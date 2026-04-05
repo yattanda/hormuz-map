@@ -7,6 +7,7 @@
 <meta property="og:title" content="ホルムズ海峡危機・原油代替ルート全体像【リアルマップ完全版】2026年4月">
 <meta property="og:description" content="ホルムズ封鎖・代替ルートA〜Dをインタラクティブ地図で可視化。48時間カウントダウン・シナリオ分析付き。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yattanda.github.io/hormuz-map/">
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -31,9 +32,9 @@ header {
 header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .badges { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 .badge-item { border-radius:20px; padding:4px 12px; font-size:0.72rem; font-weight:600; }
-.badge-alert { background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#fca5a5; animation:blink 2s ease-in-out infinite; }
+.badge-alert { background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#fca5a5; animation:badgeBlink 2s ease-in-out infinite; }
 .badge-date  { background:#1e3a5f; border:1px solid #2d6ca8; color:#93c5fd; }
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.5}}
+@keyframes badgeBlink{0%,100%{opacity:1}50%{opacity:0.5}}
 
 /* TICKER */
 .ticker {
@@ -44,8 +45,8 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 }
 .ticker-label { background:#ef4444; color:#fff; font-size:0.68rem; font-weight:800; padding:3px 9px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
 .ticker-scroll { overflow:hidden; flex:1; }
-.ticker-text { font-size:0.8rem; color:#fecaca; white-space:nowrap; display:inline-block; animation:scroll 50s linear infinite; }
-@keyframes scroll{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+.ticker-text { font-size:0.8rem; color:#fecaca; white-space:nowrap; display:inline-block; animation:tickerScroll 50s linear infinite; }
+@keyframes tickerScroll{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
 
 /* MAIN CONTAINER */
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
@@ -65,7 +66,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .sit-card .s-body strong { color:#cbd5e1; }
 .sit-card .s-src  { display:block; margin-top:7px; font-size:0.65rem; color:#475569; border-top:1px solid rgba(255,255,255,0.05); padding-top:6px; }
 
-/* DEADLINE */
+/* DEADLINE / COUNTDOWN */
 .deadline {
   background:linear-gradient(135deg,#1a0808,#2d1010);
   border:2px solid #dc2626; border-radius:12px;
@@ -75,22 +76,34 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .dl-label { font-size:0.78rem; color:#fca5a5; font-weight:700; white-space:nowrap; }
 .dl-boxes { display:flex; gap:10px; align-items:center; flex-wrap:wrap; flex:1; }
 .dl-box { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.4); border-radius:8px; padding:8px 14px; text-align:center; min-width:90px; }
-.dl-num { font-size:1.3rem; font-weight:800; color:#ef4444; line-height:1; animation:blink 1.5s ease-in-out infinite; }
+.dl-num { font-size:1.3rem; font-weight:800; color:#ef4444; line-height:1; }
+.dl-num.blink { animation:cdBlink 1s ease-in-out infinite; }
 .dl-sub { font-size:0.65rem; color:#fca5a5; margin-top:3px; }
 .dl-arrow { color:#6b7280; font-size:1.1rem; }
 .dl-note  { font-size:0.73rem; color:#fca5a5; flex:1; min-width:160px; padding-left:6px; }
+@keyframes cdBlink{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* countdown digits */
+#cd-display {
+  display:flex; gap:6px; align-items:center; justify-content:center;
+}
+.cd-unit { text-align:center; }
+.cd-val {
+  font-size:1.5rem; font-weight:800; color:#ef4444;
+  line-height:1; animation:cdBlink 1s ease-in-out infinite;
+  font-variant-numeric: tabular-nums;
+  min-width:2.2ch; display:inline-block;
+}
+.cd-sep { font-size:1.3rem; color:#ef4444; font-weight:800; margin-bottom:10px; }
+.cd-label { font-size:0.6rem; color:#fca5a5; margin-top:2px; }
+.cd-expired { font-size:1rem; font-weight:800; color:#f87171; animation:cdBlink 0.8s ease-in-out infinite; }
 
 /* MAP */
 .map-wrap { border-radius:14px; overflow:hidden; border:1px solid #1e3a5f; position:relative; }
 #map { height:580px; width:100%; background:#071828; }
+.leaflet-tile-pane { filter: brightness(0.45) saturate(0.45) hue-rotate(190deg); }
 
-/* ===== KEY FIX: タイルに色フィルター ===== */
-/* 海：深いネイビー、陸：やや明るいスレートブルー */
-.leaflet-tile-pane {
-  filter: brightness(0.45) saturate(0.45) hue-rotate(190deg);
-}
-
-/* MAP LEGEND */
+/* MAP LEGEND — PC: bottomleft fixed, SP: collapsible overlay */
 .map-legend {
   background:rgba(7,14,28,0.95) !important;
   border:1px solid #1e3a5f !important;
@@ -101,37 +114,23 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   min-width:252px;
   line-height:1.5;
 }
-.map-legend h4 { color:#7dd3fc; font-size:0.8rem; margin-bottom:9px; font-weight:700; }
+.map-legend h4 { color:#7dd3fc; font-size:0.8rem; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
+.legend-toggle-btn {
+  display:none; /* PCでは非表示 */
+  background:rgba(239,68,68,0.15);
+  border:1px solid #ef4444;
+  color:#fca5a5;
+  font-size:0.7rem;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:12px;
+  cursor:pointer;
+}
+.legend-body { /* PCでは常に表示 */ }
 .leg-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
-.leg-line { width:30px; height:3px; flex-shrink:0; border-radius:2px; }
 .leg-dash { width:30px; height:0; flex-shrink:0; border-top:3px dashed; }
 .leg-row span { font-size:0.72rem; color:#cbd5e1; }
 .leg-note { margin-top:8px; padding-top:7px; border-top:1px solid #1e3a5f; font-size:0.66rem; color:#64748b; }
-
-/* POPUP */
-.leaflet-popup-content-wrapper {
-  background:rgba(10,18,35,0.97) !important;
-  border:1px solid #1e3a5f !important;
-  border-radius:10px !important;
-  color:#e0e8f0 !important;
-  box-shadow:0 8px 32px rgba(0,0,0,0.7) !important;
-}
-.leaflet-popup-tip { background:rgba(10,18,35,0.97) !important; }
-.leaflet-popup-content { margin:12px 15px !important; min-width:190px; }
-.p-title { font-size:0.87rem; font-weight:700; margin-bottom:6px; }
-.p-body  { font-size:0.75rem; color:#94a3b8; line-height:1.65; }
-.p-body strong { color:#cbd5e1; }
-.p-badge { display:inline-block; margin-top:8px; padding:3px 10px; border-radius:20px; font-size:0.67rem; font-weight:600; }
-
-/* TOOLTIP */
-.leaflet-tooltip {
-  background:rgba(10,18,35,0.92) !important;
-  border:1px solid #1e3a5f !important;
-  color:#e0e8f0 !important;
-  font-size:11.5px !important;
-  border-radius:6px !important;
-  padding:4px 8px !important;
-}
 
 /* STATS */
 .stats-row { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
@@ -168,32 +167,65 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .sc-body  { font-size:0.73rem; color:#94a3b8; line-height:1.65; }
 .sc-impact{ margin-top:9px; padding:8px 10px; border-radius:8px; font-size:0.71rem; line-height:1.5; }
 .sc-best  { background:linear-gradient(135deg,#081c10,#0d2a18); border-color:#16a34a; }
-.sc-best  .sc-tag { background:rgba(22,163,74,0.2);  color:#4ade80; border:1px solid rgba(22,163,74,0.4);  }
+.sc-best  .sc-tag { background:rgba(22,163,74,0.2);color:#4ade80;border:1px solid rgba(22,163,74,0.4); }
 .sc-best  .sc-title{ color:#4ade80; }
 .sc-best  .sc-impact{ background:rgba(22,163,74,0.08); color:#86efac; }
 .sc-mid   { background:linear-gradient(135deg,#1c1408,#2d2010); border-color:#d97706; }
-.sc-mid   .sc-tag { background:rgba(217,119,6,0.2);  color:#fbbf24; border:1px solid rgba(217,119,6,0.4);  }
+.sc-mid   .sc-tag { background:rgba(217,119,6,0.2);color:#fbbf24;border:1px solid rgba(217,119,6,0.4); }
 .sc-mid   .sc-title{ color:#fbbf24; }
 .sc-mid   .sc-impact{ background:rgba(217,119,6,0.08); color:#fde68a; }
 .sc-worst { background:linear-gradient(135deg,#1c0808,#2d1010); border-color:#dc2626; }
-.sc-worst .sc-tag { background:rgba(220,38,38,0.2);  color:#f87171; border:1px solid rgba(220,38,38,0.4);  }
+.sc-worst .sc-tag { background:rgba(220,38,38,0.2);color:#f87171;border:1px solid rgba(220,38,38,0.4); }
 .sc-worst .sc-title{ color:#f87171; }
 .sc-worst .sc-impact{ background:rgba(220,38,38,0.08); color:#fca5a5; }
 
 /* FOOTER */
 footer {
-  text-align:center;
-  padding:16px;
-  font-size:0.68rem;
-  color:#334155;
-  border-top:1px solid #1e293b;
-  margin-top:8px;
+  text-align:center; padding:16px;
+  font-size:0.68rem; color:#334155;
+  border-top:1px solid #1e293b; margin-top:8px;
 }
 
+/* ===================== RESPONSIVE ===================== */
 @media(max-width:860px){
-  .sit-grid,.sc-grid{grid-template-columns:1fr;}
-  .stats-row{grid-template-columns:repeat(2,1fr);}
-  #map{height:420px;}
+  header h1 { font-size:0.92rem; }
+  .sit-grid,.sc-grid { grid-template-columns:1fr; }
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  #map { height:400px; }
+
+  /* 凡例：スマホでは折りたたみ式 */
+  .map-legend {
+    min-width: 44px !important;
+    max-width: 44px !important;
+    padding: 8px !important;
+    transition: max-width 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+  }
+  .map-legend.open {
+    min-width: 230px !important;
+    max-width: 260px !important;
+    padding: 12px 14px !important;
+  }
+  .map-legend h4 { font-size:0.75rem; white-space:nowrap; }
+  .legend-toggle-btn { display:inline-block; }
+  .legend-body {
+    display:none;
+    margin-top:8px;
+  }
+  .map-legend.open .legend-body { display:block; }
+
+  /* deadline wrap */
+  .deadline { flex-direction:column; align-items:flex-start; }
+  .dl-boxes { justify-content:flex-start; }
+
+  /* table scroll */
+  .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .rtable { min-width:600px; }
+}
+@media(max-width:480px){
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  header h1 { font-size:0.82rem; }
+  .cd-val { font-size:1.2rem; }
 }
 </style>
 </head>
@@ -222,7 +254,7 @@ footer {
   <div class="sit-grid">
     <div class="sit-card danger">
       <div class="s-icon">⚡</div>
-      <div class="s-title">🇺🇸 トランプ最後通牒：48時間カウントダウン</div>
+      <div class="s-title">🇺🇸 トランプ最後通牒：カウントダウン中</div>
       <div class="s-body">「<strong>地獄が降り注ぐまで48時間</strong>」とSNSで警告。「交渉に合意するか、ホルムズ海峡を開放するか」を要求。<br>期限：<strong>米東部4/6午後8時 ＝ 日本時間4/7（月）午前9時</strong><br>「ホルムズが開放された時点で停戦を検討」とも発言。</div>
       <span class="s-src">📡 テレ朝NEWS・時事通信（4月5日）</span>
     </div>
@@ -240,15 +272,40 @@ footer {
     </div>
   </div>
 
-  <!-- DEADLINE -->
+  <!-- COUNTDOWN -->
   <div class="deadline">
     <div class="dl-label">🚨 米のイラン攻撃強化<br>期限まで</div>
     <div class="dl-boxes">
-      <div class="dl-box"><div class="dl-num">～48h</div><div class="dl-sub">残り時間</div></div>
+      <!-- リアルタイムカウントダウン -->
+      <div class="dl-box" style="min-width:200px;">
+        <div id="cd-display">
+          <div class="cd-unit">
+            <span class="cd-val" id="cd-h">--</span>
+            <div class="cd-label">時間</div>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-val" id="cd-m">--</span>
+            <div class="cd-label">分</div>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-val" id="cd-s">--</span>
+            <div class="cd-label">秒</div>
+          </div>
+        </div>
+        <div class="dl-sub" style="margin-top:4px;">リアルタイムカウントダウン</div>
+      </div>
       <div class="dl-arrow">→</div>
-      <div class="dl-box"><div class="dl-num" style="font-size:1.05rem;animation:none;color:#fbbf24">4/6 20:00</div><div class="dl-sub">米東部時間</div></div>
+      <div class="dl-box">
+        <div class="dl-num" style="font-size:1.05rem;color:#fbbf24">4/6 20:00</div>
+        <div class="dl-sub">米東部時間</div>
+      </div>
       <div class="dl-arrow">＝</div>
-      <div class="dl-box"><div class="dl-num" style="font-size:1.05rem;animation:none;color:#fbbf24">4/7 09:00</div><div class="dl-sub">日本時間（月）</div></div>
+      <div class="dl-box">
+        <div class="dl-num" style="font-size:1.05rem;color:#fbbf24">4/7 09:00</div>
+        <div class="dl-sub">日本時間（月）</div>
+      </div>
       <div class="dl-note">← この期限までにイランが合意しない場合、攻撃激化＋紅海封鎖リスクが急上昇。ホルムズ＋紅海「二重封鎖」シナリオが現実味を帯びる。</div>
     </div>
   </div>
@@ -270,6 +327,7 @@ footer {
   <!-- ROUTE TABLE -->
   <div>
     <div class="sec-title">🚢 全ルート現況サマリー（2026年4月5日時点）</div>
+    <div class="rtable-wrap">
     <table class="rtable">
       <thead>
         <tr>
@@ -324,6 +382,7 @@ footer {
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 
   <!-- SCENARIOS -->
@@ -362,6 +421,34 @@ footer {
 
 <script>
 // ============================================================
+// 0. COUNTDOWN TIMER（日本時間 2026/4/7 09:00:00）
+// ============================================================
+const DEADLINE = new Date('2026-04-07T09:00:00+09:00');
+
+function updateCountdown() {
+  const now  = new Date();
+  const diff = DEADLINE - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-display').innerHTML =
+      '<span class="cd-expired">⏰ 期限超過</span>';
+    return;
+  }
+
+  const totalSec = Math.floor(diff / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+// ============================================================
 // 1. MAP INIT
 // ============================================================
 const map = L.map('map', {
@@ -370,9 +457,7 @@ const map = L.map('map', {
   minZoom: 2,
   maxZoom: 10,
   zoomControl: true,
-  attributionControl: true,
-  // 日付変更線をまたぐポリラインのために worldCopyJump を有効化
-  worldCopyJump: false  // false のまま、経度+360 方式で対処
+  attributionControl: true
 });
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -381,34 +466,34 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
+
 // ============================================================
-// 2. GeoJSON 国境線 + 国名ラベル
+// 2. GeoJSON 国境線
 // ============================================================
 const COUNTRIES = [
-  { name:'イラン',         iso:'IR', lat:32.4,  lng:53.7  },
-  { name:'サウジアラビア', iso:'SA', lat:24.0,  lng:45.0  },
-  { name:'UAE',            iso:'AE', lat:24.0,  lng:54.5  },
-  { name:'オマーン',       iso:'OM', lat:22.0,  lng:57.5  },
-  { name:'イエメン',       iso:'YE', lat:15.5,  lng:47.5  },
-  { name:'イラク',         iso:'IQ', lat:33.2,  lng:43.7  },
-  { name:'クウェート',     iso:'KW', lat:29.3,  lng:47.5  },
-  { name:'バーレーン',     iso:'BH', lat:26.0,  lng:50.6  },
-  { name:'カタール',       iso:'QA', lat:25.3,  lng:51.2  },
-  { name:'パキスタン',     iso:'PK', lat:30.4,  lng:69.3  },
-  { name:'インド',         iso:'IN', lat:22.0,  lng:79.0  },
-  { name:'エジプト',       iso:'EG', lat:26.0,  lng:29.0  },
-  { name:'ジブチ',         iso:'DJ', lat:11.8,  lng:42.6  },
-  { name:'イエメン',       iso:'YE', lat:15.5,  lng:47.5  },
-  { name:'ソマリア',       iso:'SO', lat:6.0,   lng:46.0  },
-  { name:'日本',           iso:'JP', lat:36.5,  lng:138.0 },
-  { name:'中国',           iso:'CN', lat:35.0,  lng:104.0 },
-  { name:'マレーシア',     iso:'MY', lat:4.2,   lng:108.0 },
-  { name:'アメリカ',       iso:'US', lat:39.0,  lng:-98.0 },
-  { name:'ロシア',         iso:'RU', lat:61.0,  lng:80.0  },
-  { name:'南アフリカ',     iso:'ZA', lat:-30.0, lng:25.0  },
-  { name:'ブラジル',       iso:'BR', lat:-10.0, lng:-52.0 },
-  { name:'イスラエル',     iso:'IL', lat:31.5,  lng:34.8  },
-  { name:'トルコ',         iso:'TR', lat:39.0,  lng:35.0  },
+  {name:'イラン',iso:'IR',lat:32.4,lng:53.7},
+  {name:'サウジアラビア',iso:'SA',lat:24.0,lng:45.0},
+  {name:'UAE',iso:'AE',lat:24.0,lng:54.5},
+  {name:'オマーン',iso:'OM',lat:22.0,lng:57.5},
+  {name:'イエメン',iso:'YE',lat:15.5,lng:47.5},
+  {name:'イラク',iso:'IQ',lat:33.2,lng:43.7},
+  {name:'クウェート',iso:'KW',lat:29.3,lng:47.5},
+  {name:'バーレーン',iso:'BH',lat:26.0,lng:50.6},
+  {name:'カタール',iso:'QA',lat:25.3,lng:51.2},
+  {name:'パキスタン',iso:'PK',lat:30.4,lng:69.3},
+  {name:'インド',iso:'IN',lat:22.0,lng:79.0},
+  {name:'エジプト',iso:'EG',lat:26.0,lng:29.0},
+  {name:'ジブチ',iso:'DJ',lat:11.8,lng:42.6},
+  {name:'ソマリア',iso:'SO',lat:6.0,lng:46.0},
+  {name:'日本',iso:'JP',lat:36.5,lng:138.0},
+  {name:'中国',iso:'CN',lat:35.0,lng:104.0},
+  {name:'マレーシア',iso:'MY',lat:4.2,lng:108.0},
+  {name:'アメリカ',iso:'US',lat:39.0,lng:-98.0},
+  {name:'ロシア',iso:'RU',lat:61.0,lng:80.0},
+  {name:'南アフリカ',iso:'ZA',lat:-30.0,lng:25.0},
+  {name:'ブラジル',iso:'BR',lat:-10.0,lng:-52.0},
+  {name:'イスラエル',iso:'IL',lat:31.5,lng:34.8},
+  {name:'トルコ',iso:'TR',lat:39.0,lng:35.0},
 ];
 
 fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
@@ -416,191 +501,170 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
   .then(data => {
     L.geoJSON(data, {
       style: {
-        // ★ 陸地をやや明るいスレートブルーに。海（背景 #071828）より明確に差をつける
-        color: '#2a4a6a',
-        weight: 0.9,
-        fillColor: '#1a3048',   // 旧: #0d1e30 → 明るめのネイビーに変更
-        fillOpacity: 0.70,      // 不透明度を高くして陸地の存在感UP
-        opacity: 0.8
+        color:'#2a4a6a', weight:0.9,
+        fillColor:'#1a3048', fillOpacity:0.70, opacity:0.8
       },
-      onEachFeature: function(feature, layer) {
+      onEachFeature(feature, layer) {
         const iso = feature.properties.ISO_A2;
         const found = COUNTRIES.find(c => c.iso === iso);
         if (found) {
           layer.bindTooltip(found.name, {
-            permanent: false, sticky: true,
-            className: 'leaflet-tooltip', direction: 'auto'
+            permanent:false, sticky:true,
+            className:'leaflet-tooltip', direction:'auto'
           });
         }
-        // 中東の関係国をさらに明るくハイライト
-        const highlights = ['IR','SA','AE','YE','IQ','OM','BH','QA','KW'];
-        if (highlights.includes(iso)) {
-          layer.setStyle({
-            fillColor: '#1e3d28',
-            fillOpacity: 0.75,
-            color: '#2e5a3a',
-            weight: 1.3
-          });
+        const hi = ['IR','SA','AE','YE','IQ','OM','BH','QA','KW'];
+        if (hi.includes(iso)) {
+          layer.setStyle({fillColor:'#1e3d28',fillOpacity:0.75,color:'#2e5a3a',weight:1.3});
         }
       }
     }).addTo(map);
 
-    // 国名ラベル
     COUNTRIES.forEach(c => {
-      const labelIcon = L.divIcon({
-        html: `<div style="
-          color:rgba(180,210,235,0.85);
-          font-size:11px;font-weight:600;
-          font-family:'Hiragino Sans','Yu Gothic','Segoe UI',sans-serif;
-          text-shadow:0 1px 4px rgba(0,0,0,0.95),0 0 8px rgba(0,0,0,0.9);
-          white-space:nowrap;pointer-events:none;letter-spacing:0.04em;
-        ">${c.name}</div>`,
-        iconSize:[0,0], iconAnchor:[0,0], className:''
-      });
-      L.marker([c.lat, c.lng], { icon: labelIcon, interactive: false }).addTo(map);
+      L.marker([c.lat,c.lng], {
+        icon: L.divIcon({
+          html:`<div style="color:rgba(180,210,235,0.85);font-size:11px;font-weight:600;font-family:'Hiragino Sans','Yu Gothic','Segoe UI',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">${c.name}</div>`,
+          iconSize:[0,0], iconAnchor:[0,0], className:''
+        }), interactive:false
+      }).addTo(map);
     });
   })
-  .catch(err => console.warn('GeoJSON読み込み失敗:', err));
+  .catch(e => console.warn('GeoJSON失敗:', e));
 
 
 // ============================================================
 // 3. ROUTE DEFINITIONS
-//    ★ ルートC修正：日付変更線問題を経度+360 方式で解決
-//      アラスカ(lng=-150) → lng=210 に統一（360-150=210）
-//      日本(lng=139.8) は既に東側なので lng=139.8+360=499.8 は
-//      過剰なので代わりに太平洋経由の中間点を +360 系に統一する
+//
+// ★ 共通区間オフセット方式：
+//   インド洋〜マラッカ〜日本の共通区間を
+//   各ルートごとに緯度を±0.4°ずつずらして
+//   4色が平行に並んで見えるようにする
+//
+//   オフセット量（緯度）:
+//     ルートA（青）:  +0.6
+//     ルートB（緑）:  +0.2
+//     ルートD（橙）:  -0.2
+//     旧ルート（灰）: -0.6
+//   ルートC（紫）は太平洋ルートなので共通区間なし
 // ============================================================
 
-// 旧ルート（封鎖中・グレー破線）
+// オフセット付き共通区間生成ヘルパー
+function commonEast(latOffset) {
+  // インド洋東部〜マラッカ〜日本
+  return [
+    [2.0 + latOffset,        90.0],
+    [1.3 + latOffset,       103.8],
+    [5.0 + latOffset,       110.0],
+    [14.0 + latOffset,      118.0],
+    [24.0 + latOffset,      126.0],
+    [34.5 + latOffset,      136.0],
+    [35.5,                  139.8],  // 日本は共通
+  ];
+}
+
+// ── 旧ルート（封鎖中）lat offset: -0.6
 const routeOld = [
   [26.0,50.5],[26.5,56.5],[24.0,60.0],[19.0,65.0],
-  [8.0,77.5],[5.8,80.5],[2.0,90.0],[1.3,103.8],
-  [5.0,110.0],[14.0,118.0],[24.0,126.0],[34.5,136.0],[35.5,139.8]
+  [8.0,77.5],[5.8,80.5],
+  ...commonEast(-0.6)
 ];
 
-// ルートA パイプライン（アブダビ→フジャイラ）
+// ── ルートD（通航料）lat offset: -0.2
+const routeD = [
+  [26.0,50.5],[26.5,56.5],[24.0,60.0],[19.0,65.0],
+  [8.0,77.5],[5.8,80.5],
+  ...commonEast(-0.2)
+];
+
+// ── ルートA パイプライン
 const routeA_pl = [[24.5,54.4],[25.1,56.3]];
 
-// ルートA 海上（フジャイラ→ムンバイ→マラッカ→日本）
+// ── ルートA 海上 lat offset: +0.6
 const routeA = [
   [25.1,56.3],[22.0,62.0],[18.5,67.0],
   [19.0,72.8],
   [14.0,74.0],[8.0,77.5],[5.8,80.5],
-  [2.0,90.0],[1.3,103.8],[5.0,110.0],
-  [14.0,118.0],[24.0,126.0],[34.5,136.0],[35.5,139.8]
+  ...commonEast(+0.6)
 ];
 
-// ルートB パイプライン（サウジ東部→ヤンブー）
+// ── ルートB パイプライン
 const routeB_pl = [[26.3,49.8],[24.1,38.1]];
 
-// ルートB 海上（ヤンブー→バベルマンデブ→マレーシア→日本）
+// ── ルートB 海上 lat offset: +0.2
 const routeB = [
   [24.1,38.1],[20.0,38.5],[15.5,41.5],
   [12.6,43.4],
   [11.5,45.5],[8.0,50.5],[4.0,48.0],
   [-4.0,50.0],[-10.0,55.0],[-5.0,65.0],
   [0.0,73.0],[4.0,80.0],[2.5,92.0],
+  ...commonEast(+0.2)
+];
+
+// ── ルートC アラスカ→太平洋（+360経度方式）
+const routeC_pacific = [
+  [35.5,139.8],
+  [38.0,145.0],[42.0,152.0],[48.0,160.0],
+  [54.0,170.0],[57.0,180.0],
+  [58.0,190.0],[60.0,200.0],[61.2,210.0],
+];
+
+// ── ルートC ブラジル→喜望峰
+const routeC_brazil = [
+  [-10.0,-38.0],[-15.0,-15.0],[-30.0,5.0],
+  [-34.3,18.4],
+  [-30.0,40.0],[-20.0,55.0],[-10.0,65.0],
+  [0.0,73.0],[4.0,80.0],[2.5,92.0],
   [1.3,103.8],[5.0,110.0],
   [14.0,118.0],[24.0,126.0],[34.5,136.0],[35.5,139.8]
 ];
 
-// ================================================================
-// ルートC ★修正版★：太平洋経由（日付変更線問題を+360で解決）
-//
-// Leafletは経度が連続して増減する方向に直線を引くため、
-// 日本(139.8)→アラスカ(-150) の場合、差が約290°となり
-// ユーラシア大陸横断（西回り）になってしまう。
-//
-// 解決策：日本をアンカーに「東向き経度」で統一。
-//   日本: 139.8  → そのまま
-//   太平洋中間: 180°付近 → 175, 180 を橋渡しに使用
-//   アラスカ: -150° → +210°（= -150 + 360）に統一
-//   これにより全座標が 139→175→210 と単調増加し、太平洋経由で描画
-// ================================================================
-const routeC_pacific = [
-  [35.5, 139.8],   // 日本（東京湾）
-  [38.0, 145.0],   // 日本の東沖
-  [42.0, 152.0],   // 北太平洋西部
-  [48.0, 160.0],   // 北太平洋中央寄り
-  [54.0, 170.0],   // アリューシャン列島方面
-  [57.0, 180.0],   // 日付変更線付近
-  [58.0, 190.0],   // ＝ -170°（アラスカ湾口）
-  [60.0, 200.0],   // ＝ -160°
-  [61.2, 210.0],   // ＝ -150°（アラスカ）
-];
-
-// ブラジルルート（ルートCの南米バリアント・喜望峰周り）
-// ブラジル→喜望峰→インド洋→マラッカ→日本
-const routeC_brazil = [
-  [-10.0,-38.0],   // ブラジル東海岸
-  [-15.0,-15.0],   // 大西洋
-  [-30.0,5.0],     // 大西洋南部
-  [-34.3,18.4],    // 喜望峰
-  [-30.0,40.0],    // インド洋南部
-  [-20.0,55.0],    // インド洋中央
-  [-10.0,65.0],    // インド洋北上
-  [0.0,73.0],      // インド洋北部
-  [4.0,80.0],      // スリランカ沖
-  [2.5,92.0],      // ベンガル湾
-  [1.3,103.8],     // マラッカ海峡
-  [5.0,110.0],[14.0,118.0],[24.0,126.0],[34.5,136.0],[35.5,139.8]
-];
-
-// ルートD（通航料ホルムズ通過・オレンジ破線）
-const routeD = [
-  [26.0,50.5],[26.5,56.5],[24.0,60.0],[19.0,65.0],
-  [8.0,77.5],[2.0,90.0],[1.3,103.8],
-  [5.0,110.0],[14.0,118.0],[24.0,126.0],[35.5,139.8]
-];
-
 
 // ============================================================
-// 4. DRAW ROUTES
+// 4. DRAW ROUTES（細め＋オフセットでレインボー効果）
 // ============================================================
+// 旧ルート
+L.polyline(routeOld,{color:'#6b7280',weight:2,dashArray:'10 7',opacity:0.55})
+  .addTo(map).bindTooltip('旧ルート（ホルムズ経由・封鎖中）',{sticky:true});
 
-// 旧ルート（封鎖）
-L.polyline(routeOld, {color:'#4b5563', weight:2, dashArray:'10 7', opacity:0.5})
-  .addTo(map).bindTooltip('旧ルート（ホルムズ経由・封鎖中）', {sticky:true});
+// ルートD
+L.polyline(routeD,{color:'#f59e0b',weight:2.5,dashArray:'8 5',opacity:0.88})
+  .addTo(map).bindTooltip('ルートD：通航料払いホルムズ通過（友好国限定）',{sticky:true});
 
-// ルートD（通航料払い）
-L.polyline(routeD, {color:'#f59e0b', weight:3, dashArray:'8 5', opacity:0.85})
-  .addTo(map).bindTooltip('ルートD：通航料払いホルムズ通過（友好国限定）', {sticky:true});
+// ルートB
+L.polyline(routeB_pl,{color:'#34d399',weight:2,dashArray:'5 4',opacity:0.85})
+  .addTo(map).bindTooltip('ルートB：東西パイプライン（陸上・1,200km）',{sticky:true});
+L.polyline(routeB,{color:'#34d399',weight:2.5,dashArray:'12 5',opacity:0.92})
+  .addTo(map).bindTooltip('ルートB：ヤンブー港経由（海上）',{sticky:true});
 
-// ルートB（パイプライン + 海上）
-L.polyline(routeB_pl, {color:'#34d399', weight:2.5, dashArray:'5 4', opacity:0.85})
-  .addTo(map).bindTooltip('ルートB：東西パイプライン（陸上・1,200km）', {sticky:true});
-L.polyline(routeB, {color:'#34d399', weight:3.5, dashArray:'12 5', opacity:0.9})
-  .addTo(map).bindTooltip('ルートB：ヤンブー港経由（海上）', {sticky:true});
+// ルートA
+L.polyline(routeA_pl,{color:'#38bdf8',weight:2,dashArray:'5 4',opacity:0.85})
+  .addTo(map).bindTooltip('ルートA：ADCOPパイプライン（陸上）',{sticky:true});
+L.polyline(routeA,{color:'#38bdf8',weight:2.5,dashArray:'12 5',opacity:0.92})
+  .addTo(map).bindTooltip('ルートA：フジャイラ港経由（海上）',{sticky:true});
 
-// ルートA（パイプライン + 海上）
-L.polyline(routeA_pl, {color:'#38bdf8', weight:2.5, dashArray:'5 4', opacity:0.85})
-  .addTo(map).bindTooltip('ルートA：ADCOPパイプライン（陸上）', {sticky:true});
-L.polyline(routeA, {color:'#38bdf8', weight:3.5, dashArray:'12 5', opacity:0.9})
-  .addTo(map).bindTooltip('ルートA：フジャイラ港経由（海上）', {sticky:true});
+// ルートC 太平洋
+L.polyline(routeC_pacific,{color:'#a78bfa',weight:2.5,dashArray:'10 7',opacity:0.88})
+  .addTo(map).bindTooltip('ルートC：米国アラスカ発 太平洋ルート（4/25到着予定）',{sticky:true});
 
-// ルートC ★修正版★（アラスカ→太平洋経由→日本）
-L.polyline(routeC_pacific, {color:'#a78bfa', weight:3, dashArray:'10 7', opacity:0.85})
-  .addTo(map).bindTooltip('ルートC：米国アラスカ発 太平洋ルート（4/25到着予定）', {sticky:true});
-
-// ルートC ブラジルバリアント（喜望峰周り）
-L.polyline(routeC_brazil, {color:'#c084fc', weight:2.5, dashArray:'8 6', opacity:0.72})
-  .addTo(map).bindTooltip('ルートC（南米）：ブラジル発 喜望峰経由ルート', {sticky:true});
+// ルートC ブラジル
+L.polyline(routeC_brazil,{color:'#c084fc',weight:2,dashArray:'8 6',opacity:0.75})
+  .addTo(map).bindTooltip('ルートC（南米）：ブラジル発 喜望峰経由ルート',{sticky:true});
 
 
 // ============================================================
 // 5. MARKERS
 // ============================================================
-function mkIcon(emoji, color, size=34) {
+function mkIcon(emoji,color,size=34){
   return L.divIcon({
     html:`<div style="width:${size}px;height:${size}px;background:${color};border:2px solid rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${Math.round(size*0.48)}px;box-shadow:0 0 ${Math.round(size/2)}px ${color}99;">${emoji}</div>`,
-    iconSize:[size,size], iconAnchor:[size/2,size/2], className:''
+    iconSize:[size,size],iconAnchor:[size/2,size/2],className:''
   });
 }
 
-// ── ホルムズ海峡（赤点滅）
-L.marker([26.5,56.5], {icon: L.divIcon({
-  html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.18);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 18px rgba(239,68,68,0.6);">⛔</div>`,
-  iconSize:[44,44], iconAnchor:[22,22], className:''
+// ホルムズ
+L.marker([26.5,56.5],{icon:L.divIcon({
+  html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.18);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">⛔</div>`,
+  iconSize:[44,44],iconAnchor:[22,22],className:''
 })}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">⛔ ホルムズ海峡 / Strait of Hormuz</div>
   <div class="p-body"><strong>状態：</strong>事実上封鎖中（2026年2月末〜）<br>
@@ -609,10 +673,10 @@ L.marker([26.5,56.5], {icon: L.divIcon({
   <strong>トランプ期限：</strong>4月7日午前9時（日本時間）</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⛔ 封鎖中</span>`);
 
-// ── バベルマンデブ海峡（警戒）
-L.marker([12.6,43.4], {icon: L.divIcon({
-  html:`<div class="pulse-yellow" style="width:40px;height:40px;background:rgba(220,38,38,0.2);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 15px rgba(239,68,68,0.5);">⚠️</div>`,
-  iconSize:[40,40], iconAnchor:[20,20], className:''
+// バベルマンデブ
+L.marker([12.6,43.4],{icon:L.divIcon({
+  html:`<div class="pulse-yellow" style="width:40px;height:40px;background:rgba(220,38,38,0.2);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>`,
+  iconSize:[40,40],iconAnchor:[20,20],className:''
 })}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#fbbf24">⚠️ バベルマンデブ海峡 / Bab-el-Mandeb</div>
   <div class="p-body"><strong>場所：</strong>紅海南端・イエメン沖<br>
@@ -621,58 +685,55 @@ L.marker([12.6,43.4], {icon: L.divIcon({
   <strong>現況：</strong>船舶数が激減・極度に緊張</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⬆ リスク急上昇</span>`);
 
-// ── フジャイラ港
-L.marker([25.1,56.3], {icon:mkIcon('⚓','#1d4ed8',36)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#38bdf8">⚓ フジャイラ港（UAE）/ Fujairah Port</div>
+// フジャイラ
+L.marker([25.1,56.3],{icon:mkIcon('⚓','#1d4ed8',36)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#38bdf8">⚓ フジャイラ港（UAE）</div>
   <div class="p-body"><strong>位置：</strong>UAE東部・オマーン湾沿岸<br>
-  <strong>特徴：</strong>ホルムズ海峡を完全回避可能<br>
   <strong>パイプライン：</strong>ADCOP（アブダビ直結）<br>
   <strong>輸送能力：</strong>日量 約150〜180万バレル<br>
   <strong>本日到着：</strong>4月5日（ENEOS向け）✅</div>
   <span class="p-badge" style="background:rgba(56,189,248,0.2);color:#38bdf8;border:1px solid rgba(56,189,248,0.4)">ルートA 拠点</span>`);
 
-// ── ヤンブー港
-L.marker([24.1,38.1], {icon:mkIcon('⚓','#065f46',36)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">⚓ ヤンブー港（サウジアラビア）/ Yanbu Port</div>
-  <div class="p-body"><strong>位置：</strong>紅海沿岸・サウジアラビア西部<br>
-  <strong>パイプライン：</strong>東西パイプライン（全長1,200km）<br>
+// ヤンブー
+L.marker([24.1,38.1],{icon:mkIcon('⚓','#065f46',36)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#34d399">⚓ ヤンブー港（サウジアラビア）</div>
+  <div class="p-body"><strong>パイプライン：</strong>東西パイプライン（全長1,200km）<br>
   <strong>輸送能力：</strong>最大 日量約500万バレル<br>
   <strong>実績：</strong>3/28 太陽石油（愛媛）到着 ✅<br>
   <strong>積荷：</strong>サウジ産原油 64万バレル</div>
   <span class="p-badge" style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.4)">ルートB 拠点</span>`);
 
-// ── アブダビ油田
-L.marker([24.5,54.4], {icon:mkIcon('🛢️','#1e3a5f',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#38bdf8">🛢️ アブダビ油田 / Abu Dhabi Oilfield</div>
+// アブダビ油田
+L.marker([24.5,54.4],{icon:mkIcon('🛢️','#1e3a5f',30)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#38bdf8">🛢️ アブダビ油田</div>
   <div class="p-body">ADCOPパイプラインでフジャイラ港に直結。ホルムズ海峡を完全に回避した輸出が可能。</div>`);
 
-// ── サウジ東部油田
-L.marker([26.3,49.8], {icon:mkIcon('🛢️','#064e3b',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🛢️ サウジ東部油田 / Saudi East Oilfield</div>
+// サウジ東部油田
+L.marker([26.3,49.8],{icon:mkIcon('🛢️','#064e3b',30)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#34d399">🛢️ サウジ東部油田</div>
   <div class="p-body">東西パイプライン（1,200km）でヤンブー港へ輸送。世界最大の産油設備群が集中するエリア。</div>`);
 
-// ── ムンバイ沖 積み替え
-L.marker([19.0,72.8], {icon:mkIcon('🔄','#78350f',32)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">🔄 ムンバイ沖 / Mumbai (Transshipment)</div>
-  <div class="p-body"><strong>ルートA</strong>：フジャイラからの原油をVLCC（超大型）に積み替え。ENEOSホールディングスが関与。<br>
-  <strong>到着予定：</strong>4月5日（日本）</div>`);
+// ムンバイ積み替え
+L.marker([19.0,72.8],{icon:mkIcon('🔄','#78350f',32)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">🔄 ムンバイ沖（積み替え）</div>
+  <div class="p-body"><strong>ルートA</strong>：フジャイラからの原油をVLCCに積み替え。ENEOSホールディングスが関与。4月5日（日本）到着予定。</div>`);
 
-// ── マレーシア沖 積み替え
-L.marker([2.5,104.0], {icon:mkIcon('🔄','#064e3b',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🔄 マレーシア沖 / Malaysia (Transshipment)</div>
+// マレーシア積み替え
+L.marker([2.5,104.0],{icon:mkIcon('🔄','#064e3b',30)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#34d399">🔄 マレーシア沖（積み替え）</div>
   <div class="p-body"><strong>ルートB</strong>：ヤンブーからの原油をVLCCに積み替え。3/28着の太陽石油向けもここで積み替え。</div>`);
 
-// ── マラッカ海峡
-L.marker([1.5,103.5], {icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#7dd3fc">🚢 マラッカ海峡 / Malacca Strait</div>
+// マラッカ海峡
+L.marker([1.5,103.5],{icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#7dd3fc">🚢 マラッカ海峡</div>
   <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。</div>`);
 
-// ── 日本（東京湾）
-L.marker([35.5,139.8], {icon: L.divIcon({
+// 日本
+L.marker([35.5,139.8],{icon:L.divIcon({
   html:`<div style="width:42px;height:42px;background:#1d4ed8;border:2px solid #93c5fd;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 16px rgba(59,130,246,0.8);">🇯🇵</div>`,
-  iconSize:[42,42], iconAnchor:[21,21], className:''
+  iconSize:[42,42],iconAnchor:[21,21],className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">🇯🇵 日本 / Japan（東京湾）</div>
+  <div class="p-title" style="color:#93c5fd">🇯🇵 日本（東京湾）</div>
   <div class="p-body"><strong>石油備蓄：</strong>240日分（国家＋民間＋産油国）<br>
   <strong>ホルムズ依存度：</strong>原油輸入の9割超（封鎖前）<br>
   <strong>ルートB着：</strong>3/28 太陽石油（愛媛）✅<br>
@@ -680,54 +741,72 @@ L.marker([35.5,139.8], {icon: L.divIcon({
   <strong>ルートC着：</strong>4/25 予定</div>
   <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">最終目的地</span>`);
 
-// ── アラスカ（ルートC起点）★修正：lng=210 で配置
-L.marker([61.2, 210.0], {icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#a78bfa">🇺🇸 米国（アラスカ）/ USA Alaska</div>
-  <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。ブラジル・カナダ・カザフスタン等も候補。<strong>4/25に第1便が日本到着予定。</strong></div>`);
+// アラスカ（+360経度）
+L.marker([61.2,210.0],{icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#a78bfa">🇺🇸 米国（アラスカ）</div>
+  <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>4/25に第1便が日本到着予定。</strong></div>`);
 
-// ── ブラジル
-L.marker([-10.0,-38.0], {icon:mkIcon('🇧🇷','#4c1d95',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#c084fc">🇧🇷 ブラジル / Brazil</div>
-  <div class="p-body"><strong>ルートC（南米バリアント）</strong>の供給源。喜望峰→インド洋経由で日本へ。中東産と品質差が大きく製油所の調整が必要。</div>`);
+// ブラジル
+L.marker([-10.0,-38.0],{icon:mkIcon('🇧🇷','#4c1d95',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#c084fc">🇧🇷 ブラジル</div>
+  <div class="p-body"><strong>ルートC（南米）</strong>の供給源。喜望峰→インド洋経由で日本へ。製油所の品質調整が必要。</div>`);
 
-// ── 喜望峰
-L.marker([-34.3,18.4], {icon:mkIcon('🌍','#1a3a2a',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🌍 喜望峰 / Cape of Good Hope</div>
+// 喜望峰
+L.marker([-34.3,18.4],{icon:mkIcon('🌍','#1a3a2a',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#34d399">🌍 喜望峰</div>
   <div class="p-body">バベルマンデブ封鎖時のルートBの迂回経路。紅海ルートより約2週間余分。ブラジル産（ルートC南米）もここを通過。</div>`);
 
-// ── バーレーン（攻撃報告）
-L.marker([26.0,50.5], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 バーレーン / Bahrain（攻撃報告 4/4）</div>
-  <div class="p-body">イラン革命防衛隊が4日、バーレーン港でイスラエル関連船舶を攻撃したと発表。大規模火災が発生（詳細確認中）。</div>
+// バーレーン攻撃
+L.marker([26.0,50.5],{icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">💥 バーレーン（攻撃報告 4/4）</div>
+  <div class="p-body">イラン革命防衛隊が4日、バーレーン港でイスラエル関連船舶を攻撃。大規模火災が発生（詳細確認中）。</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 最新攻撃報告</span>`);
 
-// ── スエズ運河
-L.marker([30.6,32.3], {icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#94a3b8">⚓ スエズ運河 / Suez Canal</div>
-  <div class="p-body">紅海とヨーロッパを結ぶ要衝。ヤンブーからのルートBはバベルマンデブから東（アジア）方面へ向かう。</div>`);
+// スエズ運河
+L.marker([30.6,32.3],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#94a3b8">⚓ スエズ運河</div>
+  <div class="p-body">紅海とヨーロッパを結ぶ要衝。ルートBはバベルマンデブからアジア方面へ向かう。</div>`);
 
 
 // ============================================================
-// 6. MAP LEGEND
+// 6. MAP LEGEND（PC：固定表示 / SP：折りたたみ式）
 // ============================================================
 const Legend = L.Control.extend({
   options: { position: 'bottomleft' },
   onAdd() {
     const div = L.DomUtil.create('div','map-legend');
+    div.id = 'map-legend-ctrl';
     div.innerHTML = `
-      <h4>🗺️ 凡 例</h4>
-      <div class="leg-row"><div class="leg-dash" style="border-color:#38bdf8"></div><span>ルートA：フジャイラ港経由（UAE）</span></div>
-      <div class="leg-row"><div class="leg-dash" style="border-color:#34d399"></div><span>ルートB：ヤンブー港経由（サウジ）</span></div>
-      <div class="leg-row"><div class="leg-dash" style="border-color:#a78bfa"></div><span>ルートC：アラスカ発 太平洋ルート</span></div>
-      <div class="leg-row"><div class="leg-dash" style="border-color:#c084fc"></div><span>ルートC：ブラジル発 喜望峰ルート</span></div>
-      <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過 🆕</span></div>
-      <div class="leg-row"><div class="leg-dash" style="border-color:#4b5563"></div><span>旧ルート（ホルムズ経由・封鎖中）</span></div>
-      <div class="leg-note">💡 各マーカー・ラインをクリックで詳細表示</div>
+      <h4>🗺️ 凡 例
+        <button class="legend-toggle-btn" onclick="toggleLegend()" id="legend-btn">開く</button>
+      </h4>
+      <div class="legend-body" id="legend-body">
+        <div class="leg-row"><div class="leg-dash" style="border-color:#38bdf8"></div><span>ルートA：フジャイラ港経由（UAE）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#34d399"></div><span>ルートB：ヤンブー港経由（サウジ）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#a78bfa"></div><span>ルートC：アラスカ発 太平洋ルート</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#c084fc"></div><span>ルートC：ブラジル発 喜望峰ルート</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過 🆕</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・封鎖中）</span></div>
+        <div class="leg-note">💡 各マーカー・ラインをクリックで詳細表示</div>
+      </div>
     `;
+    // スクロール・ズーム操作がマップに貫通しないよう止める
+    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.disableScrollPropagation(div);
     return div;
   }
 });
 new Legend().addTo(map);
+
+// 凡例トグル（スマホ用）
+function toggleLegend() {
+  const legend = document.getElementById('map-legend-ctrl');
+  const btn    = document.getElementById('legend-btn');
+  const isOpen = legend.classList.contains('open');
+  legend.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? '開く' : '閉じる';
+}
+
 
 // ============================================================
 // 7. CSS ANIMATIONS
@@ -742,8 +821,8 @@ st.textContent = `
     0%,100%{opacity:1;box-shadow:0 0 14px rgba(239,68,68,0.4);}
     50%{opacity:0.45;box-shadow:0 0 24px rgba(239,68,68,0.8);}
   }
-  .pulse-red  { animation: pulse-red  1.3s ease-in-out infinite; }
-  .pulse-yellow { animation: pulse-yellow 1.8s ease-in-out infinite; }
+  .pulse-red   { animation: pulse-red   1.3s ease-in-out infinite; }
+  .pulse-yellow{ animation: pulse-yellow 1.8s ease-in-out infinite; }
   .leaflet-control-attribution a { color:#4a9eff !important; }
 `;
 document.head.appendChild(st);

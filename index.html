@@ -193,26 +193,48 @@ footer {
   .stats-row { grid-template-columns:repeat(2,1fr); }
   #map { height:400px; }
 
-  /* 凡例：スマホでは折りたたみ式 */
   .map-legend {
-    min-width: 44px !important;
-    max-width: 44px !important;
-    padding: 8px !important;
-    transition: max-width 0.3s ease, padding 0.3s ease;
+    min-width: 80px !important;
+    max-width: 80px !important;
+    padding: 8px 10px !important;
+    transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
     overflow: hidden;
+    cursor: pointer;
   }
   .map-legend.open {
     min-width: 230px !important;
     max-width: 260px !important;
     padding: 12px 14px !important;
   }
-  .map-legend h4 { font-size:0.75rem; white-space:nowrap; }
-  .legend-toggle-btn { display:inline-block; }
-  .legend-body {
-    display:none;
-    margin-top:8px;
+  .map-legend h4 {
+    font-size:0.75rem;
+    white-space:nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
   }
-  .map-legend.open .legend-body { display:block; }
+  .legend-toggle-btn {
+    display: inline-block;
+    pointer-events: none; /* 親のタッチで開閉するので不要 */
+  }
+  .legend-body {
+    display: none;
+    margin-top: 8px;
+  }
+  .map-legend.open .legend-body {
+    display: block;
+  }
+
+  .deadline { flex-direction:column; align-items:flex-start; }
+  .dl-boxes { justify-content:flex-start; }
+  .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .rtable { min-width:600px; }
+}
+@media(max-width:480px){
+  .stats-row { grid-template-columns:repeat(2,1fr); }
+  header h1 { font-size:0.82rem; }
+  .cd-val { font-size:1.2rem; }
+}
 
   /* deadline wrap */
   .deadline { flex-direction:column; align-items:flex-start; }
@@ -799,13 +821,32 @@ const Legend = L.Control.extend({
 new Legend().addTo(map);
 
 // 凡例トグル（スマホ用）
-function toggleLegend() {
+function toggleLegend(e) {
+  if (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
   const legend = document.getElementById('map-legend-ctrl');
   const btn    = document.getElementById('legend-btn');
   const isOpen = legend.classList.contains('open');
   legend.classList.toggle('open', !isOpen);
   btn.textContent = isOpen ? '開く' : '閉じる';
 }
+
+// スマホタッチ対応：凡例全体をタップで開閉
+window.addEventListener('DOMContentLoaded', () => {
+  // Leafletのコントロールは後から追加されるので少し待つ
+  setTimeout(() => {
+    const legend = document.getElementById('map-legend-ctrl');
+    if (!legend) return;
+    ['click','touchend'].forEach(evtType => {
+      legend.addEventListener(evtType, function(e) {
+        e.stopPropagation();
+        toggleLegend();
+      }, { passive: false });
+    });
+  }, 1000);
+});
 
 
 // ============================================================

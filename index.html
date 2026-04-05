@@ -200,6 +200,8 @@ footer {
     transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
     overflow: hidden;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(56,189,248,0.2); /* ← これを追加 */
+    touch-action: manipulation; /* ← これを追加 */
   }
   .map-legend.open {
     min-width: 230px !important;
@@ -839,12 +841,26 @@ window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const legend = document.getElementById('map-legend-ctrl');
     if (!legend) return;
-    ['click','touchend'].forEach(evtType => {
-      legend.addEventListener(evtType, function(e) {
-        e.stopPropagation();
-        toggleLegend();
-      }, { passive: false });
-    });
+['click','touchstart'].forEach(evtType => {
+  legend.addEventListener(evtType, function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    toggleLegend();
+  }, { passive: false });
+});
+
+// h4タグも個別にタッチ対応
+setTimeout(() => {
+  const h4 = document.querySelector('#map-legend-ctrl h4');
+  if (!h4) return;
+  ['click','touchstart'].forEach(evtType => {
+    h4.addEventListener(evtType, function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      toggleLegend();
+    }, { passive: false });
+  });
+}, 1200);
   }, 1000);
 });
 

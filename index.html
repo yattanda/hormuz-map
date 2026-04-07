@@ -817,6 +817,162 @@ L.marker([30.6,32.3],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#94a3b8">⚓ スエズ運河</div>
   <div class="p-body">紅海とヨーロッパを結ぶ要衝。ルートBはバベルマンデブからアジア方面へ向かう。</div>`);
 
+// ── イスラエル詳細
+L.marker([32.08, 34.78], {icon:mkIcon('🇮🇱','#1e3a5f',30)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#93c5fd">🇮🇱 テルアビブ / Tel Aviv</div>
+  <div class="p-body"><strong>位置：</strong>イスラエル中部・地中海沿岸<br>
+  <strong>役割：</strong>イスラエルの経済・軍事中枢<br>
+  <strong>状況：</strong>イランのミサイル攻撃対象として継続的に警戒中</div>`);
+
+L.marker([31.78, 35.22], {icon:mkIcon('🇮🇱','#1e3a5f',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#93c5fd">🇮🇱 エルサレム / Jerusalem</div>
+  <div class="p-body"><strong>位置：</strong>イスラエル中部<br>
+  <strong>役割：</strong>イスラエルの首都・政治中枢</div>`);
+
+L.marker([29.55, 34.95], {icon:mkIcon('⚓','#1e3a5f',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#93c5fd">⚓ エイラート / Eilat</div>
+  <div class="p-body"><strong>位置：</strong>イスラエル南端・紅海アカバ湾<br>
+  <strong>役割：</strong>イスラエル唯一の紅海港・石油輸入の玄関口<br>
+  <strong>状況：</strong>フーシ派攻撃の標的となり港湾機能が大幅低下</div>
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 機能低下中</span>`);
+
+// ── レバノン
+L.marker([33.88, 35.50], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">⚠️ ベイルート / Beirut（レバノン）</div>
+  <div class="p-body"><strong>位置：</strong>レバノン首都・地中海沿岸<br>
+  <strong>役割：</strong>ヒズボラの拠点・イランの代理勢力<br>
+  <strong>状況：</strong>イスラエルとの緊張継続中</div>`);
+
+// ── シリア
+L.marker([33.51, 36.29], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">⚠️ ダマスカス / Damascus（シリア）</div>
+  <div class="p-body"><strong>位置：</strong>シリア首都<br>
+  <strong>役割：</strong>イランの軍事物資輸送ルートの中継地<br>
+  <strong>状況：</strong>イスラエルによる空爆が断続的に発生</div>`);
+
+// ── ヨルダン
+L.marker([31.95, 35.93], {icon:mkIcon('🌍','#1e293b',24)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#94a3b8">🌍 アンマン / Amman（ヨルダン）</div>
+  <div class="p-body"><strong>位置：</strong>ヨルダン首都<br>
+  <strong>役割：</strong>中東和平の仲介役・米軍基地あり<br>
+  <strong>状況：</strong>イランのミサイルが領空を通過する事態が発生</div>`);
+
+// ── サウジアラビア詳細
+L.marker([24.47, 39.61], {icon:mkIcon('🛢️','#064e3b',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#34d399">🛢️ アラムコ本社 / Saudi Aramco HQ（ダーラン）</div>
+  <div class="p-body"><strong>位置：</strong>サウジアラビア東部<br>
+  <strong>役割：</strong>世界最大の石油会社・サウジ原油輸出の中枢<br>
+  <strong>状況：</strong>過去にドローン攻撃を受けた実績あり・厳重警戒中</div>`);
+
+L.marker([26.43, 50.10], {icon:mkIcon('🛢️','#064e3b',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#34d399">🛢️ ラスタヌーラ製油所 / Ras Tanura</div>
+  <div class="p-body"><strong>位置：</strong>サウジアラビア東部・ペルシャ湾岸<br>
+  <strong>役割：</strong>世界最大級の石油輸出ターミナル<br>
+  <strong>状況：</strong>攻撃対象として最高警戒レベル</div>
+  <span class="p-badge" style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">⚠️ 最高警戒</span>`);
+
+// ── バーレーン詳細（既存マーカーを補完）
+L.marker([26.21, 50.59], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#93c5fd">🇺🇸 米第5艦隊司令部 / US 5th Fleet HQ（バーレーン）</div>
+  <div class="p-body"><strong>位置：</strong>バーレーン・マナーマ<br>
+  <strong>役割：</strong>中東・インド洋・紅海を管轄する米海軍の中枢<br>
+  <strong>状況：</strong>ホルムズ危機対応の最前線司令部</div>
+  <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">米軍中枢</span>`);
+
+// ── カタール
+L.marker([25.28, 51.53], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#93c5fd">🇺🇸 アルウデイド空軍基地 / Al Udeid Air Base（カタール）</div>
+  <div class="p-body"><strong>位置：</strong>カタール・ドーハ近郊<br>
+  <strong>役割：</strong>中東最大の米空軍基地・CENTCOM前進司令部<br>
+  <strong>状況：</strong>対イラン作戦の主要拠点・イランの攻撃対象</div>
+  <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">米軍主要拠点</span>`);
+
+// ── イラン詳細
+L.marker([35.69, 51.39], {icon:mkIcon('🇮🇷','#7f1d1d',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">🇮🇷 テヘラン / Tehran</div>
+  <div class="p-body"><strong>位置：</strong>イラン首都<br>
+  <strong>役割：</strong>イラン政治・軍事の中枢<br>
+  <strong>状況：</strong>米・イスラエルによる攻撃対象として警戒中</div>`);
+
+L.marker([32.66, 51.67], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">⚠️ イスファハン / Isfahan（核関連施設）</div>
+  <div class="p-body"><strong>位置：</strong>イラン中部<br>
+  <strong>役割：</strong>核関連施設・ウラン濃縮施設が集中<br>
+  <strong>状況：</strong>イスラエルによる過去の攻撃実績あり・最高警戒</div>
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 核関連施設</span>`);
+
+L.marker([29.25, 50.32], {icon: L.divIcon({
+  html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.25);border:2.5px solid #ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">💥</div>`,
+  iconSize:[44,44], iconAnchor:[22,22], className:''
+})}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">💥 カーグ島 / Kharg Island</div>
+  <div class="p-body"><strong>位置：</strong>イラン南西部・ペルシャ湾内<br>
+  <strong>重要性：</strong>イラン原油輸出の約90%を担う最大ターミナル<br>
+  <strong>被害：</strong>空爆90回以上・民間人18人死亡<br>
+  <strong>状況：</strong>軍事作戦進行中・輸出能力に深刻な打撃</div>
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">🚨 空爆90回以上</span>`);
+
+L.marker([30.34, 48.30], {icon:mkIcon('🔥','#7f1d1d',30)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">🔥 アバダン製油所 / Abadan Refinery</div>
+  <div class="p-body"><strong>位置：</strong>イラン南西部・シャットルアラブ川沿岸<br>
+  <strong>役割：</strong>中東最大級の製油所・イランの石油精製の中核<br>
+  <strong>状況：</strong>攻撃対象として警戒中</div>`);
+
+L.marker([27.18, 56.27], {icon:mkIcon('⚠️','#7f1d1d',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">⚠️ バンダルアッバース / Bandar Abbas</div>
+  <div class="p-body"><strong>位置：</strong>イラン南部・ホルムズ海峡北岸<br>
+  <strong>役割：</strong>イラン海軍主要基地・ホルムズ封鎖の拠点<br>
+  <strong>状況：</strong>革命防衛隊の海峡管理拠点</div>`);
+
+L.marker([25.87, 55.03], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">⚠️ アブムーサ島 / Abu Musa Island</div>
+  <div class="p-body"><strong>位置：</strong>ホルムズ海峡・UAE沖<br>
+  <strong>役割：</strong>イランが実効支配・ホルムズ封鎖の前線基地</div>`);
+
+// ── UAE攻撃拠点
+L.marker([24.35, 54.47], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">💥 ムサッファ港（UAE）/ Musaffah</div>
+  <div class="p-body"><strong>被害：</strong>4/6 波状攻撃・負傷者複数<br>
+  <strong>状況：</strong>警戒解除済みも被害継続</div>
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
+
+L.marker([25.37, 55.42], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">💥 シャルジャ港（UAE）/ Sharjah</div>
+  <div class="p-body"><strong>被害：</strong>4/6 ミサイル・ドローン攻撃<br>
+  <strong>状況：</strong>警戒解除済み</div>
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
+
+// ── クウェートKPC
+L.marker([29.37, 47.98], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#f87171">💥 KPC本部（クウェート）</div>
+  <div class="p-body"><strong>被害：</strong>4/6 直撃「深刻な物質的損害」・海水淡水化施設も損傷<br>
+  <strong>状況：</strong>警戒継続中</div>
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">直撃確認</span>`);
+
+// ── アカバ湾
+L.marker([28.55, 34.88], {icon:mkIcon('🚢','#1e3a5f',24)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#7dd3fc">🚢 アカバ湾 / Gulf of Aqaba</div>
+  <div class="p-body"><strong>位置：</strong>紅海北部・イスラエル・ヨルダン・サウジ・エジプトに囲まれた湾<br>
+  <strong>役割：</strong>イスラエルのエイラート港への唯一のアクセス<br>
+  <strong>状況：</strong>フーシ派の攻撃により実質的に封鎖状態</div>`);
+
+// ── ペルシャ湾ラベル
+L.marker([27.0, 52.0], {icon: L.divIcon({
+  html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">ペルシャ湾</div>`,
+  iconSize:[0,0], iconAnchor:[0,0], className:''
+}), interactive:false}).addTo(map);
+
+// ── 紅海ラベル
+L.marker([20.0, 38.5], {icon: L.divIcon({
+  html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">紅海</div>`,
+  iconSize:[0,0], iconAnchor:[0,0], className:''
+}), interactive:false}).addTo(map);
+
+// ── アラビア海ラベル
+L.marker([18.0, 63.0], {icon: L.divIcon({
+  html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">アラビア海</div>`,
+  iconSize:[0,0], iconAnchor:[0,0], className:''
+}), interactive:false}).addTo(map);
 // ── カーグ島（Kharg Island）★空爆確認
 L.marker([29.25, 50.32], {icon: L.divIcon({
   html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.25);border:2.5px solid #ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">💥</div>`,

@@ -431,6 +431,30 @@ footer {
   .modal-box { padding:18px 16px; }
   .modal-interp { grid-template-columns:1fr; }
 }
+/* NEWS COLUMN */
+.news-section-title{font-size:1rem;font-weight:800;color:#38bdf8;margin:24px 0 12px;padding-left:4px;border-left:3px solid #38bdf8;}
+.news-list{display:flex;flex-direction:column;gap:6px;}
+.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 13px;display:flex;gap:12px;align-items:flex-start;transition:background 0.2s;}
+.news-item:hover{background:rgba(255,255,255,0.05);}
+.news-item a{color:#cbd5e1;text-decoration:none;font-size:0.78rem;line-height:1.5;flex:1;}
+.news-item a:hover{color:#7dd3fc;}
+.news-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;min-width:90px;}
+.news-date{font-size:0.65rem;color:#64748b;white-space:nowrap;}
+.news-badge{font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+.badge-txn{background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.3);}
+.badge-sankei{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);}
+.badge-fnn{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);}
+.badge-yomi{background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);}
+.badge-toyo{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);}
+.badge-rim{background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);}
+.badge-reuters{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);}
+.badge-afp{background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.3);}
+.badge-bb{background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);}
+.badge-arab{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);}
+.news-hidden{display:none;}
+.news-more-btn{width:100%;margin-top:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px;color:#64748b;font-size:0.73rem;cursor:pointer;transition:all 0.2s;font-family:inherit;}
+.news-more-btn:hover{background:rgba(255,255,255,0.07);color:#94a3b8;}
+@media(max-width:860px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
 </style>
 </head>
 <body>
@@ -505,10 +529,11 @@ footer {
 <div class="container">
 
   <!-- SITUATION CARDS -->
+  <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div>
   <div class="sit-grid">
     <div class="sit-card danger">
-      <div class="s-icon"><div style="font-size:0.7rem;font-weight:800;letter-spacing:0.08em;color:#64748b;text-transform:uppercase;margin-bottom:6px;">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div></div>
-      <div class="s-title">🎯 プレイヤー①：米国（トランプ政権）の動向</div>
+      <div class="s-icon">⚡</div>
+      <div class="s-title">🎯 プレイヤー① 米国（トランプ政権）の動向</div>
       <div class="s-body">Kharg Island空爆<strong>90回以上・民間人18人死亡</strong>。橋梁・鉄道・発電所への波状攻撃継続中。VP Vanceがパキスタン提案（2週間延長）を<strong>直接仲介中</strong>。White House声明待機状態。期限：<strong>日本時間4/8午前9時（残り約1時間38分）</strong></div>
       <span class="s-src">📡 Reuters・Bloomberg・産経新聞（4月8日 07:20）</span>
     </div>
@@ -1419,30 +1444,7 @@ function toggleNewsMore() {
   btn.textContent = isHidden ? '▲ 折りたたむ' : `▼ 過去の記事を見る（${hidden.length}件）`;
 }
 </script>
-/* NEWS COLUMN */
-.news-section-title{font-size:1rem;font-weight:800;color:#38bdf8;margin:24px 0 12px;padding-left:4px;border-left:3px solid #38bdf8;}
-.news-list{display:flex;flex-direction:column;gap:6px;}
-.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 13px;display:flex;gap:12px;align-items:flex-start;transition:background 0.2s;}
-.news-item:hover{background:rgba(255,255,255,0.05);}
-.news-item a{color:#cbd5e1;text-decoration:none;font-size:0.78rem;line-height:1.5;flex:1;}
-.news-item a:hover{color:#7dd3fc;}
-.news-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;min-width:90px;}
-.news-date{font-size:0.65rem;color:#64748b;white-space:nowrap;}
-.news-badge{font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
-.badge-txn{background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.3);}
-.badge-sankei{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);}
-.badge-fnn{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);}
-.badge-yomi{background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);}
-.badge-toyo{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);}
-.badge-rim{background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);}
-.badge-reuters{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);}
-.badge-afp{background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.3);}
-.badge-bb{background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);}
-.badge-arab{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);}
-.news-hidden{display:none;}
-.news-more-btn{width:100%;margin-top:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px;color:#64748b;font-size:0.73rem;cursor:pointer;transition:all 0.2s;font-family:inherit;}
-.news-more-btn:hover{background:rgba(255,255,255,0.07);color:#94a3b8;}
-@media(max-width:860px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
+
 <!-- NEWS COLUMN -->
 <div style="max-width:960px;margin:24px auto;padding:0 16px;">
   <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>

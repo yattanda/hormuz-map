@@ -801,10 +801,12 @@ const map = L.map('map', {
   attributionControl: true
 });
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© <a href="https://www.openstreetmap.org/copyright" style="color:#4a9eff">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions" style="color:#4a9eff">CARTO</a>',
-  subdomains: 'abcd',
-  maxZoom: 19
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap contributors © CARTO'}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',{
+  attribution:'',
+  pane:'overlayPane',
+  zIndex:650,
+  opacity:0.85
 }).addTo(map);
 
 
@@ -843,7 +845,7 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
     L.geoJSON(data, {
       style: {
         color:'#2a4a6a', weight:0.9,
-        fillColor:'#1a3048', fillOpacity:0.70, opacity:0.8
+        fillColor:'#1a3048',fillOpacity:0.7, opacity:0.8
       },
       onEachFeature(feature, layer) {
         const iso = feature.properties.ISO_A2;

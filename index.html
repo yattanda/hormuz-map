@@ -455,6 +455,159 @@ footer {
 .news-more-btn{width:100%;margin-top:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px;color:#64748b;font-size:0.73rem;cursor:pointer;transition:all 0.2s;font-family:inherit;}
 .news-more-btn:hover{background:rgba(255,255,255,0.07);color:#94a3b8;}
 @media(max-width:860px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
+/* ================================================
+   タンカー足止めオーバーレイ
+================================================ */
+
+#map {
+  position: relative;
+}
+
+#tanker-overlay {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  z-index: 1000;
+  width: 260px;
+  background: rgba(10, 20, 50, 0.85);
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  border-radius: 10px;
+  padding: 10px 12px 8px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  transition: width 0.3s ease;
+  font-family: sans-serif;
+}
+
+#tanker-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#tanker-title span {
+  font-size: 11px;
+  color: #93c5fd;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+#tanker-toggle {
+  background: none;
+  border: 1px solid #4b6fa8;
+  color: #93c5fd;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 1px 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#tanker-toggle:hover {
+  background: rgba(96, 165, 250, 0.2);
+}
+
+#tanker-date {
+  font-size: 10px;
+  color: #7dd3fc;
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+#ship-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: flex-start;
+  align-content: flex-start;
+  max-height: 130px;
+  overflow: hidden;
+}
+
+.ship-icon {
+  font-size: 17px;
+  line-height: 1.1;
+  cursor: default;
+  transition: transform 0.15s;
+  filter: drop-shadow(0 0 3px rgba(248, 113, 113, 0.8));
+  user-select: none;
+}
+
+.ship-icon.passable {
+  filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.8));
+}
+
+.ship-icon:hover {
+  transform: scale(1.35);
+  z-index: 1;
+}
+
+#tanker-stats {
+  margin-top: 7px;
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.stat-row span:last-child {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.stat-row.pass span:last-child {
+  color: #34d399;
+  font-weight: bold;
+}
+
+.stat-row:last-child span:last-child {
+  color: #93c5fd;
+}
+
+#tanker-progress-wrap {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  height: 5px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+#tanker-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #f87171, #fbbf24);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+#tanker-overlay.zoom-close {
+  width: 300px;
+}
+
+#tanker-overlay.zoom-close .ship-icon {
+  font-size: 20px;
+}
+
+#tanker-overlay.zoom-close #ship-grid {
+  max-height: 160px;
+}
+
+#tanker-overlay.zoom-far {
+  width: 200px;
+}
+
+#tanker-overlay.zoom-far .ship-icon {
+  font-size: 13px;
+}
+
+#tanker-overlay.zoom-far #ship-grid {
+  max-height: 100px;
+}
 </style>
 </head>
 <body>
@@ -639,7 +792,33 @@ footer {
 </div>
   <!-- MAP -->
   <div class="map-wrap">
-    <div id="map"></div>
+<div id="map">
+  <div id="tanker-overlay">
+    <div id="tanker-title">
+      <span>🚢 日本関連船 足止め状況</span>
+      <button id="tanker-toggle">折畳</button>
+    </div>
+    <div id="tanker-date"></div>
+    <div id="ship-grid"></div>
+    <div id="tanker-stats">
+      <div class="stat-row">
+        <span>🔴 足止め中</span>
+        <span id="t-stuck">-</span>
+      </div>
+      <div class="stat-row pass">
+        <span>🟢 通過済み</span>
+        <span id="t-pass">-</span>
+      </div>
+      <div class="stat-row">
+        <span>合計</span>
+        <span id="t-total" style="color:#93c5fd;">-</span>
+      </div>
+    </div>
+    <div id="tanker-progress-wrap">
+      <div id="tanker-progress-bar" style="width:100%"></div>
+    </div>
+  </div>
+</div>
   </div>
 
   <!-- STATS -->
@@ -660,6 +839,113 @@ footer {
     <div class="stat-card"><div class="stat-num c-red">$92<span style="font-size:0.9rem">/bbl</span></div><div class="stat-label">WTI原油価格（停戦合意で▼17%急落）</div></div>
     <div class="stat-card"><div class="stat-num c-orange">40<span style="font-size:0.9rem">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
   </div>
+  <script>
+
+// ============================================================
+// 日本関連タンカー足止め可視化 v2.1
+// ★ここだけ変更すればOK★
+// ============================================================
+const SHIP_CONFIG = {
+  totalShips:    42,          // 足止め総数
+  passableShips: 0,           // 通過済み隻数（緑で表示）
+  date:          '2026年4月8日'
+};
+
+// ============================================================
+// 描画メイン
+// ============================================================
+(function () {
+
+  function renderShipPanel(cfg) {
+    const { totalShips, passableShips, date } = cfg;
+    const stuck = totalShips - passableShips;
+
+    // 日付
+    document.getElementById('tanker-date').textContent = date + '現在';
+
+    // 船アイコン生成（flexで自動横並び）
+    const grid = document.getElementById('ship-grid');
+    grid.innerHTML = '';
+
+    for (let i = 0; i < totalShips; i++) {
+      const el        = document.createElement('span');
+      const isPass    = (i < passableShips);
+      el.className    = 'ship-icon' + (isPass ? ' passable' : '');
+      el.textContent  = '🚢';
+      el.title        = isPass
+                          ? `#${i + 1}　通過済み ✅`
+                          : `#${i + 1}　足止め中 🔴`;
+      grid.appendChild(el);
+    }
+
+    // 統計テキスト
+    document.getElementById('t-stuck').textContent = stuck        + '隻';
+    document.getElementById('t-pass' ).textContent = passableShips + '隻';
+    document.getElementById('t-total').textContent = totalShips    + '隻';
+
+    // プログレスバー（足止め率）
+    const stuckPct = totalShips > 0
+      ? Math.round((stuck / totalShips) * 100)
+      : 0;
+    document.getElementById('tanker-progress-bar').style.width = stuckPct + '%';
+  }
+
+  // --------------------------------------------------------
+  // 折り畳みボタン
+  // --------------------------------------------------------
+  document.getElementById('tanker-toggle')
+    .addEventListener('click', function () {
+      const overlay   = document.getElementById('tanker-overlay');
+      const grid      = document.getElementById('ship-grid');
+      const stats     = document.getElementById('tanker-stats');
+      const bar       = document.getElementById('tanker-progress-wrap');
+      const dateEl    = document.getElementById('tanker-date');
+      const collapsed = overlay.classList.toggle('collapsed');
+
+      grid.style.display   = collapsed ? 'none' : 'flex';
+      stats.style.display  = collapsed ? 'none' : 'block';
+      bar.style.display    = collapsed ? 'none' : 'block';
+      dateEl.style.display = collapsed ? 'none' : 'block';
+      this.textContent     = collapsed ? '展開' : '折畳';
+    });
+
+  // --------------------------------------------------------
+  // Leaflet ズーム連動
+  // ※ Leafletの地図変数名が "map" 以外の場合は下記を修正
+  // --------------------------------------------------------
+  function attachLeafletZoom() {
+    const leafletMap = window.map;   // ← 地図変数名を確認して合わせる
+    if (!leafletMap || typeof leafletMap.on !== 'function') return;
+
+    leafletMap.on('zoomend', function () {
+      const z       = leafletMap.getZoom();
+      const overlay = document.getElementById('tanker-overlay');
+
+      overlay.classList.remove('zoom-close', 'zoom-far');
+
+      if      (z >= 8) overlay.classList.add('zoom-close');
+      else if (z <= 5) overlay.classList.add('zoom-far');
+      // それ以外はデフォルトサイズ
+    });
+  }
+
+  // --------------------------------------------------------
+  // 初期化
+  // --------------------------------------------------------
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      renderShipPanel(SHIP_CONFIG);
+      attachLeafletZoom();
+    });
+  } else {
+    renderShipPanel(SHIP_CONFIG);
+    attachLeafletZoom();
+  }
+
+})();
+
+  </script>
+
 
   <!-- ROUTE TABLE -->
   <div>

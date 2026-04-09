@@ -1429,12 +1429,16 @@ L.marker([29.55, 34.95], {icon:mkIcon('⚓','#1e3a5f',26)}).addTo(map).bindPopup
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 機能低下中</span>`);
 
 // ── レバノン
-L.marker([33.88, 35.50], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ ベイルート / Beirut（レバノン）</div>
-  <div class="p-body"><strong>位置：</strong>レバノン首都・地中海沿岸<br>
-  <strong>役割：</strong>ヒズボラの拠点・イランの代理勢力<br>
-  <strong>状況：</strong>イスラエルとの緊張継続中</div>`);
+L.marker([33.88,35.50],{icon:mkIcon('💥','#ef4444')}).addTo(map)
+  .bindPopup('<strong>🇱🇧 ベイルート（レバノン首都）</strong><br>🚨 4/8-9 イスラエルが停戦合意数時間後に最大規模攻撃。ヒズボラ中央本部等100カ所以上を標的。<strong>死者254人・負傷者1,165人</strong>。国連が「恐ろしい」と非難。イスラエル「レバノンは停戦対象外」/ イラン「停戦違反」で対立激化。');
 
+// ティール（南レバノン）
+L.marker([33.27,35.19],{icon:mkIcon('🏥','#ef4444')}).addTo(map)
+  .bindPopup('<strong>🏥 ティール（南レバノン）</strong><br>ヒラム病院前の建物がイスラエル軍の夜間攻撃を受け4人死亡。病院も被害。（4/8-9）');
+
+// ベカー高原（東部レバノン）
+L.marker([34.00,36.22],{icon:mkIcon('💥','#ef4444')}).addTo(map)
+  .bindPopup('<strong>💥 ベカー高原（東レバノン）</strong><br>ヒズボラ軍事拠点への大規模攻撃。葬儀参列者を含む多数の民間人が犠牲に。（4/8-9）');
 // ── シリア
 L.marker([33.51, 36.29], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#fbbf24">⚠️ ダマスカス / Damascus（シリア）</div>

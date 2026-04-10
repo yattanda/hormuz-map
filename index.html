@@ -3,11 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>中東原油 代替ルートマップ 2026【完全版】</title>
-<meta property="og:title" content="ホルムズ海峡危機・原油代替ルート全体像【リアルマップ完全版】2026年4月">
-<meta property="og:description" content="ホルムズ封鎖・代替ルートA〜Dをインタラクティブ地図で可視化。48時間カウントダウン・シナリオ分析付き。">
+<title>ホルムズ海峡危機マップ｜通航状況・代替ルート・市場波及</title>
+<meta name="description" content="ホルムズ海峡危機の通航状況、代替ルート、原油輸送・海運・市場への波及を地図で整理。中東情勢を煽らず、構造と論点をわかりやすく解説します。">
+<link rel="canonical" href="https://yattanda.github.io/hormuz-map/">
+
+<!-- OGP -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="ホルムズ海峡危機マップ">
+<meta property="og:title" content="ホルムズ海峡危機マップ｜通航状況・代替ルート・市場波及">
+<meta property="og:description" content="ホルムズ海峡危機の通航状況、代替ルート、原油輸送・海運・市場への波及を地図で整理。中東情勢を煽らず、構造と論点をわかりやすく解説します。">
 <meta property="og:url" content="https://yattanda.github.io/hormuz-map/">
+<meta property="og:image" content="https://yattanda.github.io/hormuz-map/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hormuz_watch">
+<meta name="twitter:title" content="ホルムズ海峡危機マップ｜通航状況・代替ルート・市場波及">
+<meta name="twitter:description" content="ホルムズ海峡危機の通航状況、代替ルート、原油輸送・海運・市場への波及を地図で整理。中東情勢を煽らず、構造と論点をわかりやすく解説します。">
+<meta name="twitter:image" content="https://yattanda.github.io/hormuz-map/ogp.jpg">
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -422,13 +436,18 @@ footer {
 #tanker-overlay.zoom-far { width: 200px; }
 #tanker-overlay.zoom-far .ship-icon { font-size: 13px; }
 #tanker-overlay.zoom-far #ship-grid { max-height: 100px; }
+/* 信頼ラベル */
+.label-fact   { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(74,222,128,0.15); border:1px solid rgba(74,222,128,0.4); color:#4ade80; }
+.label-analysis { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.4); color:#fbbf24; }
+.label-scenario { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.4); color:#d8b4fe; }
+.label-unconfirmed { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(100,116,139,0.2); border:1px solid rgba(100,116,139,0.4); color:#94a3b8; }
 
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🛢️ <span style="color: #d8b4fe; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px;">ホルムズ</span>海峡危機・<span style="color: #d8b4fe; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px;">原油代替ルート</span>全体像【リアルマップ完全版】</h1>
+  <h1>🗺️ <span style="color: #7dd3fc; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px;">ホルムズ海峡危機マップ</span><span style="color: #94a3b8; font-size: 1.0rem; font-weight: 400; margin-left: 12px;">通航状況・代替ルート・市場波及</span></h1>
   <div class="badges">
     <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
     <span class="badge-item badge-date">📅 2026年4月9日11:30更新</span>
@@ -454,12 +473,87 @@ footer {
   <span class="ticker-label">速 報</span>
   <div class="ticker-scroll">
     <span class="ticker-text" style="font-size: 16px; font-weight: 700;">
-          【4/10 緊急】イラン ホルムズ再封鎖・協議4/11へ延期 | バンス副大統領がイスラマバード交渉主導 | トランプ「通航料あってはならない」警告 | WTI $97台に反発 | 停戦後24時間通過船わずか3隻／イスラエル、レバノン史上最大規模攻撃（100ターゲット・死者182人）／Iran がホルムズ再封鎖を宣言・通行料$2M要求・協定撤退を示唆／停戦の「Lebanon含む/含まず」で US・Pakistan・Iran が紛糾／原油WTI $98/bbl → $120超のリスク復活／Islamabad直接交渉が土曜日開始（VP Vance主導・2週間で恒久合意目指す）／再エスカレーション可能性が高まり、交渉の窓口が閉じかけている
+          【4/11 速報】米イラン協議がイスラマバードで本日開始 | バンス副大統領 vs ガリバフ国会議長が直接交渉 | WTI $99台へ続伸 | 論点：レバノン・ウラン濃縮・通航料・賠償 | イスラマバードは厳戒態勢・セレナホテルで会場封鎖／イスラエル、レバノン史上最大規模攻撃（100ターゲット・死者182人）／Iran が限定通航の再強化を宣言・通行料$2M要求・協定撤退を示唆／停戦の「Lebanon含む/含まず」で US・Pakistan・Iran が紛糾／原油WTI $98/bbl → $120超のリスク復活／Islamabad直接交渉が土曜日開始（VP Vance主導・2週間で恒久合意目指す）／再エスカレーション可能性が高まり、交渉の窓口が閉じかけている
     </span>
   </div>
 </div>
 
 <div class="container">
+
+<!-- 30SEC SUMMARY -->
+<div style="max-width:960px;margin:0 auto 28px;padding:0 16px;">
+  <div style="background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%);border:1px solid rgba(56,189,248,0.25);border-radius:14px;padding:24px 28px;">
+
+    <!-- タイトル -->
+    <div style="font-size:0.8rem;font-weight:800;letter-spacing:0.08em;color:#38bdf8;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(56,189,248,0.15);">
+      🗺️ ホルムズ海峡危機マップ 2026 &nbsp;―&nbsp; 30秒で全体像を把握
+    </div>
+
+    <!-- 3行サマリー -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <span style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#f87171;font-size:0.65rem;font-weight:800;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">いま何が</span>
+        <span style="color:#e2e8f0;font-size:0.85rem;line-height:1.5;">米・イラン・イスラエルが軍事衝突。4/8に2週間停戦合意も、イスラエルのレバノン攻撃でイランが反発。停戦は発表直後から<strong style="color:#f87171;">脆弱な状態</strong>が続いている。</span>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:0.65rem;font-weight:800;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">海峡の今</span>
+        <span style="color:#e2e8f0;font-size:0.85rem;line-height:1.5;">ホルムズ海峡は<strong style="color:#fbbf24;">厳格統制下</strong>。イランが通航料を徴収し選別的に船舶を通過させている。停戦後24時間で通過確認はわずか3隻。正常化は4/11協議の進展次第。</span>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:0.65rem;font-weight:800;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:1px;">次に見る</span>
+        <span style="color:#e2e8f0;font-size:0.85rem;line-height:1.5;">↓ <strong style="color:#38bdf8;">情勢カード</strong>で各プレイヤーの最新動向を確認 → <strong style="color:#38bdf8;">ルート表</strong>で日本向け代替輸送の現状を把握 → <strong style="color:#38bdf8;">シナリオ</strong>で今後の展開を整理。</span>
+      </div>
+
+    </div>
+
+    <!-- 現状ステータス行 -->
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
+      <span style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;font-size:0.72rem;padding:4px 10px;border-radius:20px;">🔴 停戦は脆弱</span>
+      <span style="background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);color:#fde68a;font-size:0.72rem;padding:4px 10px;border-radius:20px;">⚠️ 海峡は厳格統制下</span>
+      <span style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.3);color:#7dd3fc;font-size:0.72rem;padding:4px 10px;border-radius:20px;">📅 4/11 協議進展が焦点</span>
+      <span style="background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.3);color:#d8b4fe;font-size:0.72rem;padding:4px 10px;border-radius:20px;">💹 WTI $97台（反発中）</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- SITUATION CARDS -->
+<div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div>
+<div class="sit-grid">
+
+  <!-- カード① 米国 -->
+  <div class="sit-card danger">
+    <div class="s-icon">🇺🇸</div>
+    <div class="s-title"><span class="label-fact">事実</span>🎯 プレイヤー① 米国（トランプ政権）</div>
+    <div class="s-body">
+      本日4/11（土）イスラマバード・セレナホテルで<strong>初の直接交渉が開始</strong>。米代表団は<strong>バンス副大統領</strong>が主導、ウィトコフ中東特使・クシュナー氏が同行。米国の立場：レバノンは停戦対象外、ウラン濃縮放棄を要求、通航料徴収は認めない。トランプ「合意に<strong>非常に楽観的</strong>」と発言する一方、バンス「停戦崩壊はイラン次第」と警告。イスラエルとレバノンの<strong>直接交渉</strong>も並行して合意済み。
+    </div>
+    <span class="s-src">📡 Bloomberg・Reuters・WSJ（4月10日）</span>
+  </div>
+
+  <!-- カード② イラン -->
+  <div class="sit-card danger">
+    <div class="s-icon">🇮🇷</div>
+    <div class="s-title"><span class="label-fact">事実</span>🎯 プレイヤー② イラン（イスラム共和国）</div>
+    <div class="s-body">
+      ガリバフ国会議長が代表団長として交渉に臨む。イランの主な要求：<strong>レバノン停戦を合意対象に含めること</strong>、賠償、制裁完全解除、域内米軍基地撤退。ウラン濃縮放棄には強く抵抗。ペゼシュキアン大統領「レバノン攻撃は<strong>停戦の明白な違反</strong>」と主張継続。ホルムズは<strong>厳格統制下</strong>で通航量は戦前比大幅減が継続。専門家「イラン側には交渉を有利に進める誘因がある」と分析。
+    </div>
+    <span class="s-src">📡 Bloomberg・Reuters・朝日新聞（4月9〜10日）</span>
+  </div>
+
+  <!-- カード③ 通航戦略 -->
+  <div class="sit-card info">
+    <div class="s-icon">⚓</div>
+    <div class="s-title"><span class="label-analysis">分析</span>🚢 ホルムズ海峡 通航戦略の現状</div>
+    <div class="s-body">
+      ホルムズ海峡は<strong>厳格統制下で限定通航継続</strong>。イランが2つの安全航路を公表しているが通航量は戦前比大幅減が続く。<strong>通航料問題</strong>が協議の主要論点に浮上。トランプ「認めない」と警告するも具体的な解決策は未定。船主各社は安全保障の明確化を待機中。正常化の条件は<strong>本日の協議進展</strong>次第。最大議論期間は15日間（延長可能）。
+    </div>
+    <span class="s-src">📡 Bloomberg・Reuters（4月9〜10日）</span>
+  </div>
+</div>
   <!-- COUNTDOWN -->
   <div class="deadline">
     <div class="dl-label">🚨 米のイラン攻撃強化<br>期限まで</div>
@@ -493,7 +587,7 @@ footer {
         <div class="dl-num" style="font-size:1.05rem;color:#fbbf24">4/11 14:00</div>
         <div class="dl-sub">日本時間</div>
       </div>
-      <div class="dl-note">← 4/11 イスラマバード協議（バンス副大統領出席）が最終合意の山場。合意不成立の場合、2週間後（4/22-23）に攻撃再開リスク。恒久停戦への移行が焦点。</div>
+      <div class="dl-note">← 4/11 協議進行中。最大15日間（双方合意で延長可）。レバノン・ウラン濃縮・通航料で隔たり大きく、合意は長期戦の可能性。</div>
     </div>
   </div>
 
@@ -576,42 +670,6 @@ footer {
   </div>
   <!-- ==================== 💰 ダッシュボード終了 ==================== -->
 
-<!-- SITUATION CARDS -->
-<div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div>
-<div class="sit-grid">
-
-  <!-- カード① 米国 -->
-  <div class="sit-card danger">
-    <div class="s-icon">🇺🇸</div>
-    <div class="s-title">🎯 プレイヤー① 米国（トランプ政権）</div>
-    <div class="s-body">
-      4/11（土）イスラマバードで<strong>初の対面協議</strong>に臨む。米代表団は<strong>バンス副大統領</strong>が主導、ウィトコフ中東特使・クシュナー氏が同行。トランプはSNSでイランの通航料徴収を<strong>「今すぐやめるべき」</strong>と警告する一方、<strong>米・イラン共同徴収案</strong>も検討中。ネタニヤフには<strong>レバノン攻撃を「控えめに」</strong>するよう要求し、イスラエルとレバノンの<strong>直接交渉</strong>も合意済み。トランプ「合意に<strong>非常に楽観的</strong>」と発言。
-    </div>
-    <span class="s-src">📡 Bloomberg・Reuters・WSJ（4月10日）</span>
-  </div>
-
-  <!-- カード② イラン -->
-  <div class="sit-card danger">
-    <div class="s-icon">🇮🇷</div>
-    <div class="s-title">🎯 プレイヤー② イラン（イスラム共和国）</div>
-    <div class="s-body">
-      イスラエルのレバノン大規模攻撃（<strong>死者300人超</strong>）を<strong>「停戦合意の明白な違反」</strong>として、ホルムズ海峡を<strong>再封鎖</strong>。停戦後24時間の通過確認船舶は<strong>わずか3隻</strong>。モジタバ最高指導者が「海峡管理を<strong>新たな段階へ引き上げる</strong>」と声明。<strong>賠償要求</strong>も継続しており米国側には受け入れ困難な要求。イラン代表団は<strong>4/9にイスラマバード入り済み</strong>。ペゼシュキアン大統領「レバノン攻撃は<strong>交渉を無意味にする</strong>」と警告。
-    </div>
-    <span class="s-src">📡 Bloomberg・Reuters・朝日新聞（4月9〜10日）</span>
-  </div>
-
-  <!-- カード③ 通航戦略 -->
-  <div class="sit-card info">
-    <div class="s-icon">⚓</div>
-    <div class="s-title">🚢 ホルムズ海峡 通航戦略の現状</div>
-    <div class="s-body">
-      停戦合意後もホルムズは<strong>事実上の閉鎖継続</strong>。イラン当局が<strong>2つの安全航路</strong>を公表したものの、通航量は戦前比を大幅下回る。イランが独自に<strong>通航料を徴収</strong>開始→ トランプが「即座にやめるべき」と警告。停戦後24時間の通過確認船舶は<strong>わずか3隻</strong>。船主各社は明確な安全保障を待機中。「<strong>選別的通航</strong>」の実態が続き、正常化には<strong>4/11協議の進展</strong>が必要。
-    </div>
-    <span class="s-src">📡 Bloomberg・NHK・テレ朝（4月9〜10日）</span>
-  </div>
-
-</div>
-
 <!-- TRUMP STATEMENT BANNER -->
 <div class="trump-banner" onclick="openTrumpModal()">
   <div class="trump-banner-icon">📜</div>
@@ -675,7 +733,7 @@ footer {
       <div class="modal-section-title" style="color:#94a3b8;">📌 言語学的な微妙さ</div>
       <div style="color:#94a3b8; font-size:0.73rem; line-height:1.75;">
         英語の <strong style="color:#cbd5e1;">"suspend"</strong> という動詞自体が曖昧です。<br>
-        <strong style="color:#cbd5e1;">条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong style="color:#fbbf24;">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが完全開放を維持することが前提の可能性があります。<br><br>
+        <strong style="color:#cbd5e1;">条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong style="color:#fbbf24;">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが正常化を維持することが前提の可能性があります。<br><br>
         <strong style="color:#f87171;">🔴 重要：</strong>この曖昧性はおそらく<strong style="color:#fbbf24;">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
       </div>
     </div>
@@ -845,14 +903,17 @@ const SHIP_CONFIG = {
     <strong style="color:#ff6b6b; font-size:13px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">速報インシデント</strong>
     <span style="margin-left:auto; font-size:11px; color:#888; font-weight:400;">📅 4/10 更新</span>
   </div>
-  <strong style="color: #ffcccc; font-size: 14px; font-weight: 700;">🔴【4/10 最新】停戦合意が早くも崩壊危機</strong>
+  <strong style="color: #ffcccc; font-size: 14px; font-weight: 700;">🟡【4/11 本日】米イラン初の直接交渉がイスラマバードで開始</strong>
   <ul style="color: #ffdddd; margin: 8px 0 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; list-style-position: inside;">
-    <li><strong>ホルムズ再封鎖：</strong>イスラエルのレバノン大規模攻撃（死者300人超）に反発、イランが再封鎖を宣言。停戦後24時間の通過確認船舶は<strong>わずか3隻</strong></li>
-    <li><strong>通航料問題：</strong>イランが独自に通航料徴収を開始 → トランプ「今すぐやめるべき」とSNSで警告。一方で<strong>米・イラン共同徴収案</strong>も検討中</li>
-    <li><strong>停戦の亀裂：</strong>「Lebanon含む／含まず」で米国・イラン・イスラエルの主張が真っ向対立。イラン大統領「レバノン攻撃は交渉を無意味にする」</li>
-    <li><strong>原油反発：</strong>停戦合意で急落した WTI が再封鎖懸念で反発、<strong>$92 → $97台</strong>へ上昇中</li>
-    <li><strong>協議へ：</strong>4/11（土）イスラマバードでバンス副大統領が米交渉団を主導。イラン代表団は<strong>4/9に現地入り済み</strong>。合意成否が2週間停戦の継続を左右</li>
+    <li><strong>会場：</strong>イスラマバード・セレナホテル。周辺は厳戒態勢・完全封鎖。パキスタンは2日間の公休日を宣言し万全の警備体制</li>
+    <li><strong>米側論点：</strong>レバノンは停戦対象外／ウラン濃縮放棄を要求／通航料徴収は認めない。バンス「停戦崩壊はイラン次第」</li>
+    <li><strong>イラン側論点：</strong>レバノン停戦を合意に含めること／賠償要求／制裁完全解除。ウラン濃縮放棄には強く抵抗</li>
+    <li><strong>原油続伸：</strong>WTI $94台→$99台へ続伸。協議の不透明感が上昇圧力に。Investing.com 4/10終値 $99.87</li>
+    <li><strong>パキスタン：</strong>仲介成功で国際的存在感を確立したい一方、専門家「ホルムズ完全開放を保証できる実効力はない」と指摘</li>
   </ul>
+  <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:0.8rem;color:#7dd3fc;line-height:1.6;">
+  <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
+</div>
 </div>
     <div class="sec-title">🚢 全ルート現況サマリー（2026年4月5日時点）</div>
     <div class="rtable-wrap">
@@ -872,9 +933,9 @@ const SHIP_CONFIG = {
           <td>⛔</td>
           <td><strong style="color:#f87171">旧ルート</strong><br><small style="color:#64748b">ホルムズ海峡経由</small></td>
           <td style="color:#f87171">日量 約2,000万bbl<br><small>世界消費の約20%</small></td>
-          <td>2月末より封鎖継続中。Kharg Island空爆により状況さらに悪化。封鎖解除の見通し立たず。</td>
+          <td>2月末より厳格統制継続中。Kharg Island空爆により状況さらに悪化。正常化には至らず。</td>
           <td>イランの巡航ミサイル等による攻撃リスク依然高い</td>
-          <td><span class="pill pill-r">⛔ 封鎖中</span></td>
+          <td><span class="pill pill-r">⚠️ 厳格統制下</span></td>
         </tr>
         <tr class="rd">
           <td>🟡</td>
@@ -919,7 +980,7 @@ const SHIP_CONFIG = {
     <div class="sc-grid">
       <div class="sc-card sc-best">
         <span class="sc-tag">シナリオ① 【4/8 実現】</span>
-        <div class="sc-title">🕊️ 停戦合意・ホルムズ2週間開放へ</div>
+        <div class="sc-title"><span class="label-fact">事実</span>🕊️ 停戦合意・ホルムズ2週間開放へ</div>
         <div class="sc-body">4/8朝、トランプ大統領が「2週間の爆撃停止」を発表。パキスタン首相が「米・イラン・同盟国がレバノン含むあらゆる場所で即時停戦合意、停戦は即時発効」と公式発表（AFP）。アラグチ外相「攻撃停止でイランも停止・2週間の安全通航を確保」。4/10イスラマバードで最終合意に向けた協議開始予定。<br><br>
         <strong>⚠️ 残る不確実性：</strong>イスラエルは「ホルムズ開放まで作戦継続」の立場。イラン国営TV「米国の屈辱的な撤退」と報道。2週間後の恒久停戦移行は不透明。
           <div class="sc-impact"><strong style="color:#4ade80">原油への影響：</strong>WTI急落▼17%→$97台。備蓄放出を段階的に停止し通常供給へ回帰の見通し。</div>
@@ -927,14 +988,14 @@ const SHIP_CONFIG = {
       </div>
       <div class="sc-card sc-mid">
         <span class="sc-tag">シナリオ② 【要注視】</span>
-        <div class="sc-title">⏳ 2週間後の再交渉・膠着継続</div>
+        <div class="sc-title"><span class="label-scenario">シナリオ</span>⏳ 2週間後の再交渉・膠着継続</div>
         <div class="sc-body">2週間の停止期間中に恒久合意に至らず再び膠着するケース。イランが「賠償なき完全再開は拒否」の立場を維持しており、4/10イスラマバード協議が難航する可能性。トランプが再度延長を選択するか攻撃を再開するかの二択に直面。アジア諸国の「選別的通航」協定は継続。OPEC＋増産の効果は限定的。
           <div class="sc-impact"><strong style="color:#fbbf24">原油への影響：</strong>$92台から再び上昇リスク。代替ルートA・Bの維持と備蓄活用継続。ガソリン価格は補助金で抑制。</div>
         </div>
       </div>
       <div class="sc-card sc-worst">
         <span class="sc-tag">シナリオ③ 【リスク継続】</span>
-        <div class="sc-title">💥 2週間後に攻撃再開・二重封鎖</div>
+        <div class="sc-title"><span class="label-scenario">シナリオ</span>💥 2週間後に攻撃再開・二重封鎖</div>
         <div class="sc-body">2週間の停止期間中にイランがホルムズを実質開放せず、トランプが攻撃を再開するケース。イスラエルが独自作戦を継続しイランが報復としてフーシ派に紅海封鎖を命令。ホルムズ＋バベルマンデブ「二重封鎖」が現実化。IEA「供給減少はオイルショック超」と警告。
           <div class="sc-impact"><strong style="color:#f87171">原油への影響：</strong>WTI再び$110超へ急騰リスク。世界供給最大25%減少。日本はルートCへの全振りと備蓄の急速消費が迫られる。</div>
         </div>
@@ -1173,7 +1234,7 @@ L.marker([26.5,56.5],{icon:L.divIcon({
   <strong>通過量：</strong>世界原油の約20%（日量2,000万bbl）<br>
   <strong>通航料ルート：</strong>友好国限定・1bbl≒$1（1隻≒3億円）<br>
   <strong>トランプ期限：</strong>4月7日午前9時（日本時間）</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⛔ 封鎖中</span>`);
+  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 厳格統制下</span>`);
 
 L.marker([12.6,43.4],{icon:L.divIcon({
   html:`<div class="pulse-yellow" style="width:40px;height:40px;background:rgba(220,38,38,0.2);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>`,
@@ -1517,6 +1578,20 @@ function toggleNewsMore() {
 <div style="max-width:960px;margin:24px auto;padding:0 16px;">
   <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>
   <div class="news-list" id="news-list">
+
+<!-- ▼▼▼ 新しい記事はここに追加 ▼▼▼ -->
+<div class="news-item">
+  <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/11 本日</span></div>
+  <a href="https://jp.reuters.com/world/us-politics/SWCJ2E5PPBODZBL6IGPZBLKACQ-2026-04-10/" target="_blank" rel="noopener">イスラマバード厳戒態勢・パキスタンが仲介の正念場　米イラン協議の舞台裏（Reuters）</a>
+</div>
+<div class="news-item">
+  <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11 本日</span></div>
+  <a href="https://www.bloomberg.com/jp/news/articles/2026-04-08/TD6T97KK3NY800" target="_blank" rel="noopener">バンス副大統領率いる米代表団、11日にイランと初の直接協議へ（Bloomberg）</a>
+</div>
+<div class="news-item">
+  <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/11 本日</span></div>
+  <a href="https://www.nikkei.com/article/DGXZQOGR105SM0Q6A410C2000000/" target="_blank" rel="noopener">米イラン、レバノン攻撃やウラン濃縮で溝　戦闘終結向け初交渉へ（日経）</a>
+</div>
 <div class="news-item">
   <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/10 最新</span></div>
   <a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2590563?display=1" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・イスラエルはレバノンと直接交渉へ</a>
@@ -1524,10 +1599,6 @@ function toggleNewsMore() {
 <div class="news-item">
   <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/10</span></div>
   <a href="https://topics.smt.docomo.ne.jp/amp/article/afpbb/world/afpbb-3630497" target="_blank" rel="noopener">バンス米副大統領がイラン交渉主導・11日イスラマバードで初の対面協議</a>
-</div>
-<div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-nhk">NHK</span><span class="news-date">4/10</span></div>
-  <a href="https://news.web.nhk.or.jp/newsweb/na/na-k10015095751000" target="_blank" rel="noopener">ホルムズ海峡・停戦合意後24時間の通過船舶はわずか3隻　位置情報分析</a>
 </div>
          <div class="news-item">
       <div class="news-meta">
@@ -1594,6 +1665,53 @@ function toggleNewsMore() {
     </div>
   </div>
   <button class="news-more-btn" id="news-more-btn" onclick="toggleNewsMore()">▼ 過去の記事を見る（4件）</button>
+</div>
+<!-- SOURCE & UPDATE LOG -->
+<div style="max-width:960px;margin:32px auto 0;padding:0 16px 40px;">
+  <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
+
+    <!-- タイトル -->
+    <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.1em;color:#64748b;text-transform:uppercase;margin-bottom:14px;">
+      📋 出典・更新ログ ― 信頼性確認用
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+      <!-- 最終更新・主要出典 -->
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
+        <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">🕐 最終更新 ＆ 主要出典（本日）</div>
+        <div style="font-size:0.75rem;color:#cbd5e1;line-height:2;">
+          <div>📅 <strong>2026年4月11日</strong> 更新</div>
+          <div>① <a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2590563?display=1" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Bloomberg — トランプ氏、ホルムズ通航料警告・イスラエルはレバノンと直接交渉へ（4/10）</a></div>
+          <div>② <a href="https://www.fnn.jp/articles/-/1027831" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">FNN — 停戦後もホルムズ通航量は戦前比大幅減・通航料問題浮上（4/9）</a></div>
+          <div>③ <a href="https://jp.reuters.com/markets/commodities/W3M4BMDGZVMTTOAYYTWG5RQM4U-2026-04-08/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters — イラン、限定的・管理された海峡開放の可能性示唆（4/9）</a></div>
+        </div>
+      </div>
+
+      <!-- 更新履歴 -->
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
+        <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">📝 変更履歴</div>
+        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+          <div><span style="color:#4ade80;">2026/04/11</span> — 米イラン協議開始を反映・WTI $99台に更新・各カード更新</div>
+          <div><span style="color:#4ade80;">2026/04/10</span> — 情勢カード・速報ブロック・WTI価格を最新情報に更新</div>
+          <div><span style="color:#4ade80;">2026/04/10</span> — カウントダウン期限を4/11（土）14:00 JSTに変更</div>
+          <div><span style="color:#4ade80;">2026/04/09</span> — レバノン攻撃・ホルムズ限定通航強化を反映</div>
+          <div><span style="color:#4ade80;">2026/04/08</span> — 停戦合意反映・WTI急落（$92台）を更新</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 数値注記 -->
+    <div style="margin-top:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 16px;font-size:0.7rem;color:#64748b;line-height:1.8;">
+      <strong style="color:#94a3b8;">⚠️ 数値・データに関する注記</strong><br>
+      WTI原油価格はCFD（差金決済取引）データをもとに表示しており、実際の先物・現物価格と微小な差異や遅延が生じる場合があります。／
+      石油備蓄日数はIEA基準による推定値です（国家備蓄＋民間備蓄＋産油国在庫の合計）。／
+      通航量（平常時比14%等）はBloomberg・Reuters報道およびShiptrackingデータの分析に基づく推定値です。／
+      シナリオ記述は編集部による分析であり、確定的な予測ではありません。
+    </div>
+
+  </div>
 </div>
 </body>
 </html>

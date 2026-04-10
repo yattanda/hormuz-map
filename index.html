@@ -103,7 +103,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 #map { height:580px; width:100%; background:#071828; }
 .leaflet-tile-pane { filter: brightness(0.45) saturate(0.45) hue-rotate(190deg); }
 
-/* MAP LEGEND — PC: bottomleft fixed, SP: collapsible overlay */
+/* MAP LEGEND */
 .map-legend {
   background:rgba(7,14,28,0.95) !important;
   border:1px solid #1e3a5f !important;
@@ -116,7 +116,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 }
 .map-legend h4 { color:#7dd3fc; font-size:0.8rem; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
 .legend-toggle-btn {
-  display:none; /* PCでは非表示 */
+  display:none; 
   background:rgba(239,68,68,0.15);
   border:1px solid #ef4444;
   color:#fca5a5;
@@ -126,7 +126,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   border-radius:12px;
   cursor:pointer;
 }
-.legend-body { /* PCでは常に表示 */ }
 .leg-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .leg-dash { width:30px; height:0; flex-shrink:0; border-top:3px dashed; }
 .leg-row span { font-size:0.72rem; color:#cbd5e1; }
@@ -200,8 +199,8 @@ footer {
     transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
     overflow: hidden;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(56,189,248,0.2); /* ← これを追加 */
-    touch-action: manipulation; /* ← これを追加 */
+    -webkit-tap-highlight-color: rgba(56,189,248,0.2);
+    touch-action: manipulation;
   }
   .map-legend.open {
     min-width: 230px !important;
@@ -217,7 +216,7 @@ footer {
   }
   .legend-toggle-btn {
     display: inline-block;
-    pointer-events: none; /* 親のタッチで開閉するので不要 */
+    pointer-events: none;
   }
   .legend-body {
     display: none;
@@ -229,20 +228,6 @@ footer {
 
   .deadline { flex-direction:column; align-items:flex-start; }
   .dl-boxes { justify-content:flex-start; }
-  .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-  .rtable { min-width:600px; }
-}
-@media(max-width:480px){
-  .stats-row { grid-template-columns:repeat(2,1fr); }
-  header h1 { font-size:0.82rem; }
-  .cd-val { font-size:1.2rem; }
-}
-
-  /* deadline wrap */
-  .deadline { flex-direction:column; align-items:flex-start; }
-  .dl-boxes { justify-content:flex-start; }
-
-  /* table scroll */
   .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .rtable { min-width:600px; }
 }
@@ -341,96 +326,36 @@ footer {
   font-size:0.78rem;
   line-height:1.75;
 }
-.modal-section.red {
-  background:rgba(239,68,68,0.08);
-  border:1px solid rgba(239,68,68,0.25);
-}
-.modal-section.yellow {
-  background:rgba(251,191,36,0.08);
-  border:1px solid rgba(251,191,36,0.25);
-}
-.modal-section.blue {
-  background:rgba(56,189,248,0.08);
-  border:1px solid rgba(56,189,248,0.25);
-}
-.modal-section.gray {
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-}
-.modal-section-title {
-  font-size:0.8rem;
-  font-weight:700;
-  margin-bottom:8px;
-}
+.modal-section.red { background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); }
+.modal-section.yellow { background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); }
+.modal-section.blue { background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.25); }
+.modal-section.gray { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); }
+.modal-section-title { font-size:0.8rem; font-weight:700; margin-bottom:8px; }
 .modal-section.red   .modal-section-title { color:#f87171; }
 .modal-section.yellow .modal-section-title { color:#fbbf24; }
 .modal-section.blue  .modal-section-title { color:#38bdf8; }
 .modal-section.gray  .modal-section-title { color:#94a3b8; }
 .modal-quote {
-  font-family:'Courier New',monospace;
-  font-size:0.76rem;
-  color:#e2e8f0;
-  line-height:1.8;
-  background:rgba(0,0,0,0.3);
-  padding:12px 14px;
-  border-radius:8px;
-  border-left:3px solid #ef4444;
-  margin-bottom:10px;
+  font-family:'Courier New',monospace; font-size:0.76rem; color:#e2e8f0; line-height:1.8;
+  background:rgba(0,0,0,0.3); padding:12px 14px; border-radius:8px; border-left:3px solid #ef4444; margin-bottom:10px;
 }
-.modal-interp {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:10px;
-}
-.modal-interp-box {
-  padding:10px 12px;
-  border-radius:8px;
-  font-size:0.73rem;
-  line-height:1.6;
-}
-.modal-interp-box.a {
-  background:rgba(239,68,68,0.1);
-  border:1px solid rgba(239,68,68,0.3);
-}
-.modal-interp-box.b {
-  background:rgba(52,211,153,0.1);
-  border:1px solid rgba(52,211,153,0.3);
-}
-.modal-interp-box .i-title {
-  font-weight:700;
-  margin-bottom:5px;
-  font-size:0.75rem;
-}
+.modal-interp { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+.modal-interp-box { padding:10px 12px; border-radius:8px; font-size:0.73rem; line-height:1.6; }
+.modal-interp-box.a { background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); }
+.modal-interp-box.b { background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); }
+.modal-interp-box .i-title { font-weight:700; margin-bottom:5px; font-size:0.75rem; }
 .modal-interp-box.a .i-title { color:#f87171; }
 .modal-interp-box.b .i-title { color:#34d399; }
-.modal-media {
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-  flex-wrap:wrap;
-}
-.modal-media-pill {
-  padding:5px 12px;
-  border-radius:20px;
-  font-size:0.72rem;
-  font-weight:700;
-}
-.pill-optimist {
-  background:rgba(52,211,153,0.15);
-  color:#34d399;
-  border:1px solid rgba(52,211,153,0.3);
-}
-.pill-cautious {
-  background:rgba(239,68,68,0.15);
-  color:#f87171;
-  border:1px solid rgba(239,68,68,0.3);
-}
+.modal-media { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+.modal-media-pill { padding:5px 12px; border-radius:20px; font-size:0.72rem; font-weight:700; }
+.pill-optimist { background:rgba(52,211,153,0.15); color:#34d399; border:1px solid rgba(52,211,153,0.3); }
+.pill-cautious { background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.3); }
 
 @media(max-width:860px){
   .modal-box { padding:18px 16px; }
   .modal-interp { grid-template-columns:1fr; }
 }
+
 /* NEWS COLUMN */
 .news-section-title{font-size:1rem;font-weight:800;color:#38bdf8;margin:24px 0 12px;padding-left:4px;border-left:3px solid #38bdf8;}
 .news-list{display:flex;flex-direction:column;gap:6px;}
@@ -455,383 +380,48 @@ footer {
 .news-more-btn{width:100%;margin-top:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px;color:#64748b;font-size:0.73rem;cursor:pointer;transition:all 0.2s;font-family:inherit;}
 .news-more-btn:hover{background:rgba(255,255,255,0.07);color:#94a3b8;}
 @media(max-width:860px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
+
 /* ================================================
    タンカー足止めオーバーレイ
 ================================================ */
-
-#map {
-  position: relative;
-}
-
+#map { position: relative; }
 #tanker-overlay {
-  position: absolute;
-  bottom: 30px;
-  right: 10px;
-  z-index: 1000;
-  width: 260px;
-  background: rgba(10, 20, 50, 0.85);
-  border: 1px solid rgba(96, 165, 250, 0.45);
-  border-radius: 10px;
-  padding: 10px 12px 8px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
-  transition: width 0.3s ease;
-  font-family: sans-serif;
+  position: absolute; bottom: 30px; right: 10px; z-index: 1000; width: 260px;
+  background: rgba(10, 20, 50, 0.85); border: 1px solid rgba(96, 165, 250, 0.45);
+  border-radius: 10px; padding: 10px 12px 8px; backdrop-filter: blur(4px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55); transition: width 0.3s ease; font-family: sans-serif;
 }
-
-#tanker-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-#tanker-title span {
-  font-size: 11px;
-  color: #93c5fd;
-  font-weight: bold;
-  letter-spacing: 0.04em;
-}
-
+#tanker-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+#tanker-title span { font-size: 11px; color: #93c5fd; font-weight: bold; letter-spacing: 0.04em; }
 #tanker-toggle {
-  background: none;
-  border: 1px solid #4b6fa8;
-  color: #93c5fd;
-  border-radius: 4px;
-  font-size: 10px;
-  padding: 1px 6px;
-  cursor: pointer;
-  transition: background 0.2s;
+  background: none; border: 1px solid #4b6fa8; color: #93c5fd; border-radius: 4px;
+  font-size: 10px; padding: 1px 6px; cursor: pointer; transition: background 0.2s;
 }
-
-#tanker-toggle:hover {
-  background: rgba(96, 165, 250, 0.2);
-}
-
-#tanker-date {
-  font-size: 10px;
-  color: #7dd3fc;
-  text-align: right;
-  margin-bottom: 6px;
-}
-
+#tanker-toggle:hover { background: rgba(96, 165, 250, 0.2); }
+#tanker-date { font-size: 10px; color: #7dd3fc; text-align: right; margin-bottom: 6px; }
 #ship-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 3px;
-  justify-content: flex-start;
-  align-content: flex-start;
-  max-height: 130px;
-  overflow: hidden;
+  display: flex; flex-direction: row; flex-wrap: wrap; gap: 3px;
+  justify-content: flex-start; align-content: flex-start; max-height: 130px; overflow: hidden;
 }
-
 .ship-icon {
-  font-size: 17px;
-  line-height: 1.1;
-  cursor: default;
-  transition: transform 0.15s;
-  filter: drop-shadow(0 0 3px rgba(248, 113, 113, 0.8));
-  user-select: none;
+  font-size: 17px; line-height: 1.1; cursor: default; transition: transform 0.15s;
+  filter: drop-shadow(0 0 3px rgba(248, 113, 113, 0.8)); user-select: none;
 }
-
-.ship-icon.passable {
-  filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.8));
-}
-
-.ship-icon:hover {
-  transform: scale(1.35);
-  z-index: 1;
-}
-
-#tanker-stats {
-  margin-top: 7px;
-  font-size: 10px;
-  color: #94a3b8;
-}
-
-.stat-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2px;
-}
-
-.stat-row span:last-child {
-  color: #f87171;
-  font-weight: bold;
-}
-
-.stat-row.pass span:last-child {
-  color: #34d399;
-  font-weight: bold;
-}
-
-.stat-row:last-child span:last-child {
-  color: #93c5fd;
-}
-
-#tanker-progress-wrap {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  height: 5px;
-  margin-top: 6px;
-  overflow: hidden;
-}
-
-#tanker-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #f87171, #fbbf24);
-  border-radius: 4px;
-  transition: width 0.8s ease;
-}
-
-#tanker-overlay.zoom-close {
-  width: 300px;
-}
-
-#tanker-overlay.zoom-close .ship-icon {
-  font-size: 20px;
-}
-
-#tanker-overlay.zoom-close #ship-grid {
-  max-height: 160px;
-}
-
-#tanker-overlay.zoom-far {
-  width: 200px;
-}
-
-#tanker-overlay.zoom-far .ship-icon {
-  font-size: 13px;
-}
-
-#tanker-overlay.zoom-far #ship-grid {
-  max-height: 100px;
-}
-/* =============================================
-   💰 WTI リアルタイム原油価格ウィジェット
-   ============================================= */
-.wti-widget {
-  background: linear-gradient(135deg, #0a1628, #0f1f3a, #0a1628);
-  border: 1px solid #1e3a5f;
-  border-radius: 14px;
-  padding: 16px 20px;
-  margin: 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-}
-.wti-widget::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #38bdf8, #fbbf24, #38bdf8, transparent);
-  animation: wtiScan 3s linear infinite;
-}
-@keyframes wtiScan {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-.wti-icon-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-}
-.wti-icon { font-size: 2rem; line-height: 1; }
-.wti-icon-label {
-  font-size: 0.6rem;
-  font-weight: 800;
-  color: #64748b;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.wti-price-main {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex-shrink: 0;
-}
-.wti-price-label {
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #64748b;
-  text-transform: uppercase;
-}
-.wti-price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.wti-price-val {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #fbbf24;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-  transition: color 0.4s ease;
-  text-shadow: 0 0 20px rgba(251,191,36,0.4);
-}
-.wti-price-val.up   { color: #34d399; text-shadow: 0 0 20px rgba(52,211,153,0.4); }
-.wti-price-val.down { color: #f87171; text-shadow: 0 0 20px rgba(248,113,113,0.4); }
-.wti-price-unit {
-  font-size: 0.9rem;
-  color: #64748b;
-  font-weight: 600;
-  align-self: flex-end;
-  margin-bottom: 4px;
-}
-.wti-change-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.wti-change {
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-variant-numeric: tabular-nums;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  transition: all 0.4s ease;
-}
-.wti-change.up      { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.35); }
-.wti-change.down    { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.35); }
-.wti-change.neutral { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
-.wti-change-arrow { font-size: 1rem; line-height: 1; }
-.wti-sep {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, #1e3a5f, transparent);
-  flex-shrink: 0;
-}
-.wti-sub-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px 16px;
-  flex: 1;
-  min-width: 160px;
-}
-.wti-sub-label {
-  font-size: 0.6rem;
-  color: #475569;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-.wti-sub-val {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #94a3b8;
-  font-variant-numeric: tabular-nums;
-}
-.wti-crisis-badge {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex-shrink: 0;
-}
-.wti-crisis-item {
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-align: center;
-  white-space: nowrap;
-}
-.wti-crisis-item.red    { background: rgba(239,68,68,0.12);  border: 1px solid rgba(239,68,68,0.3);    color: #fca5a5; }
-.wti-crisis-item.yellow { background: rgba(251,191,36,0.1);  border: 1px solid rgba(251,191,36,0.25);  color: #fde68a; }
-.wti-status-bar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(30,58,95,0.6);
-  margin-top: 4px;
-  flex-wrap: wrap;
-}
-.wti-status-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  animation: wtiDotBlink 2s ease-in-out infinite;
-}
-.wti-status-dot.live  { background: #34d399; box-shadow: 0 0 6px #34d399; }
-.wti-status-dot.stale { background: #fbbf24; box-shadow: 0 0 6px #fbbf24; }
-.wti-status-dot.error { background: #f87171; box-shadow: 0 0 6px #f87171; }
-@keyframes wtiDotBlink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-.wti-status-text { font-size: 0.65rem; color: #475569; flex: 1; }
-.wti-status-text span { color: #64748b; font-weight: 600; }
-.wti-refresh-btn {
-  background: rgba(56,189,248,0.1);
-  border: 1px solid rgba(56,189,248,0.25);
-  color: #38bdf8;
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.2s;
-}
-.wti-refresh-btn:hover    { background: rgba(56,189,248,0.2); }
-.wti-refresh-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-.wti-gauge-wrap { width: 100%; margin-top: 4px; }
-.wti-gauge-label-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.6rem;
-  color: #475569;
-  margin-bottom: 3px;
-}
-.wti-gauge-track {
-  height: 6px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, #34d399 0%, #fbbf24 40%, #fb923c 70%, #ef4444 100%);
-  position: relative;
-  opacity: 0.7;
-}
-.wti-gauge-thumb {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid #fbbf24;
-  box-shadow: 0 0 6px rgba(251,191,36,0.6);
-  transition: left 0.8s ease;
-}
-@keyframes wtiFlash {
-  0%   { background: rgba(251,191,36,0.25); }
-  100% { background: transparent; }
-}
-.wti-widget.updating { animation: wtiFlash 0.6s ease-out; }
-
-/* WTI レスポンシブ */
-@media(max-width:860px){
-  .wti-widget { gap: 12px; padding: 12px 14px; }
-  .wti-price-val { font-size: 1.7rem; }
-  .wti-sep { display: none; }
-  .wti-sub-grid { min-width: unset; }
-}
-@media(max-width:480px){
-  .wti-price-val { font-size: 1.4rem; }
-  .wti-crisis-badge { display: none; }
-}
+.ship-icon.passable { filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.8)); }
+.ship-icon:hover { transform: scale(1.35); z-index: 1; }
+#tanker-stats { margin-top: 7px; font-size: 10px; color: #94a3b8; }
+.stat-row { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.stat-row span:last-child { color: #f87171; font-weight: bold; }
+.stat-row.pass span:last-child { color: #34d399; font-weight: bold; }
+.stat-row:last-child span:last-child { color: #93c5fd; }
+#tanker-progress-wrap { background: rgba(255, 255, 255, 0.1); border-radius: 4px; height: 5px; margin-top: 6px; overflow: hidden; }
+#tanker-progress-bar { height: 100%; background: linear-gradient(90deg, #f87171, #fbbf24); border-radius: 4px; transition: width 0.8s ease; }
+#tanker-overlay.zoom-close { width: 300px; }
+#tanker-overlay.zoom-close .ship-icon { font-size: 20px; }
+#tanker-overlay.zoom-close #ship-grid { max-height: 160px; }
+#tanker-overlay.zoom-far { width: 200px; }
+#tanker-overlay.zoom-far .ship-icon { font-size: 13px; }
+#tanker-overlay.zoom-far #ship-grid { max-height: 100px; }
 
 </style>
 </head>
@@ -856,7 +446,7 @@ footer {
      " onmouseover="this.style.background='rgba(56,189,248,0.3)'"
        onmouseout="this.style.background='rgba(56,189,248,0.15)'">
      🔄 強制再表示
-</button>
+    </button>
   </div>
 </header>
 
@@ -865,14 +455,15 @@ footer {
   <div class="ticker-scroll">
     <span class="ticker-text" style="font-size: 16px; font-weight: 700;">
           【4/10 緊急】イラン ホルムズ再封鎖・協議4/11へ延期 | バンス副大統領がイスラマバード交渉主導 | トランプ「通航料あってはならない」警告 | WTI $97台に反発 | 停戦後24時間通過船わずか3隻／イスラエル、レバノン史上最大規模攻撃（100ターゲット・死者182人）／Iran がホルムズ再封鎖を宣言・通行料$2M要求・協定撤退を示唆／停戦の「Lebanon含む/含まず」で US・Pakistan・Iran が紛糾／原油WTI $98/bbl → $120超のリスク復活／Islamabad直接交渉が土曜日開始（VP Vance主導・2週間で恒久合意目指す）／再エスカレーション可能性が高まり、交渉の窓口が閉じかけている
-    </span>　
-          </div>
+    </span>
+  </div>
 </div>
+
+<div class="container">
   <!-- COUNTDOWN -->
-    <div class="deadline">
+  <div class="deadline">
     <div class="dl-label">🚨 米のイラン攻撃強化<br>期限まで</div>
     <div class="dl-boxes">
-      <!-- リアルタイムカウントダウン -->
       <div class="dl-box" style="min-width:200px;">
         <div id="cd-display">
           <div class="cd-unit">
@@ -905,69 +496,85 @@ footer {
       <div class="dl-note">← 4/11 イスラマバード協議（バンス副大統領出席）が最終合意の山場。合意不成立の場合、2週間後（4/22-23）に攻撃再開リスク。恒久停戦への移行が焦点。</div>
     </div>
   </div>
-  <!-- ==================== 💰 WTI リアルタイム価格ウィジェット ==================== -->
-<div class="wti-widget" id="wtiWidget" style="margin-top:12px;">
-  <div class="wti-icon-wrap">
-    <div class="wti-icon">🛢️</div>
-    <div class="wti-icon-label">WTI</div>
-  </div>
-  <div class="wti-price-main">
-    <div class="wti-price-label">WTI 原油先物 (CL=F)</div>
-    <div class="wti-price-row">
-      <span class="wti-price-val" id="wtiPrice">$--.--</span>
-      <span class="wti-price-unit">/ bbl</span>
-    </div>
-    <div class="wti-change-row">
-      <span class="wti-change neutral" id="wtiChange">
-        <span class="wti-change-arrow" id="wtiArrow">◆</span>
-        <span id="wtiChangeTxt">読み込み中...</span>
-      </span>
-      <span style="font-size:0.65rem;color:#475569;" id="wtiTime">--:--</span>
-    </div>
-    <div class="wti-gauge-wrap" id="wtiGaugeWrap" style="display:none;">
-      <div class="wti-gauge-label-row"><span>低値 $70</span><span>危機水準 $120</span></div>
-      <div class="wti-gauge-track">
-        <div class="wti-gauge-thumb" id="wtiGaugeThumb" style="left:40%;"></div>
+
+  <!-- ==================== 💰 リアルタイム市場ダッシュボード (TradingView) ==================== -->
+  <div id="wtiWidget" style="margin-top:8px; background: #131722; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 20px; font-family: sans-serif; border: 1px solid #1e3a5f;">
+    
+    <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+      
+      <!-- 1. WTI原油 -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:USOIL", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 2. ドル円 -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "FX_IDC:USDJPY", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
       </div>
     </div>
+  
+    <!-- ▼ サブセクション（小さく表示：高さ150） ▼ -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+      
+      <!-- 3. ゴールド -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:GOLD", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 4. シルバー -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:SILVER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 5. 銅 -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "CAPITALCOM:COPPER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 6. プラチナ -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:PLATINUM", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- ▼ 包括的な但し書き ▼ -->
+    <div style="text-align: right; font-size: 0.75rem; color: #868993; border-top: 1px solid #2B3139; padding-top: 12px; margin-top: 4px;">
+      ※表示価格はCFD等のデータであり、実際の先物・現物価格とは微小な差異や遅延が生じる場合があります。
+    </div>
   </div>
-  <div class="wti-sep"></div>
-  <div class="wti-sub-grid">
-    <div class="wti-sub-item">
-      <div class="wti-sub-label">本日高値</div>
-      <div class="wti-sub-val" id="wtiHigh">--</div>
-    </div>
-    <div class="wti-sub-item">
-      <div class="wti-sub-label">本日安値</div>
-      <div class="wti-sub-val" id="wtiLow">--</div>
-    </div>
-    <div class="wti-sub-item">
-      <div class="wti-sub-label">前日終値</div>
-      <div class="wti-sub-val" id="wtiPrev">--</div>
-    </div>
-    <div class="wti-sub-item">
-      <div class="wti-sub-label">出来高</div>
-      <div class="wti-sub-val" id="wtiVol">--</div>
-    </div>
-  </div>
-  <div class="wti-sep"></div>
-  <div class="wti-crisis-badge">
-    <div class="wti-crisis-item red"    id="crisisLevel">🔴 危機価格帯</div>
-    <div class="wti-crisis-item yellow" id="crisisNote">$120超：最悪シナリオ</div>
-  </div>
-  <div class="wti-status-bar">
-    <div class="wti-status-dot error" id="wtiDot"></div>
-    <div class="wti-status-text" id="wtiStatusText">
-      <span>データ取得中...</span>　※ Yahoo Finance プロキシ経由・遅延あり
-    </div>
-    <div style="font-size:0.62rem;color:#334155;margin-left:auto;">
-      次回更新 <span id="wtiNextUpdate">60</span>秒後
-    </div>
-    <button class="wti-refresh-btn" id="wtiRefreshBtn" onclick="wtiManualRefresh()">⟳ 今すぐ更新</button>
-  </div>
-</div>
-
-<div class="container">
+  <!-- ==================== 💰 ダッシュボード終了 ==================== -->
 
 <!-- SITUATION CARDS -->
 <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div>
@@ -1004,7 +611,8 @@ footer {
   </div>
 
 </div>
-  <!-- TRUMP STATEMENT BANNER -->
+
+<!-- TRUMP STATEMENT BANNER -->
 <div class="trump-banner" onclick="openTrumpModal()">
   <div class="trump-banner-icon">📜</div>
   <div class="trump-banner-text">
@@ -1028,7 +636,6 @@ footer {
       「2週間の爆撃停止」― 原文・翻訳・解釈分析
     </div>
 
-    <!-- 英語原文 -->
     <div class="modal-section red">
       <div class="modal-section-title">🔴 英語原文（Truth Social）</div>
       <div class="modal-quote">
@@ -1036,7 +643,6 @@ footer {
       </div>
     </div>
 
-    <!-- 日本語翻訳 -->
     <div class="modal-section yellow">
       <div class="modal-section-title">🟡 日本語翻訳（原文に忠実）</div>
       <div style="color:#fde68a; font-size:0.77rem; line-height:1.8;">
@@ -1044,7 +650,6 @@ footer {
       </div>
     </div>
 
-    <!-- 解釈分析 -->
     <div class="modal-section blue">
       <div class="modal-section-title">🔍 曖昧性の分析：2通りの解釈</div>
       <div style="color:#7dd3fc; font-size:0.73rem; margin-bottom:10px;">
@@ -1066,7 +671,6 @@ footer {
       </div>
     </div>
 
-    <!-- 言語学的分析 -->
     <div class="modal-section gray">
       <div class="modal-section-title" style="color:#94a3b8;">📌 言語学的な微妙さ</div>
       <div style="color:#94a3b8; font-size:0.73rem; line-height:1.75;">
@@ -1076,7 +680,6 @@ footer {
       </div>
     </div>
 
-    <!-- メディア解釈 -->
     <div class="modal-section gray">
       <div class="modal-section-title" style="color:#94a3b8;">💡 メディア解釈の分裂</div>
       <div class="modal-media">
@@ -1088,9 +691,9 @@ footer {
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
   <!-- MAP -->
   <div class="map-wrap">
 <div id="map">
@@ -1137,42 +740,36 @@ footer {
     <div class="stat-card"><div class="stat-num c-red">20<span style="font-size:0.9rem">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
     <div class="stat-card"><div class="stat-num c-red">+5<span style="font-size:0.9rem">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
     <div class="stat-card"><div class="stat-num c-yellow">3<span style="font-size:0.9rem">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
+    <!-- 既存のスクロールリンクは維持 -->
     <div class="stat-card" id="wtiStatCard"
      style="background:linear-gradient(135deg,#0a1a10,#0f2820);border-color:#1e5f3a;cursor:pointer;"
      onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
-    <div class="stat-num c-green" id="wtiStatNum" style="font-size:1.35rem;">$--.--</div>
-    <div class="stat-label">WTI原油価格<br>
-    <span id="wtiStatChange" style="font-size:0.65rem;color:#64748b;">読込中...</span><br>
+    <div class="stat-num c-green" id="wtiStatNum" style="font-size:1.35rem;">Live表示中</div>
+    <div class="stat-label">市場ダッシュボード<br>
+    <span id="wtiStatChange" style="font-size:0.65rem;color:#64748b;">稼働中</span><br>
     ▲クリックで詳細
    </div>
   </div>
     <div class="stat-card"><div class="stat-num c-orange">40<span style="font-size:0.9rem">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
   </div>
-  <script>
 
+  <script>
 // ============================================================
 // 日本関連タンカー足止め可視化 v2.1
-// ★ここだけ変更すればOK★
 // ============================================================
 const SHIP_CONFIG = {
-  totalShips:    42,          // 足止め総数
-  passableShips: 0,           // 通過済み隻数（緑で表示）
+  totalShips:    42,
+  passableShips: 0,
   date:          '2026年4月8日'
 };
 
-// ============================================================
-// 描画メイン
-// ============================================================
 (function () {
-
   function renderShipPanel(cfg) {
     const { totalShips, passableShips, date } = cfg;
     const stuck = totalShips - passableShips;
 
-    // 日付
     document.getElementById('tanker-date').textContent = date + '現在';
 
-    // 船アイコン生成（flexで自動横並び）
     const grid = document.getElementById('ship-grid');
     grid.innerHTML = '';
 
@@ -1187,21 +784,16 @@ const SHIP_CONFIG = {
       grid.appendChild(el);
     }
 
-    // 統計テキスト
     document.getElementById('t-stuck').textContent = stuck        + '隻';
     document.getElementById('t-pass' ).textContent = passableShips + '隻';
     document.getElementById('t-total').textContent = totalShips    + '隻';
 
-    // プログレスバー（足止め率）
     const stuckPct = totalShips > 0
       ? Math.round((stuck / totalShips) * 100)
       : 0;
     document.getElementById('tanker-progress-bar').style.width = stuckPct + '%';
   }
 
-  // --------------------------------------------------------
-  // 折り畳みボタン
-  // --------------------------------------------------------
   document.getElementById('tanker-toggle')
     .addEventListener('click', function () {
       const overlay   = document.getElementById('tanker-overlay');
@@ -1218,12 +810,8 @@ const SHIP_CONFIG = {
       this.textContent     = collapsed ? '展開' : '折畳';
     });
 
-  // --------------------------------------------------------
-  // Leaflet ズーム連動
-  // ※ Leafletの地図変数名が "map" 以外の場合は下記を修正
-  // --------------------------------------------------------
   function attachLeafletZoom() {
-    const leafletMap = window.map;   // ← 地図変数名を確認して合わせる
+    const leafletMap = window.map;
     if (!leafletMap || typeof leafletMap.on !== 'function') return;
 
     leafletMap.on('zoomend', function () {
@@ -1234,13 +822,9 @@ const SHIP_CONFIG = {
 
       if      (z >= 8) overlay.classList.add('zoom-close');
       else if (z <= 5) overlay.classList.add('zoom-far');
-      // それ以外はデフォルトサイズ
     });
   }
 
-  // --------------------------------------------------------
-  // 初期化
-  // --------------------------------------------------------
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       renderShipPanel(SHIP_CONFIG);
@@ -1250,11 +834,8 @@ const SHIP_CONFIG = {
     renderShipPanel(SHIP_CONFIG);
     attachLeafletZoom();
   }
-
 })();
-
   </script>
-
 
   <!-- ROUTE TABLE -->
   <div>
@@ -1371,8 +952,7 @@ const SHIP_CONFIG = {
 // ============================================================
 // 0. COUNTDOWN TIMER（日本時間 2026/4/7 09:00:00）
 // ============================================================
-const DEADLINE = new Date('2026-04-11T14:00:00+09:00');  // Islamabad 交渉開始
-
+const DEADLINE = new Date('2026-04-11T14:00:00+09:00'); 
 
 function updateCountdown() {
   const now  = new Date();
@@ -1485,23 +1065,9 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
 
 // ============================================================
 // 3. ROUTE DEFINITIONS
-//
-// ★ 共通区間オフセット方式：
-//   インド洋〜マラッカ〜日本の共通区間を
-//   各ルートごとに緯度を±0.4°ずつずらして
-//   4色が平行に並んで見えるようにする
-//
-//   オフセット量（緯度）:
-//     ルートA（青）:  +0.6
-//     ルートB（緑）:  +0.2
-//     ルートD（橙）:  -0.2
-//     旧ルート（灰）: -0.6
-//   ルートC（紫）は太平洋ルートなので共通区間なし
 // ============================================================
 
-// オフセット付き共通区間生成ヘルパー
 function commonEast(latOffset) {
-  // インド洋東部〜マラッカ〜日本
   return [
     [2.0 + latOffset,        90.0],
     [1.3 + latOffset,       103.8],
@@ -1509,28 +1075,24 @@ function commonEast(latOffset) {
     [14.0 + latOffset,      118.0],
     [24.0 + latOffset,      126.0],
     [34.5 + latOffset,      136.0],
-    [35.5,                  139.8],  // 日本は共通
+    [35.5,                  139.8],  
   ];
 }
 
-// ── 旧ルート（封鎖中）lat offset: -0.6
 const routeOld = [
   [26.0,50.5],[26.5,56.5],[24.0,60.0],[19.0,65.0],
   [8.0,77.5],[5.8,80.5],
   ...commonEast(-0.6)
 ];
 
-// ── ルートD（通航料）lat offset: -0.2
 const routeD = [
   [26.0,50.5],[26.5,56.5],[24.0,60.0],[19.0,65.0],
   [8.0,77.5],[5.8,80.5],
   ...commonEast(-0.2)
 ];
 
-// ── ルートA パイプライン
 const routeA_pl = [[24.5,54.4],[25.1,56.3]];
 
-// ── ルートA 海上 lat offset: +0.6
 const routeA = [
   [25.1,56.3],[22.0,62.0],[18.5,67.0],
   [19.0,72.8],
@@ -1538,10 +1100,8 @@ const routeA = [
   ...commonEast(+0.6)
 ];
 
-// ── ルートB パイプライン
 const routeB_pl = [[26.3,49.8],[24.1,38.1]];
 
-// ── ルートB 海上 lat offset: +0.2
 const routeB = [
   [24.1,38.1],[20.0,38.5],[15.5,41.5],
   [12.6,43.4],
@@ -1551,7 +1111,6 @@ const routeB = [
   ...commonEast(+0.2)
 ];
 
-// ── ルートC アラスカ→太平洋（+360経度方式）
 const routeC_pacific = [
   [35.5,139.8],
   [38.0,145.0],[42.0,152.0],[48.0,160.0],
@@ -1559,7 +1118,6 @@ const routeC_pacific = [
   [58.0,190.0],[60.0,200.0],[61.2,210.0],
 ];
 
-// ── ルートC ブラジル→喜望峰
 const routeC_brazil = [
   [-10.0,-38.0],[-15.0,-15.0],[-30.0,5.0],
   [-34.3,18.4],
@@ -1571,33 +1129,27 @@ const routeC_brazil = [
 
 
 // ============================================================
-// 4. DRAW ROUTES（細め＋オフセットでレインボー効果）
+// 4. DRAW ROUTES
 // ============================================================
-// 旧ルート
 L.polyline(routeOld,{color:'#6b7280',weight:2,dashArray:'10 7',opacity:0.55})
   .addTo(map).bindTooltip('旧ルート（ホルムズ経由・封鎖中）',{sticky:true});
 
-// ルートD
 L.polyline(routeD,{color:'#f59e0b',weight:2.5,dashArray:'8 5',opacity:0.88})
   .addTo(map).bindTooltip('ルートD：通航料払いホルムズ通過（友好国限定）',{sticky:true});
 
-// ルートB
 L.polyline(routeB_pl,{color:'#34d399',weight:2,dashArray:'5 4',opacity:0.85})
   .addTo(map).bindTooltip('ルートB：東西パイプライン（陸上・1,200km）',{sticky:true});
 L.polyline(routeB,{color:'#34d399',weight:2.5,dashArray:'12 5',opacity:0.92})
   .addTo(map).bindTooltip('ルートB：ヤンブー港経由（海上）',{sticky:true});
 
-// ルートA
 L.polyline(routeA_pl,{color:'#38bdf8',weight:2,dashArray:'5 4',opacity:0.85})
   .addTo(map).bindTooltip('ルートA：ADCOPパイプライン（陸上）',{sticky:true});
 L.polyline(routeA,{color:'#38bdf8',weight:2.5,dashArray:'12 5',opacity:0.92})
   .addTo(map).bindTooltip('ルートA：フジャイラ港経由（海上）',{sticky:true});
 
-// ルートC 太平洋
 L.polyline(routeC_pacific,{color:'#a78bfa',weight:2.5,dashArray:'10 7',opacity:0.88})
   .addTo(map).bindTooltip('ルートC：米国アラスカ発 太平洋ルート（4/25到着予定）',{sticky:true});
 
-// ルートC ブラジル
 L.polyline(routeC_brazil,{color:'#c084fc',weight:2,dashArray:'8 6',opacity:0.75})
   .addTo(map).bindTooltip('ルートC（南米）：ブラジル発 喜望峰経由ルート',{sticky:true});
 
@@ -1612,7 +1164,6 @@ function mkIcon(emoji,color,size=34){
   });
 }
 
-// ホルムズ
 L.marker([26.5,56.5],{icon:L.divIcon({
   html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.18);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">⛔</div>`,
   iconSize:[44,44],iconAnchor:[22,22],className:''
@@ -1624,7 +1175,6 @@ L.marker([26.5,56.5],{icon:L.divIcon({
   <strong>トランプ期限：</strong>4月7日午前9時（日本時間）</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⛔ 封鎖中</span>`);
 
-// バベルマンデブ
 L.marker([12.6,43.4],{icon:L.divIcon({
   html:`<div class="pulse-yellow" style="width:40px;height:40px;background:rgba(220,38,38,0.2);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>`,
   iconSize:[40,40],iconAnchor:[20,20],className:''
@@ -1636,7 +1186,6 @@ L.marker([12.6,43.4],{icon:L.divIcon({
   <strong>現況：</strong>船舶数が激減・極度に緊張</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⬆ リスク急上昇</span>`);
 
-// フジャイラ
 L.marker([25.1,56.3],{icon:mkIcon('⚓','#1d4ed8',36)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#38bdf8">⚓ フジャイラ港（UAE）</div>
   <div class="p-body"><strong>位置：</strong>UAE東部・オマーン湾沿岸<br>
@@ -1645,7 +1194,6 @@ L.marker([25.1,56.3],{icon:mkIcon('⚓','#1d4ed8',36)}).addTo(map).bindPopup(`
   <strong>本日到着：</strong>4月5日（ENEOS向け）✅</div>
   <span class="p-badge" style="background:rgba(56,189,248,0.2);color:#38bdf8;border:1px solid rgba(56,189,248,0.4)">ルートA 拠点</span>`);
 
-// ヤンブー
 L.marker([24.1,38.1],{icon:mkIcon('⚓','#065f46',36)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#34d399">⚓ ヤンブー港（サウジアラビア）</div>
   <div class="p-body"><strong>パイプライン：</strong>東西パイプライン（全長1,200km）<br>
@@ -1654,32 +1202,26 @@ L.marker([24.1,38.1],{icon:mkIcon('⚓','#065f46',36)}).addTo(map).bindPopup(`
   <strong>積荷：</strong>サウジ産原油 64万バレル</div>
   <span class="p-badge" style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.4)">ルートB 拠点</span>`);
 
-// アブダビ油田
 L.marker([24.5,54.4],{icon:mkIcon('🛢️','#1e3a5f',30)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#38bdf8">🛢️ アブダビ油田</div>
   <div class="p-body">ADCOPパイプラインでフジャイラ港に直結。ホルムズ海峡を完全に回避した輸出が可能。</div>`);
 
-// サウジ東部油田
 L.marker([26.3,49.8],{icon:mkIcon('🛢️','#064e3b',30)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#34d399">🛢️ サウジ東部油田</div>
   <div class="p-body">東西パイプライン（1,200km）でヤンブー港へ輸送。世界最大の産油設備群が集中するエリア。</div>`);
 
-// ムンバイ積み替え
 L.marker([19.0,72.8],{icon:mkIcon('🔄','#78350f',32)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#fbbf24">🔄 ムンバイ沖（積み替え）</div>
   <div class="p-body"><strong>ルートA</strong>：フジャイラからの原油をVLCCに積み替え。ENEOSホールディングスが関与。4月5日（日本）到着予定。</div>`);
 
-// マレーシア積み替え
 L.marker([2.5,104.0],{icon:mkIcon('🔄','#064e3b',30)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#34d399">🔄 マレーシア沖（積み替え）</div>
   <div class="p-body"><strong>ルートB</strong>：ヤンブーからの原油をVLCCに積み替え。3/28着の太陽石油向けもここで積み替え。</div>`);
 
-// マラッカ海峡
 L.marker([1.5,103.5],{icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#7dd3fc">🚢 マラッカ海峡</div>
   <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。</div>`);
 
-// 日本
 L.marker([35.5,139.8],{icon:L.divIcon({
   html:`<div style="width:42px;height:42px;background:#1d4ed8;border:2px solid #93c5fd;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 16px rgba(59,130,246,0.8);">🇯🇵</div>`,
   iconSize:[42,42],iconAnchor:[21,21],className:''
@@ -1692,33 +1234,27 @@ L.marker([35.5,139.8],{icon:L.divIcon({
   <strong>ルートC着：</strong>4/25 予定</div>
   <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">最終目的地</span>`);
 
-// アラスカ（+360経度）
 L.marker([61.2,210.0],{icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#a78bfa">🇺🇸 米国（アラスカ）</div>
   <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>4/25に第1便が日本到着予定。</strong></div>`);
 
-// ブラジル
 L.marker([-10.0,-38.0],{icon:mkIcon('🇧🇷','#4c1d95',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#c084fc">🇧🇷 ブラジル</div>
   <div class="p-body"><strong>ルートC（南米）</strong>の供給源。喜望峰→インド洋経由で日本へ。製油所の品質調整が必要。</div>`);
 
-// 喜望峰
 L.marker([-34.3,18.4],{icon:mkIcon('🌍','#1a3a2a',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#34d399">🌍 喜望峰</div>
   <div class="p-body">バベルマンデブ封鎖時のルートBの迂回経路。紅海ルートより約2週間余分。ブラジル産（ルートC南米）もここを通過。</div>`);
 
-// バーレーン攻撃
 L.marker([26.0,50.5],{icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">💥 バーレーン（攻撃報告 4/4）</div>
   <div class="p-body">イラン革命防衛隊が4日、バーレーン港でイスラエル関連船舶を攻撃。大規模火災が発生。UAE・クウェートにもミサイル・ドローン攻撃が発生（警戒は解除済み）。</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 最新攻撃報告</span>`);
 
-// スエズ運河
 L.marker([30.6,32.3],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#94a3b8">⚓ スエズ運河</div>
   <div class="p-body">紅海とヨーロッパを結ぶ要衝。ルートBはバベルマンデブからアジア方面へ向かう。</div>`);
 
-// ── イスラエル詳細
 L.marker([32.08, 34.78], {icon:mkIcon('🇮🇱','#1e3a5f',30)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#93c5fd">🇮🇱 テルアビブ / Tel Aviv</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部・地中海沿岸<br>
@@ -1737,32 +1273,27 @@ L.marker([29.55, 34.95], {icon:mkIcon('⚓','#1e3a5f',26)}).addTo(map).bindPopup
   <strong>状況：</strong>フーシ派攻撃の標的となり港湾機能が大幅低下</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 機能低下中</span>`);
 
-// ── レバノン
 L.marker([33.88,35.50],{icon:mkIcon('💥','#ef4444')}).addTo(map)
   .bindPopup('<strong>🇱🇧 ベイルート（レバノン首都）</strong><br>🚨 4/8-9 イスラエルが停戦合意数時間後に最大規模攻撃。ヒズボラ中央本部等100カ所以上を標的。<strong>死者254人・負傷者1,165人</strong>。国連が「恐ろしい」と非難。イスラエル「レバノンは停戦対象外」/ イラン「停戦違反」で対立激化。');
 
-// ティール（南レバノン）
 L.marker([33.27,35.19],{icon:mkIcon('🏥','#ef4444')}).addTo(map)
   .bindPopup('<strong>🏥 ティール（南レバノン）</strong><br>ヒラム病院前の建物がイスラエル軍の夜間攻撃を受け4人死亡。病院も被害。（4/8-9）');
 
-// ベカー高原（東部レバノン）
 L.marker([34.00,36.22],{icon:mkIcon('💥','#ef4444')}).addTo(map)
   .bindPopup('<strong>💥 ベカー高原（東レバノン）</strong><br>ヒズボラ軍事拠点への大規模攻撃。葬儀参列者を含む多数の民間人が犠牲に。（4/8-9）');
-// ── シリア
+
 L.marker([33.51, 36.29], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#fbbf24">⚠️ ダマスカス / Damascus（シリア）</div>
   <div class="p-body"><strong>位置：</strong>シリア首都<br>
   <strong>役割：</strong>イランの軍事物資輸送ルートの中継地<br>
   <strong>状況：</strong>イスラエルによる空爆が断続的に発生</div>`);
 
-// ── ヨルダン
 L.marker([31.95, 35.93], {icon:mkIcon('🌍','#1e293b',24)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#94a3b8">🌍 アンマン / Amman（ヨルダン）</div>
   <div class="p-body"><strong>位置：</strong>ヨルダン首都<br>
   <strong>役割：</strong>中東和平の仲介役・米軍基地あり<br>
   <strong>状況：</strong>イランのミサイルが領空を通過する事態が発生</div>`);
 
-// ── サウジアラビア詳細
 L.marker([24.47, 39.61], {icon:mkIcon('🛢️','#064e3b',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#34d399">🛢️ アラムコ本社 / Saudi Aramco HQ（ダーラン）</div>
   <div class="p-body"><strong>位置：</strong>サウジアラビア東部<br>
@@ -1776,7 +1307,6 @@ L.marker([26.43, 50.10], {icon:mkIcon('🛢️','#064e3b',26)}).addTo(map).bindP
   <strong>状況：</strong>攻撃対象として最高警戒レベル</div>
   <span class="p-badge" style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">⚠️ 最高警戒</span>`);
 
-// ── バーレーン詳細（既存マーカーを補完）
 L.marker([26.21, 50.59], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#93c5fd">🇺🇸 米第5艦隊司令部 / US 5th Fleet HQ（バーレーン）</div>
   <div class="p-body"><strong>位置：</strong>バーレーン・マナーマ<br>
@@ -1784,7 +1314,6 @@ L.marker([26.21, 50.59], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bind
   <strong>状況：</strong>ホルムズ危機対応の最前線司令部</div>
   <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">米軍中枢</span>`);
 
-// ── カタール
 L.marker([25.28, 51.53], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#93c5fd">🇺🇸 アルウデイド空軍基地 / Al Udeid Air Base（カタール）</div>
   <div class="p-body"><strong>位置：</strong>カタール・ドーハ近郊<br>
@@ -1792,7 +1321,6 @@ L.marker([25.28, 51.53], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bind
   <strong>状況：</strong>対イラン作戦の主要拠点・イランの攻撃対象</div>
   <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">米軍主要拠点</span>`);
 
-// ── イラン詳細
 L.marker([35.69, 51.39], {icon:mkIcon('🇮🇷','#7f1d1d',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">🇮🇷 テヘラン / Tehran</div>
   <div class="p-body"><strong>位置：</strong>イラン首都<br>
@@ -1834,7 +1362,6 @@ L.marker([25.87, 55.03], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPo
   <div class="p-body"><strong>位置：</strong>ホルムズ海峡・UAE沖<br>
   <strong>役割：</strong>イランが実効支配・ホルムズ封鎖の前線基地</div>`);
 
-// ── UAE攻撃拠点
 L.marker([24.35, 54.47], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">💥 ムサッファ港（UAE）/ Musaffah</div>
   <div class="p-body"><strong>被害：</strong>4/6 波状攻撃・負傷者複数<br>
@@ -1847,98 +1374,35 @@ L.marker([25.37, 55.42], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopu
   <strong>状況：</strong>警戒解除済み</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
 
-// ── クウェートKPC
 L.marker([29.37, 47.98], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">💥 KPC本部（クウェート）</div>
   <div class="p-body"><strong>被害：</strong>4/6 直撃「深刻な物質的損害」・海水淡水化施設も損傷<br>
   <strong>状況：</strong>警戒継続中</div>
   <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">直撃確認</span>`);
 
-// ── アカバ湾
 L.marker([28.55, 34.88], {icon:mkIcon('🚢','#1e3a5f',24)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#7dd3fc">🚢 アカバ湾 / Gulf of Aqaba</div>
   <div class="p-body"><strong>位置：</strong>紅海北部・イスラエル・ヨルダン・サウジ・エジプトに囲まれた湾<br>
   <strong>役割：</strong>イスラエルのエイラート港への唯一のアクセス<br>
   <strong>状況：</strong>フーシ派の攻撃により実質的に封鎖状態</div>`);
 
-// ── ペルシャ湾ラベル
 L.marker([27.0, 52.0], {icon: L.divIcon({
   html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">ペルシャ湾</div>`,
   iconSize:[0,0], iconAnchor:[0,0], className:''
 }), interactive:false}).addTo(map);
 
-// ── 紅海ラベル
 L.marker([20.0, 38.5], {icon: L.divIcon({
   html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">紅海</div>`,
   iconSize:[0,0], iconAnchor:[0,0], className:''
 }), interactive:false}).addTo(map);
 
-// ── アラビア海ラベル
 L.marker([18.0, 63.0], {icon: L.divIcon({
   html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">アラビア海</div>`,
   iconSize:[0,0], iconAnchor:[0,0], className:''
 }), interactive:false}).addTo(map);
-// ── カーグ島（Kharg Island）★空爆確認
-L.marker([29.25, 50.32], {icon: L.divIcon({
-  html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.25);border:2.5px solid #ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">💥</div>`,
-  iconSize:[44,44], iconAnchor:[22,22], className:''
-})}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 カーグ島 / Kharg Island（空爆確認）</div>
-  <div class="p-body"><strong>位置：</strong>イラン南西部・ペルシャ湾内<br>
-  <strong>重要性：</strong>イラン最大の石油輸出ターミナル<br>
-  <strong>輸出量：</strong>イラン原油輸出の約90%を担う<br>
-  <strong>被害：</strong>4/7夜間空爆90回以上・民間人18人死亡<br>
-  <strong>状況：</strong>軍事作戦進行中・輸出能力に深刻な打撃</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">🚨 空爆確認・進行中</span>`);
-
-// ── アバダン製油所
-L.marker([30.34, 48.30], {icon:mkIcon('🔥','#7f1d1d',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">🔥 アバダン製油所 / Abadan Refinery</div>
-  <div class="p-body"><strong>位置：</strong>イラン南西部・シャットルアラブ川沿岸<br>
-  <strong>重要性：</strong>中東最大級の製油所・イランの石油精製の中核<br>
-  <strong>状況：</strong>攻撃対象として警戒中</div>`);
-
-// ── バンダルアッバース
-L.marker([27.18, 56.27], {icon:mkIcon('⚠️','#7f1d1d',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ バンダルアッバース / Bandar Abbas</div>
-  <div class="p-body"><strong>位置：</strong>イラン南部・ホルムズ海峡北岸<br>
-  <strong>重要性：</strong>イラン海軍の主要基地・ホルムズ封鎖の拠点<br>
-  <strong>状況：</strong>革命防衛隊の海峡管理拠点</div>`);
-
-// ── アブムーサ島
-L.marker([25.87, 55.03], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ アブムーサ島 / Abu Musa Island</div>
-  <div class="p-body"><strong>位置：</strong>ホルムズ海峡・UAE沖<br>
-  <strong>重要性：</strong>イランが実効支配・ホルムズ封鎖の前線基地<br>
-  <strong>状況：</strong>UAEとの領有権争い継続中</div>`);
-
-// ── ムサッファ港（UAE・攻撃報告）
-L.marker([24.35, 54.47], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 ムサッファ港（UAE）/ Musaffah Port</div>
-  <div class="p-body"><strong>位置：</strong>アブダビ近郊・UAE<br>
-  <strong>被害：</strong>4/6 波状攻撃・負傷者複数<br>
-  <strong>状況：</strong>警戒解除済みも被害拡大</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
-
-// ── シャルジャ港（UAE・攻撃報告）
-L.marker([25.37, 55.42], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 シャルジャ港（UAE）/ Sharjah Port</div>
-  <div class="p-body"><strong>位置：</strong>UAE北部<br>
-  <strong>被害：</strong>4/6 ミサイル・ドローン攻撃<br>
-  <strong>状況：</strong>警戒解除済み</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
-
-// ── クウェートKPC本部
-L.marker([29.37, 47.98], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 クウェート石油公社（KPC）本部</div>
-  <div class="p-body"><strong>位置：</strong>クウェート市内<br>
-  <strong>被害：</strong>4/6 直撃「深刻な物質的損害」・海水淡水化施設も損傷<br>
-  <strong>状況：</strong>警戒継続中</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">直撃確認</span>`);
-
 
 // ============================================================
-// 6. MAP LEGEND（PC：固定表示 / SP：折りたたみ式）
+// 6. MAP LEGEND
 // ============================================================
 const Legend = L.Control.extend({
   options: { position: 'bottomleft' },
@@ -1959,7 +1423,6 @@ const Legend = L.Control.extend({
         <div class="leg-note">💡 各マーカー・ラインをクリックで詳細表示</div>
       </div>
     `;
-    // スクロール・ズーム操作がマップに貫通しないよう止める
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
     return div;
@@ -1967,7 +1430,6 @@ const Legend = L.Control.extend({
 });
 new Legend().addTo(map);
 
-// 凡例トグル（スマホ用）
 function toggleLegend(e) {
   if (e) {
     e.stopPropagation();
@@ -1980,35 +1442,31 @@ function toggleLegend(e) {
   btn.textContent = isOpen ? '開く' : '閉じる';
 }
 
-// スマホタッチ対応：凡例全体をタップで開閉
 window.addEventListener('DOMContentLoaded', () => {
-  // Leafletのコントロールは後から追加されるので少し待つ
   setTimeout(() => {
     const legend = document.getElementById('map-legend-ctrl');
     if (!legend) return;
-['click','touchstart'].forEach(evtType => {
-  legend.addEventListener(evtType, function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    toggleLegend();
-  }, { passive: false });
-});
+    ['click','touchstart'].forEach(evtType => {
+      legend.addEventListener(evtType, function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        toggleLegend();
+      }, { passive: false });
+    });
 
-// h4タグも個別にタッチ対応
-setTimeout(() => {
-  const h4 = document.querySelector('#map-legend-ctrl h4');
-  if (!h4) return;
-  ['click','touchstart'].forEach(evtType => {
-    h4.addEventListener(evtType, function(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      toggleLegend();
-    }, { passive: false });
-  });
-}, 1200);
+    setTimeout(() => {
+      const h4 = document.querySelector('#map-legend-ctrl h4');
+      if (!h4) return;
+      ['click','touchstart'].forEach(evtType => {
+        h4.addEventListener(evtType, function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          toggleLegend();
+        }, { passive: false });
+      });
+    }, 1200);
   }, 1000);
 });
-
 
 // ============================================================
 // 7. CSS ANIMATIONS
@@ -2028,7 +1486,7 @@ st.textContent = `
   .leaflet-control-attribution a { color:#4a9eff !important; }
 `;
 document.head.appendChild(st);
-// Trump声明モーダル
+
 function openTrumpModal() {
   document.getElementById('trump-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -2040,16 +1498,12 @@ function closeTrumpModal() {
 function closeTrumpModalOutside(e) {
   if (e.target.id === 'trump-modal') closeTrumpModal();
 }
-// ESCキーでも閉じる
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeTrumpModal();
 });
-// 強制再表示（キャッシュ回避）
 function hardReload() {
-  window.location.href = window.location.pathname
-    + '?v=' + new Date().getTime();
+  window.location.href = window.location.pathname + '?v=' + new Date().getTime();
 }
-// ニュース「もっと見る」トグル
 function toggleNewsMore() {
   const hidden = document.querySelectorAll('.news-hidden');
   const btn = document.getElementById('news-more-btn');
@@ -2063,7 +1517,6 @@ function toggleNewsMore() {
 <div style="max-width:960px;margin:24px auto;padding:0 16px;">
   <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>
   <div class="news-list" id="news-list">
-    <!-- ▼▼▼ 新しい記事はここに追加（上に積み上げ） ▼▼▼ -->
 <div class="news-item">
   <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/10 最新</span></div>
   <a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2590563?display=1" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・イスラエルはレバノンと直接交渉へ</a>
@@ -2111,7 +1564,6 @@ function toggleNewsMore() {
       </div>
       <a href="https://jp.reuters.com/world/us/LQ5WWJP7RJIXBKOOLDJ62H2HGU-2026-04-07/" target="_blank" rel="noopener">イランへの攻撃「2週間停止で合意」トランプ氏が表明・WTI急落▼17%→$97台</a>
     </div>
-    <!-- ▼ 以下は「もっと見る」で展開 ▼ -->
     <div class="news-item news-hidden">
       <div class="news-meta">
         <span class="news-badge badge-bb">Bloomberg</span>
@@ -2140,10 +1592,8 @@ function toggleNewsMore() {
       </div>
       <a href="https://toyokeizai.net/articles/-/937516" target="_blank" rel="noopener">ホルムズ海峡封鎖で国内の石油化学産業は減産の動き、停戦機運あっても先行き不透明</a>
     </div>
-    <!-- ▲▲▲ 古い記事はここまで ▲▲▲ -->
   </div>
   <button class="news-more-btn" id="news-more-btn" onclick="toggleNewsMore()">▼ 過去の記事を見る（4件）</button>
 </div>
-</script>
 </body>
 </html>

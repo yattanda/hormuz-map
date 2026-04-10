@@ -608,6 +608,231 @@ footer {
 #tanker-overlay.zoom-far #ship-grid {
   max-height: 100px;
 }
+/* =============================================
+   💰 WTI リアルタイム原油価格ウィジェット
+   ============================================= */
+.wti-widget {
+  background: linear-gradient(135deg, #0a1628, #0f1f3a, #0a1628);
+  border: 1px solid #1e3a5f;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.wti-widget::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38bdf8, #fbbf24, #38bdf8, transparent);
+  animation: wtiScan 3s linear infinite;
+}
+@keyframes wtiScan {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.wti-icon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.wti-icon { font-size: 2rem; line-height: 1; }
+.wti-icon-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.wti-price-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.wti-price-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+.wti-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.wti-price-val {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fbbf24;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  transition: color 0.4s ease;
+  text-shadow: 0 0 20px rgba(251,191,36,0.4);
+}
+.wti-price-val.up   { color: #34d399; text-shadow: 0 0 20px rgba(52,211,153,0.4); }
+.wti-price-val.down { color: #f87171; text-shadow: 0 0 20px rgba(248,113,113,0.4); }
+.wti-price-unit {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+  align-self: flex-end;
+  margin-bottom: 4px;
+}
+.wti-change-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.wti-change {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.4s ease;
+}
+.wti-change.up      { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.35); }
+.wti-change.down    { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.35); }
+.wti-change.neutral { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+.wti-change-arrow { font-size: 1rem; line-height: 1; }
+.wti-sep {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #1e3a5f, transparent);
+  flex-shrink: 0;
+}
+.wti-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  flex: 1;
+  min-width: 160px;
+}
+.wti-sub-label {
+  font-size: 0.6rem;
+  color: #475569;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.wti-sub-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #94a3b8;
+  font-variant-numeric: tabular-nums;
+}
+.wti-crisis-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.wti-crisis-item {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+.wti-crisis-item.red    { background: rgba(239,68,68,0.12);  border: 1px solid rgba(239,68,68,0.3);    color: #fca5a5; }
+.wti-crisis-item.yellow { background: rgba(251,191,36,0.1);  border: 1px solid rgba(251,191,36,0.25);  color: #fde68a; }
+.wti-status-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(30,58,95,0.6);
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.wti-status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: wtiDotBlink 2s ease-in-out infinite;
+}
+.wti-status-dot.live  { background: #34d399; box-shadow: 0 0 6px #34d399; }
+.wti-status-dot.stale { background: #fbbf24; box-shadow: 0 0 6px #fbbf24; }
+.wti-status-dot.error { background: #f87171; box-shadow: 0 0 6px #f87171; }
+@keyframes wtiDotBlink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.wti-status-text { font-size: 0.65rem; color: #475569; flex: 1; }
+.wti-status-text span { color: #64748b; font-weight: 600; }
+.wti-refresh-btn {
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.25);
+  color: #38bdf8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.wti-refresh-btn:hover    { background: rgba(56,189,248,0.2); }
+.wti-refresh-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.wti-gauge-wrap { width: 100%; margin-top: 4px; }
+.wti-gauge-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  color: #475569;
+  margin-bottom: 3px;
+}
+.wti-gauge-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #34d399 0%, #fbbf24 40%, #fb923c 70%, #ef4444 100%);
+  position: relative;
+  opacity: 0.7;
+}
+.wti-gauge-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fbbf24;
+  box-shadow: 0 0 6px rgba(251,191,36,0.6);
+  transition: left 0.8s ease;
+}
+@keyframes wtiFlash {
+  0%   { background: rgba(251,191,36,0.25); }
+  100% { background: transparent; }
+}
+.wti-widget.updating { animation: wtiFlash 0.6s ease-out; }
+
+/* WTI レスポンシブ */
+@media(max-width:860px){
+  .wti-widget { gap: 12px; padding: 12px 14px; }
+  .wti-price-val { font-size: 1.7rem; }
+  .wti-sep { display: none; }
+  .wti-sub-grid { min-width: unset; }
+}
+@media(max-width:480px){
+  .wti-price-val { font-size: 1.4rem; }
+  .wti-crisis-badge { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -680,6 +905,68 @@ footer {
       <div class="dl-note">← 4/11 イスラマバード協議（バンス副大統領出席）が最終合意の山場。合意不成立の場合、2週間後（4/22-23）に攻撃再開リスク。恒久停戦への移行が焦点。</div>
     </div>
   </div>
+  <!-- ==================== 💰 WTI リアルタイム価格ウィジェット ==================== -->
+<div class="wti-widget" id="wtiWidget" style="margin-top:12px;">
+  <div class="wti-icon-wrap">
+    <div class="wti-icon">🛢️</div>
+    <div class="wti-icon-label">WTI</div>
+  </div>
+  <div class="wti-price-main">
+    <div class="wti-price-label">WTI 原油先物 (CL=F)</div>
+    <div class="wti-price-row">
+      <span class="wti-price-val" id="wtiPrice">$--.--</span>
+      <span class="wti-price-unit">/ bbl</span>
+    </div>
+    <div class="wti-change-row">
+      <span class="wti-change neutral" id="wtiChange">
+        <span class="wti-change-arrow" id="wtiArrow">◆</span>
+        <span id="wtiChangeTxt">読み込み中...</span>
+      </span>
+      <span style="font-size:0.65rem;color:#475569;" id="wtiTime">--:--</span>
+    </div>
+    <div class="wti-gauge-wrap" id="wtiGaugeWrap" style="display:none;">
+      <div class="wti-gauge-label-row"><span>低値 $70</span><span>危機水準 $120</span></div>
+      <div class="wti-gauge-track">
+        <div class="wti-gauge-thumb" id="wtiGaugeThumb" style="left:40%;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wti-sep"></div>
+  <div class="wti-sub-grid">
+    <div class="wti-sub-item">
+      <div class="wti-sub-label">本日高値</div>
+      <div class="wti-sub-val" id="wtiHigh">--</div>
+    </div>
+    <div class="wti-sub-item">
+      <div class="wti-sub-label">本日安値</div>
+      <div class="wti-sub-val" id="wtiLow">--</div>
+    </div>
+    <div class="wti-sub-item">
+      <div class="wti-sub-label">前日終値</div>
+      <div class="wti-sub-val" id="wtiPrev">--</div>
+    </div>
+    <div class="wti-sub-item">
+      <div class="wti-sub-label">出来高</div>
+      <div class="wti-sub-val" id="wtiVol">--</div>
+    </div>
+  </div>
+  <div class="wti-sep"></div>
+  <div class="wti-crisis-badge">
+    <div class="wti-crisis-item red"    id="crisisLevel">🔴 危機価格帯</div>
+    <div class="wti-crisis-item yellow" id="crisisNote">$120超：最悪シナリオ</div>
+  </div>
+  <div class="wti-status-bar">
+    <div class="wti-status-dot error" id="wtiDot"></div>
+    <div class="wti-status-text" id="wtiStatusText">
+      <span>データ取得中...</span>　※ Yahoo Finance プロキシ経由・遅延あり
+    </div>
+    <div style="font-size:0.62rem;color:#334155;margin-left:auto;">
+      次回更新 <span id="wtiNextUpdate">60</span>秒後
+    </div>
+    <button class="wti-refresh-btn" id="wtiRefreshBtn" onclick="wtiManualRefresh()">⟳ 今すぐ更新</button>
+  </div>
+</div>
+
 <div class="container">
 
 <!-- SITUATION CARDS -->
@@ -850,7 +1137,15 @@ footer {
     <div class="stat-card"><div class="stat-num c-red">20<span style="font-size:0.9rem">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
     <div class="stat-card"><div class="stat-num c-red">+5<span style="font-size:0.9rem">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
     <div class="stat-card"><div class="stat-num c-yellow">3<span style="font-size:0.9rem">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
-    <div class="stat-card"><div class="stat-num c-red">$98<span style="font-size:0.9rem">/bbl</span></div><div class="stat-label">WTI原油価格<br>（$120超のリスク警告中）</div></div>
+    <div class="stat-card" id="wtiStatCard"
+     style="background:linear-gradient(135deg,#0a1a10,#0f2820);border-color:#1e5f3a;cursor:pointer;"
+     onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
+    <div class="stat-num c-green" id="wtiStatNum" style="font-size:1.35rem;">$--.--</div>
+    <div class="stat-label">WTI原油価格<br>
+    <span id="wtiStatChange" style="font-size:0.65rem;color:#64748b;">読込中...</span><br>
+    ▲クリックで詳細
+   </div>
+  </div>
     <div class="stat-card"><div class="stat-num c-orange">40<span style="font-size:0.9rem">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
   </div>
   <script>
@@ -1849,5 +2144,6 @@ function toggleNewsMore() {
   </div>
   <button class="news-more-btn" id="news-more-btn" onclick="toggleNewsMore()">▼ 過去の記事を見る（4件）</button>
 </div>
+</script>
 </body>
 </html>

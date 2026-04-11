@@ -577,11 +577,32 @@ footer {
         <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">海峡の今</span>
         <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">ホルムズ海峡は<strong>厳格統制下</strong>。イランが通航料を徴収し選別的に船舶を通過させている。停戦後24時間で通過確認はわずか3隻。正常化は4/11協議の進展次第。</span>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:10px;">
-        <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">次に見る</span>
-        <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">↓ <a href="#situation" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">情勢カード</a>で各プレイヤーの最新動向を確認 → <a href="#routes" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">ルート表</a>で日本向け代替輸送の現状を把握 → <a href="#scenario" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">シナリオ</a>で今後の展開を整理。</span>
-      </div>
+<div style="display:flex;align-items:flex-start;gap:10px;">
+  <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">次に見る</span>
+  <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+
+    <!-- テキストリンク行 -->
+    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">↓
+      <a href="#situation" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">情勢カード</a>で各プレイヤーの最新動向を確認 →
+      <a href="#routes" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">ルート表</a>で日本向け代替輸送の現状を把握 →
+      <a href="#scenario" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">シナリオ</a>で今後の展開を整理。
+    </span>
+
+    <!-- ボタン行 -->
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;">
+      <a href="#incident" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        🚨 速報インシデント
+      </a>
+      <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        📰 最新ニュース
+      </a>
+      <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        🌐 現地メディア視点
+      </a>
     </div>
+
+  </div>
+</div>
 
     <!-- ステータスバッジ -->
     <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
@@ -976,7 +997,7 @@ const SHIP_CONFIG = {
   </script>
 
 <!-- ROUTE TABLE -->
-<div>
+<div id="incident">
 <div style="background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%); padding: 15px; margin: 15px 0; border-radius: 4px; border-left: 5px solid #cc3333;">
   <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid rgba(255,100,100,0.2);">
     <span style="font-size:18px;">🚨</span>
@@ -1732,7 +1753,7 @@ function toggleNewsMore() {
 }
 </script>
 <!-- OSINT PANEL -->
-<div style="max-width:960px;margin:24px auto 0;padding:0 16px;">
+<div id="osint-panel" style="width:100%;margin:24px 0 0;padding:0 16px;text-align:left;">
 
   <!-- パネルタイトル -->
   <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
@@ -1799,7 +1820,7 @@ function toggleNewsMore() {
   <!-- 将来の特別解説コンテンツをここに追加 -->
 </div>
 
-<div style="max-width:960px;margin:24px auto;padding:0 16px;">
+<div style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
   <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>
   <div class="news-list" id="news-list">
 

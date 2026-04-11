@@ -1724,106 +1724,114 @@ function hardReload() {
   window.location.href = window.location.pathname + '?v=' + new Date().getTime();
 }
 function toggleNewsMore() {
-  const hidden = document.querySelectorAll('.news-hidden');
+  const moreNews = document.getElementById('more-news');
   const btn = document.getElementById('news-more-btn');
-  const isHidden = hidden[0].style.display === 'none' || hidden[0].style.display === '';
-  hidden.forEach(el => { el.style.display = isHidden ? 'flex' : 'none'; });
-  btn.textContent = isHidden ? '▲ 折りたたむ' : `▼ 過去の記事を見る（${hidden.length}件）`;
+  const isHidden = moreNews.style.display === 'none' || moreNews.style.display === '';
+  moreNews.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ 過去の記事を見る';
 }
 </script>
 
 <!-- NEWS COLUMN -->
+
+<!-- ① 特別解説（空枠・将来使用用） -->
+<div id="special-commentary" style="display:none;">
+  <!-- 将来の特別解説コンテンツをここに追加 -->
+</div>
+
 <div style="max-width:960px;margin:24px auto;padding:0 16px;">
   <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>
   <div class="news-list" id="news-list">
 
-<!-- ▼▼▼ 新しい記事はここに追加 ▼▼▼ -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/11 本日</span></div>
-  <a href="https://jp.reuters.com/world/us-politics/SWCJ2E5PPBODZBL6IGPZBLKACQ-2026-04-10/" target="_blank" rel="noopener">イスラマバード厳戒態勢・パキスタンが仲介の正念場　米イラン協議の舞台裏（Reuters）</a>
-</div>
-<div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11 本日</span></div>
-  <a href="https://www.bloomberg.com/jp/news/articles/2026-04-08/TD6T97KK3NY800" target="_blank" rel="noopener">バンス副大統領率いる米代表団、11日にイランと初の直接協議へ（Bloomberg）</a>
-</div>
-<div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/11 本日</span></div>
-  <a href="https://www.nikkei.com/article/DGXZQOGR105SM0Q6A410C2000000/" target="_blank" rel="noopener">米イラン、レバノン攻撃やウラン濃縮で溝　戦闘終結向け初交渉へ（日経）</a>
-</div>
-<div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/10 最新</span></div>
-  <a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2590563?display=1" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・イスラエルはレバノンと直接交渉へ</a>
-</div>
-<div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/10</span></div>
-  <a href="https://topics.smt.docomo.ne.jp/amp/article/afpbb/world/afpbb-3630497" target="_blank" rel="noopener">バンス米副大統領がイラン交渉主導・11日イスラマバードで初の対面協議</a>
-</div>
-         <div class="news-item">
-      <div class="news-meta">
-        <span class="news-badge badge-fnn">テレ東BIZ</span>
-        <span class="news-date">4/9 朝</span>
-      </div>
-      <a href="https://news.tv-asahi.co.jp/news_international/articles/000497327.html" target="_blank" rel="noopener">イスラエル ヒズボラ標的にレバノンで最大規模攻撃 254人死亡 停戦合意数時間後</a>
+    <!-- ▼▼▼ 新しい記事はここに追加 ▼▼▼ -->
+
+    <!-- 常時表示：トップ3件 -->
+    <div class="news-item">
+      <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/11 本日</span></div>
+      <a href="https://jp.reuters.com/world/us-politics/SWCJ2E5PPBODZBL6IGPZBLKACQ-2026-04-10/" target="_blank" rel="noopener">イスラマバード厳戒態勢・パキスタンが仲介の正念場　米イラン協議の舞台裏（Reuters）</a>
     </div>
     <div class="news-item">
-      <div class="news-meta">
-        <span class="news-badge badge-reuters">Reuters</span>
-        <span class="news-date">4/9 朝</span>
-      </div>
-      <a href="https://jp.reuters.com/world/us/YOWC4EFCYZIYZH5V5HBJ6Z32CE-2026-04-08/" target="_blank" rel="noopener">イスラエルのレバノン空爆「恐ろしい」国連が停戦後の大規模攻撃を非難</a>
+      <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11 本日</span></div>
+      <a href="https://www.bloomberg.com/jp/news/articles/2026-04-08/TD6T97KK3NY800" target="_blank" rel="noopener">バンス副大統領率いる米代表団、11日にイランと初の直接協議へ（Bloomberg）</a>
     </div>
     <div class="news-item">
-      <div class="news-meta">
-        <span class="news-badge badge-fnn">FNN</span>
-        <span class="news-date">4/9 朝</span>
-      </div>
-      <a href="https://www.fnn.jp/articles/-/1027614" target="_blank" rel="noopener">レバノン攻撃続けるイスラエル ネタニヤフ首相「いつでも戦闘に戻る」</a>
+      <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/11 本日</span></div>
+      <a href="https://www.nikkei.com/article/DGXZQOGR105SM0Q6A410C2000000/" target="_blank" rel="noopener">米イラン、レバノン攻撃やウラン濃縮で溝　戦闘終結向け初交渉へ（日経）</a>
     </div>
-    <div class="news-item">
-      <div class="news-meta">
-        <span class="news-badge badge-afp">AFP</span>
-        <span class="news-date">4/8 最新</span>
+
+    <!-- 折りたたみ：4件目以降 -->
+    <div id="more-news" style="display:none;">
+
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/10 最新</span></div>
+        <a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2590563?display=1" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・イスラエルはレバノンと直接交渉へ</a>
       </div>
-      <a href="https://www.afpbb.com/articles/-/3630348" target="_blank" rel="noopener">米・イラン・同盟国が「レバノン含むあらゆる場所」で即時停戦合意 パキスタン首相が公式発表</a>
-    </div>
-    <div class="news-item">
-      <div class="news-meta">
-        <span class="news-badge badge-reuters">Reuters</span>
-        <span class="news-date">4/8 朝</span>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/10</span></div>
+        <a href="https://topics.smt.docomo.ne.jp/amp/article/afpbb/world/afpbb-3630497" target="_blank" rel="noopener">バンス米副大統領がイラン交渉主導・11日イスラマバードで初の対面協議</a>
       </div>
-      <a href="https://jp.reuters.com/world/us/LQ5WWJP7RJIXBKOOLDJ62H2HGU-2026-04-07/" target="_blank" rel="noopener">イランへの攻撃「2週間停止で合意」トランプ氏が表明・WTI急落▼17%→$97台</a>
-    </div>
-    <div class="news-item news-hidden">
-      <div class="news-meta">
-        <span class="news-badge badge-bb">Bloomberg</span>
-        <span class="news-date">4/7 朝</span>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-fnn">テレ東BIZ</span><span class="news-date">4/9 朝</span></div>
+        <a href="https://news.tv-asahi.co.jp/news_international/articles/000497327.html" target="_blank" rel="noopener">イスラエル ヒズボラ標的にレバノンで最大規模攻撃 254人死亡 停戦合意数時間後</a>
       </div>
-      <a href="https://www.bloomberg.com/jp/news/articles/2026-04-07/TD4U2AT9NJLS00" target="_blank" rel="noopener">トランプ氏、期限前に「激しい交渉」－パキスタンが延長要請・水面下で停戦協議</a>
-    </div>
-    <div class="news-item news-hidden">
-      <div class="news-meta">
-        <span class="news-badge badge-arab">Arab News</span>
-        <span class="news-date">4/7 前日</span>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/9 朝</span></div>
+        <a href="https://jp.reuters.com/world/us/YOWC4EFCYZIYZH5V5HBJ6Z32CE-2026-04-08/" target="_blank" rel="noopener">イスラエルのレバノン空爆「恐ろしい」国連が停戦後の大規模攻撃を非難</a>
       </div>
-      <a href="https://www.arabnews.jp/article/middle-east/article_173721/" target="_blank" rel="noopener">イラン、停戦提案を拒否 トランプ大統領は「十分ではない」と発言</a>
-    </div>
-    <div class="news-item news-hidden">
-      <div class="news-meta">
-        <span class="news-badge badge-reuters">Reuters</span>
-        <span class="news-date">3/16</span>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-fnn">FNN</span><span class="news-date">4/9 朝</span></div>
+        <a href="https://www.fnn.jp/articles/-/1027614" target="_blank" rel="noopener">レバノン攻撃続けるイスラエル ネタニヤフ首相「いつでも戦闘に戻る」</a>
       </div>
-      <a href="https://jp.reuters.com/markets/japan/DB2YZY3V35N45KEFNCL3VO324A-2026-03-16/" target="_blank" rel="noopener">中東からの原油輸出、ホルムズ海峡封鎖で最低でも日量60%減少</a>
-    </div>
-    <div class="news-item news-hidden">
-      <div class="news-meta">
-        <span class="news-badge badge-toyo">東洋経済</span>
-        <span class="news-date">4/5</span>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-afp">AFP</span><span class="news-date">4/8 最新</span></div>
+        <a href="https://www.afpbb.com/articles/-/3630348" target="_blank" rel="noopener">米・イラン・同盟国が「レバノン含むあらゆる場所」で即時停戦合意 パキスタン首相が公式発表</a>
       </div>
-      <a href="https://toyokeizai.net/articles/-/937516" target="_blank" rel="noopener">ホルムズ海峡封鎖で国内の石油化学産業は減産の動き、停戦機運あっても先行き不透明</a>
-    </div>
-  </div>
-  <button class="news-more-btn" id="news-more-btn" onclick="toggleNewsMore()">▼ 過去の記事を見る（4件）</button>
-</div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/8 朝</span></div>
+        <a href="https://jp.reuters.com/world/us/LQ5WWJP7RJIXBKOOLDJ62H2HGU-2026-04-07/" target="_blank" rel="noopener">イランへの攻撃「2週間停止で合意」トランプ氏が表明・WTI急落▼17%→$97台</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-bb">Bloomberg</span><span class="news-date">4/7 朝</span></div>
+        <a href="https://www.bloomberg.com/jp/news/articles/2026-04-07/TD4U2AT9NJLS00" target="_blank" rel="noopener">トランプ氏、期限前に「激しい交渉」－パキスタンが延長要請・水面下で停戦協議</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-arab">Arab News</span><span class="news-date">4/7 前日</span></div>
+        <a href="https://www.arabnews.jp/article/middle-east/article_173721/" target="_blank" rel="noopener">イラン、停戦提案を拒否 トランプ大統領は「十分ではない」と発言</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">3/16</span></div>
+        <a href="https://jp.reuters.com/markets/japan/DB2YZY3V35N45KEFNCL3VO324A-2026-03-16/" target="_blank" rel="noopener">中東からの原油輸出、ホルムズ海峡封鎖で最低でも日量60%減少</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-toyo">東洋経済</span><span class="news-date">4/5</span></div>
+        <a href="https://toyokeizai.net/articles/-/937516" target="_blank" rel="noopener">ホルムズ海峡封鎖で国内の石油化学産業は減産の動き、停戦機運あっても先行き不透明</a>
+      </div>
+
+      <!-- サウジ関連記事（移設） -->
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-reuters">NRI 野村総研</span><span class="news-date">2026/03/25</span></div>
+        <a href="https://www.nri.com/jp/media/column/kiuchi/20260325.html" target="_blank" rel="noopener">🇸🇦 サウジアラビアとホルムズ非経由ルート — ヤンブー港・パイプライン・日本への影響を解説</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-bloomberg">MarketScreener</span><span class="news-date">2026/04/02</span></div>
+        <a href="https://hk.marketscreener.com/news/saudi-crude-import-prices-to-japan-surge-80-amid-hormuz-supply-disruptions-ce7e51dcdd8cff20" target="_blank" rel="noopener">🇸🇦 日本向けサウジ原油輸入価格が80%急騰 — ホルムズ供給障害の直撃</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">2026/03/26</span></div>
+        <a href="https://www.bloomberg.com/news/articles/2026-03-26/saudi-oil-sales-to-top-asia-buyers-to-drop-on-hormuz-disruptions" target="_blank" rel="noopener">🌏 サウジ、アジア向け販売量を削減 — ホルムズ混乱で日中韓への供給が低下</a>
+      </div>
+      <div class="news-item">
+        <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">2026/03/10</span></div>
+        <a href="https://www.reuters.com/business/energy/consequences-global-oil-markets-could-be-catastrophic-if-hormuz-closure-2026-03-10/" target="_blank" rel="noopener">⚠️ アラムコCEO「ホルムズ閉鎖継続なら石油市場に壊滅的影響」</a>
+      </div>
+
+    </div><!-- /#more-news -->
+
+    <button class="news-more-btn" id="news-more-btn" onclick="toggleNewsMore()">▼ 過去の記事を見る</button>
+
+  </div><!-- /#news-list -->
+</div><!-- /NEWS COLUMN -->
+
 <!-- SOURCE & UPDATE LOG -->
 <div style="max-width:960px;margin:32px auto 0;padding:0 16px 40px;">
   <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">

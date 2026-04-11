@@ -559,7 +559,12 @@ footer {
 
     <!-- タイトル -->
     <div style="font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:#38bdf8;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(56,189,248,0.15);">
-      🗺️ ホルムズ海峡危機マップ 2026 &nbsp;―&nbsp; 30秒で全体像を把握
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+  <span>🗺️ ホルムズ海峡危機マップ 2026 &nbsp;―&nbsp; 30秒で全体像を把握</span>
+  <a href="https://x.com/hormuz_map_jp" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#94a3b8;font-size:0.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;">
+    𝕏 このマップの更新情報はXで発信中
+  </a>
+</div>
     </div>
 
     <!-- 3行サマリー -->
@@ -1134,6 +1139,45 @@ const map = L.map('map', {
   zoomControl: true,
   attributionControl: true
 });
+// 日本製油所サマリーマーカー
+const japanRefineryMarker = L.marker([34.5, 138.5], {
+  icon: L.divIcon({
+    className: '',
+    html: `<div style="
+      background: linear-gradient(135deg, #1e3a5f, #0f2027);
+      border: 2px solid #38bdf8;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 12px rgba(56,189,248,0.5);
+      cursor: pointer;
+    ">🏭</div>`,
+    iconSize: [44, 44],
+    iconAnchor: [22, 22],
+    popupAnchor: [0, -24]
+  })
+}).addTo(map);
+
+japanRefineryMarker.bindPopup(`
+  <div style="font-family:'Noto Sans JP',sans-serif;min-width:220px;padding:4px;">
+    <div style="font-size:0.85rem;font-weight:800;color:#38bdf8;margin-bottom:6px;">🇯🇵 日本の受入拠点</div>
+    <div style="font-size:0.75rem;color:#cbd5e1;line-height:1.8;margin-bottom:6px;">
+      <strong style="color:#e2e8f0;">石油備蓄：</strong>209〜214日分（国家＋民間）<br>
+      <strong style="color:#e2e8f0;">中東依存度：</strong>原油輸入の約95%<br>
+      <strong style="color:#e2e8f0;">ルートA着：</strong>ENEOS向け2船 到着済み ✅<br>
+      <strong style="color:#e2e8f0;">ルートB着：</strong>3/28 太陽石油（愛媛）✅<br>
+      <strong style="color:#e2e8f0;">ルートC着：</strong>4/25 予定 🔄
+    </div>
+    <button onclick="document.getElementById('refinery-modal').style.display='flex'"
+      style="width:100%;background:linear-gradient(135deg,#1e40af,#1e3a5f);border:1px solid #38bdf8;color:#7dd3fc;font-size:0.78rem;font-weight:700;padding:7px 0;border-radius:6px;cursor:pointer;letter-spacing:0.03em;">
+      📋 製油所・備蓄基地の詳細を見る →
+    </button>
+  </div>
+`, { maxWidth: 260 });
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap contributors © CARTO'}).addTo(map);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',{
@@ -1221,7 +1265,7 @@ function commonEast(latOffset) {
     [14.0 + latOffset,      118.0],
     [24.0 + latOffset,      126.0],
     [34.5 + latOffset,      136.0],
-    [35.5,                  139.8],  
+    [34.5,                  138.5],  
   ];
 }
 
@@ -1258,7 +1302,7 @@ const routeB = [
 ];
 
 const routeC_pacific = [
-  [35.5,139.8],
+  [34.5,138.5],
   [38.0,145.0],[42.0,152.0],[48.0,160.0],
   [54.0,170.0],[57.0,180.0],
   [58.0,190.0],[60.0,200.0],[61.2,210.0],
@@ -1270,7 +1314,7 @@ const routeC_brazil = [
   [-30.0,40.0],[-20.0,55.0],[-10.0,65.0],
   [0.0,73.0],[4.0,80.0],[2.5,92.0],
   [1.3,103.8],[5.0,110.0],
-  [14.0,118.0],[24.0,126.0],[34.5,136.0],[35.5,139.8]
+  [14.0,118.0],[24.0,126.0],[34.5,136.0],[34.5,138.5]
 ];
 
 
@@ -1367,18 +1411,6 @@ L.marker([2.5,104.0],{icon:mkIcon('🔄','#064e3b',30)}).addTo(map).bindPopup(`
 L.marker([1.5,103.5],{icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#7dd3fc">🚢 マラッカ海峡</div>
   <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。</div>`);
-
-L.marker([35.5,139.8],{icon:L.divIcon({
-  html:`<div style="width:42px;height:42px;background:#1d4ed8;border:2px solid #93c5fd;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 16px rgba(59,130,246,0.8);">🇯🇵</div>`,
-  iconSize:[42,42],iconAnchor:[21,21],className:''
-})}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">🇯🇵 日本（東京湾）</div>
-  <div class="p-body"><strong>石油備蓄：</strong>240日分（国家＋民間＋産油国）<br>
-  <strong>ホルムズ依存度：</strong>原油輸入の9割超（封鎖前）<br>
-  <strong>ルートB着：</strong>3/28 太陽石油（愛媛）✅<br>
-  <strong>ルートA着：</strong>4/5 本日（ENEOS向け）⏳<br>
-  <strong>ルートC着：</strong>4/25 予定</div>
-  <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">最終目的地</span>`);
 
 L.marker([61.2,210.0],{icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#a78bfa">🇺🇸 米国（アラスカ）</div>
@@ -1794,6 +1826,109 @@ function toggleNewsMore() {
       石油備蓄日数はIEA基準による推定値です（国家備蓄＋民間備蓄＋産油国在庫の合計）。／
       通航量（平常時比14%等）はBloomberg・Reuters報道およびShiptrackingデータの分析に基づく推定値です。／
       シナリオ記述は編集部による分析であり、確定的な予測ではありません。
+    </div>
+
+  </div>
+</div>
+<!-- 日本製油所モーダル -->
+<div id="refinery-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px 0;">
+  <div style="background:linear-gradient(135deg,#0f2027,#1a2a3a);border:1px solid rgba(56,189,248,0.3);border-radius:14px;max-width:780px;width:95%;margin:auto;padding:28px 24px;position:relative;">
+
+    <!-- 閉じるボタン -->
+    <button onclick="document.getElementById('refinery-modal').style.display='none'"
+      style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#94a3b8;font-size:1rem;width:32px;height:32px;border-radius:50%;cursor:pointer;">✕</button>
+
+    <!-- タイトル -->
+    <div style="font-size:1rem;font-weight:800;color:#38bdf8;margin-bottom:6px;">🛢️ 中東OILタンカー — 日本の受入拠点</div>
+    <div style="font-size:0.75rem;color:#64748b;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.08);">製油所19か所・国家備蓄基地10か所（2025年3月現在）</div>
+
+    <!-- 概要 -->
+    <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:0.8rem;color:#94a3b8;line-height:1.7;">
+      中東からの原油は<strong style="color:#e2e8f0;">ホルムズ海峡→インド洋→マラッカ海峡→日本</strong>（約20日・6,500海里）のルートで輸送。VLCCが全国各地の製油所・備蓄基地へ<strong style="color:#e2e8f0;">分散直送</strong>される。
+    </div>
+
+    <!-- 製油所エリア別 -->
+    <div style="font-size:0.78rem;font-weight:800;color:#7dd3fc;margin-bottom:10px;letter-spacing:0.05em;">📍 主要製油所（エリア別）</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">
+
+      <!-- 北海道・東北 -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+        <div style="font-size:0.72rem;font-weight:700;color:#fbbf24;margin-bottom:8px;">🗾 北海道・東北</div>
+        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+          出光興産 北海道製油所（苫小牧）14万bbl/日<br>
+          ENEOS 仙台製油所（仙台）14.5万bbl/日
+        </div>
+      </div>
+
+      <!-- 関東 -->
+      <div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:12px;">
+        <div style="font-size:0.72rem;font-weight:700;color:#38bdf8;margin-bottom:8px;">🏙️ 関東（最大集積地）</div>
+        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+          ENEOS 川崎製油所 24.9万bbl/日<br>
+          鹿島石油 鹿島製油所 21万bbl/日<br>
+          出光興産 千葉事業所 19.5万bbl/日<br>
+          ENEOS 根岸製油所 15.3万bbl/日<br>
+          富士石油 袖ケ浦製油所 14.3万bbl/日<br>
+          コスモ石油 千葉製油所 17.7万bbl/日<br>
+          大阪国際石油精製 千葉 12.9万bbl/日<br>
+          東亜石油 京浜製油所 7万bbl/日
+        </div>
+      </div>
+
+      <!-- 中部 -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+        <div style="font-size:0.72rem;font-weight:700;color:#a78bfa;margin-bottom:8px;">🏭 中部</div>
+        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+          昭和四日市石油 四日市 25.5万bbl/日 ★国内最大級<br>
+          出光興産 愛知事業所 16.5万bbl/日<br>
+          コスモ石油 四日市製油所 8.6万bbl/日
+        </div>
+      </div>
+
+      <!-- 近畿・中国 -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+        <div style="font-size:0.72rem;font-weight:700;color:#34d399;margin-bottom:8px;">🌊 近畿・中国</div>
+        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+          ENEOS 水島製油所（倉敷）35万bbl/日 ★国内最大<br>
+          コスモ石油 堺製油所 10万bbl/日<br>
+          ENEOS 堺製油所 14.1万bbl/日<br>
+          ENEOS 麻里布製油所（山口）12.8万bbl/日
+        </div>
+      </div>
+
+      <!-- 四国・九州 -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+        <div style="font-size:0.72rem;font-weight:700;color:#fb923c;margin-bottom:8px;">🌅 四国・九州</div>
+        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+          太陽石油 四国事業所（菊間）13.8万bbl/日<br>
+          ※2026/3 代替ルート初到着地点<br>
+          ENEOS 大分製油所 13.6万bbl/日<br>
+          ENEOS 喜入原油基地（鹿児島）※VLCC直接入港・積替拠点
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 国家備蓄基地 -->
+    <div style="font-size:0.78rem;font-weight:800;color:#7dd3fc;margin-bottom:10px;letter-spacing:0.05em;">🏛️ 国家石油備蓄基地（JOGMEC管轄）</div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;margin-bottom:20px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:4px;font-size:0.72rem;color:#94a3b8;line-height:1.9;">
+        <div>🔹 苫小牧東部（北海道）地上タンク</div>
+        <div>🔹 むつ小川原（青森）地上タンク</div>
+        <div>🔹 久慈（岩手）水封式地下岩盤</div>
+        <div>🔹 秋田（秋田）地上・地下岩盤</div>
+        <div>🔹 福井（福井）地下岩盤</div>
+        <div>🔹 菊間（愛媛）地下岩盤</div>
+        <div>🔹 白島（福岡沖）洋上タンク</div>
+        <div>🔹 上五島（長崎沖）洋上タンク</div>
+        <div>🔹 串木野（鹿児島）地上タンク</div>
+        <div>🔹 志布志（鹿児島）地上タンク</div>
+      </div>
+    </div>
+
+    <!-- 注記 -->
+    <div style="font-size:0.7rem;color:#475569;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
+      ⚠️ 処理能力は石油連盟公式データ（2025年3月現在）。bbl/日＝バレル/日。国家備蓄は約146日分、民間備蓄含む合計は約209〜214日分（2026年4月時点）。
     </div>
 
   </div>

@@ -69,50 +69,6 @@ body {
     font-size: 15px !important;
   }
 }
-
-/* ===== ルートテーブル列幅最適化 ===== */
-@media (max-width: 768px) {
-  .rtable {
-    font-size: 13px !important;
-    width: 100% !important;
-    table-layout: fixed;
-  }
-  /* ルート列（狭め） */
-  .rtable th:nth-child(1),
-  .rtable td:nth-child(1) {
-    width: 18% !important;
-    word-break: break-all;
-  }
-  /* 輸送能力列（狭め） */
-  .rtable th:nth-child(2),
-  .rtable td:nth-child(2) {
-    width: 14% !important;
-    word-break: break-all;
-  }
-  /* 現況・実績列（広め） */
-  .rtable th:nth-child(3),
-  .rtable td:nth-child(3) {
-    width: 36% !important;
-  }
-  /* 主なリスク列（中） */
-  .rtable th:nth-child(4),
-  .rtable td:nth-child(4) {
-    width: 20% !important;
-  }
-  /* ステータス列（狭め） */
-  .rtable th:nth-child(5),
-  .rtable td:nth-child(5) {
-    width: 12% !important;
-    text-align: center;
-    word-break: break-all;
-  }
-  /* セル内余白を詰める */
-  .rtable th, .rtable td {
-    padding: 8px 5px !important;
-    vertical-align: top;
-  }
-}
-
 /* ===== 情勢カード余白最適化 ===== */
 @media (max-width: 768px) {
   .sit-grid {
@@ -544,7 +500,22 @@ footer {
 .label-analysis { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.4); color:#fbbf24; }
 .label-scenario { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.4); color:#d8b4fe; }
 .label-unconfirmed { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(100,116,139,0.2); border:1px solid rgba(100,116,139,0.4); color:#94a3b8; }
+/* ===== ルートテーブル列幅最適化 ===== */
+.rtable { table-layout: fixed !important; }
+.rtable th:nth-child(1), .rtable td:nth-child(1) { width: 18%; }
+.rtable th:nth-child(2), .rtable td:nth-child(2) { width: 12%; }
+.rtable th:nth-child(3), .rtable td:nth-child(3) { width: 35%; }
+.rtable th:nth-child(4), .rtable td:nth-child(4) { width: 22%; }
+.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 13%; }
 
+@media (max-width: 768px) {
+  .rtable { font-size: 11px !important; }
+  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 14% !important; word-break: break-all; padding: 5px 3px !important; }
+  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 10% !important; word-break: break-all; padding: 5px 3px !important; }
+  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 42% !important; padding: 5px 4px !important; }
+  .rtable th:nth-child(4), .rtable td:nth-child(4) { width: 22% !important; word-break: break-all; padding: 5px 3px !important; }
+  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 12% !important; text-align: center; word-break: break-all; padding: 5px 2px !important; }
+}
 </style>
 </head>
 <body>
@@ -1021,6 +992,14 @@ const SHIP_CONFIG = {
     <div class="sec-title">🚢 全ルート現況サマリー（2026年4月5日時点）</div>
     <div class="rtable-wrap">
     <table class="rtable">
+    <colgroup>
+    <col class="col-route">
+    <col class="col-capacity">
+    <col class="col-status">
+    <col class="col-risk">
+    <col class="col-badge">
+    </colgroup>
+  <thead>
       <thead>
         <tr>
           <th style="width:4%"></th>

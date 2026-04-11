@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホルムズ海峡危機マップ｜通航状況・代替ルート・市場波及</title>
 <meta name="description" content="ホルムズ海峡危機の通航状況、代替ルート、原油輸送・海運・市場への波及を地図で整理。中東情勢を煽らず、構造と論点をわかりやすく解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://yattanda.github.io/hormuz-map/">
 
 <!-- OGP -->
@@ -27,6 +30,106 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <style>
+/* ===== フォント・基本設定 ===== */
+* {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== 余白最適化（スマホ優先） ===== */
+body {
+  margin: 0;
+  padding: 0 10px;
+}
+
+/* ===== コンテナ幅をフル活用 ===== */
+.container, [style*="max-width:960px"], [style*="max-width: 960px"] {
+  max-width: 100% !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* ===== 全体文字サイズを1-2pt拡大 ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  p, li, td, div {
+    font-size: 14px;
+  }
+  .s-body {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+  .s-title {
+    font-size: 15px !important;
+  }
+  .sec-title {
+    font-size: 15px !important;
+  }
+}
+
+/* ===== ルートテーブル列幅最適化 ===== */
+@media (max-width: 768px) {
+  .rtable {
+    font-size: 13px !important;
+    width: 100% !important;
+    table-layout: fixed;
+  }
+  /* ルート列（狭め） */
+  .rtable th:nth-child(1),
+  .rtable td:nth-child(1) {
+    width: 18% !important;
+    word-break: break-all;
+  }
+  /* 輸送能力列（狭め） */
+  .rtable th:nth-child(2),
+  .rtable td:nth-child(2) {
+    width: 14% !important;
+    word-break: break-all;
+  }
+  /* 現況・実績列（広め） */
+  .rtable th:nth-child(3),
+  .rtable td:nth-child(3) {
+    width: 36% !important;
+  }
+  /* 主なリスク列（中） */
+  .rtable th:nth-child(4),
+  .rtable td:nth-child(4) {
+    width: 20% !important;
+  }
+  /* ステータス列（狭め） */
+  .rtable th:nth-child(5),
+  .rtable td:nth-child(5) {
+    width: 12% !important;
+    text-align: center;
+    word-break: break-all;
+  }
+  /* セル内余白を詰める */
+  .rtable th, .rtable td {
+    padding: 8px 5px !important;
+    vertical-align: top;
+  }
+}
+
+/* ===== 情勢カード余白最適化 ===== */
+@media (max-width: 768px) {
+  .sit-grid {
+    gap: 12px !important;
+  }
+  .sit-card {
+    padding: 14px 14px !important;
+  }
+}
+
+/* ===== ニュースリスト余白最適化 ===== */
+@media (max-width: 768px) {
+  .news-item {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+}
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   background:#071828;
@@ -450,7 +553,7 @@ footer {
   <h1>🗺️ <span style="color: #7dd3fc; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px;">ホルムズ海峡危機マップ</span><span style="color: #94a3b8; font-size: 1.0rem; font-weight: 400; margin-left: 12px;">通航状況・代替ルート・市場波及</span></h1>
   <div class="badges">
     <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-    <span class="badge-item badge-date">📅 2026年4月9日11:30更新</span>
+    <span class="badge-item badge-date">📅 2026年4月11日朝更新</span>
     <button onclick="hardReload()" style="
      background:rgba(56,189,248,0.15);
      border:1px solid #38bdf8;

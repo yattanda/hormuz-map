@@ -601,36 +601,41 @@ footer {
       <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
         🌐 現地メディア視点
       </a>
-      <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-        🔬 特別解説
-      </a>
-      <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:#fca5a5;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-        💣 機雷問題
-      </a>
-      <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.35);color:#fbbf24;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-        🛢️ サウジ危機
-      </a>
-    </div>
 
-  </div>
 </div>
-
     <!-- ステータスバッジ -->
     <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
       <span style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#f87171;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">🔴 停戦は脆弱</span>
       <span style="background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ 海峡は厳格統制下</span>
       <span style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">📅 4/11 協議進展が焦点</span>
       <span style="background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.3);color:#d8b4fe;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">💹 WTI $99台（反発中）</span>
-
       <!-- 地図リンクボタン -->
       <a href="#map" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%);border:1px solid rgba(56,189,248,0.5);color:#7dd3fc;font-size:0.9rem;font-weight:800;padding:7px 18px;border-radius:24px;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;white-space:nowrap;">
         🗺️ 地図はここ &nbsp;→
       </a>
     </div>
 
-  </div>
-</div>
+    <!-- 特別解説グループ -->
+    <div style="margin-top:16px;border:1.5px solid rgba(248,113,113,0.45);border-radius:12px;padding:12px 16px;background:rgba(239,68,68,0.04);">
+      <div style="font-size:0.95rem;font-weight:800;color:#ff6b6b;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:7px;">
+        <span style="font-size:1.1rem;">🔬</span> 特別解説コラム
+        <span style="font-size:0.68rem;font-weight:600;color:#94a3b8;margin-left:4px;">― 深掘り分析記事</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+          💣 機雷問題
+        </a>
+        <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.35);color:#fbbf24;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+          🛢️ サウジ危機
+        </a>
+        <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+          🌊 ルートC・アラスカ
+        </a>
+      </div>
+    </div>
 
+  </div><!-- /30秒カラム内側 -->
+</div><!-- /30秒カラム外側 -->
 <!-- SITUATION CARDS -->
 <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div>
 <div id="situation" class="sit-grid"></div>
@@ -1972,6 +1977,103 @@ function toggleNewsMore() {
   </div><!-- /#saudi-detail -->
 
 </div><!-- /サウジコラムカード -->
+<!-- ルートC・アラスカ原油コラムカード -->
+<div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+
+  <!-- タイトル行 -->
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span style="font-size:1.2rem;">🌊</span>
+    <div style="flex:1;min-width:0;">
+      <div style="font-size:0.85rem;font-weight:800;color:#38bdf8;line-height:1.4;">ルートC・アラスカ原油の現実</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</div>
+    </div>
+    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/12</span>
+  </div>
+
+  <!-- 詳細ボタン -->
+  <button onclick="toggleSpecial('alaska-detail', this)"
+    style="margin-top:12px;width:100%;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.3);border-radius:6px;color:#38bdf8;font-size:0.78rem;font-weight:700;padding:7px 0;cursor:pointer;letter-spacing:0.03em;">
+    ▼ 詳細を読む
+  </button>
+
+  <!-- 詳細本文（初期非表示） -->
+  <div id="alaska-detail" style="display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(56,189,248,0.15);">
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:0.82rem;color:#cbd5e1;line-height:1.75;">
+
+      <!-- セクション① -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#38bdf8;margin-bottom:5px;">📌 なぜ今「ルートC」と「アラスカ」が注目されるのか</div>
+        <p>日本が直面しているのは単なるホルムズ封鎖だけではない。4月9日のサウジ東西パイプライン攻撃により、<strong style="color:#e2e8f0;">ルートA（ヤンブー経由）も標的になった</strong>。ルートB（フジャイラ経由）もUAEへの攻撃リスクが常にある。つまり<strong style="color:#f87171;">中東経由の全ルートが同時に遮断される「二重・三重封鎖リスク」</strong>が現実味を帯びている。この構造的リスクが、中東に依存しない調達先として<strong style="color:#38bdf8;">北米（アラスカ・メキシコ湾岸）</strong>と<strong style="color:#38bdf8;">喜望峰迂回ルート</strong>への期待を一気に高めている。</p>
+      </div>
+
+      <!-- セクション② -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#34d399;margin-bottom:5px;">🇺🇸 アラスカ原油の「強み」</div>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-bottom:8px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span><strong style="color:#e2e8f0;">輸送距離が短い</strong>：米本土（メキシコ湾岸）より約2週間短縮。アラスカ〜日本は太平洋を直行で約10〜15日</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span><strong style="color:#e2e8f0;">地政学リスクゼロ</strong>：中東・ホルムズ・スエズ・マラッカ海峡を一切経由しない</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span><strong style="color:#e2e8f0;">日米関係の強化</strong>：3月の日米首脳会談でアラスカ産原油増産への日本投資を表明。対米貿易摩擦緩和にも寄与</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>高市首相が4月7日「<strong style="color:#e2e8f0;">5月分の米国からの輸入が増加</strong>」と表明。Bloomberg（4/8）はメキシコ湾岸からのタンカーが急増と報道</span></div>
+        </div>
+      </div>
+
+      <!-- セクション③ -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#f87171;margin-bottom:5px;">🚧 アラスカ原油の「現実の課題」4点</div>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;display:flex;flex-direction:column;gap:8px;">
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:3px;"><span style="color:#f87171;font-weight:700;">① 港湾インフラ不足</span></div>
+            <p style="font-size:0.78rem;color:#94a3b8;margin-left:14px;">アラスカにはVLCC（大型タンカー）が直接入港できる港が存在しない。小型タンカーで米国内の別港まで運び、そこでVLCCに積み替える「ライタリング」が必要で、コストと時間が増大する。日本政府は積み出し設備への投資を検討中だが整備には数年を要する。</p>
+          </div>
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:3px;"><span style="color:#f87171;font-weight:700;">② 原油の質の問題</span></div>
+            <p style="font-size:0.78rem;color:#94a3b8;margin-left:14px;">アラスカ産原油（ANS：Alaska North Slope）は<strong style="color:#e2e8f0;">金属成分（バナジウム・ニッケル）が多く</strong>、日本の製油所の既存設備では除去が難しい。石油連盟・木藤会長が「精製時の技術面で課題がある」と明言。既存設備の改修または新規投資が必要となる。</p>
+          </div>
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:3px;"><span style="color:#f87171;font-weight:700;">③ 短期的な供給量の限界</span></div>
+            <p style="font-size:0.78rem;color:#94a3b8;margin-left:14px;">現状で確保できる量は日本の需要の<strong style="color:#e2e8f0;">1割程度</strong>（東洋経済、4/2）にとどまる。アラスカの増産には採掘設備・パイプライン整備を含め数年単位の投資が必要で、即戦力にはなりにくい。</p>
+          </div>
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:3px;"><span style="color:#f87171;font-weight:700;">④ 価格プレミアムの急騰</span></div>
+            <p style="font-size:0.78rem;color:#94a3b8;margin-left:14px;">需要急増により2026年のANSプレミアムは<strong style="color:#e2e8f0;">史上最高の$8.30/バレル超</strong>に達している。中東産より割安だったメリットが縮小しつつある。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- セクション④ -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#fb923c;margin-bottom:5px;">🌍 喜望峰ルート（メキシコ湾岸・ブラジル経由）の現実</div>
+        <p>アラスカの港湾問題を回避するため、<strong style="color:#e2e8f0;">米メキシコ湾岸からの原油をインド洋・喜望峰経由で日本に輸送</strong>するルートも動き始めている。ブラジル産原油（プレソルト層の軽質油）も中長期の代替本命として注目されている。しかし以下の課題がある。</p>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#fb923c;font-weight:700;">⚠️</span><span><strong style="color:#e2e8f0;">輸送日数：約100日（往復）</strong>。通常の中東ルート（約40日）の約2.5倍</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fb923c;font-weight:700;">⚠️</span><span><strong style="color:#e2e8f0;">海上保険料：戦前比最大4倍超</strong>。VLCC1隻1回で200〜300万ドルの追加コスト</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fb923c;font-weight:700;">⚠️</span><span>カザフスタン産（カスピ海）は地中海〜喜望峰経由で<strong style="color:#e2e8f0;">約50日</strong>だがコスト面が課題（INPEX検討中）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">📌</span><span>ブラジル産は質が良く安定供給が見込めるが、<strong style="color:#e2e8f0;">日本到着は早くて2026年後半以降</strong>の見込み</span></div>
+        </div>
+      </div>
+
+      <!-- セクション⑤ -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#a78bfa;margin-bottom:5px;">🇯🇵 日本の現在地と戦略的選択</div>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>政府は代替ルート活用で<strong style="color:#e2e8f0;">「来年の年明けまで原油確保のめど」</strong>を立てた（TBS、4/5）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>国家備蓄45日分放出継続中・総備蓄<strong style="color:#e2e8f0;">254日分</strong>で短期危機は回避</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>短期確保できる非中東産原油は需要の<strong style="color:#e2e8f0;">1割程度</strong>にとどまる構造的限界</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>輸入価格の80%超急騰がガソリン・製品価格に波及。石油化学産業は減産加速</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">🔴</span><span>アラスカ投資は<strong style="color:#e2e8f0;">「中長期戦略」</strong>であり即戦力にはならない。今夏〜秋が最大の正念場</span></div>
+        </div>
+      </div>
+
+      <!-- まとめ -->
+      <div style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2);border-radius:6px;padding:10px 14px;margin-top:4px;">
+        <div style="font-size:0.75rem;font-weight:800;color:#38bdf8;margin-bottom:5px;">📋 結論</div>
+        <p style="font-size:0.78rem;">アラスカ・北米ルートは「答え」ではなく「出口戦略の入口」に過ぎない。港湾整備・精製技術・供給量・コストの4つの壁がある中、日本が取れる現実的な手は<strong style="color:#e2e8f0;">備蓄の活用で時間を買いながら、複数ルートを並列で整備する</strong>ことだ。ホルムズ危機は日本の94%中東依存という構造的脆弱性を世界に晒した。<strong style="color:#fbbf24;">この危機を「脱中東依存」への転換点にできるかが、日本のエネルギー安全保障の真の試練となっている。</strong></p>
+      </div>
+
+    </div>
+  </div><!-- /#alaska-detail -->
+
+</div><!-- /ルートCコラムカード -->
 
   </div>
 </div>

@@ -543,12 +543,9 @@ footer {
   </div>
 </header>
 
-<div class="ticker">
-  <span class="ticker-label">速 報</span>
-  <div class="ticker-scroll">
-    <span class="ticker-text" style="font-size: 16px; font-weight: 700;">
-          【4/11 速報】米イラン協議がイスラマバードで本日開始 | バンス副大統領 vs ガリバフ国会議長が直接交渉 | WTI $99台へ続伸 | 論点：レバノン・ウラン濃縮・通航料・賠償 | イスラマバードは厳戒態勢・セレナホテルで会場封鎖／イスラエル、レバノン史上最大規模攻撃（100ターゲット・死者182人）／Iran が限定通航の再強化を宣言・通行料$2M要求・協定撤退を示唆／停戦の「Lebanon含む/含まず」で US・Pakistan・Iran が紛糾／原油WTI $98/bbl → $120超のリスク復活／Islamabad直接交渉が土曜日開始（VP Vance主導・2週間で恒久合意目指す）／再エスカレーション可能性が高まり、交渉の窓口が閉じかけている
-    </span>
+<span class="ticker-text" style="font-size: 16px; font-weight: 700;">
+  【4/12 速報】米イラン協議・第1ラウンド終了／ホルムズ管理権で深刻な対立・合意持ち越し｜米駆逐艦2隻がホルムズ通過・掃海作戦を正式開始｜トランプ「ホルムズ近く開放・何が起きても米国が勝った」と強気｜イラン「米国の過大要求が合意を阻んでいる」と反発｜イランが米艦艇に「30分以内に攻撃対象」と警告・艦艇は後退｜WTI $95〜97台で不安定推移・協議決裂なら$110超リスク｜サウジ東西パイプライン攻撃（4/9）で輸送能力日量70万バレル減・精製施設も被弾｜機雷問題：イラン自身が位置把握できず・完全開放が技術的に困難｜日本備蓄254日分確保中・国家備蓄45日分放出継続｜レバノン停戦：イスラエルが攻撃継続・イラン「停戦違反」と強く反発｜次の焦点：第2ラウンド協議の日程・ホルムズ掃海進捗・レバノン攻撃縮小の有無
+</span>
   </div>
 </div>
 
@@ -589,6 +586,11 @@ footer {
     </span>
 
     <!-- ボタン行 -->
+     <!-- ボタン案内 -->
+<div style="font-size:0.72rem;color:#64748b;margin-bottom:6px;letter-spacing:0.03em;">
+  👇 気になるセクションへジャンプ
+</div>
+
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;">
       <a href="#incident" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
         🚨 速報インシデント
@@ -598,6 +600,15 @@ footer {
       </a>
       <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
         🌐 現地メディア視点
+      </a>
+      <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        🔬 特別解説
+      </a>
+      <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);color:#fca5a5;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        💣 機雷問題
+      </a>
+      <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.35);color:#fbbf24;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        🛢️ サウジ危機
       </a>
     </div>
 
@@ -1744,6 +1755,12 @@ document.addEventListener('keydown', function(e) {
 function hardReload() {
   window.location.href = window.location.pathname + '?v=' + new Date().getTime();
 }
+function toggleSpecial(id, btn) {
+  const el = document.getElementById(id);
+  const isHidden = el.style.display === 'none' || el.style.display === '';
+  el.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '▲ 閉じる' : '▼ 詳細を読む';
+}
 function toggleNewsMore() {
   const moreNews = document.getElementById('more-news');
   const btn = document.getElementById('news-more-btn');
@@ -1758,6 +1775,7 @@ function toggleNewsMore() {
   <!-- パネルタイトル -->
   <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
     🌐 現地メディア視点（多言語OSINT）
+    
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
@@ -1815,34 +1833,191 @@ function toggleNewsMore() {
 <!-- /OSINT PANEL -->
 <!-- NEWS COLUMN -->
 
-<!-- ① 特別解説（空枠・将来使用用） -->
-<div id="special-commentary" style="display:none;">
-  <!-- 将来の特別解説コンテンツをここに追加 -->
-</div>
+<!-- 特別解説コラム -->
+<div id="special-commentary" style="width:100%;margin:24px 0 0;padding:0 16px;">
 
+  <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#f87171;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(248,113,113,0.25);">
+    🔬 特別解説コラム
+  </div>
+
+  <!-- 機雷コラムカード -->
+  <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+
+    <!-- タイトル行 -->
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <span style="font-size:1.2rem;">💣</span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.85rem;font-weight:800;color:#f87171;line-height:1.4;">ホルムズ海峡「機雷問題」の深層</div>
+        <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</div>
+      </div>
+      <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/12</span>
+    </div>
+
+    <!-- 詳細ボタン -->
+    <button onclick="toggleSpecial('mine-detail', this)"
+      style="margin-top:12px;width:100%;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:6px;color:#f87171;font-size:0.78rem;font-weight:700;padding:7px 0;cursor:pointer;letter-spacing:0.03em;">
+      ▼ 詳細を読む
+    </button>
+
+    <!-- 詳細本文（初期非表示） -->
+    <div id="mine-detail" style="display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(239,68,68,0.15);">
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:0.82rem;color:#cbd5e1;line-height:1.75;">
+
+        <div>
+          <div style="font-size:0.75rem;font-weight:800;color:#fbbf24;margin-bottom:5px;">📌 いつ・どのように撒かれたのか</div>
+          <p>イランは2026年2月末〜3月初旬の封鎖開始直後、小型ボートを使って急ごしらえで機雷を敷設。米中央軍は3月10日に「機雷敷設船16隻を排除した」と発表。3月12日時点で<strong style="color:#e2e8f0;">約12個の機雷</strong>が設置されたと報じられたが、その後も追加敷設の可能性がある。</p>
+        </div>
+
+        <div>
+          <div style="font-size:0.75rem;font-weight:800;color:#f87171;margin-bottom:5px;">🚨 最大の問題：「イラン自身も位置を把握していない」</div>
+          <p>NYTが4月11日に報じた内容によると、<strong style="color:#f87171;">イランは自国が敷設した機雷の全位置を把握できていない</strong>。原因は3点に集約される。</p>
+          <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">①</span><span>急いで敷設したため<strong style="color:#e2e8f0;">座標記録が不正確・不完全</strong></span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">②</span><span>海流によって一部が<strong style="color:#e2e8f0;">元の位置から漂流・移動</strong></span></div>
+            <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">③</span><span>イラン軍の<strong style="color:#e2e8f0;">掃海能力・装備が極めて限定的</strong></span></div>
+          </div>
+          <p style="margin-top:8px;">アラグチ外相が4月8日に「技術的制約を十分考慮した上で開放する」と発言したのは、この問題を事実上認めたもの。</p>
+        </div>
+
+        <div>
+          <div style="font-size:0.75rem;font-weight:800;color:#38bdf8;margin-bottom:5px;">🗺️ 「機雷回避航路図」という苦肉の策</div>
+          <p>イランは4月9日、海峡南側TSS（通常航路）を「危険区域」に指定した<strong style="color:#e2e8f0;">機雷回避航路図</strong>を公開。しかしこれ自体が「自分たちも正確な位置を把握していない」証左であり、海運各社から「安全の保証がない」と強く批判されている。</p>
+        </div>
+
+        <div>
+          <div style="font-size:0.75rem;font-weight:800;color:#34d399;margin-bottom:5px;">🇺🇸 米軍：掃海作戦を正式開始（4月11日）</div>
+          <p>米中央軍が4月11日に<strong style="color:#e2e8f0;">機雷除去作戦を正式開始</strong>。駆逐艦2隻が先行通過し、トランプ大統領は「全28個の機雷除去プロセスを開始。機雷敷設艦はすべて沈んだ」とSNSに投稿。ただし専門家は<strong style="color:#fbbf24;">完全除去には数ヶ月を要する</strong>と指摘している。</p>
+        </div>
+
+        <div>
+          <div style="font-size:0.75rem;font-weight:800;color:#a78bfa;margin-bottom:5px;">🇯🇵 日本の立場</div>
+          <p>高市首相「<strong style="color:#e2e8f0;">自衛隊の近傍展開は想定できない</strong>」と明言（3/12予算委）。6カ国共同声明でイランの封鎖を国際法違反と非難しつつも直接関与は否定。日本船舶42隻が足止め中。</p>
+        </div>
+
+        <div style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);border-radius:6px;padding:10px 14px;">
+          <div style="font-size:0.75rem;font-weight:800;color:#f87171;margin-bottom:5px;">📋 結論</div>
+          <p style="font-size:0.78rem;">機雷問題は外交交渉の核心的障害。完全な安全航行再開には米軍掃海の進展が不可欠だが、イランの主権問題と絡み合い長期化必至。<strong style="color:#fbbf24;">エネルギー価格の高止まりは2026年半ばまで続く見込み。</strong></p>
+        </div>
+
+      </div>
+    </div><!-- /#mine-detail -->
+    <!-- サウジパイプラインコラムカード -->
+<div style="background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+
+  <!-- タイトル行 -->
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span style="font-size:1.2rem;">🛢️</span>
+    <div style="flex:1;min-width:0;">
+      <div style="font-size:0.85rem;font-weight:800;color:#fbbf24;line-height:1.4;">サウジ東西パイプライン攻撃の深層</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</div>
+    </div>
+    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/09</span>
+  </div>
+
+  <!-- 詳細ボタン -->
+  <button onclick="toggleSpecial('saudi-detail', this)"
+    style="margin-top:12px;width:100%;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);border-radius:6px;color:#fbbf24;font-size:0.78rem;font-weight:700;padding:7px 0;cursor:pointer;letter-spacing:0.03em;">
+    ▼ 詳細を読む
+  </button>
+
+  <!-- 詳細本文（初期非表示） -->
+  <div id="saudi-detail" style="display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(251,191,36,0.15);">
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:0.82rem;color:#cbd5e1;line-height:1.75;">
+
+      <!-- セクション① -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#fbbf24;margin-bottom:5px;">📌 東西パイプラインとは何か</div>
+        <p>サウジアラビアの「東西パイプライン（Petroline）」は、ペルシャ湾岸の巨大油田地帯（ラスタヌラ・アブカイク）から紅海沿岸の<strong style="color:#e2e8f0;">ヤンブー港</strong>まで全長約1,200kmをつなぐ原油輸送の大動脈。ホルムズ海峡が封鎖された現在、日本を含むアジア向け原油の<strong style="color:#fbbf24;">事実上唯一の代替輸出ルート</strong>として機能していた。輸送能力は最大<strong style="color:#e2e8f0;">日量700万バレル</strong>で、サウジの全輸出量の約75%をカバーする。</p>
+      </div>
+
+      <!-- セクション② -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#f87171;margin-bottom:5px;">🚨 4月8〜9日：停戦合意直後の攻撃</div>
+        <p>4月8日の米イラン停戦合意発表からわずか数時間後、イランが東西パイプラインをドローンで攻撃。同時にサウジの主要エネルギー施設も標的となった。</p>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">●</span><span><strong style="color:#e2e8f0;">東西パイプライン</strong>：流量が日量<strong style="color:#f87171;">70万バレル減少</strong></span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">●</span><span><strong style="color:#e2e8f0;">石油生産能力</strong>：約<strong style="color:#f87171;">60万バレル/日の減少</strong>（マニファ・フライス油田が被弾）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">●</span><span><strong style="color:#e2e8f0;">精製施設</strong>：ラスタヌラ製油所・SAMREF（ヤンブー）・リヤド製油所が攻撃を受け精製品出荷に影響</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">▲</span><span>ヤンブー港での積み込みは継続中（被害は限定的との報告あり）</span></div>
+        </div>
+        <p style="margin-top:8px;">サウジのエネルギー輸出能力の<strong style="color:#f87171;">約10%が一時的に失われた</strong>と試算されている（Middle East Eye）。</p>
+      </div>
+
+      <!-- セクション③ -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#fb923c;margin-bottom:5px;">⚡ なぜ停戦直後に攻撃したのか</div>
+        <p>停戦合意はイスラエルのレバノン攻撃継続を理由にイランが「違反」と主張しており、サウジへの攻撃はその報復と見られている。イランにとって東西パイプラインは「ホルムズ封鎖の効果を無力化する存在」であり、封鎖の経済的圧力を維持するための<strong style="color:#e2e8f0;">戦略的ターゲット</strong>でもある。</p>
+      </div>
+
+      <!-- セクション④ -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#38bdf8;margin-bottom:5px;">🇯🇵 日本への影響</div>
+        <p>日本の原油輸入に占めるサウジアラビアの割合は約<strong style="color:#e2e8f0;">40〜44%</strong>。ホルムズ封鎖以降、ENEOSなどはヤンブー港経由（ルートA）でサウジ原油を調達してきたが、今回の攻撃はその<strong style="color:#f87171;">代替ルート自体が標的になった</strong>ことを意味する。日本側の状況は以下の通り。</p>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>政府は3月26日から国家備蓄（史上最大規模・計45日分）の放出を開始済み</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>総備蓄残量は<strong style="color:#e2e8f0;">約254日分</strong>（国家＋民間＋産油国共同備蓄）を確保中</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>日本向けサウジ原油の輸入価格が<strong style="color:#f87171;">80%超急騰</strong>（2〜3月長期契約）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>ルートC（喜望峰回り・約100日）への切り替えが本格検討段階に</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">🔴</span><span>石油化学産業では<strong style="color:#e2e8f0;">減産の動き</strong>が広がり始めている</span></div>
+        </div>
+      </div>
+
+      <!-- まとめ -->
+      <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:6px;padding:10px 14px;margin-top:4px;">
+        <div style="font-size:0.75rem;font-weight:800;color:#fbbf24;margin-bottom:5px;">📋 結論</div>
+        <p style="font-size:0.78rem;">ホルムズ封鎖＋東西パイプライン損傷という「二重の供給障害」が現実となった。日本は備蓄で短期的な危機を回避できているが、パイプライン復旧の遅れやルートC移行コストの増大が長期化すれば、<strong style="color:#fbbf24;">エネルギーコストの大幅上昇と産業への波及が避けられない。</strong></p>
+      </div>
+
+    </div>
+  </div><!-- /#saudi-detail -->
+
+</div><!-- /サウジコラムカード -->
+
+  </div>
+</div>
+</div><!-- /special-commentary -->
+
+<!-- NEWS COLUMN -->
 <div style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
   <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>
   <div class="news-list" id="news-list">
-
     <!-- ▼▼▼ 新しい記事はここに追加 ▼▼▼ -->
 
     <!-- 常時表示：トップ3件 -->
-    <div class="news-item">
-      <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/11 本日</span></div>
-      <a href="https://jp.reuters.com/world/us-politics/SWCJ2E5PPBODZBL6IGPZBLKACQ-2026-04-10/" target="_blank" rel="noopener">イスラマバード厳戒態勢・パキスタンが仲介の正念場　米イラン協議の舞台裏（Reuters）</a>
-    </div>
-    <div class="news-item">
-      <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11 本日</span></div>
-      <a href="https://www.bloomberg.com/jp/news/articles/2026-04-08/TD6T97KK3NY800" target="_blank" rel="noopener">バンス副大統領率いる米代表団、11日にイランと初の直接協議へ（Bloomberg）</a>
-    </div>
-    <div class="news-item">
-      <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/11 本日</span></div>
-      <a href="https://www.nikkei.com/article/DGXZQOGR105SM0Q6A410C2000000/" target="_blank" rel="noopener">米イラン、レバノン攻撃やウラン濃縮で溝　戦闘終結向け初交渉へ（日経）</a>
-    </div>
+<!-- 記事1 -->
+<div class="news-item">
+  <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/12 本日</span></div>
+  <a href="https://jp.reuters.com/world/asia-pacific/us-iran-talks-pause-now-disagreements-remain-2026-04-11/" target="_blank" rel="noopener">【速報】米イラン協議いったん停止・ホルムズ管理権で深刻な対立残る（Reuters）</a>
+  <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">💣 機雷問題が交渉の核心的障害に。イランが自ら敷設した機雷の全位置を把握できず、完全開放が技術的に困難な状況。米軍は掃海作戦を4/11に開始。</div>
+</div>
+
+<!-- 記事2 -->
+<div class="news-item">
+  <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/12 本日</span></div>
+  <a href="https://www.nikkei.com/article/DGXZQOGN120130S6A410C2000000/" target="_blank" rel="noopener">米イラン直接協議、ホルムズ海峡巡り紛糾　8時間超えてなお継続（日経）</a>
+</div>
+
+<!-- 記事3 -->
+<div class="news-item">
+  <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/12 本日</span></div>
+  <a href="https://www.bloomberg.com/jp/news/articles/2026-04-11/TDBGEAT96OSG00" target="_blank" rel="noopener">米国とイランが対面協議、パキスタン交え　ホルムズ掃海開始へ（Bloomberg）</a>
+</div>
 
     <!-- 折りたたみ：4件目以降 -->
     <div id="more-news" style="display:none;">
 
+          <div class="news-item">
+      <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/11 本日</span></div>
+      <a href="https://jp.reuters.com/world/us-politics/SWCJ2E5PPBODZBL6IGPZBLKACQ-2026-04-10/" target="_blank" rel="noopener">イスラマバード厳戒態勢・パキスタンが仲介の正念場　米イラン協議の舞台裏（Reuters）</a>
+      </div>
+      <div class="news-item">
+      <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11 本日</span></div>
+      <a href="https://www.bloomberg.com/jp/news/articles/2026-04-08/TD6T97KK3NY800" target="_blank" rel="noopener">バンス副大統領率いる米代表団、11日にイランと初の直接協議へ（Bloomberg）</a>
+      </div>
+      <div class="news-item">
+      <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/11 本日</span></div>
+      <a href="https://www.nikkei.com/article/DGXZQOGR105SM0Q6A410C2000000/" target="_blank" rel="noopener">米イラン、レバノン攻撃やウラン濃縮で溝　戦闘終結向け初交渉へ（日経）</a>
+      </div>
       <div class="news-item">
         <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/10 最新</span></div>
         <a href="https://newsdig.tbs.co.jp/articles/withbloomberg/2590563?display=1" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・イスラエルはレバノンと直接交渉へ</a>

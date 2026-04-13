@@ -245,6 +245,31 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .leg-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .leg-dash { width:30px; height:0; flex-shrink:0; border-top:3px dashed; }
 .leg-row span { font-size:0.72rem; color:#cbd5e1; }
+@media (max-width: 600px) {
+  .map-legend {
+    font-size: 0.65rem;
+  }
+  .leg-row span {
+    font-size: 0.58rem;
+  }
+  .leg-section {
+    font-size: 0.50rem;
+  }
+}
+.leg-section {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 6px 0 4px;
+}
+.leg-emoji {
+  font-size: 0.9rem;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
 .leg-note { margin-top:8px; padding-top:7px; border-top:1px solid #1e3a5f; font-size:0.66rem; color:#64748b; }
 
 /* STATS */
@@ -514,6 +539,13 @@ footer {
   font-size: 10px; padding: 1px 6px; cursor: pointer; transition: background 0.2s;
 }
 #tanker-toggle:hover { background: rgba(96, 165, 250, 0.2); }
+@media (max-width: 600px) {
+  #tanker-title span { font-size: 10px; }
+  #tanker-toggle { font-size: 8px; }
+  #tanker-date { font-size: 8px; }
+  .ship-icon { font-size: 6px; }
+  #tanker-stats { font-size: 4px; }
+}
 #tanker-date { font-size: 10px; color: #7dd3fc; text-align: right; margin-bottom: 6px; }
 #ship-grid {
   display: flex; flex-direction: row; flex-wrap: wrap; gap: 3px;
@@ -671,7 +703,9 @@ footer {
           </a>
           <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
             🌊 ルートC・アラスカ
-          </a>
+            <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.35);color:#34d399;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+            🌍 西アフリカ・南米調達
+            </a>
         </div>
       </div>
 
@@ -1225,6 +1259,63 @@ const map = L.map('map', {
   zoomControl: true,
   attributionControl: true
 });
+// ナイジェリア（ボニー港）
+L.marker([4.5, 7.0], {
+  icon: mkIcon('🇳🇬', 'rgba(251,191,36,0.85)', 32)
+}).addTo(map).bindTooltip(
+  'ナイジェリア（Bonny Light）<br>API36° 硫黄0.15%<br>喜望峰経由→日本 約35〜40日',
+  {sticky:true}
+).bindPopup(`
+  <div style="font-family:'Noto Sans JP',sans-serif;min-width:200px;padding:4px;">
+    <div style="font-size:0.85rem;font-weight:800;color:#fbbf24;margin-bottom:6px;">🇳🇬 ナイジェリア（Bonny Light）</div>
+    <div style="font-size:0.75rem;color:#1e293b;line-height:1.9;">
+      <strong>品質：</strong>API比重36° / 硫黄0.15%（低硫黄スイート）<br>
+      <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
+      <strong>所要日数：</strong>約35〜40日<br>
+      <strong>状況：</strong>METI接触確認済み（4/11）🔄<br>
+      <strong>課題：</strong>中国・インドとの調達競合
+    </div>
+  </div>
+`, { maxWidth: 240 });
+
+// アンゴラ（ルアンダ港）
+L.marker([-8.8, 13.2], {
+  icon: mkIcon('🇦🇴', 'rgba(251,146,60,0.85)', 32)
+}).addTo(map).bindTooltip(
+  'アンゴラ（Hungo）<br>API28.8° 硫黄0.65%<br>喜望峰経由→日本 約35〜40日',
+  {sticky:true}
+).bindPopup(`
+  <div style="font-family:'Noto Sans JP',sans-serif;min-width:200px;padding:4px;">
+    <div style="font-size:0.85rem;font-weight:800;color:#fb923c;margin-bottom:6px;">🇦🇴 アンゴラ（Hungo）</div>
+    <div style="font-size:0.75rem;color:#1e293b;line-height:1.9;">
+      <strong>品質：</strong>API比重28.8° / 硫黄0.65%（中質スイート）<br>
+      <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
+      <strong>所要日数：</strong>約35〜40日<br>
+      <strong>状況：</strong>METI接触確認済み（4/11）🔄<br>
+      <strong>課題：</strong>高窒素・精製コスト増加
+    </div>
+  </div>
+`, { maxWidth: 240 });
+
+// ブラジル（カンポス沖・プレソルト油田）
+L.marker([-22.0, -40.0], {
+  icon: mkIcon('🇧🇷', 'rgba(192,132,252,0.85)', 32)
+}).addTo(map).bindTooltip(
+  'ブラジル（Tupi・Buzios）<br>API31° 硫黄0.3%<br>喜望峰経由→日本 約40〜45日',
+  {sticky:true}
+).bindPopup(`
+  <div style="font-family:'Noto Sans JP',sans-serif;min-width:200px;padding:4px;">
+    <div style="font-size:0.85rem;font-weight:800;color:#c084fc;margin-bottom:6px;">🇧🇷 ブラジル（Tupi・Buzios）</div>
+    <div style="font-size:0.75rem;color:#1e293b;line-height:1.9;">
+      <strong>品質：</strong>API比重31° / 硫黄0.3%（中質スイート）<br>
+      <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
+      <strong>所要日数：</strong>約40〜45日<br>
+      <strong>生産量：</strong>日量400万bpd超（増産中）<br>
+      <strong>状況：</strong>日本の石油会社が定期契約開始🔄<br>
+      <strong>課題：</strong>中国が日量160万bpd購入中（競合大）
+    </div>
+  </div>
+`, { maxWidth: 240 });
 // 日本製油所サマリーマーカー
 const japanRefineryMarker = L.marker([34.5, 138.5], {
   icon: L.divIcon({
@@ -1402,6 +1493,26 @@ const routeC_brazil = [
   [1.3,103.8],[5.0,110.0],
   [14.0,118.0],[24.0,126.0],[34.5,136.0],[34.5,138.5]
 ];
+// ナイジェリア発 喜望峰経由ルート
+const routeNigeria = [
+  [4.5, 7.0],[0.0, 5.0],[-10.0, 5.0],[-20.0, 10.0],
+  [-34.3, 18.4],
+  [-30.0, 40.0],[-20.0, 55.0],[-10.0, 65.0],
+  [0.0, 73.0],[4.0, 80.0],[2.5, 92.0],
+  [1.3, 103.8],[5.0, 110.0],
+  [14.0, 118.0],[24.0, 126.0],[34.5, 136.0],[34.5, 138.5]
+];
+
+// アンゴラ発 喜望峰経由ルート
+const routeAngola = [
+  [-8.8, 13.2],[-15.0, 10.0],[-25.0, 12.0],
+  [-34.3, 18.4],
+  [-30.0, 40.0],[-20.0, 55.0],[-10.0, 65.0],
+  [0.0, 73.0],[4.0, 80.0],[2.5, 92.0],
+  [1.3, 103.8],[5.0, 110.0],
+  [14.0, 118.0],[24.0, 126.0],[34.5, 136.0],[34.5, 138.5]
+];
+
 
 
 // ============================================================
@@ -1428,6 +1539,12 @@ L.polyline(routeC_pacific,{color:'#a78bfa',weight:2.5,dashArray:'10 7',opacity:0
 
 L.polyline(routeC_brazil,{color:'#c084fc',weight:2,dashArray:'8 6',opacity:0.75})
   .addTo(map).bindTooltip('ルートC（南米）：ブラジル発 喜望峰経由ルート',{sticky:true});
+
+  L.polyline(routeNigeria,{color:'#fbbf24',weight:2,dashArray:'8 6',opacity:0.75})
+  .addTo(map).bindTooltip('ナイジェリア発：喜望峰経由→日本（約35〜40日）',{sticky:true});
+
+L.polyline(routeAngola,{color:'#fb923c',weight:2,dashArray:'8 6',opacity:0.75})
+  .addTo(map).bindTooltip('アンゴラ発：喜望峰経由→日本（約35〜40日）',{sticky:true});
 
 
 // ============================================================
@@ -1718,13 +1835,34 @@ const Legend = L.Control.extend({
         <button class="legend-toggle-btn" onclick="toggleLegend()" id="legend-btn">開く</button>
       </h4>
       <div class="legend-body" id="legend-body">
-        <div class="leg-row"><div class="leg-dash" style="border-color:#38bdf8"></div><span>ルートA：フジャイラ港経由（UAE）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#34d399"></div><span>ルートB：ヤンブー港経由（サウジ）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#a78bfa"></div><span>ルートC：アラスカ発 太平洋ルート</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#c084fc"></div><span>ルートC：ブラジル発 喜望峰ルート</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過 🆕</span></div>
+
+        <div class="leg-section">輸送ルート</div>
+
+        <div class="leg-row"><div class="leg-dash" style="border-color:#38bdf8"></div><span>ルートA：ADCOP PL→フジャイラ港（UAE）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#34d399"></div><span>ルートB：サウジ東西PL→ヤンブー港 ✅全面回復</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#a78bfa"></div><span>ルートC：アラスカ発 太平洋ルート（4/25着予定）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#c084fc"></div><span>ルートC（南米）：ブラジル発 喜望峰経由（約40〜45日）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#fbbf24"></div><span>ナイジェリア発：喜望峰経由→日本（約35〜40日）🆕</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#fb923c"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）🆕</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過（友好国限定）</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・封鎖中）</span></div>
+
+        <!-- 主要拠点マーカー（非表示）
+        <div class="leg-section" style="margin-top:8px;">主要拠点マーカー</div>
+
+        <div class="leg-row"><span class="leg-emoji">🏭</span><span>🇯🇵 日本受入拠点（製油所サマリー）</span></div>
+        <div class="leg-row"><span class="leg-emoji">🚢</span><span>🇦🇪 フジャイラ港（UAE）</span></div>
+        <div class="leg-row"><span class="leg-emoji">🛢️</span><span>🇸🇦 サウジ東西PL / ヤンブー港</span></div>
+        <div class="leg-row"><span class="leg-emoji">⛽</span><span>🇺🇸 アラスカ（North Slope）</span></div>
+        <div class="leg-row"><span class="leg-emoji">🛢️</span><span>🇧🇷 ブラジル（Tupi・Buzios）</span></div>
+        <div class="leg-row"><span class="leg-emoji">🛢️</span><span>🇳🇬 ナイジェリア（Bonny Light）🆕</span></div>
+        <div class="leg-row"><span class="leg-emoji">🛢️</span><span>🇦🇴 アンゴラ（Hungo）🆕</span></div>
+        <div class="leg-row"><span class="leg-emoji">⚓</span><span>ホルムズ海峡（封鎖中）</span></div>
+        <div class="leg-row"><span class="leg-emoji">⚠️</span><span>機雷リスクゾーン</span></div>
+        -->
+
         <div class="leg-note">💡 各マーカー・ラインをクリックで詳細表示</div>
+        <div class="leg-note" style="color:#475569;margin-top:4px;">最終更新：2026/04/13 07:00 JST</div>
       </div>
     `;
     L.DomEvent.disableClickPropagation(div);
@@ -1744,6 +1882,25 @@ function toggleLegend(e) {
   const isOpen = legend.classList.contains('open');
   legend.classList.toggle('open', !isOpen);
   btn.textContent = isOpen ? '開く' : '閉じる';
+}
+
+// スマホ時はデフォルト閉じた状態にする
+function initLegendState() {
+  if (window.innerWidth <= 600) {
+    const legend = document.getElementById('map-legend-ctrl');
+    const btn    = document.getElementById('legend-btn');
+    if (legend && btn) {
+      legend.classList.remove('open');
+      btn.textContent = '開く';
+    }
+  } else {
+    const legend = document.getElementById('map-legend-ctrl');
+    const btn    = document.getElementById('legend-btn');
+    if (legend && btn) {
+      legend.classList.add('open');
+      btn.textContent = '閉じる';
+    }
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -1770,8 +1927,29 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }, 1200);
   }, 1000);
-});
 
+  // 凡例の初期状態設定
+  setTimeout(initLegendState, 1100);
+    // 日本関連船パネルのスマホ初期状態（閉じる）
+  setTimeout(() => {
+    if (window.innerWidth <= 600) {
+      const overlay = document.getElementById('tanker-overlay');
+      const grid    = document.getElementById('ship-grid');
+      const stats   = document.getElementById('tanker-stats');
+      const bar     = document.getElementById('tanker-progress-wrap');
+      const dateEl  = document.getElementById('tanker-date');
+      const btn     = document.getElementById('tanker-toggle');
+      if (overlay && btn) {
+        overlay.classList.add('collapsed');
+        grid.style.display   = 'none';
+        stats.style.display  = 'none';
+        bar.style.display    = 'none';
+        dateEl.style.display = 'none';
+        btn.textContent      = '展開';
+      }
+    }
+  }, 1100);
+});
 // ============================================================
 // 7. CSS ANIMATIONS
 // ============================================================
@@ -2122,7 +2300,142 @@ function toggleNewsMore() {
   </div><!-- /#alaska-detail -->
 
 </div><!-- /ルートCコラムカード -->
+<!-- ナイジェリア・アンゴラ・ブラジル調達コラムカード -->
+<div style="background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
 
+  <!-- タイトル行 -->
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span style="font-size:1.2rem;">🌍</span>
+    <div style="flex:1;min-width:0;">
+      <div style="font-size:0.85rem;font-weight:800;color:#34d399;line-height:1.4;">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の状況・ボリューム・見通しを徹底解説</div>
+    </div>
+    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/13</span>
+  </div>
+
+  <!-- 詳細ボタン -->
+  <button onclick="toggleSpecial('africa-brazil-detail', this)"
+    style="margin-top:12px;width:100%;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:6px;color:#34d399;font-size:0.78rem;font-weight:700;padding:7px 0;cursor:pointer;letter-spacing:0.03em;">
+    ▼ 詳細を読む
+  </button>
+
+  <!-- 詳細本文（初期非表示） -->
+  <div id="africa-brazil-detail" style="display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(52,211,153,0.15);">
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:0.82rem;color:#cbd5e1;line-height:1.75;">
+
+      <!-- 背景 -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#34d399;margin-bottom:5px;">📌 なぜ今、西アフリカ・南米なのか</div>
+        <p>日本の原油輸入の約95%を中東に依存してきた構造が、2026年のホルムズ封鎖で一気に問題化した。経済産業省（METI）は「<strong style="color:#e2e8f0;">2026年5月までに輸入の半分以上をホルムズを通らないルートで確保する</strong>」という目標を掲げ、米国・カナダに加えてマレーシア・アゼルバイジャン・<strong style="color:#34d399;">ブラジル・ナイジェリア・アンゴラ</strong>への緊急接触を開始した。METI副局長が4月11日のブリーフィングで各国への接触を公式に確認している。現在の日本の原油輸入量は日量約236万バレルであり、非中東ルート目標（50%超＝約120万bpd）の達成には、米国・カナダに加えて西アフリカ・南米からの数十万bpd規模の積み増しが不可欠だ。</p>
+      </div>
+
+      <!-- ナイジェリア -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#fbbf24;margin-bottom:5px;">🇳🇬 ナイジェリア（Bonny Light・Forcados）</div>
+        <p>ナイジェリア産原油はAPI比重36度・硫黄分0.15%という<strong style="color:#e2e8f0;">低硫黄スイート原油</strong>で、日本の製油所が扱いやすい品質だ。4月11日時点でMETIが正式に接触を確認しており、地元ナイジェリアメディアも「日本が中東戦争の中でナイジェリア産原油を大量予約」と報じた。アジア向け輸出量はすでに増加傾向にあり、2026年3月時点でアジア向け出荷が前月比約<strong style="color:#34d399;">20万bpd増加</strong>している（Channels TV）。</p>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>品質：API比重36度・硫黄分0.15%・低硫黄スイート</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>灯油・軽油の収率が高く、日本の冬場需要に適合</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">📍</span><span>輸送ルート：ナイジェリア → <strong style="color:#e2e8f0;">喜望峰 → インド洋 → 日本</strong>（約35〜40日）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>スポット市場での価格競争が激化。インド・中国とも争奪戦</span></div>
+        </div>
+      </div>
+
+      <!-- アンゴラ -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#fb923c;margin-bottom:5px;">🇦🇴 アンゴラ（Hungo・Girassol）</div>
+        <p>アンゴラ産原油はAPI比重28.8度・硫黄分0.65%の<strong style="color:#e2e8f0;">中質スイート原油</strong>だ。ナイジェリアと同時にMETIが接触を確認しており、ブラジル産との「大西洋スイートブレンド」として有望視されている。ただし<strong style="color:#f87171;">窒素分が高く精製過程で水素消費量が増加</strong>するという技術的課題がある。日本向け出荷は現在調整段階で、早くても5月末〜6月以降の到着見込みだ。</p>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>品質：API比重28.8度・硫黄分0.65%・中質スイート</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>高窒素分により水素消費量増大・精製コスト上昇</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">📍</span><span>輸送ルート：アンゴラ → <strong style="color:#e2e8f0;">喜望峰 → インド洋 → 日本</strong>（約35〜40日）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>日本向けは調整段階。本格到着は早くて6月以降の見込み</span></div>
+        </div>
+      </div>
+
+      <!-- ブラジル -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#38bdf8;margin-bottom:5px;">🇧🇷 ブラジル（Tupi・Buzios・Mero）</div>
+        <p>ブラジルのプレソルト油田が中長期の代替本命として最も注目されている。API比重31度・硫黄分0.3%という<strong style="color:#e2e8f0;">中質スイート原油</strong>で、日本の製油所との相性が良好だ。生産量は日量<strong style="color:#34d399;">400万バレル超</strong>に迫る勢いで増産中であり、すでに日本の石油会社が定期購入契約を結び始めている。ただし中国が日量<strong style="color:#f87171;">160万bpdという過去最高</strong>を購入中（Reuters 4/8）であり、調達競合が懸念される。</p>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;margin-top:6px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>品質：API比重31度・硫黄分0.3%・中質スイート・日本の装置との相性◎</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">✅</span><span>生産量：日量400万bpd超へ増産中（Tupi・Buzios・Mero油田）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">📍</span><span>輸送ルート：ブラジル → <strong style="color:#e2e8f0;">喜望峰 → インド洋 → 日本</strong>（約40〜45日）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">⚠️</span><span>中国が日量160万bpd（過去最高）を購入中 ― 日本との調達競合リスク大</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">⚠️</span><span>日本への本格到着は早くて<strong style="color:#e2e8f0;">2026年後半以降</strong>の見込み</span></div>
+        </div>
+      </div>
+
+      <!-- 輸送ルート比較表 -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#a78bfa;margin-bottom:8px;">🗺️ 輸送ルート比較（日本向け）</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.75rem;">
+            <thead>
+              <tr style="background:rgba(255,255,255,0.05);">
+                <th style="padding:6px 10px;text-align:left;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.1);">調達先</th>
+                <th style="padding:6px 10px;text-align:left;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.1);">経由ルート</th>
+                <th style="padding:6px 10px;text-align:left;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.1);">所要日数</th>
+                <th style="padding:6px 10px;text-align:left;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,0.1);">主な課題</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:6px 10px;color:#fbbf24;">🇳🇬 ナイジェリア</td>
+                <td style="padding:6px 10px;color:#e2e8f0;">喜望峰→インド洋</td>
+                <td style="padding:6px 10px;color:#34d399;">約35〜40日</td>
+                <td style="padding:6px 10px;color:#94a3b8;">価格競争・スポット</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:6px 10px;color:#fb923c;">🇦🇴 アンゴラ</td>
+                <td style="padding:6px 10px;color:#e2e8f0;">喜望峰→インド洋</td>
+                <td style="padding:6px 10px;color:#34d399;">約35〜40日</td>
+                <td style="padding:6px 10px;color:#94a3b8;">高窒素・精製コスト</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:6px 10px;color:#38bdf8;">🇧🇷 ブラジル</td>
+                <td style="padding:6px 10px;color:#e2e8f0;">喜望峰→インド洋</td>
+                <td style="padding:6px 10px;color:#fbbf24;">約40〜45日</td>
+                <td style="padding:6px 10px;color:#94a3b8;">中国との競合・長距離</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:6px 10px;color:#e2e8f0;">🇺🇸 米湾岸</td>
+                <td style="padding:6px 10px;color:#e2e8f0;">パナマ運河</td>
+                <td style="padding:6px 10px;color:#34d399;">約26〜28日</td>
+                <td style="padding:6px 10px;color:#94a3b8;">運河混雑・喫水制限</td>
+              </tr>
+              <tr>
+                <td style="padding:6px 10px;color:#e2e8f0;">🇨🇦 カナダ西岸</td>
+                <td style="padding:6px 10px;color:#e2e8f0;">太平洋直行</td>
+                <td style="padding:6px 10px;color:#34d399;">約14〜16日</td>
+                <td style="padding:6px 10px;color:#94a3b8;">TMX拡張・最短ルート</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 見通し -->
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:#f87171;margin-bottom:5px;">📅 スケジュールと見通し</div>
+        <div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:10px 14px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:8px;"><span style="color:#34d399;font-weight:700;">4〜5月</span><span>米国・カナダからの増量が先行。5月から北米産が大量到着予定（昨年比4倍増）</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fbbf24;font-weight:700;">5〜6月</span><span>ナイジェリア・アンゴラ産が到着開始見込み。ブラジル産は早くて6月末以降</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#fb923c;font-weight:700;">夏〜秋</span><span>備蓄254日分で当面対応可能だが、今夏〜秋がホルムズ封鎖長期化シナリオでの正念場</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#f87171;font-weight:700;">中長期</span><span>ブラジル・西アフリカ産の安定供給ルート確立が鍵。精製設備の改修投資も必要</span></div>
+        </div>
+      </div>
+
+      <!-- まとめ -->
+      <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:6px;padding:10px 14px;margin-top:4px;">
+        <div style="font-size:0.75rem;font-weight:800;color:#34d399;margin-bottom:5px;">📋 結論</div>
+        <p style="font-size:0.78rem;">ナイジェリア・アンゴラ・ブラジルはいずれも喜望峰→インド洋ルートを経由し、到着まで35〜45日を要する。輸送コストの増大・中国との調達競合・精製技術の課題が重なるが、中東以外で日本向け中質スイート原油を安定供給できる数少ない選択肢だ。<strong style="color:#e2e8f0;">備蓄で時間を買いながら、北米・西アフリカ・南米の3方向から並列で調達先を整備する</strong>ことが、日本のエネルギー安全保障の現実的な答えとなっている。<strong style="color:#fbbf24;">この危機を「脱中東依存」への構造転換の契機にできるかが、2026年以降の日本のエネルギー政策の真価を問う試練だ。</strong></p>
+      </div>
+
+    </div>
+  </div><!-- /#africa-brazil-detail -->
+
+</div><!-- /ナイジェリア・アンゴラ・ブラジルコラムカード -->
   </div>
 </div>
 </div><!-- /special-commentary -->

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <title>ホルムズ海峡危機マップ｜通航状況・代替ルート・市場波及</title>
 <meta name="description" content="ホルムズ海峡危機の通航状況、代替ルート、原油輸送・海運・市場への波及を地図で整理。中東情勢を煽らず、構造と論点をわかりやすく解説します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,50 @@ body {
   padding-left: 10px !important;
   padding-right: 10px !important;
 }
+/* ===== スマホ最適化 ===== */
+@media (max-width: 600px) {
 
+  /* 全体余白を削減 */
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .container,
+  [style*="max-width:960px"],
+  [style*="max-width: 960px"] {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  /* ステータスバッジを横並び維持 */
+  [style*="display:flex;flex-wrap:wrap;gap:8px;"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;
+  }
+
+/* いま何が・海峡の今・次に見る の行を縦積みに */
+.summary-row {
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+  /* フォントサイズ微調整 */
+  [style*="font-size:0.95rem"] {
+    font-size: 0.88rem !important;
+  }
+
+  /* ティッカー余白削減 */
+  .ticker {
+    padding: 7px 10px !important;
+  }
+
+  /* カード系の余白削減 */
+  .sit-card,
+  .news-item {
+    padding: 10px 12px !important;
+  }
+}
 /* ===== 全体文字サイズを1-2pt拡大 ===== */
 @media (max-width: 768px) {
   body {
@@ -432,9 +475,9 @@ footer {
 /* NEWS COLUMN */
 .news-section-title{font-size:1rem;font-weight:800;color:#38bdf8;margin:24px 0 12px;padding-left:4px;border-left:3px solid #38bdf8;}
 .news-list{display:flex;flex-direction:column;gap:6px;}
-.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 13px;display:flex;gap:12px;align-items:flex-start;transition:background 0.2s;}
+.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 13px;display:flex;flex-direction:column;gap:6px;transition:background 0.2s;}
 .news-item:hover{background:rgba(255,255,255,0.05);}
-.news-item a{color:#cbd5e1;text-decoration:none;font-size:0.78rem;line-height:1.5;flex:1;}
+.news-item a{color:#cbd5e1;text-decoration:none;font-size:0.78rem;line-height:1.5;flex:1;align-self:flex-start;}
 .news-item a:hover{color:#7dd3fc;}
 .news-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;min-width:90px;}
 .news-date{font-size:0.65rem;color:#64748b;white-space:nowrap;}
@@ -564,75 +607,77 @@ footer {
 </div>
     </div>
 
-    <!-- 3行サマリー -->
-    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:18px;">
-      <div style="display:flex;align-items:flex-start;gap:10px;">
-        <span style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#f87171;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">いま何が</span>
-        <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">米・イラン・イスラエルが軍事衝突。4/8に2週間停戦合意も交渉は4/12に事実上決裂。トランプは4/12夜、<strong>「米海軍がホルムズを封鎖し、通航料支払い済み全船舶を公海上で追跡・拿捕」</strong>と宣言。米中央軍（CENTCOM）は<strong>4月13日よりイラン港湾への海上封鎖を正式開始</strong>と発表した。</span>
+<!-- 3行サマリー -->
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:18px;border:1.5px solid rgba(56,189,248,0.3);border-radius:14px;padding:14px 12px;background:rgba(15,23,42,0.6);">
+  <div style="display:flex;align-items:flex-start;gap:10px;">
+    <span style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#f87171;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">いま何が</span>
+    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">米・イラン・イスラエルが軍事衝突。4/8に2週間停戦合意も交渉は4/12に事実上決裂。トランプは4/12夜、<strong>「米海軍がホルムズを封鎖し、通航料支払い済み全船舶を公海上で追跡・拿捕」</strong>と宣言。米中央軍（CENTCOM）は<strong>4月13日よりイラン港湾への海上封鎖を正式開始</strong>と発表した。</span>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:10px;">
+    <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">海峡の今</span>
+    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">ホルムズ海峡は厳格統制下を超え、<strong>米軍による封鎖フェーズへ移行中</strong>（4/13〜 CENTCOM正式発表）。イランは「敵が誤れば"死の渦"に飲み込まれる」と警告。<strong>✅ サウジ東西パイプライン4/12全面回復</strong>（700万bpd）・代替ルートB復活。停戦期限（4/22前後）前の再交渉の動きが次の正念場。</span>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:10px;">
+    <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">次に見る</span>
+    <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+
+      <!-- テキストリンク行 -->
+      <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">↓
+        <a href="#situation" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">情勢カード</a>で各プレイヤーの最新動向を確認 →
+        <a href="#routes" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">ルート表</a>で日本向け代替輸送の現状を把握 →
+        <a href="#scenario" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">シナリオ</a>で今後の展開を整理。
+      </span>
+
+      <!-- ステータスバッジ（クリック不可） -->
+      <div style="margin-top:2px;margin-bottom:10px;">
+        <div style="font-size:0.65rem;font-weight:700;color:#64748b;letter-spacing:0.08em;margin-bottom:6px;text-transform:uppercase;">ステータス</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 停戦は脆弱</span>
+          <span style="background:rgba(251,191,36,0.06);border:1px dashed rgba(251,191,36,0.4);color:#fbbf24;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">⚠️ 海峡は厳格統制下→封鎖フェーズへ</span>
+          <span style="background:rgba(56,189,248,0.06);border:1px dashed rgba(56,189,248,0.4);color:#38bdf8;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">📅 4/13 再交渉・封鎖開始が焦点</span>
+          <span style="background:rgba(168,85,247,0.06);border:1px dashed rgba(168,85,247,0.4);color:#d8b4fe;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">💹 WTI $100超・急騰リスク</span>
+        </div>
       </div>
-      <div style="display:flex;align-items:flex-start;gap:10px;">
-        <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">海峡の今</span>
-        <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">ホルムズ海峡は厳格統制下を超え、<strong>米軍による封鎖フェーズへ移行中</strong>（4/13〜 CENTCOM正式発表）。イランは「敵が誤れば"死の渦"に飲み込まれる」と警告。<strong>✅ サウジ東西パイプライン4/12全面回復</strong>（700万bpd）・代替ルートB復活。停戦期限（4/22前後）前の再交渉の動きが次の正念場。</span>
+
+      <!-- ジャンプ＋クリッカブルバッジ -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
+        <div style="width:100%;font-size:0.75rem;color:#64748b;font-weight:600;margin-bottom:2px;">👇 気になるセクションへジャンプ</div>
+        <a href="#incident" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+          🚨 速報インシデント
+        </a>
+        <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+          📰 最新ニュース
+        </a>
+        <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+          🌐 現地メディア視点
+        </a>
+        <a href="#map" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%);border:1px solid rgba(56,189,248,0.5);color:#7dd3fc;font-size:0.9rem;font-weight:800;padding:7px 18px;border-radius:24px;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;white-space:nowrap;">
+          🗺️ 地図はここ &nbsp;→
+        </a>
       </div>
-<div style="display:flex;align-items:flex-start;gap:10px;">
-  <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">次に見る</span>
-  <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
 
-    <!-- テキストリンク行 -->
-    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">↓
-      <a href="#situation" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">情勢カード</a>で各プレイヤーの最新動向を確認 →
-      <a href="#routes" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">ルート表</a>で日本向け代替輸送の現状を把握 →
-      <a href="#scenario" style="color:#38bdf8;text-decoration:none;border-bottom:1px solid rgba(56,189,248,0.4);">シナリオ</a>で今後の展開を整理。
-    </span>
+      <!-- 特別解説グループ -->
+      <div style="margin-top:16px;border:1.5px solid rgba(248,113,113,0.45);border-radius:12px;padding:12px 16px;background:rgba(239,68,68,0.04);">
+        <div style="font-size:0.95rem;font-weight:800;color:#ff6b6b;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:7px;">
+          <span style="font-size:1.1rem;">🔬</span> 特別解説コラム
+          <span style="font-size:0.68rem;font-weight:600;color:#94a3b8;margin-left:4px;">― 深掘り分析記事</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+            💣 機雷問題
+          </a>
+          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.35);color:#fbbf24;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+            🛢️ サウジ危機
+          </a>
+          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+            🌊 ルートC・アラスカ
+          </a>
+        </div>
+      </div>
 
-    <!-- ボタン行 -->
-     <!-- ボタン案内 -->
-<div style="font-size:0.72rem;color:#64748b;margin-bottom:6px;letter-spacing:0.03em;">
-  👇 気になるセクションへジャンプ
-</div>
-
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;">
-      <a href="#incident" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-        🚨 速報インシデント
-      </a>
-      <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-        📰 最新ニュース
-      </a>
-      <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-        🌐 現地メディア視点
-      </a>
-
-</div>
-    <!-- ステータスバッジ -->
-    <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
-      <span style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#f87171;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">🔴 停戦は脆弱</span>
-      <span style="background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">⚠️ 海峡は厳格統制下</span>
-      <span style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">📅 4/13 協議進展が焦点</span>
-      <span style="background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.3);color:#d8b4fe;font-size:0.8rem;font-weight:700;padding:4px 12px;border-radius:20px;">💹 WTI $100超・急騰リスク</span>
-      <!-- 地図リンクボタン -->
-      <a href="#map" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%);border:1px solid rgba(56,189,248,0.5);color:#7dd3fc;font-size:0.9rem;font-weight:800;padding:7px 18px;border-radius:24px;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;white-space:nowrap;">
-        🗺️ 地図はここ &nbsp;→
-      </a>
     </div>
-
-    <!-- 特別解説グループ -->
-    <div style="margin-top:16px;border:1.5px solid rgba(248,113,113,0.45);border-radius:12px;padding:12px 16px;background:rgba(239,68,68,0.04);">
-      <div style="font-size:0.95rem;font-weight:800;color:#ff6b6b;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:7px;">
-        <span style="font-size:1.1rem;">🔬</span> 特別解説コラム
-        <span style="font-size:0.68rem;font-weight:600;color:#94a3b8;margin-left:4px;">― 深掘り分析記事</span>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          💣 機雷問題
-        </a>
-        <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.35);color:#fbbf24;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          🛢️ サウジ危機
-        </a>
-        <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          🌊 ルートC・アラスカ
-        </a>
-      </div>
-    </div>
+  </div>
+</div>
 
   </div><!-- /30秒カラム内側 -->
 </div><!-- /30秒カラム外側 -->
@@ -640,7 +685,6 @@ footer {
 <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 各プレイヤーの動向と通航状況をリアルタイムで確認</div>
 <div id="situation" class="sit-grid"></div>
 <div class="sit-grid">
-
 <!-- カード① 米国 -->
   <div class="sit-card danger">
     <div class="s-icon">🇺🇸</div>

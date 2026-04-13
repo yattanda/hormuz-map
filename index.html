@@ -591,6 +591,236 @@ footer {
   .rtable th:nth-child(4), .rtable td:nth-child(4) { width: 22% !important; word-break: break-all; padding: 5px 3px !important; }
   .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 12% !important; text-align: center; word-break: break-all; padding: 5px 2px !important; }
 }
+/* ================================================
+   特別解説ウィジェット (briefing-widget)
+   既存サイトのデザインシステムに完全統合
+================================================ */
+.briefing-widget {
+  border: 1.5px solid #c9a84c;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0d1020, #0f1428);
+  box-shadow: 0 0 32px rgba(201,168,76,0.12), 0 4px 24px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.bw-banner {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: linear-gradient(90deg, #1e0000, #3a0000, #1e0000);
+  border-bottom: 1.5px solid #c9a84c;
+  padding: 9px 16px;
+}
+.bw-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #ef4444; flex-shrink: 0;
+  animation: badgeBlink 1.3s ease-in-out infinite;
+}
+.bw-flag { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
+.bw-badge {
+  font-size: .65rem; font-weight: 800; letter-spacing: .15em;
+  color: #f87171; border: 1px solid rgba(239,68,68,0.5);
+  background: rgba(239,68,68,0.12); padding: 3px 10px; border-radius: 3px;
+}
+.bw-sub {
+  font-size: .68rem; color: #c8b080; letter-spacing: .05em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bw-header {
+  text-align: center;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  background: linear-gradient(180deg, #0f1030 0%, transparent 100%);
+}
+.bw-eyebrow {
+  display: inline-block; font-size: .62rem; font-weight: 700;
+  letter-spacing: .38em; color: #c9a84c;
+  border: 1px solid rgba(201,168,76,0.4); padding: 3px 14px; margin-bottom: 12px;
+}
+.bw-title {
+  font-size: 1.15rem; font-weight: 800; color: #f0e8d4;
+  letter-spacing: .06em; line-height: 1.65; margin-bottom: 8px;
+}
+.bw-meta { font-size: .66rem; color: #64748b; }
+.bw-meta em { color: #c9a84c; font-style: normal; margin: 0 4px; }
+.bw-inner { padding: 0 18px 24px; }
+.bw-sec {
+  font-size: .62rem; font-weight: 700; letter-spacing: .3em; color: #c9a84c;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+  padding: 16px 0 6px; margin-bottom: 12px;
+}
+/* 精査メモ */
+.bw-analysis {
+  background: #061206; border: 1px solid rgba(92,184,92,0.4);
+  border-left: 3px solid #5cb85c; border-radius: 0 8px 8px 0;
+  padding: 12px 14px; margin-bottom: 16px;
+}
+.bw-analysis-head {
+  font-size: .63rem; font-weight: 700; color: #5cb85c;
+  letter-spacing: .15em; margin-bottom: 7px;
+}
+.bw-analysis p {
+  font-size: .75rem; color: #9ecf9e; line-height: 1.8;
+}
+.bw-analysis p + p { margin-top: 5px; }
+.bw-analysis strong { color: #e8f4e8; }
+.bw-c-gold { color: #c9a84c; }
+.bw-c-blue { color: #38bdf8; }
+/* タイムライン */
+.bw-timeline { position: relative; padding-left: 22px; margin-bottom: 4px; }
+.bw-timeline::before {
+  content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1.5px;
+  background: linear-gradient(to bottom, rgba(201,168,76,.4), rgba(56,189,248,.4), rgba(201,168,76,.4));
+}
+.bw-tl { position: relative; margin-bottom: 13px; }
+.bw-tl:last-child { margin-bottom: 0; }
+.bw-tl::before {
+  content: ''; position: absolute; left: -18px; top: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #0d1020; border: 1.5px solid #c9a84c;
+}
+.bw-tl.tl-b::before { border-color: #38bdf8; }
+.bw-tl.tl-r::before { border-color: #ef4444; background: #1c0505; }
+.bw-tl.tl-g::before { border-color: #34d399; }
+.bw-tl-time { font-size: .62rem; color: #c9a84c; letter-spacing: .07em; margin-bottom: 2px; }
+.bw-tl.tl-b .bw-tl-time { color: #38bdf8; }
+.bw-tl.tl-r .bw-tl-time { color: #f87171; }
+.bw-tl.tl-g .bw-tl-time { color: #34d399; }
+.bw-tl-body { font-size: .74rem; color: #94a3b8; line-height: 1.7; }
+/* 差分表 */
+.bw-diff {
+  background: #090915; border: 1px solid rgba(155,89,182,0.4);
+  border-left: 3px solid #9b59b6; border-radius: 0 8px 8px 0;
+  padding: 12px 14px; margin-bottom: 4px;
+}
+.bw-diff-head {
+  font-size: .63rem; font-weight: 700; color: #bb8fce;
+  letter-spacing: .15em; margin-bottom: 10px;
+}
+.bw-table {
+  width: 100%; border-collapse: collapse;
+  font-size: .7rem;
+}
+.bw-table th {
+  text-align: left; color: #475569; font-weight: 600;
+  padding: 4px 8px; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.bw-table th:first-child { width: 26%; }
+.bw-table td {
+  padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.6; vertical-align: top;
+}
+.bw-table tr:last-child td { border-bottom: none; }
+.bw-table td:first-child { color: #bb8fce; font-weight: 600; }
+.bw-table td:nth-child(2) { color: #c9a84c; }
+.bw-table td:nth-child(3) { color: #7ab3e8; }
+/* 声明カード */
+.bw-card {
+  border-radius: 10px; padding: 20px 20px 16px;
+  margin-bottom: 20px; position: relative;
+}
+.bw-card:last-of-type { margin-bottom: 0; }
+.bw-card.bw-gold {
+  background: linear-gradient(135deg, #0d1020, #121830);
+  border: 1px solid rgba(201,168,76,0.4);
+}
+.bw-card.bw-blue {
+  background: linear-gradient(135deg, #08101e, #0d1828);
+  border: 1px solid rgba(56,189,248,0.35);
+}
+.bw-card-badge {
+  position: absolute; top: -9px; left: 18px;
+  font-size: .58rem; font-weight: 700; letter-spacing: .15em; padding: 0 8px;
+}
+.bw-card.bw-gold .bw-card-badge { background: #0d1020; color: #c9a84c; }
+.bw-card.bw-blue .bw-card-badge { background: #08101e; color: #38bdf8; }
+.bw-card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+.bw-card-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  font-size: .74rem; font-weight: 700; flex-shrink: 0;
+}
+.bw-card.bw-gold .bw-card-num { color: #c9a84c; border: 1.5px solid #c9a84c; background: rgba(201,168,76,0.1); }
+.bw-card.bw-blue .bw-card-num { color: #38bdf8; border: 1.5px solid #38bdf8; background: rgba(56,189,248,0.1); }
+.bw-card-title { font-size: .82rem; font-weight: 700; color: #e2e8f0; margin-bottom: 3px; }
+.bw-card-meta { font-size: .63rem; color: #475569; }
+.bw-card-meta em { font-style: normal; margin: 0 3px; color: #64748b; }
+/* 原文ボックス */
+.bw-orig {
+  background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px; padding: 11px 14px; margin-bottom: 12px;
+}
+.bw-orig-label {
+  font-size: .56rem; font-weight: 700; letter-spacing: .22em;
+  color: #475569; margin-bottom: 7px;
+}
+.bw-orig-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .73rem; color: #94a3b8; line-height: 1.85;
+}
+.bw-orig-text p + p { margin-top: 7px; }
+/* 翻訳ボックス */
+.bw-trans { border-radius: 6px; padding: 14px 16px; }
+.bw-card.bw-gold .bw-trans { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.15); }
+.bw-card.bw-blue .bw-trans { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.15); }
+.bw-trans-label {
+  font-size: .58rem; font-weight: 700; letter-spacing: .22em; margin-bottom: 10px;
+}
+.bw-card.bw-gold .bw-trans-label { color: #c9a84c; }
+.bw-card.bw-blue .bw-trans-label { color: #38bdf8; }
+.bw-trans-body { font-size: .8rem; line-height: 2.05; color: #cbd5e1; letter-spacing: .03em; }
+.bw-trans-body p { margin-bottom: 1.1em; }
+.bw-trans-body p:last-child { margin-bottom: 0; }
+.bw-hl-gold { border-left: 2px solid #c9a84c; padding-left: 11px; color: #e8dfc4; }
+.bw-hl-blue { border-left: 2px solid #38bdf8; padding-left: 11px; color: #bae0f8; }
+.bw-hl-red  { border-left: 2px solid #ef4444; padding-left: 11px; color: #fca5a5; }
+/* 出典 */
+.bw-src {
+  margin-top: 12px; background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 10px 13px;
+}
+.bw-src-head {
+  font-size: .57rem; font-weight: 700; letter-spacing: .22em;
+  color: #475569; margin-bottom: 8px;
+}
+.bw-src-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px; }
+.bw-src-row:last-child { margin-bottom: 0; }
+.bw-src-icon { font-size: .8rem; flex-shrink: 0; margin-top: 1px; }
+.bw-src-name { font-size: .65rem; color: #94a3b8; margin-bottom: 1px; }
+.bw-src-url { font-size: .63rem; }
+.bw-src-url a { color: #38bdf8; text-decoration: none; word-break: break-all; }
+.bw-src-url a:hover { text-decoration: underline; }
+.bw-src-note { font-size: .59rem; color: #475569; margin-top: 1px; }
+/* 区切り */
+.bw-divider {
+  display: flex; align-items: center; gap: 10px; padding: 2px 0 16px;
+}
+.bw-divider::before, .bw-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.25), transparent);
+}
+.bw-divider span { color: rgba(201,168,76,0.3); font-size: .66rem; }
+/* フッター */
+.bw-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 6px;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.2);
+}
+.bw-footer-l { font-size: .6rem; color: #334155; }
+.bw-footer-r { font-size: .6rem; color: rgba(201,168,76,0.4); letter-spacing: .1em; }
+/* レスポンシブ */
+@media (max-width: 860px) {
+  .bw-title { font-size: .95rem; }
+  .bw-table th:first-child { width: 32%; }
+  .bw-card { padding: 16px 14px 14px; }
+  .bw-inner { padding: 0 12px 20px; }
+}
+@media (max-width: 480px) {
+  .bw-title { font-size: .88rem; }
+  .bw-trans-body { font-size: .76rem; }
+  .bw-orig-text { font-size: .68rem; }
+}
+Copy
+
 </style>
 </head>
 <body>
@@ -599,7 +829,7 @@ footer {
   <h1>🗺️ <span style="color: #7dd3fc; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px;">ホルムズ海峡危機マップ</span><span style="color: #94a3b8; font-size: 1.0rem; font-weight: 400; margin-left: 12px;">通航状況・代替ルート・市場波及</span></h1>
   <div class="badges">
     <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-    <span class="badge-item badge-date">📅 2026年4月11日朝更新</span>
+    <span class="badge-item badge-date">📅 2026年4月13日 更新</span>
     <button onclick="hardReload()" style="
      background:rgba(56,189,248,0.15);
      border:1px solid #38bdf8;
@@ -618,8 +848,15 @@ footer {
   </div>
 </header>
 
-<span class="ticker-text" style="font-size:16px;font-weight:700;">
-【4/13 7:00 速報】🚨【重大局面】トランプ大統領「米海軍がホルムズ海峡を封鎖する。イランに通航料を支払った全船舶を公海上で追跡・拿捕せよと海軍に命令した」（4/12夜SNS投稿）｜米中央軍（CENTCOM）「4月13日よりイランの港湾への海上封鎖を開始する」と正式発表｜イラン「敵が誤った行動をとればホルムズで"deadly vortex（死の渦）"に飲み込まれる」と警告｜🛢️WTI $115超への急騰予測が浮上―Kobeissi Letter「今月中に+21%上昇の可能性」｜交渉は事実上決裂（バンス副大統領、21時間交渉後「合意なし」で帰国）｜停戦期限4/22前後が迫る中、再交渉か米の再攻撃判断が次の焦点｜✅サウジ東西パイプライン（7,00万bpd）は4/12全面回復・ヤンブー経由代替ルートB復活｜🇯🇵日本：5月から北米産原油到着・備蓄254日分で当面対応可能だが今夏〜秋が正念場
+<div class="ticker">
+  <span class="ticker-label">🔴 速報</span>
+  <div class="ticker-scroll">
+    <span class="ticker-text">
+      【【4/13 23:00 速報】🚨【重大局面・封鎖発動】米中央軍（CENTCOM）が4月13日10:00 AM ET（23:00 JST）よりイラン港湾への封鎖を正式開始｜Brent $101.88・WTI $104.69（前日比+9%急騰）｜サウジ東西パイプライン4/12全面回復（700万BPD）｜イラン「誤れば"死の渦"に飲み込まれる」と警告｜停戦期限4/22が次の焦点
+    </span>
+  </div>
+</div>
+【4/13 7:00 】🚨【重大局面】トランプ大統領「米海軍がホルムズ海峡を封鎖する。イランに通航料を支払った全船舶を公海上で追跡・拿捕せよと海軍に命令した」（4/12夜SNS投稿）｜米中央軍（CENTCOM）「4月13日よりイランの港湾への海上封鎖を開始する」と正式発表｜イラン「敵が誤った行動をとればホルムズで"deadly vortex（死の渦）"に飲み込まれる」と警告｜🛢️WTI $115超への急騰予測が浮上―Kobeissi Letter「今月中に+21%上昇の可能性」｜交渉は事実上決裂（バンス副大統領、21時間交渉後「合意なし」で帰国）｜停戦期限4/22前後が迫る中、再交渉か米の再攻撃判断が次の焦点｜✅サウジ東西パイプライン（7,00万bpd）は4/12全面回復・ヤンブー経由代替ルートB復活｜🇯🇵日本：5月から北米産原油到着・備蓄254日分で当面対応可能だが今夏〜秋が正念場
 </span>
   </div>
 </div>
@@ -1095,121 +1332,288 @@ const SHIP_CONFIG = {
   </script>
 
 <!-- ROUTE TABLE -->
-<div id="incident">
-<div style="background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%); padding: 15px; margin: 15px 0; border-radius: 4px; border-left: 5px solid #cc3333;">
-  <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid rgba(255,100,100,0.2);">
-    <span style="font-size:18px;">🚨</span>
-    <strong style="color:#ff6b6b; font-size:13px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">速報インシデント</strong>
-    <span style="margin-left:auto; font-size:11px; color:#888; font-weight:400;">📅 4/11 17:30 更新</span>
+<div id="incident" style="border-radius:12px;overflow:hidden;border:1px solid rgba(239,68,68,0.35);">
+
+  <!-- トグルボタン -->
+  <button onclick="toggleIncident()" id="incident-toggle-btn"
+    style="width:100%;background:linear-gradient(135deg,#1a0808,#2d1010);border:none;border-bottom:1px solid rgba(239,68,68,0.3);padding:13px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:inherit;">
+    <span style="display:flex;align-items:center;gap:10px;">
+      <span style="font-size:1.1rem;">🚨</span>
+      <strong style="font-size:0.88rem;font-weight:800;color:#f87171;">速報インシデント</strong>
+      <span style="font-size:0.65rem;color:#64748b;padding:2px 8px;border-radius:12px;background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);">📅 4/13 23:00 更新（旧速報・参考用）</span>
+    </span>
+    <span id="incident-arrow" style="font-size:0.78rem;color:#ef4444;white-space:nowrap;">▼ 開いて表示</span>
+  </button>
+
+  <!-- 折りたたみ本体（デフォルト非表示） -->
+  <div id="incident-body" style="display:none;background:linear-gradient(135deg,#1a0808,#250d0d);padding:16px 18px;">
+
+    <p style="font-size:0.72rem;color:#64748b;margin-bottom:12px;padding:6px 10px;background:rgba(100,116,139,0.1);border-radius:6px;border-left:3px solid #475569;">
+      ⚠️ 以下は4/11〜4/12時点の速報です。最新状況はティッカーおよび各セクションを参照してください。
+    </p>
+
+    <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+      【4/11 記録】ホルムズ通航制限継続中・東西パイプライン輸送量減少・イスラマバード協議開始
+    </strong>
+
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+
+      <li style="padding:10px 12px;background:rgba(239,68,68,0.07);border-radius:8px;border-left:3px solid #dc2626;font-size:0.76rem;color:#94a3b8;line-height:1.8;">
+        <strong style="color:#fca5a5;">🛢️ 東西パイプライン（4/8）：</strong>停戦合意から数時間後、ドローンによりポンプ施設1か所が被弾。輸送量<strong style="color:#f87171;">▲70万BPD（通常能力700万BPDの約10%）</strong>。サウジエネルギー省が4/9に公式確認。現時点で復旧時期の発表なし。
+        <em style="color:#4ade80;font-size:0.68rem;display:block;margin-top:4px;">→ 4/12 全面復旧（700万BPD回復）済み ✅</em>
+      </li>
+
+      <li style="padding:10px 12px;background:rgba(239,68,68,0.07);border-radius:8px;border-left:3px solid #dc2626;font-size:0.76rem;color:#94a3b8;line-height:1.8;">
+        <strong style="color:#fca5a5;">🏭 サウジ生産・精製施設：</strong>マニファ油田▲30万BPD・クライス施設▲30万BPD、合計<strong style="color:#f87171;">生産能力▲60万BPD</strong>。ジュベイル・ラスタヌラ・ヤンブー・リヤドの製油所4か所も被弾、精製品輸出に影響。<strong style="color:#f87171;">死者1名・負傷者7名</strong>（Aramco保安要員）
+      </li>
+
+      <li style="padding:10px 12px;background:rgba(245,158,11,0.07);border-radius:8px;border-left:3px solid #d97706;font-size:0.76rem;color:#94a3b8;line-height:1.8;">
+        <strong style="color:#fde68a;">🚢 ホルムズ通航状況（4/9）：</strong>ADNOC CEO「通航は条件付き・管理下で行われている」と発言。停戦後24時間の通過確認船舶は<strong style="color:#fbbf24;">3隻</strong>。Kpler分析「湾岸産油国で合計<strong style="color:#fbbf24;">日量1,300万BPD相当が通常の出荷ペースを下回っている</strong>」
+        <em style="color:#f87171;font-size:0.68rem;display:block;margin-top:4px;">→ 4/13 CENTCOM封鎖発動により状況さらに悪化</em>
+      </li>
+
+      <li style="padding:10px 12px;background:rgba(245,158,11,0.07);border-radius:8px;border-left:3px solid #d97706;font-size:0.76rem;color:#94a3b8;line-height:1.8;">
+        <strong style="color:#fde68a;">🤝 4/11〜12 イスラマバード協議（21時間）→ 事実上決裂：</strong>米代表団（バンス副大統領）と参加も核問題・ホルムズ管理権・レバノン停戦条件で妥協できず帰国。バンス「最終かつ最善の提案を示した。イランが受け入れるかどうかだ」と声明。トランプ「合意の有無は関係ない、米国はすでに勝った」と強気を維持。
+      </li>
+
+      <li style="padding:10px 12px;background:rgba(56,189,248,0.07);border-radius:8px;border-left:3px solid #2563eb;font-size:0.76rem;color:#94a3b8;line-height:1.8;">
+        <strong style="color:#93c5fd;">💹 WTI推移：</strong>4/7 $112.95 → 4/8 $94.41（停戦合意で▲17%下落）→ 4/10 $95.63 → 4/11 NY終値<strong style="color:#38bdf8;">$96.57</strong>（▲1.33%）。週間では<strong style="color:#38bdf8;">▲13.4%</strong>。パイプライン被害と協議の不透明感を受け下値は限定的な推移。
+        <em style="color:#f87171;font-size:0.68rem;display:block;margin-top:4px;">→ 4/13 封鎖発動後：Brent $101.88・WTI $104.69（+9%急騰）</em>
+      </li>
+
+    </ul>
   </div>
-  <strong style="color: #ffcccc; font-size: 14px; font-weight: 700;">【4/11 最新】ホルムズ通航制限継続中・東西パイプライン輸送量減少・イスラマバード協議本日開始</strong>
-  <ul style="color: #ffdddd; margin: 8px 0 0 0; padding-left: 20px; font-size: 14px; line-height: 1.8; list-style-position: inside;">
-    <li><strong>🛢️ 東西パイプライン（4/8）：</strong>停戦合意から数時間後、ドローンによりポンプ施設1か所が被弾。輸送量<strong>▲70万BPD（通常能力700万BPDの約10%）</strong>。サウジエネルギー省が4/9に公式確認。現時点で復旧時期の発表なし</li>
-    <li><strong>🏭 サウジ生産・精製施設：</strong>マニファ油田▲30万BPD・クライス施設▲30万BPD、合計<strong>生産能力▲60万BPD</strong>。ジュベイル・ラスタヌラ・ヤンブー・リヤドの製油所4か所も被弾、精製品輸出に影響。<strong>死者1名・負傷者7名</strong>（Aramco保安要員）</li>
-    <li><strong>🚢 ホルムズ通航状況：</strong>ADNOC CEO「通航は条件付き・管理下で行われている」と発言（4/9）。停戦後24時間の通過確認船舶は<strong>3隻</strong>。Kpler分析「湾岸産油国で合計<strong>日量1,300万BPD相当が通常の出荷ペースを下回っている</strong>」</li>
-    <li><strong>🤝 4/11 イスラマバード協議：</strong>米代表団（バンス副大統領）・イラン代表団ともに到着確認、本日午後（現地時間）開始見通し。主要論点はホルムズ管理・ウラン濃縮・レバノン停戦条件への包含可否。トランプ「イランの対応は極めて不十分」と発言</li>
-    <li><strong>💹 WTI：</strong>4/7 $112.95 → 4/8 $94.41（停戦合意で下落）→ 4/10 $95.63 → 4/11 NY終値<strong>$96.57</strong>（▲1.33%）。週間では<strong>▲13.4%</strong>。パイプライン被害と協議の不透明感を受け下値は限定的な推移</li>
-  </ul>
 </div>
+
+<script>
+function toggleIncident() {
+  var body = document.getElementById('incident-body');
+  var arrow = document.getElementById('incident-arrow');
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    arrow.textContent = '▲ 閉じる';
+  } else {
+    body.style.display = 'none';
+    arrow.textContent = '▼ 開いて表示';
+  }
+}
+</script>
   <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:0.8rem;color:#7dd3fc;line-height:1.6;">
   <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
 </div>
 </div>
-  <div id="routes">
-    <div class="sec-title">🚢 全ルート現況サマリー（2026年4月5日時点）</div>
-    <div class="rtable-wrap">
+Copy<div id="routes">
+  <div class="sec-title">🚢 全ルート現況サマリー（2026年4月13日 23:00 JST 更新）</div>
+  <div class="rtable-wrap">
     <table class="rtable">
-    <colgroup>
-    <col class="col-route">
-    <col class="col-capacity">
-    <col class="col-status">
-    <col class="col-risk">
-    <col class="col-badge">
-    </colgroup>
-  <thead>
+      <colgroup>
+        <col style="width:4%">
+        <col style="width:16%">
+        <col style="width:16%">
+        <col style="width:27%">
+        <col style="width:22%">
+        <col style="width:15%">
+      </colgroup>
       <thead>
         <tr>
-          <th style="width:4%"></th>
-          <th style="width:16%">ルート</th>
-          <th style="width:16%">輸送能力</th>
-          <th style="width:25%">現況・実績</th>
-          <th style="width:22%">主なリスク</th>
-          <th style="width:17%">ステータス</th>
+          <th></th>
+          <th>ルート</th>
+          <th>輸送能力</th>
+          <th>現況・実績</th>
+          <th>主なリスク</th>
+          <th>ステータス</th>
         </tr>
       </thead>
       <tbody>
+
         <tr class="rx">
           <td>⛔</td>
-          <td><strong style="color:#f87171">旧ルート</strong><br><small style="color:#64748b">ホルムズ海峡経由</small></td>
-          <td style="color:#f87171">日量 約2,000万bbl<br><small>世界消費の約20%</small></td>
-          <td>2月末より厳格統制継続中。Kharg Island空爆により状況さらに悪化。正常化には至らず。</td>
-          <td>イランの巡航ミサイル等による攻撃リスク依然高い</td>
-          <td><span class="pill pill-r">⚠️ 厳格統制下</span></td>
+          <td>
+            <strong style="color:#f87171">旧ルート</strong><br>
+            <small style="color:#64748b">ホルムズ海峡本線</small>
+          </td>
+          <td style="color:#f87171">
+            日量 約2,000万bbl<br>
+            <small>世界消費の約20%</small>
+          </td>
+          <td>
+            <strong style="color:#f87171">4/13 10:00 AM ET（23:00 JST）よりCENTCOM封鎖発動。</strong>
+            通過船舶は平常時比<strong style="color:#f87171">約95%減（日平均≤5隻）</strong>。
+            Brent $101.88・WTI $104.69（前日比+9%急騰）。<br>
+            <small style="color:#64748b">出典：CENTCOM声明・Reuters・global-scm.com（4/13）</small>
+          </td>
+          <td>米軍‑IRGC偶発衝突リスク。米海軍による拿捕・機雷除去作戦継続中。イラン「誤れば"死の渦"」と警告。</td>
+          <td><span class="pill pill-r">🔴 封鎖中</span></td>
         </tr>
+
         <tr class="rd">
-          <td>🟡</td>
-          <td><strong style="color:#fbbf24">ルートD 🆕</strong><br><small style="color:#64748b">通航料払いで通過</small></td>
-          <td style="color:#fbbf24">限定的<br><small>友好国のみ</small></td>
-          <td>日本関係船2隻目（GREEN SANVI）が4/5通過。インド・パキスタン・フィリピンが独立通航協定を取得。「選別的通航」が既成事実化。通航実績：平常時比14%で低迷。</td>
-          <td>イランの恣意的判断に依存。いつでも停止可能。</td>
-          <td><span class="pill pill-o">🆕 交渉次第</span></td>
+          <td>🟠</td>
+          <td>
+            <strong style="color:#fb923c">ルートD</strong><br>
+            <small style="color:#64748b">イラン通航料払い通過</small>
+          </td>
+          <td style="color:#fb923c">
+            実質停止<br>
+            <small>拿捕リスク大</small>
+          </td>
+          <td>
+            CENTCOM封鎖発動により<strong style="color:#f87171">実質機能停止</strong>。
+            トランプがイランへの通航料支払い済み船舶も拿捕対象と明言。
+            インド・パキスタン等との独立通航協定も事実上無効化リスク。<br>
+            <small style="color:#64748b">出典：National Review・JNS.org（4/12）</small>
+          </td>
+          <td>米海軍による拿捕リスク大。現時点での利用は極めて危険。</td>
+          <td><span class="pill pill-r">🔴 事実上停止</span></td>
         </tr>
+
         <tr class="ra">
           <td>🔵</td>
-          <td><strong style="color:#38bdf8">ルートA</strong><br><small style="color:#64748b">フジャイラ港経由</small></td>
-          <td style="color:#38bdf8">日量 約150〜180万bbl</td>
-          <td>ADCOPパイプライン→フジャイラ→ムンバイ沖積み替え→日本。4/5 ENEOS向け到着済み✅。UAE周辺への攻撃発生によりフジャイラ港の安全確保が課題。</td>
-          <td>フジャイラ港へのイラン攻撃リスク</td>
-          <td><span class="pill pill-y">⚠️ 継続・要警戒</span></td>
+          <td>
+            <strong style="color:#38bdf8">ルートA</strong><br>
+            <small style="color:#64748b">フジャイラ港経由</small>
+          </td>
+          <td style="color:#38bdf8">
+            日量 約150〜180万bbl
+          </td>
+          <td>
+            ADCOPパイプライン→フジャイラ→ムンバイ沖積み替え→日本。
+            <strong>ENEOS向け荷受け済み✅</strong>。
+            ホルムズ封鎖の適用外港湾として引き続き機能中。混雑傾向あり。<br>
+            <small style="color:#64748b">出典：Bloomberg・Lloyd's List（4/13）</small>
+          </td>
+          <td>UAE周辺へのイラン報復攻撃リスク。フジャイラ港の混雑・遅延拡大。</td>
+          <td><span class="pill pill-y">⚠️ 継続・混雑</span></td>
         </tr>
+
         <tr class="rb">
-          <td>🟡</td>
-          <td><strong style="color:#fbbf24">ルートB</strong><br><small style="color:#64748b">ヤンブー港経由</small></td>
-          <td style="color:#fbbf24">現在 日量約430万bbl<br><small>（▲70万BPD 減少中）</small></td>
-          <td>東西PL→ヤンブー→バベルマンデブ→マレーシア沖積み替え→日本。3/28太陽石油（愛媛）到着済み✅。4/8ドローン攻撃によりポンプ施設1か所被弾、輸送量▲70万BPD減少（サウジエネルギー省 4/9公式確認）。Aramcoはヤンブー港からの積載をアラブライト限定に絞って運用中。復旧時期は未発表。</td>
-          <td><strong style="color:#fbbf24">⚠️ 東西PL輸送量減少中・復旧時期未定<br>フーシ派・紅海リスク継続</strong></td>
-          <td><span class="pill pill-y">⚠️ 要注意</span></td>
+          <td>🟢</td>
+          <td>
+            <strong style="color:#4ade80">ルートB</strong><br>
+            <small style="color:#64748b">ヤンブー港経由<br>（サウジ東西PL）</small>
+          </td>
+          <td style="color:#4ade80">
+            日量 700万bpd<br>
+            <small style="color:#4ade80">✅ 4/12 全面回復</small>
+          </td>
+          <td>
+            東西PL→ヤンブー→バベルマンデブ→日本。
+            <strong style="color:#4ade80">4/12 全面復旧（700万BPD回復）✅</strong>（サウジエネルギー省公式・Reuters・Bloomberg確認）。
+            太陽石油（愛媛）3/28到着済み。日本向けサウジ原油の主力ルートとして機能再開。<br>
+            <small style="color:#64748b">出典：Reuters・Bloomberg・サウジエネルギー省（4/12）</small>
+          </td>
+          <td>フーシ派による紅海・バベルマンデブ攻撃リスク（ホルムズとの二重封鎖シナリオ）。</td>
+          <td><span class="pill pill-g">🟢 全面回復</span></td>
         </tr>
+
         <tr class="rc">
           <td>🟣</td>
-          <td><strong style="color:#a78bfa">ルートC</strong><br><small style="color:#64748b">中東以外からの調達</small></td>
-          <td style="color:#a78bfa">増量交渉中</td>
-          <td>米国（アラスカ含む）・ブラジル（喜望峰周り）・カザフスタン・カナダ等。4/25に第1便到着予定。中東以外からの調達が急務となり各社が増量交渉を加速中。</td>
-          <td>輸送期間大幅増・製油所との品質適合調整が必要</td>
-          <td><span class="pill pill-p">📅 4/25予定・加速中</span></td>
+          <td>
+            <strong style="color:#a78bfa">ルートC</strong><br>
+            <small style="color:#64748b">中東以外からの調達<br>（喜望峰ルート含む）</small>
+          </td>
+          <td style="color:#a78bfa">
+            増量交渉中<br>
+            <small>+12〜16日所要</small>
+          </td>
+          <td>
+            米国（アラスカ含む）・ブラジル（喜望峰周り）・カザフスタン・カナダ等。
+            喜望峰経由3/28初到着。中東以外の調達比率を各社が急拡大中。
+            所要期間+12〜16日増・調達コスト上昇。<br>
+            <small style="color:#64748b">出典：FreightWaves・時事通信（4/3）</small>
+          </td>
+          <td>輸送期間大幅増・製油所との品質適合調整が必要。調達コスト上昇。</td>
+          <td><span class="pill pill-p">📅 拡大中・加速</span></td>
         </tr>
+
+        <tr style="background:rgba(56,189,248,0.04);">
+          <td colspan="6" style="font-size:0.68rem;color:#475569;padding:8px 13px;text-align:right;">
+            📊 市場：Brent $101.88・WTI $104.69（4/13）｜湾岸産油国で日量1,300万BPD以上が通常ペース以下（Kpler）｜戦争危険保険料は危機前比10〜50倍（IUA）
+          </td>
+        </tr>
+
       </tbody>
     </table>
-    </div>
   </div>
+</div>
 
   <!-- SCENARIOS -->
    <div id="scenario"></div>
-  <div>
-    <div class="sec-title">📊 3つのシナリオ（4/8停戦合意後・今後の展開）</div>
-    <div class="sc-grid">
-      <div class="sc-card sc-best">
-        <span class="sc-tag">シナリオ① 【4/8 実現】</span>
-        <div class="sc-title"><span class="label-fact">事実</span>🕊️ 停戦合意・ホルムズ2週間開放へ</div>
-        <div class="sc-body">4/8朝、トランプ大統領が「2週間の爆撃停止」を発表。パキスタン首相が「米・イラン・同盟国がレバノン含むあらゆる場所で即時停戦合意、停戦は即時発効」と公式発表（AFP）。アラグチ外相「攻撃停止でイランも停止・2週間の安全通航を確保」。4/10イスラマバードで最終合意に向けた協議開始予定。<br><br>
-        <strong>⚠️ 残る不確実性：</strong>イスラエルは「ホルムズ開放まで作戦継続」の立場。イラン国営TV「米国の屈辱的な撤退」と報道。2週間後の恒久停戦移行は不透明。
-          <div class="sc-impact"><strong style="color:#4ade80">原油への影響：</strong>WTI急落▼17%→$97台。備蓄放出を段階的に停止し通常供給へ回帰の見通し。</div>
+<div>
+  <div class="sec-title">📊 4つのシナリオ（4/13 封鎖発動後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></div>
+  <div class="sc-grid" style="grid-template-columns:repeat(2,1fr);">
+
+    <!-- シナリオ A：ベスト -->
+    <div class="sc-card sc-best">
+      <span class="sc-tag">シナリオ A ― ベスト　確率 約20%</span>
+      <div class="sc-title">🕊️ 封鎖圧力でイランが交渉復帰・早期解決</div>
+      <div class="sc-body">
+        米軍封鎖によるイランの原油輸出ほぼゼロに対し、国内経済圧力が限界に達し<strong style="color:#86efac">停戦期限（4/22）前後に交渉が再開</strong>。ホルムズの完全開放と核問題の部分合意に至るシナリオ。中国・パキスタン仲介が奏功し米・イランが相互撤退条件に合意。CENTCOM封鎖を段階的に解除。
+        <div class="sc-impact">
+          💰 Brent $85〜95<br>
+          🗓️ 次の焦点：4/22 停戦期限・再交渉開始の有無<br>
+          🇯🇵 日本：代替コスト低減・ホルムズ通航正常化
         </div>
       </div>
-      <div class="sc-card sc-mid">
-        <span class="sc-tag">シナリオ② 【要注視】</span>
-        <div class="sc-title"><span class="label-scenario">シナリオ</span>⏳ 2週間後の再交渉・膠着継続</div>
-        <div class="sc-body">2週間の停止期間中に恒久合意に至らず再び膠着するケース。イランが「賠償なき完全再開は拒否」の立場を維持しており、4/10イスラマバード協議が難航する可能性。トランプが再度延長を選択するか攻撃を再開するかの二択に直面。アジア諸国の「選別的通航」協定は継続。OPEC＋増産の効果は限定的。
-          <div class="sc-impact"><strong style="color:#fbbf24">原油への影響：</strong>$92台から再び上昇リスク。代替ルートA・Bの維持と備蓄活用継続。ガソリン価格は補助金で抑制。</div>
+    </div>
+
+    <!-- シナリオ B：ベースライン -->
+    <div class="sc-card sc-mid">
+      <span class="sc-tag">シナリオ B ― ベースライン　確率 約50%</span>
+      <div class="sc-title">⏳ 米・イラン二重封鎖が定着・長期管理</div>
+      <div class="sc-body">
+        米軍がイラン港湾封鎖を継続・IRGCもホルムズ本線の通過を制限する<strong style="color:#fde68a">「二重管理フェーズ」</strong>が4/22以降も固定化。完全解決には至らないが大規模衝突も回避される膠着状態。サウジ東西PL（ルートB）・フジャイラ（ルートA）が主要ルートとして機能。代替調達（ルートC）の拡大が続く。
+        <div class="sc-impact">
+          💰 Brent $95〜110<br>
+          🗓️ 次の焦点：5月初旬の外交接触・OPECプラスの増産動向<br>
+          🇯🇵 日本：追加コスト継続・ナフサ在庫流通課題
         </div>
       </div>
-      <div class="sc-card sc-worst">
-        <span class="sc-tag">シナリオ③ 【リスク継続】</span>
-        <div class="sc-title"><span class="label-scenario">シナリオ</span>💥 2週間後に攻撃再開・二重封鎖</div>
-        <div class="sc-body">2週間の停止期間中にイランがホルムズを実質開放せず、トランプが攻撃を再開するケース。イスラエルが独自作戦を継続しイランが報復としてフーシ派に紅海封鎖を命令。ホルムズ＋バベルマンデブ「二重封鎖」が現実化。IEA「供給減少はオイルショック超」と警告。
-          <div class="sc-impact"><strong style="color:#f87171">原油への影響：</strong>WTI再び$110超へ急騰リスク。世界供給最大25%減少。日本はルートCへの全振りと備蓄の急速消費が迫られる。</div>
+    </div>
+
+    <!-- シナリオ C：ワースト -->
+    <div class="sc-card sc-worst">
+      <span class="sc-tag">シナリオ C ― ワースト　確率 約20%</span>
+      <div class="sc-title">💥 米軍‑IRGC偶発衝突→全面封鎖・戦線拡大</div>
+      <div class="sc-body">
+        封鎖執行中に米海軍とIRGC艦艇が<strong style="color:#fca5a5">偶発的に交戦</strong>し全面衝突に発展。イランがフーシ派に紅海再封鎖を命令し<strong style="color:#fca5a5">ホルムズ＋バベルマンデブの二重海峡封鎖</strong>が現実化。IEA「1970年代のオイルショック超の供給減」と警告。日本は備蓄の急速消費とルートCへの全振りを迫られる。
+        <div class="sc-impact">
+          💰 Brent $130〜150<br>
+          🗓️ 次の焦点：4/13〜4/22の米海軍執行フェーズ中の衝突有無<br>
+          🇯🇵 日本：備蓄消費加速・製造業ナフサ不足・輸出減速
         </div>
       </div>
+    </div>
+
+    <!-- シナリオ D：外交進展 -->
+    <div class="sc-card" style="background:linear-gradient(135deg,#080e1c,#0d1a30);border:1px solid #2563eb;">
+      <span class="sc-tag" style="background:rgba(37,99,235,0.2);color:#60a5fa;border:1px solid rgba(37,99,235,0.4);">シナリオ D ― 外交進展　確率 約10%</span>
+      <div class="sc-title" style="color:#60a5fa;">🌐 多国間枠組みによる段階的正常化</div>
+      <div class="sc-body">
+        中国・パキスタン・日本・EU等が加わる<strong style="color:#93c5fd">多国間外交フォーマット</strong>が成立。米・イランが段階的撤退に合意し封鎖・機雷問題を国際監視下で処理。IMF・世界銀行による経済支援パッケージが誘因となりイランが交渉テーブルに復帰。11月の米中間選挙前に政治的実績を求めるトランプが柔軟姿勢へ転換する可能性を含む。
+        <div class="sc-impact" style="background:rgba(37,99,235,0.08);color:#93c5fd;">
+          💰 Brent $95〜105<br>
+          🗓️ 次の焦点：5月以降の多国間協議の枠組み形成<br>
+          🇯🇵 日本：外交主体として積極参画の機会
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- シナリオ フッター -->
+  <div style="margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);font-size:0.7rem;color:#64748b;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+    <span>📅 次の注目日：</span>
+    <span style="color:#fbbf24;">4/13〜 CENTCOM封鎖執行フェーズ</span>
+    <span style="color:#475569;">→</span>
+    <span style="color:#f87171;">4/22前後 停戦期限</span>
+    <span style="color:#475569;">→</span>
+    <span style="color:#a78bfa;">5月初旬 再交渉の有無</span>
+    <span style="color:#475569;">→</span>
+    <span style="color:#38bdf8;">11月 米中間選挙</span>
+    <span class="label-scenario" style="margin-left:auto;">分析：2026年4月13日時点</span>
+  </div>
+
+</div>
     </div>
   </div>
 
@@ -2438,6 +2842,208 @@ function toggleNewsMore() {
 </div><!-- /ナイジェリア・アンゴラ・ブラジルコラムカード -->
   </div>
 </div>
+<!-- ================================================
+     特別解説ウィジェット：トランプ大統領 ホルムズ封鎖宣言
+     追加日：2026-04-13
+================================================ -->
+<div class="briefing-widget">
+
+  <!-- バナー -->
+  <div class="bw-banner">
+    <div class="bw-dot"></div>
+    <span class="bw-flag">🇺🇸</span>
+    <span class="bw-badge">⚠ 原文日本語訳のみ掲載</span>
+    <span class="bw-sub">２声明 精査比較付き &nbsp;／&nbsp; 2026年4月12〜13日 &nbsp;｜&nbsp; Truth Social &amp; @WhiteHouse (X)</span>
+    <span class="bw-flag" style="margin-left:auto;">🇮🇷</span>
+    <div class="bw-dot"></div>
+  </div>
+
+  <!-- ヘッダー -->
+  <div class="bw-header">
+    <div class="bw-eyebrow">特　別　解　説</div>
+    <h2 class="bw-title">ホルムズ海峡封鎖宣言<br>トランプ大統領 ２つの声明 全文日本語訳</h2>
+    <div class="bw-meta">
+      2026年4月12〜13日
+      <em>|</em> イスラマバード和平交渉決裂後
+      <em>|</em> Truth Social &amp; @WhiteHouse (X)
+    </div>
+  </div>
+
+  <div class="bw-inner">
+
+    <!-- 精査メモ -->
+    <div class="bw-sec">📋 精査メモ — 2声明の構造と関係</div>
+    <div class="bw-analysis">
+      <div class="bw-analysis-head">▶ 二段構えの宣言構造について</div>
+      <p>
+        トランプ大統領は今回、<strong>2段階・2種類の声明</strong>を発しています。
+        <span class="bw-c-gold">【声明①】</span>は4月12日（日）イスラマバード交渉決裂直後にTruth Socialへ投稿した
+        「<strong>ホルムズ海峡全体の封鎖を即時発効</strong>」という広域・政治的宣言（機雷除去・拿捕・砲撃警告含む）。
+      </p>
+      <p>
+        <span class="bw-c-blue">【声明②】</span>は同日深夜（米東部時間0:43 AM＝日本時間13日13:43）に投稿された
+        「<strong>イランの港に出入りする船舶の封鎖を4月13日午前10時ESTより開始</strong>」という正式通告。
+        CENTCOMはこれを受け「非イラン向けホルムズ通航は妨げない」と限定・精緻化して公式発表しました。
+        すなわち①が<strong>最大圧力メッセージ</strong>、②が<strong>実施細則の確定通告</strong>という二段構えの構造です。
+      </p>
+    </div>
+
+    <!-- タイムライン -->
+    <div class="bw-sec">⏱ 時系列タイムライン</div>
+    <div class="bw-timeline">
+      <div class="bw-tl">
+        <div class="bw-tl-time">4月12日（日）早朝〜夕方　イスラマバード、パキスタン</div>
+        <div class="bw-tl-body">
+          <span class="pill pill-y">背景</span>
+          米・イラン・パキスタン3者による約21時間の和平交渉が決裂。バンス副大統領・ウィトコフ特使・クシュナー氏ら帰国。核問題で最終合意できず。
+        </div>
+      </div>
+      <div class="bw-tl">
+        <div class="bw-tl-time">4月12日（日）午後〜夕方　米東部時間　【声明①】</div>
+        <div class="bw-tl-body">
+          <span class="pill pill-o">声明①</span>
+          Truth Social投稿。「<strong style="color:#e2e8f0;">ホルムズ海峡全体の封鎖を即時発効</strong>」と宣言。機雷除去・通航料支払い船舶の拿捕・砲撃警告を含む広域宣言。
+        </div>
+      </div>
+      <div class="bw-tl tl-b">
+        <div class="bw-tl-time">4月13日 0:43 AM EST（日本時間13:43）　【声明②】</div>
+        <div class="bw-tl-body">
+          <span class="pill pill-p">声明②</span>
+          Truth Social第2投稿、@WhiteHouseがXで転載。「<strong style="color:#e2e8f0;">イランの港に出入りする船舶の封鎖を4月13日午前10時ESTより開始</strong>」と時刻明示の正式通告。
+        </div>
+      </div>
+      <div class="bw-tl tl-b">
+        <div class="bw-tl-time">4月12日深夜〜13日早朝　CENTCOM公式声明</div>
+        <div class="bw-tl-body">
+          <span class="pill pill-g">CENTCOM</span>
+          声明②を受けて公式発表。対象を「イランの港湾・沿岸水域への出入り船舶」に限定。「全国籍の船舶に公平に適用」と明記。非イラン向けホルムズ通航は妨げないと明示。
+        </div>
+      </div>
+      <div class="bw-tl tl-r">
+        <div class="bw-tl-time">4月13日（月）10:00 AM EST ＝ 日本時間 23:00　封鎖発動</div>
+        <div class="bw-tl-body">
+          <span class="pill pill-r">実施</span>
+          封鎖が正式発動。空母2隻（Gerald R. Ford, Abraham Lincoln）を含む大規模艦隊が配備。ブレント原油が再び$100超へ上昇。イラン革命防衛隊は「停戦違反」と強く警告。
+        </div>
+      </div>
+      <div class="bw-tl tl-g">
+        <div class="bw-tl-time">4月13日（月）　各国の反応</div>
+        <div class="bw-tl-body">
+          <span class="pill pill-g">国際反応</span>
+          英（スターマー首相）参加拒否 ／ スペイン・NATO批判 ／ イスラエル（ネタニヤフ首相）支持 ／ ロシア（ペスコフ報道官）市場への悪影響警告 ／ 中国は名指し批判を回避。
+        </div>
+      </div>
+    </div>
+
+    <!-- 差分比較 -->
+    <div class="bw-sec" style="padding-top:14px;">🔍 2声明の比較・主な違い</div>
+    <div class="bw-diff">
+      <div class="bw-diff-head">▶ 声明①（広域宣言）vs 声明②（正式通告）— 比較表</div>
+      <table class="bw-table">
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th>声明① （4/12 午後）</th>
+            <th>声明② （4/13 0:43 EST）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>投稿媒体</td><td>Truth Social</td><td>Truth Social ／ @WhiteHouse (X)</td></tr>
+          <tr><td>封鎖の範囲</td><td>ホルムズ海峡全体</td><td>イランの港に出入りする船舶に限定</td></tr>
+          <tr><td>発効時刻</td><td>「即時発効」</td><td>4月13日 午前10時 ET と明示</td></tr>
+          <tr><td>声明の性格</td><td>政治的宣言・最大圧力</td><td>実施細則の確定通告（簡潔）</td></tr>
+          <tr><td>国際法上の含意</td><td>UNCLOS通航権と矛盾の可能性</td><td>CENTCOMがUNCLOS整合性を意識</td></tr>
+          <tr><td>CENTCOMとの整合</td><td>「港湾限定」に縮小解釈</td><td>CENTCOM公式発表と完全整合</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 声明① -->
+    <div class="bw-sec" style="padding-top:14px;">📜 声明全文 日本語訳</div>
+
+    <div class="bw-card bw-gold">
+      <span class="bw-card-badge">日本語訳</span>
+      <div class="bw-card-head">
+        <span class="bw-card-num">①</span>
+        <div>
+          <div class="bw-card-title">ホルムズ海峡全体の封鎖宣言（第1声明）</div>
+          <div class="bw-card-meta">2026年4月12日（日）午後 <em>|</em> Truth Social — @realDonaldTrump <em>|</em> イスラマバード交渉決裂直後</div>
+        </div>
+      </div>
+      <div class="bw-orig">
+        <div class="bw-orig-label">ORIGINAL TEXT（原文）</div>
+        <div class="bw-orig-text">
+          <p>"Effective immediately, the United States Navy, the Finest in the World, will begin the process of BLOCKADING any and all Ships trying to enter, or leave, the Strait of Hormuz. The Blockade will begin shortly. Other Countries will be involved with this Blockade. Iran will not be allowed to profit off this Illegal Act of EXTORTION.</p>
+          <p>At some point, we will reach an 'ALL BEING ALLOWED TO GO IN, ALL BEING ALLOWED TO GO OUT' basis, but Iran has not allowed that to happen by merely saying, 'There may be a mine out there somewhere,' that nobody knows about but them. THIS IS WORLD EXTORTION, and Leaders of Countries, especially the United States of America, will never be extorted.</p>
+          <p>I have also instructed our Navy to seek and interdict every vessel in International Waters that has paid a toll to Iran. No one who pays an illegal toll will have safe passage on the high seas.</p>
+          <p>We will also begin destroying the mines the Iranians laid in the Straits.</p>
+          <p>Iran promised to open the Strait of Hormuz, and they knowingly failed to do so…as they promised, they better begin the process of getting this INTERNATIONAL WATERWAY OPEN AND FAST!</p>
+          <p>Any Iranian who fires at us, or at peaceful vessels, will be BLOWN TO HELL! Iran knows, better than anyone, how to END this situation which has already devastated their Country."</p>
+        </div>
+      </div>
+      <div class="bw-trans">
+        <div class="bw-trans-label">◆ 日本語訳</div>
+        <div class="bw-trans-body">
+          <p class="bw-hl-gold">即時発効で、世界最強の米海軍は、ホルムズ海峡に入ろうとする、あるいは出ようとするあらゆる船舶を封鎖するプロセスを開始する。封鎖は間もなく始まる。他の国々もこの封鎖に加わる。イランはこの違法な恐喝行為で利益を得ることは許されない。</p>
+          <p>いずれは「全船出入り自由」という形に至るだろうが、イランは「どこかに機雷があるかもしれない」——それを知っているのは彼らだけだが——と言うだけで、そうした状況を実現させてこなかった。これは世界規模の恐喝であり、各国の指導者、とりわけアメリカ合衆国は決して恐喝に屈しない。</p>
+          <p>また、海軍に対し、イランに通航料を支払った船舶を国際水域上で捜索・拿捕するよう命じた。違法な通航料を支払う者に、公海上の安全な通航はない。</p>
+          <p>イランが海峡に敷設した機雷の破壊も開始する。</p>
+          <p>イランはホルムズ海峡を開放すると約束しながら、意図的にその約束を守らなかった。約束した通り、この国際水域を一刻も早く開放するプロセスを始めるべきだ！</p>
+          <p class="bw-hl-red">われわれや平和的な船舶に向けて発砲するイラン人は誰であれ、地獄に吹き飛ばされるだろう！イランは誰よりも、自国をすでに壊滅させているこの状況を終わらせる方法を知っているはずだ。</p>
+        </div>
+      </div>
+      <div class="bw-src">
+        <div class="bw-src-head">📌 出典・ソース（声明①）</div>
+        <div class="bw-src-row"><span class="bw-src-icon">🔗</span><div><div class="bw-src-name">Truth Social — @realDonaldTrump</div><div class="bw-src-url"><a href="https://truthsocial.com/@realDonaldTrump" target="_blank" rel="noopener">https://truthsocial.com/@realDonaldTrump</a></div><div class="bw-src-note">※ 直接クロール不可のため以下二次ソースで原文確認済み</div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">Reuters（ロイター）日本語報道</div><div class="bw-src-url"><a href="https://jp.reuters.com/world/us/XFYI674QIBLRJJY2HCA3T2LZCA-2026-04-12/" target="_blank" rel="noopener">https://jp.reuters.com/world/us/XFYI674QIBLRJJY2HCA3T2LZCA-2026-04-12/</a></div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">National Review — 原文全文引用</div><div class="bw-src-url"><a href="https://www.nationalreview.com/news/trump-announces-blockade-of-strait-of-hormuz-after-iran-peace-talks-collapse/" target="_blank" rel="noopener">https://www.nationalreview.com/news/trump-announces-blockade-of-strait-of-hormuz-after-iran-peace-talks-collapse/</a></div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">Xinhua（新華社）英語版</div><div class="bw-src-url"><a href="https://english.news.cn/20260413/9e8b8e74497f44068574bfd432b00211/c.html" target="_blank" rel="noopener">https://english.news.cn/20260413/9e8b8e74497f44068574bfd432b00211/c.html</a></div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">JNS.org — 原文全文引用・背景解説</div><div class="bw-src-url"><a href="https://www.jns.org/trump-orders-blockade-of-strait-of-hormuz" target="_blank" rel="noopener">https://www.jns.org/trump-orders-blockade-of-strait-of-hormuz</a></div></div></div>
+      </div>
+    </div>
+
+    <div class="bw-divider"><span>✦</span></div>
+
+    <!-- 声明② -->
+    <div class="bw-card bw-blue">
+      <span class="bw-card-badge">日本語訳</span>
+      <div class="bw-card-head">
+        <span class="bw-card-num">②</span>
+        <div>
+          <div class="bw-card-title">イラン港湾限定・開始時刻明示の正式通告（第2声明）</div>
+          <div class="bw-card-meta">2026年4月13日 0:43 AM EST（日本時間13:43）<em>|</em> Truth Social — @realDonaldTrump <em>|</em> @WhiteHouse (X) 転載</div>
+        </div>
+      </div>
+      <div class="bw-orig">
+        <div class="bw-orig-label">ORIGINAL TEXT（原文）</div>
+        <div class="bw-orig-text">
+          <p>"The United States to Blockade Ships Entering or Exiting Iranian Ports on April 13 at 10:00 A.M. ET. Thank you for your attention to this matter! President DJT"</p>
+        </div>
+      </div>
+      <div class="bw-trans">
+        <div class="bw-trans-label">◆ 日本語訳</div>
+        <div class="bw-trans-body">
+          <p class="bw-hl-blue">米国は4月13日、米東部時間午前10時より、イランの港に出入りする船舶を封鎖する。本件についてご注意願いたい。&nbsp;大統領　ドナルド・J・トランプ</p>
+        </div>
+      </div>
+      <div class="bw-src">
+        <div class="bw-src-head">📌 出典・ソース（声明②）</div>
+        <div class="bw-src-row"><span class="bw-src-icon">🔗</span><div><div class="bw-src-name">@WhiteHouse — X（旧Twitter）公式転載</div><div class="bw-src-url"><a href="https://x.com/whitehouse/status/2043650546112860166" target="_blank" rel="noopener">https://x.com/whitehouse/status/2043650546112860166</a></div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">🔗</span><div><div class="bw-src-name">Truth Social — @realDonaldTrump（原文投稿）</div><div class="bw-src-url"><a href="https://truthsocial.com/@realDonaldTrump/posts/116395566253303665" target="_blank" rel="noopener">https://truthsocial.com/@realDonaldTrump/posts/116395566253303665</a></div><div class="bw-src-note">投稿時刻 0:43 AM EST — CBS News・@TrumpDailyPosts 等で確認</div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">CBS News Live Updates</div><div class="bw-src-url"><a href="https://www.cbsnews.com/live-updates/iran-war-us-iran-ports-blockade-strait-of-hormuz-trump/" target="_blank" rel="noopener">https://www.cbsnews.com/live-updates/iran-war-us-iran-ports-blockade-strait-of-hormuz-trump/</a></div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">FXStreet — 声明②の原文確認・時刻報道</div><div class="bw-src-url"><a href="https://www.fxstreet.com/news/us-president-trump-blockade-on-iranian-ports-to-begin-officially-on-april-13-at-10-00-am-et-202604130507" target="_blank" rel="noopener">https://www.fxstreet.com/news/us-president-trump-blockade-on-iranian-ports-to-begin-officially-on-april-13-at-10-00-am-et-202604130507</a></div></div></div>
+        <div class="bw-src-row"><span class="bw-src-icon">📰</span><div><div class="bw-src-name">House of Saud — CENTCOM声明・法的分析・軍事詳細</div><div class="bw-src-url"><a href="https://houseofsaud.com/centcom-naval-blockade-iranian-ports/" target="_blank" rel="noopener">https://houseofsaud.com/centcom-naval-blockade-iranian-ports/</a></div></div></div>
+      </div>
+    </div>
+
+  </div><!-- /bw-inner -->
+
+  <div class="bw-footer">
+    <span class="bw-footer-l">情報収集：Reuters / CBS News / NPR / JNS / National Review / Xinhua / House of Saud ほか ｜ 追加 2026.04.13</span>
+    <span class="bw-footer-r">SPECIAL BRIEFING ✦ 2 STATEMENTS</span>
+  </div>
+
+</div>
 </div><!-- /special-commentary -->
 
 <!-- NEWS COLUMN -->
@@ -2569,28 +3175,35 @@ function toggleNewsMore() {
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
 
-      <!-- 最終更新・主要出典 -->
-      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
-        <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">🕐 最終更新 ＆ 主要出典（本日）</div>
-        <div style="font-size:0.75rem;color:#cbd5e1;line-height:2;">
-          <div>📅 <strong>2026年4月11日 17:30 JST</strong> 更新</div>
-          <div>① <a href="https://jp.reuters.com/markets/commodities/NUCN4R4LCZPW3IU67I4ATVCT7A-2026-04-09/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters — サウジ 東西パイプライン輸送量▲70万BPD・生産能力▲60万BPD（4/9）</a></div>
-          <div>② <a href="https://www.cnbc.com/2026/04/09/iran-war-oil-saudi-arabia-east-west-pipeline.html" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">CNBC — 東西パイプライン被弾の詳細・ADNOC CEO「通航は通常状態ではない」（4/9）</a></div>
-          <div>③ <a href="https://jp.reuters.com/markets/commodities/NJYBTB3R4NO3FDFXDDVUHQMXDU-2026-04-10/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters — 米イラン協議、11日開始「成否分ける重要局面」＝パキスタン首相（4/10）</a></div>
-        </div>
-      </div>
+<!-- 最終更新・主要出典 -->
+<div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
+  <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">🕐 最終更新 ＆ 主要出典（本日）</div>
+  <div style="font-size:0.75rem;color:#cbd5e1;line-height:2;">
+    <div>📅 <strong>2026年4月13日 23:00 JST</strong> 更新</div>
+    <div>① <a href="https://jp.reuters.com/world/us/XFYI674QIBLRJJY2HCA3T2LZCA-2026-04-12/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters日本語 — トランプ「米軍がホルムズ封鎖へ」・CENTCOM正式発表（4/12〜13）</a></div>
+    <div>② <a href="https://www.nationalreview.com/news/trump-announces-blockade-of-strait-of-hormuz-after-iran-peace-talks-collapse/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">National Review — トランプ Truth Social 投稿原文・封鎖宣言の全文引用（4/12）</a></div>
+    <div>③ <a href="https://x.com/whitehouse/status/2043650546112860166" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">X / ホワイトハウス公式 — 「4月13日 10:00 AM ET よりイラン港湾封鎖開始」声明（4/13）</a></div>
+    <div>④ <a href="https://www.cbsnews.com/live-updates/iran-war-us-iran-ports-blockade-strait-of-hormuz-trump/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">CBS News Live Updates — CENTCOM・イラン港湾封鎖・ホルムズ海峡最新動向（4/13）</a></div>
+    <div>⑤ <a href="https://global-scm.com/blog/?p=6085" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Global-SCM — ホルムズ海峡危機：情勢と実務リスク 総合分析（4/13 更新）</a></div>
+    <div>⑥ <a href="https://jp.reuters.com/markets/commodities/BILJFT2L7NKPVLXTZUPGTBPA74-2026-04-06/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters — ホルムズ封鎖で中東産油国に明暗・イラクに打撃・サウジは恩恵（4/6）</a></div>
+    <div>⑦ <a href="https://www.jns.org/trump-orders-blockade-of-strait-of-hormuz" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">JNS.org — 封鎖宣言の背景・停戦期限・バンス声明の詳細（4/12）</a></div>
+    <div>⑧ <a href="https://houseofsaud.com/centcom-naval-blockade-iranian-ports/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">House of Saud — CENTCOM封鎖分析：Kharg Island・94%輸出への影響（4/13）</a></div>
+  </div>
+</div>
 
-      <!-- 更新履歴 -->
-      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
-        <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">📝 変更履歴</div>
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div><span style="color:#4ade80;">2026/04/11</span> — 米イラン協議開始を反映・WTI $99台に更新・各カード更新</div>
-          <div><span style="color:#4ade80;">2026/04/10</span> — 情勢カード・速報ブロック・WTI価格を最新情報に更新</div>
-          <div><span style="color:#4ade80;">2026/04/10</span> — カウントダウン期限を4/11（土）14:00 JSTに変更</div>
-          <div><span style="color:#4ade80;">2026/04/09</span> — レバノン攻撃・ホルムズ限定通航強化を反映</div>
-          <div><span style="color:#4ade80;">2026/04/08</span> — 停戦合意反映・WTI急落（$92台）を更新</div>
-        </div>
-      </div>
+<!-- 更新履歴 -->
+<div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
+  <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">📝 変更履歴</div>
+  <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+    <div><span style="color:#f87171;">2026/04/13</span> — <strong style="color:#fca5a5;">【重大更新】</strong>CENTCOM封鎖発動（10:00 AM ET）反映・全ルート現況サマリー更新・4シナリオ体制に改訂・速報インシデントをトグル化・ティッカー・ヘッダー日付を更新</div>
+    <div><span style="color:#fbbf24;">2026/04/12</span> — サウジ東西PL全面復旧（700万BPD）反映・米イランイスラマバード協議決裂を更新・トランプ Truth Social 封鎖宣言を速報追加</div>
+    <div><span style="color:#4ade80;">2026/04/11</span> — 米イラン協議開始を反映・WTI $96台に更新・各カード更新</div>
+    <div><span style="color:#4ade80;">2026/04/10</span> — 情勢カード・速報ブロック・WTI価格を最新情報に更新</div>
+    <div><span style="color:#4ade80;">2026/04/10</span> — カウントダウン期限を4/11（土）14:00 JSTに変更</div>
+    <div><span style="color:#4ade80;">2026/04/09</span> — レバノン攻撃・ホルムズ限定通航強化を反映</div>
+    <div><span style="color:#4ade80;">2026/04/08</span> — 停戦合意反映・WTI急落（$92台）を更新</div>
+  </div>
+</div>
 
     </div>
 

@@ -499,12 +499,13 @@ footer {
 
 /* NEWS COLUMN */
 .news-section-title{font-size:1rem;font-weight:800;color:#38bdf8;margin:24px 0 12px;padding-left:4px;border-left:3px solid #38bdf8;}
-.news-list{display:flex;flex-direction:column;gap:6px;}
-.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:10px 13px;display:flex;flex-direction:column;gap:6px;transition:background 0.2s;}
+.news-list{display:flex;flex-direction:column;gap:4px;}
+.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:8px 13px;display:flex;flex-direction:column;gap:4px;transition:background 0.2s;min-height:unset;}
 .news-item:hover{background:rgba(255,255,255,0.05);}
 .news-item a{color:#cbd5e1;text-decoration:none;font-size:0.78rem;line-height:1.5;flex:1;align-self:flex-start;}
 .news-item a:hover{color:#7dd3fc;}
-.news-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;min-width:90px;}
+.news-date{font-size:0.7rem;color:#64748b;white-space:nowrap;}
+.news-meta{display:flex;flex-direction:row;align-items:center;gap:8px;flex-wrap:wrap;flex-shrink:0;}
 .news-date{font-size:0.65rem;color:#64748b;white-space:nowrap;}
 .news-badge{font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
 .badge-txn{background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.3);}
@@ -852,10 +853,12 @@ Copy
   <span class="ticker-label">🔴 速報</span>
   <div class="ticker-scroll">
     <span class="ticker-text">
+    <!-- 新ティッカー（4/13 23:00版） -->
       【4/13 23:00 速報】🚨【重大局面・封鎖発動】米中央軍（CENTCOM）が4月13日10:00 AM ET（23:00 JST）よりイラン港湾への封鎖を正式開始｜Brent $101.88・WTI $104.69（前日比+9%急騰）｜サウジ東西パイプライン4/12全面回復（700万BPD）｜イラン「誤れば"死の渦"に飲み込まれる」と警告｜停戦期限4/22が次の焦点
     </span>
   </div>
 </div>
+<!-- 旧ティッカー（4/13 7:00版）コメントアウト済み -->
 <!--【4/13 7:00 】🚨【重大局面】トランプ大統領「米海軍がホルムズ海峡を封鎖する。イランに通航料を支払った全船舶を公海上で追跡・拿捕せよと海軍に命令した」（4/12夜SNS投稿）｜米中央軍（CENTCOM）「4月13日よりイランの港湾への海上封鎖を開始する」と正式発表｜イラン「敵が誤った行動をとればホルムズで"deadly vortex（死の渦）"に飲み込まれる」と警告｜🛢️WTI $115超への急騰予測が浮上―Kobeissi Letter「今月中に+21%上昇の可能性」｜交渉は事実上決裂（バンス副大統領、21時間交渉後「合意なし」で帰国）｜停戦期限4/22前後が迫る中、再交渉か米の再攻撃判断が次の焦点｜✅サウジ東西パイプライン（7,00万bpd）は4/12全面回復・ヤンブー経由代替ルートB復活｜🇯🇵日本：5月から北米産原油到着・備蓄254日分で当面対応可能だが今夏〜秋が正念場-->
 </span>
   </div>
@@ -866,7 +869,7 @@ Copy
 <div style="width:100%;margin:0 0 28px 0;padding:0;">
   <div style="background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%);border:1px solid rgba(56,189,248,0.25);border-radius:14px;padding:28px 32px;">
 
-    <!-- タイトル -->
+    <!-- 30秒で全体像を把握 -->
     <div style="font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:#38bdf8;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(56,189,248,0.15);">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
   <span>🗺️ ホルムズ海峡危機マップ 2026 &nbsp;―&nbsp; 30秒で全体像を把握</span>
@@ -914,7 +917,7 @@ Copy
         <a href="#incident" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
           🚨 速報インシデント
         </a>
-        <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
+        <a href="#news-column" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
           📰 最新ニュース
         </a>
         <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
@@ -1027,7 +1030,7 @@ Copy
     </div>
   </div>
 
-  <!-- ==================== 💰 リアルタイム市場ダッシュボード (TradingView) ==================== -->
+  <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
   <div id="wtiWidget" style="margin-top:8px; background: #131722; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 20px; font-family: sans-serif; border: 1px solid #1e3a5f;">
     
     <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
@@ -1106,20 +1109,7 @@ Copy
   </div>
   <!-- ==================== 💰 ダッシュボード終了 ==================== -->
 
-<!-- TRUMP STATEMENT BANNER -->
-<div class="trump-banner" onclick="openTrumpModal()">
-  <div class="trump-banner-icon">📜</div>
-  <div class="trump-banner-text">
-    <div class="trump-banner-title">
-      🚨 トランプ声明（4/8 JST）：2週間停止に合意
-      ―― 「完全・即時・安全なホルムズ開放」を条件に
-    </div>
-    <div class="trump-banner-sub">
-      Truth Social投稿 原文＋日本語訳＋解釈分析 ▶ クリックで全文を読む
-    </div>
-  </div>
-  <div class="trump-banner-arrow">▶</div>
-</div>
+
 
 <!-- TRUMP STATEMENT MODAL -->
 <div class="modal-overlay" id="trump-modal" onclick="closeTrumpModalOutside(event)">
@@ -1334,7 +1324,7 @@ const SHIP_CONFIG = {
 <!-- ROUTE TABLE -->
 <div id="incident" style="border-radius:12px;overflow:hidden;border:1px solid rgba(239,68,68,0.35);">
 
-  <!-- トグルボタン -->
+  <!-- 速報インシデント　トグルボタン -->
   <button onclick="toggleIncident()" id="incident-toggle-btn"
     style="width:100%;background:linear-gradient(135deg,#1a0808,#2d1010);border:none;border-bottom:1px solid rgba(239,68,68,0.3);padding:13px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:inherit;">
     <span style="display:flex;align-items:center;gap:10px;">
@@ -1382,6 +1372,22 @@ const SHIP_CONFIG = {
       </li>
 
     </ul>
+        <!-- トランプ声明バナー（移動） -->
+    <div style="margin-top:14px;">
+      <div class="trump-banner" onclick="openTrumpModal()">
+        <div class="trump-banner-icon">📜</div>
+        <div class="trump-banner-text">
+          <div class="trump-banner-title">
+            🚨 トランプ声明（4/8 JST）：2週間停止に合意
+            ―― 「完全・即時・安全なホルムズ開放」を条件に
+          </div>
+          <div class="trump-banner-sub">
+            Truth Social投稿 原文＋日本語訳＋解釈分析 ▶ クリックで全文を読む
+          </div>
+        </div>
+        <div class="trump-banner-arrow">▶</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1398,12 +1404,13 @@ function toggleIncident() {
   }
 }
 </script>
-  <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:0.8rem;color:#7dd3fc;line-height:1.6;">
-  <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
+
 </div>
-</div>
-Copy<div id="routes">
+<div id="routes">
   <div class="sec-title">🚢 全ルート現況サマリー（2026年4月13日 23:00 JST 更新）</div>
+    <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:0.8rem;color:#7dd3fc;line-height:1.6;">
+    <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
+  </div>
   <div class="rtable-wrap">
     <table class="rtable">
       <colgroup>
@@ -2390,6 +2397,18 @@ document.addEventListener('keydown', function(e) {
 function hardReload() {
   window.location.href = window.location.pathname + '?v=' + new Date().getTime();
 }
+function toggleBwDetail(btn) {
+  const detail = document.getElementById('bw-detail-body');
+  const isOpen = detail.style.display !== 'none';
+  detail.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen ? '▼ 2声明の比較・声明全文を表示する' : '▲ 2声明の比較・声明全文を閉じる';
+}
+function toggleTimeline(btn) {
+  const detail = document.getElementById('bw-timeline-detail');
+  const isOpen = detail.style.display !== 'none';
+  detail.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen ? '▼ 時系列タイムラインを表示する' : '▲ 時系列タイムラインを閉じる';
+}
 function toggleSpecial(id, btn) {
   const el = document.getElementById(id);
   const isHidden = el.style.display === 'none' || el.style.display === '';
@@ -2406,67 +2425,6 @@ function toggleNewsMore() {
 </script>
 <!-- OSINT PANEL -->
 <div id="osint-panel" style="width:100%;margin:24px 0 0;padding:0 16px;text-align:left;">
-
-  <!-- パネルタイトル -->
-  <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
-    🌐 現地メディア視点（多言語OSINT）
-    
-  </div>
-
-  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
-
-    <!-- 🇮🇷 イラン系：PressTV -->
-    <a href="https://www.presstv.ir/Detail/2026/03/19/765581/US-says-may-%E2%80%98unsanction%E2%80%99-Iran-as-IRGC-regulates-Hormuz-traffic--" target="_blank" rel="noopener"
-      style="display:block;background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇮🇷</span>
-        <span style="background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:#a78bfa;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">PressTV（イラン国営）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/03/19</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】米財務長官「イラン制裁解除の可能性」― IRGCがホルムズ海峡の通航を管理・規制中</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: US says may 'unsanction' Iran as IRGC regulates Hormuz traffic</div>
-    </a>
-
-    <!-- 🇸🇦 サウジ系：Al Arabiya -->
-    <a href="https://english.alarabiya.net/News/middle-east/2026/04/10/trump-says-iran-is-doing-very-poor-job-of-allowing-oil-through-strait-of-hormuz-" target="_blank" rel="noopener"
-      style="display:block;background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇸🇦</span>
-        <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Arabiya（サウジ系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/04/10</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】トランプ氏「イランの石油通航管理は非常に不十分」― ホルムズ海峡の完全開放を要求</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Trump says Iran is doing 'very poor job' of allowing oil through Strait of Hormuz</div>
-    </a>
-
-    <!-- 🇦🇪 UAE系：The National -->
-    <a href="https://www.thenationalnews.com/business/energy/2026/03/30/gulf-states-must-invest-in-alternatives-to-the-strait-of-hormuz/" target="_blank" rel="noopener"
-      style="display:block;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇦🇪</span>
-        <span style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#34d399;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">The National（UAE系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/03/30</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】湾岸諸国はホルムズ代替ルートへの投資を急ぐべき ― サウジ輸出の約75%が依然ホルムズ経由</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Gulf states must invest in alternatives to the Strait of Hormuz</div>
-    </a>
-
-    <!-- 🇶🇦 カタール系：Al Jazeera -->
-    <a href="https://www.aljazeera.com/economy/2026/3/27/saudi-uae-iraq-can-three-pipelines-help-oil-escape-strait-of-hormuz" target="_blank" rel="noopener"
-      style="display:block;background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇶🇦</span>
-        <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Jazeera（カタール系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/03/27</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】サウジ・UAE・イラクの3本のパイプラインでホルムズを回避できるか？ ― 代替輸出能力の限界を検証</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Saudi, UAE, Iraq: Can three pipelines help oil escape Strait of Hormuz?</div>
-    </a>
-
-  </div>
-</div>
-<!-- /OSINT PANEL -->
-<!-- NEWS COLUMN -->
 
 <!-- 特別解説コラム -->
 <div id="special-commentary" style="width:100%;margin:24px 0 0;padding:0 16px;">
@@ -2852,7 +2810,7 @@ function toggleNewsMore() {
   <div class="bw-banner">
     <div class="bw-dot"></div>
     <span class="bw-flag">🇺🇸</span>
-    <span class="bw-badge">⚠ 原文日本語訳のみ掲載</span>
+    <span class="bw-badge">⚠ 原文英語＋日本語訳付</span>
     <span class="bw-sub">２声明 精査比較付き &nbsp;／&nbsp; 2026年4月12〜13日 &nbsp;｜&nbsp; Truth Social &amp; @WhiteHouse (X)</span>
     <span class="bw-flag" style="margin-left:auto;">🇮🇷</span>
     <div class="bw-dot"></div>
@@ -2861,7 +2819,7 @@ function toggleNewsMore() {
   <!-- ヘッダー -->
   <div class="bw-header">
     <div class="bw-eyebrow">特　別　解　説</div>
-    <h2 class="bw-title">ホルムズ海峡封鎖宣言<br>トランプ大統領 ２つの声明 全文日本語訳</h2>
+    <h2 class="bw-title">ホルムズ海峡封鎖宣言<br>トランプ大統領 ２つの声明 全文日本語訳付</h2>
     <div class="bw-meta">
       2026年4月12〜13日
       <em>|</em> イスラマバード和平交渉決裂後
@@ -2888,7 +2846,13 @@ function toggleNewsMore() {
       </p>
     </div>
 
+    <!-- タイムライン トグルボタン -->
+    <button onclick="toggleTimeline(this)" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#94a3b8;font-size:0.78rem;font-weight:700;padding:8px 0;cursor:pointer;margin-bottom:8px;letter-spacing:0.03em;">
+      ▼ 時系列タイムラインと原文/翻訳を表示する
+    </button>
+
     <!-- タイムライン -->
+    <div id="bw-timeline-detail" style="display:none;">
     <div class="bw-sec">⏱ 時系列タイムライン</div>
     <div class="bw-timeline">
       <div class="bw-tl">
@@ -2934,7 +2898,14 @@ function toggleNewsMore() {
         </div>
       </div>
     </div>
+    </div><!-- /#bw-timeline-detail -->
 
+    <!-- 差分比較・声明全文 トグルボタン -->
+    <button onclick="toggleBwDetail(this)" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#94a3b8;font-size:0.78rem;font-weight:700;padding:8px 0;cursor:pointer;margin-bottom:8px;letter-spacing:0.03em;">
+      ▼ 2声明の比較・声明全文を表示する
+    </button>
+
+    <div id="bw-detail-body" style="display:none;">
     <!-- 差分比較 -->
     <div class="bw-sec" style="padding-top:14px;">🔍 2声明の比較・主な違い</div>
     <div class="bw-diff">
@@ -3036,6 +3007,7 @@ function toggleNewsMore() {
       </div>
     </div>
 
+      </div><!-- /#bw-detail-body -->
   </div><!-- /bw-inner -->
 
   <div class="bw-footer">
@@ -3047,92 +3019,77 @@ function toggleNewsMore() {
 </div><!-- /special-commentary -->
 
 <!-- NEWS COLUMN -->
-<div style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
-  <div class="news-section-title">📰 関連最新ニュース（信頼メディア厳選）</div>
+<div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
+  <div class="news-section-title">📰 関連最新ニュース</div>
   <div class="news-list" id="news-list">
     <!-- ▼▼▼ 新しい記事はここに追加 ▼▼▼ -->
 
 <!-- 常時表示：トップ3件 -->
 <!-- 記事1 -->
 <div class="news-item">
-  <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/13 本日</span></div>
+  <div class="news-meta" style="display:flex;flex-direction:row;align-items:center;gap:8px;"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/13 本日</span></div>
   <a href="https://www.wdrb.com/news/national/us-military-says-it-will-blockade-iranian-ports-after-ceasefire-talks-ended-without-agreement/article_0a2c2b7e-ffa6-5b14-97cc-74a9b0fa6cf0.html" target="_blank" rel="noopener">【🚨速報】米中央軍（CENTCOM）、4月13日10時（米東部）よりイラン全港湾への海上封鎖を正式開始と発表</a>
   <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">⚓ ホルムズ海峡を通るイラン以外の船舶の航行は妨げないとも明言。トランプは「通航料を支払った全船舶を公海上で追跡・拿捕せよ」と海軍に命令。イランは「死の渦」警告で対抗。</div>
 </div>
-
 <!-- 記事2 -->
 <div class="news-item">
   <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/13 本日</span></div>
   <a href="https://www.bloomberg.com/news/articles/2026-04-12/saudi-arabia-says-east-west-pipeline-restored-to-full-capacity" target="_blank" rel="noopener">【✅好材料】サウジ東西パイプライン、輸送能力が日量700万bpdへ全面回復（Bloomberg・4/12公式発表）</a>
   <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">🛢️ 4/8のドローン攻撃で▲70万bpd減少していた輸送能力が完全復旧。ヤンブー港経由の代替ルートB（紅海→インド洋→日本）が再び機能する見通し。</div>
 </div>
-
 <!-- 記事3 -->
 <div class="news-item">
   <div class="news-meta"><span class="news-badge badge-nikkei">共同・産経</span><span class="news-date">4/13 本日</span></div>
   <a href="https://news.yahoo.co.jp/articles/9daa67f0163ad28b277367a901e74b6474a92361" target="_blank" rel="noopener">トランプ「違法な通航料を払った者に公海上での安全な航行は認めない」― 海軍に追跡・拿捕を命令（産経・共同）</a>
   <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">💹 WTI $115超への急騰予測が市場に浮上。Kobeissi Letter「今月中に+21%上昇の可能性」。封鎖宣言でエネルギー市場は再び緊張局面へ。</div>
 </div>
-
 <!-- 折りたたみ：4件目以降 -->
 <div id="more-news" style="display:none;">
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/12 昨日</span></div>
     <a href="https://www.reuters.com/business/energy/saudi-arabia-restores-full-capacity-east-west-oil-pipeline-7-million-bpd-after-2026-04-12/" target="_blank" rel="noopener">サウジアラビア、東西パイプラインの輸送能力を日量700万bpdへ完全復旧（Reuters）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/12 昨日</span></div>
     <a href="https://www.latimes.com/politics/story/2026-04-12/trumps-strait-of-hormuz-blockade-risks-clash-with-china" target="_blank" rel="noopener">トランプのホルムズ封鎖宣言、中国との衝突リスクも　LAタイムズが分析（LA Times）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/12 昨日</span></div>
     <a href="https://jp.reuters.com/world/asia-pacific/us-iran-talks-pause-now-disagreements-remain-2026-04-11/" target="_blank" rel="noopener">米イラン協議21時間超で事実上決裂・バンス副大統領「合意なし、帰国する」（Reuters）</a>
     <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">💣 機雷問題・ホルムズ管理権・核開発・レバノン停戦の4点で溝埋まらず。停戦期限（4/22前後）前の再交渉が次の焦点。</div>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/12 昨日</span></div>
     <a href="https://www.nikkei.com/article/DGXZQOGN120130S6A410C2000000/" target="_blank" rel="noopener">米イラン直接協議、ホルムズ海峡巡り紛糾　8時間超えてなお継続（日経）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11</span></div>
     <a href="https://www.bloomberg.com/jp/news/articles/2026-04-11/TDBGEAT96OSG00" target="_blank" rel="noopener">米国とイランが対面協議、パキスタン交え　ホルムズ掃海開始へ（Bloomberg）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/10</span></div>
     <a href="https://jp.reuters.com/markets/commodities/7QOQNGXMMJNBJAMCDFODH6M2NQ-2026-04-10/" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・通過船舶数戻らず（Reuters）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-fnn">テレ朝</span><span class="news-date">4/9 朝</span></div>
     <a href="https://news.tv-asahi.co.jp/news_international/articles/000497327.html" target="_blank" rel="noopener">イスラエル、ヒズボラ標的にレバノンで最大規模攻撃 254人死亡 停戦合意数時間後（テレ朝）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/9 朝</span></div>
     <a href="https://jp.reuters.com/world/us/YOWC4EFCYZIYZH5V5HBJ6Z32CE-2026-04-08/" target="_blank" rel="noopener">イスラエルのレバノン空爆「恐ろしい」国連が停戦後の大規模攻撃を非難（Reuters）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-afp">AFP</span><span class="news-date">4/8</span></div>
     <a href="https://www.afpbb.com/articles/-/3630348" target="_blank" rel="noopener">米・イラン・同盟国が「レバノン含むあらゆる場所」で即時停戦合意 パキスタン首相が公式発表（AFP）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/8 朝</span></div>
     <a href="https://jp.reuters.com/world/us/LQ5WWJP7RJIXBKOOLDJ62H2HGU-2026-04-07/" target="_blank" rel="noopener">イランへの攻撃「2週間停止で合意」トランプ氏が表明・WTI急落▼17%→$97台（Reuters）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-toyo">東洋経済</span><span class="news-date">4/5</span></div>
     <a href="https://toyokeizai.net/articles/-/937516" target="_blank" rel="noopener">ホルムズ海峡封鎖で国内の石油化学産業は減産の動き、停戦機運あっても先行き不透明（東洋経済）</a>
   </div>
-
   <div class="news-item">
     <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">3/16</span></div>
     <a href="https://jp.reuters.com/markets/japan/DB2YZY3V35N45KEFNCL3VO324A-2026-03-16/" target="_blank" rel="noopener">中東からの原油輸出、ホルムズ海峡封鎖で最低でも日量60%減少（Reuters）</a>
@@ -3147,14 +3104,17 @@ function toggleNewsMore() {
       <div class="news-item">
         <div class="news-meta"><span class="news-badge badge-bloomberg">MarketScreener</span><span class="news-date">2026/04/02</span></div>
         <a href="https://hk.marketscreener.com/news/saudi-crude-import-prices-to-japan-surge-80-amid-hormuz-supply-disruptions-ce7e51dcdd8cff20" target="_blank" rel="noopener">🇸🇦 日本向けサウジ原油輸入価格が80%急騰 — ホルムズ供給障害の直撃</a>
+        <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">💹 封鎖開始から約2週間でアラビアンライトのCIF価格が急騰。日本の製油所は調達コスト増大に直面し、代替原油の緊急確保を迫られている。</div>
       </div>
       <div class="news-item">
         <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">2026/03/26</span></div>
         <a href="https://www.bloomberg.com/news/articles/2026-03-26/saudi-oil-sales-to-top-asia-buyers-to-drop-on-hormuz-disruptions" target="_blank" rel="noopener">🌏 サウジ、アジア向け販売量を削減 — ホルムズ混乱で日中韓への供給が低下</a>
+        <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">🛢️ サウジアラムコが日本・中国・韓国向けの5月積み原油の供給量を削減。東西パイプライン経由のヤンブー港からの代替輸出に切り替え中。</div>
       </div>
       <div class="news-item">
         <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">2026/03/10</span></div>
         <a href="https://www.reuters.com/business/energy/consequences-global-oil-markets-could-be-catastrophic-if-hormuz-closure-2026-03-10/" target="_blank" rel="noopener">⚠️ アラムコCEO「ホルムズ閉鎖継続なら石油市場に壊滅的影響」</a>
+        <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">🔴 アミン・ナセルCEOが封鎖長期化への警告を発表。世界の石油供給の約20%が通過するホルムズの閉鎖が続けば、代替ルートでは需要を賄えないと指摘。</div>
       </div>
 
     </div><!-- /#more-news -->
@@ -3168,7 +3128,7 @@ function toggleNewsMore() {
 <div style="max-width:960px;margin:32px auto 0;padding:0 16px 40px;">
   <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
 
-    <!-- タイトル -->
+    <!--出典・更新ログ-->
     <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.1em;color:#64748b;text-transform:uppercase;margin-bottom:14px;">
       📋 出典・更新ログ ― 信頼性確認用
     </div>
@@ -3204,6 +3164,68 @@ function toggleNewsMore() {
     <div><span style="color:#4ade80;">2026/04/08</span> — 停戦合意反映・WTI急落（$92台）を更新</div>
   </div>
 </div>
+  </div><!-- /news-list -->
+</div><!-- /NEWS COLUMN wrapper -->
+
+<!--🌐 現地メディア視点-->
+  <div id="osint-panel" style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
+    🌐 現地メディア視点
+    
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
+
+    <!-- 🇮🇷 イラン系：PressTV -->
+    <a href="https://www.presstv.ir/Detail/2026/03/19/765581/US-says-may-%E2%80%98unsanction%E2%80%99-Iran-as-IRGC-regulates-Hormuz-traffic--" target="_blank" rel="noopener"
+      style="display:block;background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:0.85rem;">🇮🇷</span>
+        <span style="background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:#a78bfa;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">PressTV（イラン国営）</span>
+        <span style="font-size:0.68rem;color:#64748b;">2026/03/19</span>
+      </div>
+      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】米財務長官「イラン制裁解除の可能性」― IRGCがホルムズ海峡の通航を管理・規制中</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: US says may 'unsanction' Iran as IRGC regulates Hormuz traffic</div>
+    </a>
+
+    <!-- 🇸🇦 サウジ系：Al Arabiya -->
+    <a href="https://english.alarabiya.net/News/middle-east/2026/04/10/trump-says-iran-is-doing-very-poor-job-of-allowing-oil-through-strait-of-hormuz-" target="_blank" rel="noopener"
+      style="display:block;background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:0.85rem;">🇸🇦</span>
+        <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Arabiya（サウジ系）</span>
+        <span style="font-size:0.68rem;color:#64748b;">2026/04/10</span>
+      </div>
+      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】トランプ氏「イランの石油通航管理は非常に不十分」― ホルムズ海峡の完全開放を要求</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Trump says Iran is doing 'very poor job' of allowing oil through Strait of Hormuz</div>
+    </a>
+
+    <!-- 🇦🇪 UAE系：The National -->
+    <a href="https://www.thenationalnews.com/business/energy/2026/03/30/gulf-states-must-invest-in-alternatives-to-the-strait-of-hormuz/" target="_blank" rel="noopener"
+      style="display:block;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:0.85rem;">🇦🇪</span>
+        <span style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#34d399;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">The National（UAE系）</span>
+        <span style="font-size:0.68rem;color:#64748b;">2026/03/30</span>
+      </div>
+      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】湾岸諸国はホルムズ代替ルートへの投資を急ぐべき ― サウジ輸出の約75%が依然ホルムズ経由</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Gulf states must invest in alternatives to the Strait of Hormuz</div>
+    </a>
+
+    <!-- 🇶🇦 カタール系：Al Jazeera -->
+    <a href="https://www.aljazeera.com/economy/2026/3/27/saudi-uae-iraq-can-three-pipelines-help-oil-escape-strait-of-hormuz" target="_blank" rel="noopener"
+      style="display:block;background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:0.85rem;">🇶🇦</span>
+        <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Jazeera（カタール系）</span>
+        <span style="font-size:0.68rem;color:#64748b;">2026/03/27</span>
+      </div>
+      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】サウジ・UAE・イラクの3本のパイプラインでホルムズを回避できるか？ ― 代替輸出能力の限界を検証</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Saudi, UAE, Iraq: Can three pipelines help oil escape Strait of Hormuz?</div>
+    </a>
+
+  </div>
+</div>
+<!-- /OSINT PANEL -->
 
     </div>
 

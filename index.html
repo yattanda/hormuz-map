@@ -1047,16 +1047,13 @@ Copy
   ></iframe>
 </div>
 <script>
-  // 画面幅に応じてiframeの高さを自動調整
   function adjustIframeHeight() {
     const iframe = document.getElementById('hormuz-dashboard');
     if (!iframe) return;
     if (window.innerWidth <= 768) {
-      // スマホ：2列×3段 = 高さ多め
-      iframe.style.height = '1100px';
+      iframe.style.height = '1350px';
     } else {
-      // PC：6列横並び
-      iframe.style.height = '400px';
+      iframe.style.height = '460px';
     }
   }
   adjustIframeHeight();

@@ -1035,6 +1035,7 @@ Copy
 <!-- ホルムズ データ監視ダッシュボード -->
 <div style="margin: 20px auto; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1e3a5f;">
   <iframe
+    id="hormuz-dashboard"
     src="https://yattanda.github.io/hormuz-data-/"
     width="100%"
     height="400"
@@ -1045,6 +1046,22 @@ Copy
     loading="lazy"
   ></iframe>
 </div>
+<script>
+  // 画面幅に応じてiframeの高さを自動調整
+  function adjustIframeHeight() {
+    const iframe = document.getElementById('hormuz-dashboard');
+    if (!iframe) return;
+    if (window.innerWidth <= 768) {
+      // スマホ：2列×3段 = 高さ多め
+      iframe.style.height = '1100px';
+    } else {
+      // PC：6列横並び
+      iframe.style.height = '400px';
+    }
+  }
+  adjustIframeHeight();
+  window.addEventListener('resize', adjustIframeHeight);
+</script>
 <!-- /ダッシュボード -->
   <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
   <div id="wtiWidget" style="margin-top:8px; background: #131722; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 20px; font-family: sans-serif; border: 1px solid #1e3a5f;">

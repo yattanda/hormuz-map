@@ -1050,8 +1050,10 @@ Copy
   function adjustIframeHeight() {
     const iframe = document.getElementById('hormuz-dashboard');
     if (!iframe) return;
-    if (window.innerWidth <= 768) {
-      iframe.style.height = '1650px';
+    if (window.innerWidth <= 480) {
+      iframe.style.height = '1100px';
+    } else if (window.innerWidth <= 768) {
+      iframe.style.height = '1300px';
     } else {
       iframe.style.height = '680px';
     }

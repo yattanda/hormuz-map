@@ -1223,6 +1223,7 @@ Copy
       <button id="tanker-toggle">折畳</button>
     </div>
     <div id="tanker-date"></div>
+    <div id="tanker-date-confirmed" style="font-size:0.7rem;color:#4ade80;margin-top:2px;"></div>
     <div id="ship-grid"></div>
     <div id="tanker-stats">
       <div class="stat-row">
@@ -1280,7 +1281,8 @@ Copy
 const SHIP_CONFIG = {
   totalShips:    42,
   passableShips: 0,
-  date:          '2026年4月8日'
+  date:          '2026年4月8日',
+  dateConfirmed: '2026年4月17日変更無'
 };
 
 (function () {
@@ -1289,6 +1291,8 @@ const SHIP_CONFIG = {
     const stuck = totalShips - passableShips;
 
     document.getElementById('tanker-date').textContent = date + '現在';
+    const confirmedEl = document.getElementById('tanker-date-confirmed');
+    if (confirmedEl) confirmedEl.textContent = cfg.dateConfirmed || '';
 
     const grid = document.getElementById('ship-grid');
     grid.innerHTML = '';

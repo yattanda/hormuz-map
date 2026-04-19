@@ -1705,11 +1705,11 @@ function renderMilitaryLayer() {
           });
           L.marker([f.lat, f.lng], { icon })
             .bindPopup(`
-              <div style="min-width:200px;">
+              <div style="min-width:200px;background:#1e293b;padding:8px;border-radius:8px;">
                 <strong style="color:#f87171;">${f.emoji} ${f.name}</strong><br>
-                <span style="background:rgba(239,68,68,0.15);color:#fca5a5;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${f.status}</span><br><br>
-                <span style="font-size:0.8rem;color:#e2e8f0;">${f.detail}</span><br>
-                <small style="color:#94a3b8;">出典：${f.source}　更新：${data.updated}</small>
+                <span style="background:rgba(239,68,68,0.3);color:#fca5a5;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${f.status}</span><br><br>
+                <span style="font-size:0.8rem;color:#cbd5e1;">${f.detail}</span><br>
+                <small style="color:#64748b;">出典：${f.source}　更新：${data.updated}</small>
               </div>
             `)
             .addTo(map);
@@ -1735,11 +1735,11 @@ function renderMilitaryLayer() {
           });
           L.marker([p.lat, p.lng], { icon })
             .bindPopup(`
-              <div style="min-width:200px;">
+              <div style="min-width:200px;background:#1e293b;padding:8px;border-radius:8px;">
                 <strong style="color:${col};">${p.emoji} ${p.name}</strong><br>
-                <span style="background:rgba(255,255,255,0.08);color:#e2e8f0;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${p.status}</span><br><br>
-                <span style="font-size:0.8rem;color:#e2e8f0;">${p.detail}</span><br>
-                <small style="color:#94a3b8;">出典：${p.source}　更新：${data.updated}</small>
+                <span style="background:rgba(255,255,255,0.12);color:#e2e8f0;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${p.status}</span><br><br>
+                <span style="font-size:0.8rem;color:#cbd5e1;">${p.detail}</span><br>
+                <small style="color:#64748b;">出典：${p.source}　更新：${data.updated}</small>
               </div>
             `)
             .addTo(map);

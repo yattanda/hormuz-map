@@ -1,0 +1,136 @@
+{
+  "updated": "2026-04-18",
+  "comment": "このファイルを編集するだけで地図が更新されます。index.htmlは変更不要。",
+
+  "fleets": [
+    {
+      "id": "uss-strike-group-1",
+      "type": "carrier",
+      "name": "米空母打撃群（第5艦隊）",
+      "emoji": "🚢",
+      "lat": 24.2,
+      "lng": 58.5,
+      "status": "封鎖任務中",
+      "detail": "CENTCOM発表・4/13より封鎖任務開始。護衛艦12隻以上・戦闘機100機超を展開中。",
+      "source": "CENTCOM（4/16）"
+    },
+    {
+      "id": "uss-patrol-1",
+      "type": "patrol",
+      "name": "米海軍哨戒艦隊（北部）",
+      "emoji": "✈️",
+      "lat": 26.8,
+      "lng": 55.5,
+      "status": "哨戒任務中",
+      "detail": "ホルムズ海峡北部を監視。AIS偽装船舶の検知・追跡を担当。",
+      "source": "CENTCOM（4/16）"
+    },
+    {
+      "id": "uss-patrol-2",
+      "type": "patrol",
+      "name": "米海軍哨戒艦隊（南部）",
+      "emoji": "✈️",
+      "lat": 23.5,
+      "lng": 59.2,
+      "status": "哨戒任務中",
+      "detail": "オマーン湾南部を監視。封鎖突破試行船舶の阻止を担当。",
+      "source": "CENTCOM（4/16）"
+    }
+  ],
+
+  "ports": [
+    {
+      "id": "bandar-abbas",
+      "type": "port-iran-military",
+      "name": "バンダル・アッバース港",
+      "emoji": "⚓",
+      "lat": 27.18,
+      "lng": 56.27,
+      "status": "🔴 封鎖対象",
+      "detail": "イラン最大の軍事・商業港。米軍封鎖の主要対象。IRGC海軍基地併設。",
+      "source": "Reuters（4/13）"
+    },
+    {
+      "id": "bandar-imam",
+      "type": "port-iran",
+      "name": "バンダル・イマーム・ホメイニー港",
+      "emoji": "⚓",
+      "lat": 30.43,
+      "lng": 49.08,
+      "status": "🔴 封鎖対象",
+      "detail": "イラン最大の石油化学輸出港。Petrochemical全輸出停止（4/13〜）の影響直撃。",
+      "source": "Reuters（4/13）"
+    },
+    {
+      "id": "bushehr",
+      "type": "port-iran",
+      "name": "ブーシェフル港",
+      "emoji": "⚓",
+      "lat": 28.97,
+      "lng": 50.84,
+      "status": "🔴 封鎖対象",
+      "detail": "イラン南部の主要商業港。核施設（ブーシェフル原発）が近接。",
+      "source": "Reuters（4/13）"
+    },
+    {
+      "id": "chabahar",
+      "type": "port-escape",
+      "name": "チャーバハール港（非常口）",
+      "emoji": "🚪",
+      "lat": 25.29,
+      "lng": 60.64,
+      "status": "🟢 ホルムズ回避可能",
+      "detail": "インド洋直結・ホルムズ海峡を通らない唯一のイラン港。インドが開発支援。封鎖対象外の可能性あり。迂回ルートとして注目。",
+      "source": "AP通信（4/14）"
+    },
+    {
+      "id": "larak-island",
+      "type": "port-irgc",
+      "name": "ラーラク島（IRGC拠点）",
+      "emoji": "🎯",
+      "lat": 26.85,
+      "lng": 56.35,
+      "status": "🔴 機雷・警戒区域",
+      "detail": "IRGC海軍の前進拠点。機雷敷設の起点とされる。通航料（$2M/隻）の徴収ポイント。",
+      "source": "Reuters・Lloyd's List（4/9）"
+    }
+  ],
+
+  "blockadeZones": [
+    {
+      "id": "hormuz-blockade-zone",
+      "name": "米軍封鎖実施ゾーン",
+      "type": "blockade",
+      "color": "#ef4444",
+      "opacity": 0.15,
+      "coords": [
+        [26.6, 55.8],
+        [25.8, 56.5],
+        [24.8, 57.2],
+        [24.2, 58.0],
+        [24.0, 59.5],
+        [25.0, 60.2],
+        [26.0, 59.5],
+        [26.8, 57.5]
+      ],
+      "detail": "CENTCOM封鎖実施エリア（4/13〜）。全US制裁船舶・禁輸品搬送疑い船舶を対象に差し押さえ・捜索権を行使。",
+      "source": "CENTCOM（4/16）"
+    },
+    {
+      "id": "mine-warning-zone",
+      "name": "機雷警戒区域（IRGC）",
+      "type": "minefield",
+      "color": "#f97316",
+      "opacity": 0.12,
+      "coords": [
+        [26.9, 55.9],
+        [26.5, 56.0],
+        [26.2, 56.8],
+        [26.6, 57.2],
+        [27.1, 56.8]
+      ],
+      "detail": "IRGC機雷敷設確認エリア（4/9公式認定）。一部機雷は位置不明・漂流の可能性あり（Reuters報道）。",
+      "source": "IRGC・Reuters（4/9）"
+    }
+  ]
+}

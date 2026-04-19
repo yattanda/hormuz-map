@@ -1666,6 +1666,91 @@ function toggleIncident() {
 
 <script>
 // ============================================================
+// MILITARY LAYER（外部JSONから読み込み）
+// ============================================================
+function renderMilitaryLayer() {
+  fetch('data/military.json')
+    .then(r => r.json())
+    .then(data => {
+
+      // --- 封鎖ゾーン（ポリゴン）---
+      if (data.blockadeZones) {
+        data.blockadeZones.forEach(zone => {
+          L.polygon(zone.coords, {
+            color: zone.color,
+            fillColor: zone.color,
+            fillOpacity: zone.opacity,
+            weight: 2,
+            dashArray: zone.type === 'minefield' ? '6,4' : null
+          })
+          .bindPopup(`
+            <div style="min-width:200px;">
+              <strong style="color:${zone.color};">${zone.name}</strong><br>
+              <span style="font-size:0.8rem;">${zone.detail}</span><br>
+              <small style="color:#94a3b8;">出典：${zone.source}</small>
+            </div>
+          `)
+          .addTo(map);
+        });
+      }
+
+      // --- 艦隊マーカー ---
+      if (data.fleets) {
+        data.fleets.forEach(f => {
+          const icon = L.divIcon({
+            html: `<div style="font-size:26px;filter:drop-shadow(0 0 4px rgba(239,68,68,0.8));cursor:pointer;">${f.emoji}</div>`,
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            className: ''
+          });
+          L.marker([f.lat, f.lng], { icon })
+            .bindPopup(`
+              <div style="min-width:200px;">
+                <strong style="color:#f87171;">${f.emoji} ${f.name}</strong><br>
+                <span style="background:rgba(239,68,68,0.15);color:#fca5a5;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${f.status}</span><br><br>
+                <span style="font-size:0.8rem;color:#e2e8f0;">${f.detail}</span><br>
+                <small style="color:#94a3b8;">出典：${f.source}　更新：${data.updated}</small>
+              </div>
+            `)
+            .addTo(map);
+        });
+      }
+
+      // --- 港・拠点マーカー ---
+      if (data.ports) {
+        data.ports.forEach(p => {
+          const colorMap = {
+            'port-iran-military': '#ef4444',
+            'port-iran':          '#f97316',
+            'port-escape':        '#4ade80',
+            'port-irgc':          '#f87171'
+          };
+          const col = colorMap[p.type] || '#94a3b8';
+
+          const icon = L.divIcon({
+            html: `<div style="font-size:22px;filter:drop-shadow(0 0 3px ${col});cursor:pointer;">${p.emoji}</div>`,
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+            className: ''
+          });
+          L.marker([p.lat, p.lng], { icon })
+            .bindPopup(`
+              <div style="min-width:200px;">
+                <strong style="color:${col};">${p.emoji} ${p.name}</strong><br>
+                <span style="background:rgba(255,255,255,0.08);color:#e2e8f0;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${p.status}</span><br><br>
+                <span style="font-size:0.8rem;color:#e2e8f0;">${p.detail}</span><br>
+                <small style="color:#94a3b8;">出典：${p.source}　更新：${data.updated}</small>
+              </div>
+            `)
+            .addTo(map);
+        });
+      }
+
+    })
+    .catch(err => console.warn('military.json 読み込みエラー:', err));
+}
+
+// ============================================================
 // 0. COUNTDOWN TIMER（2段階：Critical Window 4/17 + 停戦期限 4/22）
 // ============================================================
 const DEADLINE_1 = new Date('2026-04-17T12:00:00+09:00'); // Pakistan 2nd round（Critical Window）
@@ -1822,6 +1907,10 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.p
   zIndex:650,
   opacity:0.85
 }).addTo(map);
+
+// 軍事レイヤー（外部JSONから読み込み）
+renderMilitaryLayer();
+
 
 
 // ============================================================

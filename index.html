@@ -994,7 +994,7 @@ Copy
 </div>
   <!-- COUNTDOWN -->
   <div class="deadline">
-    <div class="dl-label" id="cd-phase-label">🔴 Pakistan 2nd round まで</div>
+    <div class="dl-label" id="cd-phase-label">🔴 停戦期限まで（4/23 JST早朝）</div>
     <div class="dl-boxes">
       <div class="dl-box" style="min-width:200px;">
         <div id="cd-display">
@@ -1017,17 +1017,17 @@ Copy
       </div>
       <div class="dl-arrow">→</div>
       <div class="dl-box">
-        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">4/17 03:00</div>
-        <div class="dl-sub">米東部時間</div>
+        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">4/22（水）夜</div>
+        <div class="dl-sub">米東部時間（ET）</div>
       </div>
       <div class="dl-arrow">＝</div>
       <div class="dl-box">
-        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">4/17 12:00</div>
-        <div class="dl-sub">日本時間</div>
+        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">4/23（木）早朝</div>
+        <div class="dl-sub">日本時間（JST）</div>
       </div>
       <div class="dl-note">
-        🔴 <strong>Critical Window：4/17 JST早朝〜日中</strong> — Trump「2日以内にPakistanで第2ラウンド交渉再開」示唆。成功確度60〜70%。失敗→ IRGC報復・WTI $110〜130+急騰リスク。
-        <br><span style="color:#fbbf24;">🟡 第2期限：4/22（停戦期限・暫定）— 4/17通過後に自動切り替え。</span>
+        🔴 <strong>停戦期限：4/23 JST早朝（米国4/22水曜夜ET）</strong> — Trump「延長はhighly unlikely」と明言。Vance第2ラウンド交渉（イスラマバード4/22）の成否が停戦継続か爆撃再開かを左右する最大分岐点。
+        <br><span style="color:#fbbf24;">🟡 Israel-Lebanon停戦満了：4/22〜28（10日間）</span>
       </div>
     </div>
   </div>
@@ -1761,10 +1761,10 @@ function renderMilitaryLayer() {
 }
 
 // ============================================================
-// 0. COUNTDOWN TIMER（2段階：Critical Window 4/17 + 停戦期限 4/22）
+// 0. COUNTDOWN TIMER（停戦期限 4/23 JST早朝 = 米国4/22水曜夜ET）
 // ============================================================
-const DEADLINE_1 = new Date('2026-04-17T12:00:00+09:00'); // Pakistan 2nd round（Critical Window）
-const DEADLINE_2 = new Date('2026-04-22T00:00:00+09:00'); // 停戦期限（暫定）
+const DEADLINE_1 = new Date('2026-04-17T12:00:00+09:00'); // Pakistan 2nd round（過去・通過済み）
+const DEADLINE_2 = new Date('2026-04-23T02:00:00+09:00'); // 停戦期限（4/23 JST早朝）
 
 function updateCountdown() {
   const now  = new Date();
@@ -1781,7 +1781,7 @@ function updateCountdown() {
     document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
     document.getElementById('cd-phase-label').textContent = '🔴 Pakistan 2nd round まで';
   } else {
-    // 4/17 超過後 → 4/22 に切り替え
+    // 4/17 超過後 → 停戦期限 4/23 JST早朝 に切り替え
     const diff2 = DEADLINE_2 - now;
     if (diff2 > 0) {
       const totalSec = Math.floor(diff2 / 1000);
@@ -1791,7 +1791,7 @@ function updateCountdown() {
       document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
       document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
       document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-      document.getElementById('cd-phase-label').textContent = '🟡 停戦期限（暫定4/22）まで';
+      document.getElementById('cd-phase-label').textContent = '🔴 停戦期限まで（4/23 JST早朝）';
     } else {
       document.getElementById('cd-display').innerHTML =
         '<span class="cd-expired">⏰ 期限超過 — 状況を確認してください</span>';

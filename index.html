@@ -2596,11 +2596,12 @@ function toggleArchive() {
 }
 function _buildNewsItem(item) {
   const labelClass = item.label === '分析' ? 'label-analysis' : 'label-fact';
+  const bodyHtml = item.body ? `<div class="news-body">${item.body}</div>` : '';
   return `<div class="news-item">
   <div class="news-meta"><span class="news-date">${item.date}</span><span class="${labelClass}">${item.label || '事実'}</span></div>
   <div class="news-title"><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></div>
-  <div class="news-body">${item.body}</div>
-  <div class="news-source">出典：${item.source}</div>
+  ${bodyHtml}
+  <div class="news-source">出典：${item.sourceLabel}</div>
 </div>`;
 }
 function renderLatestNews(data) {
@@ -2613,7 +2614,7 @@ function renderArchive(data) {
   if (!c) return;
   c.innerHTML = data.archive.map(batch =>
     `<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
-  <div style="font-size:0.68rem;font-weight:800;color:#64748b;letter-spacing:0.05em;margin-bottom:8px;">📁 ${batch.label}</div>
+  <div style="font-size:0.68rem;font-weight:800;color:#64748b;letter-spacing:0.05em;margin-bottom:8px;">📁 ${batch.batchLabel}</div>
   ${batch.items.map(_buildNewsItem).join('')}
 </div>`
   ).join('');
@@ -2631,12 +2632,12 @@ function renderOsint(data) {
     return `<a href="${item.url}" target="_blank" rel="noopener"
       style="display:block;background:${item.cardBg};border:1px solid ${item.cardBorder};border-radius:8px;padding:12px 14px;text-decoration:none;margin-bottom:8px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">${item.flag}</span>
+        <span style="font-size:0.85rem;">${item.country}</span>
         <span style="background:${item.badgeColor};border:1px solid ${item.borderColor};color:${item.textColor};font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">${item.media}</span>
         <span style="font-size:0.68rem;color:#64748b;">${item.date}</span>
         ${latestBadge}
       </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】${item.titleJa}</div>
+      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">${item.titleJa}</div>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: ${item.titleEn}</div>
       ${bodyHtml}
     </a>`;

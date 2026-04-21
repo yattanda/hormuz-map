@@ -2612,12 +2612,14 @@ function renderLatestNews(data) {
 function renderArchive(data) {
   const c = document.getElementById('news-archive-container');
   if (!c) return;
-  c.innerHTML = data.archive.map(batch =>
-    `<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
-  <div style="font-size:0.68rem;font-weight:800;color:#64748b;letter-spacing:0.05em;margin-bottom:8px;">📁 ${batch.batchLabel}</div>
+  const batchHtml = data.archive.map(batch =>
+    `<div class="news-archive-batch" style="margin-bottom:12px;">
+  <div style="font-size:0.68rem;font-weight:800;color:#64748b;letter-spacing:0.08em;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:8px;">📁 ${batch.batchLabel}</div>
   ${batch.items.map(_buildNewsItem).join('')}
 </div>`
   ).join('');
+  const bottomBtn = `<button class="news-more-btn" onclick="toggleArchive()" style="margin-top:4px;">▲ 折りたたむ</button>`;
+  c.innerHTML = batchHtml + bottomBtn;
 }
 function renderOsint(data) {
   const c = document.getElementById('osint-container');

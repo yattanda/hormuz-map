@@ -2622,28 +2622,43 @@ function renderArchive(data) {
   c.innerHTML = batchHtml + bottomBtn;
 }
 function renderOsint(data) {
-  const c = document.getElementById('osint-container');
-  if (!c) return;
-  c.innerHTML = data.osint.map(item => {
-    const latestBadge = item.isLatest
-      ? `<span style="font-size:0.65rem;color:#f87171;font-weight:700;padding:1px 5px;background:rgba(239,68,68,0.15);border-radius:3px;">🔴 最新</span>`
-      : '';
-    const bodyHtml = item.bodyJa
-      ? `<div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">${item.bodyJa}</div>`
-      : '';
-    return `<a href="${item.url}" target="_blank" rel="noopener"
-      style="display:block;background:${item.cardBg};border:1px solid ${item.cardBorder};border-radius:8px;padding:12px 14px;text-decoration:none;margin-bottom:8px;">
+  const LIMIT = 4;
+  const items = data.osint;
+  const makeCard = item => `
+    <a href="${item.url}" target="_blank" rel="noopener"
+      style="display:block;background:${item.cardBg};border:1px solid ${item.cardBorder};border-radius:8px;padding:12px 14px;text-decoration:none;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
         <span style="font-size:0.85rem;">${item.country}</span>
         <span style="background:${item.badgeColor};border:1px solid ${item.borderColor};color:${item.textColor};font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">${item.media}</span>
         <span style="font-size:0.68rem;color:#64748b;">${item.date}</span>
-        ${latestBadge}
       </div>
       <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">${item.titleJa}</div>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: ${item.titleEn}</div>
-      ${bodyHtml}
-    </a>`;
-  }).join('');
+    </a>
+  `;
+  const topItems = items.slice(0, LIMIT);
+  const extraItems = items.slice(LIMIT);
+  const hasExtra = extraItems.length > 0;
+  let html = `<div style="display:flex;flex-direction:column;gap:8px;">${topItems.map(makeCard).join('')}</div>`;
+  if (hasExtra) {
+    html += `
+      <button class="news-more-btn" id="osint-more-btn" onclick="toggleOsint()" style="margin-top:8px;">▼ 過去の記事を見る</button>
+      <div id="osint-extra" style="display:none;margin-top:8px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">${extraItems.map(makeCard).join('')}</div>
+        <button class="news-more-btn" onclick="toggleOsint()" style="margin-top:4px;">▲ 折りたたむ</button>
+      </div>
+    `;
+  }
+  const c = document.getElementById('osint-container');
+  if (c) c.innerHTML = html;
+}
+function toggleOsint() {
+  const extra = document.getElementById('osint-extra');
+  const btn = document.getElementById('osint-more-btn');
+  if (!extra) return;
+  const isHidden = extra.style.display === 'none' || extra.style.display === '';
+  extra.style.display = isHidden ? 'block' : 'none';
+  if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ 過去の記事を見る';
 }
 function loadNewsData() {
   fetch('data/news_data.json')

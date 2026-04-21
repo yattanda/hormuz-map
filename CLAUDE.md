@@ -57,6 +57,14 @@
 - マネタイズ：現状は X 投稿によるインプレッション収益
 - GenSpark：参照用アーカイブのみ（更新しない）
 
+## news_data.json 運用ルール
+- `data/news_data.json` がニュース・OSINT表示の単一ソース（index.htmlのNEWS COLUMN・現地メディア視点はJSで動的レンダリング）
+- 毎日の更新は `data/news_data.json` のみを編集する（index.htmlのNEWS COLUMNセクションは触らない）
+- `latest` に最新4件を掲載。追加時は最古の1件を `archive` の先頭バッチへ移動する
+- `archive` は更新バッチ単位（`label` 付き）で管理。1バッチ10件前後が目安
+- `osint` は各メディア1件ずつ。`isLatest: true` は最新記事1件のみに付与（複数不可）
+- `updated` フィールドは `YYYY年MM月DD日 HH:MM 日本時間JST` 形式で必ず更新
+
 ## 作業方針
 - 変更前に対象セクションを明示する
 - 変更箇所以外は絶対に触らない

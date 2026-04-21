@@ -2586,13 +2586,76 @@ function toggleSpecial(id, btn) {
   el.style.display = isHidden ? 'block' : 'none';
   btn.textContent = isHidden ? '▲ 閉じる' : '▼ 詳細を読む';
 }
-function toggleNewsMore() {
-  const moreNews = document.getElementById('more-news');
+function toggleArchive() {
+  const container = document.getElementById('news-archive-container');
   const btn = document.getElementById('news-more-btn');
-  const isHidden = moreNews.style.display === 'none' || moreNews.style.display === '';
-  moreNews.style.display = isHidden ? 'block' : 'none';
-  btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ 過去の記事を見る';
+  if (!container) return;
+  const isHidden = container.style.display === 'none' || container.style.display === '';
+  container.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ 過去の履歴を見る';
 }
+function _buildNewsItem(item) {
+  const labelClass = item.label === '分析' ? 'label-analysis' : 'label-fact';
+  return `<div class="news-item">
+  <div class="news-meta"><span class="news-date">${item.date}</span><span class="${labelClass}">${item.label || '事実'}</span></div>
+  <div class="news-title"><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></div>
+  <div class="news-body">${item.body}</div>
+  <div class="news-source">出典：${item.source}</div>
+</div>`;
+}
+function renderLatestNews(data) {
+  const c = document.getElementById('news-latest-container');
+  if (!c) return;
+  c.innerHTML = data.latest.map(_buildNewsItem).join('');
+}
+function renderArchive(data) {
+  const c = document.getElementById('news-archive-container');
+  if (!c) return;
+  c.innerHTML = data.archive.map(batch =>
+    `<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="font-size:0.68rem;font-weight:800;color:#64748b;letter-spacing:0.05em;margin-bottom:8px;">📁 ${batch.label}</div>
+  ${batch.items.map(_buildNewsItem).join('')}
+</div>`
+  ).join('');
+}
+function renderOsint(data) {
+  const c = document.getElementById('osint-container');
+  if (!c) return;
+  c.innerHTML = data.osint.map(item => {
+    const latestBadge = item.isLatest
+      ? `<span style="font-size:0.65rem;color:#f87171;font-weight:700;padding:1px 5px;background:rgba(239,68,68,0.15);border-radius:3px;">🔴 最新</span>`
+      : '';
+    const bodyHtml = item.bodyJa
+      ? `<div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">${item.bodyJa}</div>`
+      : '';
+    return `<a href="${item.url}" target="_blank" rel="noopener"
+      style="display:block;background:${item.cardBg};border:1px solid ${item.cardBorder};border-radius:8px;padding:12px 14px;text-decoration:none;margin-bottom:8px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:0.85rem;">${item.flag}</span>
+        <span style="background:${item.badgeColor};border:1px solid ${item.borderColor};color:${item.textColor};font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">${item.media}</span>
+        <span style="font-size:0.68rem;color:#64748b;">${item.date}</span>
+        ${latestBadge}
+      </div>
+      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】${item.titleJa}</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: ${item.titleEn}</div>
+      ${bodyHtml}
+    </a>`;
+  }).join('');
+}
+function loadNewsData() {
+  fetch('data/news_data.json')
+    .then(r => r.json())
+    .then(data => {
+      renderLatestNews(data);
+      renderArchive(data);
+      renderOsint(data);
+    })
+    .catch(() => {
+      const c = document.getElementById('news-latest-container');
+      if (c) c.innerHTML = '<div style="color:#f87171;font-size:0.8rem;padding:16px;">データ読み込みエラー</div>';
+    });
+}
+document.addEventListener('DOMContentLoaded', loadNewsData);
 </script>
 <!-- OSINT PANEL -->
 <div style="width:100%;margin:24px 0 0;padding:0 16px;text-align:left;">
@@ -3192,245 +3255,11 @@ function toggleNewsMore() {
 <!-- NEWS COLUMN -->
 <div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
   <div class="news-section-title">📰 関連最新ニュース</div>
-  <div class="news-list" id="news-list">
-    <!-- ▼▼▼ 新しい記事はここに追加 ▼▼▼ -->
-
-<!-- 常時表示：トップ4件 -->
-<!-- ニュース1 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/21</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.cnn.com/2026/04/20/world/live-news/iran-war-us-trump-israel" target="_blank" rel="noopener">
-      Trump「停戦は水曜夜終了」延長「highly unlikely」・Vanceがパキスタンへ出発
-    </a>
+  <div id="news-latest-container">
+    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
   </div>
-  <div class="news-body">Trump大統領が「停戦は水曜夜（米国東部時間）＝JST4/23早朝に終了」と表明し、延長を「highly unlikely」と明言。Vance副大統領・Witkoff・Kusnerが第2ラウンド交渉のためイスラマバードへ出発。4/22（水）に米イラン交渉が予定されるが、イランは「現時点で交渉日程なし」と発言。両国間の相互不信が深刻で、明日が停戦継続か爆撃再開かの最大分岐点。</div>
-  <div class="news-source">出典：CNN Live Updates（現地時間4/20〜21・JST 4/21）</div>
-</div>
-
-<!-- ニュース2 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/19</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.npr.org/2026/04/19/nx-s1-5790378/iran-us-hormuz-closed-impossible" target="_blank" rel="noopener">
-      米海軍USS Spruanceがイラン籍貨物船「Touska」を拿捕・イランが報復宣言
-    </a>
-  </div>
-  <div class="news-body">Trump大統領がTruth Socialで「USS SpruanceがGulf of OmanでイランTouskaを発砲・制圧・接収した」と発表。USCENTCOMが確認。イラン軍報道官が「近日中に報復する」と声明。Trump「イランは停戦に違反した。発電所と橋を全て破壊する。NO MORE MR. NICE GUY!」と脅迫投稿。イラン「これは海賊行為」と強く非難。</div>
-  <div class="news-source">出典：NPR（現地時間4/19・JST 4/20）</div>
-</div>
-
-<!-- ニュース3 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/20</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.cnbc.com/2026/04/20/us-iran-war-middle-east-conflict-peace-deal-strait-hormuz-shipping-ceasefire-tensions.html" target="_blank" rel="noopener">
-      停戦期限迫る中、イラン「第2交渉現時点で予定なし」・原油Brent $94台に急騰
-    </a>
-  </div>
-  <div class="news-body">イラン外務省スポークスマンが「現時点で第2ラウンドの交渉計画なし」と表明。ホルムズ海峡通過は土曜の衝突以降ほぼ停止（週最多20隻→3隻以下に急減）。Brent $94.57（+4.6%）・WTI $88.45（+5.5%）に急反発。CNBC分析家「1日1,300万バレルが停止中、累積5億バレル超の損失」。IMF「世界経済へのダメージは避けられない」と警告。</div>
-  <div class="news-source">出典：CNBC（現地時間4/20・JST 4/21）</div>
-</div>
-
-<!-- ニュース4 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/19</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.nbcnews.com/world/iran/iran-distance-peace-deal-hormuz-closure-halts-shipping-rcna340846" target="_blank" rel="noopener">
-      Trump「合意なければイランの発電所・橋を全て破壊」・イラン「戦争を再開する」と応戦
-    </a>
-  </div>
-  <div class="news-body">Trump大統領が「合意なければイランの全ての発電所と橋を破壊する」とTruth Socialに投稿。イラン核交渉責任者が「米国が我々の要求を受け入れなければ戦争を再開する」と強硬声明。インド外務省はインド籍船2隻が銃撃を受けたとしてイラン大使を召喚。停戦の脆さが改めて浮き彫りに。</div>
-  <div class="news-source">出典：NBC News（現地時間4/19・JST 4/20）</div>
-</div>
-
-<!-- 旧ニュース（CNN/4/18） -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/18</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.cnn.com/2026/04/18/world/live-news/iran-war-trump-israel" target="_blank" rel="noopener">
-      Trump「米国-イラン取引が100%完了まで海上ブロケード継続」・月曜に第2ラウンド交渉へ
-    </a>
-  </div>
-  <div class="news-body">Trump大統領が海上ブロケードの継続を明言。取引が100%完了するまで封鎖は解除しないと強調。月曜日に向けて第2ラウンド交渉が調整されている。</div>
-  <div class="news-source">出典：CNN（4/18）</div>
-</div>
-
-<!-- ニュース2 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/18</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.bbc.com/news/live/cqxdg17yr2wt" target="_blank" rel="noopener">
-      レバノン停戦初日：イスラエルが「黄色い線」設定・55村落への帰還禁止
-    </a>
-  </div>
-  <div class="news-body">Israel-Lebanon停戦発効初日。イスラエルが55村落への住民帰還を禁止する「黄色い線」を設定。イスラエル国防相は停戦中も対テロインフラ破壊を継続すると明言。</div>
-  <div class="news-source">出典：BBC（4/18）</div>
-</div>
-
-<!-- ニュース3 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/18</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://apnews.com/article/us-iran-war-lebanon-israel-talks-pakistan-hormuz-17-april-2026-4bd5a29af608ecbd72356559b3c55d67" target="_blank" rel="noopener">
-      Trump vs イラン「相反する主張」・4/22期限・爆撃再開警告
-    </a>
-  </div>
-  <div class="news-body">Trumpは「イランは全て受け入れ済み・濃縮ウラン放出に合意」と発表。イラン議会議長は「Trumpの主張7つは全て虚偽」と全面否定。Trumpは4/22期限に「合意なければ爆撃再開」と警告。Pakistan Munirテヘラン訪問終了・月曜2ndラウンド調整継続。</div>
-  <div class="news-source">出典：AP通信（4/18）</div>
-</div>
-
-<!-- ニュース2 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/18</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.aljazeera.com/news/liveblog/2026/4/18/iran-war-live-tehran-says-president-trump-made-false-claims-amid-talks" target="_blank" rel="noopener">
-      テヘラン「Trumpの主張は虚偽」・ホルムズ実通過は極めて少数
-    </a>
-  </div>
-  <div class="news-body">イラン外務省「濃縮ウランは交渉で一度も提起されたことがない」。イラン外相「完全再開」宣言を「IRGCルート限定」に修正。金曜の実際の通過船舶は極めて少数。イラン議会議長「米ブロケード継続なら再閉鎖」。Israel：55村落への帰還禁止「黄色い線」設定。</div>
-  <div class="news-source">出典：Al Jazeera（4/18）</div>
-</div>
-
-<!-- 旧ニュース1 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/16</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.reuters.com/world/iran-war-live-updates-trump-says-israel-lebanon-have-agreed-10-day-ceasefire-2026-04-16/" target="_blank" rel="noopener">
-      Israel-Lebanon 10日間停戦開始・Trump発表
-    </a>
-  </div>
-  <div class="news-body">Netanyahu-Aoun合意。Israel南部10kmセキュリティゾーン設定。Hezbollah攻撃停止。ただし停戦違反報告あり実効性に疑問符。</div>
-  <div class="news-source">出典：Reuters（4/16）</div>
-</div>
-
-<!-- ニュース2 -->
-<!-- ニュース1 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/17</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://apnews.com/live/iran-war-israel-trump-04-16-2026" target="_blank" rel="noopener">
-      Israel-Lebanon 10日間停戦開始・Trump「歴史的日」
-    </a>
-  </div>
-  <div class="news-body">Netanyahu-Aoun合意。Israel南部10kmセキュリティゾーン設定。Hezbollah攻撃停止。レバノンで祝賀。停戦期間は10日間。</div>
-  <div class="news-source">出典：AP通信（4/17）</div>
-</div>
-
-<!-- ニュース2 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/17</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.reuters.com/world/africa/dollar-set-second-weekly-loss-iran-war-peace-hopes-2026-04-17/" target="_blank" rel="noopener">
-      ホルムズ海峡完全再開・イラン発表・ドル7週間ぶり安値
-    </a>
-  </div>
-  <div class="news-body">イラン外相Araghchiがホルムズ完全再開を宣言。ドルインデックス97.632（7週間ぶり最安値）。米株急騰・原油急落。</div>
-  <div class="news-source">出典：Reuters（4/17）</div>
-</div>
-
-<!-- ニュース3 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/18</span><span class="label-analysis">分析</span></div>
-  <div class="news-title">
-    <a href="https://www.9news.com.au/world/us-israel-iran-war-strait-of-hormuz-is-fully-open-trump-and-iran-foreign-minister-say/5446e58e-f396-4cfa-8597-25ca7920b93a" target="_blank" rel="noopener">
-      石油価格10%下落・ホルムズ海峡開放受け
-    </a>
-  </div>
-  <div class="news-body">ホルムズ完全再開宣言でWTI▼10%急落。Dow +1,020pt・S&P500 +1.3%・Nasdaq +1.5%。ただし米軍封鎖は継続中。</div>
-  <div class="news-source">出典：9 News Australia（4/18）</div>
-</div>
-
-<!-- ニュース4 -->
-<div class="news-item">
-  <div class="news-meta"><span class="news-date">2026/04/16</span><span class="label-fact">事実</span></div>
-  <div class="news-title">
-    <a href="https://www.reuters.com/world/asia-pacific/pakistan-says-no-dates-set-second-round-us-iran-talks-2026-04-16/" target="_blank" rel="noopener">
-      Pakistan「第2ラウンド日程未定」・仲介継続
-    </a>
-  </div>
-  <div class="news-body">Pakistan FO「No date set」発表。Field Marshal MunirはTehranで停戦延長を仲介中。第2ラウンドはIslamabadで開催予定だが日程未定。</div>
-  <div class="news-source">出典：Reuters（4/16）</div>
-</div>
-<!-- 折りたたみ：5件目以降 -->
-<div id="more-news" style="display:none;">
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/12 昨日</span></div>
-    <a href="https://www.reuters.com/business/energy/saudi-arabia-restores-full-capacity-east-west-oil-pipeline-7-million-bpd-after-2026-04-12/" target="_blank" rel="noopener">サウジアラビア、東西パイプラインの輸送能力を日量700万bpdへ完全復旧（Reuters）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/12 昨日</span></div>
-    <a href="https://www.latimes.com/politics/story/2026-04-12/trumps-strait-of-hormuz-blockade-risks-clash-with-china" target="_blank" rel="noopener">トランプのホルムズ封鎖宣言、中国との衝突リスクも　LAタイムズが分析（LA Times）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/12 昨日</span></div>
-    <a href="https://jp.reuters.com/world/asia-pacific/us-iran-talks-pause-now-disagreements-remain-2026-04-11/" target="_blank" rel="noopener">米イラン協議21時間超で事実上決裂・バンス副大統領「合意なし、帰国する」（Reuters）</a>
-    <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">💣 機雷問題・ホルムズ管理権・核開発・レバノン停戦の4点で溝埋まらず。停戦期限（4/22前後）前の再交渉が次の焦点。</div>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-nikkei">日経</span><span class="news-date">4/12 昨日</span></div>
-    <a href="https://www.nikkei.com/article/DGXZQOGN120130S6A410C2000000/" target="_blank" rel="noopener">米イラン直接協議、ホルムズ海峡巡り紛糾　8時間超えてなお継続（日経）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">4/11</span></div>
-    <a href="https://www.bloomberg.com/jp/news/articles/2026-04-11/TDBGEAT96OSG00" target="_blank" rel="noopener">米国とイランが対面協議、パキスタン交え　ホルムズ掃海開始へ（Bloomberg）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/10</span></div>
-    <a href="https://jp.reuters.com/markets/commodities/7QOQNGXMMJNBJAMCDFODH6M2NQ-2026-04-10/" target="_blank" rel="noopener">トランプ氏、ホルムズ通航料「即座にやめるべき」警告・通過船舶数戻らず（Reuters）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-fnn">テレ朝</span><span class="news-date">4/9 朝</span></div>
-    <a href="https://news.tv-asahi.co.jp/news_international/articles/000497327.html" target="_blank" rel="noopener">イスラエル、ヒズボラ標的にレバノンで最大規模攻撃 254人死亡 停戦合意数時間後（テレ朝）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/9 朝</span></div>
-    <a href="https://jp.reuters.com/world/us/YOWC4EFCYZIYZH5V5HBJ6Z32CE-2026-04-08/" target="_blank" rel="noopener">イスラエルのレバノン空爆「恐ろしい」国連が停戦後の大規模攻撃を非難（Reuters）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-afp">AFP</span><span class="news-date">4/8</span></div>
-    <a href="https://www.afpbb.com/articles/-/3630348" target="_blank" rel="noopener">米・イラン・同盟国が「レバノン含むあらゆる場所」で即時停戦合意 パキスタン首相が公式発表（AFP）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">4/8 朝</span></div>
-    <a href="https://jp.reuters.com/world/us/LQ5WWJP7RJIXBKOOLDJ62H2HGU-2026-04-07/" target="_blank" rel="noopener">イランへの攻撃「2週間停止で合意」トランプ氏が表明・WTI急落▼17%→$97台（Reuters）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-toyo">東洋経済</span><span class="news-date">4/5</span></div>
-    <a href="https://toyokeizai.net/articles/-/937516" target="_blank" rel="noopener">ホルムズ海峡封鎖で国内の石油化学産業は減産の動き、停戦機運あっても先行き不透明（東洋経済）</a>
-  </div>
-  <div class="news-item">
-    <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">3/16</span></div>
-    <a href="https://jp.reuters.com/markets/japan/DB2YZY3V35N45KEFNCL3VO324A-2026-03-16/" target="_blank" rel="noopener">中東からの原油輸出、ホルムズ海峡封鎖で最低でも日量60%減少（Reuters）</a>
-  </div>
-
-</div>
-      <!-- サウジ関連記事（移設） -->
-      <div class="news-item">
-        <div class="news-meta"><span class="news-badge badge-reuters">NRI 野村総研</span><span class="news-date">2026/03/25</span></div>
-        <a href="https://www.nri.com/jp/media/column/kiuchi/20260325.html" target="_blank" rel="noopener">🇸🇦 サウジアラビアとホルムズ非経由ルート — ヤンブー港・パイプライン・日本への影響を解説</a>
-      </div>
-      <div class="news-item">
-        <div class="news-meta"><span class="news-badge badge-bloomberg">MarketScreener</span><span class="news-date">2026/04/02</span></div>
-        <a href="https://hk.marketscreener.com/news/saudi-crude-import-prices-to-japan-surge-80-amid-hormuz-supply-disruptions-ce7e51dcdd8cff20" target="_blank" rel="noopener">🇸🇦 日本向けサウジ原油輸入価格が80%急騰 — ホルムズ供給障害の直撃</a>
-        <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">💹 封鎖開始から約2週間でアラビアンライトのCIF価格が急騰。日本の製油所は調達コスト増大に直面し、代替原油の緊急確保を迫られている。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-meta"><span class="news-badge badge-bloomberg">Bloomberg</span><span class="news-date">2026/03/26</span></div>
-        <a href="https://www.bloomberg.com/news/articles/2026-03-26/saudi-oil-sales-to-top-asia-buyers-to-drop-on-hormuz-disruptions" target="_blank" rel="noopener">🌏 サウジ、アジア向け販売量を削減 — ホルムズ混乱で日中韓への供給が低下</a>
-        <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">🛢️ サウジアラムコが日本・中国・韓国向けの5月積み原油の供給量を削減。東西パイプライン経由のヤンブー港からの代替輸出に切り替え中。</div>
-      </div>
-      <div class="news-item">
-        <div class="news-meta"><span class="news-badge badge-reuters">Reuters</span><span class="news-date">2026/03/10</span></div>
-        <a href="https://www.reuters.com/business/energy/consequences-global-oil-markets-could-be-catastrophic-if-hormuz-closure-2026-03-10/" target="_blank" rel="noopener">⚠️ アラムコCEO「ホルムズ閉鎖継続なら石油市場に壊滅的影響」</a>
-        <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">🔴 アミン・ナセルCEOが封鎖長期化への警告を発表。世界の石油供給の約20%が通過するホルムズの閉鎖が続けば、代替ルートでは需要を賄えないと指摘。</div>
-      </div>
-
-    </div><!-- /#more-news -->
-
-    <button class="news-more-btn" id="news-more-btn" onclick="toggleNewsMore()">▼ 過去の記事を見る</button>
-
-  </div><!-- /#news-list -->
+  <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
+  <div id="news-archive-container" style="display:none;"></div>
 </div><!-- /NEWS COLUMN -->
 
 <!-- SOURCE & UPDATE LOG -->
@@ -3491,83 +3320,8 @@ function toggleNewsMore() {
     🌐 現地メディア視点
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
-
-    <!-- 🇮🇷 イラン系：PressTV -->
-    <a href="https://www.presstv.ir/Detail/2026/03/19/765581/US-says-may-%E2%80%98unsanction%E2%80%99-Iran-as-IRGC-regulates-Hormuz-traffic--" target="_blank" rel="noopener"
-      style="display:block;background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇮🇷</span>
-        <span style="background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:#a78bfa;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">PressTV（イラン国営）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/03/19</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】米財務長官「イラン制裁解除の可能性」― IRGCがホルムズ海峡の通航を管理・規制中</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: US says may 'unsanction' Iran as IRGC regulates Hormuz traffic</div>
-    </a>
-
-    <!-- 🇸🇦 サウジ系：Al Arabiya -->
-    <a href="https://english.alarabiya.net/News/middle-east/2026/04/10/trump-says-iran-is-doing-very-poor-job-of-allowing-oil-through-strait-of-hormuz-" target="_blank" rel="noopener"
-      style="display:block;background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇸🇦</span>
-        <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Arabiya（サウジ系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/04/10</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】トランプ氏「イランの石油通航管理は非常に不十分」― ホルムズ海峡の完全開放を要求</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Trump says Iran is doing 'very poor job' of allowing oil through Strait of Hormuz</div>
-    </a>
-
-    <!-- 🇦🇪 UAE系：The National -->
-    <a href="https://www.thenationalnews.com/business/energy/2026/03/30/gulf-states-must-invest-in-alternatives-to-the-strait-of-hormuz/" target="_blank" rel="noopener"
-      style="display:block;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇦🇪</span>
-        <span style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#34d399;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">The National（UAE系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/03/30</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】湾岸諸国はホルムズ代替ルートへの投資を急ぐべき ― サウジ輸出の約75%が依然ホルムズ経由</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Gulf states must invest in alternatives to the Strait of Hormuz</div>
-    </a>
-
-    <!-- 🇶🇦 カタール系：Al Jazeera -->
-    <a href="https://www.aljazeera.com/news/2026/4/20/pakistan-ready-for-multi-day-us-iran-talks-but-tehran-unsure-about-joining" target="_blank" rel="noopener"
-      style="display:block;background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇶🇦</span>
-        <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Jazeera（カタール系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/04/20</span>
-        <span style="font-size:0.65rem;color:#f87171;font-weight:700;padding:1px 5px;background:rgba(239,68,68,0.15);border-radius:3px;">🔴 最新</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】イラン「交渉なし」宣言・パキスタンの仲介努力が試練に ― 停戦崩壊の瀬戸際</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Pakistan ready for multi-day US-Iran talks, but Tehran unsure about joining</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:4px;line-height:1.5;">イラン外務省スポークスマン・バゲイ氏は「米国の海上封鎖は停戦開始当初から違反状態にある」とし、交渉参加を「良好な信義誠実と過度な要求の撤回が前提」と条件提示。パキスタンは「Islamabad process」として複数日交渉の枠組みを準備。テヘランの「交渉なし」表明にもかかわらず、イラン代表団がパキスタン入りとの情報もある。</div>
-    </a>
-
-    <!-- 🇬🇧 The Guardian ライブブログ 4/18 -->
-    <a href="https://www.theguardian.com/world/live/2026/apr/18/middle-east-crisis-live-iran-warns-it-will-close-strait-of-hormuz-if-us-blockade-continues" target="_blank" rel="noopener"
-      style="display:block;background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇬🇧</span>
-        <span style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#34d399;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">The Guardian（英国）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/04/18</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】イラン最高指導者「新しい苦い敗北をもたらす」― ホルムズ再閉鎖宣言・軍事的警告発出</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Middle East crisis live — Iran warns it will close Strait of Hormuz if US blockade continues</div>
-    </a>
-
-    <!-- 🇶🇦 Al Jazeera ライブブログ 4/18 -->
-    <a href="https://www.aljazeera.com/news/liveblog/2026/4/18/iran-war-live-tehran-says-president-trump-made-false-claims-amid-talks" target="_blank" rel="noopener"
-      style="display:block;background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">🇶🇦</span>
-        <span style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">Al Jazeera（カタール系）</span>
-        <span style="font-size:0.68rem;color:#64748b;">2026/04/18</span>
-        <span style="font-size:0.65rem;color:#f87171;font-weight:700;padding:1px 5px;background:rgba(239,68,68,0.15);border-radius:3px;">🔴 最新</span>
-      </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">【日】テヘラン「Trumpの主張は虚偽」― ホルムズ実通過は極めて少数・IRGCルート限定に修正・4/22期限が焦点</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: Iran war live — Tehran says President Trump made false claims amid talks</div>
-    </a>
-
+  <div id="osint-container">
+    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
   </div>
 </div>
 </div><!-- /#osint-panel -->

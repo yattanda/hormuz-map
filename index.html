@@ -2762,7 +2762,7 @@ function loadNewsData() {
 // SCENARIO SYNC（hormuz-data- の manual.json から確率を同期）
 // ============================================================
 function syncScenarioFromDashboard() {
-  fetch('https://yattanda.github.io/hormuz-data-/data/manual.json?t=' + Date.now())
+  fetch('https://yattanda.github.io/hormuz-data-/data/manual-update.json?t=' + Date.now())
     .then(r => r.json())
     .then(d => {
       if (!d.scenario) return;

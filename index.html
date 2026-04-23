@@ -1695,7 +1695,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ A：外交妥結 -->
     <div class="sc-card sc-best">
-      <span class="sc-tag">シナリオ A ― 外交妥結・段階的解決　確率 約20% ↓</span>
+      <span class="sc-tag" id="sc-tag-A">シナリオ A ― 外交妥結・段階的解決　確率 約20% ↓</span>
       <div class="sc-title">🕊️ イランが統一提案を提出・封鎖解除と引き換えに核制限合意</div>
       <div class="sc-body">
         4/22 イスラマバード第2ラウンドで「核：5〜10年停止」「ホルムズ：段階的開放」の枠組み合意。停戦延長を経て5〜6月に部分的商業通航再開。Brent $75〜85へ段階的下落。日本：備蓄消費を抑制しつつ代替調達を正常化。ただし米側「完全非核化」要求とイラン側「ホルムズ主権維持」が依然として壁。
@@ -1709,7 +1709,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ B：膠着深刻化 -->
     <div class="sc-card sc-mid">
-      <span class="sc-tag">シナリオ B ― 無期限延長・膠着深刻化　確率 約50% ↑</span>
+      <span class="sc-tag" id="sc-tag-B">シナリオ B ― 無期限延長・膠着深刻化　確率 約50% ↑</span>
       <div class="sc-title">⏳ 封鎖継続・会談日程確定せず・ホルムズ低通航が常態化</div>
       <div class="sc-body">
         本日の交渉で合意に至らず、短期停戦延長を繰り返す膠着状態。ホルムズは部分通過（限定ルート）が続くが完全正常化は遠い。Brent $90〜100帯で高止まり。米ガス$4台が数ヶ月継続。イランの核要求と米の完全開放要求の間で妥協点が見えず、交渉が長期化する可能性が最も高い。
@@ -1723,7 +1723,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ C：全面衝突 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag">シナリオ C ― 全面衝突・完全再封鎖　確率 約30% ↑↑</span>
+      <span class="sc-tag" id="sc-tag-C">シナリオ C ― 全面衝突・完全再封鎖　確率 約30% ↑↑</span>
       <div class="sc-title">💥 IRGC攻撃が米軍との直接交戦に発展・ホルムズ完全閉鎖</div>
       <div class="sc-body">
         4/22のIRGCコンテナ船銃撃へのエスカレーションが米軍との直接交戦に発展。無期限延長中の停戦が崩壊しTrumpが「発電所・橋を全て破壊する」と予告した爆撃を再開。フーシ派が紅海再封鎖し二重海峡封鎖が現実化。Brent $130〜150超。日本は備蓄緊急放出・エネルギー緊急事態宣言を検討。直近のTouska拿捕と報復警告により現実化リスク急上昇。
@@ -2758,7 +2758,45 @@ function loadNewsData() {
       if (c) c.innerHTML = '<div style="color:#f87171;font-size:0.8rem;padding:16px;">データ読み込みエラー</div>';
     });
 }
-document.addEventListener('DOMContentLoaded', loadNewsData);
+// ============================================================
+// SCENARIO SYNC（hormuz-data- の manual.json から確率を同期）
+// ============================================================
+function syncScenarioFromDashboard() {
+  fetch('https://yattanda.github.io/hormuz-data-/data/manual.json?t=' + Date.now())
+    .then(r => r.json())
+    .then(d => {
+      if (!d.scenario) return;
+      const map = {
+        A: {
+          id: 'sc-tag-A',
+          label: 'シナリオ A ― 第2ラウンド合意・段階的解決',
+          pct:   d.scenario.A_diplomacy_pct
+        },
+        B: {
+          id: 'sc-tag-B',
+          label: 'シナリオ B ― 停戦延長・膠着継続',
+          pct:   d.scenario.B_partial_blockade_pct
+        },
+        C: {
+          id: 'sc-tag-C',
+          label: 'シナリオ C ― 全面衝突・完全再封鎖',
+          pct:   d.scenario.C_full_blockade_pct
+        },
+      };
+      Object.values(map).forEach(sc => {
+        const tag = document.getElementById(sc.id);
+        if (tag && sc.pct !== undefined) {
+          tag.textContent = `${sc.label}　確率 約${sc.pct}%`;
+        }
+      });
+    })
+    .catch(e => console.warn('scenario sync failed:', e));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadNewsData();
+  syncScenarioFromDashboard();
+});
 </script>
 <!-- OSINT PANEL -->
 <div style="width:100%;margin:24px 0 0;padding:0 16px;text-align:left;">

@@ -2,6 +2,8 @@
 
 ## プロジェクト概要
 - index.html 1ファイルにHTML・CSS・JavaScript全て集約
+- `data/news_data.json` がニュース・OSINT表示の単一ソース
+- `images/` ディレクトリにインフォグラフィック画像を管理
 - GitHub Pages で公開済み
 - 更新頻度：毎日〜数日に1回
 
@@ -19,6 +21,8 @@
 ## セクション構成（順番固定）
 - /* TICKER */　← 毎日更新
 - <!-- 30秒で全体像を把握 --> ← 毎日更新
+  - 末尾に「📊 解説インフォグラフィック」サムネイルブロックあり（クリックでライトボックス拡大）
+  - 画像ファイルは `images/` に配置。追加時は `openLightbox('images/xxx.png')` を参照
 - <!-- SITUATION CARDS --> ← 毎日更新
 - <!-- COUNTDOWN --> ← 適宜更新
 - <!-- 💰 リアルタイム市場ダッシュボード --> ← 通常変更なし
@@ -29,6 +33,9 @@
 - <!-- STATS --> ← 週1更新
 - <!-- 速報インシデント トグルボタン --> ← 毎日更新
 - <!-- SCENARIOS --> ← 毎日更新
+  - 各sc-tagには `id="sc-tag-A"` / `id="sc-tag-B"` / `id="sc-tag-C"` が付与済み
+  - ページ読み込み時に `syncScenarioFromDashboard()` が hormuz-data- から確率を自動上書きする
+  - **確率補足バナー・sc-tagの確率数値は手動更新不要**（自動同期が優先）。ただし文面の矢印（↑↓）や補足テキストは手動で情勢に合わせて更新する
 - <!-- シナリオ フッター --> ← 毎日更新
 - <!-- 特別解説コラム --> ← 手動指示時のみ
 - <!-- NEWS COLUMN --> ← 毎日更新
@@ -56,6 +63,13 @@
 - GitHub 公式連携：完全自動化フェーズで実施予定
 - マネタイズ：現状は X 投稿によるインプレッション収益
 - GenSpark：参照用アーカイブのみ（更新しない）
+
+## hormuz-data- 連携ルール
+- `hormuz-data-` リポジトリ（`https://yattanda.github.io/hormuz-data-/`）はダッシュボード・自動データの別リポジトリ
+- `data/manual-update.json` の `scenario` フィールド（A/B/C/D確率）がシナリオ確率の正として自動同期される
+- hormuz-map/index.html の `syncScenarioFromDashboard()` がページ読み込み時にfetchして `sc-tag-A/B/C` を上書き
+- hormuz-data- の fetch URL：`https://yattanda.github.io/hormuz-data-/data/manual-update.json`
+- hormuz-data- を直接編集する場合は別途 git push が必要（hormuz-map とは独立）
 
 ## news_data.json 運用ルール
 - `data/news_data.json` がニュース・OSINT表示の単一ソース（index.htmlのNEWS COLUMN・現地メディア視点はJSで動的レンダリング）

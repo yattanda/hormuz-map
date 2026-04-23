@@ -1735,6 +1735,20 @@ document.addEventListener('keydown', function(e) {
       </div>
     </div>
 
+    <!-- シナリオ D：軍事エスカレーション -->
+    <div class="sc-card sc-worst">
+      <span class="sc-tag" id="sc-tag-D">シナリオ D ― 軍事エスカレーション　確率 約35%</span>
+      <div class="sc-title">💣 IRGC銃撃が米軍との全面交戦に発展・中東戦争に拡大</div>
+      <div class="sc-body">
+        4/22のIRGCコンテナ船銃撃をきっかけに米軍が報復攻撃を実施。イランが核施設防衛を名目に宣戦布告に近い行動をとり、イスラエル・フーシ派・ヒズボラが連動して中東全域に戦火が拡大。ホルムズ・紅海の二重封鎖が長期化し、OPECプラス生産設備への攻撃リスクも浮上。Brent $150超が現実的シナリオとなり、世界的な景気後退入りが不可避となる。日本は備蓄放出だけでは対応できずエネルギー緊急事態宣言を発令。製造業の稼働停止・輸送コスト急騰により日本経済に深刻なダメージ。
+        <div class="sc-impact">
+          💰 WTI $150〜180超<br>
+          🗓️ 次の焦点：IRGC追加攻撃の有無・米軍の対イラン報復判断・イスラエルの動向<br>
+          🇯🇵 日本：エネルギー緊急事態宣言・製造業停止・備蓄枯渇リスク
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- シナリオ フッター -->
@@ -2767,21 +2781,10 @@ function syncScenarioFromDashboard() {
     .then(d => {
       if (!d.scenario) return;
       const map = {
-        A: {
-          id: 'sc-tag-A',
-          label: 'シナリオ A ― 第2ラウンド合意・段階的解決',
-          pct:   d.scenario.A_diplomacy_pct
-        },
-        B: {
-          id: 'sc-tag-B',
-          label: 'シナリオ B ― 停戦延長・膠着継続',
-          pct:   d.scenario.B_partial_blockade_pct
-        },
-        C: {
-          id: 'sc-tag-C',
-          label: 'シナリオ C ― 全面衝突・完全再封鎖',
-          pct:   d.scenario.C_full_blockade_pct
-        },
+        A: { id: 'sc-tag-A', label: 'シナリオ A ― 外交妥結・段階的解決',   pct: d.scenario.A_diplomacy_pct       },
+        B: { id: 'sc-tag-B', label: 'シナリオ B ― 停戦延長・膠着継続',     pct: d.scenario.B_partial_blockade_pct },
+        C: { id: 'sc-tag-C', label: 'シナリオ C ― 全面衝突・完全再封鎖',   pct: d.scenario.C_full_blockade_pct    },
+        D: { id: 'sc-tag-D', label: 'シナリオ D ― 軍事エスカレーション',   pct: d.scenario.D_escalation_pct       },
       };
       Object.values(map).forEach(sc => {
         const tag = document.getElementById(sc.id);

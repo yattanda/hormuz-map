@@ -33,7 +33,8 @@
 - <!-- STATS --> ← 週1更新
 - <!-- 速報インシデント トグルボタン --> ← 毎日更新
 - <!-- SCENARIOS --> ← 毎日更新
-  - 各sc-tagには `id="sc-tag-A"` / `id="sc-tag-B"` / `id="sc-tag-C"` が付与済み
+  - 各sc-tagには `id="sc-tag-A"` / `id="sc-tag-B"` / `id="sc-tag-C"` / `id="sc-tag-D"` が付与済み
+  - シナリオはA（外交妥結）・B（停戦膠着）・C（全面衝突）・D（軍事エスカレーション）の4種
   - ページ読み込み時に `syncScenarioFromDashboard()` が hormuz-data- から確率を自動上書きする
   - **確率補足バナー・sc-tagの確率数値は手動更新不要**（自動同期が優先）。ただし文面の矢印（↑↓）や補足テキストは手動で情勢に合わせて更新する
 - <!-- シナリオ フッター --> ← 毎日更新
@@ -67,7 +68,7 @@
 ## hormuz-data- 連携ルール
 - `hormuz-data-` リポジトリ（`https://yattanda.github.io/hormuz-data-/`）はダッシュボード・自動データの別リポジトリ
 - `data/manual-update.json` の `scenario` フィールド（A/B/C/D確率）がシナリオ確率の正として自動同期される
-- hormuz-map/index.html の `syncScenarioFromDashboard()` がページ読み込み時にfetchして `sc-tag-A/B/C` を上書き
+- hormuz-map/index.html の `syncScenarioFromDashboard()` がページ読み込み時にfetchして `sc-tag-A/B/C/D` を上書き
 - hormuz-data- の fetch URL：`https://yattanda.github.io/hormuz-data-/data/manual-update.json`
 - hormuz-data- を直接編集する場合は別途 git push が必要（hormuz-map とは独立）
 

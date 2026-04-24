@@ -94,33 +94,35 @@
 - 関連最新ニュースおよび現地メディア視点の記事日付は、現地時間とJST（日本標準時）の両方を記載する
 
 ## 毎日更新の作業順序（厳守）
-1. `data/news_data.json` を更新（latest差し替え・旧latestをarchiveへ・osint更新・updatedフィールド更新）
-2. `index.html` — ヘッダー日時・警戒レベル更新
-3. `index.html` — TICKERテキスト更新
-4. `index.html` — 「30秒で全体像を把握」セクション（いま何が・海峡の今・バッジ5枚）更新
-5. `index.html` — SITUATION CARDS 3枚（本文・出典）更新
-6. `index.html` — COUNTDOWN ラベル更新（HTMLとJS両方）
-7. `index.html` — 速報インシデント更新
-8. `index.html` — シナリオ確率補足バナー（矢印・説明文・タイムスタンプ）更新
-9. `index.html` — シナリオ本文（必要な場合のみ）更新
-10. `index.html` — シナリオ フッター タイムスタンプ更新
-11. `index.html` — 更新ログ先頭にエントリ追加
-12. JSONバリデーション（`python -m json.tool data/news_data.json`）
-13. `git commit`（メッセージに日時・主な変更を記載）
-14. ユーザーの push 指示を待つ
 
-## 更新完了チェックリスト
-- [ ] `news_data.json` — `updated` フィールドを今回のJST日時に更新した
-- [ ] `news_data.json` — `latest` 4件を差し替え、旧latestを archive 先頭バッチに移動した
-- [ ] `news_data.json` — `osint` の `isLatest:true` は最新1件のみである
-- [ ] `index.html` — ヘッダー badge-date を今回のJST日時に更新した
-- [ ] `index.html` — TICKERコメント行の日時を更新した
-- [ ] `index.html` — 「いま何が」「海峡の今」・バッジ5枚を更新した
-- [ ] `index.html` — SITUATION CARDS 3枚の本文・出典を更新した
-- [ ] `index.html` — COUNTDOWN ラベルを HTML・JS 両方更新した
-- [ ] `index.html` — 速報インシデントを更新した
-- [ ] `index.html` — シナリオ確率バナーのタイムスタンプ・矢印・説明文を更新した
-- [ ] `index.html` — シナリオ フッターのタイムスタンプを更新した
-- [ ] `index.html` — 更新ログ先頭に新エントリを追加した
-- [ ] JSONバリデーションがエラーなし
-- [ ] `git commit` 済み（push はユーザー指示待ち）
+抜け漏れ防止のため、以下の順番で作業する。順番を変えない。
+
+1. 最新情報収集（Web検索・複数ソース確認）
+2. `data/news_data.json` 更新（latest 4件・osint）
+3. 速報インシデント 更新
+4. 速報ティッカー（TICKER）決定
+5. 情勢カード（SITUATION CARDS）更新
+6. COUNTDOWN 更新
+7. ４つのシナリオ内容決定（1〜6を踏まえて初めて書く）
+8. シナリオフッター 更新
+9. **30秒カラム（3行サマリー＋ステータスバッジ）― 必ず最後に書く**
+   └ 全セクションの総括のため、他が確定してから書くこと
+10. ヘッダー（日時・警戒レベル）更新
+11. 更新ログ 追記
+
+## 更新完了チェックリスト（毎回必ず確認）
+
+作業後、以下を1件ずつ目視確認してからcommitすること：
+
+- [ ] TICKER ― 本日の主要ニュースを反映しているか
+- [ ] 30秒カラム「いま何が」― 最新日付・最新事実か
+- [ ] 30秒カラム「海峡の今」― 最新通過数・価格か
+- [ ] ステータスバッジ ― 5枚が本日の事実を反映しているか
+- [ ] 情勢カード3枚 ― 日付・数値・出典が最新か
+- [ ] COUNTDOWN ― フェーズラベルが現状と合っているか
+- [ ] シナリオ4本 ― 内容が相互に矛盾していないか
+- [ ] シナリオフッター ― 次の焦点が最新か
+- [ ] news_data.json latest ― 4件が最新か
+- [ ] news_data.json osint ― isLatest:true が1件のみか
+- [ ] ヘッダー日時 ― 本日JST時刻になっているか
+- [ ] 更新ログ ― 先頭行に本日分が追記されているか

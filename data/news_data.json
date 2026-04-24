@@ -1,44 +1,85 @@
 {
-  "updated": "2026年4月24日 09:25 日本時間JST",
+  "updated": "2026年4月25日 07:00 日本時間JST",
   "latest": [
     {
-      "id": "2026-04-23-axios",
-      "date": "2026/04/23",
+      "id": "latest-001",
+      "date": "2026/04/25",
       "label": "事実",
-      "url": "https://www.axios.com/2026/04/23/trump-israel-lebanon-ceasefire-extended-talks-us-iran-war",
-      "title": "イスラエル-レバノン停戦「3週間延長」・Trump発表（ホワイトハウス直接会談後）",
-      "body": "4/23、トランプがホワイトハウスでイスラエル・レバノン両大使と直接会談。停戦を3週間延長すると発表。米国はイラン和平交渉と並行してレバノン問題を処理する意図。",
-      "sourceLabel": "Axios（4/23 ET / 4/24 JST）"
+      "url": "https://www.npr.org/2026/04/24/g-s1-118595/middle-east-war-updates",
+      "title": "Witkoff・Kushner、本日パキスタンへ出発 ─ 米イラン直接会談に向け",
+      "body": "ホワイトハウスが4/24夜に確認。WitkoffとKushnerが4/25（土）朝イスラマバードへ出発。アラグチー外相は既に現地入りも、イラン外務省は「会談予定なし」と否定。双方の発表が真っ向衝突。",
+      "sourceLabel": "NPR（4/24 ET / 4/25 JST）"
     },
     {
-      "id": "2026-04-23-cnn",
-      "date": "2026/04/23",
+      "id": "latest-002",
+      "date": "2026/04/24",
       "label": "事実",
-      "url": "https://www.cnn.com/2026/04/23/world/live-news/iran-war-trump-blockade-israel-lebanon",
-      "title": "Trump「機雷設置するイラン船を射殺せよ」命令・掃海作戦も3倍規模に強化",
-      "body": "トランプがTruth Socialで米海軍に「機雷を敷設するいかなる小型船も撃沈せよ」と命令。IEAが「ホルムズが今日再開しても回復に数年」と警告。",
-      "sourceLabel": "CNN（4/23 ET / 4/24 JST）"
+      "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-trump-iran-hormuz-blockade-ceasefire-talks-lebanon-israel-rcna341571",
+      "title": "Trump「機雷設置船を射殺せよ」命令 ─ 海軍に射撃許可・ペンタゴン追認",
+      "body": "TruthSocialで発令。ヘグセス国防長官もペンタゴン会見で追認し「海賊・テロリスト行為」と非難。機雷除去には最大6ヵ月とペンタゴンが議会に通告。空母3隻（Lincoln・Ford・Bush）体制を公式公開、2003年以来初。",
+      "sourceLabel": "NBC News（4/24 ET / 4/25 JST）"
     },
     {
-      "id": "2026-04-22-nbc",
-      "date": "2026/04/22",
+      "id": "latest-003",
+      "date": "2026/04/24",
       "label": "事実",
-      "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-trump-ceasefire-hormuz-attack-peace-talks-israel-rcna341361",
-      "title": "IRGCがMSC-Francesca・Epaminondas拿捕・停戦延長の数時間後に3隻攻撃",
-      "body": "イラン革命防衛隊がホルムズ海峡でコンテナ船2隻を拿捕。フィリピン人船員15名の安全確認済み。米国は停戦違反と見なさない立場。",
-      "sourceLabel": "NBC News（4/22 ET / 4/23 JST）"
+      "url": "https://edition.cnn.com/2026/04/24/world/live-news/iran-war-trump-israel-lebanon",
+      "title": "イスラエル・レバノン停戦3週間延長 ─ ホワイトハウスで合意",
+      "body": "ネタニヤフはヒズボラへの攻撃継続を留保。トランプは「3週間以内にオーバル・オフィスで首脳会談」を提案。米大使「主な障害はヒズボラ側」。",
+      "sourceLabel": "CNN（4/24 ET / 4/25 JST）"
     },
     {
-      "id": "2026-04-21-cnbc",
-      "date": "2026/04/21",
+      "id": "latest-004",
+      "date": "2026/04/24",
       "label": "事実",
-      "url": "https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html",
-      "title": "Trump、停戦を無期限延長・海軍封鎖は継続・「統一提案を待つ」",
-      "body": "トランプがパキスタン首相の要請を受け停戦を無期限延長。ただし米海軍によるイラン港湾封鎖は継続。「イランの指導部は分断されており、統一提案を出せていない」と主張。",
-      "sourceLabel": "CNBC（4/21 ET / 4/22 JST）"
+      "url": "https://www.cnbc.com/2026/04/24/iran-war-pakistan-trump-hegseth.html",
+      "title": "Hegseth「封鎖は必要な限り継続」─ 欧州に「船に乗れ」と要求",
+      "body": "ペンタゴン会見でHegsethが断言。空母3隻（リンカーン・フォード・ブッシュ）体制を公開。欧州の「豪華会議」を揶揄し、実質的な参加を要求。",
+      "sourceLabel": "CNBC（4/24 ET / 4/25 JST）"
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/04/24 09:25 更新分",
+      "items": [
+        {
+          "id": "2026-04-23-axios",
+          "date": "2026/04/23",
+          "label": "事実",
+          "url": "https://www.axios.com/2026/04/23/trump-israel-lebanon-ceasefire-extended-talks-us-iran-war",
+          "title": "イスラエル-レバノン停戦「3週間延長」・Trump発表（ホワイトハウス直接会談後）",
+          "body": "4/23、トランプがホワイトハウスでイスラエル・レバノン両大使と直接会談。停戦を3週間延長すると発表。米国はイラン和平交渉と並行してレバノン問題を処理する意図。",
+          "sourceLabel": "Axios（4/23 ET / 4/24 JST）"
+        },
+        {
+          "id": "2026-04-23-cnn",
+          "date": "2026/04/23",
+          "label": "事実",
+          "url": "https://www.cnn.com/2026/04/23/world/live-news/iran-war-trump-blockade-israel-lebanon",
+          "title": "Trump「機雷設置するイラン船を射殺せよ」命令・掃海作戦も3倍規模に強化",
+          "body": "トランプがTruth Socialで米海軍に「機雷を敷設するいかなる小型船も撃沈せよ」と命令。IEAが「ホルムズが今日再開しても回復に数年」と警告。",
+          "sourceLabel": "CNN（4/23 ET / 4/24 JST）"
+        },
+        {
+          "id": "2026-04-22-nbc",
+          "date": "2026/04/22",
+          "label": "事実",
+          "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-trump-ceasefire-hormuz-attack-peace-talks-israel-rcna341361",
+          "title": "IRGCがMSC-Francesca・Epaminondas拿捕・停戦延長の数時間後に3隻攻撃",
+          "body": "イラン革命防衛隊がホルムズ海峡でコンテナ船2隻を拿捕。フィリピン人船員15名の安全確認済み。米国は停戦違反と見なさない立場。",
+          "sourceLabel": "NBC News（4/22 ET / 4/23 JST）"
+        },
+        {
+          "id": "2026-04-21-cnbc",
+          "date": "2026/04/21",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html",
+          "title": "Trump、停戦を無期限延長・海軍封鎖は継続・「統一提案を待つ」",
+          "body": "トランプがパキスタン首相の要請を受け停戦を無期限延長。ただし米海軍によるイラン港湾封鎖は継続。「イランの指導部は分断されており、統一提案を出せていない」と主張。",
+          "sourceLabel": "CNBC（4/21 ET / 4/22 JST）"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/04/22 21:38 更新分",
       "items": [
@@ -48,7 +89,7 @@
           "label": "事実",
           "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-ceasefire-pakistan-peace-talks-ultimatum/",
           "title": "【速報】IRGCがホルムズ海峡でコンテナ船を銃撃・同日2隻目も攻撃確認（4/22 JST）",
-          "body": "イラン革命防衛隊（IRGC）の砲艦がホルムズ海峡でコンテナ船に警告なしで銃撃・損傷させた。英国海軍UKMTO「砲艦は事前に通信を行わず発砲」と確認。直後に2隻目も攻撃を受けたと報告（発砲主体は不明）。死傷者なし。Trump停戦延長を発表した当日に起きたエスカレートで交渉に影響必至。",
+          "body": "イラン革命防衛隊（IRGC）の砲艦がホルムズ海峡でコンテナ船に警告なしで銃撃・損傷させた。英国海軍UKMTO「砲艦は事前に通信を行わず発砲」と確認。直後に2隻目も攻撃を受けたと報告（発砲主体は不明）。死傷者なし。",
           "sourceLabel": "CBS News（現地時間4/22・JST 4/22）"
         },
         {
@@ -57,7 +98,7 @@
           "label": "事実",
           "url": "https://www.cnn.com/2026/04/22/world/live-news/iran-war-us-trump-blockade-ceasefire",
           "title": "英仏、30カ国超の軍事担当者をロンドンに召集・ホルムズ再開策を協議（4/22）",
-          "body": "英国・フランスが30カ国以上の軍事プランナーをロンドンに招集し、ホルムズ海峡の再開に向けた方策を協議。EU委員「ホルムズが今日再開しても生産水準回復には数年かかる」と警告。米財務長官Bessent「イランのカーグ島石油備蓄は数日内に満杯・油田閉鎖に追い込まれる」と発言。",
+          "body": "英国・フランスが30カ国以上の軍事プランナーをロンドンに招集し、ホルムズ海峡の再開に向けた方策を協議。EU委員「ホルムズが今日再開しても生産水準回復には数年かかる」と警告。",
           "sourceLabel": "CNN Live Updates（現地時間4/22・JST 4/22）"
         },
         {
@@ -66,7 +107,7 @@
           "label": "事実",
           "url": "https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html",
           "title": "Trump、停戦を「統一提案」待ちで無期限延長・封鎖は継続・イラン側「意味なし」",
-          "body": "Trumpがパキスタン首相・Munirの要請受け停戦を無期限延長。ただし米海軍封鎖は継続。イラン上級顧問Mohammadi「この発表は意味がない」と一蹴。イラン国連大使は「封鎖終了次第、速やかにイスラマバードで第2ラウンドへ」と条件付き歓迎。中国「戦争か和平かの臨界点」と懸念表明。",
+          "body": "Trumpがパキスタン首相・Munirの要請受け停戦を無期限延長。ただし米海軍封鎖は継続。イラン上級顧問Mohammadi「この発表は意味がない」と一蹴。中国「戦争か和平かの臨界点」と懸念表明。",
           "sourceLabel": "CNBC（現地時間4/21・JST 4/22）"
         },
         {
@@ -75,7 +116,7 @@
           "label": "事実",
           "url": "https://www.pbs.org/newshour/world/u-s-and-iran-signal-new-ceasefire-talks-in-islamabad-as-fragile-truce-nears-end",
           "title": "Vance訪問中止・イラン代表団未派遣で第2回会談頓挫・Witkoff・Kushnerがワシントンで協議",
-          "body": "Vance副大統領のイスラマバード訪問が中止。イラン外務省は「最終決定なし」とし米の封鎖継続を問題視。Tasnim「イランは代表団を派遣しないとパキスタンに通知」と報道。Witkoff・Kushnerがワシントンで次の手を協議中。次回会談の日程は完全に未定。",
+          "body": "Vance副大統領のイスラマバード訪問が中止。イラン外務省は「最終決定なし」とし米の封鎖継続を問題視。Witkoff・Kushnerがワシントンで次の手を協議中。次回会談の日程は完全に未定。",
           "sourceLabel": "PBS NewsHour / AP（現地時間4/21・JST 4/22）"
         }
       ]
@@ -220,49 +261,49 @@
   ],
   "osint": [
     {
-      "country": "🇶🇦",
-      "media": "Al Jazeera",
-      "badgeColor": "rgba(251,191,36,0.15)",
-      "borderColor": "rgba(251,191,36,0.3)",
-      "textColor": "#fbbf24",
-      "cardBg": "rgba(251,191,36,0.05)",
-      "cardBorder": "rgba(251,191,36,0.2)",
-      "date": "2026/04/23",
+      "country": "🌊",
+      "media": "MarineTraffic / AIS",
+      "badgeColor": "rgba(56,189,248,0.15)",
+      "borderColor": "rgba(56,189,248,0.3)",
+      "textColor": "#38bdf8",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.2)",
+      "date": "2026/04/25",
       "isLatest": true,
-      "titleJa": "【日】Trump「機雷を置くイラン船を撃沈せよ」─停戦崩壊リスクとして分析",
-      "titleEn": "Trump orders US Navy to 'shoot and kill' Iranian boats laying mines in Hormuz",
-      "url": "https://www.aljazeera.com/news/2026/4/23/us-to-shoot-and-kill-iranian-boats-laying-mines-in-hormuz-trump-says",
-      "summary": "カタール系メディアはトランプの命令を「停戦崩壊を招きうる極めて危険な宣言」と位置づけ。IRGCの即時反発と「停戦違反」声明も併せて報道。"
+      "titleJa": "【AIS】ホルムズ通過船：直近24hで約14〜16隻（平常比約0.5%）",
+      "titleEn": "Hormuz vessel transits: ~14-16 in last 24h vs normal ~3,000/month",
+      "url": "",
+      "summary": "イラン旗艦2隻含む。大半がバンダルアッバース沖のイラン承認ルート経由。米海軍は4/13以降、27隻をイラン港湾から引き返させたと公表（CENTCOM）。"
     },
     {
-      "country": "🌍",
-      "media": "Middle East Monitor",
-      "badgeColor": "rgba(167,139,250,0.15)",
-      "borderColor": "rgba(167,139,250,0.3)",
-      "textColor": "#a78bfa",
-      "cardBg": "rgba(167,139,250,0.05)",
-      "cardBorder": "rgba(167,139,250,0.2)",
-      "date": "2026/04/23",
-      "isLatest": false,
-      "titleJa": "【日】イラン、ホルムズ通行料の初回収益を中央銀行に入金─主権宣言として強調",
-      "titleEn": "Iran says it collected 1st revenue from tolls imposed on ships transiting Hormuz",
-      "url": "https://www.middleeastmonitor.com/20260423-iran-says-it-collected-1st-revenue-from-tolls-imposed-on-ships-transiting-hormuz/",
-      "summary": "議会副議長が「初回収益が中央銀行口座に入金された」と公表。「我々を制裁しようとする者を制裁する」と対抗宣言。通行料はリスクと貨物に応じて変動。"
-    },
-    {
-      "country": "🇮🇷",
-      "media": "Iran International",
-      "badgeColor": "rgba(248,113,113,0.15)",
-      "borderColor": "rgba(248,113,113,0.3)",
+      "country": "🇺🇸",
+      "media": "CENTCOM（米中央軍）",
+      "badgeColor": "rgba(239,68,68,0.15)",
+      "borderColor": "rgba(239,68,68,0.3)",
       "textColor": "#f87171",
-      "cardBg": "rgba(248,113,113,0.05)",
-      "cardBorder": "rgba(248,113,113,0.2)",
-      "date": "2026/04/21",
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.2)",
+      "date": "2026/04/24",
       "isLatest": false,
-      "titleJa": "【日】詐欺業者がビットコインで「ホルムズ安全通行」を販売─海運各社に警告",
-      "titleEn": "Scam messages seek crypto for ships' safe passage through Hormuz, firm warns",
-      "url": "https://www.iranintl.com/en/202604215950",
-      "summary": "ギリシャのMARISKS社が警告。イラン当局を騙る業者がビットコイン・テザーで通行許可を売るという詐欺が発生。「これは本物のイラン当局ではない」と明言。"
+      "titleJa": "【公式】空母3隻体制を公式公開 ─ 航空機200機超・水兵15,000人",
+      "titleEn": "Three carrier strike groups in CENTCOM AOR - Lincoln, Ford, Bush (first since 2003 Iraq War)",
+      "url": "",
+      "summary": "USS Abraham Lincoln / USS Gerald R. Ford / USS George H.W. Bush。CENTCOM域内での3空母同時運用は2003年のイラク戦争以来初。"
+    },
+    {
+      "country": "🇬🇧",
+      "media": "UKMTO（英国海運安全機構）",
+      "badgeColor": "rgba(52,211,153,0.15)",
+      "borderColor": "rgba(52,211,153,0.3)",
+      "textColor": "#34d399",
+      "cardBg": "rgba(52,211,153,0.05)",
+      "cardBorder": "rgba(52,211,153,0.2)",
+      "date": "2026/04/22",
+      "isLatest": false,
+      "titleJa": "【海事警報】商船3隻が銃撃・うち2隻をIRGCが拿捕・イラン沿岸へ移送",
+      "titleEn": "Three merchant vessels attacked in Hormuz, two seized by IRGC",
+      "url": "",
+      "summary": "ブリッジに重大損傷（リベリア旗コンテナ船）。UKMTO「1 IRGC gunboat、警告なしに発砲」と記録。ギリシャ船籍Epaminondasの被弾も確認。インドが大使召喚。"
     },
     {
       "country": "🇮🇷",

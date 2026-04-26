@@ -1561,19 +1561,20 @@ document.addEventListener('keydown', function(e) {
   <div class="rtable-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
     <table class="rtable">
       <colgroup>
-        <col style="width:4%">
-        <col style="width:16%">
-        <col style="width:16%">
-        <col style="width:27%">
-        <col style="width:22%">
-        <col style="width:15%">
+        <col style="width:4%">   <!-- アイコン -->
+        <col style="width:14%">  <!-- ルート -->
+        <col style="width:13%">  <!-- 輸送能力 -->
+        <col style="width:11%">  <!-- 🇯🇵日本向け ← 新列 -->
+        <col style="width:25%">  <!-- 現況詳細 -->
+        <col style="width:18%">  <!-- 主なリスク -->
+        <col style="width:15%">  <!-- 状態 -->
       </colgroup>
       <thead>
         <tr style="background:rgba(255,255,255,0.04);font-size:0.72rem;color:#94a3b8;">
           <th style="padding:8px 10px;width:28px;"></th>
           <th style="padding:8px 10px;">ルート</th>
           <th style="padding:8px 10px;">輸送能力</th>
-          <th style="padding:8px 10px;color:#38bdf8;white-space:nowrap;min-width:90px;max-width:110px;">
+          <th class="jf-col" style="padding:8px 10px;color:#38bdf8;white-space:nowrap;min-width:90px;max-width:110px;">
             🇯🇵 日本向け<br>
             <span style="font-size:0.62rem;color:#475569;font-weight:400;">万BPD・隻/週（推定）</span>
           </th>
@@ -1594,7 +1595,7 @@ document.addEventListener('keydown', function(e) {
             日量 約2,000万bbl<br>
             <small>世界消費の約20%</small>
           </td>
-          <td id="jf-td-old" style="color:#f87171; font-size:0.72rem; white-space:nowrap; min-width:90px;">
+          <td id="jf-td-old" class="jf-col" style="color:#f87171; font-size:0.72rem; white-space:nowrap; min-width:90px;">
             <strong>停止中</strong><br>
             <small style="color:#64748b">— 隻/週</small>
           </td>
@@ -1619,7 +1620,7 @@ document.addEventListener('keydown', function(e) {
             実質停止<br>
             <small>拿捕リスク大</small>
           </td>
-          <td id="jf-td-D" style="color:#fb923c; font-size:0.72rem; white-space:nowrap; min-width:90px;">
+          <td id="jf-td-D" class="jf-col" style="color:#fb923c; font-size:0.72rem; white-space:nowrap; min-width:90px;">
             <strong>停止中</strong><br>
             <small style="color:#64748b">— 隻/週</small>
           </td>
@@ -1642,7 +1643,7 @@ document.addEventListener('keydown', function(e) {
           <td style="color:#38bdf8">
             日量 約150〜180万bbl
           </td>
-          <td id="jf-td-A" style="color:#38bdf8; font-size:0.72rem; white-space:nowrap; min-width:90px;">
+          <td id="jf-td-A" class="jf-col" style="color:#38bdf8; font-size:0.72rem; white-space:nowrap; min-width:90px;">
             <strong id="jf-A-bpd">—</strong> 万BPD<br>
             <small id="jf-A-tanker" style="color:#64748b">— 隻/週</small>
           </td>
@@ -1666,7 +1667,7 @@ document.addEventListener('keydown', function(e) {
             日量 700万bpd<br>
             <small style="color:#4ade80">✅ 4/12 全面回復</small>
           </td>
-          <td id="jf-td-B" style="color:#4ade80; font-size:0.72rem; white-space:nowrap; min-width:90px;">
+          <td id="jf-td-B" class="jf-col" style="color:#4ade80; font-size:0.72rem; white-space:nowrap; min-width:90px;">
             <strong id="jf-B-bpd">—</strong> 万BPD<br>
             <small id="jf-B-tanker" style="color:#64748b">— 隻/週</small>
           </td>
@@ -1690,7 +1691,7 @@ document.addEventListener('keydown', function(e) {
             増量中<br>
             <small>太平洋直行 約15日</small>
           </td>
-          <td id="jf-td-C_US" style="color:#a78bfa; font-size:0.72rem; white-space:nowrap; min-width:90px;">
+          <td id="jf-td-C_US" class="jf-col" style="color:#a78bfa; font-size:0.72rem; white-space:nowrap; min-width:90px;">
             <strong id="jf-C_US-bpd">—</strong> 万BPD<br>
             <small id="jf-C_US-tanker" style="color:#64748b">— 隻/週</small>
           </td>
@@ -1714,7 +1715,7 @@ document.addEventListener('keydown', function(e) {
             拡大中<br>
             <small>+40〜45日所要</small>
           </td>
-          <td id="jf-td-C_GL" style="color:#fb923c; font-size:0.72rem; white-space:nowrap; min-width:90px;">
+          <td id="jf-td-C_GL" class="jf-col" style="color:#fb923c; font-size:0.72rem; white-space:nowrap; min-width:90px;">
             <strong id="jf-C_GL-bpd">—</strong> 万BPD<br>
             <small id="jf-C_GL-tanker" style="color:#64748b">— 隻/週</small>
           </td>

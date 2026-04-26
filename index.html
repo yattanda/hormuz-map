@@ -982,7 +982,7 @@ Copy
         <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
           🌐 現地メディア視点
         </a>
-        <a href="#japan-flow" style="display:inline-flex;align-items:center;
+        <a href="#" onclick="scrollToJapanFlow(event)" style="display:inline-flex;align-items:center;
           gap:5px;padding:6px 12px;border-radius:6px;font-size:0.75rem;
           font-weight:700;text-decoration:none;
           background:rgba(56,189,248,0.12);
@@ -3673,6 +3673,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </div>
 </div>
+<script>
+function scrollToJapanFlow(e) {
+  e.preventDefault();
+  const anchor = document.getElementById('japan-flow');
+  if (!anchor) return;
+  // iframeのトップ位置 + iframe内でのカード位置（推定px）を加算
+  const iframeTop = anchor.getBoundingClientRect().top + window.scrollY;
+  const cardOffsetInIframe = 420; // カードがiframe内の何px下にあるか
+  window.scrollTo({
+    top: iframeTop + cardOffsetInIframe - 60,
+    behavior: 'smooth'
+  });
+}
+</script>
 <!-- LIGHTBOX OVERLAY -->
 <div id="lightbox-overlay" onclick="closeLightbox()">
   <button id="lightbox-close" onclick="closeLightbox()">✕</button>

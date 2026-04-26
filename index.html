@@ -1138,6 +1138,21 @@ Copy
   }
   adjustIframeHeight();
   window.addEventListener('resize', adjustIframeHeight);
+  const iframe = document.getElementById('hormuz-dashboard');
+  iframe.addEventListener('load', function() {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      // 米国中東原油比率カードを非表示
+      const cards = doc.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (card.textContent.includes('米国の中東原油')) {
+          card.style.display = 'none';
+        }
+      });
+    } catch(e) {
+      console.warn('card hide error:', e);
+    }
+  });
 </script>
 <!-- /ダッシュボード -->
   <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->

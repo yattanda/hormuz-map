@@ -37,6 +37,7 @@
   - シナリオはA（外交妥結）・B（停戦膠着）・C（全面衝突）・D（軍事エスカレーション）の4種
   - ページ読み込み時に `syncScenarioFromDashboard()` が hormuz-data- から確率を自動上書きする
   - **確率補足バナー・sc-tagの確率数値は手動更新不要**（自動同期が優先）。ただし文面の矢印（↑↓）や補足テキストは手動で情勢に合わせて更新する
+  - sc-tag の確率表示はstyledなHTMLスパン（`innerHTML`）で構成されている。手動編集・JS更新ともに `textContent` で上書きすると装飾が消えるため **必ず `innerHTML` を使うこと**
 - <!-- シナリオ フッター --> ← 毎日更新
 - <!-- 特別解説コラム --> ← 手動指示時のみ
 - <!-- NEWS COLUMN --> ← 毎日更新
@@ -71,6 +72,17 @@
 - hormuz-map/index.html の `syncScenarioFromDashboard()` がページ読み込み時にfetchして `sc-tag-A/B/C/D` を上書き
 - hormuz-data- の fetch URL：`https://yattanda.github.io/hormuz-data-/data/manual-update.json`
 - hormuz-data- を直接編集する場合は別途 git push が必要（hormuz-map とは独立）
+- `data/oil-flow.json` が日本原油調達フローの単一ソース（hormuz-map の `loadRouteTableFlow()` がfetchして値を注入）
+- **LiveServerでiframe内容は更新が反映されない**（iframeはGitHub Pages URLから読み込むため）。hormuz-data- の変更はpushしてGitHub Pages経由で確認すること
+
+## ルートテーブル構造（STATSセクション内）
+
+- **7列構成**：状態 / ルート名 / BPD / タンカー/週 / 備考 / 日本フロー実績 / 同前週比
+- `<colgroup>` は必ず7列（`<col>` 7個）に保つこと。列追加時は colgroup・nth-child CSS・JS の3箇所を同時更新する
+- `.jf-col` クラスの列はモバイル（600px以下）で `display:none` により自動非表示
+- `loadRouteTableFlow()` が `oil-flow.json` から `.jf-*-bpd` / `.jf-*-tanker` 要素に値を注入（手動編集不要）
+- Route C は `C_US`（米国）と `C_GL`（南半球）の2行に分割済み
+- 日本原油調達フロー説明カードへのアンカー `<div id="japan-flow">` がiframe wrapper直前に設置済み
 
 ## news_data.json 運用ルール
 - `data/news_data.json` がニュース・OSINT表示の単一ソース（index.htmlのNEWS COLUMN・現地メディア視点はJSで動的レンダリング）

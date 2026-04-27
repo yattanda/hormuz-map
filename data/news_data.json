@@ -1,44 +1,85 @@
 {
-  "updated": "2026年4月26日 07:45 日本時間JST",
+  "updated": "2026年4月27日 09:05 日本時間JST",
   "latest": [
     {
-      "id": "news-2026-04-25-npr-cancel",
-      "date": "2026/04/25",
+      "id": "news-2026-04-27-abcnews-putin",
+      "date": "2026/04/27",
       "label": "事実",
-      "url": "https://www.npr.org/2026/04/25/nx-s1-5799372/iran-middle-east-updates",
-      "title": "Trump、Witkoff・Kushnerのパキスタン行きを土壇場でキャンセル・「18時間のフライトで何も得られない紙を受け取りに行かない」",
-      "body": "アラグチ外相がイスラマバードを離脱した直後、Trumpが米交渉団の派遣を中止。電話外交に切り替える方針を表明。「我々は全てのカードを持っている。彼らが話したければ電話すれば良い」。",
-      "sourceLabel": "NPR（現地時間4/25・JST 4/25）"
+      "url": "https://abcnews.go.com/International/live-updates/iran-live-updates-marines-uss-tripoli-seized-iranian/?id=132196152",
+      "title": "アラグチ外相、本日プーチン大統領とサンクトペテルブルクで会談へ・核問題とホルムズの「レッドライン」書面をパキスタン経由で米に伝達",
+      "body": "イランの駐露大使がTelegramで「アラグチ外相は本日（4/27）プーチン大統領と会談する」と明らかにした。外相はロシア外務省のラブロフ長官とも協議予定。また、イランはパキスタンを仲介役として核問題とホルムズ封鎖に関する「レッドライン」を記した書面を米国に伝達。ただし「交渉ではなく立場の明示」と強調した。",
+      "sourceLabel": "ABC News（現地時間4/27・JST 4/27）"
     },
     {
-      "id": "news-2026-04-25-bloomberg-improved-paper",
-      "date": "2026/04/25",
+      "id": "news-2026-04-26-cnbc-trump-cancel",
+      "date": "2026/04/26",
       "label": "事実",
-      "url": "https://www.bloomberg.com/news/articles/2026-04-25/trump-cancels-envoys-pakistan-trip-for-iran-talks-fox-reports",
-      "title": "Trump「キャンセル後10分でイランからより良い提案が届いた」・「たくさん提示したが十分ではなかった」と評価",
-      "body": "Trumpは派遣中止後「キャンセルした途端に改善版の文書が届いた」と述べ、イラン内部に「大きな内輪もめ」があると主張。「誰が仕切っているか分からないが、誰とでも交渉する」と交渉継続の意思を示した。",
-      "sourceLabel": "Bloomberg（現地時間4/25・JST 4/25）"
+      "url": "https://www.cnbc.com/2026/04/26/irans-araghchi-briefly-returns-to-pakistan-trump-says-they-can-call.html",
+      "title": "トランプ、Witkoff・Kushnerのパキスタン派遣をキャンセル・「電話すれば良い。18時間かけて人を送らない」",
+      "body": "アラグチ外相がイスラマバードを離脱したことを受け、トランプが米交渉団の派遣を中止。Fox Newsで「我々は全てのカードを持っている。彼らが話したければ電話すれば良い」と表明。一方でキャンセル後10分でイランから「改善提案が届いた」とも述べ、交渉継続の意思は示した。",
+      "sourceLabel": "CNBC（現地時間4/26・JST 4/26）"
     },
     {
-      "id": "news-2026-04-23-axios-mines",
-      "date": "2026/04/23",
+      "id": "news-2026-04-26-cbsnews-moscow",
+      "date": "2026/04/26",
       "label": "事実",
-      "url": "https://www.axios.com/2026/04/23/iran-strait-hormuz-mines-trump",
-      "title": "IRGCが今週ホルムズに追加機雷を敷設・Trump「機雷を置くイラン船を撃沈せよ」と海軍に命令",
-      "body": "米政府高官と事情通の情報源がAxiosに確認。新たな機雷敷設を受けTrumpはTruth Socialで「躊躇なく撃沈せよ」と命令。IEAは「1973・1979・2022年の危機を合計した以上の供給危機」と警告。CENTCOM「これまでに33隻を転向させた」。",
-      "sourceLabel": "Axios（現地時間4/23・JST 4/24）"
+      "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/",
+      "title": "アラグチ外相がモスクワへ出発・パキスタン再訪→オマン→ロシアの外交ツアー完了・第2回直接協議の日程は依然未定",
+      "body": "アラグチ外相はパキスタン（2回）・オマン（スルタンと会談）を経てロシアへ出発。パキスタン首相Sharif・イラン大統領Pezeshkianが50分間電話会談し「状況を詳細に議論」したが具体的な交渉日程の発表はなし。米海軍封鎖は「取引が100%完了するまで」継続とTrumpが明言。",
+      "sourceLabel": "CBS News（現地時間4/26・JST 4/27）"
     },
     {
-      "id": "news-2026-04-22-wapo-mines-6months",
-      "date": "2026/04/22",
+      "id": "news-2026-04-26-cnn-standstill-starmer",
+      "date": "2026/04/26",
       "label": "事実",
-      "url": "https://www.washingtonpost.com/national-security/2026/04/22/iran-hormuz-mines/",
-      "title": "ペンタゴンが議会に極秘通達：ホルムズの機雷完全除去には最大6ヶ月・中間選挙まで高エネルギー価格が継続の見通し",
-      "body": "下院軍事委員会への機密説明で明らかに。Hegseth長官は「タイムラインについて推測しない」と述べたが否定せず。掃海艦USS Chief・USS Pioneer・水中ドローンが除去作戦中。保険会社は船主に「イラン当局への安全証明取得」義務付けを開始。",
-      "sourceLabel": "Washington Post（現地時間4/22・JST 4/23）"
+      "url": "https://www.cnn.com/2026/04/26/world/live-news/iran-war-trump-israel",
+      "title": "ホルムズ通過ほぼ停止・MarineTraffic「日曜は数隻のみ」・Trump-Starmer電話会談で「緊急開通」が議題に",
+      "body": "MarineTrafficによるとホルムズ通過船舶は戦前比で大幅に減少し日曜日はわずか数隻のみ確認。トランプとスターマー英首相の電話会談でホルムズの「緊急開通」と世界経済・英国民の生活費への影響を議論。Chevron CEO Wirth「エネルギーシステムは20%を失った。たとえ今すぐ再開しても在庫再構築に時間がかかる」と警告。米海軍はホルムズ機雷除去作業を開始したが最大6ヶ月を要する見込み。",
+      "sourceLabel": "CNN（現地時間4/26・JST 4/27）"
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/04/26 07:45 更新分",
+      "items": [
+        {
+          "id": "news-2026-04-25-npr-cancel",
+          "date": "2026/04/25",
+          "label": "事実",
+          "url": "https://www.npr.org/2026/04/25/nx-s1-5799372/iran-middle-east-updates",
+          "title": "Trump、Witkoff・Kushnerのパキスタン行きを土壇場でキャンセル・「18時間のフライトで何も得られない紙を受け取りに行かない」",
+          "body": "アラグチ外相がイスラマバードを離脱した直後、Trumpが米交渉団の派遣を中止。電話外交に切り替える方針を表明。「我々は全てのカードを持っている。彼らが話したければ電話すれば良い」。",
+          "sourceLabel": "NPR（現地時間4/25・JST 4/25）"
+        },
+        {
+          "id": "news-2026-04-25-bloomberg-improved-paper",
+          "date": "2026/04/25",
+          "label": "事実",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-25/trump-cancels-envoys-pakistan-trip-for-iran-talks-fox-reports",
+          "title": "Trump「キャンセル後10分でイランからより良い提案が届いた」・「たくさん提示したが十分ではなかった」と評価",
+          "body": "Trumpは派遣中止後「キャンセルした途端に改善版の文書が届いた」と述べ、イラン内部に「大きな内輪もめ」があると主張。「誰が仕切っているか分からないが、誰とでも交渉する」と交渉継続の意思を示した。",
+          "sourceLabel": "Bloomberg（現地時間4/25・JST 4/25）"
+        },
+        {
+          "id": "news-2026-04-23-axios-mines",
+          "date": "2026/04/23",
+          "label": "事実",
+          "url": "https://www.axios.com/2026/04/23/iran-strait-hormuz-mines-trump",
+          "title": "IRGCが今週ホルムズに追加機雷を敷設・Trump「機雷を置くイラン船を撃沈せよ」と海軍に命令",
+          "body": "米政府高官と事情通の情報源がAxiosに確認。新たな機雷敷設を受けTrumpはTruth Socialで「躊躇なく撃沈せよ」と命令。IEAは「1973・1979・2022年の危機を合計した以上の供給危機」と警告。CENTCOM「これまでに33隻を転向させた」。",
+          "sourceLabel": "Axios（現地時間4/23・JST 4/24）"
+        },
+        {
+          "id": "news-2026-04-22-wapo-mines-6months",
+          "date": "2026/04/22",
+          "label": "事実",
+          "url": "https://www.washingtonpost.com/national-security/2026/04/22/iran-hormuz-mines/",
+          "title": "ペンタゴンが議会に極秘通達：ホルムズの機雷完全除去には最大6ヶ月・中間選挙まで高エネルギー価格が継続の見通し",
+          "body": "下院軍事委員会への機密説明で明らかに。Hegseth長官は「タイムラインについて推測しない」と述べたが否定せず。掃海艦USS Chief・USS Pioneer・水中ドローンが除去作戦中。保険会社は船主に「イラン当局への安全証明取得」義務付けを開始。",
+          "sourceLabel": "Washington Post（現地時間4/22・JST 4/23）"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/04/24 09:25 更新分",
       "items": [
@@ -47,50 +88,18 @@
           "date": "2026/04/23",
           "label": "事実",
           "url": "https://www.euronews.com/2026/04/23/diplomacy-stalls-as-iran-fires-on-three-ships-in-the-strait-of-hormuz-and-us-maintains-blo",
-          "title": "IRGCがホルムズで3船を銃撃・MSC-Francesca・Epaminondasをイランへ曳航",
-          "body": "IRGCは2隻を接収・イランに曳航。Technomar社「Epaminondasはオマン沖で武装ボートに発砲された」。フィリピン人船員15名は安全が確認。",
+          "title": "外交停滞の中イランがホルムズで3隻に発砲・英仏30ヶ国ロンドン会合「国際有志連合」が形成加速",
+          "body": "IRGCが外国船3隻に発砲し2隻を拿捕と発表。英仏主導の30ヶ国緊急会合がロンドンで開催され機雷除去・護衛連合の形成を協議。ドイツも掃海艦Fuldaの地中海派遣を検討。IEA「史上最大のエネルギー危機」継続宣言。",
           "sourceLabel": "Euronews（現地時間4/23・JST 4/24）"
         },
         {
-          "id": "news-2026-04-24-fox-hegseth",
-          "date": "2026/04/24",
-          "label": "事実",
-          "url": "https://www.foxnews.com/live-news/iran-war-trump-us-ceasefire-deal-strait-hormuz-israel-lebanon-april-24",
-          "title": "Hegseth国防長官「機雷設置や商船妨害には迷いなく撃沈する。イランに核兵器は持たせない」とペンタゴンで声明",
-          "body": "「この封鎖は彼らに1日$5億のコストをかけている。我々は何も失わない」。ホルムズは「欧州の戦いであり米国のではない」とNATO同盟国に責任を転嫁する発言も。",
-          "sourceLabel": "Fox News（現地時間4/24・JST 4/24）"
-        },
-        {
-          "id": "news-2026-04-23-cnn-lebanon-ceasefire",
+          "id": "news-2026-04-23-nyt-iea-crisis",
           "date": "2026/04/23",
-          "label": "事実",
-          "url": "https://www.cnn.com/2026/04/23/world/live-news/iran-war-trump-blockade-israel-lebanon",
-          "title": "Trump、ホワイトハウスにイスラエル・レバノン大使を招集・停戦を3週間延長・「歴史的会合」と表現",
-          "body": "Trump「近い将来にネタニヤフ首相とレバノン大統領アウンを招く」と表明。一方イスラエル軍はヒズボラ拠点への攻撃を継続・双方が停戦違反を非難。",
-          "sourceLabel": "CNN Live Updates（現地時間4/23・JST 4/24）"
-        },
-        {
-          "id": "news-2026-04-24-nbc-mines-blockade",
-          "date": "2026/04/24",
-          "label": "事実",
-          "url": "https://www.nbcnews.com/world/iran/live-blog/live-updates-trump-iran-hormuz-blockade-ceasefire-talks-lebanon-israel-rcna341831",
-          "title": "CENTCOM、封鎖以来37隻を転向・3隻を接収・イラン国内3,400人超死亡を確認",
-          "body": "イラン法医学局長が「米・イスラエル攻撃開始以来3,400人超死亡」を確認（2/28〜）。レバノン2,496人、湾岸諸国32人、イスラエル23人。米軍13人死亡。",
-          "sourceLabel": "NBC News Live Updates（現地時間4/24・JST 4/25）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/22 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-22-cnn-london-summit",
-          "date": "2026/04/22",
-          "label": "事実",
-          "url": "https://www.cnn.com/2026/04/22/world/live-news/iran-war-us-trump-blockade-ceasefire",
-          "title": "英仏、30カ国超の軍事担当者をロンドンに召集・ホルムズ再開策を協議（4/22）",
-          "body": "英国・フランスが30カ国以上の軍事プランナーをロンドンに招集し、ホルムズ海峡の再開に向けた方策を協議。EU委員「ホルムズが今日再開しても生産水準回復には数年かかる」と警告。",
-          "sourceLabel": "CNN Live Updates（現地時間4/22・JST 4/22）"
+          "label": "分析",
+          "url": "https://www.nytimes.com/2026/04/23/world/middleeast/iran-hormuz-iea-energy.html",
+          "title": "IEA「1973・1979・2022年の危機を合計した以上の供給危機」・国際備蓄放出4億bbl追加を要請",
+          "body": "IEAは過去最大規模の緊急備蓄放出を発表。9.1億バレルの共同放出を検討。アジア・太平洋での食料安全保障への影響を警告（潜在的に9100万人追加リスク）。国連は人道支援向け通行の維持を強く求めた。",
+          "sourceLabel": "New York Times（現地時間4/23・JST 4/24）"
         },
         {
           "id": "news-2026-04-22-cnbc-ceasefire-extend",
@@ -141,146 +150,11 @@
           "title": "停戦期限迫る中、イラン「第2交渉現時点で予定なし」・原油Brent $94台に急騰",
           "body": "Brent $94.57（+4.6%）・WTI $88.45（+5.5%）。累積供給停止5億バレル超。",
           "sourceLabel": "CNBC（現地時間4/20・JST 4/21）"
-        },
-        {
-          "id": "news-2026-04-19-nbc",
-          "date": "2026/04/19",
-          "label": "事実",
-          "url": "https://www.nbcnews.com/world/iran/iran-distance-peace-deal-hormuz-closure-halts-shipping-rcna340846",
-          "title": "Trump「合意なければイランの発電所・橋を全て破壊」・インドがイラン大使を召喚",
-          "body": "インド外務省はインド籍船2隻が銃撃を受けたとしてイラン大使を召喚。",
-          "sourceLabel": "NBC News（現地時間4/19・JST 4/20）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/18〜20 更新分",
-      "items": [
-        {
-          "id": "arch-2026-04-18-ap",
-          "date": "2026/04/18",
-          "label": "事実",
-          "url": "https://apnews.com/article/us-iran-war-lebanon-israel-talks-pakistan-hormuz-17-april-2026-4bd5a29af608ecbd72356559b3c55d67",
-          "title": "Trump vs イラン「相反する主張」・4/22期限・爆撃再開警告",
-          "body": "",
-          "sourceLabel": "AP通信（4/18）"
-        },
-        {
-          "id": "arch-2026-04-17-reuters-reopen",
-          "date": "2026/04/17",
-          "label": "事実",
-          "url": "https://www.reuters.com/world/africa/dollar-set-second-weekly-loss-iran-war-peace-hopes-2026-04-17/",
-          "title": "ホルムズ海峡完全再開・イラン発表・ドル7週間ぶり安値",
-          "body": "",
-          "sourceLabel": "Reuters（4/17）"
-        },
-        {
-          "id": "arch-2026-04-16-reuters-pakistan",
-          "date": "2026/04/16",
-          "label": "事実",
-          "url": "https://www.reuters.com/world/asia-pacific/pakistan-says-no-dates-set-second-round-us-iran-talks-2026-04-16/",
-          "title": "Pakistan「第2ラウンド日程未定」・仲介継続",
-          "body": "",
-          "sourceLabel": "Reuters（4/16）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/14 更新分",
-      "items": [
-        {
-          "id": "arch-2026-04-12-reuters-pipeline",
-          "date": "2026/04/12",
-          "label": "事実",
-          "url": "https://www.reuters.com/business/energy/saudi-arabia-restores-full-capacity-east-west-oil-pipeline-7-million-bpd-after-2026-04-12/",
-          "title": "サウジアラビア、東西パイプラインの輸送能力を日量700万bpdへ完全復旧",
-          "body": "",
-          "sourceLabel": "Reuters（4/12）"
-        },
-        {
-          "id": "arch-2026-04-12-reuters-talks",
-          "date": "2026/04/12",
-          "label": "事実",
-          "url": "https://jp.reuters.com/world/asia-pacific/us-iran-talks-pause-now-disagreements-remain-2026-04-11/",
-          "title": "米イラン協議21時間超で事実上決裂・バンス副大統領「合意なし、帰国する」",
-          "body": "",
-          "sourceLabel": "Reuters（4/12）"
-        },
-        {
-          "id": "arch-2026-04-08-afp",
-          "date": "2026/04/08",
-          "label": "事実",
-          "url": "https://www.afpbb.com/articles/-/3630348",
-          "title": "米・イラン・同盟国が「レバノン含むあらゆる場所」で即時停戦合意 パキスタン首相が公式発表",
-          "body": "",
-          "sourceLabel": "AFP（4/8）"
-        },
-        {
-          "id": "arch-2026-04-05-toyo",
-          "date": "2026/04/05",
-          "label": "分析",
-          "url": "https://toyokeizai.net/articles/-/937516",
-          "title": "ホルムズ海峡封鎖で国内の石油化学産業は減産の動き、停戦機運あっても先行き不透明",
-          "body": "",
-          "sourceLabel": "東洋経済（4/5）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "背景・参考資料",
-      "items": [
-        {
-          "id": "arch-ref-nri",
-          "date": "2026/03/25",
-          "label": "分析",
-          "url": "https://www.nri.com/jp/media/column/kiuchi/20260325.html",
-          "title": "🇸🇦 サウジアラビアとホルムズ非経由ルート — ヤンブー港・パイプライン・日本への影響を解説",
-          "body": "",
-          "sourceLabel": "NRI 野村総研（3/25）"
-        },
-        {
-          "id": "arch-ref-reuters-aramco",
-          "date": "2026/03/10",
-          "label": "分析",
-          "url": "https://www.reuters.com/business/energy/consequences-global-oil-markets-could-be-catastrophic-if-hormuz-closure-2026-03-10/",
-          "title": "⚠️ アラムコCEO「ホルムズ閉鎖継続なら石油市場に壊滅的影響」",
-          "body": "",
-          "sourceLabel": "Reuters（3/10）"
         }
       ]
     }
   ],
   "osint": [
-    {
-      "country": "🇶🇦",
-      "media": "Al Jazeera",
-      "badgeColor": "rgba(251,191,36,0.15)",
-      "borderColor": "rgba(251,191,36,0.3)",
-      "textColor": "#fbbf24",
-      "cardBg": "rgba(251,191,36,0.05)",
-      "cardBorder": "rgba(251,191,36,0.2)",
-      "date": "2026/04/25",
-      "isLatest": true,
-      "titleJa": "【日】イランが強硬路線を維持─IRGC系TasnimとFars「核問題は対米交渉の対象外」と断言",
-      "titleEn": "Iran's authorities project hardened stance with more talks on horizon",
-      "url": "https://www.aljazeera.com/news/2026/4/25/irans-authorities-project-hardened-stance-with-more-talks-on-horizon",
-      "summary": "カタール系メディアが現地から詳報。TasnimとFarsはIRGCの立場として「核問題は外交交渉の対象ではない」と主張。大統領府は市民に「電力消費の節約」を呼びかけ、インフラ攻撃を念頭に置いた準備態勢を示す。IRGCは毎晩支持者を路上に動員し体制の統制維持に動いている。"
-    },
-    {
-      "country": "🇶🇦",
-      "media": "Al Jazeera",
-      "badgeColor": "rgba(251,191,36,0.15)",
-      "borderColor": "rgba(251,191,36,0.3)",
-      "textColor": "#fbbf24",
-      "cardBg": "rgba(251,191,36,0.05)",
-      "cardBorder": "rgba(251,191,36,0.2)",
-      "date": "2026/04/25",
-      "isLatest": false,
-      "titleJa": "【日】アラグチ外相がパキスタンを離れオマンへ─Trump「米交渉団は送らない」と即座に反応",
-      "titleEn": "Trump cancels US envoys' trip after Iran's Araghchi leaves Pakistan",
-      "url": "https://www.aljazeera.com/news/2026/4/25/trump-cancels-envoys-trip-to-pakistan-after-irans-araghchi-leaves-country",
-      "summary": "アラグチ外相はイスラマバードでパキスタン首相・軍参謀長と会談後にオマンへ出発。「米国と会う計画はない。イランの立場をパキスタン側に伝えた」とX投稿。TrumpはFox Newsで「18時間のフライトは無駄だ。電話してくれれば良い」と即座に応答。"
-    },
     {
       "country": "🇮🇷",
       "media": "Iran International",
@@ -289,27 +163,57 @@
       "textColor": "#f87171",
       "cardBg": "rgba(248,113,113,0.05)",
       "cardBorder": "rgba(248,113,113,0.2)",
-      "date": "2026/04/25",
+      "date": "2026/04/27",
+      "isLatest": true,
+      "titleJa": "【最新】アラグチ外相、本日プーチンと会談へ・IRGC「ホルムズ管理は断固たる戦略」・イラン国内インターネット遮断9週目",
+      "titleEn": "Araghchi set to meet Putin; IRGC declares Hormuz control 'definitive strategy'",
+      "url": "https://www.iranintl.com/en/liveblog/202604194357",
+      "summary": "アラグチ外相が4/27にプーチン大統領（サンクトペテルブルク）・ラブロフ外相と会談予定（IRNA・駐露大使確認）。IRGC革命防衛隊はTelegramで「ホルムズ海峡の管理と抑止力の維持はイスラム・イランの断固たる戦略だ」と声明。一方でNetBlocks「イラン国内インターネット遮断は9週目・史上最長の国家規模遮断記録を更新中」と報告。"
+    },
+    {
+      "country": "🇶🇦",
+      "media": "Al Jazeera",
+      "badgeColor": "rgba(251,191,36,0.15)",
+      "borderColor": "rgba(251,191,36,0.3)",
+      "textColor": "#fbbf24",
+      "cardBg": "rgba(251,191,36,0.05)",
+      "cardBorder": "rgba(251,191,36,0.2)",
+      "date": "2026/04/26",
       "isLatest": false,
-      "titleJa": "【日】アラグチ外相がオマン到着・日曜夜に再びイスラマバードへ帰還予定─代表団は追加指令待ちでテヘランへ",
-      "titleEn": "Araghchi leaves Islamabad, set to travel to Oman and Russia",
-      "url": "https://www.iranintl.com/en/202604251877",
-      "summary": "イラン国営IRNA「外相はオマン訪問後、ロシアへ向かう前に再びイスラマバードに戻る予定」。随行代表団の一部はテヘランに帰国し追加指令を受けて日曜夜に再合流予定。マクロン仏大統領「ホルムズ完全再開が最優先・通行料なしの航行自由を求める」と表明。"
+      "titleJa": "アラグチ外相パキスタン離脱→モスクワへ・直接協議再開の兆しなし・Farsが「書面を米に伝達」と報道",
+      "titleEn": "Iran's foreign minister leaves Pakistan, heads to Russia for more talks",
+      "url": "https://www.aljazeera.com/news/2026/4/26/irans-foreign-minister-leaves-pakistan-en-route-to-russia-for-more-talks",
+      "summary": "アラグチ外相はオマン（Omani Sultan Haithamと会談）を経由して再びイスラマバードへ帰還後、日曜夜にモスクワへ出発。Farsはイランがパキスタン経由で核問題とホルムズ海峡に関する「レッドライン」を記した書面を米に送ったと報道。ただし「これは交渉ではなく立場の明示だ」と強調。"
+    },
+    {
+      "country": "🇶🇦",
+      "media": "Al Jazeera",
+      "badgeColor": "rgba(251,191,36,0.15)",
+      "borderColor": "rgba(251,191,36,0.3)",
+      "textColor": "#fbbf24",
+      "cardBg": "rgba(251,191,36,0.05)",
+      "cardBorder": "rgba(251,191,36,0.2)",
+      "date": "2026/04/24",
+      "isLatest": false,
+      "titleJa": "「1980年代タンカー戦争の再来か」─ 4/20の米イラン籍船拿捕を歴史的文脈で分析",
+      "titleEn": "Iran-Iraq Tanker War redux? Why the Strait of Hormuz crisis is different",
+      "url": "https://www.aljazeera.com/news/2026/4/24/iran-iraq-tanker-war-redux-why-the-strait-of-hormuz-crisis-is-different",
+      "summary": "4/20に米海軍がホルムズ近傍でイラン籍コンテナ船を砲撃・拿捕したことを受け、1980年代のイラン・イラク「タンカー戦争」との比較分析。当時は両国合計451回の攻撃・116人死亡。現在の危機がより規模が大きく、核・封鎖・外交が複合している点で「はるかに複雑」と結論。"
     },
     {
       "country": "🌍",
-      "media": "Middle East Monitor",
+      "media": "Euronews",
       "badgeColor": "rgba(167,139,250,0.15)",
       "borderColor": "rgba(167,139,250,0.3)",
       "textColor": "#a78bfa",
       "cardBg": "rgba(167,139,250,0.05)",
       "cardBorder": "rgba(167,139,250,0.2)",
-      "date": "2026/04/23",
+      "date": "2026/04/26",
       "isLatest": false,
-      "titleJa": "【日】イラン、ホルムズ通行料の初回収益を中央銀行に入金─主権宣言として強調",
-      "titleEn": "Iran says it collected 1st revenue from tolls imposed on ships transiting Hormuz",
-      "url": "https://www.middleeastmonitor.com/20260423-iran-says-it-collected-1st-revenue-from-tolls-imposed-on-ships-transiting-hormuz/",
-      "summary": "議会副議長が「初回収益が中央銀行口座に入金された」と公表。「我々を制裁しようとする者を制裁する」と対抗宣言。通行料はリスクと貨物に応じて変動。"
+      "titleJa": "アラグチ外相パキスタン再訪→モスクワへ・Netanyahu「ヒズボラはレバノン停戦を解体している」・停戦違反で南部攻撃を再開命令",
+      "titleEn": "Iranian FM returns to Pakistan before heading to Moscow; Netanyahu orders strikes on Hezbollah",
+      "url": "https://www.euronews.com/2026/04/26/iranian-foreign-minister-returns-to-pakistan-before-heading-to-moscow-for-meeting-with-put",
+      "summary": "ネタニヤフ首相は4/25のイスラエル閣議で「ヒズボラはレバノン停戦合意を事実上解体している」と述べ南部への攻撃再開を命令。4/25夜にレバノン南部で6人死亡。レバノン政府は「戦争犯罪」と非難。ホルムズ本線については引き続き「当面の再開の兆しなし」とEuronewsが分析。"
     }
   ]
 }

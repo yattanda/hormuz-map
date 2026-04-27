@@ -60,11 +60,22 @@
 - これらの現地中東系メディアは「🌐 現地メディア視点」カラムにのみ掲載可
 
 ## 運用方針
-- Claude.ai Project：戦略・設計・相談担当
-- Claude Code：コード実装・git push 担当
-- GitHub 公式連携：完全自動化フェーズで実施予定
+- Claude.ai Project：戦略・設計・情報収集・差分ファイル生成担当
+- Claude Code：index.html更新・commit担当
+- auto_push.py：news_data.json と index_html_diffs.md を
+  DownloadsフォルダからGitHub APIで直接pushするスクリプト
+  （hormuz-map/auto_push.py・hormuz-map/.envにトークン管理）
 - マネタイズ：現状は X 投稿によるインプレッション収益
 - GenSpark：参照用アーカイブのみ（更新しない）
+
+## 毎日の定常更新フロー
+1. Claude.aiで最新情報収集・news_data.json と index_html_diffs.md を生成
+2. 2ファイルをダウンロード
+3. auto_push.py を実行（DownloadsからGitHubへ自動push）
+4. Claude Codeに以下の定型文を送る：
+   「index_html_diffs.mdに従ってindex.htmlを更新して
+    commitしてください。pushは確認後に指示します。」
+5. 内容確認後、pushを指示
 
 ## hormuz-data- 連携ルール
 - `hormuz-data-` リポジトリ（`https://yattanda.github.io/hormuz-data-/`）はダッシュボード・自動データの別リポジトリ

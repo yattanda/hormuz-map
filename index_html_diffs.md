@@ -125,7 +125,42 @@ BREAKING: イラン軍報道官「依然として戦争状態にある」（4/29
 
 ---
 
-## [5] COUNTDOWN 更新
+## [5] 速報インシデント 更新（`<!-- 速報インシデント トグルボタン -->` セクション内）
+
+### ① トグルボタン内の日付ラベルを更新
+
+```
+変更前: <span ...>📅 4/28 09:48 更新</span>
+変更後: <span ...>📅 4/29 06:59 更新</span>
+```
+
+### ② 最新インシデントの見出し行（`<strong style="color:#ffcccc;">`）を以下に変更：
+
+```html
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【4/29 06:59 速報】ルビオが3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超
+</strong>
+```
+
+### ③ インシデントリスト（`<ul>` 内）の先頭に以下の `<li>` 2件を追加（既存リストは保持）：
+
+```html
+<li style="background:rgba(56,189,248,0.08);border-left:3px solid #38bdf8;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#7dd3fc;">🚢【速報】日本関連タンカー「出光丸」がホルムズ海峡を通過（2026年4月28日 JST）：</strong>
+  日本関連VLCC「出光丸」が積み荷（約200万バレル）がある状態でホルムズ海峡を通過。イラン戦争開始（2/28）後、日本関連タンカーがペルシャ湾を離れるのは初。イラン側タスニム通信（IRGC系）は「イランとの調整で通過した」と確認。同船は4/17にサウジアラビアのラスタヌラ港を出発。通航料支払いの有無は不明。
+  <span style="font-size:0.7rem;color:#64748b;display:block;margin-top:4px;">📡 Bloomberg JP / CBS News（現地時間4/28・JST 4/28）</span>
+</li>
+
+<li style="background:rgba(239,68,68,0.08);border-left:3px solid #ef4444;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#fca5a5;">🔴 ルビオ国務長官、イランの「3フェーズ提案」を拒否（2026年4月28日 JST）：</strong>
+  ルビオ国務長官はFoxニュースで「核問題はいかなる合意においても中心的争点であり棚上げは不可」と明言し事実上拒否。「イランは巧みな交渉者で時間稼ぎを狙っている。将来の核兵器保有を確実に防ぐ合意でなければならない」と強調。トランプ大統領への公式コメントはなし。イラン軍報道官は「依然として戦争状態にある」と声明（Al Jazeera 4/29）。
+  <span style="font-size:0.7rem;color:#64748b;display:block;margin-top:4px;">📡 AP / NBC News（現地時間4/27〜4/28・JST 4/28）</span>
+</li>
+```
+
+---
+
+## [5b] COUNTDOWN 更新
 
 `<div class="dl-label" id="cd-phase-label">` の内容を以下に変更：
 ```

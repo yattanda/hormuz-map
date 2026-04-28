@@ -169,7 +169,25 @@ BREAKING: イラン軍報道官「依然として戦争状態にある」（4/29
 
 ---
 
-## [6] シナリオ4本 更新（`<!-- SCENARIOS -->` セクション内）
+## [6a] シナリオ確率補足バナー 更新（`<!-- SCENARIOS -->` セクション内）
+
+`<span style="font-size:0.8rem;font-weight:700;color:#fca5a5;">🟡 シナリオ確率更新補足（...）：</span>` の行と直後の補足テキストブロックを以下に全文差し替える：
+
+```html
+<span style="font-size:0.8rem;font-weight:700;color:#fca5a5;">🟡 シナリオ確率更新補足（4/29 06:59 JST）：</span>
+<span style="font-size:0.78rem;color:#cbd5e1;line-height:1.6;display:block;margin-top:4px;">
+  ルビオ国務長官がイランの3フェーズ提案（Phase1停戦→Phase2ホルムズ→Phase3核）を「核棚上げ不可」として拒否（4/28）・出光丸がホルムズを戦争後初通過（200万bbl・通航料不明）・イラン軍「依然戦争状態」声明・WTI $98超・5/1法的期限まで2日・マラッカ海峡波及懸念浮上を受け更新。
+  シナリオAは<strong style="color:#4ade80;">↑</strong>（出光丸通過が「個別調整」による通航モデルを示し、部分合意への足がかりとなる可能性がわずかに上昇）。
+  シナリオBは<strong style="color:#fbbf24;">→</strong>（ルビオ拒否後も即時交渉断絶はなく・双重封鎖膠着のまま5/1期限延長が最有力軌道）。
+  シナリオCは<strong style="color:#f87171;">↑</strong>（米封鎖法的期限5/1まで2日・3フェーズ拒否後に攻撃再開ルートが現実味を帯びてきた）。
+  シナリオDは<strong style="color:#fbbf24;">→</strong>（機雷偶発衝突リスク継続・マラッカ波及懸念・ヒズボラ停戦不安定）。
+  <em style="color:#fbbf24;display:block;margin-top:4px;">🔴 次の焦点：①米の最終回答・5/1法的期限の判断（2日後）②出光丸に続く第2・第3船の有無③プーチン仲介の実効性④マラッカ波及懸念の動向</em>
+</span>
+```
+
+---
+
+## [6b] シナリオ4本 更新（`<!-- SCENARIOS -->` セクション内）
 
 ### シナリオ A（sc-card sc-good）
 

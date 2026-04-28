@@ -1,44 +1,85 @@
 {
-  "updated": "2026年4月27日 09:05 日本時間JST",
+  "updated": "2026年4月28日 09:48 日本時間JST",
   "latest": [
     {
-      "id": "news-2026-04-27-abcnews-putin",
+      "id": "news-2026-04-27-ap-pbs-3phase",
       "date": "2026/04/27",
       "label": "事実",
-      "url": "https://abcnews.go.com/International/live-updates/iran-live-updates-marines-uss-tripoli-seized-iranian/?id=132196152",
-      "title": "アラグチ外相、本日プーチン大統領とサンクトペテルブルクで会談へ・核問題とホルムズの「レッドライン」書面をパキスタン経由で米に伝達",
-      "body": "イランの駐露大使がTelegramで「アラグチ外相は本日（4/27）プーチン大統領と会談する」と明らかにした。外相はロシア外務省のラブロフ長官とも協議予定。また、イランはパキスタンを仲介役として核問題とホルムズ封鎖に関する「レッドライン」を記した書面を米国に伝達。ただし「交渉ではなく立場の明示」と強調した。",
-      "sourceLabel": "ABC News（現地時間4/27・JST 4/27）"
+      "url": "https://www.pbs.org/newshour/world/iran-offers-to-reopen-strait-of-hormuz-if-u-s-lifts-its-blockade-and-the-war-ends-officials-say",
+      "title": "イランが「3フェーズ提案」を提示―Phase1:停戦保証→Phase2:ホルムズ再開→Phase3:核問題・パキスタン経由で米に伝達",
+      "body": "2名の地域当局者がAPに確認。Phase1で完全停戦＋対イラン攻撃再開禁止の保証、Phase2でホルムズ海峡の「管理と安全保障」協議、Phase3（最後）に核問題交渉という3段階提案。核問題をPhase3に後回しにする構造のため、トランプ大統領は受け入れる可能性が低いとの見方。Brent原油は$108/bbl（戦前比+50%）。",
+      "sourceLabel": "AP通信 / PBS NewsHour（現地時間4/27・JST 4/28）"
     },
     {
-      "id": "news-2026-04-26-cnbc-trump-cancel",
-      "date": "2026/04/26",
+      "id": "news-2026-04-27-fortune-putin-araghchi",
+      "date": "2026/04/27",
       "label": "事実",
-      "url": "https://www.cnbc.com/2026/04/26/irans-araghchi-briefly-returns-to-pakistan-trump-says-they-can-call.html",
-      "title": "トランプ、Witkoff・Kushnerのパキスタン派遣をキャンセル・「電話すれば良い。18時間かけて人を送らない」",
-      "body": "アラグチ外相がイスラマバードを離脱したことを受け、トランプが米交渉団の派遣を中止。Fox Newsで「我々は全てのカードを持っている。彼らが話したければ電話すれば良い」と表明。一方でキャンセル後10分でイランから「改善提案が届いた」とも述べ、交渉継続の意思は示した。",
-      "sourceLabel": "CNBC（現地時間4/26・JST 4/26）"
+      "url": "https://fortune.com/2026/04/27/iran-offers-to-reopen-strait-of-hormuz-oil-prices-trump-putin-nuclear/",
+      "title": "アラグチ外相、プーチン大統領とサンクトペテルブルクで会談・「核は棚上げ」提案の詳細判明",
+      "body": "アラグチ外相が4月27日にプーチン大統領とボリス・エリツィン大統領図書館で会談。イランは核濃縮の凍結・IAEA再立入・ブレイクアウト制限を提案に含めておらず、IAEAは2/28以降締め出し継続中。イランは60%濃縮を続けながらホルムズ再開をPhase2に位置づける戦略を維持。",
+      "sourceLabel": "Fortune / AP（現地時間4/27・JST 4/28）"
     },
     {
-      "id": "news-2026-04-26-cbsnews-moscow",
-      "date": "2026/04/26",
+      "id": "news-2026-04-27-military-ceasefire-flux",
+      "date": "2026/04/27",
       "label": "事実",
-      "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/",
-      "title": "アラグチ外相がモスクワへ出発・パキスタン再訪→オマン→ロシアの外交ツアー完了・第2回直接協議の日程は依然未定",
-      "body": "アラグチ外相はパキスタン（2回）・オマン（スルタンと会談）を経てロシアへ出発。パキスタン首相Sharif・イラン大統領Pezeshkianが50分間電話会談し「状況を詳細に議論」したが具体的な交渉日程の発表はなし。米海軍封鎖は「取引が100%完了するまで」継続とTrumpが明言。",
-      "sourceLabel": "CBS News（現地時間4/26・JST 4/27）"
+      "url": "https://www.military.com/daily-news/2026/04/27/despite-new-proposal-iran-ceasefire-negotiations-us-are-flux.html",
+      "title": "米代表団のパキスタン派遣キャンセルで停戦協議は依然混迷・アラグチ外相のシャトル外交（パキスタン→オマーン→ロシア）が継続",
+      "body": "米国はイラン新提案にもかかわらずパキスタン派遣を中止。ヒズボラはワシントン主導の外交に不参加を継続。イスラエル-ヒズボラ停戦は3週間延長。アラグチ外相はパキスタン→オマーン→ロシアとシャトル外交を展開。次回直接交渉の日程は依然未定。",
+      "sourceLabel": "Military.com / AP（現地時間4/27・JST 4/28）"
     },
     {
-      "id": "news-2026-04-26-cnn-standstill-starmer",
-      "date": "2026/04/26",
+      "id": "news-2026-04-27-irishtimes-merz-eu",
+      "date": "2026/04/27",
       "label": "事実",
-      "url": "https://www.cnn.com/2026/04/26/world/live-news/iran-war-trump-israel",
-      "title": "ホルムズ通過ほぼ停止・MarineTraffic「日曜は数隻のみ」・Trump-Starmer電話会談で「緊急開通」が議題に",
-      "body": "MarineTrafficによるとホルムズ通過船舶は戦前比で大幅に減少し日曜日はわずか数隻のみ確認。トランプとスターマー英首相の電話会談でホルムズの「緊急開通」と世界経済・英国民の生活費への影響を議論。Chevron CEO Wirth「エネルギーシステムは20%を失った。たとえ今すぐ再開しても在庫再構築に時間がかかる」と警告。米海軍はホルムズ機雷除去作業を開始したが最大6ヶ月を要する見込み。",
-      "sourceLabel": "CNN（現地時間4/26・JST 4/27）"
+      "url": "https://www.irishtimes.com/world/middle-east/2026/04/27/us-iran-war-israel-lebanon-oil-prices-strait-of-hormuz/",
+      "title": "Merz独首相「イランは米国を侮辱している」・EU欧州委員会「制裁解除は時期尚早」・交渉停滞を欧州が批判",
+      "body": "ドイツのメルツ首相がイランの交渉姿勢を強く批判。EU欧州委員会のフォン・デア・ライエン委員長は「今はイランへの制裁を解除する段階ではない」と明言。英国のスターマー首相は4/26トランプ大統領との電話会談でホルムズ再開の「緊急の必要性」を協議し、マクロン大統領との共同イニシアチブの進捗を報告した。",
+      "sourceLabel": "Irish Times / Reuters（現地時間4/27・JST 4/28）"
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/04/27 09:05 更新分",
+      "items": [
+        {
+          "id": "news-2026-04-27-abcnews-putin",
+          "date": "2026/04/27",
+          "label": "事実",
+          "url": "https://abcnews.go.com/International/live-updates/iran-live-updates-marines-uss-tripoli-seized-iranian/?id=132196152",
+          "title": "アラグチ外相、本日プーチン大統領とサンクトペテルブルクで会談へ・核問題とホルムズの「レッドライン」書面をパキスタン経由で米に伝達",
+          "body": "イランの駐露大使がTelegramで「アラグチ外相は本日（4/27）プーチン大統領と会談する」と明らかにした。外相はロシア外務省のラブロフ長官とも協議予定。また、イランはパキスタンを仲介役として核問題とホルムズ封鎖に関する「レッドライン」を記した書面を米国に伝達。ただし「交渉ではなく立場の明示」と強調した。",
+          "sourceLabel": "ABC News（現地時間4/27・JST 4/27）"
+        },
+        {
+          "id": "news-2026-04-26-cnbc-trump-cancel",
+          "date": "2026/04/26",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/26/irans-araghchi-briefly-returns-to-pakistan-trump-says-they-can-call.html",
+          "title": "トランプ、Witkoff・Kushnerのパキスタン派遣をキャンセル・「電話すれば良い。18時間かけて人を送らない」",
+          "body": "アラグチ外相がイスラマバードを離脱したことを受け、トランプが米交渉団の派遣を中止。Fox Newsで「我々は全てのカードを持っている。彼らが話したければ電話すれば良い」と表明。一方でキャンセル後10分でイランから「改善提案が届いた」とも述べ、交渉継続の意思は示した。",
+          "sourceLabel": "CNBC（現地時間4/26・JST 4/26）"
+        },
+        {
+          "id": "news-2026-04-26-cbsnews-moscow",
+          "date": "2026/04/26",
+          "label": "事実",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/",
+          "title": "アラグチ外相がモスクワへ出発・パキスタン再訪→オマーン→ロシアの外交ツアー完了・第2回直接協議の日程は依然未定",
+          "body": "アラグチ外相はパキスタン（2回）・オマーン（スルタンと会談）を経てロシアへ出発。パキスタン首相Sharif・イラン大統領Pezeshkianが50分間電話会談し「状況を詳細に議論」したが具体的な交渉日程の発表はなし。米海軍封鎖は「取引が100%完了するまで」継続とTrumpが明言。",
+          "sourceLabel": "CBS News（現地時間4/26・JST 4/27）"
+        },
+        {
+          "id": "news-2026-04-26-cnn-standstill-starmer",
+          "date": "2026/04/26",
+          "label": "事実",
+          "url": "https://www.cnn.com/2026/04/26/world/live-news/iran-war-trump-israel",
+          "title": "ホルムズ通過ほぼ停止・MarineTraffic「日曜は数隻のみ」・Trump-Starmer電話会談で「緊急開通」が議題に",
+          "body": "MarineTrafficによるとホルムズ通過船舶は戦前比で大幅に減少し日曜日はわずか数隻のみ確認。トランプとスターマー英首相の電話会談でホルムズの「緊急開通」と世界経済・英国民の生活費への影響を議論。Chevron CEO Wirth「エネルギーシステムは20%を失った。たとえ今すぐ再開しても在庫再構築に時間がかかる」と警告。米海軍はホルムズ機雷除去作業を開始したが最大6ヶ月を要する見込み。",
+          "sourceLabel": "CNN（現地時間4/26・JST 4/27）"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/04/26 07:45 更新分",
       "items": [
@@ -163,12 +204,12 @@
       "textColor": "#f87171",
       "cardBg": "rgba(248,113,113,0.05)",
       "cardBorder": "rgba(248,113,113,0.2)",
-      "date": "2026/04/27",
+      "date": "2026/04/28",
       "isLatest": true,
-      "titleJa": "【最新】アラグチ外相、本日プーチンと会談へ・IRGC「ホルムズ管理は断固たる戦略」・イラン国内インターネット遮断9週目",
-      "titleEn": "Araghchi set to meet Putin; IRGC declares Hormuz control 'definitive strategy'",
+      "titleJa": "【最新】イランが「3フェーズ提案」でホルムズ再開提示・アラグチ外相プーチン会談・IRGC「ホルムズ管理は断固たる戦略」",
+      "titleEn": "Iran pitches 3-phase Hormuz deal to US via Pakistan; Araghchi meets Putin; IRGC: Hormuz control 'definitive strategy'",
       "url": "https://www.iranintl.com/en/liveblog/202604194357",
-      "summary": "アラグチ外相が4/27にプーチン大統領（サンクトペテルブルク）・ラブロフ外相と会談予定（IRNA・駐露大使確認）。IRGC革命防衛隊はTelegramで「ホルムズ海峡の管理と抑止力の維持はイスラム・イランの断固たる戦略だ」と声明。一方でNetBlocks「イラン国内インターネット遮断は9週目・史上最長の国家規模遮断記録を更新中」と報告。"
+      "summary": "イランはパキスタン経由で「Phase1停戦保証→Phase2ホルムズ再開→Phase3核」の3段階提案を米国に伝達（4/25〜27）。アラグチ外相は4/27にプーチン大統領とサンクトペテルブルクで会談。IRGC革命防衛隊は「ホルムズ海峡の管理と抑止力の維持はイスラム・イランの断固たる戦略だ」と声明。核問題は最終段階に棚上げされ、IAEA締め出し（2/28以降）は継続中。"
     },
     {
       "country": "🇶🇦",
@@ -178,12 +219,12 @@
       "textColor": "#fbbf24",
       "cardBg": "rgba(251,191,36,0.05)",
       "cardBorder": "rgba(251,191,36,0.2)",
-      "date": "2026/04/26",
+      "date": "2026/04/27",
       "isLatest": false,
       "titleJa": "アラグチ外相パキスタン離脱→モスクワへ・直接協議再開の兆しなし・Farsが「書面を米に伝達」と報道",
       "titleEn": "Iran's foreign minister leaves Pakistan, heads to Russia for more talks",
       "url": "https://www.aljazeera.com/news/2026/4/26/irans-foreign-minister-leaves-pakistan-en-route-to-russia-for-more-talks",
-      "summary": "アラグチ外相はオマン（Omani Sultan Haithamと会談）を経由して再びイスラマバードへ帰還後、日曜夜にモスクワへ出発。Farsはイランがパキスタン経由で核問題とホルムズ海峡に関する「レッドライン」を記した書面を米に送ったと報道。ただし「これは交渉ではなく立場の明示だ」と強調。"
+      "summary": "アラグチ外相はオマーン（Omani Sultan Haithamと会談）を経由して再びイスラマバードへ帰還後、日曜夜にモスクワへ出発。Farsはイランがパキスタン経由で核問題とホルムズ海峡に関する「レッドライン」を記した書面を米に送ったと報道。ただし「これは交渉ではなく立場の明示だ」と強調。"
     },
     {
       "country": "🇶🇦",
@@ -198,22 +239,22 @@
       "titleJa": "「1980年代タンカー戦争の再来か」─ 4/20の米イラン籍船拿捕を歴史的文脈で分析",
       "titleEn": "Iran-Iraq Tanker War redux? Why the Strait of Hormuz crisis is different",
       "url": "https://www.aljazeera.com/news/2026/4/24/iran-iraq-tanker-war-redux-why-the-strait-of-hormuz-crisis-is-different",
-      "summary": "4/20に米海軍がホルムズ近傍でイラン籍コンテナ船を砲撃・拿捕したことを受け、1980年代のイラン・イラク「タンカー戦争」との比較分析。当時は両国合計451回の攻撃・116人死亡。現在の危機がより規模が大きく、核・封鎖・外交が複合している点で「はるかに複雑」と結論。"
+      "summary": "4/20に米海軍がイラン籍コンテナ船をホルムズ近海で拿捕したことを1980年代のイラン・イラク「タンカー戦争」と比較分析。イランはPhase2でホルムズの「管理と安全保障」を交渉議題にしようとしており、事実上の主権主張と解説。"
     },
     {
-      "country": "🌍",
-      "media": "Euronews",
-      "badgeColor": "rgba(167,139,250,0.15)",
-      "borderColor": "rgba(167,139,250,0.3)",
-      "textColor": "#a78bfa",
-      "cardBg": "rgba(167,139,250,0.05)",
-      "cardBorder": "rgba(167,139,250,0.2)",
+      "country": "🇺🇳",
+      "media": "UN News",
+      "badgeColor": "rgba(56,189,248,0.15)",
+      "borderColor": "rgba(56,189,248,0.3)",
+      "textColor": "#38bdf8",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.2)",
       "date": "2026/04/26",
       "isLatest": false,
-      "titleJa": "アラグチ外相パキスタン再訪→モスクワへ・Netanyahu「ヒズボラはレバノン停戦を解体している」・停戦違反で南部攻撃を再開命令",
-      "titleEn": "Iranian FM returns to Pakistan before heading to Moscow; Netanyahu orders strikes on Hezbollah",
-      "url": "https://www.euronews.com/2026/04/26/iranian-foreign-minister-returns-to-pakistan-before-heading-to-moscow-for-meeting-with-put",
-      "summary": "ネタニヤフ首相は4/25のイスラエル閣議で「ヒズボラはレバノン停戦合意を事実上解体している」と述べ南部への攻撃再開を命令。4/25夜にレバノン南部で6人死亡。レバノン政府は「戦争犯罪」と非難。ホルムズ本線については引き続き「当面の再開の兆しなし」とEuronewsが分析。"
+      "titleJa": "IMO事務総長「船舶・船員は地政学的紛争の人質になっている」・2万人足止め・29件攻撃・10名死亡",
+      "titleEn": "Chokepoints and conflict: How the Hormuz crisis is exposing global shipping vulnerabilities",
+      "url": "https://news.un.org/en/story/2026/04/1167383",
+      "summary": "IMOのドミンゲス事務総長が国連安保理会合（4/28予定）を前にUN Newsに語った。2/28以降商船への攻撃29件・船員10名死亡・2万人の船員と2000隻が足止め。「ホルムズ海峡には安全な通航経路はどこにもない」と警告。"
     }
   ]
 }

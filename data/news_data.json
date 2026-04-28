@@ -109,6 +109,15 @@
           "title": "IRGCが今週ホルムズに追加機雷を敷設・Trump「機雷を置くイラン船を撃沈せよ」と海軍に命令",
           "body": "米政府高官と事情通の情報源がAxiosに確認。新たな機雷敷設を受けTrumpはTruth Socialで「躊躇なく撃沈せよ」と命令。IEAは「1973・1979・2022年の危機を合計した以上の供給危機」と警告。CENTCOMはこれまでに33隻を拿捕・阻止と発表。",
           "sourceLabel": "Axios（現地時間4/23・JST 4/24）"
+        },
+        {
+          "id": "news-2026-04-22-wapo-mines-6months",
+          "date": "2026/04/22",
+          "label": "事実",
+          "url": "https://www.washingtonpost.com/national-security/2026/04/22/iran-hormuz-mines/",
+          "title": "ペンタゴンが議会に極秘通達：ホルムズの機雷完全除去には最大6ヶ月・中間選挙まで高エネルギー価格が継続の見通し",
+          "body": "下院軍事委員会への機密説明で明らかに。Hegseth長官は「タイムラインについて推測しない」と述べたが否定せず。掃海艦USS Chief・USS Pioneer・水中ドローンが除去作戦中。保険会社は船主に「イラン当局への安全証明取得」義務付けを開始。",
+          "sourceLabel": "Washington Post（現地時間4/22・JST 4/23）"
         }
       ]
     },
@@ -150,6 +159,38 @@
           "title": "ペンタゴンが議会に極秘通達：ホルムズの機雷完全除去には最大6ヶ月・中間選挙まで高エネルギー価格が継続の見通し",
           "body": "下院軍事委員会への機密説明で明らかに。Hegseth長官は「タイムラインについて推測しない」と述べたが否定せず。掃海艦USS Chief・USS Pioneer・水中ドローンが除去作戦中。保険会社は船主に「イラン当局への安全証明取得」義務付けを開始。",
           "sourceLabel": "Washington Post（現地時間4/22・JST 4/23）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026/04/21 7:12 更新分",
+      "items": [
+        {
+          "id": "news-2026-04-21-cnn",
+          "date": "2026/04/21",
+          "label": "事実",
+          "url": "https://www.cnn.com/2026/04/20/world/live-news/iran-war-us-trump-israel",
+          "title": "Trump「停戦は水曜夜終了」延長「highly unlikely」・Vanceがパキスタンへ出発",
+          "body": "Trump大統領が延長を「highly unlikely」と明言。Vance副大統領・Witkoff・Kushnerが第2ラウンド交渉のためイスラマバードへ出発。",
+          "sourceLabel": "CNN（現地時間4/20〜21・JST 4/21）"
+        },
+        {
+          "id": "news-2026-04-19-npr",
+          "date": "2026/04/19",
+          "label": "事実",
+          "url": "https://www.npr.org/2026/04/19/nx-s1-5790378/iran-us-hormuz-closed-impossible",
+          "title": "米海軍USS Spruanceがイラン籍貨物船「Touska」を拿捕・イランが報復宣言",
+          "body": "USS SpruanceがGulf of OmanでイランTouskaを発砲・制圧・接収。イラン軍「近日中に報復する」と声明。",
+          "sourceLabel": "NPR（現地時間4/19・JST 4/20）"
+        },
+        {
+          "id": "news-2026-04-20-cnbc",
+          "date": "2026/04/20",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/20/us-iran-war-middle-east-conflict-peace-deal-strait-hormuz-shipping-ceasefire-tensions.html",
+          "title": "停戦期限迫る中、イラン「第2交渉現時点で予定なし」・原油Brent $94台に急騰",
+          "body": "Brent $94.57（+4.6%）・WTI $88.45（+5.5%）。累積供給停止5億バレル超。",
+          "sourceLabel": "CNBC（現地時間4/20・JST 4/21）"
         }
       ]
     }

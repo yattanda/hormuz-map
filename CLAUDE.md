@@ -65,16 +65,23 @@
 - auto_push.py：news_data.json と index_html_diffs.md を
   DownloadsフォルダからGitHub APIで直接pushするスクリプト
   （hormuz-map/auto_push.py・hormuz-map/.envにトークン管理）
+  ※ Downloads内に同名ファイルが複数存在する場合（例: news_data (1).json）、
+     最終更新時刻が最新のものを自動選択し、古いものを自動削除する。
+     手動でのファイル整理は不要。
+- run.bat：auto_push.py をダブルクリック一発で実行するバッチファイル
+  （cd + python auto_push.py + pause を自動実行）
 - マネタイズ：現状は X 投稿によるインプレッション収益
 - GenSpark：参照用アーカイブのみ（更新しない）
 
 ## 毎日の定常更新フロー
 1. Claude.aiで最新情報収集・news_data.json と index_html_diffs.md を生成
-2. 2ファイルをダウンロード
-3. auto_push.py を実行（DownloadsからGitHubへ自動push）
+2. 2ファイルをダウンロード（Downloadsに同名ファイルが残っていても問題なし）
+3. run.bat をダブルクリック（auto_push.pyが自動実行・重複は自動処理）
+   └ 「完了: 2/2 ファイル push成功」を確認してウィンドウを閉じる
 4. Claude Codeに以下の定型文を送る：
-   「index_html_diffs.mdに従ってindex.htmlを更新して
-    commitしてください。pushは確認後に指示します。」
+   「index_html_diffs.mdに従ってindex.htmlを更新してください。
+    またdata/news_data.jsonも最新版がpush済みです。
+    更新完了後にcommitしてください。pushは確認後に指示します。」
 5. 内容確認後、pushを指示
 
 ## hormuz-data- 連携ルール

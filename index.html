@@ -1324,6 +1324,14 @@ Copy
         <span>🔴 足止め中</span>
         <span id="t-stuck">-</span>
       </div>
+      <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px;">
+        <span>┗ うち石油系タンカー</span>
+        <span style="color:#fbbf24; font-weight:bold;">23隻</span>
+      </div>
+      <div class="stat-row" style="font-size:8px; color:#64748b; padding-left:16px;">
+        <span>原油11隻 ／ 石油製品12隻</span>
+        <span></span>
+      </div>
       <div class="stat-row pass">
         <span>🟢 通過済み</span>
         <span id="t-pass">-</span>
@@ -1373,10 +1381,10 @@ Copy
 // 日本関連タンカー足止め可視化 v2.1
 // ============================================================
 const SHIP_CONFIG = {
-  totalShips:    42,
+  totalShips:    41,
   passableShips: 0,
-  date:          '2026年4月8日',
-  dateConfirmed: '2026年4月20日 7:31 JST確認：Touska拿捕・報復宣言により解消の見通しなし。推定40隻超が継続停留'
+  date:          '2026年4月29日',
+  dateConfirmed: '2026年4月29日 JST確認：出光丸（出光タンカー運航・サウジ産原油200万bbl積載）が4月28日夜にホルムズ海峡を通過。41隻が引き続き湾内停留中。'
 };
 
 (function () {
@@ -1700,7 +1708,7 @@ document.addEventListener('keydown', function(e) {
             <strong style="color:#4ade80;">4/18 イラン外相「完全再開」宣言。</strong>
            ただし<strong style="color:#fbbf24;">米軍封鎖は「取引100%完了まで」継続中（Trump明言）</strong>。
            実際の商業船通航正常化には第2ラウンド交渉妥結が必要。
-           原油▼10%・Dow +1,020pt急反応。タンカー足止め42隻は解放待ち。<br>
+           原油▼10%・Dow +1,020pt急反応。タンカー足止め41隻は解放待ち（4/28夜 出光丸通過・1隻減）。<br>
            <small style="color:#64748b;">出典：Reuters・AP通信・9 News Australia（4/18）</small>
           </td>
           <td>米軍‑IRGC偶発衝突リスク。米海軍による拿捕・機雷除去作戦継続中。イラン「誤れば"死の渦"」と警告。</td>
@@ -3582,6 +3590,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
   <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">🕐 最終更新 ＆ 主要出典（本日）</div>
   <div style="font-size:0.75rem;color:#cbd5e1;line-height:2;">
+    <div>📅 <strong>2026年4月29日 JST</strong> 更新（MAP）</div>
+    <div><span style="color:#38bdf8;">2026/04/29</span> — <strong style="color:#93c5fd;">【MAP更新】</strong>出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。石油系タンカー内訳（原油11隻・製品12隻＝計23隻）をタンカーオーバーレイに追加表示。出典：ロイター・国交省金子大臣会見（4/28）</div>
     <div>📅 <strong>2026年4月29日 06:59 JST</strong> 更新</div>
     <div><span style="color:#f87171;">2026/04/29 06:59</span> — <strong style="color:#fca5a5;">【重大更新】</strong>ルビオ3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超・Brent $108継続・マラッカ波及懸念浮上・5/1法的期限まで2日・ニュース4件更新・OSINT更新（Al Jazeera）</div>
     <div>📅 <strong>2026年4月28日 09:48 JST</strong> 更新</div>
@@ -3605,6 +3615,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:14px 16px;">
   <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">📝 変更履歴</div>
   <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+    <div>📅 <strong>2026年4月29日 JST</strong> 更新（MAP）</div>
+    <div><span style="color:#38bdf8;">2026/04/29</span> — <strong style="color:#93c5fd;">【MAP更新】</strong>出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。石油系タンカー内訳（原油11隻・製品12隻＝計23隻）をタンカーオーバーレイに追加表示。出典：ロイター・国交省金子大臣会見（4/28）</div>
     <div>📅 <strong>2026年4月29日 06:59 JST</strong> 更新</div>
     <div><span style="color:#f87171;">2026/04/29 06:59</span> — <strong style="color:#fca5a5;">【重大更新】</strong>ルビオ3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超・Brent $108継続・マラッカ波及懸念浮上・5/1法的期限まで2日・ニュース4件更新・OSINT更新（Al Jazeera）</div>
     <div>📅 <strong>2026年4月28日 09:48 JST</strong> 更新</div>

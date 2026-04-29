@@ -2,15 +2,19 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(git status)",
-      "Bash(git diff *)",
-      "Bash(git *)",
-      "Bash(grep -n \"4/25 07:00 更新\\\\|Witkoff/Kushner本日イスラマバード\\\\|双重封鎖継続・機雷除去最大6\\\\|第2回イスラマバード交渉\\\\|WTI \\\\$105.*機雷除去6\\\\|Trump「機雷射殺命令\\\\|二重封鎖・中東全域\\\\|Witkoff/Kushnerとアラグチー\\\\|Witkoff/Kushner訪問でも実質合意\\\\|4/26 07:45 JST】Trump\" c:/Users/yutay/Documents/GitHub/hormuz-map/index.html)"
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git pull*)",
+      "Bash(git fetch*)",
+      "Bash(git log*)",
+      "Bash(git stash*)",
+      "Bash(git checkout*)",
+      "Bash(grep*)"
     ],
     "ask": [
-      "Bash(git push *)"
+      "Bash(git push*)"
     ],
     "defaultMode": "acceptEdits"
   },

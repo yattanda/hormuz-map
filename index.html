@@ -1344,10 +1344,6 @@ Copy
         <span>🚢 その他</span>
         <span style="color:#94a3b8; font-weight:bold;">13隻</span>
       </div>
-      <div class="stat-row pass">
-        <span>🟢 通過済み</span>
-        <span id="t-pass">-</span>
-      </div>
       <div class="stat-row">
         <span>合計</span>
         <span id="t-total" style="color:#93c5fd;">-</span>
@@ -1411,20 +1407,27 @@ const SHIP_CONFIG = {
     const grid = document.getElementById('ship-grid');
     grid.innerHTML = '';
 
-    for (let i = 0; i < totalShips; i++) {
-      const el        = document.createElement('span');
-      const isPass    = (i < passableShips);
-      el.className    = 'ship-icon' + (isPass ? ' passable' : '');
-      el.textContent  = '🚢';
-      el.title        = isPass
-                          ? `#${i + 1}　通過済み ✅`
-                          : `#${i + 1}　足止め中 🔴`;
-      grid.appendChild(el);
-    }
+    const SHIP_TYPES = [
+      { icon: '🛢', count: 23, label: '石油系タンカー', color: 'rgba(251,191,36,0.9)'  },
+      { icon: '🧊', count: 5,  label: 'LNG',           color: 'rgba(56,189,248,0.9)'   },
+      { icon: '🚢', count: 13, label: 'その他',         color: 'rgba(248,113,113,0.8)'  },
+    ];
 
-    document.getElementById('t-stuck').textContent = stuck        + '隻';
-    document.getElementById('t-pass' ).textContent = passableShips + '隻';
-    document.getElementById('t-total').textContent = totalShips    + '隻';
+    let idx = 0;
+    SHIP_TYPES.forEach(function(type) {
+      for (let i = 0; i < type.count; i++) {
+        idx++;
+        const el       = document.createElement('span');
+        el.className   = 'ship-icon';
+        el.textContent = type.icon;
+        el.title       = `#${idx}　${type.label}　足止め中 🔴`;
+        el.style.filter = `drop-shadow(0 0 3px ${type.color})`;
+        grid.appendChild(el);
+      }
+    });
+
+    document.getElementById('t-stuck').textContent = stuck     + '隻';
+    document.getElementById('t-total').textContent = totalShips + '隻';
 
     const stuckPct = totalShips > 0
       ? Math.round((stuck / totalShips) * 100)
@@ -3603,7 +3606,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">🕐 最終更新 ＆ 主要出典（本日）</div>
   <div style="font-size:0.75rem;color:#cbd5e1;line-height:2;">
     <div>📅 <strong>2026年4月29日 JST</strong> 更新（MAP）</div>
-    <div><span style="color:#38bdf8;">2026/04/29</span> — <strong style="color:#93c5fd;">【MAP更新】</strong>出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。タンカーオーバーレイに船種別内訳（石油系23隻・LNG5隻・LPG0隻・その他13隻）を追加表示。出典：ロイター・国交省金子大臣会見（4/28）</div>
+    <div><span style="color:#38bdf8;">2026/04/29</span> — <strong style="color:#93c5fd;">【MAP更新】</strong>出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。タンカーオーバーレイを船種別アイコン表示に刷新（🛢石油系23隻・🧊LNG5隻・🚢その他13隻）、通過済み表示を削除。出典：ロイター・国交省金子大臣会見（4/28）</div>
     <div>📅 <strong>2026年4月29日 06:59 JST</strong> 更新</div>
     <div><span style="color:#f87171;">2026/04/29 06:59</span> — <strong style="color:#fca5a5;">【重大更新】</strong>ルビオ3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超・Brent $108継続・マラッカ波及懸念浮上・5/1法的期限まで2日・ニュース4件更新・OSINT更新（Al Jazeera）</div>
     <div>📅 <strong>2026年4月28日 09:48 JST</strong> 更新</div>
@@ -3628,7 +3631,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="font-size:0.7rem;font-weight:700;color:#94a3b8;margin-bottom:10px;">📝 変更履歴</div>
   <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
     <div>📅 <strong>2026年4月29日 JST</strong> 更新（MAP）</div>
-    <div><span style="color:#38bdf8;">2026/04/29</span> — <strong style="color:#93c5fd;">【MAP更新】</strong>出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。タンカーオーバーレイに船種別内訳（石油系23隻・LNG5隻・LPG0隻・その他13隻）を追加表示。出典：ロイター・国交省金子大臣会見（4/28）</div>
+    <div><span style="color:#38bdf8;">2026/04/29</span> — <strong style="color:#93c5fd;">【MAP更新】</strong>出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。タンカーオーバーレイを船種別アイコン表示に刷新（🛢石油系23隻・🧊LNG5隻・🚢その他13隻）、通過済み表示を削除。出典：ロイター・国交省金子大臣会見（4/28）</div>
     <div>📅 <strong>2026年4月29日 06:59 JST</strong> 更新</div>
     <div><span style="color:#f87171;">2026/04/29 06:59</span> — <strong style="color:#fca5a5;">【重大更新】</strong>ルビオ3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超・Brent $108継続・マラッカ波及懸念浮上・5/1法的期限まで2日・ニュース4件更新・OSINT更新（Al Jazeera）</div>
     <div>📅 <strong>2026年4月28日 09:48 JST</strong> 更新</div>

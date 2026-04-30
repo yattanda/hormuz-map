@@ -2,12 +2,12 @@
 auto_push.py  ― hormuz-map 自動push スクリプト
 改訂: 2026-04-30
 変更点:
-  - ファイル名を完全固定（完全一致のみ・正規表現リモート無効化オプション追加）
-  - ファイルサイズ上限チェック（MAX_FILE_SIZE_KB）
-  - 空ファイル拒否
-  - GITHUB_TOKEN / github_pat_ / ghp_ を含むファイルはpush拒否
-  - push前に対象ファイル名・サイズを表示
-  - 前回と同一ファイル（差分なし）の場合は警告を表示
+  - 旧来の「最新ファイル自動選択・古い重複削除」ロジックを維持
+  - ファイルサイズ上限チェック（MAX_FILE_SIZE_KB）追加
+  - 空ファイル拒否 追加
+  - GITHUB_TOKEN / github_pat_ / ghp_ を含むファイルはpush拒否 追加
+  - push前に対象ファイル名・サイズを表示 追加
+  - 前回と同一ファイル（差分なし）の場合は警告を表示 追加
 """
 
 import os
@@ -25,7 +25,7 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_OWNER   = os.getenv("REPO_OWNER", "yattanda")
 REPO_NAME    = os.getenv("REPO_NAME",  "hormuz-map")
 
-# push先リポジトリ内パス → ローカルの「完全固定」ファイル名
+# push先リポジトリ内パス → ローカルの「基準ファイル名（拡張子あり）」
 FILE_MAP = {
     "data/news_data.json":  "news_data.json",
     "index_html_diffs.md":  "index_html_diffs.md",
@@ -34,11 +34,10 @@ FILE_MAP = {
 DOWNLOADS_DIR = Path(r"C:\Users\yutay\Downloads")
 
 # ─── レート設定 ──────────────────────────────────────────────
-# [2] ファイルサイズ上限（KB）。これを超えるファイルはpush拒否
-MAX_FILE_SIZE_KB = 512  # 512KB = 十分な上限（JSON/MDとして異常に大きい場合を弾く）
+# ファイルサイズ上限（KB）。これを超えるファイルはpush拒否
+MAX_FILE_SIZE_KB = 512
 
 # トークン漏洩ガード用キーワード
-# [4] これらの文字列がファイル内容に含まれる場合はpush拒否
 TOKEN_PATTERNS = [
     "GITHUB_TOKEN",
     "github_pat_",
@@ -47,36 +46,64 @@ TOKEN_PATTERNS = [
 # ─────────────────────────────────────────────────────────────
 
 
-def find_exact_file(exact_name: str) -> Path | None:
+def find_latest_file(base_name: str) -> Path | None:
     """
-    [1] ファイル名を完全固定：Downloadsから exact_name に完全一致するファイルのみ返す。
-    「news_data (1).json」のような類似ファイルは一切拾わない。
+    Downloadsフォルダから base_name に対応する最新ファイルを返す。
+    「news_data (1).json」などの重複は自動で最新選択・古いものを削除。
+
+    マッチパターン（例: base_name = "news_data.json"）
+      news_data.json
+      news_data (1).json
+      news_data (2).json
+      news_data(1).json  ← スペースなし variant
     """
-    target = DOWNLOADS_DIR / exact_name
-    if target.exists() and target.is_file():
-        return target
-    return None
+    stem, suffix = os.path.splitext(base_name)
+
+    all_files = list(DOWNLOADS_DIR.iterdir())
+    pattern = re.compile(
+        r"^" + re.escape(stem) + r"(\s*\(\d+\))?" + re.escape(suffix) + r"$",
+        re.IGNORECASE,
+    )
+    candidates = [f for f in all_files if f.is_file() and pattern.match(f.name)]
+
+    if not candidates:
+        return None
+
+    # 最終更新時刻が最も新しいものを選ぶ
+    candidates.sort(key=lambda f: f.stat().st_mtime, reverse=True)
+    newest = candidates[0]
+
+    # 古い重複ファイルを削除（最新1件だけ残す）
+    for old in candidates[1:]:
+        try:
+            old.unlink()
+            print(f"  🗑  削除: {old.name}  (古い重複)")
+        except Exception as e:
+            print(f"  ⚠  削除失敗: {old.name} ({e})")
+
+    return newest
 
 
 def check_file_safety(local_path: Path) -> tuple[bool, str]:
     """
-    [2][3][4] ファイルの安全チェック。
+    ファイルの安全チェック（空・サイズ上限・トークン漏洩）。
     戻り値: (OK: bool, エラーメッセージ: str)
     """
-    # [3] 空ファイル拒否
     size_bytes = local_path.stat().st_size
+
+    # 空ファイル拒否
     if size_bytes == 0:
         return False, "空ファイルのため push を中断します。"
 
-    # [2] ファイルサイズ上限チェック
+    # ファイルサイズ上限
     size_kb = size_bytes / 1024
     if size_kb > MAX_FILE_SIZE_KB:
         return False, (
             f"ファイルサイズ {size_kb:.1f} KB が上限 {MAX_FILE_SIZE_KB} KB を超えています。"
-            " 誤ったファイルを指定している可能性があります。"
+            " 誤ったファイルの可能性があります。"
         )
 
-    # [4] トークン漏洩チェック
+    # トークン漏洩チェック
     try:
         content_text = local_path.read_text(encoding="utf-8", errors="replace")
     except Exception as e:
@@ -110,24 +137,21 @@ def get_remote_sha_and_content(repo_path: str) -> tuple[str | None, bytes | None
 
 
 def files_are_identical(local_path: Path, remote_bytes: bytes | None) -> bool:
-    """
-    [6] ローカルファイルとGitHub上のファイルが同一かどうかをハッシュで比較。
-    """
+    """ローカルとリモートが同一内容かSHA256で比較。"""
     if remote_bytes is None:
-        return False  # リモートに存在しない = 新規ファイル → 差分あり扱い
+        return False  # リモート未存在 = 新規 → 差分あり扱い
     local_bytes = local_path.read_bytes()
     return hashlib.sha256(local_bytes).digest() == hashlib.sha256(remote_bytes).digest()
 
 
 def push_file(local_path: Path, repo_path: str, sha: str | None) -> bool:
     """ファイルをGitHub APIでpushする。成功時True。"""
-    url     = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{repo_path}"
+    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{repo_path}"
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Content-Type":  "application/json",
     }
     content_b64 = base64.b64encode(local_path.read_bytes()).decode()
-
     payload = {
         "message": f"auto: update {repo_path}",
         "content": content_b64,
@@ -151,26 +175,27 @@ def main():
     print(f"\n📂 Downloadsフォルダ: {DOWNLOADS_DIR}\n")
 
     results = {}
-    for repo_path, exact_name in FILE_MAP.items():
+    for repo_path, base_name in FILE_MAP.items():
 
-        print(f"{'━'*50}")
-        print(f"🔍 [{exact_name}] を検索中...")
+        print(f"{'━' * 50}")
+        print(f"🔍 {base_name} を検索中...")
 
-        # [1] 完全一致のみ
-        local_file = find_exact_file(exact_name)
+        # 最新ファイルを自動選択（重複は古いものを自動削除）
+        local_file = find_latest_file(base_name)
 
         if local_file is None:
-            print(f"  ⚠   ファイルが見つかりません: {exact_name}  → スキップ\n")
+            print(f"  ⚠   ファイルが見つかりません: {base_name}  → スキップ")
             results[repo_path] = False
+            print()
             continue
 
-        # [5] push前にファイル名・サイズを表示
+        # push前にファイル名・サイズを表示
         size_kb = local_file.stat().st_size / 1024
         print(f"  📄 対象ファイル : {local_file.name}")
         print(f"     フルパス     : {local_file}")
         print(f"     ファイルサイズ: {size_kb:.1f} KB")
 
-        # [2][3][4] 安全チェック
+        # 安全チェック（空・サイズ上限・トークン漏洩）
         ok, err_msg = check_file_safety(local_file)
         if not ok:
             print(f"  ❌ {err_msg}")
@@ -181,12 +206,12 @@ def main():
         # リモート情報取得（SHA + コンテンツ）
         sha, remote_bytes = get_remote_sha_and_content(repo_path)
 
-        # [6] 差分チェック
+        # 差分チェック
         if files_are_identical(local_file, remote_bytes):
             print()
             print("  ⚠️  前回と同一ファイルです（空撃ちでトークン無駄遣いにならないよう確認してください）")
-            print()
             results[repo_path] = False
+            print()
             continue
 
         # push実行

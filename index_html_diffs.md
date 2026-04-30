@@ -1,168 +1,342 @@
-# index_html_diffs.md
-# 更新日時: 2026年4月29日 JST
-# 目的: 出光丸通過反映 / 42→41隻 / 船種別アイコン表示 / 通過済み行削除
+# index_html_diffs.md — 2026年4月30日 09:51 JST 更新分
+
+> Claude Code への指示：以下の差分を index.html に適用してください。
+> 変更箇所以外は絶対に触らないこと。
 
 ---
 
-## [C01] MAP・タンカー可視化 更新
+## [S01] ヘッダー日時・警戒レベル
 
-### 変更1: SHIP_CONFIG の数値・日付更新
+**対象：** `<header>` 内の `.badge-alert` と `.badge-date`
 
-**検索文字列（完全一致）:**
-```
-const SHIP_CONFIG = {
-  totalShips:    42,
-  passableShips: 0,
-  date:          '2026年4月8日',
-  dateConfirmed: '2026年4月20日 7:31 JST確認：Touska拿捕・報復宣言により解消の見通しなし。推定40隻超が継続停留'
-};
-```
-
-**置換後:**
-```
-const SHIP_CONFIG = {
-  totalShips:    41,
-  passableShips: 0,
-  date:          '2026年4月29日',
-  dateConfirmed: '2026年4月29日 JST確認：出光丸（出光タンカー運航・サウジ産原油200万bbl積載）が4月28日夜にホルムズ海峡を通過。41隻が引き続き湾内停留中。'
-};
-```
-
----
-
-### 変更2: ship-grid のアイコン描画ロジックを船種別に変更
-
-**検索文字列（完全一致）:**
-```
-    const grid = document.getElementById('ship-grid');
-    grid.innerHTML = '';
-
-    for (let i = 0; i < totalShips; i++) {
-      const el        = document.createElement('span');
-      const isPass    = (i < passableShips);
-      el.className    = 'ship-icon' + (isPass ? ' passable' : '');
-      el.textContent  = '🚢';
-      el.title        = isPass
-                          ? `#${i + 1}　通過済み ✅`
-                          : `#${i + 1}　足止め中 🔴`;
-      grid.appendChild(el);
-    }
-```
-
-**置換後:**
-```
-    const grid = document.getElementById('ship-grid');
-    grid.innerHTML = '';
-
-    const SHIP_TYPES = [
-      { icon: '🛢', count: 23, label: '石油系タンカー', color: 'rgba(251,191,36,0.9)'  },
-      { icon: '🧊', count: 5,  label: 'LNG',           color: 'rgba(56,189,248,0.9)'   },
-      { icon: '🚢', count: 13, label: 'その他',         color: 'rgba(248,113,113,0.8)'  },
-    ];
-
-    let idx = 0;
-    SHIP_TYPES.forEach(function(type) {
-      for (let i = 0; i < type.count; i++) {
-        idx++;
-        const el       = document.createElement('span');
-        el.className   = 'ship-icon';
-        el.textContent = type.icon;
-        el.title       = `#${idx}　${type.label}　足止め中 🔴`;
-        el.style.filter = `drop-shadow(0 0 3px ${type.color})`;
-        grid.appendChild(el);
-      }
-    });
-```
-
----
-
-### 変更3: t-pass の更新処理を安全化（null チェック追加）
-
-**検索文字列（完全一致）:**
-```
-    document.getElementById('t-stuck').textContent = stuck        + '隻';
-    document.getElementById('t-pass' ).textContent = passableShips + '隻';
-    document.getElementById('t-total').textContent = totalShips    + '隻';
-```
-
-**置換後:**
-```
-    document.getElementById('t-stuck').textContent = stuck     + '隻';
-    document.getElementById('t-total').textContent = totalShips + '隻';
-```
-
----
-
-### 変更4: tanker-stats から「通過済み」行を削除し、船種別内訳を追加
-
-**検索文字列（完全一致）:**
-```
-    <div class="stat-row">
-      <span>足止め中</span>
-      <span id="t-stuck">-</span>
-    </div>
-    <div class="stat-row pass">
-      <span>通過済み</span>
-      <span id="t-pass">-</span>
-    </div>
-    <div class="stat-row">
-      <span>合計</span>
-      <span id="t-total">-</span>
-    </div>
-```
-
-**置換後:**
-```
-    <div class="stat-row">
-      <span>足止め中</span>
-      <span id="t-stuck">-</span>
-    </div>
-    <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px; margin-top:4px; border-top:1px solid rgba(148,163,184,0.2); padding-top:5px;">
-      <span>🛢 石油系タンカー</span>
-      <span style="color:#fbbf24; font-weight:bold;">23隻</span>
-    </div>
-    <div class="stat-row" style="font-size:8px; color:#64748b; padding-left:16px;">
-      <span>原油 11隻 ／ 製品 12隻</span>
-      <span></span>
-    </div>
-    <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px;">
-      <span>🧊 LNG</span>
-      <span style="color:#38bdf8; font-weight:bold;">5隻</span>
-    </div>
-    <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px;">
-      <span>⛽ LPG</span>
-      <span style="color:#4ade80; font-weight:bold;">0隻</span>
-    </div>
-    <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px; border-bottom:1px solid rgba(148,163,184,0.2); padding-bottom:5px; margin-bottom:2px;">
-      <span>🚢 その他</span>
-      <span style="color:#94a3b8; font-weight:bold;">13隻</span>
-    </div>
-    <div class="stat-row">
-      <span>合計</span>
-      <span id="t-total">-</span>
-    </div>
-```
-
----
-
-### 変更5: ルートテーブル内「42隻」テキストを「41隻」に更新
-
-**検索文字列（完全一致）:**
-```
-タンカー足止め42隻は解放待ち
-```
-
-**置換後:**
-```
-タンカー足止め41隻は解放待ち（4/28夜 出光丸通過・1隻減）
-```
-
----
-
-## 更新ログ追記
-
-**`<!--出典・更新ログ-->` セクション内の既存最新ログエントリの直前に以下を追加:**
-
+**変更前：**
 ```html
-<li><strong>2026年4月29日 JST</strong>：出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。タンカーオーバーレイを船種別アイコン表示に刷新（🛢石油系23隻・🧊LNG5隻・🚢その他13隻）、通過済み表示を削除。出典：ロイター・国交省金子大臣会見（4/28）</li>
+<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
+<span class="badge-item badge-date">📅2026年4月29日 06:59 JST</span>
+```
+
+**変更後：**
+```html
+<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
+<span class="badge-item badge-date">📅2026年4月30日 09:51 JST</span>
+```
+
+---
+
+## [S02] TICKER
+
+**対象：** `/* TICKER */` コメント直後のティッカーテキスト部分（`ticker-track` 内の `<span>` 要素）
+
+**変更前：（既存の最初のspanを以下に置き換え）**
+```
+🚨 ...（前日の内容）...
+```
+
+**変更後：（ticker-trackの最初のspanを以下に置き換え）**
+```html
+<span>
+🚨【本日発効】UAE、OPEC・OPEC+から正式離脱（5月1日）｜
+🛢️ ブレント原油$120突破——2022年6月以来の高値（4/29）｜
+🇺🇸 ルビオ、イランの「核先送り・ホルムズ再開」提案を正式拒否（4/27）｜
+🇷🇺 アラグチー外相がプーチンと会談——ロシアがイランへの支持を再確認（4/27）｜
+💬 トランプ「イランは崩壊状態——海峡を開けたがっている」（Truth Social 4/29）｜
+⚠️ 外交完全膠着——停戦延長中も通航量は戦前比95%減継続（封鎖63日目）
+</span>
+```
+
+---
+
+## [S03] 速報インシデント ⚠️（漏れ多発セクション）
+
+**対象：** `<!-- 速報インシデント トグルボタン -->` 内の日付バッジ＋本文
+
+### トグルボタン内の日付バッジ
+
+**変更前：**
+```html
+<span style="font-size:0.65rem;color:#64748b;padding:2px 8px;border-radius:12px;background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);">📅 4/29 06:59 更新</span>
+```
+
+**変更後：**
+```html
+<span style="font-size:0.65rem;color:#64748b;padding:2px 8px;border-radius:12px;background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);">📅 4/30 09:51 更新</span>
+```
+
+### 速報インシデント本体（incident-body 先頭に追加）
+
+**変更前（先頭の strong タグ）：**
+```html
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【4/29 06:59 速報】ルビオが3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超
+</strong>
+```
+
+**変更後（先頭の strong タグを以下に置き換え。既存のリストアイテムは維持）：**
+```html
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【4/30 09:51 速報】UAE・OPEC離脱本日発効｜Brent $120突破（2022年6月以来）｜イラン提案・米拒否で外交完全膠着｜アラグチー外相プーチン会談でロシア支持確認｜トランプ「イランは崩壊状態」
+</strong>
+```
+
+**incident-body の `<ul>` 先頭に以下の `<li>` を追加：**
+```html
+<li style="background:rgba(239,68,68,0.1);border-left:3px solid #ef4444;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#f87171;">🇦🇪【本日発効】UAE、OPEC・OPEC+から正式離脱（2026年5月1日）：</strong>
+  UAEが4月28日にOPEC・OPEC+からの脱退を正式表明し、本日5月1日発効。UAEの産油能力480万BPD（OPEC制限下では320万BPD）。エネルギー相は「海峡が閉じている今、市場への即時影響は限定的。封鎖後を見据えた戦略的決断」と説明。長期的にOPECの結束・価格管理能力が低下するリスクが浮上。サウジアラビアとの路線対立が表面化。
+  <span style="font-size:0.7rem;color:#64748b;display:block;margin-top:6px;">出典：Washington Post・Al Jazeera・CNBC（2026年4月28〜29日）</span>
+</li>
+
+<li style="background:rgba(239,68,68,0.08);border-left:3px solid #f97316;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#fb923c;">🛢️【市場】ブレント原油$120突破——2022年6月以来の高値（4/29）：</strong>
+  4月29日、ブレント原油先物が$120/バレル超に急騰。交渉膠着・UAE離脱・米在庫急減・米輸出が記録的高水準の複合要因。IEAは「歴史上最大の石油供給混乱」と認定済み。ペンタゴンは機雷除去に6ヶ月必要と議会に報告しており、短期正常化への期待が低下した。
+  <span style="font-size:0.7rem;color:#64748b;display:block;margin-top:6px;">出典：Trading Economics・CNBC（2026年4月29日）</span>
+</li>
+
+<li style="background:rgba(239,68,68,0.06);border-left:3px solid #94a3b8;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#cbd5e1;">🇺🇸🇮🇷【外交膠着】ルビオ、イラン「核先送り・ホルムズ再開」提案を正式拒否（4/27）：</strong>
+  イランがパキスタン経由で「先にホルムズを再開・停戦延長し、核問題は後回し」とする提案を提示。ルビオ国務長官はFox Newsで「核問題は核心。先送りは受け入れられない」と正式拒否。トランプも「カードは我々が持っている」とイスラマバード派遣をキャンセル。アラグチー外相はオマーン→パキスタン→モスクワの外交ツアーを展開しロシアの支持を取り付けた。
+  <span style="font-size:0.7rem;color:#64748b;display:block;margin-top:6px;">出典：Axios・CNBC・NPR・Al Jazeera（2026年4月27〜29日）</span>
+</li>
+
+<li style="background:rgba(56,189,248,0.06);border-left:3px solid #38bdf8;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#7dd3fc;">💬【トランプ発言】「イランは崩壊状態——海峡を開けたがっている」（Truth Social 4/29）：</strong>
+  トランプ大統領がTruth Socialに「イランは崩壊状態にある。彼らはホルムズを開けたがっている」と投稿。一方でルビオは核問題での進展がないことを強調。米政府内の発言が矛盾した状況が続き、交渉の着地点が見えていない。メルツ独首相は「米国は説得力ある戦略を持っていない」と批判。
+  <span style="font-size:0.7rem;color:#64748b;display:block;margin-top:6px;">出典：NPR・CNBC（2026年4月29日）</span>
+</li>
+```
+
+---
+
+## [S04] 情勢カード3枚
+
+**対象：** `<!-- SITUATION CARDS -->` セクション内の3枚のカード
+
+### カード1（米国戦略）
+
+**変更箇所：日付・内容を以下に更新**
+
+```
+タイトル：🇺🇸 米国の戦略
+日付バッジ：📅 4/30 09:51 更新
+主要ポイント（箇条書きで記載されている部分）：
+• トランプ安保チームがSituation Room会議でイラン提案を協議（4/28）
+• ルビオが「核問題先送りは不可」と提案を正式拒否（4/27）
+• 海軍封鎖は核合意まで継続する方針を堅持
+• 「イランは崩壊状態」とTruth Socialに投稿（4/29）——交渉力維持が狙い
+• メルツ独首相の「戦略なし」批判をトランプが即座に反論
+出典表示：出典：NPR・CNBC・Axios（2026年4月28〜29日）
+```
+
+### カード2（イラン戦略）
+
+```
+タイトル：🇮🇷 イランの戦略
+日付バッジ：📅 4/30 09:51 更新
+主要ポイント：
+• 「核先送り・ホルムズ先行再開」提案をパキスタン経由で提示——米に拒否される
+• アラグチー外相がオマーン・パキスタン・モスクワを歴訪し支持取り付け
+• プーチン「イランは勇敢に戦っている」とロシアの連帯を再確認（4/27）
+• イラン国内の指導部は分裂との米側分析——モジュタバー・ハメネイ体制の安定性が焦点
+• IRGCによる選別通航・通行料徴収は継続中（停戦中も）
+出典表示：出典：Al Jazeera・CNN・NPR（2026年4月27〜29日）
+```
+
+### カード3（エネルギー・市場）
+
+```
+タイトル：🛢️ エネルギー・市場
+日付バッジ：📅 4/30 09:51 更新
+主要ポイント：
+• ブレント原油 $120/bbl 突破（4/29）——2022年6月以来の高値
+• UAE、本日（5/1）OPEC・OPEC+から正式離脱——産油能力480万BPDが制限解除へ
+• 通航量：戦前比95%減継続（月3,000隻→約150隻）
+• 機雷除去：ペンタゴンが「完全除去に6ヶ月」と議会に報告——正常化は遠い
+• IEA「史上最大の石油供給混乱」認定。日本向け代替調達（米産原油）は一部到着済み
+出典表示：出典：Trading Economics・Al Jazeera・House of Commons Library（4月29日）
+```
+
+---
+
+## [S05] COUNTDOWN
+
+**対象：** `<!-- COUNTDOWN -->` セクションのフェーズラベル・テキスト
+
+**変更内容：**
+```
+フェーズラベル：「🔴 双方向封鎖 継続中 — 外交完全膠着フェーズ」
+サブテキスト：「UAE OPEC離脱が本日発効。次の焦点は米イランの第2回交渉が実現するか否か」
+日付表示：4/30 09:51 JST 更新
+次の注目日：TBD（第2回米イラン交渉の開催未定）
+```
+
+---
+
+## [S06] シナリオ確率補足バナー ⚠️（漏れ多発セクション）
+
+**対象：** `<!-- SCENARIOS -->` セクション内の補足バナー（シナリオ4本とは別の独立要素）
+
+**変更前の日付部分：**
+```
+📅 4/29 06:59 更新
+```
+
+**変更後：**
+```html
+<!-- バナー全体を以下に更新 -->
+<div style="background:rgba(239,68,68,0.07);border:1px dashed rgba(239,68,68,0.35);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.78rem;color:#fca5a5;line-height:1.8;">
+  <span style="font-weight:800;color:#f87171;">📊 シナリオ確率の動向（4/30 09:51 JST）</span><br>
+  ルビオによる「核先送り提案」拒否（4/27）で外交膠着が深化。<br>
+  <strong>A（外交解決）↓↓</strong> 米が提案拒否——短期合意の可能性さらに低下 ／
+  <strong>B（部分封鎖継続）↑↑</strong> 現状維持が最も蓋然性高い ／
+  <strong>C（完全封鎖強化）→</strong> UAE離脱でOPECの価格安定機能弱体化リスク ／
+  <strong>D（軍事エスカレーション）→</strong> 停戦は延長中だが脆弱性は続く<br>
+  <span style="font-size:0.7rem;color:#64748b;">※ 数値はCard 5（Gemini AI・40+ data points）が自動同期</span>
+</div>
+```
+
+---
+
+## [S07] シナリオ4本（タイトル・本文）
+
+**対象：** `<!-- SCENARIOS -->` 内の各 `sc-card`（A/B/C/D）の本文テキスト部分
+
+### シナリオA（外交解決）
+
+```
+タイトル：🟢 シナリオA：外交解決
+サブタイトル：核問題含む包括合意
+本文更新内容：
+イランの「核先送り・ホルムズ先行再開」提案をルビオが拒否（4/27）したことで、短期合意の
+道筋は大幅に後退した。米国は核問題の同時解決を条件として堅持しており、交渉は
+デッドロック状態。プーチンがイランを支持したことで、イラン側の妥協圧力も弱まっている。
+アナリストは「米国が先に折れる可能性がある」との見方も示しているが、トランプ政権の
+国内政治的制約が交渉柔軟性を制限している。
+```
+
+### シナリオB（部分封鎖継続）
+
+```
+タイトル：🟡 シナリオB：部分封鎖継続
+サブタイトル：停戦延長・交渉停滞の長期化
+本文更新内容：
+現状最も蓋然性が高いシナリオ。停戦は延長中だが「停戦＝海峡再開」ではなく、
+IRGCによる選別通航・通行料徴収が制度化されている。通航量は戦前比95%減が継続。
+ブレント$120突破・UAE OPEC離脱という新たな不安定要因が加わり、停滞の長期化コストが
+増大。米国とイランの双方が相手の先の折れを待つ構造となっている。
+機雷除去に6ヶ月必要（ペンタゴン報告）なため、合意後も完全正常化は遠い。
+```
+
+### シナリオC（完全封鎖強化）
+
+```
+タイトル：🔴 シナリオC：完全封鎖強化
+サブタイトル：交渉決裂・制裁強化
+本文更新内容：
+UAE離脱でOPECの産油調整能力が低下し、封鎖が長期化した場合の市場安定機能が弱まった。
+外交が決裂した場合、イランがIRGCによる通航管理をさらに厳格化するリスクがある。
+中国・ロシア以外の船舶への妨害が拡大するシナリオ。ドイツのメルツ首相が米国の
+「戦略不在」を批判しており、国際連帯の亀裂がイランの交渉力を強める。
+```
+
+### シナリオD（軍事エスカレーション）
+
+```
+タイトル：⚫ シナリオD：軍事エスカレーション
+サブタイトル：停戦破綻・直接衝突再開
+本文更新内容：
+停戦は継続中だが、レバノン停戦が揺らいでいること、アラグチー外相がロシアの軍事
+支援を念頭に外交を展開していることから、破綻リスクの背景は残る。
+トランプは「機雷設置船は撃沈」命令を維持しており、偶発的エスカレーションの火種が
+くすぶっている。核問題での合意なき停戦長期化は、米国内の強硬論を刺激する可能性もある。
+```
+
+---
+
+## [S08] シナリオフッター
+
+**対象：** `<!-- シナリオ フッター -->` セクション（「次に注目すべき5つの焦点」など）
+
+**変更後（次の焦点5点）：**
+```html
+<ol>
+  <li>🇺🇸🇮🇷 <strong>米イラン第2回交渉の実現有無</strong>——イスラマバード方式 or 電話外交か</li>
+  <li>🇦🇪 <strong>UAE離脱後の産油戦略</strong>——増産タイミングと海峡再開のリンクに注目</li>
+  <li>🛢️ <strong>ブレント原油$120超の持続性</strong>——IEA緊急備蓄放出の判断が焦点</li>
+  <li>🇮🇷 <strong>イラン指導部の内部結束</strong>——モジュタバー体制の安定とIRGCの自律性</li>
+  <li>🇱🇧 <strong>レバノン停戦の行方</strong>——ヒズボラとの衝突再燃がホルムズ交渉に波及するリスク</li>
+</ol>
+```
+
+---
+
+## [S09] 30秒カラム（3行サマリー＋ステータスバッジ5枚）
+
+**対象：** `<!-- 30秒で全体像を把握 -->` セクション
+
+### 3行サマリー（「いま何が」「海峡の今」「次の焦点」）
+
+**変更後：**
+```
+【いま何が起きているか（4/30 09:51 JST）】
+イランの「核先送り・ホルムズ先行再開」提案をルビオが拒否し外交が完全膠着。
+UAE（OPEC離脱本日発効）・ブレント$120突破など新たな不安定要因が重なった。
+停戦延長中だが通航量は戦前比95%減が継続——封鎖63日目。
+
+【海峡の今】
+通航量：戦前比約95%減（月3,000隻→150隻前後）
+ブレント原油：$120/bbl（2022年6月以来の高値）
+機雷：完全除去に6ヶ月（ペンタゴン報告）
+
+【次の焦点】
+米イラン第2回交渉の実現有無 ／ UAE離脱後の産油戦略 ／ ブレント$120持続性
+```
+
+### ステータスバッジ5枚
+
+**変更後：**
+```html
+<span ...>🔴 封鎖63日目：通航95%減継続</span>
+<span ...>🟡 停戦：無期限延長中（脆弱）</span>
+<span ...>🔴 原油：$120/bbl（戦前比+67%）</span>
+<span ...>🔴 UAE：OPEC離脱 本日発効</span>
+<span ...>🔴 外交：完全膠着（第2回交渉未定）</span>
+```
+
+---
+
+## [S10] news_data.json 更新メモ
+
+**更新方法：** `data/news_data.json` を最新版（別ファイル）に置き換え。
+`latest` の最古1件（旧4件目）を `archive` の先頭バッチへ移動すること。
+`updated` フィールドを `2026年4月30日 09:51 日本時間JST` に更新すること。
+`osint` の `isLatest: true` は Al Jazeera の最新記事1件のみに付与すること。
+
+---
+
+## [S11] 更新ログ追記
+
+**対象：** `<!--出典・更新ログ-->` セクション内の最終更新グリッド
+
+**先頭に以下を追加：**
+```html
+<div>📅 <strong>2026年4月30日 09:51 JST</strong> 更新</div>
+<div><span style="color:#f87171;">2026/04/30 09:51</span> — <strong style="color:#fca5a5;">【重大更新】</strong>UAE・OPEC離脱本日（5/1）発効・Brent $120突破（2022年6月以来）・ルビオがイラン「核先送り」提案を正式拒否・アラグチー外相プーチン会談でロシア支持確認・トランプ「イランは崩壊状態」投稿・外交完全膠着・機雷除去6ヶ月・封鎖63日目・ニュース4件更新・OSINT更新（Al Jazeera）</div>
+```
+
+---
+
+## ✅ 出力前セルフチェック
+
+```
+[x] S01 ヘッダー ― 2026年4月30日 09:51 JST ✓
+[x] S02 TICKER ― UAE離脱・$120・提案拒否・膠着 ✓
+[x] S03 速報インシデント ― 4件追加（UAE離脱・$120・拒否・トランプ発言）✓
+[x] S04 情勢カード3枚 ― 日付・数値・出典 4/30版 ✓
+[x] S05 COUNTDOWN ― 双方向封鎖継続フェーズ ✓
+[x] S06 シナリオ確率補足バナー ― 4/30日付・方向矢印 ✓（独立更新）
+[x] S07 シナリオ4本 ― A/B/C/D本文を4/30情勢に更新 ✓
+[x] S08 シナリオフッター ― 次の焦点5点更新 ✓
+[x] S09 30秒カラム ― 3行＋バッジ5枚更新 ✓（最後に作成）
+[x] S10 news_data.json更新メモ ― アーカイブ注意 ✓
+[x] S11 更新ログ ― 先頭に4/30 09:51行 ✓
 ```

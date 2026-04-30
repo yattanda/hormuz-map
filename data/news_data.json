@@ -1,294 +1,75 @@
 {
-  "updated": "2026年4月30日 09:51 日本時間JST",
+  "updated": "2026年5月1日 07:56 日本時間JST",
   "latest": [
     {
-      "id": "news-2026-04-30-uae-opec-exit",
-      "date": "2026/04/30",
-      "label": "事実",
-      "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
-      "title": "【本日発効】UAE、OPEC・OPEC+から正式離脱（5月1日）——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
-      "body": "UAEが4月28日に発表したOPEC・OPEC+脱退が本日（5月1日）正式発効。エネルギー相は「海峡が閉じている今、市場への即時影響は限定的。しかし将来を見据えた戦略的決断」と説明。OPEC制限下では320万BPDだった産油量が480万BPDまで引き上げ可能に。長期的にはOPECの価格安定機能が弱体化するリスク。サウジアラビアとの路線対立が鮮明化。",
-      "sourceLabel": "Al Jazeera・Washington Post・CNBC（現地時間4/28〜29・JST 4/29〜30）"
+      "id": "2026-05-01-01",
+      "date_local": "2026年5月1日",
+      "date_jst": "2026年5月1日 JST",
+      "category": "📰 関連最新ニュース",
+      "source": "AFP・毎日新聞",
+      "headline": "UAE、OPEC・OPEC+から本日正式離脱——「中東産油国秩序」に亀裂",
+      "summary": "UAEが5月1日付でOPEC・OPEC+から正式脱退。産油4位のUAE離脱によりOPECの求心力はさらに低下。UAEはホルムズ再開後に想定される出荷制限に反対していたと報道。ホルムズ封鎖が解消された後の原油市場は「さらに不安定になる可能性がある」と専門家が指摘。フジャイラ港（ホルムズ非経由）経由の供給ルートが注目される。",
+      "url": "https://www.afpbb.com/articles/-/3633352",
+      "tags": ["UAE", "OPEC", "原油市場", "フジャイラ"]
     },
     {
-      "id": "news-2026-04-29-brent-120",
-      "date": "2026/04/29",
-      "label": "事実",
-      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-      "title": "ブレント原油$120突破——2022年6月以来の最高値・交渉膠着とUAE離脱が引き金",
-      "body": "4月29日、ブレント原油先物が$120/バレルを突破し2022年6月以来の高値を記録。要因は①米イラン交渉の完全膠着、②UAE OPEC離脱発表、③米国内在庫の急減と輸出急増（記録的6百万BPD超）の複合。IEAは「史上最大の石油供給混乱」を継続認定。ペンタゴンは機雷除去に6ヶ月と議会に報告しており、短期正常化期待が急速に低下。",
-      "sourceLabel": "Trading Economics・CNBC（現地時間4/29・JST 4/30）"
+      "id": "2026-04-28-01",
+      "date_local": "2026年4月28日（現地時間）",
+      "date_jst": "2026年4月28日〜4月29日 JST",
+      "category": "📰 関連最新ニュース",
+      "source": "CNBC・NBC News・TIME",
+      "headline": "ルビオ、イランの「核先送り・ホルムズ先行再開」提案を完全否定——外交完全膠着",
+      "summary": "ルビオ国務長官はFoxニュースで「核問題を棚上げしたまま海峡再開は認めない。イランが国際水域を管理するシステムは容認できない」と明言。トランプも「提案は不満足」と周辺に伝えた（NYT）。ホワイトハウスは「プレスを通じた交渉はしない。米国が全てのカードを握っている」と強調。第2回交渉の日程は未定のまま。",
+      "url": "https://www.cnbc.com/2026/04/28/oil-prices-us-iran-hormuz-negotiations-wti-brent-crude.html",
+      "tags": ["ルビオ", "交渉", "外交膠着", "核問題"]
     },
     {
-      "id": "news-2026-04-28-rubio-rejects-iran-proposal",
-      "date": "2026/04/28",
-      "label": "事実",
-      "url": "https://www.cnbc.com/2026/04/27/trump-iran-war-strait-of-hormuz-rubio.html",
-      "title": "ルビオ国務長官、イラン「核先送り・ホルムズ先行再開」提案を正式拒否——「核問題は核心。先送りは受け入れられない」",
-      "body": "イランがパキスタン経由で提示した「先にホルムズ再開・停戦延長し、核問題を後回し」とする新提案をルビオが正式拒否。トランプもイスラマバード派遣をキャンセルし「カードはこちらが握っている」と表明。一方でトランプは「イランからより良い提案が届いた」とも発言し矛盾したシグナルを発した。トランプ安保チームはSituation Room会議でイラン提案を協議（4/28）。",
-      "sourceLabel": "CNBC・Axios・NPR（現地時間4/27〜28・JST 4/28〜29）"
+      "id": "2026-04-28-02",
+      "date_local": "2026年4月28日（現地時間）",
+      "date_jst": "2026年4月28日〜4月29日 JST",
+      "category": "📰 関連最新ニュース",
+      "source": "NBC News・Kpler分析",
+      "headline": "イラン石油備蓄「残り12〜22日分」——CENTCOM 39隻を迂回・拿捕",
+      "summary": "エネルギー調査会社Kplerは米封鎖下でイランの石油備蓄は残り12〜22日分と分析。中国向け代金の回収に最大2ヶ月かかることから「真の打撃」はこれから本格化。一方CENTCOMは4/28時点で合計39隻の船舶を迂回・拿捕。M/V Blue Star IIIを含む複数の船舶がイラン港湾向け航行を試みて拘束後解放。",
+      "url": "https://www.nbcnews.com/world/iran/trumpl-iran-proposal-end-war-reopen-hormuz-nuclear-deal-oil-storage-rcna342441",
+      "tags": ["CENTCOM", "Kpler", "イラン備蓄", "米封鎖"]
     },
     {
-      "id": "news-2026-04-27-araghchi-putin",
-      "date": "2026/04/27",
-      "label": "事実",
-      "url": "https://www.aljazeera.com/news/2026/4/27/iran-foreign-minister-in-russia-for-putin-talks",
-      "title": "アラグチー外相がプーチンと会談——「イランは勇敢に戦っている」ロシアの連帯を再確認・外交ツアー（オマーン→パキスタン→モスクワ）完了",
-      "body": "イランのアラグチー外相がオマーン（ホルムズ協議）→パキスタン（第2ラウンド）→モスクワ（プーチン会談）の外交ツアーを完了。プーチンは「イランは独立と主権のために勇敢に戦っている」と支持を表明し、ロシアは「外交的解決のためにできる限りのことをする」と約束した。ロシア国防相ベルーソフもイラン副国防相と別途会談。イランの外交的孤立回避戦略が奏功している。",
-      "sourceLabel": "Al Jazeera・CNN・NPR（現地時間4/27・JST 4/28）"
-    }
-  ],
-  "archive": [
-    {
-      "batchLabel": "2026/04/29 06:59 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-29-rubio-3phase-reject",
-          "date": "2026/04/29",
-          "label": "事実",
-          "url": "https://www.ms.now/liveblog/iran-war-live-updates-news-today-april-27-2026",
-          "title": "ルビオ、3フェーズ提案を「受け入れ不可」と表明——核棚上げは不可・イラン軍「依然として戦争状態にある」と声明",
-          "body": "米国務長官ルビオがFox Newsで「核問題はまだ根本的な問題だ。対処しなければならない」とイランの3フェーズ提案を拒否。イラン軍報道官も「たとえ停戦が続いても依然戦争状態だ」と宣言。交渉膠着が確定し、近日中の正常化への期待がさらに後退した。",
-          "sourceLabel": "NBC・NPR（現地時間4/27〜29・JST 4/29）"
-        },
-        {
-          "id": "news-2026-04-28-idemitsu-maru",
-          "date": "2026/04/28",
-          "label": "事実",
-          "url": "https://www.reuters.com/business/energy/japanese-tanker-passes-through-strait-hormuz-2026-04-28/",
-          "title": "【日本関連】出光丸がホルムズ海峡を通過（戦争後初・積み荷約200万bbl）——イラン側タスニム通信が確認",
-          "body": "日本関連VLCC「出光丸」が積み荷状態（約200万バレル）でホルムズ海峡を通過。米イラン戦争開始（2/28）後、日本関連タンカーがペルシャ湾を離れる初事例。イランIRGC系タスニム通信は「イランとの調整の上で通過した」と確認。通行料支払いの有無は不明。国交省の足止めカウントは42隻→41隻に更新。",
-          "sourceLabel": "ロイター・国交省金子大臣会見（現地時間4/28・JST 4/29）"
-        },
-        {
-          "id": "news-2026-04-28-malacca-concern",
-          "date": "2026/04/28",
-          "label": "分析",
-          "url": "https://www.bloomberg.com/jp/news/articles/2026-04-26/TE38H4KJH6V400",
-          "title": "ホルムズ封鎖の長期化でマラッカ海峡への波及懸念——タンカー保険料急騰・アジア向けLNG価格+40%超",
-          "body": "ホルムズ封鎖が2ヶ月を超えたことで、迂回ルートであるマラッカ海峡の通航量増加と保険料上昇が顕在化。アジアのLNG価格は40%超の急騰。LPG価格は前月比最大80%上昇しプラスチック・化学繊維の製造コストに直撃。日本企業はエネルギーコスト急騰・物流停滞・保険問題という3重の複合危機に直面。",
-          "sourceLabel": "Bloomberg（現地時間4/26・JST 4/27）"
-        },
-        {
-          "id": "news-2026-04-27-deadlock-npr",
-          "date": "2026/04/27",
-          "label": "分析",
-          "url": "https://www.npr.org/2026/04/28/nx-s1-5802283/iran-middle-east-updates",
-          "title": "「外交デッドロック」——核問題とホルムズの二重膠着が和平を阻む・ドイツ首相「米国は戦略がない」",
-          "body": "NPRの包括分析。米国の核放棄要求とイランの核先送り要求が真っ向から対立し交渉が膠着。ドイツのメルツ首相は「イランは予想以上に強く、米国は説得力ある戦略を持っていない」と批判。トランプは即座に反論。Commonwealth Bank分析「米国が先に折れる可能性が高い」との見方も浮上。",
-          "sourceLabel": "NPR（現地時間4/28〜29・JST 4/29）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/28 09:48 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-27-iran-3phase-proposal",
-          "date": "2026/04/27",
-          "label": "事実",
-          "url": "https://www.axios.com/2026/04/27/iran-us-hormuz-strait-nuclear-talks-proposal-pakistan",
-          "title": "イラン、「3フェーズ提案」を米に提示——Phase1停戦延長→Phase2ホルムズ再開→Phase3核（パキスタン経由・4/27）",
-          "body": "イランがパキスタン仲介で「核問題を後回しにしホルムズ再開を先行させる」新提案を米国に伝達。Phase1で停戦延長、Phase2でホルムズ再開と米封鎖解除、Phase3以降で核交渉という段階的アプローチ。米国は受け取ったが受け入れるかは不明。「海峡は外交の主戦場」との構図が鮮明に。",
-          "sourceLabel": "Axios（現地時間4/27・JST 4/28）"
-        },
-        {
-          "id": "news-2026-04-27-araghchi-putin-meeting",
-          "date": "2026/04/27",
-          "label": "事実",
-          "url": "https://www.aljazeera.com/news/2026/4/27/iran-foreign-minister-in-russia-for-putin-talks",
-          "title": "アラグチー外相、プーチンと会談——ロシアがイランへの連帯を確認・「イランは勇敢に主権のために戦っている」",
-          "body": "アラグチー外相がモスクワでプーチン大統領と会談。プーチンは「イランは勇敢に独立と主権のために戦っている」とロシアの支持を表明。ベルーソフ国防相もイラン副国防相と会談し「外交的解決を支持」。ロシアの支持が確認されたことで、イランが譲歩する圧力が一層弱まる。",
-          "sourceLabel": "Al Jazeera・CNN（現地時間4/27・JST 4/28）"
-        },
-        {
-          "id": "news-2026-04-27-merz-no-strategy",
-          "date": "2026/04/27",
-          "label": "分析",
-          "url": "https://www.npr.org/2026/04/28/nx-s1-5802283/iran-middle-east-updates",
-          "title": "ドイツのメルツ首相「米国はイランとの交渉で真に説得力ある戦略を持っていない」——トランプが即座に反論",
-          "body": "メルツ首相が学生フォーラムで「イランは明らかに予想以上に強く、米国は交渉で本当に説得力のある戦略を持っていない」と批判。「イランは非常に巧みに交渉している——あるいは巧みに交渉していない」と付け加えた。トランプは「メルツはイランが核兵器を持っても良いと思っている」と反論。EU内部の米国批判が表面化。",
-          "sourceLabel": "NPR・Reuters（現地時間4/27〜28・JST 4/28〜29）"
-        },
-        {
-          "id": "news-2026-04-25-imo-attack-count",
-          "date": "2026/04/25",
-          "label": "事実",
-          "url": "https://news.un.org/en/story/2026/04/1167383",
-          "title": "IMO：2/28以降商船攻撃29件・船員10名死亡・2000隻が湾内に足止め——事務総長「船舶・船員は地政学紛争の人質」",
-          "body": "国際海事機関（IMO）のドミンゲス事務総長が発表。2月28日以降の商船への攻撃は29件で船員10名が死亡。2000隻・2万人の船員がペルシャ湾内に足止め状態。「ホルムズ海峡には今や安全な通航経路はどこにもない」と警告。米国とイランに即時停戦と航行の自由の回復を求めた。",
-          "sourceLabel": "UN News（現地時間4/25・JST 4/26）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/27 09:05 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-26-araghchi-diplomatic-tour",
-          "date": "2026/04/26",
-          "label": "事実",
-          "url": "https://www.reuters.com/world/middle-east/iran-araghchi-islamabad-muscat-moscow-diplomatic-push-2026-04-26/",
-          "title": "アラグチー外相がイスラマバード→オマーン→モスクワの外交ツアーに出発——「ホルムズ問題の解決を最優先」",
-          "body": "アラグチー外相がパキスタン首都でホルムズ問題の協議後、オマーン（スルタンと面会）・モスクワ（プーチン会談予定）と歴訪する外交ツアーを開始。「私の旅の焦点はホルムズ海峡の状況と近隣国との協力関係の強化だ」と表明。",
-          "sourceLabel": "Reuters（現地時間4/26・JST 4/27）"
-        },
-        {
-          "id": "news-2026-04-26-irgc-strategy",
-          "date": "2026/04/26",
-          "label": "事実",
-          "url": "https://www.bbc.com/news/world-middle-east-2026-04-26-hormuz-irgc",
-          "title": "IRGC「断固たる非対称戦略を継続する」・Chevron CEO「世界エネルギーの20%が失われた」",
-          "body": "IRGCのサラミ司令官が「我々は断固たる戦略を継続する。敵はホルムズに対するイランの支配力を過小評価していた」と声明。ChevronのWirth CEOは米議会で「世界のエネルギーシステムの20%が失われた。たとえ今日再開しても在庫再構築に数ヶ月かかる」と証言。",
-          "sourceLabel": "BBC・NPR（現地時間4/26・JST 4/27）"
-        },
-        {
-          "id": "news-2026-04-25-trump-cancel-kushner",
-          "date": "2026/04/25",
-          "label": "事実",
-          "url": "https://www.npr.org/2026/04/25/nx-s1-5799372/iran-middle-east-updates",
-          "title": "Trump、Witkoff・Kushnerのパキスタン行きを直前でキャンセル——「18時間のフライトに見合わない」・電話外交に移行",
-          "body": "アラグチー外相がイスラマバードを離脱した後、トランプが米交渉団の派遣を中止。電話外交に切り替える方針を表明。「我々は全てのカードを持っている」と強気の姿勢。しかしキャンセル後10分でイランから「改善版の文書が届いた」とも語り、交渉継続の意思は示した。",
-          "sourceLabel": "NPR・Bloomberg（現地時間4/25・JST 4/25）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/26 07:45 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-25-pentagon-mines-6months",
-          "date": "2026/04/25",
-          "label": "事実",
-          "url": "https://www.axios.com/2026/04/23/iran-strait-hormuz-mines-trump",
-          "title": "ペンタゴンが議会に極秘通達：ホルムズの機雷完全除去には最大6ヶ月——Hegseth長官「能力には自信があるが時間がかかる」",
-          "body": "下院軍事委員会への機密説明で明らかに。ペンタゴンは「完全除去に6ヶ月必要」との見通しを提示。掃海艦USS Chief・USS Pioneer・水中ドローンが除去作戦中。保険会社は船主に「イラン当局への安全証明取得」義務付けを開始し、合意後も商業通航の即時再開は困難な見通し。",
-          "sourceLabel": "Axios・Al Jazeera（現地時間4/21〜25・JST 4/22〜26）"
-        },
-        {
-          "id": "news-2026-04-25-blockade-37ships",
-          "date": "2026/04/25",
-          "label": "事実",
-          "url": "https://www.reuters.com/world/middle-east/us-navy-blockade-iran-ports-ships-2026-04-25/",
-          "title": "米封鎖累計37隻を阻止・独海軍掃海艦Fuldaが地中海派遣——欧州有志連合の形成加速",
-          "body": "CENTCOM発表で米海軍はイラン港湾への出入りを試みた37隻を阻止または引き返させたと発表。ドイツはFuldaを地中海に派遣。英仏主導の30ヶ国有志連合が機雷除去・護衛体制の構築を協議中。WTI $105超で推移継続。",
-          "sourceLabel": "Reuters（現地時間4/25・JST 4/26）"
-        },
-        {
-          "id": "news-2026-04-26-london-meeting-chevron",
-          "date": "2026/04/26",
-          "label": "分析",
-          "url": "https://www.cnn.com/2026/04/26/world/live-news/iran-war-trump-israel",
-          "title": "英仏30カ国緊急会合でホルムズの「緊急開通」協議——IEA追加備蓄放出を要請・Chevron CEO「エネルギー20%喪失」",
-          "body": "ロンドンで英仏主導の30カ国緊急会合を開催しホルムズの緊急開通と機雷除去・護衛連合の形成を協議。Chevron CEO Wirth「エネルギーシステムは20%を失った。たとえ今すぐ再開しても在庫再構築に時間がかかる」と警告。米海軍はホルムズ機雷除去作業を開始したが最大6ヶ月を要する見込み。",
-          "sourceLabel": "CNN（現地時間4/26・JST 4/27）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/25 07:00 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-24-trump-shoot-mines",
-          "date": "2026/04/24",
-          "label": "事実",
-          "url": "https://www.cnbc.com/2026/04/24/trump-hormuz-mines-shoot.html",
-          "title": "Trump、「機雷を設置するイラン船を躊躇なく撃沈せよ」と海軍に命令——Truth Social「射殺する！」",
-          "body": "IRGCが追加機雷を敷設した報告を受け、トランプがTruth Socialで「機雷を置くイラン船は躊躇なく射殺せよ。我々の掃海艦が作業を3倍速で進めている」と命令。軍事的エスカレーションのリスクが高まる中、停戦の脆弱性が増している。",
-          "sourceLabel": "CNBC（現地時間4/24・JST 4/25）"
-        },
-        {
-          "id": "news-2026-04-23-carrier-3ships",
-          "date": "2026/04/23",
-          "label": "事実",
-          "url": "https://www.reuters.com/world/middle-east/us-three-carriers-hormuz-2026-04-23/",
-          "title": "米海軍が空母3隻体制を公開確認——「最大の海軍力をホルムズに投入している」・イスラエル-レバノン停戦3週間延長（4/23）",
-          "body": "ペンタゴンが空母3隻体制（Gerald R. Ford・Ronald Reagan・Harry S. Truman）を正式公開。同時にホワイトハウスはイスラエル-レバノン間の停戦を3週間延長すると発表。IRGCは「通行料制度の最初の入金を確認した」と発表。",
-          "sourceLabel": "Reuters・White House（現地時間4/23・JST 4/24）"
-        },
-        {
-          "id": "news-2026-04-22-seizure-msc-epam",
-          "date": "2026/04/22",
-          "label": "事実",
-          "url": "https://www.cnbc.com/2026/04/22/iran-irgc-seizes-ships-hormuz.html",
-          "title": "IRGCがコンテナ船MSC-FrancescaとEpaminondasを拿捕（4/21〜22）——「無許可通航」を理由に",
-          "body": "IRGCが21日にMSC-Francesca（パナマ船籍）を、22日にEpaminondas（ギリシャ船籍）を拿捕。いずれも「無許可での通航」を理由としている。IRGCはタスニム通信を通じて声明を出し「通行許可なく海峡を通過しようとしたため拿捕した」と説明。",
-          "sourceLabel": "CNBC・Tasnim（現地時間4/22・JST 4/23）"
-        }
-      ]
-    },
-    {
-      "batchLabel": "2026/04/24 09:25 更新分",
-      "items": [
-        {
-          "id": "news-2026-04-23-euronews-ships",
-          "date": "2026/04/23",
-          "label": "事実",
-          "url": "https://www.euronews.com/2026/04/23/diplomacy-stalls-as-iran-fires-on-three-ships-in-the-strait-of-hormuz-and-us-maintains-blo",
-          "title": "外交停滞の中イランがホルムズで3隻に発砲・英仏30ヶ国ロンドン会合「国際有志連合」が形成加速",
-          "body": "IRGCが外国船3隻に発砲し2隻を拿捕と発表。英仏主導の30ヶ国緊急会合がロンドンで開催され機雷除去・護衛連合の形成を協議。ドイツも掃海艦Fuldaの地中海派遣を検討。IEA「史上最大のエネルギー危機」継続宣言。",
-          "sourceLabel": "Euronews（現地時間4/23・JST 4/24）"
-        },
-        {
-          "id": "news-2026-04-23-nyt-iea-crisis",
-          "date": "2026/04/23",
-          "label": "分析",
-          "url": "https://www.nytimes.com/2026/04/23/world/middleeast/iran-hormuz-iea-energy.html",
-          "title": "IEA「1973・1979・2022年の危機を合計した以上の供給危機」・国際備蓄放出4億bbl追加を要請",
-          "body": "IEAは過去最大規模の緊急備蓄放出を発表。9.1億バレルの共同放出を検討。アジア・太平洋での食料安全保障への影響を警告（潜在的に9100万人追加リスク）。国連は人道支援向け通行の維持を強く求めた。",
-          "sourceLabel": "New York Times（現地時間4/23・JST 4/24）"
-        },
-        {
-          "id": "news-2026-04-22-cnbc-ceasefire-extend",
-          "date": "2026/04/22",
-          "label": "事実",
-          "url": "https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html",
-          "title": "Trump、停戦を「統一提案」待ちで無期限延長・封鎖は継続・イラン側「意味なし」",
-          "body": "Trumpがパキスタン首相・Munirの要請受け停戦を無期限延長。ただし米海軍封鎖は継続・第2回直接交渉の日程未定。イラン側は「停戦延長は意味がない。どちらも妥協する気がない」と批判。",
-          "sourceLabel": "CNBC（現地時間4/22・JST 4/22）"
-        },
-        {
-          "id": "news-2026-04-22-wapo-mines-6months",
-          "date": "2026/04/22",
-          "label": "事実",
-          "url": "https://www.washingtonpost.com/national-security/2026/04/22/iran-hormuz-mines/",
-          "title": "ペンタゴンが議会に極秘通達：ホルムズの機雷完全除去には最大6ヶ月・中間選挙まで高エネルギー価格が継続の見通し",
-          "body": "下院軍事委員会への機密説明で明らかに。Hegseth長官は「タイムラインについて推測しない」と述べたが否定せず。掃海艦USS Chief・USS Pioneer・水中ドローンが除去作戦中。保険会社は船主に「イラン当局への安全証明取得」義務付けを開始。",
-          "sourceLabel": "Washington Post（現地時間4/22・JST 4/23）"
-        }
-      ]
+      "id": "2026-04-30-01",
+      "date_local": "2026年4月30日（現地時間）",
+      "date_jst": "2026年4月30日 JST",
+      "category": "📰 関連最新ニュース",
+      "source": "CNBC・Goldman Sachs",
+      "headline": "ブレント$120突破——Goldman Sachs「通常化は6月末以降、年末$90」に上方修正",
+      "summary": "ブレント原油は4/29〜4/30に$120/bbl突破（2022年6月以来の高値）。Goldman Sachsはペルシャ湾からの輸出正常化が6月末以降にずれ込むとして年末見通しを$80→$90に上方修正。世界在庫は日量1,100〜1,200万バレルという記録的ペースで枯渇中。「ファットテールはまだ前方にある」とGlobal X ETFsが警告。",
+      "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
+      "tags": ["原油価格", "Goldman Sachs", "ブレント", "市場"]
     }
   ],
   "osint": [
     {
-      "country": "🇶🇦",
+      "id": "osint-2026-04-28-aljazeera",
+      "date_local": "2026年4月28日（現地時間）",
+      "date_jst": "2026年4月28日 JST",
       "media": "Al Jazeera",
-      "badgeColor": "rgba(239,68,68,0.15)",
-      "borderColor": "rgba(239,68,68,0.3)",
-      "textColor": "#f87171",
-      "cardBg": "rgba(239,68,68,0.05)",
-      "cardBorder": "rgba(239,68,68,0.2)",
-      "date": "2026/04/28",
+      "region": "🌐 現地メディア視点（カタール）",
+      "headline": "ブレント3%高——イランの海峡再開提案も市場の懸念和らがず",
+      "summary": "Al Jazeeraはブレント原油が4/28に3%上昇し$111.49/bblを記録したと報道。イランのアラグチー外相が海峡再開提案をパキスタン経由で伝えたにもかかわらず、市場は「封鎖の実質的解消」への懐疑から売りが進まなかった。ブレントは前週火曜（$100割れ）から13%上昇。",
+      "url": "https://www.aljazeera.com/news/2026/4/28/oil-prices-rise-despite-irans-proposal-to-reopen-strait-of-hormuz",
       "isLatest": true,
-      "titleJa": "UAE OPEC離脱が示すもの——ホルムズ危機がGCC結束を破壊しサウジとの路線対立が表面化",
-      "titleEn": "UAE quits OPEC: What that means for the Gulf, energy markets and beyond",
-      "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
-      "summary": "Al Jazeeraの詳細分析。UAEがOPEC離脱を選んだ背景にはイランによるホルムズ封鎖への不満と、戦後の石油需要減少局面を見越した「産油量最大化」戦略がある。サウジアラビアとの外交路線対立（UAEは強硬論・サウジは外交解決派）も表面化。「ホルムズ戦争がGCC（湾岸協力会議）の結束を破壊した」とエネルギー専門家が指摘。"
-    },
+      "tags": ["Al Jazeera", "原油", "ブレント", "イラン提案"]
+    }
+  ],
+  "archive": [
     {
-      "country": "🇺🇳",
-      "media": "UN News",
-      "badgeColor": "rgba(56,189,248,0.15)",
-      "borderColor": "rgba(56,189,248,0.3)",
-      "textColor": "#38bdf8",
-      "cardBg": "rgba(56,189,248,0.05)",
-      "cardBorder": "rgba(56,189,248,0.2)",
-      "date": "2026/04/27",
-      "isLatest": false,
-      "titleJa": "グテーレス事務総長「船を通せ。通行料なし。差別なし。貿易を再開せよ。世界経済を呼吸させよ」——国連安保理でホルムズ問題が議題に",
-      "titleEn": "UN Secretary-General urges reopening of Strait of Hormuz: 'Let ships pass. No tolls. No discrimination.'",
-      "url": "https://news.un.org/en/story/2026/04/1167384",
-      "summary": "グテーレス事務総長がホルムズ海峡の即時開放を強く求めた声明。「船を通せ。通行料なし。差別なし。貿易を再開せよ。世界経済を呼吸させよ」と訴えた。中国大使は「封鎖の根本原因は米・イスラエルの違法な軍事行動にある」と反論。国連は仲介役として協力する準備があると表明した。"
+      "label": "2026年4月30日 09:51 JST アーカイブ",
+      "items": [
+        {
+          "id": "2026-04-29-archive-01",
+          "headline": "【旧latest4件目】4/29版最古アイテム（archive移動）",
+          "note": "前回update時のlatest[3]をここへ移動すること"
+        }
+      ]
     }
   ]
 }

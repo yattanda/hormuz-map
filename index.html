@@ -2962,7 +2962,7 @@ function toggleOsint() {
   if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ 過去の記事を見る';
 }
 function loadNewsData() {
-  fetch('data/news_data.json')
+  fetch('data/news_data.json?t=' + Date.now())
     .then(r => r.json())
     .then(data => {
       renderLatestNews(data);

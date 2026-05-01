@@ -204,7 +204,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .annot-popup { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); width:min(330px,90vw); background:rgba(15,23,42,0.97); border:1px solid rgba(248,113,113,0.45); border-radius:8px; padding:10px 12px; font-size:0.72rem; color:#e2e8f0; line-height:1.6; z-index:200; box-shadow:0 4px 24px rgba(0,0,0,0.6); }
 .annot-popup.open { display:block; }
 .annot-popup::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:rgba(248,113,113,0.45); }
-@media (max-width:480px) { .annot-popup { left:50%; transform:translateX(-50%); } }
+@media (max-width:480px) { .annot-popup { transform:translateX(calc(-50% - 70px)); } .annot-popup::after { left:calc(50% + 70px); transform:none; } }
 .dl-arrow { color:#6b7280; font-size:1.1rem; }
 .dl-note  { font-size:0.73rem; color:#fca5a5; flex:1; min-width:160px; padding-left:6px; }
 @keyframes cdBlink{0%,100%{opacity:1}50%{opacity:0.4}}

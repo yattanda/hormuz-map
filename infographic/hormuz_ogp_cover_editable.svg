@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="45%" stop-color="#102a55"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      text {
+        font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      }
+      .title { font-size: 62px; font-weight: 900; fill: #ffffff; letter-spacing: 0.02em; }
+      .sub { font-size: 28px; font-weight: 800; fill: #dbeafe; }
+      .small { font-size: 22px; font-weight: 800; fill: #e2e8f0; }
+      .chip { font-size: 22px; font-weight: 900; fill: #ffffff; }
+      .label { font-size: 20px; font-weight: 900; fill: #0f172a; }
+      .mini { font-size: 17px; font-weight: 800; fill: #cbd5e1; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="1040" cy="90" r="220" fill="#2563eb" opacity="0.18"/>
+  <circle cx="120" cy="560" r="260" fill="#dc2626" opacity="0.13"/>
+
+  <g filter="url(#shadow)">
+    <rect x="56" y="54" width="1088" height="522" rx="36" fill="rgba(255,255,255,0.06)" stroke="#334155" stroke-width="2"/>
+  </g>
+
+  <text x="86" y="120" class="mini">地図・航路・チョークポイントで見る</text>
+  <text x="86" y="198" class="title">ホルムズ海峡危機</text>
+  <text x="86" y="258" class="sub">5枚で俯瞰：米国・イラン・湾岸・アジア需要国</text>
+
+  <g transform="translate(82,304)">
+    <rect x="0" y="0" width="222" height="52" rx="26" fill="#b91c1c"/>
+    <text x="26" y="35" class="chip">米国＝軍事圧力</text>
+
+    <rect x="244" y="0" width="244" height="52" rx="26" fill="#7f1d1d"/>
+    <text x="270" y="35" class="chip">イラン＝海峡カード</text>
+
+    <rect x="500" y="0" width="218" height="52" rx="26" fill="#1d4ed8"/>
+    <text x="522" y="35" class="chip">アジア＝エネルギー</text>
+  </g>
+
+  <g transform="translate(82,386)">
+    <rect x="0" y="0" width="205" height="48" rx="24" fill="#0f766e"/>
+    <text x="25" y="33" class="chip">原油・LNG</text>
+
+    <rect x="226" y="0" width="192" height="48" rx="24" fill="#c2410c"/>
+    <text x="251" y="33" class="chip">紅海リスク</text>
+
+    <rect x="440" y="0" width="224" height="48" rx="24" fill="#6d28d9"/>
+    <text x="466" y="33" class="chip">日本への影響</text>
+  </g>
+
+  <g transform="translate(820,142)" filter="url(#shadow)">
+    <rect x="0" y="0" width="314" height="288" rx="30" fill="#e0f2fe" opacity="0.96"/>
+    <path d="M40,158 C110,116 172,194 270,132" fill="none" stroke="url(#sea)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M56,166 C132,130 182,202 260,144" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+    <rect x="124" y="117" width="132" height="38" rx="19" fill="#0f172a"/>
+    <text x="140" y="143" font-size="18" font-weight="900" fill="#fff">ホルムズ海峡</text>
+    <rect x="176" y="42" width="82" height="38" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="195" y="68" class="label">イラン</text>
+    <rect x="192" y="196" width="94" height="38" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="213" y="222" class="label">オマーン</text>
+    <rect x="34" y="66" width="98" height="38" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="50" y="92" class="label">ペルシャ湾</text>
+    <rect x="36" y="230" width="104" height="38" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+    <text x="52" y="256" class="label">外洋航路</text>
+  </g>
+
+  <text x="86" y="516" class="small">遠い中東の話ではなく、燃料代・電気代・物価の話。</text>
+  <text x="86" y="552" class="mini">2026-05-01 JST時点の公開情報に基づく図解</text>
+</svg>

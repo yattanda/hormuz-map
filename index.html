@@ -197,6 +197,14 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .dl-num { font-size:1.3rem; font-weight:800; color:#ef4444; line-height:1; }
 .dl-num.blink { animation:cdBlink 1s ease-in-out infinite; }
 .dl-sub { font-size:0.65rem; color:#fca5a5; margin-top:3px; }
+.annot-wrap { position:relative; margin-top:4px; }
+.annot-trigger { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; color:#94a3b8; cursor:pointer; user-select:none; }
+.annot-trigger:hover { color:#e2e8f0; }
+.annot-trigger .dot { width:6px; height:6px; border-radius:50%; background:#f87171; flex-shrink:0; }
+.annot-popup { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); width:300px; background:rgba(15,23,42,0.97); border:1px solid rgba(248,113,113,0.45); border-radius:8px; padding:10px 12px; font-size:0.72rem; color:#e2e8f0; line-height:1.6; z-index:200; box-shadow:0 4px 24px rgba(0,0,0,0.6); }
+.annot-popup.open { display:block; }
+.annot-popup::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:rgba(248,113,113,0.45); }
+@media (max-width:480px) { .annot-popup { width:280px; left:0; transform:none; } .annot-popup::after { left:16px; transform:none; } }
 .dl-arrow { color:#6b7280; font-size:1.1rem; }
 .dl-note  { font-size:0.73rem; color:#fca5a5; flex:1; min-width:160px; padding-left:6px; }
 @keyframes cdBlink{0%,100%{opacity:1}50%{opacity:0.4}}
@@ -1105,6 +1113,15 @@ Copy
       <div class="dl-box">
         <div class="dl-num" style="font-size:1.05rem;color:#f87171;">米封鎖 法的期限</div>
         <div class="dl-sub">Operation Epic Fury</div>
+        <div class="annot-wrap">
+          <div class="annot-trigger" onclick="this.nextElementSibling.classList.toggle('open')">
+            <span class="dot"></span>クリックで解説
+          </div>
+          <div class="annot-popup">
+            <strong style="color:#f87171;">Operation Epic Fury とは？</strong><br>
+            トランプ大統領が2026年4月13日に発動した米海軍によるイラン港湾封鎖作戦のコードネーム。イランの核・弾道ミサイル開発を交渉で解決するための経済的圧力措置として発動。当初の法的期限は5月1日 23:00 JST（米国ET: 10:00 AM ET）に設定されていたが、交渉膠着により延長継続中。CENTCOMは4/28時点で39隻を迂回・拿捕。
+          </div>
+        </div>
       </div>
       <div class="dl-arrow">→</div>
       <div class="dl-box">

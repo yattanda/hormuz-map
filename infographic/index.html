@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ホルムズ海峡危機を、地政学・エネルギー・軍事・海上交通・主要プレイヤーの視点から5枚の"図解"で整理します。" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://yattanda.github.io/hormuz-map/infographic/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ホルムズ海峡危機を5枚の"図解"で俯瞰する" />
+  <meta property="og:description" content="地政学・エネルギー・軍事・海上交通・主要プレイヤーの視点から、ホルムズ海峡危機を5枚の"図解"で整理。" />
+  <meta property="og:url" content="https://yattanda.github.io/hormuz-map/infographic/" />
+  <meta property="og:image" content="https://yattanda.github.io/hormuz-map/infographic/ogp-hormuz-infographic.jpg" />
+  <meta property="og:site_name" content="ホルムズ海峡危機マップ" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ホルムズ海峡危機を5枚の"図解"で俯瞰する" />
+  <meta name="twitter:description" content="地政学・エネルギー・軍事・海上交通・主要プレイヤーの視点から、ホルムズ海峡危機を5枚の"図解"で整理。" />
+  <meta name="twitter:image" content="https://yattanda.github.io/hormuz-map/infographic/ogp-hormuz-infographic.jpg" />
+  <title>ホルムズ海峡危機を5枚の"図解"で俯瞰する</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --paper:#f8fafc;
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:#cbd5e1;
+      --red:#b91c1c;
+      --deepred:#7f1d1d;
+      --blue:#1d4ed8;
+      --green:#047857;
+      --orange:#c2410c;
+      --purple:#6d28d9;
+      --gold:#b45309;
+      --teal:#0f766e;
+      --gray:#334155;
+      --soft-red:#fee2e2;
+      --soft-blue:#dbeafe;
+      --soft-green:#dcfce7;
+      --soft-orange:#ffedd5;
+      --soft-purple:#ede9fe;
+      --soft-gold:#fef3c7;
+      --soft-teal:#ccfbf1;
+      --soft-gray:#e2e8f0;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","YuGothic","Meiryo",sans-serif; }
+    body{ line-height:1.55; letter-spacing:.01em; }
+    .toolbar{ position:sticky; top:0; z-index:10; background:rgba(11,16,32,.92); color:white; padding:10px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; backdrop-filter: blur(8px); }
+    .toolbar small{ color:#cbd5e1; }
+    .toolbar button{ border:1px solid #64748b; background:#111827; color:#fff; padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:700; }
+    .toolbar button:hover{ background:#1f2937; }
+    .deck{ width:min(1400px,95vw); margin:22px auto 56px; display:flex; flex-direction:column; gap:24px; }
+    .quick-summary{ background:linear-gradient(135deg,#0f172a,#1e3a8a); color:#fff; border-radius:24px; padding:26px 30px; box-shadow:0 18px 48px rgba(0,0,0,.28); border:1px solid rgba(226,232,240,.18); }
+    .quick-summary h1{ color:#fff; font-size:34px; margin:0 0 8px; }
+    .quick-summary p{ color:#e2e8f0; font-size:17px; line-height:1.7; }
+    #summary{ scroll-margin-top:84px; }
+    .quick-points{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:18px; }
+    .quick-point{ background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18); border-radius:16px; padding:13px 14px; }
+    .quick-point b{ display:block; color:#fff; font-size:15px; margin-bottom:4px; }
+    .quick-point span{ color:#dbeafe; font-size:13px; }
+    .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; align-items:center; }
+    .cta-row a{ color:#0f172a; background:#fff; text-decoration:none; border-radius:999px; padding:8px 13px; font-size:13px; font-weight:900; }
+    .cta-row small{ color:#cbd5e1; }
+    .slide{ background:var(--paper); min-height:780px; border-radius:24px; padding:32px; box-shadow:0 18px 48px rgba(0,0,0,.28); position:relative; overflow:hidden; }
+    .slide::before{ content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 85% 10%, rgba(29,78,216,.12), transparent 26%), radial-gradient(circle at 10% 90%, rgba(185,28,28,.10), transparent 26%); }
+    .slide > *{ position:relative; }
+    .kicker{ font-size:13px; letter-spacing:.10em; font-weight:900; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+    h1{ font-size:36px; line-height:1.12; margin:0 0 6px; letter-spacing:.01em; }
+    h2{ font-size:20px; margin:0; color:var(--muted); font-weight:700; }
+    h3{ font-size:18px; margin:0 0 8px; }
+    p{ margin:0; }
+    .lead{ font-size:20px; font-weight:800; line-height:1.45; background:white; border:1px solid var(--line); border-radius:18px; padding:14px 18px; margin-top:18px; box-shadow:0 4px 12px rgba(15,23,42,.05); }
+    .note{ font-size:12.5px; color:var(--muted); margin-top:12px; }
+    .grid{ display:grid; gap:14px; }
+    .g2{ grid-template-columns:repeat(2,1fr); }
+    .g3{ grid-template-columns:repeat(3,1fr); }
+    .g4{ grid-template-columns:repeat(4,1fr); }
+    .g5{ grid-template-columns:repeat(5,1fr); }
+    .section{ margin-top:16px; }
+    .card{ background:white; border:1px solid var(--line); border-radius:18px; padding:14px 15px; box-shadow:0 5px 14px rgba(15,23,42,.04); }
+    .card ul{ margin:8px 0 0; padding-left:1.1em; }
+    .card li{ margin:.18em 0; }
+    .tag{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:800; border-radius:999px; padding:4px 10px; margin-bottom:8px; }
+    .tag.red{ color:var(--red); background:var(--soft-red); }
+    .tag.deepred{ color:var(--deepred); background:var(--soft-red); }
+    .tag.blue{ color:var(--blue); background:var(--soft-blue); }
+    .tag.green{ color:var(--green); background:var(--soft-green); }
+    .tag.orange{ color:var(--orange); background:var(--soft-orange); }
+    .tag.purple{ color:var(--purple); background:var(--soft-purple); }
+    .tag.gold{ color:var(--gold); background:var(--soft-gold); }
+    .tag.teal{ color:var(--teal); background:var(--soft-teal); }
+    .tag.gray{ color:var(--gray); background:var(--soft-gray); }
+    .mini{ font-size:14px; color:var(--muted); }
+    .bigword{ font-size:30px; font-weight:900; letter-spacing:.02em; }
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip{ font-size:13px; border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 10px; font-weight:700; }
+    .flow{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; justify-content:center; background:#fff; border:1px solid var(--line); border-radius:22px; padding:16px; margin-top:18px; }
+    .flow span{ font-weight:800; background:#f1f5f9; padding:10px 12px; border-radius:14px; }
+    .arrow{ color:var(--muted); font-weight:900; }
+    .footer{ position:absolute; left:32px; right:32px; bottom:18px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:11.5px; color:#64748b; border-top:1px solid #e2e8f0; padding-top:9px; }
+    .page-no{ font-weight:900; color:#334155; }
+    .mapbox{ margin-top:18px; display:grid; grid-template-columns:1.05fr .9fr 1.05fr; gap:12px; align-items:stretch; }
+    .sea{ background:linear-gradient(135deg,#dbeafe,#ccfbf1); border:2px solid #93c5fd; border-radius:26px; min-height:365px; padding:18px; position:relative; overflow:hidden; }
+    .sea .strait{ position:absolute; left:50%; top:42%; transform:translate(-50%,-50%); background:#0f172a; color:#fff; border-radius:999px; padding:10px 16px; font-weight:900; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+    .sea .route{ position:absolute; left:9%; right:9%; top:55%; border-top:7px solid rgba(29,78,216,.45); border-radius:50%; transform:rotate(-8deg); }
+    .sea .label{ position:absolute; font-weight:900; color:#0f172a; background:rgba(255,255,255,.78); border:1px solid rgba(148,163,184,.55); border-radius:14px; padding:7px 10px; }
+    .label.iran{ top:38px; right:28px; }
+    .label.oman{ bottom:72px; right:42px; }
+    .label.gulf{ top:140px; left:28px; }
+    .label.ocean{ bottom:28px; left:38px; }
+    .column-cards{ display:flex; flex-direction:column; gap:10px; }
+    .impact-table{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:16px; }
+    .impact-col{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:14px; }
+    .impact-col h3{ display:flex; align-items:center; justify-content:space-between; }
+    .country-list{ display:grid; grid-template-columns:1fr; gap:8px; margin-top:10px; }
+    .country{ border:1px solid #e2e8f0; border-radius:12px; padding:8px 9px; background:#f8fafc; }
+    .country b{ display:block; font-size:15px; }
+    .military-map{ display:grid; grid-template-columns:1fr 1.35fr 1fr; gap:14px; margin-top:18px; }
+    .watermap{ min-height:470px; background:linear-gradient(150deg,#dbeafe,#e0f2fe 45%,#dcfce7); border:2px solid #bfdbfe; border-radius:26px; position:relative; padding:18px; overflow:hidden; }
+    .watermap .route1{ position:absolute; top:130px; left:70px; width:70%; border-top:8px solid rgba(29,78,216,.46); transform:rotate(-9deg); border-radius:50%; }
+    .watermap .route2{ position:absolute; bottom:130px; left:42px; width:64%; border-top:8px solid rgba(194,65,12,.42); transform:rotate(14deg); border-radius:50%; }
+    .pin{ position:absolute; font-weight:900; font-size:13px; padding:7px 9px; border-radius:12px; background:rgba(255,255,255,.86); border:1px solid rgba(148,163,184,.7); box-shadow:0 4px 14px rgba(15,23,42,.08); }
+    .pin.hormuz{ top:102px; right:56px; background:#0f172a; color:white; }
+    .pin.bab{ bottom:118px; left:112px; background:#7c2d12; color:white; }
+    .pin.suez{ bottom:44px; left:36px; }
+    .pin.bahrain{ top:140px; left:80px; }
+    .pin.qatar{ top:178px; left:122px; }
+    .pin.kuwait{ top:74px; left:70px; }
+    .pin.iran{ top:54px; right:88px; }
+    .pin.oman{ top:178px; right:36px; }
+    .pin.yemen{ bottom:74px; left:190px; }
+    .carrier-list .card{ border-left:7px solid var(--blue); }
+    .people-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:11px; margin-top:18px; }
+    .person{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:10px; min-height:128px; }
+    .person h3{ font-size:15px; margin-bottom:5px; }
+    .person p{ font-size:12px; margin:1px 0; }
+    .person b{ color:#0f172a; }
+    .small-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:9px; margin-top:12px; }
+    .small-card{ background:#f8fafc; border:1px solid #e2e8f0; border-radius:13px; padding:8px 9px; min-height:84px; }
+    .small-card h3{ font-size:13px; margin-bottom:4px; }
+    .small-card p{ font-size:11.5px; color:#334155; }
+    .summary-box{ background:#0f172a; color:#fff; border-radius:18px; padding:14px 16px; margin-top:14px; }
+    .summary-box h3{ color:#fff; }
+    .summary-box ul{ margin:6px 0 0; padding-left:1.2em; columns:2; }
+    .summary-box li{ break-inside:avoid; margin:2px 0; }
+    [contenteditable="true"]:focus{ outline:3px solid rgba(59,130,246,.38); outline-offset:4px; border-radius:6px; }
+    .editable-hint{ color:#cbd5e1; font-weight:700; }
+
+    /* Web掲載用の最終調整 */
+    html{ scroll-behavior:smooth; }
+    .toolbar{ flex-wrap:wrap; }
+    .web-nav{ width:100%; display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .web-nav a{ color:#e2e8f0; text-decoration:none; border:1px solid #475569; background:rgba(15,23,42,.8); padding:7px 10px; border-radius:999px; font-size:12px; font-weight:800; }
+    .web-nav a:hover{ background:#1e293b; }
+    .slide{ scroll-margin-top:112px; }
+    .slide-header{ max-width:980px; }
+    .slide::after{ content:attr(data-section); position:absolute; top:28px; right:32px; font-weight:900; font-size:13px; color:#94a3b8; letter-spacing:.08em; }
+    .card,.person,.small-card,.country{ overflow-wrap:anywhere; }
+    @media (max-width:900px){
+      .toolbar{ position:relative; align-items:flex-start; padding:12px 14px; }
+      .toolbar > div:first-child{ width:100%; }
+      .toolbar button{ width:100%; margin-top:4px; }
+      .web-nav{ overflow-x:visible; flex-wrap:wrap; gap:5px; padding-bottom:0; margin-left:-1em; width:calc(100% + 1em); }
+      .web-nav a{ white-space:nowrap; flex:0 0 auto; padding:6px 8px; font-size:11.5px; }
+      .deck{ width:min(100% - 24px, 760px); margin:14px auto 36px; gap:18px; }
+      .quick-summary{ border-radius:20px; padding:22px 18px; }
+      .quick-summary h1{ font-size:26px; }
+      .quick-summary p{ font-size:15.5px; }
+      .quick-points{ grid-template-columns:1fr; gap:8px; }
+      .cta-row a{ width:100%; text-align:center; }
+      .slide{ min-height:auto; border-radius:18px; padding:24px 18px 20px; }
+      .slide::after{ top:18px; right:18px; font-size:11px; }
+      .kicker{ font-size:11px; padding-right:48px; }
+      h1{ font-size:clamp(26px, 7vw, 34px); line-height:1.15; }
+      h2{ font-size:clamp(16px, 4vw, 20px); line-height:1.35; }
+      h3{ font-size:16px; }
+      .lead{ font-size:16px; padding:13px 14px; border-radius:16px; }
+      .g2,.g3,.g4,.g5,.mapbox,.impact-table,.military-map,.people-grid,.small-grid{ grid-template-columns:1fr !important; }
+      .people-grid,.small-grid{ gap:8px; }
+      .card{ padding:13px 14px; }
+      .person{ min-height:auto; padding:11px 12px; }
+      .person h3{ font-size:15.5px; }
+      .person p{ font-size:12.5px; }
+      .small-card{ min-height:auto; padding:10px 11px; }
+      .small-card h3{ font-size:14px; }
+      .small-card p{ font-size:12.5px; }
+      .country{ font-size:13px; }
+      .country b{ font-size:14px; }
+      .sea{ min-height:300px; }
+      .watermap{ min-height:430px; }
+      .flow{ justify-content:flex-start; align-items:stretch; flex-direction:column; padding:12px; }
+      .flow .arrow{ text-align:center; transform:rotate(90deg); }
+      .summary-box ul{ columns:1; }
+      .footer{ position:relative; left:auto; right:auto; bottom:auto; flex-direction:column; align-items:flex-start; margin-top:20px; font-size:11.5px; }
+    }
+    @media (max-width:560px){
+      .deck{ width:100%; margin:0 auto 28px; gap:12px; }
+      .slide{ border-radius:0; padding:22px 14px 18px; box-shadow:none; border-bottom:1px solid #cbd5e1; }
+      .toolbar{ border-bottom:1px solid #334155; padding-left:8px; padding-right:8px; }
+      .web-nav{ margin-left:-0.9em; width:calc(100% + 0.9em); gap:4px; }
+      .web-nav a{ padding:5px 7px; font-size:11px; }
+      .toolbar b{ font-size:14px; }
+      .toolbar small{ font-size:11px; }
+      h1{ font-size:28px; }
+      h2{ font-size:16px; }
+      .lead{ font-size:15.5px; }
+      .tag{ font-size:11.5px; padding:3px 8px; }
+      .chip{ font-size:12px; padding:5px 9px; }
+      .sea{ min-height:260px; }
+      .sea .strait{ font-size:13px; padding:8px 12px; }
+      .sea .label{ font-size:12px; padding:5px 8px; }
+      .watermap{ min-height:380px; }
+      .pin{ font-size:11px; padding:5px 7px; }
+      .pin.kuwait{ top:56px; left:24px; }
+      .pin.bahrain{ top:118px; left:34px; }
+      .pin.qatar{ top:162px; left:64px; }
+      .pin.iran{ top:44px; right:48px; }
+      .pin.hormuz{ top:94px; right:24px; }
+      .pin.oman{ top:168px; right:20px; }
+      .pin.yemen{ bottom:68px; left:128px; }
+      .pin.bab{ bottom:112px; left:56px; }
+      .pin.suez{ bottom:34px; left:18px; }
+      .watermap .route1{ left:34px; width:76%; }
+      .watermap .route2{ left:20px; width:72%; }
+      .summary-box{ padding:12px 13px; }
+    }
+
+    @media (max-width:1100px){
+      .g4,.g5,.people-grid,.small-grid{ grid-template-columns:repeat(2,1fr); }
+      .mapbox,.impact-table,.military-map{ grid-template-columns:1fr; }
+      .footer{ position:relative; left:auto; right:auto; bottom:auto; margin-top:28px; }
+      .slide{ min-height:auto; }
+    }
+    @media print{
+      body{ background:white; }
+      .toolbar{ display:none; }
+
+      .web-nav{ display:none; }
+      .slide::after{ display:none; }
+
+      .deck{ width:100%; margin:0; gap:0; }
+      .slide{ width:100%; min-height:100vh; box-shadow:none; border-radius:0; page-break-after:always; }
+      .footer{ position:absolute; }
+    }
+  </style>
+  <!-- GitHub Pages deploy note:
+       推奨配置：/infographic/index.html
+       SNSカードを安定させる場合、公開後に og:url と og:image を絶対URLへ差し替えてください。
+       例：
+       og:url   = https://USERNAME.github.io/REPOSITORY/infographic/
+       og:image = https://USERNAME.github.io/REPOSITORY/infographic/ogp-hormuz-infographic.jpg
+  -->
+</head>
+<body>
+  <div class="toolbar">
+    <div>
+      <b>ホルムズ海峡危機 俯瞰インフォグラフィック</b><br>
+      <small class="editable-hint">Web掲載・スマホ閲覧向け。本文はブラウザ上で直接編集できます。</small>
+      <nav class="web-nav" aria-label="ページ内ナビ">
+        <a href="#summary">30秒要約</a>
+        <a href="#overview">全体像</a>
+        <a href="#impact">経済影響</a>
+        <a href="#military">軍事・航路</a>
+        <a href="#players-core">主要①</a>
+        <a href="#players-other">主要②</a>
+      </nav>
+    </div>
+    <button onclick="window.print()">PDF保存</button>
+  </div>
+
+  <main class="deck" contenteditable="false">
+    <section id="summary" class="quick-summary" contenteditable="true">
+      <div class="kicker" style="color:#bfdbfe;">30秒でわかる要約</div>
+      <h1>ホルムズ海峡危機は、エネルギーと海運のチョークポイント危機</h1>
+      <p>米国は空母展開と海上封鎖で圧力をかけ、イランはホルムズ海峡を交渉カードにしている。湾岸諸国は戦火拡大を避けたい一方、日本・韓国・台湾・インド・中国などのアジア需要国は、原油・LNG・物流コストの上昇を強く警戒している。</p>
+      <div class="quick-points">
+        <div class="quick-point"><b>対立の軸</b><span>米国の軍事圧力 vs イランの海峡カード</span></div>
+        <div class="quick-point"><b>経済の軸</b><span>原油・LNG・保険料・物流費に波及</span></div>
+        <div class="quick-point"><b>軍事の軸</b><span>空母3隻、湾岸基地、紅海リスク</span></div>
+        <div class="quick-point"><b>日本への意味</b><span>電気代・燃料代・物価に跳ね返る可能性</span></div>
+      </div>
+      <div class="cta-row">
+        <a href="#overview">図解を見る</a>
+        <a href="#impact">経済影響を見る</a>
+        <a href="#military">軍事・航路を見る</a>
+        <small>導線用投稿から来た読者向けの入口ブロックです。</small>
+      </div>
+    </section>
+    <section id="overview" class="slide" data-section="01" contenteditable="true">
+      <div class="kicker">PAGE 1 / OVERVIEW</div>
+      <h1>ホルムズ海峡危機の全体像</h1>
+      <h2>圧力・海峡カード・航行再開</h2>
+      <div class="lead">エネルギー、海運、軍事、外交が重なる。<br>ホルムズが止まれば、世界経済にも波及する。</div>
+
+      <div class="mapbox">
+        <div class="column-cards">
+          <div class="card"><span class="tag red">軍事圧力</span><h3>米国・イスラエル側</h3><ul><li>米国：海上封鎖と空母展開で圧力</li><li>トランプ大統領：交渉主導権を握る構え</li><li>ヘグセス国防長官：軍事態勢を強調</li><li>イスラエル：対イラン強硬路線を維持</li></ul></div>
+          <div class="card"><span class="tag green">仲介・調整</span><h3>仲介役</h3><ul><li>オマーン：対話の窓口</li><li>パキスタン：米国・イラン間の仲介</li><li>トルコ：NATO加盟国だが独自外交</li><li>マレーシア：物流・物価を警戒</li></ul></div>
+        </div>
+        <div class="sea">
+          <div class="route"></div>
+          <div class="strait">ホルムズ海峡</div>
+          <div class="label iran">イラン<br>IRGC</div>
+          <div class="label oman">オマーン</div>
+          <div class="label gulf">ペルシャ湾</div>
+          <div class="label ocean">オマーン湾</div>
+        </div>
+        <div class="column-cards">
+          <div class="card"><span class="tag deepred">海峡カード</span><h3>イラン側</h3><ul><li>イラン：通航制限を対米交渉の材料に</li><li>革命防衛隊：海峡支配力を誇示</li><li>首脳部：主権・安全保障・核計画を一体で主張</li></ul></div>
+          <div class="card"><span class="tag blue">航行再開</span><h3>湾岸・アジア需要国</h3><ul><li>サウジ・UAE・カタール・クウェート・バーレーン：戦火拡大を回避</li><li>日本・中国・インド・韓国・台湾：エネルギー安定が死活的</li></ul></div>
+        </div>
+      </div>
+
+      <div class="chips"><span class="chip">米国＝軍事圧力</span><span class="chip">イラン＝海峡カード</span><span class="chip">湾岸諸国＝被害回避</span><span class="chip">アジア＝エネルギー安定</span><span class="chip">紅海＝第二リスク</span></div>
+
+      <div class="section grid g3">
+        <div class="card"><span class="tag orange">波及</span><h3>イラク・レバノン</h3><p>米国・イラン、イスラエル・ヒズボラの間で巻き込まれを警戒。</p></div>
+        <div class="card"><span class="tag teal">海運結節点</span><h3>シンガポール・エジプト</h3><p>海運、金融、補給、スエズ運河への波及を警戒。</p></div>
+        <div class="card"><span class="tag orange">第二リスク</span><h3>イエメン／フーシ派</h3><p>紅海・バブ・エル・マンデブ側の不安定化要因。</p></div>
+      </div>
+
+      <div class="footer"><span>出典：IEA、Reuters、各国政府発表等。2026-05-01 JST確認。</span><span class="page-no">1 / 5</span></div>
+    </section>
+
+    <section id="impact" class="slide" data-section="02" contenteditable="true">
+      <div class="kicker">PAGE 2 / ENERGY & ECONOMY</div>
+      <h1>止まると誰が困るのか</h1>
+      <h2>原油・LNG・海運への波及</h2>
+      <div class="lead">海峡が詰まると、エネルギー価格、物流コスト、保険料が連鎖的に上がる。</div>
+
+      <div class="impact-table">
+        <div class="impact-col">
+          <span class="tag gold">供給側</span>
+          <h3>原油輸出が詰まる国</h3>
+          <div class="country-list">
+            <div class="country"><b>サウジアラビア</b>原油輸出の大動脈が制約される</div>
+            <div class="country"><b>UAE</b>一部代替ルートはあるが完全代替は困難</div>
+            <div class="country"><b>クウェート</b>輸出制約が国内財政に直撃</div>
+            <div class="country"><b>イラク</b>南部輸出がホルムズ依存</div>
+            <div class="country"><b>イラン</b>封鎖と海峡カードで自国も苦しくなる</div>
+            <div class="country"><b>バーレーン</b>米軍拠点と湾岸安定の象徴</div>
+          </div>
+        </div>
+        <div class="impact-col">
+          <span class="tag purple">LNG</span>
+          <h3>LNG供給が揺れる国</h3>
+          <div class="country-list">
+            <div class="country"><b>カタール</b>LNG供給の要。海峡閉塞は世界のガス市場に直撃</div>
+            <div class="country"><b>UAE</b>LNG・原油とも輸出ルートの安全が課題</div>
+          </div>
+          <div class="section">
+            <span class="tag blue">需要側</span>
+            <h3>アジア需要国が苦しくなる</h3>
+            <div class="country-list">
+              <div class="country"><b>日本</b>原油・LNG・電力価格への影響が大きい</div>
+              <div class="country"><b>中国</b>調達分散しても市場高騰は避けにくい</div>
+              <div class="country"><b>インド</b>輸入コスト上昇が物価に響く</div>
+              <div class="country"><b>韓国</b>産業用エネルギーとLNG調達に影響</div>
+              <div class="country"><b>台湾</b>LNG依存と安全保障リスクが重なる</div>
+            </div>
+          </div>
+        </div>
+        <div class="impact-col">
+          <span class="tag teal">物流・金融</span>
+          <h3>海運・保険・中継地</h3>
+          <div class="country-list">
+            <div class="country"><b>シンガポール</b>海運、金融、補給、保険の結節点</div>
+            <div class="country"><b>エジプト</b>紅海・スエズ運河ルートへの波及を警戒</div>
+            <div class="country"><b>マレーシア</b>物流混乱と輸入物価上昇を警戒</div>
+            <div class="country"><b>パキスタン</b>燃料負担と通貨・財政不安が重なる</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow">
+        <span>海峡閉塞</span><b class="arrow">→</b><span>輸送量低下</span><b class="arrow">→</b><span>原油・LNG価格上昇</span><b class="arrow">→</b><span>海上保険料上昇</span><b class="arrow">→</b><span>物流コスト上昇</span><b class="arrow">→</b><span>家計・企業・通貨に波及</span>
+      </div>
+      <p class="note">最大の被害者は、戦場から遠いアジア需要国。電気代・燃料代・物価にも波及しうる。</p>
+      <div class="footer"><span>出典：IEA。2025年のホルムズ通過量、LNG比率、代替ルート制約を参照。</span><span class="page-no">2 / 5</span></div>
+    </section>
+
+    <section id="military" class="slide" data-section="03" contenteditable="true">
+      <div class="kicker">PAGE 3 / MILITARY & SEA LANES</div>
+      <h1>軍事・海上交通の構図</h1>
+      <h2>空母3隻・湾岸基地・紅海リスク</h2>
+      <div class="lead">危機はホルムズ海峡だけではない。紅海・スエズまで含めて見る必要がある。</div>
+
+      <div class="military-map">
+        <div class="column-cards carrier-list">
+          <div class="card"><span class="tag blue">米空母3隻</span><h3>圧力の象徴</h3><ul><li>USS George H.W. Bush</li><li>USS Abraham Lincoln</li><li>USS Gerald R. Ford</li></ul><p class="mini">※配置は短期間で変わる可能性あり。</p></div>
+          <div class="card"><span class="tag gray">米軍拠点</span><h3>湾岸の支点</h3><ul><li>バーレーン：米第5艦隊</li><li>カタール：アル・ウデイド基地</li><li>クウェート：湾岸作戦の支点</li></ul></div>
+        </div>
+        <div class="watermap">
+          <div class="route1"></div><div class="route2"></div>
+          <div class="pin kuwait">クウェート</div>
+          <div class="pin bahrain">バーレーン<br>第5艦隊</div>
+          <div class="pin qatar">カタール<br>アル・ウデイド</div>
+          <div class="pin iran">イラン</div>
+          <div class="pin hormuz">ホルムズ海峡</div>
+          <div class="pin oman">オマーン</div>
+          <div class="pin yemen">イエメン<br>フーシ派</div>
+          <div class="pin bab">バブ・エル・マンデブ</div>
+          <div class="pin suez">エジプト<br>スエズ</div>
+        </div>
+        <div class="column-cards">
+          <div class="card"><span class="tag deepred">第1のチョークポイント</span><h3>ホルムズ海峡</h3><ul><li>ペルシャ湾から外洋へ出る最重要ルート</li><li>イランとオマーンの間に位置</li><li>原油・LNG輸送の核心</li></ul></div>
+          <div class="card"><span class="tag orange">第2のチョークポイント</span><h3>バブ・エル・マンデブ海峡</h3><ul><li>紅海とアデン湾をつなぐ要衝</li><li>フーシ派リスクと連動</li><li>スエズ運河への入口</li></ul></div>
+        </div>
+      </div>
+
+      <div class="summary-box">
+        <h3>危機は二正面化する</h3>
+        <p><b>東側：</b>ホルムズ海峡　　<b>西側：</b>紅海・バブ・エル・マンデブ・スエズ運河</p>
+        <p>どちらか一方でも詰まると、世界の海運コストが跳ね上がる。</p>
+      </div>
+      <div class="footer"><span>出典：CENTCOM関連報道、米海軍中央軍・第5艦隊情報、Reuters等。2026-05-01 JST確認。</span><span class="page-no">3 / 5</span></div>
+    </section>
+
+    <section id="players-core" class="slide" data-section="04" contenteditable="true">
+      <div class="kicker">PAGE 4 / CORE PLAYERS</div>
+      <h1>主要プレイヤー①</h1>
+      <h2>中核プレイヤー</h2>
+      <div class="lead">危機を直接動かすプレイヤーを整理する。</div>
+
+      <div class="people-grid">
+        <div class="person"><h3>イラン／IRGC</h3><p><b>代表：</b>首脳部、革命防衛隊</p><p><b>対米：</b>敵対</p><p><b>態度：</b>海峡を交渉カード化</p><p><b>要旨：</b>海峡管理は主権問題</p></div>
+        <div class="person"><h3>米国</h3><p><b>代表：</b>トランプ大統領</p><p><b>対イラン：</b>敵対</p><p><b>態度：</b>封鎖と空母展開</p><p><b>要旨：</b>譲歩を迫る</p></div>
+        <div class="person"><h3>米国防総省</h3><p><b>代表：</b>ヘグセス国防長官</p><p><b>役割：</b>軍事態勢の説明</p><p><b>態度：</b>即応態勢を強調</p><p><b>要旨：</b>強制力を残す</p></div>
+        <div class="person"><h3>イスラエル</h3><p><b>代表：</b>ネタニヤフ首相</p><p><b>対米：</b>最重要同盟</p><p><b>対イラン：</b>宿敵</p><p><b>態度：</b>強硬路線を維持</p></div>
+        <div class="person"><h3>パキスタン</h3><p><b>代表：</b>シャリフ首相</p><p><b>対米：</b>関係維持</p><p><b>対イラン：</b>隣国</p><p><b>態度：</b>仲介役</p></div>
+        <div class="person"><h3>サウジアラビア</h3><p><b>代表：</b>MBS皇太子兼首相</p><p><b>対米：</b>重要パートナー</p><p><b>対イラン：</b>競合・対話</p><p><b>態度：</b>湾岸安定を重視</p></div>
+        <div class="person"><h3>UAE</h3><p><b>代表：</b>MBZ大統領</p><p><b>補足：</b>ムハンマド首相</p><p><b>対米：</b>安全保障パートナー</p><p><b>態度：</b>被害回避と代替輸出</p></div>
+        <div class="person"><h3>オマーン</h3><p><b>代表：</b>ハイサム国王</p><p><b>対米：</b>関係維持</p><p><b>対イラン：</b>対話可能</p><p><b>態度：</b>仲介・接触窓口</p></div>
+        <div class="person"><h3>イラク</h3><p><b>代表：</b>スーダーニ首相</p><p><b>補足：</b>政権移行要素あり</p><p><b>態度：</b>米国とイランの間で板挟み</p></div>
+        <div class="person"><h3>英国</h3><p><b>代表：</b>スターマー首相</p><p><b>対米：</b>最重要同盟</p><p><b>態度：</b>航行再開枠組みを主導</p><p><b>要旨：</b>国際水路の自由</p></div>
+      </div>
+
+      <div class="summary-box">
+        <h3>このページの読み方</h3>
+        <ul><li>米国・イラン：危機の主軸</li><li>イスラエル：対イラン強硬軸</li><li>サウジ・UAE：湾岸安定と被害回避</li><li>オマーン・パキスタン：仲介ルート</li><li>イラク：板挟みの典型</li><li>英国：航行再開の国際枠組みを重視</li></ul>
+      </div>
+      <div class="footer"><span>出典：Reuters、首相官邸、外務省、各国政府発表等。発言は図解用の要旨。</span><span class="page-no">4 / 5</span></div>
+    </section>
+
+    <section id="players-other" class="slide" data-section="05" contenteditable="true">
+      <div class="kicker">PAGE 5 / OTHER PLAYERS</div>
+      <h1>主要プレイヤー②</h1>
+      <h2>周辺プレイヤー</h2>
+      <div class="lead">需要国、地域大国、連動リスク側のプレイヤーを整理する。</div>
+
+      <div class="people-grid">
+        <div class="person"><h3>フランス</h3><p><b>代表：</b>マクロン大統領</p><p><b>補足：</b>ルコルニュ首相</p><p><b>態度：</b>欧州主導と自由航行</p></div>
+        <div class="person"><h3>インド</h3><p><b>代表：</b>モディ首相</p><p><b>対米：</b>戦略的接近</p><p><b>対イラン：</b>実利関係</p><p><b>態度：</b>自由航行と輸入コストを警戒</p></div>
+        <div class="person"><h3>中国</h3><p><b>代表：</b>習近平主席</p><p><b>対米：</b>競合</p><p><b>対イラン：</b>関係維持</p><p><b>態度：</b>安定通航と対米牽制</p></div>
+        <div class="person"><h3>ロシア</h3><p><b>代表：</b>プーチン大統領</p><p><b>対米：</b>敵対的</p><p><b>対イラン：</b>接近</p><p><b>態度：</b>米国批判と外交解決</p></div>
+        <div class="person"><h3>日本</h3><p><b>代表：</b>高市早苗首相</p><p><b>対米：</b>同盟国</p><p><b>対イラン：</b>外交関係維持</p><p><b>態度：</b>邦船・エネルギー安定を重視</p></div>
+        <div class="person"><h3>マレーシア</h3><p><b>代表：</b>アンワル首相</p><p><b>対米：</b>実利関係</p><p><b>対イラン：</b>対話可能</p><p><b>態度：</b>物流・物価を警戒</p></div>
+      </div>
+
+      <div class="small-grid">
+        <div class="small-card"><h3>カタール</h3><p>LNG・米軍基地・仲介外交。</p></div>
+        <div class="small-card"><h3>クウェート</h3><p>原油輸出国。閉塞の直撃を受ける。</p></div>
+        <div class="small-card"><h3>バーレーン</h3><p>米第5艦隊の拠点。小国だが軍事地図では大きい。</p></div>
+        <div class="small-card"><h3>韓国</h3><p>大口需要国。価格上昇に弱い。</p></div>
+        <div class="small-card"><h3>台湾</h3><p>LNG依存が高い。</p></div>
+        <div class="small-card"><h3>シンガポール</h3><p>海運・金融・補給の結節点。</p></div>
+        <div class="small-card"><h3>エジプト</h3><p>スエズ運河・紅海ルートの要所。</p></div>
+        <div class="small-card"><h3>トルコ</h3><p>地域大国。独自外交の余地。</p></div>
+        <div class="small-card"><h3>レバノン</h3><p>国家は巻き込まれ回避を志向。</p></div>
+        <div class="small-card"><h3>イエメン／フーシ派</h3><p>紅海側の連動リスク。</p></div>
+      </div>
+
+      <div class="summary-box">
+        <h3>各国の本音は違う</h3>
+        <ul><li>米国：イランに譲歩を迫りたい</li><li>イラン：海峡を交渉材料にしたい</li><li>湾岸諸国：戦火と経済被害を避けたい</li><li>アジア諸国：エネルギーを止めたくない</li><li>欧州：国際水路の秩序を守りたい</li><li>中国・ロシア：米国主導を牽制したい</li><li>レバノン・イエメン：別戦線として波及する</li></ul>
+      </div>
+      <div class="footer"><span>出典：Reuters、首相官邸、外務省、各国政府発表等。発言は図解用の要旨。</span><span class="page-no">5 / 5</span></div>
+    </section>
+  </main>
+</body>
+</html>

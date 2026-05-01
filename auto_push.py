@@ -119,6 +119,74 @@ def check_file_safety(local_path: Path) -> tuple[bool, str]:
     return True, ""
 
 
+def validate_news_data_json(local_path: Path) -> tuple[bool, str]:
+    """
+    news_data.json のフィールド構造を検証。
+    latest / osint / archive(batchLabel+items) の必須フィールドをチェックし、
+    いずれか欠けていたら push を中断する。
+    """
+    import json
+
+    LATEST_REQUIRED  = {"title", "body", "sourceLabel", "date", "label", "url"}
+    OSINT_REQUIRED   = {"titleJa", "titleEn", "country", "media",
+                        "cardBg", "cardBorder", "badgeColor", "borderColor", "textColor",
+                        "url", "date"}
+    ARCHIVE_REQUIRED = {"batchLabel", "items"}
+
+    try:
+        data = json.loads(local_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"JSON パースエラー: {e}"
+
+    # ── latest ──────────────────────────────────────────────────
+    latest = data.get("latest", [])
+    if not latest:
+        return False, "latest が空です。"
+    for i, item in enumerate(latest):
+        missing = LATEST_REQUIRED - item.keys()
+        if missing:
+            return False, (
+                f"latest[{i}] (id={item.get('id','?')}) に必須フィールドが欠けています: "
+                + ", ".join(sorted(missing))
+            )
+        # 旧フィールド名が残っていないか確認
+        for old_field in ("headline", "summary", "source", "date_local", "date_jst", "tags"):
+            if old_field in item:
+                return False, (
+                    f"latest[{i}] に旧フィールド '{old_field}' が残っています。"
+                    " 新構造（title/body/sourceLabel）に変換してください。"
+                )
+
+    # ── osint ───────────────────────────────────────────────────
+    osint = data.get("osint", [])
+    for i, item in enumerate(osint):
+        missing = OSINT_REQUIRED - item.keys()
+        if missing:
+            return False, (
+                f"osint[{i}] (media={item.get('media','?')}) に必須フィールドが欠けています: "
+                + ", ".join(sorted(missing))
+            )
+
+    # ── archive ─────────────────────────────────────────────────
+    archive = data.get("archive", [])
+    for bi, batch in enumerate(archive):
+        missing_batch = ARCHIVE_REQUIRED - batch.keys()
+        if missing_batch:
+            return False, (
+                f"archive[{bi}] に必須フィールドが欠けています: "
+                + ", ".join(sorted(missing_batch))
+            )
+        for ii, item in enumerate(batch.get("items", [])):
+            missing = LATEST_REQUIRED - item.keys()
+            if missing:
+                return False, (
+                    f"archive[{bi}].items[{ii}] (id={item.get('id','?')}) に必須フィールドが欠けています: "
+                    + ", ".join(sorted(missing))
+                )
+
+    return True, ""
+
+
 def get_remote_sha_and_content(repo_path: str) -> tuple[str | None, bytes | None]:
     """GitHub上の既存ファイルのSHAとコンテンツを取得。"""
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{repo_path}"
@@ -202,6 +270,16 @@ def main():
             results[repo_path] = False
             print()
             continue
+
+        # news_data.json はフィールド構造を追加検証
+        if base_name == "news_data.json":
+            ok, err_msg = validate_news_data_json(local_file)
+            if not ok:
+                print(f"  ❌ [フィールド検証失敗] {err_msg}")
+                results[repo_path] = False
+                print()
+                continue
+            print("  ✅ フィールド検証OK（title/body/sourceLabel/batchLabel等）")
 
         # リモート情報取得（SHA + コンテンツ）
         sha, remote_bytes = get_remote_sha_and_content(repo_path)

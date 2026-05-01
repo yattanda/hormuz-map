@@ -110,6 +110,31 @@
 - `archive` は更新バッチ単位（`label` 付き）で管理。1バッチ10件前後が目安
 - `osint` は各メディア1件ずつ。`isLatest: true` は最新記事1件のみに付与（複数不可）
 - `updated` フィールドは `YYYY年MM月DD日 HH:MM 日本時間JST` 形式で必ず更新
+- **必須フィールド（JSが参照）**：`latest`/`archive.items` 各アイテムは `title`・`body`・`sourceLabel`・`date`・`label`・`url` の6フィールドが必須。旧フィールド名（`headline`・`summary`・`source`・`date_local`・`date_jst`・`tags`）は使用禁止
+- **`archive` のバッチキーは `batchLabel`**（旧 `label` は使用禁止）
+- **`osint` アイテムの必須フィールド**：`titleJa`・`titleEn`・`country`・`media`・`cardBg`・`cardBorder`・`badgeColor`・`borderColor`・`textColor`・`url`・`date`
+
+## news_data.json conflict解決ルール
+
+**発生パターン：** auto_push.py がリモートに新しいJSONをpush済みの状態で、Claude CodeがローカルにJSONの旧版commitを持っている場合に `git pull --rebase` でconflictが起きる。
+
+**⚠️ rebaseの --ours/--theirs は直感と逆になるため、以下の手順を厳守する：**
+
+```
+# NG（やってはいけない）
+git checkout --theirs data/news_data.json   # rebase文脈では「ローカルの旧commit側」になる
+
+# OK（正しい手順）
+git checkout origin/main -- data/news_data.json   # リモートの最新版を明示的に取得
+```
+
+**conflict解決の正しい手順：**
+1. `git pull --rebase` でconflict発生
+2. `git checkout origin/main -- data/news_data.json` でリモート版を取得
+3. `head -10 data/news_data.json` で `"title"` フィールドが存在することを確認
+4. `git add data/news_data.json` → `git rebase --continue`
+
+**根拠：** auto_push.py は GitHub API 経由でリモートに直接pushするため、リモート版が常に最新の正しい構造を持つ。
 
 ## 作業方針
 - 変更前に対象セクションを明示する

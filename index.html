@@ -201,10 +201,10 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .annot-trigger { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; color:#94a3b8; cursor:pointer; user-select:none; }
 .annot-trigger:hover { color:#e2e8f0; }
 .annot-trigger .dot { width:6px; height:6px; border-radius:50%; background:#f87171; flex-shrink:0; }
-.annot-popup { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); width:300px; background:rgba(15,23,42,0.97); border:1px solid rgba(248,113,113,0.45); border-radius:8px; padding:10px 12px; font-size:0.72rem; color:#e2e8f0; line-height:1.6; z-index:200; box-shadow:0 4px 24px rgba(0,0,0,0.6); }
+.annot-popup { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); width:min(330px,90vw); background:rgba(15,23,42,0.97); border:1px solid rgba(248,113,113,0.45); border-radius:8px; padding:10px 12px; font-size:0.72rem; color:#e2e8f0; line-height:1.6; z-index:200; box-shadow:0 4px 24px rgba(0,0,0,0.6); }
 .annot-popup.open { display:block; }
 .annot-popup::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:rgba(248,113,113,0.45); }
-@media (max-width:480px) { .annot-popup { width:280px; left:0; transform:none; } .annot-popup::after { left:16px; transform:none; } }
+@media (max-width:480px) { .annot-popup { left:50%; transform:translateX(-50%); } }
 .dl-arrow { color:#6b7280; font-size:1.1rem; }
 .dl-note  { font-size:0.73rem; color:#fca5a5; flex:1; min-width:160px; padding-left:6px; }
 @keyframes cdBlink{0%,100%{opacity:1}50%{opacity:0.4}}
@@ -1118,8 +1118,13 @@ Copy
             <span class="dot"></span>クリックで解説
           </div>
           <div class="annot-popup">
-            <strong style="color:#f87171;">Operation Epic Fury とは？</strong><br>
-            トランプ大統領が2026年4月13日に発動した米海軍によるイラン港湾封鎖作戦のコードネーム。イランの核・弾道ミサイル開発を交渉で解決するための経済的圧力措置として発動。当初の法的期限は5月1日 23:00 JST（米国ET: 10:00 AM ET）に設定されていたが、交渉膠着により延長継続中。CENTCOMは4/28時点で39隻を迂回・拿捕。
+            <strong style="color:#f87171;display:block;margin-bottom:6px;">⚖️ 1973年戦争権限法（60日条項）</strong>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div>📜 ベトナム戦争の反省から生まれた法律。議会承認なしに大統領が単独で戦争を継続できる上限は<strong style="color:#fbbf24;">60日間</strong>。<span style="color:#64748b;font-size:0.68rem;">The Conversation</span></div>
+              <div>📅 トランプは3月2日に議会へ報告を提出。60日後の期限は<strong style="color:#fbbf24;">5月1日</strong>となる。<span style="color:#64748b;font-size:0.68rem;">The Conversation</span></div>
+              <div>⚔️ ヘグセス国防長官は「停戦によって時計は止まった」と主張。民主党カイン上院議員はこれに反論し<strong style="color:#f87171;">法的論争が継続中</strong>。<span style="color:#64748b;font-size:0.68rem;">The Hill</span></div>
+              <div>🇺🇸 共和党カーティス上院議員も「60日超の軍事行動は議会承認なしには支持しない」と公言。<span style="color:#64748b;font-size:0.68rem;">Senator John Curtis</span></div>
+            </div>
           </div>
         </div>
       </div>

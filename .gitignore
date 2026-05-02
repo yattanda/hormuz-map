@@ -1,2 +1,6 @@
 .env
 *.lnk
+.env
+__pycache__/
+*.pyc
+tools/*.lnk

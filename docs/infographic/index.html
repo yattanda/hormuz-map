@@ -134,19 +134,23 @@
       .page-header { padding: 20px 12px 16px; }
 
       .jump-nav {
-        justify-content: flex-start;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding: 0 10px 6px;
-        margin-top: 16px;
-        -webkit-overflow-scrolling: touch;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 0 10px;
+        margin: 16px auto 18px;
+        overflow-x: visible;
+        max-width: 520px;
       }
 
       .jump-nav a {
-        flex: 0 0 auto;
-        min-height: 36px;
-        padding: 8px 12px;
-        font-size: 13px;
+        width: 100%;
+        min-height: 38px;
+        padding: 8px 8px;
+        font-size: 12.5px;
+        line-height: 1.25;
+        text-align: center;
+        white-space: normal;
       }
 
       .infographic-gallery {
@@ -165,6 +169,13 @@
       .infographic-note {
         margin-top: -32px;
         font-size: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .jump-nav a {
+        font-size: 11.5px;
+        padding: 8px 6px;
       }
     }
   </style>

@@ -11,7 +11,7 @@
   <meta property="og:title" content="ホルムズ海峡危機を6枚の図解で俯瞰する" />
   <meta property="og:description" content="全体俯瞰、経済・エネルギー、軍事・海上交通、主要プレイヤー、周辺プレイヤー、市場インフラの視点から、ホルムズ海峡危機を6枚の図解で整理。" />
   <meta property="og:url" content="https://yattanda.github.io/hormuz-map/infographic/" />
-  <meta property="og:image" content="https://yattanda.github.io/hormuz-map/infographic/ogp-hormuz-infographic-v2.jpg" />
+  <meta property="og:image" content="https://yattanda.github.io/hormuz-map/infographic/ogp-hormuz-infographic.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -19,8 +19,8 @@
   <meta property="og:locale" content="ja_JP" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ホルムズ海峡危機を6枚の図解で俯瞰する" />
-  <meta name="twitter:description" content="全体俯瞰、経済・エネルギー、軍事・海上交通、主要プレイヤー、周辺プレイヤー、市場インフラの視点から、ホルムズ海峡危機を6枚の図解で整理。" />
-  <meta name="twitter:image" content="https://yattanda.github.io/hormuz-map/infographic/ogp-hormuz-infographic-v2.jpg" />
+  <meta name="twitter:description" content="ホルムズ海峡危機を、6枚の図解で俯瞰します。" />
+  <meta name="twitter:image" content="https://yattanda.github.io/hormuz-map/infographic/ogp-hormuz-infographic.jpg" />
   <meta name="twitter:image:alt" content="ホルムズ海峡危機を6枚の図解で俯瞰する" />
   <title>ホルムズ海峡危機を6枚の図解で俯瞰する</title>
   <style>
@@ -95,8 +95,59 @@
       line-height: 1.7;
     }
 
+    .jump-nav {
+      max-width: 1400px;
+      margin: 20px auto 18px;
+      padding: 0 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .jump-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 14px;
+      border: 1px solid rgba(67, 217, 255, 0.45);
+      border-radius: 999px;
+      color: #dff7ff;
+      background: rgba(3, 18, 34, 0.78);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+    }
+
+    .jump-nav a:hover {
+      background: rgba(67, 217, 255, 0.16);
+      border-color: rgba(67, 217, 255, 0.85);
+    }
+
+    .infographic-gallery figure {
+      scroll-margin-top: 84px;
+    }
+
     @media (max-width: 768px) {
       .page-header { padding: 20px 12px 16px; }
+
+      .jump-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 0 10px 6px;
+        margin-top: 16px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .jump-nav a {
+        flex: 0 0 auto;
+        min-height: 36px;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
 
       .infographic-gallery {
         padding: 16px 8px 56px;
@@ -125,23 +176,32 @@
     <p>全体俯瞰・経済エネルギー・軍事海上交通・主要プレイヤー・周辺プレイヤー・市場インフラの視点から整理しています。</p>
   </div>
 
+  <nav class="jump-nav" aria-label="インフォグラフィック内ナビゲーション">
+    <a href="#slide-01">1 全体俯瞰</a>
+    <a href="#slide-02">2 経済・エネルギー</a>
+    <a href="#slide-03">3 軍事・海上交通</a>
+    <a href="#slide-04">4 中核プレイヤー</a>
+    <a href="#slide-05">5 周辺プレイヤー②</a>
+    <a href="#slide-06">6 周辺プレイヤー③</a>
+  </nav>
+
   <section class="infographic-gallery" aria-label="ホルムズ海峡危機を6枚の図解で俯瞰する">
-    <figure>
+    <figure id="slide-01">
       <img src="./assets/final/slide-01-overview.png" alt="ホルムズ海峡危機 1枚目 全体俯瞰">
     </figure>
-    <figure>
+    <figure id="slide-02">
       <img src="./assets/final/slide-02-economic-energy.png" alt="ホルムズ海峡危機 2枚目 経済・エネルギー影響">
     </figure>
-    <figure>
+    <figure id="slide-03">
       <img src="./assets/final/slide-03-military-maritime.png" alt="ホルムズ海峡危機 3枚目 軍事・海上交通">
     </figure>
-    <figure>
+    <figure id="slide-04">
       <img src="./assets/final/slide-04-core-players.png" alt="ホルムズ海峡危機 4枚目 中核プレイヤー イラン 米国 イスラエル 湾岸諸国">
     </figure>
-    <figure>
+    <figure id="slide-05">
       <img src="./assets/final/slide-05-peripheral-players-ii.png" alt="ホルムズ海峡危機 5枚目 周辺プレイヤー 中国 ロシア インド パキスタン">
     </figure>
-    <figure>
+    <figure id="slide-06">
       <img src="./assets/final/slide-06-peripheral-players-iii.png" alt="ホルムズ海峡危機 6枚目 周辺プレイヤー 日韓 欧州 トルコ 海運 保険 市場インフラ">
     </figure>
   </section>

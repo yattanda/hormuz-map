@@ -1,51 +1,51 @@
 {
-  "updated": "2026年5月1日 07:56 日本時間JST",
+  "updated": "2026年5月3日 08:59 日本時間JST",
   "latest": [
     {
-      "id": "news-2026-05-01-uae-opec-exit",
+      "id": "news-2026-05-01-iran-new-proposal",
       "date": "2026/05/01",
       "label": "事実",
-      "url": "https://www.afpbb.com/articles/-/3633352",
-      "title": "【本日発効】UAE、OPEC・OPEC+から正式離脱——産油秩序に亀裂、フジャイラ港経由ルートに注目",
-      "body": "UAEが5月1日付でOPEC・OPEC+から正式脱退。産油4位のUAE離脱によりOPECの求心力はさらに低下。エネルギー省筋によるとUAEはホルムズ再開後に想定される出荷制限に反対していたと報道（AFP）。OPEC制限下では320万BPDだった産油量が480万BPDまで引き上げ可能に。ホルムズを経由しないフジャイラ港ルートが日本向け供給の注目点に。",
-      "sourceLabel": "AFPBB・毎日新聞（現地時間4/28〜29・JST 5/1 発効）"
+      "url": "https://www.claimsjournal.com/news/national/2026/05/01/337311.htm",
+      "title": "イラン、パキスタン経由で米に新提案「ホルムズ先行再開・核交渉は後回し」正式伝達",
+      "body": "イラン国営IRNAが報じた。提案の骨子は「Phase1：停戦長期化・ホルムズ再開、Phase2：核交渉」の段階的解決策。核問題の先送りが最大の焦点。トランプ大統領は国家安全保障チームとの会議でこの提案を協議したとホワイトハウス報道官が確認。ルビオ国務長官は「核問題を棚上げしたまま封鎖解除は容認できない」と即時否定しつつ「想定よりマシな提案」とも評価。",
+      "sourceLabel": "Bloomberg・Axios・Claims Journal（現地時間5/1・JST 5/1）"
     },
     {
-      "id": "news-2026-04-28-rubio-rejects-proposal",
-      "date": "2026/04/28",
+      "id": "news-2026-05-01-khamenei-hardline",
+      "date": "2026/05/01",
       "label": "事実",
-      "url": "https://www.cnbc.com/2026/04/28/oil-prices-us-iran-hormuz-negotiations-wti-brent-crude.html",
-      "title": "ルビオ、イランの「核先送り・ホルムズ先行再開」提案を完全否定——「国際水域をイランが管理するシステムは容認できない」",
-      "body": "ルビオ国務長官はFox Newsで「核問題はまだ根本的な問題。先送りは一切受け入れられない」と明言。「イランが通行料を取り、誰が通れるか決めるシステムは国際水域の原則に反する」とも強調。トランプも周辺に「提案は不満足」と伝えた（NYT）。ホワイトハウスは「プレスを通じた交渉はしない。米国が全てのカードを握っている」と声明。第2回交渉日程は未定のまま外交完全膠着。",
-      "sourceLabel": "CNBC・NBC News・TIME（現地時間4/27〜28・JST 4/28〜29）"
+      "url": "https://www.npr.org/2026/04/28/nx-s1-5802283/iran-middle-east-updates",
+      "title": "新最高指導者モジュタバ・ハメネイ「核・ミサイル技術は絶対に放棄しない」——ホルムズ主権も維持を宣言",
+      "body": "父ハメネイ師の後継者が就任後初の重要声明を発表。「ホルムズ海峡の主権はイランが維持する」と明言。イラン議会国家安全保障委員会も「停戦延長はホルムズのイラン管理が条件」と表明。新指導部がIRGC強硬派と一体化している構図が鮮明になり、米国の要求する「完全非核化・無条件開放」は事実上拒否された形。",
+      "sourceLabel": "Bloomberg・NPR（現地時間4/30〜5/1・JST 5/1）"
     },
     {
-      "id": "news-2026-04-28-iran-oil-storage-kpler",
-      "date": "2026/04/28",
+      "id": "news-2026-05-01-ofac-faq1249",
+      "date": "2026/05/01",
       "label": "事実",
-      "url": "https://www.nbcnews.com/world/iran/trumpl-iran-proposal-end-war-reopen-hormuz-nuclear-deal-oil-storage-rcna342441",
-      "title": "Kpler：イラン石油備蓄「残り12〜22日分」——CENTCOM 39隻を迂回・拿捕・米封鎖の打撃本格化へ",
-      "body": "エネルギー調査会社Kplerは米海軍封鎖下でイランの石油保管残量が12〜22日分に圧縮されたと分析。イラン→中国向け石油の代金回収には最大2ヶ月かかることから「真の打撃はこれから」。CENTCOMは4/28時点で合計39隻を迂回・拿捕と発表（M/V Blue Star IIIほか）。米封鎖の経済的損害はイランに日200〜250百万ドルと試算（Kpler）。",
-      "sourceLabel": "NBC News・Kpler分析（現地時間4/28・JST 4/29）"
+      "url": "https://global-scm.com/blog/?p=6652",
+      "title": "OFAC制裁警告（FAQ 1249 & 5/1アラート）——ホルムズ通航料支払いは米制裁対象と明示",
+      "body": "米財務省OFACが4月28日のFAQ 1249と5月1日付けアラートで、IRGCや関連機関への通航料支払いが米制裁対象となることを明示。日本を含む企業の法務・財務・物流担当が一体で対応する必要がある分岐点。「物流担当だけの問題ではない」とGlobal SCMが警告。支払い・船舶・保険・契約・在庫・価格転嫁を同時に管理する体制が必要。",
+      "sourceLabel": "OFAC・Global SCM（現地時間5/1・JST 5/1）"
     },
     {
-      "id": "news-2026-04-30-brent-120-goldman",
-      "date": "2026/04/30",
+      "id": "news-2026-05-01-38countries-hormuz",
+      "date": "2026/05/01",
       "label": "事実",
-      "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
-      "title": "ブレント$120突破（2022年6月以来）——Goldman Sachs「通常化は6月末以降・年末$90に上方修正」",
-      "body": "4/29〜4/30にブレント原油が$120/バレルを突破し約4年ぶりの高値を記録。Goldman Sachsはペルシャ湾からの輸出正常化が6月末以降にずれ込むと判断し、年末見通しを$80→$90に上方修正。世界在庫は日量1,100〜1,200万バレルという記録的ペースで枯渇中。「ファットテールはまだ前方にある」とGlobal X ETFsが警告。たとえ即日合意でも在庫再構築に4〜6ヶ月かかるとLipow Oil Associatesが試算。",
-      "sourceLabel": "CNBC・Goldman Sachs報告書（現地時間4/30・JST 4/30）"
+      "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10636/",
+      "title": "英仏主催・38カ国以上がホルムズ再開声明署名——国際連帯が拡大フェーズへ",
+      "body": "英国・フランスが計2回のホルムズ再開国際会議を開催し、38カ国以上が商船攻撃を非難し安全航行確保への貢献意志を表明する共同声明に署名。拘束力はないが、外交的圧力として蓄積。ドイツのメルツ首相は「イランは想定より強く、米国に本当に説得力のある戦略がない」と米政権を批判。国際社会の対米・対イラン双方への圧力が強まっている。",
+      "sourceLabel": "House of Commons Library・NPR（現地時間5/1・JST 5/1）"
     }
   ],
   "osint": [
     {
       "country": "🇶🇦",
       "media": "Al Jazeera",
-      "date": "2026/04/28",
+      "date": "2026/05/01",
       "url": "https://www.aljazeera.com/news/2026/4/28/oil-prices-rise-despite-irans-proposal-to-reopen-strait-of-hormuz",
-      "titleJa": "ブレント3%高——イランの海峡再開提案も市場の懸念和らがず・$111.49を記録",
-      "titleEn": "Oil prices rise despite Iran's proposal to reopen Strait of Hormuz",
+      "titleJa": "イランの新提案「ホルムズ先行・核後回し」——中東専門家「出口戦略か時間稼ぎか」",
+      "titleEn": "Iran's new Hormuz proposal: exit strategy or stalling tactic?",
       "cardBg": "rgba(15,40,60,0.7)",
       "cardBorder": "rgba(56,189,248,0.2)",
       "badgeColor": "rgba(56,189,248,0.15)",
@@ -56,6 +56,47 @@
   ],
   "archive": [
     {
+      "batchLabel": "2026/05/01 07:56 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-01-uae-opec-exit",
+          "date": "2026/05/01",
+          "label": "事実",
+          "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
+          "title": "UAE、OPEC・OPEC+から本日正式脱退——産油能力480万BPDが制限解除・OPECの結束に亀裂",
+          "body": "UAEが5月1日付けでOPEC・OPEC+から正式離脱。フジャイラ港（ホルムズ非経由）経由の迂回ルートへの注目が継続。OPEC求心力の低下により、封鎖長期化時の産油調整能力が弱まった。",
+          "sourceLabel": "Al Jazeera・AFP（現地時間4/29〜5/1・JST 5/1）"
+        },
+        {
+          "id": "news-2026-04-30-rubio-rejects-nuclear-postpone",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/27/trump-iran-war-strait-of-hormuz-rubio.html",
+          "title": "ルビオ「核先送りは一切容認しない」——イランの3段階提案を完全否定",
+          "body": "ルビオ国務長官はFox Newsで「核問題を棚上げしたまま海峡再開は認めない」と明言（4/28）。イランが国際水域を管理するシステムは容認できないとも強調。第2回交渉の日程は依然未定。",
+          "sourceLabel": "CNBC・Fox News（現地時間4/28・JST 4/28）"
+        },
+        {
+          "id": "news-2026-04-30-kpler-iran-reserves",
+          "date": "2026/04/30",
+          "label": "分析",
+          "url": "https://global-scm.com/blog/?p=6564",
+          "title": "Kpler分析：イラン石油備蓄残り12〜22日分——米封鎖の経済打撃が本格化フェーズへ",
+          "body": "Kpler社の分析によるとイランの石油備蓄は残り12〜22日分。米封鎖で中国向け石油代金の到達には最大2ヶ月のラグがあり「真の打撃」はこれから。CENTCOMは4/28時点で39隻を迂回・拿捕。",
+          "sourceLabel": "Kpler・Global SCM（現地時間4/28・JST 4/28）"
+        },
+        {
+          "id": "news-2026-04-30-brent-120-goldman",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
+          "title": "ブレント$120突破（2022年6月以来）——Goldman Sachs「通常化は6月末以降・年末$90に上方修正」",
+          "body": "4/29〜4/30にブレント原油が$120/バレルを突破し約4年ぶりの高値を記録。Goldman Sachsはペルシャ湾からの輸出正常化が6月末以降にずれ込むと判断し、年末見通しを$80→$90に上方修正。世界在庫は日量1,100〜1,200万バレルという記録的ペースで枯渇中。",
+          "sourceLabel": "CNBC・Goldman Sachs報告書（現地時間4/30・JST 4/30）"
+        }
+      ]
+    },
+    {
       "batchLabel": "2026/04/30 09:51 更新分（アーカイブ）",
       "items": [
         {
@@ -64,35 +105,17 @@
           "label": "事実",
           "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
           "title": "【本日発効予告】UAE、OPEC・OPEC+から正式離脱（5月1日）——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
-          "body": "UAEが4月28日に発表したOPEC・OPEC+脱退が翌5月1日に正式発効予定。エネルギー相は「海峡が閉じている今、市場への即時影響は限定的。しかし将来を見据えた戦略的決断」と説明。OPEC制限下では320万BPDだった産油量が480万BPDまで引き上げ可能に。",
-          "sourceLabel": "Al Jazeera・Washington Post（現地時間4/28〜29・JST 4/29〜30）"
+          "body": "UAEが4月29日に正式脱退を表明し5月1日に発効。フジャイラ港経由ルートへの注目が高まる。",
+          "sourceLabel": "Al Jazeera（現地時間4/29・JST 4/30）"
         },
         {
-          "id": "news-2026-04-29-brent-120-prev",
+          "id": "news-2026-04-29-araghchi-putin",
           "date": "2026/04/29",
           "label": "事実",
-          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-          "title": "ブレント原油$120突破——2022年6月以来の最高値・交渉膠着とUAE離脱が引き金",
-          "body": "4月29日、ブレント原油先物が$120/バレルを突破し2022年6月以来の高値を記録。要因は①米イラン交渉の完全膠着、②UAE OPEC離脱発表、③在庫急減の複合。IEAは「史上最大の石油供給混乱」を継続認定。",
-          "sourceLabel": "Trading Economics・CNBC（現地時間4/29・JST 4/30）"
-        },
-        {
-          "id": "news-2026-04-28-rubio-rejects-prev",
-          "date": "2026/04/28",
-          "label": "事実",
           "url": "https://www.cnbc.com/2026/04/27/trump-iran-war-strait-of-hormuz-rubio.html",
-          "title": "ルビオ国務長官、イラン「核先送り・ホルムズ先行再開」提案を正式拒否——「核問題は核心。先送りは受け入れられない」",
-          "body": "イランがパキスタン経由で提示した提案をルビオが正式拒否。トランプもイスラマバード派遣をキャンセルし「カードはこちらが握っている」と表明。トランプ安保チームはSituation Room会議でイラン提案を協議（4/28）。",
-          "sourceLabel": "CNBC・Axios・NPR（現地時間4/27〜28・JST 4/28〜29）"
-        },
-        {
-          "id": "news-2026-04-27-araghchi-putin-prev",
-          "date": "2026/04/27",
-          "label": "事実",
-          "url": "https://www.aljazeera.com/news/2026/4/27/iran-foreign-minister-in-russia-for-putin-talks",
-          "title": "アラグチー外相がプーチンと会談——「イランは勇敢に戦っている」ロシアの連帯を再確認・外交ツアー完了",
-          "body": "イランのアラグチー外相がオマーン→パキスタン→モスクワの外交ツアーを完了。プーチンは「イランは独立と主権のために勇敢に戦っている」と支持を表明。",
-          "sourceLabel": "Al Jazeera・CNN・NPR（現地時間4/27・JST 4/28）"
+          "title": "アラグチー外相がプーチンと会談——ロシアがイランへの支持を再確認",
+          "body": "イランのアラグチー外相がモスクワでプーチン大統領と会談。ロシアはイランへの外交支持を再確認。米イラン交渉の第三者的影響力としてロシアの存在感が増している。",
+          "sourceLabel": "CNBC・Reuters（現地時間4/27〜28・JST 4/28）"
         }
       ]
     }

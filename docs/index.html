@@ -2982,7 +2982,22 @@ function _buildNewsItem(item) {
 function renderLatestNews(data) {
   const c = document.getElementById('news-latest-container');
   if (!c) return;
-  c.innerHTML = data.latest.map(_buildNewsItem).join('');
+  // staleNotice があれば先頭に表示
+  if (data.staleNotice) {
+    const notice = `<div style="
+      background:rgba(100,116,139,0.12);
+      border:1px solid rgba(100,116,139,0.3);
+      border-radius:6px;
+      padding:8px 14px;
+      font-size:0.78rem;
+      color:#94a3b8;
+      margin-bottom:10px;">
+      📋 ${data.staleNotice}
+    </div>`;
+    c.innerHTML = notice + data.latest.map(_buildNewsItem).join('');
+  } else {
+    c.innerHTML = data.latest.map(_buildNewsItem).join('');
+  }
 }
 function renderArchive(data) {
   const c = document.getElementById('news-archive-container');

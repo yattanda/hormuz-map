@@ -113,6 +113,7 @@
 - **必須フィールド（JSが参照）**：`latest`/`archive.items` 各アイテムは `title`・`body`・`sourceLabel`・`date`・`label`・`url` の6フィールドが必須。旧フィールド名（`headline`・`summary`・`source`・`date_local`・`date_jst`・`tags`）は使用禁止
 - **`archive` のバッチキーは `batchLabel`**（旧 `label` は使用禁止）
 - **`osint` アイテムの必須フィールド**：`titleJa`・`titleEn`・`country`・`media`・`cardBg`・`cardBorder`・`badgeColor`・`borderColor`・`textColor`・`url`・`date`
+- `staleNotice` フィールド：最新ニュースに新情報がない日は `"MM/DD HH:MM JST 確認済——最新ニュースなし（膠着継続中）"` を設定する。新情報がある日は `"staleNotice": ""` （空文字）にする。
 
 ## news_data.json conflict解決ルール
 

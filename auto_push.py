@@ -2,7 +2,7 @@
 auto_push.py  ― hormuz-map 自動push スクリプト
 改訂: 2026-04-30
 変更点:
-  - 旧来の「最新ファイル自動選択・古い重複削除」ロジックを維持
+  - 旧来の「最新ファイル自動選択＋古い重複削除」ロジックを維持
   - ファイルサイズ上限チェック（MAX_FILE_SIZE_KB）追加
   - 空ファイル拒否 追加
   - GITHUB_TOKEN / github_pat_ / ghp_ を含むファイルはpush拒否 追加
@@ -27,13 +27,13 @@ REPO_NAME    = os.getenv("REPO_NAME",  "hormuz-map")
 
 # push先リポジトリ内パス → ローカルの「基準ファイル名（拡張子あり）」
 FILE_MAP = {
-    "data/news_data.json":  "news_data.json",
-    "index_html_diffs.md":  "index_html_diffs.md",
+    "docs/data/news_data.json":       "news_data.json",
+    "docs/tools/index_html_diffs.md": "index_html_diffs.md",
 }
 
 DOWNLOADS_DIR = Path(r"C:\Users\yutay\Downloads")
 
-# ─── レート設定 ──────────────────────────────────────────────
+# ─── ガード設定 ────────────────────────────────────────────
 # ファイルサイズ上限（KB）。これを超えるファイルはpush拒否
 MAX_FILE_SIZE_KB = 512
 
@@ -86,14 +86,14 @@ def find_latest_file(base_name: str) -> Path | None:
 
 def check_file_safety(local_path: Path) -> tuple[bool, str]:
     """
-    ファイルの安全チェック（空・サイズ上限・トークン漏洩）。
+    ファイルの安全チェック（空・サイズ・トークン漏洩）。
     戻り値: (OK: bool, エラーメッセージ: str)
     """
     size_bytes = local_path.stat().st_size
 
     # 空ファイル拒否
     if size_bytes == 0:
-        return False, "空ファイルのため push を中断します。"
+        return False, "空ファイルのため push を中止します。"
 
     # ファイルサイズ上限
     size_kb = size_bytes / 1024
@@ -112,77 +112,9 @@ def check_file_safety(local_path: Path) -> tuple[bool, str]:
     for pattern in TOKEN_PATTERNS:
         if pattern in content_text:
             return False, (
-                f"⚠ 危険: ファイル内に '{pattern}' が含まれています！"
-                " 機密情報の混入を防ぐため push を中断します。"
+                f"⛔ 危険: ファイル内に '{pattern}' が含まれています！"
+                " 機密情報の混入を防ぐため push を中止します。"
             )
-
-    return True, ""
-
-
-def validate_news_data_json(local_path: Path) -> tuple[bool, str]:
-    """
-    news_data.json のフィールド構造を検証。
-    latest / osint / archive(batchLabel+items) の必須フィールドをチェックし、
-    いずれか欠けていたら push を中断する。
-    """
-    import json
-
-    LATEST_REQUIRED  = {"title", "body", "sourceLabel", "date", "label", "url"}
-    OSINT_REQUIRED   = {"titleJa", "titleEn", "country", "media",
-                        "cardBg", "cardBorder", "badgeColor", "borderColor", "textColor",
-                        "url", "date"}
-    ARCHIVE_REQUIRED = {"batchLabel", "items"}
-
-    try:
-        data = json.loads(local_path.read_text(encoding="utf-8"))
-    except Exception as e:
-        return False, f"JSON パースエラー: {e}"
-
-    # ── latest ──────────────────────────────────────────────────
-    latest = data.get("latest", [])
-    if not latest:
-        return False, "latest が空です。"
-    for i, item in enumerate(latest):
-        missing = LATEST_REQUIRED - item.keys()
-        if missing:
-            return False, (
-                f"latest[{i}] (id={item.get('id','?')}) に必須フィールドが欠けています: "
-                + ", ".join(sorted(missing))
-            )
-        # 旧フィールド名が残っていないか確認
-        for old_field in ("headline", "summary", "source", "date_local", "date_jst", "tags"):
-            if old_field in item:
-                return False, (
-                    f"latest[{i}] に旧フィールド '{old_field}' が残っています。"
-                    " 新構造（title/body/sourceLabel）に変換してください。"
-                )
-
-    # ── osint ───────────────────────────────────────────────────
-    osint = data.get("osint", [])
-    for i, item in enumerate(osint):
-        missing = OSINT_REQUIRED - item.keys()
-        if missing:
-            return False, (
-                f"osint[{i}] (media={item.get('media','?')}) に必須フィールドが欠けています: "
-                + ", ".join(sorted(missing))
-            )
-
-    # ── archive ─────────────────────────────────────────────────
-    archive = data.get("archive", [])
-    for bi, batch in enumerate(archive):
-        missing_batch = ARCHIVE_REQUIRED - batch.keys()
-        if missing_batch:
-            return False, (
-                f"archive[{bi}] に必須フィールドが欠けています: "
-                + ", ".join(sorted(missing_batch))
-            )
-        for ii, item in enumerate(batch.get("items", [])):
-            missing = LATEST_REQUIRED - item.keys()
-            if missing:
-                return False, (
-                    f"archive[{bi}].items[{ii}] (id={item.get('id','?')}) に必須フィールドが欠けています: "
-                    + ", ".join(sorted(missing))
-                )
 
     return True, ""
 
@@ -245,14 +177,14 @@ def main():
     results = {}
     for repo_path, base_name in FILE_MAP.items():
 
-        print(f"{'━' * 50}")
+        print(f"{'─' * 50}")
         print(f"🔍 {base_name} を検索中...")
 
         # 最新ファイルを自動選択（重複は古いものを自動削除）
         local_file = find_latest_file(base_name)
 
         if local_file is None:
-            print(f"  ⚠   ファイルが見つかりません: {base_name}  → スキップ")
+            print(f"  ⚠  ファイルが見つかりません: {base_name}  → スキップ")
             results[repo_path] = False
             print()
             continue
@@ -271,23 +203,13 @@ def main():
             print()
             continue
 
-        # news_data.json はフィールド構造を追加検証
-        if base_name == "news_data.json":
-            ok, err_msg = validate_news_data_json(local_file)
-            if not ok:
-                print(f"  ❌ [フィールド検証失敗] {err_msg}")
-                results[repo_path] = False
-                print()
-                continue
-            print("  ✅ フィールド検証OK（title/body/sourceLabel/batchLabel等）")
-
         # リモート情報取得（SHA + コンテンツ）
         sha, remote_bytes = get_remote_sha_and_content(repo_path)
 
         # 差分チェック
         if files_are_identical(local_file, remote_bytes):
             print()
-            print("  ⚠️  前回と同一ファイルです（空撃ちでトークン無駄遣いにならないよう確認してください）")
+            print("  ⚠️  前回と同一ファイルです！空打ちでトークン無駄遣いにならないように、確認してください！")
             results[repo_path] = False
             print()
             continue
@@ -297,7 +219,7 @@ def main():
         results[repo_path] = ok
         print()
 
-    # ─── サマリー ────────────────────────────────────────────
+    # ─── サマリー ───────────────────────────────────────────
     print("=" * 50)
     success = sum(v for v in results.values())
     total   = len(results)

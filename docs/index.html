@@ -242,7 +242,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 }
 .map-legend h4 { color:#7dd3fc; font-size:0.8rem; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
 .legend-toggle-btn {
-  display:none; 
+  display:inline-block;
   background:rgba(239,68,68,0.15);
   border:1px solid #ef4444;
   color:#fca5a5;
@@ -281,6 +281,14 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   flex-shrink: 0;
 }
 .leg-note { margin-top:8px; padding-top:7px; border-top:1px solid #1e3a5f; font-size:0.66rem; color:#64748b; }
+
+/* 凡例ボディ折りたたみ（PC・スマホ共通） */
+.legend-body {
+  display: none;
+}
+.map-legend.open .legend-body {
+  display: block;
+}
 
 /* STATS */
 .stats-row { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }

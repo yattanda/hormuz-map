@@ -375,7 +375,7 @@ footer {
   }
   .legend-toggle-btn {
     display: inline-block;
-    pointer-events: none;
+    pointer-events: auto;
   }
   .legend-body {
     display: none;
@@ -2875,7 +2875,7 @@ const Legend = L.Control.extend({
     div.id = 'map-legend-ctrl';
     div.innerHTML = `
       <h4>🗺️ 凡 例
-        <button class="legend-toggle-btn" onclick="toggleLegend()" id="legend-btn">開く</button>
+        <button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn">閉じる</button>
       </h4>
       <div class="legend-body" id="legend-body">
 
@@ -2947,29 +2947,7 @@ function initLegendState() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const legend = document.getElementById('map-legend-ctrl');
-    if (!legend) return;
-    ['click','touchstart'].forEach(evtType => {
-      legend.addEventListener(evtType, function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        toggleLegend();
-      }, { passive: false });
-    });
-
-    setTimeout(() => {
-      const h4 = document.querySelector('#map-legend-ctrl h4');
-      if (!h4) return;
-      ['click','touchstart'].forEach(evtType => {
-        h4.addEventListener(evtType, function(e) {
-          e.stopPropagation();
-          e.preventDefault();
-          toggleLegend();
-        }, { passive: false });
-      });
-    }, 1200);
-  }, 1000);
+  // 凡例はボタンのみでトグル（div全体クリックは廃止）
 
   // 凡例の初期状態設定
   setTimeout(initLegendState, 1100);

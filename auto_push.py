@@ -169,8 +169,8 @@ def push_file(local_path: Path, repo: str, repo_path: str, sha: str | None) -> b
         return False
 
 
-def git_pull_local(local_repo: str) -> None:
-    """push成功後にローカルリポジトリを git pull --rebase で同期。"""
+def git_pull_local(local_repo: str) -> bool:
+    """ローカルリポジトリを git pull --rebase で同期。成功時True。"""
     print(f"  🔄 git pull --rebase: {local_repo}")
     try:
         result = subprocess.run(
@@ -181,11 +181,14 @@ def git_pull_local(local_repo: str) -> None:
         )
         if result.returncode == 0:
             print(f"  ✅ git pull成功: {Path(local_repo).name}")
+            return True
         else:
             print(f"  ⚠️  git pull失敗（手動でpullしてください）:")
             print(f"     {result.stderr.strip()}")
+            return False
     except Exception as e:
         print(f"  ⚠️  git pull実行エラー: {e}")
+        return False
 
 
 def main():
@@ -243,21 +246,30 @@ def main():
         print()
 
     # ─── git pull（ファイル発見済みリポジトリ全て）──────────
+    pull_results = {}
     if pull_target_repos:
         print(f"{'─' * 50}")
         print("🔄 ローカルリポジトリを同期中...")
         for local_repo in pull_target_repos:
-            git_pull_local(local_repo)
+            pull_results[Path(local_repo).name] = git_pull_local(local_repo)
         print()
 
     # ─── サマリー ───────────────────────────────────────────
     print("=" * 50)
     success = sum(v for v in results.values())
     total   = len(results)
-    print(f"完了: {success}/{total} ファイル push成功")
+    print(f"push : {success}/{total} ファイル成功")
     if success < total:
         failed = [k for k, v in results.items() if not v]
-        print("スキップ/失敗:", ", ".join(failed))
+        print("  スキップ/失敗:", ", ".join(failed))
+
+    if pull_results:
+        pull_ok = sum(v for v in pull_results.values())
+        pull_total = len(pull_results)
+        print(f"pull : {pull_ok}/{pull_total} リポジトリ成功")
+        for repo_name, ok in pull_results.items():
+            mark = "✅" if ok else "❌"
+            print(f"  {mark} {repo_name}")
     print("=" * 50)
 
 

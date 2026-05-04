@@ -1,52 +1,52 @@
 {
-  "updated": "2026年5月3日 08:59 日本時間JST",
-  "staleNotice": "5/3 08:59 JST 確認済——最新ニュースなし（膠着継続中）",
+  "updated": "2026年5月4日 11:13 日本時間JST",
+  "staleNotice": "",
   "latest": [
     {
-      "id": "news-2026-05-01-iran-new-proposal",
-      "date": "2026/05/01",
+      "id": "news-2026-05-04-project-freedom-launch",
+      "date": "2026/05/04",
       "label": "事実",
-      "url": "https://www.claimsjournal.com/news/national/2026/05/01/337311.htm",
-      "title": "イラン、パキスタン経由で米に新提案「ホルムズ先行再開・核交渉は後回し」正式伝達",
-      "body": "イラン国営IRNAが報じた。提案の骨子は「Phase1：停戦長期化・ホルムズ再開、Phase2：核交渉」の段階的解決策。核問題の先送りが最大の焦点。トランプ大統領は国家安全保障チームとの会議でこの提案を協議したとホワイトハウス報道官が確認。ルビオ国務長官は「核問題を棚上げしたまま封鎖解除は容認できない」と即時否定しつつ「想定よりマシな提案」とも評価。",
-      "sourceLabel": "Bloomberg・Axios・Claims Journal（現地時間5/1・JST 5/1）"
+      "url": "https://www.newsweek.com/trump-vows-us-escort-for-trapped-ships-in-strait-of-hormuz-11908634",
+      "title": "【速報・本日開始】米軍「プロジェクト・フリーダム」始動——誘導ミサイル駆逐艦・100機超・1.5万人でホルムズ閉じ込め船を護衛退出",
+      "body": "トランプ大統領が5/3にTruth Socialで「Project Freedom」を宣言、5/4（月）中東時間朝より開始。CENTCOMは誘導ミサイル駆逐艦・100機超の航空機・無人機・1万5,000名の兵員を展開し、ホルムズ海峡に閉じ込められた第三国の中立船舶を護衛退出させると発表。妨害には「武力行使も辞さない」とトランプが明言。イラン議会安全保障委員長は「停戦違反とみなす」と警告し、初の米軍船護衛作戦がイランの反応を試す最初の局面となる。",
+      "sourceLabel": "Newsweek・CBS News（現地時間5/3〜5/4・JST 5/4）"
     },
     {
-      "id": "news-2026-05-01-khamenei-hardline",
-      "date": "2026/05/01",
+      "id": "news-2026-05-04-iran-14point-rejected",
+      "date": "2026/05/04",
       "label": "事実",
-      "url": "https://www.npr.org/2026/04/28/nx-s1-5802283/iran-middle-east-updates",
-      "title": "新最高指導者モジュタバ・ハメネイ「核・ミサイル技術は絶対に放棄しない」——ホルムズ主権も維持を宣言",
-      "body": "父ハメネイ師の後継者が就任後初の重要声明を発表。「ホルムズ海峡の主権はイランが維持する」と明言。イラン議会国家安全保障委員会も「停戦延長はホルムズのイラン管理が条件」と表明。新指導部がIRGC強硬派と一体化している構図が鮮明になり、米国の要求する「完全非核化・無条件開放」は事実上拒否された形。",
-      "sourceLabel": "Bloomberg・NPR（現地時間4/30〜5/1・JST 5/1）"
+      "url": "https://www.nbcnews.com/world/iran/iranian-proposal-rejected-trump-open-strait-nuclear-talks-iran-rcna343186",
+      "title": "トランプ「イランの14ポイント提案は容認できない」——核先送り・30日終戦案を全面拒否、米が反提案送付",
+      "body": "イランが5/2にパキスタン経由で提出した14ポイント提案（①30日以内の戦争終結②米軍の周辺撤退③封鎖解除④凍結資産解放⑤賠償⑥ホルムズ新ガバナンス機制等）をトランプがイスラエル・カン放送との会見で「容認できない」と拒否。「イランはまだ十分な代価を払っていない」とも表明。米国はパキスタン経由で反提案を送付済みで、イラン外務省は「審査中」とし、ウィトコフ特使は「対話は継続中」と確認した。",
+      "sourceLabel": "NBC News・Reuters（現地時間5/2〜5/3・JST 5/3〜5/4）"
     },
     {
-      "id": "news-2026-05-01-ofac-faq1249",
-      "date": "2026/05/01",
+      "id": "news-2026-05-04-ukmto-attack-may3",
+      "date": "2026/05/04",
       "label": "事実",
-      "url": "https://global-scm.com/blog/?p=6652",
-      "title": "OFAC制裁警告（FAQ 1249 & 5/1アラート）——ホルムズ通航料支払いは米制裁対象と明示",
-      "body": "米財務省OFACが4月28日のFAQ 1249と5月1日付けアラートで、IRGCや関連機関への通航料支払いが米制裁対象となることを明示。日本を含む企業の法務・財務・物流担当が一体で対応する必要がある分岐点。「物流担当だけの問題ではない」とGlobal SCMが警告。支払い・船舶・保険・契約・在庫・価格転嫁を同時に管理する体制が必要。",
-      "sourceLabel": "OFAC・Global SCM（現地時間5/1・JST 5/1）"
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-israel-lebanon-ceasefire/",
+      "title": "5/3にもホルムズ海峡付近で貨物船が小型ボートに攻撃——英UKMTO確認・IRGC「厳格管理継続」宣言",
+      "body": "英国海事貿易機関（UKMTO）は5月3日、ホルムズ海峡付近でコンテナ船が小型ボートによる攻撃を受けたと発表。IRGCは「海峡の管理は以前の状態に戻る。米国の港湾封鎖が続く限りこの状態は変わらない」声明を継続。インドは4/18の発砲事件でイラン大使を召喚済みだが散発的攻撃は続いており、Project Freedom開始後の最初の数時間が最大の注目点となる。",
+      "sourceLabel": "CBS News・UKMTO・AFP（現地時間5/3・JST 5/4）"
     },
     {
-      "id": "news-2026-05-01-38countries-hormuz",
-      "date": "2026/05/01",
-      "label": "事実",
-      "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10636/",
-      "title": "英仏主催・38カ国以上がホルムズ再開声明署名——国際連帯が拡大フェーズへ",
-      "body": "英国・フランスが計2回のホルムズ再開国際会議を開催し、38カ国以上が商船攻撃を非難し安全航行確保への貢献意志を表明する共同声明に署名。拘束力はないが、外交的圧力として蓄積。ドイツのメルツ首相は「イランは想定より強く、米国に本当に説得力のある戦略がない」と米政権を批判。国際社会の対米・対イラン双方への圧力が強まっている。",
-      "sourceLabel": "House of Commons Library・NPR（現地時間5/1・JST 5/1）"
+      "id": "news-2026-05-04-oil-market-pf-reaction",
+      "date": "2026/05/04",
+      "label": "分析",
+      "url": "https://www.cnbc.com/2026/05/02/trump-iran-strait-of-hormuz.html",
+      "title": "WTI 105〜111ドル高止まり——Project Freedom始動と外交膠着で市場は「護衛作戦への報復リスク」を最大変数に",
+      "body": "5/1〜5/3にかけてWTIは105〜111ドルで推移（開戦前比約+60%）。市場はProject Freedom開始に伴いイランが護衛船を攻撃するか否かを最大の変数として警戒を強めている。Goldman Sachs「ブレント年末90ドル」の見通しに変更なし。世界在庫は日量1,100〜1,200万バレルのペースで枯渇が継続しており、報復攻撃が発生すれば再び120ドル超の展開も視野に入る。",
+      "sourceLabel": "CNBC・Goldman Sachs・Reuters（現地時間5/1〜5/3・JST 5/4）"
     }
   ],
   "osint": [
     {
       "country": "🇶🇦",
       "media": "Al Jazeera",
-      "date": "2026/05/01",
-      "url": "https://www.aljazeera.com/news/2026/4/28/oil-prices-rise-despite-irans-proposal-to-reopen-strait-of-hormuz",
-      "titleJa": "イランの新提案「ホルムズ先行・核後回し」——中東専門家「出口戦略か時間稼ぎか」",
-      "titleEn": "Iran's new Hormuz proposal: exit strategy or stalling tactic?",
+      "date": "2026/05/03",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/3/iran-war-live-trump-says-reviewing-14-point-plan-israel-pounds-lebanon",
+      "titleJa": "「プロジェクト・フリーダム」の行方——イランが応じれば出口、武力衝突なら再開戦への入口",
+      "titleEn": "Project Freedom: Trump announces plan to escort ships through Hormuz amid Iran nuclear deadlock",
       "cardBg": "rgba(15,40,60,0.7)",
       "cardBorder": "rgba(56,189,248,0.2)",
       "badgeColor": "rgba(56,189,248,0.15)",
@@ -56,6 +56,47 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/05/03 08:59 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-03-iran-new-proposal-official",
+          "date": "2026/05/03",
+          "label": "事実",
+          "url": "https://www.axios.com/2026/04/27/iran-us-hormuz-strait-nuclear-talks-proposal-pakistan",
+          "title": "イランがパキスタン経由で米に新提案（ホルムズ先行・核後回し）を正式送付——米NSCが協議",
+          "body": "イランがパキスタンを通じて「ホルムズ再開・封鎖解除を先行させ、核問題は後回し」とする新提案を正式に米国に送付（4/28）。トランプはSituation Room会議を開催し協議したが「不満」と表明。ルビオは「核問題は核心課題」と繰り返し、外交は膠着が続く。",
+          "sourceLabel": "Axios・NPR（現地時間4/27〜5/1・JST 5/3）"
+        },
+        {
+          "id": "news-2026-05-03-mojtaba-hardline",
+          "date": "2026/05/03",
+          "label": "事実",
+          "url": "https://www.npr.org/2026/04/28/nx-s1-5802283/iran-middle-east-updates",
+          "title": "新最高指導者モジュタバ・ハメネイ「核・ミサイル能力は絶対に放棄しない」——強硬声明で外交余地をさらに圧縮",
+          "body": "イランの新最高指導者モジュタバ・ハメネイが「核・ミサイルプログラムを放棄することは決してない」と強硬声明を発表。ルビオは「イラン指導部は深く分断されている」と指摘し、交渉相手の明確化が課題。指導部内の強硬派と現実派の綱引きが和平への最大の構造的障壁となっている。",
+          "sourceLabel": "NPR・Reuters（現地時間4/28〜5/1・JST 5/3）"
+        },
+        {
+          "id": "news-2026-05-03-ofac-warning",
+          "date": "2026/05/03",
+          "label": "事実",
+          "url": "https://global-scm.com/blog/?p=6652",
+          "title": "OFAC制裁警告（FAQ 1249 & 5/1アラート）——IRGCへの通航料支払いは制裁対象と米財務省が明示",
+          "body": "米財務省OFACが4月28日のFAQ 1249と5月1日付けアラートで、IRGCや関連機関への通航料支払いは米制裁対象と明示。日本を含む企業の法務・財務・物流担当が一体で対応する必要がある。米ドル建て取引や米国系金融機関を経由している企業は二次制裁の対象となる可能性があり、コンプライアンス部門との確認が不可欠。",
+          "sourceLabel": "OFAC・Global SCM（現地時間4/28〜5/1・JST 5/3）"
+        },
+        {
+          "id": "news-2026-05-03-38nations-statement",
+          "date": "2026/05/03",
+          "label": "事実",
+          "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10636/",
+          "title": "英仏主催・38カ国がホルムズ再開共同声明署名——国際連帯が拡大フェーズへ",
+          "body": "英国・フランスが計2回のホルムズ再開国際会議を開催し、38カ国以上が商船攻撃を非難し安全航行確保への貢献意志を表明する共同声明に署名。拘束力はないが外交的圧力として蓄積している。英国はCENTCOM措置への直接関与は否定しつつも外交解決を優先する方針。",
+          "sourceLabel": "House of Commons Library（現地時間4/30〜5/1・JST 5/3）"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/05/01 07:56 更新分（アーカイブ）",
       "items": [
@@ -106,17 +147,35 @@
           "label": "事実",
           "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
           "title": "【本日発効予告】UAE、OPEC・OPEC+から正式離脱（5月1日）——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
-          "body": "UAEが4月29日に正式脱退を表明し5月1日に発効。フジャイラ港経由ルートへの注目が高まる。",
-          "sourceLabel": "Al Jazeera（現地時間4/29・JST 4/30）"
+          "body": "UAEが4月28日に発表したOPEC・OPEC+脱退が翌5月1日に正式発効予定。エネルギー相は「海峡が閉じている今、市場への即時影響は限定的。しかし将来を見据えた戦略的決断」と説明。OPEC制限下では320万BPDだった産油量が480万BPDまで引き上げ可能に。",
+          "sourceLabel": "Al Jazeera・Washington Post（現地時間4/28〜29・JST 4/29〜30）"
         },
         {
-          "id": "news-2026-04-29-araghchi-putin",
+          "id": "news-2026-04-29-brent-120-prev",
           "date": "2026/04/29",
           "label": "事実",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "title": "ブレント原油$120突破——2022年6月以来の最高値・交渉膠着とUAE離脱が引き金",
+          "body": "4月29日、ブレント原油先物が$120/バレルを突破し2022年6月以来の高値を記録。要因は①米イラン交渉の完全膠着、②UAE OPEC離脱発表、③在庫急減の複合。IEAは「史上最大の石油供給混乱」を継続認定。",
+          "sourceLabel": "Trading Economics・CNBC（現地時間4/29・JST 4/30）"
+        },
+        {
+          "id": "news-2026-04-28-rubio-rejects-prev",
+          "date": "2026/04/28",
+          "label": "事実",
           "url": "https://www.cnbc.com/2026/04/27/trump-iran-war-strait-of-hormuz-rubio.html",
-          "title": "アラグチー外相がプーチンと会談——ロシアがイランへの支持を再確認",
-          "body": "イランのアラグチー外相がモスクワでプーチン大統領と会談。ロシアはイランへの外交支持を再確認。米イラン交渉の第三者的影響力としてロシアの存在感が増している。",
-          "sourceLabel": "CNBC・Reuters（現地時間4/27〜28・JST 4/28）"
+          "title": "ルビオ国務長官、イラン「核先送り・ホルムズ先行再開」提案を正式拒否——「核問題は核心。先送りは受け入れられない」",
+          "body": "イランがパキスタン経由で提示した提案をルビオが正式拒否。トランプもイスラマバード派遣をキャンセルし「カードはこちらが握っている」と表明。",
+          "sourceLabel": "CNBC・Axios・NPR（現地時間4/27〜28・JST 4/28〜29）"
+        },
+        {
+          "id": "news-2026-04-27-araghchi-putin-prev",
+          "date": "2026/04/27",
+          "label": "事実",
+          "url": "https://www.aljazeera.com/news/2026/4/27/iran-foreign-minister-in-russia-for-putin-talks",
+          "title": "アラグチー外相がプーチンと会談——「イランは勇敢に戦っている」ロシアの連帯を再確認",
+          "body": "イランのアラグチー外相がオマーン→パキスタン→モスクワの外交ツアーを完了。プーチンは「イランは独立と主権のために勇敢に戦っている」と支持を表明。",
+          "sourceLabel": "Al Jazeera・CNN・NPR（現地時間4/27・JST 4/28）"
         }
       ]
     }

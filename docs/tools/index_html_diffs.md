@@ -1,78 +1,99 @@
-# index_html_diffs.md — 凡例 PC折りたたみ対応
+# index_html_diffs.md — 凡例ボタン 二重発火バグ修正
 
-## [P01] CSS変更 — legend-toggle-btn を PC でも表示
+## 原因
+ボタン `onclick="toggleLegend()"` → イベントが親div `#map-legend-ctrl` に伝播
+→ divの `click` リスナーでもう1回 `toggleLegend()` 発火
+→ 計2回トグル = 元に戻る = ノーリアクションに見える
+
+---
+
+## [P01] HTML修正 — ボタンに event を渡す
 
 **変更前：**
+```html
+<button class="legend-toggle-btn" onclick="toggleLegend()" id="legend-btn">開く</button>
+```
+
+**変更後：**
+```html
+<button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn">閉じる</button>
+```
+> ※ PCはデフォルト「開く」状態なのでボタン初期テキストは「閉じる」に変更
+
+---
+
+## [P02] CSS修正 — スマホのボタン pointer-events を有効化
+
+**変更前（`@media(max-width:860px)` 内）：**
 ```css
-.legend-toggle-btn {
-  display:none; 
-  background:rgba(239,68,68,0.15);
-  border:1px solid #ef4444;
-  color:#fca5a5;
-  font-size:0.7rem;
-  font-weight:700;
-  padding:2px 8px;
-  border-radius:12px;
-  cursor:pointer;
-}
+  .legend-toggle-btn {
+    display: inline-block;
+    pointer-events: none;
+  }
 ```
 
 **変更後：**
 ```css
-.legend-toggle-btn {
-  display:inline-block;
-  background:rgba(239,68,68,0.15);
-  border:1px solid #ef4444;
-  color:#fca5a5;
-  font-size:0.7rem;
-  font-weight:700;
-  padding:2px 8px;
-  border-radius:12px;
-  cursor:pointer;
-}
+  .legend-toggle-btn {
+    display: inline-block;
+    pointer-events: auto;
+  }
 ```
 
 ---
 
-## [P02] CSS追加 — legend-body の折りたたみをグローバルに適用
+## [P03] JS修正 — div・h4 への click/touchstart リスナーを削除
 
-**挿入位置：** `.leg-note { ... }` ブロックの直後（`/* STATS */` より前）
+**変更前：**
+```javascript
+  setTimeout(() => {
+    const legend = document.getElementById('map-legend-ctrl');
+    if (!legend) return;
+    ['click','touchstart'].forEach(evtType => {
+      legend.addEventListener(evtType, function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        toggleLegend();
+      }, { passive: false });
+    });
 
-**変更前（この行の直前に挿入）：**
-```css
-/* STATS */
+    setTimeout(() => {
+      const h4 = document.querySelector('#map-legend-ctrl h4');
+      if (!h4) return;
+      ['click','touchstart'].forEach(evtType => {
+        h4.addEventListener(evtType, function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          toggleLegend();
+        }, { passive: false });
+      });
+    }, 1200);
+  }, 1000);
 ```
 
-**挿入するCSS：**
-```css
-/* 凡例ボディ折りたたみ（PC・スマホ共通） */
-.legend-body {
-  display: none;
-}
-.map-legend.open .legend-body {
-  display: block;
-}
-
+**変更後（ブロックごと削除、凡例の初期状態設定だけ残す）：**
+```javascript
+  // 凡例はボタンのみでトグル（div全体クリックは廃止）
 ```
 
 ---
 
 ## 変更サマリー
 
-| 変更 | 内容 |
-|------|------|
-| CSS変更 | `.legend-toggle-btn` の `display:none` → `display:inline-block` |
-| CSS追加 | `.legend-body` の hide/show をグローバルルールとして追加 |
+| # | 変更 | 内容 |
+|---|------|------|
+| P01 | HTML | `toggleLegend()` → `toggleLegend(event)` でイベント伝播を停止 |
+| P02 | CSS | スマホの `pointer-events:none` → `auto`（スマホでもボタンが押せる）|
+| P03 | JS | div・h4 への click リスナーを削除（ボタン一本化）|
 
 ## 動作確認ポイント
 
-- **PC**：ページ読み込み時は「開く」状態（`initLegendState()` が `.open` を付与済み）
-- **PC**：ボタンクリックで本文が折りたたまれ、タイトル行（🗺️ 凡 例 ＋ボタン）だけ残る
-- **スマホ**：既存動作（幅も縮まる）は維持される
-- 既存の `toggleLegend()` / `initLegendState()` JS は**変更不要**
+- **PC**：「閉じる」ボタン押下 → 凡例が折りたたまれボタンが「開く」に変わる ✓
+- **PC**：パネル本体クリック → 何も起きない（意図通り）✓
+- **スマホ**：ボタン押下で開閉できる ✓
 
 ## commit メッセージ（案）
 
 ```
-feat: 凡例折りたたみをPC表示にも対応
+fix: 凡例ボタンの二重発火バグを修正・ボタン操作に一本化
 ```

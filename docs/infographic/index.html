@@ -291,14 +291,14 @@
       transform: translateX(-58%);
     }
 
-    /* 2枚目：57:43 */
-    .zoom-block-crop.split-57-43.is-left img {
-      width: 175.4386%;
+    /* 2枚目：56:44 */
+    .zoom-block-crop.split-56-44.is-left img {
+      width: 178.5714%;
       transform: translateX(0);
     }
-    .zoom-block-crop.split-57-43.is-right img {
-      width: 232.5581%;
-      transform: translateX(-57%);
+    .zoom-block-crop.split-56-44.is-right img {
+      width: 227.2727%;
+      transform: translateX(-56%);
     }
 
     @media (max-width: 768px) {
@@ -364,14 +364,14 @@
       <figcaption class="zoom-block-controls" aria-label="2枚目の拡大表示">
         <button type="button" class="zoom-block-btn"
           data-zoom-side="left"
-          data-zoom-split="57-43"
+          data-zoom-split="56-44"
           data-zoom-img="./assets/final/slide-02-economic-energy.png"
           data-zoom-title="2枚目 左ブロック拡大">
           ◀ 左拡大
         </button>
         <button type="button" class="zoom-block-btn"
           data-zoom-side="right"
-          data-zoom-split="57-43"
+          data-zoom-split="56-44"
           data-zoom-img="./assets/final/slide-02-economic-energy.png"
           data-zoom-title="2枚目 右ブロック拡大">
           右拡大 ▶
@@ -432,7 +432,7 @@
 
         lastFocused = document.activeElement;
 
-        crop.classList.remove('is-left', 'is-right', 'split-58-42', 'split-57-43');
+        crop.classList.remove('is-left', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44');
         crop.classList.add(side === 'right' ? 'is-right' : 'is-left');
         crop.classList.add(`split-${split}`);
 

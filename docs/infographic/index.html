@@ -277,13 +277,20 @@
 
     .zoom-block-crop img {
       display: block;
-      width: 200%;
       max-width: none;
       height: auto;
     }
 
+    /* 左60%を表示：画像全体を166.6667%幅にして左60%が表示領域いっぱいに入る */
+    .zoom-block-crop.is-left img {
+      width: 166.6667%;
+      transform: translateX(0);
+    }
+
+    /* 右40%を表示：画像全体を250%幅にして右40%が表示領域いっぱいに入る */
     .zoom-block-crop.is-right img {
-      transform: translateX(-50%);
+      width: 250%;
+      transform: translateX(-60%);
     }
 
     @media (max-width: 768px) {
@@ -386,7 +393,8 @@
 
       const openModal = (side) => {
         lastFocused = document.activeElement;
-        crop.classList.toggle('is-right', side === 'right');
+        crop.classList.remove('is-left', 'is-right');
+        crop.classList.add(side === 'right' ? 'is-right' : 'is-left');
         title.textContent = side === 'right'
           ? '1枚目 右ブロック拡大'
           : '1枚目 左ブロック拡大';

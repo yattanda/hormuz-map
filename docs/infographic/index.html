@@ -281,16 +281,24 @@
       height: auto;
     }
 
-    /* 左58%を表示：100 / 58 = 172.4138% */
-    .zoom-block-crop.is-left img {
+    /* 1枚目：58:42 */
+    .zoom-block-crop.split-58-42.is-left img {
       width: 172.4138%;
       transform: translateX(0);
     }
-
-    /* 右42%を表示：100 / 42 = 238.0952% */
-    .zoom-block-crop.is-right img {
+    .zoom-block-crop.split-58-42.is-right img {
       width: 238.0952%;
       transform: translateX(-58%);
+    }
+
+    /* 2枚目：57:43 */
+    .zoom-block-crop.split-57-43.is-left img {
+      width: 175.4386%;
+      transform: translateX(0);
+    }
+    .zoom-block-crop.split-57-43.is-right img {
+      width: 232.5581%;
+      transform: translateX(-57%);
     }
 
     @media (max-width: 768px) {
@@ -335,16 +343,40 @@
     <figure id="slide-01" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-01-overview.png" alt="ホルムズ海峡危機 1枚目 全体俯瞰">
       <figcaption class="zoom-block-controls" aria-label="1枚目の拡大表示">
-        <button type="button" class="zoom-block-btn" data-zoom-side="left">
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="left"
+          data-zoom-split="58-42"
+          data-zoom-img="./assets/final/slide-01-overview.png"
+          data-zoom-title="1枚目 左ブロック拡大">
           ◀ 左拡大
         </button>
-        <button type="button" class="zoom-block-btn" data-zoom-side="right">
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="right"
+          data-zoom-split="58-42"
+          data-zoom-img="./assets/final/slide-01-overview.png"
+          data-zoom-title="1枚目 右ブロック拡大">
           右拡大 ▶
         </button>
       </figcaption>
     </figure>
-    <figure id="slide-02">
+    <figure id="slide-02" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-02-economic-energy.png" alt="ホルムズ海峡危機 2枚目 経済・エネルギー影響">
+      <figcaption class="zoom-block-controls" aria-label="2枚目の拡大表示">
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="left"
+          data-zoom-split="57-43"
+          data-zoom-img="./assets/final/slide-02-economic-energy.png"
+          data-zoom-title="2枚目 左ブロック拡大">
+          ◀ 左拡大
+        </button>
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="right"
+          data-zoom-split="57-43"
+          data-zoom-img="./assets/final/slide-02-economic-energy.png"
+          data-zoom-title="2枚目 右ブロック拡大">
+          右拡大 ▶
+        </button>
+      </figcaption>
     </figure>
     <figure id="slide-03">
       <img src="./assets/final/slide-03-military-maritime.png" alt="ホルムズ海峡危機 3枚目 軍事・海上交通">
@@ -373,7 +405,7 @@
       </div>
       <div class="zoom-block-scroll">
         <div class="zoom-block-crop" id="zoomBlockCrop">
-          <img src="./assets/final/slide-01-overview.png" alt="ホルムズ海峡危機 1枚目 拡大表示">
+          <img id="zoomBlockImage" src="./assets/final/slide-01-overview.png" alt="拡大表示">
         </div>
       </div>
     </div>
@@ -384,6 +416,7 @@
       const modal = document.getElementById('zoomBlockModal');
       const crop = document.getElementById('zoomBlockCrop');
       const title = document.getElementById('zoomBlockTitle');
+      const zoomImage = document.getElementById('zoomBlockImage');
       const buttons = document.querySelectorAll('.zoom-block-btn');
       const closeButtons = document.querySelectorAll('[data-zoom-close]');
 
@@ -391,15 +424,24 @@
 
       let lastFocused = null;
 
-      const openModal = (side) => {
+      const openModal = (button) => {
+        const side = button.dataset.zoomSide || 'left';
+        const split = button.dataset.zoomSplit || '58-42';
+        const imgSrc = button.dataset.zoomImg;
+        const modalTitle = button.dataset.zoomTitle || '拡大表示';
+
         lastFocused = document.activeElement;
-        crop.classList.remove('is-left', 'is-right');
+
+        crop.classList.remove('is-left', 'is-right', 'split-58-42', 'split-57-43');
         crop.classList.add(side === 'right' ? 'is-right' : 'is-left');
-        title.textContent = side === 'right'
-          ? '1枚目 右ブロック拡大'
-          : '1枚目 左ブロック拡大';
+        crop.classList.add(`split-${split}`);
+
+        if (zoomImage && imgSrc) zoomImage.src = imgSrc;
+        title.textContent = modalTitle;
+
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
         const closeBtn = modal.querySelector('.zoom-block-close');
         if (closeBtn) closeBtn.focus();
         const scrollArea = modal.querySelector('.zoom-block-scroll');
@@ -415,9 +457,7 @@
       };
 
       buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-          openModal(button.dataset.zoomSide || 'left');
-        });
+        button.addEventListener('click', () => openModal(button));
       });
 
       closeButtons.forEach((button) => {

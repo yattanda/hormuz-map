@@ -464,7 +464,8 @@
           data-zoom-side="center"
           data-zoom-split="38-21-41"
           data-zoom-img="./assets/final/slide-06-peripheral-players-iii.png"
-          data-zoom-title="6枚目 中央ブロック拡大">
+          data-zoom-title="6枚目 中央ブロック拡大"
+          data-zoom-inset="8%">
           中央拡大
         </button>
         <button type="button" class="zoom-block-btn"
@@ -531,6 +532,9 @@
         if (zoomImage && imgSrc) zoomImage.src = imgSrc;
         title.textContent = modalTitle;
 
+        const inset = button.dataset.zoomInset || '0';
+        crop.style.padding = `0 ${inset}`;
+
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
 
@@ -543,6 +547,7 @@
       const closeModal = () => {
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        crop.style.padding = '';
         if (lastFocused && typeof lastFocused.focus === 'function') {
           lastFocused.focus();
         }

@@ -311,6 +311,20 @@
       transform: translateX(-50%);
     }
 
+    /* 4枚目：35:30:35 */
+    .zoom-block-crop.split-35-30-35.is-left img {
+      width: 285.7143%;
+      transform: translateX(0);
+    }
+    .zoom-block-crop.split-35-30-35.is-center img {
+      width: 333.3333%;
+      transform: translateX(-35%);
+    }
+    .zoom-block-crop.split-35-30-35.is-right img {
+      width: 285.7143%;
+      transform: translateX(-65%);
+    }
+
     @media (max-width: 768px) {
       .zoom-block-controls {
         margin-top: 10px;
@@ -407,8 +421,31 @@
         </button>
       </figcaption>
     </figure>
-    <figure id="slide-04">
+    <figure id="slide-04" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-04-core-players.png" alt="ホルムズ海峡危機 4枚目 中核プレイヤー イラン 米国 イスラエル 湾岸諸国">
+      <figcaption class="zoom-block-controls" aria-label="4枚目の拡大表示">
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="left"
+          data-zoom-split="35-30-35"
+          data-zoom-img="./assets/final/slide-04-core-players.png"
+          data-zoom-title="4枚目 左ブロック拡大">
+          ◀ 左拡大
+        </button>
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="center"
+          data-zoom-split="35-30-35"
+          data-zoom-img="./assets/final/slide-04-core-players.png"
+          data-zoom-title="4枚目 中央ブロック拡大">
+          中央拡大
+        </button>
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="right"
+          data-zoom-split="35-30-35"
+          data-zoom-img="./assets/final/slide-04-core-players.png"
+          data-zoom-title="4枚目 右ブロック拡大">
+          右拡大 ▶
+        </button>
+      </figcaption>
     </figure>
     <figure id="slide-05">
       <img src="./assets/final/slide-05-peripheral-players-ii.png" alt="ホルムズ海峡危機 5枚目 周辺プレイヤー 中国 ロシア インド パキスタン">
@@ -458,8 +495,14 @@
 
         lastFocused = document.activeElement;
 
-        crop.classList.remove('is-left', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50');
-        crop.classList.add(side === 'right' ? 'is-right' : 'is-left');
+        crop.classList.remove('is-left', 'is-center', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50', 'split-35-30-35');
+        if (side === 'center') {
+          crop.classList.add('is-center');
+        } else if (side === 'right') {
+          crop.classList.add('is-right');
+        } else {
+          crop.classList.add('is-left');
+        }
         crop.classList.add(`split-${split}`);
 
         if (zoomImage && imgSrc) zoomImage.src = imgSrc;

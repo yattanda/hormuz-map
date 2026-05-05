@@ -311,6 +311,20 @@
       transform: translateX(-50%);
     }
 
+    /* 5枚目：38:20:42 */
+    .zoom-block-crop.split-38-20-42.is-left img {
+      width: 263.1579%;
+      transform: translateX(0);
+    }
+    .zoom-block-crop.split-38-20-42.is-center img {
+      width: 500%;
+      transform: translateX(-38%);
+    }
+    .zoom-block-crop.split-38-20-42.is-right img {
+      width: 238.0952%;
+      transform: translateX(-58%);
+    }
+
     /* 4枚目：38:21:41 */
     .zoom-block-crop.split-38-21-41.is-left img {
       width: 263.1579%;
@@ -447,8 +461,31 @@
         </button>
       </figcaption>
     </figure>
-    <figure id="slide-05">
+    <figure id="slide-05" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-05-peripheral-players-ii.png" alt="ホルムズ海峡危機 5枚目 周辺プレイヤー 中国 ロシア インド パキスタン">
+      <figcaption class="zoom-block-controls" aria-label="5枚目の拡大表示">
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="left"
+          data-zoom-split="38-20-42"
+          data-zoom-img="./assets/final/slide-05-peripheral-players-ii.png"
+          data-zoom-title="5枚目 左ブロック拡大">
+          ◀ 左拡大
+        </button>
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="center"
+          data-zoom-split="38-20-42"
+          data-zoom-img="./assets/final/slide-05-peripheral-players-ii.png"
+          data-zoom-title="5枚目 中央ブロック拡大">
+          中央拡大
+        </button>
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="right"
+          data-zoom-split="38-20-42"
+          data-zoom-img="./assets/final/slide-05-peripheral-players-ii.png"
+          data-zoom-title="5枚目 右ブロック拡大">
+          右拡大 ▶
+        </button>
+      </figcaption>
     </figure>
     <figure id="slide-06" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-06-peripheral-players-iii.png" alt="ホルムズ海峡危機 6枚目 周辺プレイヤー 日韓 欧州 トルコ 海運 保険 市場インフラ">
@@ -519,7 +556,7 @@
 
         lastFocused = document.activeElement;
 
-        crop.classList.remove('is-left', 'is-center', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50', 'split-35-30-35', 'split-36-28-36', 'split-36-26-38', 'split-38-21-41');
+        crop.classList.remove('is-left', 'is-center', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50', 'split-35-30-35', 'split-36-28-36', 'split-36-26-38', 'split-38-21-41', 'split-38-20-42');
         if (side === 'center') {
           crop.classList.add('is-center');
         } else if (side === 'right') {

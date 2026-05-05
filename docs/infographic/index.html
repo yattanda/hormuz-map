@@ -281,16 +281,16 @@
       height: auto;
     }
 
-    /* 左60%を表示：画像全体を166.6667%幅にして左60%が表示領域いっぱいに入る */
+    /* 左58%を表示：100 / 58 = 172.4138% */
     .zoom-block-crop.is-left img {
-      width: 166.6667%;
+      width: 172.4138%;
       transform: translateX(0);
     }
 
-    /* 右40%を表示：画像全体を250%幅にして右40%が表示領域いっぱいに入る */
+    /* 右42%を表示：100 / 42 = 238.0952% */
     .zoom-block-crop.is-right img {
-      width: 250%;
-      transform: translateX(-60%);
+      width: 238.0952%;
+      transform: translateX(-58%);
     }
 
     @media (max-width: 768px) {

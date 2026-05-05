@@ -311,18 +311,18 @@
       transform: translateX(-50%);
     }
 
-    /* 4枚目：35:30:35 */
-    .zoom-block-crop.split-35-30-35.is-left img {
-      width: 285.7143%;
+    /* 4枚目：36:28:36 */
+    .zoom-block-crop.split-36-28-36.is-left img {
+      width: 277.7778%;
       transform: translateX(0);
     }
-    .zoom-block-crop.split-35-30-35.is-center img {
-      width: 333.3333%;
-      transform: translateX(-35%);
+    .zoom-block-crop.split-36-28-36.is-center img {
+      width: 357.1429%;
+      transform: translateX(-36%);
     }
-    .zoom-block-crop.split-35-30-35.is-right img {
-      width: 285.7143%;
-      transform: translateX(-65%);
+    .zoom-block-crop.split-36-28-36.is-right img {
+      width: 277.7778%;
+      transform: translateX(-64%);
     }
 
     @media (max-width: 768px) {
@@ -426,21 +426,21 @@
       <figcaption class="zoom-block-controls" aria-label="4枚目の拡大表示">
         <button type="button" class="zoom-block-btn"
           data-zoom-side="left"
-          data-zoom-split="35-30-35"
+          data-zoom-split="36-28-36"
           data-zoom-img="./assets/final/slide-04-core-players.png"
           data-zoom-title="4枚目 左ブロック拡大">
           ◀ 左拡大
         </button>
         <button type="button" class="zoom-block-btn"
           data-zoom-side="center"
-          data-zoom-split="35-30-35"
+          data-zoom-split="36-28-36"
           data-zoom-img="./assets/final/slide-04-core-players.png"
           data-zoom-title="4枚目 中央ブロック拡大">
           中央拡大
         </button>
         <button type="button" class="zoom-block-btn"
           data-zoom-side="right"
-          data-zoom-split="35-30-35"
+          data-zoom-split="36-28-36"
           data-zoom-img="./assets/final/slide-04-core-players.png"
           data-zoom-title="4枚目 右ブロック拡大">
           右拡大 ▶
@@ -495,7 +495,7 @@
 
         lastFocused = document.activeElement;
 
-        crop.classList.remove('is-left', 'is-center', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50', 'split-35-30-35');
+        crop.classList.remove('is-left', 'is-center', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50', 'split-35-30-35', 'split-36-28-36');
         if (side === 'center') {
           crop.classList.add('is-center');
         } else if (side === 'right') {

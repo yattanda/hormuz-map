@@ -178,6 +178,134 @@
         padding: 8px 6px;
       }
     }
+
+    /* ── zoom-block: 1枚目左右拡大 ── */
+    .zoom-block-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 12px auto 4px;
+      flex-wrap: wrap;
+    }
+
+    .zoom-block-btn {
+      appearance: none;
+      border: 1px solid rgba(148, 197, 255, 0.35);
+      background: rgba(10, 32, 52, 0.92);
+      color: #eaf6ff;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .zoom-block-btn:hover,
+    .zoom-block-btn:focus-visible {
+      background: rgba(24, 78, 125, 0.96);
+      outline: none;
+    }
+
+    .zoom-block-modal[aria-hidden="true"] { display: none; }
+
+    .zoom-block-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+    }
+
+    .zoom-block-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+    }
+
+    .zoom-block-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(100vw, 1440px);
+      height: 100dvh;
+      margin: 0 auto;
+      background: #061521;
+      color: #eaf6ff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .zoom-block-header {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .zoom-block-header h2 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .zoom-block-close {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-radius: 999px;
+      width: 36px;
+      height: 36px;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .zoom-block-scroll {
+      flex: 1 1 auto;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0;
+    }
+
+    .zoom-block-crop {
+      width: 100%;
+      overflow: hidden;
+      background: #061521;
+    }
+
+    .zoom-block-crop img {
+      display: block;
+      width: 200%;
+      max-width: none;
+      height: auto;
+    }
+
+    .zoom-block-crop.is-right img {
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .zoom-block-controls {
+        margin-top: 10px;
+        gap: 8px;
+      }
+
+      .zoom-block-btn {
+        min-width: 112px;
+        padding: 9px 14px;
+        font-size: 13px;
+      }
+
+      .zoom-block-header {
+        padding: 8px 10px;
+      }
+
+      .zoom-block-header h2 {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -197,8 +325,16 @@
   </nav>
 
   <section class="infographic-gallery" aria-label="ホルムズ海峡危機を6枚の図解で俯瞰する">
-    <figure id="slide-01">
+    <figure id="slide-01" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-01-overview.png" alt="ホルムズ海峡危機 1枚目 全体俯瞰">
+      <figcaption class="zoom-block-controls" aria-label="1枚目の拡大表示">
+        <button type="button" class="zoom-block-btn" data-zoom-side="left">
+          ◀ 左拡大
+        </button>
+        <button type="button" class="zoom-block-btn" data-zoom-side="right">
+          右拡大 ▶
+        </button>
+      </figcaption>
     </figure>
     <figure id="slide-02">
       <img src="./assets/final/slide-02-economic-energy.png" alt="ホルムズ海峡危機 2枚目 経済・エネルギー影響">
@@ -220,5 +356,72 @@
   <p class="infographic-note">
     ※本ページは全6枚構成です。一部画像内の表記は制作過程の表記を含みますが、内容理解に影響しない範囲で掲載しています。
   </p>
+  <!-- zoom-block modal: 1枚目左右拡大 -->
+  <div class="zoom-block-modal" id="zoomBlockModal" aria-hidden="true">
+    <div class="zoom-block-backdrop" data-zoom-close></div>
+    <div class="zoom-block-dialog" role="dialog" aria-modal="true" aria-labelledby="zoomBlockTitle">
+      <div class="zoom-block-header">
+        <h2 id="zoomBlockTitle">1枚目 拡大表示</h2>
+        <button type="button" class="zoom-block-close" data-zoom-close aria-label="拡大表示を閉じる">×</button>
+      </div>
+      <div class="zoom-block-scroll">
+        <div class="zoom-block-crop" id="zoomBlockCrop">
+          <img src="./assets/final/slide-01-overview.png" alt="ホルムズ海峡危機 1枚目 拡大表示">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const modal = document.getElementById('zoomBlockModal');
+      const crop = document.getElementById('zoomBlockCrop');
+      const title = document.getElementById('zoomBlockTitle');
+      const buttons = document.querySelectorAll('.zoom-block-btn');
+      const closeButtons = document.querySelectorAll('[data-zoom-close]');
+
+      if (!modal || !crop || !title || !buttons.length) return;
+
+      let lastFocused = null;
+
+      const openModal = (side) => {
+        lastFocused = document.activeElement;
+        crop.classList.toggle('is-right', side === 'right');
+        title.textContent = side === 'right'
+          ? '1枚目 右ブロック拡大'
+          : '1枚目 左ブロック拡大';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('.zoom-block-close');
+        if (closeBtn) closeBtn.focus();
+        const scrollArea = modal.querySelector('.zoom-block-scroll');
+        if (scrollArea) scrollArea.scrollTop = 0;
+      };
+
+      const closeModal = () => {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+          lastFocused.focus();
+        }
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          openModal(button.dataset.zoomSide || 'left');
+        });
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

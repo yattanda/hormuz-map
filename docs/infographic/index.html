@@ -301,6 +301,16 @@
       transform: translateX(-56%);
     }
 
+    /* 3枚目：50:50 */
+    .zoom-block-crop.split-50-50.is-left img {
+      width: 200%;
+      transform: translateX(0);
+    }
+    .zoom-block-crop.split-50-50.is-right img {
+      width: 200%;
+      transform: translateX(-50%);
+    }
+
     @media (max-width: 768px) {
       .zoom-block-controls {
         margin-top: 10px;
@@ -378,8 +388,24 @@
         </button>
       </figcaption>
     </figure>
-    <figure id="slide-03">
+    <figure id="slide-03" class="infographic-figure has-zoom-blocks">
       <img src="./assets/final/slide-03-military-maritime.png" alt="ホルムズ海峡危機 3枚目 軍事・海上交通">
+      <figcaption class="zoom-block-controls" aria-label="3枚目の拡大表示">
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="left"
+          data-zoom-split="50-50"
+          data-zoom-img="./assets/final/slide-03-military-maritime.png"
+          data-zoom-title="3枚目 左ブロック拡大">
+          ◀ 左拡大
+        </button>
+        <button type="button" class="zoom-block-btn"
+          data-zoom-side="right"
+          data-zoom-split="50-50"
+          data-zoom-img="./assets/final/slide-03-military-maritime.png"
+          data-zoom-title="3枚目 右ブロック拡大">
+          右拡大 ▶
+        </button>
+      </figcaption>
     </figure>
     <figure id="slide-04">
       <img src="./assets/final/slide-04-core-players.png" alt="ホルムズ海峡危機 4枚目 中核プレイヤー イラン 米国 イスラエル 湾岸諸国">
@@ -432,7 +458,7 @@
 
         lastFocused = document.activeElement;
 
-        crop.classList.remove('is-left', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44');
+        crop.classList.remove('is-left', 'is-right', 'split-58-42', 'split-57-43', 'split-56-44', 'split-50-50');
         crop.classList.add(side === 'right' ? 'is-right' : 'is-left');
         crop.classList.add(`split-${split}`);
 

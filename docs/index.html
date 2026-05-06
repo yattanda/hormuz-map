@@ -1690,15 +1690,14 @@ const SHIP_CONFIG = {
 <div id="incident" style="border-radius:12px;overflow:hidden;border:1px solid rgba(239,68,68,0.35);">
 
   <!-- 速報インシデント　トグルボタン -->
-  <button onclick="toggleIncident()" id="incident-toggle-btn"
-    style="width:100%;background:linear-gradient(135deg,#1a0808,#2d1010);border:none;border-bottom:1px solid rgba(239,68,68,0.3);padding:13px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:inherit;">
+  <div id="incident-toggle-btn"
+    style="width:100%;background:linear-gradient(135deg,#1a0808,#2d1010);border-bottom:1px solid rgba(239,68,68,0.3);padding:13px 18px;display:flex;align-items:center;font-family:inherit;">
     <span style="display:flex;align-items:center;gap:10px;">
       <span style="font-size:1.1rem;">🚨</span>
       <strong style="font-size:0.88rem;font-weight:800;color:#f87171;">速報インシデント</strong>
-      <span <span style="font-size:0.65rem;color:#64748b;padding:2px 8px;border-radius:12px;background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);">📅 5/5 09:11 更新</span>
+      <span style="font-size:0.65rem;color:#64748b;padding:2px 8px;border-radius:12px;background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.25);">📅 5/5 09:11 更新</span>
     </span>
-    <span id="incident-arrow" style="font-size:0.78rem;color:#ef4444;white-space:nowrap;">▼ 開いて表示</span>
-  </button>
+  </div>
 
   <!-- 折りたたみ本体（デフォルト非表示） -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
@@ -3203,7 +3202,7 @@ function toggleNewsExtra() {
   if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ さらに見る';
 }
 
-// 速報インシデント: 3件常時表示 + 4件目以降折り畳み
+// 速報インシデント: 3件常時表示 + 4件目以降折り畳み（上下両ボタン）
 function applyIncidentFold() {
   const list = document.getElementById('incident-list');
   if (!list || list.dataset.folded) return;
@@ -3211,18 +3210,36 @@ function applyIncidentFold() {
   const items = Array.from(list.children);
   if (items.length <= 3) return;
   items.slice(3).forEach(function(el) { el.style.display = 'none'; });
-  const btn = document.createElement('button');
-  btn.className = 'news-more-btn';
-  btn.textContent = '▼ 過去のインシデントを見る（' + (items.length - 3) + '件）';
-  btn.onclick = function() {
+
+  var buttons = [];
+  var label = '▼ 過去のインシデントを見る（' + (items.length - 3) + '件）';
+
+  function toggleFold() {
     const hidden = items.slice(3);
     const isHidden = hidden[0].style.display === 'none';
     hidden.forEach(function(el) { el.style.display = isHidden ? '' : 'none'; });
-    btn.textContent = isHidden
+    const newText = isHidden
       ? '▲ 折りたたむ'
       : '▼ 過去のインシデントを見る（' + hidden.length + '件）';
-  };
-  list.after(btn);
+    buttons.forEach(function(b) { b.textContent = newText; });
+  }
+
+  var topBtn = document.createElement('button');
+  topBtn.className = 'news-more-btn';
+  topBtn.textContent = label;
+  topBtn.style.marginBottom = '8px';
+  topBtn.onclick = toggleFold;
+  buttons.push(topBtn);
+
+  var bottomBtn = document.createElement('button');
+  bottomBtn.className = 'news-more-btn';
+  bottomBtn.textContent = label;
+  bottomBtn.style.marginTop = '8px';
+  bottomBtn.onclick = toggleFold;
+  buttons.push(bottomBtn);
+
+  list.before(topBtn);
+  list.after(bottomBtn);
 }
 function loadNewsData() {
   fetch('data/news_data.json?t=' + Date.now())

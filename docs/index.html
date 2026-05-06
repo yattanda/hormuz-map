@@ -3202,31 +3202,70 @@ function toggleNewsExtra() {
   if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ さらに見る';
 }
 
-// 速報インシデント: 3件常時表示 + 4件目以降折り畳み（下のみ）
+// 速報インシデント: 3件常時表示 + 4件目以降折り畳み
+// 上ボタン：3件目直後（▼開く / ▲閉じる が切り替わる）
+// 下ボタン：展開コンテンツの末尾（▲折りたたむ、展開時のみ表示）
+// 折りたたむ時のジャンプをscrollByで補正
 function applyIncidentFold() {
   const list = document.getElementById('incident-list');
   if (!list || list.dataset.folded) return;
   list.dataset.folded = '1';
-  const items = Array.from(list.children);
-  if (items.length <= 3) return;
-  items.slice(3).forEach(function(el) { el.style.display = 'none'; });
+  const allItems = Array.from(list.children);
+  if (allItems.length <= 3) return;
 
-  var label = '▼ 過去のインシデントを見る（' + (items.length - 3) + '件）';
+  // 4件目以降を <ul> から取り出して別divに移動
+  const extraDiv = document.createElement('div');
+  extraDiv.id = 'incident-extra';
+  extraDiv.style.display = 'none';
+  allItems.slice(3).forEach(function(el) {
+    extraDiv.appendChild(el);
+  });
+  var extraCount = extraDiv.children.length;
 
-  var btn = document.createElement('button');
-  btn.className = 'news-more-btn';
-  btn.textContent = label;
-  btn.style.marginTop = '8px';
-  btn.onclick = function() {
-    const hidden = items.slice(3);
-    const isHidden = hidden[0].style.display === 'none';
-    hidden.forEach(function(el) { el.style.display = isHidden ? '' : 'none'; });
-    btn.textContent = isHidden
+  // 上ボタン（3件目直後・extraDivの直前）
+  var topBtn = document.createElement('button');
+  topBtn.className = 'news-more-btn';
+  topBtn.style.margin = '8px 0';
+
+  // 下ボタン（extraDiv末尾・展開時のみ表示）
+  var bottomBtn = document.createElement('button');
+  bottomBtn.className = 'news-more-btn';
+  bottomBtn.textContent = '▲ 折りたたむ';
+  bottomBtn.style.marginTop = '8px';
+
+  function setExpanded(expanded) {
+    topBtn.textContent = expanded
       ? '▲ 折りたたむ'
-      : '▼ 過去のインシデントを見る（' + hidden.length + '件）';
+      : '▼ 過去のインシデントを見る（' + extraCount + '件）';
+    extraDiv.style.display = expanded ? 'block' : 'none';
+    bottomBtn.style.display = expanded ? 'block' : 'none';
+  }
+  setExpanded(false);
+
+  function collapse() {
+    var topY = topBtn.getBoundingClientRect().top;
+    setExpanded(false);
+    var newTopY = topBtn.getBoundingClientRect().top;
+    window.scrollBy({ top: newTopY - topY, left: 0, behavior: 'instant' });
+  }
+
+  topBtn.onclick = function() {
+    var isExpanded = extraDiv.style.display !== 'none';
+    if (isExpanded) { collapse(); } else { setExpanded(true); }
   };
 
-  list.after(btn);
+  bottomBtn.onclick = function() {
+    collapse();
+    // 折りたたんだ後、上ボタンが見える位置までスクロール
+    topBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  // extraDiv の末尾に下ボタンを追加
+  extraDiv.appendChild(bottomBtn);
+
+  // ul の後ろに: [topBtn][extraDiv] の順で挿入
+  list.after(extraDiv);
+  list.after(topBtn);
 }
 function loadNewsData() {
   fetch('data/news_data.json?t=' + Date.now())

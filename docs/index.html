@@ -679,15 +679,12 @@ footer {
 
   .rtable { font-size: 12px !important; }
 
-  /* 主なリスク列（6列目）をスマホで非表示 → 状態列が収まる */
-  .rtable th:nth-child(6),
-  .rtable td:nth-child(6) { display: none !important; }
-
-  /* スマホ用列幅再配分（jf-col・主なリスク非表示後の5列） */
-  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 5% !important; }
-  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 20% !important; }
-  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 20% !important; }
-  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 38% !important; }
+  /* 列幅再配分：主なリスクを狭め、状態列を横スクロールなしで表示 */
+  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4% !important; }
+  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14% !important; }
+  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13% !important; }
+  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 30% !important; }
+  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 22% !important; }
   .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 17% !important; }
 }
 /* ================================================

@@ -70,8 +70,16 @@ body {
   .container,
   [style*="max-width:960px"],
   [style*="max-width: 960px"] {
-    padding-left: 6px !important;
-    padding-right: 6px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  /* ルートテーブルは端まで広げる */
+  .rtable-wrap {
+    margin-left: -4px !important;
+    margin-right: -4px !important;
+    width: calc(100% + 8px) !important;
+    overflow-x: auto;
   }
   /* ステータスバッジを横並び維持 */
   [style*="display:flex;flex-wrap:wrap;gap:8px;"] {

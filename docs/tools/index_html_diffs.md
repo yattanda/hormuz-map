@@ -1,307 +1,117 @@
-# index_html_diffs.md — 2026年5月5日 09:11 JST 更新分
+# index_html_diffs — 凡例ボタン修正 + テーブル右余白解消 2026-05-06
 
-> Claude Code への指示：以下の差分を index.html に適用してください。
+> Claude Code への指示：以下の2箇所を docs/index.html に適用してください。
 > 変更箇所以外は絶対に触らないこと。
+> 適用後は commit してください。push はユーザーの確認後に実施。
 
 ---
 
-## [S01] ヘッダー日時・警戒レベル
+## [CSS-1] 凡例ボタン修正（タップできない問題）
 
-**対象：** `<header>` 内の `.badge-alert` と `.badge-date`
+対象： @media(max-width:860px) ブロック内の .map-legend 関連CSS
 
-**変更前：**
-```html
-<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-<span class="badge-item badge-date">📅2026年5月4日 11:13 JST</span>
-```
+変更前：
+  .map-legend {
+    min-width: 80px !important;
+    max-width: 80px !important;
+    padding: 8px 10px !important;
+    transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(56,189,248,0.2);
+    touch-action: manipulation;
+  }
+  .map-legend.open {
+    min-width: 230px !important;
+    max-width: 260px !important;
+    padding: 12px 14px !important;
+  }
+  .map-legend h4 {
+    font-size:0.75rem;
+    white-space:nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .legend-toggle-btn {
+    display: inline-block;
+    pointer-events: auto;
+  }
 
-**変更後：**
-```html
-<span class="badge-item badge-alert">🚨 警戒レベル：最高（交戦突入）</span>
-<span class="badge-item badge-date">📅2026年5月5日 09:11 JST</span>
-```
-
----
-
-## [S02] TICKER
-
-**対象：** ティッカー内の `<!-- 新ティッカー（2026年5月4日 11:13 JST） -->` コメント直後の `<span class="ticker-text">` 内テキスト全体
-
-**変更前：**
-```
-<!-- 新ティッカー（2026年5月4日 11:13 JST） -->
-      🔴【速報・本日開始】米軍「Project Freedom」始動 ― 誘導ミサイル駆逐艦・100機超・1.5万人でホルムズ閉じ込め船を護衛退出（5/4 11:13 JST）｜🔴 トランプ、イランの14ポイント提案を「容認できない」と全面拒否 ― 米がパキスタン経由で反提案送付済み（5/4 JST）｜⚠️ イラン議会安全保障委員長「Project Freedom介入は停戦違反とみなす」と警告（5/4 JST）｜🔴 5/3ホルムズ海峡付近で貨物船が小型ボートに攻撃 ― 英UKMTO確認（5/4 JST）｜📊 WTI 105〜111ドル高止まり ― 開戦前比約+60%・Project Freedom後の報復リスクを市場が最大変数に（5/4 JST）｜🔴 イラン・米国による二重封鎖（Iran-US dual blockade）67日目 ― 通航量は戦前比約95%減（5/4 JST）｜🛢️ イラン石油備蓄：逼迫フェーズ継続 ― Kpler「残り12〜22日分」（4/28時点・5/4 JST 確認）
-```
-
-**変更後：**
-```
-<!-- 新ティッカー（2026年5月5日 09:11 JST） -->
-      🔴【速報】5/4 米・イランが実弾交戦——イランがUAE（フジャイラ）にミサイル15発・ドローン4機攻撃、米軍がイラン小型艇7隻撃沈（5/5 09:11 JST）｜🔴 停戦「最危険局面」——Fox News上席官員「24時間前より大規模作戦再開に近い」・トランプ「停戦継続か分からない」（5/5 JST）｜🛢️ ブレント$114.44・WTI$106.42——フジャイラ炎上で4年ぶり高値（5/4終値・5/5 JST）｜🇮🇷 アラグチ外相「Project Freedom = Project Deadlock」——停戦違反と主張しながら「交渉は進展中」と矛盾シグナル（5/5 JST）｜🚢 MSC（世界最大コンテナ社）が5/10からホルムズ完全迂回の新ルート開始——サウジ陸送活用（5/5 JST）｜🔴 イラン・米国による二重封鎖（Iran-US dual blockade）68日目——商業通航戦前比95%減継続（5/5 09:11 JST）
-```
-
----
-
-## [S03] 速報インシデント ⚠️（漏れ多発セクション）
-
-**対象：** `<!-- 速報インシデント トグルボタン -->` 内
-
-### トグルボタン内の日付バッジ
-
-**変更前：**
-```html
-📅 5/4 11:13 更新
-```
-
-**変更後：**
-```html
-📅 5/5 09:11 更新
-```
-
-### 速報インシデント本体（先頭の `<strong>` タグを置き換え）
-
-**変更前（先頭の strong タグ）：**
-```html
-<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【5/4 11:13 速報】米軍「Project Freedom」本日始動（1.5万人・駆逐艦・100機超）・トランプがイランの14ポイント提案を全面拒否・米が反提案送付しイラン審査中・5/3海峡付近で貨物船攻撃（英UKMTO）・WTI 105〜111ドル高止まり・封鎖67日目・ニュース4件更新・OSINT更新
-</strong>
-```
-
-**変更後：**
-```html
-<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【5/5 09:11 速報】5/4 米・イラン実弾交戦：イランがUAEにミサイル15発・ドローン4機（フジャイラ炎上）、米軍がイラン小型艇7隻撃沈・韓国籍船被弾｜停戦「最危険局面」（Fox News）｜ブレント$114.44・WTI$106.42（4年ぶり高値）｜アラグチ「Project Freedom = Project Deadlock」・交渉は並行継続中｜封鎖68日目
-</strong>
-```
-
-### インシデントリスト（先頭に2件追加、`<ul>` の直後）
-
-```html
-<li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.8rem;color:#fde68a;">
-  <strong>🔴 5/4（月）UAE へのミサイル・ドローン攻撃——フジャイラ石油ハブ炎上</strong><br>
-  イランがUAEに弾道ミサイル12発・巡航ミサイル3発・ドローン4機を発射。UAE防空が全弾迎撃も3人が負傷し、フジャイラの石油施設でドローン攻撃による火災が発生。英国のスターマー首相はイランを非難し「この緊張拡大は即刻停止しなければならない」と声明。サウジがUAEへの連帯を表明。（出典：CNN・Fox News / 5/4）
-</li>
-<li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.8rem;color:#fde68a;">
-  <strong>🔴 5/4（月）米・イランが実弾交戦——米が小型艇7隻撃沈、韓国籍船被弾</strong><br>
-  Project Freedom開始直後にイラン革命防衛隊が米海軍艦船と護衛商船に対し「複数の巡航ミサイル・ドローン・小型艇」で攻撃。米軍がイランの小型艇6〜7隻を撃沈・撃破し商船を防護。韓国籍貨物船が被弾しトランプが韓国に「参戦」を要請。トランプは停戦継続の有無を問われ「分からない」と回答。軍は「命令待ち・再武装完了済み」と表明。（出典：CNBC・CBS News / 5/4）
-</li>
-```
+変更後：
+  .map-legend {
+    min-width: 80px !important;
+    max-width: 80px !important;
+    padding: 8px 10px !important;
+    transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(56,189,248,0.2);
+    touch-action: manipulation;
+  }
+  .map-legend.open {
+    min-width: 250px !important;
+    max-width: 290px !important;
+    padding: 12px 14px !important;
+  }
+  .map-legend h4 {
+    font-size: 13px !important;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .legend-toggle-btn {
+    display: inline-block;
+    pointer-events: auto;
+    flex-shrink: 0;
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+    min-width: 44px;
+    text-align: center;
+  }
 
 ---
 
-## [S04] 情勢カード3枚
+## [CSS-2] テーブル右余白解消（containerのpaddingを削減）
 
-**対象：** `<!-- SITUATION CARDS -->` セクション内の3枚のカード
+対象： /* ===== スマホ最適化 ===== */ @media (max-width: 600px) ブロック内の
+      .container の padding指定
 
-### カード1（軍事・安全保障）
+変更前：
+  .container,
+  [style*="max-width:960px"],
+  [style*="max-width: 960px"] {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
 
-**変更前タイトル：**
-```
-Project Freedom 5/4始動——誘導駆逐艦・100機超・1.5万人でホルムズ護衛開始
-```
+変更後：
+  .container,
+  [style*="max-width:960px"],
+  [style*="max-width: 960px"] {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
 
-**変更後タイトル：**
-```
-🔴 米・イラン実弾交戦（5/4）——停戦「最危険局面」に突入
-```
-
-**変更後本文：**
-```
-Project Freedom開始直後の5月4日、イランがUAEにミサイル15発・ドローン4機を発射（フジャイラ炎上）。米軍がイラン小型艇7隻撃沈。韓国籍船が被弾。Fox News上席官員「24時間前より大規模作戦再開に近い」。トランプは停戦継続の有無を「分からない」と発言し、軍は「命令待ち・再武装完了」と表明。イランの統合軍司令官は「ホルムズに接近する外国軍はいかなる勢力も攻撃する」と宣言。停戦崩壊リスクが急上昇。（出典：CNN・Fox News / 5/4）
-```
-
-### カード2（外交・交渉）
-
-**変更前タイトル：**
-```
-14ポイント提案——トランプ全面拒否・米が反提案送付・イラン審査中
-```
-
-**変更後タイトル：**
-```
-「Project Deadlock」——アラグチが批判も交渉は並行継続
-```
-
-**変更後本文：**
-```
-イラン外相アラグチはX上で「Project FreedomはProject Deadlock（行き詰まり）だ。ホルムズに軍事的解決策はない」と批判。しかし同時に「パキスタンの仲介で交渉は進展中。米国もUAEも泥沼に引き込まれないよう」と交渉継続も示唆。米側は引き続きパキスタン経由で反提案の協議を継続。一方でネタニヤフ首相の訪米が近く報じられており、「停戦延長 vs 爆撃再開」を巡る意思決定が最大の焦点。（出典：CNN・Reuters / 5/4）
-```
-
-### カード3（エネルギー・市場）
-
-**変更前タイトル：**
-```
-WTI $105〜111——市場は「護衛作戦報復リスク」を最大変数に警戒
-```
-
-**変更後タイトル：**
-```
-ブレント$114.44・WTI$106.42——フジャイラ炎上で4年ぶり高値
-```
-
-**変更後本文：**
-```
-5月4日、イランのUAE攻撃・フジャイラ石油ハブ炎上を受けブレントが約6%急騰し$114.44/バレル（2022年6月以来の高値）で終値、WTIは$106.42。米ガソリン平均は$4.46/ガロン（開戦前比+50%）。CENTCOMはイラン港湾向け船舶のリダイレクト合計48隻と発表。MSC（世界最大コンテナ社）が5/10よりホルムズ迂回新ルート（サウジ陸送活用）を開始。米財務長官ベセントはイラン油井が「近く停止する」と予測。（出典：CNBC・Bloomberg / 5/4）
-```
+  /* ルートテーブルは端まで広げる */
+  .rtable-wrap {
+    margin-left: -4px !important;
+    margin-right: -4px !important;
+    width: calc(100% + 8px) !important;
+    overflow-x: auto;
+  }
 
 ---
 
-## [S05] COUNTDOWN
+## 確認ポイント（適用後）
 
-**対象：** `<!-- COUNTDOWN -->` セクション内のフェーズラベルと説明テキスト
-
-**フェーズラベル変更前：**
-```
-🟠 フェーズ4：Project Freedom ― 護衛作戦始動
-```
-
-**フェーズラベル変更後：**
-```
-🔴 フェーズ5：実弾交戦突入 ― 停戦崩壊の瀬戸際
-```
-
-**説明テキスト変更後：**
-```
-米・イランが5/4に実弾を交わした。Project Freedom開始直後にイランがUAEを攻撃し米軍が反撃。停戦は維持されているか不明確。トランプは「継続か分からない」と発言し、軍は「再武装完了・命令待ち」と表明。ホルムズを巡る軍事的対峙が最も危険な局面に達した。
-```
-
----
-
-## [S06] シナリオ確率補足バナー ⚠️（漏れ多発セクション）
-
-**対象：** `<!-- SCENARIOS -->` 内の確率補足バナー（`sc-note-banner` 相当の div）
-
-**変更前：**
-```html
-📊 <strong>5/4 11:13 JST 更新</strong> — Project Freedom始動で外交膠着が軍事的対峙に転換。シナリオD（エスカレーション）↑↑、シナリオA（外交妥結）↓↓
-```
-
-**変更後：**
-```html
-📊 <strong>5/5 09:11 JST 更新</strong> — 米・イラン実弾交戦発生。フジャイラ炎上・停戦「最危険局面」。シナリオD（エスカレーション）↑↑↑、シナリオC（全面衝突）↑↑、シナリオA（外交妥結）↓↓↓
-```
-
----
-
-## [S07] シナリオ4本（タイトル・本文）
-
-**対象：** `<!-- SCENARIOS -->` 内の各 `sc-card`
-
-### シナリオA（外交妥結・段階的解決）
-
-**変更後本文：**
-```
-実弾交戦の発生により外交空間は急速に収縮。しかしアラグチ外相が「交渉は進展中」と並行シグナルを維持。パキスタン仲介の間接接触は継続しており、米・イランのいずれも「公式に停戦終了」を宣言していない。ただし核問題を巡る根本的すれ違い（米：核廃絶先行、イラン：ホルムズ先行）は解消していない。交戦が拡大すれば外交経路は完全に閉じる。
-```
-
-### シナリオB（停戦延長・膠着継続）
-
-**変更後本文：**
-```
-5/4の交戦後も米・イランともに「停戦終了」を正式宣言していない。膠着が再び続く余地はあるが、UAE攻撃・フジャイラ炎上はこれまでとは質的に異なるエスカレーション。ネタニヤフ訪米・議会60日制限問題・米中間選挙圧力が、トランプに「行動」を迫る構造的圧力となっている。純粋な膠着継続シナリオの確率は低下した。
-```
-
-### シナリオC（全面衝突・完全再封鎖）
-
-**変更後本文：**
-```
-イランがUAEへのミサイル攻撃を実行し、フジャイラ石油ハブを炎上させた。これは停戦後初の大規模なインフラ攻撃であり、「完全再封鎖」への引き金になり得る。イランの統合軍司令官は「ホルムズ接近勢力は全て攻撃する」と宣言済み。米軍がイラン本土への爆撃を再開すれば、イランは海峡を完全閉鎖し湾岸産油国への攻撃を拡大する公算が高い。
-```
-
-### シナリオD（軍事エスカレーション）
-
-**変更後本文：**
-```
-5/4の実弾交戦によりこのシナリオが現実化しつつある。米軍は「再武装完了・命令待ち」状態で、Fox News上席官員は「大規模作戦再開に24時間前より近い」と証言。イランはUAE・フジャイラを攻撃し紛争を湾岸全域に拡大した。トランプが爆撃再開を命令すれば、イランは湾岸産油国（サウジ・クウェート含む）への攻撃拡大・機雷大量展開で応じる可能性が高い。ブレント$130超シナリオが視野に入る。
-```
-
----
-
-## [S08] シナリオフッター
-
-**対象：** `<!-- シナリオ フッター -->` 内の「次の焦点」と日付
-
-**変更前の「次の焦点」：**
-```
-米国のイラン新提案への最終回答 ／ モジュタバ強硬姿勢とIRGCの行動 ／ イラン備蓄枯渇タイムリミット
-```
-
-**変更後の「次の焦点」：**
-```
-トランプの爆撃再開命令の有無 ／ イランの停戦違反宣言 ／ UAEへの追加攻撃の有無 ／ ブレント$120再突破リスク ／ ネタニヤフ訪米と対イラン戦略の整合
-```
-
-**更新日時：** `5/4 11:13 JST` → `5/5 09:11 JST`
-
----
-
-## [S09] 30秒カラム（3行＋バッジ5枚）
-
-**対象：** `<!-- 30秒で全体像を把握 -->` セクション
-
-### 3行サマリー
-
-**「いま何が」行 変更後：**
-```
-5/4、米・イランが実弾を交わした。イランがUAE（フジャイラ）にミサイル・ドローンで攻撃し油田施設が炎上。米軍はイランの小型艇7隻を撃沈。停戦崩壊の瀬戸際に突入（5/4）。
-```
-
-**「海峡の今」行 変更後：**
-```
-全商業通航実質停止継続（戦前比95%減）・ブレント$114.44・WTI$106.42（4年ぶり高値）・約2万人の船員が足止め・68日目
-```
-
-**「次に見る」行 変更後：**
-```
-トランプが爆撃再開を命じるか ／ イランが停戦違反を正式宣言するか ／ UAEへの追加攻撃・ブレント$120再突破リスク
-```
-
-### ステータスバッジ5枚（全置き換え）
-
-**変更後：**
-```html
-<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 封鎖68日目：米・イラン実弾交戦発生</span>
-<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 停戦：最危険局面（継続か否か不明確）</span>
-<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 原油：ブレント$114.44・WTI$106.42（4年ぶり高値）</span>
-<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 UAE：フジャイラ石油ハブ炎上・ミサイル15発迎撃</span>
-<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 外交：交戦と並行で継続——停戦崩壊リスク最高潮</span>
-```
-
----
-
-## [S10] news_data.json 更新メモ
-
-**更新内容：**
-- `updated`: `"2026年5月5日 09:11 日本時間JST"`
-- `staleNotice`: `""` （新情報あり）
-- `latest` 4件を新規に差し替え（5/4〜5/5の交戦・原油・外交・MSC迂回ルート）
-- 旧 `latest` 4件は `"batchLabel": "2026/05/04 11:13 更新分（アーカイブ）"` として archive 先頭に追加
-- `osint` を Al Jazeera 5/4記事（イラン警告）に更新、`isLatest: true` は1件のみ
-
----
-
-## [S11] 更新ログ追記
-
-**対象：** `<!--出典・更新ログ-->` セクション内のログリスト先頭に以下を追記
-
-```html
-<div>📅 <strong>2026年5月5日 09:11 JST</strong> 更新</div>
-<div><span style="color:#f87171;">2026/05/05 09:11</span> — <strong style="color:#fca5a5;">【重大更新・交戦突入】</strong>5/4 米・イラン実弾交戦：イランがUAEにミサイル15発・ドローン4機攻撃（フジャイラ炎上）、米軍がイラン小型艇7隻撃沈・韓国籍船被弾・停戦「最危険局面」・ブレント$114.44・WTI$106.42（4年ぶり高値）・MSC迂回新ルート5/10開始・封鎖68日目・ニュース4件更新・OSINT更新</div>
-```
-
----
-
-## セルフチェック（出力前確認）
-
-```
-[✓] S01 ヘッダー ― 2026年5月5日 09:11 JST・警戒レベル「最高（交戦突入）」
-[✓] S02 TICKER ― 実弾交戦・UAE攻撃・ブレント$114・MSC迂回・68日目
-[✓] S03 速報インシデント ― 2件追加（UAE攻撃・米イラン交戦）
-[✓] S04 情勢カード3枚 ― 軍事/外交/エネルギー全て5/4内容で更新
-[✓] S05 COUNTDOWN ― フェーズ5「実弾交戦突入」に変更
-[✓] S06 シナリオ確率補足バナー ― 5/5 09:11 JST・D↑↑↑・A↓↓↓
-[✓] S07 シナリオ4本 ― 交戦後の情勢を反映した本文に全更新
-[✓] S08 シナリオフッター ― 「爆撃再開命令」「UAE追加攻撃」等に更新
-[✓] S09 30秒カラム ― 3行+バッジ5枚すべて5/4交戦内容で更新
-[✓] S10 news_data.jsonメモ ― アーカイブ注意事項記載
-[✓] S11 更新ログ ― 先頭行に5/5 09:11分を追記
-```
+- [ ] 地図凡例の「閉じる」ボタンがタップできるか
+- [ ] テーブルの右余白が減り、表が広くなっているか
+- [ ] 6列すべて表示・横スクロールなしで「状態」まで見えるか
+- [ ] 他のセクション（ニュース・カード等）の余白が極端に狭くなっていないか
+- [ ] PC表示（768px超）が崩れていないか

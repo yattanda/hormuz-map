@@ -3202,7 +3202,7 @@ function toggleNewsExtra() {
   if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ さらに見る';
 }
 
-// 速報インシデント: 3件常時表示 + 4件目以降折り畳み（上下両ボタン）
+// 速報インシデント: 3件常時表示 + 4件目以降折り畳み（下のみ）
 function applyIncidentFold() {
   const list = document.getElementById('incident-list');
   if (!list || list.dataset.folded) return;
@@ -3211,35 +3211,22 @@ function applyIncidentFold() {
   if (items.length <= 3) return;
   items.slice(3).forEach(function(el) { el.style.display = 'none'; });
 
-  var buttons = [];
   var label = '▼ 過去のインシデントを見る（' + (items.length - 3) + '件）';
 
-  function toggleFold() {
+  var btn = document.createElement('button');
+  btn.className = 'news-more-btn';
+  btn.textContent = label;
+  btn.style.marginTop = '8px';
+  btn.onclick = function() {
     const hidden = items.slice(3);
     const isHidden = hidden[0].style.display === 'none';
     hidden.forEach(function(el) { el.style.display = isHidden ? '' : 'none'; });
-    const newText = isHidden
+    btn.textContent = isHidden
       ? '▲ 折りたたむ'
       : '▼ 過去のインシデントを見る（' + hidden.length + '件）';
-    buttons.forEach(function(b) { b.textContent = newText; });
-  }
+  };
 
-  var topBtn = document.createElement('button');
-  topBtn.className = 'news-more-btn';
-  topBtn.textContent = label;
-  topBtn.style.marginBottom = '8px';
-  topBtn.onclick = toggleFold;
-  buttons.push(topBtn);
-
-  var bottomBtn = document.createElement('button');
-  bottomBtn.className = 'news-more-btn';
-  bottomBtn.textContent = label;
-  bottomBtn.style.marginTop = '8px';
-  bottomBtn.onclick = toggleFold;
-  buttons.push(bottomBtn);
-
-  list.before(topBtn);
-  list.after(bottomBtn);
+  list.after(btn);
 }
 function loadNewsData() {
   fetch('data/news_data.json?t=' + Date.now())

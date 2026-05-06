@@ -3198,8 +3198,20 @@ function toggleNewsExtra() {
   const btn   = document.getElementById('news-latest-more-btn');
   if (!extra) return;
   const isHidden = extra.style.display === 'none';
-  extra.style.display = isHidden ? 'block' : 'none';
-  if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ さらに見る';
+  if (isHidden) {
+    // 展開
+    extra.style.display = 'block';
+    if (btn) btn.textContent = '▲ 折りたたむ';
+  } else {
+    // 折りたたむ前にボタン位置を記録してジャンプ防止
+    const btnY = btn ? btn.getBoundingClientRect().top : 0;
+    extra.style.display = 'none';
+    if (btn) {
+      btn.textContent = '▼ さらに見る';
+      const newBtnY = btn.getBoundingClientRect().top;
+      window.scrollBy({ top: newBtnY - btnY, left: 0, behavior: 'instant' });
+    }
+  }
 }
 
 // 速報インシデント: 3件常時表示 + 4件目以降折り畳み

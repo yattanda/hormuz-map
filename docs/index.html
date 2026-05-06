@@ -1911,15 +1911,19 @@ const SHIP_CONFIG = {
 
 <script>
 function toggleIncident() {
-  var body = document.getElementById('incident-body');
+  var incident = document.getElementById('incident');
+  var btn = document.getElementById('incident-toggle-btn');
   var arrow = document.getElementById('incident-arrow');
-  if (body.style.display === 'none') {
-    body.style.display = 'block';
-    arrow.textContent = '▲ 閉じる';
-  } else {
-    body.style.display = 'none';
-    arrow.textContent = '▼ 開いて表示';
-  }
+  if (!incident) return;
+  // ボタン以外の子要素をトグル
+  var children = Array.from(incident.children);
+  var anyVisible = children.some(function(el) {
+    return el !== btn && el.style.display !== 'none';
+  });
+  children.forEach(function(el) {
+    if (el !== btn) el.style.display = anyVisible ? 'none' : '';
+  });
+  arrow.textContent = anyVisible ? '▼ 開いて表示' : '▲ 閉じる';
 }
 
 // LIGHTBOX
@@ -3235,9 +3239,26 @@ function syncScenarioFromDashboard() {
     .catch(e => console.warn('scenario sync failed:', e));
 }
 
+function toggleLatestNews() {
+  var wrapper = document.getElementById('news-latest-wrapper');
+  var btn = document.getElementById('news-toggle-btn');
+  if (!wrapper) return;
+  var isHidden = wrapper.style.display === 'none' || wrapper.style.display === '';
+  wrapper.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '▲ 閉じる' : '▼ 開く';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadNewsData();
   syncScenarioFromDashboard();
+  // 速報インシデント: デフォルト非表示（ボタン以外を隠す）
+  var incident = document.getElementById('incident');
+  var incBtn = document.getElementById('incident-toggle-btn');
+  if (incident && incBtn) {
+    Array.from(incident.children).forEach(function(el) {
+      if (el !== incBtn) el.style.display = 'none';
+    });
+  }
 });
 </script>
 <!-- OSINT PANEL -->
@@ -3837,13 +3858,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- NEWS COLUMN -->
 <div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
-  <div class="news-section-title">📰 関連最新ニュース</div>
-  <div id="news-latest-container">
-    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+    <div class="news-section-title" style="margin-bottom:0;border-bottom:none;padding-bottom:0;">📰 関連最新ニュース</div>
+    <button class="news-more-btn" id="news-toggle-btn" onclick="toggleLatestNews()" style="width:auto;margin:0;padding:4px 14px;font-size:0.75rem;">▼ 開く</button>
   </div>
-  <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
-  <div id="news-archive-container" style="display:none;"></div>
-</div><!-- /NEWS COLUMN -->
+  <div id="news-latest-wrapper" style="display:none;">
+    <div id="news-latest-container">
+      <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
+    </div>
+    <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
+    <div id="news-archive-container" style="display:none;"></div>
+  </div>
+</div><!-- /NEWS COLUMN wrapper -->
 
 <!-- SOURCE & UPDATE LOG -->
 <div style="max-width:960px;margin:32px auto 0;padding:0 16px 40px;">

@@ -674,18 +674,24 @@ footer {
 .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 15%; }
 
 @media (max-width: 768px) {
-  /* min-width解除：横スクロール強制を廃止 */
-  .rtable-wrap .rtable { min-width: 0 !important; }
+  /* min-width:600px を解除して横スクロール強制を廃止 */
+  .rtable-wrap .rtable { min-width: 0 !important; width: 100% !important; }
 
-  .rtable { font-size: 12px !important; }
+  /* フォント・セル余白を詰める */
+  .rtable { font-size: 11px !important; }
+  .rtable th, .rtable td { padding: 6px 4px !important; }
 
-  /* 列幅再配分：主なリスクを狭め、状態列を横スクロールなしで表示 */
-  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4% !important; }
+  /* 状態列のpillを小さく */
+  .rtable .pill { font-size: 10px !important; padding: 2px 5px !important; }
+
+  /* 6列の幅配分（合計100%） */
+  /* 1:アイコン 2:ルート 3:輸送能力 5:現況詳細 6:主なリスク 7:状態 */
+  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%  !important; }
   .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14% !important; }
   .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13% !important; }
   .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 30% !important; }
-  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 22% !important; }
-  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 17% !important; }
+  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 25% !important; }
+  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 14% !important; }
 }
 /* ================================================
    特別解説ウィジェット (briefing-widget)

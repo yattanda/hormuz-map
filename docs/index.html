@@ -1704,7 +1704,7 @@ const SHIP_CONFIG = {
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
   【5/5 09:11 速報】5/4 米・イラン実弾交戦：イランがUAEにミサイル15発・ドローン4機（フジャイラ炎上）、米軍がイラン小型艇7隻撃沈・韓国籍船被弾｜停戦「最危険局面」（Fox News）｜ブレント$114.44・WTI$106.42（4年ぶり高値）｜アラグチ「Project Freedom = Project Deadlock」・交渉は並行継続中｜封鎖68日目
 </strong>
-<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
+<ul id="incident-list" style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;">
 
 <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.8rem;color:#fde68a;">
   <strong>🔴 5/4（月）UAE へのミサイル・ドローン攻撃——フジャイラ石油ハブ炎上</strong><br>
@@ -1911,19 +1911,16 @@ const SHIP_CONFIG = {
 
 <script>
 function toggleIncident() {
-  var incident = document.getElementById('incident');
-  var btn = document.getElementById('incident-toggle-btn');
+  var body = document.getElementById('incident-body');
   var arrow = document.getElementById('incident-arrow');
-  if (!incident) return;
-  // ボタン以外の子要素をトグル
-  var children = Array.from(incident.children);
-  var anyVisible = children.some(function(el) {
-    return el !== btn && el.style.display !== 'none';
-  });
-  children.forEach(function(el) {
-    if (el !== btn) el.style.display = anyVisible ? 'none' : '';
-  });
-  arrow.textContent = anyVisible ? '▼ 開いて表示' : '▲ 閉じる';
+  if (!body) return;
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    arrow.textContent = '▲ 閉じる';
+  } else {
+    body.style.display = 'none';
+    arrow.textContent = '▼ 開いて表示';
+  }
 }
 
 // LIGHTBOX
@@ -3131,21 +3128,19 @@ function _buildNewsItem(item) {
 function renderLatestNews(data) {
   const c = document.getElementById('news-latest-container');
   if (!c) return;
-  // staleNotice があれば先頭に表示
+  const top3 = data.latest.slice(0, 3);
+  const rest  = data.latest.slice(3);
+  let html = top3.map(_buildNewsItem).join('');
+  if (rest.length > 0) {
+    html += `
+      <div id="news-latest-extra" style="display:none;">${rest.map(_buildNewsItem).join('')}</div>
+      <button class="news-more-btn" id="news-latest-more-btn" onclick="toggleNewsExtra()">▼ さらに見る（${rest.length}件）</button>`;
+  }
   if (data.staleNotice) {
-    const notice = `<div style="
-      background:rgba(100,116,139,0.12);
-      border:1px solid rgba(100,116,139,0.3);
-      border-radius:6px;
-      padding:8px 14px;
-      font-size:0.78rem;
-      color:#94a3b8;
-      margin-bottom:10px;">
-      📋 ${data.staleNotice}
-    </div>`;
-    c.innerHTML = notice + data.latest.map(_buildNewsItem).join('');
+    const notice = `<div style="background:rgba(100,116,139,0.12);border:1px solid rgba(100,116,139,0.3);border-radius:6px;padding:8px 14px;font-size:0.78rem;color:#94a3b8;margin-bottom:10px;">📋 ${data.staleNotice}</div>`;
+    c.innerHTML = notice + html;
   } else {
-    c.innerHTML = data.latest.map(_buildNewsItem).join('');
+    c.innerHTML = html;
   }
 }
 function renderArchive(data) {
@@ -3161,7 +3156,7 @@ function renderArchive(data) {
   c.innerHTML = batchHtml + bottomBtn;
 }
 function renderOsint(data) {
-  const LIMIT = 4;
+  const LIMIT = 3;
   const items = data.osint;
   const makeCard = item => `
     <a href="${item.url}" target="_blank" rel="noopener"
@@ -3198,6 +3193,36 @@ function toggleOsint() {
   const isHidden = extra.style.display === 'none' || extra.style.display === '';
   extra.style.display = isHidden ? 'block' : 'none';
   if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ 過去の記事を見る';
+}
+function toggleNewsExtra() {
+  const extra = document.getElementById('news-latest-extra');
+  const btn   = document.getElementById('news-latest-more-btn');
+  if (!extra) return;
+  const isHidden = extra.style.display === 'none';
+  extra.style.display = isHidden ? 'block' : 'none';
+  if (btn) btn.textContent = isHidden ? '▲ 折りたたむ' : '▼ さらに見る';
+}
+
+// 速報インシデント: 3件常時表示 + 4件目以降折り畳み
+function applyIncidentFold() {
+  const list = document.getElementById('incident-list');
+  if (!list || list.dataset.folded) return;
+  list.dataset.folded = '1';
+  const items = Array.from(list.children);
+  if (items.length <= 3) return;
+  items.slice(3).forEach(function(el) { el.style.display = 'none'; });
+  const btn = document.createElement('button');
+  btn.className = 'news-more-btn';
+  btn.textContent = '▼ 過去のインシデントを見る（' + (items.length - 3) + '件）';
+  btn.onclick = function() {
+    const hidden = items.slice(3);
+    const isHidden = hidden[0].style.display === 'none';
+    hidden.forEach(function(el) { el.style.display = isHidden ? '' : 'none'; });
+    btn.textContent = isHidden
+      ? '▲ 折りたたむ'
+      : '▼ 過去のインシデントを見る（' + hidden.length + '件）';
+  };
+  list.after(btn);
 }
 function loadNewsData() {
   fetch('data/news_data.json?t=' + Date.now())
@@ -3239,26 +3264,10 @@ function syncScenarioFromDashboard() {
     .catch(e => console.warn('scenario sync failed:', e));
 }
 
-function toggleLatestNews() {
-  var wrapper = document.getElementById('news-latest-wrapper');
-  var btn = document.getElementById('news-toggle-btn');
-  if (!wrapper) return;
-  var isHidden = wrapper.style.display === 'none' || wrapper.style.display === '';
-  wrapper.style.display = isHidden ? 'block' : 'none';
-  btn.textContent = isHidden ? '▲ 閉じる' : '▼ 開く';
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   loadNewsData();
   syncScenarioFromDashboard();
-  // 速報インシデント: デフォルト非表示（ボタン以外を隠す）
-  var incident = document.getElementById('incident');
-  var incBtn = document.getElementById('incident-toggle-btn');
-  if (incident && incBtn) {
-    Array.from(incident.children).forEach(function(el) {
-      if (el !== incBtn) el.style.display = 'none';
-    });
-  }
+  applyIncidentFold();
 });
 </script>
 <!-- OSINT PANEL -->
@@ -3858,17 +3867,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- NEWS COLUMN -->
 <div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-    <div class="news-section-title" style="margin-bottom:0;border-bottom:none;padding-bottom:0;">📰 関連最新ニュース</div>
-    <button class="news-more-btn" id="news-toggle-btn" onclick="toggleLatestNews()" style="width:auto;margin:0;padding:4px 14px;font-size:0.75rem;">▼ 開く</button>
+  <div class="news-section-title">📰 関連最新ニュース</div>
+  <div id="news-latest-container">
+    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
   </div>
-  <div id="news-latest-wrapper" style="display:none;">
-    <div id="news-latest-container">
-      <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
-    </div>
-    <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
-    <div id="news-archive-container" style="display:none;"></div>
-  </div>
+  <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
+  <div id="news-archive-container" style="display:none;"></div>
 </div><!-- /NEWS COLUMN wrapper -->
 
 <!-- SOURCE & UPDATE LOG -->

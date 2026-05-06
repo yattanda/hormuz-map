@@ -3267,9 +3267,9 @@ function applyIncidentFold() {
   };
 
   bottomBtn.onclick = function() {
-    collapse();
-    // 折りたたんだ後、上ボタンが見える位置までスクロール
-    topBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // collapse()のscrollBy補正は使わず、直接非表示にしてtopBtnへスクロール
+    setExpanded(false);
+    topBtn.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   // extraDiv の末尾に下ボタンを追加

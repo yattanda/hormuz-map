@@ -94,24 +94,105 @@ body {
     padding: 10px 12px !important;
   }
 }
-/* ===== 全体文字サイズを1-2pt拡大 ===== */
+/* ===== 全体文字サイズを底上げ（スマホ最適化 v2） ===== */
 @media (max-width: 768px) {
+
+  /* --- ベース --- */
   body {
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.75;
   }
-  p, li, td, div {
-    font-size: 14px;
+
+  /* --- ティッカー --- */
+  .ticker-text {
+    font-size: 0.9rem !important;   /* 12.8px → 13.5px */
+  }
+
+  /* --- ヘッダーバッジ --- */
+  .badge-item {
+    font-size: 0.82rem !important;  /* 0.72rem → 0.82rem */
+    padding: 5px 13px !important;
+  }
+
+  /* --- セクションタイトル --- */
+  .sec-title {
+    font-size: 1rem !important;     /* 15px 統一 */
+  }
+
+  /* --- 30秒カラム --- */
+  .s-title {
+    font-size: 0.95rem !important;
   }
   .s-body {
-    font-size: 14px !important;
+    font-size: 0.9rem !important;   /* 13px → 13.5px */
+    line-height: 1.8 !important;
+  }
+
+  /* --- 情勢カード --- */
+  .sit-title {
+    font-size: 0.92rem !important;
+  }
+  .sit-body, .sit-card p, .sit-card li {
+    font-size: 0.88rem !important;
     line-height: 1.75 !important;
   }
-  .s-title {
-    font-size: 15px !important;
+
+  /* --- ニュースアイテム --- */
+  .news-item,
+  .news-item a {
+    font-size: 0.88rem !important;  /* 13px → 14px相当 */
+    line-height: 1.7 !important;
   }
-  .sec-title {
-    font-size: 15px !important;
+  .news-meta {
+    font-size: 0.75rem !important;  /* 最低限確保 */
+  }
+
+  /* --- シナリオカード --- */
+  .sc-title {
+    font-size: 0.92rem !important;
+  }
+  .sc-tag {
+    font-size: 0.75rem !important;  /* 0.68rem → 0.75rem */
+  }
+  .sc-body, .sc-impact {
+    font-size: 0.86rem !important;
+    line-height: 1.75 !important;
+  }
+
+  /* --- 速報インシデント --- */
+  #incident-body {
+    font-size: 0.88rem !important;
+    line-height: 1.75 !important;
+  }
+  #incident-body li {
+    font-size: 0.86rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* --- ラベル系（最低ライン 0.72rem 確保） --- */
+  .label-analysis,
+  .label-source,
+  .label-bb,
+  .label-osint {
+    font-size: 0.72rem !important;
+  }
+
+  /* --- 汎用 small テキスト（0.68rem 以下を底上げ） --- */
+  [style*="font-size:0.68rem"],
+  [style*="font-size: 0.68rem"] {
+    font-size: 0.75rem !important;
+  }
+  [style*="font-size:0.72rem"],
+  [style*="font-size: 0.72rem"] {
+    font-size: 0.78rem !important;
+  }
+  [style*="font-size:0.75rem"],
+  [style*="font-size: 0.75rem"] {
+    font-size: 0.82rem !important;
+  }
+  [style*="font-size:0.8rem"],
+  [style*="font-size: 0.8rem"] {
+    font-size: 0.88rem !important;
   }
 }
 /* ===== 情勢カード余白最適化 ===== */

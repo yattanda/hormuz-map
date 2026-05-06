@@ -371,20 +371,29 @@ footer {
     touch-action: manipulation;
   }
   .map-legend.open {
-    min-width: 230px !important;
-    max-width: 260px !important;
+    min-width: 250px !important;
+    max-width: 290px !important;
     padding: 12px 14px !important;
   }
   .map-legend h4 {
-    font-size:0.75rem;
-    white-space:nowrap;
+    font-size: 13px !important;
+    white-space: nowrap;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
   }
   .legend-toggle-btn {
     display: inline-block;
     pointer-events: auto;
+    flex-shrink: 0;
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+    min-width: 44px;
+    text-align: center;
   }
   .legend-body {
     display: none;
@@ -665,14 +674,21 @@ footer {
 .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 15%; }
 
 @media (max-width: 768px) {
-  .rtable { font-size: 11px !important; }
-  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4% !important; }
-  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 13% !important; }
-  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 12% !important; }
-  .rtable th:nth-child(4), .rtable td:nth-child(4) { width: 10% !important; }
-  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 26% !important; }
-  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 20% !important; }
-  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 15% !important; }
+  /* min-width解除：横スクロール強制を廃止 */
+  .rtable-wrap .rtable { min-width: 0 !important; }
+
+  .rtable { font-size: 12px !important; }
+
+  /* 主なリスク列（6列目）をスマホで非表示 → 状態列が収まる */
+  .rtable th:nth-child(6),
+  .rtable td:nth-child(6) { display: none !important; }
+
+  /* スマホ用列幅再配分（jf-col・主なリスク非表示後の5列） */
+  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 5% !important; }
+  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 20% !important; }
+  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 20% !important; }
+  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 38% !important; }
+  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 17% !important; }
 }
 /* ================================================
    特別解説ウィジェット (briefing-widget)

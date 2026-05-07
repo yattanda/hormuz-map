@@ -113,6 +113,15 @@
 - **`osint` アイテムの必須フィールド**：`titleJa`・`titleEn`・`country`・`media`・`cardBg`・`cardBorder`・`badgeColor`・`borderColor`・`textColor`・`url`・`date`
 - `staleNotice` フィールド：最新ニュースに新情報がない日は `"MM/DD HH:MM JST 確認済——最新ニュースなし（膠着継続中）"` を設定する。新情報がある日は `"staleNotice": ""` （空文字）にする。
 
+## update_log.json 運用ルール
+- `docs/data/update_log.json` が更新ログの完全アーカイブ（`<!--出典・更新ログ-->` セクションのHTMLに載せきれない過去分を保持）
+- 形式：`[{"date":"YYYY/MM/DD HH:MM","text":"..."},...]`（新しい順）
+- index.html の `<!--出典・更新ログ-->` セクションは**常に最新10件のみ**掲載する
+  - 常時表示：最新3件 / 折り畳み（`log-collapse`）：4〜10件目
+  - 出典リンク①〜⑧は折り畳み末尾に固定（削除しない）
+- 毎日の更新時に新エントリを1件追加したら、index.htmlから11件目を削除し、その内容を update_log.json の先頭に追加する
+- update_log.json の編集は index.html の更新と同じcommitに含める
+
 ## news_data.json conflict解決ルール
 
 **発生パターン：** auto_push.py がリモートに新しいJSONをpush済みの状態で、Claude CodeがローカルにJSONの旧版commitを持っている場合に `git pull --rebase` でconflictが起きる。

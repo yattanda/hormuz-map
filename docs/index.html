@@ -1371,27 +1371,26 @@ Copy
   ></iframe>
 </div>
 <script>
-/* ===== iframe 動的高さ調整（postMessage方式） ===== */
-(function() {
-  const iframe = document.getElementById('hormuz-dashboard');
-  if (!iframe) return;
-
-  // postMessage到着までのフォールバック高さ
-  iframe.style.height = '700px';
-
-  // iframe側からの高さ通知を受信
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.type === 'iframeHeight'
-        && typeof e.data.height === 'number') {
-      iframe.style.height = Math.max(e.data.height, 400) + 'px';
+  function adjustIframeHeight() {
+    const iframe = document.getElementById('hormuz-dashboard');
+    if (!iframe) return;
+    if (window.innerWidth <= 480) {
+      iframe.style.height = '2200px';
+    } else if (window.innerWidth <= 768) {
+      iframe.style.height = '2300px';
+    } else {
+      iframe.style.height = '1000px';
     }
-  });
-
-  // 既存: 米国中東原油比率カード非表示（同一オリジン時のみ有効）
+  }
+  adjustIframeHeight();
+  window.addEventListener('resize', adjustIframeHeight);
+  const iframe = document.getElementById('hormuz-dashboard');
   iframe.addEventListener('load', function() {
     try {
       const doc = iframe.contentDocument || iframe.contentWindow.document;
-      doc.querySelectorAll('.card').forEach(function(card) {
+      // 米国中東原油比率カードを非表示
+      const cards = doc.querySelectorAll('.card');
+      cards.forEach(card => {
         if (card.textContent.includes('米国の中東原油')) {
           card.style.display = 'none';
         }
@@ -1400,7 +1399,6 @@ Copy
       console.warn('card hide error:', e);
     }
   });
-})();
 </script>
 <!-- /ダッシュボード -->
   <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->

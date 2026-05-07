@@ -1019,37 +1019,57 @@ Copy
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 7px 32px;
-    border-radius: 7px;
-    background: linear-gradient(180deg, #e84444 0%, #c42e2e 55%, #a02020 100%);
+    padding: 5px 28px;
+    border-radius: 6px;
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0.18) 0%,
+      #d93030 8%,
+      #b82020 80%,
+      #8a1010 100%
+    );
     color: #fff;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     text-decoration: none;
     white-space: nowrap;
-    letter-spacing: 0.03em;
-    border: 1px solid rgba(0,0,0,0.35);
-    border-bottom: 4px solid #6b1010;
-    box-shadow: 0 4px 0 #4a0a0a, 0 6px 12px rgba(0,0,0,0.4);
-    transition: transform 0.08s ease, box-shadow 0.08s ease, border-bottom-width 0.08s ease;
+    letter-spacing: 0.04em;
+    /* 上面ハイライト + 側面 + 底面の3層ボーダー */
+    border-top: 1.5px solid rgba(255,255,255,0.45);
+    border-left: 1.5px solid rgba(255,255,255,0.2);
+    border-right: 1.5px solid rgba(0,0,0,0.4);
+    border-bottom: 4px solid #5a0808;
+    /* 外側にキーの「台座」シャドウ */
+    box-shadow:
+      0 5px 0 #3a0505,
+      0 7px 10px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform 0.07s ease, box-shadow 0.07s ease, border-bottom-width 0.07s ease;
     position: relative;
-    top: 0;
   }
 
   .infographic-button:hover {
-    background: linear-gradient(180deg, #f05555 0%, #d43535 55%, #b02525 100%);
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0.22) 0%,
+      #e83838 8%,
+      #c82828 80%,
+      #9a1818 100%
+    );
+    border-top-color: rgba(255,255,255,0.55);
   }
 
   .infographic-button:active {
-    transform: translateY(3px);
+    transform: translateY(4px);
     border-bottom-width: 1px;
-    box-shadow: 0 1px 0 #4a0a0a, 0 2px 4px rgba(0,0,0,0.3);
+    box-shadow:
+      0 1px 0 #3a0505,
+      0 2px 4px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(0,0,0,0.2);
   }
 
   @media (max-width: 640px) {
     .infographic-button {
-      font-size: 13px;
-      padding: 7px 24px;
+      font-size: 12px;
+      padding: 5px 20px;
     }
   }
 </style>

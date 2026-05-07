@@ -4233,5 +4233,29 @@ function scrollToJapanFlow(e) {
     .catch(e => console.warn('oil-flow fetch error:', e));
 })();
 </script>
+<script>
+/* ===== postMessage height sender ===== */
+(function() {
+  function sendHeight() {
+    const h = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight
+    );
+    window.parent.postMessage({ type: 'iframeHeight', height: h }, '*');
+  }
+
+  // ロード直後・遅延・ResizeObserver の3段構え
+  window.addEventListener('load', function() {
+    sendHeight();
+    setTimeout(sendHeight, 600);
+    setTimeout(sendHeight, 1800);
+  });
+
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(sendHeight);
+    ro.observe(document.body);
+  }
+})();
+</script>
 </body>
 </html>

@@ -1019,32 +1019,37 @@ Copy
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 22px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #d93636, #7f1d1d);
+    padding: 7px 32px;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #e84444 0%, #c42e2e 55%, #a02020 100%);
     color: #fff;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    border: 1px solid rgba(0,0,0,0.35);
+    border-bottom: 4px solid #6b1010;
+    box-shadow: 0 4px 0 #4a0a0a, 0 6px 12px rgba(0,0,0,0.4);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, border-bottom-width 0.08s ease;
+    position: relative;
+    top: 0;
   }
 
-  .infographic-button {
-    white-space: nowrap;
-  }
   .infographic-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
-    opacity: 0.95;
+    background: linear-gradient(180deg, #f05555 0%, #d43535 55%, #b02525 100%);
+  }
+
+  .infographic-button:active {
+    transform: translateY(3px);
+    border-bottom-width: 1px;
+    box-shadow: 0 1px 0 #4a0a0a, 0 2px 4px rgba(0,0,0,0.3);
   }
 
   @media (max-width: 640px) {
     .infographic-button {
-      width: calc(100% - 32px);
-      max-width: 360px;
-      font-size: 15px;
-      padding: 13px 18px;
+      font-size: 13px;
+      padding: 7px 24px;
     }
   }
 </style>
@@ -1104,7 +1109,7 @@ Copy
     <div style="font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:#38bdf8;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(56,189,248,0.15);">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
   <span>🗺️ 30秒で全体像を把握</span>
-  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto;">
     <a href="https://x.com/hormuz_map_jp" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#94a3b8;font-size:0.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;">
       𝕏 このマップの更新情報はXで発信中
     </a>

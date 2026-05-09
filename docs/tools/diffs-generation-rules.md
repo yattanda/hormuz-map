@@ -1,10 +1,6 @@
-# index_html_diffs.md 形式ルール・スケルトン
+# index_html_diffs.md 生成ルール
 
-> **位置づけ：このファイルは、かつて CLAUDE.md に記載されていた `index_html_diffs.md` の形式ルール・必須スケルトン・セルフチェックを、CLAUDE.md の常時コンテキスト外に切り出した補助ドキュメントである。**
->
-> - `docs/tools/index_html_diffs.md` は Claude.ai がデイリー更新作業のために生成する handoff ファイルであり、このファイルとは別物。移動・変更はしていない。
-> - このドキュメントは Claude.ai が自動参照するルールファイルではなく、diffs.md の形式や運用メモをまとめた参照用資料である。
-> - Claude Code の常時コンテキストには載せない。
+> **注意：このファイルは Claude.ai で `docs/tools/index_html_diffs.md` を生成・更新する際の参照ルールであり、Claude Code の通常作業では常時参照しない。**
 
 ---
 

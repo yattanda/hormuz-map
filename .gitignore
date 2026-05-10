@@ -4,3 +4,17 @@
 __pycache__/
 *.pyc
 tools/*.lnk
+# Claude Code ローカル設定
+.claude/settings.json
+.claude/settings.local.json
+
+# バックアップ・一時ファイル
+*.bak
+*.backup
+*.tmp
+**(1).*
+**(2).*
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db

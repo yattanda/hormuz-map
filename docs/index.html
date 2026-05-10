@@ -2224,6 +2224,86 @@ document.addEventListener('keydown', function(e) {
       </tbody>
     </table>
   </div>
+
+<!-- ▼ その他の検討中ルート（折り畳み） -->
+<div style="margin-top:16px;margin-bottom:8px;">
+  <button onclick="
+    var body = document.getElementById('other-routes-body');
+    var isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    this.innerHTML = isOpen
+      ? '▼ その他の検討中ルート（実績少・計画段階）― <span style=&quot;color:#fbbf24&quot;>影響度高い順</span>に表示'
+      : '▲ その他の検討中ルートを閉じる';
+  "
+    style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);
+           border-radius:8px;color:#94a3b8;font-size:0.8rem;font-weight:700;
+           padding:12px 18px;cursor:pointer;text-align:left;letter-spacing:0.03em;">
+    ▼ その他の検討中ルート（実績少・計画段階）― <span style="color:#fbbf24">影響度高い順</span>に表示
+  </button>
+
+  <div id="other-routes-body" style="display:none;margin-top:14px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+
+      <!-- ① ブラジル -->
+      <div style="background:rgba(192,132,252,0.05);border:1px solid rgba(192,132,252,0.2);border-radius:10px;padding:14px 18px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+          <span style="font-size:1rem;">🇧🇷</span>
+          <strong style="color:#c084fc;font-size:0.85rem;">ブラジル→喜望峰→インド洋→日本</strong>
+          <span style="font-size:0.72rem;background:rgba(192,132,252,0.15);border:1px solid rgba(192,132,252,0.3);color:#c084fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約40〜45日</span>
+        </div>
+        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
+          チュピ・ブジオス油田からの良質原油。3大チョークポイント完全回避。
+          <strong style="color:#e2e8f0;">課題：</strong>日本向け到着は2026年後半以降の見込み。中国との競合・長距離コスト。精製時の品質調整が必要。
+        </div>
+        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：確認なし（計画・スポット交渉段階）</div>
+      </div>
+
+      <!-- ② メキシコ -->
+      <div style="background:rgba(52,211,153,0.04);border:1px solid rgba(52,211,153,0.15);border-radius:10px;padding:14px 18px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+          <span style="font-size:1rem;">🇲🇽</span>
+          <strong style="color:#34d399;font-size:0.85rem;">メキシコ→太平洋→日本</strong>
+          <span style="font-size:0.72rem;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);color:#34d399;padding:2px 8px;border-radius:4px;margin-left:auto;">約30〜35日</span>
+        </div>
+        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
+          <strong style="color:#fbbf24;">🆕 2026年7月初便予定：</strong>日本向け約100万バレルの輸送が計画中。太平洋直行で3大チョークポイント完全回避。往復所要日数は中東比で半分以下。
+          <strong style="color:#e2e8f0;">課題：</strong>輸出余力は日量40〜50万BPDのみ。前例なし。
+        </div>
+        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：なし（2026年7月着予定・100万バレル）</div>
+      </div>
+
+      <!-- ③ イラク・キルクーク→トルコ・チェイハン -->
+      <div style="background:rgba(251,191,36,0.04);border:1px solid rgba(251,191,36,0.15);border-radius:10px;padding:14px 18px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+          <span style="font-size:1rem;">🇮🇶</span>
+          <strong style="color:#fbbf24;font-size:0.85rem;">イラク・キルクーク→🇹🇷トルコ・チェイハン（地中海）</strong>
+          <span style="font-size:0.72rem;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25);color:#fbbf24;padding:2px 8px;border-radius:4px;margin-left:auto;">🆕 3月再開</span>
+        </div>
+        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
+          <strong style="color:#4ade80;">✅ 2026年3月再開：</strong>10年以上の閉鎖から復活。初期25万BPD。地中海直結でホルムズ完全回避。
+          <strong style="color:#e2e8f0;">課題：</strong>ISIS・PKKによる攻撃リスク。<strong style="color:#f87171;">⚠️ 2026年7月27日：</strong>イラク・トルコ1973年条約が期限切れ。欧州向け主体で日本向け実績なし。
+        </div>
+        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：欧州向けのみ。日本向けは確認なし。</div>
+      </div>
+
+      <!-- ④ カナダ西岸 -->
+      <div style="background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.12);border-radius:10px;padding:14px 18px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+          <span style="font-size:1rem;">🇨🇦</span>
+          <strong style="color:#7dd3fc;font-size:0.85rem;">カナダ西岸（Trans Mountain）→太平洋直行→日本</strong>
+          <span style="font-size:0.72rem;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#7dd3fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約14〜16日</span>
+        </div>
+        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
+          Trans Mountain拡張パイプライン（2024年完成）でバンクーバー港から太平洋最短ルート。地政学リスクほぼゼロ。
+          <strong style="color:#e2e8f0;">課題：</strong>日本向け長期契約の締結実績が未確認。重質油主体で製油所適合性要確認。
+        </div>
+        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：日本向け契約なし（可能性段階）</div>
+      </div>
+
+    </div>
+  </div>
+</div><!-- /その他ルート折り畳み -->
+
 </div>
 
   <!-- SCENARIOS -->
@@ -3834,96 +3914,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </div><!-- /ナイジェリア・アンゴラ・ブラジルコラムカード -->
 
-<!-- ▼ その他の検討中ルート（折り畳み） -->
-<div style="margin-top:24px;margin-bottom:32px;">
-
-  <button onclick="
-    var body = document.getElementById('other-routes-body');
-    var isOpen = body.style.display !== 'none';
-    body.style.display = isOpen ? 'none' : 'block';
-    this.innerHTML = isOpen
-      ? '▼ その他の検討中ルート（実績少・計画段階）― <span style=&quot;color:#fbbf24&quot;>影響度高い順</span>に表示'
-      : '▲ その他の検討中ルートを閉じる';
-  "
-    style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);
-           border-radius:8px;color:#94a3b8;font-size:0.8rem;font-weight:700;
-           padding:12px 18px;cursor:pointer;text-align:left;letter-spacing:0.03em;
-           transition:background 0.2s;">
-    ▼ その他の検討中ルート（実績少・計画段階）― <span style="color:#fbbf24">影響度高い順</span>に表示
-  </button>
-
-  <div id="other-routes-body" style="display:none;margin-top:14px;">
-    <div style="display:flex;flex-direction:column;gap:14px;">
-
-      <!-- ① ブラジル（影響度1位 / 実績少） -->
-      <div style="background:rgba(192,132,252,0.05);border:1px solid rgba(192,132,252,0.2);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇧🇷</span>
-          <strong style="color:#c084fc;font-size:0.85rem;">ブラジル→喜望峰→インド洋→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(192,132,252,0.15);border:1px solid rgba(192,132,252,0.3);color:#c084fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約40〜45日</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          チュピ・ブジオス油田からの良質原油（Tupi Blend）。
-          ホルムズ・バベルマンデブ・スエズ3大チョークポイント完全回避。
-          <strong style="color:#e2e8f0;">課題：</strong>日本向け到着は2026年後半以降の見込み。中国との競合激化・長距離コスト。精製時の品質調整が必要。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：確認なし（計画・スポット交渉段階）</div>
-      </div>
-
-      <!-- ② メキシコ（影響度2位 / 7月予定のみ） -->
-      <div style="background:rgba(52,211,153,0.04);border:1px solid rgba(52,211,153,0.15);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇲🇽</span>
-          <strong style="color:#34d399;font-size:0.85rem;">メキシコ→太平洋→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);color:#34d399;padding:2px 8px;border-radius:4px;margin-left:auto;">約30〜35日</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          <strong style="color:#fbbf24;">🆕 2026年7月初便予定：</strong>日本向け約100万バレルの輸送が計画中。
-          太平洋直行ルートで3大チョークポイントを完全回避。往復所要日数は中東比で半分以下。
-          輸送コスト：1バレルあたり2〜4ドル（中東比で競争力あり）。
-          <strong style="color:#e2e8f0;">課題：</strong>総生産量の輸出余力は日量40〜50万BPDのみ（国内消費優先）。前例なし。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：なし（2026年7月着予定・100万バレル）</div>
-      </div>
-
-      <!-- ③ イラク・キルクーク→トルコ・チェイハン（影響度3位） -->
-      <div style="background:rgba(251,191,36,0.04);border:1px solid rgba(251,191,36,0.15);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇮🇶</span>
-          <strong style="color:#fbbf24;font-size:0.85rem;">イラク・キルクーク→🇹🇷トルコ・チェイハン（地中海）</strong>
-          <span style="font-size:0.72rem;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25);color:#fbbf24;padding:2px 8px;border-radius:4px;margin-left:auto;">🆕 3月再開</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          <strong style="color:#4ade80;">✅ 2026年3月再開：</strong>10年以上の閉鎖から復活。初期輸送能力 日量25万BPD（最大容量1.6百万BPD）。
-          バグダッド連邦政府とクルド自治区政府（KRG）が合意。地中海へ直結しホルムズを完全回避。
-          IEAはバスラ〜チェイハン新規パイプライン建設も提言中。
-          <strong style="color:#e2e8f0;">課題：</strong>ISIS・PKKによる攻撃リスク（過去に繰り返し閉鎖）。
-          <strong style="color:#f87171;">⚠️ 2026年7月27日：</strong>イラク・トルコ1973年条約が期限切れ→交渉再開リスク。
-          欧州向け主体で日本への直接供給実績はなし。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：欧州向けのみ。日本向けは確認なし。</div>
-      </div>
-
-      <!-- ④ カナダ西岸（影響度4位） -->
-      <div style="background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.12);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇨🇦</span>
-          <strong style="color:#7dd3fc;font-size:0.85rem;">カナダ西岸（Trans Mountain）→太平洋直行→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#7dd3fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約14〜16日</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          Trans Mountain拡張パイプライン（2024年完成）でアルバータ州の産油がバンクーバー港へ。
-          太平洋最短ルートで地政学的リスクはほぼゼロ。3大チョークポイント完全回避。
-          <strong style="color:#e2e8f0;">課題：</strong>日本向け長期契約の締結実績が未確認。
-          重質油主体でカナダ産は日本の製油所設備との適合性要確認。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：日本向け契約なし（可能性段階）</div>
-      </div>
-
-    </div><!-- /flex -->
-  </div><!-- /#other-routes-body -->
-
-</div><!-- /その他ルート折り畳み -->
 
   </div>
 </div>

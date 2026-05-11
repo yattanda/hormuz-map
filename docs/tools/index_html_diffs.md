@@ -1,419 +1,341 @@
-# index_patch.md — ルート情報更新・構造変更
-# 生成日時: 2026-05-10
-# 作業者: Claude Code
-# 対象ファイル: docs/index.html
-# 重要: 各str_replaceの前に必ずview_rangeで該当箇所を確認してから実施すること
+# index_html_diffs.md — 2026年5月11日 18:22 JST 更新分（部分更新）
+
+> Claude Code への指示：以下の差分を index.html に適用してください。
+> **今回の更新範囲：S01（ヘッダー）・S02（TICKER）・S03（速報インシデント）・S09（30秒カラム）・S11（更新ログ）のみ。**
+> S04〜S08（情勢カード・COUNTDOWN・シナリオ等）は今回更新しない。
+> 変更箇所以外は絶対に触らないこと。
 
 ---
 
-## 事前確認
+## [S01] ヘッダー日時・警戒レベル
 
-作業開始前に以下を実行してください：
+**対象：** `<header>` 内の `.badge-date`
 
-```
-view docs/index.html
-```
-
-行数を確認し、以下の各セクションの位置をview_rangeで把握してから作業に入ること。
-
----
-
-## PATCH-01: ルートA現況テキスト更新（ルートテーブル内）
-
-### 目的
-5/4攻撃後の最新状況（58%激減・限定復旧）を反映
-
-### 検索キーワード
-`5/4 VTTIターミナル直撃・積み出し停止中` を含む `<td>` セル
-
-### str_replace
-
-**old_str（ルートA説明セル・現在の内容）:**
-```
-            ADCOPパイプライン→フジャイラ→ムンバイ沖積み替え→日本。<br>
-            <strong style="color:#f87171;">🔴 5/4 VTTIターミナル直撃・積み出し停止中。</strong>
-            イランのドローン1機がUAEの防空網を突破しVTTI施設（Vitol・IFM・ADNOC共同所有）を直撃、火災発生。
-            UAEは弾道ミサイル3発・ドローン多数を迎撃したが終端施設への攻撃は防げず。
-            イランは関与を否定。革命防衛隊海軍はフジャイラを「イラン管理域」に追加宣言。
-            積み出し再開時期不明。ADCOPパイプラインとホルムズの「二択同時崩壊」が確定。<br>
-            <small style="color:#64748b">出典：Bloomberg・Reuters・Al Jazeera・EurasianTimes（5/4〜5/5）</small>
-```
-
-**new_str:**
-```
-            ADCOPパイプライン→フジャイラ→ムンバイ沖積み替え→日本。<br>
-            <strong style="color:#f87171;">🔴 5/4 VTTIターミナル直撃・限定復旧も実態は不透明。</strong>
-            イランのドローン1機がUAEの防空網を突破しVTTI施設（Vitol・IFM・ADNOC共同所有）を直撃。
-            同時にADNOCスーパータンカー「バラカ」もドローン2機で攻撃を受け複合打撃。
-            UAE産原油輸出量は通常比<strong style="color:#f87171;">58%減（日量135万BPD）</strong>に急落、100隻超が錨泊滞留。
-            一部バースは再開報告あるが、衛星画像では港内タンカー2隻・VLCC1隻のみ確認（5/7）。
-            革命防衛隊海軍がフジャイラを「イラン管理域」に宣言、ADCOPとホルムズの「二択同時崩壊」が確定。<br>
-            <small style="color:#64748b">出典：Bloomberg・Reuters・Windward・Kanoo Shipping・衛星画像分析（5/4〜5/8）</small>
-```
-
----
-
-## PATCH-02: ルートA ステータスpillの更新
-
-### str_replace
-
-**old_str:**
-```
-          <td><span class="pill pill-r">🔴 機能不全（5/4攻撃）</span></td>
-```
-
-**new_str:**
-```
-          <td><span class="pill pill-r">🔴 機能不全（58%激減・限定復旧）</span></td>
-```
-
----
-
-## PATCH-03: ルートB説明セル更新（SUMED迂回・330%増追記）
-
-### 目的
-東西PL経由輸出330%増・バベルマンデブ二重チョークポイント・SUMED迂回オプションを追記
-
-### str_replace
-
-**old_str（ルートB説明セル）:**
-```
-            東西PL→ヤンブー→バベルマンデブ→日本。
-            <strong style="color:#4ade80">4/12 パイプライン全面復旧（700万BPD）✅</strong>（サウジエネルギー省公式・Reuters確認）。
-            Manifa油田（▲30万BPD）も復旧済み✅。
-            <strong style="color:#fbbf24">⚠️ Khurais油田（▲30万BPD）は5/8時点でも復旧作業継続中・未完了。</strong>
-            サウジの実際の生産能力は30万BPD規模の低下が継続。太陽石油（愛媛）3/28到着済み。ルートA機能不全後の最重要代替ルート。<br>
-            <small style="color:#64748b">出典：Reuters・Bloomberg・サウジエネルギー省（4/12）・The National（4/12）</small>
-```
-
-**new_str:**
-```
-            東西PL→ヤンブー→バベルマンデブ→日本。
-            <strong style="color:#4ade80">4/12 パイプライン全面復旧（700万BPD）✅</strong>（サウジエネルギー省公式・Reuters確認）。
-            <strong style="color:#4ade80">⬆ ヤンブー輸出量：戦前比330%増（日量247万BPD）・VLCC27隻がヤンブーへ向航中。</strong><br>
-            Manifa油田（▲30万BPD）復旧済み✅。
-            <strong style="color:#fbbf24">⚠️ Khurais油田（▲30万BPD）は5/8時点でも復旧作業継続中・未完了。</strong><br>
-            ⚠️ <strong style="color:#fbbf24">二重チョークポイント問題：</strong>ヤンブー発アジア向けはバベルマンデブ海峡（フーシ派リスク）を通過必須。
-            ただし日量200〜250万BPD分はエジプト・アイン・スフナ経由のSUMEDパイプラインでバベルマンデブを迂回可能（欧州向け限定）。
-            太陽石油（愛媛）3/28到着済み ✅。ルートA崩壊後の最重要代替ルート。<br>
-            <small style="color:#64748b">出典：Reuters・Bloomberg・Windward・OilPrice・サウジエネルギー省（4/12〜5/8）</small>
-```
-
----
-
-## PATCH-04: ルートテーブルの行順を並び替え（B→A→C→西アフリカ→D）
-
-### 目的
-日本への影響度（輸入シェア）順に並び替え
-
-### 手順
-1. まず `view docs/index.html` で各 `<tr class="ra">` `<tr class="rb">` の行番号を確認
-2. テーブル内の行順を以下の通りに並び替える：
-   - ルートB行（`<tr class="rb">`）を先頭へ
-   - ルートA行（`<tr class="ra">`）を2番目へ  
-   - ルートC🇺🇸行（`<tr class="rc">`）を3番目へ
-   - 西アフリカ行（ナイジェリア・アンゴラ、`<tr class="rng">`等）を4番目へ
-   - ルートD行を末尾へ
-
-### str_replace（テーブルヘッダー直後の行）
-
-**※重要: view_rangeで `<thead>` ～最初の `<tr class=` までを確認してから実施**
-
-テーブルの `<tbody>` 開始直後を探し、`<tr class="ra">` で始まる場合は以下を適用：
-
-**old_str（tbody開始の識別子 ― 正確な文字列はview後に確認）:**
-```
-        <tr class="ra">
-```
-
-**new_str（ルートBをBODY先頭に移動するため、実際の作業はCUT＆PASTEで対応）:**
-
-※ 行の移動はstr_replaceの組み合わせで実施する。具体的には：
-1. ルートBの `<tr class="rb">〜</tr>` ブロック全体をコピーし、ルートAの `<tr class="ra">` の直前に `str_replace` で挿入
-2. 元のルートBブロックを空str_replaceで削除
-
-実際の作業例：
-
-**Step A - ルートB行を先頭に複製（ルートA行の直前に挿入）:**
-```
-# old_str の先頭部分（ルートA行の開始）:
-        <tr class="ra">
-          <td>🔴</td>
-          <td>
-            <strong style="color:#f87171">ルートA</strong>
-
-# new_str（ルートBをコピーして先に配置 + ルートA継続）:
-        <tr class="rb">
-          ← ここにルートBの全内容を view で確認して貼り付け →
-        </tr>
-
-        <tr class="ra">
-          <td>🔴</td>
-          <td>
-            <strong style="color:#f87171">ルートA</strong>
-```
-
-**Step B - 元のルートB行を削除:**
-```
-# old_str（元の位置のルートB行 ― viewで確認した完全なブロック）:
-        <tr class="rb">
-          ← ルートBの全内容 →
-        </tr>
-
-# new_str: （空文字 = 削除）
-```
-
----
-
-## PATCH-05: ルートCにメキシコ産原油を追記
-
-### 目的
-2026年7月予定の日本向けメキシコ産原油1百万バレルを新情報として追記
-
-### 対象
-ルートC🇺🇸の説明セル内、アラスカの説明の後に追加
-
-### str_replace
-
-**ルートC説明セル内、アラスカ関連テキストの末尾を探す。以下の文字列の直後に追記：**
-
-**old_str（ルートC 説明セル末尾付近）:**
-```
-            <small style="color:#64748b">出典：Reuters・Bloomberg・日米首脳会談資料（3月）・UPI（3/19）</small>
-```
-※ 上記が見つからない場合は view でルートC説明セルの最終 `<small>` タグを確認してから適用
-
-**new_str:**
-```
-            <strong style="color:#c084fc">🆕 メキシコ産原油（2026年7月・初便予定）：</strong>日量換算は小規模だが太平洋ルート約30〜35日で到着。3大チョークポイントを完全回避。<br>
-            <small style="color:#64748b">出典：Reuters・Bloomberg・日米首脳会談資料（3月）・UPI（3/19）・DiscoveryAlert（4/26）</small>
-```
-
----
-
-## PATCH-06: 西アフリカ（ナイジェリア・アンゴラ）コラムカード本文の更新
-
-### 目的
-ダンゴテ製油所フル稼働・拡張計画・欧州輸出開始の最新情報を追加
-
-### 対象
-`原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌` カードを探す
-
-### str_replace
-
-**old_str（カードのサブタイトル行）:**
-```
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の状況・ボリューム・見通しを徹底解説</div>
-```
-
-**new_str:**
-```
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</div>
-```
-
----
-**ナイジェリア最新情報を追記（カード本文内のナイジェリア説明部分を探して更新）:**
-
-`<strong style="color:#fbbf24;">🇳🇬 ナイジェリア` を含むブロック内に以下を追記。
-viewで確認後、ナイジェリアの説明末尾に以下を挿入：
-
-**追記内容（ナイジェリアの説明セクション末尾に追加）:**
+**変更前：**
 ```html
-            <div style="background:rgba(251,191,36,0.08);border-left:3px solid #fbbf24;padding:8px 12px;margin-top:8px;border-radius:0 6px 6px 0;font-size:0.78rem;">
-              <strong style="color:#fbbf24;">🆕 2026年5月 最新情報</strong><br>
-              ダンゴテ製油所（アフリカ最大・日量65万BPD）がフル稼働達成。欧州・アフリカ向け燃料輸出を開始。
-              2025年10月に1.4百万BPD（世界最大）への拡張計画を発表。
-              南アフリカ・ガーナ・ケニア各政府が12ヶ月長期供給契約の交渉に入った。
-              日本はスポット調達で輸入実績あり ✅。ホルムズ・バベルマンデブ・スエズの3大チョークポイントを完全回避。
-              <small style="color:#64748b">出典：OilPrice・Wikipedia・Pravda Nigeria（5/6）・African Energy Week（4/8）</small>
-            </div>
+<span class="badge-item badge-date">📅2026年5月9日 16:14 JST</span>
+```
+
+**変更後：**
+```html
+<span class="badge-item badge-date">📅2026年5月11日 18:22 JST</span>
 ```
 
 ---
 
-## PATCH-07: 「その他のルート」折り畳みセクションを追加
+## [S02] TICKER
 
-### 目的
-ブラジル・メキシコ・イラク-チェイハン・カナダを影響度高い順で折り畳みに収容
+**対象：** ティッカー内の `<!-- 新ティッカー（2026年5月9日 16:14 JST） -->` コメント直後の `<span class="ticker-text">` 内テキスト全体
 
-### 挿入位置
-西アフリカ・コラムカードの閉じタグ `</div><!-- /ナイジェリアコラムカード -->` の直後
-（見つからない場合は `<!-- ルートC・アラスカ原油コラムカード -->` の前）
+**変更前（コメント行含む）：**
+```
+<!-- 新ティッカー（2026年5月9日 16:14 JST） -->
+```
 
-### new_str（追加ブロック全体）:
+**変更後（コメント行のみ置き換え）：**
+```
+<!-- 新ティッカー（2026年5月11日 18:22 JST） -->
+```
+
+**続けてティッカー本文を置き換え：**
+
+**現在のティッカーテキスト（`<span class="ticker-text">` 内）old_str：**
+
+> ⚠️ Claude Code 作業注意：`view_range` で現在の ticker-text を確認してから以下の new_str に str_replace すること。
+
+```
+🚨【イランがUAEを攻撃】ミサイル2発・ドローン3機——UAE防空が全弾迎撃（5/9 JST）｜⚔️ 5/8 米・イランがホルムズで軍事衝突——3駆逐艦攻撃・米が報復空爆（5/8 JST）｜MOU回答待機中——停戦辛うじて継続（5/9 JST）｜🛢️ ブレント$101.29・週間▲6%超（5/9 JST）｜⚠️ 停戦綱渡り継続——封鎖72日目
+```
+
+**変更後：**
+```
+🚨【交渉決裂】イランが「ホルムズ主権認定・戦争賠償」要求の対案提出——トランプ「TOTALLY UNACCEPTABLE」と即座に拒否（5/11 JST）｜🇮🇷 イランの対案に核問題の記載なし——意図的除外か（5/11 JST）｜🛢️ ブレント原油$104.50（+3.2%）——交渉決裂懸念で急上昇（5/10 JST）｜✈️ UAE・クウェート・カタール沖でドローン攻撃が同日多発（5/10 JST）｜🚢 開戦以来初のカタールLNGタンカーがホルムズを通過——信頼醸成・象徴的のみ（5/11 JST）｜⚠️ 停戦は名目上継続——封鎖74日目
+```
+
+---
+
+## [S03] 速報インシデント ⚠️（漏れ多発セクション）
+
+**対象：** `<!-- 速報インシデント トグルボタン -->` 内
+
+### トグルボタン内の日付バッジ
+
+**変更前：**
+```html
+📅 5/9 16:14 更新
+```
+
+**変更後：**
+```html
+📅 5/11 18:22 更新
+```
+
+---
+
+### 速報インシデント本体（先頭の `<strong>` タグを置き換え）
+
+**変更前（先頭の strong タグ）：**
+```html
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【5/9 16:14 速報】イランがUAEにミサイル2発・ドローン3機発射——全弾迎撃｜5/8 米・イランがホルムズ内で軍事衝突（3米駆逐艦攻撃→報復空爆）｜MOU回答なし・停戦は辛うじて継続｜ブレント$101.29・週間-6%超
+</strong>
+```
+
+**変更後：**
+```html
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【5/11 18:22 速報】イランが「ホルムズ主権認定・戦争賠償・制裁解除」要求の対案提出→トランプ「TOTALLY UNACCEPTABLE」即座に拒否（5/10-11）｜UAE・クウェート・カタール沖でドローン攻撃が同日多発（5/10）｜カタールLNGタンカー、開戦以来初のホルムズ通過（信頼醸成・象徴的）｜ブレント$104.50急騰・交渉行き詰まり・封鎖74日目
+</strong>
+```
+
+---
+
+### インシデントリスト（先頭に2件追加）
+
+**既存リストの先頭（`<ul id="incident-list">` の直後）に以下の2件を追記：**
 
 ```html
-<!-- ▼ その他の検討中ルート（折り畳み） -->
-<div style="margin-top:24px;margin-bottom:32px;">
+<li style="background:rgba(239,68,68,0.15);border-left:3px solid #ef4444;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#fca5a5;">🔴【交渉決裂 5/11 18:22 JST】イランが「ホルムズ主権認定・戦争賠償・制裁解除・核問題除外」の対案を米に提出——トランプ「TOTALLY UNACCEPTABLE」と即座に拒否</strong><br>
+  イランはパキスタン経由で対案を米国に送付。内容は①ホルムズへの主権認定②戦争賠償③凍結資産解放④制裁解除⑤全戦線停戦⑥米海軍封鎖終了を要求。核問題は対案に一切記載なし（意図的に除外）。トランプはTruth Socialで「TOTALLY UNACCEPTABLE」と投稿。ウォルツ米国連大使「米国はレッドラインを明確に示した」。停戦延長後の最大の交渉決裂。
+  <span style="font-size:0.75rem;color:#64748b;display:block;margin-top:6px;">📡 CNBC（5/11 JST）</span>
+</li>
 
-  <button onclick="
-    var body = document.getElementById('other-routes-body');
-    var isOpen = body.style.display !== 'none';
-    body.style.display = isOpen ? 'none' : 'block';
-    this.innerHTML = isOpen
-      ? '▼ その他の検討中ルート（実績少・計画段階）― <span style=&quot;color:#fbbf24&quot;>影響度高い順</span>に表示'
-      : '▲ その他の検討中ルートを閉じる';
-  "
-    style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);
-           border-radius:8px;color:#94a3b8;font-size:0.8rem;font-weight:700;
-           padding:12px 18px;cursor:pointer;text-align:left;letter-spacing:0.03em;
-           transition:background 0.2s;">
-    ▼ その他の検討中ルート（実績少・計画段階）― <span style="color:#fbbf24">影響度高い順</span>に表示
-  </button>
-
-  <div id="other-routes-body" style="display:none;margin-top:14px;">
-    <div style="display:flex;flex-direction:column;gap:14px;">
-
-      <!-- ① ブラジル（影響度1位 / 実績少） -->
-      <div style="background:rgba(192,132,252,0.05);border:1px solid rgba(192,132,252,0.2);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇧🇷</span>
-          <strong style="color:#c084fc;font-size:0.85rem;">ブラジル→喜望峰→インド洋→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(192,132,252,0.15);border:1px solid rgba(192,132,252,0.3);color:#c084fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約40〜45日</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          チュピ・ブジオス油田からの良質原油（Tupi Blend）。
-          ホルムズ・バベルマンデブ・スエズ3大チョークポイント完全回避。
-          <strong style="color:#e2e8f0;">課題：</strong>日本向け到着は2026年後半以降の見込み。中国との競合激化・長距離コスト。精製時の品質調整が必要。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：確認なし（計画・スポット交渉段階）</div>
-      </div>
-
-      <!-- ② メキシコ（影響度2位 / 7月予定のみ） -->
-      <div style="background:rgba(52,211,153,0.04);border:1px solid rgba(52,211,153,0.15);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇲🇽</span>
-          <strong style="color:#34d399;font-size:0.85rem;">メキシコ→太平洋→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);color:#34d399;padding:2px 8px;border-radius:4px;margin-left:auto;">約30〜35日</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          <strong style="color:#fbbf24;">🆕 2026年7月初便予定：</strong>日本向け約100万バレルの輸送が計画中。
-          太平洋直行ルートで3大チョークポイントを完全回避。往復所要日数は中東比で半分以下。
-          輸送コスト：1バレルあたり2〜4ドル（中東比で競争力あり）。
-          <strong style="color:#e2e8f0;">課題：</strong>総生産量の輸出余力は日量40〜50万BPDのみ（国内消費優先）。前例なし。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：なし（2026年7月着予定・100万バレル）</div>
-      </div>
-
-      <!-- ③ イラク・キルクーク→トルコ・チェイハン（影響度3位） -->
-      <div style="background:rgba(251,191,36,0.04);border:1px solid rgba(251,191,36,0.15);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇮🇶</span>
-          <strong style="color:#fbbf24;font-size:0.85rem;">イラク・キルクーク→🇹🇷トルコ・チェイハン（地中海）</strong>
-          <span style="font-size:0.72rem;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25);color:#fbbf24;padding:2px 8px;border-radius:4px;margin-left:auto;">🆕 3月再開</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          <strong style="color:#4ade80;">✅ 2026年3月再開：</strong>10年以上の閉鎖から復活。初期輸送能力 日量25万BPD（最大容量1.6百万BPD）。
-          バグダッド連邦政府とクルド自治区政府（KRG）が合意。地中海へ直結しホルムズを完全回避。
-          IEAはバスラ〜チェイハン新規パイプライン建設も提言中。
-          <strong style="color:#e2e8f0;">課題：</strong>ISIS・PKKによる攻撃リスク（過去に繰り返し閉鎖）。
-          <strong style="color:#f87171;">⚠️ 2026年7月27日：</strong>イラク・トルコ1973年条約が期限切れ→交渉再開リスク。
-          欧州向け主体で日本への直接供給実績はなし。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：欧州向けのみ。日本向けは確認なし。</div>
-      </div>
-
-      <!-- ④ カナダ西岸（影響度4位） -->
-      <div style="background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.12);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇨🇦</span>
-          <strong style="color:#7dd3fc;font-size:0.85rem;">カナダ西岸（Trans Mountain）→太平洋直行→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#7dd3fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約14〜16日</span>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          Trans Mountain拡張パイプライン（2024年完成）でアルバータ州の産油がバンクーバー港へ。
-          太平洋最短ルートで地政学的リスクはほぼゼロ。3大チョークポイント完全回避。
-          <strong style="color:#e2e8f0;">課題：</strong>日本向け長期契約の締結実績が未確認。
-          重質油主体でカナダ産は日本の製油所設備との適合性要確認。
-        </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：日本向け契約なし（可能性段階）</div>
-      </div>
-
-    </div><!-- /flex -->
-  </div><!-- /#other-routes-body -->
-
-</div><!-- /その他ルート折り畳み -->
+<li style="background:rgba(251,191,36,0.08);border-left:3px solid #f59e0b;padding:10px 12px;border-radius:6px;">
+  <strong style="color:#fcd34d;">✈️【多発ドローン攻撃 5/10 JST】UAE・クウェート・カタール沖で同日多発——停戦が再度テスト</strong><br>
+  5/10（現地時間）、UAE：イランからの弾道ミサイル2発とドローンへの対処で3人負傷（一部迎撃不確認）。クウェート：敵対ドローンが領空侵入し防空が対処。カタール沖：カーゴ船にドローンが着弾し小火災、死傷者なし。IRGCは「米軍基地への報復攻撃」を再度警告。トランプ政権は「停戦維持中」と主張するも実態は停戦崩壊寸前。パキスタン首相はカタール首脳と平和努力継続を確認。
+  <span style="font-size:0.75rem;color:#64748b;display:block;margin-top:6px;">📡 Fortune・CNN（5/10 JST）</span>
+</li>
 ```
 
 ---
 
-## PATCH-08: ルートテーブルのヘッダー行に並び替え注記を追加
+## [S09] 30秒カラム（3行サマリー＋ステータスバッジ5枚）
 
-### 目的
-テーブルが「影響度順」であることを明示
+> ⚠️ Claude Code 作業注意：`view_range` で `<!-- 30秒で全体像を把握 -->` セクションの現在の内容を確認してから str_replace すること。
 
-### 対象
-ルートテーブルの `<thead>` 内、最初の `<th>` の前
+### ステータスバッジ5枚（全置き換え）
 
-**ルートテーブルのcaptionまたはtableタグ直後を探して追加**
-
-viewで `<table` を含み、`輸送ルート比較` に近い箇所を確認後：
-
-テーブルタイトル行があれば以下を付加：
-
-**old_str（テーブルタイトル部分の例）:**
-```
-        <div style="font-size:0.8rem;font-weight:800;color:#a78bfa;margin-bottom:8px;">🗺️ 輸送ルート比較（日本向け）</div>
-```
-
-**new_str:**
-```
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
-          <div style="font-size:0.8rem;font-weight:800;color:#a78bfa;">🗺️ 輸送ルート比較（日本向け）</div>
-          <span style="font-size:0.68rem;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;padding:2px 8px;border-radius:4px;">↑ 日本への影響度（輸入シェア）高い順</span>
-        </div>
-```
-
----
-
-## PATCH-09: 更新ログへの記載追加
-
-### 対象
-`<!--出典・更新ログ-->` セクション内の更新グリッド先頭
-
-**old_str（更新グリッドの先頭行を探す ― `2026年5月8日` または最新の更新行）:**
-```
-<div>📅 <strong>2026年5月8日
-```
-※ viewで最新の更新ログ行を確認後、その直前に以下を挿入
-
-**new_str（既存行の前に追加）:**
+**変更前（バッジ5枚 — 現在の内容）：**
 ```html
-<div>📅 <strong>2026年5月10日 更新</strong></div>
-<div><span style="color:#4ade80;">2026/05/10</span> — <strong style="color:#86efac;">【ルート情報大幅更新】</strong>
-  代替ルート情報を日本輸入シェア影響度順に再編成。
-  ルートA：VTTI攻撃詳細更新（58%激減・衛星画像確認）。
-  ルートB：330%急増・SUMED迂回オプション・二重チョークポイント問題追記。
-  ルートC：メキシコ産7月初便予定を追加。
-  西アフリカ：ダンゴテ製油所フル稼働・拡張計画（1.4百万BPD）追記。
-  新設：折り畳み「その他の検討中ルート」（ブラジル・メキシコ・イラク-チェイハン・カナダ）。
-</div>
+<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔒 封鎖72日目</span>
+          <span style="background:rgba(251,191,36,0.06);border:1px dashed rgba(251,191,36,0.4);color:#fbbf24;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🛢️ ブレント $101.29/bbl</span>
+          <span style="background:rgba(251,191,36,0.06);border:1px dashed rgba(251,191,36,0.4);color:#fbbf24;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🚢 通航 約5%</span>
+          <span style="background:rgba(56,189,248,0.06);border:1px dashed rgba(56,189,248,0.4);color:#38bdf8;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">📜 MOU回答 待機中</span>
+          <span style="background:rgba(16,185,129,0.06);border:1px dashed rgba(16,185,129,0.4);color:#6ee7b7;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">⚠️ 停戦 綱渡り継続</span>
+```
+
+**変更後：**
+```html
+<span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔒 封鎖74日目：停戦継続中</span>
+          <span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🛢️ ブレント $104.50/bbl（+3.2%）</span>
+          <span style="background:rgba(251,191,36,0.06);border:1px dashed rgba(251,191,36,0.4);color:#fbbf24;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🚢 通航 約5%</span>
+          <span style="background:rgba(239,68,68,0.06);border:1px dashed rgba(239,68,68,0.4);color:#f87171;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">🔴 対案：トランプ即座に拒否</span>
+          <span style="background:rgba(251,191,36,0.06);border:1px dashed rgba(251,191,36,0.4);color:#fbbf24;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:default;">⚠️ 停戦 綱渡り継続</span>
 ```
 
 ---
 
-## 作業完了チェックリスト
+### 3行サマリー（「いま何が」「海峡の今」「次の焦点」）
 
+> ⚠️ Claude Code：view で現在の 3行サマリーテキストを確認後、以下の内容に str_replace すること。  
+> 対象：`<!-- 30秒で全体像を把握 -->` セクション内の「いま何が起きているか」「海峡の今」「次の焦点」の各ブロック。
+
+**「いま何が起きているか」ブロック本文 — 変更後：**
 ```
-[ ] PATCH-01: ルートA説明テキスト更新（58%激減・ADNOCバラカ追記）
-[ ] PATCH-02: ルートA ステータスpill更新
-[ ] PATCH-03: ルートB説明更新（330%増・SUMED追記・二重チョークポイント）
-[ ] PATCH-04: ルートテーブル行順並び替え（B→A→C→西アフリカ→D）
-[ ] PATCH-05: ルートCにメキシコ産追記
-[ ] PATCH-06: 西アフリカカードのサブタイトル更新・ダンゴテ新情報追加
-[ ] PATCH-07: 「その他の検討中ルート」折り畳みセクション追加
-[ ] PATCH-08: ルートテーブルヘッダーに「影響度順」注記追加
-[ ] PATCH-09: 更新ログ追記
-[ ] git add docs/index.html
-[ ] git commit -m "feat: ルート情報大幅更新・影響度順再編成・その他ルート折り畳み追加（2026-05-10）"
-[ ] git push
+【いま何が起きているか（5/11 18:22 JST）】
+イランが「ホルムズ主権認定・戦争賠償・核問題除外」の対案を米国に提出。トランプは即座に「TOTALLY UNACCEPTABLE」と拒否し交渉は再び完全決裂。
+UAE・クウェート・カタール沖で5/10にドローン攻撃が同日多発——停戦は名目上継続も実態は崩壊寸前。
+開戦以来初のカタールLNGタンカーがホルムズを通過（信頼醸成・象徴的）するも、交渉決裂でブレント$104.50急騰——封鎖74日目。
+```
+
+**「海峡の今」ブロック本文 — 変更後：**
+```
+【海峡の今】
+通航量：戦前比約95%減（月3,000隻→150隻前後）
+ブレント原油：$104.50/bbl（+3.2%・交渉決裂で急騰）
+交渉状況：イランの対案をトランプが「TOTALLY UNACCEPTABLE」と拒否——次の動き未定
+```
+
+**「次の焦点」ブロック本文 — 変更後：**
+```
+【次の焦点】
+トランプの次の外交・軍事オプション ／ イランの対案撤回または修正交渉 ／ ブレント$110超えによる市場パニックの閾値
 ```
 
 ---
 
-## 注意事項
+## [S10] news_data.json 更新メモ
 
-1. **str_replace前に必ずview_rangeで対象行を確認** すること（プロジェクトナレッジのテキストは空白・改行が実ファイルと異なる場合あり）
-2. PATCH-04（行並び替え）は特に慎重に。ビューで各trブロックの完全な内容を確認してから実施
-3. PATCH-07の折り畳みHTMLを挿入する位置は、既存のコラムカード最後の `</div>` の直後かつ次のセクションの `<!-- コメント -->` の直前
-4. git push後はGitHubのProject Knowledgeで手動「Sync now」を実施すること
+**今回の更新方針：**
+- `docs/data/news_data.json` を `str_replace` で更新すること（`run.bat` / `auto_push.py` 経由での全ファイル置き換えは不要）
+- `archive` セクションは触らずそのまま維持すること（別ファイル `news_data.json` が提供されているが archive は部分的なため `str_replace` 方式を推奨）
+
+**① `"updated"` フィールドの更新**
+
+```
+old_str: "updated": "2026年5月10日 更新（ルート情報特集）"
+new_str: "updated": "2026年5月11日 18:22 日本時間JST"
+```
+
+**② `"staleNotice"` は `""` のまま変更なし**
+
+**③ `"latest"` 配列を以下の4件に全置き換え**
+
+old_str: `"latest": [` から始まり `],` で終わる配列全体（先頭から `"osint"` の手前まで）  
+new_str:
+
+```json
+"latest": [
+    {
+      "id": "news-2026-05-11-iran-counter-proposal-rejected",
+      "date": "2026/05/11",
+      "label": "🔴 交渉",
+      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+      "title": "イランが「ホルムズ主権認定・戦争賠償・制裁解除」要求の対案提出——トランプ「TOTALLY UNACCEPTABLE」と即座に拒否",
+      "body": "イランはパキスタン経由で対案を米国に送付。要求内容：①ホルムズへの主権認定②戦争賠償③凍結資産解放④制裁解除⑤全戦線停戦⑥米封鎖終了。核問題は対案に一切記載なし（意図的に除外）。トランプはTruth Socialで「I have just read the response from Iran's so-called 'Representatives.' I don't like it — TOTALLY UNACCEPTABLE!」と投稿。Saxo Bankは「再エスカレーション方向への傾き」と分析。ウォルツ米国連大使「米国はレッドラインを明確に示した」。ブレント$104.50（+3.2%）急騰。",
+      "sourceLabel": "CNBC（2026/05/11）"
+    },
+    {
+      "id": "news-2026-05-10-drone-attacks-gcc",
+      "date": "2026/05/10",
+      "label": "⚔️ 軍事",
+      "url": "https://fortune.com/2026/05/10/iran-war-ceasefire-drone-cargo-ship-qatar-kuwait-uae-attacks/",
+      "title": "UAE・クウェート・カタール沖でドローン攻撃が同日多発——停戦が再度テスト（5/10）",
+      "body": "5/10（現地時間）、停戦が再度試される攻撃が同日多発した。UAE：イランからの弾道ミサイル2発とドローンへの対処で3人負傷。クウェート：敵対ドローンが領空侵入し防空が対処。カタール沖：カーゴ船にドローンが着弾し小火災発生、死傷者なし。IRGCは「米軍基地への報復攻撃」を再度警告。トランプ政権は「停戦維持中」と主張するも実態は綱渡り。パキスタン首相はカタール首脳と平和努力の継続を確認。",
+      "sourceLabel": "Fortune（2026/05/10）"
+    },
+    {
+      "id": "news-2026-05-11-qatar-lng-hormuz-passage",
+      "date": "2026/05/11",
+      "label": "🚢 通航",
+      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+      "title": "開戦以来初・カタールLNGタンカーがホルムズを通過——イランがカタール・パキスタンへの信頼醸成として承認",
+      "body": "開戦以来初めてカタール産LNGを積んだタンカーがホルムズ海峡を通過した。イランがカタール・パキスタンとの関係維持のため通過を特例承認したとされる。ただし同日にカタール沖でカーゴ船へのドローン攻撃が発生しており、象徴的な通過が実質的な開通にはほど遠い現実が浮き彫りに。「この通過は市場の懸念解消には至らなかった」（OCBC銀行）。",
+      "sourceLabel": "CNBC（2026/05/11）"
+    },
+    {
+      "id": "news-2026-05-08-us-iran-military-clash-update",
+      "date": "2026/05/08",
+      "label": "⚔️ 軍事",
+      "url": "https://www.npr.org/2026/05/08/g-s1-121061/iran-war-updates",
+      "title": "米がイラン産油タンカー2隻を攻撃——UAE「3人負傷」・CMA CGM被弾・Kharg島沖油流出（5/8更新）",
+      "body": "米軍は米海軍封鎖突破を試みるイラン産油タンカー2隻を攻撃し無力化した。UAE国防省はイラン発射の弾道ミサイル・ドローンで3人が負傷したと発表（一部迎撃不確認）。アラグチー外相は「外交テーブルにある度に米国は無謀な軍事行動を選ぶ」とXに投稿。カタール沖ではCMA CGMサンアントニオが巡航ミサイルに被弾し乗組員8名が負傷（5/5）。Kharg島沖の油流出が欧州宇宙機関の衛星画像で確認され拡大中。",
+      "sourceLabel": "NPR（2026/05/08）"
+    }
+  ],
+```
+
+**④ `"osint"` 配列を以下の1件に置き換え（既存全件を新1件に差し替え）**
+
+```json
+"osint": [
+    {
+      "country": "🇮🇷",
+      "media": "Al Jazeera",
+      "date": "2026/05/06",
+      "url": "https://www.aljazeera.com/news/2026/5/6/french-container-ship-struck-in-latest-escalation-at-strait-of-hormuz",
+      "titleJa": "IRGC「新手順でホルムズ通航を保証する」——米作戦一時停止後に声明・CMA CGMサンアントニオが最新被弾事例",
+      "titleEn": "Iran's IRGC says Hormuz safe transit will be 'ensured' under new procedures as US pauses operation",
+      "cardBg": "rgba(30,10,10,0.7)",
+      "cardBorder": "rgba(239,68,68,0.2)",
+      "badgeColor": "rgba(239,68,68,0.15)",
+      "borderColor": "rgba(239,68,68,0.3)",
+      "textColor": "#f87171",
+      "isLatest": true
+    }
+  ],
+```
+
+**⑤ `"archive"` 先頭に以下のバッチを追加**（既存バッチの上に挿入）
+
+```json
+    {
+      "batchLabel": "2026/05/10 ルート情報特集（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-08-fujairah-limited-recovery",
+          "date": "2026/05/08",
+          "label": "🔴 ルートA",
+          "url": "https://energynow.com/2026/03/port-of-fujairah-resumes-oil-loadings-after-attack-and-why-it-matters-globally/",
+          "title": "フジャイラ港・一部復旧も実態は不透明——衛星画像でタンカー2隻・VLCC1隻のみ確認（通常比58%激減継続）",
+          "body": "5/4のVTTIターミナルへのドローン攻撃後、衛星画像（5/7）では港内タンカー2隻・VLCC1隻のみ。UAE産原油輸出は日量135万バレルに落ち込み（通常比58%減）。100隻超が錨泊滞留中。",
+          "sourceLabel": "EnergyNow・Windward（5/4〜5/8）"
+        },
+        {
+          "id": "news-2026-05-08-yanbu-surge-330pct",
+          "date": "2026/05/08",
+          "label": "🟢 ルートB",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/East-West-Pipeline-Key-to-Saudi-Arabias-New-Oil-Export-Strategy.html",
+          "title": "サウジ・ヤンブー輸出が戦前比330%増——VLCC27隻が向航中、ただしバベルマンデブ「二重チョークポイント」リスクが浮上",
+          "body": "サウジアラビアはヤンブーへの振り向けを全開にし、輸出量が日量247万BPDと戦前比330%増に達した。Windwardは27隻のVLCCがヤンブーへ向航中と報告。ただしアジア向けはバベルマンデブ海峡を通過必須で「ホルムズを避けたが別のチョークポイントに依存する」構造が鮮明に。",
+          "sourceLabel": "OilPrice・Windward・HornReview（5/8）"
+        },
+        {
+          "id": "news-2026-05-06-nigeria-dangote-full-capacity",
+          "date": "2026/05/06",
+          "label": "🌍 西アフリカ",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Dangote-Refinery-Crude-Supply-Doubles-But-High-Import-Costs-Squeeze-Margins.html",
+          "title": "ダンゴテ製油所がフル稼働（65万BPD）・欧州向け輸出開始——日本もナイジェリア・アンゴラからの輸入を本格拡大",
+          "body": "アフリカ最大のダンゴテ製油所が日量65万BPDのフル稼働を達成。日本はホルムズ危機を受けナイジェリア・アンゴラ・ブラジルからの原油輸入を急拡大中。西アフリカ産はホルムズ・バベルマンデブ・スエズの3大チョークポイントを完全回避できる。日本向けは喜望峰経由で約35〜40日。",
+          "sourceLabel": "OilPrice・Pravda Nigeria・African Energy Week（4/8〜5/6）"
+        },
+        {
+          "id": "news-2026-05-04-hormuz-alternative-routes-overview",
+          "date": "2026/04/23",
+          "label": "分析",
+          "url": "https://www.cnbc.com/2026/04/23/strait-hormuz-closure-alternative-routes-middle-east-oil-gas-pipelines.html",
+          "title": "ホルムズ代替ルートの現実——IEA「既存の全バイパスを合わせても封鎖分の半分しか補えない」",
+          "body": "CNBCが代替ルートを総括。既存の全パイプライン・迂回ルートの合計容量は最大約900〜1,000万BPD（ホルムズ通常流量2,000万BPDの半分以下）。メキシコ産は2026年7月に日本向け初便（100万バレル）が予定されている。",
+          "sourceLabel": "CNBC・IEA・RSIS（4/23〜5/1）"
+        }
+      ]
+    },
+```
+
+---
+
+## [S11] 更新ログ追記
+
+**対象：** `<!--出典・更新ログ-->` セクション内の更新グリッド先頭
+
+**直近更新行（view で確認して先頭に以下を追加）：**
+
+```html
+<div>📅 <strong>2026年5月11日 18:22 JST</strong> 更新</div>
+<div><span style="color:#f87171;">2026/05/11 18:22</span> — <strong style="color:#fca5a5;">【速報更新】</strong>イランが「ホルムズ主権認定・戦争賠償・制裁解除・核除外」の対案提出→トランプ「TOTALLY UNACCEPTABLE」即座に拒否・UAE・クウェート・カタール沖でドローン攻撃多発（5/10）・カタールLNGタンカー初通過（象徴的）・ブレント$104.50急騰・封鎖74日目・ニュース4件更新・OSINT更新</div>
+```
+
+---
+
+## ✅ 出力前セルフチェック（部分更新版）
+
+```
+[x] S01 ヘッダー ― 2026年5月11日 18:22 JST ✓
+[x] S02 TICKER ― イラン対案拒否・ドローン多発・カタールLNG・$104.50・封鎖74日目 ✓
+[x] S03 速報インシデント ― 5/11 18:22付け・2件新規追加 ✓
+[ ] S04〜S08 ― 今回は更新しない（省略）
+[x] S09 30秒カラム ― バッジ5枚更新・3行サマリー更新（最後に作成）✓
+[x] S10 news_data.json ― str_replace 5項目の指示を記載 ✓
+[x] S11 更新ログ ― 先頭に5/11 18:22行追記 ✓
+
+TICKER内JST表記チェック：全日付にJST付き ✓
+📰 関連最新ニュースのAl Jazeera混入チェック：Al Jazeeraはosintのみ ✓
+AI推測URL混入チェック：全URLは検索結果から取得済み ✓
+日付表記フォーマット統一チェック：YYYY年MM月DD日 HH:MM JST ✓
+封鎖日数チェック：5/3=66日目 → 5/11=74日目（+8日）✓
+```
+
+---
+
+## ⚠️ シナリオ変更について（ユーザーへの確認依頼）
+
+今回の情報はシナリオ確率に顕著な影響を与えます。
+次回の通常更新時（または今回の追加指示時）にシナリオ更新もご検討ください。
+
+| シナリオ | 現在 | 要検討 | 変更理由 |
+|---|---|---|---|
+| A（外交解決） | ~15% | **↓ 5〜10%** | トランプ「TOTALLY UNACCEPTABLE」で短期合意が極めて困難に |
+| B（現状維持） | ~35% | 35%前後維持 | 依然として最大確率だが不安定要素増大 |
+| C（完全封鎖強化） | ~15% | 15〜20%↑ | 対案決裂後の強硬行動リスク上昇 |
+| D（軍事エスカレーション） | ~20% | **↑ 25〜30%** | ドローン攻撃継続・停戦崩壊寸前・IRGC警告強化 |

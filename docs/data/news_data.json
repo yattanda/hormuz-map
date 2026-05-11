@@ -53,6 +53,48 @@
       "borderColor": "rgba(239,68,68,0.3)",
       "textColor": "#f87171",
       "isLatest": true
+    },
+    {
+      "country": "🇦🇪",
+      "media": "Al Arabiya / Profile News",
+      "date": "2026/05/06",
+      "url": "https://www.profilenews.com/en/fujairah-port-gulf-trade-hormuz/",
+      "titleJa": "フジャイラ港がGCC最重要エネルギー動脈に——トラック交通が100台→7,000台/日に爆増",
+      "titleEn": "Fujairah Port Becomes Gulf Trade Lifeline as Hormuz Disruptions Intensify",
+      "cardBg": "rgba(30,58,95,0.7)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "rgba(56,189,248,0.18)",
+      "borderColor": "rgba(56,189,248,0.35)",
+      "textColor": "#38bdf8",
+      "isLatest": false
+    },
+    {
+      "country": "🇸🇦",
+      "media": "Arab News",
+      "date": "2026/03/31",
+      "url": "https://www.arabnews.com/node/2638351/saudi-arabia",
+      "titleJa": "東西パイプライン最大稼働——「ホルムズ回避」も今度はバベルマンデブ依存に。フーシ派が次の「鍵」に",
+      "titleEn": "How Saudi Arabia's East-West pipeline is easing the Hormuz chokehold on global oil markets",
+      "cardBg": "rgba(5,46,22,0.7)",
+      "cardBorder": "rgba(52,211,153,0.25)",
+      "badgeColor": "rgba(52,211,153,0.15)",
+      "borderColor": "rgba(52,211,153,0.3)",
+      "textColor": "#34d399",
+      "isLatest": false
+    },
+    {
+      "country": "🇳🇬",
+      "media": "Pravda Nigeria",
+      "date": "2026/05/06",
+      "url": "https://nigeria.news-pravda.com/world/2026/05/05/6718.html",
+      "titleJa": "「ナイジェリアの石油が世界を救う」——ダンゴテ精製でアフリカ・欧州へ供給拡大・日本も調達加速",
+      "titleEn": "Nigeria's Oil. For the whole world - Dangote Refinery reaches full capacity amid Hormuz disruptions",
+      "cardBg": "rgba(5,46,22,0.6)",
+      "cardBorder": "rgba(251,191,36,0.2)",
+      "badgeColor": "rgba(251,191,36,0.12)",
+      "borderColor": "rgba(251,191,36,0.25)",
+      "textColor": "#fbbf24",
+      "isLatest": false
     }
   ],
   "archive": [

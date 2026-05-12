@@ -1,7 +1,16 @@
 {
-  "updated": "2026年5月12日 10:24 日本時間JST",
+  "updated": "2026年5月13日 07:59 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "news-2026-05-13-wti-102-iran-deadlock",
+      "date": "2026/05/12",
+      "label": "⚡ 速報",
+      "url": "https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html",
+      "title": "WTI $102・ブレント $107.77 に急騰——トランプ「イラン提案はゴミ」で停戦「瀕死」・サウジAramco CEO「正常化は2027年以降の恐れ」",
+      "body": "5月12日のNY原油市場でWTI先物は4.2%高の$102.18、ブレント先物は3.4%高の$107.77で引け。背景はトランプがイランの最新反案を「TOTALLY UNACCEPTABLE」（5/11）→「ゴミ（garbage）」（5/12電話取材）と2日連続拒絶し停戦が「生命維持装置」状態に陥ったこと。サウジAramco CEOアミン・ナセルは決算説明会で「市場は週100MB分の供給を失っており、6月中旬以降も封鎖が続けば正常化は2027年以降にずれ込む」と警告。元NATO最高司令官スタブリディス海軍大将はCNBC生出演で「ホルムズを武力で再開するのが現時点の最有力オプション」と明言。NSCは武力再開オプションを本格協議中。",
+      "sourceLabel": "CNBC（2026/05/12）"
+    },
     {
       "id": "news-2026-05-12-trump-rejects-iran-proposal",
       "date": "2026/05/11",
@@ -28,15 +37,6 @@
       "title": "日本、UAEから追加20億バレル原油調達合意——ホルムズ迂回・代替ルート確保を加速（日経アジア）",
       "body": "日経アジアが報じたところによると、日本はUAEから追加で2,000万バレルの原油を購入することで合意した。ホルムズ海峡封鎖が続く中、日本政府は代替調達チャネルの拡大を継続している。90%以上を中東に依存してきた日本の原油輸入は封鎖で大打撃を受けており、4月初旬にはUAE・サウジの港湾から迂回ルートでの原油が日本に届き始めた。日本PM高市早苗は「インド太平洋に甚大な影響」と表明し豪州との協力協定を締結（5/4）。備蓄：254日分（国家146日＋民間101日＋IEA7日）。",
       "sourceLabel": "日経アジア（2026/05/07）"
-    },
-    {
-      "id": "news-2026-05-12-trump-xi-beijing-summit",
-      "date": "2026/05/11",
-      "label": "🌐 外交",
-      "url": "https://oilprice.com/Energy/Energy-General/Trump-Xi-Talks-Set-to-Tackle-Iran-Oil-Lifeline-Strait-of-Hormuz-and-US-Energy.html",
-      "title": "トランプ-習近平主席 北京首脳会談（5/14-15）——ホルムズ再開・Iran問題・米中エネルギー取引が最大議題・Goldman「最も重要な二国間会合」",
-      "body": "トランプが北京に到着し5/14-15の首脳会談に臨む。最重要議題はホルムズ再開。財務長官ベッセントは「イランへの共同圧力」を中国に要求。Goldman Sachs：北京は「仲介者としての立場」を強化しつつあり、中国・イラン間でホルムズ問題が主要議題に。中国の4月の原油輸入は前年比20%減（4年ぶり低水準）で、中国は安定的な湾岸エネルギー確保の強い動機がある。ただし「管理された緩和、薄い成果」が基本シナリオとの見方。またボーイング・農産物・エネルギー購入のアナウンスも予定。",
-      "sourceLabel": "OilPrice.com・CNBC（2026/05/11）"
     }
   ],
   "osint": [
@@ -67,53 +67,25 @@
       "borderColor": "rgba(239,68,68,0.3)",
       "textColor": "#f87171",
       "isLatest": false
-    },
-    {
-      "country": "🇦🇪",
-      "media": "Al Arabiya / Profile News",
-      "date": "2026/05/06",
-      "url": "https://www.profilenews.com/en/fujairah-port-gulf-trade-hormuz/",
-      "titleJa": "フジャイラ港がGCC最重要エネルギー動脈に——トラック交通が100台→7,000台/日に爆増",
-      "titleEn": "Fujairah Port Becomes Gulf Trade Lifeline as Hormuz Disruptions Intensify",
-      "cardBg": "rgba(30,58,95,0.7)",
-      "cardBorder": "rgba(56,189,248,0.25)",
-      "badgeColor": "rgba(56,189,248,0.18)",
-      "borderColor": "rgba(56,189,248,0.35)",
-      "textColor": "#38bdf8",
-      "isLatest": false
-    },
-    {
-      "country": "🇸🇦",
-      "media": "Arab News",
-      "date": "2026/03/31",
-      "url": "https://www.arabnews.com/node/2638351/saudi-arabia",
-      "titleJa": "東西パイプライン最大稼働——「ホルムズ回避」も今度はバベルマンデブ依存に。フーシ派が次の「鍵」に",
-      "titleEn": "How Saudi Arabia's East-West pipeline is easing the Hormuz chokehold on global oil markets",
-      "cardBg": "rgba(5,46,22,0.7)",
-      "cardBorder": "rgba(52,211,153,0.25)",
-      "badgeColor": "rgba(52,211,153,0.15)",
-      "borderColor": "rgba(52,211,153,0.3)",
-      "textColor": "#34d399",
-      "isLatest": false
-    },
-    {
-      "country": "🇳🇬",
-      "media": "Pravda Nigeria",
-      "date": "2026/05/06",
-      "url": "https://nigeria.news-pravda.com/world/2026/05/05/6718.html",
-      "titleJa": "「ナイジェリアの石油が世界を救う」——ダンゴテ精製でアフリカ・欧州へ供給拡大・日本も調達加速",
-      "titleEn": "Nigeria's Oil For the Whole World - Dangote Refinery reaches full capacity amid Hormuz disruptions",
-      "cardBg": "rgba(5,46,22,0.6)",
-      "cardBorder": "rgba(251,191,36,0.2)",
-      "badgeColor": "rgba(251,191,36,0.12)",
-      "borderColor": "rgba(251,191,36,0.25)",
-      "textColor": "#fbbf24",
-      "isLatest": false
     }
   ],
   "archive": [
     {
-      "batchLabel": "2026/05/12 10:24 更新分アーカイブ予定（str_replace で追加）",
+      "batchLabel": "2026/05/13 07:59 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-12-trump-xi-beijing-summit",
+          "date": "2026/05/11",
+          "label": "🌐 外交",
+          "url": "https://oilprice.com/Energy/Energy-General/Trump-Xi-Talks-Set-to-Tackle-Iran-Oil-Lifeline-Strait-of-Hormuz-and-US-Energy.html",
+          "title": "トランプ-習近平主席 北京首脳会談（5/14-15）——ホルムズ再開・米中エネルギー取引・Iran問題が最大議題・Goldman「最も重要な二国間会合」",
+          "body": "トランプが北京に到着し5/14-15の首脳会談に臨む。最重要議題はホルムズ再開。財務長官ベッセントは「イランへの共同圧力」を中国に要求。Goldman Sachs：北京は「仲介者としての立場」を強化しつつあり、中国・イラン間でホルムズ問題が主要議題に。中国の4月の原油輸入は前年比20%減（4年ぶり低水準）で、中国は安定的な湾岸エネルギー確保の強い動機がある。ただし「管理された緩和、薄い成果」が基本シナリオとの見方。またボーイング・農産物・エネルギー購入のアナウンスも予定。",
+          "sourceLabel": "OilPrice.com・CNBC（2026/05/11）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026/05/12 10:24 更新分（アーカイブ）— ※既存archive内容をここに保持",
       "items": []
     }
   ]

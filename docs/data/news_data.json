@@ -1,92 +1,125 @@
 {
-  "updated": "2026年5月13日 07:59 日本時間JST",
+  "updated": "2026年5月14日 07:47 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "news-2026-05-14-trump-xi-beijing-hormuz",
+      "date": "2026/05/14",
+      "label": "⚡ 速報",
+      "url": "https://www.cnbc.com/2026/05/12/trump-china-iran-war-xi-jinping-analysis.html",
+      "title": "トランプ大統領が北京入り——習近平との首脳会談（5/14-15）でホルムズ再開・イラン産油購入停止を要請",
+      "body": "トランプ大統領が2017年以来初の中国国賓訪問として5月14日に北京入り。習近平との2日間首脳会談（5/14-15）でホルムズ再開・イラン産油購入停止が最優先議題となる。中国は米エネルギー・農産物・ボーイング航空機の購入を発表予定。イラン外相が直前に北京を訪問しており、中国は仲介姿勢を示しているが、CSISやCFRの専門家は「中国が実質的な対イラン圧力をかける可能性は低い」と慎重。Goldman Sachsは「北京が仲介役として機能すればWTI急落も」と指摘するが、現実的なブレークスルーへのハードルは依然高い。",
+      "sourceLabel": "CNBC・NPR・CSIS（2026/05/14）"
+    },
     {
       "id": "news-2026-05-13-wti-102-iran-deadlock",
       "date": "2026/05/12",
       "label": "⚡ 速報",
       "url": "https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html",
-      "title": "WTI $102・ブレント $107.77 に急騰——トランプ「イラン提案はゴミ」で停戦「瀕死」・サウジAramco CEO「正常化は2027年以降の恐れ」",
-      "body": "5月12日のNY原油市場でWTI先物は4.2%高の$102.18、ブレント先物は3.4%高の$107.77で引け。背景はトランプがイランの最新反案を「TOTALLY UNACCEPTABLE」（5/11）→「ゴミ（garbage）」（5/12電話取材）と2日連続拒絶し停戦が「生命維持装置」状態に陥ったこと。サウジAramco CEOアミン・ナセルは決算説明会で「市場は週100MB分の供給を失っており、6月中旬以降も封鎖が続けば正常化は2027年以降にずれ込む」と警告。元NATO最高司令官スタブリディス海軍大将はCNBC生出演で「ホルムズを武力で再開するのが現時点の最有力オプション」と明言。NSCは武力再開オプションを本格協議中。",
-      "sourceLabel": "CNBC（2026/05/12）"
+      "title": "WTI $102・ブレント $107.77 に急騰——停戦「生命維持装置」・サウジAramco CEO「正常化は2027年以降の恐れ」",
+      "body": "5月12日のNY原油市場でWTI先物は4.2%高の$102.18、ブレント先物は3.4%高の$107.77で引け。トランプがイランの最新逆提案を「TOTALLY UNACCEPTABLE」（5/11）と連続拒絶し停戦が「生命維持装置」状態に。サウジAramco CEOアミン・ナセルはQ1決算説明会で「市場は週100MB分の供給を失っており、6月中旬以降も封鎖継続なら正常化は2027年以降にずれ込む」と警告。EIA（5/12公表STEO）はQ2に世界在庫が1日850万バレル減少すると試算し、ブレントは5-6月$106/b水準を予測。",
+      "sourceLabel": "CNBC・EIA Short-Term Energy Outlook（2026/05/12）"
     },
     {
-      "id": "news-2026-05-12-trump-rejects-iran-proposal",
+      "id": "news-2026-05-12-eia-steo-hms-dragon",
+      "date": "2026/05/12",
+      "label": "事実",
+      "url": "https://www.eia.gov/outlooks/steo/",
+      "title": "EIA「ホルムズ閉鎖は5月末まで継続・6月から通航回復」——英HMS Dragon が中東へ出航、多国籍任務を事前展開",
+      "body": "EIA（米エネルギー情報局）が5月12日に公表した月次短期エネルギー見通し（STEO）で、ホルムズ海峡は5月末まで事実上閉鎖が継続し6月から通航が回復するシナリオを基本として策定。中東産油国6カ国（イラク・サウジ・UAE・クウェート・カタール・バーレーン）が4月に合計1050万BPDを停止中。一方、英国防省は英海軍HMS Dragon（45型駆逐艦）を中東へ出航させ、英仏共同主導・38カ国参加の多国籍海峡護衛任務（条件整い次第）の事前展開を開始したと発表。IEAは「在庫が記録的ペースで減少しており、来月紛争が終結しても10月まで深刻な供給不足が続く」と警告。",
+      "sourceLabel": "EIA・英国防省・IEA（2026/05/12）"
+    },
+    {
+      "id": "news-2026-05-11-iran-counter-proposal-rejected",
       "date": "2026/05/11",
-      "label": "🔴 交渉",
-      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
-      "title": "トランプ、イラン対案を「TOTALLY UNACCEPTABLE」と即時拒否——停戦「massive life support（命綱）」宣言・トランプ-習近平主席 首脳会談（5/14-15）に交渉の命運",
-      "body": "イランはパキスタン経由で対案を米国に送付（ホルムズ主権認定・戦争賠償・凍結資産解放・制裁解除・全戦線停戦・米封鎖終了を要求。核問題は意図的に除外）。トランプはTruth Socialで「TOTALLY UNACCEPTABLE」「stupid」と投稿し、停戦は「massive life support」状態と宣言。核問題については「イランは一定の譲歩を示したが不十分」と述べた。ペンタゴン内では「追加標的攻撃」を主張する強硬派と外交継続派が対立。地域筋はCNNに「5/14-15の北京首脳会談の結果次第でしか進まない」と明言。封鎖74日目。",
-      "sourceLabel": "CNBC（2026/05/11）"
-    },
-    {
-      "id": "news-2026-05-12-aramco-normalization-2027",
-      "date": "2026/05/11",
-      "label": "⚡ エネルギー",
-      "url": "https://www.cnbc.com/2026/05/11/oil-price-today-brent-wti-iran-war-trump.html",
-      "title": "サウジアラムコCEO「封鎖継続なら正常化は2027年以降」——ブレント$104.21・IEA「日量1,400万バレル喪失・史上最大の供給途絶」",
-      "body": "アラムコCEOアミン・ナセルが投資家電話会議で「封鎖があと数週間続けば、ホルムズが再開しても市場の再均衡は2027年以降にずれ込む」と警告。IEAは紛争が世界供給から日量約1,400万バレルを除去していると発表。Citi分析：「イランは合意の時機を握っており、リスクは長期化・部分再開側に傾いている」。ブレントは5/11に+2.9%の$104.21で終値。WTIは+2.9%の$98.07。Goldman Sachs：在庫は5月末98日分に低下の懸念。",
-      "sourceLabel": "CNBC（2026/05/11）"
-    },
-    {
-      "id": "news-2026-05-12-japan-uae-20m-barrels",
-      "date": "2026/05/07",
-      "label": "🇯🇵 日本",
-      "url": "https://asia.nikkei.com/business/markets/commodities/japan-to-buy-another-20m-barrels-of-uae-oil-to-bypass-hormuz-blockade",
-      "title": "日本、UAEから追加20億バレル原油調達合意——ホルムズ迂回・代替ルート確保を加速（日経アジア）",
-      "body": "日経アジアが報じたところによると、日本はUAEから追加で2,000万バレルの原油を購入することで合意した。ホルムズ海峡封鎖が続く中、日本政府は代替調達チャネルの拡大を継続している。90%以上を中東に依存してきた日本の原油輸入は封鎖で大打撃を受けており、4月初旬にはUAE・サウジの港湾から迂回ルートでの原油が日本に届き始めた。日本PM高市早苗は「インド太平洋に甚大な影響」と表明し豪州との協力協定を締結（5/4）。備蓄：254日分（国家146日＋民間101日＋IEA7日）。",
-      "sourceLabel": "日経アジア（2026/05/07）"
+      "label": "⚡ 速報",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
+      "title": "トランプ「イラン提案はまったく受け入れられない」——イランは海峡管理の法制化を推進、UAEがドローン2機を迎撃",
+      "body": "イランがパキスタン経由で提示した逆提案（OFAC制裁30日以内解除・海軍封鎖終了・ウラン濃縮継続・核問題は別交渉・ホルムズ「イラン管理」）をトランプが即日拒否。「TOTALLY UNACCEPTABLE」とTruth Socialに投稿し、停戦を「massive life support（生命維持装置）状態で非常に脆弱」と表現。一方イラン議会は「敵対国船舶の通行禁止」条項を含むホルムズ管理法の起草を開始し既成事実化を加速。UAE首長国が5月10日にイラン製ドローン2機を迎撃。カタール首相がルビオ国務長官・ウィトコフ中東特使らとマイアミで協議。",
+      "sourceLabel": "CBS News・NBC News・CNBC（2026/05/11）"
     }
   ],
   "osint": [
     {
+      "country": "🇦🇪",
+      "media": "The National",
+      "date": "2026/05/12",
+      "url": "https://www.thenationalnews.com/business/energy/2026/05/12/trump-unlikely-to-persuade-xi-to-stop-buying-iranian-oil-analysts-say/",
+      "titleJa": "トランプ訪中——中国はイランへの圧力をかけられるか。専門家は慎重「中国の国益に反する圧力は困難」",
+      "titleEn": "Trump unlikely to persuade Xi to stop buying Iranian oil, analysts say",
+      "cardBg": "rgba(20,40,20,0.7)",
+      "cardBorder": "rgba(74,222,128,0.2)",
+      "badgeColor": "rgba(74,222,128,0.15)",
+      "borderColor": "rgba(74,222,128,0.3)",
+      "textColor": "#4ade80",
+      "isLatest": true
+    },
+    {
       "country": "🇶🇦",
       "media": "Al Jazeera",
       "date": "2026/05/11",
-      "url": "https://www.aljazeera.com/news/2026/5/11/iran-says-us-making-unreasonable-demands-in-negotiations-to-end-war",
-      "titleJa": "イラン外務省「米国の要求は不合理・一方的」——停戦継続も交渉は完全膠着・バグェイ報道官が反論声明",
-      "titleEn": "Iran says US making 'unreasonable' demands in negotiations to end war",
+      "url": "https://www.aljazeera.com/news/2026/5/11/unacceptable-whats-irans-peace-proposal-that-trump-has-rejected",
+      "titleJa": "「受け入れ不可能」——トランプが拒否したイランの和平提案とは何か",
+      "titleEn": "Unacceptable: What's Iran's peace proposal that Trump has rejected?",
       "cardBg": "rgba(15,40,60,0.7)",
       "cardBorder": "rgba(56,189,248,0.2)",
       "badgeColor": "rgba(56,189,248,0.15)",
       "borderColor": "rgba(56,189,248,0.3)",
       "textColor": "#38bdf8",
-      "isLatest": true
+      "isLatest": false
     },
     {
-      "country": "🇮🇷",
+      "country": "🇶🇦",
       "media": "Al Jazeera",
-      "date": "2026/05/06",
-      "url": "https://www.aljazeera.com/news/2026/5/6/french-container-ship-struck-in-latest-escalation-at-strait-of-hormuz",
-      "titleJa": "IRGC「新手順でホルムズ通航を保証する」——米作戦一時停止後に声明・CMA CGMサンアントニオが最新被弾事例",
-      "titleEn": "Iran's IRGC says Hormuz safe transit will be 'ensured' under new procedures as US pauses operation",
-      "cardBg": "rgba(30,10,10,0.7)",
-      "cardBorder": "rgba(239,68,68,0.2)",
-      "badgeColor": "rgba(239,68,68,0.15)",
-      "borderColor": "rgba(239,68,68,0.3)",
-      "textColor": "#f87171",
+      "date": "2026/04/28",
+      "url": "https://www.aljazeera.com/news/2026/4/28/oil-prices-rise-despite-irans-proposal-to-reopen-strait-of-hormuz",
+      "titleJa": "ブレント3%高——イランの海峡再開提案も市場の懸念和らがず・$111.49を記録",
+      "titleEn": "Oil prices rise despite Iran's proposal to reopen Strait of Hormuz",
+      "cardBg": "rgba(15,40,60,0.7)",
+      "cardBorder": "rgba(56,189,248,0.2)",
+      "badgeColor": "rgba(56,189,248,0.15)",
+      "borderColor": "rgba(56,189,248,0.3)",
+      "textColor": "#38bdf8",
       "isLatest": false
     }
   ],
   "archive": [
     {
-      "batchLabel": "2026/05/13 07:59 更新分（アーカイブ）",
+      "batchLabel": "2026/05/14 07:47 更新分（アーカイブ）",
       "items": [
         {
-          "id": "news-2026-05-12-trump-xi-beijing-summit",
-          "date": "2026/05/11",
-          "label": "🌐 外交",
-          "url": "https://oilprice.com/Energy/Energy-General/Trump-Xi-Talks-Set-to-Tackle-Iran-Oil-Lifeline-Strait-of-Hormuz-and-US-Energy.html",
-          "title": "トランプ-習近平主席 北京首脳会談（5/14-15）——ホルムズ再開・米中エネルギー取引・Iran問題が最大議題・Goldman「最も重要な二国間会合」",
-          "body": "トランプが北京に到着し5/14-15の首脳会談に臨む。最重要議題はホルムズ再開。財務長官ベッセントは「イランへの共同圧力」を中国に要求。Goldman Sachs：北京は「仲介者としての立場」を強化しつつあり、中国・イラン間でホルムズ問題が主要議題に。中国の4月の原油輸入は前年比20%減（4年ぶり低水準）で、中国は安定的な湾岸エネルギー確保の強い動機がある。ただし「管理された緩和、薄い成果」が基本シナリオとの見方。またボーイング・農産物・エネルギー購入のアナウンスも予定。",
-          "sourceLabel": "OilPrice.com・CNBC（2026/05/11）"
+          "id": "news-2026-05-09-us-iran-clash-destroyers",
+          "date": "2026/05/08",
+          "label": "⚡ 速報",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
+          "title": "米駆逐艦3隻がイランの攻撃をかわしホルムズ通過——トランプ「吹き飛ばした」停戦は「継続中」と強調（5/7 JST）",
+          "body": "米中央軍（CENTCOM）が5月7日（米東部時間）、ホルムズ海峡通過中の米駆逐艦3隻がイランのミサイル・ドローン攻撃を受けたが全艦回避成功と発表。トランプ大統領はOval Officeで「They trifled with us today. We blew them away.（奴らは我々をバカにした。吹き飛ばしてやった）」と発言し、停戦が続いていることを強調。イランは報復として複数のIRGC施設への空爆を受けたと伝えられる。CENTCOM転回船数は57隻に更新された。",
+          "sourceLabel": "CBS News・CENTCOM（2026/05/08）"
         }
       ]
     },
     {
-      "batchLabel": "2026/05/12 10:24 更新分（アーカイブ）— ※既存archive内容をここに保持",
-      "items": []
+      "batchLabel": "2026/04/30 09:51 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-04-30-uae-opec-exit-prev",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
+          "title": "【本日発効予告】UAE、OPEC・OPEC+から正式離脱（5月1日）——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
+          "body": "UAEが4月29日に正式通知し、5月1日付でOPEC・OPEC+から離脱。UAEの産油能力は480万BPD（日量）で制限なしの増産が可能になる。OPECのスペア生産能力見通しは3.8百万BPD→2.5百万BPD（2027年）に下方修正（EIA）。ただしホルムズ封鎖が継続する限り増産分を輸出できず、短期的な市場効果は限定的。長期的にはサウジとの亀裂が深まりOPEC結束に影響。",
+          "sourceLabel": "Al Jazeera・EIA（2026/04/30）"
+        },
+        {
+          "id": "news-2026-04-30-brent-120-goldman",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
+          "title": "ブレント$120突破（2022年6月以来）——Goldman Sachs「通常化は6月末以降・年末$90に上方修正」",
+          "body": "4/29〜4/30にブレント原油が$120/バレルを突破し約4年ぶりの高値を記録。Goldman Sachsはペルシャ湾からの輸出正常化が6月末以降にずれ込むと判断し、年末見通しを$80→$90に上方修正。世界在庫は日量1,100〜1,200万バレルという記録的ペースで枯渇中。「ファットテールはまだ前方にある」とGlobal X ETFsが警告。たとえ即日合意でも在庫再構築に4〜6ヶ月かかるとLipow Oil Associatesが試算。",
+          "sourceLabel": "CNBC・Goldman Sachs報告書（2026/04/30）"
+        }
+      ]
     }
   ]
 }

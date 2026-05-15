@@ -30,7 +30,7 @@
       "sourceLabel": "UN News（2026/05/11）"
     },
     {
-      "id": "news-2026-05-09-eia-steo-may-hormuz-closed-until-late-may",
+      "id": "news-2026-05-09-eia-steo-hms-dragon",
       "date": "2026/05/12",
       "label": "分析",
       "url": "https://www.eia.gov/outlooks/steo/",
@@ -67,6 +67,255 @@
       "borderColor": "rgba(56,189,248,0.3)",
       "textColor": "#38bdf8",
       "isLatest": false
+    }
+  ],
+  "archive": [
+    {
+      "batchLabel": "2026/05/14 07:47 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-09-us-iran-clash-destroyers",
+          "date": "2026/05/08",
+          "label": "⚡ 速報",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
+          "title": "米駆逐艦3隻がイランの攻撃をかわしホルムズ通過——トランプ「吹き飛ばした」停戦は「継続中」と強調（5/7 JST）",
+          "body": "米中央軍（CENTCOM）が5月7日（米東部時間）、ホルムズ海峡通過中の米駆逐艦3隻がイランのミサイル・ドローン攻撃を受けたが全艦回避成功と発表。トランプ大統領はOval Officeで「They trifled with us today. We blew them away.（奴らは我々をバカにした。吹き飛ばしてやった）」と発言し、停戦が続いていることを強調。イランは報復として複数のIRGC施設への空爆を受けたと伝えられる。CENTCOM転回船数は57隻に更新された。",
+          "sourceLabel": "CBS News・CENTCOM（2026/05/08）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026/05/13 07:59 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-12-trump-xi-beijing-summit",
+          "date": "2026/05/11",
+          "label": "🌐 外交",
+          "url": "https://oilprice.com/Energy/Energy-General/Trump-Xi-Talks-Set-to-Tackle-Iran-Oil-Lifeline-Strait-of-Hormuz-and-US-Energy.html",
+          "title": "トランプ-習近平主席 北京首脳会談（5/14-15）——ホルムズ再開・米中エネルギー取引・Iran問題が最大議題・Goldman「最も重要な二国間会合」",
+          "body": "トランプが北京に到着し5/14-15の首脳会談に臨む。最重要議題はホルムズ再開。財務長官ベッセントは「イランへの共同圧力」を中国に要求。Goldman Sachs：北京は「仲介者としての立場」を強化しつつあり、中国・イラン間でホルムズ問題が主要議題に。中国の4月の原油輸入は前年比20%減（4年ぶり低水準）で、中国は安定的な湾岸エネルギー確保の強い動機がある。ただし「管理された緩和、薄い成果」が基本シナリオとの見方。またボーイング・農産物・エネルギー購入のアナウンスも予定。",
+          "sourceLabel": "OilPrice.com・CNBC（2026/05/11）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026/05/10 ルート情報特集（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-08-fujairah-limited-recovery",
+          "date": "2026/05/08",
+          "label": "🔴 ルートA",
+          "url": "https://energynow.com/2026/03/port-of-fujairah-resumes-oil-loadings-after-attack-and-why-it-matters-globally/",
+          "title": "フジャイラ港・一部復旧も実態は不透明——衛星画像でタンカー2隻・VLCC1隻のみ確認（通常比58%激減継続）",
+          "body": "5/4のVTTIターミナルへのドローン攻撃後、衛星画像（5/7）では港内タンカー2隻・VLCC1隻のみ。UAE産原油輸出は日量135万バレルに落ち込み（通常比58%減）。100隻超が錨泊滞留中。革命防衛隊海軍がフジャイラを「イラン管理域」に宣言。ADCOPとホルムズの「二択同時崩壊」が確定。",
+          "sourceLabel": "EnergyNow・Windward（5/4〜5/8）"
+        },
+        {
+          "id": "news-2026-05-08-yanbu-surge-330pct",
+          "date": "2026/05/08",
+          "label": "🟢 ルートB",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/East-West-Pipeline-Key-to-Saudi-Arabias-New-Oil-Export-Strategy.html",
+          "title": "サウジ・ヤンブー輸出が戦前比330%増——VLCC27隻が向航中、ただしバベルマンデブ「二重チョークポイント」リスクが浮上",
+          "body": "サウジアラビアはヤンブーへの振り向けを全開にし、輸出量が日量247万BPDと戦前比330%増に達した。Windwardは27隻のVLCCがヤンブーへ向航中と報告。ただしアジア向けはバベルマンデブ海峡を通過必須で「ホルムズを避けたが別のチョークポイントに依存する」構造が鮮明に。ヤンブー発の一部（200〜250万BPD）はSUMEDパイプライン経由でバベルマンデブを迂回可能（欧州向け限定）。",
+          "sourceLabel": "OilPrice・Windward・HornReview（5/8）"
+        },
+        {
+          "id": "news-2026-05-06-nigeria-dangote-full-capacity",
+          "date": "2026/05/06",
+          "label": "🌍 西アフリカ",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Dangote-Refinery-Crude-Supply-Doubles-But-High-Import-Costs-Squeeze-Margins.html",
+          "title": "ダンゴテ製油所がフル稼働（65万BPD）・欧州向け輸出開始——日本もナイジェリア・アンゴラからの輸入を本格拡大",
+          "body": "アフリカ最大のダンゴテ製油所が日量65万BPDのフル稼働を達成。2025年10月には1.4百万BPD（世界最大）への拡張計画も発表済み。日本はホルムズ危機を受けナイジェリア・アンゴラ・ブラジルからの原油輸入を急拡大中。西アフリカ産はホルムズ・バベルマンデブ・スエズの3大チョークポイントを完全回避できる。日本向けは喜望峰経由で約35〜40日。",
+          "sourceLabel": "OilPrice・Pravda Nigeria・African Energy Week（4/8〜5/6）"
+        },
+        {
+          "id": "news-2026-05-04-hormuz-alternative-routes-overview",
+          "date": "2026/04/23",
+          "label": "分析",
+          "url": "https://www.cnbc.com/2026/04/23/strait-hormuz-closure-alternative-routes-middle-east-oil-gas-pipelines.html",
+          "title": "ホルムズ代替ルートの現実——IEA「既存の全バイパスを合わせても封鎖分の半分しか補えない」・イラク-チェイハン再開・新パイプライン提言も",
+          "body": "CNBCが代替ルートを総括。既存の全パイプライン・迂回ルートの合計容量は最大約900〜1,000万BPD（ホルムズ通常流量2,000万BPDの半分以下）。イラクのキルクーク-チェイハンパイプラインが3月に10年ぶり再開（初期25万BPD）。IEAはバスラ〜チェイハン新ルート建設を提言。メキシコ産は2026年7月に日本向け初便（100万バレル）が予定されている。",
+          "sourceLabel": "CNBC・IEA・RSIS（4/23〜5/1）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026/05/09 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-08-us-iran-clash-hormuz",
+          "date": "2026/05/08",
+          "label": "🚨 速報",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-08/us-iran-clash-near-hormuz-as-response-on-proposed-deal-awaited",
+          "title": "米・イランがホルムズで交戦——3隻の米駆逐艦を攻撃・米はイラン軍事施設を報復空爆",
+          "body": "米CENTCOMは8日（現地時間）、ホルムズ海峡を通過中の米海軍駆逐艦3隻がイランのミサイル・ドローン・小型艇による攻撃を受けたと発表。米軍は即座に報復し、ホルムズ周辺のイランのミサイル・ドローン発射拠点を空爆した。艦船への命中はなく停戦は継続中とトランプ大統領が主張。米はMOU回答を依然待機中。",
+          "sourceLabel": "Bloomberg（5/8）"
+        },
+        {
+          "id": "news-2026-05-09-iran-uae-missile",
+          "date": "2026/05/09",
+          "label": "🚨 速報",
+          "url": "https://www.cnbc.com/2026/05/08/oil-prices-today-wti-brent-us-iran-fire-war-hormuz-ceasefire.html",
+          "title": "イランがUAEに弾道ミサイル2発・ドローン3機——UAE防空が全弾迎撃。ブレント週間6%超下落",
+          "body": "イランは9日（現地時間）、UAEに向けて弾道ミサイル2発とドローン3機を発射した。UAE国防省は自国の防空システムが全弾を迎撃したと発表。ブレント原油は前日比+1.2%の$101.29/bblで引けたが、週間ベースでは6%超の下落となった。",
+          "sourceLabel": "CNBC（5/9）"
+        },
+        {
+          "id": "news-2026-05-06-mou-14-items",
+          "date": "2026/05/06",
+          "label": "🕊️ 外交",
+          "url": "https://www.axios.com/2026/05/06/iran-us-deal-one-page-memo",
+          "title": "米・イラン14項目MOU草案に最接近——核濃縮モラトリアム12年・ホルムズ段階的再開30日フレーム",
+          "body": "AxiosはMOU草案の詳細を報道。①ホルムズ段階的再開（30日間）②核濃縮モラトリアム最低12年③高濃縮ウランの国外移送④スナップ査察受入れ⑤米の制裁段階的解除・凍結資産解放、が主要条項。イランは9日も公式回答を出していない。",
+          "sourceLabel": "Axios（5/6）"
+        },
+        {
+          "id": "news-2026-04-30-brent-120-goldman-arch",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
+          "title": "ブレント$120突破——Goldman Sachs「通常化は6月末以降・年末$90に上方修正」",
+          "body": "4/29〜4/30にブレント原油が$120/バレルを突破し約4年ぶりの高値を記録。Goldman Sachsはペルシャ湾からの輸出正常化が6月末以降にずれ込むと判断し、年末見通しを$80→$90に上方修正。世界在庫は日量1,100〜1,200万バレルという記録的ペースで枯渇中。",
+          "sourceLabel": "CNBC・Goldman Sachs報告書（4/30）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026年5月8日 09:57 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "arch-0508-001",
+          "date": "2026年5月7日（現地）/ 2026年5月8日 JST",
+          "label": "外交",
+          "url": "https://www.axios.com/2026/05/06/iran-us-deal-one-page-memo",
+          "title": "米、イランに14項目MOU草案を提示——「数日以内に返答」イラン外務省",
+          "body": "米政府がパキスタン経由で1ページ・14項目のMOU草案をイランに送付。内容はホルムズ封鎖解除、米のイラン制裁緩和・凍結資産解放、イランの核濃縮モラトリアム。イラン外務省は「審査中、見解まとまり次第パキスタン側に回答」と表明。CNN・Axiosは「5月7〜8日に返答の可能性」と報じた。",
+          "sourceLabel": "Bloomberg / Axios（現地時間5/7・JST 5/8）"
+        },
+        {
+          "id": "arch-0508-002",
+          "date": "2026年5月6日（現地）/ 2026年5月7日 JST",
+          "label": "外交",
+          "url": "https://www.npr.org/2026/05/05/nx-s1-5811770/iran-war-updates",
+          "title": "トランプ「プロジェクト・フリーダム」停止——「大きな進展、合意近い」停戦維持・封鎖継続",
+          "body": "米大統領はSNSで「パキスタン等の要請と交渉の大きな進展」を理由に護衛作戦を一時停止と発表。米海軍によるイラン港湾封鎖は継続中。CENTCOMは同作戦開始以来52隻を迂回・拿捕。停止と同時にIRGCも「新手続きのもとで安全通航を保証する」と表明したが、詳細は不明。",
+          "sourceLabel": "NPR / CNBC（現地時間5/6・JST 5/7）"
+        },
+        {
+          "id": "arch-0508-003",
+          "date": "2026年5月6日（現地）/ 2026年5月7日 JST",
+          "label": "事実",
+          "url": "https://www.aljazeera.com/news/2026/5/6/french-container-ship-struck-in-latest-escalation-at-strait-of-hormuz",
+          "title": "仏CMA CGM船「サン・アントニオ」がホルムズで攻撃——乗組員負傷・船体損傷",
+          "body": "世界第3位のコンテナ海運グループCMA CGMは、同社船がホルムズ海峡通過中に攻撃を受け、乗組員に負傷者が出て船体が損傷したと発表。負傷した乗組員は避難・治療済み。同社は湾内に14隻が足止め中と説明。Project Freedom停止直後の攻撃であり、停戦の脆弱性を示す事例として国際的に注目された。",
+          "sourceLabel": "Bloomberg / Al Jazeera（現地時間5/6-7・JST 5/7-8）"
+        },
+        {
+          "id": "arch-0508-004",
+          "date": "2026年5月7日（現地）/ 2026年5月8日 JST",
+          "label": "経済",
+          "url": "https://www.cnbc.com/2026/05/07/oil-prices-today-trump-iran-strait-of-hormuz-us-crude-brent-.html",
+          "title": "ブレント原油、MOU期待で$96.73に急落後$101台に反発——週初比13%安・ANZ「ジェットコースター相場」",
+          "body": "MOU草案報道でブレントは一時$96.73まで急落（週初比13%下落）。その後イラン強硬派・モフセン・レザエイ「米は戦争賠償を支払え」発言で$100台に反発。5月7日終値はブレント$100.06、WTI$94.81。ピーク（5/5: $114.44）比では約12%下落。Goldman Sachsは「戦争勃発前$61→現在$100超」と報告。米ガソリン平均$4.46/ガロン（約4年ぶり高水準）。",
+          "sourceLabel": "CNBC（現地時間5/7-8・JST 5/8）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026年5月5〜6日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "arch-0506-001",
+          "date": "2026年5月5日（現地）/ 2026年5月6日 JST",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/05/05/oil-prices-today-wti-brent-iran-war-trump-hormuz.html",
+          "title": "ブレント原油$114.44——2026年最高値、IRGC小型艇6隻撃沈でProject Freedom初日に急騰",
+          "body": "米海軍が「プロジェクト・フリーダム」を開始しIRGC小型艇6隻を撃沈。ブレント原油は5.8%急騰し2026年最高値$114.44を記録。米ガソリン平均$4.48/ガロンに上昇。",
+          "sourceLabel": "CNBC / CNN（現地時間5/5・JST 5/6）"
+        },
+        {
+          "id": "arch-0506-002",
+          "date": "2026年5月5日（現地）/ 2026年5月6日 JST",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/05/05/oil-prices-today-wti-brent-iran-war-trump-hormuz.html",
+          "title": "UAE、イランのドローン・ミサイル攻撃でフジャイラ石油施設が炎上——インド人作業員3名負傷",
+          "body": "UAEがイランから2日連続でドローン・ミサイル攻撃を受け、フジャイラ石油施設で大規模火災が発生。イランは関与を否定。米軍は「停戦閾値以下」として本格交戦回避。",
+          "sourceLabel": "CNN / CNBC（現地時間5/5・JST 5/6）"
+        },
+        {
+          "id": "arch-0506-003",
+          "date": "2026年5月5日（現地）/ 2026年5月6日 JST",
+          "label": "事実",
+          "url": "https://www.npr.org/2026/05/05/nx-s1-5811770/iran-war-updates",
+          "title": "ヘグセス国防長官「停戦は確実に維持されている」——UAE攻撃後も本格戦再開否定",
+          "body": "米軍統合参謀本部議長ケイン大将は「UAE攻撃は本格交戦再開の閾値以下」と発言。停戦維持を強調し市場の恐慌を抑制。ブレント原油は翌日4%下落し$109.87で引け。",
+          "sourceLabel": "NPR（現地時間5/5・JST 5/6）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026年5月1〜3日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "arch-0501-001",
+          "date": "2026年5月1日（現地）/ 2026年5月1日 JST",
+          "label": "事実",
+          "url": "https://www.afpbb.com/articles/-/3633352",
+          "title": "【発効】UAE、OPEC・OPEC+から正式離脱——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
+          "body": "UAEが5月1日付でOPEC・OPEC+から正式脱退。産油4位のUAE離脱によりOPECの求心力はさらに低下。エネルギー省筋によるとUAEはホルムズ再開後に想定される出荷制限に反対していたと報道（AFP）。OPEC制限下では320万BPDだった産油量が480万BPDまで引き上げ可能に。ホルムズを経由しないフジャイラ港ルートが日本向け供給の注目点に。",
+          "sourceLabel": "AFPBB（現地時間5/1・JST 5/1）"
+        },
+        {
+          "id": "arch-0501-002",
+          "date": "2026年4月28日（現地）/ 2026年4月28日 JST",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/28/oil-prices-us-iran-hormuz-negotiations-wti-brent-crude.html",
+          "title": "ルビオ、イランの「核先送り・ホルムズ先行再開」提案を完全否定——「国際水域をイランが管理するシステムは容認できない」",
+          "body": "ルビオ国務長官はFox Newsで「核問題はまだ根本的な問題。先送りは一切受け入れられない」と明言。「イランが通行料を取り、誰が通れるか決めるシステムは国際水域の原則に反する」とも強調。トランプも周辺に「提案は不満足」と伝えた（NYT）。ホワイトハウスは「プレスを通じた交渉はしない。米国が全てのカードを握っている」と声明。",
+          "sourceLabel": "CNBC・NBC News・TIME（現地時間4/28・JST 4/28）"
+        },
+        {
+          "id": "arch-0501-003",
+          "date": "2026年4月28日（現地）/ 2026年4月29日 JST",
+          "label": "事実",
+          "url": "https://www.nbcnews.com/world/iran/trumpl-iran-proposal-end-war-reopen-hormuz-nuclear-deal-oil-storage-rcna342441",
+          "title": "Kpler：イラン石油備蓄「残り12〜22日分」——CENTCOM 39隻を迂回・拿捕・米封鎖の打撃本格化へ",
+          "body": "エネルギー調査会社Kplerは米海軍封鎖下でイランの石油保管残量が12〜22日分に圧縮されたと分析。イラン→中国向け石油の代金回収には最大2ヶ月かかることから「真の打撃はこれから」。CENTCOMは4/28時点で合計39隻を迂回・拿捕と発表。",
+          "sourceLabel": "NBC News・Kpler分析（現地時間4/28・JST 4/29）"
+        },
+        {
+          "id": "arch-0501-004",
+          "date": "2026年4月27日（現地）/ 2026年4月28日 JST",
+          "label": "事実",
+          "url": "https://www.aljazeera.com/news/2026/4/27/iran-foreign-minister-in-russia-for-putin-talks",
+          "title": "アラグチー外相がプーチンと会談——「イランは勇敢に戦っている」ロシアの連帯を再確認",
+          "body": "イランのアラグチー外相がオマーン→パキスタン→モスクワの外交ツアーを完了。プーチンは「イランは独立と主権のために勇敢に戦っている」と支持を表明。",
+          "sourceLabel": "Al Jazeera・CNN（現地時間4/27・JST 4/28）"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026/04/30 09:51 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-04-30-uae-opec-exit-prev",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
+          "title": "【本日発効予告】UAE、OPEC・OPEC+から正式離脱（5月1日）——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
+          "body": "UAEが4月29日に正式通知し、5月1日付でOPEC・OPEC+から離脱。UAEの産油能力は480万BPD（日量）で制限なしの増産が可能になる。OPECのスペア生産能力見通しは3.8百万BPD→2.5百万BPD（2027年）に下方修正（EIA）。ただしホルムズ封鎖が継続する限り増産分を輸出できず、短期的な市場効果は限定的。長期的にはサウジとの亀裂が深まりOPEC結束に影響。",
+          "sourceLabel": "Al Jazeera・EIA（2026/04/30）"
+        },
+        {
+          "id": "news-2026-04-30-brent-120-goldman",
+          "date": "2026/04/30",
+          "label": "事実",
+          "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
+          "title": "ブレント$120突破（2022年6月以来）——Goldman Sachs「通常化は6月末以降・年末$90に上方修正」",
+          "body": "4/29〜4/30にブレント原油が$120/バレルを突破し約4年ぶりの高値を記録。Goldman Sachsはペルシャ湾からの輸出正常化が6月末以降にずれ込むと判断し、年末見通しを$80→$90に上方修正。世界在庫は日量1,100〜1,200万バレルという記録的ペースで枯渇中。「ファットテールはまだ前方にある」とGlobal X ETFsが警告。たとえ即日合意でも在庫再構築に4〜6ヶ月かかるとLipow Oil Associatesが試算。",
+          "sourceLabel": "CNBC・Goldman Sachs報告書（2026/04/30）"
+        }
+      ]
     }
   ]
 }

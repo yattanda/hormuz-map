@@ -1,7 +1,25 @@
 {
-  "updated": "2026年5月15日 09:08 日本時間JST",
+  "updated": "2026年5月16日 06:54 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "news-2026-05-16-trump-iran-extinction-warning",
+      "date": "2026/05/15",
+      "label": "⚡ 速報",
+      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+      "title": "トランプ「合意なければ大規模爆撃・絶滅」警告——イラン「決して屈しない」・WTI $103.5超・週間+10%",
+      "body": "トランプ大統領は5/14（JST 5/15早朝）、Truth Socialで「イランが合意しなければ以前よりはるかに大規模かつ高強度の爆撃を開始する」と警告。「絶滅させる」との表現も使用し強硬姿勢を鮮明にした。イランは「決して屈しない」と応じ交渉は再度膠着。WTIは5/15に$103.5超で引け週間+10%近い上昇。IEA「6月に紛争解決でも10月まで市場が供給不足」と警告。停戦は「瀕死状態」のまま78日目継続。",
+      "sourceLabel": "CNBC（2026/05/11・2026/05/15）・Trading Economics（2026/05/15）"
+    },
+    {
+      "id": "news-2026-05-16-yuan-hua-hu-passage",
+      "date": "2026/05/15",
+      "label": "🌐 外交",
+      "url": "https://tradingeconomics.com/commodity/crude-oil",
+      "title": "中国VLCC「Yuan Hua Hu」約2か月ぶりホルムズ通過——外交調整を経た個別許可通航・「管理プロトコル」制度化の動き",
+      "body": "中国船籍VLCC「Yuan Hua Hu」がイラク産原油約200万バレルを積み、約2か月超の足止め後に海峡を通過。米中首脳会談（5/15〜16）前後の外交調整と、イラン外相の北京訪問を含む外交プロセスを経た個別許可通航と見るべきもの。同日イランのFars通信は「中国船舶に対する管理プロトコルを正式化」と報道。「誰が・何を・どの条件で通すかをイランが決定する」制度化の動きであり海峡支配の既成事実化を意味する。",
+      "sourceLabel": "global-scm.com ホルムズ海峡危機実務リスク報告（2026/05/15）"
+    },
     {
       "id": "news-2026-05-15-trump-xi-hormuz-agreement",
       "date": "2026/05/14",
@@ -42,6 +60,20 @@
   "osint": [
     {
       "country": "🇶🇦",
+      "media": "Al Jazeera（英語版）",
+      "date": "2026/05/15",
+      "url": "https://www.aljazeera.com/news/2026/5/6/has-the-us-accepted-irans-demand-to-settle-hormuz-first-nuclear-later",
+      "titleJa": "米国はイランの「ホルムズ先行・核後回し」要求を事実上受け入れたのか",
+      "titleEn": "Has the US accepted Iran's demand to settle Hormuz first, nuclear later?",
+      "cardBg": "rgba(15,40,60,0.7)",
+      "cardBorder": "rgba(56,189,248,0.2)",
+      "badgeColor": "rgba(56,189,248,0.15)",
+      "borderColor": "rgba(56,189,248,0.3)",
+      "textColor": "#38bdf8",
+      "isLatest": true
+    },
+    {
+      "country": "🇶🇦",
       "media": "Al Jazeera",
       "date": "2026/05/14",
       "url": "https://www.aljazeera.com/news/2026/5/14/trump-xi-discuss-strait-of-hormuz-as-chinese-vessels-transit-key-waterway",
@@ -52,7 +84,7 @@
       "badgeColor": "rgba(56,189,248,0.15)",
       "borderColor": "rgba(56,189,248,0.3)",
       "textColor": "#38bdf8",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "country": "🇦🇪",

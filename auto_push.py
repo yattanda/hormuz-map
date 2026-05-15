@@ -1,11 +1,9 @@
 """
 auto_push.py  ― hormuz-map / hormuz-data- 自動push スクリプト
-改訂: 2026-05-04 (rev2)
+改訂: 2026-05-15 (rev3)
 変更点:
-  - FILE_MAP を複数リポジトリ対応に拡張（リストオブジェクト形式へ変更）
-  - hormuz-data- の data/oil-flow.json を FILE_MAP に追加
-  - push成功後に各ローカルリポジトリへ git pull --rebase を自動実行
-  - git pull の対象をpush成否に関わらずファイル発見時点で追加（スキップ時も pull する）
+  - news_data.json を FILE_MAP から除外（Claude Code 側でマージ管理する方式に変更）
+  - hormuz-map の push 対象は index_html_diffs.md のみに変更
 """
 
 import os
@@ -29,12 +27,6 @@ REPO_OWNER   = os.getenv("REPO_OWNER", "yattanda")
 # - local_name : Downloadsフォルダ内の基準ファイル名
 # - local_repo : ローカルのgitリポジトリパス（git pull対象）
 FILE_MAP = [
-    {
-        "repo":       "hormuz-map",
-        "repo_path":  "docs/data/news_data.json",
-        "local_name": "news_data.json",
-        "local_repo": r"C:\Users\yutay\Documents\GitHub\hormuz-map",
-    },
     {
         "repo":       "hormuz-map",
         "repo_path":  "docs/tools/index_html_diffs.md",

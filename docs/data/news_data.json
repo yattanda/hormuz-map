@@ -55,6 +55,34 @@
       "isLatest": true
     },
     {
+      "country": "🇦🇪",
+      "media": "The National",
+      "date": "2026/05/12",
+      "url": "https://www.thenationalnews.com/business/energy/2026/05/12/trump-unlikely-to-persuade-xi-to-stop-buying-iranian-oil-analysts-say/",
+      "titleJa": "トランプ訪中——中国はイランへの圧力をかけられるか。専門家は慎重「中国の国益に反する圧力は困難」",
+      "titleEn": "Trump unlikely to persuade Xi to stop buying Iranian oil, analysts say",
+      "cardBg": "rgba(20,40,20,0.7)",
+      "cardBorder": "rgba(74,222,128,0.2)",
+      "badgeColor": "rgba(74,222,128,0.15)",
+      "borderColor": "rgba(74,222,128,0.3)",
+      "textColor": "#4ade80",
+      "isLatest": false
+    },
+    {
+      "country": "🇶🇦",
+      "media": "Al Jazeera",
+      "date": "2026/05/11",
+      "url": "https://www.aljazeera.com/news/2026/5/11/unacceptable-whats-irans-peace-proposal-that-trump-has-rejected",
+      "titleJa": "「受け入れ不可能」——トランプが拒否したイランの和平提案とは何か",
+      "titleEn": "Unacceptable: What's Iran's peace proposal that Trump has rejected?",
+      "cardBg": "rgba(15,40,60,0.7)",
+      "cardBorder": "rgba(56,189,248,0.2)",
+      "badgeColor": "rgba(56,189,248,0.15)",
+      "borderColor": "rgba(56,189,248,0.3)",
+      "textColor": "#38bdf8",
+      "isLatest": false
+    },
+    {
       "country": "🇶🇦",
       "media": "Al Jazeera",
       "date": "2026/04/28",

@@ -1,7 +1,39 @@
 {
-  "updated": "2026年5月16日 06:54 日本時間JST",
+  "updated": "2026年5月17日 07:45 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "イラン、対話5条件を提示──「戦争賠償・ホルムズ主権承認」が前提",
+      "body": "イランは5月16日、Fars通信を通じて米国との交渉再開に向けた5条件を提示した。条件には「戦争賠償の支払い」「ホルムズ海峡に対するイランの主権承認」「制裁完全解除」「米軍撤退」「イランの核権利承認」が含まれる。ホワイトハウスはこれらを即時に拒否し、交渉は完全膠着状態に入った。封鎖は80日目を迎えており、IEAは今月解決しても10月まで原油供給不足が続くと警告している。",
+      "sourceLabel": "Reuters / PBS NewsHour",
+      "date": "2026年5月16日 日本時間JST",
+      "label": "外交",
+      "url": "https://www.pbs.org/newshour/world/tensions-flare-near-strait-of-hormuz-as-one-ship-is-seized-and-another-is-sunk"
+    },
+    {
+      "title": "米中首脳会談──Xi「ホルムズ開放に協力したい」、中国船2ヶ月ぶり通過",
+      "body": "トランプ大統領は5月14〜15日に北京を訪問し習近平国家主席と会談した。会談ではイラン問題が議題となり、習近平は「ホルムズ海峡の開放に協力したい」と述べ、中国がイランに軍事装備を供与しないとも表明した。イランの革命防衛隊は会談に合わせ複数の中国向けVLCCの通過を許可した。ただし実質的な合意内容はなく、一般商業船舶の通航状況に変化はない。",
+      "sourceLabel": "CNN",
+      "date": "2026年5月15日 日本時間JST",
+      "label": "外交",
+      "url": "https://www.cnn.com/politics/live-news/trump-china-visit-xi-meeting-hnk"
+    },
+    {
+      "title": "ホルムズ近傍で1隻拿捕・1隻撃沈──インド「容認できない」と非難",
+      "body": "5月15日（日本時間）、ホルムズ海峡近傍で外国籍コンテナ船1隻が拿捕され、別の1隻が攻撃を受け撃沈された。インド外務省は「商業船舶・民間船員への継続的な攻撃は容認できない」との声明を発出した。加害勢力は特定されていない。この事件はトランプ大統領が中国から帰国途上にある最中に発生した。",
+      "sourceLabel": "NBC News / AP",
+      "date": "2026年5月15日 日本時間JST",
+      "label": "インシデント",
+      "url": "https://www.nbcnews.com/world/iran/ship-reported-seized-another-attacked-strait-hormuz-rcna345086"
+    },
+    {
+      "title": "IEA：ホルムズ閉鎖継続なら10月まで世界原油供給不足──3〜4月に日量400万バレル減",
+      "body": "国際エネルギー機関（IEA）は5月13日公表の石油市場報告書で、ホルムズ海峡を経由する原油・燃料フローが3〜4月に日量約400万バレル減少したことを確認した。また「来月解決したとしても世界の原油市場は10月まで供給不足が続く可能性がある」と警告した。WTIは5月15日に週間+11%近い上昇を記録し、$106近傍に達した。",
+      "sourceLabel": "Bloomberg / CNBC",
+      "date": "2026年5月13日 日本時間JST",
+      "label": "市場",
+      "url": "https://www.cnbc.com/2026/04/22/oil-price-wti-brent-iran-ceasefire-extension-clouds-outlook.html"
+    },
     {
       "id": "news-2026-05-16-trump-iran-extinction-warning",
       "date": "2026/05/15",
@@ -46,18 +78,23 @@
       "title": "国連グテーレス事務総長「ホルムズ完全開放を強く求める——アフリカ輸入の13%が依存・停戦維持と交渉継続を両者に訴え」",
       "body": "グテーレス国連事務総長は5月11日、ナイロビでのアフリカ・フォワード・サミット出席中に「停戦を維持し、外交的解決が見つかるまで交渉を続け、その間ホルムズ海峡を完全に開放するよう強く訴える。戦闘が再開すれば恐ろしい結果をもたらす」と声明。アフリカの輸入品の約13%が同海峡に依存しており（石油・肥料を中心に）、「これは遠い危機ではない」と強調した。国連は米・イラン双方に対し無制限の通航保障を求めた。",
       "sourceLabel": "UN News（2026/05/11）"
-    },
-    {
-      "id": "news-2026-05-09-eia-steo-hms-dragon",
-      "date": "2026/05/12",
-      "label": "分析",
-      "url": "https://www.eia.gov/outlooks/steo/",
-      "title": "EIA STEO（5/12公表）「ホルムズは5月末まで実質閉鎖・Q2在庫日量850万BPD枯渇・ブレントQ2平均$106・Q4$89予測」",
-      "body": "米エネルギー情報局（EIA）は5月12日公表のSTEOで、ホルムズ海峡は5月末まで実質閉鎖が続き、6月から徐々に通航が回復するシナリオを基本想定とした。Q2（4〜6月）の世界在庫は日量850万BPDの記録的ペースで枯渇しており、ブレント平均はQ2に$106/バレルを維持。ただしホルムズが開放されてもQ4には$89/バレル、2027年には$79/バレルへ下落を予測。UAEのOPEC離脱（5/1発効）に伴い、同国の産油能力（480万BPD）が制限から解放される計算に変更。サウジアラビアの生産量は1990年以来最低水準。",
-      "sourceLabel": "EIA Short-Term Energy Outlook（2026/05/12公表）"
     }
   ],
   "osint": [
+    {
+      "isLatest": true,
+      "titleJa": "「米国の新たな非難は地域介入正当化のための口実」──イラン外交報道官（5/17）",
+      "titleEn": "Iran: US accusations aimed at justifying increased regional intervention",
+      "country": "イラン",
+      "media": "Crisis Group / Fars News",
+      "cardBg": "rgba(239,68,68,0.07)",
+      "cardBorder": "rgba(239,68,68,0.3)",
+      "badgeColor": "rgba(239,68,68,0.2)",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#f87171",
+      "url": "https://www.crisisgroup.org/trigger-list/iran-usisrael-trigger-list/flashpoints/strait-hormuz",
+      "date": "2026年5月17日 日本時間JST"
+    },
     {
       "country": "🇶🇦",
       "media": "Al Jazeera（英語版）",
@@ -70,7 +107,7 @@
       "badgeColor": "rgba(56,189,248,0.15)",
       "borderColor": "rgba(56,189,248,0.3)",
       "textColor": "#38bdf8",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "country": "🇶🇦",
@@ -130,6 +167,20 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/05/17 07:45 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-09-eia-steo-hms-dragon",
+          "date": "2026/05/12",
+          "label": "分析",
+          "url": "https://www.eia.gov/outlooks/steo/",
+          "title": "EIA STEO（5/12公表）「ホルムズは5月末まで実質閉鎖・Q2在庫日量850万BPD枯渇・ブレントQ2平均$106・Q4$89予測」",
+          "body": "米エネルギー情報局（EIA）は5月12日公表のSTEOで、ホルムズ海峡は5月末まで実質閉鎖が続き、6月から徐々に通航が回復するシナリオを基本想定とした。Q2（4〜6月）の世界在庫は日量850万BPDの記録的ペースで枯渔しており、ブレント平均はQ2に$106/バレルを維持。ただしホルムズが開放されてもQ4には$89/バレル、2027年には$79/バレルへ下落を予測。UAEのOPEC離脱（5/1発効）に伴い、同国の産油能力（480万BPD）が制限から解放される計算に変更。サウジアラビアの生産量は1990年以来最低水準。",
+          "sourceLabel": "EIA Short-Term Energy Outlook（2026/05/12公表）"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/05/14 07:47 更新分（アーカイブ）",
       "items": [

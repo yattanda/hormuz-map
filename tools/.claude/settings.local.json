@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"c:\\\\Users\\\\yutay\\\\Documents\\\\GitHub\\\\hormuz-map\" && grep -n \"警戒レベル\\\\|更新日時\\\\|2026年5月13日\\\\|2026年5月12日\\\\|封鎖\" docs/index.html | head -20)",
+      "Read(//c/Users/yutay/Documents/GitHub/hormuz-map/**)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('docs/data/update_log.json', encoding='utf-8'\\)\\); print\\(f'entries: {len\\(d\\)}'\\); [print\\(f'  {e[\\\\\"date\\\\\"]}'\\) for e in d[:5]]\")"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C 'c:\\\\Users\\\\yutay\\\\Documents\\\\GitHub\\\\hormuz-map' commit -m ' *)",
+      "Skill(html-safe-edit)",
+      "Skill(html-safe-edit:*)",
+      "Skill(publish-checklist)",
+      "Skill(publish-checklist:*)",
+      "Bash(git -C \"c:\\\\Users\\\\yutay\\\\Documents\\\\GitHub\\\\hormuz-map\" add docs/index.html)",
+      "Skill(daily-site-update)",
+      "Skill(daily-site-update:*)",
+      "Bash(node -e \"const d=require\\('./docs/data/news_data.json'\\); console.log\\('latest:', d.latest.length, 'osint:', d.osint.length, 'archive batches:', d.archive.length, 'updated:', d.updated\\);\")",
+      "Bash(node -e \"const d=require\\('c:/Users/yutay/Documents/GitHub/hormuz-map/docs/data/news_data.json'\\); console.log\\('latest:', d.latest.length, 'osint:', d.osint.length, 'archive batches:', d.archive.length, 'updated:', d.updated\\);\")",
+      "Bash(git push *)"
+    ]
+  }
+}

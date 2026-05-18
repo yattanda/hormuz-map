@@ -1,7 +1,34 @@
 {
-  "updated": "2026年5月18日 08:12 日本時間JST",
+  "updated": "2026年5月19日 07:46 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "news-2026-05-19-uae-barakah-drone-attack",
+      "date": "2026/05/18",
+      "label": "🔥 速報",
+      "url": "https://abcnews.com/US/wireStory/drone-strike-sparks-fire-perimeter-uaes-nuclear-power-133046073",
+      "title": "UAEバラカ原子力発電所の外周にドローン攻撃——発電機に火災・放射線レベル正常・IAEA「核施設攻撃は容認不可」と警告（5/18 JST）",
+      "body": "ドローンがUAEバラカ原子力発電所外周の発電機を直撃し火災が発生（5/17 EDT）。UAE外相ビン・ザーイドは「テロ的攻撃」と非難し、IAEAに通報。IAEA事務局長グロッシは「核施設への軍事活動は容認不可」と最大限の自制を要請。放射線レベルは正常。犯行声明なし・UAE当局が調査継続中。イスラエル・ネタニヤフ首相は「あらゆる事態に備えている」と閣議で発言（5/17）。",
+      "sourceLabel": "Reuters（ABC News経由）・The National（2026/05/17〜18）"
+    },
+    {
+      "id": "news-2026-05-19-trump-clock-is-ticking",
+      "date": "2026/05/18",
+      "label": "⚡ 速報",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-warning-oil-stock-prices-futures-ceasefire-diplomacy/",
+      "title": "トランプ「時計は時を刻んでいる、速く動かなければ何も残らない」——イランへの最後通告を強化（Truth Social 5/18 JST）",
+      "body": "トランプ大統領は5/18（JST）、Truth Socialで「時計は時を刻んでいる。速く動かなければ何も残らない」と投稿し、イランへの最後通告を一段と強化した。パキスタン仲介者は「時間がない・両者がゴールポストを変え続けている」と危機感を表明。アラグチ外相はニューデリーサミット（5/16）で「米国を全く信頼できない。不信が最大の障壁」と発言した。",
+      "sourceLabel": "CBS News（2026/05/18）"
+    },
+    {
+      "id": "news-2026-05-19-iran-modified-proposal-pakistan",
+      "date": "2026/05/18",
+      "label": "🌐 外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-warning-oil-stock-prices-futures-ceasefire-diplomacy/",
+      "title": "イランが修正提案をパキスタン経由で再提出——「核交渉の詳細はまだ議論していない」・停戦終結に集中（5/18 JST）",
+      "body": "イランはパキスタン経由で修正提案を再提出（5/18 JST）。「核交渉の詳細はまだ議論していない」として停戦・戦争終結のみに集中する「核後回し」戦術を継続。14条MOUのウラン濃縮モラトリアム期間（12〜20年で未合意）など難題が残存。パキスタン仲介者「時間がない・両者がゴールポストを変え続けている」と危機感を表明。",
+      "sourceLabel": "CBS News・Reuters（2026/05/18）"
+    },
     {
       "id": "news-2026-05-18-iran-2nd-talks-unconfirmed",
       "date": "2026/05/18",
@@ -87,20 +114,25 @@
       "title": "米中首脳会談（北京）でホルムズ開放に合意——習近平「軍事化・通行料に反対」・仲介意欲を表明・「イランへ軍事機器提供しない」と言質",
       "body": "5月14日、北京・人民大会堂でトランプ・習近平首脳会談が行われ、ホワイトハウス声明で「両首脳はホルムズ海峡がエネルギーの自由な流れを支えるため開放された状態を維持しなければならないことで合意した」と発表。習近平は海峡の軍事化とイランによる通行料徴収に反対する立場を明示し、米石油の購入増量によるホルムズ依存低減への意欲も示した。トランプはFox Newsで「習は仲介に協力したいと述べた」と明かし、「習はイランへ軍事機器を提供しないと言った。これは大きな声明だ」と評価。一方で同日、フジャイラ沖で船舶1隻がイランと見られる勢力に拿捕され、インド籍貨物船がオマーン沖で沈没するなど海峡の不安定化は継続中。",
       "sourceLabel": "CNBC・AP通信（2026/05/14）"
-    },
-    {
-      "id": "news-2026-05-13-wti-102-iran-deadlock",
-      "date": "2026/05/12",
-      "label": "⚡ 速報",
-      "url": "https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html",
-      "title": "WTI $102・ブレント $107.77 に急騰——トランプ「イラン提案はゴミ」で停戦「瀕死」・サウジAramco CEO「正常化は2027年以降の恐れ」",
-      "body": "5月12日のNY原油市場でWTI先物は4.2%高の$102.18、ブレント先物は3.4%高の$107.77で引け。背景はトランプがイランの最新反案を「TOTALLY UNACCEPTABLE」（5/11）→「ゴミ」（5/12電話取材）と連続拒絶し停戦が「生命維持装置」状態に陥ったこと。サウジAramco CEOアミン・ナセルは決算説明会で「市場は週100MB分の供給を失っており、6月中旬以降も封鎖が続けば正常化は2027年以降にずれ込む」と警告。元NATO最高司令官スタブリディス海軍大将はCNBC生出演で「ホルムズを武力で再開するのが現時点の最有力オプション」と明言。",
-      "sourceLabel": "CNBC（2026/05/12）"
     }
   ],
   "osint": [
     {
       "isLatest": true,
+      "date": "2026/05/19",
+      "country": "🇦🇪",
+      "media": "The National（UAE系メディア）",
+      "titleJa": "UAE「バラカ原発への攻撃は国際法の重大な違反」——UAE外相がIAEAに通報・犯人不明・IAEA事務局長が最大限の自制を要請",
+      "titleEn": "UAE: 'Drone strike on Barakah nuclear plant is a serious violation of international law' — FM reports to IAEA; IAEA chief urges maximum restraint",
+      "cardBg": "rgba(239,68,68,0.07)",
+      "cardBorder": "rgba(239,68,68,0.3)",
+      "badgeColor": "rgba(239,68,68,0.2)",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#f87171",
+      "url": "https://www.thenationalnews.com/news/uae/2026/05/17/uae-launches-investigation-into-source-of-drone-strike-on-barakah-nuclear-plant/"
+    },
+    {
+      "isLatest": false,
       "titleJa": "イラン、第2回交渉に「合意していない」──米封鎖継続と過度な要求を理由に留保（タスニム 5/18）",
       "titleEn": "Iran: No agreement on 2nd round of talks, citing US blockade and excessive demands",
       "country": "🇮🇷",
@@ -200,6 +232,20 @@
   ],
   "archive": [
     {
+      "batchLabel": "2026/05/19 07:46 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-13-wti-102-iran-deadlock",
+          "date": "2026/05/12",
+          "label": "⚡ 速報",
+          "url": "https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html",
+          "title": "WTI $102・ブレント $107.77 に急騰——トランプ「イラン提案はゴミ」で停戦「瀕死」・サウジAramco CEO「正常化は2027年以降の恐れ」",
+          "body": "5月12日のNY原油市場でWTI先物は4.2%高の$102.18、ブレント先物は3.4%高の$107.77で引け。背景はトランプがイランの最新反案を「TOTALLY UNACCEPTABLE」（5/11）→「ゴミ」（5/12電話取材）と連続拒絶し停戦が「生命維持装置」状態に陥ったこと。サウジAramco CEOアミン・ナセルは決算説明会で「市場は週100MB分の供給を失っており、6月中旬以降も封鎖が続けば正常化は2027年以降にずれ込む」と警告。元NATO最高司令官スタブリディス海軍大将はCNBC生出演で「ホルムズを武力で再開するのが現時点の最有力オプション」と明言。",
+          "sourceLabel": "CNBC（2026/05/12）"
+        }
+      ]
+    },
+    {
       "batchLabel": "2026/05/18 08:12 更新分（アーカイブ）",
       "items": [
         {
@@ -236,7 +282,7 @@
           "label": "⚡ 速報",
           "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
           "title": "米駆逐艦3隻がイランの攻撃をかわしホルムズ通過——トランプ「吹き飛ばした」停戦は「継続中」と強調（5/7 JST）",
-          "body": "米中央軍（CENTCOM）が5月7日（米東部時間）、ホルムズ海峡通過中の米駆逐艦3隻がイランのミサイル・ドローン攻撃を受けたが全艦回避成功と発表。トランプ大統領はOval Officeで「They trifled with us today. We blew them away.（奴らは我々をバカにした。吹き飛ばしてやった）」と発言し、停戦が続いていることを強調。イランは報復として複数のIRGC施設への空爆を受けたと伝えられる。CENTCOM転回船数は57隻に更新された。",
+          "body": "米中央軍（CENTCOM）が5月7日（米東部時間）、ホルムズ海峡通過中の米海軍駆逐艦3隻がイランのミサイル・ドローン攻撃を受けたが全艦回避成功と発表。トランプ大統領はOval Officeで「They trifled with us today. We blew them away.（奴らは我々をバカにした。吹き飛ばしてやった）」と発言し、停戦が続いていることを強調。イランは報復として複数のIRGC施設への空爆を受けたと伝えられる。CENTCOM転回船数は57隻に更新された。",
           "sourceLabel": "CBS News・CENTCOM（2026/05/08）"
         }
       ]

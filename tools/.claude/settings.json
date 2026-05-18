@@ -11,7 +11,11 @@
       "Skill(daily-site-update:*)",
       "Bash(node -e \"const d=require\\('./docs/data/news_data.json'\\); console.log\\('latest:', d.latest.length, 'osint:', d.osint.length, 'archive batches:', d.archive.length, 'updated:', d.updated\\);\")",
       "Bash(node -e \"const d=require\\('c:/Users/yutay/Documents/GitHub/hormuz-map/docs/data/news_data.json'\\); console.log\\('latest:', d.latest.length, 'osint:', d.osint.length, 'archive batches:', d.archive.length, 'updated:', d.updated\\);\")",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(python -c \"import json; f=open\\('c:/Users/yutay/Documents/GitHub/hormuz-map/docs/data/news_data.json','r',encoding='utf-8'\\); data=json.load\\(f\\); print\\('JSON OK'\\); print\\(f'latest: {len\\(data[\\\\\"latest\\\\\"]\\)} items'\\); print\\(f'osint: {len\\(data[\\\\\"osint\\\\\"]\\)} items'\\); print\\(f'archive batches: {len\\(data[\\\\\"archive\\\\\"]\\)}'\\); print\\(f'updated: {data[\\\\\"updated\\\\\"]}'\\); osint_latest=[x for x in data['osint'] if x.get\\('isLatest'\\)]; print\\(f'osint isLatest=true count: {len\\(osint_latest\\)}'\\)\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\yutay\\Documents\\GitHub\\hormuz-map\\.claude"
     ]
   }
 }

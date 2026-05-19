@@ -1,7 +1,34 @@
 {
-  "updated": "2026年5月19日 07:46 日本時間JST",
+  "updated": "2026年5月20日 07:40 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "news-2026-05-20-trump-attack-delayed",
+      "date": "2026/05/19",
+      "label": "外交",
+      "url": "https://www.npr.org/2026/05/19/g-s1-122762/trump-says-hes-called-off-iran-strike",
+      "title": "トランプ、5月19日予定の大規模対イラン攻撃を延期——カタール・サウジ・UAE首脳の要請受け「重大な交渉進行中」・随時攻撃準備は継続",
+      "body": "トランプ大統領は5月18日夜（米国時間）、翌19日に計画していた「非常に大規模な攻撃」をGulf allies（カタール・サウジアラビア・UAE）3首脳の要請を受け一時延期すると発表。「重大な交渉が進行中」として「少しの間、うまくいけば永遠に」先送りにするとした。ただし軍には「受け入れ可能な合意が得られない場合、随時フルスケールの攻撃準備完了」を命じており、軍事的圧力は維持。WTI原油は発表後に約2ドル下落（108.83→107.25ドル）するも乱高下継続。",
+      "sourceLabel": "NPR / AP通信"
+    },
+    {
+      "id": "news-2026-05-20-iran-proposal-insufficient",
+      "date": "2026/05/19",
+      "label": "外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-warning-oil-stock-prices-futures-ceasefire-diplomacy/",
+      "title": "イランがパキスタン経由で最新修正提案を提出——White Houseは「不十分」と評価、アラグチー「米国を全く信頼できない」",
+      "body": "パキスタン調停団がイランの最新修正提案を米国に送付したことを確認。しかしWhite Houseはこれを「不十分」と評価し合意に至らず。アラグチー外相はニューデリーでの発言で「米国を全く信頼できない。毎日（時に1日2回）異なるメッセージが届き、不信感を深めている」と述べた。パキスタン筋は「時間がない——双方がゴールポストを動かし続けている」と警告。",
+      "sourceLabel": "Reuters / CBS News"
+    },
+    {
+      "id": "news-2026-05-20-wti-103-market-update",
+      "date": "2026/05/20",
+      "label": "市場",
+      "url": "https://tradingeconomics.com/commodity/crude-oil",
+      "title": "WTI $103・Brent $110付近——攻撃延期後下落も不確実性で乱高下、IEA「世界の石油在庫が急速に減少中」と緊急警告",
+      "body": "トランプの攻撃延期発表後、WTI先物は一時$107台から$103付近へ下落（5/19）、Brentは$110付近で推移。ただし交渉進展への期待と膠着懸念が入り混じり乱高下が続く。国際エネルギー機関（IEA）は5/18に「世界の石油在庫が急速に減少している」と警告。Saudi Aramco CEOアミン・ナセル「6月中旬以降もホルムズが閉鎖されれば正常化は2027年にずれ込む」と警告（5/12）。",
+      "sourceLabel": "CNBC / Trading Economics / IEA"
+    },
     {
       "id": "news-2026-05-19-uae-barakah-drone-attack",
       "date": "2026/05/18",
@@ -105,20 +132,25 @@
       "title": "中国VLCC「Yuan Hua Hu」約2か月ぶりホルムズ通過——外交調整を経た個別許可通航・「管理プロトコル」制度化の動き",
       "body": "中国船籍VLCC「Yuan Hua Hu」がイラク産原油約200万バレルを積み、約2か月超の足止め後に海峡を通過。米中首脳会談（5/15〜16）前後の外交調整と、イラン外相の北京訪問を含む外交プロセスを経た個別許可通航と見るべきもの。同日イランのFars通信は「中国船舶に対する管理プロトコルを正式化」と報道。「誰が・何を・どの条件で通すかをイランが決定する」制度化の動きであり海峡支配の既成事実化を意味する。",
       "sourceLabel": "global-scm.com ホルムズ海峡危機実務リスク報告（2026/05/15）"
-    },
-    {
-      "id": "news-2026-05-15-trump-xi-hormuz-agreement",
-      "date": "2026/05/14",
-      "label": "⚡ 速報",
-      "url": "https://www.cnbc.com/2026/05/14/trump-xi-summit-beijing-takeaway-taiwan-trade-iran-war-strategic-relations-.html",
-      "title": "米中首脳会談（北京）でホルムズ開放に合意——習近平「軍事化・通行料に反対」・仲介意欲を表明・「イランへ軍事機器提供しない」と言質",
-      "body": "5月14日、北京・人民大会堂でトランプ・習近平首脳会談が行われ、ホワイトハウス声明で「両首脳はホルムズ海峡がエネルギーの自由な流れを支えるため開放された状態を維持しなければならないことで合意した」と発表。習近平は海峡の軍事化とイランによる通行料徴収に反対する立場を明示し、米石油の購入増量によるホルムズ依存低減への意欲も示した。トランプはFox Newsで「習は仲介に協力したいと述べた」と明かし、「習はイランへ軍事機器を提供しないと言った。これは大きな声明だ」と評価。一方で同日、フジャイラ沖で船舶1隻がイランと見られる勢力に拿捕され、インド籍貨物船がオマーン沖で沈没するなど海峡の不安定化は継続中。",
-      "sourceLabel": "CNBC・AP通信（2026/05/14）"
     }
   ],
   "osint": [
     {
       "isLatest": true,
+      "date": "2026/05/19",
+      "country": "🇶🇦",
+      "media": "Al Jazeera（カタール系メディア）",
+      "titleJa": "【Al Jazeera ライブブログ】トランプ、Gulf allies要請で対イラン攻撃を延期——イラン当局「大規模攻撃の脅威はいつでも断固撃退する」",
+      "titleEn": "LIVE: Trump says Iran attack postponed at request of Gulf allies",
+      "cardBg": "rgba(239,68,68,0.07)",
+      "cardBorder": "rgba(239,68,68,0.3)",
+      "badgeColor": "rgba(239,68,68,0.2)",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#f87171",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/19/iran-war-live-trump-says-iran-attack-postponed-at-request-of-gulf-allies"
+    },
+    {
+      "isLatest": false,
       "date": "2026/05/19",
       "country": "🇦🇪",
       "media": "The National（UAE系メディア）",
@@ -231,6 +263,20 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/05/20 07:40 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "news-2026-05-15-trump-xi-hormuz-agreement",
+          "date": "2026/05/14",
+          "label": "⚡ 速報",
+          "url": "https://www.cnbc.com/2026/05/14/trump-xi-summit-beijing-takeaway-taiwan-trade-iran-war-strategic-relations-.html",
+          "title": "米中首脳会談（北京）でホルムズ開放に合意——習近平「軍事化・通行料に反対」・仲介意欲を表明・「イランへ軍事機器提供しない」と言質",
+          "body": "5月14日、北京・人民大会堂でトランプ・習近平首脳会談が行われ、ホワイトハウス声明で「両首脳はホルムズ海峡がエネルギーの自由な流れを支えるため開放された状態を維持しなければならないことで合意した」と発表。習近平は海峡の軍事化とイランによる通行料徴収に反対する立場を明示し、米石油の購入増量によるホルムズ依存低減への意欲も示した。トランプはFox Newsで「習は仲介に協力したいと述べた」と明かし、「習はイランへ軍事機器を提供しないと言った。これは大きな声明だ」と評価。一方で同日、フジャイラ沖で船舶1隻がイランと見られる勢力に拿捕され、インド籍貨物船がオマーン沖で沈没するなど海峡の不安定化は継続中。",
+          "sourceLabel": "CNBC・AP通信（2026/05/14）"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/05/19 07:46 更新分（アーカイブ）",
       "items": [

@@ -8,8 +8,9 @@
       "Edit",
       "MultiEdit"
     ],
-    "ask": ["Bash(git push*)"],
-    "defaultMode": "acceptEdits"
+    "deny": [
+      "Bash(git push:*)"
+    ]
   },
   "language": "japanese"
 }

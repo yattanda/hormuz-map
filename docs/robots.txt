@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yattanda.github.io/hormuz-map/sitemap.xml

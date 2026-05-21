@@ -3,12 +3,20 @@
   "staleNotice": "",
   "latest": [
     {
-      "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イランは核ウラン国外移送を拒否",
-      "body": "米国務長官マルコ・ルビオは5月21日、イランとの和平交渉について「若干の好兆候がある」と発言した。ただし「過度に楽観的になりたくない」とも述べ慎重姿勢を示した。トランプ大統領は高濃縮ウランの国外移送を要求しているが、イランは「自国内でダウンブレンドする」と拒否。交渉はパキスタン仲介で継続中。",
-      "sourceLabel": "CNBC",
-      "date": "2026/05/11",
+      "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イラン最高指導者がウラン国外移送を拒否",
+      "body": "米国務長官マルコ・ルビオは5月21日、パキスタン当局がテヘランへ向かうと明かしつつ「若干の好兆候がある」と発言。ただし「過度に楽観的になりたくない」と慎重姿勢も示した。同日、イランの最高指導者ホジャトレスラム・ハメネイ師が「ウランは国外に出すべきでない」と指示し、トランプ大統領の要求を拒否（ロイター報道）。",
+      "sourceLabel": "Bloomberg",
+      "date": "2026/05/21",
       "label": "外交",
-      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html"
+      "url": "https://www.bloomberg.com/news/newsletters/2026-05-21/eu-downgrades-growth-forecasts-on-iran-war-energy-shock"
+    },
+    {
+      "title": "EU、イラン戦争エネルギーショックで成長見通しを下方修正——インフレ3.0%へ",
+      "body": "欧州委員会は5月21日、イラン戦争に起因するエネルギー価格高騰を受けてユーロ圏の2026年成長予測を1.2%から0.9%に下方修正。インフレは当初予測1.9%から3.0%へと上方修正された。ECBの物価目標2%を上回り、利上げ観測が高まっている。",
+      "sourceLabel": "Reuters",
+      "date": "2026/05/21",
+      "label": "経済",
+      "url": "https://www.bnnbloomberg.ca/business/international/2026/05/21/energy-shock-from-iran-war-to-weigh-on-europes-growth-boost-inflation/"
     },
     {
       "title": "IEA：ホルムズ封鎖で世界石油供給が10億バレル超の損失——日本の輸入量は-190万b/d",
@@ -19,20 +27,12 @@
       "url": "https://www.iea.org/reports/oil-market-report-may-2026"
     },
     {
-      "title": "日本への初のロシア産原油タンカー（サハリン2）が愛媛に到着——代替調達が本格化",
-      "body": "ホルムズ閉鎖後、初めてサハリン2（制裁適用外）由来のロシア産原油を積んだタンカーが5月初旬に愛媛県・太陽石油の精製施設に到着した。米国産原油（コスモ石油契約）も千葉沖に4月26日到着済み。経済産業省は代替調達の「着実な進展」を強調。",
-      "sourceLabel": "Japan Times",
-      "date": "2026/05/03",
-      "label": "日本",
-      "url": "https://www.japantimes.co.jp/news/2026/05/03/japan/tanker-russian-oil-japan/"
-    },
-    {
-      "title": "米軍がホルムズ再開を試みるも UAE への攻撃で停戦が揺らぐ——2隻が通過成功",
-      "body": "米軍は5月4日にホルムズ海峡再開を図り、6隻のイランの小型艇を撃沈、米国旗の商船2隻が通過に成功した。UAEはイランから初めて15発のミサイルと4機のドローンによる攻撃を受け、フジャイラの石油施設で火災が発生。インド人3人が負傷した。停戦の脆弱性が改めて露呈した。",
-      "sourceLabel": "NPR",
-      "date": "2026/05/04",
-      "label": "軍事",
-      "url": "https://www.npr.org/2026/05/04/nx-s1-5810508/iran-war-updates"
+      "title": "トランプ大統領がイランの和平提案を「完全に受け入れられない」と拒否——イランは「屈しない」と宣言",
+      "body": "トランプ大統領はイランの和平反提案をTruth Socialで「完全に受け入れられない」と断言。イラン側は「外交は戦争より賢明だが、決して屈服しない」と反発した。核プログラムと高濃縮ウランの扱いが最大の障壁となっており、交渉は膠着状態にある。",
+      "sourceLabel": "CNBC",
+      "date": "2026/05/11",
+      "label": "外交",
+      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html"
     }
   ],
   "osint": [
@@ -202,6 +202,14 @@
           "date": "2026年5月13日 日本時間JST",
           "label": "市場",
           "url": "https://www.cnbc.com/2026/04/22/oil-price-wti-brent-iran-ceasefire-extension-clouds-outlook.html"
+        },
+        {
+          "title": "日本への初のロシア産原油タンカー（サハリン2）が愛媛に到着——代替調達が本格化",
+          "body": "ホルムズ閉鎖後、初めてサハリン2（制裁適用外）由来のロシア産原油を積んだタンカーが5月初旬に愛媛県・太陽石油の精製施設に到着した。米国産原油（コスモ石油契約）も千葉沖に4月26日到着済み。経済産業省は代替調達の「着実な進展」を強調。",
+          "sourceLabel": "Japan Times",
+          "date": "2026/05/03",
+          "label": "日本",
+          "url": "https://www.japantimes.co.jp/news/2026/05/03/japan/tanker-russian-oil-japan/"
         }
       ]
     },

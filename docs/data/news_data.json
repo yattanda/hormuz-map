@@ -1,160 +1,57 @@
 {
-  "updated": "2026年5月21日 08:04 日本時間JST",
+  "updated": "2026年5月22日 07:43 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "news-2026-05-20-araghchi-more-surprises",
-      "date": "2026/05/20",
+      "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イランは核ウラン国外移送を拒否",
+      "body": "米国務長官マルコ・ルビオは5月21日、イランとの和平交渉について「若干の好兆候がある」と発言した。ただし「過度に楽観的になりたくない」とも述べ慎重姿勢を示した。トランプ大統領は高濃縮ウランの国外移送を要求しているが、イランは「自国内でダウンブレンドする」と拒否。交渉はパキスタン仲介で継続中。",
+      "sourceLabel": "CNBC",
+      "date": "2026/05/11",
       "label": "外交",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/5/20/iran-war-live-tehran-warns-of-many-more-surprises-if-conflict-resumes",
-      "title": "アラグチー外相「戦争再開なら更なる驚きを見せる」——イラン首席交渉官「米国が明示的・秘密裏に新攻撃を準備」・バンス「双方多大な進展」と相反（5/20 JST）",
-      "body": "イランのアラグチー外相は5月20日、「以前の戦闘から軍事的知見を得た。戦争が再開されれば更なる驚きが待っている」と警告。イランの首席交渉官も「米国は明示的・秘密裏に新たな攻撃を準備しており、戦争再開を望んでいる」と主張。一方、米国のバンス副大統領は同日「双方が多大な進展を遂げている」と楽観的な見方を示しており、双方の認識に大きな乖離。トランプは「急いでいない」と発言。習近平とプーチンの北京会談（5/20）はエネルギー・武器取引を焦点とし、ホルムズ危機が両国関係に直接影響。",
-      "sourceLabel": "Al Jazeera（5/20 ライブブログ）"
+      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html"
     },
     {
-      "id": "news-2026-05-21-brent-108-wti-103-market-update",
-      "date": "2026/05/21",
-      "label": "市場",
-      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-      "title": "ブレント~$108・WTI~$103——攻撃延期後も乱高下継続・米国民のガソリン・ディーゼル代が累計約450億ドル増加",
-      "body": "ブレント原油は5/19のトランプ攻撃延期発表後に$110付近から$108付近へ小幅下落するも、交渉動向に過敏反応し乱高下継続。WTIは$103付近で推移。OilPrice.comによれば、米国民のガソリン・ディーゼル支出は2/28の危機開始以来累計約450億ドル増加し、低所得層が最も深刻な打撃を受けている。停戦延長・交渉膠着の長期化が市場心理の不安定化を招いている。",
-      "sourceLabel": "Trading Economics / OilPrice.com"
-    },
-    {
-      "id": "news-2026-05-19-uk-parliament-hormuz-briefing",
-      "date": "2026/05/19",
-      "label": "外交",
-      "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10636/",
-      "title": "英国議会図書館「ホルムズ外交ブリーフィング」5/19更新——停戦拡張中も商業通航5%・双方封鎖（イラン＋米国）が相互に継続中",
-      "body": "英国下院議会図書館が5月19日更新のブリーフィングで現状を整理。停戦は「交渉結論まで延長」されているが、実質的な商業通航は戦前比5%水準にとどまり、ホルムズは事実上閉鎖継続。イランは海峡封鎖を維持し米国はイラン港へのカウンター封鎖を維持する「二重封鎖」状態。UAEは「ホルムズの無条件即時再開」「イランの賠償責任」「武装組織支援停止」の3条件を主張し最も強硬な姿勢を示している。",
-      "sourceLabel": "House of Commons Library（英国議会図書館）"
-    },
-    {
-      "id": "news-2026-05-13-iea-may-2026-oil-market-report",
+      "title": "IEA：ホルムズ封鎖で世界石油供給が10億バレル超の損失——日本の輸入量は-190万b/d",
+      "body": "国際エネルギー機関（IEA）の5月報告書によると、ホルムズ海峡の通航制限により中東産油国の石油供給損失は累計10億バレルを超えた。シャットインされた生産量は日量1,440万バレル以上。日本の石油輸入は戦前比で日量190万バレル超の減少。IEAは6月以降に段階的な通航再開を想定するが、現時点では不透明。",
+      "sourceLabel": "IEA",
       "date": "2026/05/13",
-      "label": "市場",
-      "url": "https://www.iea.org/reports/oil-market-report-may-2026",
-      "title": "IEA May 2026レポート——「世界油市場は2026年Q4まで赤字継続・在庫が記録的ペースで減少」北海ブレントは$100〜$144の乱高下",
-      "body": "IEAが5月13日に公表した月次報告書によると、ホルムズ海峡封鎖による世界石油在庫の減少は記録的ペースで進行中。IEAは3Qに外交合意によるホルムズ再開を基本シナリオとしているが、供給回復は需要回復より遅れ、市場は赤字状態を年末まで維持する見通し。ブレント原油は$100〜$144の広いレンジで乱高下を続けており、交渉動向に過敏反応している。",
-      "sourceLabel": "IEA（国際エネルギー機関）"
+      "label": "エネルギー",
+      "url": "https://www.iea.org/reports/oil-market-report-may-2026"
     },
     {
-      "id": "news-2026-05-20-trump-attack-delayed",
-      "date": "2026/05/19",
-      "label": "外交",
-      "url": "https://www.npr.org/2026/05/19/g-s1-122762/trump-says-hes-called-off-iran-strike",
-      "title": "トランプ、5月19日予定の大規模対イラン攻撃を延期——カタール・サウジ・UAE首脳の要請受け「重大な交渉進行中」・随時攻撃準備は継続",
-      "body": "トランプ大統領は5月18日夜（米国時間）、翌19日に計画していた「非常に大規模な攻撃」をGulf allies（カタール・サウジアラビア・UAE）3首脳の要請を受け一時延期すると発表。「重大な交渉が進行中」として「少しの間、うまくいけば永遠に」先送りにするとした。ただし軍には「受け入れ可能な合意が得られない場合、随時フルスケールの攻撃準備完了」を命じており、軍事的圧力は維持。WTI原油は発表後に約2ドル下落（108.83→107.25ドル）するも乱高下継続。",
-      "sourceLabel": "NPR / AP通信"
+      "title": "日本への初のロシア産原油タンカー（サハリン2）が愛媛に到着——代替調達が本格化",
+      "body": "ホルムズ閉鎖後、初めてサハリン2（制裁適用外）由来のロシア産原油を積んだタンカーが5月初旬に愛媛県・太陽石油の精製施設に到着した。米国産原油（コスモ石油契約）も千葉沖に4月26日到着済み。経済産業省は代替調達の「着実な進展」を強調。",
+      "sourceLabel": "Japan Times",
+      "date": "2026/05/03",
+      "label": "日本",
+      "url": "https://www.japantimes.co.jp/news/2026/05/03/japan/tanker-russian-oil-japan/"
     },
     {
-      "id": "news-2026-05-20-iran-proposal-insufficient",
-      "date": "2026/05/19",
-      "label": "外交",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-warning-oil-stock-prices-futures-ceasefire-diplomacy/",
-      "title": "イランがパキスタン経由で最新修正提案を提出——White Houseは「不十分」と評価、アラグチー「米国を全く信頼できない」",
-      "body": "パキスタン調停団がイランの最新修正提案を米国に送付したことを確認。しかしWhite Houseはこれを「不十分」と評価し合意に至らず。アラグチー外相はニューデリーでの発言で「米国を全く信頼できない。毎日（時に1日2回）異なるメッセージが届き、不信感を深めている」と述べた。パキスタン筋は「時間がない——双方がゴールポストを動かし続けている」と警告。",
-      "sourceLabel": "Reuters / CBS News"
-    },
-    {
-      "id": "news-2026-05-20-wti-103-market-update",
-      "date": "2026/05/20",
-      "label": "市場",
-      "url": "https://tradingeconomics.com/commodity/crude-oil",
-      "title": "WTI $103・Brent $110付近——攻撃延期後下落も不確実性で乱高下、IEA「世界の石油在庫が急速に減少中」と緊急警告",
-      "body": "トランプの攻撃延期発表後、WTI先物は一時$107台から$103付近へ下落（5/19）、Brentは$110付近で推移。ただし交渉進展への期待と膠着懸念が入り混じり乱高下が続く。国際エネルギー機関（IEA）は5/18に「世界の石油在庫が急速に減少している」と警告。Saudi Aramco CEOアミン・ナセル「6月中旬以降もホルムズが閉鎖されれば正常化は2027年にずれ込む」と警告（5/12）。",
-      "sourceLabel": "CNBC / Trading Economics / IEA"
-    },
-    {
-      "id": "news-2026-05-19-uae-barakah-drone-attack",
-      "date": "2026/05/18",
-      "label": "🔥 速報",
-      "url": "https://abcnews.com/US/wireStory/drone-strike-sparks-fire-perimeter-uaes-nuclear-power-133046073",
-      "title": "UAEバラカ原子力発電所の外周にドローン攻撃——発電機に火災・放射線レベル正常・IAEA「核施設攻撃は容認不可」と警告（5/18 JST）",
-      "body": "ドローンがUAEバラカ原子力発電所外周の発電機を直撃し火災が発生（5/17 EDT）。UAE外相ビン・ザーイドは「テロ的攻撃」と非難し、IAEAに通報。IAEA事務局長グロッシは「核施設への軍事活動は容認不可」と最大限の自制を要請。放射線レベルは正常。犯行声明なし・UAE当局が調査継続中。イスラエル・ネタニヤフ首相は「あらゆる事態に備えている」と閣議で発言（5/17）。",
-      "sourceLabel": "Reuters（ABC News経由）・The National（2026/05/17〜18）"
-    },
-    {
-      "id": "news-2026-05-19-trump-clock-is-ticking",
-      "date": "2026/05/18",
-      "label": "⚡ 速報",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-warning-oil-stock-prices-futures-ceasefire-diplomacy/",
-      "title": "トランプ「時計は時を刻んでいる、速く動かなければ何も残らない」——イランへの最後通告を強化（Truth Social 5/18 JST）",
-      "body": "トランプ大統領は5/18（JST）、Truth Socialで「時計は時を刻んでいる。速く動かなければ何も残らない」と投稿し、イランへの最後通告を一段と強化した。パキスタン仲介者は「時間がない・両者がゴールポストを変え続けている」と危機感を表明。アラグチ外相はニューデリーサミット（5/16）で「米国を全く信頼できない。不信が最大の障壁」と発言した。",
-      "sourceLabel": "CBS News（2026/05/18）"
-    },
-    {
-      "id": "news-2026-05-19-iran-modified-proposal-pakistan",
-      "date": "2026/05/18",
-      "label": "🌐 外交",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-warning-oil-stock-prices-futures-ceasefire-diplomacy/",
-      "title": "イランが修正提案をパキスタン経由で再提出——「核交渉の詳細はまだ議論していない」・停戦終結に集中（5/18 JST）",
-      "body": "イランはパキスタン経由で修正提案を再提出（5/18 JST）。「核交渉の詳細はまだ議論していない」として停戦・戦争終結のみに集中する「核後回し」戦術を継続。14条MOUのウラン濃縮モラトリアム期間（12〜20年で未合意）など難題が残存。パキスタン仲介者「時間がない・両者がゴールポストを変え続けている」と危機感を表明。",
-      "sourceLabel": "CBS News・Reuters（2026/05/18）"
-    },
-    {
-      "id": "news-2026-05-18-iran-2nd-talks-unconfirmed",
-      "date": "2026/05/18",
-      "label": "⚡ 速報",
-      "url": "",
-      "title": "イラン、第2回交渉を未確認──「米封鎖・過度な要求」を理由に留保（タスニム 5/18）",
-      "body": "タスニム通信（5/18 JST）は、イランが米国の海上封鎖継続と「過度な要求」を理由に、第2回イスラマバード交渉への参加に合意していないと報じた。アラグチ外相はモスクワでプーチン大統領と会談し、交渉膠着の主因は核濃縮ウラン問題にあると指摘した。",
-      "sourceLabel": "Tasnim News Agency（2026/05/18）"
-    },
-    {
-      "id": "news-2026-05-16-trump-very-bad-time-warning",
-      "date": "2026/05/16",
-      "label": "⚡ 速報",
-      "url": "https://en.wikipedia.org/wiki/2025%E2%80%932026_Iran%E2%80%93United_States_negotiations",
-      "title": "トランプ、イランに「非常に悪い時期になる」と再警告──第2回交渉前に圧力強化（5/16）",
-      "body": "トランプ大統領は5/16、「イランに合意しなければ非常に悪い時期（very bad time）が来る」と再警告し、5/22を事実上の対話リミットと示唆した。米国はイランへの「1ページ14項目覚書（MOU）」を提示しており、イランのウラン濃縮モラトリアム・制裁解除・ホルムズ開放の相互確認が柱となっている。ただし米国は依然として凍結資産の返還を拒否しており、イラン側は「過度な要求」として強く反発している。",
-      "sourceLabel": "Reuters / CNBC（2026/05/16）"
-    },
-    {
-      "id": "news-2026-05-16-putin-uae-araghchi-moscow",
-      "date": "2026/05/16",
-      "label": "🌐 外交",
-      "url": "https://en.wikipedia.org/wiki/2025%E2%80%932026_Iran%E2%80%93United_States_negotiations",
-      "title": "プーチン、UAE首長と電話・アラグチと会談──ロシア仲介が浮上（5/16〜17）",
-      "body": "プーチン大統領は5/16にUAE首長・ビン・ザーイドと電話会談を行い、5/17にはイラン外相アラグチとモスクワで会談した。アラグチ外相は「交渉膠着の主因は核濃縮ウランの取り扱い問題にある」と指摘し、ロシアが仲介役として関与を深める可能性が浮上している。",
-      "sourceLabel": "Reuters / TASS（2026/05/16〜17）"
-    },
-    {
-      "title": "イラン、対話5条件を提示──「戦争賠償・ホルムズ主権承認」が前提",
-      "body": "イランは5月16日、Fars通信を通じて米国との交渉再開に向けた5条件を提示した。条件には「戦争賠償の支払い」「ホルムズ海峡に対するイランの主権承認」「制裁完全解除」「米軍撤退」「イランの核権利承認」が含まれる。ホワイトハウスはこれらを即時に拒否し、交渉は完全膠着状態に入った。封鎖は80日目を迎えており、IEAは今月解決しても10月まで原油供給不足が続くと警告している。",
-      "sourceLabel": "Reuters / PBS NewsHour",
-      "date": "2026年5月16日 日本時間JST",
-      "label": "外交",
-      "url": "https://www.pbs.org/newshour/world/tensions-flare-near-strait-of-hormuz-as-one-ship-is-seized-and-another-is-sunk"
-    },
-    {
-      "title": "米中首脳会談──Xi「ホルムズ開放に協力したい」、中国船2ヶ月ぶり通過",
-      "body": "トランプ大統領は5月14〜15日に北京を訪問し習近平国家主席と会談した。会談ではイラン問題が議題となり、習近平は「ホルムズ海峡の開放に協力したい」と述べ、中国がイランに軍事装備を供与しないとも表明した。イランの革命防衛隊は会談に合わせ複数の中国向けVLCCの通過を許可した。ただし実質的な合意内容はなく、一般商業船舶の通航状況に変化はない。",
-      "sourceLabel": "CNN",
-      "date": "2026年5月15日 日本時間JST",
-      "label": "外交",
-      "url": "https://www.cnn.com/politics/live-news/trump-china-visit-xi-meeting-hnk"
-    },
-    {
-      "title": "ホルムズ近傍で1隻拿捕・1隻撃沈──インド「容認できない」と非難",
-      "body": "5月15日（日本時間）、ホルムズ海峡近傍で外国籍コンテナ船1隻が拿捕され、別の1隻が攻撃を受け撃沈された。インド外務省は「商業船舶・民間船員への継続的な攻撃は容認できない」との声明を発出した。加害勢力は特定されていない。この事件はトランプ大統領が中国から帰国途上にある最中に発生した。",
-      "sourceLabel": "NBC News / AP",
-      "date": "2026年5月15日 日本時間JST",
-      "label": "インシデント",
-      "url": "https://www.nbcnews.com/world/iran/ship-reported-seized-another-attacked-strait-hormuz-rcna345086"
-    },
-    {
-      "title": "IEA：ホルムズ閉鎖継続なら10月まで世界原油供給不足──3〜4月に日量400万バレル減",
-      "body": "国際エネルギー機関（IEA）は5月13日公表の石油市場報告書で、ホルムズ海峡を経由する原油・燃料フローが3〜4月に日量約400万バレル減少したことを確認した。また「来月解決したとしても世界の原油市場は10月まで供給不足が続く可能性がある」と警告した。WTIは5月15日に週間+11%近い上昇を記録し、$106近傍に達した。",
-      "sourceLabel": "Bloomberg / CNBC",
-      "date": "2026年5月13日 日本時間JST",
-      "label": "市場",
-      "url": "https://www.cnbc.com/2026/04/22/oil-price-wti-brent-iran-ceasefire-extension-clouds-outlook.html"
+      "title": "米軍がホルムズ再開を試みるも UAE への攻撃で停戦が揺らぐ——2隻が通過成功",
+      "body": "米軍は5月4日にホルムズ海峡再開を図り、6隻のイランの小型艇を撃沈、米国旗の商船2隻が通過に成功した。UAEはイランから初めて15発のミサイルと4機のドローンによる攻撃を受け、フジャイラの石油施設で火災が発生。インド人3人が負傷した。停戦の脆弱性が改めて露呈した。",
+      "sourceLabel": "NPR",
+      "date": "2026/05/04",
+      "label": "軍事",
+      "url": "https://www.npr.org/2026/05/04/nx-s1-5810508/iran-war-updates"
     }
   ],
   "osint": [
     {
       "isLatest": true,
+      "titleJa": "「和平交渉に若干の好兆候」——テヘランは最新の米提案を検討中",
+      "titleEn": "Iran war live: Tehran reviews US peace proposal as fear of war rises",
+      "country": "イラン・中東",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,160,100,0.08)",
+      "cardBorder": "rgba(0,160,100,0.3)",
+      "badgeColor": "#00a064",
+      "borderColor": "#00a064",
+      "textColor": "#00a064",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/21/iran-war-live-tehran-says-no-surrender-to-us-diplomacy-wiser-than-war",
+      "date": "2026/05/21"
+    },
+    {
+      "isLatest": false,
       "date": "2026/05/20",
       "country": "🇶🇦",
       "media": "Al Jazeera（カタール系メディア）",
@@ -296,6 +193,19 @@
   ],
   "archive": [
     {
+      "batchLabel": "2026/05/22 07:43 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "IEA：ホルムズ閉鎖継続なら10月まで世界原油供給不足——3〜4月に日量400万バレル減",
+          "body": "国際エネルギー機関（IEA）は5月13日公表の石油市場報告書で、ホルムズ海峡を経由する原油・燃料フローが3〜4月に日量約400万バレル減少したことを確認した。また「来月解決したとしても世界の原油市場は10月まで供給不足が続く可能性がある」と警告した。WTIは5月15日に週間+11%近い上昇を記録し、$106近傍に達した。",
+          "sourceLabel": "Bloomberg / CNBC",
+          "date": "2026年5月13日 日本時間JST",
+          "label": "市場",
+          "url": "https://www.cnbc.com/2026/04/22/oil-price-wti-brent-iran-ceasefire-extension-clouds-outlook.html"
+        }
+      ]
+    },
+    {
       "batchLabel": "2026/05/21 08:04 更新分（アーカイブ）",
       "items": [
         {
@@ -369,7 +279,7 @@
           "label": "分析",
           "url": "https://www.eia.gov/outlooks/steo/",
           "title": "EIA STEO（5/12公表）「ホルムズは5月末まで実質閉鎖・Q2在庫日量850万BPD枯渇・ブレントQ2平均$106・Q4$89予測」",
-          "body": "米エネルギー情報局（EIA）は5月12日公表のSTEOで、ホルムズ海峡は5月末まで実質閉鎖が続き、6月から徐々に通航が回復するシナリオを基本想定とした。Q2（4〜6月）の世界在庫は日量850万BPDの記録的ペースで枯渔しており、ブレント平均はQ2に$106/バレルを維持。ただしホルムズが開放されてもQ4には$89/バレル、2027年には$79/バレルへ下落を予測。UAEのOPEC離脱（5/1発効）に伴い、同国の産油能力（480万BPD）が制限から解放される計算に変更。サウジアラビアの生産量は1990年以来最低水準。",
+          "body": "米エネルギー情報局（EIA）は5月12日公表のSTEOで、ホルムズ海峡は5月末まで実質閉鎖が続き、6月から徐々に通航が回復するシナリオを基本想定とした。Q2（4〜6月）の世界在庫は日量850万BPDの記録的ペースで枯渇しており、ブレント平均はQ2に$106/バレルを維持。ただしホルムズが開放されてもQ4には$89/バレル、2027年には$79/バレルへ下落を予測。UAEのOPEC離脱（5/1発効）に伴い、同国の産油能力（480万BPD）が制限から解放される計算に変更。サウジアラビアの生産量は1990年以来最低水準。",
           "sourceLabel": "EIA Short-Term Energy Outlook（2026/05/12公表）"
         }
       ]

@@ -3,6 +3,15 @@
   "staleNotice": "",
   "latest": [
     {
+      "id": "news-2026-05-20-araghchi-more-surprises",
+      "date": "2026/05/20",
+      "label": "外交",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/20/iran-war-live-tehran-warns-of-many-more-surprises-if-conflict-resumes",
+      "title": "アラグチー外相「戦争再開なら更なる驚きを見せる」——イラン首席交渉官「米国が明示的・秘密裏に新攻撃を準備」・バンス「双方多大な進展」と相反（5/20 JST）",
+      "body": "イランのアラグチー外相は5月20日、「以前の戦闘から軍事的知見を得た。戦争が再開されれば更なる驚きが待っている」と警告。イランの首席交渉官も「米国は明示的・秘密裏に新たな攻撃を準備しており、戦争再開を望んでいる」と主張。一方、米国のバンス副大統領は同日「双方が多大な進展を遂げている」と楽観的な見方を示しており、双方の認識に大きな乖離。トランプは「急いでいない」と発言。習近平とプーチンの北京会談（5/20）はエネルギー・武器取引を焦点とし、ホルムズ危機が両国関係に直接影響。",
+      "sourceLabel": "Al Jazeera（5/20 ライブブログ）"
+    },
+    {
       "id": "news-2026-05-21-brent-108-wti-103-market-update",
       "date": "2026/05/21",
       "label": "市場",
@@ -141,20 +150,25 @@
       "date": "2026年5月13日 日本時間JST",
       "label": "市場",
       "url": "https://www.cnbc.com/2026/04/22/oil-price-wti-brent-iran-ceasefire-extension-clouds-outlook.html"
-    },
-    {
-      "id": "news-2026-05-16-trump-iran-extinction-warning",
-      "date": "2026/05/15",
-      "label": "⚡ 速報",
-      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
-      "title": "トランプ「合意なければ大規模爆撃・絶滅」警告——イラン「決して屈しない」・WTI $103.5超・週間+10%",
-      "body": "トランプ大統領は5/14（JST 5/15早朝）、Truth Socialで「イランが合意しなければ以前よりはるかに大規模かつ高強度の爆撃を開始する」と警告。「絶滅させる」との表現も使用し強硬姿勢を鮮明にした。イランは「決して屈しない」と応じ交渉は再度膠着。WTIは5/15に$103.5超で引け週間+10%近い上昇。IEA「6月に紛争解決でも10月まで市場が供給不足」と警告。停戦は「瀕死状態」のまま78日目継続。",
-      "sourceLabel": "CNBC（2026/05/11・2026/05/15）・Trading Economics（2026/05/15）"
     }
   ],
   "osint": [
     {
       "isLatest": true,
+      "date": "2026/05/20",
+      "country": "🇶🇦",
+      "media": "Al Jazeera（カタール系メディア）",
+      "titleJa": "【Al Jazeera 5/20ライブブログ】アラグチー「戦争再開なら更なる驚きを見せる」——イラン首席交渉官「米国が明示的・秘密裏に攻撃を準備」・トランプ「急いでいない」・習近平-プーチン北京会談",
+      "titleEn": "LIVE: Iran says 'more surprises' if conflict resumes — Xi hosts Putin in Beijing",
+      "cardBg": "rgba(239,68,68,0.07)",
+      "cardBorder": "rgba(239,68,68,0.3)",
+      "badgeColor": "rgba(239,68,68,0.2)",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#f87171",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/20/iran-war-live-tehran-warns-of-many-more-surprises-if-conflict-resumes"
+    },
+    {
+      "isLatest": false,
       "date": "2026/05/19",
       "country": "🇶🇦",
       "media": "Al Jazeera（カタール系メディア）",
@@ -292,6 +306,15 @@
           "title": "中国VLCC「Yuan Hua Hu」約2か月ぶりホルムズ通過——外交調整を経た個別許可通航・「管理プロトコル」制度化の動き",
           "body": "中国船籍VLCC「Yuan Hua Hu」がイラク産原油約200万バレルを積み、約2か月超の足止め後に海峡を通過。米中首脳会談（5/15〜16）前後の外交調整と、イラン外相の北京訪問を含む外交プロセスを経た個別許可通航と見るべきもの。同日イランのFars通信は「中国船舶に対する管理プロトコルを正式化」と報道。「誰が・何を・どの条件で通すかをイランが決定する」制度化の動きであり海峡支配の既成事実化を意味する。",
           "sourceLabel": "global-scm.com ホルムズ海峡危機実務リスク報告（2026/05/15）"
+        },
+        {
+          "id": "news-2026-05-16-trump-iran-extinction-warning",
+          "date": "2026/05/15",
+          "label": "⚡ 速報",
+          "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+          "title": "トランプ「合意なければ大規模爆撃・絶滅」警告——イラン「決して屈しない」・WTI $103.5超・週間+10%",
+          "body": "トランプ大統領は5/14（JST 5/15早朝）、Truth Socialで「イランが合意しなければ以前よりはるかに大規模かつ高強度の爆撃を開始する」と警告。「絶滅させる」との表現も使用し強硬姿勢を鮮明にした。イランは「決して屈しない」と応じ交渉は再度膠着。WTIは5/15に$103.5超で引け週間+10%近い上昇。IEA「6月に紛争解決でも10月まで市場が供給不足」と警告。停戦は「瀕死状態」のまま78日目継続。",
+          "sourceLabel": "CNBC（2026/05/11・2026/05/15）・Trading Economics（2026/05/15）"
         }
       ]
     },

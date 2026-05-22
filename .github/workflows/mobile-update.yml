@@ -1,0 +1,42 @@
+name: 📱 Mobile Update — Apply Diffs
+
+# diffs.md が push されたとき自動実行
+# または GitHub Actions 画面から手動実行
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/tools/index_html_diffs.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # index.html への commit に必要
+
+jobs:
+  apply-diffs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Apply diffs to index.html
+        run: python .github/scripts/apply_diffs.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          if git diff --cached --quiet; then
+            echo "::notice::変更なし — コミットをスキップ"
+          else
+            JST=$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M JST')
+            git commit -m "🤖 [mobile] ${JST}"
+            git push
+          fi

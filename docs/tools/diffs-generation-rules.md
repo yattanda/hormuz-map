@@ -4,6 +4,64 @@
 
 ---
 
+## ⚡ モバイル更新対応：APPLY ブロック形式（必須）
+
+GitHub Actions による自動適用を有効にするため、
+**str_replace の old_str / new_str は必ず以下の APPLY ブロックで囲む**。
+
+```html
+<!-- APPLY:START -->
+<!-- OLD:START -->
+（ここに index.html から完全一致で抽出した置き換え前文字列）
+<!-- OLD:END -->
+<!-- NEW:START -->
+（ここに置き換え後の文字列）
+<!-- NEW:END -->
+<!-- APPLY:END -->
+```
+
+### ルール
+
+- `<!-- OLD:START -->` の直後に改行を入れ、old_str を書く
+- old_str の末尾に `<!-- OLD:END -->` の直前に改行を入れる
+- new_str も同様
+- old_str は **index.html の実際の文字列と完全一致**させる（スペース・改行を含む）
+- 1セクション（例: [S01]）に複数の str_replace が必要な場合は APPLY ブロックを複数並べる
+- APPLY ブロック外に通常の説明文・セクションヘッダー（`## [S01]` 等）を書くのは自由
+
+### 例
+
+```markdown
+## [S01] ヘッダー日時更新
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+📅 2026年5月22日 09:30 JST
+<!-- OLD:END -->
+<!-- NEW:START -->
+📅 2026年5月23日 11:00 JST
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+## [S02] TICKER更新
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+<div id="ticker-text">古いTICKER文</div>
+<!-- OLD:END -->
+<!-- NEW:START -->
+<div id="ticker-text">新しいTICKER文</div>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+```
+
+### news_data.json の更新（[S10]）
+
+news_data.json の更新は引き続き **[S10] セクションに更新内容をメモとして記載**する。
+スマホ更新時は GitHub モバイル/ブラウザで `docs/data/news_data.json` を直接編集してコミットする。
+
+---
+
 ## なぜこのルールが必要か
 
 `diffs.md` を「記憶と慣習」で生成すると、セクションが漏れる。  

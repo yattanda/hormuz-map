@@ -1,7 +1,23 @@
 {
-  "updated": "2026年5月22日 07:43 日本時間JST",
+  "updated": "2026年5月23日 09:58 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "パキスタン軍参謀長ムニルがテヘラン入り——仲介外交が加速、イラン「合意にはほど遠い」",
+      "body": "パキスタムの実力者・アシム・ムニル陸軍元帥が5月23日にテヘランへ到着し、米・イラン間の仲介活動が新局面を迎えた。ただしイラン当局者は「外交は継続しているが合意にはほど遠い」と牽制しており、ホルムズ問題と核交渉の双方で依然として大きな隔たりが続いている。",
+      "sourceLabel": "Al Jazeera",
+      "date": "2026年5月23日",
+      "label": "🕊️ 外交",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us"
+    },
+    {
+      "title": "ルビオ国務長官「交渉にわずかな前進」——核ウラン移送でイラン最高指導者が拒否指令",
+      "body": "米国務長官ルビオは5月22日、パキスタンを通じたイランとの仲介交渉に「わずかな前進（slight progress）」があると認めた。一方、イランの最高指導者モジュタバ・ハメネイは60%濃縮ウランを国外に移送しないよう指令を出しており、米国が最重要課題と位置づける核問題で大きな障壁が残る。",
+      "sourceLabel": "Bloomberg",
+      "date": "2026年5月22日",
+      "label": "🕊️ 外交",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-22/us-touts-slight-progress-as-deal-with-iran-remains-in-limbo"
+    },
     {
       "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イラン最高指導者がウラン国外移送を拒否",
       "body": "米国務長官マルコ・ルビオは5月21日、パキスタン当局がテヘランへ向かうと明かしつつ「若干の好兆候がある」と発言。ただし「過度に楽観的になりたくない」と慎重姿勢も示した。同日、イランの最高指導者ホジャトレスラム・ハメネイ師が「ウランは国外に出すべきでない」と指示し、トランプ大統領の要求を拒否（ロイター報道）。",
@@ -25,19 +41,25 @@
       "date": "2026/05/13",
       "label": "エネルギー",
       "url": "https://www.iea.org/reports/oil-market-report-may-2026"
-    },
-    {
-      "title": "トランプ大統領がイランの和平提案を「完全に受け入れられない」と拒否——イランは「屈しない」と宣言",
-      "body": "トランプ大統領はイランの和平反提案をTruth Socialで「完全に受け入れられない」と断言。イラン側は「外交は戦争より賢明だが、決して屈服しない」と反発した。核プログラムと高濃縮ウランの扱いが最大の障壁となっており、交渉は膠着状態にある。",
-      "sourceLabel": "CNBC",
-      "date": "2026/05/11",
-      "label": "外交",
-      "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html"
     }
   ],
   "osint": [
     {
-      "isLatest": true,
+      "titleJa": "「外交継続中だが合意遠い」——ムニル陸軍元帥テヘラン入りで仲介加速",
+      "titleEn": "Pakistan army chief Munir arrives in Tehran as diplomacy intensifies, Iran tempers deal hopes",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(20,83,45,0.25)",
+      "cardBorder": "rgba(34,197,94,0.3)",
+      "badgeColor": "#22c55e",
+      "borderColor": "rgba(34,197,94,0.4)",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
+      "date": "2026年5月23日",
+      "isLatest": true
+    },
+    {
+      "isLatest": false,
       "titleJa": "「和平交渉に若干の好兆候」——テヘランは最新の米提案を検討中",
       "titleEn": "Iran war live: Tehran reviews US peace proposal as fear of war rises",
       "country": "イラン・中東",
@@ -192,6 +214,19 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/05/23 09:58 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "トランプ大統領がイランの和平提案を「完全に受け入れられない」と拒否——イランは「屈しない」と宣言",
+          "body": "トランプ大統領はイランの和平反提案をTruth Socialで「完全に受け入れられない」と断言。イラン側は「外交は戦争より賢明だが、決して屈服しない」と反発した。核プログラムと高濃縮ウランの扱いが最大の障壁となっており、交渉は膠着状態にある。",
+          "sourceLabel": "CNBC",
+          "date": "2026/05/11",
+          "label": "外交",
+          "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/05/22 07:43 更新分（アーカイブ）",
       "items": [

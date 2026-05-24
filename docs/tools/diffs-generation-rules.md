@@ -124,8 +124,51 @@ GitHub Actions による自動適用を有効にするため、
 
 ### news_data.json の更新（[S10]）
 
-news_data.json の更新は引き続き **[S10] セクションに更新内容をメモとして記載**する。
-スマホ更新時は GitHub ブラウザで `docs/data/news_data.json` を直接編集してコミットする。
+news_data.json の変更も **APPLY ブロック形式**で記載する。
+ブロック内に `<!-- FILE:docs/data/news_data.json -->` を追加することで
+updater.html が自動的に news_data.json を対象ファイルとして認識する。
+
+#### フォーマット例
+
+```markdown
+## [S10] news_data.json 更新
+
+<!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
+<!-- OLD:START -->
+  "updated": "2026年5月23日 09:58 日本時間JST",
+<!-- OLD:END -->
+<!-- NEW:START -->
+  "updated": "2026年5月24日 08:12 日本時間JST",
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+<!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
+<!-- OLD:START -->
+  "latest": [
+<!-- OLD:END -->
+<!-- NEW:START -->
+  "latest": [
+    {
+      "title": "新規ニュースタイトル",
+      "body": "本文...",
+      "sourceLabel": "Reuters",
+      "date": "2026年5月24日",
+      "label": "🕊️ 外交",
+      "url": "https://..."
+    },
+<!-- NEW:END -->
+<!-- APPLY:END -->
+```
+
+#### ルール
+
+- `<!-- FILE:docs/data/news_data.json -->` は `<!-- OLD:START -->` の直前に記載
+- old_str は JSON の実際の文字列と**完全一致**させる（インデント・カンマも含む）
+- latest 配列への先頭追加は `"latest": [` を old_str として新規アイテムを prepend
+- staleNotice・updated の更新も個別の APPLY ブロックで記載
+- FILE: 指定がない APPLY ブロックは従来どおり index.html に適用される
 
 ---
 

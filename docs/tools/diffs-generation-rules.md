@@ -53,6 +53,25 @@ GitHub Actions による自動適用を有効にするため、
 <!-- APPLY:END -->
 ```
 
+### old_str の一意性ルール（必須）
+
+- old_str は **最低100文字以上** を目安にする
+- 短い文字列（日付・数字・短フレーズ）は必ず前後の固有HTMLタグを含めて一意にする
+
+❌ NG例（短すぎ・複数箇所にマッチ）:
+  2026年5月23日 09:58 JST
+
+✅ OK例（前後のHTMLで一意化）:
+  <span class="badge-item badge-date">📅2026年5月23日 09:58 JST</span>
+
+❌ NG例:
+  85日目
+
+✅ OK例:
+  <span class="countdown-days">85</span>日目
+
+---
+
 ### news_data.json の更新（[S10]）
 
 news_data.json の更新は引き続き **[S10] セクションに更新内容をメモとして記載**する。

@@ -1,7 +1,25 @@
 {
-  "updated": "2026年5月23日 09:58 日本時間JST",
+  "updated": "2026年5月24日 08:12 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "title": "トランプ「合意はほぼ成立」Truth Social発表——ホルムズ再開・戦争終結の枠組みMOU",
+      "body": "トランプ大統領が5月23日（現地）にTruth Socialで「米国・イラン・関係各国間の合意はほぼ成立（largely negotiated）、詳細は近日発表」と投稿。サウジアラビア・UAE・カタール・パキスタン・トルコ・エジプト・ヨルダン・バーレーン・イスラエルの首脳と電話会談後の発表。合意は第1フェーズとしてMOU（覚書）、その後30〜60日での核交渉という2段階構造。ルビオ国務長官もインドで「本日中に発表があるかもしれない」と示唆。",
+      "sourceLabel": "CNBC・NPR・PBS NewsHour",
+      "date": "2026/05/24",
+      "label": "外交",
+      "url": "https://www.cnbc.com/2026/05/23/us-iran-war-talks.html"
+    },
+    {
+      "id": "latest-002",
+      "title": "イラン「枠組み合意に過ぎず・核交渉は対象外」——ファルス通信がトランプ発言を「現実と乖離」と否定",
+      "body": "イラン外務省報道官バガエイは「現段階の焦点は全面的な戦争終結であり核問題ではない」と明言。ファルス通信は「ホルムズ海峡は最新の協議文書でもイラン管理下のまま」と発表し、トランプの「海峡再開」発言を「不完全で現実と矛盾する」と一蹴。一方で地域当局者は「土壇場の対立（last-minute disputes）が交渉を吹き飛ばすリスク」を警告。イラン最高指導者モジュタバ・ハメネイの核ウラン国外移送拒否指令が依然最大の障壁。",
+      "sourceLabel": "NPR・CNN・CBC News",
+      "date": "2026/05/24",
+      "label": "外交",
+      "url": "https://www.npr.org/2026/05/23/g-s1-124145/trump-iran-deal-strait-of-hormuz"
+    },
     {
       "title": "パキスタン軍参謀長ムニルがテヘラン入り——仲介外交が加速、イラン「合意にはほど遠い」",
       "body": "パキスタムの実力者・アシム・ムニル陸軍元帥が5月23日にテヘランへ到着し、米・イラン間の仲介活動が新局面を迎えた。ただしイラン当局者は「外交は継続しているが合意にはほど遠い」と牽制しており、ホルムズ問題と核交渉の双方で依然として大きな隔たりが続いている。",
@@ -25,25 +43,24 @@
       "date": "2026/05/21",
       "label": "外交",
       "url": "https://www.bloomberg.com/news/newsletters/2026-05-21/eu-downgrades-growth-forecasts-on-iran-war-energy-shock"
-    },
-    {
-      "title": "EU、イラン戦争エネルギーショックで成長見通しを下方修正——インフレ3.0%へ",
-      "body": "欧州委員会は5月21日、イラン戦争に起因するエネルギー価格高騰を受けてユーロ圏の2026年成長予測を1.2%から0.9%に下方修正。インフレは当初予測1.9%から3.0%へと上方修正された。ECBの物価目標2%を上回り、利上げ観測が高まっている。",
-      "sourceLabel": "Reuters",
-      "date": "2026/05/21",
-      "label": "経済",
-      "url": "https://www.bnnbloomberg.ca/business/international/2026/05/21/energy-shock-from-iran-war-to-weigh-on-europes-growth-boost-inflation/"
-    },
-    {
-      "title": "IEA：ホルムズ封鎖で世界石油供給が10億バレル超の損失——日本の輸入量は-190万b/d",
-      "body": "国際エネルギー機関（IEA）の5月報告書によると、ホルムズ海峡の通航制限により中東産油国の石油供給損失は累計10億バレルを超えた。シャットインされた生産量は日量1,440万バレル以上。日本の石油輸入は戦前比で日量190万バレル超の減少。IEAは6月以降に段階的な通航再開を想定するが、現時点では不透明。",
-      "sourceLabel": "IEA",
-      "date": "2026/05/13",
-      "label": "エネルギー",
-      "url": "https://www.iea.org/reports/oil-market-report-may-2026"
     }
   ],
   "osint": [
+    {
+      "id": "osint-2026-0524",
+      "titleJa": "【Al Jazeera】ライブブログ：トランプ「大筋合意」発表——イラン「外交継続中だが合意未成立」",
+      "titleEn": "Iran war live: Trump says Iran 'agreement has been largely negotiated'",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,168,132,0.08)",
+      "cardBorder": "rgba(0,168,132,0.4)",
+      "badgeColor": "#00a884",
+      "borderColor": "#00a884",
+      "textColor": "#6ee7d0",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
+      "date": "2026/05/24",
+      "isLatest": true
+    },
     {
       "titleJa": "「外交継続中だが合意遠い」——ムニル陸軍元帥テヘラン入りで仲介加速",
       "titleEn": "Pakistan army chief Munir arrives in Tehran as diplomacy intensifies, Iran tempers deal hopes",
@@ -56,7 +73,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
       "date": "2026年5月23日",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "isLatest": false,
@@ -214,6 +231,27 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年5月22〜23日",
+      "items": [
+        {
+          "title": "EU、イラン戦争エネルギーショックで成長見通しを下方修正——インフレ3.0%へ",
+          "body": "欧州委員会は5月21日、イラン戦争に起因するエネルギー価格高騰を受けてユーロ圏の2026年成長予測を1.2%から0.9%に下方修正。インフレは当初予測1.9%から3.0%へと上方修正された。ECBの物価目標2%を上回り、利上げ観測が高まっている。",
+          "sourceLabel": "Reuters",
+          "date": "2026/05/21",
+          "label": "経済",
+          "url": "https://www.bnnbloomberg.ca/business/international/2026/05/21/energy-shock-from-iran-war-to-weigh-on-europes-growth-boost-inflation/"
+        },
+        {
+          "title": "IEA：ホルムズ封鎖で世界石油供給が10億バレル超の損失——日本の輸入量は-190万b/d",
+          "body": "国際エネルギー機関（IEA）の5月報告書によると、ホルムズ海峡の通航制限により中東産油国の石油供給損失は累計10億バレルを超えた。シャットインされた生産量は日量1,440万バレル以上。日本の石油輸入は戦前比で日量190万バレル超の減少。IEAは6月以降に段階的な通航再開を想定するが、現時点では不透明。",
+          "sourceLabel": "IEA",
+          "date": "2026/05/13",
+          "label": "エネルギー",
+          "url": "https://www.iea.org/reports/oil-market-report-may-2026"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/05/23 09:58 更新分（アーカイブ）",
       "items": [

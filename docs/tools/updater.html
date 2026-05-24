@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hormuz更新">
+<title>🛢️ Hormuz Map 更新ツール</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --bg2: #1a1d27;
+    --bg3: #222536;
+    --border: rgba(255,255,255,0.1);
+    --border2: rgba(255,255,255,0.18);
+    --text: #e2e8f0;
+    --text2: #94a3b8;
+    --text3: #64748b;
+    --ok: #4ade80;
+    --err: #f87171;
+    --warn: #fbbf24;
+    --info: #60a5fa;
+    --accent: #6366f1;
+    --accent2: #818cf8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+    padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+  }
+
+  .app { max-width: 480px; margin: 0 auto; padding: 1rem 1rem 4rem; }
+
+  /* Header */
+  .header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 1rem 0 1.25rem;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 1.25rem;
+  }
+  .header-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .header h1 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+  .header p  { font-size: 11px; color: var(--text2); margin-top: 2px; }
+
+  /* Form */
+  .field { margin-bottom: 1rem; }
+  .field label {
+    display: block; font-size: 11px; font-weight: 500;
+    color: var(--text2); letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  input[type=text], input[type=password], textarea {
+    width: 100%;
+    background: var(--bg2);
+    border: 0.5px solid var(--border2);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 12px;
+    padding: 10px 12px;
+    outline: none;
+    -webkit-appearance: none;
+    transition: border-color 0.15s;
+  }
+  input:focus, textarea:focus { border-color: var(--accent2); }
+  textarea { min-height: 150px; resize: vertical; line-height: 1.6; }
+  ::placeholder { color: var(--text3); }
+
+  /* Commit area */
+  .commit-row { display: flex; gap: 8px; align-items: stretch; }
+  .commit-row input { flex: 1; }
+  .today-btn {
+    background: var(--bg3); border: 0.5px solid var(--border2);
+    border-radius: 10px; color: var(--text2);
+    font-size: 11px; padding: 0 12px; cursor: pointer;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .today-btn:active { opacity: 0.7; }
+
+  /* Buttons */
+  .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 1.25rem 0; }
+  .btn {
+    border-radius: 10px; border: 0.5px solid var(--border2);
+    background: var(--bg2); color: var(--text);
+    font-size: 13px; font-weight: 500;
+    padding: 11px 8px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+  .btn:active { transform: scale(0.97); opacity: 0.8; }
+  .btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .btn.primary:active { background: #4f46e5; }
+
+  /* Stats */
+  .stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px; margin-bottom: 1rem;
+  }
+  .stat {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 10px 8px; text-align: center;
+  }
+  .stat .num { font-size: 22px; font-weight: 600; }
+  .stat .lbl { font-size: 10px; color: var(--text2); margin-top: 2px; }
+  .stat.ok  .num { color: var(--ok); }
+  .stat.skip .num { color: var(--warn); }
+  .stat.err .num  { color: var(--err); }
+
+  /* Log */
+  .log-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; letter-spacing: 0.03em; text-transform: uppercase; }
+  .log {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 12px;
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 11px; line-height: 1.8;
+    min-height: 100px; max-height: 280px;
+    overflow-y: auto; white-space: pre-wrap; word-break: break-all;
+    color: var(--text2);
+    -webkit-overflow-scrolling: touch;
+  }
+  .ok   { color: var(--ok); }
+  .err  { color: var(--err); }
+  .warn { color: var(--warn); }
+  .info { color: var(--info); }
+
+  /* Token hint */
+  .hint {
+    font-size: 10px; color: var(--text3);
+    margin-top: 5px; line-height: 1.5;
+  }
+
+  /* Divider */
+  .divider { height: 0.5px; background: var(--border); margin: 1.25rem 0; }
+
+  /* Footer */
+  .footer { font-size: 10px; color: var(--text3); text-align: center; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="header">
+    <div class="header-icon">🛢️</div>
+    <div>
+      <h1>Hormuz Map 更新ツール</h1>
+      <p>diffs.md → GitHub API → index.html 自動適用</p>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>GitHub Token</label>
+    <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+    <p class="hint">※ 入力値はこのページ内にのみ存在します。外部送信・保存はしません。</p>
+  </div>
+
+  <div class="field">
+    <label>diffs.md の内容</label>
+    <textarea id="diffs" placeholder="Claude.ai が生成した diffs.md の全文を貼り付け&#10;&#10;（&lt;!-- APPLY:START --&gt; ブロックを含む内容）"></textarea>
+  </div>
+
+  <div class="field">
+    <label>コミットメッセージ</label>
+    <div class="commit-row">
+      <input type="text" id="commitmsg" value="update: mobile update via Claude.ai">
+      <button class="today-btn" onclick="setTodayMsg()">今日の日付</button>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" onclick="parseOnly()">🔍 パース確認</button>
+    <button class="btn primary" id="pushBtn" onclick="runApply()">📤 適用 &amp; Push</button>
+  </div>
+
+  <div class="stats" id="stats" style="display:none">
+    <div class="stat ok">  <div class="num" id="n-ok">0</div>  <div class="lbl">適用済</div></div>
+    <div class="stat skip"><div class="num" id="n-skip">0</div><div class="lbl">スキップ</div></div>
+    <div class="stat err"> <div class="num" id="n-err">0</div>  <div class="lbl">エラー</div></div>
+  </div>
+
+  <div class="log-label">ログ</div>
+  <div class="log" id="log">準備完了 — diffs.md を貼り付けて実行してください。</div>
+
+  <div class="footer">
+    yattanda/hormuz-map · docs/index.html<br>
+    Token はページを閉じると消去されます
+  </div>
+
+</div>
+
+<script>
+const OWNER = 'yattanda';
+const REPO  = 'hormuz-map';
+const PATH  = 'docs/index.html';
+
+const BLOCK_RE = /<!--\s*APPLY:START\s*-->\s*\n<!--\s*OLD:START\s*-->\n([\s\S]*?)\n?<!--\s*OLD:END\s*-->\s*\n<!--\s*NEW:START\s*-->\n([\s\S]*?)\n?<!--\s*NEW:END\s*-->\s*\n<!--\s*APPLY:END\s*-->/g;
+
+function setTodayMsg() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth()+1).padStart(2,'0');
+  const d = String(now.getDate()).padStart(2,'0');
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  document.getElementById('commitmsg').value = `update: ${y}-${m}-${d} ${hh}:${mm} mobile`;
+}
+
+function log(msg, cls='') {
+  const el = document.getElementById('log');
+  const line = cls ? `<span class="${cls}">${esc(msg)}</span>\n` : esc(msg)+'\n';
+  el.innerHTML += line;
+  el.scrollTop = el.scrollHeight;
+}
+
+function esc(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function parseBlocks(text) {
+  const pairs = [];
+  let m; BLOCK_RE.lastIndex = 0;
+  while ((m = BLOCK_RE.exec(text)) !== null) pairs.push({old:m[1], new:m[2]});
+  return pairs;
+}
+
+function parseOnly() {
+  document.getElementById('log').textContent = '';
+  document.getElementById('stats').style.display = 'none';
+  const pairs = parseBlocks(document.getElementById('diffs').value);
+  log(`📦 APPLY ブロック検出数: ${pairs.length}`, 'info');
+  if (!pairs.length) {
+    log('⚠️  APPLY ブロックが見つかりません。\n    <!-- APPLY:START/END --> 形式で囲まれているか確認。', 'warn');
+    return;
+  }
+  pairs.forEach((p,i) => {
+    log(`  #${i+1} old: ${p.old.substring(0,55).replace(/\n/g,'↵')}…`);
+  });
+  log(`✅ パース完了 — 「適用 & Push」で送信できます。`, 'ok');
+}
+
+async function runApply() {
+  const token = document.getElementById('token').value.trim();
+  const diffs  = document.getElementById('diffs').value;
+  const msg    = document.getElementById('commitmsg').value.trim() || 'update: mobile';
+  const logEl  = document.getElementById('log');
+  logEl.textContent = '';
+  document.getElementById('stats').style.display = 'none';
+
+  if (!token) { log('❌ GitHub Token を入力してください。','err'); return; }
+  if (!diffs)  { log('❌ diffs.md の内容を貼り付けてください。','err'); return; }
+
+  const pairs = parseBlocks(diffs);
+  log(`📦 APPLY ブロック検出数: ${pairs.length}`, 'info');
+  if (!pairs.length) { log('⚠️  APPLY ブロックなし — 中止。','warn'); return; }
+
+  const btn = document.getElementById('pushBtn');
+  btn.disabled = true;
+
+  try {
+    log('🔄 index.html を取得中…', 'info');
+    const res = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+      { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } }
+    );
+    if (!res.ok) { const e=await res.json(); log(`❌ 取得失敗(${res.status}): ${e.message}`,'err'); btn.disabled=false; return; }
+    const data = await res.json();
+    const sha  = data.sha;
+    let html   = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+    log(`✅ 取得完了 (${html.length.toLocaleString()}文字, SHA:${sha.substring(0,7)})`, 'ok');
+
+    let ok=0, skip=0, err=0;
+    pairs.forEach((p,i) => {
+      const cnt = html.split(p.old).length - 1;
+      if (cnt===0)      { log(`❌ #${i+1}: 見つからない → ${p.old.substring(0,50).replace(/\n/g,'↵')}`, 'err');  err++; }
+      else if (cnt > 1) { log(`⚠️  #${i+1}: ${cnt}箇所マッチ(スキップ) → ${p.old.substring(0,50).replace(/\n/g,'↵')}`, 'warn'); skip++; }
+      else              { html = html.replace(p.old, p.new); log(`✅ #${i+1}: 適用完了`, 'ok'); ok++; }
+    });
+
+    document.getElementById('n-ok').textContent   = ok;
+    document.getElementById('n-skip').textContent = skip;
+    document.getElementById('n-err').textContent  = err;
+    document.getElementById('stats').style.display = 'grid';
+
+    if (ok===0) { log('\n⚠️  適用0件のため Push スキップ。','warn'); btn.disabled=false; return; }
+
+    log(`\n📤 Push 中… (適用${ok} / スキップ${skip} / エラー${err})`, 'info');
+    const encoded = btoa(unescape(encodeURIComponent(html)));
+    const putRes  = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+      {
+        method: 'PUT',
+        headers: { Authorization:`Bearer ${token}`, Accept:'application/vnd.github+json', 'Content-Type':'application/json' },
+        body: JSON.stringify({ message: msg, content: encoded, sha })
+      }
+    );
+    if (!putRes.ok) { const e=await putRes.json(); log(`❌ Push失敗(${putRes.status}): ${e.message}`,'err'); btn.disabled=false; return; }
+    const pd = await putRes.json();
+    log(`\n✅ Push 完了！`, 'ok');
+    log(`   commit: ${pd.commit.sha.substring(0,7)} — ${msg}`, 'ok');
+    log(`   Pages 反映まで 1〜2分お待ちください。`, 'info');
+    log(`\n⚠️  Claude.ai Project Knowledge「Sync now」を忘れずに！`, 'warn');
+  } catch(e) {
+    log(`❌ エラー: ${e.message}`, 'err');
+  }
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>

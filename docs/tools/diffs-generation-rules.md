@@ -230,6 +230,21 @@ project_knowledge_search: "更新ログ 出典 JST 更新"
    → 1日に複数回更新がある場合、08:12 の次が 13:xx なら
      13:xx の NEW:START が現在の実態（08:12 の NEW:START ではない）
 
+#### ⚠️ run.bat 未使用時の特別ルール（必須）
+
+   run.bat（auto_push.py）を使用しなかった更新回では、
+   diffs.md は GitHub に push されないため、
+   プロジェクト知識内の diffs.md は**古い状態のまま**となる。
+
+   - Step A（diffs.md 検索）の日時 ≠ Step B（更新ログ）の日時 の場合
+     → **Step B を正として採用し、Step A の diffs.md は参照しない**
+   - Step A と Step B の日時が一致する場合のみ、diffs.md の old_str を参考にしてよい
+   - 判断に迷う場合は必ず Step B（更新ログ先頭行）を優先する
+
+   **NGパターン（禁止）**：
+   - diffs.md の日時と更新ログの日時が食い違っているのに、
+     diffs.md 側の日時を「最新」と宣言する
+
    #### この手順が必要な理由
 
    - 1日に複数回 run.bat を実行した場合、HTML は更新のたびに状態が変わる

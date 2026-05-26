@@ -1,7 +1,23 @@
 {
-  "updated": "2026年5月25日 06:47 日本時間JST",
+  "updated": "2026年5月26日 07:56 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "イラン代表団カタール入り——アラグチー外相・ガリバフ議長・中央銀行総裁が「最も機微な問題」を協議",
+      "body": "イラン外相アラグチー、議会議長ガリバフ、中央銀行総裁ヘンマティがドーハ入りし、米国との合意を阻む「最も機微な問題（most sensitive issues）」を協議中とAl Jazeeraが報道（5/26 JST）。イラン外務省報道官バガエイは「議論の大部分で進展があった」としつつ「署名が差し迫っているわけではない」と言明。CBSニュースは、米・イラン交渉担当者が「大枠の原則（broad principles）」に合意したと報道。SNSC（最高国家安全保障委員会）の承認後、最高指導者モジュタバ・ハメネイに上申される見通し。",
+      "sourceLabel": "CBS News・NPR",
+      "date": "2026年5月26日",
+      "label": "🚨 外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-peace-talks-strait-of-hormuz-control/"
+    },
+    {
+      "title": "トランプ月曜Truth Social「超優良合意か撤退か——Back to Battlefront」・イスラエル正常化を新条件に追加",
+      "body": "トランプ大統領は5/26（JST）月曜朝のTruth Socialで「イランとの交渉は順調に進んでいる！全員にとっての超優良合意か、そうでなければ合意なし——戦線に戻り、これまで以上に大きく強力に攻撃するか。誰もそれは望まない」と投稿。さらにNPRによると、トランプはいかなる合意にも「より多くの中東諸国がイスラエルと国交正常化すべき」との新条件を加え、交渉はさらに複雑化。ルビオは「トランプは悪い合意はしない」と反対派を牽制しつつ、合意の実現可能性を強調。",
+      "sourceLabel": "NPR",
+      "date": "2026年5月26日",
+      "label": "🇺🇸 交渉",
+      "url": "https://www.npr.org/2026/05/25/nx-s1-5833690/u-s-iran-negotiations-updates"
+    },
     {
       "title": "トランプ「急がない——時間は我々の味方」・「全条件が揃った時のみ署名」と慎重姿勢へ一転",
       "body": "トランプ大統領は日曜日（米国時間5/24）に「急がない——時間は我々の味方だ」とTruth Socialに投稿し、前日の「近日発表」から一転して慎重姿勢へ転換。「米国はすべての条件が揃った場合のみ署名する」と明言。ルビオ国務長官も反対派を「歴史の負け犬（losers）」と呼び共和党タカ派に反撃しつつ、交渉は「秩序ある建設的プロセス」で進行中と強調。上院軍事委員長ウィッカーは60日停戦案を「惨事」と批判し、グラハムは「なぜ戦争を始めたのか」と疑問を呈した。",
@@ -62,6 +78,21 @@
     }
   ],
   "osint": [
+    {
+      "id": "osint-2026-0526",
+      "date": "2026年5月25〜26日（現地）/ 2026年5月26日 JST",
+      "titleJa": "【Al Jazeera】ライブブログ：イラン代表団カタール入り——「最も機微な問題」を交渉中・外務省「大部分で進展も署名差し迫らず」",
+      "titleEn": "Iran war live: Tehran's negotiators in Qatar, Israel ups Lebanon operations",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,168,132,0.08)",
+      "cardBorder": "rgba(0,168,132,0.4)",
+      "badgeColor": "#00a884",
+      "borderColor": "#00a884",
+      "textColor": "#6ee7d0",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/24/live-trump-says-iran-deal-not-fully-negotiated-yet",
+      "isLatest": true
+    },
     {
       "id": "osint-2026-0524",
       "titleJa": "【Al Jazeera】ライブブログ：トランプ「大筋合意」発表——イラン「外交継続中だが合意未成立」",

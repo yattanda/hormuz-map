@@ -1,7 +1,23 @@
 {
-  "updated": "2026年5月28日 10:59 日本時間JST",
+  "updated": "2026年5月29日 09:42 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "米・イランが60日MOU草案で暫定合意——ホルムズ機雷除去30日・「無制限」通航・核交渉開始・トランプ最終署名待ち",
+      "body": "米・イランの交渉担当者が60日間の停戦延長MOU草案に合意（Axios独占スクープ→CBS・CNBC・CNN・Euronews等が確認）。ホルムズ海峡の機雷を30日以内に除去し「無制限」通航を回復、並行して核交渉・制裁緩和・資産凍結解除を協議する枠組み。ただしトランプは「まだ満足していない」として最終署名を保留、イランも公式には合意を確認していない。ベッセント財務長官「ウラン引渡しと海峡無制限開放が前提条件」と強調。ルビオとパキスタン外相イスハク・ダールが5/29ワシントンで会談し推進図る。",
+      "sourceLabel": "Axios",
+      "date": "2026年5月29日",
+      "label": "🕊️ 外交",
+      "url": "https://www.axios.com/2026/05/28/iran-peace-deal-trump-approval"
+    },
+    {
+      "title": "IRGCがクウェートへ弾道ミサイル発射・米空軍基地を攻撃——CENTCOM「重大な停戦違反」・新型防空「Arash-e Kamangir」でReaper撃墜",
+      "body": "IRGCが5/28（GMT）にクウェートへ弾道ミサイルを発射、クウェート軍が迎撃。同日にIRGCが米空軍基地（場所非公開）を攻撃——米軍のバンダルアッバース付近への新たな空爆への報復と主張。CENTCOMは「重大な停戦違反」と非難。イランは国産新型防空システム「Arash-e Kamangir」で米MQ-9 Reaperをケシュム島付近で撃墜したとも発表（初の戦闘使用）。原油はこれらの攻撃報告でWTI $91前後・ブレント $97前後に反発。",
+      "sourceLabel": "Washington Times",
+      "date": "2026年5月29日",
+      "label": "💥 衝突",
+      "url": "https://www.washingtontimes.com/news/2026/may/28/us-military-confirms-iran-launched-attacks-kuwait-test-ceasefire/"
+    },
     {
       "id": "latest-001",
       "title": "米軍がホルムズ付近でIRGCドローン4機撃墜——トランプ「合意か仕事を完遂する」",
@@ -113,6 +129,21 @@
   ],
   "osint": [
     {
+      "id": "osint-2026-0528",
+      "titleJa": "【Al Jazeera】ライブブログ：米・イランが60日MOU草案で暫定合意——ホルムズ機雷除去30日・無制限通航・核交渉開始（トランプ署名待ち）・イランが「Arash-e Kamangir」でReaper撃墜・クウェートへ弾道ミサイル",
+      "titleEn": "US and Iran reach MoU on 60-day truce, Trump's approval still pending — Iran uses new Arash-e Kamangir to down MQ-9, fires ballistic missile at Kuwait",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,168,132,0.08)",
+      "cardBorder": "rgba(0,168,132,0.4)",
+      "badgeColor": "#00a884",
+      "borderColor": "#00a884",
+      "textColor": "#6ee7d0",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/28/iran-war-live-israel-orders-mass-forced-displacement-for-all-south-lebanon",
+      "date": "2026/05/28",
+      "isLatest": true
+    },
+    {
       "id": "osint-2026-0526",
       "date": "2026年5月25〜26日（現地）/ 2026年5月26日 JST",
       "titleJa": "【Al Jazeera】ライブブログ：イラン代表団カタール入り——「最も機微な問題」を交渉中・外務省「大部分で進展も署名差し迫らず」",
@@ -125,7 +156,7 @@
       "borderColor": "#00a884",
       "textColor": "#6ee7d0",
       "url": "https://www.aljazeera.com/news/liveblog/2026/5/24/live-trump-says-iran-deal-not-fully-negotiated-yet",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-2026-0524",
@@ -140,7 +171,7 @@
       "textColor": "#6ee7d0",
       "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
       "date": "2026/05/24",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "「外交継続中だが合意遠い」——ムニル陸軍元帥テヘラン入りで仲介加速",

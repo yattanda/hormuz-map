@@ -1,7 +1,25 @@
 {
-  "updated": "2026年5月29日 09:42 日本時間JST",
+  "updated": "2026年5月30日 09:01 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年5月29日（米東部）/ 2026年5月30日 JST",
+      "title": "トランプ情勢室協議2時間で決定なし——バンス「MOU署名はTBD・数語句未合意」・イラン「合意未達」",
+      "body": "トランプ大統領が5月29日（米国時間）にホワイトハウス情勢室でルビオ国務長官・バンス副大統領らと約2時間のMOU審議を実施。協議終了後も署名なし。上級政府高官は「合意は近いが資産凍結解除等で更なる協議が必要」と証言。バンスは「TBD——いくつかの語句が依然未合意」と語った。一方イラン外務省は「合意は未達成」と表明。首席交渉官ガリバフは「権利はミサイルで取る」と強硬姿勢を示した。トランプはTrue Socialで機雷除去・封鎖解除・ウラン発掘破壊を含むsweeping demandsを公開投稿した。",
+      "sourceLabel": "PBS NewsHour（AP）",
+      "label": "🕊️ 外交",
+      "url": "https://www.pbs.org/newshour/world/trump-meeting-with-aides-to-make-final-determination-on-moving-forward-with-iran-deal"
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年5月29日（現地）/ 2026年5月30日 JST",
+      "title": "ブレント原油・月間-19%——COVID後最大の月間下落幅、WTI $87・ブレント $93で月末確定",
+      "body": "5月最終取引日（5/29 金曜日）、ブレント原油は$92.56（前日比-1.2%）、WTIは$87.18（前日比-1.9%）で引け。ブレントの月間下落率は-19%となり、2020年3月（COVID初期）以来最大の月間下落を記録した。MOU合意期待による下落が主因。アナリストは「ホルムズが開いても部分的——インフラ損傷・保険・PGSA活動が制約となる」と指摘した。IEA・IMF・世界銀行・WTOの4機関は夏場まで再開なければ世界経済に深刻リスクと共同警告を発出した。",
+      "sourceLabel": "CNBC",
+      "label": "🛢️ 原油",
+      "url": "https://www.cnbc.com/2026/05/29/oil-price-iran-deal-war-ceasefire-trump.html"
+    },
     {
       "title": "米・イランが60日MOU草案で暫定合意——ホルムズ機雷除去30日・「無制限」通航・核交渉開始・トランプ最終署名待ち",
       "body": "米・イランの交渉担当者が60日間の停戦延長MOU草案に合意（Axios独占スクープ→CBS・CNBC・CNN・Euronews等が確認）。ホルムズ海峡の機雷を30日以内に除去し「無制限」通航を回復、並行して核交渉・制裁緩和・資産凍結解除を協議する枠組み。ただしトランプは「まだ満足していない」として最終署名を保留、イランも公式には合意を確認していない。ベッセント財務長官「ウラン引渡しと海峡無制限開放が前提条件」と強調。ルビオとパキスタン外相イスハク・ダールが5/29ワシントンで会談し推進図る。",
@@ -129,6 +147,22 @@
   ],
   "osint": [
     {
+      "id": "osint-030",
+      "date": "2026年5月29日（現地）/ 2026年5月30日 JST",
+      "titleJa": "【Al Jazeera】ホルムズ92日目：トランプが封鎖解除・核ウラン発掘破壊を公開要求——情勢室協議で決定なし・イランは依然「合意なし」",
+      "titleEn": "Trump demands Hormuz reopening and uranium mine destruction — Situation Room meeting yields no deal; Iran says 'no agreement'",
+      "summary": "Al Jazeeraの5月29日ライブブログは「トランプが封鎖解除と核ウラン発掘破壊を公開要求・情勢室入りしたが2時間で決定なし」を詳報。イランの首席交渉官ガリバフが『対話ではなくミサイルで権利を取る』と強硬発言。Al Jazeeraはこれを「交渉決裂シグナルではなく、IRGC向け内部強硬演技」と分析し、両国の『公式強硬・非公式妥協』パターンが続いていると指摘する。米財務省のPGSA制裁追加についても、イラン側は「活動無妨害継続」と宣言しており実効性を疑問視する論調が目立つ。",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,168,132,0.08)",
+      "cardBorder": "rgba(0,168,132,0.4)",
+      "badgeColor": "#00a884",
+      "borderColor": "#00a884",
+      "textColor": "#6ee7d0",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/5/29/iran-war-live-tehran-trump-yet-to-comment-on-60-day-truce-extension-plan",
+      "isLatest": true
+    },
+    {
       "id": "osint-2026-0528",
       "titleJa": "【Al Jazeera】ライブブログ：米・イランが60日MOU草案で暫定合意——ホルムズ機雷除去30日・無制限通航・核交渉開始（トランプ署名待ち）・イランが「Arash-e Kamangir」でReaper撃墜・クウェートへ弾道ミサイル",
       "titleEn": "US and Iran reach MoU on 60-day truce, Trump's approval still pending — Iran uses new Arash-e Kamangir to down MQ-9, fires ballistic missile at Kuwait",
@@ -141,7 +175,7 @@
       "textColor": "#6ee7d0",
       "url": "https://www.aljazeera.com/news/liveblog/2026/5/28/iran-war-live-israel-orders-mass-forced-displacement-for-all-south-lebanon",
       "date": "2026/05/28",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-2026-0526",

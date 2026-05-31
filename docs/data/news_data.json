@@ -1,7 +1,27 @@
 {
-  "updated": "2026年5月30日 09:01 日本時間JST",
+  "updated": "2026年5月31日 09:00 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年5月30日（現地）/ 2026年5月31日 JST",
+      "title": "ヘグセス国防長官（Shangri-La）「封鎖は完全継続中——満足できる合意なければ戦争再開も十分可能」",
+      "body": "シンガポールのShangi-La国際防衛会議でヘグセス米国防長官が「ホルムズ封鎖は完全に継続中」と明言。各国との協議でもホルモズ問題が頻出し、「合意が得られなければ戦争再開も十分可能」と示唆。バンス副大統領は「very close・not there yet」としMOU署名に慎重姿勢。トランプは週末に署名せずゴルフへ。イランのガリバフ首席交渉官は「権利は対話ではなくミサイルで取る・合意の勝者は戦争翌日の準備ができた側」と強硬発言を継続。",
+      "sourceLabel": "CBS News",
+      "label": "外交・軍事",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年5月30日（現地）/ 2026年5月31日 JST",
+      "title": "イラン議会「ホルムズ管理法制化を決定——外国には決めさせない」統合軍も「全権管理宣言」",
+      "body": "イランのSalimi議員（議会presiding board）が「ホルムズ管理法案の法制化は最終決定、この計画は法律になる」と表明。「トランプらが開放を言っても、それを決めるのは我々だ」と強調。同日、イランの最高統合軍司令部Khatam al-Anbiyaも「全商船はIRGC海軍の指定ルートを通行し許可を得なければならない」と宣言し、外国軍艦の介入は標的にすると警告。MOUへの「無通行料条項は存在しない」とも主張し、トランプの要求との根本的な対立が浮き彫りに。",
+      "sourceLabel": "Middle East Monitor",
+      "label": "イラン・外交",
+      "url": "https://www.middleeastmonitor.com/20260530-irans-parliament-set-to-vote-on-hormuz-strait-management-bill/",
+      "isLatest": true
+    },
     {
       "id": "latest-001",
       "date": "2026年5月29日（米東部）/ 2026年5月30日 JST",
@@ -147,6 +167,21 @@
   ],
   "osint": [
     {
+      "id": "osint-001",
+      "titleJa": "【Al Jazeera】イラン、ホルムズ「全権管理」を宣言——議会法制化・IRGC許可制が米主張を直撃",
+      "titleEn": "Iran reasserts control over Hormuz Strait as deal with US remains elusive",
+      "country": "Qatar / Global",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(20,80,40,0.18)",
+      "cardBorder": "rgba(74,222,128,0.25)",
+      "badgeColor": "rgba(74,222,128,0.18)",
+      "borderColor": "#4ade80",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/2026/5/30/iran-reasserts-control-over-hormuz-strait-as-deal-with-us-remains-elusive",
+      "date": "2026年5月30日（現地）/ 2026年5月31日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-030",
       "date": "2026年5月29日（現地）/ 2026年5月30日 JST",
       "titleJa": "【Al Jazeera】ホルムズ92日目：トランプが封鎖解除・核ウラン発掘破壊を公開要求——情勢室協議で決定なし・イランは依然「合意なし」",
@@ -160,7 +195,7 @@
       "borderColor": "#00a884",
       "textColor": "#6ee7d0",
       "url": "https://www.aljazeera.com/news/liveblog/2026/5/29/iran-war-live-tehran-trump-yet-to-comment-on-60-day-truce-extension-plan",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-2026-0528",

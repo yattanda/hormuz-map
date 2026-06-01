@@ -1,7 +1,35 @@
 {
-  "updated": "2026年5月31日 09:00 日本時間JST",
+  "updated": "2026年6月1日 07:18 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月1日",
+      "title": "IRGC Navy「過去24時間で33隻が許可を得てホルムズ通過」——PGSA通航料制度が事実上の新常態として運用継続",
+      "body": "IRGC Navy（イラン革命防衛隊海軍）がSunday（6/1 JST）に「過去24時間で33隻の船舶がイランの許可を得てホルムズ海峡を通過した」と発表（ファルス通信）。PGSA（ペルシャ湾海峡局）通航料制度（$1/バレル相当）が事実上の新常態として運用継続。戦前の通航量は日130隻程度で、30～50%回復シナリオが現実路線となりつつある。240隻が次の許可待機中。",
+      "sourceLabel": "IRGC Navy / Farsi",
+      "label": "⚓ 通航",
+      "url": "https://en.farsnews.ir",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年5月31日（発表日）/ 2026年6月1日 JST（報道日）",
+      "title": "イラン「海峡管理は継続・トランプ要求は契約テキストと矛盾」",
+      "body": "イラン外務省がファルス通信を通じて「海峡管理は継続する。トランプが金曜に新たに求めた『無通行料・機雷除去・核放棄』の要求は、すでに合意されたテキストと矛盾している」と反発。MOU署名に向けた障壁が構造的に固定化しつつあることを示すもの。バンスは「TBD（未定）」として署名を保留。",
+      "sourceLabel": "Iran Foreign Ministry",
+      "label": "🕊️ 外交",
+      "url": "https://en.farsnews.ir",
+      "isLatest": true
+    },
+    {
+      "date": "2026年6月1日（JST記事更新）",
+      "title": "CNN「トランプ未だ承認せず・バンス『TBD』——MOU署名膠着継続」",
+      "body": "CNNライブブログによると、トランプは情勢室協議（5/29 ET）でMOU署名を承認せず、バンス副大統領も「TBD——いくつかの語句が依然未合意」と語った。トランプは土曜日もMOU承認の発表なし。月曜（6/2）の市場再開前に署名の見通しは立っていない。",
+      "sourceLabel": "CNN",
+      "label": "🕊️ 外交",
+      "url": "https://edition.cnn.com/2026/05/29/world/live-news/iran-trump-war-news"
+    },
     {
       "id": "latest-001",
       "date": "2026年5月30日（現地）/ 2026年5月31日 JST",
@@ -10,7 +38,7 @@
       "sourceLabel": "CBS News",
       "label": "外交・軍事",
       "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002",
@@ -20,7 +48,7 @@
       "sourceLabel": "Middle East Monitor",
       "label": "イラン・外交",
       "url": "https://www.middleeastmonitor.com/20260530-irans-parliament-set-to-vote-on-hormuz-strait-management-bill/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-001",
@@ -168,8 +196,8 @@
   "osint": [
     {
       "id": "osint-001",
-      "titleJa": "【Al Jazeera】イラン、ホルムズ「全権管理」を宣言——議会法制化・IRGC許可制が米主張を直撃",
-      "titleEn": "Iran reasserts control over Hormuz Strait as deal with US remains elusive",
+      "titleJa": "【Al Jazeera】ホルムズ94日目：IRGC Navy「33隻許可通航」——PGSA新常態化・MOU膠着・月曜市場が分岐点",
+      "titleEn": "IRGC Navy says 33 ships authorized to cross Hormuz in 24 hours — PGSA toll system becoming new norm as MOU deal stalls",
       "country": "Qatar / Global",
       "media": "Al Jazeera",
       "cardBg": "rgba(20,80,40,0.18)",
@@ -178,7 +206,7 @@
       "borderColor": "#4ade80",
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/2026/5/30/iran-reasserts-control-over-hormuz-strait-as-deal-with-us-remains-elusive",
-      "date": "2026年5月30日（現地）/ 2026年5月31日 JST",
+      "date": "2026年6月1日（Sunday）/ 2026年6月1日 JST",
       "isLatest": true
     },
     {

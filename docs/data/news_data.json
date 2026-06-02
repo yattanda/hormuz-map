@@ -1,7 +1,37 @@
 {
-  "updated": "2026年6月2日 09:29 日本時間JST",
+  "updated": "2026年6月3日 08:30 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001-0603",
+      "date": "2026年6月2日 / 2026年6月2日 15:00 JST",
+      "title": "バンス副大統領「not there yet（まだそこに達していない）」——米・イラン交渉は「急速ペース」で継続",
+      "body": "バンス米副大統領がCBS Newsのインタビューで「very close but not there yet」と発言し、予定されていた6/2のMOU署名が実現しなかったことを確認。Trump大統領はTruth Socialで「交渉は急速なペースで継続中」と投稿し、楽観的な姿勢を維持。イラン「米国の矛盾した立場」を理由に対話一時停止を表明（6/1状態）。Araghchi外相は「対話継続」姿勢を維持している。",
+      "sourceLabel": "CBS News",
+      "label": "🕊️ 外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002-0603",
+      "date": "2026年6月2日 / 2026年6月2日 06:00 JST",
+      "title": "Trump Truth Social「Iran ceasefire deal continues at rapid pace（急速ペースで継続中）」——MOU署名延期も交渉は加速",
+      "body": "Trump大統領がTruth Socialに「ホルムズ合意交渉は急速なペースで進んでいる」と投稿。MOU署名が6/2に実現しなかった一方、交渉自体は継続中であることを示した。Fox Newsの報道によると、両陣営は「最後の語句」の調整を行っており、6月上旬中の最終決定を見込んでいる。",
+      "sourceLabel": "Fox News",
+      "label": "🕊️ 外交",
+      "url": "https://www.foxnews.com/live-news/trump-iran-war-israel-lebanon-hormuz-june-2",
+      "isLatest": true
+    },
+    {
+      "id": "latest-003-0603",
+      "date": "2026年6月2日 / 2026年6月2日 22:00 JST",
+      "title": "Trump「one way or another、イランは決断する時だ」——Time誌インタビューで署名延期を示唆しつつ圧力維持",
+      "body": "Trump大統領がTime誌のインタビューで「one way or another、イランは合意する必要がある」と発言。Netanyahu首相との通話でLebanon ceasefire継続を確認。MOU署名の具体的タイムラインには言及せず。「時間は問題ではなく、正しい合意が問題だ」と述べ、署名延期を事実上認めつつも交渉への圧力を維持した。",
+      "sourceLabel": "Time",
+      "label": "🕊️ 外交",
+      "url": "https://time.com/article/2026/06/02/trump-netanyahu-crazy-lebanon-hezbollah-ceasefire-iran-us-peace-deal/",
+      "isLatest": true
+    },
     {
       "id": "latest-001",
       "date": "2026年6月1日（発表）/ 2026年6月2日 JST",
@@ -10,7 +40,7 @@
       "sourceLabel": "Al Jazeera / CBS News",
       "label": "🕊️ 外交",
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/1/iran-war-live-israels-expanding-invasion-of-lebanon-draws-global-alarm",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002",
@@ -20,7 +50,7 @@
       "sourceLabel": "CBS News / Defense Department",
       "label": "外交・軍事",
       "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-001-prev",

@@ -1,26 +1,46 @@
 {
-  "updated": "2026年6月1日 07:18 日本時間JST",
+  "updated": "2026年6月2日 09:29 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
       "id": "latest-001",
+      "date": "2026年6月1日（発表）/ 2026年6月2日 JST",
+      "title": "Trump「Lebanon Netanyahu・Hezbollah双方停止合意」発表——Iran IRGC「6/2湾岸基地報復」実施・Araghchi「dialogue ongoing」",
+      "body": "Trump大統領が6/1（JST）に「NethanyahuとHezbollahの双方が攻撃停止に合意した」と発表。Lebanon前線でのIsrael軍advance（Litani River超越）は継続しているが、攻撃停止の政治的合意が成立。同日、Iran IRGC は湾岸基地への報復攻撃を実施（6/2 JST確認）。Iran外務省Araghchi は「dialogue ongoing（対話継続中）」と発言。MOU署名は「署名前夜」段階（White House leak・Hegseth「deal very close」）。",
+      "sourceLabel": "Al Jazeera / CBS News",
+      "label": "🕊️ 外交",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/1/iran-war-live-israels-expanding-invasion-of-lebanon-draws-global-alarm",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月1日（現地）/ 2026年6月2日 JST",
+      "title": "Hegseth国防長官「Blockade still in place・Deal very close（合意非常に近い）」——Trump「odds gone up」",
+      "body": "Hegseth米国防長官がSingapore/DC発言（6/1-2）で「封鎖は完全継続中（still very much in place）」と明言しつつ「deal very close（合意非常に近い）」とも言及。Trump大統領は「50/50」から「odds gone up（確率が上がった）」に発言を変化させ、MOU署名前夜の雰囲気が高まっている。White House からの情報漏洩でもMOU最終条件は「ほぼ合意済み」との情報。本日（6/2）中の最終判断が予定されている。",
+      "sourceLabel": "CBS News / Defense Department",
+      "label": "外交・軍事",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-001-prev",
       "date": "2026年6月1日",
       "title": "IRGC Navy「過去24時間で33隻が許可を得てホルムズ通過」——PGSA通航料制度が事実上の新常態として運用継続",
       "body": "IRGC Navy（イラン革命防衛隊海軍）がSunday（6/1 JST）に「過去24時間で33隻の船舶がイランの許可を得てホルムズ海峡を通過した」と発表（ファルス通信）。PGSA（ペルシャ湾海峡局）通航料制度（$1/バレル相当）が事実上の新常態として運用継続。戦前の通航量は日130隻程度で、30～50%回復シナリオが現実路線となりつつある。240隻が次の許可待機中。",
       "sourceLabel": "IRGC Navy / Farsi",
       "label": "⚓ 通航",
       "url": "https://en.farsnews.ir",
-      "isLatest": true
+      "isLatest": false
     },
     {
-      "id": "latest-002",
+      "id": "latest-002-prev",
       "date": "2026年5月31日（発表日）/ 2026年6月1日 JST（報道日）",
       "title": "イラン「海峡管理は継続・トランプ要求は契約テキストと矛盾」",
       "body": "イラン外務省がファルス通信を通じて「海峡管理は継続する。トランプが金曜に新たに求めた『無通行料・機雷除去・核放棄』の要求は、すでに合意されたテキストと矛盾している」と反発。MOU署名に向けた障壁が構造的に固定化しつつあることを示すもの。バンスは「TBD（未定）」として署名を保留。",
       "sourceLabel": "Iran Foreign Ministry",
       "label": "🕊️ 外交",
       "url": "https://en.farsnews.ir",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "date": "2026年6月1日（JST記事更新）",
@@ -195,6 +215,21 @@
   ],
   "osint": [
     {
+      "id": "osint-002",
+      "titleJa": "【Al Jazeera】ホルムズ96日目：Lebanon ceasefire合意・MOU署名前夜——IRGC報復実施・oil Brent -15%月間・Trump本日最終判断",
+      "titleEn": "Iran war live: Trump says he spoke to Netanyahu, Hezbollah — deal close as US, Iran trade new attacks",
+      "country": "Qatar / Global",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(20,80,40,0.18)",
+      "cardBorder": "rgba(74,222,128,0.25)",
+      "badgeColor": "rgba(74,222,128,0.18)",
+      "borderColor": "#4ade80",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/1/iran-war-live-israels-expanding-invasion-of-lebanon-draws-global-alarm",
+      "date": "2026年6月1日（published）/ 2026年6月2日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-001",
       "titleJa": "【Al Jazeera】ホルムズ94日目：IRGC Navy「33隻許可通航」——PGSA新常態化・MOU膠着・月曜市場が分岐点",
       "titleEn": "IRGC Navy says 33 ships authorized to cross Hormuz in 24 hours — PGSA toll system becoming new norm as MOU deal stalls",
@@ -207,7 +242,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/2026/5/30/iran-reasserts-control-over-hormuz-strait-as-deal-with-us-remains-elusive",
       "date": "2026年6月1日（Sunday）/ 2026年6月1日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-030",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026年6月3日 08:30 日本時間JST",
+  "updated": "2026年6月4日 10:57 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
@@ -10,7 +10,7 @@
       "sourceLabel": "CBS News",
       "label": "🕊️ 外交",
       "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002-0603",
@@ -20,7 +20,7 @@
       "sourceLabel": "Fox News",
       "label": "🕊️ 外交",
       "url": "https://www.foxnews.com/live-news/trump-iran-war-israel-lebanon-hormuz-june-2",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-003-0603",
@@ -30,7 +30,7 @@
       "sourceLabel": "Time",
       "label": "🕊️ 外交",
       "url": "https://time.com/article/2026/06/02/trump-netanyahu-crazy-lebanon-hezbollah-ceasefire-iran-us-peace-deal/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-001",
@@ -245,6 +245,51 @@
   ],
   "osint": [
     {
+      "id": "osint-2026-0604-a",
+      "titleJa": "【Tribune India / ANI】トランプ「ホルムズ交渉very well進行中・週末署名可能」White House発表",
+      "date": "2026年6月4日（JST）",
+      "country": "Global",
+      "media": "Tribune India / ANI",
+      "cardBg": "rgba(20,80,40,0.18)",
+      "cardBorder": "rgba(74,222,128,0.25)",
+      "badgeColor": "rgba(74,222,128,0.18)",
+      "borderColor": "#4ade80",
+      "textColor": "#86efac",
+      "url": "https://www.tribuneindia.com/news/enriched-uranium-dispute/strait-of-hormuz-to-reopen-immediately-upon-signing-mou-with-iran-negotiations-going-very-well-trump",
+      "summary": "トランプ大統領が米イラン交渉は「very well進んでいる」と発表。MOU署名が週末中に実現する可能性を示唆。濃縮ウランの取得・破棄が焦点。（White House直接発言・複数メディア確認）",
+      "isLatest": true
+    },
+    {
+      "id": "osint-2026-0603-b",
+      "titleJa": "【Fortune / Trading Economics】Brent原油 $101.36/bbl — deal観測で高止まり（6月3日8:45 AM ET）",
+      "date": "2026年6月3日（ET）/ 2026年6月4日（JST）",
+      "country": "Global",
+      "media": "Fortune / Trading Economics",
+      "cardBg": "rgba(20,40,80,0.18)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "rgba(56,189,248,0.18)",
+      "borderColor": "#38bdf8",
+      "textColor": "#93c5fd",
+      "url": "https://fortune.com/article/price-of-oil-06-03-2026/",
+      "summary": "ブレント原油が$101.36/bblで取引。前日比+$4.71。MOU署名観測で買い支えられるも、濃縮ウラン要求による膠着懸念で上値制限。",
+      "isLatest": false
+    },
+    {
+      "id": "osint-2026-0602-c",
+      "titleJa": "【CNN / Gulf News】Mike Wirth（Chevron CEO）「ホルムズ再開後も正常化に時間要す」",
+      "date": "2026年6月2日 / 2026年6月2日 JST",
+      "country": "Global",
+      "media": "CNN / Gulf News",
+      "cardBg": "rgba(20,40,80,0.18)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "rgba(56,189,248,0.18)",
+      "borderColor": "#38bdf8",
+      "textColor": "#93c5fd",
+      "url": "https://gulfnews.com/amp/story/world/mena/three-months-of-paralysis-strait-of-hormuz-remains-a-ghost-route-1.500560668",
+      "summary": "Chevron最高経営責任者が、ホルムズ再開後も船舶運用者の信頼回復に時間を要すると指摘。6月末までの部分復旧でも、フル正常化は7月以降の見通し。",
+      "isLatest": false
+    },
+    {
       "id": "osint-002",
       "titleJa": "【Al Jazeera】ホルムズ96日目：Lebanon ceasefire合意・MOU署名前夜——IRGC報復実施・oil Brent -15%月間・Trump本日最終判断",
       "titleEn": "Iran war live: Trump says he spoke to Netanyahu, Hezbollah — deal close as US, Iran trade new attacks",
@@ -257,7 +302,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/1/iran-war-live-israels-expanding-invasion-of-lebanon-draws-global-alarm",
       "date": "2026年6月1日（published）/ 2026年6月2日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001",

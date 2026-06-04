@@ -1,6 +1,7 @@
 # index_html_diffs.md — 2026年6月4日 10:57 JST 更新分
 
-> Claude Code への指示：以下の差分を docs/index.html に適用してください。
+> Claude Code への指示：以下
+> の差分を docs/index.html に適用してください。
 > 変更箇所以外は絶対に触らないこと。
 > 作業後に `git commit`（メッセージ: `docs: 2026年6月4日 10:57 JST 更新 — Trump「週末署名可能」・交渉加速継続・ブレント$101水準`）してください。
 > **push は確認後に指示します。**

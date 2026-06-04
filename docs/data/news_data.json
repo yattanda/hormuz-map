@@ -1,7 +1,37 @@
 {
-  "updated": "2026年6月4日 10:57 日本時間JST",
+  "updated": "2026年6月5日 07:32 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月5日 07:32 JST",
+      "title": "MOU署名延期継続——Trump「週末署名可能」未達成・米イラン間で根本合意見えず",
+      "body": "2026年6月5日未明、Trump政権は公式には「週末署名」を掲げるも、実際には濃縮ウラン処理・資産凍結解除で米イラン間の基本的立場の相違が埋まらず、署名の先送りが続いている。The Soufan Centerの分析によれば、米国は「核兵器非保有保証」を優先するが、イラン新最高指導部（モジュタバ・ハメネイ）は「核技術放棄せず」と強硬姿勢を維持。膠着の長期化が確実視される。",
+      "sourceLabel": "The Soufan Center / CBS News",
+      "label": "外交膠着",
+      "url": "https://thesoufancenter.org/intelbrief-2026-june-1/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月4日 JST",
+      "title": "Brent原油$104-105/bbl水準で高止まり——供給懸念・deal観測が相殺",
+      "body": "2026年6月4-5日のアジア市場でBrent原油は$104-105/bbl水準を維持。ホルムズ海峡完全閉鎖による供給逼迫が油価を下支えする一方で、MOU署名による膠着解除への期待が上値を制限している。EIA予想では2Q26のBrent平均$106/bblと、当面$100/bbl超での高止まりが継続見通し。",
+      "sourceLabel": "TradingEconomics / EIA",
+      "label": "市場",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+      "isLatest": false
+    },
+    {
+      "id": "latest-003",
+      "date": "2026年6月1日 JST",
+      "title": "イラン新最高指導部モジュタバ・ハメネイ——「核・ミサイル技術絶対放棄せず」強硬声明を継続",
+      "body": "イランの新最高指導部モジュタバ・ハメネイは6月1日の公開イベントで「イスラム共和国の核・ミサイル技術は絶対に放棄しない」との強硬声明を改めて表明。これにより、Trump政権の核兵器非保有保証を「最優先条件」とする立場と根本的に対立。MOU署名後の60日間の本格交渉でも、核問題が最大の障壁となることが確実視される。",
+      "sourceLabel": "IRNA / Reuters",
+      "label": "核問題",
+      "url": "https://www.irna.ir/en/",
+      "isLatest": false
+    },
     {
       "id": "latest-001-0603",
       "date": "2026年6月2日 / 2026年6月2日 15:00 JST",
@@ -245,6 +275,21 @@
   ],
   "osint": [
     {
+      "id": "osint-001",
+      "date": "2026年6月5日 JST",
+      "titleJa": "【Iran News Agency】膠着継続——外交は「対話継続」表面上だが、根本的合意見えず",
+      "titleEn": "Iran News Agency: Diplomatic stalemate continues amid 'ongoing dialogue' rhetoric",
+      "country": "🇮🇷 イラン",
+      "media": "Iran News Agency (IRNA)",
+      "cardBg": "rgba(220, 38, 38, 0.15)",
+      "cardBorder": "border-left: 3px solid rgba(220, 38, 38, 0.6)",
+      "badgeColor": "#dc2626",
+      "borderColor": "#7f1d1d",
+      "textColor": "#fecaca",
+      "url": "https://www.irna.ir/en/",
+      "isLatest": true
+    },
+    {
       "id": "osint-2026-0604-a",
       "titleJa": "【Tribune India / ANI】トランプ「ホルムズ交渉very well進行中・週末署名可能」White House発表",
       "date": "2026年6月4日（JST）",
@@ -257,7 +302,7 @@
       "textColor": "#86efac",
       "url": "https://www.tribuneindia.com/news/enriched-uranium-dispute/strait-of-hormuz-to-reopen-immediately-upon-signing-mou-with-iran-negotiations-going-very-well-trump",
       "summary": "トランプ大統領が米イラン交渉は「very well進んでいる」と発表。MOU署名が週末中に実現する可能性を示唆。濃縮ウランの取得・破棄が焦点。（White House直接発言・複数メディア確認）",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-2026-0603-b",

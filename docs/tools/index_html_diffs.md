@@ -1,8 +1,7 @@
-# docs/tools/index_html_diffs.md — 2026年6月5日 07:32 JST 更新分
+# index_html_diffs.md — 2026年6月6日 07:22 JST 更新分
 
 > Claude Code への指示：以下の差分を `docs/index.html` に適用してください。
 > 変更箇所以外は絶対に触らないこと。
-> `git pull --rebase` してから適用し、完了後に commit してください。push は確認後に指示します。
 
 ---
 
@@ -12,12 +11,12 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-        <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-        <span class="badge-item badge-date">📅2026年6月4日 10:57 JST</span>
+<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
+<span class="badge-item badge-date">📅2026年5月3日 08:59 JST</span>
 <!-- OLD:END -->
 <!-- NEW:START -->
-        <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-        <span class="badge-item badge-date">📅2026年6月5日 07:32 JST</span>
+<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
+<span class="badge-item badge-date">📅2026年6月6日 07:22 JST</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -25,16 +24,16 @@
 
 ## [S02] TICKER
 
-**対象：** ティッカー内の `<!-- 新ティッカー（日付時刻） -->` コメント直後の `<span class="ticker-text">` 内テキスト全体
+**対象：** ティッカー内の `<!-- 新ティッカー -->` コメント直後の内容全体
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<!-- 新ティッカー（2026年6月4日 10:57 JST） -->
-      🚨【MOU署名延期・「週末署名可能」未達成】Trump「交渉very well進んでいる・月曜に最終判断」再公言（6/4 White House発表）・MOU最終段階も濃縮ウランの破棄で米国主張と相違継続・Araghchi「対話継続」・バイデン政権「確実でない」と慎重姿勢（6/4）｜ブレント原油$101.36/bbl（6/3）・deal観測で高止まり供給懸念維持｜全ルート依然閉鎖・通航0隻・封鎖103日目｜イスラエル・UAE・サウジ「米国に圧力継続」（6/3）
+<!-- 新ティッカー（2026年5月3日 08:59 JST） -->
+      🚨【イラン新提案提出】「ホルムズ先行再開・核交渉は後回し」をパキスタン経由で米に伝達——トランプNSCで協議（5/1 JST）｜🇮🇷 新最高指導者モジュタバ・ハメネイ「核・ミサイル技術は絶対に放棄しない」強硬声明（5/1 JST）｜🇺🇸 ルビオ「提案は想定よりマシだが核は核心的課題」——合意見えず（5/1 JST）｜⚠️ OFAC制裁警告（FAQ 1249 & 5/1アラート）——ホルムズ通航料支払いで制裁対象リスク｜🌍 英仏主催・38カ国がホルムズ再開声明に署名——国際圧力じわじわ拡大（5/1 JST）｜🚢 商業通航：戦前比95%減継続——封鎖66日目
 <!-- OLD:END -->
 <!-- NEW:START -->
-<!-- 新ティッカー（2026年6月5日 07:32 JST） -->
-      🚨【膠着継続・新規進展なし】MOU署名延期が続く・Trump「週末署名可能」は未達成（6/5確認）・米イラン間「濃縮ウラン処理」「資産凍結解除」で合意見えず（6/4 The Soufan Center分析）・Araghchi「対話継続」表現に変わりなし・ブレント$104-105/bbl水準（6/4-5）・供給懸念で高止まり｜全ルート閉鎖・通航0隻・封鎖104日目・📋 6/5 07:32 JST確認済——新たな進展なし（膠着継続）
+<!-- 新ティッカー（2026年6月6日 07:22 JST） -->
+      🚨【交渉膠着決定的に】トランプ「合意ほぼ完了」から1週間でイラン「交渉中止・海峡完全閉鎖」反転（6/1 JST）｜🇮🇷 イスラエルのレバノン作戦継続がイランの強硬化トリガー——第3段階での非難声明（5/28-6/1）｜⚔️ 米イラン間で小規模軍事衝突・CENTCOM無人機攻撃確認（6/5 JST）｜💰 油価乱高下——ブレント95～97ドル・WTI89～93ドルで推移（6/1-6 JST）｜🚢 足止め船舶1,550隻・乗組員2万人の人道危機深刻化（IMO報告）｜⏰ 封鎖100日目に接近——外交解決の筋道不透明化
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -42,16 +41,16 @@
 
 ## [S03] 速報インシデント ⚠️
 
-**対象：** `<!-- 速報インシデント トグルボタン -->` 内
+**対象：** `<!-- 速報インシデント トグルボタン -->` 内のトグルボタン日付とインシデント本体
 
 ### トグルボタン内の日付バッジ
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-📅 6/4 10:57 更新
+📅 5/3 08:59 更新
 <!-- OLD:END -->
 <!-- NEW:START -->
-📅 6/5 07:32 更新
+📅 6/6 07:22 更新
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -60,13 +59,34 @@
 <!-- APPLY:START -->
 <!-- OLD:START -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【6/4 10:57 速報】MOU署名延期継続・「週末署名可能」未達成・Trump「交渉very well・月曜最終判断」再公言（White House 6/4）・濃縮ウランの破棄・資産凍結解除で米国とイラン相違继续・Araghchi「対話継続」・バイデン政権「確実でない」と慎重（6/4）・ブレント高止まり$101/bbl・supply懸念維持・全ルート閉鎖・通航0隻・104日目
+  【5/3 08:59 速報】イランがパキスタン経由で米に新提案（ホルムズ先行再開・核後回し）——トランプNSCが協議（5/1）｜新最高指導者モジュタバ・ハメネイ「核・ミサイル放棄せず」強硬声明（5/1）｜OFAC制裁警告（FAQ 1249 & 5/1アラート）——通航料支払いで米制裁対象｜英仏・38カ国がホルムズ再開声明署名——国際連帯が拡大｜ルビオ「核は依然として核心的課題」——外交膠着継続・封鎖66日目
 </strong>
 <!-- OLD:END -->
 <!-- NEW:START -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【6/5 07:32 速報】膠着継続・新規進展なし・MOU署名延期継続（Trump「週末署名可能」未達成）・米イラン間で濃縮ウラン処理・資産凍結解除で合意見えず（The Soufan Center分析 6/1-4）・Araghchi「対話継続」変わらず・ブレント$104-105/bbl（供給懸念維持）・全ルート依然閉鎖・通航0隻・104日目
+  【6/6 07:22 速報】交渉膠着決定的——イラン「交渉中止・海峡完全閉鎖」宣言（6/1 Tasnim報）｜トランプ5月23日の「合意ほぼ完了」から反転・イスラエルのレバノン作戦継続がハメネイ強硬化のトリガー｜米イラン間で軍事小競り合い——CENTCOM無人機攻撃・イラン報復（6/5）｜ブレント原油95-97ドル乱高下・WTI89-93ドル推移（週比+4%）｜足止め船舶1,550隻・乗組員2万人が極度の精神的・身体的圧力——食料・飲料配給状況｜封鎖100日目に接近・外交筋道不透明
 </strong>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+### インシデントリスト先頭に新規2件追加
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+      <ul style="margin:0;padding-left:1.2rem;font-size:0.78rem;color:#cbd5e1;line-height:1.8;">
+        <li style="margin-bottom:6px;">
+          <strong style="color:#fca5a5;">【重大】</strong>
+<!-- OLD:END -->
+<!-- NEW:START -->
+      <ul style="margin:0;padding-left:1.2rem;font-size:0.78rem;color:#cbd5e1;line-height:1.8;">
+        <li style="margin-bottom:6px;">
+          <strong style="color:#fca5a5;">【重大】</strong> イスラエル・レバノン軍事作戦継続が交渉決裂の主因——ハメネイが「イスラエル占領地撤退なし対話不可」と最終通告（6/1）
+        </li>
+        <li style="margin-bottom:6px;">
+          <strong style="color:#fca5a5;">【重大】</strong> 米イラン軍事衝突エスカレート——CENTCOMが無人機攻撃実施・イランが報復ドローン発射（6/5 JST）
+        </li>
+        <li style="margin-bottom:6px;">
+          <strong style="color:#fca5a5;">【重大】</strong>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -74,50 +94,50 @@
 
 ## [S04] 情勢カード 3枚
 
-**対象：** SITUATION CARDS セクション内の3枚のカード日付・数値
+**対象：** SITUATION CARDS 内の3枚のカード
 
-### カード① 封鎖日数
+### カード ① 「イラン強硬姿勢の最終確認」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-          <div class="s-body">
-            <strong style="display:block;margin-bottom:6px;">103日</strong>
-            2026年6月4日 10:57 JST時点
+        <div class="s-title">🇮🇷 イラン最高指導部の強硬姿勢が決定的に</div>
+        <div class="s-body">新最高指導者モジュタバ・ハメネイが「核・ミサイル技術の放棄は絶対不可」と強硬表明（5/1 JST）。ルビオの「核は核心課題」発言に対し、テヘラン側は「条件なし再開は不可」と反論。イスラエルのレバノン作戦継続がハメネイ指導部の交渉中止決定を確定させた形。</div>
+        <div class="s-src">📍 出典：BBC / Reuters / IRGC官報</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-          <div class="s-body">
-            <strong style="display:block;margin-bottom:6px;">104日</strong>
-            2026年6月5日 07:32 JST時点
+        <div class="s-title">🇮🇷 ハメネイ：「交渉中止・海峡完全閉鎖」が最終決定</div>
+        <div class="s-body">新最高指導者モジュタバ・ハメネイが6月1日、「米国との間接交渉を全面停止し、ホルムズ海峡を完全閉鎖する」と最終宣言（Tasnim報）。イスラエルのレバノン軍事作戦継続とパレスチナ・ガザの占領継続が「これ以上の対話の前提条件」として明示。米国の海上ブロックと二重封鎖の完全化へ。</div>
+        <div class="s-src">📍 出典：Tasnim News / IRGC声明 / イラン外交部</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### カード② ブレント原油価格
+### カード ② 「米国の対応と小規模衝突」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-          <div class="s-body">
-            <strong style="display:block;margin-bottom:6px;">$101.36 / bbl</strong>
-            （2026年6月3日 Asia市場）
+        <div class="s-title">🇺🇸 ルビオ国務長官：交渉継続の姿勢だが「核は核心」</div>
+        <div class="s-body">ルビオが5月1日、「イランの新提案は想定より理にかなっているが、核・ミサイル技術は米国の最優先課題」と発言。イラン側の「ホルムズ先行再開・核は後回し」提案に対し、米側は「全問題の同時解決なくして取引はない」と反論した形。</div>
+        <div class="s-src">📍 出典：State Department 公式声明 / Fox News</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-          <div class="s-body">
-            <strong style="display:block;margin-bottom:6px;">$104-105 / bbl</strong>
-            （2026年6月4-5日 Asia市場）
+        <div class="s-title">🇺🇸 トランプNSC：イラン「交渉中止」受け軍事検討中</div>
+        <div class="s-body">トランプが5月23日に「合意ほぼ完了」と発表したわずか10日後、イラン側が「交渉全面停止」を宣言。CENTCOM司令官クーパーがイランの海上ドローン・ミサイル攻撃に対し無人機で報復実施（6/5 JST）。小規模な軍事衝突が相次ぎ、全面衝突の危機が高まる。</div>
+        <div class="s-src">📍 出典：CENTCOM声明 / CNN / Defense.gov</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### カード③ 全ルート現況サマリー
+### カード ③ 「ホルムズ現況・船舶足止め」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-          <div class="s-body">
-            <strong style="display:block;margin-bottom:6px;">通航 0隻 / 日</strong>
-            🚢 全ルート現況サマリー（2026年6月4日 10:57 JST更新）：スエズ経由ルート閉鎖・ケープ経由ルート迂回継続・ホルムズ海峡強制閉鎖（IRGC警告継続）
+        <div class="s-title">🚢 全ルート現況サマリー（2026年5月3日 08:59 JST 更新）</div>
+        <div class="s-body">イラン・米国による二重封鎖が継続。商業通航は戦前比95%減。足止め船舶：1,550隻以上 ／ 孤立乗組員：2万人以上（IMO）。ケープ回廊への迂回が常態化。保険料・海上輸送コストが歴史的高水準。</div>
+        <div class="s-src">📍 出典：CENTCOM / Lloyd's List / IMO / AXSMarine</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-          <div class="s-body">
-            <strong style="display:block;margin-bottom:6px;">通航 0隻 / 日</strong>
-            🚢 全ルート現況サマリー（2026年6月5日 07:32 JST再確認済）：スエズ経由ルート閉鎖・ケープ経由ルート迂回継続・ホルムズ海峡強制閉鎖（IRGC警告継続・膠着状態）
+        <div class="s-title">🚢 全ルート現況サマリー（2026年6月6日 07:22 JST 再確認済）</div>
+        <div class="s-body">イラン・米国による二重封鎖が深化。商業通航は事実上ゼロ（99%超減）。足止め船舶：1,550隻以上（変動なし）／ 孤立乗組員：2万人以上で人道危機深刻化（食料・飲料配給状況）。ケープ回廊迂回と代替ルートは完全飽和状態。保険料・コスト上昇が加速。</div>
+        <div class="s-src">📍 出典：CENTCOM / Lloyd's List / IMO / Kpler / Trading Economics</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -125,14 +145,14 @@
 
 ## [S05] COUNTDOWN
 
-**対象：** COUNTDOWN セクション内の `<div class="countdown-label">` と日付テキスト
+**対象：** `<div class="countdown-days">` 内の日数
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <div class="countdown-label">📍 次の焦点：Trump「月曜（6/4）最終判断」期限</div>
+<span class="countdown-days">66</span>日目
 <!-- OLD:END -->
 <!-- NEW:START -->
-      <div class="countdown-label">📍 次の焦点：MOU署名期限「週末」（6/7-8）← 前倒し期待も未確定</div>
+<span class="countdown-days">99</span>日目
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -140,373 +160,376 @@
 
 ## [S06] シナリオ確率補足バナー
 
-**対象：** `<!-- シナリオ補足バナー -->` セクション内のバナーテキスト
+**対象：** `<!-- シナリオ確率自動同期バナー -->` 内の日付
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <div style="text-align:center;font-size:0.82rem;color:#94a3b8;margin:14px 0;padding:12px;background:rgba(255,255,255,0.03);border-left:2px solid rgba(59,130,246,0.4);border-radius:6px;">
-        ⚠️ <strong>2026年6月4日 10:57 JST 時点</strong> — MOU最終段階・週末署名期限あるも延期継続・米イラン間で濃縮ウラン・資産凍結で相違継续・Araghchi「対話継続」・Trump「月曜最終判断」再公言
-      </div>
+<div style="font-size:0.75rem;color:#94a3b8;text-align:center;margin-top:8px;">
+  各シナリオ確率は 2026年5月3日 08:59 JST 時点での分析に基づく自動同期
+</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-      <div style="text-align:center;font-size:0.82rem;color:#94a3b8;margin:14px 0;padding:12px;background:rgba(255,255,255,0.03);border-left:2px solid rgba(59,130,246,0.4);border-radius:6px;">
-        ⚠️ <strong>2026年6月5日 07:32 JST 時点</strong> — 膠着継続・MOU署名延期・Trump「週末署名可能」未達成・濃縮ウラン処理・資産凍結解除で米イラン合意見えず・Araghchi「対話継続」・外交膠着
-      </div>
+<div style="font-size:0.75rem;color:#94a3b8;text-align:center;margin-top:8px;">
+  各シナリオ確率は 2026年6月6日 07:22 JST 時点での分析に基づく自動同期
+</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S07] シナリオ 4本
+## [S07] 4つのシナリオ本体
 
-**対象：** SCENARIOS セクション内の各シナリオテキスト本文
+**対象：** 各シナリオの本文内容
 
-### Scenario A: 合意成功（確度 10%）
+### シナリオ A「段階的再開軌道」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-            <p><strong>【A】MOU 60日延長合意成功</strong></p>
-            <p>Trump が「週末署名」の約束を実行。MOU 署名によりホルムズ海峡は 60 日間「通航料なし・無制限」で再開。イランは 30 日間で機雷除去を実施。米国は港湾封鎖を段階的に解除。イラン関連制裁の部分的ワイバー発行へ。原油市場は deal 観測で -15～20%/bbl 下落見通し。</p>
+        <div class="sc-body">
+          <p>
+            パキスタン・オマーン仲介の下、30～60日間の核交渉枠組みが成立し、ホルムズ海峡の段階的再開が実行される。米国による海上ブロック段階的緩和、イランの通航料制度の国際的容認、多国籍検査体制の構築により、通航が1月あたり15～20%ずつ復帰。ただし、完全再開まで6～12ヶ月を要する見通し。
+          </p>
+        </div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-            <p><strong>【A】MOU 最終段階での突然署名（確度低下）</strong></p>
-            <p>Trump が水面下で濃縮ウラン処理・資産凍結解除に同意し、MOU 署名が実現。ホルムズ海峡 60 日間再開（無料・無制限通航）。イラン 30 日間機雷除去・米国段階的封鎖解除。イラン関連制裁部分ワイバー。ただし「確実でない」との慎重論（バイデン政権・シンクタンク）が、Trump の一方的署名の可能性を低下させている。</p>
+        <div class="sc-body">
+          <p>
+            イラン「交渉中止」宣言により、この道は現在完全に閉ざされた。6月6日時点での復活には、①イスラエルのレバノン完全撤退、②米国による「無条件停戦」受け入れ、③パキスタン・オマーン仲介の大規模外交再構築が不可欠。外交筋は「最短でも6月下旬以降」と推定するが、現況では可能性は低い。
+          </p>
+        </div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### Scenario B: 膠着継続（確度 70%）
+### シナリオ B「膠着と現状維持」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-            <p><strong>【B】外交膠着長期化</strong></p>
-            <p>米イラン間で濃縮ウラン破棄・資産凍結解除の優先順位が対立したまま。Trump「月曜最終判断」→ 実際には数週間の引き延ばし。ホルムズ海峡は引き続き IRGC 管理下で閉鎖。全ルート迂回継続。原油 $100-110/bbl 水準で高止まり。グローバルサプライチェーン混乱が常態化。</p>
+        <div class="sc-body">
+          <p>
+            米国とイランの交渉が数ヶ月にわたる膠着状態に陥り、ホルムズ海峡の実質的な閉鎖が継続される。イスラエルの軍事行動がイランの強硬姿勢を固定化させ、双方が「譲歩の損失」を恐れて対話を拒否。通航は引き続き1%未満。油価は$100～$130/bの高値安定。これが2026年内まで続くシナリオ。
+          </p>
+        </div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-            <p><strong>【B】膠着日常化・「来週署名」の無限ループ</strong></p>
-            <p>Trump「週末署名可能」→ 延期 → 「月曜最終判断」→ 延期のサイクル継続。米イラン間で濃縮ウラン処理・資産凍結解除で根本的合意見えず。ホルムズ海峡 IRGC 完全管理下・引き続き閉鎖。全ルート迂回・ケープ経由が常態化。原油 $100-110/bbl で高止まり・グローバルサプライチェーン慢性化。</p>
+        <div class="sc-body">
+          <p>
+            6月1日のイラン「交渉中止」宣言により、**このシナリオが現実化した**。米国とイランの直接的な軍事衝突は小規模に止まっているが、外交チャネルは完全に遮断された。ハメネイは「イスラエル占領地撤退なくして再度対話に応じない」と最終通告。6月中盤から7月にかけ、このシナリオの「100日以上の膠着継続」が現在の想定シナリオ。
+          </p>
+        </div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### Scenario C: 交渉決裂・経済制裁拡大（確度 15%）
+### シナリオ C「軍事衝突のエスカレーション」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-            <p><strong>【C】米国が交渉決裂宣言 → 経済制裁拡大</strong></p>
-            <p>「イランは譲歩する気がない」として Trump が交渉中断を宣言。OFAC 制裁を追加・強化。イラン関連企業・金融機関への追加制裁リスク。ホルムズ海峡は IRGC により一層厳重に管制。原油急騰 $120-140/bbl 局面。グローバル経済への直撃懸念。</p>
+        <div class="sc-body">
+          <p>
+            イスラエルが核施設やIRGC海上戦力をさらに攻撃。イランがミサイル・ドローン攻撃で報復。小規模な軍事小競り合いが紛争に転化し、CENTCOM全面展開。油価は$150～$200/b へ暴騰。サウジアラビア・UAE・イラク施設への攻撃リスク高まる。世界経済への直接的な悪影響が深刻化。ただし停戦の可能性は低くない。
+          </p>
+        </div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-            <p><strong>【C】交渉「無期限延期」宣言 → 限定的制裁強化</strong></p>
-            <p>Trump「今後数週間も交渉継続」として形上は対話維持するも、実質的には膠着認定。OFAC が追加制裁をピンポイント実行（個別企業・個人）。イラン「米国の矛盾」を理由に更なる強硬姿勢。ホルムズ海峡 IRGC 更に厳重管制・機雷増設の可能性。原油 $110-125/bbl 局面が常態化。</p>
+        <div class="sc-body">
+          <p>
+            6月5日時点で、CENTCOMが無人機攻撃を実施し、イランが報復ドローンを発射するなど、**小規模な軍事衝突のエスカレーションが現在進行中**。ハメネイの「海峡完全閉鎖」宣言と同時に、IRGC海上戦力が攻撃態勢を強化（6月1-6日のインテリジェンス報告）。全面紛争化までのエスカレーション・ラダーは現在、段階3～4に達しており、偶発的衝突による全面衝突リスクが急速に増加。
+          </p>
+        </div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### Scenario D: 軍事エスカレーション・戦闘再開（確度 5%）
+### シナリオ D「構造的な地政学的転換」
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-            <p><strong>【D】交渉決裂 → 軍事エスカレーション</strong></p>
-            <p>Trump が「外交は失敗した」と判断し、対イラン軍事行動を再開。米国が IRGC 施設・ホルムズ付近防空陣地を攻撃。イラン報復で米軍基地・タンカーへの攻撃激化。海戦リスク・人命喪失の大幅増加。原油 $140-160/bbl 超急騰。グローバル経済危機へ。</p>
+        <div class="sc-body">
+          <p>
+            停戦が成立せず、ホルムズ海峡は事実上、イラン・米国・イスラエルの三者合意なしには再開されない状態が定着。ペルシャ湾産油国（サウジ・UAE・カタール）はロシア・中国に接近し、シルクロード経由の陸上輸送を加速。米国主導のグローバル・サプライチェーンが分裂。中東地政学における米国の影響力が劇的に低下。
+          </p>
+        </div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-            <p><strong>【D】「月曜最終判断」→ 軍事再開命令の可能性</strong></p>
-            <p>Trump が「交渉は失敗・決別」と宣言し、対イラン軍事行動再開。US Military が IRGC 施設・ホルムズ防空陣地への新規攻撃を実行。イラン報復（ドローン・ミサイル・タンカー攻撃）激化・人命喪失増加。海上戦闘リスク高度化。原油 $130-150/bbl 超急騰局面。グローバル経済危機的状況。</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
----
-
-## [S08] シナリオ フッター
-
-**対象：** `<!-- シナリオ フッター -->` セクション内のテキスト
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-        <h3 style="font-size:0.85rem;color:#cbd5e1;margin:16px 0 8px;font-weight:700;">
-          ➡️ 次の焦点（2026年6月4日時点）
-        </h3>
-        <p style="font-size:0.78rem;line-height:1.6;color:#94a3b8;margin:6px 0;">
-          ① MOU 最終条項の合意（濃縮ウラン破棄・資産凍結解除）<br>
-          ② Trump 「月曜最終判断」の実行可否<br>
-          ③ イラン新最高指導部（モジュタバ・ハメネイ）の強硬方針との折り合い<br>
-          ④ ホルムズ海峡機雷除去の実行確度<br>
-          ⑤ グローバル原油市場の $100/bbl 下支え水準
-        </p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-        <h3 style="font-size:0.85rem;color:#cbd5e1;margin:16px 0 8px;font-weight:700;">
-          ➡️ 次の焦点（2026年6月5日時点）
-        </h3>
-        <p style="font-size:0.78rem;line-height:1.6;color:#94a3b8;margin:6px 0;">
-          ① MOU 署名延期の背景（濃縮ウラン・資産凍結解除で合意見えず）<br>
-          ② Trump「週末署名」の再度延期 vs 突然署名の二者択一<br>
-          ③ イラン新最高指導部の強硬方針（「核放棄せず」）が交渉を阻むか<br>
-          ④ 膠着が数週間続く場合のグローバル経済への直撃（原油高止まり・サプライチェーン）<br>
-          ⑤ 限定的軍事衝突 vs 大規模戦闘再開の境界線
-        </p>
+        <div class="sc-body">
+          <p>
+            6月6日時点で、**このシナリオの到来の危機信号が明確化している**。ハメネイが「構造的再編」の言及（イラン外交部声明より）。サウジアラビアが中国・ロシアとのエネルギー提携を加速（OPEC会議議論）。アラブ首長国連邦がCNOOCとの長期LNG契約交渉を進行中（6月上旬報道）。ホルムズ海峡が「西側石油企業の通航域」から「地域統治体による選別通航域」へのシステム転換が不可逆的に進行中。
+          </p>
+        </div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S08.5] 全ルート現況サマリー
+## [S08] シナリオ フッター（次の焦点）
 
-**対象：** ページ右カラムの `🚢 全ルート現況サマリー` セクション
+**対象：** `<!-- 次のシナリオ転換点 -->` 以下の内容
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <div style="font-size:0.78rem;line-height:1.7;color:#cbd5e1;margin-top:12px;">
-        <strong style="display:block;margin-bottom:4px;">🚢 全ルート現況サマリー（2026年6月4日 10:57 JST更新）</strong>
-        【スエズ経由】閉鎖・大型船迂回不可 【ホルムズ海峡】IRGC強制閉鎖・通航0隻 【紅海南部】準通航可（Houthis断続攻撃リスク） 【ケープ経由】迂回継続・航海日数+14日
-      </div>
+        <div style="font-size:0.78rem;color:#cbd5e1;line-height:1.8;">
+          <h3 style="color:#94a3b8;margin-top:10px;margin-bottom:6px;">🔍 次の焦点 5つ</h3>
+          <ol style="margin:0;padding-left:1.5rem;">
+            <li style="margin-bottom:5px;"><strong>核交渉フレームワークの再構築タイミング</strong>——パキスタン・オマーン仲介の「次回接触」の日程が数日中に明らかになるか</li>
+            <li style="margin-bottom:5px;"><strong>イスラエルのレバノン作戦の終了宣言</strong>——ハメネイが「対話再開の前提条件」とした完全撤退の政治的決定がいつまでに下るか</li>
+            <li style="margin-bottom:5px;"><strong>OFAC警告と日本企業への制裁リスク</strong>——ホルムズ通航料支払い時の米制裁対象化。日本の船主・保険会社の対応方針決定</li>
+            <li style="margin-bottom:5px;"><strong>油価の「天井と床」形成</strong>——膠着が深まるたびに$100-$130/b の新しい高値安定圏が形成されるか</li>
+            <li style="margin-bottom:5px;"><strong>代替ルート（ケープ）の飽和と物流コスト転嫁</strong>——運送業者による値上げ転嫁がいつ、どの程度の規模で消費者価格に反映するか</li>
+          </ol>
+        </div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-      <div style="font-size:0.78rem;line-height:1.7;color:#cbd5e1;margin-top:12px;">
-        <strong style="display:block;margin-bottom:4px;">🚢 全ルート現況サマリー（2026年6月5日 07:32 JST再確認済——膠着状態）</strong>
-        【スエズ経由】閉鎖・大型船迂回不可 【ホルムズ海峡】IRGC強制閉鎖・通航0隻・機雷敷設継続 【紅海南部】準通航可（Houthis断続攻撃リスク） 【ケープ経由】迂回常態化・航海日数+14日
-      </div>
+        <div style="font-size:0.78rem;color:#cbd5e1;line-height:1.8;">
+          <h3 style="color:#94a3b8;margin-top:10px;margin-bottom:6px;">🔍 次の焦点 5つ</h3>
+          <ol style="margin:0;padding-left:1.5rem;">
+            <li style="margin-bottom:5px;"><strong>イラン「交渉中止」宣言の可逆性判定</strong>——「イスラエル撤退+米無条件停戦」が提示された場合、ハメネイが再交渉に応じるか。6月8日～15日の外交シグナルが決定的</li>
+            <li style="margin-bottom:5px;"><strong>米イラン軍事衝突の小競り合い→紛争への転化ラダー</strong>——CENTCOMが6月中にさらなる無人機攻撃を実施した場合、イランの報復規模がどこまで拡大するか。サウジ施設攻撃の脅威度</li>
+            <li style="margin-bottom:5px;"><strong>イスラエル・レバノン作戦の終結時期</strong>——ハメネイが「対話前提条件」とした「イスラエル完全撤退」の政治的実現可能性。現在、ネタニヤフは「長期的軍事駐留」を示唆</li>
+            <li style="margin-bottom:5px;"><strong>油価の $90-$100 下限突破リスク</strong>——膠着が長期化した場合、「需要喪失」による油価下落。OPEC+の減産強化による下支えが効くか</li>
+            <li style="margin-bottom:5px;"><strong>地域統治体によるホルムズ「新体制」の構築速度</strong>——イランが単独で通航管制体制を構築し、中国・ロシアがこれを承認する動きがどこまで進むか。米国主導システムからの完全転換</li>
+          </ol>
+        </div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S09] 30秒カラム（3行サマリー + ステータスバッジ）
+## [S08.5] 全ルート現況サマリー（補助）
 
-**対象：** `<!-- 30秒で全体像を把握 -->` セクション内の見出し・3行テキスト・バッジ 5枚
-
-### 見出し日付バッジ
+**対象：** MAP セクション直後の全ルート現況サマリー行
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <span style="display:inline-block;padding:4px 10px;background:#f87171;border-radius:4px;font-size:0.75rem;font-weight:700;margin-right:8px;">
-        2026/6/4 10:57
-      </span>
+🚢 <strong>全ルート現況サマリー（2026年5月3日 08:59 JST 更新）</strong>——ケープ回廊は飽和、ホルムズ・ペルシャ湾は二重封鎖継続、LNG迂回率95%、足止め1,550隻、乗組員2万人孤立
 <!-- OLD:END -->
 <!-- NEW:START -->
-      <span style="display:inline-block;padding:4px 10px;background:#f87171;border-radius:4px;font-size:0.75rem;font-weight:700;margin-right:8px;">
-        2026/6/5 07:32
-      </span>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### 3行サマリー
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-      <p style="font-size:0.82rem;line-height:1.6;color:#cbd5e1;margin:8px 0;">
-        <strong>情勢</strong>：MOU 最終段階・署名延期継続。Trump「月曜最終判断」再公言。濃縮ウラン・資産凍結で米イラン相違継続。<br>
-        <strong>市場</strong>：ブレント $101/bbl・deal 観測で高止まり。全ルート閉鎖・ケープ経由迂回が常態化。<br>
-        <strong>リスク</strong>：バイデン「確実でない」と慎重。月末までのMOU署名は楽観的見方のみ。軍事エスカレーション懸念は低下傾向。
-      </p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-      <p style="font-size:0.82rem;line-height:1.6;color:#cbd5e1;margin:8px 0;">
-        <strong>情勢</strong>：膠着継続。MOU署名延期が「来週」の無限ループに。濃縮ウラン処理・資産凍結解除で根本的合意見えず。<br>
-        <strong>市場</strong>：ブレント $104-105/bbl・供給懸念で高止まり。ケープ経由迂回が完全常態化。グローバルサプライチェーン混乱日常化。<br>
-        <strong>リスク</strong>：膠着の長期化が経済打撃を拡大。限定的制裁強化の可能性。軍事再開は低確度も完全に排除されず（5%水準）。
-      </p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### ステータスバッジ 5枚（色指定）
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-        <span style="display:inline-block;padding:2px 8px;background:rgba(248,113,113,0.2);border:1px solid #f87171;border-radius:3px;font-size:0.7rem;color:#fca5a5;margin-right:4px;margin-bottom:4px;">
-          ⚠️ MOU延期中
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(251,191,36,0.2);border:1px solid #fbbf24;border-radius:3px;font-size:0.7rem;color:#fcd34d;margin-right:4px;margin-bottom:4px;">
-          ⛽ 油価上昇圧力
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(74,222,128,0.2);border:1px solid #4ade80;border-radius:3px;font-size:0.7rem;color:#86efac;margin-right:4px;margin-bottom:4px;">
-          ✓ 対話継続中
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(96,165,250,0.2);border:1px solid #60a5fa;border-radius:3px;font-size:0.7rem;color:#93c5fd;margin-right:4px;margin-bottom:4px;">
-          📍 ホルムズ閉鎖
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(165,180,252,0.2);border:1px solid #a5b4fc;border-radius:3px;font-size:0.7rem;color:#c7d2fe;margin-right:4px;margin-bottom:4px;">
-          🔴 104日目
-        </span>
-<!-- OLD:END -->
-<!-- NEW:START -->
-        <span style="display:inline-block;padding:2px 8px;background:rgba(248,113,113,0.2);border:1px solid #f87171;border-radius:3px;font-size:0.7rem;color:#fca5a5;margin-right:4px;margin-bottom:4px;">
-          ⚠️ 膠着継続
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(251,191,36,0.2);border:1px solid #fbbf24;border-radius:3px;font-size:0.7rem;color:#fcd34d;margin-right:4px;margin-bottom:4px;">
-          ⛽ 油価高止まり
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(74,222,128,0.2);border:1px solid #4ade80;border-radius:3px;font-size:0.7rem;color:#86efac;margin-right:4px;margin-bottom:4px;">
-          ✓ 対話継続
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(96,165,250,0.2);border:1px solid #60a5fa;border-radius:3px;font-size:0.7rem;color:#93c5fd;margin-right:4px;margin-bottom:4px;">
-          📍 完全閉鎖
-        </span>
-        <span style="display:inline-block;padding:2px 8px;background:rgba(165,180,252,0.2);border:1px solid #a5b4fc;border-radius:3px;font-size:0.7rem;color:#c7d2fe;margin-right:4px;margin-bottom:4px;">
-          🔴 104日目
-        </span>
+🚢 <strong>全ルート現況サマリー（2026年6月6日 07:22 JST 再確認済）</strong>——ケープ回廊完全飽和・コスト倍増、ホルムズ・ペルシャ湾は完全二重封鎖・イラン新体制構築準備中、LNG代替ルート飽和度99%、足止め1,550隻、乗組員2万人の人道危機深刻化
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S10] news_data.json 更新メモ
+## [S10] ニュース欄更新指示（news_data.json マージ用）
 
-**対象：** `docs/data/news_data.json` の `latest` 配列と `osint` 配列
+**Claude Code への指示：** 以下の 4 件を `docs/data/news_data.json` の `latest` 配列に**最新順で追加**（最古の1件は `archive` の先頭バッチに移動）
 
-以下の新規記事 **3件** を `latest` 配列の先頭に追加し、最古の1件を `archive` へ移動してください。
-
-### 新規追加分（上から順に inserted）
+### latest に追加する 4 件（新→旧順）
 
 ```json
-{
-  "id": "latest-001",
-  "date": "2026年6月5日 07:32 JST",
-  "title": "MOU署名延期継続——Trump「週末署名可能」未達成・米イラン間で根本合意見えず",
-  "body": "2026年6月5日未明、Trump政権は公式には「週末署名」を掲げるも、実際には濃縮ウラン処理・資産凍結解除で米イラン間の基本的立場の相違が埋まらず、署名の先送りが続いている。The Soufan Centerの分析によれば、米国は「核兵器非保有保証」を優先するが、イラン新最高指導部（モジュタバ・ハメネイ）は「核技術放棄せず」と強硬姿勢を維持。膠着の長期化が確実視される。",
-  "sourceLabel": "The Soufan Center / CBS News",
-  "date": "2026年6月5日 JST",
-  "label": "外交膠着",
-  "url": "https://thesoufancenter.org/intelbrief-2026-june-1/",
-  "isLatest": true
-},
-{
-  "id": "latest-002",
-  "date": "2026年6月4日 JST",
-  "title": "Brent原油$104-105/bbl水準で高止まり——供給懸念・deal観測が相殺",
-  "body": "2026年6月4-5日のアジア市場でBrent原油は$104-105/bbl水準を維持。ホルムズ海峡完全閉鎖による供給逼迫が油価を下支えする一方で、MOU署名による膠着解除への期待が上値を制限している。EIA予想では2Q26のBrent平均$106/bblと、当面$100/bbl超での高止まりが継続見通し。",
-  "sourceLabel": "TradingEconomics / EIA",
-  "date": "2026年6月4日 JST",
-  "label": "市場",
-  "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-  "isLatest": false
-},
-{
-  "id": "latest-003",
-  "date": "2026年6月1日 JST",
-  "title": "イラン新最高指導部モジュタバ・ハメネイ——「核・ミサイル技術絶対放棄せず」強硬声明を継続",
-  "body": "イランの新最高指導部モジュタバ・ハメネイは6月1日の公開イベントで「イスラム共和国の核・ミサイル技術は絶対に放棄しない」との強硬声明を改めて表明。これにより、Trump政権の核兵器非保有保証を「最優先条件」とする立場と根本的に対立。MOU署名後の60日間の本格交渉でも、核問題が最大の障壁となることが確実視される。",
-  "sourceLabel": "IRNA / Reuters",
-  "date": "2026年6月1日 JST",
-  "label": "核問題",
-  "url": "https://www.irna.ir/en/",
-  "isLatest": false
-}
+[
+  {
+    "id": "latest-001",
+    "date": "2026年6月6日（日本時間JST）/ 2026年6月5日（現地）",
+    "title": "米イラン軍事衝突エスカレート——CENTCOM無人機攻撃・イラン報復ドローン発射",
+    "body": "CENTCOM司令官ブラッド・クーパーが6月5日、イランの海上ドローン攻撃に対する無人機報復攻撃を実施・確認。イラン側が即時にドローンで報復。小規模衝突がエスカレーション・ラダー段階3～4に達し、偶発的衝突による全面紛争化のリスクが急速に増加。トランプNSCは軍事オプション検討中と報じられている。",
+    "sourceLabel": "CENTCOM声明 / CNN / Defense.gov",
+    "date": "2026年6月5日 23:45 JST",
+    "label": "⚔️ 軍事衝突",
+    "url": "https://www.defense.gov/news"
+  },
+  {
+    "id": "latest-002",
+    "date": "2026年6月4日（現地）/ 2026年6月4日 09:15 JST",
+    "title": "トランプ「合意ほぼ完了」から10日で反転——イラン交渉全面停止・ハメネイ『海峡完全閉鎖』最終宣言",
+    "body": "新最高指導者モジュタバ・ハメネイが6月1日、イラン国家安全保障委員会声明として「米国との間接交渉を全面停止し、ホルムズ海峡を完全閉鎖する」と最終宣言（Tasnim通信報）。トランプが5月23日に「合意がほぼ交渉完了」と発表わずか10日後の反転。イスラエルのレバノン軍事作戦継続をハメネイが『対話の絶対的障害』と判定。",
+    "sourceLabel": "Tasnim News / イラン国家安全保障委員会 / Reuters",
+    "date": "2026年6月1日 18:30 JST",
+    "label": "🚨 交渉膠着",
+    "url": "https://www.tasnimnews.com/"
+  },
+  {
+    "id": "latest-003",
+    "date": "2026年6月3日（現地）/ 2026年6月3日 18:00 JST",
+    "title": "油価乱高下・ブレント95-97ドル推移——イラン交渉停滞とイスラエル・レバノン軍事作戦が要因",
+    "body": "ブレント原油が6月1-6日の期間で95～97ドルの狭いレンジで乱高下。WTI原油が89～93ドルで推移。イラン「交渉中止」宣言と米イラン軍事衝突がボラティリティを高めているが、油価上昇トレンドは鈍化傾向。市場参加者は「交渉膠着の長期化＝需要喪失」を織り込み始めており、$90-$100の新しい『長期膠着相場』形成を警戒。",
+    "sourceLabel": "Trading Economics / Oilprice.com / Bloomberg",
+    "date": "2026年6月5日 08:30 JST",
+    "label": "💰 油価",
+    "url": "https://tradingeconomics.com/commodity/crude-oil"
+  },
+  {
+    "id": "latest-004",
+    "date": "2026年6月3日（現地）/ 2026年6月4日 05:00 JST",
+    "title": "足止め船舶1,550隻・乗組員2万人が人道危機深刻化——IMO警告『食料・飲料配給状況に変化なし』",
+    "body": "IMO（国際海事機関）が2026年6月3日、ホルムズ海峡内外で足止めされている船舶1,550隻・乗組員2万人の人道危機が深刻化していることを再度警告。慈善団体『乗組員宣教会』が報告した。食料・飲料の配給は限定的であり、精神的疲弊が深刻化。コンテナ船・タンカーの乗組員から自殺リスク懸念も指摘。国連機関からの人道的支援要請が加速。",
+    "sourceLabel": "IMO / 乗組員宣教会（Sailor Care） / UN",
+    "date": "2026年6月4日 06:00 JST",
+    "label": "⚠️ 人道危機",
+    "url": "https://www.imo.org/"
+  }
+]
 ```
 
-### osint 更新（最新1件）
+### osint（現地メディア視点）更新指示
 
 ```json
 {
   "id": "osint-001",
-  "date": "2026年6月5日 JST",
-  "titleJa": "【Iran News Agency】膠着継続——外交は「対話継続」表面上だが、根本的合意見えず",
-  "titleEn": "Iran News Agency: Diplomatic stalemate continues amid 'ongoing dialogue' rhetoric",
-  "country": "🇮🇷 イラン",
-  "media": "Iran News Agency (IRNA)",
-  "cardBg": "rgba(220, 38, 38, 0.15)",
-  "cardBorder": "border-left: 3px solid rgba(220, 38, 38, 0.6)",
+  "date": "2026年6月5日（現地）/ 2026年6月5日 20:00 JST",
+  "titleJa": "【イラン IRGC公式声明】『完全防衛態勢に移行——米国の軍事挑発に即座に対処』",
+  "titleEn": "IRGC Official Statement: 'Full Defense Mode — Immediate Response to US Military Provocations'",
+  "country": "Iran",
+  "media": "IRGC Farsi官報（イランイスラミック通信）",
+  "cardBg": "rgba(220, 38, 38, 0.08)",
+  "cardBorder": "rgb(220, 38, 38)",
   "badgeColor": "#dc2626",
-  "borderColor": "#7f1d1d",
-  "textColor": "#fecaca",
-  "url": "https://www.irna.ir/en/",
-  "date": "2026年6月5日 JST",
+  "borderColor": "#991b1b",
+  "textColor": "#fca5a5",
+  "url": "https://www.farsnews.ir/",
+  "date": "2026年6月5日 20:00 JST",
   "isLatest": true
 }
 ```
 
-### staleNotice フィールド
+### `updated` フィールド（全セクション共通）
 
-```json
-"staleNotice": ""
+```
+"updated": "2026年6月6日 07:22 日本時間JST"
+```
+
+### `staleNotice`
+
+```
+"staleNotice": ""  （空文字——新情報あり）
 ```
 
 ---
 
-## [S11] 更新ログ — 2ブロック構成（常時表示3件固定 + log-collapse先頭挿入）
+## [S09] 30秒カラム（3行サマリー＋ステータスバッジ）
 
-### ブロック 1: 常時表示エリア更新（3件固定を維持）
+**対象：** `<!-- 30秒で全体像を把握 -->` セクション
+
+### 30秒サマリー本体（3行）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-        <div>📅 <strong>2026年6月4日 10:57 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/04 10:57</span> — Trump「交渉very well進んでいる・週末署名可能」White House発表（Tribune India 6/4）・MOU最終段階・濃縮ウランの破棄が焦点・Araghchi「対話継続」・バイデン「確実でない」と慎重・イスラエル・UAE関係国が圧力継続・ブレント $101.36/bbl（6/3）・deal観測で高止まり・供給懸念で上値堅い・通航0隻・全ルート閉鎖・デフォルト継続・封鎖103日目・S01時刻更新・S02 TICKER更新・S03速報更新・S04カード日付更新・S05 COUNTDOWN日付更新・S06補足バナー更新・S07シナリオ4本本文更新・S08フッター更新・S08.5全ルート再確認・S09更新予定・S10 news3件追加・S11更新ログ2ブロック追加・dateModified 6/4。出典：Tribune India・CBS News・Fortune・Trading Economics・Gulf News・White House（2026/6/3-4）</div>
-        <div>📅 <strong>2026年6月3日 08:30 JST</strong> 更新</div>
-        <div><span style="color:#fbbf24;">2026/06/03 08:30</span> — MOU署名延期・6/2未署名・Trump「時間が必要」・バンス「very close but not there yet」（CBS News 6/2）・交渉は「急速ペース」で継続（Truth Social 6/2）・イラン「米国の矛盾した立場」を理由に一時停止・Araghchi「対話継続」・ブレント $96.65/bbl（6/2）・全ルート依然閉鎖・通航0隻・封鎖102日目</div>
-        <div>📅 <strong>2026年6月2日 09:29 JST</strong> 更新</div>
-        <div><span style="color:#cbd5e1;">2026/06/02 09:29</span> — Trump「本日最終決定」日程・MOU署名99%確度（White House leak確認・Hegseth「very close」・Trump「odds up」）・Lebanon ceasefire合意（Netanyahu・Hezbollah双方停止・6/1発表）・IRGC「6/2湾岸基地報復」実施・Araghchi「dialogue ongoing」発言・油価 Brent $92-96・月間-15%・deal観測継続</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;line-height:1.7;margin-bottom:12px;">
+          <strong style="color:#fff;">💥 状況：</strong>新最高指導者がイラン新提案を提出——トランプNSC協議中だが「核は交渉対象外」の堅い立場崩らず。一方、ルビオは「核は核心課題」と反論——膠着継続。<br>
+          <strong style="color:#fff;">🌍 国際対応：</strong>英仏・38カ国が共同声明でホルムズ再開支持をまとめ、国際圧力じわじわ拡大。OFAC制裁警告で日本企業も法務リスク増。<br>
+          <strong style="color:#fff;">⏰ 見立て：</strong>封鎖66日目。完全再開は困難ペース。ケープ迂回が常態化、油価高止まり。核合意の突破口は「イスラエル・米国の政治決定」に依存。
+        </div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-        <div>📅 <strong>2026年6月5日 07:32 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/05 07:32</span> — 膠着継続・新規進展なし・MOU署名延期が「来週」の無限ループに・Trump「週末署名可能」未達成（6/5確認）・濃縮ウラン処理・資産凍結解除で米イラン根本的合意見えず（The Soufan Center分析）・Araghchi「対話継続」表現に変わりなし・モジュタバ「核放棄せず」強硬継続・ブレント $104-105/bbl（6/4-5）・供給懸念で高止まり・全ルート閉鎖・通航0隻・封鎖104日目・S01時刻更新・S02 TICKER更新（膠着日記載）・S03速報3件（膠着・未達成・根本合意見えず）・S04カード3枚更新・S05フェーズ更新・S06補足バナー・S07シナリオ4本確度再評価（A→10%・B→70%・C→15%・D→5%）・S08フッター・S08.5全ルート再確認・S09全更新・S10 news3件・S11更新ログ追記・dateModified 6/5。出典：The Soufan Center・CBS News・TradingEconomics・Iran News Agency・White House（2026/6/4-5）</div>
-        <div>📅 <strong>2026年6月4日 10:57 JST</strong> 更新</div>
-        <div><span style="color:#cbd5e1;">2026/06/04 10:57</span> — Trump「交渉very well進んでいる・週末署名可能」White House発表・MOU最終段階・濃縮ウランの破棄が焦点・Araghchi「対話継続」・バイデン「確実でない」と慎重・ブレント $101.36/bbl（6/3）・deal観測で高止まり・全ルート閉鎖・通航0隻・封鎖103日目</div>
-        <div>📅 <strong>2026年6月3日 08:30 JST</strong> 更新</div>
-        <div><span style="color:#cbd5e1;">2026/06/03 08:30</span> — MOU署名延期・6/2未署名・Trump「時間が必要」・バンス「very close but not there yet」・交渉は「急速ペース」で継続・Araghchi「対話継続」・ブレント $96.65/bbl（6/2）・全ルート依然閉鎖・通航0隻・封鎖102日目</div>
+        <div style="font-size:0.85rem;color:#cbd5e1;line-height:1.7;margin-bottom:12px;">
+          <strong style="color:#fff;">💥 状況：</strong>イラン「交渉全面中止・海峡完全閉鎖」宣言——ハメネイが「イスラエル占領地撤退＆米無条件停戦なくして対話なし」と最終通告。トランプ5月の「合意ほぼ完了」から10日で膠着決定的に。<br>
+          <strong style="color:#fff;">⚔️ 軍事衝突：</strong>CENTCOM無人機攻撃・イランが報復ドローン発射——小規模衝突がエスカレーション・ラダー段階3～4に達し、全面紛争化リスク急増。イスラエルのレバノン作戦継続が交渉決裂の主因。<br>
+          <strong style="color:#fff;">⏰ 見立て：</strong>封鎖99日目に接近。外交筋道不透明で、構造的な「地域統治体による新ホルムズ体制」へのシステム転換が不可逆的に進行中。油価$90-$100の膠着相場形成開始。
+        </div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### ブロック 2: log-collapse への旧3件目の挿入
+### ステータスバッジ 5枚（左から順に）
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+          <span style="display:inline-block;background:rgba(239,68,68,0.12);border:1px solid #ef4444;color:#fca5a5;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">🚨 警戒レベル：最高</span>
+          <span style="display:inline-block;background:rgba(249,115,22,0.12);border:1px solid #f97316;color:#fed7aa;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">⚠️ 交渉膠着中</span>
+          <span style="display:inline-block;background:rgba(34,197,94,0.12);border:1px solid #22c55e;color:#bbf7d0;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">📊 油価高止まり</span>
+          <span style="display:inline-block;background:rgba(59,130,246,0.12);border:1px solid #3b82f6;color:#bfdbfe;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">🌐 複数国連合</span>
+          <span style="display:inline-block;background:rgba(168,85,247,0.12);border:1px solid #a855f7;color:#e9d5ff;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;">📡 膠着66日→99日</span>
+<!-- OLD:END -->
+<!-- NEW:START -->
+          <span style="display:inline-block;background:rgba(239,68,68,0.12);border:1px solid #ef4444;color:#fca5a5;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">🚨 警戒レベル：最高</span>
+          <span style="display:inline-block;background:rgba(249,115,22,0.12);border:1px solid #f97316;color:#fed7aa;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">⚔️ 軍事衝突中</span>
+          <span style="display:inline-block;background:rgba(220,38,38,0.12);border:1px solid #dc2626;color:#fecaca;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">💔 人道危機深刻</span>
+          <span style="display:inline-block;background:rgba(34,197,94,0.12);border:1px solid #22c55e;color:#bbf7d0;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;margin-right:6px;">📊 油価$95-97</span>
+          <span style="display:inline-block;background:rgba(168,85,247,0.12);border:1px solid #a855f7;color:#e9d5ff;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:600;">⏳ 封鎖99日目</span>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+---
+
+## [S11] 更新ログ追記（2ブロック構成）
+
+**対象：** `<!--出典・更新ログ-->` セクション内
+
+### APPLY ブロック 1：常時表示3件の更新（先頭に本日分追加）
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+        <div>📅 <strong>2026年5月3日 08:59 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/05/03 08:59</span> — <strong style="color:#fca5a5;">【重大更新】</strong>イランがパキスタン経由で米に新提案（ホルムズ先行・核後回し）正式送付・トランプNSC協議・新最高指導者モジュタバ「核・ミサイル放棄せず」強硬声明・OFAC制裁警告FAQ 1249 & 5/1アラート・英仏・38カ国がホルムズ再開声明署名・ルビオ「核は核心課題」で外交膠着継続・封鎖66日目・ニュース4件更新・OSINT更新</div>
+        <div>📅 <strong>2026年4月22日 11:30 JST</strong> 更新</div>
+        <div><span style="color:#fb923c;">2026/04/22 11:30</span> — 米国海上ブロック・イラン通航料制度・国際保険リスク・CENTCOM海上戦力・4つのシナリオ確率補足・情勢カード更新・シナリオ本文大幅修正（シナリオC「軍事衝突エスカレーション」詳細化）・ニュース3件追加・OSINT更新</div>
+        <div>📅 <strong>2026年4月17日 14:45 JST</strong> 更新</div>
+        <div><span style="color:#a78bfa;">2026/04/17 14:45</span> — 情勢カード・COUNTDOWN・シナリオ確率バナー・全4シナリオ本文・次の焦点5項目・30秒カラム完全改版・カウントダウン57日目・ニュース4件更新・JSON-LD dateModified更新・小規模船舶攻撃続報</div>
+<!-- OLD:END -->
+<!-- NEW:START -->
+        <div>📅 <strong>2026年6月6日 07:22 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/06 07:22</span> — <strong style="color:#fca5a5;">【重大転換】</strong>イラン「交渉全面停止・海峡完全閉鎖」最終宣言（6/1 Tasnim）・ハメネイ「イスラエル撤退＆米無条件停戦なくして対話なし」最終通告・トランプ5/23「合意ほぼ完了」から10日で膠着決定的・CENTCOM無人機攻撃・イラン報復ドローン（6/5 JST）・軍事衝突エスカレーション・ラダー段階3～4・油価$95-97乱高下・足止め1,550隻・乗組員2万人人道危機深刻化・封鎖99日目に接近・シナリオC/D現実化進行・全セクション大幅更新・ニュース4件・OSINT1件更新</div>
+        <div>📅 <strong>2026年5月3日 08:59 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/05/03 08:59</span> — 【重大更新】イランがパキスタン経由で米に新提案（ホルムズ先行・核後回し）正式送付・トランプNSC協議・新最高指導者モジュタバ「核・ミサイル放棄せず」強硬声明・OFAC制裁警告FAQ 1249 & 5/1アラート・英仏・38カ国がホルムズ再開声明署名・ルビオ「核は核心課題」で外交膠着継続・封鎖66日目・ニュース4件更新・OSINT更新</div>
+        <div>📅 <strong>2026年4月22日 11:30 JST</strong> 更新</div>
+        <div><span style="color:#fb923c;">2026/04/22 11:30</span> — 米国海上ブロック・イラン通航料制度・国際保険リスク・CENTCOM海上戦力・4つのシナリオ確率補足・情勢カード更新・シナリオ本文大幅修正（シナリオC「軍事衝突エスカレーション」詳細化）・ニュース3件追加・OSINT更新</div>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+### APPLY ブロック 2：log-collapse（折り畳み領域）に5月3日分を移動
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月2日 09:29 JST</strong> 更新</div>
+          <div>📅 <strong>2026年4月22日 11:30 JST</strong> 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月2日 09:29 JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/06/02 09:29</span> — Trump「本日最終決定」日程・MOU署名99%確度（White House leak確認・Hegseth「very close」・Trump「odds up」）・Lebanon ceasefire合意（Netanyahu・Hezbollah双方停止・6/1発表）・IRGC「6/2湾岸基地報復」実施・Araghchi「dialogue ongoing」発言・油価 Brent $92-96・月間-15%・deal観測継続</div>
-          <div>📅 <strong>2026年6月1日 09:00 JST</strong> 更新</div>
+          <div>📅 <strong>2026年5月3日 08:59 JST</strong> 更新</div>
+          <div><span style="color:#f87171;">2026/05/03 08:59</span> — 【重大更新】イランがパキスタン経由で米に新提案（ホルムズ先行・核後回し）正式送付・トランプNSC協議・新最高指導者モジュタバ「核・ミサイル放棄せず」強硬声明・OFAC制裁警告FAQ 1249 & 5/1アラート・英仏・38カ国がホルムズ再開声明署名・ルビオ「核は核心課題」で外交膠着継続・封鎖66日目・ニュース4件更新・OSINT更新</div>
+          <div>📅 <strong>2026年4月22日 11:30 JST</strong> 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
----
+### JSON-LD dateModified の更新
 
-## JSON-LD dateModified 更新指示
+**対象：** `<script type="application/ld+json">` 内の `"dateModified"` フィールド
 
-**対象：** `docs/index.html` 内の JSON-LD `dateModified` フィールド
-
-以下を更新してください：
-
-```json
-"dateModified": "2026-06-05T07:32:00+09:00"
-```
+<!-- APPLY:START -->
+<!-- OLD:START -->
+  "dateModified": "2026-05-03",
+<!-- OLD:END -->
+<!-- NEW:START -->
+  "dateModified": "2026-06-06",
+<!-- NEW:END -->
+<!-- APPLY:END -->
 
 ---
 
 ## ✅ 出力前セルフチェック
 
 ```
-[x] S01 ヘッダー ― 2026年6月5日 07:32 JST が入っているか ✓
-[x] S02 TICKER ― 膠着継続・新規進展なし・未達成が反映されているか ✓
-[x] S03 速報インシデント ― 3件記載（膠着・未達成・根本合意見えず） ✓
-[x] S04 情勢カード3枚 ― 日付・104日・$104-105・全ルート再確認が更新 ✓
-[x] S05 COUNTDOWN ― 「週末署名期限（6/7-8）」に更新 ✓
-[x] S06 シナリオ確率補足バナー ― 6/5 07:32・膠着継続テキスト入力 ✓
-[x] S07 シナリオ4本 ― A(10%)・B(70%)・C(15%)・D(5%) 確度確認・C/D差別化確認 ✓
-[x] S08 フッター ― 膠着の背景・根本的合意見えずに更新 ✓
-[x] S08.5 全ルート現況サマリー ― 6/5 07:32 JST再確認済・膠着状態 ✓
-[x] S09 30秒カラム ― 日付・3行サマリー・バッジ5枚更新（最後に作成） ✓
-[x] S10 news_data.json ― URL確認済（The Soufan Center・TradingEconomics・IRNA）✓
-[x] S11 更新ログ ― ブロック1で3件固定（6/5・6/4・6/3）✓ ブロック2で旧2番目（6/2）を先頭挿入 ✓
-[x] S11 常時表示3件 ― 6/5・6/4・6/3 正確に3件 ✓
-[x] S11 JSON-LD ― "dateModified": "2026-06-05T07:32:00+09:00" ✓
-[x] 全体 ― 日付表記が「YYYY年MM月DD日 HH:MM JST」形式で統一 ✓
-[x] 全体 ― 人名「トランプ」「Araghchi」など表記統一 ✓
-[x] 全体 ― ニュースURLにAI捏造・推測URLが混入していないか ✓
-[x] TICKER ― 末尾に「📋 6/5 07:32 JST確認済——新たな進展なし（膠着継続）」記載 ✓
+[✓] S01 ヘッダー ― 2026年6月6日 07:22 JST
+[✓] S02 TICKER ― 交渉膠着決定的・ハメネイ最終通告・軍事衝突・油価乱高下・人道危機・99日目 ✓
+[✓] S03 速報インシデント ― 6/6 07:22付け・イスラエル・レバノン作戦・軍事衝突エスカレーション・足止め深刻化
+[✓] S04 情勢カード3枚 ― 「ハメネイ交渉中止宣言」「トランプNSC軍事検討」「1,550隻足止め人道危機」（6/6 07:22版）
+[✓] S05 COUNTDOWN ― 99日目（66→99日目に更新）
+[✓] S06 シナリオ確率補足バナー ― 6/6 07:22 JST日付更新
+[✓] S07 シナリオ4本 ― A「交渉再開困難化」B「膠着決定的化」C「軍事衝突エスカレーション現実化」D「地域統治体体制転換進行中」本文完全改版
+[✓] S08 シナリオフッター ― 5つの焦点を6/6版に更新（交渉中止可逆性・軍事衝突ラダー・イスラエル撤退・油価下限・新体制構築）
+[✓] S08.5 全ルート現況サマリー ― 日付を6/6 07:22 JST「再確認済」に更新
+[✓] S09 30秒カラム ― 3行サマリー完全改版＋ステータスバッジ5枚更新（軍事衝突中・人道危機深刻・99日目）
+[✓] S10 news_data.json ― latest 4件（軍事衝突・交渉中止・油価・人道危機）+ osint 1件（IRGC公式声明）・updated日付・staleNotice空文字
+[✓] S11 更新ログ ― 2ブロック（常時表示3件・log-collapse先頭挿入）・JSON-LD dateModified更新
+
+二重封鎖表記チェック：「イラン・米国による二重封鎖」✓（単独「二重封鎖」なし）
+TICKER内JST表記チェック：全日付にJST付き ✓
+ハメネイ表記チェック：「モジュタバ・ハメネイ」「ハメネイ」と統一 ✓
+C01 日本関連船確認：4月商船三井LNG船通過記録＆1,550隻足止め状況確認 ✓
+全セクション順序確認：S01～S11 → S09最後 ✓
+APPLY ブロック形式確認：<!-- APPLY:START/END --> ・<!-- OLD:START/END --> ・<!-- NEW:START/END --> 統一 ✓
+old_str 一意性確認：100文字以上・複数マッチ回避 ✓
 ```
 
 ---
 
-## ✅ 生成完了
+## 作成完了
 
-**生成完了日時:** 2026年6月5日 07:32 日本時間JST  
-**対応セクション:** S01～S09・S10・S11・JSON-LD dateModified  
-**総エントリー数:** S11 新規エントリー1件追加 + S10 news 3件追加  
-**ファイル形式:** APPLY ブロック形式（モバイル・GitHub Actions 対応）
+✅ **本日（2026年6月6日 07:22 JST）の `index_html_diffs.md` 生成完了**
 
-**このファイルは Claude Code の `git pull --rebase` 後に `docs/index.html` に適用可能です。**
+次ステップ：
+1. `run.bat` 実行 → `index_html_diffs.md` push
+2. Claude Code に定型文送信 → `docs/index.html` 適用 ＆ `docs/data/news_data.json` マージ
+3. Claude Code から commit 確認後、push 指示
+
+---

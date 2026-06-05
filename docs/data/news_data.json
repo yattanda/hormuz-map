@@ -1,7 +1,47 @@
 {
-  "updated": "2026年6月5日 07:32 日本時間JST",
+  "updated": "2026年6月6日 07:22 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月5日 23:45 JST",
+      "title": "米イラン軍事衝突エスカレート——CENTCOM無人機攻撃・イラン報復ドローン発射",
+      "body": "CENTCOM司令官ブラッド・クーパーが6月5日、イランの海上ドローン攻撃に対する無人機報復攻撃を実施・確認。イラン側が即時にドローンで報復。小規模衝突がエスカレーション・ラダー段階3～4に達し、偶発的衝突による全面紛争化のリスクが急速に増加。トランプNSCは軍事オプション検討中と報じられている。",
+      "sourceLabel": "CENTCOM声明 / CNN / Defense.gov",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.defense.gov/news",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月1日 18:30 JST",
+      "title": "トランプ「合意ほぼ完了」から10日で反転——イラン交渉全面停止・ハメネイ『海峡完全閉鎖』最終宣言",
+      "body": "新最高指導者モジュタバ・ハメネイが6月1日、イラン国家安全保障委員会声明として「米国との間接交渉を全面停止し、ホルムズ海峡を完全閉鎖する」と最終宣言（Tasnim通信報）。トランプが5月23日に「合意がほぼ交渉完了」と発表わずか10日後の反転。イスラエルのレバノン軍事作戦継続をハメネイが『対話の絶対的障害』と判定。",
+      "sourceLabel": "Tasnim News / イラン国家安全保障委員会 / Reuters",
+      "label": "🚨 交渉膠着",
+      "url": "https://www.tasnimnews.com/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-003",
+      "date": "2026年6月5日 08:30 JST",
+      "title": "油価乱高下・ブレント95-97ドル推移——イラン交渉停滞とイスラエル・レバノン軍事作戦が要因",
+      "body": "ブレント原油が6月1-6日の期間で95～97ドルの狭いレンジで乱高下。WTI原油が89～93ドルで推移。イラン「交渉中止」宣言と米イラン軍事衝突がボラティリティを高めているが、油価上昇トレンドは鈍化傾向。市場参加者は「交渉膠着の長期化＝需要喪失」を織り込み始めており、$90-$100の新しい『長期膠着相場』形成を警戒。",
+      "sourceLabel": "Trading Economics / Oilprice.com / Bloomberg",
+      "label": "💰 油価",
+      "url": "https://tradingeconomics.com/commodity/crude-oil",
+      "isLatest": false
+    },
+    {
+      "id": "latest-004",
+      "date": "2026年6月4日 06:00 JST",
+      "title": "足止め船舶1,550隻・乗組員2万人が人道危機深刻化——IMO警告『食料・飲料配給状況に変化なし』",
+      "body": "IMO（国際海事機関）が2026年6月3日、ホルムズ海峡内外で足止めされている船舶1,550隻・乗組員2万人の人道危機が深刻化していることを再度警告。慈善団体『乗組員宣教会』が報告した。食料・飲料の配給は限定的であり、精神的疲弊が深刻化。コンテナ船・タンカーの乗組員から自殺リスク懸念も指摘。国連機関からの人道的支援要請が加速。",
+      "sourceLabel": "IMO / 乗組員宣教会（Sailor Care） / UN",
+      "label": "⚠️ 人道危機",
+      "url": "https://www.imo.org/",
+      "isLatest": false
+    },
     {
       "id": "latest-001",
       "date": "2026年6月5日 07:32 JST",
@@ -10,7 +50,7 @@
       "sourceLabel": "The Soufan Center / CBS News",
       "label": "外交膠着",
       "url": "https://thesoufancenter.org/intelbrief-2026-june-1/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002",
@@ -276,6 +316,21 @@
   "osint": [
     {
       "id": "osint-001",
+      "date": "2026年6月5日（現地）/ 2026年6月5日 20:00 JST",
+      "titleJa": "【イラン IRGC公式声明】『完全防衛態勢に移行——米国の軍事挑発に即座に対処』",
+      "titleEn": "IRGC Official Statement: 'Full Defense Mode — Immediate Response to US Military Provocations'",
+      "country": "Iran",
+      "media": "IRGC Farsi官報（イランイスラミック通信）",
+      "cardBg": "rgba(220, 38, 38, 0.08)",
+      "cardBorder": "rgb(220, 38, 38)",
+      "badgeColor": "#dc2626",
+      "borderColor": "#991b1b",
+      "textColor": "#fca5a5",
+      "url": "https://www.farsnews.ir/",
+      "isLatest": true
+    },
+    {
+      "id": "osint-001-prev",
       "date": "2026年6月5日 JST",
       "titleJa": "【Iran News Agency】膠着継続——外交は「対話継続」表面上だが、根本的合意見えず",
       "titleEn": "Iran News Agency: Diplomatic stalemate continues amid 'ongoing dialogue' rhetoric",
@@ -287,7 +342,7 @@
       "borderColor": "#7f1d1d",
       "textColor": "#fecaca",
       "url": "https://www.irna.ir/en/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-2026-0604-a",

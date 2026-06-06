@@ -244,7 +244,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 /* MAP */
 .map-wrap { border-radius:14px; overflow:hidden; border:1px solid #1e3a5f; position:relative; }
 #map { height:580px; width:100%; background:#071828; }
-.leaflet-tile-pane { filter: brightness(0.45) saturate(0.45) hue-rotate(190deg); }
+.leaflet-tile-pane { filter: brightness(0.55) saturate(0.5) hue-rotate(190deg); }
 
 /* マーカーズームスケーリング 2026-06-06 fix */
 #map .leaflet-marker-icon:not(.country-label) > div {
@@ -3000,7 +3000,7 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
     L.geoJSON(data, {
       style: {
         color:'#2a4a6a', weight:0.9,
-        fillColor:'#1a3048',fillOpacity:0.92, opacity:0.9
+        fillColor:'#1e3a7a',fillOpacity:0.96, opacity:1.0
       },
       onEachFeature(feature, layer) {
         const iso = feature.properties.ISO_A2;

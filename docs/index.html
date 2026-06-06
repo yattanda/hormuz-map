@@ -246,6 +246,16 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 #map { height:580px; width:100%; background:#071828; }
 .leaflet-tile-pane { filter: brightness(0.45) saturate(0.45) hue-rotate(190deg); }
 
+/* マーカーズームスケーリング 2026-06-06 */
+#map .leaflet-marker-icon:not(.country-label) {
+  transform-origin: center center;
+  transition: transform 0.25s ease;
+}
+#map.mz-far  .leaflet-marker-icon:not(.country-label) { transform: scale(0.35); }
+#map.mz-mid  .leaflet-marker-icon:not(.country-label) { transform: scale(0.57); }
+#map.mz-near .leaflet-marker-icon:not(.country-label) { transform: scale(0.78); }
+/* /マーカーズームスケーリング */
+
 /* MAP LEGEND */
 .map-legend {
   background:rgba(7,14,28,0.95) !important;
@@ -1754,6 +1764,15 @@ const SHIP_CONFIG = {
       this.textContent     = collapsed ? '展開' : '折畳';
     });
 
+  function updateMarkerScale(z) {
+    const mapEl = document.getElementById('map');
+    mapEl.classList.remove('mz-far', 'mz-mid', 'mz-near');
+    if      (z <= 4) mapEl.classList.add('mz-far');
+    else if (z <= 5) mapEl.classList.add('mz-mid');
+    else if (z <= 6) mapEl.classList.add('mz-near');
+    // z >= 7: scale(1.0) = デフォルト
+  }
+
   function attachLeafletZoom() {
     const leafletMap = window.map;
     if (!leafletMap || typeof leafletMap.on !== 'function') return;
@@ -1766,7 +1785,11 @@ const SHIP_CONFIG = {
 
       if      (z >= 8) overlay.classList.add('zoom-close');
       else if (z <= 5) overlay.classList.add('zoom-far');
+
+      updateMarkerScale(z);
     });
+
+    updateMarkerScale(leafletMap.getZoom());
   }
 
   if (document.readyState === 'loading') {
@@ -2996,7 +3019,7 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
       L.marker([c.lat,c.lng], {
         icon: L.divIcon({
           html:`<div style="color:rgba(180,210,235,0.85);font-size:11px;font-weight:600;font-family:'Hiragino Sans','Yu Gothic','Segoe UI',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">${c.name}</div>`,
-          iconSize:[0,0], iconAnchor:[0,0], className:''
+          iconSize:[0,0], iconAnchor:[0,0], className:'country-label'
         }), interactive:false
       }).addTo(map);
     });

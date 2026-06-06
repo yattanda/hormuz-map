@@ -3018,6 +3018,32 @@ fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/coun
       }
     }).addTo(map);
 
+    // GeoJSONラッピング複製（右側・左側のタイル複製に対応）
+    (function addWrappedLayers(data) {
+      var hi = ['IR','SA','AE','YE','IQ','OM','BH','QA','KW'];
+      function shiftCoord(c, d) {
+        return typeof c[0] === 'number' ? [c[0] + d, c[1]] : c.map(function(x){ return shiftCoord(x, d); });
+      }
+      function makeWrapped(offset) {
+        var features = data.features.map(function(f) {
+          var fc = JSON.parse(JSON.stringify(f));
+          if (fc.geometry && fc.geometry.coordinates)
+            fc.geometry.coordinates = shiftCoord(fc.geometry.coordinates, offset);
+          return fc;
+        });
+        L.geoJSON({type:'FeatureCollection', features:features}, {
+          interactive: false,
+          style: function(ft) {
+            return hi.includes(ft.properties.ISO_A2)
+              ? {fillColor:'#1e3d28', fillOpacity:0.75, color:'#2e5a3a', weight:1.3}
+              : {color:'#2e5a8a', weight:0.9, fillColor:'#1e3a7a', fillOpacity:0.96, opacity:1.0};
+          }
+        }).addTo(map);
+      }
+      makeWrapped(360);
+      makeWrapped(-360);
+    })(data);
+
     COUNTRIES.forEach(c => {
       L.marker([c.lat,c.lng], {
         icon: L.divIcon({

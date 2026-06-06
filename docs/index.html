@@ -1765,12 +1765,14 @@ const SHIP_CONFIG = {
     });
 
   function updateMarkerScale(z) {
-    const mapEl = document.getElementById('map');
-    mapEl.classList.remove('mz-far', 'mz-mid', 'mz-near');
-    if      (z <= 4) mapEl.classList.add('mz-far');
-    else if (z <= 5) mapEl.classList.add('mz-mid');
-    else if (z <= 6) mapEl.classList.add('mz-near');
-    // z >= 7: scale(1.0) = デフォルト
+    var scale = z <= 4 ? 0.35 : z <= 5 ? 0.57 : z <= 6 ? 0.78 : 1.0;
+    document.querySelectorAll(
+      '#map .leaflet-marker-icon:not(.country-label) > div'
+    ).forEach(function(el) {
+      el.style.transformOrigin = 'center center';
+      el.style.transition = 'transform 0.25s ease';
+      el.style.transform = scale < 1.0 ? 'scale(' + scale + ')' : '';
+    });
   }
 
   function attachLeafletZoom() {
@@ -1789,7 +1791,8 @@ const SHIP_CONFIG = {
       updateMarkerScale(z);
     });
 
-    updateMarkerScale(leafletMap.getZoom());
+    // 軍事レイヤーfetch完了後に初期スケール適用
+    setTimeout(function() { updateMarkerScale(leafletMap.getZoom()); }, 2000);
   }
 
   if (document.readyState === 'loading') {

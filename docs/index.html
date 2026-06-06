@@ -1776,8 +1776,8 @@ const SHIP_CONFIG = {
   }
 
   function attachLeafletZoom() {
-    const leafletMap = window.map;
-    if (!leafletMap || typeof leafletMap.on !== 'function') return;
+    const leafletMap = (typeof map !== 'undefined' && typeof map.on === 'function') ? map : null;
+    if (!leafletMap) return;
 
     leafletMap.on('zoomend', function () {
       const z       = leafletMap.getZoom();

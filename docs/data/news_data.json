@@ -1,7 +1,43 @@
 {
-  "updated": "2026年6月6日 07:22 日本時間JST",
+  "updated": "2026年6月7日 07:06 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "date": "2026-06-05T23:45:00+09:00",
+      "title": "CENTCOM、イランドローン4機撃墜→Goruk・Qeshm島レーダー施設反撃——イランがバリスティックミサイル7発発射",
+      "summary": "6月5日、CENTCOMがイランのドローン4機をホルムズ海峡に向けて発射されたものを撃墜。反撃としてGoruk市とQeshm島のイラン海岸監視レーダー施設を精密攻撃。数時間後、イランはクウェート・バーレーンにバリスティックミサイル7発を発射（6発迎撃、1発は目標未達）。名目上の停戦中に軍事衝突が最大規模化。",
+      "source": "CENTCOM / CNN",
+      "url": "https://www.centcom.mil/MEDIA/PUBLIC-RELEASES/Article/4510668/centcom-forces-defeat-missiles-drones-launched-by-iran/",
+      "category": "military",
+      "severity": "critical"
+    },
+    {
+      "date": "2026-05-29T00:00:00+09:00",
+      "title": "停戦MOU「大筋合意」——停戦60日延長・ホルムズ再開・核交渉枠組み含む。トランプ未署名で宙ぶらりん",
+      "summary": "米・イランの交渉担当者が停戦60日延長・ホルムズ海峡段階的再開・核交渉枠組みを含むMOUで大筋合意（CNBC）。ただしトランプ大統領が未署名のまま。イラン国営TVは「ホルムズはイラン・オマーン管理」と主張したが米側は「完全な捏造」と否定。署名前に6月5日の軍事衝突が発生し、状況が複雑化。",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/05/28/oil-prices-us-strikes-in-iran-revive-strait-of-hormuz-turmoil-fears.html",
+      "category": "diplomacy",
+      "severity": "high"
+    },
+    {
+      "date": "2026-06-05T14:30:00+09:00",
+      "title": "ブレント原油$92-94水準——MOU期待で下落・軍事衝突懸念が下支え",
+      "summary": "ブレント原油が6月5日に$92.87（前日比2.27%下落）。MOU大筋合意の期待感で下落圧力。ただし6/5のCENTCOM-イラン軍事衝突が下支えとなり$88台突破を防ぐ。UBS「完全再開でも段階的」と分析。EIA「5月-6月$106/b」予想だが供給危機継続で下方修正圧力。",
+      "source": "Trading Economics / CNBC",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+      "category": "energy",
+      "severity": "high"
+    },
+    {
+      "date": "2026-06-01T18:30:00+09:00",
+      "title": "イラン、交渉中止・ホルムズ完全閉鎖を正式宣言——理由はイスラエルのレバノン作戦継続",
+      "summary": "イラン国営Tasnim通信が6月1日、「停戦違反を理由に米国との間接交渉を停止し、ホルムズ海峡を完全閉鎖する」と報道。理由：イスラエルのレバノン（ヘズボラ）軍事作戦継続。油価は報道後7%以上急騰。トランプの「合意ほぼ完了」発言（5/23）からわずか8日後の反転。",
+      "source": "Tasnim / CNBC",
+      "url": "https://www.cnbc.com/2026/06/01/iran-us-negotiations-strait-of-hormuz.html",
+      "category": "diplomacy",
+      "severity": "critical"
+    },
     {
       "id": "latest-001",
       "date": "2026年6月5日 23:45 JST",
@@ -10,7 +46,7 @@
       "sourceLabel": "CENTCOM声明 / CNN / Defense.gov",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.defense.gov/news",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002",
@@ -315,6 +351,14 @@
   ],
   "osint": [
     {
+      "date": "2026-06-05T00:00:00+09:00",
+      "title": "【IRGC公式】クウェート・バーレーンへの弾道ミサイル攻撃——「米軍基地への正当な防衛対応」",
+      "summary": "イラン革命防衛隊（IRGC）が公式声明で、クウェート・バーレーンへのバリスティックミサイル7発発射は「CENTCOMの先制攻撃に対する正当な自衛権行使」と主張。ホルムズ海峡周辺のIRGCドローン・ミサイル能力を維持・強化する方針を改めて表明。",
+      "source": "IRGC Official / Fars News",
+      "url": "https://www.farsnews.ir/",
+      "isLatest": true
+    },
+    {
       "id": "osint-001",
       "date": "2026年6月5日（現地）/ 2026年6月5日 20:00 JST",
       "titleJa": "【イラン IRGC公式声明】『完全防衛態勢に移行——米国の軍事挑発に即座に対処』",
@@ -327,7 +371,7 @@
       "borderColor": "#991b1b",
       "textColor": "#fca5a5",
       "url": "https://www.farsnews.ir/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-prev",

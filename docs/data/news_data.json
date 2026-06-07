@@ -1,7 +1,39 @@
 {
-  "updated": "2026年6月7日 07:06 日本時間JST",
+  "updated": "2026年6月8日 08:00 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "IRGCがイスラエル・ラマト・ダビッド基地にミサイル——4月停戦後初の直接攻撃・「警告射撃」声明",
+      "body": "IRGCは6月7日、イスラエルのラマト・ダビッド空軍基地にミサイルを発射し「レバノン南部ティール・ナバティエでの大規模殺害への報復」と声明。「今回は警告。繰り返せば全米・イスラエル目標に拡大する」と明言。トランプ大統領はFox Newsで「ミサイルは撃った、もう十分だ。交渉テーブルに戻れ」と呼びかけた。",
+      "sourceLabel": "The National",
+      "date": "2026年6月7日",
+      "label": "⚔️ 軍事",
+      "url": "https://www.thenationalnews.com/news/mena/2026/06/07/iran-attacks-israel-with-missiles-and-drones-after-beirut-strike/"
+    },
+    {
+      "title": "米ベッセント財務長官、凍結イラン資産をGCC再建費に転用する方針を指示",
+      "body": "ベッセント財務長官がチームに対し、イラン攻撃で被害を受けた湾岸同盟国（クウェート・バーレーン等）の再建費用を凍結イラン資産から充当する方針を指示（6/7 Reuters）。イラン側はレザーイー最高指導者顧問が「凍結資産$240億の返還が和平条件」と明言しており（6/5 CNN）、資産問題が新たな決裂要因に浮上。",
+      "sourceLabel": "Fortune",
+      "date": "2026年6月7日",
+      "label": "💰 経済",
+      "url": "https://fortune.com/2026/06/07/us-frozen-iran-assets-gulf-allies-reconstruction-treasury-secretary-bessent/"
+    },
+    {
+      "title": "イスラエルがベイルート・ダヒエ無警告空爆——停戦合意数日後・2名死亡20名負傷",
+      "body": "イスラエル軍は6月7日、ベイルート南郊ダヒエの住宅地を無警告で空爆し2名死亡・20名負傷。ネタニヤフ事務所はヒズボラの司令部攻撃と主張。米国は事前にレバノン首都への攻撃自制を要請していた。イランは「ベイルート攻撃は全レッドラインを超えた」と報復を示唆していた。",
+      "sourceLabel": "AP",
+      "date": "2026年6月7日",
+      "label": "⚔️ 軍事",
+      "url": "https://www.csmonitor.com/World/Middle-East/2026/0607/israel-lebanon-hezbollah-iran-trump-ceasefire-peace"
+    },
+    {
+      "title": "パキスタン内相ナクヴィ、テヘランでモジュタバ・ハメネイに軍・首相双方の特別書簡を手交",
+      "body": "パキスタンのナクヴィ内相が6月6-7日テヘランを訪問し、ムニル陸軍参謀長とシャバーズ首相の二通の書簡をモジュタバ・ハメネイに手交。アラグチー外相とも会談。同時にレバノン軍司令官ハイカル将軍もパキスタンを訪問——仲介チャネルの拡大が進む。ナクヴィは今回が3度目のテヘラン訪問。",
+      "sourceLabel": "Arab News",
+      "date": "2026年6月7日",
+      "label": "🕊️ 外交",
+      "url": "https://www.arabnews.com/node/2646290/pakistan"
+    },
     {
       "date": "2026-06-05T23:45:00+09:00",
       "title": "CENTCOM、イランドローン4機撃墜→Goruk・Qeshm島レーダー施設反撃——イランがバリスティックミサイル7発発射",
@@ -315,48 +347,29 @@
       "label": "外交",
       "url": "https://www.cnbc.com/2026/05/23/us-iran-war-talks.html"
     },
-    {
-      "id": "latest-002",
-      "title": "イラン「枠組み合意に過ぎず・核交渉は対象外」——ファルス通信がトランプ発言を「現実と乖離」と否定",
-      "body": "イラン外務省報道官バガエイは「現段階の焦点は全面的な戦争終結であり核問題ではない」と明言。ファルス通信は「ホルムズ海峡は最新の協議文書でもイラン管理下のまま」と発表し、トランプの「海峡再開」発言を「不完全で現実と矛盾する」と一蹴。一方で地域当局者は「土壇場の対立（last-minute disputes）が交渉を吹き飛ばすリスク」を警告。イラン最高指導者モジュタバ・ハメネイの核ウラン国外移送拒否指令が依然最大の障壁。",
-      "sourceLabel": "NPR・CNN・CBC News",
-      "date": "2026/05/24",
-      "label": "外交",
-      "url": "https://www.npr.org/2026/05/23/g-s1-124145/trump-iran-deal-strait-of-hormuz"
-    },
-    {
-      "title": "パキスタン軍参謀長ムニルがテヘラン入り——仲介外交が加速、イラン「合意にはほど遠い」",
-      "body": "パキスタムの実力者・アシム・ムニル陸軍元帥が5月23日にテヘランへ到着し、米・イラン間の仲介活動が新局面を迎えた。ただしイラン当局者は「外交は継続しているが合意にはほど遠い」と牽制しており、ホルムズ問題と核交渉の双方で依然として大きな隔たりが続いている。",
-      "sourceLabel": "Al Jazeera",
-      "date": "2026年5月23日",
-      "label": "🕊️ 外交",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us"
-    },
-    {
-      "title": "ルビオ国務長官「交渉にわずかな前進」——核ウラン移送でイラン最高指導者が拒否指令",
-      "body": "米国務長官ルビオは5月22日、パキスタンを通じたイランとの仲介交渉に「わずかな前進（slight progress）」があると認めた。一方、イランの最高指導者モジュタバ・ハメネイは60%濃縮ウランを国外に移送しないよう指令を出しており、米国が最重要課題と位置づける核問題で大きな障壁が残る。",
-      "sourceLabel": "Bloomberg",
-      "date": "2026年5月22日",
-      "label": "🕊️ 外交",
-      "url": "https://www.bloomberg.com/news/articles/2026-05-22/us-touts-slight-progress-as-deal-with-iran-remains-in-limbo"
-    },
-    {
-      "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イラン最高指導者がウラン国外移送を拒否",
-      "body": "米国務長官マルコ・ルビオは5月21日、パキスタン当局がテヘランへ向かうと明かしつつ「若干の好兆候がある」と発言。ただし「過度に楽観的になりたくない」と慎重姿勢も示した。同日、イランの最高指導者ホジャトレスラム・ハメネイ師が「ウランは国外に出すべきでない」と指示し、トランプ大統領の要求を拒否（ロイター報道）。",
-      "sourceLabel": "Bloomberg",
-      "date": "2026/05/21",
-      "label": "外交",
-      "url": "https://www.bloomberg.com/news/newsletters/2026-05-21/eu-downgrades-growth-forecasts-on-iran-war-energy-shock"
-    }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】イラン戦争100日——戦争はいかに世界を変えたか：死者7,000人超・100万人避難・ホルムズ閉鎖継続",
+      "titleEn": "100 days of US-Israel war on Iran: How the conflict impacted Iran and the world",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(200,120,50,0.10)",
+      "cardBorder": "rgba(200,120,50,0.35)",
+      "badgeColor": "#e8a040",
+      "borderColor": "rgba(200,120,50,0.5)",
+      "textColor": "#f0c878",
+      "url": "https://www.aljazeera.com/news/2026/6/7/by-the-numbers-100-days-of-the-us-israel-war-on-iran",
+      "date": "2026年6月7日（カタール）/ 2026年6月8日 JST",
+      "isLatest": true
+    },
     {
       "date": "2026-06-05T00:00:00+09:00",
       "title": "【IRGC公式】クウェート・バーレーンへの弾道ミサイル攻撃——「米軍基地への正当な防衛対応」",
       "summary": "イラン革命防衛隊（IRGC）が公式声明で、クウェート・バーレーンへのバリスティックミサイル7発発射は「CENTCOMの先制攻撃に対する正当な自衛権行使」と主張。ホルムズ海峡周辺のIRGCドローン・ミサイル能力を維持・強化する方針を改めて表明。",
       "source": "IRGC Official / Fars News",
       "url": "https://www.farsnews.ir/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001",
@@ -694,6 +707,43 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/06/07 07:06 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "イラン「枠組み合意に過ぎず・核交渉は対象外」——ファルス通信がトランプ発言を「現実と乖離」と否定",
+          "body": "イラン外務省報道官バガエイは「現段階の焦点は全面的な戦争終結であり核問題ではない」と明言。ファルス通信は「ホルムズ海峡は最新の協議文書でもイラン管理下のまま」と発表し、トランプの「海峡再開」発言を「不完全で現実と矛盾する」と一蹴。一方で地域当局者は「土壇場の対立（last-minute disputes）が交渉を吹き飛ばすリスク」を警告。イラン最高指導者モジュタバ・ハメネイの核ウラン国外移送拒否指令が依然最大の障壁。",
+          "sourceLabel": "NPR・CNN・CBC News",
+          "date": "2026/05/24",
+          "label": "外交",
+          "url": "https://www.npr.org/2026/05/23/g-s1-124145/trump-iran-deal-strait-of-hormuz"
+        },
+        {
+          "title": "パキスタン軍参謀長ムニルがテヘラン入り——仲介外交が加速、イラン「合意にはほど遠い」",
+          "body": "パキスタムの実力者・アシム・ムニル陸軍元帥が5月23日にテヘランへ到着し、米・イラン間の仲介活動が新局面を迎えた。ただしイラン当局者は「外交は継続しているが合意にはほど遠い」と牽制しており、ホルムズ問題と核交渉の双方で依然として大きな隔たりが続いている。",
+          "sourceLabel": "Al Jazeera",
+          "date": "2026年5月23日",
+          "label": "🕊️ 外交",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us"
+        },
+        {
+          "title": "ルビオ国務長官「交渉にわずかな前進」——核ウラン移送でイラン最高指導者が拒否指令",
+          "body": "米国務長官ルビオは5月22日、パキスタンを通じたイランとの仲介交渉に「わずかな前進（slight progress）」があると認めた。一方、イランの最高指導者モジュタバ・ハメネイは60%濃縮ウランを国外に移送しないよう指令を出しており、米国が最重要課題と位置づける核問題で大きな障壁が残る。",
+          "sourceLabel": "Bloomberg",
+          "date": "2026年5月22日",
+          "label": "🕊️ 外交",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-22/us-touts-slight-progress-as-deal-with-iran-remains-in-limbo"
+        },
+        {
+          "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イラン最高指導者がウラン国外移送を拒否",
+          "body": "米国務長官マルコ・ルビオは5月21日、パキスタン当局がテヘランへ向かうと明かしつつ「若干の好兆候がある」と発言。ただし「過度に楽観的になりたくない」と慎重姿勢も示した。同日、イランの最高指導者ホジャトレスラム・ハメネイ師が「ウランは国外に出すべきでない」と指示し、トランプ大統領の要求を拒否（ロイター報道）。",
+          "sourceLabel": "Bloomberg",
+          "date": "2026/05/21",
+          "label": "外交",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-05-21/eu-downgrades-growth-forecasts-on-iran-war-energy-shock"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年5月22〜23日",
       "items": [

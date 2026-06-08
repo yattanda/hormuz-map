@@ -1,7 +1,39 @@
 {
-  "updated": "2026年6月8日 08:00 日本時間JST",
+  "updated": "2026年6月9日 07:18 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "イスラエルがイラン本土を2波空爆——テヘラン・イスファハン・タブリーズ・石油化学カルン工場を攻撃",
+      "body": "6月8日、イスラエル軍がイラン本土に2波の空爆を実施。第1波はイスファハンUAV施設・ケルマンシャー・カラジ・タブリーズの防空・ミサイル発射装置。第2波はアフワーズ近郊マーシャフルの石油化学カルン工場（硝酸＝弾道ミサイル関連）。航空宇宙大学・バスィジ拠点も標的。イランは7波・弾道ミサイル20発超で報復後、作戦停止を宣言。トランプ「直ちに停止せよ」。",
+      "sourceLabel": "Alma Center / AP",
+      "date": "2026年6月8日",
+      "label": "⚔️ 軍事",
+      "url": "https://israel-alma.org/daily-report-israel-iran-escalation-june-8-2026-1700/"
+    },
+    {
+      "title": "トランプがネタニヤフに「狂ってる」と激怒通話——「お前を助けてやってるのに世界中から嫌われている」",
+      "body": "Axiosが6月8日報じた。トランプ大統領はベイルート空爆を命じたネタニヤフに「What the f-ck are you doing?」と怒鳴り、「You'd be in prison if it weren't for me」と述べたという。イスラエルのイラン空爆はトランプの自制要請を無視する形で実施された。Newsweekは「同盟の罠にトランプが嵌っている」と分析。",
+      "sourceLabel": "Axios / Newsweek",
+      "date": "2026年6月8日",
+      "label": "🕊️ 外交",
+      "url": "https://time.com/article/2026/06/08/israel-iran-war-direct-attacks-latest-ceasefire-trump-netanyahu-lebanon/"
+    },
+    {
+      "title": "フーシ派が紅海でイスラエル船「完全禁止」を宣言——ホルムズ代替ルートにも脅威",
+      "body": "イエメンのフーシ派が6月8日、紅海におけるイスラエル船の「完全かつ全面的な禁止」を宣言。「全ての敵の動きを正当な軍事目標とみなす」と声明。大手船社が紅海進入を延期——ホルムズ閉鎖下の代替ルートであるスエズ経由パイプライン輸出にも脅威が波及。",
+      "sourceLabel": "Bloomberg / MarineLink",
+      "date": "2026年6月8日",
+      "label": "🚢 海運",
+      "url": "https://www.marinelink.com/news/yemeni-houthis-threaten-israeli-red-sea-540056"
+    },
+    {
+      "title": "アジア市場暴落——KOSPI -8.29%（CB発動）・日経-3.9%・TAIEX-3.5%・ブレント一時$97超",
+      "body": "6月8日のアジア市場はイスラエル・イラン直接交戦を受け全面安。韓国KOSPIは-8.29%でサーキットブレーカーが発動（年内2回目）。Samsung -10.2%、SK Hynix -7.6%。日経-3.9%、TAIEX-3.5%。ブレント原油は一時$97超後、イラン作戦停止宣言で$94に反落。OPEC+は7月+188k bpd増産を承認したが市場安定効果は限定的。",
+      "sourceLabel": "Al Jazeera / TradingEconomics",
+      "date": "2026年6月8日",
+      "label": "📊 市場",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+    },
     {
       "title": "IRGCがイスラエル・ラマト・ダビッド基地にミサイル——4月停戦後初の直接攻撃・「警告射撃」声明",
       "body": "IRGCは6月7日、イスラエルのラマト・ダビッド空軍基地にミサイルを発射し「レバノン南部ティール・ナバティエでの大規模殺害への報復」と声明。「今回は警告。繰り返せば全米・イスラエル目標に拡大する」と明言。トランプ大統領はFox Newsで「ミサイルは撃った、もう十分だ。交渉テーブルに戻れ」と呼びかけた。",
@@ -25,14 +57,6 @@
       "date": "2026年6月7日",
       "label": "⚔️ 軍事",
       "url": "https://www.csmonitor.com/World/Middle-East/2026/0607/israel-lebanon-hezbollah-iran-trump-ceasefire-peace"
-    },
-    {
-      "title": "パキスタン内相ナクヴィ、テヘランでモジュタバ・ハメネイに軍・首相双方の特別書簡を手交",
-      "body": "パキスタンのナクヴィ内相が6月6-7日テヘランを訪問し、ムニル陸軍参謀長とシャバーズ首相の二通の書簡をモジュタバ・ハメネイに手交。アラグチー外相とも会談。同時にレバノン軍司令官ハイカル将軍もパキスタンを訪問——仲介チャネルの拡大が進む。ナクヴィは今回が3度目のテヘラン訪問。",
-      "sourceLabel": "Arab News",
-      "date": "2026年6月7日",
-      "label": "🕊️ 外交",
-      "url": "https://www.arabnews.com/node/2646290/pakistan"
     },
     {
       "date": "2026-06-05T23:45:00+09:00",
@@ -350,6 +374,20 @@
   ],
   "osint": [
     {
+      "titleJa": "【Al Jazeera】イランとイスラエルが相互爆撃——停戦は終わったのか？ 4月合意後最大のエスカレーション分析",
+      "titleEn": "Iran and Israel bomb each other: Is the ceasefire over?",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(200,120,50,0.10)",
+      "cardBorder": "rgba(200,120,50,0.35)",
+      "badgeColor": "#e8a040",
+      "borderColor": "rgba(200,120,50,0.5)",
+      "textColor": "#f0c878",
+      "url": "https://www.aljazeera.com/news/2026/6/8/iran-and-israel-bomb-each-other-is-the-ceasefire-over",
+      "date": "2026年6月8日（カタール）/ 2026年6月9日 JST",
+      "isLatest": true
+    },
+    {
       "titleJa": "【Al Jazeera】イラン戦争100日——戦争はいかに世界を変えたか：死者7,000人超・100万人避難・ホルムズ閉鎖継続",
       "titleEn": "100 days of US-Israel war on Iran: How the conflict impacted Iran and the world",
       "country": "カタール",
@@ -361,7 +399,7 @@
       "textColor": "#f0c878",
       "url": "https://www.aljazeera.com/news/2026/6/7/by-the-numbers-100-days-of-the-us-israel-war-on-iran",
       "date": "2026年6月7日（カタール）/ 2026年6月8日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "date": "2026-06-05T00:00:00+09:00",
@@ -707,6 +745,19 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026/06/08 08:00 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "パキスタン内相ナクヴィ、テヘランでモジュタバ・ハメネイに軍・首相双方の特別書簡を手交",
+          "body": "パキスタンのナクヴィ内相が6月6-7日テヘランを訪問し、ムニル陸軍参謀長とシャバーズ首相の二通の書簡をモジュタバ・ハメネイに手交。アラグチー外相とも会談。同時にレバノン軍司令官ハイカル将軍もパキスタンを訪問——仲介チャネルの拡大が進む。ナクヴィは今回が3度目のテヘラン訪問。",
+          "sourceLabel": "Arab News",
+          "date": "2026年6月7日",
+          "label": "🕊️ 外交",
+          "url": "https://www.arabnews.com/node/2646290/pakistan"
+        }
+      ]
+    },
     {
       "batchLabel": "2026/06/07 07:06 更新分（アーカイブ）",
       "items": [

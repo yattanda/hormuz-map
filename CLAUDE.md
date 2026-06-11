@@ -19,6 +19,14 @@
 - commit後のpushは必ずユーザーの指示を待ってから実行する
 - 自動pushは行わない
 
+## ブランチルール
+
+- 作業は必ず main ブランチで直接行う
+- 新しいブランチ（claude/〇〇〇 等）を自動作成しない
+- 作業開始前に必ず `git branch` で main にいることを確認する
+- main 以外のブランチにいた場合は `git checkout main` してから作業を開始する
+- commit 後・push 前に `git branch && git log --oneline -3` を実行し、main ブランチにコミットされていることを確認してからユーザーに報告する
+
 ## Windows環境・Claude Code設定ルール
 
 ### プロセス終了コマンド（Windows専用）

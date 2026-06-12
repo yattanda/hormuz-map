@@ -1,7 +1,39 @@
 {
-  "updated": "2026年6月11日 07:47 日本時間JST",
+  "updated": "2026年6月12日 07:29 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "トランプ「偉大な和解」宣言——イランとの合意「文書最終化中・数日以内に欧州署名式」",
+      "body": "トランプ大統領がオーバルオフィスで「イランとの偉大な和解を成立させた。文書最終化中で数日以内に完了する」と宣言。計画中のイラン爆撃を中止し「協議がイラン最高指導者レベルで承認された」とTruth Socialに投稿。バンス副大統領・ウィトコフ特使・クシュナー上級顧問が今週末にも欧州での署名式に出席予定（トランプ本人は不参加）。署名成立ならホルムズ正式再開・米海軍封鎖解除が「合意の一部」となる。",
+      "sourceLabel": "CNBC",
+      "date": "2026年6月11日",
+      "label": "🕊️ 外交",
+      "url": "https://www.cnbc.com/2026/06/11/trump-iran-strikes-deal.html"
+    },
+    {
+      "title": "IRGC「ホルムズ全閉鎖」・タンカー2隻攻撃——CENTCOM「通航継続中」と反論",
+      "body": "イラン革命防衛隊（IRGC）はTelegram公式で「今この瞬間から全船舶の通過を標的にする」と宣言、「違法通過を試みた」タンカー2隻への攻撃を報告。6/11朝のCENTCOM 3日目爆撃（Alborz州Karaj/Nazarabad・Pishva郡IRGC基地）への報復とみられる。CENTCOMは直ちに「IRGC主張はFALSE——商業船は今夜もホルムズを通過している」と反論。トランプの「和解」宣言はこのIRGC攻撃の数時間後に発表された。",
+      "sourceLabel": "Business Standard",
+      "date": "2026年6月11日",
+      "label": "⚔️ 軍事",
+      "url": "https://www.business-standard.com/world-news/strait-of-hormuz-closed-to-all-vessels-says-iran-s-irgc-after-us-strikes-126061100091_1.html"
+    },
+    {
+      "title": "原油WTI $86・ブレント $89——トランプ「和解」宣言で4月来最安値・NY株+1000pt急騰",
+      "body": "トランプ大統領の「偉大な和解」宣言・爆撃中止発表を受け、WTI先物は$85.94まで急落（4月来最安値）、ブレントも$89水準へ。株式市場はダウが+1000pt超の急騰。トランプは「株高は市場が合意を評価している証拠。油価は岩のように下がるだろう」とコメント。ただし署名前の段階であり、イラン公式未承認・IRGC継続攻撃が残存リスク。Goldman Sachsは署名成立で年末目標を$75-83に下方修正の可能性を示唆。",
+      "sourceLabel": "Fox News",
+      "date": "2026年6月11日",
+      "label": "📉 エネルギー",
+      "url": "https://www.foxnews.com/live-news/us-iran-war-trump-israel-june-11"
+    },
+    {
+      "title": "ネタニヤフ「イスラエルはMOU非参加」——ただしトランプの核・ミサイル制限誓約を歓迎",
+      "body": "ネタニヤフ首相事務所は「イスラエルは覚書（MOU）の当事者ではない」と確認。一方でトランプが「最終合意に濃縮ウラン撤去・濃縮インフラ解体・ミサイル制限・代理組織支援停止を含める」と誓約したことを「歓迎・感謝」と表明。バンス副大統領はCBS番組で「米国とイスラエルの利益が乖離した場合、米国は自国利益を優先せざるを得ない」と述べ、対イスラエル距離を示した。CNN: 「合意がネタニヤフの遺産を覆すリスク」と報道。",
+      "sourceLabel": "Times of Israel",
+      "date": "2026年6月11日",
+      "label": "🕊️ 外交",
+      "url": "https://www.timesofisrael.com/liveblog-june-11-2026/"
+    },
     {
       "title": "CENTCOM、2日連続でイランを攻撃——弾薬庫・指揮統制施設・ジャスク海軍基地を標的に",
       "body": "米中央軍（CENTCOM）は6月10日（ET）、イランの「自衛攻撃」に対応する形で2日連続の攻撃を実施。弾薬庫・指揮統制ノード・倉庫のほか、バンダルアッバースの防空システムやシーリーク・ジャスクの海軍施設を標的とした（CBS News）。イランはバーレーン・ヨルダン・クウェートの米軍基地にミサイル・ドローンで報復。ブレントは$96まで急騰。",
@@ -406,6 +438,20 @@
   ],
   "osint": [
     {
+      "titleJa": "「米軍がホルムズから1億バレルを密輸出」——トランプ主張の実態は？",
+      "titleEn": "Did US sneak 100 million barrels of oil out of Hormuz, as Trump claims?",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(139,69,19,0.15)",
+      "cardBorder": "rgba(139,69,19,0.4)",
+      "badgeColor": "rgba(139,69,19,0.7)",
+      "borderColor": "#92400e",
+      "textColor": "#fcd34d",
+      "url": "https://www.aljazeera.com/news/2026/6/11/did-us-sneak-100-million-barrels-of-oil-out-of-hormuz-as-trump-claims",
+      "date": "2026年6月11日",
+      "isLatest": true
+    },
+    {
       "titleJa": "イラン軍参謀本部「ホルムズは閉鎖——通過を試みれば標的にする」",
       "titleEn": "Iran's top joint military command says Strait of Hormuz has been closed and any vessel attempting to pass through will be targeted",
       "country": "🇮🇷 イラン",
@@ -417,7 +463,7 @@
       "textColor": "#fca5a5",
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/10/iran-war-live-tehran-vows-response-as-us-strikes-over-downed-helicopter",
       "date": "2026年6月11日",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-20260609-aj",

@@ -1,4 +1,4 @@
-# index_html_diffs.md — 2026年6月14日 08:54 JST 更新分
+# index_html_diffs.md — 2026年6月15日 07:09 JST 更新分
 
 > Claude Code への指示：以下の差分を `docs/index.html` に適用してください。
 > 変更箇所以外は絶対に触らないこと。
@@ -12,11 +12,11 @@
 <!-- APPLY:START -->
 <!-- OLD:START -->
         <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-        <span class="badge-item badge-date">📅2026年6月13日 09:45 JST</span>
+        <span class="badge-item badge-date">📅2026年6月14日 08:54 JST</span>
 <!-- OLD:END -->
 <!-- NEW:START -->
         <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-        <span class="badge-item badge-date">📅2026年6月14日 08:54 JST</span>
+        <span class="badge-item badge-date">📅2026年6月15日 07:09 JST</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -26,12 +26,12 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <!-- 新ティッカー（2026年6月13日 09:45 JST） -->
-      🕊️【G7脇でのホルムズ合意署名が現実に】ジュネーブで最速6/14（日）・G7エヴィアン（6/15-17）脇でのMOU署名が最有力——バンス副大統領・ウィトコフ特使が出席（6/13 JST）｜🇺🇸 トランプがアラグチー投稿をリポスト「合意は今まで以上に近い」を事実上承認——リーク対立から融和へ転換（6/13 JST）｜🇮🇷 アラグチー「MOUは2段階・核は第2段階へ先送り・ホルムズは戦前に戻らない」——イラン外相が合意構造を初公表（6/13 JST）｜🇵🇰 パキスタンPM「最終合意テキスト確認済み」——最高指導者モジュタバ・ハメネイの最終承認が唯一の残課題（6/13 JST）｜📉 WTI $84・ブレント $87——合意期待で2ヶ月ぶり最安値に続落｜⚔️ CENTCOM 6/12-13にイラン自爆ドローン複数機を撃墜——IRGC圧力は交渉中も継続｜⚠️ ホルムズ閉鎖107日目・G7署名が最大焦点
-<!-- OLD:END -->
-<!-- NEW:START -->
       <!-- 新ティッカー（2026年6月14日 08:54 JST） -->
       🚨【本日ジュネーブでMOU署名へ】パキスタンPM「24時間以内に合意成立」——バンス副大統領＋カリバフ議長が署名者・ジュネーブが最有力会場（6/14 JST）｜🇺🇸 トランプ「モジュタバ・ハメネイが承認したと理解している」——イランは公式確認せず・タスニム通信「38回目の同様の発言」と懐疑（6/13 JST）｜🇮🇷 アラグチー外相「MOU署名はリモートで先行実施・その後に発表」——署名方式を異例の形で公表（6/13 JST）｜📋 MOU内容：ホルムズ即時再開・制裁解除・凍結資産を条件付き解放・核は60日後の交渉に先送り｜📉 WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値｜⚔️ CENTCOM 複数の自爆ドローン撃墜継続・IRGCはタンカー1隻阻止（6/13）｜⚠️ ホルムズ閉鎖108日目・G7エヴィアン（6/15-17）直前
+<!-- OLD:END -->
+<!-- NEW:START -->
+      <!-- 新ティッカー（2026年6月15日 07:09 JST） -->
+      🕊️【パキスタンPM「停戦は今すぐ発効」】署名式は6月19日スイスへ延期——G7エヴィアン（6/15-17）初日・トランプ「合意は完了・石油を流せ」宣言（6/14-15 JST）｜🇮🇱 イスラエルがベイルートを空爆（6/14）——トランプ「あるべきではなかった」と異例の批判・合意プロセスに打撃｜🇶🇦 カタール調停団がテヘランへ（6/14朝）——イラン「最終決定まだ」と署名延期（ファルス通信 6/14）｜🇮🇷 アラグチー「ホルムズ通航に『サービス料』徴収・ホルムズの剣は永遠に」——MOU後もイラン主権継続主張（6/14 JST）｜📉 WTI $84.88・ブレント $87.33——合意期待で2ヶ月ぶり最安値継続｜⚠️ ホルムズ閉鎖109日目・署名式6/19スイス確定
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -43,10 +43,10 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-            📅 6/13 09:45 更新
+            📅 6/14 08:54 更新
 <!-- OLD:END -->
 <!-- NEW:START -->
-            📅 6/14 08:54 更新
+            📅 6/15 07:09 更新
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -55,102 +55,57 @@
 <!-- APPLY:START -->
 <!-- OLD:START -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【6/13 09:45 速報】G7脇・ジュネーブで最速6/14署名が有力・パキスタンPM最終テキスト確認・アラグチー2段階MOU公式認定・ハメネイ承認が唯一の残関門・WTI $84・CENTCOM 6/12-13ドローン撃墜
+  【6/14 08:54 速報】パキスタンPM「24時間以内に合意」——バンス副大統領＋カリバフ議長でジュネーブ署名目前（6/14）｜CENTCOM 自爆ドローン複数撃墜継続・IRGC タンカー1隻阻止（6/13）｜トランプ「モジュタバ・ハメネ
 <!-- OLD:END -->
 <!-- NEW:START -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【6/14 08:54 速報】パキスタンPM「24時間以内に合意」——バンス副大統領＋カリバフ議長でジュネーブ署名目前（6/14）｜CENTCOM 自爆ドローン複数撃墜継続・IRGC タンカー1隻阻止（6/13）｜トランプ「モジュタバ・ハメネイが承認と理解」——イラン公式未確認・タスニム否定（6/13）｜MOU内容：ホルムズ即時再開・制裁解除・資産凍結解除（条件付き）・核は60日先送り｜WTI $84.88・ブレント $87.33 週間マイナス6%・108日目
+  【6/15 07:09 速報】パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定——G7エヴィアン初日（6/15）｜イスラエルのベイルート空爆（6/14）でイラン強硬派が反発・トランプ異例の批判｜カタール調停団がテヘランへ——イラン「最終決定まだ」・アラグチー「サービス料・ホルムズの剣は永遠」｜WTI $84.88・109日目
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S04] 情勢カード
+## [S04] 情勢カード（外交・軍事・エネルギー）
 
-### カード①外交
+### 外交カード
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<h3 class="s-title">🕊️ 外交：G7脇ジュネーブ署名が最有力——ハメネイ承認が唯一の残関門</h3>
+バンス副大統領＋カリバフ議長でジュネーブ署名目前（6/14）
 <!-- OLD:END -->
 <!-- NEW:START -->
-<h3 class="s-title">🕊️ 外交：本日ジュネーブ署名へ——パキスタン「24時間以内」・ハメネイ承認が最終焦点</h3>
+パキスタンPM「停戦は今すぐ発効」——署名式6/19スイス（6/15 JST）
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<p class="s-body">G7エヴィアン（6/15-17）脇・ジュネーブでのMOU署名が最速6/14（本日）に有力。バンス副大統領・ウィトコフ特使が米署名者として準備。アラグチー外相が「MOUは2段階構造——核は第2段階60日交渉に先送り」と公式認定。パキスタンPM「最終合意テキスト確認済み」。モジュタバ・ハメネイの最終承認のみが残課題。米軍はC-17輸送機4機を欧州に派遣済み。</p>
+トランプ「モジュタバ・ハメネイが承認したと理解している」——イランは公式確認せず
 <!-- OLD:END -->
 <!-- NEW:START -->
-<p class="s-body">パキスタンPMが「合意は24時間以内に成立する」と明言（6/14 JST）。バンス副大統領＋カリバフ議長（イラン国会議長）が署名者として決定。アラグチー外相「MOU署名はリモートで行い、その後に公式発表」と異例の方式を示唆。米政府高官「合意成立確率80〜85%」。トランプ「モジュタバ・ハメネイが承認したと理解している」と発言するも、イラン側は公式確認なし。C-17輸送機4機は既に欧州へ。</p>
+トランプ「合意は完了・石油を流せ」——イランは「最終決定まだ」（ファルス通信）・内部調整継続
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
+### 軍事カード
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<p class="s-src">出典: Bloomberg 2026/6/12・CBC News 2026/6/13・Axios 2026/6/12</p>
+CENTCOM 自爆ドローン複数撃墜継続・IRGC タンカー1隻阻止（6/13）
 <!-- OLD:END -->
 <!-- NEW:START -->
-<p class="s-src">出典: CBS News 2026/6/14・Reuters 2026/6/12・Axios 2026/6/12</p>
+イスラエルのベイルート空爆（6/14）でIRGC強硬化リスク——トランプ「あるべきでなかった」・CENTCOM引き続きドローン撃墜継続
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### カード②軍事
+### エネルギーカード
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<h3 class="s-title">⚔️ 軍事：CENTCOM 6/12-13ドローン撃墜——IRGC交渉中も圧力継続</h3>
+WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値
 <!-- OLD:END -->
 <!-- NEW:START -->
-<h3 class="s-title">⚔️ 軍事：CENTCOM ドローン撃墜継続・IRGCがタンカー阻止——署名直前の軍事圧力</h3>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p class="s-body">CENTCOMが6/12-13にIRGCの自爆ドローン複数機を撃墜。ホルムズは「通航継続中」とCENTCOMが声明。IRGCはホルムズ全閉鎖宣言を継続し、外交交渉中も軍事圧力を緩めない姿勢。米軍は商船エスコート「Operation Project Freedom」を再開。</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p class="s-body">CENTCOMが6/12-13に複数の自爆ドローンを撃墜（「商業船舶への攻撃を試みたドローン」）し、「通航は継続中」と声明。加えてIRGCは6/13にタンカー1隻の通航を実力で阻止（Reuters）。イランは「ホルムズの管理権はIRGC海軍に帰属」との声明を維持。MOU署名直前における軍事的プレッシャーは依然として高い。</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p class="s-src">出典: CENTCOM声明 2026/6/12-13・Al Jazeera 2026/6/13</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p class="s-src">出典: CENTCOM声明 2026/6/13・Reuters 2026/6/13・Al Jazeera liveblog 2026/6/13</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### カード③エネルギー
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<h3 class="s-title">🛢️ エネルギー：WTI $84・ブレント $87——合意期待で2ヶ月ぶり最安値</h3>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<h3 class="s-title">🛢️ エネルギー：WTI $84.88（-3.2%）・ブレント $87.33——週間マイナス6%・2ヶ月ぶり最安値</h3>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p class="s-body">合意期待で原油は2ヶ月ぶり安値水準に続落。WTI $84、ブレント $87。ただし合意不成立リスクが残存する限り完全な下落は限定的。Goldman Sachs は「署名から30日でホルムズ正常化」との見方を維持。EIAは「閉鎖が続く間は6〜7月ブレント平均$105」を維持。戦前比商業通航95%減継続。</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p class="s-body">WTIは3.2%安の$84.88、ブレントは3.4%安の$87.33で引け（6/12 NY終値）。週間では約マイナス6%・2ヶ月ぶり最安値。ただしイランが「ホルムズは戦前に戻らない（通行料徴収継続）」と主張するため、合意後の完全正常化タイムラインは不透明。Goldman Sachs「署名から1ヶ月以内に通航量正常化」予想。戦前比商業通航95%減継続・機雷除去は英仏が実施予定。</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p class="s-src">出典: CNBC 2026/6/12・TradingEconomics 2026/6/12・Goldman Sachs 2026/4/26</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p class="s-src">出典: CNBC 2026/6/12・TradingEconomics 2026/6/12・Bloomberg/gCaptain 2026/6/12</p>
+WTI $84.88・ブレント $87.33——MOU期待で2ヶ月ぶり最安値継続・署名6/19へ（6/15 JST再確認）
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -160,19 +115,19 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<span class="countdown-days">107</span>日目
+<span class="countdown-days">108</span>日目
 <!-- OLD:END -->
 <!-- NEW:START -->
-<span class="countdown-days">108</span>日目
+<span class="countdown-days">109</span>日目
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="countdown-phase">Phase 9「イスラバード合意」テキスト確認・G7署名最終段階</div>
+Phase 9「ジュネーブMOU」署名目前
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="countdown-phase">Phase 9「ジュネーブMOU」署名目前——本日バンス＋カリバフ署名へ</div>
+Phase 9「スイス署名式（6/19）」停戦発効
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -182,10 +137,19 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="scenario-update-note">📊 6/13 09:45 JST 確率更新 ｜ A↑↑↑ B↑↑ C↓↓ D↓↓</div>
+6/14 08:54 JST
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="scenario-update-note">📊 6/14 08:54 JST 確率更新 ｜ A↑↑↑↑ B↑ C↓↓↓ D↓↓↓</div>
+6/15 07:09 JST
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+A↑↑↑↑ B↑ C↓↓↓ D↓↓↓
+<!-- OLD:END -->
+<!-- NEW:START -->
+A↑↑↑↑↑ B↑ C↓↓↓ D↓↓↓↓
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -193,149 +157,78 @@
 
 ## [S07] シナリオ4本
 
-### シナリオA
+### シナリオA（外交解決）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<h3 class="sc-title">🟢 シナリオA：段階的和解——G7脇ジュネーブ署名・60日交渉へ（最有力）</h3>
+シナリオA（本日署名・ホルムズ即時再開）
 <!-- OLD:END -->
 <!-- NEW:START -->
-<h3 class="sc-title">🟢 シナリオA：段階的和解——本日ジュネーブ署名・ホルムズ即時再開・60日交渉へ（最有力）</h3>
+シナリオA（6/19スイス署名成立・ホルムズ即時再開）
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="sc-body"><p>G7エヴィアン（6/15-17）脇・ジュネーブで最速6/14（本日）のMOU署名が実現。バンス副大統領とカリバフ議長がそれぞれ署名。ホルムズは「署名と同時に即時再開」——ただしイランは通行料徴収・海峡管理権を保持。60日間の停戦延長＋核交渉継続。核は第2フェーズで別途協議。モジュタバ・ハメネイの最終承認が確認されれば署名式が実現。</p></div>
+<p class="sc-body">パキスタンPM「24時間以内に合意」——バンス＋カリバフ署名・ハメネイ最終承認が残課題。MOU内容：ホルムズ即時再開・60日間停戦延長・核交渉開始・凍結資産段階的解放。署名後30日以内に戦前通航水準（140隻/日）に回復予定。WTI $70-80水準へ。
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="sc-body"><p>パキスタンPMが「24時間以内に合意成立」と明言（6/14 JST）。バンス副大統領＋カリバフ議長の署名による60日MOUが本日ジュネーブで締結。署名と同時にホルムズ即時再開（ただしイランの通行料徴収・海峡管理は継続）。米は凍結資産を条件付き解放・制裁を一部解除。G7エヴィアン（6/15-17）を前に外交的大きな一歩。核交渉は60日後の第2フェーズへ先送り。</p></div>
+<p class="sc-body">パキスタンPM「停戦は今すぐ発効」・署名式は6/19スイスへ確定。MOU内容：ホルムズ即時再開・60日間停戦延長・核交渉は60日後・凍結資産$240億を段階的解放。署名後30日以内に戦前通航水準（140隻/日）回復。機雷除去は英仏が支援。WTI $70-80水準へ急落。
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
+### シナリオB（部分合意・膠着継続）
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<p class="sc-tag">🛢️ WTI予測: $70-80｜シナリオ期待：A（最有力）・モジュタバ・ハメネイ最終承認待ち</p>
+<p class="sc-body">署名後ハメネイが合意内容を否認、またはIRGCが「サービス料」問題を盾に通航妨害継続。ホルムズは名目上再開されるが実質的に戦前水準に戻らない。核交渉60日間でも隔たり大きく、停戦期限が再び焦点に。WTI $85-95で推移。
 <!-- OLD:END -->
 <!-- NEW:START -->
-<p class="sc-tag">🛢️ WTI予測: $70-80｜本日署名成立ならWTI急落へ・機雷除去（英仏）開始後に更に低下</p>
+<p class="sc-body">6/19署名は成立したが、アラグチーの「サービス料」発言通りイランがホルムズの管理権を維持。IRGCが独自基準で一部船舶を阻止継続。核交渉60日間で隔たり大きく、停戦期限（8月中旬）が再び焦点に。イスラエルのレバノン攻撃がイラン国内強硬派の勢いを温存。WTI $85-95で推移。
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### シナリオB
+### シナリオC（署名失敗・交渉再開）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<h3 class="sc-title">🟡 シナリオB：2段階長期化——核先送りMOU成立もIRGC強硬派が妨害</h3>
+<p class="sc-body">IRGC妨害継続・ハメネイ不承認でMOUが不成立。交渉は仕切り直しで長期化。CENTCOM追加爆撃がエスカレート、ホルムズは部分的に再開するも定常化せず。地域緊張は高止まりで原油市場は再び不安定化。WTI $100-120。
 <!-- OLD:END -->
 <!-- NEW:START -->
-<h3 class="sc-title">🟡 シナリオB：署名後に破綻——ハメネイ拒否またはIRGC強硬派が署名を無効化</h3>
+<p class="sc-body">イスラエルのベイルート攻撃連鎖でイラン国内の強硬派が優勢となり、6/19署名が延期・白紙化。カタール・パキスタンの調停努力が不発に終わり交渉が仕切り直しへ。IRGC妨害が再度活発化しホルムズ通航が再び抑制。WTI $100-120へ反騰。
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-body"><p>MOU署名は成立するものの、モジュタバ・ハメネイの最終承認が遅延あるいは条件付きとなり、IRGC強硬派が実施を妨害。ホルムズは「紙の上では再開」するが現場レベルでは通航阻害が継続。60日交渉は核問題で再び膠着。イランの通行料要求と米国の「無制限通航」要求が衝突。長期間にわたる低強度紛争状態（管理された閉鎖）に移行。</p></div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-body"><p>MOU署名は紙の上では成立するが、モジュタバ・ハメネイが最終承認を拒否、またはIRGC強硬派が署名後に独自の阻害行動をとり実質的に無効化。「書類上の合意・現場レベルの閉鎖継続」という矛盾した状態に。60日交渉は核問題で早期に膠着。米「無制限通航」vsイラン「通行料＋海峡管理権維持」の衝突が解決せず長期化。ブレント$85-95水準で高止まり。</p></div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+### シナリオD（全面戦争再開）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<p class="sc-tag">🛢️ WTI予測: $85-95｜イラン強硬派の動向・2段階核先送りリスク</p>
+<p class="sc-body">ハメネイ拒否＋イスラエルのイラン本国への新規攻撃でMOUが完全崩壊。米軍が対イラン大規模爆撃を再開し停戦が消滅。イランは全面報復としてホルムズを完全封鎖。世界エネルギー市場が壊滅的混乱に。WTI $130-150超。
 <!-- OLD:END -->
 <!-- NEW:START -->
-<p class="sc-tag">🛢️ WTI予測: $85-95｜書類上の合意・現場レベルの実施不全シナリオ</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### シナリオC
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<h3 class="sc-title">🔴 シナリオC：軍事再激化——IRGC署名妨害・米が再爆撃</h3>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<h3 class="sc-title">🔴 シナリオC：署名崩壊・軍事再激化——IRGC強硬派がジュネーブ署名を破談に</h3>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-body"><p>IRGC強硬派がジュネーブ署名直前に重大インシデント（大規模タンカー攻撃・外交官への脅迫等）を引き起こし合意破談。トランプが再爆撃命令。イランが全面反撃（弾道ミサイル・GCC諸国基地攻撃）。ホルムズは完全封鎖状態に逆戻り。ブレント$100-120域へ急騰。</p></div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-body"><p>IRGC強硬派が署名日（本日）に重大インシデント（大規模タンカー攻撃・外交官への直接脅迫等）を引き起こし合意が土壇場で破談。「署名寸前での崩壊」にトランプが激怒し再爆撃命令。IRGCが全面反撃（弾道ミサイル・GCC諸国基地攻撃）。ホルムズは完全封鎖状態に逆戻り。G7はイラン非難声明で緊急対応。ブレント$100-120域へ急騰。</p></div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p class="sc-tag">🛢️ WTI予測: $100-120｜G7即時制裁・新ホルムズ護衛作戦発動</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p class="sc-tag">🛢️ WTI予測: $100-120｜G7緊急声明・イラン再爆撃・護衛作戦強化</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### シナリオD
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<h3 class="sc-title">⚫ シナリオD：核交渉破綻・全面戦争——再爆撃・ホルムズ完全封鎖</h3>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<h3 class="sc-title">⚫ シナリオD：核交渉完全破綻・全面戦争——MOU不成立で超大規模再爆撃</h3>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-body"><p>60日交渉が核問題で完全破綻。トランプがフォルドウ・ナタンズへの超大規模爆撃を実施。イランが全面戦争宣言・ホルムズに機雷大量敷設。GCC諸国へのミサイル攻撃がエスカレート。世界経済は深刻なエネルギーショック。ブレント$130-150水準に。</p></div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-body"><p>本日の署名が完全に失敗し、MOU自体が不成立。トランプが「最後通牒を無視した」として核施設（フォルドウ・ナタンズ）への超大規模爆撃を発令。イランが全面戦争宣言・ホルムズに機雷大量敷設・GCC諸国へのミサイル攻撃がエスカレート。イスラエルも同時参戦。世界経済は深刻なエネルギーショック。ブレント$130-150水準に急騰。</p></div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p class="sc-tag">🛢️ WTI予測: $130-150｜世界エネルギー危機・NATO条項発動検討</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p class="sc-tag">🛢️ WTI予測: $130-150｜世界エネルギー危機・代替ルート枯渇・NATO条項発動</p>
+<p class="sc-body">イスラエルのベイルート攻撃がイラン本国への連鎖攻撃に発展し、停戦が崩壊。IRGCが全面報復を宣言し米軍との直接衝突が再燃。長期消耗戦フェーズへ突入しホルムズは完全閉鎖継続。G7・パキスタン調停も機能停止。WTI $130-150超・世界経済危機が深刻化。
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S08] シナリオフッター
+## [S08] シナリオフッター（次の焦点5点）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="scenario-footer"><p><strong>📌 次の5焦点（6/13 09:45 JST）：</strong></p>
+署名成立・ハメネイ確認・IRGC妨害・G7・再開タイムライン
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="scenario-footer"><p><strong>📌 次の5焦点（6/14 08:54 JST）：</strong></p>
+6/19スイス署名式の成否・イランの正式批准・イスラエル-レバノン攻撃連鎖の収束・G7エヴィアン支持声明・署名後のホルムズ機雷除去タイムライン
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<li>バンス副大統領＋カリバフ議長の署名がジュネーブで実現するか（6/14 本日）</li>
-<li>モジュタバ・ハメネイの最終承認が正式に文書化されるか</li>
-<li>イラン強硬派（IRGC・タスニム）が土壇場で署名を妨害するか</li>
-<li>G7エヴィアン（6/15-17）でのトランプ外交と対イラン統一方針の形成</li>
-<li>MOU署名後のホルムズ実際の再開タイムライン（30日以内）と機雷除去作業開始</li>
+次の5焦点：①本日署名の成否　②モジュタバ・ハメネイの公式承認　③IRGC妨害の継続可否　④G7エヴィアン合意支持声明　⑤署名後のホルムズ再開タイムライン
 <!-- OLD:END -->
 <!-- NEW:START -->
-<li>本日ジュネーブでの署名が実際に成立するか——リモート署名方式の確認</li>
-<li>モジュタバ・ハメネイの最終承認が署名前後に公式確認されるか</li>
-<li>IRGC強硬派が署名後にタンカー攻撃・阻止行動を継続するか（土壇場妨害リスク）</li>
-<li>G7エヴィアン（6/15-17）でトランプが合意をどう位置づけ・同盟国に説明するか</li>
-<li>署名後のホルムズ実際の再開タイムライン（30日以内）と英仏機雷除去作業の開始日</li>
+次の5焦点：①6/19スイス署名式の成否　②イランの正式批准プロセス　③イスラエルのレバノン攻撃連鎖とIRGC強硬化リスク　④G7エヴィアン（6/15-17）の合意支持声明　⑤署名後のホルムズ機雷除去・30日以内全面再開の可否
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -345,10 +238,10 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-🚢 全ルート現況サマリー（2026年6月13日 09:45 JST 再確認済）
+🚢 全ルート現況サマリー（2026年6月14日 08:54 JST 再確認済）
 <!-- OLD:END -->
 <!-- NEW:START -->
-🚢 全ルート現況サマリー（2026年6月14日 08:54 JST 再確認済）
+🚢 全ルート現況サマリー（2026年6月15日 07:09 JST 再確認済）
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -356,30 +249,34 @@
 
 ## [S09] 30秒カラム（3行サマリー＋バッジ）
 
-### 3行サマリー更新
+⚠️ **Claude Code：以下の old_str は S01〜S08.5 が確定後に適用のこと。grep で現在の30秒カラム先頭を確認してから適用すること。**
+
+### 3行サマリー テキスト更新
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<p style="font-size:0.9rem;line-height:1.7;color:#e2e8f0;margin:0 0 14px;">
-  🔴 <strong>今何が起きているか：</strong>G7エヴィアン（6/15-17）直前・ジュネーブでMOU署名が本日（6/14）に迫る。パキスタンPM「最終テキスト確認済み」・アラグチー外相「2段階構造——核は第2フェーズ先送り」を公式認定。トランプがアラグチー投稿をリポストし事実上承認。モジュタバ・ハメネイの最終承認のみが残課題。
-</p>
-<p style="font-size:0.9rem;line-height:1.7;color:#e2e8f0;margin:0 0 14px;">
-  ⚔️ <strong>軍事：</strong>CENTCOM 6/12-13に自爆ドローン複数機を撃墜——ホルムズは「通航継続中」とCENTCOM声明。IRGCはホルムズ全閉鎖宣言を継続し、外交交渉中も軍事圧力を維持。
-</p>
-<p style="font-size:0.9rem;line-height:1.7;color:#e2e8f0;margin:0 0 14px;">
-  💰 <strong>エネルギー：</strong>WTI $84・ブレント $87——合意期待で2ヶ月ぶり最安値。商業通航は戦前比95%減継続。英仏が機雷除去を準備中。
-</p>
+🚨 パキスタンPM「24時間以内に合意成立」——バンス副大統領＋カリバフ議長でジュネーブMOU署名目前・G7エヴィアン（6/15-17）直前
 <!-- OLD:END -->
 <!-- NEW:START -->
-<p style="font-size:0.9rem;line-height:1.7;color:#e2e8f0;margin:0 0 14px;">
-  🔴 <strong>今何が起きているか：</strong>パキスタンPMが「合意は24時間以内に成立」と明言（6/14 JST）。バンス副大統領＋カリバフ議長（イラン国会議長）がジュネーブでMOUに署名する見通し。アラグチー外相「署名はリモートで行い後で発表」と異例の方式示唆。トランプ「モジュタバ・ハメネイが承認したと理解」——イラン公式未確認が唯一の残課題。G7エヴィアン（6/15-17）直前の歴史的局面。
-</p>
-<p style="font-size:0.9rem;line-height:1.7;color:#e2e8f0;margin:0 0 14px;">
-  ⚔️ <strong>軍事：</strong>CENTCOM が6/12-13に自爆ドローン複数機を撃墜——ホルムズは「通航継続中」。IRGCは同時にタンカー1隻を実力阻止（6/13 Reuters）。署名直前でも軍事圧力は緩まず。
-</p>
-<p style="font-size:0.9rem;line-height:1.7;color:#e2e8f0;margin:0 0 14px;">
-  💰 <strong>エネルギー：</strong>WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値。署名成立ならさらに急落へ。商業通航は戦前比95%減継続・英仏が機雷除去を準備中。
-</p>
+🕊️ パキスタンPM「停戦は今すぐ発効」——署名式は6月19日スイスへ延期・G7エヴィアン（6/15-17）初日
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+⚔️ CENTCOM 自爆ドローン複数撃墜継続・IRGC タンカー1隻阻止（6/13）｜トランプ「モジュタバ・ハメネイが承認」——イランは公式確認せず・署名を慎重に確認中
+<!-- OLD:END -->
+<!-- NEW:START -->
+⚔️ イスラエルのベイルート空爆（6/14）でIRGC強硬化リスク——トランプ「あるべきでなかった」と異例批判・カタール調停団テヘランへ・CENTCOM引き続きドローン撃墜継続
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+💰 WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値・ホルムズ閉鎖108日目
+<!-- OLD:END -->
+<!-- NEW:START -->
+💰 WTI $84.88・ブレント $87.33——MOU期待で2ヶ月ぶり最安値継続・アラグチー「サービス料徴収・ホルムズの剣は永遠に」・ホルムズ閉鎖109日目
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -387,163 +284,176 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<span style="background:#1a3a1a;border:1px solid #22c55e;color:#4ade80;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:700;">✅ ホルムズ：通航制限中</span>
+署名目前（G7前日）
 <!-- OLD:END -->
 <!-- NEW:START -->
-<span style="background:#1a3a1a;border:1px solid #22c55e;color:#4ade80;padding:3px 8px;border-radius:4px;font-size:0.72rem;font-weight:700;">🚨 署名目前：本日実施へ</span>
+停戦発効・署名6/19
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<span style="background:#1a2a1a;border:1px solid #16a34a;color:#86efac;padding:3px 8px;border-radius:4px;font-size:0.72rem;">🚢 商業通航95%減</span>
+WTI $84.88（-3.2%）
 <!-- OLD:END -->
 <!-- NEW:START -->
-<span style="background:#1a2a1a;border:1px solid #16a34a;color:#86efac;padding:3px 8px;border-radius:4px;font-size:0.72rem;">🚢 商業通航95%減継続</span>
+WTI $84.88（安値継続）
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [C01] 日本関係船舶確認
-
-> **Web検索実施済み（2026年6月14日 08:54 JST）**
-> 検索クエリ: "Japan tanker ship Hormuz Strait June 2026"
-> 結果: 6月13-14日における日本関係船舶の新規通過情報なし。
-> 前回確認（6/13 09:45 JST）から変化なし。
-> 出光丸は5/25到着済み。ENEOSタンカーは5月通過済み。39隻の日本関係船舶が依然としてペルシャ湾内に滞留中（高木首相声明より）。
-
----
-
-## [S10] news_data.json 更新指示
-
-> Claude Code への指示：`docs/data/news_data.json` に対して以下の変更を**マージ形式**で適用してください。
-> - `updated` フィールドを更新する
-> - `latest` の既存4件を `archive` の先頭バッチに移動し、新規4件を `latest` に追加する
-> - `osint` は先頭に新規1件を追加し、既存の `isLatest: true` を `isLatest: false` に変更する
-> - **既存データの削除・置き換えは禁止（append-only）**
+## [S10] news_data.json 更新
 
 ### `updated` フィールド更新
 
-```
-"updated": "2026年6月14日 08:54 日本時間JST"
-```
-
-### `latest` 新規4件（既存4件はarchiveへ移動）
-
-```json
-{
-  "id": "latest-001",
-  "date": "2026年6月14日 JST",
-  "title": "パキスタンPM「24時間以内に合意成立」——バンス副大統領＋カリバフ議長がジュネーブ署名へ",
-  "body": "パキスタン首相が「米・イラン間の合意は24時間以内に成立する」と明言。バンス副大統領がイラン・カリバフ国会議長との間でジュネーブにてMOU署名を行う見通し。米軍のC-17輸送機4機は既に欧州へ。アラグチー外相「署名はリモート方式で行い、その後に公式発表」と異例の方式を示唆。米政府高官は成立確率を「80〜85%」と述べた。",
-  "sourceLabel": "CBS News",
-  "date": "2026年6月14日 JST",
-  "label": "🔴 速報",
-  "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-peace-deal-agreement/"
-},
-{
-  "id": "latest-002",
-  "date": "2026年6月13日 JST",
-  "title": "G7エヴィアン脇署名へ——トランプ「モジュタバ・ハメネイ承認と理解」・イランは公式否定",
-  "body": "トランプが「モジュタバ・ハメネイは合意を承認したと理解している」と発言。ただしイラン・タスニム通信は「38回目の同種の発言」と懐疑的に報道。CBC News / Reuters によると、西側外交筋はハメネイの個人的な最終承認が「高レベルでは承認済みだがハメネイ自身は不明」と報告。G7サミット（エヴィアン、6/15-17）直前のジュネーブで署名式が予定。",
-  "sourceLabel": "Reuters / CBC News",
-  "date": "2026年6月13日 JST",
-  "label": "🕊️ 外交",
-  "url": "https://www.cbc.ca/news/world/trump-iran-memorandum-united-states-9.7233089"
-},
-{
-  "id": "latest-003",
-  "date": "2026年6月12-13日 JST",
-  "title": "MOUの内容が明らかに——ホルムズ即時再開・制裁解除・核は60日後の交渉に先送り",
-  "body": "Axiosが報じたMOUの骨子：①ホルムズを署名と同時に即時再開 ②米が制裁を一部解除 ③凍結イラン資産を条件付きで解放（義務履行後に段階解放）④核プログラムは60日間の別途交渉フェーズへ先送り——ただし「核兵器は永久に開発しない」コミットメントは含む。イランの「通行料徴収継続」要求と米の「無制限通航」要求が依然として対立点。バンス副大統領は「イランは現金を受け取らない。義務を履行した場合のみ経済的恩恵が生じる」と明言。",
-  "sourceLabel": "Axios",
-  "date": "2026年6月13日 JST",
-  "label": "📋 MOU詳細",
-  "url": "https://www.axios.com/2026/06/12/iran-deal-mou-strait-open-sanctions-relief"
-},
-{
-  "id": "latest-004",
-  "date": "2026年6月12日 JST",
-  "title": "WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値",
-  "body": "合意期待でWTIは3.2%安の$84.88、ブレントは3.4%安の$87.33で引け（6/12 NY終値）。週間ではおよそマイナス6%。ただしイランが「ホルムズの管理権維持・通行料徴収継続」を主張しているため、完全正常化後の価格水準は不透明。Goldman Sachs「署名から約1ヶ月でホルムズ通航量が戦前水準に回復」と予測。機雷除去（英仏主導）が始まるまで完全正常化は難しい見通し。",
-  "sourceLabel": "CNBC",
-  "date": "2026年6月12日 JST",
-  "label": "💰 原油市場",
-  "url": "https://www.cnbc.com/2026/06/12/oil-prices-wti-brent-on-hopes-of-us-iran-deal-despite-tehran-pushback.html"
-}
-```
-
-### `osint`（現地メディア視点）先頭に追加（既存の `isLatest: true` → `false` に変更）
-
-```json
-{
-  "id": "osint-latest",
-  "date": "2026年6月13日 JST",
-  "titleJa": "【Al Jazeera】「イランは軍事圧力で署名したのではない」——署名直前のイラン内部の見方",
-  "titleEn": "Iran war live: US, Tehran signal peace deal within reach but not signed yet",
-  "country": "カタール",
-  "media": "Al Jazeera",
-  "cardBg": "rgba(100,60,0,0.3)",
-  "cardBorder": "rgba(217,119,6,0.4)",
-  "badgeColor": "#f59e0b",
-  "borderColor": "#d97706",
-  "textColor": "#fcd34d",
-  "url": "https://www.aljazeera.com/amp/news/liveblog/2026/6/13/iran-war-live-us-tehran-signal-peace-deal-within-reach-but-not-signed-yet",
-  "date": "2026年6月13日 JST",
-  "isLatest": true
-}
-```
-
-### `staleNotice` 更新
-
-```
-"staleNotice": ""
-```
-
----
-
-## [S11] 更新ログ（2ブロック構成）
-
-> ⚠️ Claude Code への注意：ブロック1・ブロック2の old_str に含まれる日付エントリー内容は、docs/index.html の実際の HTML と一致しない場合があります。適用前に `grep -n "6月13日\|6月12日\|6月11日\|6月10日" docs/index.html` で実際の文字列を確認し、必要に応じて old_str を修正してから適用してください。
-
-### ブロック1: 常時表示3件の更新（6/14追加・6/11を押し出し）
-
 <!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
 <!-- OLD:START -->
-        <div>📅 <strong>2026年6月13日 09:45 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/13 09:45</span> — <strong style="color:#fca5a5;">【重大更新】</strong>G7脇・ジュネーブで最速6/14署名が有力・パキスタンPM最終テキスト確認・アラグチー2段階MOU公式認定・ハメネイ承認が唯一の残関門・WTI $84・CENTCOM 6/12-13ドローン撃墜・ニュース4件更新・OSINT更新</div>
-        <div>📅 <strong>2026年6月12日 07:29 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/12 07:29</span> — <strong style="color:#fca5a5;">【重大更新】</strong>トランプ「偉大な和解」宣言・攻撃中止・IRGC攻撃継続・原油急落(WTI $86・ブレント $89)・ネタニヤフMOU非参加・ニュース4件更新・OSINT更新</div>
-        <div>📅 <strong>2026年6月11日 07:47 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/11 07:47</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IRGC「ホルムズ全船舶閉鎖」正式宣言・CENTCOM2日目爆撃・イラン報復攻撃（バーレーン・ヨルダン・クウェート）・IAEA核サイト緊急査察要求・ブレント$96・ニュース4件更新・OSINT更新</div>
+  "updated": "2026年6月14日 08:54 日本時間JST",
 <!-- OLD:END -->
 <!-- NEW:START -->
-        <div>📅 <strong>2026年6月14日 08:54 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/14 08:54</span> — <strong style="color:#fca5a5;">【重大更新】</strong>パキスタン「24時間以内に合意」・バンス＋カリバフでジュネーブ署名目前・トランプ「モジュタバ・ハメネイ承認と理解」・イラン公式未確認・WTI $84.88（週間-6%）・CENTCOM ドローン撃墜継続・IRGCタンカー阻止・ニュース4件更新・OSINT更新</div>
-        <div>📅 <strong>2026年6月13日 09:45 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/13 09:45</span> — <strong style="color:#fca5a5;">【重大更新】</strong>G7脇・ジュネーブで最速6/14署名が有力・パキスタンPM最終テキスト確認・アラグチー2段階MOU公式認定・ハメネイ承認が唯一の残関門・WTI $84・CENTCOM 6/12-13ドローン撃墜・ニュース4件更新・OSINT更新</div>
-        <div>📅 <strong>2026年6月12日 07:29 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/12 07:29</span> — <strong style="color:#fca5a5;">【重大更新】</strong>トランプ「偉大な和解」宣言・攻撃中止・IRGC攻撃継続・原油急落(WTI $86・ブレント $89)・ネタニヤフMOU非参加・ニュース4件更新・OSINT更新</div>
+  "updated": "2026年6月15日 07:09 日本時間JST",
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### ブロック2: 押し出された 6/11 を log-collapse 先頭に挿入
+### `staleNotice` フィールド更新
+
+<!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
+<!-- OLD:START -->
+  "staleNotice": "",
+<!-- OLD:END -->
+<!-- NEW:START -->
+  "staleNotice": "",
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+### `latest` 配列の先頭に新規4件を追加（最古の1件はarchiveへ）
+
+<!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
+<!-- OLD:START -->
+  "latest": [
+<!-- OLD:END -->
+<!-- NEW:START -->
+  "latest": [
+    {
+      "title": "パキスタンPM「停戦は今すぐ発効」——署名式は6月19日スイスへ確定",
+      "body": "パキスタンのシャバズ・シャリフ首相がXに投稿し「米国とイランは即時かつ永続的な停戦に合意した。署名式は6月19日スイスで実施」と宣言。トランプ大統領も「合意は完了・石油を流せ（Let the oil flow!）」とTruth Socialに投稿。ただしイランのファルス通信は「最終決定はまだ行われていない」と慎重姿勢を維持している。",
+      "sourceLabel": "CBS News（ライブブログ）",
+      "date": "2026年6月15日",
+      "label": "🕊️ 外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-peace-deal-agreement/"
+    },
+    {
+      "title": "アラグチー「サービス料徴収・ホルムズの剣は永遠に」——MOU後もイラン主権継続主張",
+      "body": "イランのアラグチー外相はイラン国営メディアに対し「ホルムズ海峡の通航料は徴収不可だが、サービス料は課す」「イランのホルムズに対する剣は永久に維持する」と発言。MOU成立後もイランがホルムズの実質的管理を維持する意向を示した。米国との解釈の齟齬が今後の課題となる。",
+      "sourceLabel": "NBC News",
+      "date": "2026年6月14日",
+      "label": "🇮🇷 イラン",
+      "url": "https://www.nbcnews.com/world/iran/us-iran-deal-expected-reopen-strait-hormuz-signed-days-both-sides-say-rcna349916"
+    },
+    {
+      "title": "イスラエルのベイルート空爆（6/14）でMOU署名が複雑化——トランプが異例の批判",
+      "body": "イスラエル軍が6月14日（日）にベイルートのヒズボラ拠点を空爆。トランプは「特別な日に、合意が非常に近い時にあるべきではなかった」とイスラエルを異例の形で批判。イランはイスラエルの攻撃を停戦への「違反」と非難し、IRGC強硬派が反発。カタール調停団がテヘランに飛んで火消しに当たった。",
+      "sourceLabel": "Times of Israel",
+      "date": "2026年6月14日",
+      "label": "⚔️ 軍事",
+      "url": "https://www.timesofisrael.com/despite-trump-pronouncement-iran-signals-no-final-decision-made-on-deal/"
+    },
+    {
+      "title": "カタール調停団がテヘランへ——G7エヴィアン（6/15-17）開幕・合意確定急ぐ",
+      "body": "カタールの外務大臣顧問団が6月14日朝にテヘランへ飛び、アラグチー外相とモジュタバ・ハメネイ最高指導者側近と協議。「最新の外交プロセスを確認する目的」（タスニム通信）。G7サミットがフランス・エヴィアンで6月15日に開幕し、ホルムズ合意はG7首脳声明の最重要議題となる見通し。",
+      "sourceLabel": "RFERL / NBC News",
+      "date": "2026年6月14日",
+      "label": "🌍 国際",
+      "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html"
+    },
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+### `osint` 配列に最新1件を先頭追加（前の isLatest: true → false に変更）
+
+**① 既存のisLatest: trueをfalseに変更**
+
+<!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
+<!-- OLD:START -->
+      "isLatest": true
+<!-- OLD:END -->
+<!-- NEW:START -->
+      "isLatest": false
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+**② osint配列先頭に新規追加**
+
+<!-- APPLY:START -->
+<!-- FILE:docs/data/news_data.json -->
+<!-- OLD:START -->
+  "osint": [
+<!-- OLD:END -->
+<!-- NEW:START -->
+  "osint": [
+    {
+      "titleJa": "【Al Jazeera】パキスタン「停戦発効」宣言・署名式6/19スイス——G7エヴィアン初日・イランは内部調整継続",
+      "titleEn": "Pakistan PM says US-Iran ceasefire 'now in place', signing June 19 in Switzerland",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(139,90,43,0.15)",
+      "cardBorder": "rgba(217,119,6,0.4)",
+      "badgeColor": "rgba(217,119,6,0.25)",
+      "borderColor": "rgba(217,119,6,0.5)",
+      "textColor": "#fcd34d",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/14/iran-war-live-trump-says-deal-to-be-signed-today-as-tehran-urges-caution",
+      "date": "2026年6月14日",
+      "isLatest": true
+    },
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+---
+
+## [S11] 更新ログ
+
+⚠️ **Claude Code：S11 の old_str は以下を実行して確認してから適用すること**
+```bash
+grep -n "6月12日\|6月13日\|6月14日\|6月11日" docs/index.html | head -20
+```
+
+### ブロック1: 常時表示エリア（3件固定）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <!-- 折り畳み領域: 4件目以降（初期非表示） -->
-      <div id="log-collapse" style="display:none;">
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月10日 07:30 JST</strong> 更新</div>
+        <div>📅 <strong>2026年6月14日 08:54 JST</strong> 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
+        <div>📅 <strong>2026年6月15日 07:09 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/15 07:09</span> — <strong style="color:#86efac;">【停戦発効】</strong>パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定・G7エヴィアン（6/15-17）開幕・イスラエルのベイルート空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・ブレント $87.33・109日目・ニュース4件更新・OSINT更新</div>
+        <div>📅 <strong>2026年6月14日 08:54 JST</strong> 更新</div>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+> ⚠️ **追加注記（Claude Code）**: ブロック1の old_str は「6月14日 08:54 JST」行の1行だけをターゲットにしています。str_replace 後、常時表示が「6/15 + 6/14 + 6/13 の3件」になっているか確認してください。6/12 の行が常時表示から除外され log-collapse に移動する必要がある場合は、ブロック2を適用してください。
+
+### ブロック2: log-collapse への 6/12 エントリー挿入
+
+> ⚠️ **Claude Code**: 以下の old_str の `[6月12日の日付行]` は grep 結果で確認した実際の HTML に置き換えること。
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
           <div>📅 <strong>2026年6月11日 07:47 JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/06/11 07:47</span> — <strong style="color:#c4b5fd;">【重大更新】</strong>IRGC「ホルムズ全船舶閉鎖」正式宣言・CENTCOM2日目爆撃・イラン報復攻撃（バーレーン・ヨルダン・クウェート）・IAEA核サイト緊急査察要求・ブレント$96・ニュース4件更新・OSINT更新</div>
-          <div>📅 <strong>2026年6月10日 07:30 JST</strong> 更新</div>
+<!-- OLD:END -->
+<!-- NEW:START -->
+      <!-- 折り畳み領域: 4件目以降（初期非表示） -->
+      <div id="log-collapse" style="display:none;">
+        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+          <div>📅 <strong>2026年6月12日 XX:XX JST</strong> 更新</div>
+          <div><span style="color:#94a3b8;">2026/06/12 XX:XX</span> — [Claude Code: grep で 6月12日の実際のログ内容を確認し、ここに挿入すること]</div>
+          <div>📅 <strong>2026年6月11日 07:47 JST</strong> 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -551,10 +461,10 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-  "dateModified": "2026-06-13T00:00:00+09:00",
+  "dateModified": "2026-06-14T00:00:00+09:00",
 <!-- OLD:END -->
 <!-- NEW:START -->
-  "dateModified": "2026-06-14T00:00:00+09:00",
+  "dateModified": "2026-06-15T00:00:00+09:00",
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -563,33 +473,50 @@
 ## ✅ 出力前セルフチェック
 
 ```
-[✓] Step 0 — old_str 基準：6月13日 09:45 JST版（プロジェクト知識＋更新ログ照合確認済み・一致）
-[✓] S01 ヘッダー — 6月13日 09:45 JST → 6月14日 08:54 JST
-[✓] S02 TICKER — パキスタン24時間以内・バンス＋カリバフ署名・ハメネイ未確認・WTI $84.88・108日目
-[✓] S03 速報インシデント — 6/14 08:54付け・パキスタン24時間・IRGCタンカー阻止・CENTCOM撃墜
-[✓] S04 情勢カード3枚 — 外交（署名目前・バンス+カリバフ・ハメネイ未確認）・軍事（ドローン撃墜・タンカー阻止）・エネルギー（WTI $84.88・ブレント $87.33）
-[✓] S05 COUNTDOWN — 107日目 → 108日目・Phase 9「ジュネーブMOU」署名目前
-[✓] S06 シナリオ確率補足バナー — 6/14 08:54 JST・A↑↑↑↑ B↑ C↓↓↓ D↓↓↓
-[✓] S07 シナリオ4本 — A（本日署名・ホルムズ即時再開）・B（署名後ハメネイ拒否）・C（IRGC妨害・再激化）・D（完全破綻）確認済み
+[✓] Step 0 — old_str 基準：6月14日 08:54 JST版（プロジェクト知識＋更新ログ照合確認済み・一致）
+[✓] C01 タンカー確認 — web検索実施済み・変化なし（6/14-15 日本船舶新規通過・足止め情報なし）
+[✓] S01 ヘッダー — 6月14日 08:54 JST → 6月15日 07:09 JST
+[✓] S02 TICKER — 停戦発効・署名6/19スイス・ベイルート空爆・カタール調停・アラグチー「サービス料」・109日目
+[✓] S03 速報インシデント — 6/15 07:09付け・ベイルート空爆・カタール調停団・アラグチー発言
+[✓] S04 情勢カード3枚 — 外交（停戦発効・署名6/19）・軍事（ベイルート空爆・IRGC強硬化）・エネルギー（WTI $84.88・ブレント $87.33）
+[✓] S05 COUNTDOWN — 108日目 → 109日目・Phase 9「スイス署名式（6/19）」停戦発効
+[✓] S06 シナリオ確率補足バナー — 6/15 07:09 JST・A↑↑↑↑↑ B↑ C↓↓↓ D↓↓↓↓
+[✓] S07 シナリオ4本 — A（6/19署名・30日再開）・B（サービス料問題・部分再開）・C（ベイルート連鎖・署名失敗）・D（全面戦争再開）確認済み
+[✓] S07 C/D差別化 — C（外交失敗型・署名延期・IRGC妨害再活発化）vs D（軍事崩壊型・イスラエル連鎖・米イラン全面戦闘）✓
 [✓] S07 WTI差別化 — A: $70-80 / B: $85-95 / C: $100-120 / D: $130-150 ✓
-[✓] S08 シナリオフッター — 次の5焦点を6/14版に更新（署名成立・ハメネイ確認・IRGC妨害・G7・再開タイムライン）
-[✓] S08.5 全ルート現況サマリー — 6/14 08:54 JST 再確認済
-[✓] S09 30秒カラム — 3行サマリー＋バッジ更新（全セクション確定後に生成済）
-[✓] S10 news_data.json — latest 4件（パキスタン24時間・ハメネイ未確認・MOU内容・WTI -6%）+ osint 1件（AJ liveblog 6/13）
-[✓] S10 latest — URL確認済: CBS News ✓ CBC News / Reuters ✓ Axios ✓ CNBC ✓
-[✓] S10 osint — 配列先頭追加・既存isLatest:true→false変更 ✓
-[✓] S10 osint — Al Jazeera liveblog 6/13 記事検索実施済み（URL確認済）✓
-[✓] S11 更新ログ — 2ブロック構成（常時表示3件固定・log-collapse先頭に6/11版挿入）✓
-[✓] S11 常時表示3件 — 6/14 + 6/13 + 6/12 の3件のみ ✓
-[✓] S11 JSON-LD — 2026-06-14T00:00:00+09:00（ISO 8601 JST形式）✓
-[✓] C01 タンカー確認 — web検索実施済み・変化なし（6/13-14の日本船舶新規通過情報なし）
+[✓] S08 シナリオフッター — 6/19署名・イラン批准・ベイルート連鎖・G7声明・機雷除去タイムライン
+[✓] S08.5 全ルート現況サマリー — 6/15 07:09 JST 再確認済
+[✓] S09 30秒カラム — 3行サマリー＋バッジ更新（署名6/19・ベイルート・WTI継続）
+[✓] S10 news_data.json — latest 4件（停戦発効・サービス料・ベイルート空爆・カタール調停）+ osint 1件（AJ liveblog 6/14）
+[✓] S10 URL確認済 — CBS News ✓ NBC News ✓ Times of Israel ✓ RFERL ✓ Al Jazeera liveblog 6/14 ✓
+[✓] S10 osint — 配列先頭追加・既存 isLatest:true → false 変更 ✓
+[✓] S11 更新ログ — 2ブロック構成（常時表示3件固定・log-collapse先頭に6/12版挿入）✓
+[✓] S11 ブロック2 — 6/12のXX:XXはgrep確認後にClaude Codeが補完するよう注記済み ✓
+[✓] S11 JSON-LD — 2026-06-15T00:00:00+09:00（ISO 8601 JST形式）✓
 [✓] 全体 — 📰関連最新ニュースにAl Jazeera混入なし ✓（AJはosintのみ）
 [✓] 全体 — 習近平 記載なし ✓
 [✓] 全体 — Wikipedia/毎日新聞 URL 不使用 ✓
 [✓] 全体 — シナリオ確率数値 記載なし（自動同期） ✓
-[✓] 全体 — 人名日本語表記：トランプ・アラグチー・バンス・ウィトコフ・モジュタバ・ハメネイ・カリバフ ✓
-[✓] 全体 — 「モジュタバ・ハメネイ」漢字＋カタカナ表記で統一（「Xi」「習近平」混在なし）✓
+[✓] 全体 — TICKER内JST表記あり ✓
+[✓] 全体 — 人名日本語表記：トランプ・アラグチー・バンス・ウィトコフ・モジュタバ・ハメネイ・シャリフ ✓
+[✓] 全体 — 「モジュタバ・ハメネイ」カタカナ表記統一 ✓
+[✓] 全体 — 「二重封鎖」使用なし ✓
 ```
+
+---
+
+## 🔑 本日の重要事項まとめ（Claude Code 参照用）
+
+| 項目 | 内容 |
+|---|---|
+| 最新状況 | パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス |
+| 複雑化要因 | イスラエルのベイルート空爆（6/14）・トランプ批判 |
+| イラン立場 | アラグチー「サービス料徴収・ホルムズの剣は永遠」 |
+| G7 | エヴィアン（6/15-17）初日・合意が最重要議題 |
+| 油価 | WTI $84.88・ブレント $87.33（最安値継続） |
+| 封鎖日数 | 109日目 |
+| Phase | Phase 9「スイス署名式（6/19）」停戦発効 |
+| C01 | 日本関係船舶：変化なし（6/15 07:09 JST 確認） |
 
 ---
 
@@ -598,5 +525,5 @@
 1. `run.bat` 実行 → `index_html_diffs.md` push
 2. Claude Code 定型文送信：
    「git pull --rebase してから、docs/tools/index_html_diffs.md に従って docs/index.html を更新してください。また docs/data/news_data.json も [S10] の指示に従い、既存ファイルに対して新規追加分をマージする形で更新してください。更新完了後に commit してください。push は確認後に指示します。」
-3. ⚠️ S11 のブロック1・2 old_str は `grep -n "6月13日\|6月12日\|6月11日\|6月10日" docs/index.html` で実際の内容を確認してから適用すること
-4. commit 確認 → push 指示
+3. ⚠️ S11 ブロック2 の `6月12日 XX:XX` は `grep -n "6月12日" docs/index.html` で確認後に補完すること
+4. commit 確認（`git branch && git log --oneline -3`）→ push 指示

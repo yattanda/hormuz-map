@@ -1,7 +1,43 @@
 {
-  "updated": "2026年6月13日 09:45 日本時間JST",
+  "updated": "2026年6月14日 08:54 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月14日 JST",
+      "title": "パキスタンPM「24時間以内に合意成立」——バンス副大統領＋カリバフ議長がジュネーブ署名へ",
+      "body": "パキスタン首相が「米・イラン間の合意は24時間以内に成立する」と明言。バンス副大統領がイラン・カリバフ国会議長との間でジュネーブにてMOU署名を行う見通し。米軍のC-17輸送機4機は既に欧州へ。アラグチー外相「署名はリモート方式で行い、その後に公式発表」と異例の方式を示唆。米政府高官は成立確率を「80〜85%」と述べた。",
+      "sourceLabel": "CBS News",
+      "label": "🔴 速報",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-peace-deal-agreement/"
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月13日 JST",
+      "title": "G7エヴィアン脇署名へ——トランプ「モジュタバ・ハメネイ承認と理解」・イランは公式否定",
+      "body": "トランプが「モジュタバ・ハメネイは合意を承認したと理解している」と発言。ただしイラン・タスニム通信は「38回目の同種の発言」と懐疑的に報道。CBC News / Reuters によると、西側外交筋はハメネイの個人的な最終承認が「高レベルでは承認済みだがハメネイ自身は不明」と報告。G7サミット（エヴィアン、6/15-17）直前のジュネーブで署名式が予定。",
+      "sourceLabel": "Reuters / CBC News",
+      "label": "🕊️ 外交",
+      "url": "https://www.cbc.ca/news/world/trump-iran-memorandum-united-states-9.7233089"
+    },
+    {
+      "id": "latest-003",
+      "date": "2026年6月12-13日 JST",
+      "title": "MOUの内容が明らかに——ホルムズ即時再開・制裁解除・核は60日後の交渉に先送り",
+      "body": "Axiosが報じたMOUの骨子：①ホルムズを署名と同時に即時再開 ②米が制裁を一部解除 ③凍結イラン資産を条件付きで解放（義務履行後に段階解放）④核プログラムは60日間の別途交渉フェーズへ先送り——ただし「核兵器は永久に開発しない」コミットメントは含む。イランの「通行料徴収継続」要求と米の「無制限通航」要求が依然として対立点。バンス副大統領は「イランは現金を受け取らない。義務を履行した場合のみ経済的恩恵が生じる」と明言。",
+      "sourceLabel": "Axios",
+      "label": "📋 MOU詳細",
+      "url": "https://www.axios.com/2026/06/12/iran-deal-mou-strait-open-sanctions-relief"
+    },
+    {
+      "id": "latest-004",
+      "date": "2026年6月12日 JST",
+      "title": "WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値",
+      "body": "合意期待でWTIは3.2%安の$84.88、ブレントは3.4%安の$87.33で引け（6/12 NY終値）。週間ではおよそマイナス6%。ただしイランが「ホルムズの管理権維持・通行料徴収継続」を主張しているため、完全正常化後の価格水準は不透明。Goldman Sachs「署名から約1ヶ月でホルムズ通航量が戦前水準に回復」と予測。機雷除去（英仏主導）が始まるまで完全正常化は難しい見通し。",
+      "sourceLabel": "CNBC",
+      "label": "💰 原油市場",
+      "url": "https://www.cnbc.com/2026/06/12/oil-prices-wti-brent-on-hopes-of-us-iran-deal-despite-tehran-pushback.html"
+    },
     {
       "title": "トランプ「不誠実な人々」——イラン合意草稿リーク内容を「フェイクニュース」と完全否定",
       "body": "トランプ大統領はTruth Socialへの投稿でイランが公開した合意草稿の内容を「我々が合意した内容と全く関係ない」と激怒。「不誠実な人々だ——善意の取引など存在しない」と非難した後、アラグチー外相の「合意は今まで以上に近い」投稿をリポストし融和姿勢に転換。",
@@ -470,6 +506,21 @@
   ],
   "osint": [
     {
+      "id": "osint-latest",
+      "date": "2026年6月13日 JST",
+      "titleJa": "【Al Jazeera】「イランは軍事圧力で署名したのではない」——署名直前のイラン内部の見方",
+      "titleEn": "Iran war live: US, Tehran signal peace deal within reach but not signed yet",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(100,60,0,0.3)",
+      "cardBorder": "rgba(217,119,6,0.4)",
+      "badgeColor": "#f59e0b",
+      "borderColor": "#d97706",
+      "textColor": "#fcd34d",
+      "url": "https://www.aljazeera.com/amp/news/liveblog/2026/6/13/iran-war-live-us-tehran-signal-peace-deal-within-reach-but-not-signed-yet",
+      "isLatest": true
+    },
+    {
       "id": "osint-002",
       "date": "2026年6月12日（現地）/ 2026年6月13日 JST",
       "titleJa": "【Al Jazeera】トランプ「不誠実な国」——イランが合意草稿をメディアにリーク、G7脇署名の行方は",
@@ -482,7 +533,7 @@
       "borderColor": "#4a90e2",
       "textColor": "#93c5fd",
       "url": "https://www.aljazeera.com/news/2026/6/12/dishonorable-trump-says-leaked-iran-ceasefire-terms-fake",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "「米軍がホルムズから1億バレルを密輸出」——トランプ主張の実態は？",
@@ -899,6 +950,43 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年6月13日 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "トランプ「不誠実な人々」——イラン合意草稿リーク内容を「フェイクニュース」と完全否定",
+          "body": "トランプ大統領はTruth Socialへの投稿でイランが公開した合意草稿の内容を「我々が合意した内容と全く関係ない」と激怒。「不誠実な人々だ——善意の取引など存在しない」と非難した後、アラグチー外相の「合意は今まで以上に近い」投稿をリポストし融和姿勢に転換。",
+          "sourceLabel": "Times of Israel",
+          "date": "2026年6月13日",
+          "label": "🇺🇸 米国",
+          "url": "https://www.timesofisrael.com/trump-fumes-at-dishonorable-iranians-amid-leaks-on-emerging-deals-purported-terms/"
+        },
+        {
+          "title": "アラグチー「MOU合意は史上最近——2段階・核は第2段階へ先送り」構造を初公表",
+          "body": "イラン外相アラグチーは「MOUは2段階構成。第1段階でホルムズ再開・米海上封鎖解除・制裁停止。核問題は第2段階の交渉に先送り」と合意骨格を公式確認。「ホルムズの未来は戦前には戻らない」とも宣言。署名はイラン・オマン共同宣言と同時に行う方針。",
+          "sourceLabel": "Tribune India / ANI",
+          "date": "2026年6月13日",
+          "label": "🕊️ 外交",
+          "url": "https://www.tribuneindia.com/news/iran/iran-araghchi-says-draft-deal-covers-strait-of-hormuz-lebanon-conflict"
+        },
+        {
+          "title": "MOU署名はジュネーブで最速6/14・G7エヴィアン（6/15-17）脇が有力——バンス出席",
+          "body": "Bloomberg・複数G7高官が「G7サミット（仏エヴィアン、6/15-17）のサイドラインまたはジュネーブで最速6/14（日）に署名」と報告。パキスタンPMは「最終合意テキスト確認済み」と宣言。残課題はモジュタバ・ハメネイ最高指導者の最終承認のみ。バンス副大統領・ウィトコフ特使が米国代表として出席予定。",
+          "sourceLabel": "Bloomberg / Yahoo Finance",
+          "date": "2026年6月13日",
+          "label": "🕊️ 外交",
+          "url": "https://finance.yahoo.com/sectors/energy/articles/us-iran-nearing-peace-deal-091642417.html"
+        },
+        {
+          "title": "WTI $84・ブレント $87——合意期待で続落、2ヶ月ぶり最安値",
+          "body": "原油先物はG7脇署名期待の高まりで2日連続続落。WTI終値は$84.33（-3.85%）、ブレントは$86.98（-3.78%）と4月中旬以来の安値。Fitch Ratings「封鎖解除後はブレントが$87平均に向かう」と試算。ただしIRGC「圧力継続」宣言・バンス「凍結資金は履行条件付き」発言が下値を限定。",
+          "sourceLabel": "TradingKey",
+          "date": "2026年6月13日",
+          "label": "🛢️ エネルギー",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261964642-iran-deal-oil-price-wti-brent-g7-trump-market-tradingkey"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年6月10日 更新分（アーカイブ）",
       "items": [

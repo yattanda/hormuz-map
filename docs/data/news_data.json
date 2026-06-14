@@ -1,40 +1,68 @@
 {
-  "updated": "2026年6月14日 08:54 日本時間JST",
+  "updated": "2026年6月15日 07:09 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-001",
-      "date": "2026年6月14日 JST",
+      "title": "パキスタンPM「停戦は今すぐ発効」——署名式は6月19日スイスへ確定",
+      "body": "パキスタンのシャバズ・シャリフ首相がXに投稿し「米国とイランは即時かつ永続的な停戦に合意した。署名式は6月19日スイスで実施」と宣言。トランプ大統領も「合意は完了・石油を流せ（Let the oil flow!）」とTruth Socialに投稿。ただしイランのファルス通信は「最終決定はまだ行われていない」と慎重姿勢を維持している。",
+      "sourceLabel": "CBS News（ライブブログ）",
+      "date": "2026年6月15日",
+      "label": "🕊️ 外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-peace-deal-agreement/"
+    },
+    {
+      "title": "アラグチー「サービス料徴収・ホルムズの剣は永遠に」——MOU後もイラン主権継続主張",
+      "body": "イランのアラグチー外相はイラン国営メディアに対し「ホルムズ海峡の通航料は徴収不可だが、サービス料は課す」「イランのホルムズに対する剣は永久に維持する」と発言。MOU成立後もイランがホルムズの実質的管理を維持する意向を示した。米国との解釈の齟齬が今後の課題となる。",
+      "sourceLabel": "NBC News",
+      "date": "2026年6月14日",
+      "label": "🇮🇷 イラン",
+      "url": "https://www.nbcnews.com/world/iran/us-iran-deal-expected-reopen-strait-hormuz-signed-days-both-sides-say-rcna349916"
+    },
+    {
+      "title": "イスラエルのベイルート空爆（6/14）でMOU署名が複雑化——トランプが異例の批判",
+      "body": "イスラエル軍が6月14日（日）にベイルートのヒズボラ拠点を空爆。トランプは「特別な日に、合意が非常に近い時にあるべきではなかった」とイスラエルを異例の形で批判。イランはイスラエルの攻撃を停戦への「違反」と非難し、IRGC強硬派が反発。カタール調停団がテヘランに飛んで火消しに当たった。",
+      "sourceLabel": "Times of Israel",
+      "date": "2026年6月14日",
+      "label": "⚔️ 軍事",
+      "url": "https://www.timesofisrael.com/despite-trump-pronouncement-iran-signals-no-final-decision-made-on-deal/"
+    },
+    {
+      "title": "カタール調停団がテヘランへ——G7エヴィアン（6/15-17）開幕・合意確定急ぐ",
+      "body": "カタールの外務大臣顧問団が6月14日朝にテヘランへ飛び、アラグチー外相とモジュタバ・ハメネイ最高指導者側近と協議。「最新の外交プロセスを確認する目的」（タスニム通信）。G7サミットがフランス・エヴィアンで6月15日に開幕し、ホルムズ合意はG7首脳声明の最重要議題となる見通し。",
+      "sourceLabel": "RFERL / NBC News",
+      "date": "2026年6月14日",
+      "label": "🌍 国際",
+      "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html"
+    },
+    {
       "title": "パキスタンPM「24時間以内に合意成立」——バンス副大統領＋カリバフ議長がジュネーブ署名へ",
       "body": "パキスタン首相が「米・イラン間の合意は24時間以内に成立する」と明言。バンス副大統領がイラン・カリバフ国会議長との間でジュネーブにてMOU署名を行う見通し。米軍のC-17輸送機4機は既に欧州へ。アラグチー外相「署名はリモート方式で行い、その後に公式発表」と異例の方式を示唆。米政府高官は成立確率を「80〜85%」と述べた。",
       "sourceLabel": "CBS News",
+      "date": "2026年6月14日 JST",
       "label": "🔴 速報",
       "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-peace-deal-agreement/"
     },
     {
-      "id": "latest-002",
-      "date": "2026年6月13日 JST",
       "title": "G7エヴィアン脇署名へ——トランプ「モジュタバ・ハメネイ承認と理解」・イランは公式否定",
       "body": "トランプが「モジュタバ・ハメネイは合意を承認したと理解している」と発言。ただしイラン・タスニム通信は「38回目の同種の発言」と懐疑的に報道。CBC News / Reuters によると、西側外交筋はハメネイの個人的な最終承認が「高レベルでは承認済みだがハメネイ自身は不明」と報告。G7サミット（エヴィアン、6/15-17）直前のジュネーブで署名式が予定。",
       "sourceLabel": "Reuters / CBC News",
+      "date": "2026年6月13日 JST",
       "label": "🕊️ 外交",
       "url": "https://www.cbc.ca/news/world/trump-iran-memorandum-united-states-9.7233089"
     },
     {
-      "id": "latest-003",
-      "date": "2026年6月12-13日 JST",
       "title": "MOUの内容が明らかに——ホルムズ即時再開・制裁解除・核は60日後の交渉に先送り",
       "body": "Axiosが報じたMOUの骨子：①ホルムズを署名と同時に即時再開 ②米が制裁を一部解除 ③凍結イラン資産を条件付きで解放（義務履行後に段階解放）④核プログラムは60日間の別途交渉フェーズへ先送り——ただし「核兵器は永久に開発しない」コミットメントは含む。イランの「通行料徴収継続」要求と米の「無制限通航」要求が依然として対立点。バンス副大統領は「イランは現金を受け取らない。義務を履行した場合のみ経済的恩恵が生じる」と明言。",
       "sourceLabel": "Axios",
+      "date": "2026年6月12-13日 JST",
       "label": "📋 MOU詳細",
       "url": "https://www.axios.com/2026/06/12/iran-deal-mou-strait-open-sanctions-relief"
     },
     {
-      "id": "latest-004",
-      "date": "2026年6月12日 JST",
       "title": "WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値",
       "body": "合意期待でWTIは3.2%安の$84.88、ブレントは3.4%安の$87.33で引け（6/12 NY終値）。週間ではおよそマイナス6%。ただしイランが「ホルムズの管理権維持・通行料徴収継続」を主張しているため、完全正常化後の価格水準は不透明。Goldman Sachs「署名から約1ヶ月でホルムズ通航量が戦前水準に回復」と予測。機雷除去（英仏主導）が始まるまで完全正常化は難しい見通し。",
       "sourceLabel": "CNBC",
+      "date": "2026年6月12日 JST",
       "label": "💰 原油市場",
       "url": "https://www.cnbc.com/2026/06/12/oil-prices-wti-brent-on-hopes-of-us-iran-deal-despite-tehran-pushback.html"
     },
@@ -506,6 +534,20 @@
   ],
   "osint": [
     {
+      "titleJa": "【Al Jazeera】パキスタン「停戦発効」宣言・署名式6/19スイス——G7エヴィアン初日・イランは内部調整継続",
+      "titleEn": "Pakistan PM says US-Iran ceasefire 'now in place', signing June 19 in Switzerland",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(139,90,43,0.15)",
+      "cardBorder": "rgba(217,119,6,0.4)",
+      "badgeColor": "rgba(217,119,6,0.25)",
+      "borderColor": "rgba(217,119,6,0.5)",
+      "textColor": "#fcd34d",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/14/iran-war-live-trump-says-deal-to-be-signed-today-as-tehran-urges-caution",
+      "date": "2026年6月14日",
+      "isLatest": true
+    },
+    {
       "id": "osint-latest",
       "date": "2026年6月13日 JST",
       "titleJa": "【Al Jazeera】「イランは軍事圧力で署名したのではない」——署名直前のイラン内部の見方",
@@ -518,7 +560,7 @@
       "borderColor": "#d97706",
       "textColor": "#fcd34d",
       "url": "https://www.aljazeera.com/amp/news/liveblog/2026/6/13/iran-war-live-us-tehran-signal-peace-deal-within-reach-but-not-signed-yet",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-002",

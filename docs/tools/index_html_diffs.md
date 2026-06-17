@@ -1,4 +1,4 @@
-# index_html_diffs.md — 2026年6月16日 08:14 JST 更新分
+# index_html_diffs.md — 2026年6月17日 08:44 JST 更新分
 
 > Claude Code への指示：以下の差分を `docs/index.html` に適用してください。
 > 変更箇所以外は絶対に触らないこと。
@@ -11,12 +11,12 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-        <span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
-        <span class="badge-item badge-date">📅2026年6月15日 07:09 JST</span>
-<!-- OLD:END -->
-<!-- NEW:START -->
         <span class="badge-item badge-alert">🕊️ 警戒レベル：高（和平合意・署名待ち）</span>
         <span class="badge-item badge-date">📅2026年6月16日 08:14 JST</span>
+<!-- OLD:END -->
+<!-- NEW:START -->
+        <span class="badge-item badge-alert">🕊️ 警戒レベル：高（署名2日前・機雷除去待ち）</span>
+        <span class="badge-item badge-date">📅2026年6月17日 08:44 JST</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -26,12 +26,12 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-      <!-- 新ティッカー（2026年6月15日 07:09 JST） -->
-      🕊️【パキスタンPM「停戦は今すぐ発効」】署名式は6月19日スイスへ延期——G7エヴィアン（6/15-17）初日・トランプ「合意は完了・石油を流せ」宣言（6/14-15 JST）｜🇮🇱 イスラエルがベイルートを空爆（6/14）——トランプ「あるべきではなかった」と異例の批判・合意プロセスに打撃｜🇶🇦 カタール調停団がテヘランへ（6/14朝）——イラン「最終決定まだ」と署名延期（ファルス通信 6/14）｜🇮🇷 アラグチー「ホルムズ通航に『サービス料』徴収・ホルムズの剣は永遠に」——MOU後もイラン主権継続主張（6/14 JST）｜📉 WTI $84.88・ブレント $87.33——合意期待で2ヶ月ぶり最安値継続｜⚠️ ホルムズ閉鎖109日目・署名式6/19スイス確定
-<!-- OLD:END -->
-<!-- NEW:START -->
       <!-- 新ティッカー（2026年6月16日 08:14 JST） -->
       🕊️【米イラン和平合意成立】トランプ「合意完了・ホルムズを開けよ」・パキスタンPM「永続的停戦」——MOU14条項（全面停戦・ホルムズ再開・核60日交渉）（6/15 JST）｜✍️ 署名式6/19スイス確定——今週ドーハ事前協議・バンス「デジタル署名済み」・イラン「6/19署名まで実施保留」｜⛏️ 機雷除去最大6ヶ月（国防総省推定）・荷主「安全確認まで慎重」・本格通航再開は数週間以上先｜🇮🇱 イスラエル「レバノン撤退せず」——合意実施の唯一の懸念材料｜📉 WTI $81.10（-4.5%）・ブレント $83.80（-4.0%）——2ヶ月ぶり最安値更新（6/16 JST）｜⚠️ ホルムズ閉鎖110日目・6/19署名で新フェーズへ
+<!-- OLD:END -->
+<!-- NEW:START -->
+      <!-- 新ティッカー（2026年6月17日 08:44 JST） -->
+      🇮🇷【アラグチー警告】「イスラエルのレバノン攻撃・占領継続はMOU違反」——署名式6/19スイス2日前に最大リスク浮上（6/17 08:21 JST）｜🚢 イランタンカー2隻（DIONA・HERO2）が封鎖圏脱出——3.8百万バレル原油輸出・2ヶ月ぶりのイラン原油輸出（6/17 JST）｜⚠️ ファルス通信「MOU通航無料は60日間のみ・その後有料化」vs 米「無条件無料」——解釈矛盾継続｜🛡️ BIMCO「MOU後もホルムズ通航は依然高リスク」・日本関係船舶38隻が湾内足止め（日本船主協会 6/16）｜📉 WTI $78前後（4日連続下落・3月来最安値圏）・ブレント $80前後｜⚠️ ホルムズ閉鎖111日目・6/19署名まで2日
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -43,10 +43,10 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-            📅 6/15 07:09 更新
+            📅 6/16 08:14 更新
 <!-- OLD:END -->
 <!-- NEW:START -->
-            📅 6/16 08:14 更新
+            📅 6/17 08:44 更新
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -55,100 +55,91 @@
 <!-- APPLY:START -->
 <!-- OLD:START -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【6/15 07:09 速報】パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定・G7エヴィアン（6/15-17）開幕・イスラエルのベイルート空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・ブレント $87.33・109日目
+  【6/16 08:14 速報】米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」宣言・MOU14条項署名（6/15 JST）｜バンス「デジタル署名済み」・ドーハ事前協議今週・署名式6/19スイス｜機雷除去最大6ヶ月・荷主慎重継続
 <!-- OLD:END -->
 <!-- NEW:START -->
 <strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
-  【6/16 08:14 速報】米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」宣言・MOU14条項署名（6/15 JST）｜バンス「デジタル署名済み」・ドーハ事前協議今週・署名式6/19スイス｜機雷除去最大6ヶ月・荷主慎重継続・WTI $81.10・ブレント $83.80急落・110日目
+  【6/17 08:44 速報】アラグチー「イスラエルのレバノン攻撃・占領継続はMOU違反」と警告（6/17）｜イランタンカー2隻（DIONA・HERO2）封鎖圏脱出・3.8百万バレル原油輸出——2ヶ月ぶり（6/17）｜ファルス通信「MOU通航無料60日のみ」vs 米「無条件」矛盾継続｜BIMCO「高リスク警告」・日本関係船舶38隻足止め（日本船主協会）｜6/19スイス署名まで2日・封鎖111日目
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### 速報インシデントリスト先頭2件追加
+### 速報インシデントリスト（先頭に2件追加）
+
+⚠️ Claude Code：以下の `<ul>` 直後の先頭に2件を追加すること。
+`grep -n "速報インシデント" docs/index.html` で `<ul>` の行番号を確認し、その直後に挿入する。
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<li style="margin-bottom:6px;padding-left:10px;border-left:2px solid rgba(239,68,68,0.4);">
-  【6/15 JST】パキスタンPM「停戦は今すぐ発効」
+<ul>
+          <li style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="color:#60a5fa;font-weight:700;">✍️ [6/16 JST]</span>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<li style="margin-bottom:6px;padding-left:10px;border-left:2px solid rgba(74,222,128,0.5);">
-  【6/15 JST】<strong style="color:#86efac;">米イラン和平合意成立</strong>——トランプ「合意完了・ホルムズを開けよ」、パキスタンPM「全戦線における即時かつ恒久的な軍事作戦終結」宣言。MOU14条項：全面停戦・ホルムズ再開・核60日後交渉・$300億湾岸国再建基金
-</li>
-<li style="margin-bottom:6px;padding-left:10px;border-left:2px solid rgba(74,222,128,0.4);">
-  【6/15-16 JST】バンス副大統領「MOUは日曜にデジタル署名済み」・ドーハで事前協議今週開催——イラン副外相ガリバブ「6/19正式署名まで実施保留」・機雷除去最大6ヶ月（国防総省推定）・荷主は安全確認まで慎重姿勢継続
-</li>
-<li style="margin-bottom:6px;padding-left:10px;border-left:2px solid rgba(239,68,68,0.4);">
-  【6/15 JST】パキスタンPM「停戦は今すぐ発効」
+<ul>
+          <li style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="color:#fbbf24;font-weight:700;">🇮🇷 [6/17 JST]</span>
+            アラグチー外相「イスラエルのレバノン攻撃・占領継続はMOU違反」と警告——6/19署名式を前にイスラエル問題が最大リスクに浮上（Iran International, 6/17 08:21 JST）
+          </li>
+          <li style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="color:#60a5fa;font-weight:700;">🚢 [6/17 JST]</span>
+            イランタンカー2隻（DIONA・HERO2）が封鎖圏脱出——3.8百万バレルの原油を輸出・2ヶ月ぶりのイラン原油輸出再開の端緒（Iran International, 6/17）
+          </li>
+          <li style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="color:#60a5fa;font-weight:700;">✍️ [6/16 JST]</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
+
+> ⚠️ Claude Code: 上記 old_str の `<ul>` 直後の `<li>` は直前の更新で追加された「和平合意成立」等の行。現在の index.html の実際の文字列と照合してから適用すること。一致しない場合は grep で確認して old_str を修正すること。
 
 ---
 
-## [S04] 情勢カード3枚
+## [S04] 情勢カード
 
-### カード①外交
+⚠️ Claude Code: 以下の各カードの old_str は 6/16 08:14 JST 更新版の推定内容です。
+適用前に `grep -n "情勢カード\|s-title\|s-body\|s-src" docs/index.html` または `view_range` で現在の内容を確認し、完全一致することを確認してから適用すること。
+
+### カード①：外交情勢
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="s-title">🕊️ 外交：停戦発効・署名6/19スイス</div>
+          <div class="s-title">🕊️ 和平合意成立——6/19スイス署名式へ</div>
+          <div class="s-body">米イランMOU14条項が6/15に合意成立。トランプ「合意完了・ホルムズを開けよ」、パキスタンPMシャリフ「永続的停戦」宣言。今週ドーハ事前協議を経て6/19スイスで署名式。バンス「デジタル署名済み」・イラン「6/19まで実施保留」。イスラエル「レバノン撤退せず」が唯一の懸念材料。</div>
+          <div class="s-src">NPR / CBS News / Iran International — 6/16 08:14 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="s-title">🕊️ 外交：和平合意成立・6/19スイス署名へ</div>
+          <div class="s-title">⚠️ アラグチー警告——「イスラエル問題=MOU違反」</div>
+          <div class="s-body">アラグチー外相（6/17）「イスラエルのレバノン攻撃・占領継続はMOUの「全軍事作戦停止」条項に違反する」と警告。ドーハ事前協議継続中（カタール「$3000億イラン復興費用への関与なし」を否定）。ファルス通信「MOU通航無料は60日のみ・その後有料化」vs 米側「無条件無料」の解釈矛盾も浮上。6/19スイス署名まで2日。</div>
+          <div class="s-src">Iran International / CBS News / Hormuz Strait Monitor — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
+### カード②：軍事情勢
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="s-body">パキスタンPM「停戦は今すぐ発効」・署名式6/19スイスへ延期確定。G7エヴィアン（6/15-17）開幕——トランプが主要議題に。カタール調停団17時間交渉——イラン「最終決定まだ」。イスラエルのベイルート空爆が複雑化要因。アラグチー「サービス料・ホルムズの剣は永遠」。</div>
-<div class="s-src">出典: CBS News / ファルス通信 / NPR（6/14-15）</div>
+          <div class="s-title">⛏️ 機雷除去最大6ヶ月——荷主「慎重継続」</div>
+          <div class="s-body">国防総省推定で機雷除去に最大6ヶ月を要する見通し。欧米海事安全保障当局は40〜50日で保険・海運各社が通航に十分な自信を持てる水準と分析。本格的な通航再開は秋冬以降。BIMCOは「MOU合意後もホルムズ通航は依然高リスク」と警告。イスラエル「レバノン撤退せず」でIRGC動向も不透明。</div>
+          <div class="s-src">Jerusalem Post / BIMCO / CBS News — 6/16 08:14 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="s-body">トランプ「合意完了」・パキスタンPM「永続的停戦」——MOU14条項に合意（6/15 JST）。署名式は6/19スイスで確定、今週ドーハで事前協議。バンス「デジタル署名済み」。イラン「6/19署名まで実施保留」。イスラエルの「レバノン撤退拒否」が唯一の懸念材料として残存。</div>
-<div class="s-src">出典: NBC News / CNN / NPR（6/15-16）</div>
+          <div class="s-title">🚢 イランタンカー2隻が封鎖圏脱出——2ヶ月ぶりの原油輸出</div>
+          <div class="s-body">イランタンカー（DIONA・HERO2）がAIS追跡・衛星画像で封鎖圏脱出を確認、合計3.8百万バレルの原油を輸出——2ヶ月ぶりのイラン原油輸出（6/17）。一方、BIMCO「MOU後もホルムズ通航は依然高リスク」と警告。機雷除去は西側海事安保当局推定で40〜50日（ペンタゴン推定は最大6ヶ月）。日本関係船舶38隻が湾内で足止め継続（日本船主協会、6/16）。G7・フランスは機雷除去部隊を「数日内に展開可能」と表明。</div>
+          <div class="s-src">Iran International / BIMCO / Marine Link / House of Saud — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### カード②軍事
+### カード③：エネルギー情勢
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="s-title">⚔️ 軍事：ベイルート空爆・IRGC強硬化</div>
+          <div class="s-title">📉 WTI $81.10・ブレント $83.80——2ヶ月ぶり最安値</div>
+          <div class="s-body">合意期待を織り込み、WTI $81.10（-4.5%）・ブレント $83.80（-4.0%）と2ヶ月ぶりの最安値を更新。機雷除去に数週間〜6ヶ月を要するため物理的な原油フロー正常化は先送り。UAE（OPEC離脱済み）からの輸出拡大、イラン原油の中国向け在庫補填など段階的な供給回復が想定される。EIA：2027年に向けた緩やかな価格低下を予測。</div>
+          <div class="s-src">NBC News / TradingEconomics / EIA STEO — 6/16 08:14 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="s-title">⛏️ 軍事：機雷除去開始準備・イスラエル問題</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="s-body">イスラエルがベイルート南郊を空爆（6/14）——トランプ「あるべきではなかった」と異例の批判。IRGCがタンカー1隻阻止継続（6/13）。CENTCOM自爆ドローン複数撃墜。合意プロセスへの打撃が懸念される。</div>
-<div class="s-src">出典: Times of Israel / CENTCOM（6/13-14）</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="s-body">国防総省「機雷除去に最大6ヶ月」——除去艦3隻が既に展開中。イスラエル国防相「レバノン撤退せず」——合意がイスラエルに全前線停戦を義務付けており懸念材料。CENTCOM機雷除去準備作業開始。IRGC強硬派の動向に引き続き注視。</div>
-<div class="s-src">出典: TechTimes / NPR / CNN（6/15-16）</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### カード③エネルギー
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="s-title">💰 エネルギー：WTI $84.88・ブレント $87.33</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="s-title">📉 エネルギー：WTI $81.10・ブレント $83.80（急落）</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="s-body">WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——合意期待で週間マイナス6%・2ヶ月ぶり最安値継続。商業通航は戦前比95%減継続。</div>
-<div class="s-src">出典: Trading Economics / Investing.com（6/14）</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="s-body">WTI $81.10（-4.5%）・ブレント $83.80（-4.0%）——和平合意発表で急落、2ヶ月ぶり最安値更新。荷主は「安全確認まで慎重」——本格通航再開まで数週間以上。正常化後はWTI $65-75へ下落見通し（各社分析）。</div>
-<div class="s-src">出典: Yahoo Finance / Trading Economics / Globe and Mail（6/16）</div>
+          <div class="s-title">📉 WTI $78前後——4日連続下落・3月来最安値圏</div>
+          <div class="s-body">WTI $78前後・ブレント $80前後（6/17 JST）——合意後4日連続下落で3月以来の最安値圏に。UAE（OPEC離脱済み）からの輸出拡大とイラン原油のタンカー脱出開始で市場は供給回復を先取り。ただし物理的な通航正常化は機雷除去（40日〜6ヶ月）完了まで待つ必要があり、EIA・IEA「本格回復は2027年以降」の見方を維持。日本の石油輸入は代替調達継続中。</div>
+          <div class="s-src">TradingEconomics / EIA STEO / Iran International — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -156,21 +147,23 @@
 
 ## [S05] COUNTDOWN
 
+⚠️ Claude Code: 以下の old_str は 6/16 更新後の推定。`grep -n "countdown\|Phase\|署名" docs/index.html` で確認してから適用すること。
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<span class="countdown-days">109</span>日目
+      <div class="countdown-days-label">Phase 9：和平合意成立——6/19スイス署名式まであと3日</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<span class="countdown-days">110</span>日目
+      <div class="countdown-days-label">Phase 9：和平合意成立——6/19スイス署名式まであと2日</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="countdown-label">Phase 9「スイス署名式（6/19）」停戦発効</div>
+      <span class="countdown-days">110</span>日目
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="countdown-label">Phase 9「和平合意成立——6/19スイス署名式まであと3日」</div>
+      <span class="countdown-days">111</span>日目
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -178,109 +171,119 @@
 
 ## [S06] シナリオ確率補足バナー
 
+⚠️ Claude Code: 以下の old_str は 6/16 08:14 JST のバナー日付。`grep -n "シナリオ確率\|6月16日\|08:14" docs/index.html` で確認してから適用すること。
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div style="font-size:0.72rem;color:#94a3b8;text-align:right;margin-top:4px;">6/15 07:09 JST 確率更新 ／ A↑↑↑↑↑ B↑ C↓↓↓ D↓↓↓↓</div>
+          <span style="font-size:0.75rem;color:#94a3b8;">6/16 08:14 JST 更新</span>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div style="font-size:0.72rem;color:#94a3b8;text-align:right;margin-top:4px;">6/16 08:14 JST 確率更新 ／ A↑↑↑↑↑↑ B↑ C↓↓↓↓ D↓↓↓↓↓</div>
+          <span style="font-size:0.75rem;color:#94a3b8;">6/17 08:44 JST 更新</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
+
+矢印変更なし：A↑↑↑↑↑↑ B↑ C↓↓↓↓ D↓↓↓↓↓（情勢に変化なし）
 
 ---
 
 ## [S07] シナリオ4本
 
-### シナリオA（正式合意・段階的完全再開）
+⚠️ Claude Code: 各シナリオの old_str は 6/16 更新後の内容。`view_range` または `grep -n "sc-title\|sc-body\|sc-src" docs/index.html` で確認してから適用すること。
+
+### シナリオA（外交解決——段階的完全再開）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="sc-title">🟢 シナリオA：6/19署名・30日以内再開</div>
+          <div class="sc-title">🕊️ A：和平合意成立——機雷除去を経て段階的完全再開</div>
+          <div class="sc-body"><p>6/15に成立したMOU14条項に基づき、6/19スイス署名式を経て機雷除去（最短40日〜最大6ヶ月）が開始。荷主・保険各社の安全確認後に段階的な通航再開。核交渉は60日間の別トラックで継続。バンス「デジタル署名済み」で合意の信頼性は高い。本格的な物流正常化は秋冬以降の見込み。</p></div>
+          <div class="sc-src">NPR / CBS News / Pentagon — 6/16 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="sc-title">🟢 シナリオA：和平合意成立・機雷除去→段階的完全再開</div>
+          <div class="sc-title">🕊️ A：6/19署名→機雷除去→段階的完全再開</div>
+          <div class="sc-body"><p>6/19スイス署名式でMOU全文が公開され、機雷除去作業（西側推定40〜50日・ペンタゴン最大6ヶ月）が開始。G7・フランスが機雷除去部隊を「数日内に展開可能」と表明。イランタンカー（DIONA・HERO2）の封鎖圏脱出は合意履行の初期兆候。ファルス「60日のみ無料」vs 米「無条件無料」の矛盾は長期交渉で吸収。核交渉60日は別トラック。日本関係船舶38隻は機雷除去完了後に段階的に出港へ。</p></div>
+          <div class="sc-src">Iran International / G7 / Pentagon / Marine Link — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
+
+WTI想定価格帯：$65–75（シナリオA・変更なし）
+
+### シナリオB（機雷除去遅延——慎重再開）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="sc-body"><p>6/19スイス署名式が成立し、ホルムズ海峡の機雷除去が開始される。30日以内に商業船舶の段階的通航が再開し、秋〜冬にかけて完全正常化が達成される。60日間核交渉でイラン制裁解除・凍結資産返還が実現。WTI $70-80水準への正常化が進む。</p></div>
+          <div class="sc-title">⏳ B：機雷除去遅延・荷主慎重——部分的再開</div>
+          <div class="sc-body"><p>署名は成立するが機雷除去が6ヶ月超に長期化、あるいはイスラエル問題が技術的障害となり通航再開が遅延。BIMCO・保険各社が「高リスク継続」を維持し、荷主の自主的な通航回避が続く。日本関係船舶38隻も相当期間の足止めが続く。原油はケープタウン迂回が常態化。部分的・断続的な通航再開にとどまる。</p></div>
+          <div class="sc-src">BIMCO / Jerusalem Post / Marine Link — 6/16 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="sc-body"><p>【現在進行中】米イラン和平合意（MOU14条項）が成立（6/15）。6/19スイス署名式→機雷除去開始（国防総省推定最大6ヶ月）→商業船舶の段階的再開へ。60日間核交渉でイラン制裁解除・凍結資産返還・$300億湾岸国再建基金実現。WTI $65-75まで段階的下落見通し。機雷除去完了後の完全正常化は2026年末〜2027年初を見込む。</p></div>
+          <div class="sc-title">⏳ B：機雷除去遅延・BIMCO高リスク警告継続——部分的再開</div>
+          <div class="sc-body"><p>署名は成立するが機雷除去が長期化（6ヶ月超）し、BIMCO「依然高リスク」警告が続く中で荷主・保険各社の自主的回避が継続。アラグチー「イスラエル問題=MOU違反」の緊張は低レベルで継続するが破綻には至らない。イランタンカーの先行脱出（DIONA・HERO2）は例外的事例にとどまり、商業通航の本格再開は遅延。日本関係船舶38隻は数ヶ月単位の足止めが継続。</p></div>
+          <div class="sc-src">BIMCO / Iran International / Marine Link — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### シナリオB（機雷問題・慎重再開）
+WTI想定価格帯：$80–90（シナリオB・変更なし）
+
+### シナリオC（外交失敗型——署名崩壊）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="sc-title">🟡 シナリオB：サービス料問題・部分的再開</div>
+          <div class="sc-title">⚠️ C：イスラエル問題——署名崩壊・外交失敗型</div>
+          <div class="sc-body"><p>イスラエルがレバノン撤退を拒否し、アラグチー「MOU違反」の警告を実行に移す形で署名を拒否。あるいはイスラエルが独自の軍事行動でイランを刺激し、イランがMOUを破棄して再封鎖を宣言。6/19スイス署名式が流れた段階で外交失敗が確定。核60日交渉も開始不可能に。「二重封鎖リスク」ではなくイスラエルを起点とした外交失敗型の崩壊シナリオ。</p></div>
+          <div class="sc-src">Iran International / CBS News — 6/16 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="sc-title">🟡 シナリオB：機雷除去遅延・荷主慎重で部分再開にとどまる</div>
+          <div class="sc-title">⚠️ C：アラグチー「MOU違反」実行——署名崩壊・外交失敗型</div>
+          <div class="sc-body"><p>アラグチー外相（6/17）がすでに「イスラエルのレバノン攻撃・占領継続はMOU違反」と明言。イスラエルが「レバノン撤退せず」を維持したままイスラエルへの攻撃が続いた場合、イランが「MOU破棄」を宣言して6/19署名式を拒否。外交失敗型崩壊。核60日交渉は開始されず封鎖再開。ファルス通信「60日のみ無料」の解釈矛盾が口実に使われる可能性も。BIMCO「高リスク」は現実化。</p></div>
+          <div class="sc-src">Iran International / CBS News / Hormuz Strait Monitor — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
+
+WTI想定価格帯：$100–120（シナリオC・変更なし）
+
+### シナリオD（合意破棄——軍事衝突再開型）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="sc-body"><p>アラグチーが示した「サービス料徴収」が通航条件として残存。船主・保険業者が合意後も慎重姿勢を維持し、完全正常化が遅れる。WTI $85-95のレンジで推移が継続。イランが事実上の通航管理権を保持し、交渉カードとして活用し続ける。</p></div>
+          <div class="sc-title">💥 D：署名後合意破棄——軍事衝突再開型</div>
+          <div class="sc-body"><p>6/19に署名は成立するが、その後60日間の核交渉でイランと米国の立場が完全に対立し、合意が崩壊。あるいはイスラエルがイラン核施設を単独攻撃し、IRGCが再封鎖・機雷敷設を再開。署名後の合意破棄であるため外交プロセスは消滅し、軍事衝突が再開する最悪シナリオ。ホルムズ再封鎖で原油急騰。</p></div>
+          <div class="sc-src">Iran International / Hormuz Strait Monitor — 6/16 JST 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="sc-body"><p>機雷除去の遅れ（最大6ヶ月）・保険適用問題で荷主が安全確認まで慎重姿勢を継続。イランが事実上の通航管理権を保持（「どんな合意内容であれイランがホルムズを支配する」—A.ホッホスタイン）。商業通航の完全正常化は2027年以降にずれ込み、WTI $80-90のレンジ継続。</p></div>
+          <div class="sc-title">💥 D：署名後合意破棄——核交渉決裂・軍事衝突再開型</div>
+          <div class="sc-body"><p>6/19に署名は成立するが、60日間の核交渉でファルス「60日のみ無料」の有料化宣言とイランの核保持要求が衝突し合意崩壊。あるいはイスラエルがイラン核施設を単独攻撃したことへのイランの報復でIRGCが機雷敷設を再開。シナリオCとの違い：Cは「署名前の外交失敗」、Dは「署名後の合意破棄→軍事再開」。WTI $130以上の急騰と日本関係船舶38隻の無期限抑留が現実化。</p></div>
+          <div class="sc-src">Hormuz Strait Monitor / Iran International — 6/17 08:44 JST 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### シナリオC（署名崩壊・再炎上）
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-title">🔴 シナリオC：ベイルート連鎖・署名失敗</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-title">🔴 シナリオC：イスラエル問題拡大・署名崩壊・再炎上</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-body"><p>イスラエルのベイルート攻撃が拡大し、イランが「全戦線停戦」条項を盾に署名を拒否。IRGCの強硬派が合意を覆し、ホルムズ封鎖が再強化される。ベイルート〜テヘラン連鎖で全面衝突リスクが再浮上。WTI $100-120への逆戻り。</p></div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-body"><p>イスラエル「レバノン撤退せず」——合意はイスラエルに全前線停戦を義務付けており、イランが「全戦線停戦」条項を盾に6/19署名を拒否するリスク。IRGCの強硬派がMOU実施を妨害し、ホルムズ封鎖が再強化される可能性。合意不履行→外交崩壊→再炎上シナリオ。WTI $100-120への逆戻り。</p></div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-### シナリオD（合意破棄・全面崩壊）
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-title">⚫ シナリオD：全面戦争再開</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-title">⚫ シナリオD：署名後合意破棄・軍事衝突再開</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<div class="sc-body"><p>イスラエルとイランが軍事衝突を再開し、米軍が全面的に介入。ホルムズが再封鎖され、レバノン・シリア・イエメンへ連鎖拡大。WTI $130-150超まで急騰。グローバル経済への甚大ダメージが避けられない最悪シナリオ。</p></div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<div class="sc-body"><p>合意成立後に米国またはイランがMOUを一方的に破棄——イスラエルの大規模攻撃を契機にイランが「合意無効」宣言、米軍が全面介入するシナリオ。ホルムズ再封鎖・レバノン・シリア・イエメンへ連鎖拡大。WTI $130+超まで急騰。和平合意成立後の現時点では確率は極めて低いが、監視継続が必要。</p></div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+WTI想定価格帯：$130以上（シナリオD・変更なし）
 
 ---
 
 ## [S08] シナリオフッター
 
+⚠️ Claude Code: 以下の old_str は 6/16 更新後の推定。`grep -n "scenario-footer\|次の焦点\|注視" docs/index.html` で確認してから適用すること。
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<div class="scenario-footer"><p><strong>📍 次の焦点：</strong>①6/19スイス署名式（3日後）——正式発効のカウントダウン ②機雷除去プロセス開始——最大6ヶ月、ホルムズ安全航行確保 ③イスラエルのレバノン問題——「撤退しない」で合意への懸念残存 ④イラン国内批准——IRGC強硬派とモジュタバ・ハメネイの動向 ⑤60日間核交渉開始——制裁解除・凍結資産・$300億再建基金</p></div>
+        <h3>🔭 今後の焦点</h3>
+        <ul>
+          <li>6/19スイス署名式——MOU全文公開のタイミング</li>
+          <li>機雷除去開始時期と実際の所要期間（40日〜6ヶ月）</li>
+          <li>イスラエル「レバノン撤退せず」——合意実施の唯一の障害</li>
+          <li>核60日交渉：イランの核保持要求 vs 米の完全廃棄要求</li>
+          <li>IRGCの動向——機雷除去への実質的な協力有無</li>
+        </ul>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<div class="scenario-footer"><p><strong>📍 次の焦点（6/16時点）：</strong>①6/19スイス署名式——正式発効まであと3日 ②機雷除去開始——国防総省推定最大6ヶ月・本格通航は秋冬以降 ③イスラエルのレバノン撤退問題——「撤退せず」が唯一の懸念材料 ④60日間核交渉——制裁解除・凍結資産・湾岸国$300億再建基金の行方 ⑤イラン国内——IRGC強硬派がMOU実施を妨害するリスク</p></div>
+        <h3>🔭 今後の焦点</h3>
+        <ul>
+          <li>6/19スイス署名式（2日後）——MOU全文公開・ファルス「60日有料化」矛盾の解消なるか</li>
+          <li>アラグチー「イスラエル攻撃=MOU違反」——イスラエルの対レバノン動向が署名成否を左右</li>
+          <li>機雷除去作業の実際の開始タイミング（G7フランス部隊「数日内展開可能」）</li>
+          <li>日本関係船舶38隻の出港再開——機雷除去40〜50日後が最短目安</li>
+          <li>核60日交渉開始——イランの核保持要求 vs 米の完全廃棄要求</li>
+        </ul>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -288,69 +291,38 @@
 
 ## [S08.5] 全ルート現況サマリー
 
+⚠️ Claude Code: 以下の old_str は 6/16 08:14 JST 版の推定。`grep -n "全ルート現況\|ルート現況" docs/index.html` で行番号を確認し `view_range` で取得した実際の内容と一致することを確認してから適用すること。
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-🚢 全ルート現況サマリー（2026年6月15日 07:09 JST 再確認済
+          🚢 全ルート現況サマリー（2026年6月16日 08:14 JST 再確認済）
 <!-- OLD:END -->
 <!-- NEW:START -->
-🚢 全ルート現況サマリー（2026年6月16日 08:14 JST 再確認済・和平合意成立で近日段階的再開見込み
+          🚢 全ルート現況サマリー（2026年6月17日 08:44 JST 再確認済）
 <!-- NEW:END -->
 <!-- APPLY:END -->
+
+ルート詳細情報：変化なし（ホルムズ：機雷除去待ち通航不可・喜望峰迂回継続）
+ただし新情報：イランタンカー2隻（DIONA・HERO2）が封鎖圏脱出（例外的通航）
 
 ---
 
-## [S09] 30秒カラム（3行サマリー＋バッジ）
+## [S09] 30秒カラム（3行サマリー）
 
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<p style="margin:0 0 8px;font-size:0.88rem;line-height:1.7;color:#e2e8f0;">① <strong>和平合意目前</strong>——パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定・G7エヴィアンで合意が最重要議題</p>
-<p style="margin:0 0 8px;font-size:0.88rem;line-height:1.7;color:#e2e8f0;">② <strong>イスラエルが複雑化</strong>——ベイルート空爆（6/14）・トランプが異例の批判・カタール調停団17時間交渉でイラン「最終決定まだ」</p>
-<p style="margin:0 0 8px;font-size:0.88rem;line-height:1.7;color:#e2e8f0;">③ <strong>アラグチー強硬</strong>——「サービス料徴収・ホルムズの剣は永遠」・WTI $84.88・ブレント $87.33——封鎖109日目</p>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<p style="margin:0 0 8px;font-size:0.88rem;line-height:1.7;color:#e2e8f0;">① <strong>米イラン和平合意成立</strong>——トランプ「合意完了」・パキスタンPM「永続的停戦」宣言・MOU14条項（全面停戦・ホルムズ再開・核60日交渉）・6/19スイス署名式（6/15-16 JST）</p>
-<p style="margin:0 0 8px;font-size:0.88rem;line-height:1.7;color:#e2e8f0;">② <strong>機雷除去が最大の課題</strong>——国防総省「最大6ヶ月」・荷主は安全確認まで慎重・バンス「デジタル署名済み」・ドーハ事前協議今週開催</p>
-<p style="margin:0 0 8px;font-size:0.88rem;line-height:1.7;color:#e2e8f0;">③ <strong>イスラエルが唯一の懸念</strong>——「レバノン撤退せず」・WTI $81.10・ブレント $83.80急落——封鎖110日目・6/19署名で新フェーズへ</p>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+⚠️ Claude Code: S09 は変更量が大きくミスマッチリスクが高い。必ず適用前に `grep -n "30秒\|thirty\|three-line" docs/index.html` または `view_range` で現在の内容を確認してから適用すること。
 
-### ステータスバッジ更新
+以下の内容に更新する：
 
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<span style="display:inline-block;background:rgba(134,239,172,0.15);border:1px solid rgba(134,239,172,0.3);color:#86efac;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">📅 署名6/19スイス</span>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<span style="display:inline-block;background:rgba(134,239,172,0.25);border:1px solid rgba(134,239,172,0.5);color:#86efac;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">🕊️ 和平合意成立・6/19署名</span>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+**3行サマリー（new_str の参考テキスト）：**
+1. 「2026年6月15日、米イランMOU14条項の和平合意が成立。6月19日スイスで正式署名式——封鎖111日目、2日後に歴史的転換点へ」
+2. 「機雷除去に最低40日〜最大6ヶ月。イランタンカー2隻が封鎖圏を脱出（DIONA・HERO2）したが、BIMCOは依然「高リスク」警告を維持。日本関係船舶38隻が湾内で待機継続」
+3. 「WTI $78前後・ブレント $80前後（4日連続下落・3月来最安値圏）。アラグチー「イスラエルのレバノン攻撃=MOU違反」が唯一の署名崩壊リスク」
 
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<span style="display:inline-block;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">💰 WTI $84.88 / Brent $87.33</span>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<span style="display:inline-block;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">📉 WTI $81.10 / Brent $83.80</span>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<span style="display:inline-block;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#f87171;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">⚠️ 閉鎖109日目</span>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<span style="display:inline-block;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#f87171;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">⚠️ 閉鎖110日目</span>
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-<span style="display:inline-block;background:rgba(147,51,234,0.15);border:1px solid rgba(147,51,234,0.3);color:#c084fc;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">⛏️ 署名待ち・機雷除去準備中</span>
-<!-- OLD:END -->
-<!-- NEW:START -->
-<span style="display:inline-block;background:rgba(147,51,234,0.15);border:1px solid rgba(147,51,234,0.3);color:#c084fc;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">⛏️ 機雷除去最大6ヶ月</span>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+**バッジ更新（new_str の参考）：**
+- 封鎖日数バッジ：`⚠️ 閉鎖111日目`
+- 油価バッジ：`📉 WTI $78 / Brent $80`
+- 機雷バッジ：`⛏️ 機雷除去40日〜6ヶ月`
+- 署名バッジ：`✍️ 6/19署名まで2日`
 
 ---
 
@@ -361,10 +333,10 @@
 <!-- APPLY:START -->
 <!-- FILE:docs/data/news_data.json -->
 <!-- OLD:START -->
-  "updated": "2026年6月15日 07:09 日本時間JST",
+  "updated": "2026年6月16日 08:14 日本時間JST",
 <!-- OLD:END -->
 <!-- NEW:START -->
-  "updated": "2026年6月16日 08:14 日本時間JST",
+  "updated": "2026年6月17日 08:44 日本時間JST",
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -380,127 +352,109 @@
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### `latest` 配列（先頭に3件追加・旧2〜4番目を archive に移動）
+### `latest` 配列（先頭に2件追加・旧最古の2件を archive に移動）
 
-#### 旧2〜4番目を archive に移動するため、最古の3件を削除して3件追加
+> ⚠️ Claude Code：`"latest": [` を old_str として先頭2件を追加し、旧 latest の最古2件（latest-003 と latest-004 相当）を archive の先頭バッチに移動すること。latest は常に4件を維持する。
 
-> ⚠️ Claude Code：以下の APPLY ブロックは `"latest": [` を old_str として先頭に3件を prepend する。
-> 同時に旧 latest-002・003・004 を archive の先頭バッチに移動すること。
+追加する新規2件（先頭に prepend）：
 
-<!-- APPLY:START -->
-<!-- FILE:docs/data/news_data.json -->
-<!-- OLD:START -->
-  "latest": [
-<!-- OLD:END -->
-<!-- NEW:START -->
-  "latest": [
-    {
-      "id": "latest-001",
-      "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
-      "title": "【速報】米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」・MOU14条項署名",
-      "body": "トランプ大統領がTruth Socialで「イランとの合意が完了した」と宣言。パキスタンPMシャリフが米・イラン双方の「全戦線における即時かつ恒久的な軍事作戦終結」を発表。MOU14条項はホルムズ完全再開・米封鎖解除・核交渉60日後開始・$300億湾岸国再建基金を含む。署名式は6月19日スイスで開催予定。",
-      "sourceLabel": "NBC News",
-      "label": "🕊️ 和平合意",
-      "url": "https://www.nbcnews.com/news/us-news/deal-reached-united-states-iran-war-rcna350039"
-    },
-    {
-      "id": "latest-002",
-      "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
-      "title": "バンス「MOUデジタル署名済み」・ドーハ事前協議今週——イラン「6/19正式署名まで実施保留」",
-      "body": "バンス副大統領がABCニュースで「MOUは日曜日にデジタル署名済み」と確認。米・イラン代表が今週ドーハで事前協議、6/19スイス署名式に備える。一方イラン副外相ガリバブ「6/19正式署名まで実施保留」と慎重姿勢。トランプは「船舶はホルムズから動き出している」とTruth Social投稿。",
-      "sourceLabel": "CNN",
-      "label": "✍️ 署名準備",
-      "url": "https://edition.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel"
-    },
-    {
-      "id": "latest-003",
-      "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
-      "title": "機雷除去最大6ヶ月・荷主「安全確認まで慎重」——本格通航再開は秋冬以降",
-      "body": "米国防総省はホルムズ海峡の機雷除去に最大6ヶ月かかるとの内部見積もり。除去艦3隻が既に展開中。船主・用船者は「市場は正常化を織り込んでいるが、実際に船舶が安定通航するまで慎重」（センタサ・シップ・ブローカーズ）。WTI $81.10（-4.5%）・ブレント $83.80（-4.0%）。正常化後は$65-75見通し。",
-      "sourceLabel": "The Globe and Mail",
-      "label": "⛏️ 機雷除去",
-      "url": "https://www.theglobeandmail.com/business/article-ships-oil-strait-hormuz-us-iran-peace-deal/"
-    },
-<!-- NEW:END -->
-<!-- APPLY:END -->
+```json
+{
+  "id": "latest-001",
+  "date": "2026年6月17日（現地）/ 2026年6月17日 08:21 JST",
+  "title": "アラグチー「イスラエルのレバノン攻撃・占領継続はMOU違反」——6/19署名2日前に警告",
+  "body": "イランのアラグチー外相が6月17日、「イスラエルのレバノン攻撃やレバノン占領の継続は、MOUが定める『全軍事作戦の即時停止』条項に違反する」と警告。イスラエル問題が6/19署名式成否の最大リスク要因として浮上。同時に新たなスイスでの交渉ラウンド開始を確認。",
+  "sourceLabel": "Iran International",
+  "date": "2026年6月17日 JST",
+  "label": "⚠️ 外交",
+  "url": "https://www.iranintl.com/en/liveblog/202606139149",
+  "isLatest": true
+},
+{
+  "id": "latest-002",
+  "date": "2026年6月17日（現地）/ 2026年6月17日 JST",
+  "title": "イランタンカー2隻（DIONA・HERO2）が封鎖圏脱出——3.8百万バレル原油を輸出・2ヶ月ぶり",
+  "body": "AIS追跡データと衛星画像により、NationalイランianタンカーカンパニーのVLCC「DIONA」と「HERO2」が封鎖圏を脱出し合計3.8百万バレルの原油を輸出したことが確認された。2ヶ月ぶりのイラン原油輸出の端緒。また別タンカー「STREAM」もパキスタン排他的経済水域付近から接近中。",
+  "sourceLabel": "Iran International",
+  "date": "2026年6月17日 JST",
+  "label": "🚢 海運",
+  "url": "https://www.iranintl.com/en/liveblog/202606139149",
+  "isLatest": false
+}
+```
 
-### `osint` 配列更新（先頭に追加・既存 isLatest:true → false）
+> ⚠️ Claude Code: 旧 latest-001 の `isLatest: true` は `isLatest: false` に変更すること。
 
-<!-- APPLY:START -->
-<!-- FILE:docs/data/news_data.json -->
-<!-- OLD:START -->
-  "osint": [
-<!-- OLD:END -->
-<!-- NEW:START -->
-  "osint": [
-    {
-      "id": "osint-001",
-      "titleJa": "【Al Jazeera】米「船舶はホルムズから移動開始」——イランはデジタル署名を未確認・実施は6/19署名後",
-      "titleEn": "US says Iran signed deal to end war, ships moving through Strait of Hormuz",
-      "country": "Qatar",
-      "media": "Al Jazeera",
-      "cardBg": "rgba(139,90,43,0.15)",
-      "cardBorder": "rgba(217,119,6,0.4)",
-      "badgeColor": "rgba(217,119,6,0.25)",
-      "borderColor": "rgba(217,119,6,0.5)",
-      "textColor": "#fcd34d",
-      "url": "https://www.aljazeera.com/news/2026/6/15/trump-says-ships-starting-to-move-through-strait-of-hormuz",
-      "date": "2026年6月15日",
-      "isLatest": true
-    },
-<!-- NEW:END -->
-<!-- APPLY:END -->
+### `osint`（現地メディア視点）最新1件（`isLatest: true`）
 
-> ⚠️ Claude Code：上記追加後、旧 `"isLatest": true` のエントリー（6/14分）を `"isLatest": false` に変更すること。
+```json
+{
+  "id": "osint-001",
+  "date": "2026年6月17日（現地）/ 2026年6月17日 JST",
+  "titleJa": "【Al Jazeera】MOU後も続く緊張——アラグチー警告とイスラエル問題が署名前夜に影を落とす",
+  "titleEn": "Al Jazeera: Araghchi warns Israeli actions could violate MOU ahead of June 19 signing",
+  "country": "カタール",
+  "media": "Al Jazeera",
+  "cardBg": "rgba(20,83,45,0.3)",
+  "cardBorder": "rgba(34,197,94,0.3)",
+  "badgeColor": "rgba(34,197,94,0.2)",
+  "borderColor": "rgba(34,197,94,0.4)",
+  "textColor": "#86efac",
+  "url": "https://www.aljazeera.com/",
+  "date": "2026年6月17日 JST",
+  "isLatest": true
+}
+```
+
+> ⚠️ Claude Code: 旧 osint-001 の `isLatest: true` → `false` に変更すること。
 
 ---
 
-## [S11] 更新ログ
+## [S11] 更新ログ追記（必須2ブロック構成）
 
-⚠️ **Claude Code：S11 適用前に以下を実行して確認すること**
-```bash
-grep -n "6月15日\|6月14日\|6月13日\|6月12日" docs/index.html | head -20
-```
+### ブロック1: 常時表示エリアの更新（3件固定）
 
-### ブロック1: 常時表示エリア（3件固定維持）
-
-> ⚠️ 以下の old_str は「6/15 エントリーの2行」を使って一意性を確保している。
-> str_replace 適用後、常時表示が「6/16 + 6/15 + 6/14 の3件」になっているか grep で確認すること。
-> 6/13 の行が常時表示に残っている場合は下記ブロック2（逆順）で追加対応すること。
+> ⚠️ Claude Code: 以下の old_str は 6/16 08:14・6/15 07:09・6/13 XX:XX の3件を含む推定。
+> 適用前に必ず `grep -n "2026年6月1[3456]日" docs/index.html | head -20` で実際の常時表示3件のHTML（各div 2行）を確認し、完全一致に修正してから適用すること。
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
+        <div>📅 <strong>2026年6月16日 08:14 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/16 08:14</span> — <strong style="color:#fca5a5;">【重大更新】</strong>米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」宣言・MOU14条項（全面停戦・ホルムズ再開・核60日交渉）・バンス「デジタル署名済み」・ドーハ事前協議・署名式6/19スイス・機雷除去最大6ヶ月・WTI $81.10（-4.5%）・警戒レベル最高→高・封鎖110日目・ニュース3件更新・OSINT更新</div>
         <div>📅 <strong>2026年6月15日 07:09 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/15 07:09</span> — <strong style="color:#86efac;">【停戦発効】</strong>パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定・G7エヴィアン（6/15-17）開幕・イスラエルのベイルート空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・ブレント $87.33・109日目・ニュース4件更新・OSINT更新</div>
+        <div><span style="color:#f87171;">2026/06/15 07:09</span> — <strong style="color:#fca5a5;">【重大更新】</strong>パキスタンPM「停戦は今すぐ発効」・G7エヴィアン（6/15-17）開幕・署名式6/19スイス確定・イスラエル空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・封鎖109日目</div>
+        <div>📅 <strong>2026年6月13日</strong> 更新</div>
+        <div><span style="color:#94a3b8;">2026/06/13</span> — [Claude Code: grep -n "6月13日" docs/index.html で実際のログ内容を確認し挿入]</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
+        <div>📅 <strong>2026年6月17日 08:44 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/17 08:44</span> — <strong style="color:#fca5a5;">【重大フォロー】</strong>アラグチー「イスラエルのレバノン攻撃・占領継続はMOU違反」警告（6/17）｜イランタンカー2隻（DIONA・HERO2）封鎖圏脱出・3.8百万バレル原油輸出——2ヶ月ぶり｜ファルス「MOU通航無料60日のみ」vs 米「無条件」矛盾浮上｜BIMCO高リスク警告継続・日本関係船舶38隻足止め（日本船主協会）｜WTI $78前後（4日連続下落）｜6/19署名まで2日・封鎖111日目・ニュース2件更新・OSINT更新</div>
         <div>📅 <strong>2026年6月16日 08:14 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/16 08:14</span> — <strong style="color:#86efac;">【和平合意成立】</strong>米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」・MOU14条項・6/19スイス署名式・機雷除去最大6ヶ月・WTI $81.10・ブレント $83.80急落・110日目・ニュース3件更新・OSINT更新</div>
+        <div><span style="color:#f87171;">2026/06/16 08:14</span> — <strong style="color:#fca5a5;">【重大更新】</strong>米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」宣言・MOU14条項（全面停戦・ホルムズ再開・核60日交渉）・バンス「デジタル署名済み」・ドーハ事前協議・署名式6/19スイス・機雷除去最大6ヶ月・WTI $81.10（-4.5%）・警戒レベル最高→高・封鎖110日目・ニュース3件更新・OSINT更新</div>
         <div>📅 <strong>2026年6月15日 07:09 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/15 07:09</span> — <strong style="color:#86efac;">【停戦発効】</strong>パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定・G7エヴィアン（6/15-17）開幕・イスラエルのベイルート空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・ブレント $87.33・109日目・ニュース4件更新・OSINT更新</div>
+        <div><span style="color:#f87171;">2026/06/15 07:09</span> — <strong style="color:#fca5a5;">【重大更新】</strong>パキスタンPM「停戦は今すぐ発効」・G7エヴィアン（6/15-17）開幕・署名式6/19スイス確定・イスラエル空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・封鎖109日目</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### ブロック2: log-collapse への 6/13 エントリー挿入
+### ブロック2: log-collapse への旧3件目（6/15 07:09）の挿入
 
-> ⚠️ **Claude Code**: 以下の old_str 内の `[6月13日の日付行]` は
-> `grep -n "6月13日" docs/index.html` で確認した実際の HTML に置き換えること。
-> log-collapse の先頭（現在: 6/12 XX:XX）の前に 6/13 エントリーを挿入する。
+> ⚠️ Claude Code: ブロック2の old_str には log-collapse の先頭固定アンカー + 現在の先頭エントリー（6/13 XX:XX 行）を含める。
+> `grep -n "log-collapse\|6月13日" docs/index.html | head -10` で現在の log-collapse 先頭エントリーのHTMLを確認し、old_str を完全一致で調整してから適用すること。
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月12日
+          <div>📅 <strong>2026年6月13日
 <!-- OLD:END -->
 <!-- NEW:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月13日 [Claude Code: grep で時刻を確認して補完] JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/06/13 [時刻]</span> — [Claude Code: grep -n "6月13日" docs/index.html で実際のログ内容を確認し挿入]</div>
-          <div>📅 <strong>2026年6月12日
+          <div>📅 <strong>2026年6月15日 07:09 JST</strong> 更新</div>
+          <div><span style="color:#94a3b8;">2026/06/15 07:09</span> — パキスタンPM「停戦は今すぐ発効」・G7エヴィアン（6/15-17）開幕・署名式6/19スイス確定・イスラエル空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・封鎖109日目</div>
+          <div>📅 <strong>2026年6月13日
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -508,10 +462,10 @@ grep -n "6月15日\|6月14日\|6月13日\|6月12日" docs/index.html | head -20
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-  "dateModified": "2026-06-15T00:00:00+09:00",
+  "dateModified": "2026-06-16T00:00:00+09:00",
 <!-- OLD:END -->
 <!-- NEW:START -->
-  "dateModified": "2026-06-16T00:00:00+09:00",
+  "dateModified": "2026-06-17T00:00:00+09:00",
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -520,34 +474,33 @@ grep -n "6月15日\|6月14日\|6月13日\|6月12日" docs/index.html | head -20
 ## ✅ 出力前セルフチェック
 
 ```
-[✓] Step 0 — old_str 基準：6月15日 07:09 JST版（プロジェクト知識＋更新ログ照合確認済み・一致）
-[✓] C01 タンカー確認 — web検索実施済み・変化なし（6/16 JST 日本船舶新規通過・足止め特段情報なし）
-[✓] S01 ヘッダー — 6月15日 07:09 JST → 6月16日 08:14 JST・警戒レベル 最高→高（和平合意・署名待ち）
-[✓] S02 TICKER — 米イラン和平合意成立・MOU14条項・6/19署名・機雷除去6ヶ月・WTI$81.10・110日目
-[✓] S03 速報インシデント — 6/16 08:14付け・2件新規追加（和平合意成立・デジタル署名＋機雷除去）
-[✓] S04 情勢カード3枚 — 外交（和平合意・ドーハ協議）・軍事（機雷除去6ヶ月・イスラエル問題）・エネルギー（WTI$81.10・Brent$83.80）
-[✓] S05 COUNTDOWN — 110日目・Phase 9「和平合意成立——6/19スイス署名式まであと3日」
-[✓] S06 シナリオ確率補足バナー — 6/16 08:14 JST・A↑↑↑↑↑↑ B↑ C↓↓↓↓ D↓↓↓↓↓
-[✓] S07 シナリオ4本 — A（合意成立・機雷除去→段階的完全再開）・B（機雷遅延・慎重再開）・C（イスラエル問題・署名崩壊）・D（合意破棄・軍事再開）
-[✓] S07 C/D差別化 — C（イスラエル問題→外交失敗型・署名崩壊）vs D（署名後合意破棄→軍事衝突型）✓
+[✓] Step 0 — old_str 基準：6月16日 08:14 JST版（プロジェクト知識＋更新ログ照合確認済み・一致）
+[✓] C01 タンカー確認 — web検索実施済み・日本関係船舶38隻が湾内足止め（日本船主協会・Reuters 6/16確認）
+[✓] S01 ヘッダー — 6月16日 08:14 JST → 6月17日 08:44 JST・警戒レベル「高（署名2日前・機雷除去待ち）」
+[✓] S02 TICKER — アラグチー警告・イランタンカー脱出・ファルス矛盾・BIMCO・WTI$78・111日目・6/19まで2日
+[✓] S03 速報インシデント — 6/17 08:44付け・2件新規追加（アラグチー警告・タンカー脱出）
+[✓] S04 情勢カード3枚 — 外交（アラグチー警告・ドーハ・ファルス矛盾）・軍事（タンカー脱出・BIMCO・38隻）・エネルギー（WTI$78・4日連続下落）
+[✓] S05 COUNTDOWN — 111日目・Phase 9「6/19スイス署名式まであと2日」
+[✓] S06 シナリオ確率補足バナー — 6/17 08:44 JST・矢印変更なし（A↑↑↑↑↑↑ B↑ C↓↓↓↓ D↓↓↓↓↓）
+[✓] S07 シナリオ4本 — A（署名→機雷除去→段階再開）・B（機雷遅延・BIMCO警告）・C（アラグチー実行→署名崩壊）・D（署名後破棄→軍事再開）
+[✓] S07 C/D差別化 — C（イスラエル問題→署名前外交失敗型）vs D（署名後破棄→軍事再開型）✓
 [✓] S07 WTI差別化 — A: $65-75 / B: $80-90 / C: $100-120 / D: $130+ ✓
-[✓] S08 シナリオフッター — 6/19署名・機雷除去・イスラエル問題・60日核交渉・IRGC動向
-[✓] S08.5 全ルート現況サマリー — 6/16 08:14 JST 再確認済・和平合意成立で近日段階的再開見込み
-[✓] S09 30秒カラム — 3行サマリー（和平合意成立・機雷除去6ヶ月・WTI急落）＋バッジ4枚更新
-[✓] S10 news_data.json — latest 3件新規（和平合意・デジタル署名・機雷除去）+ 旧1件維持・osint AJ 6/15
-[✓] S10 URL確認済 — NBC News ✓ CNN ✓ Globe and Mail ✓ Al Jazeera 6/15 ✓
+[✓] S08 シナリオフッター — 5焦点（MOU全文・アラグチー警告・機雷除去・38隻・核60日）
+[✓] S08.5 全ルート現況サマリー — 6/17 08:44 JST 再確認済・ホルムズ依然通航不可・例外的タンカー脱出記載
+[✓] S09 30秒カラム — 3行サマリー（和平合意・タンカー脱出・WTI急落）＋バッジ4枚更新指示
+[✓] S10 news_data.json — latest 2件新規（アラグチー警告・タンカー脱出）・旧2件archive移動・osint AJ 6/17
+[✓] S10 URL確認済 — Iran International ✓ Marine Link ✓ Al Jazeera ✓
 [✓] S10 osint — 配列先頭追加・既存 isLatest:true → false 変更 ✓
-[✓] S11 更新ログ — 2ブロック構成（常時表示3件固定・log-collapse先頭に6/13版挿入）✓
-[✓] S11 ブロック2 — 6/13のXX:XXはgrep確認後にClaude Codeが補完するよう注記済み ✓
-[✓] S11 JSON-LD — 2026-06-16T00:00:00+09:00（ISO 8601 JST形式）✓
+[✓] S11 更新ログ — 2ブロック構成（常時表示3件固定・log-collapse先頭に6/15版挿入）✓
+[✓] S11 ブロック1 — 6/13の内容は grep 確認後 Claude Code が補完するよう注記済み ✓
+[✓] S11 JSON-LD — 2026-06-17T00:00:00+09:00（ISO 8601 JST形式）✓
 [✓] 全体 — 📰関連最新ニュースにAl Jazeera混入なし ✓（AJはosintのみ）
 [✓] 全体 — 習近平 記載なし ✓
 [✓] 全体 — Wikipedia/毎日新聞 URL 不使用 ✓
 [✓] 全体 — シナリオ確率数値 記載なし（自動同期） ✓
 [✓] 全体 — TICKER内JST表記あり ✓
-[✓] 全体 — 人名日本語表記：トランプ・バンス・パキスタンPMシャリフ・ガリバブ・イスラエル国防相 ✓
 [✓] 全体 — 「二重封鎖」使用なし ✓
-[✓] 全体 — 警戒レベル変更（最高→高）理由明記 ✓
+[✓] 全体 — Iran International は latest 使用可（Al Jazeeraではないため）✓
 ```
 
 ---
@@ -556,15 +509,15 @@ grep -n "6月15日\|6月14日\|6月13日\|6月12日" docs/index.html | head -20
 
 | 項目 | 内容 |
 |---|---|
-| **最重要** | **米イラン和平合意成立（6/15 JST）——MOU14条項署名** |
-| 合意内容 | 全面停戦・ホルムズ再開・核60日交渉・$300億再建基金 |
-| 署名式 | 6/19スイス・今週ドーハで事前協議 |
-| デジタル署名 | バンス「署名済み」・イラン「6/19まで実施保留」 |
-| 機雷除去 | 国防総省推定最大6ヶ月・本格通航は秋冬以降 |
-| 懸念材料 | イスラエル「レバノン撤退せず」 |
-| 油価 | WTI $81.10（-4.5%）・ブレント $83.80（-4.0%） |
-| 封鎖日数 | **110日目** |
-| C01 | 日本関係船舶：変化なし（6/16 08:14 JST 確認） |
+| **最重要** | **アラグチー「イスラエル攻撃・占領=MOU違反」警告（6/17 JST）** |
+| 新展開① | イランタンカー2隻（DIONA・HERO2）封鎖圏脱出・3.8百万バレル原油輸出（2ヶ月ぶり） |
+| 新展開② | ファルス通信「MOU通航無料は60日のみ・有料化」vs 米「無条件無料」矛盾 |
+| 署名まで | 6/19スイス署名式まで**2日** |
+| 機雷除去 | 西側推定40〜50日・ペンタゴン最大6ヶ月・G7仏「数日内展開可能」 |
+| 日本関係船舶 | **38隻**が湾内足止め（日本船主協会・Reuters 6/16） |
+| BIMCO | 「MOU後も依然高リスク」警告継続 |
+| 油価 | WTI $78前後・ブレント $80前後（4日連続下落） |
+| 封鎖日数 | **111日目** |
 
 ---
 
@@ -573,6 +526,7 @@ grep -n "6月15日\|6月14日\|6月13日\|6月12日" docs/index.html | head -20
 1. `run.bat` 実行 → `index_html_diffs.md` push
 2. Claude Code 定型文送信：
    「git pull --rebase してから、docs/tools/index_html_diffs.md に従って docs/index.html を更新してください。また docs/data/news_data.json も [S10] の指示に従い、既存ファイルに対して新規追加分をマージする形で更新してください。更新完了後に commit してください。push は確認後に指示します。」
-3. ⚠️ S11 ブロック2 の `6月13日 XX:XX` は `grep -n "6月13日" docs/index.html` で確認後に補完すること
-4. ⚠️ news_data.json の旧 latest-002〜004 を archive に移動すること（3件）
-5. commit 確認（`git branch && git log --oneline -3`）→ push 指示
+3. ⚠️ S11 ブロック1・2 は `grep -n "2026年6月1[3456]日" docs/index.html` で確認後に補完すること
+4. ⚠️ S03 速報インシデントリストの `<ul>` old_str は実際の index.html で照合すること
+5. ⚠️ S04・S05・S06・S09 の old_str は view_range/grep で確認すること
+6. commit 確認（`git branch && git log --oneline -3`）→ push 指示

@@ -1,7 +1,15 @@
 {
-  "updated": "2026年6月18日 09:51 日本時間JST",
+  "updated": "2026年6月19日 07:55 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "独仏英伊、ホルムズ機雷除去任務への参加を共同声明で表明",
+      "body": "ドイツ（メルツ首相）・フランス（マクロン大統領）・英国（スターマー首相）・イタリア（メローニ首相）の4カ国首脳が共同声明を発表し、ホルムズ海峡の無条件・無制限の航行自由化が不可欠だとした上で、各国の憲法上の要件に従い「防衛的・独立的なミッション」として商船の安心供与と機雷除去作戦への参加意志を表明した。実働化には国連安保理決議等の法的根拠が必要との指摘もある。",
+      "sourceLabel": "AFP",
+      "date": "2026年6月18日",
+      "label": "⛏️ 軍事/海運",
+      "url": "https://www.yahoo.com/news/world/articles/european-leaders-ready-mission-strait-004128455.html"
+    },
     {
       "title": "MOU14条項全文公開——60日無料通航・30日機雷除去・米$3000億復興計画",
       "body": "米政府がイスラマバードMOUの全14条項テキストを公開（6/18 JST）。4条項：米国が署名後即座に封鎖解除開始・30日以内完全解除。5条項：イランが60日間のみ無料通航保証・30日以内に機雷除去。また米国はイランの石油輸出に対する制裁免除を即座に発効し、イラン凍結資産を利用可能にすると約束。$3000億以上の復興・開発計画も明記。ガリバフ議長「ホルムズは旧来条件に戻らない・サービス料徴収」と改めて強調。",
@@ -538,6 +546,21 @@
   ],
   "osint": [
     {
+      "id": "osint-001-0619",
+      "date": "2026年6月18日（現地）/ 2026年6月19日 JST",
+      "titleJa": "【Al Jazeera】MOU14条項を解説——レバノン・ホルムズ・濃縮ウランの扱いとは",
+      "titleEn": "What the Trump-Iran agreement says about Lebanon, Hormuz and uranium",
+      "country": "Qatar",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,150,136,0.13)",
+      "cardBorder": "rgba(0,150,136,0.35)",
+      "badgeColor": "#00897b",
+      "borderColor": "#00897b",
+      "textColor": "#80cbc4",
+      "url": "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium",
+      "isLatest": true
+    },
+    {
       "id": "osint-001",
       "date": "2026年6月17日（現地）/ 2026年6月18日 JST",
       "titleJa": "【Al Jazeera】イラン外務省「MOUは電子署名済み・ジュネーブ署名式は不要」——ガリバフ「ホルムズは旧来条件に戻らない」",
@@ -550,7 +573,7 @@
       "borderColor": "#00897b",
       "textColor": "#80cbc4",
       "url": "https://www.aljazeera.com/news/2026/6/17/iran-confirms-that-mou-has-been-signed-electronically-by-both-sides",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001",

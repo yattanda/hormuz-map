@@ -1,7 +1,23 @@
 {
-  "updated": "2026年6月17日 08:44 日本時間JST",
+  "updated": "2026年6月18日 09:51 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "MOU14条項全文公開——60日無料通航・30日機雷除去・米$3000億復興計画",
+      "body": "米政府がイスラマバードMOUの全14条項テキストを公開（6/18 JST）。4条項：米国が署名後即座に封鎖解除開始・30日以内完全解除。5条項：イランが60日間のみ無料通航保証・30日以内に機雷除去。また米国はイランの石油輸出に対する制裁免除を即座に発効し、イラン凍結資産を利用可能にすると約束。$3000億以上の復興・開発計画も明記。ガリバフ議長「ホルムズは旧来条件に戻らない・サービス料徴収」と改めて強調。",
+      "sourceLabel": "NBC News",
+      "date": "2026年6月18日",
+      "label": "🕊️ 外交",
+      "url": "https://www.nbcnews.com/politics/national-security/text-iran-us-memorandum-understanding-rcna350582"
+    },
+    {
+      "title": "Goldman Sachs「Brent Q4目標$80」下方修正——WTI $75・5日連続下落・IEA供給過剰警告",
+      "body": "Goldman SachsがBrentクルードのQ4 2026目標価格を$90から$80に下方修正。「湾岸輸出は7月末前に戦前水準に回復する」との予測を根拠とする。WTI $75前後・Brent $79前後（5日連続下落・3月来最安値）。IEAは2027年に向けて供給過剰シナリオを警告——需要増+2百万b/d に対し供給増+8百万b/d の見通し。紛争ピーク比40%超の油価下落。",
+      "sourceLabel": "Trading Economics",
+      "date": "2026年6月18日",
+      "label": "📉 市場",
+      "url": "https://tradingeconomics.com/commodity/crude-oil"
+    },
     {
       "id": "latest-001",
       "date": "2026年6月17日（現地）/ 2026年6月17日 08:21 JST",
@@ -10,7 +26,7 @@
       "sourceLabel": "Iran International",
       "label": "⚠️ 外交",
       "url": "https://www.iranintl.com/en/liveblog/202606139149",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002",
@@ -21,25 +37,6 @@
       "label": "🚢 海運",
       "url": "https://www.iranintl.com/en/liveblog/202606139149",
       "isLatest": false
-    },
-    {
-      "id": "latest-001",
-      "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
-      "title": "【速報】米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」・MOU14条項署名",
-      "body": "トランプ大統領がTruth Socialで「イランとの合意が完了した」と宣言。パキスタンPMシャリフが米・イラン双方の「全戦線における即時かつ恒久的な軍事作戦終結」を発表。MOU14条項はホルムズ完全再開・米封鎖解除・核交渉60日後開始・$300億湾岸国再建基金を含む。署名式は6月19日スイスで開催予定。",
-      "sourceLabel": "NBC News",
-      "label": "🕊️ 和平合意",
-      "url": "https://www.nbcnews.com/news/us-news/deal-reached-united-states-iran-war-rcna350039",
-      "isLatest": false
-    },
-    {
-      "id": "latest-002",
-      "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
-      "title": "バンス「MOUデジタル署名済み」・ドーハ事前協議今週——イラン「6/19正式署名まで実施保留」",
-      "body": "バンス副大統領がABCニュースで「MOUは日曜日にデジタル署名済み」と確認。米・イラン代表が今週ドーハで事前協議、6/19スイス署名式に備える。一方イラン副外相ガリバブ「6/19正式署名まで実施保留」と慎重姿勢。トランプは「船舶はホルムズから動き出している」とTruth Social投稿。",
-      "sourceLabel": "CNN",
-      "label": "✍️ 署名準備",
-      "url": "https://edition.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel"
     },
     {
       "title": "パキスタンPM「24時間以内に合意成立」——バンス副大統領＋カリバフ議長がジュネーブ署名へ",
@@ -542,6 +539,21 @@
   "osint": [
     {
       "id": "osint-001",
+      "date": "2026年6月17日（現地）/ 2026年6月18日 JST",
+      "titleJa": "【Al Jazeera】イラン外務省「MOUは電子署名済み・ジュネーブ署名式は不要」——ガリバフ「ホルムズは旧来条件に戻らない」",
+      "titleEn": "Iran FM confirms MOU electronically signed, no Geneva ceremony needed — Ghalibaf: Hormuz will never return to pre-war conditions",
+      "country": "Qatar / Iran",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,150,136,0.13)",
+      "cardBorder": "rgba(0,150,136,0.35)",
+      "badgeColor": "#00897b",
+      "borderColor": "#00897b",
+      "textColor": "#80cbc4",
+      "url": "https://www.aljazeera.com/news/2026/6/17/iran-confirms-that-mou-has-been-signed-electronically-by-both-sides",
+      "isLatest": true
+    },
+    {
+      "id": "osint-001",
       "titleJa": "【Al Jazeera】MOU後も続く緊張——アラグチー警告とイスラエル問題が署名前夜に影を落とす",
       "titleEn": "Al Jazeera: Araghchi warns Israeli actions could violate MOU ahead of June 19 signing",
       "country": "カタール",
@@ -553,7 +565,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/",
       "date": "2026年6月17日",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001",
@@ -1032,6 +1044,22 @@
     {
       "batchLabel": "2026年6月16日 更新分（アーカイブ）",
       "items": [
+        {
+          "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
+          "title": "【速報】米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」・MOU14条項署名",
+          "body": "トランプ大統領がTruth Socialで「イランとの合意が完了した」と宣言。パキスタンPMシャリフが米・イラン双方の「全戦線における即時かつ恒久的な軍事作戦終結」を発表。MOU14条項はホルムズ完全再開・米封鎖解除・核交渉60日後開始・$300億湾岸国再建基金を含む。署名式は6月19日スイスで開催予定。",
+          "sourceLabel": "NBC News",
+          "label": "🕊️ 和平合意",
+          "url": "https://www.nbcnews.com/news/us-news/deal-reached-united-states-iran-war-rcna350039"
+        },
+        {
+          "date": "2026年6月15日（現地）/ 2026年6月16日 JST",
+          "title": "バンス「MOUデジタル署名済み」・ドーハ事前協議今週——イラン「6/19正式署名まで実施保留」",
+          "body": "バンス副大統領がABCニュースで「MOUは日曜日にデジタル署名済み」と確認。米・イラン代表が今週ドーハで事前協議、6/19スイス署名式に備える。一方イラン副外相ガリバブ「6/19正式署名まで実施保留」と慎重姿勢。トランプは「船舶はホルムズから動き出している」とTruth Social投稿。",
+          "sourceLabel": "CNN",
+          "label": "✍️ 署名準備",
+          "url": "https://edition.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel"
+        },
         {
           "title": "機雷除去最大6ヶ月・荷主「安全確認まで慎重」——本格通航再開は秋冬以降",
           "body": "米国防総省はホルムズ海峡の機雷除去に最大6ヶ月かかるとの内部見積もり。除去艦3隻が既に展開中。船主・用船者は「市場は正常化を織り込んでいるが、実際に船舶が安定通航するまで慎重」（センタサ・シップ・ブローカーズ）。WTI $81.10（-4.5%）・ブレント $83.80（-4.0%）。正常化後は$65-75見通し。",

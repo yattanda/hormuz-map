@@ -1,7 +1,39 @@
 {
-  "updated": "2026年6月19日 07:55 日本時間JST",
+  "updated": "2026年6月20日 08:18 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "米イラン実務協議（ビュルゲンシュトック）が延期——レバノン情勢悪化が理由",
+      "body": "イラン代表団がレバノン南部でのイスラエル攻撃激化を理由に渡航を延期し、バンス副大統領のスイス訪問もキャンセルされたことで、6月19日にスイス・ビュルゲンシュトックで予定されていた米イラン実務協議は開催見送りとなった。新たな日程は示されていない。",
+      "sourceLabel": "NBC News",
+      "date": "2026年6月19日 JST",
+      "label": "⚠️ 外交",
+      "url": "https://www.nbcnews.com/world/iran/us-iran-talks-postponed-vance-cancels-trip-israel-strikes-lebanon-rcna350830"
+    },
+    {
+      "title": "イラン新設PGSA、ホルムズ通航に義務的保険・指定航路を導入——将来課金の可能性を留保",
+      "body": "イランが新設したペルシャ湾海峡庁（PGSA）は、ホルムズ海峡を通航する全船舶に対し同庁承認の保険加入・48時間前の通航申請・指定航路（ラーク島沿い）の順守を義務化する文書を公表した。米イランMOUが定める60日間の無料通航期間中は無償とするが、期間終了後の課金権を留保しており、英国主導で同盟国がこれに反発している。",
+      "sourceLabel": "Middle East Eye",
+      "date": "2026年6月19日 JST",
+      "label": "🚢 海運",
+      "url": "https://www.middleeasteye.net/news/iran-plans-charge-insurance-fee-vessels-transiting-hormuz-after-us-deal-expires"
+    },
+    {
+      "title": "イスラエル・ヒズボラが停戦合意——レバノン情勢の悪化が一時沈静化",
+      "body": "トランプ大統領がネタニヤフ首相に要請したことを受け、イスラエルとヒズボラが6月19日に停戦に合意したと米当局者が明らかにした。ただし、合意発表後もイスラエル国防軍（IDF）が一部攻撃を継続したとの報道があり、完全な履行は未確認。",
+      "sourceLabel": "The Hill",
+      "date": "2026年6月19日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://thehill.com/homenews/5931781-ceasefire-lebanon-israel-hezbollah/"
+    },
+    {
+      "title": "ホルムズ海峡の通航量に改善の兆し——6/18に検証済み商船25隻が通航",
+      "body": "海事データ企業AXSMarineによれば、6月18日にホルムズ海峡を通航した検証済み商船は25隻——4月18日以来の最多で、6月上旬の平均日量の5倍に達した。米中央軍（CENTCOM）は一晩で20隻超が通過したと発表し、紛争開始後初となるサウジアラビア所有タンカーの通過も確認された。",
+      "sourceLabel": "CBS News",
+      "date": "2026年6月19日 JST",
+      "label": "🚢 海運",
+      "url": "https://www.cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting/"
+    },
     {
       "title": "独仏英伊、ホルムズ機雷除去任務への参加を共同声明で表明",
       "body": "ドイツ（メルツ首相）・フランス（マクロン大統領）・英国（スターマー首相）・イタリア（メローニ首相）の4カ国首脳が共同声明を発表し、ホルムズ海峡の無条件・無制限の航行自由化が不可欠だとした上で、各国の憲法上の要件に従い「防衛的・独立的なミッション」として商船の安心供与と機雷除去作戦への参加意志を表明した。実働化には国連安保理決議等の法的根拠が必要との指摘もある。",
@@ -546,6 +578,21 @@
   ],
   "osint": [
     {
+      "id": "osint-002-0620",
+      "date": "2026年6月19日（現地）/ 2026年6月20日 JST",
+      "titleJa": "【Al Jazeera】レバノン情勢の悪化で米イラン協議延期——停戦合意の持続性に懸念",
+      "titleEn": "Fears for US-Iran deal as talks delayed by Israeli strikes on Lebanon",
+      "country": "Qatar",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,150,136,0.13)",
+      "cardBorder": "rgba(0,150,136,0.35)",
+      "badgeColor": "#00897b",
+      "borderColor": "#00897b",
+      "textColor": "#80cbc4",
+      "url": "https://www.aljazeera.com/news/2026/6/19/us-iran-talks-postponed-as-israel-attacks-lebanon",
+      "isLatest": true
+    },
+    {
       "id": "osint-001-0619",
       "date": "2026年6月18日（現地）/ 2026年6月19日 JST",
       "titleJa": "【Al Jazeera】MOU14条項を解説——レバノン・ホルムズ・濃縮ウランの扱いとは",
@@ -558,7 +605,7 @@
       "borderColor": "#00897b",
       "textColor": "#80cbc4",
       "url": "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001",

@@ -1,7 +1,39 @@
 {
-  "updated": "2026年6月20日 08:18 日本時間JST",
+  "updated": "2026年6月21日 09:12 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "イラン軍、ホルムズ海峡「全面封鎖」を宣言——イスラエルのレバノン攻撃継続をMOU違反と非難",
+      "body": "イラン国軍中央司令部（ハータム・アルアンビヤ）が6月20日、ホルムズ海峡を「全船舶に対し封鎖、接近禁止」と発表した。イスラエルによるレバノン南部への攻撃継続と停戦合意違反を理由に挙げ、状況が改善しなければ追加措置を講じると警告した。",
+      "sourceLabel": "Times of Israel",
+      "date": "2026年6月20日 JST",
+      "label": "🚨 封鎖宣言",
+      "url": "https://www.timesofisrael.com/liveblog_entry/us-centcom-iran-does-not-control-the-strait-of-hormuz-waterway-remains-open/"
+    },
+    {
+      "title": "CENTCOM、即日反論「イランは海峡を統制せず・通航は継続中」——商船55隻が通航、開戦後最多",
+      "body": "米中央軍（CENTCOM）はイランの封鎖宣言を否定し、6月20日に商船55隻がホルムズ海峡を通航し原油・貨物1700万バレル超を輸送したと発表した。「安全な航行は維持されている」と強調し、艦艇を引き続き同海域に展開させるとした。",
+      "sourceLabel": "Türkiye Today",
+      "date": "2026年6月20日 JST",
+      "label": "⚔️ 米軍反論",
+      "url": "https://www.turkiyetoday.com/region/us-says-hormuz-traffic-flowing-despite-iranian-closure-claim-3222359"
+    },
+    {
+      "title": "本日ビュルゲンシュトックで米イラン技術協議が再開——バンス副大統領・アラグチー外相ら出席",
+      "body": "延期されていた米イラン技術協議が6月21日、スイス・ビュルゲンシュトックで開催される。米側はバンス副大統領・ウィトコフ特使・クシュナー氏、イラン側はアラグチー外相・ガリバフ議長が出席予定で、仲介国パキスタンのシャリフ首相・ムニール軍参謀総長、カタール首相も同席する見通し。",
+      "sourceLabel": "RFE/RL",
+      "date": "2026年6月21日 JST",
+      "label": "🤝 協議再開",
+      "url": "https://www.rferl.org/a/iran-burgenstock-ceasefire-vance-witkoff-kushner-araqchi/33785268.html"
+    },
+    {
+      "title": "週末先物市場で原油急騰——WTI $79・ブレント $82に、封鎖宣言を受け+7%",
+      "body": "通常の先物市場が週末で休場の中、Hyperliquid・Asterなど暗号資産系永久先物プラットフォームでWTIが$79、ブレントが$82まで急騰——月内安値から約7%の上昇となった。金曜の正規市場終値はWTI $76.60・ブレント $79.85だった。",
+      "sourceLabel": "Benzinga",
+      "date": "2026年6月20日 JST",
+      "label": "📈 原油急騰",
+      "url": "https://www.benzinga.com/markets/commodities/26/06/60004404/crude-oil-price-pops-as-iran-closes-strait-of-hormuz"
+    },
     {
       "title": "米イラン実務協議（ビュルゲンシュトック）が延期——レバノン情勢悪化が理由",
       "body": "イラン代表団がレバノン南部でのイスラエル攻撃激化を理由に渡航を延期し、バンス副大統領のスイス訪問もキャンセルされたことで、6月19日にスイス・ビュルゲンシュトックで予定されていた米イラン実務協議は開催見送りとなった。新たな日程は示されていない。",
@@ -25,14 +57,6 @@
       "date": "2026年6月19日 JST",
       "label": "🕊️ 外交",
       "url": "https://thehill.com/homenews/5931781-ceasefire-lebanon-israel-hezbollah/"
-    },
-    {
-      "title": "ホルムズ海峡の通航量に改善の兆し——6/18に検証済み商船25隻が通航",
-      "body": "海事データ企業AXSMarineによれば、6月18日にホルムズ海峡を通航した検証済み商船は25隻——4月18日以来の最多で、6月上旬の平均日量の5倍に達した。米中央軍（CENTCOM）は一晩で20隻超が通過したと発表し、紛争開始後初となるサウジアラビア所有タンカーの通過も確認された。",
-      "sourceLabel": "CBS News",
-      "date": "2026年6月19日 JST",
-      "label": "🚢 海運",
-      "url": "https://www.cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting/"
     },
     {
       "title": "独仏英伊、ホルムズ機雷除去任務への参加を共同声明で表明",
@@ -578,6 +602,21 @@
   ],
   "osint": [
     {
+      "id": "osint-003-0621",
+      "date": "2026年6月20日（現地）/ 2026年6月21日 JST",
+      "titleJa": "【Al Jazeera】イラン軍がホルムズ海峡封鎖を発表——バンス副大統領はスイスへ出発",
+      "titleEn": "Iran war updates: Tehran shuts Hormuz, Vance on way to Switzerland",
+      "country": "Qatar",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,150,136,0.13)",
+      "cardBorder": "rgba(0,150,136,0.35)",
+      "badgeColor": "#00897b",
+      "borderColor": "#00897b",
+      "textColor": "#80cbc4",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/20/iran-war-live-tehran-says-us-must-ensure-israel-ends-attacks-on-lebanon",
+      "isLatest": true
+    },
+    {
       "id": "osint-002-0620",
       "date": "2026年6月19日（現地）/ 2026年6月20日 JST",
       "titleJa": "【Al Jazeera】レバノン情勢の悪化で米イラン協議延期——停戦合意の持続性に懸念",
@@ -590,7 +629,7 @@
       "borderColor": "#00897b",
       "textColor": "#80cbc4",
       "url": "https://www.aljazeera.com/news/2026/6/19/us-iran-talks-postponed-as-israel-attacks-lebanon",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-0619",
@@ -1111,6 +1150,19 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年6月19日 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "ホルムズ海峡の通航量に改善の兆し——6/18に検証済み商船25隻が通航",
+          "body": "海事データ企業AXSMarineによれば、6月18日にホルムズ海峡を通航した検証済み商船は25隻——4月18日以来の最多で、6月上旬の平均日量の5倍に達した。米中央軍（CENTCOM）は一晩で20隻超が通過したと発表し、紛争開始後初となるサウジアラビア所有タンカーの通過も確認された。",
+          "sourceLabel": "CBS News",
+          "date": "2026年6月19日 JST",
+          "label": "🚢 海運",
+          "url": "https://www.cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting/"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年6月16日 更新分（アーカイブ）",
       "items": [

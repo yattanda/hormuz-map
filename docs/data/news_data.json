@@ -1,7 +1,39 @@
 {
-  "updated": "2026年6月21日 09:12 日本時間JST",
+  "updated": "2026年6月22日 08:26 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "title": "トランプ氏、ビュルゲンシュトック協議中のイラン代表団へ直接威嚇——「海峡閉鎖なら国がなくなる」",
+      "body": "トランプ大統領は6月21日、Fox Newsのインタビューでイラン代表団に対し「（海峡を）閉鎖すれば国がなくなる」「必要なら海峡を奪取する」などと直接的に威嚇したと明らかにした。米国が海峡の管理権を持ち通航原油の一定割合を徴収する構想にも言及した。",
+      "sourceLabel": "MS NOW",
+      "date": "2026年6月21日 JST",
+      "label": "🚨 威嚇発言",
+      "url": "https://www.ms.now/news/u-s-iran-talks-begin-in-switzerland"
+    },
+    {
+      "title": "イラン首席交渉官ガリバフ議長が猛反発——「米国の脅しは数えない」協議は一時停滞も継続",
+      "body": "イランのガリバフ国会議長はX（旧Twitter）で「我々は米国の脅しなど数えていない。発言には気をつけたほうがいい。我々の軍は別の形で応答する用意がある」と警告した。一時は代表団が協議を離脱したとの未確認報道も流れたが、パキスタンの仲介により協議は継続した。",
+      "sourceLabel": "CNN",
+      "date": "2026年6月21日 JST",
+      "label": "⚔️ 反発",
+      "url": "https://www.cnn.com/2026/06/21/world/live-news/iran-war-trump-israel-lebanon"
+    },
+    {
+      "title": "グラム上院議員「外交失敗なら米が武力でホルムズ掌握・通行料徴収」",
+      "body": "共和党のリンゼー・グラム上院議員はCBS「Face the Nation」で、外交交渉が失敗した場合トランプ大統領は武力でホルムズ海峡を掌握し通行料を徴収すると予測。「イランが米国による海峡支配に異議を唱えれば壊滅させる」とも述べた。",
+      "sourceLabel": "Washington Times",
+      "date": "2026年6月21日 JST",
+      "label": "🇺🇸 強硬論",
+      "url": "https://www.washingtontimes.com/news/2026/jun/21/sen-lindsey-graham-predicts-diplomatic-talks-iran-fail/"
+    },
+    {
+      "title": "原油急伸——トランプ氏の恫喝発言を受けブレント$81.66（+1.35%）・WTI$77.66（+2.4%）",
+      "body": "トランプ大統領がホルムズ海峡の奪取・空爆再開の可能性に言及したことを受け、日曜（米国時間）の取引でブレント原油は1.35%高の81.66ドル、WTI原油は2.4%高の77.66ドルまで上昇した。",
+      "sourceLabel": "CNN",
+      "date": "2026年6月21日 JST",
+      "label": "📈 原油急伸",
+      "url": "https://www.cnn.com/2026/06/21/world/live-news/iran-war-trump-israel-lebanon"
+    },
     {
       "title": "イラン軍、ホルムズ海峡「全面封鎖」を宣言——イスラエルのレバノン攻撃継続をMOU違反と非難",
       "body": "イラン国軍中央司令部（ハータム・アルアンビヤ）が6月20日、ホルムズ海峡を「全船舶に対し封鎖、接近禁止」と発表した。イスラエルによるレバノン南部への攻撃継続と停戦合意違反を理由に挙げ、状況が改善しなければ追加措置を講じると警告した。",
@@ -25,14 +57,6 @@
       "date": "2026年6月21日 JST",
       "label": "🤝 協議再開",
       "url": "https://www.rferl.org/a/iran-burgenstock-ceasefire-vance-witkoff-kushner-araqchi/33785268.html"
-    },
-    {
-      "title": "週末先物市場で原油急騰——WTI $79・ブレント $82に、封鎖宣言を受け+7%",
-      "body": "通常の先物市場が週末で休場の中、Hyperliquid・Asterなど暗号資産系永久先物プラットフォームでWTIが$79、ブレントが$82まで急騰——月内安値から約7%の上昇となった。金曜の正規市場終値はWTI $76.60・ブレント $79.85だった。",
-      "sourceLabel": "Benzinga",
-      "date": "2026年6月20日 JST",
-      "label": "📈 原油急騰",
-      "url": "https://www.benzinga.com/markets/commodities/26/06/60004404/crude-oil-price-pops-as-iran-closes-strait-of-hormuz"
     },
     {
       "title": "米イラン実務協議（ビュルゲンシュトック）が延期——レバノン情勢悪化が理由",
@@ -602,6 +626,21 @@
   ],
   "osint": [
     {
+      "id": "osint-004-0622",
+      "date": "2026年6月21日（現地）/ 2026年6月22日 JST",
+      "titleJa": "【Al Jazeera】イラン戦争ライブ：バンス副大統領がスイスへ、イスラエルはレバノンで16人を殺害",
+      "titleEn": "Iran war live: Vance heads to Switzerland, Israel kills 16 in Lebanon",
+      "country": "Qatar",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,150,136,0.13)",
+      "cardBorder": "rgba(0,150,136,0.35)",
+      "badgeColor": "#00897b",
+      "borderColor": "#00897b",
+      "textColor": "#80cbc4",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/21/iran-war-live-vance-heads-to-switzerland-israel-kills-16-in-lebanon",
+      "isLatest": true
+    },
+    {
       "id": "osint-003-0621",
       "date": "2026年6月20日（現地）/ 2026年6月21日 JST",
       "titleJa": "【Al Jazeera】イラン軍がホルムズ海峡封鎖を発表——バンス副大統領はスイスへ出発",
@@ -614,7 +653,7 @@
       "borderColor": "#00897b",
       "textColor": "#80cbc4",
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/20/iran-war-live-tehran-says-us-must-ensure-israel-ends-attacks-on-lebanon",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-002-0620",
@@ -1150,6 +1189,19 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年6月21日 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "週末先物市場で原油急騰——WTI $79・ブレント $82に、封鎖宣言を受け+7%",
+          "body": "通常の先物市場が週末で休場の中、Hyperliquid・Asterなど暗号資産系永久先物プラットフォームでWTIが$79、ブレントが$82まで急騰——月内安値から約7%の上昇となった。金曜の正規市場終値はWTI $76.60・ブレント $79.85だった。",
+          "sourceLabel": "Benzinga",
+          "date": "2026年6月20日 JST",
+          "label": "📈 原油急騰",
+          "url": "https://www.benzinga.com/markets/commodities/26/06/60004404/crude-oil-price-pops-as-iran-closes-strait-of-hormuz"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年6月19日 更新分（アーカイブ）",
       "items": [

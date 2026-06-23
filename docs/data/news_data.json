@@ -1,7 +1,43 @@
 {
-  "updated": "2026年6月22日 08:26 日本時間JST",
+  "updated": "2026年6月23日 08:31 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "title": "ビュルゲンシュトック「60日ロードマップ」合意——IAEA査察招請・機雷除去調整メカニズム設置で前進",
+      "body": "米イラン技術協議がスイスで終了。カタール・パキスタン仲介声明：60日以内の最終合意へのロードマップ合意・ホルムズ「インシデント回避」コミュニケーションライン設置・技術協議の即時開始。バンス副大統領「IAEAがイラン査察招請に合意——核合意の重要なマイルストーン」と評価。機雷除去の調整メカニズムでも「多くの進展」。ただし最終合意ではなくMOU実装フェーズ。",
+      "sourceLabel": "NPR / RFE/RL",
+      "date": "2026年6月22日",
+      "label": "外交",
+      "url": "https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance"
+    },
+    {
+      "id": "latest-002",
+      "title": "トランプ「米国独自のホルムズ通行料」脅迫——テヘランが一時交渉停止を示唆・協議は継続",
+      "body": "トランプ大統領が最終合意に至らない場合「米国独自のホルムズ通行料」を設定すると脅迫。バンス「イランが通行料を提案するなら最終合意はない」と警告。テヘランが一時交渉停止を示唆（イランメディア）も実際は継続。ペゼシュキヤーン「ウラン濃縮の権利は絶対に譲らない。相手もこれを受け入れなければならない」と強硬姿勢。核問題は依然として最大の難関。",
+      "sourceLabel": "AP / CBS News",
+      "date": "2026年6月22日",
+      "label": "外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-deal-strait-of-hormuz/"
+    },
+    {
+      "id": "latest-003",
+      "title": "ホルムズ通航が35→12隻に急減・ダークモード急増——主要ルート機雷約80個・550隻が湾脱出待機",
+      "body": "6/22（日曜）、ホルムズ通航が土曜の35隻から12隻に急減（Windward社データ）。8隻中5隻がAISオフのダークモード——Windward「現在のトラフィックは暗い・制裁対象・イラン関連で封鎖後期と同様」。Intertanko：主要ルートに推定機雷約80個・北ルート（イラン領水）と南ルート（オマーン領水）は現在開放。550隻が湾脱出待機中（タンカー160・バルクキャリア200・コンテナ60・自動車運搬10）。",
+      "sourceLabel": "CBS News / Intertanko",
+      "date": "2026年6月22日",
+      "label": "海運",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-deal-strait-of-hormuz/"
+    },
+    {
+      "id": "latest-004",
+      "title": "WTI約$74・Brent約$77——3月初来最安値・米財務省60日間イラン石油取引除外承認・クウェートFM解除",
+      "body": "ビュルゲンシュトック「60日ロードマップ」合意と米財務省による60日間のイラン石油・石油製品取引の生産・納入・販売の除外承認（制裁適用外）が材料となり原油が急落。WTI約$74.5・Brent約$77.5（6/22月曜・3月初来最安値水準）。イランの原油輸出が開戦後最高水準・中国向け割引販売を実施。クウェートがフォースマジュール解除・ADNOCが供給再開。フル開放で約8000万バレルが市場に放出される見通し。",
+      "sourceLabel": "Trading Economics",
+      "date": "2026年6月22日",
+      "label": "市場",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+    },
     {
       "title": "トランプ氏、ビュルゲンシュトック協議中のイラン代表団へ直接威嚇——「海峡閉鎖なら国がなくなる」",
       "body": "トランプ大統領は6月21日、Fox Newsのインタビューでイラン代表団に対し「（海峡を）閉鎖すれば国がなくなる」「必要なら海峡を奪取する」などと直接的に威嚇したと明らかにした。米国が海峡の管理権を持ち通航原油の一定割合を徴収する構想にも言及した。",
@@ -613,18 +649,24 @@
       "date": "2026年5月25日",
       "label": "📋 合意草案",
       "url": "https://www.axios.com/2026/05/24/iran-deal-strait-hormuz-sanctions-nuclear"
-    },
-    {
-      "id": "latest-001",
-      "title": "トランプ「合意はほぼ成立」Truth Social発表——ホルムズ再開・戦争終結の枠組みMOU",
-      "body": "トランプ大統領が5月23日（現地）にTruth Socialで「米国・イラン・関係各国間の合意はほぼ成立（largely negotiated）、詳細は近日発表」と投稿。サウジアラビア・UAE・カタール・パキスタン・トルコ・エジプト・ヨルダン・バーレーン・イスラエルの首脳と電話会談後の発表。合意は第1フェーズとしてMOU（覚書）、その後30〜60日での核交渉という2段階構造。ルビオ国務長官もインドで「本日中に発表があるかもしれない」と示唆。",
-      "sourceLabel": "CNBC・NPR・PBS NewsHour",
-      "date": "2026/05/24",
-      "label": "外交",
-      "url": "https://www.cnbc.com/2026/05/23/us-iran-war-talks.html"
     }
   ],
   "osint": [
+    {
+      "id": "osint-001-0622",
+      "date": "2026年6月22日（現地）/ 2026年6月23日 JST",
+      "titleJa": "【Al Jazeera】ホルムズ通航35→12隻に急減——イランの再封鎖宣言でダークモード急増・Windward「封鎖後期と同様」",
+      "titleEn": "Shipping stalls in Strait of Hormuz after Iran declares key waterway shut",
+      "country": "カタール（現地メディア）",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(0,100,50,0.15)",
+      "cardBorder": "rgba(0,200,100,0.3)",
+      "badgeColor": "rgba(0,180,80,0.3)",
+      "borderColor": "rgba(0,200,100,0.5)",
+      "textColor": "#6ee7b7",
+      "url": "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut",
+      "isLatest": true
+    },
     {
       "id": "osint-004-0622",
       "date": "2026年6月21日（現地）/ 2026年6月22日 JST",
@@ -638,7 +680,7 @@
       "borderColor": "#00897b",
       "textColor": "#80cbc4",
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/21/iran-war-live-vance-heads-to-switzerland-israel-kills-16-in-lebanon",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-003-0621",
@@ -1402,6 +1444,19 @@
           "date": "2026/05/21",
           "label": "外交",
           "url": "https://www.bloomberg.com/news/newsletters/2026-05-21/eu-downgrades-growth-forecasts-on-iran-war-energy-shock"
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026年5月24日 更新分（アーカイブ）",
+      "items": [
+        {
+          "title": "トランプ「合意はほぼ成立」Truth Social発表——ホルムズ再開・戦争終結の枠組みMOU",
+          "body": "トランプ大統領が5月23日（現地）にTruth Socialで「米国・イラン・関係各国間の合意はほぼ成立（largely negotiated）、詳細は近日発表」と投稿。サウジアラビア・UAE・カタール・パキスタン・トルコ・エジプト・ヨルダン・バーレーン・イスラエルの首脳と電話会談後の発表。合意は第1フェーズとしてMOU（覚書）、その後30〜60日での核交渉という2段階構造。ルビオ国務長官もインドで「本日中に発表があるかもしれない」と示唆。",
+          "sourceLabel": "CNBC・NPR・PBS NewsHour",
+          "date": "2026/05/24",
+          "label": "外交",
+          "url": "https://www.cnbc.com/2026/05/23/us-iran-war-talks.html"
         }
       ]
     },

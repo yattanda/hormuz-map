@@ -1,7 +1,25 @@
 {
-  "updated": "2026年6月24日 08:22 日本時間JST",
+  "updated": "2026年6月25日 07:46 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月24日（現地）/ 2026年6月25日 07:46 JST",
+      "title": "IAEA「MoUに核査察明記——必ず実施する」vs イラン「査察予定なし」——60日交渉の核心的対立",
+      "body": "IAEAのグロッシ事務局長がフクシマで記者会見し、イスラムアバードMoUには核査察が明示的に規定されていると言明。「\"言葉の戦争\"だ。いつ行うかの問題であり、行うかどうかではない」と断言。一方、イラン外務省バガエイ報道官は「査察計画は存在しない」、ガリババディー副外相は「最終合意後にのみ議論する」と真逆の立場を表明。米国のトランプ「イランは完全に合意した」との主張とも真逆で、60日ロードマップの実施をめぐる解釈乖離が深刻化している。",
+      "sourceLabel": "NPR / Bloomberg / CBS News",
+      "label": "🔬 核査察",
+      "url": "https://www.npr.org/2026/06/24/g-s1-129770/iran-nuclear-inspection"
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月24日（現地）/ 2026年6月25日 07:46 JST",
+      "title": "WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent $74割れ",
+      "body": "米国産原油WTIが一時$69.63まで下落し、封鎖開始（2月28日）以来初めて$70を割り込む場面があった。終値は$70.34。Brentも$74割れと、戦時高値$120超から約40%の下落。ホルムズ通航31隻（Kpler）、イラン石油輸出「正常水準」（Windward）、UAE輸出85%回復（IEA）などの供給回復シグナルが重なった。トランプはDOJ（司法省）に燃料価格つり上げの調査を指示。",
+      "sourceLabel": "CNBC / Trading Economics",
+      "label": "🛢️ 原油急落",
+      "url": "https://www.cnbc.com/2026/06/24/oil-prices-wti-brent-crude-trump-doj-gasoline-prices-strait-of-hormuz.html"
+    },
     {
       "id": "latest-001",
       "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
@@ -690,6 +708,21 @@
   "osint": [
     {
       "id": "osint-001",
+      "date": "2026年6月24日（現地）/ 2026年6月25日 JST",
+      "titleJa": "【Al Jazeera】イラン戦争117日目——核査察・戦争権限決議・ホルムズ通航の最新動向",
+      "titleEn": "Iran war day 117: Nuclear inspections dispute as US Senate curbs war powers",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(139,92,246,0.1)",
+      "cardBorder": "rgba(139,92,246,0.3)",
+      "badgeColor": "rgba(139,92,246,0.2)",
+      "borderColor": "#7c3aed",
+      "textColor": "#c4b5fd",
+      "url": "https://www.aljazeera.com/news/2026/6/24/iran-war-day-117-nuclear-inspections-dispute-as-us-senate-curbs-war-powers",
+      "isLatest": true
+    },
+    {
+      "id": "osint-001-0624",
       "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
       "titleJa": "【Al Jazeera】核査察問題の深層——イラン「同意していない」vs 米「同意した」の構造的矛盾",
       "titleEn": "US-Iran nuclear inspection dispute: what does each side want?",
@@ -701,7 +734,7 @@
       "borderColor": "rgba(255,165,0,0.5)",
       "textColor": "#fbbf24",
       "url": "https://www.aljazeera.com/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-0622",

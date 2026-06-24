@@ -1,7 +1,43 @@
 {
-  "updated": "2026年6月23日 08:31 日本時間JST",
+  "updated": "2026年6月24日 08:22 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
+      "title": "IMO、11,000人以上の船員避難計画を正式発動——「安全保証確保・航行条件検証完了」",
+      "body": "国連機関IMOが、ホルムズ海峡に取り残された11,000人以上の船員の避難計画を正式に開始すると発表した。イラン・オマーン・米国・全沿岸国・海運業界の協力で実施。Kpler：月曜（6/22）39隻通過・週末（6/20-22）で92隻が通航した。",
+      "sourceLabel": "CNBC / AP",
+      "label": "🚢 IMO避難計画",
+      "url": "https://www.cnbc.com/amp/2026/06/23/strait-hormuz-persian-gulf-ship-tanker-evacuation.html"
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
+      "title": "核査察問題で米イラン対立——バガエイ「IAEA査察の予定なし」・トランプ「合意なければ交渉打ち切り」",
+      "body": "バンス副大統領がIAEA査察招請を「重要マイルストーン」と評価した翌日、イラン外務省スポークスマン・バガエイが「IAEA査察の予定なし・核問題は交渉していない」と全面否定。トランプ「合意なければ即刻交渉打ち切り」と反論。60日交渉の最難関テーマとして浮上した。",
+      "sourceLabel": "NPR / Times of Israel",
+      "label": "⚠️ 核査察対立",
+      "url": "https://www.npr.org/2026/06/23/nx-s1-5867322/us-iran-finalize-war-ending-deal"
+    },
+    {
+      "id": "latest-003",
+      "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
+      "title": "ルビオ「国際法上、いかなる国も国際海峡で通行料を徴収できない」——イランの主権主張を否定",
+      "body": "アブダビに到着したルビオ国務長官が記者団に「国際法上、どの国も国際海峡で通行料・手数料を課すことは認められない」と明言。イランがオマーンと通行料体制を協議中との報道も出る中、60日交渉の主要争点になることが確実視される。",
+      "sourceLabel": "Washington Times",
+      "label": "🇺🇸 通行料問題",
+      "url": "https://www.washingtontimes.com/news/2026/jun/23/us-iran-offer-different-stories-nuclear-inspections-negotiations/"
+    },
+    {
+      "id": "latest-004",
+      "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
+      "title": "米財務省がイラン石油の60日間国際販売を承認——イラン、週30M B以上を輸出（危機以来最高水準）",
+      "body": "米財務省が60日間のイラン石油販売ライセンスを付与。ドル建て・米企業購入も初めて可能に。イランは過去1週間で30M B超を輸出（危機以来最高水準）。クウェート・UAEのADNOCも代替ルートでの輸出を再開。Hormuz完全再開時に市場へ約80M Bが追加される見通しで原油下落圧力が継続。",
+      "sourceLabel": "Trading Economics / AP",
+      "label": "🛢️ 原油市場",
+      "url": "https://tradingeconomics.com/commodity/crude-oil"
+    },
     {
       "id": "latest-001",
       "title": "ビュルゲンシュトック「60日ロードマップ」合意——IAEA査察招請・機雷除去調整メカニズム設置で前進",
@@ -653,6 +689,21 @@
   ],
   "osint": [
     {
+      "id": "osint-001",
+      "date": "2026年6月23日（現地）/ 2026年6月24日 JST",
+      "titleJa": "【Al Jazeera】核査察問題の深層——イラン「同意していない」vs 米「同意した」の構造的矛盾",
+      "titleEn": "US-Iran nuclear inspection dispute: what does each side want?",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(255,165,0,0.08)",
+      "cardBorder": "rgba(255,165,0,0.3)",
+      "badgeColor": "rgba(255,165,0,0.2)",
+      "borderColor": "rgba(255,165,0,0.5)",
+      "textColor": "#fbbf24",
+      "url": "https://www.aljazeera.com/",
+      "isLatest": true
+    },
+    {
       "id": "osint-001-0622",
       "date": "2026年6月22日（現地）/ 2026年6月23日 JST",
       "titleJa": "【Al Jazeera】ホルムズ通航35→12隻に急減——イランの再封鎖宣言でダークモード急増・Windward「封鎖後期と同様」",
@@ -665,7 +716,7 @@
       "borderColor": "rgba(0,200,100,0.5)",
       "textColor": "#6ee7b7",
       "url": "https://www.aljazeera.com/economy/2026/6/22/shipping-stalls-in-strait-of-hormuz-after-iran-declares-key-waterway-shut",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-004-0622",

@@ -1,7 +1,27 @@
 {
-  "updated": "2026年6月25日 07:46 日本時間JST",
+  "updated": "2026年6月26日 06:43 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001",
+      "date": "2026年6月25日（現地）/ 2026年6月26日 JST",
+      "title": "IRGC、シンガポール籍コンテナ船「Ever Lovely」を攻撃——IMO避難計画が一時停止",
+      "body": "IRGCがオマン・Dahit沖7.5海里でエバーグリーン社の「Ever Lovely」（8,500TEU）右舷に弾丸命中。橋頭部損傷・死傷者なし。米当局がIRGCの攻撃と確認。IMOは安全保証再確認のため避難計画を一時停止。WTI+2%急反発・$71.92で終値。",
+      "sourceLabel": "CNBC / FreightWaves",
+      "label": "🚨 攻撃",
+      "url": "https://www.cnbc.com/2026/06/25/oil-price-supply-concerns-ease-with-hormuz-tanker-traffic-resuming-.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002",
+      "date": "2026年6月25日（現地）/ 2026年6月26日 JST",
+      "title": "ルビオGCC会議（バーレーン）——湾岸諸国と完全一致・イランの核・ミサイル問題で圧力継続",
+      "body": "ルビオ国務長官がクウェート・UAE・バーレーンGCC会議の中東歴訪を完了。「湾岸諸国との完全な足並み」を強調し、イランの通航料構想を改めて拒否。韓国では26隻中13隻が通過完了。サウジアラビア油田タンカー3隻が封鎖後初出港。",
+      "sourceLabel": "CBS News",
+      "label": "🇺🇸 外交",
+      "url": "https://www.cbsnews.com/live-updates/us-iran-trump-strait-of-hormuz-oil-prices/",
+      "isLatest": false
+    },
     {
       "id": "latest-001",
       "date": "2026年6月24日（現地）/ 2026年6月25日 07:46 JST",
@@ -707,6 +727,21 @@
   ],
   "osint": [
     {
+      "id": "osint-006",
+      "titleJa": "【Al Jazeera】核査察対立とEver Lovely攻撃——米・イランのMoU解釈の溝",
+      "titleEn": "Iran war day 117: Nuclear inspections dispute as US Senate curbs war powers",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(22,101,52,0.15)",
+      "cardBorder": "rgba(34,197,94,0.3)",
+      "badgeColor": "rgba(34,197,94,0.2)",
+      "borderColor": "#22c55e",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/amp/news/2026/6/24/iran-war-day-117-nuclear-inspections-dispute-as-us-senate-curbs-war-powers",
+      "date": "2026年6月24日",
+      "isLatest": true
+    },
+    {
       "id": "osint-001",
       "date": "2026年6月24日（現地）/ 2026年6月25日 JST",
       "titleJa": "【Al Jazeera】イラン戦争117日目——核査察・戦争権限決議・ホルムズ通航の最新動向",
@@ -719,7 +754,7 @@
       "borderColor": "#7c3aed",
       "textColor": "#c4b5fd",
       "url": "https://www.aljazeera.com/news/2026/6/24/iran-war-day-117-nuclear-inspections-dispute-as-us-senate-curbs-war-powers",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-0624",

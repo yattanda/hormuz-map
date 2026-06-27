@@ -1,25 +1,25 @@
 {
-  "updated": "2026年6月26日 06:43 日本時間JST",
+  "updated": "2026年6月27日 08:27 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
       "id": "latest-001",
-      "date": "2026年6月25日（現地）/ 2026年6月26日 JST",
-      "title": "IRGC、シンガポール籍コンテナ船「Ever Lovely」を攻撃——IMO避難計画が一時停止",
-      "body": "IRGCがオマン・Dahit沖7.5海里でエバーグリーン社の「Ever Lovely」（8,500TEU）右舷に弾丸命中。橋頭部損傷・死傷者なし。米当局がIRGCの攻撃と確認。IMOは安全保証再確認のため避難計画を一時停止。WTI+2%急反発・$71.92で終値。",
-      "sourceLabel": "CNBC / FreightWaves",
-      "label": "🚨 攻撃",
-      "url": "https://www.cnbc.com/2026/06/25/oil-price-supply-concerns-ease-with-hormuz-tanker-traffic-resuming-.html",
+      "date": "2026年6月27日 JST（6月26日 米時間）",
+      "title": "【超重大】CENTCOM、Ever Lovely攻撃への報復でイランを空爆——ミサイル・ドローン施設と沿岸レーダーサイト攻撃",
+      "body": "米軍中央司令部（CENTCOM）は6月26日（米時間）、Ever Lovely へのイランのドローン攻撃（6月25日）への報復として、イランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを空爆したと発表。トランプ大統領はTruth Socialで「イランがMoUを愚かに違反した」と非難。IRGCは「繰り返しなら、より大規模に対応する」と反発。MoU崩壊危機が最高水準に。",
+      "sourceLabel": "CENTCOM公式 / Time誌",
+      "label": "🚨 最重大",
+      "url": "https://time.com/article/2026/06/26/strait-hormuz-iran-strike-vessel-un-escort-shipping-oil-trump/",
       "isLatest": true
     },
     {
       "id": "latest-002",
-      "date": "2026年6月25日（現地）/ 2026年6月26日 JST",
-      "title": "ルビオGCC会議（バーレーン）——湾岸諸国と完全一致・イランの核・ミサイル問題で圧力継続",
-      "body": "ルビオ国務長官がクウェート・UAE・バーレーンGCC会議の中東歴訪を完了。「湾岸諸国との完全な足並み」を強調し、イランの通航料構想を改めて拒否。韓国では26隻中13隻が通過完了。サウジアラビア油田タンカー3隻が封鎖後初出港。",
-      "sourceLabel": "CBS News",
-      "label": "🇺🇸 外交",
-      "url": "https://www.cbsnews.com/live-updates/us-iran-trump-strait-of-hormuz-oil-prices/",
+      "date": "2026年6月26日 JST",
+      "title": "日本関係船舶2隻が新たに通過——ペルシャ湾内残り35隻（金子国交相発表）",
+      "body": "金子恭之国土交通大臣は26日の閣議後記者会見で、ペルシャ湾内の日本関係船舶2隻が新たにホルムズ海峡を通過したと発表。これにより残り35隻となった。船体・乗組員に異常なし。日本人乗組員乗船の船舶は6月19日時点で全て退避済み。IRGC「南ルート禁止」警告で残り35隻の避難継続が困難な状況。",
+      "sourceLabel": "産経ニュース（Infoseek）",
+      "label": "🇯🇵 日本関係",
+      "url": "https://news.infoseek.co.jp/article/sankein__world_mideast_K6X744GDMNKD5MCCXHJIYUBXXA/",
       "isLatest": false
     },
     {
@@ -727,6 +727,21 @@
   ],
   "osint": [
     {
+      "id": "osint-007",
+      "titleJa": "【Al Jazeera】米軍がイランを空爆——「Ever Lovely攻撃」への報復・MoU崩壊の岐路",
+      "titleEn": "US strikes Iran in response to drone strike on commercial ship",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(16,58,40,0.35)",
+      "cardBorder": "rgba(74,222,128,0.20)",
+      "badgeColor": "rgba(74,222,128,0.20)",
+      "borderColor": "rgba(74,222,128,0.35)",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/2026/6/26/us-strikes-iran-in-response-to-drone-strike-on-commercial-ship",
+      "date": "2026年6月26日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-006",
       "titleJa": "【Al Jazeera】核査察対立とEver Lovely攻撃——米・イランのMoU解釈の溝",
       "titleEn": "Iran war day 117: Nuclear inspections dispute as US Senate curbs war powers",
@@ -739,7 +754,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/amp/news/2026/6/24/iran-war-day-117-nuclear-inspections-dispute-as-us-senate-curbs-war-powers",
       "date": "2026年6月24日",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001",
@@ -1350,6 +1365,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年6月25-26日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-001",
+          "date": "2026年6月25日（現地）/ 2026年6月26日 JST",
+          "title": "IRGC、シンガポール籍コンテナ船「Ever Lovely」を攻撃——IMO避難計画が一時停止",
+          "body": "IRGCがオマン・Dahit沖7.5海里でエバーグリーン社の「Ever Lovely」（8,500TEU）右舷に弾丸命中。橋頭部損傷・死傷者なし。米当局がIRGCの攻撃と確認。IMOは安全保証再確認のため避難計画を一時停止。WTI+2%急反発・$71.92で終値。",
+          "sourceLabel": "CNBC / FreightWaves",
+          "label": "🚨 攻撃",
+          "url": "https://www.cnbc.com/2026/06/25/oil-price-supply-concerns-ease-with-hormuz-tanker-traffic-resuming-.html",
+          "isLatest": true
+        },
+        {
+          "id": "latest-002",
+          "date": "2026年6月25日（現地）/ 2026年6月26日 JST",
+          "title": "ルビオGCC会議（バーレーン）——湾岸諸国と完全一致・イランの核・ミサイル問題で圧力継続",
+          "body": "ルビオ国務長官がクウェート・UAE・バーレーンGCC会議の中東歴訪を完了。「湾岸諸国との完全な足並み」を強調し、イランの通航料構想を改めて拒否。韓国では26隻中13隻が通過完了。サウジアラビア油田タンカー3隻が封鎖後初出港。",
+          "sourceLabel": "CBS News",
+          "label": "🇺🇸 外交",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-trump-strait-of-hormuz-oil-prices/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年6月21日 更新分（アーカイブ）",
       "items": [

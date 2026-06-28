@@ -351,11 +351,11 @@ grep -n "log-collapse\|2026年6月" docs/index.html | head -30
         <div>📅 <strong>2026年6月29日 07:58 JST</strong> 更新</div>
         <div><span style="color:#f87171;">2026/06/29 07:58</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>トランプ「イランは消滅する」Truth Social最強脅迫・CENTCOM 10施設第2波爆撃・IRGC クウェート/バーレーン米軍基地攻撃（8施設損傷主張）・IRGC「外交プロセス完全停止」警告・アラグチー「外部不干渉の湾岸新安保枠組み」提案（バグダッド）・Aramco Ras Tanuraヘリ墜落14名死亡・IMO避難計画6/28再開・ブレント$72台・米上院戦争権限決議可決・日本関係35隻変化なし・封鎖122日目・MOU残48日</div>
         <div>📅 <strong>2026年6月28日 09:10 JST</strong> 更新</div>
-貼り付けて貼り付け    <div><span style="color:#f87171;">2026/06/28 09:10</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>M/T Kiku（パナマ籍タンカー）攻撃・CENTCOM報復爆撃・バーレーンドローン攻撃・UKMTO脅威レベル「Substantial」格上げ・IMO避難計画一時停止・イラン議会MoU批准票決注視・日本関係35隻変化なし・封鎖121日目・MOU残49日</div>
+        <div><span style="color:#f87171;">2026/06/28 09:10</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>M/T Kiku（パナマ籍タンカー）攻撃・CENTCOM報復爆撃・バーレーンドローン攻撃・UKMTO脅威レベル「Substantial」格上げ・IMO避難計画一時停止・イラン議会MoU批准票決注視・日本関係35隻変化なし・封鎖121日目・MOU残49日</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-⚠️ Claude Code: ブロック1の old_str は上記が正確でない場合は `grep -n "2026年6月28日 09:10" docs/index.貼り付けて | head -3` で確認して修正すること。また、old_str に含まれる3件目のエントリー（6/27 08:27行の後の行）も必ず確認して含めること。
+⚠️ Claude Code: ブロック1の old_str は上記が正確でない場合は `grep -n "2026年6月28日 09:10" docs/index.html | head -3` で確認して修正すること。また、old_str に含まれる3件目のエントリー（6/27 08:27行の後の行）も必ず確認して含めること。
 
 ### ブロック2: log-collapse への旧3件目の挿入
 
@@ -393,7 +393,7 @@ grep -n "log-collapse\|2026年6月" docs/index.html | head -30
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-貼り付けON-LD の更新（フルISO 8601 形式）:
+JSON-LD の更新（フルISO 8601 形式）:
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
@@ -429,7 +429,7 @@ Al Jazeera: 📰関連最新ニュース（latest）に不含・osintのみ ✓
 禁止ニュースソース（毎日新聞・Wikipedia）: 使用なし ✓
 習近平表記: 今回言及なし ✓
 シナリオ確率数値: diffs内に含めず（syncScenarioFromDashboard自動同期）✓
-貼付1 2ブロック構成: ブロック1（常時3件固定）＋ブロック2（collapse先頭挿入・旧3件目移動）✓
+S11 2ブロック構成: ブロック1（常時3件固定）＋ブロック2（collapse先頭挿入・旧3件目移動）✓
 old_str最低100文字: S11ブロック1は充足（旧エントリー複数行のHTML）✓
 URL AI捏造チェック: latest-001(Times of Israel URL・検索確認済み)・latest-002(Newsweek URL・検索確認済み)・osint(Al Jazeera URL・検索確認済み) ✓
 トランプ「イランは消滅する」脅迫: S02・S03・S04・S06・S07・S08・S09・S10・S11 全セクションに反映 ✓

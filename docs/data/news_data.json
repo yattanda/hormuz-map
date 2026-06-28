@@ -1,7 +1,27 @@
 {
-  "updated": "2026年6月28日 09:10 日本時間JST",
+  "updated": "2026年6月29日 07:58 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001-0629",
+      "date": "2026年6月28日（現地・同日）/ 2026年6月28日 JST",
+      "title": "トランプ「イランは消滅する」Truth Social最強脅迫——MOU体制と矛盾する国家消滅宣言",
+      "body": "トランプ大統領が6/28のTruth Socialで「有理性の限界が来れば仕事を完遂し、イスラム共和国は消滅する」と投稿。CENTCOM追加爆撃（10施設）を受けてIRGCがクウェート・バーレーンの米軍基地を攻撃。IRGCは「外交プロセス完全停止」を警告。アラムコRas Tanuraヘリ墜落（14名死亡・原因不明）も同日発生。",
+      "sourceLabel": "Times of Israel",
+      "label": "🔴 超重大",
+      "url": "https://www.timesofisrael.com/trump-threatens-to-complete-the-job-in-iran-as-us-military-launches-fresh-strikes/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002-0629",
+      "date": "2026年6月28日（現地・同日）/ 2026年6月28日 JST",
+      "title": "CENTCOM 10施設追加爆撃・IRGC クウェート/バーレーン米軍基地攻撃——MOU第5条紛争が核心に",
+      "body": "M/T Kiku攻撃への報復としてCENTCOMが監視インフラ・通信システム・防空拠点・ドローン貯蔵・機雷敷設能力の計10施設を破壊。その後IRGCがクウェートのAli Al Salem基地とバーレーンのPort Salman（第5艦隊基地）を攻撃し「8ヶ所の施設を破壊」と主張。米イランが互いにMOU第5条違反と非難し合う構造が固定化。",
+      "sourceLabel": "Newsweek",
+      "label": "🔴 重大",
+      "url": "https://www.newsweek.com/why-iran-still-attacking-ships-in-strait-hormuz-12124424",
+      "isLatest": true
+    },
     {
       "id": "latest-001-0628",
       "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
@@ -10,7 +30,7 @@
       "sourceLabel": "CNBC",
       "label": "⚠️ 軍事",
       "url": "https://www.cnbc.com/amp/2026/06/27/tanker-struck-in-strait-of-hormuz-as-us-iran-tensions-escalate.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002-0628",
@@ -20,7 +40,7 @@
       "sourceLabel": "TIME",
       "label": "🚨 外交",
       "url": "https://time.com/article/2026/06/27/Iran-Bahrain-attack-Strait-of-Hormuz-drone-strikes/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-001",
@@ -747,6 +767,21 @@
   ],
   "osint": [
     {
+      "id": "osint-001-0629",
+      "titleJa": "【Al Jazeera】MOU第5条とは何か——なぜホルムズ海峡で衝突を引き起こしているか",
+      "titleEn": "What is Article 5 of the MOU and why is it causing Hormuz confrontations?",
+      "country": "カタール / 中東全域",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(230,126,34,0.08)",
+      "cardBorder": "rgba(230,126,34,0.3)",
+      "badgeColor": "#e67e22",
+      "borderColor": "rgba(230,126,34,0.5)",
+      "textColor": "#f0c080",
+      "url": "https://www.aljazeera.com/news/2026/6/28/why-is-article-5-of-mou-causing-confrontations-in-the-strait-of-hormuz",
+      "date": "2026年6月28日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-001-0628",
       "titleJa": "【Al Jazeera】IRGC、米軍「ホットライン」を拒絶——「電話しろ」へのバンス発言に無回答",
       "titleEn": "IRGC appears to rebuff US Strait of Hormuz 'hotline' proposal",
@@ -759,7 +794,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/2026/6/27/pick-up-the-phone-irgc-appears-to-rebuff-us-strait-of-hormuz-hotline",
       "date": "2026年6月27日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-007",

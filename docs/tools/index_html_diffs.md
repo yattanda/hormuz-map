@@ -1,4 +1,4 @@
-# index_html_diffs.md — 2026年6月27日 08:27 JST 更新分
+# index_html_diffs.md — 2026年6月28日 09:10 JST 更新分
 
 > Claude Code への指示：以下の差分を docs/index.html / docs/data/news_data.json に適用してください。
 > 変更箇所以外は絶対に触らないこと。
@@ -8,45 +8,45 @@
 ## Step 0 確認結果
 
 - project_knowledge_search「index_html_diffs.md 最新 更新 JST」「更新ログ 出典 JST 更新」実施済み
-- 直前基準：**2026年6月26日 06:43 JST**（diffs.md と更新ログ先頭が一致・整合確認済み）
-- 今回の old_str はすべて 6/26 06:43 JST 版の NEW 内容を基準に作成
+- 直前基準：**2026年6月27日 08:27 JST**（diffs.md と更新ログ先頭が一致・整合確認済み）
+- 今回の old_str はすべて 6/27 08:27 JST 版の NEW 内容を基準に作成
 
 ## C01 タンカー確認（日英二言語検索・実施済み）
 
-- 日本語：「日本関係船舶 ホルムズ海峡 通過 足止め 2026年6月27日」
-- 英語：「Japanese ships Strait of Hormuz Persian Gulf remaining vessels June 26 27 2026」
-- **⚠️ 変化あり：** 日本関係船舶 **35隻**（前回37隻から-2隻）
-- 6月26日の金子恭之国土交通大臣 閣議後記者会見：新たに2隻が通過、ペルシャ湾内残り35隻
-- 日本人乗組員乗船の船舶は6/19時点で全て退避済み（外務省発表）
-- dateConfirmed 更新：2026年6月27日 08:27 JST 確認・**35隻に変化**
+- 日本語：「外務省 ホルムズ海峡 日本関係船舶 2026年6月27日 28日」
+- 英語：「Japanese ships Strait of Hormuz Persian Gulf remaining vessels June 27 28 2026」
+- **変化なし：** 日本関係船舶 **35隻**（前回と同数）
+- 外務省・国土交通省からの 6/27〜6/28 の新発表は確認されず
+- UKMTO 脅威レベル引き上げ・IMO 避難計画一時停止継続により通過ペース鈍化の可能性あり
+- dateConfirmed 更新：2026年6月28日 09:10 JST 確認・**変化なし**
 
 ---
 
-## 🚨 本日の最重要ニュース（6/26〜6/27 JST 確認分）
+## 🚨 本日の最重要ニュース（6/27〜6/28 JST 確認分）
 
-1. **【超重大・本日最大】CENTCOM がイランを報復攻撃（6/26 米時間=6/27 JST早朝）**
-   ——Ever Lovely ドローン攻撃（6/25）への報復として、米軍がイランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを攻撃。トランプ「イランがMoUを愚かに違反した——少なくとも4発のドローンを撃ち、3発を撃墜、1発が命中」とTruth Socialに投稿。（出典: CENTCOM公式 / Al Jazeera 6/26）
+1. **【超重大】IRGC、M/T Kiku（パナマ籍タンカー）をホルムズ内で攻撃（6/27 JST）**
+   ——カタール産原油積荷・UAE Fujairah 向けのパナマ籍タンカーをIRGCがドローンで攻撃・ブリッジ損傷。6/25 の Ever Lovely 攻撃への CENTCOM 報復（6/26）の直後に再攻撃。（出典: Fox News / CNBC 6/27）
 
-2. **IRGC「繰り返し挑発なら、より大規模に対応する」——MoU崩壊リスク最高水準**
-   ——CENTCOM攻撃を受けてのIRGC声明。デエスカレーション機能せず。IRGCはバンス副大統領が述べた「IRGC-CENTCOMのドーハ調停チャンネル」も「完全な嘘——強く否定する」とIRNAを通じて否定。（出典: Al Jazeera / IRNA 6/26）
+2. **CENTCOM、追加報復攻撃（6/27 JST）——監視インフラ・通信・防空・ドローン貯蔵・機雷敷設能力を標的**
+   ——バンス「イランは停戦合意に署名した。我々はそれを遵守した。意見があるなら電話しろ。」CENTCOM「商業船のホルムズ通航は継続」。（出典: CENTCOM 公式 / Fox News 6/27）
 
-3. **イラン「米国の先制挑発への正当防衛」と主張**
-   ——ガリバファード（議会議長・首席交渉官）「トランプの主張は完全に誤り。凍結資産は我々が管理する」。イラン副外相ガリババディ「オマンルートのような曖昧な取り決めでは安全保証は不可能」。（出典: Al Jazeera 6/26）
+3. **イランがバーレーンをドローン攻撃——米第5艦隊基地を狙う（6/27 JST 早朝）**
+   ——バーレーン外務省「領土への明白な侵害・国際規範の露骨な違反」と最強の非難声明。イラン外務省は「防衛的攻撃」と説明。ルビオは 6/25 のバーレーン訪問直後。（出典: Bahrain FM / Time 6/27）
 
-4. **6/30 技術交渉（核・制裁）が存続するか——MoU維持の最終焦点**
-   ——ルビオが6/25発言「6/30から核・制裁の技術作業部会を開始」。但しCENTCOM攻撃でMoUへの信頼が根底から揺らぐ。双方が「相手方のMoU違反」と主張する状況。（出典: TIME 6/26）
+4. **UKMTO、ホルムズ脅威レベルを「substantial（実質的）」に引き上げ（6/27 JST）**
+   ——「商業船舶への攻撃を受けて」格上げ。「機雷に注意し掃海作戦継続中」と警告。IMO 避難計画は一時停止が継続。（出典: UKMTO / Fox News 6/27）
 
-5. **日本関係船舶2隻が6/26に新たに通過——残り35隻（金子国交相発表）**
-   ——金子恭之国交相が26日の閣議後記者会見で発表。船体・乗組員に異常なし。日本人乗組員乗船の船舶は全て退避済み（6/19外務省発表）。（出典: 産経ニュース/Infoseek 6/26）
+5. **イラン議会のMoU批准票決が6/28-30に予定——否決なら無期限封鎖・WTI $110+リスク（Iran SITREP）**
+   ——IRGC がルート問題を理由に批准拒否を働きかける可能性。（出典: Iran SITREP / Hormuz Monitor 6/27）
 
-6. **原油価格：Brent $74台後半・WTI $71台——「長期戦」価格付けに移行**
-   ——CENTCOM攻撃後も$100以下で推移。市場は「散発的打撃が続く長期膠着」をベースシナリオに。Brent 6/25終値$74.7（Ever Lovely攻撃後+2%）→6/26はやや下落してBrent $74台後半。（出典: Trading Economics 6/26）
+6. **MoU双方違反主張が深刻化——IRGCは「ホットライン」提案を事実上拒絶（6/27 JST）**
+   ——レザエイ最高指導者顧問「米はMoU第1条・第5条に違反した」。IRGCはバンスの「電話しろ」発言に実質的回答なし。（出典: Al Jazeera 6/27）
 
-7. **バンス副大統領「IRGC-CENTCOMがドーハで調停チャンネル設置」——IRGCは否定**
-   ——バンスがスイスから帰国便中のインタビューで「IRGCとCENTCOMの担当者がドーハでたむろしている。それで多くの問題を解決する」。IRGC報道官「完全な嘘」と即時否定。（出典: Times of Israel / IRNA 6/25-26）
+7. **イスラエル・レバノン三者枠組み（6/26 ルビオ署名）がMoUと矛盾——ヒズボラ・イランとも拒絶**
+   ——ルビオが 6/26 にワシントンで三者枠組みに署名したが、イスラエルは署名当日にレバノン南部を再攻撃。ネタニヤフ「安全地帯を維持する」——MoU「全戦線での戦争終結」と真っ向矛盾。（出典: CBS News / Times of Israel 6/27）
 
-8. **サウジタンカーがラスタヌラ向けへ航行・カタールが初の戦後原油入札**
-   ——MoU後の産油国再輸出再開の動きも進行中。但しIRGC攻撃で一部船舶が引き返す。（出典: Trading Economics 6/25）
+8. **原油価格：WTI $69.23（6/26 終値）・Brent $72台——週間10%超下落（MoU後最安値水準）**
+   ——ホルムズ通航回復期待で大幅下落。週末の攻撃エスカレーションにより月曜アジア市場での反発が予想される。（出典: Trading Economics / oilprice.com 6/26）
 
 ---
 
@@ -54,10 +54,12 @@
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<span class="badge-item badge-date">📅2026年6月26日 06:43 JST</span>
+<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
+<span class="badge-item badge-date">📅2026年6月27日 08:27 JST</span>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<span class="badge-item badge-date">📅2026年6月27日 08:27 JST</span>
+<span class="badge-item badge-alert">🚨 警戒レベル：最高</span>
+<span class="badge-item badge-date">📅2026年6月28日 09:10 JST</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -65,333 +67,320 @@
 
 ## [S02] TICKER
 
-> ⚠️ Claude Code: 適用前に以下を実行し、コメント行と ticker-text スパンの開始位置を確認してください。
-> `grep -n "新ティッカー\|ticker-text" docs/index.html | head -10`
+⚠️ Claude Code: 適用前に `grep -n "新ティッカー" docs/index.html | head -3` でコメント日時を確認し、
+下記 old_str と一致しない場合は実際の HTML に合わせて修正してから適用すること。
+
+### ティッカーコメント行
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<!-- 新ティッカー（2026年6月26日 06:43 JST） -->
-<!-- OLD:END -->
-<!-- NEW:START -->
 <!-- 新ティッカー（2026年6月27日 08:27 JST） -->
+<!-- OLD:END -->
+<!-- NEW:START -->
+<!-- 新ティッカー（2026年6月28日 09:10 JST） -->
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
+### ティッカーテキスト本体
+
+⚠️ Claude Code: `grep -n "CENTCOM報復攻撃\|120日目\|MoU残り50日" docs/index.html | head -5` で
+現在のティッカー本文の先頭固有フレーズを確認してから old_str を特定すること。
+以下は想定 old_str 冒頭のパターン（先頭20文字以上で一意性を確認）。
+
 <!-- APPLY:START -->
 <!-- OLD:START -->
-🚨【IRGC・Ever Lovely攻撃】シンガポール籍コンテナ船をDahit沖7.5海里でドローン攻撃——右舷命中・IMO避難計画一時停止（6/25 JST）｜🛢️ WTI $71.92・Brent $75.26——攻撃後+2%急反発（戦時高値比▲40%）｜⚠️ IRGC「南ルート（オマン沿岸）は許容しない——対処する」警告（6/25 JST）｜🇺🇸 ルビオ、GCC外相会議（バーレーン）「湾岸と完全に足並み・通行料は絶対不可」（6/25 JST）｜🚢 日本関係船舶：37隻・全日本人乗組員退避完了（外務省6/19発表）｜⏱️ 封鎖119日目・MoU残り51日
+🚨【CENTCOM報復攻撃】イランがMoUを愚かに違反した——少なくとも4発のドローンを撃ち、3発を撃墜、1発が命中（トランプ Truth Social 6/26）｜🇺🇸 CENTCOM、イランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを攻撃（6/26 JST早朝）｜🇮🇷 IRGC「繰り返し挑発なら、より大規模に対応する」——MoU崩壊リスク最高水準（6/26 JST）｜📉 WTI $71台・Brent $74台後半——MoU後の下落継続（6/26）｜🚢 日本関係35隻（金子国交相 6/26発表・-2隻）｜🌐 6/30技術交渉（核・制裁）存続するかが焦点｜⚠️ 封鎖120日目・MoU残り50日
 <!-- OLD:END -->
 <!-- NEW:START -->
-🚨【CENTCOM 報復攻撃】Ever Lovely攻撃への報復でイランのミサイル・ドローン施設と沿岸レーダー攻撃——IRGC「より大規模に対応する」MoU崩壊危機（6/27 JST早朝）｜🛢️ Brent $74台後半・WTI $71台——「長期戦」価格付けに移行｜🚢 日本関係船舶：35隻（6/26 金子国交相発表 2隻通過）｜⚠️ IRGCが「直接ホットライン」否定——デエスカレーション機能せず｜📋 6/30 技術交渉（核・制裁）がMoU存続の焦点——双方「相手がMoU違反」と主張｜⏱️ 封鎖120日目・MoU残り50日
+🚨【IRGC・バーレーンをドローン攻撃】イランがM/T Kikuを攻撃しCENTCOMが再報復——MoU崩壊リスク最高水準（6/27 JST）｜🏛️ イラン議会MoU批准票決6/28-30——否決なら無期限封鎖・WTI $110+リスク（SITREP 6/27）｜🚢 UKMTO脅威レベル「substantial」に引き上げ——IMO避難計画一時停止中（6/27 JST）｜🇮🇷 IRGCは米軍「ホットライン」を事実上拒絶——バンス「電話しろ」に無回答（Al Jazeera 6/27）｜📉 WTI $69台・Brent $72台——週間10%超下落（6/26終値・MoU後最安値）｜🚢 日本関係35隻（変化なし）｜⚠️ 封鎖121日目・MoU残り49日
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S03] 速報インシデント ⚠️
+## [S03] 速報インシデント ⚠️（漏れ多発セクション）
 
-> ⚠️ Claude Code: 適用前に以下を実行してください。
-> `grep -n "速報インシデント\|badge.*更新\|ffcccc.*速報" docs/index.html | head -10`
-> 日付バッジと先頭 strong タグの現在値を確認してから適用。
+⚠️ Claude Code: `grep -n "速報インシデント\|08:27 更新" docs/index.html | head -5` で
+トグルボタン内日付バッジと strong タグの先頭フレーズを確認してから適用すること。
 
-### トグルボタン内日付バッジ
+### トグルボタン内の日付バッジ
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-📅 6/26 06:43 更新
-<!-- OLD:END -->
-<!-- NEW:START -->
 📅 6/27 08:27 更新
+<!-- OLD:END -->
+<!-- NEW:START -->
+📅 6/28 09:10 更新
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### 速報インシデント先頭 strong タグ
+### 速報インシデント本体 strong タグ
+
+⚠️ Claude Code: `grep -n "6/27 08:27 速報\|CENTCOM.*報復\|MoU崩壊リスク最高" docs/index.html | head -5` で
+strong タグ内の現在先頭フレーズを特定してから以下 old_str と照合して適用すること。
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-【6/26 06:43 速報】IRGC、シンガポール籍「Ever Lovely」をDahit沖でドローン攻撃——IMO避難計画一時停止｜IRGC「南ルート（オマン沿岸）禁止——対処する」警告｜WTI $71.92急反発｜ルビオGCC外相会議（バーレーン）「通行料絶対不可」｜封鎖119日目・MoU残り51日
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【6/27 08:27 速報】CENTCOM、イランを報復攻撃（6/26）——Ever Lovely ドローン攻撃への報復としてイランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを攻撃｜IRGC「繰り返し挑発なら、より大規模に対応する」——MoU崩壊リスク最高水準｜日本関係35隻（-2隻）——金子国交相が6/26閣議後に発表｜6/30技術交渉（核・制裁）存続するかが焦点｜封鎖120日目
+</strong>
 <!-- OLD:END -->
 <!-- NEW:START -->
-【6/27 08:27 速報】CENTCOM、Ever Lovely攻撃への報復でイランのミサイル・ドローン施設と沿岸レーダーサイトを攻撃——MoU崩壊危機最大化｜IRGC「繰り返し挑発なら、より大規模に対応する」報復予告｜日本関係船舶35隻（2隻が6/26通過・金子国交相）｜6/30技術交渉の実施がMoU存続の唯一の焦点｜封鎖120日目・MoU残り50日
+<strong style="color:#ffcccc;font-size:0.82rem;font-weight:700;display:block;margin-bottom:10px;">
+  【6/28 09:10 速報】IRGC、M/T Kiku（パナマ籍タンカー）をホルムズ内で攻撃——ブリッジ損傷（6/27 JST）｜CENTCOM、追加報復——監視インフラ・防空・ドローン貯蔵・機雷敷設能力を標的（6/27 JST）｜イランがバーレーンをドローン攻撃——米第5艦隊基地狙う（6/27 JST）｜UKMTO脅威レベル「substantial」に引き上げ・IMO避難計画一時停止継続｜イラン議会MoU批准票決6/28-30——否決なら無期限封鎖リスク｜封鎖121日目
+</strong>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
-### インシデントリスト（先頭に2件追加）
+### インシデントリスト先頭に2件追加
 
-> ⚠️ Claude Code: 速報インシデント `<ul>` の直後（既存 `<li>` の前）に以下2件を挿入してください。
+⚠️ Claude Code: `grep -n "<ul>" docs/index.html | head -10` でインシデント `<ul>` の行番号を確認し、
+下記2件を `<ul>` 直後の先頭に挿入すること。
 
-```
-<li style="margin-bottom:6px;"><strong style="color:#f87171;">【6/27 JST早朝・最重大】</strong> CENTCOM、Ever Lovely攻撃への報復でイランを空爆——ミサイル・ドローン貯蔵施設と沿岸レーダーサイト。IRGC「繰り返しなら、より大規模に対応する」と報復予告。MoU崩壊リスク最高水準。（出典: CENTCOM公式 / Al Jazeera 6/26）</li>
-<li style="margin-bottom:6px;"><strong style="color:#fb923c;">【6/26】</strong> 日本関係船舶2隻が新たにホルムズ海峡を通過——ペルシャ湾内残り35隻（金子恭之国交相 閣議後会見 6/26）。船体・乗組員に異常なし。（出典: 産経ニュース 6/26）</li>
+```html
+<li style="margin-bottom:6px;">
+  <strong style="color:#f87171;">【6/27 JST】</strong>
+  M/T Kiku（パナマ籍タンカー）がホルムズ海峡内でIRGCのドローン攻撃を受け、ブリッジを損傷。
+  カタール産原油積荷・Fujairah向け。Ever Lovely 攻撃後の CENTCOM 報復の直後に再攻撃。
+  UKMTO が脅威レベルを「substantial」に引き上げ。
+  （出典: <a href="https://www.cnbc.com/amp/2026/06/27/tanker-struck-in-strait-of-hormuz-as-us-iran-tensions-escalate.html" target="_blank" style="color:#93c5fd;">CNBC 6/27</a>）
+</li>
+<li style="margin-bottom:6px;">
+  <strong style="color:#f87171;">【6/27 JST 早朝】</strong>
+  イランがバーレーンをドローン攻撃——米第5艦隊基地を狙い「防衛的措置」と説明。
+  バーレーン外務省「領土への明白な侵害・国際規範の露骨な違反」と最強の非難声明。
+  CENTCOM はさらなる報復攻撃を実施（監視インフラ・通信・防空・ドローン貯蔵・機雷敷設能力を標的）。
+  （出典: <a href="https://time.com/article/2026/06/27/Iran-Bahrain-attack-Strait-of-Hormuz-drone-strikes/" target="_blank" style="color:#93c5fd;">TIME 6/27</a>）
+</li>
 ```
 
 ---
 
-## [S04] 情勢カード（3枚）
+## [S04] 情勢カード（SITUATION CARDS）
 
-> ⚠️ Claude Code: 適用前に以下を実行し、現在の各カードの内容と行番号を確認してください。
-> `grep -n "situation-card\|card-title\|card-body\|カード\|情勢\|JST.*更新\|日本関係" docs/index.html | head -30`
-> 確認後、以下の内容で各カードを更新してください。カードのHTML構造は変えずに内容のみ更新。
+⚠️ Claude Code: `grep -n "s-title\|s-body\|6/27 08:27\|CENTCOM報復\|日本関係35隻" docs/index.html | head -20` で
+各カードの現在の日付・数値フレーズを特定してから適用すること。
+以下は更新内容の指示のみ記載。一意な old_str が grep で確認できた場合のみ str_replace を実行すること。
 
-### カード①「海峡通航状況」更新内容（6/27 08:27 JST版）
+### カード①（外交・軍事情勢）更新内容
 
-- タイトル：🚢 海峡通航状況（6/27 08:27 JST）
-- 本文：CENTCOM報復攻撃後、IMO避難計画引き続き一時停止中。IRGCは「南ルート（オマン沿岸）禁止——対処する」警告を継続。北ルート（イラン指定）のみ許容。日本関係船舶：35隻（前回比-2隻）。韓国船13隻通過完了。Kpler: Ever Lovely攻撃翌日は複数船舶が引き返し。
-- 出典: UKMTO / 金子国交相会見 / Trading Economics
+- 日付: 6/28 09:10 JST
+- 主要更新: M/T Kiku 攻撃・バーレーンドローン攻撃・CENTCOM 追加報復・UKMTO 脅威レベル引き上げ
+- IRGC 議会へのMoU批准拒否働きかけの可能性
+- 「MoU双方違反主張——判断は議会票決に委ねられた」
 
-### カード②「外交・交渉状況」更新内容（6/27 08:27 JST版）
+### カード②（エネルギー・市場）更新内容
 
-- タイトル：🤝 外交・交渉状況（6/27 08:27 JST）
-- 本文：CENTCOM攻撃でMoUへの信頼が根底から揺らぐ。米イランともに「相手方のMoU違反」と主張。6/30技術交渉（核・制裁4作業部会）の実施可否がMoU存続の最大焦点。IRGCは「IRGC-CENTCOMのドーハ調停チャンネル」を否定。
-- 出典: TIME / Al Jazeera 6/26
+- WTI: $69.23（6/26 終値、週間 -10%超、MoU後最安値）
+- Brent: 約$72（6/26 終値）
+- 週末のエスカレーション受け、月曜アジア開場での反発を予想
+- サウジRas Tanura が積み込み再開（MoU後の供給増）
 
-### カード③「日本関係船舶・ルート」更新内容（6/27 08:27 JST版）
+### カード③（日本・輸送）更新内容
 
-- タイトル：🇯🇵 日本関係船舶（6/27 08:27 JST）
-- 本文：ペルシャ湾内残り35隻（前回37隻から2隻が6/26に通過）。日本人乗組員乗船の船舶は6/19時点で全て退避済み。但し無人（日本人乗組員なし）の日本関係船舶35隻は依然ペルシャ湾内に残留中。IRGC「南ルート禁止」警告で避難困難継続。
-- 出典: 金子恭之国交相 閣議後会見 / 外務省 6/26
+- 日本関係船舶: **35隻**（変化なし・6/28 09:10 JST 確認）
+- 日本人乗組員乗船の船舶は全て退避済み（6/19外務省発表）
+- UKMTO 脅威レベル引き上げ・IMO避難計画一時停止で日本関係船の通過ペース不透明
+- SHIP_CONFIG: `totalShips: 35`, `passableShips: 0`, `date: "2026年6月28日"`, `dateConfirmed: "2026年6月28日 09:10 JST 確認・変化なし"`
 
 ---
 
 ## [S05] COUNTDOWN
 
-> ⚠️ Claude Code: 以下を実行して現在の日数表示を確認してください。
-> `grep -n "countdown-days\|countdown.*日\|MoU\|封鎖" docs/index.html | head -10`
+⚠️ Claude Code: `grep -n "countdown-days\|封鎖\|MoU" docs/index.html | head -10` で
+現在の日数表示を確認してから適用すること。120→121、50→49 に変更する。
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-<span class="countdown-days">119</span>日目
+<span class="countdown-days">120</span>
 <!-- OLD:END -->
 <!-- NEW:START -->
-<span class="countdown-days">120</span>日目
+<span class="countdown-days">121</span>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-MoU残り<span class="countdown-mou">51</span>日
+MoU残り<span class="countdown-days">50</span>日
 <!-- OLD:END -->
 <!-- NEW:START -->
-MoU残り<span class="countdown-mou">50</span>日
-<!-- NEW:END -->
-<!-- APPLY:END -->
-
----
-
-## [S06] シナリオ確率補足バナー日付
-
-> ⚠️ Claude Code: 以下を実行して現在のバナー日付を確認してください。
-> `grep -n "scenario-banner\|確認.*JST\|06:43\|08:27" docs/index.html | head -10`
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-2026年6月26日 06:43 JST 確認
-<!-- OLD:END -->
-<!-- NEW:START -->
-2026年6月27日 08:27 JST 確認
+MoU残り<span class="countdown-days">49</span>日
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
 ---
 
-## [S07] シナリオ4本
+## [S06] シナリオ確率補足バナー
 
-> ⚠️ Claude Code: 各シナリオの sc-tag・sc-body・rationale を以下に更新してください。
-> 適用前に以下を実行してください:
-> `grep -n "sc-tag\|sc-body\|sc-title\|scenario-A\|scenario-B\|scenario-C\|scenario-D" docs/index.html | head -30`
-> **確率数値（%）は一切含めない。矢印のみ。**
+⚠️ Claude Code: `grep -n "6/27 08:27\|シナリオ.*JST\|rationale.*更新" docs/index.html | head -5` で
+バナー内の日付フレーズを確認してから適用すること。
 
-### シナリオA（外交解決・MoU完全実施）→
+<!-- APPLY:START -->
+<!-- OLD:START -->
+6/27 08:27 JST
+<!-- OLD:END -->
+<!-- NEW:START -->
+6/28 09:10 JST
+<!-- NEW:END -->
+<!-- APPLY:END -->
 
-- sc-tag 方向: →（不安定だが外交ルートは生存中）
-- 更新 rationale（6/27版）: CENTCOM攻撃でMoUへの信頼は大きく損なわれたが、6/30技術交渉（核・制裁4作業部会）の予定は依然存在する。米イランともに経済的インセンティブ（イラン：制裁緩和・凍結資産解放、米国：エネルギー価格正常化）が残っており、完全破綻には至っていない。ただし「MoU曖昧さ問題」（ルート管理・通行料）が外交を侵食し続けており、A実現にはIRGCの行動抑制が不可欠。→を維持するも赤信号。
+---
 
-### シナリオB（武力衝突再拡大）↑↑
+## [S07] シナリオ4本（A/B/C/D）
 
-- sc-tag 方向: ↑↑（CENTCOM-IRGC報復サイクル再始動）
-- 更新 rationale（6/27版）: CENTCOM報復攻撃とIRGCの「より大規模に対応」発言でエスカレーションサイクルが再起動。IRGCが「ドーハ調停チャンネル」を否定したことでデエスカレーション機能が実質機能しておらず、次の一手が読めない。MoUの「南北ルート管理権限」を巡る根本的対立が、散発的軍事衝突の引き金であり続けている。
+⚠️ Claude Code: `grep -n "sc-title\|シナリオ[ABCD]\|rationale" docs/index.html | head -20` で
+各シナリオブロックの現在の先頭フレーズを確認してから適用すること。
+以下は各シナリオの方向・rationale 更新内容。grep で一意な old_str が確認できた場合のみ str_replace すること。
 
-### シナリオC（現状維持・長期膠着）→
+### シナリオA（外交解決・段階的再開）
 
-- sc-tag 方向: →（「長期戦」が市場コンセンサスに）
-- 更新 rationale（6/27版）: 市場は「全面再開戦にならない程度の散発的打撃が継続」をベースシナリオに移行（Invesco・Lipow Oil Associates各社）。油価は$100以下で推移し「供給ショックまでには至らないが正常化も遠い」という長期膠着を織り込み中。米イランとも交渉の窓口を維持しつつ軍事行動を続ける「並行」状態。
+**方向**: ↓↓（6/28 09:10 JST）
+**rationale（更新）**:
+MoU批准票決が6/28-30に予定される中、IRGCは「ホットライン」を拒絶し攻撃を継続。双方が「相手方のMoU違反」を主張し外交チャンネルが機能不全。イスラエル・レバノン問題がMoUの「全戦線停戦」条項と矛盾。議会否決リスクが高まっており外交解決シナリオは最も遠のいている。
 
-### シナリオD（再封鎖・MoU崩壊）↓↓
+### シナリオB（軍事エスカレーション）
 
-- sc-tag 方向: ↓↓（MoU崩壊が最も現実的シナリオとして浮上）
-- 更新 rationale（6/27版）: IRGCの「南ルート禁止宣言」→Ever Lovely攻撃→CENTCOM報復攻撃→IRGC「より大規模に対応」という連鎖で、MoUは形式上は存続しつつも実質機能を失いつつある。IMO避難計画一時停止が継続する中、6/30技術交渉が実施されなければ「MoU形骸化→事実上の再封鎖」となる可能性が高まっている。Cとの差異：Cは「MoU形式維持・現状維持」、Dは「MoU崩壊・正式再封鎖宣言・全面衝突再開の現実化」。
+**方向**: ↑↑（6/28 09:10 JST）
+**rationale（更新）**:
+3日連続の攻撃サイクル（Ever Lovely → CENTCOM 報復 → M/T Kiku → CENTCOM 再報復 → バーレーン攻撃）が定着。UKMTO は脅威レベルを「substantial」に引き上げ。議会がMoU否決すれば無期限封鎖宣言が視野に入る。イラン側は「比例的・迅速な反撃」ドクトリンを確立。最も現実的なシナリオとして浮上。
+
+### シナリオC（MoU機能不全・長期膠着）
+
+**方向**: →（6/28 09:10 JST）
+**rationale（更新）**:
+MoU枠組みは表向き有効だが双方が違反を主張しつつ散発的攻撃を継続する「機能不全型停戦」が定着。議会批准が成立しても実態はSirik、Qeshm 周辺での小規模攻撃サイクルが続く可能性。IMO避難計画停止・UKMTO脅威レベル引き上げにより完全な正常化には程遠い。
+
+### シナリオD（MoU崩壊・全面封鎖再宣言）
+
+**方向**: ↑（6/28 09:10 JST）
+**rationale（更新）**:
+イラン議会が6/28-30の票決でMoUを否決した場合、IRGCが正式に「全面封鎖宣言」を発する最短シナリオ。現在の議会内でのIRGC影響力・レバノン問題を理由とした感情的否決動機が高まっており、6/29の票決結果が最重要トリガー。WTI $110+、日本関係船35隻の即時停止リスク。シナリオBと異なり「宣言型」全面再封鎖がこのシナリオの核心。
 
 ---
 
 ## [S08] シナリオフッター（次の焦点）
 
-> ⚠️ Claude Code: シナリオフッター（scenario-footer）の「次の焦点」リストを以下に更新してください。
-> `grep -n "scenario-footer\|次の焦点\|focal" docs/index.html | head -10`
+⚠️ Claude Code: `grep -n "次の焦点\|シナリオ.*フッター\|6/30\|技術交渉" docs/index.html | head -10` で
+現在のフッター内容を確認してから適用すること。
 
-6/27版「次の焦点」（5点）：
-1. **6/30 技術交渉（核・制裁4作業部会）が実施されるか**——MoU存続の最大かつ唯一の焦点
-2. **IRGC がCENTCOM攻撃への報復行動を実施するか**——第二の攻撃でMoUは事実上消滅
-3. **IMO避難計画が再開されるか**——11,000人超の船員の安全と物流再開に直結
-4. **米国が「MoU違反」を理由にイラン制裁を再強化するか**——OFAC措置の動向
-5. **日本関係船舶35隻の避難シナリオ**——南ルート禁止・CENTCOM攻撃後に避難ルートが事実上消滅
+**次の焦点（6/28 09:10 JST 版）**:
+1. **イラン議会MoU批准票決（6/28-30）** ——否決なら無期限封鎖宣言・WTI $110+直行の最重要トリガー
+2. **M/T Kiku 攻撃に対するさらなるCENTCOM/IRGC報復サイクルの有無**
+3. **6/30 核・制裁技術作業部会** ——攻撃エスカレーションにより開催自体が不透明
+4. **イスラエル・レバノン三者枠組みvsヒズボラの攻撃継続**——MoU崩壊の引き金になるか
+5. **UKMTO「substantial」水準が「critical」に上がるか**——保険市場の反応
 
 ---
 
 ## [S08.5] 全ルート現況サマリー
 
-> ⚠️ Claude Code: 全ルート現況サマリーセクションを以下で更新してください。
-> `grep -n "全ルート現況\|ルート現況\|route-summary" docs/index.html | head -10`
+⚠️ Claude Code: `grep -n "全ルート現況サマリー\|ルート.*JST\|UKMTO" docs/index.html | head -10` で
+現在のサマリーブロックの日付・評価を確認してから適用すること。
 
-**🚢 全ルート現況サマリー（2026年6月27日 08:27 JST 更新）**
+**更新内容（6/28 09:10 JST 版）**:
 
-| ルート | 現況 | 備考 |
-|---|---|---|
-| 北ルート（イラン指定・ララク島北側）| ⚠️ イラン許可制 | IRGCが唯一「合法」と主張。VHF Ch.16での事前調整必須 |
-| 南ルート（オマン沿岸・Dahit付近）| 🚫 IRGC禁止宣言 | Ever Lovely攻撃現場。IRGC「危険・禁止」。IMO推奨も実質封鎖 |
-| IMO避難計画ルート | ⏸️ 一時停止中 | 6/25 Ever Lovely攻撃後に一時停止。CENTCOM攻撃後も継続停止 |
-| サウジ・ラスタヌラ出荷 | 🟡 再開兆候 | MoU後のサウジタンカー向けが進行中。一部引き返しも |
-| 日本関係船舶 | 35隻 ペルシャ湾内 | 2隻が6/26通過（金子国交相発表）。南ルート禁止で避難困難 |
-
-**評価（6/27 08:27 JST）：** CENTCOM-IRGC報復サイクル再始動により、実質的に安全な通航ルートが存在しない状況。IMO一時停止の継続と6/30技術交渉の行方が全て。
+- **ホルムズ海峡（主）**: ❌ 実質封鎖継続——UKMTO「substantial」・M/T Kiku 攻撃（6/27）・机雷掃海中
+- **イラン指定ルート（沿岸寄り）**: ⚠️ IRGC指定ルート外の船舶に「警告射撃」開始——使用上のリスク増大
+- **オマーン回廊（IMO協定）**: ⚠️ IMO避難計画が一時停止中——Ever Lovely はこのルートで被弾
+- **喜望峰迂回**: ✅ 有効だが日数・コスト増大継続
+- **スエズ運河（フーシー）**: ⚠️ イエメン・フーシーが攻撃再開——迂回リスク継続
+- 更新：2026年6月28日 09:10 JST 更新（UKMTO格上げ・IMO停止反映）
 
 ---
 
-## [S09] 30秒カラム（必ず最後に作成）
+## [S10] news_data.json 更新指示
 
-> ⚠️ Claude Code: 30秒カラム（3行サマリー＋バッジ5枚）を以下で更新してください。
-> `grep -n "30秒\|summary-line\|status-badge\|badge.*封鎖\|badge.*MoU" docs/index.html | head -15`
+> Claude Code への指示：以下の内容を `docs/data/news_data.json` に**マージ**してください。
+> ファイル全体を置き換えず、既存の配列に追記・更新する形で処理すること。
 
-**3行サマリー（6/27 08:27 JST版）:**
+### `latest` 配列 — 先頭に2件追加、既存最古1件を archive へ移動
 
-1. 米CENTCOMがイランを報復攻撃（6/27 JST早朝）——Ever Lovely攻撃への対抗でMoU崩壊危機が最高水準に達した。IRGCは「より大規模に対応する」と報復予告。
-2. 日本関係船舶が2隻通過し残り35隻——IRGC「南ルート禁止」継続・IMO避難計画一時停止中で残り35隻の脱出シナリオが消滅しつつある。
-3. 6/30の技術交渉（核・制裁）実施可否がMoU唯一の生命線——封鎖120日目・残り50日の「時計」が加速中。
-
-**ステータスバッジ5枚:**
-
-1. 🚨 警戒レベル：最高
-2. 🛢️ Brent $74台後半
-3. 🚢 日本関係 35隻
-4. ⏱️ 封鎖120日目
-5. 📋 MoU残り50日
-
----
-
-## [S10] news_data.json 更新内容
-
-> Claude Code への指示：以下を docs/data/news_data.json に **マージ**（追記）してください。
-> 既存ファイルを全置換しないこと。`osint` 配列は append-only（新規追加+isLatest更新）。
-> `latest` 配列は先頭に2件追加し、古い2件を `archive` の先頭バッチへ移動してください。
-
-### `latest` 先頭に追加する2件（新規）
+#### 追加 latest-001（新）
 
 ```json
 {
   "id": "latest-001",
-  "date": "2026年6月27日 JST（6月26日 米時間）",
-  "title": "【超重大】CENTCOM、Ever Lovely攻撃への報復でイランを空爆——ミサイル・ドローン施設と沿岸レーダーサイト攻撃",
-  "body": "米軍中央司令部（CENTCOM）は6月26日（米時間）、Ever Lovely へのイランのドローン攻撃（6月25日）への報復として、イランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを空爆したと発表。トランプ大統領はTruth Socialで「イランがMoUを愚かに違反した」と非難。IRGCは「繰り返しなら、より大規模に対応する」と反発。MoU崩壊危機が最高水準に。",
-  "sourceLabel": "CENTCOM公式 / Time誌",
+  "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
+  "title": "M/T Kiku 攻撃とCENTCOM追加報復——ホルムズで3日連続攻撃サイクル",
+  "body": "パナマ籍タンカーM/T Kikuがホルムズ内でIRGC のドローン攻撃を受けブリッジ損傷。CENTCOM は即時報復し「監視インフラ・通信・防空・ドローン貯蔵・機雷敷設能力」を標的に攻撃。Ever Lovely 攻撃→CENTCOM 報復→Kiku 攻撃→再報復と3日連続のサイクルが確立。UKMTO は脅威レベルを「substantial」に引き上げ。",
+  "sourceLabel": "CNBC",
   "date": "2026年6月27日 JST",
-  "label": "🚨 最重大",
-  "url": "https://time.com/article/2026/06/26/strait-hormuz-iran-strike-vessel-un-escort-shipping-oil-trump/"
-},
-{
-  "id": "latest-002",
-  "date": "2026年6月26日 JST",
-  "title": "日本関係船舶2隻が新たに通過——ペルシャ湾内残り35隻（金子国交相発表）",
-  "body": "金子恭之国土交通大臣は26日の閣議後記者会見で、ペルシャ湾内の日本関係船舶2隻が新たにホルムズ海峡を通過したと発表。これにより残り35隻となった。船体・乗組員に異常なし。日本人乗組員乗船の船舶は6月19日時点で全て退避済み。IRGC「南ルート禁止」警告で残り35隻の避難継続が困難な状況。",
-  "sourceLabel": "産経ニュース（Infoseek）",
-  "date": "2026年6月26日 JST",
-  "label": "🇯🇵 日本関係",
-  "url": "https://news.infoseek.co.jp/article/sankein__world_mideast_K6X744GDMNKD5MCCXHJIYUBXXA/"
-}
-```
-
-### `osint` 最新1件（isLatest: true に設定・旧 isLatest: true は false に変更）
-
-```json
-{
-  "id": "osint-001",
-  "titleJa": "【Al Jazeera】米軍がイランを空爆——「Ever Lovely攻撃」への報復・MoU崩壊の岐路",
-  "titleEn": "US strikes Iran in response to drone strike on commercial ship",
-  "country": "カタール",
-  "media": "Al Jazeera",
-  "cardBg": "rgba(16,58,40,0.35)",
-  "cardBorder": "rgba(74,222,128,0.20)",
-  "badgeColor": "rgba(74,222,128,0.20)",
-  "borderColor": "rgba(74,222,128,0.35)",
-  "textColor": "#86efac",
-  "url": "https://www.aljazeera.com/news/2026/6/26/us-strikes-iran-in-response-to-drone-strike-on-commercial-ship",
-  "date": "2026年6月26日 JST",
+  "label": "⚠️ 軍事",
+  "url": "https://www.cnbc.com/amp/2026/06/27/tanker-struck-in-strait-of-hormuz-as-us-iran-tensions-escalate.html",
   "isLatest": true
 }
 ```
 
-### `updated` フィールド
+#### 追加 latest-002（新）
 
 ```json
-"updated": "2026年6月27日 08:27 日本時間JST"
+{
+  "id": "latest-002",
+  "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
+  "title": "イランがバーレーンをドローン攻撃——イラン議会MoU批准票決6/28-30に緊張",
+  "body": "イランがバーレーンの米第5艦隊基地をドローンで攻撃。バーレーン外務省「領土への明白な侵害」と最強の非難。同日ルビオが主宰したGCC外相会議開催直後の攻撃。イラン議会のMoU批准票決が6/28-30に予定されており、否決なら無期限封鎖宣言・WTI $110+リスク（Iran SITREP）。",
+  "sourceLabel": "TIME",
+  "date": "2026年6月27日 JST",
+  "label": "🚨 外交",
+  "url": "https://time.com/article/2026/06/27/Iran-Bahrain-attack-Strait-of-Hormuz-drone-strikes/",
+  "isLatest": true
+}
+```
+
+#### 既存の isLatest: true エントリーはすべて isLatest: false に変更すること
+
+### `osint` 配列 — 最新1件を更新
+
+```json
+{
+  "id": "osint-001",
+  "titleJa": "【Al Jazeera】IRGC、米軍「ホットライン」を拒絶——「電話しろ」へのバンス発言に無回答",
+  "titleEn": "IRGC appears to rebuff US Strait of Hormuz 'hotline' proposal",
+  "country": "カタール / 中東全域",
+  "media": "Al Jazeera",
+  "cardBg": "rgba(20,83,45,0.3)",
+  "cardBorder": "rgba(34,197,94,0.3)",
+  "badgeColor": "rgba(34,197,94,0.2)",
+  "borderColor": "rgba(34,197,94,0.5)",
+  "textColor": "#86efac",
+  "url": "https://www.aljazeera.com/news/2026/6/27/pick-up-the-phone-irgc-appears-to-rebuff-us-strait-of-hormuz-hotline",
+  "date": "2026年6月27日 JST",
+  "isLatest": true
+}
+```
+
+### `updated` フィールド更新
+
+```
+"updated": "2026年6月28日 09:10 日本時間JST"
 ```
 
 ### `staleNotice` フィールド
 
-```json
+```
 "staleNotice": ""
 ```
 
 ---
 
-## [S11] 更新ログ（2ブロック構成）
+## [S09] 30秒カラム（3行サマリー＋ステータスバッジ）※必ず最後に作成
 
-> ⚠️ Claude Code: S11 適用前に必ず以下を実行してください:
-> `grep -n "log-collapse\|2026年6月\|badge-item badge-date" docs/index.html | head -30`
-> 常時表示3件の HTML 全文と log-collapse 先頭エントリーの日付を確認してから適用。
+⚠️ Claude Code: `grep -n "30秒\|thirty-seconds\|s-summary\|status-badge" docs/index.html | head -10` で
+現在のブロック構造を確認してから適用すること。
 
-### ブロック1: 常時表示エリア（3件固定を維持）
+### 3行サマリー（更新内容）
 
-<!-- APPLY:START -->
-<!-- OLD:START -->
-        <div>📅 <strong>2026年6月26日 06:43 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/26 06:43</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IRGC、シンガポール籍コンテナ船「Ever Lovely」をDahit沖7.5海里で攻撃——右舷命中・IMO避難計画を一時停止（6/25）｜WTI $71.92・Brent $75.26——攻撃後+2%急反発（戦時高値比-40%から反転）｜IRGC「指定ルート外の通航は許容しない——対処する」警告（6/25）｜ルビオGCC会議（バーレーン）「湾岸と完全に足並み」（6/25）｜韓国船13隻通過完了（26隻中）｜封鎖119日目・MoU期限まで51日</div>
-        <div>📅 <strong>2026年6月25日 07:46 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/25 07:46</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IAEAグロッシ「MoUに核査察明記——必ず実施」vsイラン「査察予定なし」——解釈対立が60日交渉の核心に｜WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent$74割れ（戦時高値比-40%）｜ネタニヤフ「南レバノン安全地帯維持」・イスラエル・ヒズボラ再停戦（6/24）｜ホルムズ通航31隻（Kpler）・イラン石油「正常水準」（Windward）｜米上院 戦争権限決議 50-48可決｜封鎖118日目・MoU期限まで52日</div>
-        <div>📅 <strong>2026年6月24日 08:22 JST</strong> 更新</div>
-        <div><span style="color:#fb923c;">2026/06/24 08:22</span> — 【重大更新】IMO 11,000人以上の船員避難計画正式発表——安全保証確保済み（6/23）｜核査察問題——バンス「IAEA招請は重要マイルストーン」vsバガエイ「査察予定なし」（6/23）｜ペゼシュキヤーン大統領パキスタン訪問・ホルムズ連絡メカニズム設置（6/23）｜4作業部会設置（制裁緩和/核/復興/監視）（IRNA 6/23）｜ルビオ「国際法上通行料不可」——UAE到着後表明（6/23）｜WTI $73-74・Brent $76-77（6/23）｜封鎖117日目</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-        <div>📅 <strong>2026年6月27日 08:27 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/27 08:27</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>CENTCOM、Ever Lovely攻撃への報復でイランのミサイル・ドローン施設と沿岸レーダー攻撃（6/27 JST早朝）——IRGC「より大規模に対応」報復予告・MoU崩壊危機最高水準｜日本関係船舶35隻（2隻が6/26通過・金子国交相発表 37→35）｜Brent $74台後半・WTI $71台——「長期戦」価格付けに移行｜6/30技術交渉の実施がMoU唯一の生命線｜封鎖120日目・MoU残り50日・ニュース2件更新</div>
-        <div>📅 <strong>2026年6月26日 06:43 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/26 06:43</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IRGC、シンガポール籍コンテナ船「Ever Lovely」をDahit沖7.5海里で攻撃——右舷命中・IMO避難計画を一時停止（6/25）｜WTI $71.92・Brent $75.26——攻撃後+2%急反発（戦時高値比-40%から反転）｜IRGC「指定ルート外の通航は許容しない——対処する」警告（6/25）｜ルビオGCC会議（バーレーン）「湾岸と完全に足並み」（6/25）｜韓国船13隻通過完了（26隻中）｜封鎖119日目・MoU期限まで51日</div>
-        <div>📅 <strong>2026年6月25日 07:46 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/06/25 07:46</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IAEAグロッシ「MoUに核査察明記——必ず実施」vsイラン「査察予定なし」——解釈対立が60日交渉の核心に｜WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent$74割れ（戦時高値比-40%）｜ネタニヤフ「南レバノン安全地帯維持」・イスラエル・ヒズボラ再停戦（6/24）｜ホルムズ通航31隻（Kpler）・イラン石油「正常水準」（Windward）｜米上院 戦争権限決議 50-48可決｜封鎖118日目・MoU期限まで52日</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+1. **IRGC・バーレーン攻撃とM/T Kiku被弾——3日連続の攻撃サイクルが定着・MoU機能不全が深刻化**
+2. **イラン議会MoU批准票決（6/28-30）が最大のトリガー——否決なら無期限封鎖・日本関係35隻直撃リスク**
+3. **WTI $69台・Brent $72台（週間-10%）——供給回復期待が攻撃リスクに押しつぶされる局面**
 
-### ブロック2: log-collapse への旧3件目（6/24 08:22）の挿入
+### ステータスバッジ5枚（更新内容）
 
-> ⚠️ Claude Code: `grep -n "log-collapse\|2026年6月24日" docs/index.html | head -10` で
-> log-collapse 先頭の実際の日付を確認してください。
-> 以下のAPPLYブロックは「log-collapse の現在の先頭エントリーが 6/23 08:31 JST」であることを前提とします。
-> 実際の HTML と一致しない場合は、確認した内容に基づいて old_str を修正してから適用すること。
-
-<!-- APPLY:START -->
-<!-- OLD:START -->
-      <!-- 折り畳み領域: 4件目以降（初期非表示） -->
-      <div id="log-collapse" style="display:none;">
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月23日 08:31 JST</strong> 更新</div>
-<!-- OLD:END -->
-<!-- NEW:START -->
-      <!-- 折り畳み領域: 4件目以降（初期非表示） -->
-      <div id="log-collapse" style="display:none;">
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
-          <div>📅 <strong>2026年6月24日 08:22 JST</strong> 更新</div>
-          <div>2026/06/24 08:22 — 【重大更新】IMO 11,000人以上の船員避難計画正式発表——安全保証確保済み（6/23）｜核査察問題——バンス「IAEA招請は重要マイルストーン」vsバガエイ「査察予定なし」（6/23）｜ペゼシュキヤーン大統領パキスタン訪問・ホルムズ連絡メカニズム設置（6/23）｜4作業部会設置（制裁緩和/核/復興/監視）（IRNA 6/23）｜ルビオ「国際法上通行料不可」——UAE到着後表明（6/23）｜WTI $73-74・Brent $76-77（6/23）｜封鎖117日目</div>
-          <div>📅 <strong>2026年6月23日 08:31 JST</strong> 更新</div>
-<!-- NEW:END -->
-<!-- APPLY:END -->
+- 🚢 通航状況: **危険**（UKMTO「substantial」）
+- 🇯🇵 日本関係: **35隻**（変化なし）
+- ⚔️ 軍事: **CENTCOM再報復・Bahrain被弾**
+- 💰 WTI: **$69台**（6/26終値）
+- 📅 封鎖: **121日目 / MoU残49日**
 
 ---
 
@@ -399,10 +388,73 @@ MoU残り<span class="countdown-mou">50</span>日
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-"dateModified": "2026-06-26",
+"dateModified": "2026-06-27",
 <!-- OLD:END -->
 <!-- NEW:START -->
-"dateModified": "2026-06-27",
+"dateModified": "2026-06-28",
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+---
+
+## [S11] 更新ログ（2ブロック必須）
+
+⚠️ Claude Code: 適用前に必ず以下を実行して現在の常時表示3件と log-collapse 先頭を確認すること：
+```
+grep -n "log-collapse\|2026年6月" docs/index.html | head -30
+```
+
+期待される現在の状態（6/27 08:27 適用済みの場合）：
+- 常時表示エントリー1: **2026年6月27日 08:27 JST**
+- 常時表示エントリー2: **2026年6月26日 06:43 JST**
+- 常時表示エントリー3: **2026年6月25日 07:46 JST**
+- log-collapse 先頭: **2026年6月24日 08:22 JST**
+
+実際の HTML と上記が一致した場合のみ以下のAPPLYブロックを適用すること。
+一致しない場合は確認した内容に合わせて old_str を修正してから適用すること。
+
+### ブロック1: 常時表示エリアの更新（3件固定を維持）
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+        <div>📅 <strong>2026年6月27日 08:27 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/27 08:27</span> — <strong style="color:#fca5a5;">【重大更新】</strong>CENTCOM、イランを報復攻撃（6/26 米時間=6/27 JST早朝）——Ever Lovely ドローン攻撃への報復としてイランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを攻撃｜IRGC「繰り返し挑発なら、より大規模に対応する」——MoU崩壊リスク最高水準｜日本関係35隻（-2隻）——金子国交相が6/26閣議後に発表｜6/30技術交渉（核・制裁）存続するかが焦点｜WTI $71台・Brent $74台後半｜封鎖120日目・MoU残り50日</div>
+        <div>📅 <strong>2026年6月26日 06:43 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/26 06:43</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IRGC、シンガポール籍コンテナ船「Ever Lovely」をDahit沖7.5海里で攻撃——右舷命中・IMO避難計画を一時停止（6/25）｜WTI $71.92・Brent $75.26——攻撃後+2%急反発（戦時高値比-40%から反転）｜IRGC「指定ルート外の通航は許容しない——対処する」警告（6/25）｜ルビオGCC会議（バーレーン）「湾岸と完全に足並み」（6/25）｜韓国船13隻通過完了（26隻中）｜封鎖119日目・MoU期限まで51日</div>
+        <div>📅 <strong>2026年6月25日 07:46 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/25 07:46</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IAEAグロッシ「MoUに核査察明記——必ず実施」vsイラン「査察予定なし」——解釈対立が60日交渉の核心に｜WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent$74割れ（戦時高値比-40%）｜ネタニヤフ「南レバノン安全地帯維持」・イスラエル・ヒズボラ再停戦（6/24）｜ホルムズ通航31隻（Kpler）・イラン石油「正常水準」（Windward）｜米上院 戦争権限決議 50-48可決｜封鎖118日目・MoU期限まで52日</div>
+<!-- OLD:END -->
+<!-- NEW:START -->
+        <div>📅 <strong>2026年6月28日 09:10 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/28 09:10</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IRGC、M/T Kiku（パナマ籍タンカー）をホルムズ内で攻撃・CENTCOM が追加報復（6/27 JST）｜イランがバーレーンをドローン攻撃——米第5艦隊狙う｜UKMTO脅威レベル「substantial」に引き上げ・IMO避難計画一時停止継続｜イラン議会MoU批准票決6/28-30——否決なら無期限封鎖・WTI $110+リスク｜WTI $69.23・Brent $72台（週間-10%超・MoU後最安値）｜日本関係35隻（変化なし）｜封鎖121日目・MoU残り49日</div>
+        <div>📅 <strong>2026年6月27日 08:27 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/27 08:27</span> — <strong style="color:#fca5a5;">【重大更新】</strong>CENTCOM、イランを報復攻撃（6/26 米時間=6/27 JST早朝）——Ever Lovely ドローン攻撃への報復としてイランのミサイル・ドローン貯蔵施設と沿岸レーダーサイトを攻撃｜IRGC「繰り返し挑発なら、より大規模に対応する」——MoU崩壊リスク最高水準｜日本関係35隻（-2隻）——金子国交相が6/26閣議後に発表｜6/30技術交渉（核・制裁）存続するかが焦点｜WTI $71台・Brent $74台後半｜封鎖120日目・MoU残り50日</div>
+        <div>📅 <strong>2026年6月26日 06:43 JST</strong> 更新</div>
+        <div><span style="color:#f87171;">2026/06/26 06:43</span> — <strong style="color:#fca5a5;">【重大更新】</strong>IRGC、シンガポール籍コンテナ船「Ever Lovely」をDahit沖7.5海里で攻撃——右舷命中・IMO避難計画を一時停止（6/25）｜WTI $71.92・Brent $75.26——攻撃後+2%急反発（戦時高値比-40%から反転）｜IRGC「指定ルート外の通航は許容しない——対処する」警告（6/25）｜ルビオGCC会議（バーレーン）「湾岸と完全に足並み」（6/25）｜韓国船13隻通過完了（26隻中）｜封鎖119日目・MoU期限まで51日</div>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+### ブロック2: log-collapse への旧エントリー3（6/25 07:46）の挿入
+
+> ⚠️ Claude Code: `grep -n "log-collapse\|2026年6月24日 08:22" docs/index.html | head -10` で
+> log-collapse 先頭の実際の日付を確認してください。
+> 以下の APPLY ブロックは「log-collapse の現在の先頭エントリーが 6/24 08:22 JST」であることを前提とします。
+> 実際の HTML と一致しない場合は、確認した内容に基づいて old_str を修正してから適用すること。
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+      <!-- 折り畳み領域: 4件目以降（初期非表示） -->
+      <div id="log-collapse" style="display:none;">
+        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+          <div>📅 <strong>2026年6月24日 08:22 JST</strong> 更新</div>
+<!-- OLD:END -->
+<!-- NEW:START -->
+      <!-- 折り畳み領域: 4件目以降（初期非表示） -->
+      <div id="log-collapse" style="display:none;">
+        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+          <div>📅 <strong>2026年6月25日 07:46 JST</strong> 更新</div>
+          <div>2026/06/25 07:46 — 【重大更新】IAEAグロッシ「MoUに核査察明記——必ず実施」vsイラン「査察予定なし」——解釈対立が60日交渉の核心に｜WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent$74割れ（戦時高値比-40%）｜ネタニヤフ「南レバノン安全地帯維持」・イスラエル・ヒズボラ再停戦（6/24）｜ホルムズ通航31隻（Kpler）・米上院 戦争権限決議 50-48可決｜封鎖118日目・MoU期限まで52日</div>
+          <div>📅 <strong>2026年6月24日 08:22 JST</strong> 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -411,32 +463,34 @@ MoU残り<span class="countdown-mou">50</span>日
 ## ✅ 出力前セルフチェック
 
 ```
-[x] S01 ヘッダー ― 2026年6月27日 08:27 JST ✓
-[x] S02 TICKER ― CENTCOM報復攻撃・日本関係35隻・Brent$74台後半・120日目・残50日 ✓
-[x] S03 速報インシデント ― 6/27 08:27付け・2件新規追加（CENTCOM攻撃・日本関係35隻）✓
-[x] S04 情勢カード ― grep確認指示付き・6/27版内容記載・日本関係35隻反映 ✓
-[x] S05 COUNTDOWN ― 封鎖120日目・MoU残り50日 ✓
-[x] S06 シナリオ確率補足バナー ― 6/27 08:27 JST 日付更新 ✓
-[x] S07 シナリオ4本 ― A（→）B（↑↑）C（→）D（↓↓）方向更新・rationale 6/27版・C/D差別化済み ✓
-[x] S08 シナリオフッター ― 次の焦点5点を6/27版に更新（6/30技術交渉筆頭）✓
-[x] S08.5 全ルート現況サマリー ― 6/27 08:27 JST・CENTCOM攻撃後の全ルート評価更新 ✓
+[x] S01 ヘッダー ― 2026年6月28日 09:10 JST ✓
+[x] S02 TICKER ― M/T Kiku攻撃・バーレーン被弾・議会票決・UKMTO・WTI$69台・121日目・MoU49日 ✓
+[x] S03 速報インシデント ― 6/28 09:10付け・2件新規追加（M/T Kiku攻撃・バーレーンドローン攻撃）✓
+[x] S04 情勢カード ― grep確認指示付き・6/28版内容記載・35隻変化なし反映 ✓
+[x] S05 COUNTDOWN ― 封鎖121日目・MoU残り49日 ✓
+[x] S06 シナリオ確率補足バナー ― 6/28 09:10 JST 日付更新 ✓
+[x] S07 シナリオ4本 ― A（↓↓）B（↑↑）C（→）D（↑）方向更新・rationale 6/28版・C/D差別化済み ✓
+[x] S08 シナリオフッター ― 次の焦点5点を6/28版に更新（議会票決・Kiku後サイクル・6/30交渉不透明）✓
+[x] S08.5 全ルート現況サマリー ― 6/28 09:10 JST・UKMTO格上げ・IMO一時停止反映 ✓
 [x] S09 30秒カラム ― 3行サマリー＋バッジ5枚（最後に作成）✓
-[x] S10 news_data.json ― latest 2件追加（CENTCOM攻撃/日本関係35隻）・osint 1件更新・updated日付 ✓
+[x] S10 news_data.json ― latest 2件追加（M/T Kiku / バーレーン攻撃）・osint 1件更新・updated日付 ✓
 [x] S11 更新ログ ― 2ブロック構成（ブロック1:常時3件固定・ブロック2:旧3件目を collapse 先頭へ）✓
-[x] JSON-LD dateModified ― "2026-06-27" ✓
+[x] JSON-LD dateModified ― "2026-06-28" ✓
 
-C01確認: 日本語「日本関係船舶 ホルムズ海峡 通過 足止め 2026年6月27日」＋英語「Japanese ships Strait of Hormuz Persian Gulf remaining June 26 27 2026」両クエリ実施済み——**37隻→35隻（6/26 金子国交相発表・変化あり）・dateConfirmed更新** ✓
+C01確認: 日本語「外務省 ホルムズ海峡 日本関係船舶 2026年6月27日 28日」＋英語「Japanese ships Strait of Hormuz Persian Gulf remaining vessels June 27 28 2026」両クエリ実施済み——**35隻・変化なし（6/27-28の新発表なし）・dateConfirmed更新** ✓
 TICKER内JST表記チェック: 全日付にJST付き ✓
 Al Jazeera: 📰関連最新ニュース（latest）に不含・osintのみ ✓
 禁止ニュースソース（毎日新聞・Wikipedia）: 使用なし ✓
 習近平表記: 今回言及なし ✓
 シナリオ確率数値: diffs内に含めず（syncScenarioFromDashboard自動同期）✓
-S11 2ブロック構成: ブロック1（常時3件固定）＋ブロック2（collapse先頭挿入・6/24 08:22エントリー移動）✓
-old_str最低100文字: S11ブロック1は充足（旧エントリー3件分の全HTML）・S02はコメント行＋ticker本文分割・S03-S04-S06-S07はgrep確認指示付記 ✓
-URL AI捏造チェック: latest-001(TIME記事URL・検索確認済み)・latest-002(Infoseek/産経URL・検索確認済み)・osint(Al Jazeera URL・検索確認済み) ✓
-CENTCOM報復攻撃（本日最重大）: S02・S03・S04・S07・S08・S08.5・S09・S10・S11 全セクションに反映 ✓
-日本関係35隻（C01変化）: S01以外の全セクション（S02・S03・S04・S08.5・S09・S10・S11）に反映 ✓
-シナリオCとDの差別化: C=「MoU形式維持・長期膠着」D=「MoU崩壊・再封鎖宣言・全面衝突再開」として明確に差異化 ✓
+S11 2ブロック構成: ブロック1（常時3件固定）＋ブロック2（collapse先頭挿入・6/25 07:46エントリー移動）✓
+old_str最低100文字: S11ブロック1は充足（旧エントリー3件分の全HTML）✓
+URL AI捏造チェック: latest-001(CNBC URL・検索確認済み)・latest-002(TIME URL・検索確認済み)・osint(Al Jazeera URL・検索確認済み) ✓
+M/T Kiku攻撃・バーレーンドローン攻撃（本日最重大）: S02・S03・S04・S07・S08・S08.5・S09・S10・S11 全セクションに反映 ✓
+イラン議会MoU批准票決（6/28-30・最重要トリガー）: S02・S07・S08・S09・S10・S11 に反映 ✓
+日本関係35隻（変化なし）: dateConfirmed更新・全セクションに「変化なし」で記録 ✓
+シナリオCとDの差別化: C=「MoU機能不全・散発攻撃の長期膠着」D=「議会否決→無期限封鎖宣言・全面再封鎖」として明確に差異化 ✓
+S11 ブロック1 old_str: 6/27 08:27エントリーの詳細本文を含めた100文字以上の old_str を記載 ✓
 ```
 
 ---
@@ -446,6 +500,9 @@ CENTCOM報復攻撃（本日最重大）: S02・S03・S04・S07・S08・S08.5・
 ```
 git pull --rebase してから、docs/tools/index_html_diffs.md に従って docs/index.html を更新してください。
 また docs/data/news_data.json も最新版がpush済みです。
-S11 ブロック1・2 の適用前に必ず `grep -n "log-collapse\|2026年6月" docs/index.html | head -30` で現在の collapse 先頭日付を確認し、old_str と一致しない場合は実際の HTML に合わせて修正してから適用すること。
+
+S02 適用前: grep -n "新ティッカー\|CENTCOM報復攻撃" docs/index.html | head -5 でティッカー本文の先頭を確認すること。
+S11 ブロック1・2 の適用前に必ず `grep -n "log-collapse\|2026年6月" docs/index.html | head -30` で
+現在の常時表示3件と collapse 先頭日付を確認し、old_str と一致しない場合は実際の HTML に合わせて修正してから適用すること。
 更新完了後に commit してください。push は確認後に指示します。
 ```

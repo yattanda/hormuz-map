@@ -1,7 +1,27 @@
 {
-  "updated": "2026年6月29日 07:58 日本時間JST",
+  "updated": "2026年6月30日 09:34 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-001-0630",
+      "date": "2026年6月29日（JST）",
+      "title": "米イランstanddown合意——ドーハ技術協議 本日6/30開催・航路解釈の成文化が焦点",
+      "body": "6/28夜に米当局者がRFE/RL等に「両者作戦停止・ホルムズ通航再開で合意」と確認。Axiosは6/30ドーハで技術協議と報道。イランFM副大臣が初め否定もトランプが「イランが会談要請、ドーハ本日開催」と確認。議題は南ルート（JMIC拡幅）vs IRGC指定ルートの解釈対立と機雷除去スケジュール。合意の成文化に成功するかがMOU存続の鍵。",
+      "sourceLabel": "Times of Israel / RFE/RL",
+      "label": "外交・軍事",
+      "url": "https://www.timesofisrael.com/us-iran-agree-to-halt-hormuz-attacks-hold-talks-about-strait-in-qatar-on-tuesday-report/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-002-0630",
+      "date": "2026年6月29日（JST）",
+      "title": "ペゼシュキヤン「カタールから60億ドル凍結資産解放予定」——米・カタール側は未確認",
+      "body": "イラン大統領が国営IRNA経由で「カタール保有のイラン資産120億ドルのうち60億ドルが解放される」と発表。MOU履行の成果としてイラン国内に向けてアピール。米当局は「まだ解放されていない」と否定、カタールも確認していない。第1回ホルムズ合同委員会（ムスカット）・テヘラン-ドバイ航空再開（戦争以来初）も同日発表。",
+      "sourceLabel": "The Hill / Washington Times",
+      "label": "外交・経済",
+      "url": "https://thehill.com/policy/international/5945120-qatar-releases-iranian-assets/",
+      "isLatest": false
+    },
     {
       "id": "latest-001-0629",
       "date": "2026年6月28日（現地・同日）/ 2026年6月28日 JST",
@@ -10,7 +30,7 @@
       "sourceLabel": "Times of Israel",
       "label": "🔴 超重大",
       "url": "https://www.timesofisrael.com/trump-threatens-to-complete-the-job-in-iran-as-us-military-launches-fresh-strikes/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002-0629",
@@ -20,26 +40,6 @@
       "sourceLabel": "Newsweek",
       "label": "🔴 重大",
       "url": "https://www.newsweek.com/why-iran-still-attacking-ships-in-strait-hormuz-12124424",
-      "isLatest": true
-    },
-    {
-      "id": "latest-001-0628",
-      "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
-      "title": "M/T Kiku 攻撃とCENTCOM追加報復——ホルムズで3日連続攻撃サイクル",
-      "body": "パナマ籍タンカーM/T Kikuがホルムズ内でIRGC のドローン攻撃を受けブリッジ損傷。CENTCOM は即時報復し「監視インフラ・通信・防空・ドローン貯蔵・機雷敷設能力」を標的に攻撃。Ever Lovely 攻撃→CENTCOM 報復→Kiku 攻撃→再報復と3日連続のサイクルが確立。UKMTO は脅威レベルを「substantial」に引き上げ。",
-      "sourceLabel": "CNBC",
-      "label": "⚠️ 軍事",
-      "url": "https://www.cnbc.com/amp/2026/06/27/tanker-struck-in-strait-of-hormuz-as-us-iran-tensions-escalate.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-002-0628",
-      "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
-      "title": "イランがバーレーンをドローン攻撃——イラン議会MoU批准票決6/28-30に緊張",
-      "body": "イランがバーレーンの米第5艦隊基地をドローンで攻撃。バーレーン外務省「領土への明白な侵害」と最強の非難。同日ルビオが主宰したGCC外相会議開催直後の攻撃。イラン議会のMoU批准票決が6/28-30に予定されており、否決なら無期限封鎖宣言・WTI $110+リスク（Iran SITREP）。",
-      "sourceLabel": "TIME",
-      "label": "🚨 外交",
-      "url": "https://time.com/article/2026/06/27/Iran-Bahrain-attack-Strait-of-Hormuz-drone-strikes/",
       "isLatest": false
     },
     {
@@ -767,6 +767,21 @@
   ],
   "osint": [
     {
+      "id": "osint-001-0630",
+      "titleJa": "【Al Jazeera】テヘランが語る——ホルムズは「イランの完全管理下」。しかし国内では疲弊と外圧の狭間で",
+      "titleEn": "Tehran insists: Hormuz under 'total Iranian control'. But at home, war fatigue and economic strain shape the calculus",
+      "country": "カタール（テヘラン発）",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(20,83,45,0.25)",
+      "cardBorder": "rgba(34,197,94,0.3)",
+      "badgeColor": "rgba(34,197,94,0.15)",
+      "borderColor": "rgba(34,197,94,0.4)",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/29/iran-war-live-tehran-insists-on-control-of-hormuz-amid-reports-of-us-talks",
+      "date": "2026年6月29日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-001-0629",
       "titleJa": "【Al Jazeera】MOU第5条とは何か——なぜホルムズ海峡で衝突を引き起こしているか",
       "titleEn": "What is Article 5 of the MOU and why is it causing Hormuz confrontations?",
@@ -779,7 +794,7 @@
       "textColor": "#f0c080",
       "url": "https://www.aljazeera.com/news/2026/6/28/why-is-article-5-of-mou-causing-confrontations-in-the-strait-of-hormuz",
       "date": "2026年6月28日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-0628",
@@ -1435,6 +1450,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年6月27日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-001",
+          "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
+          "title": "M/T Kiku 攻撃とCENTCOM追加報復——ホルムズで3日連続攻撃サイクル",
+          "body": "パナマ籍タンカーM/T Kikuがホルムズ内でIRGC のドローン攻撃を受けブリッジ損傷。CENTCOM は即時報復し「監視インフラ・通信・防空・ドローン貯蔵・機雷敷設能力」を標的に攻撃。Ever Lovely 攻撃→CENTCOM 報復→Kiku 攻撃→再報復と3日連続のサイクルが確立。UKMTO は脅威レベルを「substantial」に引き上げ。",
+          "sourceLabel": "CNBC",
+          "label": "⚠️ 軍事",
+          "url": "https://www.cnbc.com/amp/2026/06/27/tanker-struck-in-strait-of-hormuz-as-us-iran-tensions-escalate.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-002",
+          "date": "2026年6月27日（現地）/ 2026年6月27日 JST",
+          "title": "イランがバーレーンをドローン攻撃——イラン議会MoU批准票決6/28-30に緊張",
+          "body": "イランがバーレーンの米第5艦隊基地をドローンで攻撃。バーレーン外務省「領土への明白な侵害」と最強の非難。同日ルビオが主宰したGCC外相会議開催直後の攻撃。イラン議会のMoU批准票決が6/28-30に予定されており、否決なら無期限封鎖宣言・WTI $110+リスク（Iran SITREP）。",
+          "sourceLabel": "TIME",
+          "label": "🚨 外交",
+          "url": "https://time.com/article/2026/06/27/Iran-Bahrain-attack-Strait-of-Hormuz-drone-strikes/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年6月25-26日 更新分（アーカイブ）",
       "items": [

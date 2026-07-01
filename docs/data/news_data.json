@@ -1,7 +1,25 @@
 {
-  "updated": "2026年6月30日 09:34 日本時間JST",
+  "updated": "2026年7月1日 11:15 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-doha-dispute-001",
+      "date": "2026年6月30日（現地）/ 2026年6月30日 JST",
+      "title": "トランプ氏「ドーハで30日協議」主張をイラン・カタール両政府が否定",
+      "summary": "米国が主張したドーハでの米イラン技術協議について、イラン外務省とカタール政府はいずれも実施を否定。一方で米ウィトコフ特使らの交渉チームは現地入りしており、非公式接触の可能性は残る。",
+      "source": "TBS NEWS DIG",
+      "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-mine-clearance-001",
+      "date": "2026年6月30日（現地）/ 2026年6月30日 JST",
+      "title": "イラン「機雷除去はイランのみの権利」——仏を名指しでけん制",
+      "summary": "イラン外務省のガリババディ副外相は、機雷除去への外国の関与は受け入れないと主張し、フランスを名指しして挑発しないよう忠告した。英仏独伊は6月15日に機雷除去への関与を表明していた。",
+      "source": "時事通信",
+      "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
+      "isLatest": true
+    },
     {
       "id": "latest-001-0630",
       "date": "2026年6月29日（JST）",
@@ -10,7 +28,7 @@
       "sourceLabel": "Times of Israel / RFE/RL",
       "label": "外交・軍事",
       "url": "https://www.timesofisrael.com/us-iran-agree-to-halt-hormuz-attacks-hold-talks-about-strait-in-qatar-on-tuesday-report/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-002-0630",

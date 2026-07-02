@@ -1,7 +1,27 @@
 {
-  "updated": "2026年7月1日 11:15 日本時間JST",
+  "updated": "2026年7月2日 08:23 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-doha-confirmed-001",
+      "title": "米イラン、ドーハで技術協議を正式実施——バンス副大統領確認",
+      "body": "米国とイランは7月1日、ホルムズ海峡の商船通航と長期停戦維持を目的とした技術協議をドーハで実施。バンス副大統領も交渉団の協議実施を確認し、6/30時点のイラン・カタール否定から一転した。次回協議は「ハメネイ師国葬後」の見通し。",
+      "sourceLabel": "Reuters経由Mezha",
+      "date": "2026年7月1日（現地）/ 2026年7月2日 JST",
+      "label": "外交",
+      "url": "https://mezha.net/jp/bukvy/0c51712b_us_and_iran/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-wti-below69-001",
+      "title": "WTI一時$69割れ——2月27日以来の安値、供給過剰懸念",
+      "body": "WTIは7月1日、一時1バレル＝69ドルを割り込み2月27日以来の安値を記録。米イラン技術協議の進展観測とイラン・ロシア産原油の洋上在庫積み増しが材料。",
+      "sourceLabel": "Trading Economics",
+      "date": "2026年7月1日（現地）/ 2026年7月2日 JST",
+      "label": "市場",
+      "url": "https://tradingeconomics.com/commodity/crude-oil",
+      "isLatest": true
+    },
     {
       "id": "latest-doha-dispute-001",
       "date": "2026年6月30日（現地）/ 2026年6月30日 JST",
@@ -9,7 +29,7 @@
       "summary": "米国が主張したドーハでの米イラン技術協議について、イラン外務省とカタール政府はいずれも実施を否定。一方で米ウィトコフ特使らの交渉チームは現地入りしており、非公式接触の可能性は残る。",
       "source": "TBS NEWS DIG",
       "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-mine-clearance-001",
@@ -18,7 +38,7 @@
       "summary": "イラン外務省のガリババディ副外相は、機雷除去への外国の関与は受け入れないと主張し、フランスを名指しして挑発しないよう忠告した。英仏独伊は6月15日に機雷除去への関与を表明していた。",
       "source": "時事通信",
       "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-001-0630",

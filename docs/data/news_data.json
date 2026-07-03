@@ -1,7 +1,27 @@
 {
-  "updated": "2026年7月3日 09:16 日本時間JST",
+  "updated": "2026年7月4日 08:22 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-khamenei-funeral-day1-001",
+      "date": "2026年7月4日（現地）/ 2026年7月4日 JST",
+      "title": "故ハメネイ師の国葬、本日テヘランで開始——1500万〜2000万人参列見込み",
+      "body": "米国とイスラエルの軍事作戦で2月末に死亡した前最高指導者アリー・ハーメネイー師の国葬が7月4日、テヘランで始まった。遺体はモサッラーに安置され一般参列が開始、90カ国以上が参列の意向を示している。日程は7/4〜6テヘラン、7/7ゴムで追悼式、7/9マシュハドで埋葬。同国史上最大の国葬になる見通し。",
+      "sourceLabel": "時事通信",
+      "url": "https://news.yahoo.co.jp/articles/30e235766c4ed8ef4f7d6d7c608ff61c7e88bdb6",
+      "label": "⚱️ 国葬",
+      "isLatest": true
+    },
+    {
+      "id": "latest-ships-31-001",
+      "date": "2026年7月1日（現地）/ 2026年7月3日 JST発表",
+      "title": "日本関係船舶、新たに1隻通過——残り31隻に",
+      "body": "金子国土交通大臣は7月3日の閣議後会見で、ペルシャ湾内にとどまっていた日本関係船舶のうち新たに1隻が7月1日にホルムズ海峡を通過したと発表した。乗組員の健康状態・船体に異常はなく、残る船舶は31隻となった。",
+      "sourceLabel": "時事通信",
+      "url": "https://sp.m.jiji.com/article/show/3814715",
+      "label": "🚢 船舶",
+      "isLatest": false
+    },
     {
       "id": "latest-doha-nobreakthrough-001",
       "date": "2026年7月1日〜2日（現地）/ 2026年7月2日 JST",
@@ -10,7 +30,7 @@
       "sourceLabel": "Reuters / Japan Times",
       "url": "https://www.japantimes.co.jp/news/2026/07/02/world/politics/us-iran-talks-doha-strait/",
       "label": "外交",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-khamenei-funeral-001",

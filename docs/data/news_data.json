@@ -1,7 +1,27 @@
 {
-  "updated": "2026年7月2日 08:23 日本時間JST",
+  "updated": "2026年7月3日 09:16 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-doha-nobreakthrough-001",
+      "date": "2026年7月1日〜2日（現地）/ 2026年7月2日 JST",
+      "title": "ドーハ間接協議、突破口なく終了——通航料対立が焦点に",
+      "summary": "米国とイランは7月1〜2日にドーハで間接技術協議を実施したが、恒久的和平への進展は見られなかった。凍結資産の一部を対イラン物資購入に充当する仕組みと、違反通報用の連絡チャネル新設で合意。ホルムズ海峡の通航料徴収を巡り、米国は一切のイラン主導の課金を拒否、イランはオマーンとの共同管理・任意課金を主張し対立継続。",
+      "sourceLabel": "Reuters / Japan Times",
+      "url": "https://www.japantimes.co.jp/news/2026/07/02/world/politics/us-iran-talks-doha-strait/",
+      "label": "外交",
+      "isLatest": true
+    },
+    {
+      "id": "latest-khamenei-funeral-001",
+      "date": "2026年7月4日〜9日（予定）/ 2026年7月2日 JST発表",
+      "title": "故ハメネイ前最高指導者の国葬、7月4日開始——次回協議は国葬後",
+      "summary": "2月28日の米イスラエル攻撃で死亡した前最高指導者アリ・ハメネイ師の国葬が7月4日にテヘランで開始。7日に聖地ゴムで追悼式、9日に北東部マシュハドで埋葬。1500万〜2000万人の参列が見込まれる同国史上最大の国葬となる見通し。カタール仲介筋によれば、次回の米イラン協議は国葬後、可能な限り早期に設定される。",
+      "sourceLabel": "AFP / 時事通信",
+      "url": "https://www.jiji.com/jc/article?k=2026062400202&g=int",
+      "label": "情勢",
+      "isLatest": false
+    },
     {
       "id": "latest-doha-confirmed-001",
       "title": "米イラン、ドーハで技術協議を正式実施——バンス副大統領確認",
@@ -10,7 +30,7 @@
       "date": "2026年7月1日（現地）/ 2026年7月2日 JST",
       "label": "外交",
       "url": "https://mezha.net/jp/bukvy/0c51712b_us_and_iran/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-wti-below69-001",
@@ -20,7 +40,7 @@
       "date": "2026年7月1日（現地）/ 2026年7月2日 JST",
       "label": "市場",
       "url": "https://tradingeconomics.com/commodity/crude-oil",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-doha-dispute-001",
@@ -28,15 +48,6 @@
       "title": "トランプ氏「ドーハで30日協議」主張をイラン・カタール両政府が否定",
       "summary": "米国が主張したドーハでの米イラン技術協議について、イラン外務省とカタール政府はいずれも実施を否定。一方で米ウィトコフ特使らの交渉チームは現地入りしており、非公式接触の可能性は残る。",
       "source": "TBS NEWS DIG",
-      "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-mine-clearance-001",
-      "date": "2026年6月30日（現地）/ 2026年6月30日 JST",
-      "title": "イラン「機雷除去はイランのみの権利」——仏を名指しでけん制",
-      "summary": "イラン外務省のガリババディ副外相は、機雷除去への外国の関与は受け入れないと主張し、フランスを名指しして挑発しないよう忠告した。英仏独伊は6月15日に機雷除去への関与を表明していた。",
-      "source": "時事通信",
       "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
       "isLatest": false
     },
@@ -805,6 +816,21 @@
   ],
   "osint": [
     {
+      "id": "osint-hormuz-july3-001",
+      "titleJa": "【Al Jazeera】イラン軍、米介入に「断固たる迅速対応」を警告——ドーハ協議は「前向きな進展」とカタール",
+      "titleEn": "Iran's military headquarters warns US against Hormuz interference as Doha talks show 'positive progress'",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(20,83,45,0.3)",
+      "cardBorder": "rgba(34,197,94,0.3)",
+      "badgeColor": "rgba(34,197,94,0.2)",
+      "borderColor": "rgba(34,197,94,0.5)",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/2/iran-war-live-positive-progress-as-us-tehran-wrap-up-indirect-talks",
+      "date": "2026年7月2日（現地）/ 2026年7月2日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-001-0630",
       "titleJa": "【Al Jazeera】テヘランが語る——ホルムズは「イランの完全管理下」。しかし国内では疲弊と外圧の狭間で",
       "titleEn": "Tehran insists: Hormuz under 'total Iranian control'. But at home, war fatigue and economic strain shape the calculus",
@@ -817,7 +843,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/29/iran-war-live-tehran-insists-on-control-of-hormuz-amid-reports-of-us-talks",
       "date": "2026年6月29日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-0629",
@@ -1488,6 +1514,20 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年6月30日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-mine-clearance-001",
+          "date": "2026年6月30日（現地）/ 2026年6月30日 JST",
+          "title": "イラン「機雷除去はイランのみの権利」——仏を名指しでけん制",
+          "summary": "イラン外務省のガリババディ副外相は、機雷除去への外国の関与は受け入れないと主張し、フランスを名指しして挑発しないよう忠告した。英仏独伊は6月15日に機雷除去への関与を表明していた。",
+          "source": "時事通信",
+          "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年6月27日 更新分（アーカイブ）",
       "items": [

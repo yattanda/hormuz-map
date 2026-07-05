@@ -1,7 +1,27 @@
 {
-  "updated": "2026年7月4日 08:22 日本時間JST",
+  "updated": "2026年7月5日 09:06 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-khamenei-funeral-day2-001",
+      "date": "2026年7月4日（現地）/ 2026年7月4日 JST",
+      "title": "故ハメネイ師国葬、テヘランで告別式開始——数千人が参列し「復讐」を連呼",
+      "body": "故ハメネイ前最高指導者の国葬関連式典が7月4日、テヘランのグランド・モサッラーで告別式・一般参列という形で始まった。参列者らは胸を叩きながら「復讐」を連呼したとAP通信が報告。次期最高指導者モジュタバ・ハーメネイー師は依然公の場に姿を見せていない。イラン当局は1500万〜2000万人の参列を見込み、7月6日に大規模葬列、7月9日にマシュハドでの埋葬が予定されている。",
+      "sourceLabel": "CBS News",
+      "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-negotiations-pause-ayatollah-funeral/",
+      "label": "⚱️ 国葬",
+      "isLatest": true
+    },
+    {
+      "id": "latest-uk-france-hormuz-mission-001",
+      "date": "2026年7月3日（現地）/ 2026年7月4日 JST",
+      "title": "英仏、ホルムズ海峡での多国籍航行支援任務の展開を表明",
+      "body": "マクロン仏大統領とスターマー英首相は7月3日付の共同声明で、ホルムズ海峡の航行自由確保に向けた多国籍任務の展開に両国が準備を進めていると表明した。オマーンも安全な航行確保への協力に合意しており、フリゲート艦2隻・哨戒機を伴う多国籍任務が航行の全面再開に貢献するとしている。イラン・米国からの公式反応は確認できていない。",
+      "sourceLabel": "CNBC",
+      "url": "https://www.cnbc.com/2026/07/04/uk-france-agree-with-oman-to-ensure-safety-of-its-territorial-waters.html",
+      "label": "🚢 多国籍任務",
+      "isLatest": false
+    },
     {
       "id": "latest-khamenei-funeral-day1-001",
       "date": "2026年7月4日（現地）/ 2026年7月4日 JST",
@@ -10,7 +30,7 @@
       "sourceLabel": "時事通信",
       "url": "https://news.yahoo.co.jp/articles/30e235766c4ed8ef4f7d6d7c608ff61c7e88bdb6",
       "label": "⚱️ 国葬",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-ships-31-001",

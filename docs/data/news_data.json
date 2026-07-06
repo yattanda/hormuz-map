@@ -1,7 +1,17 @@
 {
-  "updated": "2026年7月5日 09:06 日本時間JST",
-  "staleNotice": "",
+  "updated": "2026年7月6日 09:04 日本時間JST",
+  "staleNotice": "7/6 09:04 JST 確認済——新規ニュースはOPEC+8月増産継続決定のみ（膠着継続中）",
   "latest": [
+    {
+      "id": "latest-opec-august-increase-001",
+      "date": "2026年7月5日（現地）/ 2026年7月5日 JST",
+      "title": "OPEC+有志国、8月も増産継続を決定——5カ月連続",
+      "body": "OPECプラスの有志国は7月5日、月次会合を開き8月の増産継続で合意した。増産は5カ月連続で、米国・イランによる戦闘終結の覚書合意後としては初の会合。原油価格は軍事衝突前の水準まで下落しており、増産継続で一段と下押し圧力がかかりやすい状況。サウジアラビア・イラク・ロシアなど有志7カ国が日量18.8万バレルの生産枠引き上げを決定した。",
+      "sourceLabel": "日本経済新聞",
+      "url": "https://www.nikkei.com/topics/22A00625",
+      "label": "🛢️ 原油",
+      "isLatest": true
+    },
     {
       "id": "latest-khamenei-funeral-day2-001",
       "date": "2026年7月4日（現地）/ 2026年7月4日 JST",
@@ -10,7 +20,7 @@
       "sourceLabel": "CBS News",
       "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-negotiations-pause-ayatollah-funeral/",
       "label": "⚱️ 国葬",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-uk-france-hormuz-mission-001",

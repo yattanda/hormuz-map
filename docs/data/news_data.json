@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月7日 09:05 日本時間JST",
+  "updated": "2026年7月8日 08:14 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-centcom-destroyer-attack-0708",
+      "title": "CENTCOM、駆逐艦3隻への攻撃に反撃——米イラン軍事衝突が再燃",
+      "body": "米中央軍は7月7日、ホルムズ海峡からオマーン湾へ向かっていた駆逐艦3隻（トラクスタン・ペラルタ・メイソン）がイランのミサイル・ドローン・小型艇による攻撃を受けたとして、自衛のためイラン側の発射拠点・指揮統制・偵察拠点を反撃したと発表した。米軍側に被害はなかった。CENTCOMは「エスカレーションは求めない」としつつ即応態勢の維持を表明。standdown合意（6/28）後で最も深刻な軍事衝突となった。",
+      "sourceLabel": "Reuters / CBS News",
+      "date": "2026年7月7日（現地）/ 2026年7月8日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.cbsnews.com/live-updates/iran-us-war-strait-of-hormuz-trump-nato/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-tanker-strike-oil-license-0708",
+      "title": "タンカー3隻被弾、米が対イラン原油輸出許可を取消",
+      "body": "UKMTOは7月7日未明、オマーン沖でカタール籍LNGタンカーAl Rekayyatが被弾・出火したと確認。サウジ籍Wedyanなど計3隻が攻撃を受けたことが明らかになった。米財務省は同日、6月22日に発給していたイラン産原油売却許可（本来8月21日期限）を取消し、7月17日までの取引清算猶予を設定。イラン外務省は枠組み合意違反だと非難した。",
+      "sourceLabel": "CNN / UKMTO",
+      "date": "2026年7月7日（現地）/ 2026年7月8日 JST",
+      "label": "🛢️ 原油市場",
+      "url": "https://www.cnn.com/2026/07/07/middleeast/hormuz-tanker-iran-attack-intl-hnk",
+      "isLatest": false
+    },
+    {
+      "id": "latest-japan-ships-10-passed-0708",
+      "title": "日本関係船10隻超がイランルート経由で通過、残り26隻に",
+      "body": "商船三井（MOL）運航船を中心とする日本関係船10隻以上が7月6日〜7日、イラン沿岸寄りルートを船団で通過した。超大型タンカー6隻（サウジ・UAE・カタール産原油計1,200万バレル）・ケミカルタンカー2隻・自動車船1隻・コンテナ船1隻が7月6日に、超大型タンカー2隻（サウジ産原油計200万バレル）が7月7日に通過。金子恭之国土交通大臣は7月7日の閣議後会見で新たに5隻の通過を確認し、ペルシャ湾内に残る日本関係船舶は開戦時45隻から26隻に減少したと発表した。日本船主協会も同数を確認している。",
+      "sourceLabel": "国土交通省 / 日本船主協会 / Reuters / Bloomberg",
+      "date": "2026年7月6日〜7日（現地）/ 2026年7月8日 JST",
+      "label": "🇯🇵 日本関係",
+      "url": "https://news.yahoo.co.jp/articles/8472482cfbe5cf54a2151e81f5c810b8ae0507fb",
+      "isLatest": false
+    },
     {
       "id": "latest-oman-uturn-0707",
       "title": "オマーン南ルートで商船8隻がUターン——うち4隻はイラン指定ルートへ変針(原因未確認)",
@@ -10,7 +40,7 @@
       "date": "2026年7月3〜4日（現地）/ 2026年7月4日 JST",
       "label": "🚢 海運",
       "url": "https://www.bloomberg.com/jp/news/articles/2026-07-04/THNDDVKK3NY800",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-japan-oil-0707",

@@ -1,7 +1,27 @@
 {
-  "updated": "2026年7月6日 09:04 日本時間JST",
-  "staleNotice": "7/6 09:04 JST 確認済——新規ニュースはOPEC+8月増産継続決定のみ（膠着継続中）",
+  "updated": "2026年7月7日 09:05 日本時間JST",
+  "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-oman-uturn-0707",
+      "title": "オマーン南ルートで商船8隻がUターン——うち4隻はイラン指定ルートへ変針(原因未確認)",
+      "body": "7月3〜4日、ペルシャ湾のオマーン沿岸航路を通って湾外に出ようとしていた石油タンカーやばら積み船など少なくとも8隻がUターンしたことが確認された。このうち4隻はその後イラン側の指定航路を通って航行を続けた。原因は明らかになっておらず、JMICが推奨する南ルートの実務的な安全性への懸念を再燃させている。",
+      "sourceLabel": "Bloomberg",
+      "date": "2026年7月3〜4日（現地）/ 2026年7月4日 JST",
+      "label": "🚢 海運",
+      "url": "https://www.bloomberg.com/jp/news/articles/2026-07-04/THNDDVKK3NY800",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-japan-oil-0707",
+      "title": "イランが日本企業へ石油販売を打診——買い手は制裁免除の長期化と航行安全の保証を要求",
+      "body": "イランが米制裁免除（6月22日発効・8月21日失効）の下、日本企業との石油販売交渉を開始したことが判明。日本側の潜在的な買い手は、輸送日数を踏まえた免除期間の延長とペルシャ湾での航行安全の保証を求めている。経済産業省担当者は購入判断は民間企業次第とし、輸送期間や既存契約を踏まえ実現するかは不透明との見方を示した。積み荷はイランのカーグ島で積載し日本運航タンカーを使用する案が浮上している。",
+      "sourceLabel": "Reuters",
+      "date": "2026年7月3日（現地）/ 2026年7月3日 JST",
+      "label": "🛢️ 原油市場",
+      "url": "https://www.reuters.com/business/energy/iran-exploring-oil-sales-japan-buyers-seek-longer-sanctions-waiver-sources-2026-07-03/",
+      "isLatest": false
+    },
     {
       "id": "latest-opec-august-increase-001",
       "date": "2026年7月5日（現地）/ 2026年7月5日 JST",
@@ -10,7 +30,7 @@
       "sourceLabel": "日本経済新聞",
       "url": "https://www.nikkei.com/topics/22A00625",
       "label": "🛢️ 原油",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-khamenei-funeral-day2-001",

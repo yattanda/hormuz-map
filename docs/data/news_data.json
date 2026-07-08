@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月8日 08:14 日本時間JST",
+  "updated": "2026年7月9日 06:59 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-trump-ceasefire-over-0709",
+      "title": "トランプ氏「イランとの停戦は終わった」——NATO首脳会議で表明",
+      "body": "トランプ米大統領は7月8日、トルコ・アンカラで開催されたNATO年次首脳会議で、ルッテ事務総長と並んで記者団に対し、イランとの暫定停戦について「私としては、もう終わったと思っている」「私からすれば、時間の無駄にすぎない」と発言した。米イラン間の軍事衝突再燃（7/7）後、枠組み合意（MOU）の存続に対する最大の不透明要因となっている。",
+      "sourceLabel": "Bloomberg / 日本経済新聞",
+      "date": "2026年7月8日（現地）/ 2026年7月8日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.bloomberg.com/jp/news/articles/2026-07-08/THUKJ2KK3NYA00",
+      "isLatest": true
+    },
+    {
+      "id": "latest-araghchi-conditional-stop-0709",
+      "title": "アラグチー外相「攻撃停止すればイランも停止」——安全通航は2週間可能と表明",
+      "body": "イランのアラグチ外相は7月8日の声明で、自国への攻撃が停止されればイランも攻撃を停止すると表明した。また、ホルムズ海峡の安全な通航について、イラン軍との調整のもとで2週間可能になるとした。",
+      "sourceLabel": "ロイター",
+      "date": "2026年7月8日（現地）/ 2026年7月8日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://jp.reuters.com/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-mol-8ships-passed-0709",
+      "title": "商船三井関係8隻が追加通過、日本関係船は残り18隻に",
+      "body": "ペルシャ湾にとどまっていた商船三井関係の船舶8隻が7月7日、ホルムズ海峡を通過したことが同社への取材で判明した。同日午前には金子国交相発表の別の5隻（計26隻）の通過も明らかになっており、湾内に残る日本関係船舶は18隻になったとみられる。商船三井は「全船舶の船員、船体と貨物の無事を確認している」とコメント。通航料は支払っていないという。",
+      "sourceLabel": "時事通信",
+      "date": "2026年7月7日（現地）/ 2026年7月8日 JST",
+      "label": "🚢 船舶動向",
+      "url": "https://www.jiji.com/jc/article?k=2026070701178&g=eco",
+      "isLatest": false
+    },
     {
       "id": "latest-centcom-destroyer-attack-0708",
       "title": "CENTCOM、駆逐艦3隻への攻撃に反撃——米イラン軍事衝突が再燃",
@@ -10,7 +40,7 @@
       "date": "2026年7月7日（現地）/ 2026年7月8日 JST",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.cbsnews.com/live-updates/iran-us-war-strait-of-hormuz-trump-nato/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-tanker-strike-oil-license-0708",

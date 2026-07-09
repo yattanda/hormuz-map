@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月9日 06:59 日本時間JST",
+  "updated": "2026年7月10日 07:40 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-kuwait-bahrain-qatar-0710",
+      "title": "IRGC、クウェート・バーレーン・カタールの米軍拠点に報復攻撃——1名負傷",
+      "body": "イラン革命防衛隊（IRGC）は7月9日、CENTCOMによる前夜の追加空爆への報復として、クウェート（Ali Al Salem基地）、バーレーン（第5艦隊拠点）、カタール（早期警戒システム）の米軍関連拠点にドローン・ミサイルによる攻撃を実施したと発表した。停戦後、カタールが標的となったのは初めて。クウェート国防省は弾道ミサイル3発・巡航ミサイル1発・ドローン10機を迎撃したとしたが、迎撃に伴う被害で少なくとも1名が負傷（容体は安定）したと明らかにした。バーレーン・クウェート・UAE・ヨルダンはイランの攻撃を「主権への明白な侵害」として一斉に非難した。",
+      "sourceLabel": "RFE/RL",
+      "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-ghalibaf-araghchi-warning-0710",
+      "title": "ガリバフ国会議長「攻撃すれば反撃を受ける」——アラグチー外相も対米強硬姿勢",
+      "body": "イラン国会議長で対米交渉責任者のモハマド・バゲル・ガリバフ氏は7月9日、X投稿で米国は「いじめや約束違反がもはや罰せられないままでは済まされない」と警告し、「攻撃すれば、反撃を受ける」と述べた。ホルムズ海峡の航行は「イランの取り決めの下でのみ」可能と改めて主張。アラグチー外相もトランプ大統領の対イラン発言を「下品な物言い」と批判し、イランの対応は「決然として恐れず、全力」であると表明した。",
+      "sourceLabel": "CNN",
+      "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.cnn.com/2026/07/09/middleeast/iran-us-ceasefire-attacks-resume-intl-hnk",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-volatile-0710",
+      "title": "原油、一時ブレント$79台へ急騰後$77前後に落ち着く",
+      "body": "軍事衝突拡大を受け、ブレント原油は7月9日に一時1バレル=79ドル台まで急騰し、6月23日以来の高値を付けた。その後は伸び悩み、Trading Economicsによれば同日終値は76.97ドル（前日比-1.35%）。WTIも73ドル台前半で推移している。トレーダーは軍事衝突がさらなる報復につながるか、収束に向かうかを見極めている段階だとの指摘が出ている。",
+      "sourceLabel": "Trading Economics / Kitco・Reuters",
+      "date": "2026年7月9日（現地）/ 2026年7月10日 JST",
+      "label": "🛢️ 原油市場",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-07-09/oil-prices-fall-markets-weigh-impact-us-strikes-iran",
+      "isLatest": false
+    },
     {
       "id": "latest-trump-ceasefire-over-0709",
       "title": "トランプ氏「イランとの停戦は終わった」——NATO首脳会議で表明",
@@ -10,7 +40,7 @@
       "date": "2026年7月8日（現地）/ 2026年7月8日 JST",
       "label": "🕊️ 外交",
       "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-mou-hormuz-control-dispute-0709",
@@ -946,6 +976,21 @@
   ],
   "osint": [
     {
+      "id": "osint-bushehr-blasts-0709",
+      "titleJa": "【Al Jazeera】南部イラン各地で爆発——テヘランは湾岸諸国へ攻撃",
+      "titleEn": "Iran war live: Blasts across southern Iran after Tehran attacks GCC states",
+      "country": "カタール / 中東全域",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(20,83,45,0.3)",
+      "cardBorder": "rgba(34,197,94,0.3)",
+      "badgeColor": "rgba(34,197,94,0.2)",
+      "borderColor": "rgba(34,197,94,0.5)",
+      "textColor": "#86efac",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/9/iran-war-live-one-killed-as-us-bombs-bushehr-chabahar-bandar-abbas-jask",
+      "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
+      "isLatest": true
+    },
+    {
       "id": "osint-hormuz-july3-001",
       "titleJa": "【Al Jazeera】イラン軍、米介入に「断固たる迅速対応」を警告——ドーハ協議は「前向きな進展」とカタール",
       "titleEn": "Iran's military headquarters warns US against Hormuz interference as Doha talks show 'positive progress'",
@@ -958,7 +1003,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/2/iran-war-live-positive-progress-as-us-tehran-wrap-up-indirect-talks",
       "date": "2026年7月2日（現地）/ 2026年7月2日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-001-0630",

@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月10日 07:40 日本時間JST",
+  "updated": "2026年7月11日 08:38 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-japan-ships-22-passed-0711",
+      "title": "日本関係船22隻がホルムズ海峡通過——残り4隻に大幅減",
+      "body": "金子恭之国土交通相は7月10日の閣議後会見で、7〜9日にペルシャ湾内に留め置かれていた日本関係船舶のうち新たに22隻がホルムズ海峡を通過したと発表した。うち6隻は日本向けの大型原油タンカーで、積載する原油量は合計約180万キロリットル、20日程度かけて今月末に日本へ到着する見通し。乗組員の健康状態・船体に異常はない。これにより湾内に留め置かれている日本関係船舶は、開戦時45隻から過去最少の残り4隻となった。",
+      "sourceLabel": "国土交通省 / 時事通信 / NHK",
+      "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
+      "label": "🇯🇵 邦人・船舶",
+      "url": "https://www.nippon.com/en/news/yjj2026071000499/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-us-demands-iran-statement-0711",
+      "title": "米、イランに攻撃停止・全通航路開放の公式声明を要求",
+      "body": "米当局者は7月10日、イランに対しホルムズ海峡の全通航路が開放されており船舶への攻撃をやめる旨を公式に表明するよう要求していると明らかにした。通航料の徴収も認めない方針。イラン側は非公式に、今回の攻撃は「制度の一部が暴走した結果」であり対話継続を望んでいると伝えたという。トランプ大統領は停戦は「終わった」との立場を維持しつつ、対話継続には合意したとSNSで表明した。",
+      "sourceLabel": "Reuters / AP",
+      "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.al-monitor.com/originals/2026/07/us-insists-iran-commit-stopping-attacks-hormuz-strait-say-us-officials",
+      "isLatest": false
+    },
+    {
+      "id": "latest-araghchi-oman-talks-0711",
+      "title": "アラグチー外相、本日オマーンでホルムズ海峡管理を協議",
+      "body": "イランのアラグチー外相は7月11日、オマーンを訪問しブーサイーディー外相とホルムズ海峡の今後の管理・海事サービスについて協議する。トルコのフィダン外相は「今週末にも解決に至る可能性がある」と楽観的な見方を示した一方、イランの国連大使イラワニ氏は海峡の開放・機雷除去を含む運用は「専らイランに属する」と述べ、対立姿勢を崩していない。",
+      "sourceLabel": "IRNA / Al Jazeera",
+      "date": "2026年7月11日（現地）/ 2026年7月11日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/10/iran-war-live-fresh-attacks-on-iran-as-us-says-talks-still-on",
+      "isLatest": false
+    },
     {
       "id": "latest-irgc-kuwait-bahrain-qatar-0710",
       "title": "IRGC、クウェート・バーレーン・カタールの米軍拠点に報復攻撃——1名負傷",
@@ -10,7 +40,7 @@
       "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-ghalibaf-araghchi-warning-0710",
@@ -31,19 +61,24 @@
       "label": "🛢️ 原油市場",
       "url": "https://www.kitco.com/news/off-the-wire/2026-07-09/oil-prices-fall-markets-weigh-impact-us-strikes-iran",
       "isLatest": false
-    },
-    {
-      "id": "latest-trump-ceasefire-over-0709",
-      "title": "トランプ氏「イランとの停戦は終わった」——NATO首脳会議で表明",
-      "body": "トランプ米大統領は7月8日、トルコ・アンカラで開催されたNATO年次首脳会議で、ルッテ事務総長と並んで記者団に対し、イランとの暫定停戦について「私としては、もう終わったと思っている」「私からすれば、時間の無駄にすぎない」と発言した。イラン指導部を「cuckoo」「evil, sick people」等と表現。米イラン間の軍事衝突再燃（7/7）後、枠組み合意（MOU）の存続に対する最大の不透明要因となっている。",
-      "sourceLabel": "CBS News / Bloomberg",
-      "date": "2026年7月8日（現地）/ 2026年7月8日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-hormuz-traffic-halt-0711",
+      "titleJa": "【Al Jazeera】ホルムズ海峡の通航、事実上停止——大型船のAIS通航は7/7以降ゼロ",
+      "titleEn": "Strait of Hormuz traffic plunges as US, Iran resume fighting",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/economy/2026/7/10/strait-of-hormuz-shipping-grinds-to-halt-as-us-iran-resume-fighting",
+      "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
+      "isLatest": true
+    },
     {
       "id": "osint-bushehr-blasts-0709",
       "titleJa": "【Al Jazeera】南部イラン各地で爆発——テヘランは湾岸諸国へ攻撃",
@@ -57,7 +92,7 @@
       "textColor": "#86efac",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/9/iran-war-live-one-killed-as-us-bombs-bushehr-chabahar-bandar-abbas-jask",
       "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-hormuz-july3-001",
@@ -758,6 +793,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月9日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-trump-ceasefire-over-0709",
+          "title": "トランプ氏「イランとの停戦は終わった」——NATO首脳会議で表明",
+          "body": "トランプ米大統領は7月8日、トルコ・アンカラで開催されたNATO年次首脳会議で、ルッテ事務総長と並んで記者団に対し、イランとの暫定停戦について「私としては、もう終わったと思っている」「私からすれば、時間の無駄にすぎない」と発言した。イラン指導部を「cuckoo」「evil, sick people」等と表現。米イラン間の軍事衝突再燃（7/7）後、枠組み合意（MOU）の存続に対する最大の不透明要因となっている。",
+          "sourceLabel": "CBS News / Bloomberg",
+          "date": "2026年7月8日（現地）/ 2026年7月8日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月8日 更新分（アーカイブ）",
       "items": [

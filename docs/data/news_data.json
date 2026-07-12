@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月11日 08:38 日本時間JST",
+  "updated": "2026年7月12日 09:19 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-hormuz-closed-gfs-galaxy-0712",
+      "title": "イラン、ホルムズ海峡「閉鎖」を宣言——コンテナ船GFS Galaxyを攻撃",
+      "body": "イラン革命防衛隊（IRGC）海軍は7月11日夜（現地時間）、キプロス籍コンテナ船GFS Galaxyが「認可外ルート」を航行しようとしたとして警告射撃を実施し、船体後部に着火・機関室に大きな損傷を与えた。乗組員1名が行方不明。IRGCはこれを受け、ホルムズ海峡を「次官通達があるまで閉鎖する」と宣言した。CENTCOMは同日、今週3度目となる対イラン空爆を実施し、「イランはMOU遵守の機会を再び与えられたが、また失敗した」と非難。ヘグセス国防長官は「イランは間違った選択をした。今、代償を払う」とX投稿した。",
+      "sourceLabel": "CENTCOM / Times of Israel",
+      "date": "2026年7月11日（現地）/ 2026年7月12日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.timesofisrael.com/liveblog-july-11-2026/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oman-tollfree-corridor-0712",
+      "title": "オマーン、通航料なしの南北二経路案を提示——イランは持ち帰り検討",
+      "body": "オマーンはホルムズ海峡の通航を南北2つの経路に分けて管理する案を提示したとCNNが関係筋の話として報じた。南ルート（オマーン領海）は戦前同様に自由航行が可能、北ルート（イラン領海）は事前にイランの承認が必要だが通航料は課さない内容。イランのアラグチー外相とオマーンのブーサイーディー外相は7月11日マスカットで会談し、技術・政治レベルでの協議継続に合意したが、米政権が求める公式声明表明には至らず、イラン側は同案を承認せずテヘランに持ち帰り検討中とみられる。",
+      "sourceLabel": "CNN",
+      "date": "2026年7月11日（現地）/ 2026年7月12日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.cnn.com/2026/07/11/world/live-news/iran-war-trump",
+      "isLatest": false
+    },
+    {
+      "id": "latest-us-third-strikes-hegseth-0712",
+      "title": "米、今週3度目の対イラン空爆——ヘグセス長官「代償を払う」",
+      "body": "米中央軍（CENTCOM）は7月11日、GFS Galaxy攻撃への対応として今週3度目となる対イラン空爆を実施したと発表した。ヘグセス国防長官はX投稿で「イランは間違った選択をした。今、代償を払う」と表明。イラン国営メディアはバンダルアッバス・ゲシュム島・ブシェール・アサルイェ・チャバハール・シリク等の沿岸各地で複数の爆発を報じた。トランプ大統領は自身が標的にされた場合は即応する用意があると述べた。",
+      "sourceLabel": "Times of Israel / Haaretz",
+      "date": "2026年7月11日（現地）/ 2026年7月12日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-11/ty-article-live/aoc-calls-to-release-gaza-hospital-director-hussam-abu-safiya/0000019f-4de2-d38b-afbf-5ff684110004",
+      "isLatest": false
+    },
     {
       "id": "latest-japan-ships-22-passed-0711",
       "title": "日本関係船22隻がホルムズ海峡通過——残り4隻に大幅減",
@@ -10,7 +40,7 @@
       "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
       "label": "🇯🇵 邦人・船舶",
       "url": "https://www.nippon.com/en/news/yjj2026071000499/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-us-demands-iran-statement-0711",
@@ -31,39 +61,24 @@
       "label": "🕊️ 外交",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/10/iran-war-live-fresh-attacks-on-iran-as-us-says-talks-still-on",
       "isLatest": false
-    },
-    {
-      "id": "latest-irgc-kuwait-bahrain-qatar-0710",
-      "title": "IRGC、クウェート・バーレーン・カタールの米軍拠点に報復攻撃——1名負傷",
-      "body": "イラン革命防衛隊（IRGC）は7月9日、CENTCOMによる前夜の追加空爆への報復として、クウェート（Ali Al Salem基地）、バーレーン（第5艦隊拠点）、カタール（早期警戒システム）の米軍関連拠点にドローン・ミサイルによる攻撃を実施したと発表した。停戦後、カタールが標的となったのは初めて。クウェート国防省は弾道ミサイル3発・巡航ミサイル1発・ドローン10機を迎撃したとしたが、迎撃に伴う被害で少なくとも1名が負傷（容体は安定）したと明らかにした。バーレーン・クウェート・UAE・ヨルダンはイランの攻撃を「主権への明白な侵害」として一斉に非難した。",
-      "sourceLabel": "RFE/RL",
-      "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ghalibaf-araghchi-warning-0710",
-      "title": "ガリバフ国会議長「攻撃すれば反撃を受ける」——アラグチー外相も対米強硬姿勢",
-      "body": "イラン国会議長で対米交渉責任者のモハマド・バゲル・ガリバフ氏は7月9日、X投稿で米国は「いじめや約束違反がもはや罰せられないままでは済まされない」と警告し、「攻撃すれば、反撃を受ける」と述べた。ホルムズ海峡の航行は「イランの取り決めの下でのみ」可能と改めて主張。アラグチー外相もトランプ大統領の対イラン発言を「下品な物言い」と批判し、イランの対応は「決然として恐れず、全力」であると表明した。",
-      "sourceLabel": "CNN",
-      "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.cnn.com/2026/07/09/middleeast/iran-us-ceasefire-attacks-resume-intl-hnk",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-volatile-0710",
-      "title": "原油、一時ブレント$79台へ急騰後$77前後に落ち着く",
-      "body": "軍事衝突拡大を受け、ブレント原油は7月9日に一時1バレル=79ドル台まで急騰し、6月23日以来の高値を付けた。その後は伸び悩み、Trading Economicsによれば同日終値は76.97ドル（前日比-1.35%）。WTIも73ドル台前半で推移している。トレーダーは軍事衝突がさらなる報復につながるか、収束に向かうかを見極めている段階だとの指摘が出ている。",
-      "sourceLabel": "Trading Economics / Kitco・Reuters",
-      "date": "2026年7月9日（現地）/ 2026年7月10日 JST",
-      "label": "🛢️ 原油市場",
-      "url": "https://www.kitco.com/news/off-the-wire/2026-07-09/oil-prices-fall-markets-weigh-impact-us-strikes-iran",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-hormuz-closed-live-0712",
+      "titleJa": "【Al Jazeera】イラン、ホルムズ海峡「閉鎖」を宣言——米、公式声明を要求も応酬続く",
+      "titleEn": "Iran war updates: IRGC navy declares Strait of Hormuz closed",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/11/iran-war-live-us-demands-iran-publicly-state-strait-of-hormuz-open-for-all",
+      "date": "2026年7月11日（現地）/ 2026年7月12日 JST",
+      "isLatest": true
+    },
     {
       "id": "osint-hormuz-traffic-halt-0711",
       "titleJa": "【Al Jazeera】ホルムズ海峡の通航、事実上停止——大型船のAIS通航は7/7以降ゼロ",
@@ -77,7 +92,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/economy/2026/7/10/strait-of-hormuz-shipping-grinds-to-halt-as-us-iran-resume-fighting",
       "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-bushehr-blasts-0709",
@@ -793,6 +808,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月10日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-irgc-kuwait-bahrain-qatar-0710",
+          "title": "IRGC、クウェート・バーレーン・カタールの米軍拠点に報復攻撃——1名負傷",
+          "body": "イラン革命防衛隊（IRGC）は7月9日、CENTCOMによる前夜の追加空爆への報復として、クウェート（Ali Al Salem基地）、バーレーン（第5艦隊拠点）、カタール（早期警戒システム）の米軍関連拠点にドローン・ミサイルによる攻撃を実施したと発表した。停戦後、カタールが標的となったのは初めて。クウェート国防省は弾道ミサイル3発・巡航ミサイル1発・ドローン10機を迎撃したとしたが、迎撃に伴う被害で少なくとも1名が負傷（容体は安定）したと明らかにした。バーレーン・クウェート・UAE・ヨルダンはイランの攻撃を「主権への明白な侵害」として一斉に非難した。",
+          "sourceLabel": "RFE/RL",
+          "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ghalibaf-araghchi-warning-0710",
+          "title": "ガリバフ国会議長「攻撃すれば反撃を受ける」——アラグチー外相も対米強硬姿勢",
+          "body": "イラン国会議長で対米交渉責任者のモハマド・バゲル・ガリバフ氏は7月9日、X投稿で米国は「いじめや約束違反がもはや罰せられないままでは済まされない」と警告し、「攻撃すれば、反撃を受ける」と述べた。ホルムズ海峡の航行は「イランの取り決めの下でのみ」可能と改めて主張。アラグチー外相もトランプ大統領の対イラン発言を「下品な物言い」と批判し、イランの対応は「決然として恐れず、全力」であると表明した。",
+          "sourceLabel": "CNN",
+          "date": "2026年7月9日（現地）/ 2026年7月9日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.cnn.com/2026/07/09/middleeast/iran-us-ceasefire-attacks-resume-intl-hnk",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-volatile-0710",
+          "title": "原油、一時ブレント$79台へ急騰後$77前後に落ち着く",
+          "body": "軍事衝突拡大を受け、ブレント原油は7月9日に一時1バレル=79ドル台まで急騰し、6月23日以来の高値を付けた。その後は伸び悩み、Trading Economicsによれば同日終値は76.97ドル（前日比-1.35%）。WTIも73ドル台前半で推移している。トレーダーは軍事衝突がさらなる報復につながるか、収束に向かうかを見極めている段階だとの指摘が出ている。",
+          "sourceLabel": "Trading Economics / Kitco・Reuters",
+          "date": "2026年7月9日（現地）/ 2026年7月10日 JST",
+          "label": "🛢️ 原油市場",
+          "url": "https://www.kitco.com/news/off-the-wire/2026-07-09/oil-prices-fall-markets-weigh-impact-us-strikes-iran",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月9日 更新分（アーカイブ）",
       "items": [

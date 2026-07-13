@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月12日 09:19 日本時間JST",
+  "updated": "2026年7月13日 08:28 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-attacks-5states-0712",
+      "title": "イラン、米の3度目空爆にオマーン・カタール・クウェート・バーレーン・ヨルダンを報復攻撃",
+      "body": "CENTCOMが今週3度目・約140カ所への対イラン空爆を実施したのに続き、イランはオマーン（ドゥクム）、カタール（アルウデイド空軍基地）、クウェート、バーレーン、ヨルダンの米軍関連拠点にドローン・弾道ミサイルで報復攻撃を実施した。カタールは迎撃したと発表したが、破片により子供を含む3名が負傷。イラン国会議長ガリバフ氏はMOU第5条（ホルムズ海峡再開）の条文画像を添え「約束を守るか代償を払うかだ」「一方的な合意の時代は終わった」とX投稿し、対米強硬姿勢を鮮明にした。開戦以来、最も広範囲に及ぶ軍事応酬となった。",
+      "sourceLabel": "NPR / Washington Post",
+      "date": "2026年7月12日（現地）/ 2026年7月12日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.npr.org/2026/07/11/g-s1-133212/us-iran-vessel-attack-strait-hormuz-gulf",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oman-summons-iran-ambassador-0712",
+      "title": "オマーン、ドゥクム・ムサンダム攻撃を受けイラン大使を召喚——「無責任な行為」と抗議",
+      "body": "オマーン外務省は7月12日、ムサンダム県とアルウスタ県（ドゥクム周辺）の施設を狙ったイランのドローン攻撃を受け、駐オマーン・イラン大使を召喚し正式な抗議文を手交した。会談でオマーン外務次官はイランの「無責任な行為」への不満を表明したと発表されている。ムサンダム県はホルムズ海峡のオマーン側沿岸を構成し、アルウスタ県にはドゥクム周辺地域が含まれる。前日にはアラグチー外相がオマーンを訪問しブーサイーディー外相とホルムズ海峡の安全通航の枠組みを協議したばかりで、外交チャンネル自体は維持されているものの、実効的な安全通航合意には至っていない。在オマーン米国大使館はムサンダム県への退避勧告を発出した。",
+      "sourceLabel": "コンサルタントの独り言（global-scm.com）",
+      "date": "2026年7月12日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://global-scm.com/blog/?p=7870",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-surge-4pct-0713",
+      "title": "原油急反発、ブレント一時79ドル台・WTI74ドル台——週明けに4%高",
+      "body": "イランによるホルムズ海峡の再封鎖宣言・5カ国への報復攻撃などで供給懸念が高まり、日本時間13日早朝の取引で原油の先物価格が反発した。国際指標である北海ブレント先物の期近9月物は一時1バレル79ドル台と、前週末比4%上昇。同じく国際指標であるWTI先物も同74ドル台と、4%高を付けた。イランの革命防衛隊は海峡を通る商船に攻撃し、海峡の通航を認めないと宣言している。",
+      "sourceLabel": "日本経済新聞",
+      "date": "2026年7月13日 JST",
+      "label": "🛢️ 市場",
+      "url": "https://www.nikkei.com/markets/stocks/",
+      "isLatest": false
+    },
     {
       "id": "latest-hormuz-closed-gfs-galaxy-0712",
       "title": "イラン、ホルムズ海峡「閉鎖」を宣言——コンテナ船GFS Galaxyを攻撃",
@@ -10,7 +40,7 @@
       "date": "2026年7月11日（現地）/ 2026年7月12日 JST",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.timesofisrael.com/liveblog-july-11-2026/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-oman-tollfree-corridor-0712",
@@ -31,39 +61,24 @@
       "label": "⚔️ 軍事衝突",
       "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-11/ty-article-live/aoc-calls-to-release-gaza-hospital-director-hussam-abu-safiya/0000019f-4de2-d38b-afbf-5ff684110004",
       "isLatest": false
-    },
-    {
-      "id": "latest-japan-ships-22-passed-0711",
-      "title": "日本関係船22隻がホルムズ海峡通過——残り4隻に大幅減",
-      "body": "金子恭之国土交通相は7月10日の閣議後会見で、7〜9日にペルシャ湾内に留め置かれていた日本関係船舶のうち新たに22隻がホルムズ海峡を通過したと発表した。うち6隻は日本向けの大型原油タンカーで、積載する原油量は合計約180万キロリットル、20日程度かけて今月末に日本へ到着する見通し。乗組員の健康状態・船体に異常はない。これにより湾内に留め置かれている日本関係船舶は、開戦時45隻から過去最少の残り4隻となった。",
-      "sourceLabel": "国土交通省 / 時事通信 / NHK",
-      "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
-      "label": "🇯🇵 邦人・船舶",
-      "url": "https://www.nippon.com/en/news/yjj2026071000499/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-us-demands-iran-statement-0711",
-      "title": "米、イランに攻撃停止・全通航路開放の公式声明を要求",
-      "body": "米当局者は7月10日、イランに対しホルムズ海峡の全通航路が開放されており船舶への攻撃をやめる旨を公式に表明するよう要求していると明らかにした。通航料の徴収も認めない方針。イラン側は非公式に、今回の攻撃は「制度の一部が暴走した結果」であり対話継続を望んでいると伝えたという。トランプ大統領は停戦は「終わった」との立場を維持しつつ、対話継続には合意したとSNSで表明した。",
-      "sourceLabel": "Reuters / AP",
-      "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.al-monitor.com/originals/2026/07/us-insists-iran-commit-stopping-attacks-hormuz-strait-say-us-officials",
-      "isLatest": false
-    },
-    {
-      "id": "latest-araghchi-oman-talks-0711",
-      "title": "アラグチー外相、本日オマーンでホルムズ海峡管理を協議",
-      "body": "イランのアラグチー外相は7月11日、オマーンを訪問しブーサイーディー外相とホルムズ海峡の今後の管理・海事サービスについて協議する。トルコのフィダン外相は「今週末にも解決に至る可能性がある」と楽観的な見方を示した一方、イランの国連大使イラワニ氏は海峡の開放・機雷除去を含む運用は「専らイランに属する」と述べ、対立姿勢を崩していない。",
-      "sourceLabel": "IRNA / Al Jazeera",
-      "date": "2026年7月11日（現地）/ 2026年7月11日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/7/10/iran-war-live-fresh-attacks-on-iran-as-us-says-talks-still-on",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-iran-attacks-5states-live-0712",
+      "titleJa": "【Al Jazeera】イラン、5カ国へ報復攻撃——米が新たな空爆を実施と発表",
+      "titleEn": "Iran war live: More explosions as US says launching new strikes",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/12/iran-war-live-irgc-declares-strait-of-hormuz-closed-over-us-interference",
+      "date": "2026年7月12日（現地）/ 2026年7月12日 JST",
+      "isLatest": true
+    },
     {
       "id": "osint-hormuz-closed-live-0712",
       "titleJa": "【Al Jazeera】イラン、ホルムズ海峡「閉鎖」を宣言——米、公式声明を要求も応酬続く",
@@ -77,7 +92,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/11/iran-war-live-us-demands-iran-publicly-state-strait-of-hormuz-open-for-all",
       "date": "2026年7月11日（現地）/ 2026年7月12日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-hormuz-traffic-halt-0711",
@@ -808,6 +823,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月11日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-japan-ships-22-passed-0711",
+          "title": "日本関係船22隻がホルムズ海峡通過——残り4隻に大幅減",
+          "body": "金子恭之国土交通相は7月10日の閣議後会見で、7〜9日にペルシャ湾内に留め置かれていた日本関係船舶のうち新たに22隻がホルムズ海峡を通過したと発表した。うち6隻は日本向けの大型原油タンカーで、積載する原油量は合計約180万キロリットル、20日程度かけて今月末に日本へ到着する見通し。乗組員の健康状態・船体に異常はない。これにより湾内に留め置かれている日本関係船舶は、開戦時45隻から過去最少の残り4隻となった。",
+          "sourceLabel": "国土交通省 / 時事通信 / NHK",
+          "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
+          "label": "🇯🇵 邦人・船舶",
+          "url": "https://www.nippon.com/en/news/yjj2026071000499/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-us-demands-iran-statement-0711",
+          "title": "米、イランに攻撃停止・全通航路開放の公式声明を要求",
+          "body": "米当局者は7月10日、イランに対しホルムズ海峡の全通航路が開放されており船舶への攻撃をやめる旨を公式に表明するよう要求していると明らかにした。通航料の徴収も認めない方針。イラン側は非公式に、今回の攻撃は「制度の一部が暴走した結果」であり対話継続を望んでいると伝えたという。トランプ大統領は停戦は「終わった」との立場を維持しつつ、対話継続には合意したとSNSで表明した。",
+          "sourceLabel": "Reuters / AP",
+          "date": "2026年7月10日（現地）/ 2026年7月10日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.al-monitor.com/originals/2026/07/us-insists-iran-commit-stopping-attacks-hormuz-strait-say-us-officials",
+          "isLatest": false
+        },
+        {
+          "id": "latest-araghchi-oman-talks-0711",
+          "title": "アラグチー外相、本日オマーンでホルムズ海峡管理を協議",
+          "body": "イランのアラグチー外相は7月11日、オマーンを訪問しブーサイーディー外相とホルムズ海峡の今後の管理・海事サービスについて協議する。トルコのフィダン外相は「今週末にも解決に至る可能性がある」と楽観的な見方を示した一方、イランの国連大使イラワニ氏は海峡の開放・機雷除去を含む運用は「専らイランに属する」と述べ、対立姿勢を崩していない。",
+          "sourceLabel": "IRNA / Al Jazeera",
+          "date": "2026年7月11日（現地）/ 2026年7月11日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/7/10/iran-war-live-fresh-attacks-on-iran-as-us-says-talks-still-on",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月10日 更新分（アーカイブ）",
       "items": [

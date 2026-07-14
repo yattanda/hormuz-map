@@ -1,7 +1,17 @@
 {
-  "updated": "2026年7月14日 08:48 日本時間JST",
+  "updated": "2026年7月14日 16:16 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-japan-tankers-all-transited-0714",
+      "title": "日本関係の原油タンカー、全てホルムズ海峡を通過——残る4隻は非タンカー船",
+      "body": "関係者への取材で14日、日本関係船舶のうち原油タンカーは全てホルムズ海峡を通過し、ペルシャ湾外へ退避したことが判明した。船舶位置情報の追跡データによると、商船三井系のタンカーなどが14日までに通過したとみられ、日本へ向かっている船もあるとみられる。現在ペルシャ湾内に残る日本関係船舶は原油タンカー以外の4隻で、金子国土交通相が10日の会見で発表した隻数からの変化はない。トランプ大統領がホルムズ海峡通航貨物の20%相当を安全確保の対価として徴収する方針を表明するなど、情勢の混乱は続いている。",
+      "sourceLabel": "共同通信 / 日本海新聞",
+      "date": "2026年7月14日 JST",
+      "label": "🇯🇵 邦人・船舶",
+      "url": "https://news.yahoo.co.jp/articles/b43aa6b7fa6a8027bec7ecb1fb1bfed60e62beb4",
+      "isLatest": true
+    },
     {
       "id": "latest-trump-guardian-20pct-toll-0713",
       "title": "トランプ大統領、対イラン海上封鎖の再開と「ホルムズ海峡の守護者」を宣言——全貨物の20%通航料を表明",
@@ -10,7 +20,7 @@
       "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
       "label": "💰 経済・封鎖",
       "url": "https://www.cnbc.com/2026/07/13/trump-iran-hormuz-strait-charge-reimburse.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-araghchi-response-imo-oppose-0713",
@@ -50,16 +60,6 @@
       "date": "2026年7月12日 JST",
       "label": "🕊️ 外交",
       "url": "https://global-scm.com/blog/?p=7870",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-surge-4pct-0713",
-      "title": "原油急反発、ブレント一時79ドル台・WTI74ドル台——週明けに4%高",
-      "body": "イランによるホルムズ海峡の再封鎖宣言・5カ国への報復攻撃などで供給懸念が高まり、日本時間13日早朝の取引で原油の先物価格が反発した。国際指標である北海ブレント先物の期近9月物は一時1バレル79ドル台と、前週末比4%上昇。同じく国際指標であるWTI先物も同74ドル台と、4%高を付けた。イランの革命防衛隊は海峡を通る商船に攻撃し、海峡の通航を認めないと宣言している。",
-      "sourceLabel": "日本経済新聞",
-      "date": "2026年7月13日 JST",
-      "label": "🛢️ 市場",
-      "url": "https://www.nikkei.com/markets/stocks/",
       "isLatest": false
     }
   ],
@@ -838,6 +838,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月13日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-oil-surge-4pct-0713",
+          "title": "原油急反発、ブレント一時79ドル台・WTI74ドル台——週明けに4%高",
+          "body": "イランによるホルムズ海峡の再封鎖宣言・5カ国への報復攻撃などで供給懸念が高まり、日本時間13日早朝の取引で原油の先物価格が反発した。国際指標である北海ブレント先物の期近9月物は一時1バレル79ドル台と、前週末比4%上昇。同じく国際指標であるWTI先物も同74ドル台と、4%高を付けた。イランの革命防衛隊は海峡を通る商船に攻撃し、海峡の通航を認めないと宣言している。",
+          "sourceLabel": "日本経済新聞",
+          "date": "2026年7月13日 JST",
+          "label": "🛢️ 市場",
+          "url": "https://www.nikkei.com/markets/stocks/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月12日 更新分（アーカイブ）",
       "items": [

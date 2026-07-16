@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月14日 16:16 日本時間JST",
+  "updated": "2026年7月16日 10:52 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-blockade-tanker-disabled-0715",
+      "title": "米、新封鎖下で初めてカーグ島向けタンカーを無力化——CENTCOMは5夜連続で対イラン空爆",
+      "body": "対イラン海上封鎖は米東部時間7/14午後4時（7/14 20:00 GMT）に正式発効し、CENTCOMは発効から17時間で無許可通航を試みた商船2隻を進路変更させ、イラン最大の原油輸出拠点カーグ島へ向かおうとしていた無人（乗員退避済み）の石油タンカー1隻を無力化したと発表した。新封鎖下での無力化措置は初めて。CENTCOMは7/15朝にはホルムズ海峡西側入口付近のグレーター・タンブ島で沿岸防衛システム・巡航ミサイル拠点を90分間攻撃し、対イラン攻撃は5夜連続となった。IRGC海軍幹部は「海峡閉鎖の方針を維持し、侵略者に最も過酷な打撃を加える」とX投稿で表明した。",
+      "sourceLabel": "CENTCOM / CNN / Marine Log",
+      "date": "2026年7月15日（現地）/ 2026年7月15日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.cnn.com/2026/07/15/world/live-news/iran-war-trump",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-toll-reversal-0714",
+      "title": "トランプ大統領、20%通航料を撤回——ガルフ諸国との貿易投資取引に転換",
+      "body": "トランプ大統領は表明からわずか1日で、ホルムズ海峡通過貨物への20%通航料案を撤回し「ガルフ諸国が米国に対して行う貿易・投資取引」に置き換えると発表した。「投資は莫大なものになるが、彼らにとっても極めて良い話だ」とし、具体的な投資内容には言及しなかった。同氏は「石油はかつてないほど流れている」と成果を強調し、ヘグセス国防長官・ケイン統合参謀本部議長・CENTCOMクーパー司令官の功績を称えた。対イラン海上封鎖自体は継続する方針に変わりはない。",
+      "sourceLabel": "CNBC / Foreign Policy",
+      "date": "2026年7月14日（現地）/ 2026年7月14日 JST",
+      "label": "💰 経済・封鎖",
+      "url": "https://www.cnbc.com/2026/07/15/cnbc-daily-open-trump-hormuz-fees-us-stocks-tech-fed.html",
+      "isLatest": false
+    },
+    {
+      "id": "latest-japan-business-hormuz-offlimits-0715",
+      "title": "日本貿易会・石油連盟トップ「ホルムズ海峡は当面使えない」——日本経済界が長期化を前提とした見方を表明",
+      "body": "日本貿易会の岡藤正広会長（伊藤忠商事会長）は7/15の定例会見で、中東情勢に関して「ホルムズ海峡はしばらく使えない」と述べ、中長期的な視点でのサプライチェーン再構築の必要性を訴えた。石油連盟の木藤俊一会長（出光興産会長）も同日の定例会見で、海峡経由の原油調達再開について「現時点で当てにできない、当てにしない」との認識を示した。両会長とも、米イラン戦争が終結しない限り根本的な解決には至らないとの見方を共有している。",
+      "sourceLabel": "日本経済新聞",
+      "date": "2026年7月15日 JST",
+      "label": "🇯🇵 邦人・船舶",
+      "url": "https://www.nikkei.com/article/DGXZQOUC14B4Z0U6A710C2000000/",
+      "isLatest": false
+    },
     {
       "id": "latest-japan-tankers-all-transited-0714",
       "title": "日本関係の原油タンカー、全てホルムズ海峡を通過——残る4隻は非タンカー船",
@@ -10,7 +40,7 @@
       "date": "2026年7月14日 JST",
       "label": "🇯🇵 邦人・船舶",
       "url": "https://news.yahoo.co.jp/articles/b43aa6b7fa6a8027bec7ecb1fb1bfed60e62beb4",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-guardian-20pct-toll-0713",
@@ -31,39 +61,24 @@
       "label": "🗣️ 外交",
       "url": "https://www.newsweekjapan.jp/articles/-/328268",
       "isLatest": false
-    },
-    {
-      "id": "latest-oil-surge-83dollar-0713",
-      "title": "原油急伸、ブレント一時83ドル台——封鎖再開・通航料表明を受け週明けに急騰",
-      "body": "原油先物はトランプ大統領による対イラン海上封鎖再開・20%通航料表明を受けて週明けの取引で急伸した。ブレント先物は7/13終値で前日比3.74%高の78.85ドルを付けた後、同日夜の取引で一時83ドル台まで上昇。米国内のレギュラーガソリン平均価格は1ガロン3.87ドルと、1週間前から8セント上昇した。データ分析企業Kplerは、ホルムズ海峡の通航実績が前週比で半分以下に減少したと分析している。",
-      "sourceLabel": "Trading Economics / KPBS",
-      "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
-      "label": "🛢️ 市場動向",
-      "url": "https://www.kpbs.org/news/international/2026/07/13/the-u-s-strikes-iran-after-trump-announces-a-renewed-blockade-and-tolls-in-hormuz",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-attacks-5states-0712",
-      "title": "イラン、米の3度目空爆にオマーン・カタール・クウェート・バーレーン・ヨルダンを報復攻撃",
-      "body": "CENTCOMが今週3度目・約140カ所への対イラン空爆を実施したのに続き、イランはオマーン（ドゥクム）、カタール（アルウデイド空軍基地）、クウェート、バーレーン、ヨルダンの米軍関連拠点にドローン・弾道ミサイルで報復攻撃を実施した。カタールは迎撃したと発表したが、破片により子供を含む3名が負傷。イラン国会議長ガリバフ氏はMOU第5条（ホルムズ海峡再開）の条文画像を添え「約束を守るか代償を払うかだ」「一方的な合意の時代は終わった」とX投稿し、対米強硬姿勢を鮮明にした。開戦以来、最も広範囲に及ぶ軍事応酬となった。",
-      "sourceLabel": "NPR / Washington Post",
-      "date": "2026年7月12日（現地）/ 2026年7月12日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.npr.org/2026/07/11/g-s1-133212/us-iran-vessel-attack-strait-hormuz-gulf",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oman-summons-iran-ambassador-0712",
-      "title": "オマーン、ドゥクム・ムサンダム攻撃を受けイラン大使を召喚——「無責任な行為」と抗議",
-      "body": "オマーン外務省は7月12日、ムサンダム県とアルウスタ県（ドゥクム周辺）の施設を狙ったイランのドローン攻撃を受け、駐オマーン・イラン大使を召喚し正式な抗議文を手交した。会談でオマーン外務次官はイランの「無責任な行為」への不満を表明したと発表されている。ムサンダム県はホルムズ海峡のオマーン側沿岸を構成し、アルウスタ県にはドゥクム周辺地域が含まれる。前日にはアラグチー外相がオマーンを訪問しブーサイーディー外相とホルムズ海峡の安全通航の枠組みを協議したばかりで、外交チャンネル自体は維持されているものの、実効的な安全通航合意には至っていない。在オマーン米国大使館はムサンダム県への退避勧告を発出した。",
-      "sourceLabel": "コンサルタントの独り言（global-scm.com）",
-      "date": "2026年7月12日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://global-scm.com/blog/?p=7870",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-us-attacks-irgc-strikes-live-0715",
+      "titleJa": "【Al Jazeera】米、対イラン攻撃継続——IRGCは湾岸の米軍拠点への攻撃を主張",
+      "titleEn": "US attacks Iran as IRGC claims strikes on US military sites in Gulf",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/7/15/us-attacks-iran-as-irgc-claims-strikes-on-us-military-sites-in-gulf",
+      "date": "2026年7月15日（現地）/ 2026年7月15日 JST",
+      "isLatest": true
+    },
     {
       "id": "osint-trump-guardian-toll-live-0713",
       "titleJa": "【Al Jazeera】トランプ大統領、対イラン封鎖再開と「ホルムズ海峡の守護者」宣言を受け米が新たな空爆を実施",
@@ -77,7 +92,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/13/iran-war-live-us-bombs-iranian-cities-again-as-hormuz-standoff-intensifies",
       "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-iran-attacks-5states-live-0712",
@@ -838,6 +853,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月14日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-oil-surge-83dollar-0713",
+          "title": "原油急伸、ブレント一時83ドル台——封鎖再開・通航料表明を受け週明けに急騰",
+          "body": "原油先物はトランプ大統領による対イラン海上封鎖再開・20%通航料表明を受けて週明けの取引で急伸した。ブレント先物は7/13終値で前日比3.74%高の78.85ドルを付けた後、同日夜の取引で一時83ドル台まで上昇。米国内のレギュラーガソリン平均価格は1ガロン3.87ドルと、1週間前から8セント上昇した。データ分析企業Kplerは、ホルムズ海峡の通航実績が前週比で半分以下に減少したと分析している。",
+          "sourceLabel": "Trading Economics / KPBS",
+          "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
+          "label": "🛢️ 市場動向",
+          "url": "https://www.kpbs.org/news/international/2026/07/13/the-u-s-strikes-iran-after-trump-announces-a-renewed-blockade-and-tolls-in-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-attacks-5states-0712",
+          "title": "イラン、米の3度目空爆にオマーン・カタール・クウェート・バーレーン・ヨルダンを報復攻撃",
+          "body": "CENTCOMが今週3度目・約140カ所への対イラン空爆を実施したのに続き、イランはオマーン（ドゥクム）、カタール（アルウデイド空軍基地）、クウェート、バーレーン、ヨルダンの米軍関連拠点にドローン・弾道ミサイルで報復攻撃を実施した。カタールは迎撃したと発表したが、破片により子供を含む3名が負傷。イラン国会議長ガリバフ氏はMOU第5条（ホルムズ海峡再開）の条文画像を添え「約束を守るか代償を払うかだ」「一方的な合意の時代は終わった」とX投稿し、対米強硬姿勢を鮮明にした。開戦以来、最も広範囲に及ぶ軍事応酬となった。",
+          "sourceLabel": "NPR / Washington Post",
+          "date": "2026年7月12日（現地）/ 2026年7月12日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.npr.org/2026/07/11/g-s1-133212/us-iran-vessel-attack-strait-hormuz-gulf",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oman-summons-iran-ambassador-0712",
+          "title": "オマーン、ドゥクム・ムサンダム攻撃を受けイラン大使を召喚——「無責任な行為」と抗議",
+          "body": "オマーン外務省は7月12日、ムサンダム県とアルウスタ県（ドゥクム周辺）の施設を狙ったイランのドローン攻撃を受け、駐オマーン・イラン大使を召喚し正式な抗議文を手交した。会談でオマーン外務次官はイランの「無責任な行為」への不満を表明したと発表されている。ムサンダム県はホルムズ海峡のオマーン側沿岸を構成し、アルウスタ県にはドゥクム周辺地域が含まれる。前日にはアラグチー外相がオマーンを訪問しブーサイーディー外相とホルムズ海峡の安全通航の枠組みを協議したばかりで、外交チャンネル自体は維持されているものの、実効的な安全通航合意には至っていない。在オマーン米国大使館はムサンダム県への退避勧告を発出した。",
+          "sourceLabel": "コンサルタントの独り言（global-scm.com）",
+          "date": "2026年7月12日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://global-scm.com/blog/?p=7870",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月13日 更新分（アーカイブ）",
       "items": [

@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月16日 10:52 日本時間JST",
+  "updated": "2026年7月19日 10:17 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-mou-crisis-stage-0719",
+      "title": "イラン外務省「米イラン停戦覚書は危機段階に入った」——トランプ大統領も事実上の破棄を示唆",
+      "body": "イラン外務省報道官エスマイル・バゲイー氏は会見で、米イラン間のMOU（覚書）が「危機段階に入った」と発言。イランが履行していない点があるとすれば米側の義務違反が直接の原因だと主張した。週末のオマーンでの協議はホルムズ海峡の安全通航に限定した内容だったが合意に至らず、「米国のオマーンへの公然・非公然の圧力」が原因だと説明した。トランプ大統領も「（イランとの合意を）もう終わったと思っている」と述べ、事実上MOUの形骸化を認めた形となっている。",
+      "sourceLabel": "ABC News",
+      "date": "2026年7月13日〜18日（現地）/ 2026年7月18日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://abcnews.com/International/live-updates/iran-live-updates-kuwait-reports-attacks-after-latest/?id=134704698",
+      "isLatest": true
+    },
+    {
+      "id": "latest-jordan-us-troops-killed-0718",
+      "title": "ヨルダンで米兵2名戦死・1名不明——3月以来初の米軍戦闘死者",
+      "body": "米中央軍（CENTCOM）は、7月17日にヨルダンのムワッファク・サルティ空軍基地でイランの弾道ミサイル・ドローン攻撃に対応中、米兵2名が交戦中に死亡したと発表した。1名が現在も行方不明となっているほか、4名がヨルダン国内の病院に搬送されたが既に退院している。米軍の戦闘死者は今年3月以来初めてで、CENTCOMは戦死者の氏名を近親者への通知から24時間経過後に公表するとしている。",
+      "sourceLabel": "CNN / Bloomberg",
+      "date": "2026年7月17日（現地）/ 2026年7月18日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.cnn.com/2026/07/18/politics/iran-war-us-service-members-killed-jordan",
+      "isLatest": false
+    },
+    {
+      "id": "latest-kuwait-oil-facility-attack-0718",
+      "title": "クウェート石油公社施設が「甚大な物的損害」——イラン、5カ国へ同時報復攻撃",
+      "body": "クウェート石油公社は、石油部門の重要施設がイランの度重なる攻撃を受け「甚大な物的損害」と負傷者が発生したと発表した。同日、イランはヨルダン・バーレーン・カタール・イラク（クルド人自治区）へも攻撃を実施。カタール外務省は「主権・領土保全への重大な違反、国際法違反」だとして最も強い言葉で非難し、ヨルダン軍は7/19未明にもイランのミサイル10発を迎撃したと発表した。",
+      "sourceLabel": "Fox News / Al Jazeera",
+      "date": "2026年7月18日（現地）/ 2026年7月18日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026",
+      "isLatest": false
+    },
     {
       "id": "latest-blockade-tanker-disabled-0715",
       "title": "米、新封鎖下で初めてカーグ島向けタンカーを無力化——CENTCOMは5夜連続で対イラン空爆",
@@ -10,7 +40,7 @@
       "date": "2026年7月15日（現地）/ 2026年7月15日 JST",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.cnn.com/2026/07/15/world/live-news/iran-war-trump",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-toll-reversal-0714",
@@ -41,29 +71,24 @@
       "label": "🇯🇵 邦人・船舶",
       "url": "https://news.yahoo.co.jp/articles/b43aa6b7fa6a8027bec7ecb1fb1bfed60e62beb4",
       "isLatest": false
-    },
-    {
-      "id": "latest-trump-guardian-20pct-toll-0713",
-      "title": "トランプ大統領、対イラン海上封鎖の再開と「ホルムズ海峡の守護者」を宣言——全貨物の20%通航料を表明",
-      "body": "トランプ大統領はTruth Social投稿とFox Newsのインタビューで、6月に解除した対イラン海上封鎖を再開し、米国が「ホルムズ海峡の守護者」となって同海峡を通過する全貨物の20%相当を安全確保の対価として徴収する方針を表明した。イラン以外の国は海峡を公正かつ自由に利用できるとしつつ、封鎖はイランの船舶・顧客の出入りのみを止めるものだと説明。CENTCOMは封鎖が米東部時間7/14午後4時（7/14 20:00 GMT）に発効すると発表した。米国はこれまで海峡通航への通航料導入に一貫して反対してきた立場から大きく転換した。",
-      "sourceLabel": "CNBC / Al Jazeera",
-      "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
-      "label": "💰 経済・封鎖",
-      "url": "https://www.cnbc.com/2026/07/13/trump-iran-hormuz-strait-charge-reimburse.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-araghchi-response-imo-oppose-0713",
-      "title": "アラグチー外相「イランこそ永遠の守護者」と反発——IMOは強制通航料に断固反対",
-      "body": "イランのアラグチー外相はX投稿で、安全な航行への対価支払いという発想自体は正しいと認めつつ「イランこそが海峡の守護者であり、これからも永遠にそうである」と反論し、「20%は明らかに高すぎる。我々は公正にやる」と税率を巡る交渉の余地を示唆した。国連の国際海事機関（IMO）は、国際航行に用いられる海峡での強制的な通航料導入に法的根拠はないとして断固反対する立場を改めて表明。イラン軍ハタム・アル・アンビヤ司令部も米国による海峡管理への干渉は一切許さないと強調した。",
-      "sourceLabel": "NPR/KPBS / ニューズウィーク日本版",
-      "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
-      "label": "🗣️ 外交",
-      "url": "https://www.newsweekjapan.jp/articles/-/328268",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-jordan-strikes-us-troops-live-0718",
+      "titleJa": "【Al Jazeera】ヨルダンで米兵2名死亡・1名不明——米、対イラン攻撃7夜目に突入",
+      "titleEn": "Two US service members killed in Jordan and another missing",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/18/iran-war-live-us-and-iran-exchange-attacks-for-7th-consecutive-night",
+      "date": "2026年7月18日（現地）/ 2026年7月18日 JST",
+      "isLatest": true
+    },
     {
       "id": "osint-us-attacks-irgc-strikes-live-0715",
       "titleJa": "【Al Jazeera】米、対イラン攻撃継続——IRGCは湾岸の米軍拠点への攻撃を主張",
@@ -77,7 +102,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/7/15/us-attacks-iran-as-irgc-claims-strikes-on-us-military-sites-in-gulf",
       "date": "2026年7月15日（現地）/ 2026年7月15日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-trump-guardian-toll-live-0713",
@@ -853,6 +878,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月16日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-trump-guardian-20pct-toll-0713",
+          "title": "トランプ大統領、対イラン海上封鎖の再開と「ホルムズ海峡の守護者」を宣言——全貨物の20%通航料を表明",
+          "body": "トランプ大統領はTruth Social投稿とFox Newsのインタビューで、6月に解除した対イラン海上封鎖を再開し、米国が「ホルムズ海峡の守護者」となって同海峡を通過する全貨物の20%相当を安全確保の対価として徴収する方針を表明した。イラン以外の国は海峡を公正かつ自由に利用できるとしつつ、封鎖はイランの船舶・顧客の出入りのみを止めるものだと説明。CENTCOMは封鎖が米東部時間7/14午後4時（7/14 20:00 GMT）に発効すると発表した。米国はこれまで海峡通航への通航料導入に一貫して反対してきた立場から大きく転換した。",
+          "sourceLabel": "CNBC / Al Jazeera",
+          "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
+          "label": "💰 経済・封鎖",
+          "url": "https://www.cnbc.com/2026/07/13/trump-iran-hormuz-strait-charge-reimburse.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-araghchi-response-imo-oppose-0713",
+          "title": "アラグチー外相「イランこそ永遠の守護者」と反発——IMOは強制通航料に断固反対",
+          "body": "イランのアラグチー外相はX投稿で、安全な航行への対価支払いという発想自体は正しいと認めつつ「イランこそが海峡の守護者であり、これからも永遠にそうである」と反論し、「20%は明らかに高すぎる。我々は公正にやる」と税率を巡る交渉の余地を示唆した。国連の国際海事機関（IMO）は、国際航行に用いられる海峡での強制的な通航料導入に法的根拠はないとして断固反対する立場を改めて表明。イラン軍ハタム・アル・アンビヤ司令部も米国による海峡管理への干渉は一切許さないと強調した。",
+          "sourceLabel": "NPR/KPBS / ニューズウィーク日本版",
+          "date": "2026年7月13日（現地）/ 2026年7月13日 JST",
+          "label": "🗣️ 外交",
+          "url": "https://www.newsweekjapan.jp/articles/-/328268",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月14日 更新分（アーカイブ）",
       "items": [

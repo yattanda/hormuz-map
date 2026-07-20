@@ -1,11 +1,920 @@
 {
   "meta": {
     "generated": "2026-07-20",
-    "rangeStart": "2026-06-20",
+    "rangeStart": "2026-04-08",
     "rangeEnd": "2026-07-19",
-    "note": "直近30日分の初期バックフィル。以前の日付は今後段階的に追加予定。速報を出していない日はスキップ。"
+    "note": "全期間バックフィル完了（4/8開戦初期〜現在）。速報を出していない日はスキップ。"
   },
   "entries": [
+    {
+      "date": "2026-04-08",
+      "dateLabel": "2026/04/08",
+      "blockadeDay": null,
+      "summary": "停戦合意反映・WTI急落（$92台）を更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-09",
+      "dateLabel": "2026/04/09",
+      "blockadeDay": null,
+      "summary": "レバノン攻撃・ホルムズ限定通航強化を反映",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-10",
+      "dateLabel": "2026/04/10 ",
+      "blockadeDay": null,
+      "summary": "情勢カード・速報ブロック・WTI価格を最新情報に更新 ／ カウントダウン期限を4/11（土）14:00 JSTに変更",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-11",
+      "dateLabel": "2026/04/11",
+      "blockadeDay": null,
+      "summary": "米イラン協議開始を反映・WTI $96台に更新・各カード更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-12",
+      "dateLabel": "2026/04/12",
+      "blockadeDay": null,
+      "summary": "サウジ東西PL全面復旧（700万BPD）反映・米イランイスラマバード協議決裂を更新・トランプ Truth Social 封鎖宣言を速報追加",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-13",
+      "dateLabel": "2026/04/13",
+      "blockadeDay": null,
+      "summary": "【重大更新】CENTCOM封鎖発動（10:00 AM ET）反映・全ルート現況サマリー更新・4シナリオ体制に改訂・速報インシデントをトグル化・ティッカー・ヘッダー日付を更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-14",
+      "dateLabel": "2026/04/14",
+      "blockadeDay": null,
+      "summary": "【重大更新】ホルムズ軍事封鎖正式実施・トランプ「撃沈」宣言・中国タンカー封鎖突破・Brent $98.46急落・シナリオ確率更新・速報インシデント全更新・次の注目日更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-15",
+      "dateLabel": "2026/04/15",
+      "blockadeDay": null,
+      "summary": "【重大更新】Trump「Iran war終わり間近」・封鎖24h実績（発砲ゼロ）・WTI $91.49急落・Vance Grand Bargain戦略・Lebanon-Israel直接交渉・Saudi Bab al-Mandeb警告・France 4/18会議・シナリオ確率大幅更新（A:25%→60〜70%）・Critical Window 4/17設定",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-16",
+      "dateLabel": "2026/04/16",
+      "blockadeDay": 3,
+      "summary": "【重大更新】Hegseth「bombing再開」直接脅迫・封鎖3日目13隻進路転換・封鎖対象全域拡大・Pakistan Field Marshal Munirテヘラン到着・Netanyahu-Aoun初電話予定・Iran Petrochemical全停止・WTI $92.46反発・シナリオ確率更新・次の注目日更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-18",
+      "dateLabel": "2026/04/18 07:49〜17:10",
+      "blockadeDay": null,
+      "summary": "[07:49時点] 【重大更新】ホルムズ「完全再開」イラン外相宣言・原油▼10%急落・Dow +1,020pt急騰・Israel-Lebanon停戦発効・米軍封鎖「取引完了まで継続」・シナリオA 80%↑↑・次の注目日更新・全セクション4/18版に更新 ／ [17:10時点] 【重大更新】Trump vs イラン「相反する主張」激突・4/22期限爆撃警告・ホルムズ実通過極めて少数・IRGC限定ルートに修正・シナリオA55%↓/B30%↑/C15%↑・シナリオD削除・Israel「黄色い線」設定・Munirテヘラン訪問終了",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-19",
+      "dateLabel": "2026/04/19 0:30",
+      "blockadeDay": null,
+      "summary": "【最重要更新】イランがホルムズ「厳密な管理・統制下」に戻したと宣言・IRGC銃艇タンカー銃撃・最高指導者軍事警告・副外相「日程設定せず」・シナリオA30%↓↓/B45%↑/C25%↑",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-20",
+      "dateLabel": "2026/04/20 7:31",
+      "blockadeDay": null,
+      "summary": "【重大更新】米海軍USS SpruanceがイランTouska号拿捕・報復宣言・4/19タンカー通過ゼロ・インド大使召喚・IRNA「第2ラウンド日程未定」・シナリオA20%↓↓/B50%↑/C30%↑↑・全更新対象セクション4/20版に更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-22",
+      "dateLabel": "2026/04/22 21:38",
+      "blockadeDay": null,
+      "summary": "【最重要更新】IRGCがホルムズでコンテナ船を銃撃（同日2隻目も）・Trump停戦を無期限延長・封鎖継続・Vance訪問中止・第2回会談頓挫・英仏30カ国ロンドン会合・IEA「史上最大エネルギー危機」・Brent $98.48（+3%）・ニュース4件・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-24",
+      "dateLabel": "2026/04/24 09:25",
+      "blockadeDay": null,
+      "summary": "【重大更新】IRGC・MSC-Francesca/Epaminondas拿捕（4/22）・Trump「機雷設置船射殺」命令（4/23）・イスラエル-レバノン停戦3週間延長（4/23）・イラン通行料初回入金・第2回会談日程未定・WTI $96〜105台・ニュース4件・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-25",
+      "dateLabel": "2026/04/25 07:00",
+      "blockadeDay": null,
+      "summary": "【重大更新】Witkoff・Kushner本日イスラマバード入り（4/25）・イラン「会談予定なし」否定・Trump「機雷射殺」命令（4/24）・ペンタゴン機雷除去に最大6ヵ月・空母3隻体制公開・イスラエル-レバノン停戦3週間延長（ホワイトハウス）・WTI $105前後・海峡通過14〜16隻/日・シナリオC確率↑↑・ニュース4件・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-26",
+      "dateLabel": "2026/04/26 07:45",
+      "blockadeDay": null,
+      "summary": "【重大更新】Trump・Witkoff/Kushnerパキスタン派遣キャンセル（4/25）・アラグチ外相イスラマバード→オマン→ロシアツアー・日曜夜再訪予定・Trump「10分後に改善提案届いた」・電話外交へ移行・ペンタゴン機密通達「機雷除去6ヶ月」・米封鎖累計37隻・WTI $105超・ドイツ掃海艦Fulda派遣・ニュース4件・OSINT3件更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-27",
+      "dateLabel": "2026/04/27 09:05",
+      "blockadeDay": null,
+      "summary": "【定期更新】アラグチ外相本日プーチン会談（IRNA確認）・イランが「レッドライン」書面を米に伝達・Trumpがパキスタン派遣キャンセル→電話外交移行・ホルムズ日曜ほぼ停止（数隻のみ）・IRGC「断固たる戦略」声明・Chevron CEO「20%エネルギー喪失」・news_data.json latest 4件・osint 4件更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-04-28",
+      "dateLabel": "2026/04/28 09:48",
+      "blockadeDay": null,
+      "summary": "【重大更新】イランが「3フェーズ提案」提示（Phase1停戦→Phase2ホルムズ→Phase3核・パキスタン経由・4/27）・アラグチ外相プーチン会談（4/27実施）・Merz「イランは米国を侮辱」・EU制裁解除時期尚早・IMO29件攻撃確認・10名死亡（4/25）・Brent $108/bbl・5/1封鎖法的期限まで3日・ニュース4件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "ルビオ、イランの「核先送り・ホルムズ先行再開」提案を完全否定——「国際水域をイランが管理するシステムは容認できない」",
+          "url": "https://www.cnbc.com/2026/04/28/oil-prices-us-iran-hormuz-negotiations-wti-brent-crude.html",
+          "sourceLabel": "CNBC・NBC News・TIME（現地時間4/28・JST 4/28）"
+        },
+        {
+          "title": "アラグチー外相がプーチンと会談——「イランは勇敢に戦っている」ロシアの連帯を再確認",
+          "url": "https://www.aljazeera.com/news/2026/4/27/iran-foreign-minister-in-russia-for-putin-talks",
+          "sourceLabel": "Al Jazeera・CNN（現地時間4/27・JST 4/28）"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "dateLabel": "2026/04/29 06:59",
+      "blockadeDay": null,
+      "summary": "【MAP更新】出光丸（出光タンカー）がホルムズ海峡を通過（4/28夜）。国交省発表42隻→41隻に更新。タンカーオーバーレイを船種別アイコン表示に刷新（🛢石油系23隻・🧊LNG5隻・🚢その他13隻）、通過済み表示を削除。出典：ロイター・国交省金子大臣会見（4/28） ／ [06:59時点] 【重大更新】ルビオ3フェーズ提案拒否（核棚上げ不可）・出光丸ホルムズ通過（戦争後初・200万bbl）・イラン軍「依然戦争状態」・WTI $98超・Brent $108継続・マラッカ波及懸念浮上・5/1法的期限まで2日・ニュース4件更新・OSINT更新（Al Jazeera）",
+      "relatedNews": [
+        {
+          "title": "Kpler：イラン石油備蓄「残り12〜22日分」——CENTCOM 39隻を迂回・拿捕・米封鎖の打撃本格化へ",
+          "url": "https://www.nbcnews.com/world/iran/trumpl-iran-proposal-end-war-reopen-hormuz-nuclear-deal-oil-storage-rcna342441",
+          "sourceLabel": "NBC News・Kpler分析（現地時間4/28・JST 4/29）"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "dateLabel": "2026/04/30 09:51",
+      "blockadeDay": 63,
+      "summary": "【重大更新】UAE・OPEC離脱本日（5/1）発効・Brent $120突破（2022年6月以来）・ルビオがイラン「核先送り」提案を正式拒否・アラグチー外相プーチン会談でロシア支持確認・トランプ「イランは崩壊状態」投稿・外交完全膠着・機雷除去6ヶ月・封鎖63日目・ニュース4件更新・OSINT更新（Al Jazeera）",
+      "relatedNews": [
+        {
+          "title": "ブレント$120突破——Goldman Sachs「通常化は6月末以降・年末$90に上方修正」",
+          "url": "https://www.cnbc.com/2026/04/27/us-iran-peace-talks-stall-global-markets-stocks-oil-treasurys.html",
+          "sourceLabel": "CNBC・Goldman Sachs報告書（4/30）"
+        },
+        {
+          "title": "【本日発効予告】UAE、OPEC・OPEC+から正式離脱（5月1日）——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
+          "url": "https://www.aljazeera.com/news/2026/4/29/uae-quits-opec-what-that-means-for-the-gulf-energy-markets-and-beyond",
+          "sourceLabel": "Al Jazeera・EIA（2026/04/30）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "dateLabel": "2026/05/01 07:56",
+      "blockadeDay": 64,
+      "summary": "【重大更新】UAE・OPEC/OPEC+離脱本日正式発効・ルビオがイラン3段階提案（核先送り）を完全否定・Kpler「イラン石油備蓄残り12〜22日」・CENTCOM 39隻迂回拿捕・Goldman Sachs ブレント年末見通し$90に上方修正・外交完全膠着・第2回交渉日程未定・封鎖64日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "【発効】UAE、OPEC・OPEC+から正式離脱——産油能力480万BPDが制限解除へ・OPECの結束に亀裂",
+          "url": "https://www.afpbb.com/articles/-/3633352",
+          "sourceLabel": "AFPBB（現地時間5/1・JST 5/1）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "dateLabel": "2026/05/03 08:59",
+      "blockadeDay": 66,
+      "summary": "【重大更新】イランがパキスタン経由で米に新提案（ホルムズ先行・核後回し）正式送付・トランプNSC協議・新最高指導者モジュタバ「核・ミサイル放棄せず」強硬声明・OFAC制裁警告FAQ 1249 &amp; 5/1アラート・英仏・38カ国がホルムズ再開声明署名・ルビオ「核は核心課題」で外交膠着継続・封鎖66日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "日本への初のロシア産原油タンカー（サハリン2）が愛媛に到着——代替調達が本格化",
+          "url": "https://www.japantimes.co.jp/news/2026/05/03/japan/tanker-russian-oil-japan/",
+          "sourceLabel": "Japan Times"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "dateLabel": "2026/05/04 11:13",
+      "blockadeDay": 67,
+      "summary": "【重大更新】米軍「Project Freedom」本日始動（1.5万人・駆逐艦・100機超）・トランプがイランの14ポイント提案を全面拒否・米が反提案送付しイラン審査中・5/3海峡付近で貨物船攻撃（英UKMTO）・WTI 105〜111ドル高止まり・封鎖67日目・ニュース4件更新・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-07",
+      "dateLabel": "2026/05/07 09:00",
+      "blockadeDay": null,
+      "summary": "【重大更新】米・イランMOU交渉最終局面（14項目覚書・48時間以内返答期待）、Project Freedom一時停止、安保理制裁決議案提出（5/5）、ブレント$103割れ（5/6）、IRGCが安全通航保証声明を反映。全11セクション更新。出典：Axios・Bloomberg・CNBC・NPR・AP通信・CBS News",
+      "relatedNews": [
+        {
+          "title": "トランプ「プロジェクト・フリーダム」停止——「大きな進展、合意近い」停戦維持・封鎖継続",
+          "url": "https://www.npr.org/2026/05/05/nx-s1-5811770/iran-war-updates",
+          "sourceLabel": "NPR / CNBC（現地時間5/6・JST 5/7）"
+        },
+        {
+          "title": "仏CMA CGM船「サン・アントニオ」がホルムズで攻撃——乗組員負傷・船体損傷",
+          "url": "https://www.aljazeera.com/news/2026/5/6/french-container-ship-struck-in-latest-escalation-at-strait-of-hormuz",
+          "sourceLabel": "Bloomberg / Al Jazeera（現地時間5/6-7・JST 5/7-8）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "dateLabel": "2026/05/08 09:57",
+      "blockadeDay": 71,
+      "summary": "【重大更新】米が14項目MOU草案をイランに提示・本日返答期限目安 / Project Freedom停止（交渉優先） / IRGC「新手続きで安全通航保証」（詳細不明） / 仏CMA CGM船サン・アントニオ被弾（乗組員負傷） / ブレント原油$101（MOU期待で週初比13%急落後反発） / パキスタン「合意は早ければ早いほどよい」 / 封鎖71日目 / シナリオ確率更新（A30%・B38%・C20%・D12%） / ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "米駆逐艦3隻がイランの攻撃をかわしホルムズ通過——トランプ「吹き飛ばした」停戦は「継続中」と強調（5/7 JST）",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-attacks-qeshm-island-ceasefire/",
+          "sourceLabel": "CBS News・CENTCOM（2026/05/08）"
+        },
+        {
+          "title": "フジャイラ港・一部復旧も実態は不透明——衛星画像でタンカー2隻・VLCC1隻のみ確認（通常比58%激減継続）",
+          "url": "https://energynow.com/2026/03/port-of-fujairah-resumes-oil-loadings-after-attack-and-why-it-matters-globally/",
+          "sourceLabel": "EnergyNow・Windward（5/4〜5/8）"
+        },
+        {
+          "title": "サウジ・ヤンブー輸出が戦前比330%増——VLCC27隻が向航中、ただしバベルマンデブ「二重チョークポイント」リスクが浮上",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/East-West-Pipeline-Key-to-Saudi-Arabias-New-Oil-Export-Strategy.html",
+          "sourceLabel": "OilPrice・Windward・HornReview（5/8）"
+        },
+        {
+          "title": "米・イランがホルムズで交戦——3隻の米駆逐艦を攻撃・米はイラン軍事施設を報復空爆",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-08/us-iran-clash-near-hormuz-as-response-on-proposed-deal-awaited",
+          "sourceLabel": "Bloomberg（5/8）"
+        },
+        {
+          "title": "ブレント原油、MOU期待で$96.73に急落後$101台に反発——週初比13%安・ANZ「ジェットコースター相場」",
+          "url": "https://www.cnbc.com/2026/05/07/oil-prices-today-trump-iran-strait-of-hormuz-us-crude-brent-.html",
+          "sourceLabel": "CNBC（現地時間5/7-8・JST 5/8）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "dateLabel": "2026/05/09 16:14",
+      "blockadeDay": 72,
+      "summary": "【重大更新】封鎖72日目：5/8 米・イランがホルムズ内で軍事衝突（3米駆逐艦攻撃→報復空爆）、5/9 イランがUAEにミサイル・ドローン攻撃——停戦辛うじて継続。イラン MOU回答なし・交渉最終盤。ブレント$101.29・週間-6%超。全11セクション更新・ニュース4件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "イランがUAEに弾道ミサイル2発・ドローン3機——UAE防空が全弾迎撃。ブレント週間6%超下落",
+          "url": "https://www.cnbc.com/2026/05/08/oil-prices-today-wti-brent-us-iran-fire-war-hormuz-ceasefire.html",
+          "sourceLabel": "CNBC（5/9）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "dateLabel": "2026/05/10",
+      "blockadeDay": null,
+      "summary": "【ルート情報大幅更新】代替ルート情報を日本輸入シェア影響度順に再編成。ルートA：VTTI攻撃詳細更新（58%激減・衛星画像確認）。ルートB：330%急増・SUMED迂回オプション・二重チョークポイント問題追記。ルートC：メキシコ産7月初便予定を追加。西アフリカ：ダンゴテ製油所フル稼働・拡張計画（1.4百万BPD）追記。新設：折り畳み「その他の検討中ルート」（ブラジル・メキシコ・イラク-チェイハン・カナダ）。",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-11",
+      "dateLabel": "2026/05/11 18:22",
+      "blockadeDay": 74,
+      "summary": "【速報更新】イランが「ホルムズ主権認定・戦争賠償・制裁解除・核除外」の対案提出→トランプ「TOTALLY UNACCEPTABLE」即座に拒否・UAE・クウェート・カタール沖でドローン攻撃多発（5/10）・カタールLNGタンカー初通過（象徴的）・ブレント$104.50急騰・封鎖74日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "トランプ大統領がイランの和平提案を「完全に受け入れられない」と拒否——イランは「屈しない」と宣言",
+          "url": "https://www.cnbc.com/2026/05/11/iran-war-trump-negotiation-hormuz-nuclear-talks.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "国連グテーレス事務総長「ホルムズ完全開放を強く求める——アフリカ輸入の13%が依存・停戦維持と交渉継続を両者に訴え」",
+          "url": "https://news.un.org/en/story/2026/05/1167478",
+          "sourceLabel": "UN News（2026/05/11）"
+        },
+        {
+          "title": "トランプ-習近平主席 北京首脳会談（5/14-15）——ホルムズ再開・米中エネルギー取引・Iran問題が最大議題・Goldman「最も重要な二国間会合」",
+          "url": "https://oilprice.com/Energy/Energy-General/Trump-Xi-Talks-Set-to-Tackle-Iran-Oil-Lifeline-Strait-of-Hormuz-and-US-Energy.html",
+          "sourceLabel": "OilPrice.com・CNBC（2026/05/11）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "dateLabel": "2026/05/12 10:24",
+      "blockadeDay": 74,
+      "summary": "【重大更新】トランプがイラン対案「TOTALLY UNACCEPTABLE」と即時拒否・停戦「massive life support」宣言・ペンタゴン強硬派vs外交派対立・Trump-Xi北京首脳会談（5/14-15）が唯一の突破口・サウジアラムコCEO「正常化2027年以降」警告・IEA「日量1,400万バレル喪失・史上最大の供給途絶」・日本UAE追加20億バレル調達・ブレント$104.21・封鎖74日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "WTI $102・ブレント $107.77 に急騰——トランプ「イラン提案はゴミ」で停戦「瀕死」・サウジAramco CEO「正常化は2027年以降の恐れ」",
+          "url": "https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html",
+          "sourceLabel": "CNBC（2026/05/12）"
+        },
+        {
+          "title": "EIA STEO（5/12公表）「ホルムズは5月末まで実質閉鎖・Q2在庫日量850万BPD枯渇・ブレントQ2平均$106・Q4$89予測」",
+          "url": "https://www.eia.gov/outlooks/steo/",
+          "sourceLabel": "EIA Short-Term Energy Outlook（2026/05/12公表）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "dateLabel": "2026/05/13 07:59",
+      "blockadeDay": null,
+      "summary": "【重大更新】トランプ、イラン提案を「ゴミ」と再拒絶・武力再開をNSCで本格協議・WTI $102.18／ブレント $107.77（+4%超）・EIA STEO「5月下旬まで封鎖継続・5〜6月$106/b予測」・サウジAramco「正常化2027年以降の恐れ」・アラグチー外相がプーチン会談・5/14-15 北京首脳会談が直近最重要変数・封鎖第75日目・ニュース1件更新",
+      "relatedNews": [
+        {
+          "title": "IEA：ホルムズ封鎖で世界石油供給が10億バレル超の損失——日本の輸入量は-190万b/d",
+          "url": "https://www.iea.org/reports/oil-market-report-may-2026",
+          "sourceLabel": "IEA"
+        },
+        {
+          "title": "IEA：ホルムズ閉鎖継続なら10月まで世界原油供給不足——3〜4月に日量400万バレル減",
+          "url": "https://www.cnbc.com/2026/04/22/oil-price-wti-brent-iran-ceasefire-extension-clouds-outlook.html",
+          "sourceLabel": "Bloomberg / CNBC"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "dateLabel": "2026/05/14 07:47",
+      "blockadeDay": 77,
+      "summary": "【重大更新】封鎖77日目：トランプ大統領が北京入り（習近平会談5/14-15）——ホルムズ再開・イラン産油購入停止が最大議題。停戦「生命維持装置」状態でイラン逆提案拒否。ブレント$107・WTI$102、アラムコCEO「6月中旬超えで2027年正常化」警告。EIA 5月末閉鎖継続を基本シナリオに。英HMS Dragon 中東派遣。全11セクション更新・ニュース4件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "米中首脳会談（北京）でホルムズ開放に合意——習近平「軍事化・通行料に反対」・仲介意欲を表明・「イランへ軍事機器提供しない」と言質",
+          "url": "https://www.cnbc.com/2026/05/14/trump-xi-summit-beijing-takeaway-taiwan-trade-iran-war-strategic-relations-.html",
+          "sourceLabel": "CNBC・AP通信（2026/05/14）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "dateLabel": "2026/05/15 09:08",
+      "blockadeDay": null,
+      "summary": "【重大更新】米中北京首脳会談でホルムズ開放共同声明・習近平仲介意欲表明。5/14フジャイラ沖船舶拿捕・インド籍船沈没。CENTCOM累計70隻誘導。WTI $101・ブレント $105。EIA「10月まで供給不足」。日本代替ルート受け入れ開始確認。情報源: CNBC・AP通信・NBC News・NPR・EIA STEO（5/12公表）",
+      "relatedNews": [
+        {
+          "title": "中国VLCC「Yuan Hua Hu」約2か月ぶりホルムズ通過——外交調整を経た個別許可通航・「管理プロトコル」制度化の動き",
+          "url": "https://tradingeconomics.com/commodity/crude-oil",
+          "sourceLabel": "global-scm.com ホルムズ海峡危機実務リスク報告（2026/05/15）"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "dateLabel": "2026/05/16 06:54",
+      "blockadeDay": null,
+      "summary": "【定常更新（78日目）】TICKER・速報インシデント・情勢カード3枚・COUNTDOWN・シナリオ確率補足バナー・シナリオ4本・シナリオフッター・全ルート現況サマリー・30秒カラム更新。主要変更：トランプ「絶滅」警告（5/14）反映・WTI $103.5超（5/15）・交渉再膠着・IEA警告（10月まで供給不足）・Yuan Hua Hu個別通航・英仏護衛任務展開。出典：CNBC・CNN・CBS News・Trading Economics・IEA Oil Market Report（5/13）・global-scm.com（5/15）・Wikipedia 2026 Hormuz crisis（5/16確認）。",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-17",
+      "dateLabel": "2026/05/17 07:45",
+      "blockadeDay": null,
+      "summary": "【定常更新（80日目）】TICKER・速報インシデント・情勢カード3枚・COUNTDOWN・シナリオ確率補足バナー・シナリオ4本・シナリオフッター・全ルート現況サマリー・30秒カラム更新。主要変更：イラン5条件提示（5/16）・トランプ「絶滅」警告（5/14）・米中首脳会談（5/14〜15 北京）・中国船2ヶ月ぶり通過・船舶拿捕・撃沈（5/15）・WTI $105超・IEA 10月まで供給不足警告（5/13）・英国防衛任務展開開始。出典：CNN・CNBC・NBC News・PBS NewsHour・Trading Economics・IEA Oil Market Report（5/13）・Crisis Group（5/17）・Wikipedia 2026 Hormuz crisis（5/17確認）。",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-18",
+      "dateLabel": "2026/05/18 08:12",
+      "blockadeDay": null,
+      "summary": "【定常更新（80日目）】TICKER・速報インシデント・情勢カード3枚・COUNTDOWN・シナリオ確率補足バナー・シナリオ4本・シナリオフッター・全ルート現況サマリー（再確認済）・30秒カラム更新。主要変更：タスニム通信（5/18）「イランが第2回交渉に合意していない」・トランプ「22日期限」再警告（5/16）・プーチン×アラグチ会談（5/17）ロシア仲介浮上・イラン強硬派カイハン紙「全面報復を求める」論評（5/17）・英仏主導30カ国RAF会議（5/16〜17）。出典：タスニム通信・Reuters・CNBC・Wikipedia 2025–2026 Iran–US negotiations（5/18確認）・Wikipedia 2026 Strait of Hormuz crisis（5/18確認）。",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-19",
+      "dateLabel": "2026/05/19 07:46",
+      "blockadeDay": null,
+      "summary": "【定常更新（81日目）】TICKER・速報インシデント・情勢カード3枚・COUNTDOWN・シナリオ確率補足バナー・シナリオ4本・シナリオフッター・全ルート現況サマリー（再確認済）・30秒カラム更新。主要変更：UAEバラカ原発ドローン攻撃（5/18 JST）・IAEA「核施設攻撃は容認不可」警告・トランプ「時計は時を刻んでいる」最後通告（5/18 JST）・イラン修正提案再提出（5/18 JST）・PGSA（ペルシャ湾海峡局）設立・オマーンと安全通過メカニズム協議（5/19 JST）・WTI $105〜108 / Brent $102〜111（急騰後反落）。出典：CBS News（5/18 EDT）・Reuters（ABC News経由）・The National（5/17）・Trading Economics（5/18）・EIA STEO（5/12）。",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-20",
+      "dateLabel": "2026/05/20 07:40",
+      "blockadeDay": 82,
+      "summary": "【重大更新】トランプが5/19予定の大規模攻撃をGulf allies（カタール・サウジ・UAE）要請で一時延期——「2〜3日猶予・随時攻撃準備継続」｜イラン最新提案にWhite House「不十分」・アラグチー「米国信頼できない」・交渉膠着継続｜WTI $103・Brent $110付近・IEA在庫警告｜バラカ原発攻撃犯人不明調査継続｜CENTCOM 70隻迂回（更新）｜封鎖82日目・ニュース3件更新・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-21",
+      "dateLabel": "2026/05/21 08:04",
+      "blockadeDay": 83,
+      "summary": "【定常更新（83日目）＋HTML構造修正】ティッカー構造エラー（div/span閉じタグ順序バグ）修正・TICKER・速報インシデント・情勢カード3枚・COUNTDOWN・シナリオ確率補足バナー・シナリオ4本・シナリオフッター・全ルート現況サマリー（再確認済）・30秒カラム更新。主要変更：アラグチー「戦争再開なら更なる驚き」（5/20 Al Jazeera）・イラン首席交渉官「米国が攻撃準備」警告・バンス「双方多大な進展」——認識乖離鮮明・習近平-プーチン北京会談（5/20）・IEA May 2026「Q4まで赤字・在庫記録的減少」（5/13）・WTI~$103/Brent~$108乱高下継続・封鎖83日目。ニュース3件更新・osint 5/20 Al Jazeeraライブブログに更新。出典：Al Jazeera ライブブログ（5/20）/ IEA Oil Market Report May 2026 / House of Commons Library（5/19）。",
+      "relatedNews": [
+        {
+          "title": "ルビオ国務長官「和平交渉に若干の好兆候」——イラン最高指導者がウラン国外移送を拒否",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-05-21/eu-downgrades-growth-forecasts-on-iran-war-energy-shock",
+          "sourceLabel": "Bloomberg"
+        },
+        {
+          "title": "EU、イラン戦争エネルギーショックで成長見通しを下方修正——インフレ3.0%へ",
+          "url": "https://www.bnnbloomberg.ca/business/international/2026/05/21/energy-shock-from-iran-war-to-weigh-on-europes-growth-boost-inflation/",
+          "sourceLabel": "Reuters"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "dateLabel": "2026/05/22 07:43",
+      "blockadeDay": null,
+      "summary": "【定常更新】情勢更新：PGSA管制海域マップ公開、ルビオ「好兆候」発言（5/21）、IRGC26隻管制通過（5/20）、EU成長見通し下方修正、WTI $96.82、日本代替調達進捗、osint Al Jazeera 5/21ライブブログ追加",
+      "relatedNews": [
+        {
+          "title": "ルビオ国務長官「交渉にわずかな前進」——核ウラン移送でイラン最高指導者が拒否指令",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-22/us-touts-slight-progress-as-deal-with-iran-remains-in-limbo",
+          "sourceLabel": "Bloomberg"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "dateLabel": "2026/05/23 09:58",
+      "blockadeDay": null,
+      "summary": "【定常更新（85日目）】TICKER・速報インシデント・情勢カード3枚・COUNTDOWN・シナリオ確率補足バナー・シナリオ4本・シナリオフッター・全ルート現況サマリー（再確認済）・30秒カラム更新。主要変更：パキスタン軍参謀長ムニルがテヘランへ（5/23）・ルビオ「わずかな前進」（5/22 Bloomberg）・イラン最高指導者が核ウラン国外移送を拒否指令・米下院GOP戦争権限決議を土壇場で延期（5/21）・ホルムズ通行料制度化協議（イラン・オマーン）・WTI $96〜98（週間4%下落）。出典：Bloomberg・Al Jazeera・Reuters・Trading Economics・Britannica。",
+      "relatedNews": [
+        {
+          "title": "パキスタン軍参謀長ムニルがテヘラン入り——仲介外交が加速、イラン「合意にはほど遠い」",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/5/23/iran-war-live-tehran-says-diplomacy-continues-but-no-deal-yet-with-us",
+          "sourceLabel": "Al Jazeera"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "dateLabel": "2026/05/24 08:12〜19:58",
+      "blockadeDay": null,
+      "summary": "[08:12時点] 【超重大更新（86日目）】トランプ「合意はほぼ成立（largely negotiated）」Truth Social電撃発表——ホルムズ再開・MOU署名が秒読みか。ムニル陸軍参謀長がテヘランでペゼシュキアンと会談。ルビオ「本日中に発表の可能性」。イランは「核交渉は対象外・海峡はイラン管理下」と猛反論、ファルス通信「現実と乖離」。地域当局者が「土壇場の決裂リスク」を警告。WTI $96.60・ブレント $103.54（5/22終値、週間8%超下落）。月曜市場に急落シナリオ。ニュース2件更新・OSINT更新。出典：CNBC・NPR・PBS NewsHour・CNN・CBC・OPB。 ／ [19:58時点] 【定常更新（86日目）】Axios独占：MOU草案全容判明（60日停戦延長・ホルムズ無課金再開・機雷除去・制裁一時解除・核は60日棚上げ）｜共和党グラハム「核放棄なき合意不可」反発・ネタニヤフがトランプに追加攻撃要求——合意の新障壁｜MOU未署名のまま持ち越し・イランはタスニム「30日ホルムズ手続き＋60日核協議」ファルス「管理権はイランのまま」｜Al Jazeera 5/24ライブブログ更新・ニュース2件追加・OSINT更新。出典：Axios（5/24）・NPR（5/23）・Times of Israel（5/24）・Al Jazeera（5/24）。",
+      "relatedNews": [
+        {
+          "title": "イラン「枠組み合意に過ぎず・核交渉は対象外」——ファルス通信がトランプ発言を「現実と乖離」と否定",
+          "url": "https://www.npr.org/2026/05/23/g-s1-124145/trump-iran-deal-strait-of-hormuz",
+          "sourceLabel": "NPR・CNN・CBC News"
+        },
+        {
+          "title": "トランプ「合意はほぼ成立」Truth Social発表——ホルムズ再開・戦争終結の枠組みMOU",
+          "url": "https://www.cnbc.com/2026/05/23/us-iran-war-talks.html",
+          "sourceLabel": "CNBC・NPR・PBS NewsHour"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "dateLabel": "2026/05/25 06:47",
+      "blockadeDay": null,
+      "summary": "【定常更新（87日目）】トランプ「急がない・時間は我々の味方」でMOU署名タイムライン後退——Axios詳報：60日停戦・段階的再開・制裁解除・核交渉の草案全貌。イラン「1〜2条項で依然対立」・GOP猛反発（ウィッカー「惨事」・グラハム「悪夢」）・NYMEX休場（メモリアルデー）。S03速報2件追加・S07シナリオ更新済み。出典：CNBC・Axios・CBS News・NPR。",
+      "relatedNews": [
+        {
+          "title": "トランプ「急がない——時間は我々の味方」・「全条件が揃った時のみ署名」と慎重姿勢へ一転",
+          "url": "https://www.cnbc.com/2026/05/24/trump-iran-war-talks.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "Axios詳報：MOU草案の全貌——60日停戦延長・段階的ホルムズ再開・機雷除去・制裁一部解除・核交渉",
+          "url": "https://www.axios.com/2026/05/24/iran-deal-strait-hormuz-sanctions-nuclear",
+          "sourceLabel": "Axios"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "dateLabel": "2026/05/26 07:56",
+      "blockadeDay": null,
+      "summary": "【定常更新（88日目）】イラン代表団（アラグチー外相・ガリバフ議長・中央銀行総裁）カタール入り——MOU「最も機微な問題」を協議中。トランプ「Back to Battlefront」・イスラエル正常化を新条件追加。米海軍封鎖累計100隻マイルストーン。NYMEXメモリアルデー明け再開。S03速報2件追加・S04カード3枚・S06バナー・S07シナリオ4本・S09全更新。出典：Al Jazeera・CBS News・NPR。",
+      "relatedNews": [
+        {
+          "title": "米軍、停戦中にバンダルアッバース付近のイラン船舶2隻撃沈——CENTCOM「自衛攻撃」・停戦合意に亀裂",
+          "url": "https://www.npr.org/2026/05/26/nx-s1-5833793/u-s-military-strikes-iran-amid-ongoing-negotiations-to-end-war",
+          "sourceLabel": "NPR"
+        },
+        {
+          "title": "IRGCがMQ-9 Reaper撃墜・F-35にも発砲——「停戦違反への報復権を保有」と宣言",
+          "url": "https://www.cnn.com/2026/05/25/world/live-news/iran-war-us-peace-deal",
+          "sourceLabel": "CNN"
+        },
+        {
+          "title": "イラン代表団カタール入り——アラグチー外相・ガリバフ議長・中央銀行総裁が「最も機微な問題」を協議",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-peace-talks-strait-of-hormuz-control/",
+          "sourceLabel": "CBS News・NPR"
+        },
+        {
+          "title": "トランプ月曜Truth Social「超優良合意か撤退か——Back to Battlefront」・イスラエル正常化を新条件に追加",
+          "url": "https://www.npr.org/2026/05/25/nx-s1-5833690/u-s-iran-negotiations-updates",
+          "sourceLabel": "NPR"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "dateLabel": "2026/05/27 09:17",
+      "blockadeDay": null,
+      "summary": "【重大更新（89日目）】米CENTCOM「自衛攻撃」——バンダルアッバース付近のイラン船舶2隻撃沈・ミサイル発射台攻撃（5/25現地/5/26 JST）。IRGCがMQ-9 Reaperを撃墜・F-35とRQ-4にも発砲・「停戦違反への報復権を保有」宣言。イラン外務省「米国の矛盾した政策決定が交渉を困難にしている」——カタール協議は継続中。ブレント $97〜98/bbl。S02 TICKER・S03速報2件追加・S04カード3枚・S05フェーズラベル・S06バナー・S07シナリオ4本・S08フッター・S08.5ルートサマリー・S09全更新・S10 news_data.json（latest 2件追加・osint更新）。出典：NPR・CNN・Al Jazeera・Times of Israel・Soufan Center（5/26）。",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-05-28",
+      "dateLabel": "2026/05/28 10:59",
+      "blockadeDay": null,
+      "summary": "【重大更新（90日目・3ヶ月節目）】米軍がホルムズ付近でIRGCドローン4機撃墜（5/27夜GMT）——停戦は継続。トランプ「合意か仕事を完遂する」キャビネット発言（5/27）。ルビオ「数日内・単語1つの対立」・イラン「深い不信感」・IRGC批准なき文民交渉の構造的限界が表面化。イラン国営テレビMOU草案公開→ホワイトハウス「完全な捏造」否定。IRGC「南部を墓場に」・モジュタバ・ハメネイ「各国は米基地の盾になるな」。ブレント$95〜96/bbl（週次2連続下落）。🇯🇵 日本籍タンカー戦争後初ホルムズ通過・日本着確認（CNN 5/26）。イランのインターネット87日ぶり部分的復旧。S02 TICKER・S03速報2件追加・S04カード3枚・S05フェーズラベル・S06バナー・S07シナリオ4本・S08フッター・S08.5ルートサマリー・S09全更新・S10 news_data.json（latest 2件追加・osint更新）。出典：CNN・NPR・Al Jazeera（5/27〜28）。",
+      "relatedNews": [
+        {
+          "title": "米軍がホルムズ付近でIRGCドローン4機撃墜——トランプ「合意か仕事を完遂する」",
+          "url": "https://www.cnn.com/2026/05/27/world/live-news/iran-war-us-news",
+          "sourceLabel": "CNN・ABC News"
+        },
+        {
+          "title": "ルビオ「合意まで数日・単語1つの対立」——イラン「深い不信感」・IRGC批准なき構造的限界",
+          "url": "https://www.npr.org/2026/05/26/nx-s1-5834840/iran-lebanon-updates",
+          "sourceLabel": "NPR・Al Jazeera"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "dateLabel": "2026/05/29 09:42",
+      "blockadeDay": null,
+      "summary": "米・イランが60日MOU草案で暫定合意（トランプ最終署名待ち）・機雷除去30日・無制限通航・核交渉開始・IRGC missile launch・MQ-9撃墜・EU制裁拡大・ニュース2件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "米・イランが60日MOU草案で暫定合意——ホルムズ機雷除去30日・「無制限」通航・核交渉開始・トランプ最終署名待ち",
+          "url": "https://www.axios.com/2026/05/28/iran-peace-deal-trump-approval",
+          "sourceLabel": "Axios"
+        },
+        {
+          "title": "IRGCがクウェートへ弾道ミサイル発射・米空軍基地を攻撃——CENTCOM「重大な停戦違反」・新型防空「Arash-e Kamangir」でReaper撃墜",
+          "url": "https://www.washingtontimes.com/news/2026/may/28/us-military-confirms-iran-launched-attacks-kuwait-test-ceasefire/",
+          "sourceLabel": "Washington Times"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "dateLabel": "2026/05/31 09:00",
+      "blockadeDay": null,
+      "summary": "イラン統合軍「ホルムズ全権管理宣言」議会法制化へ・MOU無通行料条項否定・ヘグセス「戦争再開可能」・バンス「not there yet」・WTI $87.18・ブレント $91.12・COVID後最大月間下落・PGSA通航料制度が実質的な新常態へ・ニュース2件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "イラン議会「ホルムズ管理法制化を決定——外国には決めさせない」統合軍も「全権管理宣言」",
+          "url": "https://www.middleeastmonitor.com/20260530-irans-parliament-set-to-vote-on-hormuz-strait-management-bill/",
+          "sourceLabel": "Middle East Monitor"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "dateLabel": "2026/06/01 07:18",
+      "blockadeDay": null,
+      "summary": "IRGC Navy「過去24時間で33隻許可通航」発表（Sunday）・240隻待機中・PGSA通航料制度が既成事実化・イラン「海峡管理は継続・トランプ要求は契約と矛盾」・MOU膠着・バンス「TBD」・WTI $87～88・ブレント $91～92・S全更新・News3件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "トランプ「合意ほぼ完了」から10日で反転——イラン交渉全面停止・ハメネイ『海峡完全閉鎖』最終宣言",
+          "url": "https://www.tasnimnews.com/",
+          "sourceLabel": "Tasnim News / イラン国家安全保障委員会 / Reuters"
+        },
+        {
+          "title": "イラン新最高指導部モジュタバ・ハメネイ——「核・ミサイル技術絶対放棄せず」強硬声明を継続",
+          "url": "https://www.irna.ir/en/",
+          "sourceLabel": "IRNA / Reuters"
+        },
+        {
+          "title": "IRGC Navy「過去24時間で33隻が許可を得てホルムズ通過」——PGSA通航料制度が事実上の新常態として運用継続",
+          "url": "https://en.farsnews.ir",
+          "sourceLabel": "IRGC Navy / Farsi"
+        },
+        {
+          "title": "CNN「トランプ未だ承認せず・バンス『TBD』——MOU署名膠着継続」",
+          "url": "https://edition.cnn.com/2026/05/29/world/live-news/iran-trump-war-news",
+          "sourceLabel": "CNN"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "dateLabel": "2026/06/02 09:29",
+      "blockadeDay": null,
+      "summary": "Trump「本日最終決定」日程・MOU署名99%確度（White House leak確認・Hegseth「very close」・Trump「odds up」）・Lebanon ceasefire合意（Netanyahu・Hezbollah双方停止・6/1発表）・IRGC「6/2湾岸基地報復」実施・Araghchi「dialogue ongoing」発言・油価 Brent $92-96・月間-15%・deal観測継続",
+      "relatedNews": [
+        {
+          "title": "バンス副大統領「not there yet（まだそこに達していない）」——米・イラン交渉は「急速ペース」で継続",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
+          "sourceLabel": "CBS News"
+        },
+        {
+          "title": "Trump Truth Social「Iran ceasefire deal continues at rapid pace（急速ペースで継続中）」——MOU署名延期も交渉は加速",
+          "url": "https://www.foxnews.com/live-news/trump-iran-war-israel-lebanon-hormuz-june-2",
+          "sourceLabel": "Fox News"
+        },
+        {
+          "title": "Trump「one way or another、イランは決断する時だ」——Time誌インタビューで署名延期を示唆しつつ圧力維持",
+          "url": "https://time.com/article/2026/06/02/trump-netanyahu-crazy-lebanon-hezbollah-ceasefire-iran-us-peace-deal/",
+          "sourceLabel": "Time"
+        },
+        {
+          "title": "Trump「Lebanon Netanyahu・Hezbollah双方停止合意」発表——Iran IRGC「6/2湾岸基地報復」実施・Araghchi「dialogue ongoing」",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/6/1/iran-war-live-israels-expanding-invasion-of-lebanon-draws-global-alarm",
+          "sourceLabel": "Al Jazeera / CBS News"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "dateLabel": "2026/06/03 08:30",
+      "blockadeDay": 102,
+      "summary": "MOU署名延期・6/2未署名・Trump「時間が必要」・バンス「very close but not there yet」・交渉は「急速ペース」で継続・Araghchi「対話継続」・ブレント $96.65/bbl（6/2）・全ルート依然閉鎖・通航0隻・封鎖102日目",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-06-06",
+      "dateLabel": "2026/06/06 07:22",
+      "blockadeDay": 99,
+      "summary": "【重大転換】イラン「交渉全面停止・海峡完全閉鎖」最終宣言（6/1 Tasnim）・ハメネイ「イスラエル撤退＆米無条件停戦なくして対話なし」最終通告・トランプ5/23「合意ほぼ完了」から10日で膠着決定的・CENTCOM無人機攻撃・イラン報復ドローン（6/5 JST）・軍事衝突エスカレーション・ラダー段階3～4・油価$95-97乱高下・足止め1,550隻・乗組員2万人人道危機深刻化・封鎖99日目に接近・シナリオC/D現実化進行・全セクション大幅更新・ニュース4件・OSINT1件更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-06-07",
+      "dateLabel": "2026/06/07 07:06",
+      "blockadeDay": 101,
+      "summary": "【軍事衝突エスカレーション】6/5 CENTCOM、イランドローン4機撃墜→Goruk・Qeshm島レーダー施設反撃・イランがバリスティックミサイル7発発射（6発迎撃）・停戦MOU「大筋合意」もトランプ未署名——外交と軍事が並走・ブレント$92-94水準・二重封鎖101日目・DHL「4-6ヶ月」正常化予測・ニュース4件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "IRGCがイスラエル・ラマト・ダビッド基地にミサイル——4月停戦後初の直接攻撃・「警告射撃」声明",
+          "url": "https://www.thenationalnews.com/news/mena/2026/06/07/iran-attacks-israel-with-missiles-and-drones-after-beirut-strike/",
+          "sourceLabel": "The National"
+        },
+        {
+          "title": "米ベッセント財務長官、凍結イラン資産をGCC再建費に転用する方針を指示",
+          "url": "https://fortune.com/2026/06/07/us-frozen-iran-assets-gulf-allies-reconstruction-treasury-secretary-bessent/",
+          "sourceLabel": "Fortune"
+        },
+        {
+          "title": "イスラエルがベイルート・ダヒエ無警告空爆——停戦合意数日後・2名死亡20名負傷",
+          "url": "https://www.csmonitor.com/World/Middle-East/2026/0607/israel-lebanon-hezbollah-iran-trump-ceasefire-peace",
+          "sourceLabel": "AP"
+        },
+        {
+          "title": "パキスタン内相ナクヴィ、テヘランでモジュタバ・ハメネイに軍・首相双方の特別書簡を手交",
+          "url": "https://www.arabnews.com/node/2646290/pakistan",
+          "sourceLabel": "Arab News"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "dateLabel": "2026/06/08 08:00",
+      "blockadeDay": 102,
+      "summary": "【重大エスカレーション】IRGCがイスラエル・ラマト・ダビッド空軍基地にミサイル発射（4月停戦後初）・「警告射撃」声明・ベイルート・ダヒエ無警告空爆（停戦直後・2名死亡20名負傷）・レバノン軍准将サブラ戦死・ナクヴィ→ハメネイ特別書簡手交（軍・首相二通）・ベッセント凍結資産GCC転用指示 vs イラン$240億返還要求・CENTCOM追加ドローン2機撃墜・油価$93水準・シナリオD↑↑（段階5接近）・封鎖102日目・ニュース4件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "イスラエルがイラン本土を2波空爆——テヘラン・イスファハン・タブリーズ・石油化学カルン工場を攻撃",
+          "url": "https://israel-alma.org/daily-report-israel-iran-escalation-june-8-2026-1700/",
+          "sourceLabel": "Alma Center / AP"
+        },
+        {
+          "title": "トランプがネタニヤフに「狂ってる」と激怒通話——「お前を助けてやってるのに世界中から嫌われている」",
+          "url": "https://time.com/article/2026/06/08/israel-iran-war-direct-attacks-latest-ceasefire-trump-netanyahu-lebanon/",
+          "sourceLabel": "Axios / Newsweek"
+        },
+        {
+          "title": "フーシ派が紅海でイスラエル船「完全禁止」を宣言——ホルムズ代替ルートにも脅威",
+          "url": "https://www.marinelink.com/news/yemeni-houthis-threaten-israeli-red-sea-540056",
+          "sourceLabel": "Bloomberg / MarineLink"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "dateLabel": "2026/06/09 07:18",
+      "blockadeDay": 103,
+      "summary": "【4月停戦後最大の軍事衝突】イスラエルがイラン本土2波空爆（テヘラン・イスファハン・タブリーズ・カラジ・石油化学カルン工場）——イラン7波・弾道ミサイル20発超で報復→作戦停止宣言（「再攻撃ならより壊滅的」）・トランプ「直ちに停止せよ」→ネタニヤフに「狂ってる」と激怒（Axios）・フーシ派が紅海イスラエル船完全禁止宣言・イラクShiite民兵総動員・サウジ基地攻撃・OPEC+ 7月+188k bpd・アジア市場暴落（KOSPI -8.29% CB発動・日経-3.9%）・ブレント$94-97・封鎖103日目・ニュース4件・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "イランが米軍AH-64アパッチヘリをホルムズ海峡上空で撃墜——乗員2名はドローン救出",
+          "url": "https://www.npr.org/2026/06/09/nx-s1-5851482/trump-pilots-us-helicopter-crash",
+          "sourceLabel": "NPR"
+        },
+        {
+          "title": "CENTCOM、アパッチ撃墜への報復攻撃をイランに開始——シーリーク・ゲシュム島で爆発",
+          "url": "https://www.axios.com/2026/06/09/us-strikes-iran-army-helicopter-response",
+          "sourceLabel": "Axios / NBC News"
+        },
+        {
+          "title": "トランプ「合意は2-3日以内・最終段階」——報復命令と同日に楽観発言",
+          "url": "https://www.cnbc.com/2026/06/09/trump-iran-war-deal-days.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "アラグチー外相「外国軍はホルムズから退去せよ」——イランが強硬姿勢を鮮明化",
+          "url": "https://edition.cnn.com/2026/06/09/world/live-news/iran-war-trump-israel",
+          "sourceLabel": "CNN"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "dateLabel": "2026/06/10 06:47",
+      "blockadeDay": 104,
+      "summary": "【米イラン直接交戦エスカレーション】イランが米軍AH-64アパッチヘリをホルムズ海峡上空で撃墜（開戦以来初のアパッチ喪失）——乗員2名は海軍無人ボートCorsairで救出（史上初のドローン海上救出）・トランプ「対応は必然」→CENTCOM 6/9 17:00 ETに報復攻撃開始（ホルモズガーン州シーリーク・ゲシュム島・ジャスク）・アラグチー外相「外国軍はホルムズから退去せよ」・Tasnim「決定的対応」宣誓・トランプ「合意2-3日以内」——報復と交渉が同時並行・フーシ紅海禁止継続・ブレント$93-94・封鎖104日目・ニュース4件・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-06-11",
+      "dateLabel": "2026/06/11 07:47",
+      "blockadeDay": null,
+      "summary": "【重大更新】IRGC「ホルムズ全船舶閉鎖」正式宣言・CENTCOM2日目爆撃・イラン報復攻撃（バーレーン・ヨルダン・クウェート）・IAEA核サイト緊急査察要求・ブレント$96・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "トランプ「偉大な和解」宣言——イランとの合意「文書最終化中・数日以内に欧州署名式」",
+          "url": "https://www.cnbc.com/2026/06/11/trump-iran-strikes-deal.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "IRGC「ホルムズ全閉鎖」・タンカー2隻攻撃——CENTCOM「通航継続中」と反論",
+          "url": "https://www.business-standard.com/world-news/strait-of-hormuz-closed-to-all-vessels-says-iran-s-irgc-after-us-strikes-126061100091_1.html",
+          "sourceLabel": "Business Standard"
+        },
+        {
+          "title": "原油WTI $86・ブレント $89——トランプ「和解」宣言で4月来最安値・NY株+1000pt急騰",
+          "url": "https://www.foxnews.com/live-news/us-iran-war-trump-israel-june-11",
+          "sourceLabel": "Fox News"
+        },
+        {
+          "title": "ネタニヤフ「イスラエルはMOU非参加」——ただしトランプの核・ミサイル制限誓約を歓迎",
+          "url": "https://www.timesofisrael.com/liveblog-june-11-2026/",
+          "sourceLabel": "Times of Israel"
+        },
+        {
+          "title": "CENTCOM、2日連続でイランを攻撃——弾薬庫・指揮統制施設・ジャスク海軍基地を標的に",
+          "url": "https://www.cbsnews.com/news/us-iran-strikes-trump-centcom-hard-deal/",
+          "sourceLabel": "CBS News"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "dateLabel": "2026/06/12 07:29",
+      "blockadeDay": null,
+      "summary": "【重大更新】トランプ「偉大な和解」宣言・攻撃中止・IRGC攻撃継続・原油急落(WTI $86・ブレント $89)・ネタニヤフMOU非参加・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "MOUの内容が明らかに——ホルムズ即時再開・制裁解除・核は60日後の交渉に先送り",
+          "url": "https://www.axios.com/2026/06/12/iran-deal-mou-strait-open-sanctions-relief",
+          "sourceLabel": "Axios"
+        },
+        {
+          "title": "WTI $84.88（-3.2%）・ブレント $87.33（-3.4%）——週間マイナス6%・2ヶ月ぶり最安値",
+          "url": "https://www.cnbc.com/2026/06/12/oil-prices-wti-brent-on-hopes-of-us-iran-deal-despite-tehran-pushback.html",
+          "sourceLabel": "CNBC"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "dateLabel": "2026/06/13 09:45",
+      "blockadeDay": null,
+      "summary": "【重大更新】G7脇・ジュネーブで最速6/14署名が有力・パキスタンPM最終テキスト確認・アラグチー2段階MOU公式認定・ハメネイ承認が唯一の残関門・WTI $84・CENTCOM 6/12-13ドローン撃墜・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "トランプ「不誠実な人々」——イラン合意草稿リーク内容を「フェイクニュース」と完全否定",
+          "url": "https://www.timesofisrael.com/trump-fumes-at-dishonorable-iranians-amid-leaks-on-emerging-deals-purported-terms/",
+          "sourceLabel": "Times of Israel"
+        },
+        {
+          "title": "アラグチー「MOU合意は史上最近——2段階・核は第2段階へ先送り」構造を初公表",
+          "url": "https://www.tribuneindia.com/news/iran/iran-araghchi-says-draft-deal-covers-strait-of-hormuz-lebanon-conflict",
+          "sourceLabel": "Tribune India / ANI"
+        },
+        {
+          "title": "MOU署名はジュネーブで最速6/14・G7エヴィアン（6/15-17）脇が有力——バンス出席",
+          "url": "https://finance.yahoo.com/sectors/energy/articles/us-iran-nearing-peace-deal-091642417.html",
+          "sourceLabel": "Bloomberg / Yahoo Finance"
+        },
+        {
+          "title": "WTI $84・ブレント $87——合意期待で続落、2ヶ月ぶり最安値",
+          "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/261964642-iran-deal-oil-price-wti-brent-g7-trump-market-tradingkey",
+          "sourceLabel": "TradingKey"
+        },
+        {
+          "title": "G7エヴィアン脇署名へ——トランプ「モジュタバ・ハメネイ承認と理解」・イランは公式否定",
+          "url": "https://www.cbc.ca/news/world/trump-iran-memorandum-united-states-9.7233089",
+          "sourceLabel": "Reuters / CBC News"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "dateLabel": "2026/06/14 08:54",
+      "blockadeDay": null,
+      "summary": "パキスタン「24時間以内に合意」・バンス＋カリバフでジュネーブ署名目前・トランプ「モジュタバ・ハメネイ承認と理解」・イラン公式未確認・WTI $84.88（週間-6%）・CENTCOM ドローン撃墜継続・IRGCタンカー阻止・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "アラグチー「サービス料徴収・ホルムズの剣は永遠に」——MOU後もイラン主権継続主張",
+          "url": "https://www.nbcnews.com/world/iran/us-iran-deal-expected-reopen-strait-hormuz-signed-days-both-sides-say-rcna349916",
+          "sourceLabel": "NBC News"
+        },
+        {
+          "title": "イスラエルのベイルート空爆（6/14）でMOU署名が複雑化——トランプが異例の批判",
+          "url": "https://www.timesofisrael.com/despite-trump-pronouncement-iran-signals-no-final-decision-made-on-deal/",
+          "sourceLabel": "Times of Israel"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "dateLabel": "2026/06/15 07:09",
+      "blockadeDay": null,
+      "summary": "【停戦発効】パキスタンPM「停戦は今すぐ発効」・署名式6/19スイス確定・G7エヴィアン（6/15-17）開幕・イスラエルのベイルート空爆（6/14）で複雑化・カタール調停団テヘランへ・アラグチー「サービス料・ホルムズの剣は永遠」・WTI $84.88・ブレント $87.33・109日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "パキスタンPM「停戦は今すぐ発効」——署名式は6月19日スイスへ確定",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-peace-deal-agreement/",
+          "sourceLabel": "CBS News（ライブブログ）"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "dateLabel": "2026/06/16 08:14",
+      "blockadeDay": 110,
+      "summary": "米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」宣言・MOU14条項（全面停戦・ホルムズ再開・核60日交渉）・バンス「デジタル署名済み」・ドーハ事前協議・署名式6/19スイス・機雷除去最大6ヶ月・WTI $81.10（-4.5%）・警戒レベル最高→高・封鎖110日目・ニュース3件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "【速報】米イラン和平合意成立——トランプ「合意完了」・パキスタンPM「永続的停戦」・MOU14条項署名",
+          "url": "https://www.nbcnews.com/news/us-news/deal-reached-united-states-iran-war-rcna350039",
+          "sourceLabel": "NBC News"
+        },
+        {
+          "title": "バンス「MOUデジタル署名済み」・ドーハ事前協議今週——イラン「6/19正式署名まで実施保留」",
+          "url": "https://edition.cnn.com/2026/06/14/world/live-news/iran-war-trump-israel",
+          "sourceLabel": "CNN"
+        },
+        {
+          "title": "機雷除去最大6ヶ月・荷主「安全確認まで慎重」——本格通航再開は秋冬以降",
+          "url": "https://www.theglobeandmail.com/business/article-ships-oil-strait-hormuz-us-iran-peace-deal/",
+          "sourceLabel": "The Globe and Mail"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "dateLabel": "2026/06/17 08:44",
+      "blockadeDay": 111,
+      "summary": "アラグチー「イスラエルのレバノン攻撃・占領継続はMOU違反」警告（6/17）｜イランタンカー2隻（DIONA・HERO2）封鎖圏脱出・3.8百万バレル原油輸出——2ヶ月ぶり｜ファルス「MOU通航無料60日のみ」vs 米「無条件」矛盾浮上｜BIMCO高リスク警告継続・日本関係船舶38隻足止め（日本船主協会）｜WTI $78前後（4日連続下落）｜6/19署名まで2日・封鎖111日目・ニュース2件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "アラグチー「イスラエルのレバノン攻撃・占領継続はMOU違反」——6/19署名2日前に警告",
+          "url": "https://www.iranintl.com/en/liveblog/202606139149",
+          "sourceLabel": "Iran International"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "dateLabel": "2026/06/18 09:51",
+      "blockadeDay": 112,
+      "summary": "MOU14条項全文公開（60日無料通航・30日機雷除去・$3000億復興計画）・6/19ジュネーブ署名式キャンセル確定（電子署名発効確認済：バガエイ外務省報道官）・Goldman Sachs Brent Q4$80下方修正・IEA供給過剰警告・WTI $75前後（5日連続下落・3月来最安値）・日本関係38隻足止め継続・封鎖112日目・ニュース2件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "独仏英伊、ホルムズ機雷除去任務への参加を共同声明で表明",
+          "url": "https://www.yahoo.com/news/world/articles/european-leaders-ready-mission-strait-004128455.html",
+          "sourceLabel": "AFP"
+        },
+        {
+          "title": "MOU14条項全文公開——60日無料通航・30日機雷除去・米$3000億復興計画",
+          "url": "https://www.nbcnews.com/politics/national-security/text-iran-us-memorandum-understanding-rcna350582",
+          "sourceLabel": "NBC News"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "dateLabel": "2026/06/19 07:55",
+      "blockadeDay": 113,
+      "summary": "最高指導者モジュタバ「異なる見解だが承認」表明・本日ビュルゲンシュトック（瑞）で米イラン実務協議——会場をジュネーブから変更・パキスタン首相訪欧キャンセル・独仏英伊が機雷除去任務参加を共同声明で表明・IAEA・グロッシ事務局長「技術検証開始」——440kg濃縮ウラン希釈化を監督・通航実態変化なし・日本関係38隻継続足止め・WTI $75前後・ブレント $78前後で安値圏継続・封鎖113日目・ニュース1件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡の通航量に改善の兆し——6/18に検証済み商船25隻が通航",
+          "url": "https://www.cbsnews.com/live-updates/iran-us-war-talks-suspended-trump-mou-israel-lebanon-hezbollah-fighting/",
+          "sourceLabel": "CBS News"
+        },
+        {
+          "title": "米イラン実務協議（ビュルゲンシュトック）が延期——レバノン情勢悪化が理由",
+          "url": "https://www.nbcnews.com/world/iran/us-iran-talks-postponed-vance-cancels-trip-israel-strikes-lebanon-rcna350830",
+          "sourceLabel": "NBC News"
+        },
+        {
+          "title": "イラン新設PGSA、ホルムズ通航に義務的保険・指定航路を導入——将来課金の可能性を留保",
+          "url": "https://www.middleeasteye.net/news/iran-plans-charge-insurance-fee-vessels-transiting-hormuz-after-us-deal-expires",
+          "sourceLabel": "Middle East Eye"
+        },
+        {
+          "title": "イスラエル・ヒズボラが停戦合意——レバノン情勢の悪化が一時沈静化",
+          "url": "https://thehill.com/homenews/5931781-ceasefire-lebanon-israel-hezbollah/",
+          "sourceLabel": "The Hill"
+        }
+      ]
+    },
     {
       "date": "2026-06-20",
       "dateLabel": "2026/06/20 08:18",

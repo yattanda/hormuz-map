@@ -87,6 +87,27 @@
   }
   .notice strong{color:var(--ink);}
 
+  /* ===== MONTH TABS ===== */
+  .month-tabs{
+    display:flex;gap:6px;flex-wrap:wrap;padding:20px 0 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .month-tab{
+    font-family:var(--mono);font-size:.76rem;letter-spacing:.03em;
+    color:var(--muted);background:transparent;
+    border:1px solid var(--line-strong);border-radius:20px;
+    padding:6px 15px;cursor:pointer;transition:all .15s;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .month-tab .count{
+    font-size:.65rem;color:var(--muted-dim);
+  }
+  .month-tab:hover{border-color:var(--amber-line);color:var(--amber);}
+  .month-tab.active{
+    background:var(--amber-dim);border-color:var(--amber-line);color:var(--amber);
+  }
+  .month-tab.active .count{color:var(--amber);}
+
   /* ===== TIMELINE ===== */
   .timeline{position:relative;padding:28px 0 60px;}
   .timeline::before{
@@ -192,11 +213,12 @@
 
   <div class="notice">
     <strong>収録範囲について：</strong>
-    現在は直近分（2026年6月20日〜）のみを収録しています。過去分は今後、段階的に遡って追加予定です。
+    開戦初期（2026年4月）から現在までを収録しています。
     本サイトが速報を発信しなかった日は記録対象外としています。
   </div>
 
   <div id="loading">記録を読み込み中…</div>
+  <div class="month-tabs" id="month-tabs" style="display:none;"></div>
   <div class="timeline" id="timeline" style="display:none;"></div>
 
   <footer>
@@ -206,7 +228,11 @@
 
 <script>
 (function(){
-  const MONTH_LABELS = {"06":"2026年6月","07":"2026年7月","08":"2026年8月","09":"2026年9月","10":"2026年10月","11":"2026年11月","12":"2026年12月","01":"2027年1月","02":"2027年2月"};
+  const MONTH_LABELS = {"01":"1月","02":"2月","03":"3月","04":"4月","05":"5月","06":"6月","07":"7月","08":"8月","09":"9月","10":"10月","11":"11月","12":"12月"};
+  const YEAR_LABELS = {};
+
+  let ALL_ENTRIES = [];
+  let CURRENT_MONTH = null;
 
   function fmtDate(iso){
     const [y,m,d] = iso.split('-');
@@ -220,9 +246,25 @@
       return r.json();
     })
     .then(data => {
-      const entries = (data.entries || []).slice().sort((a,b) => a.date < b.date ? 1 : -1); // newest first
-      renderStats(data, entries);
-      renderTimeline(entries);
+      ALL_ENTRIES = (data.entries || []).slice().sort((a,b) => a.date < b.date ? -1 : 1); // oldest first, for month grouping
+      renderStats(data, ALL_ENTRIES);
+      const months = buildMonthList(ALL_ENTRIES);
+      CURRENT_MONTH = months[months.length - 1].key; // default: latest month
+      renderMonthTabs(months);
+      renderMonth(CURRENT_MONTH);
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('month-tabs').style.display = 'flex';
+      document.getElementById('timeline').style.display = 'block';
+
+      // deep-link support: #2026-07
+      if(location.hash && /^#\d{4}-\d{2}$/.test(location.hash)){
+        const h = location.hash.slice(1);
+        if(months.some(m => m.key === h)){
+          CURRENT_MONTH = h;
+          renderMonthTabs(months);
+          renderMonth(CURRENT_MONTH);
+        }
+      }
     })
     .catch(err => {
       document.getElementById('loading').textContent = '記録データの読み込みに失敗しました（' + err.message + '）。時間をおいて再度お試しください。';
@@ -232,29 +274,51 @@
     const statEls = document.querySelectorAll('#stats .n');
     statEls[0].textContent = entries.length + '日';
     const rs = data.meta && data.meta.rangeStart, re = data.meta && data.meta.rangeEnd;
-    statEls[1].textContent = rs && re ? `${rs.slice(5)}〜${re.slice(5)}` : '—';
+    statEls[1].textContent = rs && re ? `${rs.slice(0,7).replace('-','/')}〜${re.slice(0,7).replace('-','/')}` : '—';
     const days = entries.map(e => e.blockadeDay).filter(Boolean);
     if(days.length){
       statEls[2].textContent = Math.min(...days) + '〜' + Math.max(...days) + '日目';
     }
   }
 
-  function renderTimeline(entries){
+  function buildMonthList(entries){
+    const map = {};
+    entries.forEach(e => {
+      const ym = e.date.slice(0,7);
+      map[ym] = (map[ym] || 0) + 1;
+    });
+    return Object.keys(map).sort().map(key => ({key, count: map[key]}));
+  }
+
+  function renderMonthTabs(months){
+    const el = document.getElementById('month-tabs');
+    el.innerHTML = months.map(m => {
+      const [y,mo] = m.key.split('-');
+      const label = MONTH_LABELS[mo] || mo;
+      const active = m.key === CURRENT_MONTH ? ' active' : '';
+      return `<button class="month-tab${active}" data-month="${m.key}">${y}年${label}<span class="count">${m.count}</span></button>`;
+    }).join('');
+    el.querySelectorAll('.month-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        CURRENT_MONTH = btn.getAttribute('data-month');
+        history.replaceState(null, '', '#' + CURRENT_MONTH);
+        renderMonthTabs(months);
+        renderMonth(CURRENT_MONTH);
+        document.getElementById('month-tabs').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
+
+  function renderMonth(monthKey){
+    const entries = ALL_ENTRIES.filter(e => e.date.slice(0,7) === monthKey)
+                                .slice().sort((a,b) => a.date < b.date ? 1 : -1); // newest first within month
     const el = document.getElementById('timeline');
     let html = '';
-    let lastMonth = null;
     let lastDate = null;
 
     entries.forEach(e => {
-      const ym = e.date.slice(0,7);
-      const monthKey = e.date.slice(5,7);
-      if(ym !== lastMonth){
-        html += `<div class="month-divider"><span>${MONTH_LABELS[monthKey] || ym}</span></div>`;
-        lastMonth = ym;
-      }
-
       if(lastDate){
-        const gap = dayGap(e.date, lastDate);
+        const gap = dayGap(lastDate, e.date);
         if(gap > 1){
           html += `<div class="gap-note">（${gap - 1}日分の速報なし・スキップ）</div>`;
         }
@@ -284,12 +348,14 @@
       </div>`;
     });
 
+    if(!entries.length){
+      html = `<p style="color:var(--muted);font-size:.85rem;padding:20px 0;">この月の記録はまだありません。</p>`;
+    }
+
     el.innerHTML = html;
-    document.getElementById('loading').style.display = 'none';
-    el.style.display = 'block';
   }
 
-  function dayGap(newer, older){
+  function dayGap(older, newer){
     const d1 = new Date(newer + 'T00:00:00Z');
     const d2 = new Date(older + 'T00:00:00Z');
     return Math.round((d1 - d2) / 86400000);

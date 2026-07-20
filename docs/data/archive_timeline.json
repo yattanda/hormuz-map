@@ -1,0 +1,510 @@
+{
+  "meta": {
+    "generated": "2026-07-20",
+    "rangeStart": "2026-06-20",
+    "rangeEnd": "2026-07-19",
+    "note": "直近30日分の初期バックフィル。以前の日付は今後段階的に追加予定。速報を出していない日はスキップ。"
+  },
+  "entries": [
+    {
+      "date": "2026-06-20",
+      "dateLabel": "2026/06/20 08:18",
+      "blockadeDay": 114,
+      "summary": "【重大フォロー】米イラン実務協議（ビュルゲンシュトック）延期——レバノン情勢悪化が理由・バンス副大統領訪欧キャンセル・新日程未定｜日本人乗船の日本関係船は全てペルシャ湾外へ退避完了（茂木外相 6/19）・残る日本関係船舶37隻に｜イスラエル・ヒズボラ停戦合意——IDFは停戦後も一部攻撃継続と報道｜イラン新設PGSAがホルムズ通航に義務的保険・指定航路を導入——60日無料も将来課金の可能性留保・英国主導で同盟国反発｜通航量改善——6/18に25隻通航（4/18以来最多）・CENTCOM「一晩で20隻超通過」｜WTI $76前後・ブレント $79前後｜封鎖114日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "イラン軍、ホルムズ海峡「全面封鎖」を宣言——イスラエルのレバノン攻撃継続をMOU違反と非難",
+          "url": "https://www.timesofisrael.com/liveblog_entry/us-centcom-iran-does-not-control-the-strait-of-hormuz-waterway-remains-open/",
+          "sourceLabel": "Times of Israel"
+        },
+        {
+          "title": "CENTCOM、即日反論「イランは海峡を統制せず・通航は継続中」——商船55隻が通航、開戦後最多",
+          "url": "https://www.turkiyetoday.com/region/us-says-hormuz-traffic-flowing-despite-iranian-closure-claim-3222359",
+          "sourceLabel": "Türkiye Today"
+        },
+        {
+          "title": "週末先物市場で原油急騰——WTI $79・ブレント $82に、封鎖宣言を受け+7%",
+          "url": "https://www.benzinga.com/markets/commodities/26/06/60004404/crude-oil-price-pops-as-iran-closes-strait-of-hormuz",
+          "sourceLabel": "Benzinga"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "dateLabel": "2026/06/21 09:12",
+      "blockadeDay": 115,
+      "summary": "イラン軍中央司令部がホルムズ海峡の「全船舶封鎖・接近禁止」を宣言（6/20）——イスラエルのレバノン攻撃継続をMOU違反と非難｜CENTCOM即日反論「イランは海峡を統制せず・通航は継続中」——6/20に商船55隻が通航し開戦後最多・原油1700万バレル超を輸送｜本日ビュルゲンシュトックで米イラン技術協議再開——バンス副大統領・アラグチー外相ら出席｜イスラエル・ヒズボラ停戦は維持も応酬続き6/20の空爆で17人死亡｜週末先物市場でWTI $79・ブレント $82に急騰（金曜終値WTI $76.60）｜日本関係船舶37隻変化なし｜封鎖115日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "トランプ氏、ビュルゲンシュトック協議中のイラン代表団へ直接威嚇——「海峡閉鎖なら国がなくなる」",
+          "url": "https://www.ms.now/news/u-s-iran-talks-begin-in-switzerland",
+          "sourceLabel": "MS NOW"
+        },
+        {
+          "title": "イラン首席交渉官ガリバフ議長が猛反発——「米国の脅しは数えない」協議は一時停滞も継続",
+          "url": "https://www.cnn.com/2026/06/21/world/live-news/iran-war-trump-israel-lebanon",
+          "sourceLabel": "CNN"
+        },
+        {
+          "title": "グラム上院議員「外交失敗なら米が武力でホルムズ掌握・通行料徴収」",
+          "url": "https://www.washingtontimes.com/news/2026/jun/21/sen-lindsey-graham-predicts-diplomatic-talks-iran-fail/",
+          "sourceLabel": "Washington Times"
+        },
+        {
+          "title": "本日ビュルゲンシュトックで米イラン技術協議が再開——バンス副大統領・アラグチー外相ら出席",
+          "url": "https://www.rferl.org/a/iran-burgenstock-ceasefire-vance-witkoff-kushner-araqchi/33785268.html",
+          "sourceLabel": "RFE/RL"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "dateLabel": "2026/06/22 08:26",
+      "blockadeDay": 116,
+      "summary": "【重大フォロー】トランプ氏がビュルゲンシュトック協議中のイラン代表団へ直接威嚇——「海峡閉鎖なら国がなくなる」「必要なら奪取する」とFox Newsで発言（6/21）｜ガリバフ議長が猛反発「米国の脅しは数えない・軍は別の形で応答」——一時離脱報道もパキスタン仲介で協議は夜通し継続｜グラム上院議員「外交失敗なら米が武力でホルムズ掌握」・独ピストリウス国防相「封鎖の原因はトランプ」と批判｜バンス氏「過去最多1600万バレルが通過」と発表｜原油急伸——ブレント$81.66（+1.35%）・WTI$77.66（+2.4%）｜日本関係船舶37隻変化なし｜封鎖116日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "ビュルゲンシュトック「60日ロードマップ」合意——IAEA査察招請・機雷除去調整メカニズム設置で前進",
+          "url": "https://www.npr.org/2026/06/21/g-s1-129222/us-iran-deal-lebanon-israel-strait-hormuz-jd-vance",
+          "sourceLabel": "NPR / RFE/RL"
+        },
+        {
+          "title": "トランプ「米国独自のホルムズ通行料」脅迫——テヘランが一時交渉停止を示唆・協議は継続",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-deal-strait-of-hormuz/",
+          "sourceLabel": "AP / CBS News"
+        },
+        {
+          "title": "WTI約$74・Brent約$77——3月初来最安値・米財務省60日間イラン石油取引除外承認・クウェートFM解除",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "sourceLabel": "Trading Economics"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "dateLabel": "2026/06/23 08:31",
+      "blockadeDay": 117,
+      "summary": "【重大更新】ビュルゲンシュトック「60日ロードマップ」合意・IAEA査察招請・機雷除去調整メカニズム設置（6/22）・トランプ「米国独自通行料」脅迫・テヘラン一時停止示唆→協議継続・ホルムズ通航35→12隻急減（Windward「封鎖後期と同様」）・WTI$74〜75・Brent$77〜78（3月来最安値）・米財務省60日間イラン石油除外承認・クウェートFM解除・日本関係船舶37隻変化なし・封鎖117日目・ニュース4件更新・OSINT更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-06-24",
+      "dateLabel": "2026/06/24 08:22",
+      "blockadeDay": 118,
+      "summary": "【速報】IMO：11,000人以上の船員避難計画を正式発動（6/23）・核査察問題で米イラン対立（バガエイ「IAEA予定なし」↔トランプ「打ち切り辞さず」）・南レバノン再銃撃（2人死亡）・ルビオ「通行料は国際法上不可」（アブダビ）・WTI$73-74・Brent$76-77・39隻/日回復傾向・日本関係船舶37隻変化なし・封鎖118日目・ニュース4件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "IMO、11,000人以上の船員避難計画を正式発動——「安全保証確保・航行条件検証完了」",
+          "url": "https://www.cnbc.com/amp/2026/06/23/strait-hormuz-persian-gulf-ship-tanker-evacuation.html",
+          "sourceLabel": "CNBC / AP"
+        },
+        {
+          "title": "核査察問題で米イラン対立——バガエイ「IAEA査察の予定なし」・トランプ「合意なければ交渉打ち切り」",
+          "url": "https://www.npr.org/2026/06/23/nx-s1-5867322/us-iran-finalize-war-ending-deal",
+          "sourceLabel": "NPR / Times of Israel"
+        },
+        {
+          "title": "ルビオ「国際法上、いかなる国も国際海峡で通行料を徴収できない」——イランの主権主張を否定",
+          "url": "https://www.washingtontimes.com/news/2026/jun/23/us-iran-offer-different-stories-nuclear-inspections-negotiations/",
+          "sourceLabel": "Washington Times"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "dateLabel": "2026/06/25 07:46",
+      "blockadeDay": 118,
+      "summary": "【重大更新】IAEAグロッシ「MoUに核査察明記——必ず実施」vsイラン「査察予定なし」——解釈対立が60日交渉の核心に｜WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent$74割れ（戦時高値比-40%）｜ネタニヤフ「南レバノン安全地帯維持」・イスラエル・ヒズボラ再停戦（6/24）｜ホルムズ通航31隻（Kpler）・米上院 戦争権限決議 50-48可決｜封鎖118日目・MoU期限まで52日",
+      "relatedNews": [
+        {
+          "title": "IAEA「MoUに核査察明記——必ず実施する」vs イラン「査察予定なし」——60日交渉の核心的対立",
+          "url": "https://www.npr.org/2026/06/24/g-s1-129770/iran-nuclear-inspection",
+          "sourceLabel": "NPR / Bloomberg / CBS News"
+        },
+        {
+          "title": "WTI一時$69.63・終値$70.34——封鎖以来初の$70台突入・Brent $74割れ",
+          "url": "https://www.cnbc.com/2026/06/24/oil-prices-wti-brent-crude-trump-doj-gasoline-prices-strait-of-hormuz.html",
+          "sourceLabel": "CNBC / Trading Economics"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "dateLabel": "2026/06/26 06:43",
+      "blockadeDay": 119,
+      "summary": "【重大更新】IRGC、シンガポール籍コンテナ船「Ever Lovely」をDahit沖7.5海里で攻撃——右舷命中・IMO避難計画を一時停止（6/25）｜WTI $71.92・Brent $75.26——攻撃後+2%急反発（戦時高値比-40%から反転）｜IRGC「指定ルート外の通航は許容しない——対処する」警告（6/25）｜ルビオGCC会議（バーレーン）「湾岸と完全に足並み」（6/25）｜韓国船13隻通過完了（26隻中）｜封鎖119日目・MoU期限まで51日",
+      "relatedNews": [
+        {
+          "title": "日本関係船舶2隻が新たに通過——ペルシャ湾内残り35隻（金子国交相発表）",
+          "url": "https://news.infoseek.co.jp/article/sankein__world_mideast_K6X744GDMNKD5MCCXHJIYUBXXA/",
+          "sourceLabel": "産経ニュース（Infoseek）"
+        },
+        {
+          "title": "IRGC、シンガポール籍コンテナ船「Ever Lovely」を攻撃——IMO避難計画が一時停止",
+          "url": "https://www.cnbc.com/2026/06/25/oil-price-supply-concerns-ease-with-hormuz-tanker-traffic-resuming-.html",
+          "sourceLabel": "CNBC / FreightWaves"
+        },
+        {
+          "title": "ルビオGCC会議（バーレーン）——湾岸諸国と完全一致・イランの核・ミサイル問題で圧力継続",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-trump-strait-of-hormuz-oil-prices/",
+          "sourceLabel": "CBS News"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-27",
+      "dateLabel": "2026/06/27 08:27",
+      "blockadeDay": 120,
+      "summary": "【超重大更新】CENTCOM、Ever Lovely攻撃への報復でイランのミサイル・ドローン施設と沿岸レーダー攻撃（6/27 JST早朝）——IRGC「より大規模に対応」報復予告・MoU崩壊危機最高水準｜日本関係船舶35隻（2隻が6/26通過・金子国交相発表 37→35）｜Brent $74台後半・WTI $71台——「長期戦」価格付けに移行｜6/30技術交渉の実施がMoU唯一の生命線｜封鎖120日目・MoU残り50日・ニュース2件更新",
+      "relatedNews": [
+        {
+          "title": "M/T Kiku 攻撃とCENTCOM追加報復——ホルムズで3日連続攻撃サイクル",
+          "url": "https://www.cnbc.com/amp/2026/06/27/tanker-struck-in-strait-of-hormuz-as-us-iran-tensions-escalate.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "イランがバーレーンをドローン攻撃——イラン議会MoU批准票決6/28-30に緊張",
+          "url": "https://time.com/article/2026/06/27/Iran-Bahrain-attack-Strait-of-Hormuz-drone-strikes/",
+          "sourceLabel": "TIME"
+        },
+        {
+          "title": "【超重大】CENTCOM、Ever Lovely攻撃への報復でイランを空爆——ミサイル・ドローン施設と沿岸レーダーサイト攻撃",
+          "url": "https://time.com/article/2026/06/26/strait-hormuz-iran-strike-vessel-un-escort-shipping-oil-trump/",
+          "sourceLabel": "CENTCOM公式 / Time誌"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "dateLabel": "2026/06/28 09:10",
+      "blockadeDay": 121,
+      "summary": "【重大更新】IRGC、M/T Kiku（パナマ籍タンカー）をホルムズ内で攻撃・CENTCOM が追加報復（6/27 JST）｜イランがバーレーンをドローン攻撃——米第5艦隊狙う｜UKMTO脅威レベル「substantial」に引き上げ・IMO避難計画一時停止継続｜イラン議会MoU批准票決6/28-30——否決なら無期限封鎖・WTI $110+リスク｜WTI $69.23・Brent $72台（週間-10%超・MoU後最安値）｜日本関係35隻（変化なし）｜封鎖121日目・MoU残り49日",
+      "relatedNews": [
+        {
+          "title": "トランプ「イランは消滅する」Truth Social最強脅迫——MOU体制と矛盾する国家消滅宣言",
+          "url": "https://www.timesofisrael.com/trump-threatens-to-complete-the-job-in-iran-as-us-military-launches-fresh-strikes/",
+          "sourceLabel": "Times of Israel"
+        },
+        {
+          "title": "CENTCOM 10施設追加爆撃・IRGC クウェート/バーレーン米軍基地攻撃——MOU第5条紛争が核心に",
+          "url": "https://www.newsweek.com/why-iran-still-attacking-ships-in-strait-hormuz-12124424",
+          "sourceLabel": "Newsweek"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "dateLabel": "2026/06/29 07:58",
+      "blockadeDay": 122,
+      "summary": "【超重大更新】トランプ「イランは消滅する」Truth Social最強脅迫（6/28）——MOU崩壊の瀬戸際｜IRGC、クウェート・バーレーン米軍基地攻撃（8施設損傷主張）——CENTCOM「死傷者なし」｜CENTCOM 10ヶ所追加爆撃（監視・通信・防空・ドローン・機雷）——M/T Kiku攻撃への第2波報復｜IRGC「外交プロセス完全停止」警告・アラグチー「外部不干渉の湾岸新安保枠組み」提案（バグダッド）｜アラムコ Ras Tanura ヘリ墜落・14名全員死亡（6/28午後）｜IMO避難計画6/28再開——南北2ルート運用・流動化継続｜ブレント$72台・WTI$68台（週間10%超下落）｜米上院、対イラン戦争権限決議可決（危機初）｜日本関係35隻（変化なし・通過ペース鈍化懸念）｜封鎖122日目・MoU残り48日",
+      "relatedNews": [
+        {
+          "title": "米イランstanddown合意——ドーハ技術協議 本日6/30開催・航路解釈の成文化が焦点",
+          "url": "https://www.timesofisrael.com/us-iran-agree-to-halt-hormuz-attacks-hold-talks-about-strait-in-qatar-on-tuesday-report/",
+          "sourceLabel": "Times of Israel / RFE/RL"
+        },
+        {
+          "title": "ペゼシュキヤン「カタールから60億ドル凍結資産解放予定」——米・カタール側は未確認",
+          "url": "https://thehill.com/policy/international/5945120-qatar-releases-iranian-assets/",
+          "sourceLabel": "The Hill / Washington Times"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "dateLabel": "2026/06/30 09:34",
+      "blockadeDay": 123,
+      "summary": "【重大更新】米イランstanddown合意・ドーハ技術協議 本日6/30開催中（航路管理・MOU実施）・ペゼシュキヤン「60億ドル凍結資産解放」（米・カタール未確認）・第1回ホルムズ合同委員会（ムスカット・イラン-オマーン）・テヘラン-ドバイ航空再開・Araghchi「ホルムズは30日間イラン完全管理下」・JMIC南ルート拡幅→IRGC「違法」・封鎖123日目・ニュース2件更新・OSINT更新",
+      "relatedNews": [
+        {
+          "title": "イラン「機雷除去はイランのみの権利」——仏を名指しでけん制",
+          "url": "https://news.infoseek.co.jp/article/jiji_2026063000753/",
+          "sourceLabel": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "dateLabel": "2026/07/01 11:15",
+      "blockadeDay": 124,
+      "summary": "【重大更新】トランプ氏「ドーハ30日協議」をイラン・カタール両政府が否定・米ウィトコフ特使は現地入り・日本関係船舶3隻通過で残り約32隻（金子国交相6/30）・イラン「機雷除去はイランのみの権利」仏をけん制・原油ブレント$72.51/WTI$70.36で戦前水準接近・G7がホルムズ／インド太平洋での立場確認・封鎖124日目・ニュース2件更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-07-02",
+      "dateLabel": "2026/07/02 08:23",
+      "blockadeDay": 125,
+      "summary": "【重大更新】米イラン、ドーハで技術協議を正式実施・バンス副大統領確認（6/30の否定から一転）・イランが海峡管轄権と通行料徴収の国際承認を要求・WTI一時$69割れで2/27以来安値・日本関係船舶は新規発表なく残り約32隻のまま・機雷除去は依然未着手（INTERTANKO）で南北二重ルート継続・封鎖125日目・ニュース2件更新",
+      "relatedNews": [
+        {
+          "title": "ドーハ間接協議、突破口なく終了——通航料対立が焦点に",
+          "url": "https://www.japantimes.co.jp/news/2026/07/02/world/politics/us-iran-talks-doha-strait/",
+          "sourceLabel": "Reuters / Japan Times"
+        },
+        {
+          "title": "故ハメネイ前最高指導者の国葬、7月4日開始——次回協議は国葬後",
+          "url": "https://www.jiji.com/jc/article?k=2026062400202&g=int",
+          "sourceLabel": "AFP / 時事通信"
+        },
+        {
+          "title": "米イラン、ドーハで技術協議を正式実施——バンス副大統領確認",
+          "url": "https://mezha.net/jp/bukvy/0c51712b_us_and_iran/",
+          "sourceLabel": "Reuters経由Mezha"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "dateLabel": "2026/07/03 09:16",
+      "blockadeDay": 126,
+      "summary": "ドーハ協議、突破口なく終了（通航料対立継続・実務進展のみ）・イラン軍司令部が米介入に新威嚇声明・故ハメネイ師国葬あす7/4開始（次回協議は国葬後）・ブレント$70台/WTI$68台に続落（ホルムズ通航量日量1000万バレル超）・米海軍ヘリ緊急着水1名不明（7/1）・日本関係船変化なく残り約32隻・封鎖126日目・ニュース2件更新",
+      "relatedNews": [
+        {
+          "title": "イランが日本企業へ石油販売を打診——買い手は制裁免除の長期化と航行安全の保証を要求",
+          "url": "https://www.reuters.com/business/energy/iran-exploring-oil-sales-japan-buyers-seek-longer-sanctions-waiver-sources-2026-07-03/",
+          "sourceLabel": "Reuters"
+        },
+        {
+          "title": "日本関係船舶、新たに1隻通過——残り31隻に",
+          "url": "https://sp.m.jiji.com/article/show/3814715",
+          "sourceLabel": "時事通信"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-04",
+      "dateLabel": "2026/07/04 08:22",
+      "blockadeDay": 127,
+      "summary": "【重大更新】故ハメネイ師国葬、本日テヘランで開始（7/6大葬列・7/9マシュハド埋葬）・ドーハ協議は国葬終了まで完全休止——次回は国葬後に設定・イラン軍「米介入に断固対応」新威嚇声明・米は第2海兵遠征部隊を中東追加展開・日本関係船新たに1隻通過で残り31隻に（7/1分・7/3発表）・ブレント$71台/WTI$68台弱で戦前水準近辺・封鎖127日目・ニュース2件更新",
+      "relatedNews": [
+        {
+          "title": "オマーン南ルートで商船8隻がUターン——うち4隻はイラン指定ルートへ変針(原因未確認)",
+          "url": "https://www.bloomberg.com/jp/news/articles/2026-07-04/THNDDVKK3NY800",
+          "sourceLabel": "Bloomberg"
+        },
+        {
+          "title": "故ハメネイ師国葬、テヘランで告別式開始——数千人が参列し「復讐」を連呼",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-negotiations-pause-ayatollah-funeral/",
+          "sourceLabel": "CBS News"
+        },
+        {
+          "title": "英仏、ホルムズ海峡での多国籍航行支援任務の展開を表明",
+          "url": "https://www.cnbc.com/2026/07/04/uk-france-agree-with-oman-to-ensure-safety-of-its-territorial-waters.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "故ハメネイ師の国葬、本日テヘランで開始——1500万〜2000万人参列見込み",
+          "url": "https://news.yahoo.co.jp/articles/30e235766c4ed8ef4f7d6d7c608ff61c7e88bdb6",
+          "sourceLabel": "時事通信"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "dateLabel": "2026/07/05 09:06",
+      "blockadeDay": 128,
+      "summary": "故ハメネイ師国葬、進行中（7/4テヘラン告別式開始・7/6大葬列予定）・英仏がホルムズ多国籍航行支援任務の展開を表明（7/3・オマーンも協力）・ドーハ協議は国葬終了まで休止継続・イラン軍「攻撃には断固対応」継続・日本関係船舶31隻で変化なし（土日のため会見なし）・ブレント$71〜72/WTI$68〜69で横ばい・封鎖128日目・ニュース2件更新",
+      "relatedNews": [
+        {
+          "title": "OPEC+有志国、8月も増産継続を決定——5カ月連続",
+          "url": "https://www.nikkei.com/topics/22A00625",
+          "sourceLabel": "日本経済新聞"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "dateLabel": "2026/07/06 09:04",
+      "blockadeDay": 129,
+      "summary": "故ハメネイ師国葬、本日大葬列（7/9マシュハド埋葬まで継続）・ドーハ協議は国葬終了まで休止継続で変化なし・日本関係船舶31隻で変化なし（祝日・国葬関連で会見なし）・ブレント$71〜72/WTI$68〜69で横ばい・OPEC+有志国が8月増産継続を決定（7/5）・封鎖129日目・ニュース1件更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-07-07",
+      "dateLabel": "2026/07/07 09:05",
+      "blockadeDay": 130,
+      "summary": "故ハメネイ師国葬、本日ゴム追悼式（7/9マシュハド埋葬まで継続）・トランプ「いずれにせよ米国が勝つ」発言（7/6）・オマーン南ルートで商船8隻Uターン（うち4隻イランルートへ変針・7/3〜4）・イランが日本企業へ石油販売を打診（Reuters 7/3）・日本関係船舶31隻で変化なし・ブレント$72割れ/WTI$69割れに続落（OPEC+8月増産・サウジ値下げ）・封鎖130日目・ニュース2件更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-07-08",
+      "dateLabel": "2026/07/08 08:14",
+      "blockadeDay": 131,
+      "summary": "CENTCOM、ホルムズ海峡通過中の駆逐艦3隻（トラクスタン・ペラルタ・メイソン）への攻撃に反撃——米イラン軍事衝突が再燃（7/7）・タンカー3隻新たに被弾（カタール籍Al Rekayyat・サウジ籍Wedyan含む）・米財務省がイラン産原油売却許可を取消（7/17清算期限）・アラグチー外相「脅威継続なら交渉再開せず」・一方で日本関係船10隻超がイランルート経由で通過し残り26隻に（7/6〜7・金子国交相発表）・故ハメネイ師、本日ナジャフ・カルバラで追悼式典（7/9マシュハド埋葬）・封鎖131日目・ニュース3件更新",
+      "relatedNews": [
+        {
+          "title": "トランプ氏「イランとの停戦は終わった」——NATO首脳会議で表明",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-says-ceasefire-over/",
+          "sourceLabel": "CBS News / Bloomberg"
+        },
+        {
+          "title": "商船三井関係8隻が追加通過、日本関係船は残り18隻に",
+          "url": "https://www.jiji.com/jc/article?k=2026070701178&g=eco",
+          "sourceLabel": "時事通信"
+        },
+        {
+          "title": "CENTCOM、駆逐艦3隻への攻撃に反撃——米イラン軍事衝突が再燃",
+          "url": "https://www.cbsnews.com/live-updates/iran-us-war-strait-of-hormuz-trump-nato/",
+          "sourceLabel": "Reuters / CBS News"
+        },
+        {
+          "title": "タンカー3隻被弾、米が対イラン原油輸出許可を取消",
+          "url": "https://www.cnn.com/2026/07/07/middleeast/hormuz-tanker-iran-attack-intl-hnk",
+          "sourceLabel": "CNN / UKMTO"
+        },
+        {
+          "title": "日本関係船10隻超がイランルート経由で通過、残り26隻に",
+          "url": "https://news.yahoo.co.jp/articles/8472482cfbe5cf54a2151e81f5c810b8ae0507fb",
+          "sourceLabel": "国土交通省 / 日本船主協会 / Reuters / Bloomberg"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "dateLabel": "2026/07/09 06:59",
+      "blockadeDay": 132,
+      "summary": "トランプ大統領、NATO首脳会議（アンカラ）でイランとの停戦は「もう終わったと思っている」と表明・イラン指導部を罵倒（7/8）・アラグチー外相はXで反論・イラン外務省「MOUはホルムズ管理権をイランに戻す」——米は否定（7/8）・原油急騰（ブレント一時$75.18・+4.4%／WTI一時$74.26・+5.3%）・商船三井関係8隻が追加通過し日本関係船は残り18隻に（7/7判明・時事通信）・IMO「船員約6,000人取り残され」・封鎖132日目・ニュース3件更新",
+      "relatedNews": [
+        {
+          "title": "IRGC、クウェート・バーレーン・カタールの米軍拠点に報復攻撃——1名負傷",
+          "url": "https://www.rferl.org/a/iran-war-us-hormuz-oil-blockade-gulf-israel/33640284.html",
+          "sourceLabel": "RFE/RL"
+        },
+        {
+          "title": "ガリバフ国会議長「攻撃すれば反撃を受ける」——アラグチー外相も対米強硬姿勢",
+          "url": "https://www.cnn.com/2026/07/09/middleeast/iran-us-ceasefire-attacks-resume-intl-hnk",
+          "sourceLabel": "CNN"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "dateLabel": "2026/07/10 07:40",
+      "blockadeDay": 133,
+      "summary": "CENTCOM、南部イラン各地（ブシェール・チャバハール・バンダルアッバス・ジャスク等）で追加空爆（7/8夜）・IRGCがクウェート・バーレーン・カタールの米軍拠点にドローン・ミサイルで報復——停戦後初のカタール標的化（7/9）・クウェート国防省「迎撃したが被害で1名負傷」・ガリバフ国会議長「攻撃すれば反撃を受ける」・バーレーン・クウェート・UAE・ヨルダンが非難・ブシェール州で原因不明の爆発複数・原油一時$79台へ急騰後$77前後に落ち着く・日本関係船18隻で変化なし・封鎖133日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "日本関係船22隻がホルムズ海峡通過——残り4隻に大幅減",
+          "url": "https://www.nippon.com/en/news/yjj2026071000499/",
+          "sourceLabel": "国土交通省 / 時事通信 / NHK"
+        },
+        {
+          "title": "米、イランに攻撃停止・全通航路開放の公式声明を要求",
+          "url": "https://www.al-monitor.com/originals/2026/07/us-insists-iran-commit-stopping-attacks-hormuz-strait-say-us-officials",
+          "sourceLabel": "Reuters / AP"
+        },
+        {
+          "title": "原油、一時ブレント$79台へ急騰後$77前後に落ち着く",
+          "url": "https://www.kitco.com/news/off-the-wire/2026-07-09/oil-prices-fall-markets-weigh-impact-us-strikes-iran",
+          "sourceLabel": "Trading Economics / Kitco・Reuters"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "dateLabel": "2026/07/11 08:38",
+      "blockadeDay": 134,
+      "summary": "金子国交相、日本関係船22隻（大型原油タンカー6隻含む）の通過を発表——残り4隻に大幅減（開戦時45隻から・7/10会見）・米当局者、イランに攻撃停止・全通航路開放の公式声明を要求——通航料も不可（Reuters）・イラン、攻撃は「制度の一部の暴走」と釈明し対話継続を希望・アラグチー外相は本日オマーンでブーサイーディー外相と海峡管理を協議・トルコ外相フィダン氏「今週末にも解決の可能性」・イラン国連大使は「海峡管理は専らイランに属する」と対立姿勢維持・原油はブレント$76台で高止まり（週間+5〜6%）・南ルートは大型船AIS通航が7/7以降ゼロで事実上停止・バンダルアッバスの漁船30隻超が空爆で損壊・封鎖134日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "アラグチー外相、本日オマーンでホルムズ海峡管理を協議",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/7/10/iran-war-live-fresh-attacks-on-iran-as-us-says-talks-still-on",
+          "sourceLabel": "IRNA / Al Jazeera"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "dateLabel": "2026/07/12 09:19",
+      "blockadeDay": 135,
+      "summary": "IRGC、キプロス籍コンテナ船GFS Galaxyに警告射撃・着火攻撃——ホルムズ海峡を「次官通達まで閉鎖」と宣言（7/12未明JST）・CENTCOM、今週3度目の対イラン空爆を実施——ヘグセス国防長官「イランは間違った選択をした。今、代償を払う」・停戦は事実上崩壊・オマーンが通航料なしの南北二経路案を提示（南＝自由航行、北＝イラン事前承認制だが無料）——アラグチー外相はオマーン外相と会談も結論持ち帰りで検討中・日本関係船は残り4隻で変化なし（外務省/国交省へ日英クエリで再確認）・原油はブレント週間+5〜6%で$76台高止まり（7/10終値時点）・封鎖135日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "イラン、米の3度目空爆にオマーン・カタール・クウェート・バーレーン・ヨルダンを報復攻撃",
+          "url": "https://www.npr.org/2026/07/11/g-s1-133212/us-iran-vessel-attack-strait-hormuz-gulf",
+          "sourceLabel": "NPR / Washington Post"
+        },
+        {
+          "title": "オマーン、ドゥクム・ムサンダム攻撃を受けイラン大使を召喚——「無責任な行為」と抗議",
+          "url": "https://global-scm.com/blog/?p=7870",
+          "sourceLabel": "コンサルタントの独り言（global-scm.com）"
+        },
+        {
+          "title": "イラン、ホルムズ海峡「閉鎖」を宣言——コンテナ船GFS Galaxyを攻撃",
+          "url": "https://www.timesofisrael.com/liveblog-july-11-2026/",
+          "sourceLabel": "CENTCOM / Times of Israel"
+        },
+        {
+          "title": "オマーン、通航料なしの南北二経路案を提示——イランは持ち帰り検討",
+          "url": "https://www.cnn.com/2026/07/11/world/live-news/iran-war-trump",
+          "sourceLabel": "CNN"
+        },
+        {
+          "title": "米、今週3度目の対イラン空爆——ヘグセス長官「代償を払う」",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-07-11/ty-article-live/aoc-calls-to-release-gaza-hospital-director-hussam-abu-safiya/0000019f-4de2-d38b-afbf-5ff684110004",
+          "sourceLabel": "Times of Israel / Haaretz"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "dateLabel": "2026/07/13 08:28",
+      "blockadeDay": 136,
+      "summary": "イラン、米の3度目・約140カ所への対イラン空爆に対しオマーン（ドゥクム）・カタール（アルウデイド基地）・クウェート・バーレーン・ヨルダンの5カ国を弾道ミサイル・ドローンで同時報復攻撃（7/12 JST）・カタールで迎撃破片により3名負傷・ガリバフ国会議長「一方的な合意の時代は終わった」とX投稿・オマーン外務省、ドゥクム・ムサンダム攻撃を受けイラン大使を召喚し正式抗議——前日のアラグチー・ブーサイーディー両外相協議から一転し仲介の立場も緊張最高潮・日本関係船は残り4隻で変化なし（外務省/国交省へ日英クエリで再確認）・原油は週明けに反発しブレント一時79ドル台・WTI74ドル台まで4%高・封鎖136日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "トランプ大統領、対イラン海上封鎖の再開と「ホルムズ海峡の守護者」を宣言——全貨物の20%通航料を表明",
+          "url": "https://www.cnbc.com/2026/07/13/trump-iran-hormuz-strait-charge-reimburse.html",
+          "sourceLabel": "CNBC / Al Jazeera"
+        },
+        {
+          "title": "アラグチー外相「イランこそ永遠の守護者」と反発——IMOは強制通航料に断固反対",
+          "url": "https://www.newsweekjapan.jp/articles/-/328268",
+          "sourceLabel": "NPR/KPBS / ニューズウィーク日本版"
+        },
+        {
+          "title": "原油急伸、ブレント一時83ドル台——封鎖再開・通航料表明を受け週明けに急騰",
+          "url": "https://www.kpbs.org/news/international/2026/07/13/the-u-s-strikes-iran-after-trump-announces-a-renewed-blockade-and-tolls-in-hormuz",
+          "sourceLabel": "Trading Economics / KPBS"
+        },
+        {
+          "title": "原油急反発、ブレント一時79ドル台・WTI74ドル台——週明けに4%高",
+          "url": "https://www.nikkei.com/markets/stocks/",
+          "sourceLabel": "日本経済新聞"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "dateLabel": "2026/07/14 08:48〜18:00",
+      "blockadeDay": 137,
+      "summary": "トランプ大統領、対イラン海上封鎖の再開と「ホルムズ海峡の守護者」を宣言——全貨物の20%を通航料として徴収する方針を表明（封鎖発効は7/14 20:00 GMT予定）・アラグチー外相「イランこそ永遠の守護者」と反発しつつ「20%は高すぎる」と税率交渉に含み・イラン軍ハタム・アル・アンビヤ司令部は米国の海峡管理への干渉を許さないと強調・IMOは強制通航料に法的根拠なしとして断固反対・中国外務省も安全な航行確保を要求（08:48時点）／共同通信：日本関係の原油タンカーは全てホルムズ海峡を通過しペルシャ湾外へ退避したと判明・ペルシャ湾内に残る日本関係船舶は原油タンカー以外の4隻で隻数に変化なし（16:16時点）／UAE国防省：ホルムズ海峡でタンカー「モンバサ」「アルバヒヤ」がイラン巡航ミサイル攻撃を受けインド人乗組員1人死亡・8人負傷（火災鎮圧）・トランプ大統領、対イラン戦闘は7/7に再開と議会へ正式通知（18:00時点）・原油はブレント7/13終値78.85ドル（+3.74%）後、同日夜一時83ドル台まで急伸・封鎖137日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "トランプ大統領、20%通航料を撤回——ガルフ諸国との貿易投資取引に転換",
+          "url": "https://www.cnbc.com/2026/07/15/cnbc-daily-open-trump-hormuz-fees-us-stocks-tech-fed.html",
+          "sourceLabel": "CNBC / Foreign Policy"
+        },
+        {
+          "title": "日本関係の原油タンカー、全てホルムズ海峡を通過——残る4隻は非タンカー船",
+          "url": "https://news.yahoo.co.jp/articles/b43aa6b7fa6a8027bec7ecb1fb1bfed60e62beb4",
+          "sourceLabel": "共同通信 / 日本海新聞"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "dateLabel": "2026/07/16 10:52",
+      "blockadeDay": 139,
+      "summary": "【超重大更新】トランプ大統領、20%通航料を撤回しガルフ諸国との貿易投資取引に転換すると表明・対イラン海上封鎖は7/14夕発効・米軍は5夜連続の対イラン空爆を継続しGreater Tunb島の巡航ミサイル拠点等を攻撃・新封鎖下で初めてカーグ島向け無許可タンカー1隻を無力化・商船2隻を進路変更・IRGC海軍幹部「海峡閉鎖の方針を維持し最も過酷な打撃を加える」と表明・トランプ「来週はもっと悪くなる」と発電所・橋梁攻撃を警告・カーグ島制圧検討との報道も・米はIRGC武器調達関連に追加制裁・イランは拘束中の米国籍女性を解放・日本関係船は残り4隻で変化なし・日本貿易会/石油連盟トップが「ホルムズ海峡は当面使えない」と表明・原油はブレント7/15終値84.95ドル・封鎖139日目・ニュース3件更新・osint更新",
+      "relatedNews": []
+    },
+    {
+      "date": "2026-07-19",
+      "dateLabel": "2026/07/19 10:17",
+      "blockadeDay": 142,
+      "summary": "イラン外務省「米イラン停戦覚書は危機段階に入った」と表明・トランプ「停戦は終わった」と言及・米軍は7夜連続で対イラン空爆継続——バンダルハミール橋梁・チャバハール港監視塔を破壊・イランはヨルダン・クウェート・バーレーン・カタール・イラクへ報復攻撃・ヨルダンの米軍基地攻撃で米兵2名戦死・1名行方不明（3月以来初の米軍戦死者）・クウェート石油公社施設に甚大な被害・イラン側発表で直近の米空爆により46名死亡400名超負傷・ホルムズ通航量は7/16に8隻のみで3週間ぶり最低水準・原油はブレント7/17終値88.09ドル（週間+14%超）・日本関係船は残り4隻で変化なし・封鎖142日目・ニュース3件更新・osint更新",
+      "relatedNews": []
+    }
+  ]
+}

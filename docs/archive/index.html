@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホルムズ危機 全記録 — 日次アーカイブ | ホルムズ海峡危機マップ</title>
+<meta name="description" content="ホルムズ海峡封鎖危機の日次記録アーカイブ。速報の全履歴を日付順に保存し、日本語で最も詳細な一次記録を目指します。">
+<link rel="canonical" href="https://yattanda.github.io/hormuz-map/archive/">
+<style>
+  :root{
+    --bg:#0b1220;
+    --bg-raised:#0f1830;
+    --ink:#dbe4f0;
+    --muted:#8b9bb4;
+    --muted-dim:#5c6b85;
+    --line:rgba(219,228,240,0.09);
+    --line-strong:rgba(219,228,240,0.16);
+    --amber:#c9a869;
+    --amber-dim:rgba(201,168,105,0.14);
+    --amber-line:rgba(201,168,105,0.35);
+    --alert:#e07856;
+    --link:#7fb8e0;
+    --serif: "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    --sans: -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
+    --mono: "SF Mono","Menlo","Consolas",monospace;
+  }
+  *{box-sizing:border-box;}
+  html{background:var(--bg);}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.7;
+  }
+  a{color:var(--link);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+  /* ===== HEADER / MASTHEAD ===== */
+  .masthead{
+    border-bottom:1px solid var(--line-strong);
+    padding:28px 0 22px;
+    background:
+      radial-gradient(1200px 300px at 50% -80%, rgba(201,168,105,0.08), transparent);
+  }
+  .masthead .eyebrow{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    color:var(--amber);text-transform:uppercase;margin-bottom:10px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .masthead .eyebrow::before{content:"◈";}
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:2.05rem;
+    letter-spacing:.01em;
+    margin:0 0 8px;
+    color:#f2ead9;
+  }
+  .masthead .sub{
+    color:var(--muted);font-size:.92rem;max-width:56ch;
+  }
+  .masthead .backlink{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-size:.8rem;color:var(--muted);text-decoration:none;
+    border:1px solid var(--line-strong);padding:6px 12px;border-radius:20px;
+  }
+  .masthead .backlink:hover{border-color:var(--amber-line);color:var(--amber);}
+
+  /* ===== STATS STRIP ===== */
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{padding:16px 4px;text-align:center;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .n{
+    font-family:var(--mono);font-size:1.5rem;color:var(--amber);
+    font-variant-numeric:tabular-nums;
+  }
+  .stat .l{font-size:.68rem;color:var(--muted-dim);letter-spacing:.06em;margin-top:2px;}
+
+  /* ===== NOTICE ===== */
+  .notice{
+    margin:18px 0;padding:12px 14px;border:1px dashed var(--line-strong);
+    border-radius:8px;font-size:.78rem;color:var(--muted);
+    background:rgba(255,255,255,0.015);
+  }
+  .notice strong{color:var(--ink);}
+
+  /* ===== TIMELINE ===== */
+  .timeline{position:relative;padding:28px 0 60px;}
+  .timeline::before{
+    content:"";position:absolute;left:64px;top:0;bottom:0;width:1px;
+    background:linear-gradient(to bottom, transparent, var(--line-strong) 3%, var(--line-strong) 97%, transparent);
+  }
+  .day{position:relative;padding-left:96px;margin-bottom:34px;scroll-margin-top:20px;}
+  .day .marker{
+    position:absolute;left:56px;top:2px;width:17px;height:17px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--amber-line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .day.crit .marker{border-color:var(--alert);}
+  .day .marker::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber);}
+  .day.crit .marker::after{background:var(--alert);}
+
+  .day .datehead{
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px;
+  }
+  .day .datehead .date{
+    font-family:var(--serif);font-size:1.18rem;color:#f2ead9;
+  }
+  .day .datehead .stamp{
+    font-family:var(--mono);font-size:.68rem;color:var(--amber);
+    border:1px solid var(--amber-line);background:var(--amber-dim);
+    padding:2px 9px;border-radius:3px;letter-spacing:.03em;white-space:nowrap;
+  }
+  .day .datehead .time{
+    font-family:var(--mono);font-size:.72rem;color:var(--muted-dim);
+  }
+
+  .day .summary{
+    font-size:.9rem;color:#c3cfe0;line-height:1.85;
+    padding:14px 16px;background:var(--bg-raised);
+    border:1px solid var(--line);border-radius:10px;
+  }
+  .day .summary .sep{color:var(--muted-dim);margin:0 2px;}
+
+  .day .news{margin-top:9px;padding-left:2px;}
+  .day .news .newslabel{
+    font-size:.65rem;color:var(--muted-dim);letter-spacing:.08em;
+    text-transform:uppercase;margin-bottom:5px;
+  }
+  .day .news ul{list-style:none;margin:0;padding:0;}
+  .day .news li{
+    font-size:.78rem;margin-bottom:4px;padding-left:14px;position:relative;
+  }
+  .day .news li::before{content:"—";position:absolute;left:0;color:var(--muted-dim);}
+  .day .news a{text-decoration:none;border-bottom:1px solid rgba(127,184,224,0.25);}
+  .day .news a:hover{border-bottom-color:var(--link);}
+  .day .news .src{color:var(--muted-dim);font-size:.7rem;}
+
+  .month-divider{
+    padding-left:96px;margin:8px 0 20px;position:relative;
+  }
+  .month-divider span{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;
+    color:var(--muted-dim);text-transform:uppercase;
+  }
+
+  .gap-note{
+    padding-left:96px;margin:-14px 0 28px;font-size:.72rem;color:var(--muted-dim);
+    font-style:italic;
+  }
+
+  footer{
+    border-top:1px solid var(--line);padding:24px 0 40px;
+    font-size:.75rem;color:var(--muted-dim);
+  }
+  footer a{color:var(--muted);}
+
+  #loading{padding:60px 0;text-align:center;color:var(--muted);font-size:.85rem;}
+
+  @media (max-width:600px){
+    .wrap{padding:0 14px;}
+    .timeline::before{left:38px;}
+    .day{padding-left:58px;}
+    .day .marker{left:30px;}
+    .month-divider,.gap-note{padding-left:58px;}
+    .masthead h1{font-size:1.6rem;}
+    .stats{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">ホルムズ海峡危機マップ — 補助アーカイブ</div>
+    <h1>ホルムズ危機 全記録</h1>
+    <p class="sub">
+      本サイトが日々発信してきた速報を、日付順に一次記録として保存するアーカイブです。
+      危機の推移を後から検証できる「日本語で最も詳細な記録」を目指し、随時追記しています。
+    </p>
+    <a class="backlink" href="../index.html">← 危機マップ本編（最新情報）へ</a>
+  </header>
+
+  <div class="stats" id="stats">
+    <div class="stat"><div class="n">—</div><div class="l">記録日数</div></div>
+    <div class="stat"><div class="n">—</div><div class="l">対象期間</div></div>
+    <div class="stat"><div class="n">—</div><div class="l">封鎖経過日数</div></div>
+  </div>
+
+  <div class="notice">
+    <strong>収録範囲について：</strong>
+    現在は直近分（2026年6月20日〜）のみを収録しています。過去分は今後、段階的に遡って追加予定です。
+    本サイトが速報を発信しなかった日は記録対象外としています。
+  </div>
+
+  <div id="loading">記録を読み込み中…</div>
+  <div class="timeline" id="timeline" style="display:none;"></div>
+
+  <footer>
+    <p>本ページは <a href="https://yattanda.github.io/hormuz-map/" target="_blank" rel="noopener">ホルムズ海峡危機マップ</a> の一部として、危機の進行記録を保存する目的で運用しています。各エントリーの本文は公開時点の速報内容をそのまま収録したものであり、後日の訂正・修正は反映されない場合があります。最新の情勢は必ず本編をご確認ください。</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const MONTH_LABELS = {"06":"2026年6月","07":"2026年7月","08":"2026年8月","09":"2026年9月","10":"2026年10月","11":"2026年11月","12":"2026年12月","01":"2027年1月","02":"2027年2月"};
+
+  function fmtDate(iso){
+    const [y,m,d] = iso.split('-');
+    const wd = ['日','月','火','水','木','金','土'][new Date(iso+'T00:00:00+09:00').getUTCDay()];
+    return `${parseInt(m)}月${parseInt(d)}日（${wd}）`;
+  }
+
+  fetch('../data/archive_timeline.json')
+    .then(r => {
+      if(!r.ok) throw new Error('data fetch failed: ' + r.status);
+      return r.json();
+    })
+    .then(data => {
+      const entries = (data.entries || []).slice().sort((a,b) => a.date < b.date ? 1 : -1); // newest first
+      renderStats(data, entries);
+      renderTimeline(entries);
+    })
+    .catch(err => {
+      document.getElementById('loading').textContent = '記録データの読み込みに失敗しました（' + err.message + '）。時間をおいて再度お試しください。';
+    });
+
+  function renderStats(data, entries){
+    const statEls = document.querySelectorAll('#stats .n');
+    statEls[0].textContent = entries.length + '日';
+    const rs = data.meta && data.meta.rangeStart, re = data.meta && data.meta.rangeEnd;
+    statEls[1].textContent = rs && re ? `${rs.slice(5)}〜${re.slice(5)}` : '—';
+    const days = entries.map(e => e.blockadeDay).filter(Boolean);
+    if(days.length){
+      statEls[2].textContent = Math.min(...days) + '〜' + Math.max(...days) + '日目';
+    }
+  }
+
+  function renderTimeline(entries){
+    const el = document.getElementById('timeline');
+    let html = '';
+    let lastMonth = null;
+    let lastDate = null;
+
+    entries.forEach(e => {
+      const ym = e.date.slice(0,7);
+      const monthKey = e.date.slice(5,7);
+      if(ym !== lastMonth){
+        html += `<div class="month-divider"><span>${MONTH_LABELS[monthKey] || ym}</span></div>`;
+        lastMonth = ym;
+      }
+
+      if(lastDate){
+        const gap = dayGap(e.date, lastDate);
+        if(gap > 1){
+          html += `<div class="gap-note">（${gap - 1}日分の速報なし・スキップ）</div>`;
+        }
+      }
+      lastDate = e.date;
+
+      const isCrit = /超重大更新|重大更新/.test(e.summary);
+      const summaryHtml = escapeHtml(e.summary).split('・').join('<span class="sep">・</span>');
+
+      let newsHtml = '';
+      if(e.relatedNews && e.relatedNews.length){
+        newsHtml = `<div class="news"><div class="newslabel">関連ニュース</div><ul>` +
+          e.relatedNews.map(n => `<li><a href="${escapeAttr(n.url)}" target="_blank" rel="noopener">${escapeHtml(n.title)}</a> <span class="src">— ${escapeHtml(n.sourceLabel||'')}</span></li>`).join('') +
+          `</ul></div>`;
+      }
+
+      html += `
+      <div class="day${isCrit ? ' crit' : ''}" id="d-${e.date}">
+        <div class="marker"></div>
+        <div class="datehead">
+          <span class="date">${fmtDate(e.date)}</span>
+          ${e.blockadeDay ? `<span class="stamp">封鎖${e.blockadeDay}日目</span>` : ''}
+          <span class="time">${escapeHtml(e.dateLabel || '')}</span>
+        </div>
+        <div class="summary">${summaryHtml}</div>
+        ${newsHtml}
+      </div>`;
+    });
+
+    el.innerHTML = html;
+    document.getElementById('loading').style.display = 'none';
+    el.style.display = 'block';
+  }
+
+  function dayGap(newer, older){
+    const d1 = new Date(newer + 'T00:00:00Z');
+    const d2 = new Date(older + 'T00:00:00Z');
+    return Math.round((d1 - d2) / 86400000);
+  }
+  function escapeHtml(s){
+    return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+  function escapeAttr(s){ return escapeHtml(s); }
+})();
+</script>
+</body>
+</html>

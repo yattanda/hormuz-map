@@ -68,6 +68,12 @@
 - `auto_push.py` / `run.bat`：`news_data.json` と `index_html_diffs.md` を Downloads フォルダから GitHub API で直接 push
 - GenSpark：参照用アーカイブのみ（更新しない）
 
+## 特別解説コラムの個別ページ化
+
+- 「特別解説コラム」の各コラムは `docs/articles/{slug}.html` として個別ページ化されている（一覧：`docs/articles/index.html`）
+- `docs/index.html` 側の各カードは要約＋「全文を読む」リンクのみを表示し、本文全文は個別ページ側が正とする
+- 新規コラムを追加する場合は `docs/tools/new-article-checklist.md` の手順に従うこと
+
 ## hormuz-data- 連携ルール
 
 - `hormuz-data-` リポジトリはダッシュボード・自動データの別リポジトリ

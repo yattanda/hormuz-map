@@ -15,4 +15,39 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://yattanda.github.io/hormuz-map/articles/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://yattanda.github.io/hormuz-map/articles/mine-clearance.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://yattanda.github.io/hormuz-map/articles/saudi-pipeline-attack.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://yattanda.github.io/hormuz-map/articles/route-c-alaska-oil.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://yattanda.github.io/hormuz-map/articles/oil-diversification-africa-brazil.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

@@ -1,0 +1,112 @@
+<!--
+  記事テンプレート（コピー元）
+  使い方は docs/tools/new-article-checklist.md を参照。
+  {{ }} で囲んだプレースホルダーをすべて置換してから公開する。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<title>{{記事タイトル}}｜ホルムズ海峡危機マップ</title>
+<meta name="description" content="{{140字程度の要約。検索結果に表示される説明文}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://yattanda.github.io/hormuz-map/articles/{{slug}}.html">
+<link rel="stylesheet" href="_article.css">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ホルムズ海峡危機マップ">
+<meta property="og:title" content="{{記事タイトル}}｜ホルムズ海峡危機マップ">
+<meta property="og:description" content="{{140字程度の要約}}">
+<meta property="og:url" content="https://yattanda.github.io/hormuz-map/articles/{{slug}}.html">
+<meta property="og:image" content="https://yattanda.github.io/hormuz-map/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hormuz_map_jp">
+<meta name="twitter:title" content="{{記事タイトル}}">
+<meta name="twitter:description" content="{{140字程度の要約}}">
+<meta name="twitter:image" content="https://yattanda.github.io/hormuz-map/ogp.jpg">
+
+<!-- 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{記事タイトル}}",
+  "description": "{{140字程度の要約}}",
+  "datePublished": "{{YYYY-MM-DD（初出日）}}",
+  "dateModified": "{{YYYY-MM-DD（最終更新日）}}",
+  "author": { "@type": "Organization", "name": "ホルムズ海峡危機マップ" },
+  "publisher": { "@type": "Organization", "name": "ホルムズ海峡危機マップ" },
+  "mainEntityOfPage": "https://yattanda.github.io/hormuz-map/articles/{{slug}}.html"
+}
+</script>
+</head>
+<body>
+
+<div class="article-container">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb">
+    <a href="../index.html">ホーム</a>
+    <span>›</span>
+    <a href="../index.html#special-commentary">特別解説コラム</a>
+    <span>›</span>
+    <span>{{記事タイトル（短縮版）}}</span>
+  </nav>
+
+  <!-- 見出し -->
+  <div class="article-eyebrow">{{絵文字}} 特別解説コラム</div>
+  <h1 class="article-title">{{記事タイトル}}</h1>
+  <p class="article-lead">{{サブタイトル・リード文}}</p>
+  <div class="article-meta">
+    <span>初出：<strong>{{YYYY/MM/DD}}</strong></span>
+    <span>最終更新：<strong>{{YYYY/MM/DD}}</strong></span>
+  </div>
+
+  <!-- 本文（既存トグル本文をそのまま移設。時系列的事実には
+       <span class="at-the-time">（{{当時の日付}}時点の情報）</span>
+       のような注記を添える） -->
+  <div class="article-body">
+
+    <div>
+      <div class="article-section-title">{{セクション見出し1}}</div>
+      <p>{{本文}}</p>
+    </div>
+
+    <div>
+      <div class="article-section-title">{{セクション見出し2}}</div>
+      <p>{{本文}}</p>
+    </div>
+
+    <!-- 結論・まとめ -->
+    <div class="article-summary-box">
+      <div class="article-section-title">📋 結論</div>
+      <p>{{まとめ本文}}</p>
+    </div>
+
+  </div>
+
+  <!-- 関連コラム（SEO内部リンク） -->
+  <div class="related-articles">
+    <h2>関連コラム</h2>
+    <div class="related-list">
+      <a href="{{related-slug-1}}.html">{{関連コラムタイトル1}}</a>
+      <a href="{{related-slug-2}}.html">{{関連コラムタイトル2}}</a>
+    </div>
+  </div>
+
+  <!-- 本編へ戻る -->
+  <div class="back-to-main">
+    <a href="../index.html#special-commentary">← ホルムズ海峡危機マップ 本編へ戻る</a>
+  </div>
+
+</div>
+
+</body>
+</html>

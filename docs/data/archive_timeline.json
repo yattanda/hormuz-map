@@ -426,6 +426,41 @@
       "fillType": "gap"
     },
     {
+      "date": "2026-03-31",
+      "dateLabel": "2026/03/31（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領、ホルムズ海峡通過船舶の安全確保について「米国は一切関与しない」と発言——インフラ攻撃をちらつかせていたそれまでの強硬姿勢から一転した内容で、その後すぐに矛盾する強硬発言に戻ることになる",
+      "relatedNews": [
+        {
+          "title": "Trump claims Iran's president wants a ceasefire（3/31の発言の経緯に言及）",
+          "url": "https://www.pbs.org/newshour/world/trump-claims-irans-president-wants-a-ceasefire",
+          "sourceLabel": "PBS NewsHour / AP"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
+      "date": "2026-04-01",
+      "dateLabel": "2026/04/01（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領、「イランの新体制大統領が停戦を要請してきた」とTruth Socialに投稿——ただしホルムズ海峡が「完全に開放され、自由かつ明瞭な状態」になるまでは検討しないと表明し「それまではイランを壊滅させ、石器時代に戻す」と発言・イラン外務省報道官エスマイル・バガエイ氏は「根拠のない虚偽」と即座に否定・イラン革命防衛隊(IRGC)も「海峡は断固として我々の管理下にあり、米大統領の茶番によって敵に開放されることはない」と反発・イランは同日もペルシャ湾岸諸国への攻撃を継続",
+      "relatedNews": [
+        {
+          "title": "Trump says Iran's president asked for ceasefire, but U.S. wants Hormuz Strait open first",
+          "url": "https://www.cnbc.com/2026/04/01/trump-iran-war-ceasefire.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "Iran fires back with flat denial after Trump claims Tehran requested ceasefire",
+          "url": "https://www-ak-ms.foxnews.com/politics/iran-fires-back-flat-denial-after-trump-claims-tehran-requested-ceasefire-false-baseless.print",
+          "sourceLabel": "Fox News"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
       "date": "2026-04-04",
       "dateLabel": "2026/04/04（事後調査）",
       "blockadeDay": null,

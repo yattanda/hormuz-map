@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated": "2026-07-20",
+    "generated": "2026-07-21",
     "rangeStart": "2026-02-28",
     "rangeEnd": "2026-07-19",
-    "note": "2026年2月28日〜3月15日分は本サイト開設前のため、事後調査により作成した記録です（sourceType: researched）。2026年4月8日以降は本サイトが実際に発信した速報本文をそのまま収録しています（sourceType: site-log）。速報のなかった日はスキップしています。"
+    "note": "2026年2月28日〜4月7日分は本サイト開設前のため、公開情報をもとに事後調査で作成した記録です（sourceType: researched）。2026年4月8日以降は、本サイトが実際にその日に発信した速報本文をそのまま収録しています（sourceType: site-log）。速報のなかった日はスキップしています。"
   },
   "entries": [
     {
@@ -167,6 +167,142 @@
         {
           "title": "Trump urges nations to send ships to secure Strait of Hormuz",
           "url": "https://www.newsonair.gov.in/us-president-donald-trump-urges-nations-to-send-ships-to-secure-strait-of-hormuz-amid-iran-tensions",
+          "sourceLabel": "News On AIR"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "dateLabel": "2026/03/16（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領、SNSで約7カ国に対しホルムズ海峡の安全確保のため艦船派遣を要請したと表明・原油依存度の高い国々による「海峡警備連合」結成を提案・EU外交安全保障上級代表カヤ・カラス氏は、海峡再開に向けた2種類の海軍派遣案を検討中と表明（ブリュッセルでのEU外相会合を前に）",
+      "relatedNews": [
+        {
+          "title": "Trump demands about seven countries send warships to keep Strait of Hormuz open",
+          "url": "https://www.newsonair.gov.in/us-president-trump-says-he-has-demanded-that-about-seven-countries-send-warships-to-keep-strait-of-hormuz-open-as-iran-continued-to-strike-gulf-countries",
+          "sourceLabel": "News On AIR"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "dateLabel": "2026/03/19（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "米軍がホルムズ海峡再開を目的とした本格的な航空作戦を正式に開始（2026 Strait of Hormuz campaign）——イラン海軍艦艇・ドローンの破壊を目標に掲げるも、進展は緩慢でイラン側に譲歩の兆しなし",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Crisis 2026: Full Timeline & Ocean Freight Impact",
+          "url": "https://www.seavantage.com/blog/strait-of-hormuz-crisis-2026-shipping-disruption-timeline",
+          "sourceLabel": "Seavantage"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "dateLabel": "2026/03/22（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "開戦23日目、トランプ大統領がイランに対し「48時間以内にホルムズ海峡を再開しなければ発電施設を破壊する」と警告・イランはイスラエル南部ディモナ（核関連施設周辺）へミサイルを発射し多数負傷・イラン核関連施設ナタンズへの攻撃も報告・アラグチー外相は「海峡を通航できないのは保険会社が米国発の戦争を懸念しているためで、イランの行動が原因ではない」と主張",
+      "relatedNews": [
+        {
+          "title": "US-Israel war on Iran, Day 23: Trump gives Iran 48 hours to reopen Strait of Hormuz",
+          "url": "https://gulfnews.com/uae/usisrael-war-on-iran-day-23-trump-gives-iran-48-hours-to-reopen-strait-of-hormuz-qatar-helicopter-crashes-1.500482371",
+          "sourceLabel": "Gulf News"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "dateLabel": "2026/03/26（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "イスラエル軍がイラン中部イスファハンのインフラ標的へ空爆を実施・イスラエル国防相、ホルムズ海峡封鎖の首謀者とされるIRGC海軍司令官アリレザ・タンギシーリー提督をバンダルアッバスへの空爆で殺害したと発表（他の海軍幹部も死亡）・イランはイスラエル中部へミサイル2波を発射し被害・負傷者・トランプ大統領は発電施設破壊の期限を10日間延長し「4月6日午後8時（東部時間）」に設定・フランスが35カ国とのテレビ会議を主催し、停戦後のホルムズ海峡通航再開に向けた調整を開始",
+      "relatedNews": [
+        {
+          "title": "Israel kills IRGC Navy commander Alireza Tangsiri",
+          "url": "https://gulfnews.com/world/mena/abandon-your-posts-or-die-us-admiral-tells-iranians-in-irgc-navy-confirms-tangsiris-death-1.500487731",
+          "sourceLabel": "Gulf News / AFP"
+        },
+        {
+          "title": "Trump grants Iran another extension on Strait of Hormuz deadline",
+          "url": "https://www.npr.org/2026/03/26/nx-s1-5761882/iran-war-peace-conditions",
+          "sourceLabel": "NPR"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "dateLabel": "2026/03/27（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "イラン革命防衛隊(IRGC)がホルムズ海峡に対する正式な通航禁止令を発令——一時的措置ではなく恒常的な戦略姿勢であることを示唆",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Crisis 2026: Full Timeline & Ocean Freight Impact",
+          "url": "https://www.seavantage.com/blog/strait-of-hormuz-crisis-2026-shipping-disruption-timeline",
+          "sourceLabel": "Seavantage"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "dateLabel": "2026/03/28〜30（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "オマーン・サラーラ港（APMターミナルズ運営）が攻撃を受ける——「ホルムズを迂回しサラーラで積み替える」という代替戦略そのものが標的化され、海運業界に新たな衝撃",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡危機：情勢と実務リスク（サラーラ港攻撃に言及）",
+          "url": "https://global-scm.com/blog/?p=5716",
+          "sourceLabel": "Global SCM"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "dateLabel": "2026/04/05（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領、ホルムズ海峡が閉鎖されたままなら「4月7日（火）にイランの発電所・橋梁を攻撃する」と最終警告・イラン軍は南部イスファハン付近で、行方不明となった米軍機乗員の捜索・救助活動中にブラックホーク2機とC-130輸送機を撃墜したと主張（IRGC・バスィージ発表）",
+      "relatedNews": [
+        {
+          "title": "Trump warns of strikes on Iran's power plants on April 7",
+          "url": "https://www.newsonair.gov.in/us-president-trump-warns-of-strikes-on-irans-power-plants-on-april-7-if-strait-of-hormuz-remains-closed",
+          "sourceLabel": "News On AIR"
+        },
+        {
+          "title": "Trump gives 48-hour ultimatum to Iran to open Strait of Hormuz",
+          "url": "https://www.newsonair.gov.in/us-president-donald-trump-gives-48-hour-ultimatum-to-iran-to-open-strait-of-hormuz",
+          "sourceLabel": "News On AIR"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "dateLabel": "2026/04/06（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領の最終期限当日——イランに「発電所・橋梁を破壊する」と改めて警告しつつ「合意の可能性は十分ある」とも発言・イラン側は最後通牒を拒否し「圧力下での交渉はしない」と表明・OPEC+は5月からの増産（日量約20万6千バレル）で合意し市場安定化を図る",
+      "relatedNews": [
+        {
+          "title": "Iran rejects a U.S. ceasefire plan as Trump again threatens to bomb its infrastructure",
+          "url": "https://www.npr.org/2026/04/06/nx-s1-5775383/iran-war-updates",
+          "sourceLabel": "NPR"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "dateLabel": "2026/04/07（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領、ホワイトハウスでの記者会見で「一晩でイランを壊滅させることもできる」と改めて警告——統合参謀本部議長ケイン大将・国防長官ヘグセス氏が同席・数日前に南部イランで撃墜されたF-15乗員2名の救出に成功したことも明らかに・NATO同盟国の非協力に不満を表明・イランは停戦提案を拒否し、停戦・復興支援・制裁解除を要求——このわずか1〜2日後（4/7〜8）に米イラン間で停戦合意が成立",
+      "relatedNews": [
+        {
+          "title": "Trump threatens to decimate Iran in one night",
+          "url": "https://www.newsonair.gov.in/us-president-trump-threatens-to-decimate-iran-in-one-night-if-tehran-fails-to-make-a-deal-before-set-deadline-to-reopen-strait-of-hormuz",
           "sourceLabel": "News On AIR"
         }
       ]

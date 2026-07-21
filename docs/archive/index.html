@@ -135,6 +135,14 @@
     border:1px solid var(--amber-line);background:var(--amber-dim);
     padding:2px 9px;border-radius:3px;letter-spacing:.03em;white-space:nowrap;
   }
+  .day .datehead .researched-badge{
+    font-family:var(--mono);font-size:.65rem;color:#8b9bb4;
+    border:1px dashed var(--line-strong);background:rgba(255,255,255,0.02);
+    padding:2px 9px;border-radius:3px;letter-spacing:.03em;white-space:nowrap;
+  }
+  .day.researched .summary{
+    border-style:dashed;
+  }
   .day .datehead .time{
     font-family:var(--mono);font-size:.72rem;color:var(--muted-dim);
   }
@@ -211,10 +219,9 @@
     <div class="stat"><div class="n">—</div><div class="l">封鎖経過日数</div></div>
   </div>
 
-  <div class="notice">
+  <div class="notice" id="range-notice">
     <strong>収録範囲について：</strong>
-    開戦初期（2026年4月）から現在までを収録しています。
-    本サイトが速報を発信しなかった日は記録対象外としています。
+    読み込み中…
   </div>
 
   <div id="loading">記録を読み込み中…</div>
@@ -248,6 +255,7 @@
     .then(data => {
       ALL_ENTRIES = (data.entries || []).slice().sort((a,b) => a.date < b.date ? -1 : 1); // oldest first, for month grouping
       renderStats(data, ALL_ENTRIES);
+      renderRangeNotice(ALL_ENTRIES);
       const months = buildMonthList(ALL_ENTRIES);
       CURRENT_MONTH = months[months.length - 1].key; // default: latest month
       renderMonthTabs(months);
@@ -269,6 +277,29 @@
     .catch(err => {
       document.getElementById('loading').textContent = '記録データの読み込みに失敗しました（' + err.message + '）。時間をおいて再度お試しください。';
     });
+
+  function fmtJpDate(iso){
+    const [y,m,d] = iso.split('-');
+    return `${parseInt(y)}年${parseInt(m)}月${parseInt(d)}日`;
+  }
+
+  function renderRangeNotice(entries){
+    const el = document.getElementById('range-notice');
+    const researched = entries.filter(e => e.sourceType === 'researched');
+    const siteLog = entries.filter(e => e.sourceType !== 'researched');
+    let html = '<strong>収録範囲について：</strong><br>';
+    if(researched.length){
+      const rStart = fmtJpDate(researched[0].date);
+      const rEnd = fmtJpDate(researched[researched.length-1].date);
+      html += `${rStart}〜${rEnd}分は本サイト開設前のため、公開情報をもとに事後調査でまとめた記録です（<span style="border:1px dashed var(--line-strong);padding:1px 6px;border-radius:3px;">事後調査</span> バッジ表示）。`;
+    }
+    if(siteLog.length){
+      const sStart = fmtJpDate(siteLog[0].date);
+      html += ` ${sStart}以降は、本サイトが実際にその日に発信した速報本文をそのまま収録しています。`;
+    }
+    html += ' 本サイトが速報を発信しなかった日は記録対象外としています。';
+    el.innerHTML = html;
+  }
 
   function renderStats(data, entries){
     const statEls = document.querySelectorAll('#stats .n');
@@ -326,6 +357,7 @@
       lastDate = e.date;
 
       const isCrit = /超重大更新|重大更新/.test(e.summary);
+      const isResearched = e.sourceType === 'researched';
       const summaryHtml = escapeHtml(e.summary).split('・').join('<span class="sep">・</span>');
 
       let newsHtml = '';
@@ -336,11 +368,12 @@
       }
 
       html += `
-      <div class="day${isCrit ? ' crit' : ''}" id="d-${e.date}">
+      <div class="day${isCrit ? ' crit' : ''}${isResearched ? ' researched' : ''}" id="d-${e.date}">
         <div class="marker"></div>
         <div class="datehead">
           <span class="date">${fmtDate(e.date)}</span>
           ${e.blockadeDay ? `<span class="stamp">封鎖${e.blockadeDay}日目</span>` : ''}
+          ${isResearched ? `<span class="researched-badge">🔍 事後調査</span>` : ''}
           <span class="time">${escapeHtml(e.dateLabel || '')}</span>
         </div>
         <div class="summary">${summaryHtml}</div>

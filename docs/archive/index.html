@@ -20,6 +20,9 @@
     --amber-line:rgba(201,168,105,0.35);
     --alert:#e07856;
     --link:#7fb8e0;
+    --phase:#7fb8c9;
+    --phase-dim:rgba(127,184,201,0.12);
+    --phase-line:rgba(127,184,201,0.4);
     --serif: "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
     --sans: -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
     --mono: "SF Mono","Menlo","Consolas",monospace;
@@ -87,9 +90,24 @@
   }
   .notice strong{color:var(--ink);}
 
+  /* ===== VIEW TOGGLE ===== */
+  .view-toggle{
+    display:flex;gap:8px;padding:20px 0 0;
+  }
+  .view-btn{
+    font-family:var(--mono);font-size:.78rem;letter-spacing:.03em;
+    color:var(--muted);background:transparent;
+    border:1px solid var(--line-strong);border-radius:20px;
+    padding:7px 16px;cursor:pointer;transition:all .15s;
+  }
+  .view-btn:hover{border-color:var(--amber-line);color:var(--amber);}
+  .view-btn.active{
+    background:var(--amber-dim);border-color:var(--amber-line);color:var(--amber);
+  }
+
   /* ===== MONTH TABS ===== */
   .month-tabs{
-    display:flex;gap:6px;flex-wrap:wrap;padding:20px 0 4px;
+    display:flex;gap:6px;flex-wrap:wrap;padding:16px 0 4px;
     border-bottom:1px solid var(--line);
   }
   .month-tab{
@@ -107,6 +125,44 @@
     background:var(--amber-dim);border-color:var(--amber-line);color:var(--amber);
   }
   .month-tab.active .count{color:var(--amber);}
+
+  /* ===== ACT (PHASE) TABS ===== */
+  .act-tabs{
+    display:flex;gap:6px;flex-wrap:wrap;padding:16px 0 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .act-tab{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.02em;
+    color:var(--muted);background:transparent;
+    border:1px solid var(--line-strong);border-radius:20px;
+    padding:6px 14px;cursor:pointer;transition:all .15s;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .act-tab .count{font-size:.65rem;color:var(--muted-dim);}
+  .act-tab:hover{border-color:var(--phase-line);color:var(--phase);}
+  .act-tab.active{
+    background:var(--phase-dim);border-color:var(--phase-line);color:var(--phase);
+  }
+  .act-tab.active .count{color:var(--phase);}
+
+  .act-banner{
+    margin:18px 0 4px;padding:16px 18px;border:1px solid var(--phase-line);
+    border-radius:10px;background:var(--phase-dim);
+  }
+  .act-banner .act-num{
+    font-family:var(--mono);font-size:.68rem;color:var(--phase);
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;
+  }
+  .act-banner h2{
+    font-family:var(--serif);font-weight:400;font-size:1.25rem;
+    color:#f2ead9;margin:0 0 6px;
+  }
+  .act-banner .act-range{
+    font-family:var(--mono);font-size:.72rem;color:var(--muted-dim);margin-bottom:8px;
+  }
+  .act-banner .act-desc{
+    font-size:.85rem;color:#c3cfe0;line-height:1.75;
+  }
 
   /* ===== TIMELINE ===== */
   .timeline{position:relative;padding:28px 0 60px;}
@@ -234,7 +290,15 @@
   </div>
 
   <div id="loading">記録を読み込み中…</div>
+
+  <div class="view-toggle" id="view-toggle" style="display:none;">
+    <button class="view-btn active" data-view="month">📅 月別で見る</button>
+    <button class="view-btn" data-view="act">📖 フェーズ別で見る</button>
+  </div>
+
   <div class="month-tabs" id="month-tabs" style="display:none;"></div>
+  <div class="act-tabs" id="act-tabs" style="display:none;"></div>
+  <div class="act-banner" id="act-banner" style="display:none;"></div>
   <div class="timeline" id="timeline" style="display:none;"></div>
 
   <footer>
@@ -245,10 +309,63 @@
 <script>
 (function(){
   const MONTH_LABELS = {"01":"1月","02":"2月","03":"3月","04":"4月","05":"5月","06":"6月","07":"7月","08":"8月","09":"9月","10":"10月","11":"11月","12":"12月"};
-  const YEAR_LABELS = {};
+
+  // ============================================================
+  // フェーズ（Act）定義 ― 2026年2月28日〜7月21日の全体フローを
+  // 6幕構成で区切る。境界日はニュース裏付け済み（2026-07-21検証）。
+  // Act6の end は null = 進行中（最新データまで含む）。
+  // ============================================================
+  const ACTS = [
+    {
+      num: 1, key: 'act1',
+      label: '開戦と海峡の実質閉鎖',
+      start: '2026-02-28', end: '2026-04-07',
+      desc: '米イスラエル軍の奇襲攻撃「Operation Epic Fury」で開戦。IRGCが海峡を「死の水域」と宣言し、保険引受の一斉停止で海峡は事実上閉鎖状態に。第一次停戦成立まで。'
+    },
+    {
+      num: 2, key: 'act2',
+      label: '束の間の停戦',
+      start: '2026-04-08', end: '2026-04-12',
+      desc: '第一次停戦成立から、イスラマバードでの米イラン協議決裂までのわずか5日間。危機終息への期待が最も高まった局面。'
+    },
+    {
+      num: 3, key: 'act3',
+      label: '二重封鎖と長期膠着',
+      start: '2026-04-13', end: '2026-05-31',
+      desc: 'イスラマバード協議決裂を受け、CENTCOMが対イラン海上封鎖を発動（本サイトの「封鎖◯日目」カウントの起点）。提案と拒否の反復が続いた長期膠着期。'
+    },
+    {
+      num: 4, key: 'act4',
+      label: '交渉決裂・最大衝突・MOU成立',
+      start: '2026-06-01', end: '2026-06-19',
+      desc: 'イランが交渉全面停止・海峡完全閉鎖を最終宣言。停戦後最大規模の軍事衝突（イスラエルによるイラン本土空爆）を経て、14条項のMOU（覚書）が電子署名に至る。'
+    },
+    {
+      num: 5, key: 'act5',
+      label: 'MOU動揺とドーハ決裂',
+      start: '2026-06-20', end: '2026-07-08',
+      desc: 'MOU解釈を巡る対立が即座に表面化。ドーハでの技術協議は突破口なく終了し、ハメネイ前最高指導者の国葬による協議休止中に軍事衝突が再燃、トランプ大統領が「停戦は終わった」と表明。'
+    },
+    {
+      num: 6, key: 'act6',
+      label: '封鎖再発効と衝突再燃',
+      start: '2026-07-09', end: null,
+      desc: '対イラン海上封鎖が再発効。連夜の空爆とイランによる多方面への報復攻撃が続き、現在に至る。'
+    }
+  ];
+
+  function getActForDate(date){
+    for (const act of ACTS){
+      if (date >= act.start && (act.end === null || date <= act.end)) return act;
+    }
+    return null;
+  }
 
   let ALL_ENTRIES = [];
+  let CURRENT_VIEW = 'month'; // 'month' | 'act'
   let CURRENT_MONTH = null;
+  let CURRENT_ACT = null;
+  let MONTHS = [];
 
   function fmtDate(iso){
     const [y,m,d] = iso.split('-');
@@ -262,25 +379,38 @@
       return r.json();
     })
     .then(data => {
-      ALL_ENTRIES = (data.entries || []).slice().sort((a,b) => a.date < b.date ? -1 : 1); // oldest first, for month grouping
+      ALL_ENTRIES = (data.entries || []).slice().sort((a,b) => a.date < b.date ? -1 : 1); // oldest first
       renderStats(data, ALL_ENTRIES);
       renderRangeNotice(ALL_ENTRIES);
-      const months = buildMonthList(ALL_ENTRIES);
-      CURRENT_MONTH = months[months.length - 1].key; // default: latest month
-      renderMonthTabs(months);
+      MONTHS = buildMonthList(ALL_ENTRIES);
+      CURRENT_MONTH = MONTHS[MONTHS.length - 1].key; // default: latest month
+      CURRENT_ACT = ACTS[ACTS.length - 1].key; // default: latest act
+
+      renderMonthTabs();
+      renderActTabs();
       renderMonth(CURRENT_MONTH);
+
       document.getElementById('loading').style.display = 'none';
+      document.getElementById('view-toggle').style.display = 'flex';
       document.getElementById('month-tabs').style.display = 'flex';
       document.getElementById('timeline').style.display = 'block';
 
-      // deep-link support: #2026-07
-      if(location.hash && /^#\d{4}-\d{2}$/.test(location.hash)){
+      setupViewToggle();
+
+      // deep-link support: #2026-07 (month) or #act-3 (phase)
+      if(location.hash){
         const h = location.hash.slice(1);
-        if(months.some(m => m.key === h)){
+        if(/^\d{4}-\d{2}$/.test(h) && MONTHS.some(m => m.key === h)){
+          CURRENT_VIEW = 'month';
           CURRENT_MONTH = h;
-          renderMonthTabs(months);
-          renderMonth(CURRENT_MONTH);
+        } else if(/^act-\d$/.test(h)){
+          const n = parseInt(h.split('-')[1], 10);
+          if(ACTS.some(a => a.num === n)){
+            CURRENT_VIEW = 'act';
+            CURRENT_ACT = ACTS.find(a => a.num === n).key;
+          }
         }
+        applyView();
       }
     })
     .catch(err => {
@@ -308,6 +438,7 @@
     }
     html += ' 一部、本サイトが速報を発信し忘れていた日について後日調査で補完した記録には<span style="border:1px dotted rgba(127,184,201,0.5);padding:1px 6px;border-radius:3px;">🧩欠損補完</span>バッジを表示しています。';
     html += ' 本サイトが速報を発信せず、かつ重要な動きも確認できなかった日は記録対象外としています。';
+    html += ' <strong>フェーズ別で見る</strong>を選ぶと、危機の展開を6つの局面（Act1〜6）に分けて通しで追うことができます。';
     el.innerHTML = html;
   }
 
@@ -331,9 +462,40 @@
     return Object.keys(map).sort().map(key => ({key, count: map[key]}));
   }
 
-  function renderMonthTabs(months){
+  // ============================================================
+  // ビュー切り替え（月別 / フェーズ別）
+  // ============================================================
+  function setupViewToggle(){
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        CURRENT_VIEW = btn.getAttribute('data-view');
+        applyView();
+      });
+    });
+  }
+
+  function applyView(){
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-view') === CURRENT_VIEW);
+    });
+    if(CURRENT_VIEW === 'month'){
+      document.getElementById('month-tabs').style.display = 'flex';
+      document.getElementById('act-tabs').style.display = 'none';
+      document.getElementById('act-banner').style.display = 'none';
+      renderMonthTabs();
+      renderMonth(CURRENT_MONTH);
+    } else {
+      document.getElementById('month-tabs').style.display = 'none';
+      document.getElementById('act-tabs').style.display = 'flex';
+      document.getElementById('act-banner').style.display = 'block';
+      renderActTabs();
+      renderAct(CURRENT_ACT);
+    }
+  }
+
+  function renderMonthTabs(){
     const el = document.getElementById('month-tabs');
-    el.innerHTML = months.map(m => {
+    el.innerHTML = MONTHS.map(m => {
       const [y,mo] = m.key.split('-');
       const label = MONTH_LABELS[mo] || mo;
       const active = m.key === CURRENT_MONTH ? ' active' : '';
@@ -343,23 +505,82 @@
       btn.addEventListener('click', () => {
         CURRENT_MONTH = btn.getAttribute('data-month');
         history.replaceState(null, '', '#' + CURRENT_MONTH);
-        renderMonthTabs(months);
+        renderMonthTabs();
         renderMonth(CURRENT_MONTH);
         document.getElementById('month-tabs').scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
   }
 
+  function renderActTabs(){
+    const el = document.getElementById('act-tabs');
+    el.innerHTML = ACTS.map(a => {
+      const count = ALL_ENTRIES.filter(e => getActForDate(e.date) && getActForDate(e.date).key === a.key).length;
+      const active = a.key === CURRENT_ACT ? ' active' : '';
+      return `<button class="act-tab${active}" data-act="${a.key}">Act${a.num}<span class="count">${count}</span></button>`;
+    }).join('');
+    el.querySelectorAll('.act-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        CURRENT_ACT = btn.getAttribute('data-act');
+        const a = ACTS.find(x => x.key === CURRENT_ACT);
+        history.replaceState(null, '', '#act-' + a.num);
+        renderActTabs();
+        renderAct(CURRENT_ACT);
+        document.getElementById('act-tabs').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
+
+  function renderActBanner(act){
+    const el = document.getElementById('act-banner');
+    const rangeLabel = act.end
+      ? `${fmtJpDate(act.start)} 〜 ${fmtJpDate(act.end)}`
+      : `${fmtJpDate(act.start)} 〜 現在`;
+    el.innerHTML = `
+      <div class="act-num">Act ${act.num} / 6</div>
+      <h2>${escapeHtml(act.label)}</h2>
+      <div class="act-range">${rangeLabel}</div>
+      <div class="act-desc">${escapeHtml(act.desc)}</div>
+    `;
+  }
+
+  // ============================================================
+  // タイムライン描画（月別ビュー・フェーズ別ビュー共通のカード描画）
+  // ============================================================
   function renderMonth(monthKey){
     const entries = ALL_ENTRIES.filter(e => e.date.slice(0,7) === monthKey)
                                 .slice().sort((a,b) => a.date < b.date ? 1 : -1); // newest first within month
+    renderEntriesList(entries, {order:'desc', showMonthDivider:false});
+  }
+
+  function renderAct(actKey){
+    const act = ACTS.find(a => a.key === actKey);
+    if(!act) return;
+    renderActBanner(act);
+    const entries = ALL_ENTRIES.filter(e => {
+      const a = getActForDate(e.date);
+      return a && a.key === actKey;
+    }).slice().sort((a,b) => a.date < b.date ? -1 : 1); // oldest first within act(通しで読む前提)
+    renderEntriesList(entries, {order:'asc', showMonthDivider:true});
+  }
+
+  function renderEntriesList(entries, opts){
     const el = document.getElementById('timeline');
     let html = '';
     let lastDate = null;
+    let lastMonth = null;
 
     entries.forEach(e => {
+      const ym = e.date.slice(0,7);
+      if(opts.showMonthDivider && ym !== lastMonth){
+        const [y,mo] = ym.split('-');
+        html += `<div class="month-divider"><span>${y}年${MONTH_LABELS[mo] || mo}</span></div>`;
+        lastMonth = ym;
+        lastDate = null; // 月をまたぐ場合はギャップ表示をリセット
+      }
+
       if(lastDate){
-        const gap = dayGap(lastDate, e.date);
+        const gap = dayGap(lastDate, e.date, opts.order);
         if(gap > 1){
           html += `<div class="gap-note">（${gap - 1}日分の速報なし・スキップ）</div>`;
         }
@@ -393,13 +614,16 @@
     });
 
     if(!entries.length){
-      html = `<p style="color:var(--muted);font-size:.85rem;padding:20px 0;">この月の記録はまだありません。</p>`;
+      html = `<p style="color:var(--muted);font-size:.85rem;padding:20px 0;">この範囲の記録はまだありません。</p>`;
     }
 
     el.innerHTML = html;
   }
 
-  function dayGap(older, newer){
+  function dayGap(a, b, order){
+    // order: 'desc' なら a が新しい→b は古い / 'asc' なら a が古い→b が新しい
+    const older = order === 'asc' ? a : b;
+    const newer = order === 'asc' ? b : a;
     const d1 = new Date(newer + 'T00:00:00Z');
     const d2 = new Date(older + 'T00:00:00Z');
     return Math.round((d1 - d2) / 86400000);

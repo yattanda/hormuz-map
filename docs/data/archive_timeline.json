@@ -133,6 +133,36 @@
       "fillType": "gap"
     },
     {
+      "date": "2026-03-07",
+      "dateLabel": "2026/03/07（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "ホルムズ海峡の通航はこの日わずか3件のみを記録しほぼ完全に停止・一方でバブ・エル・マンデブ海峡の通航は前日比+47.8%の34件に増加（7日平均9.7件を大幅に上回る）——ホルムズが「軍事的脅威による封鎖」から「保険が引き受けられないことによる実質的閉鎖」へと性格を変えつつあることが専門家分析で指摘される",
+      "relatedNews": [
+        {
+          "title": "March 8, 2026: Iran War Maritime Intelligence Daily（3/7の通航データに言及）",
+          "url": "https://windward.ai/blog/march-8-maritime-intelligence-daily/",
+          "sourceLabel": "Windward"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
+      "date": "2026-03-08",
+      "dateLabel": "2026/03/08（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "英国海事貿易オペレーション（UKMTO）の集計で、3/8時点までに商船への攻撃が累計10件に達したことが判明・これまでに2隻で船員5名が死亡したと報告される",
+      "relatedNews": [
+        {
+          "title": "Iran Conflict and the Strait of Hormuz（議会調査局レポート、UKMTO集計に言及）",
+          "url": "https://www.congress.gov/crs-product/R45281",
+          "sourceLabel": "Congress.gov / CRS"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
       "date": "2026-03-09",
       "dateLabel": "2026/03/09（事後調査）",
       "blockadeDay": null,
@@ -192,6 +222,21 @@
           "sourceLabel": "CNN Business"
         }
       ]
+    },
+    {
+      "date": "2026-03-13",
+      "dateLabel": "2026/03/13（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "開戦14日目・ブレント原油が開戦後2度目の1バレル100ドル突破——イラン新最高指導者モジュタバ・ハメネイ師が就任後初の公式声明で「ホルムズ海峡閉鎖は敵への圧力の道具として維持する」と表明・IEAは3/11に過去最大となる4億バレルの戦略備蓄放出を承認するも供給不安は収まらず・3/12〜13にかけ商船3隻が新たに被弾し2/28以降の被弾累計は22隻超に・米空軍KC-135空中給油機が3/12にイラク西部で墜落（開戦後4機目の米軍機喪失、少なくとも5名の乗員の安否が3/13時点で未確定）・フランス軍下士官1名がイラク・アルビル近郊のドローン攻撃で死亡、6名負傷——有志連合側で開戦後初の米国以外の戦闘死・国連安保理は3/11、イランの「重大な攻撃」を非難する決議2817を13対0（中国・ロシアは棄権）で採択——両国が拒否権を行使しなかった点が注目される",
+      "relatedNews": [
+        {
+          "title": "Iran War 2026 -- Daily Update（Day 14情勢概観）",
+          "url": "https://www.globalsecurity.org/military/ops/iran-war-update.htm",
+          "sourceLabel": "GlobalSecurity.org"
+        }
+      ],
+      "fillType": "gap"
     },
     {
       "date": "2026-03-14",

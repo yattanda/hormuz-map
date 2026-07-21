@@ -64,6 +64,41 @@
       ]
     },
     {
+      "date": "2026-03-03",
+      "dateLabel": "2026/03/03（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "主要保険引受会社がホルムズ海峡・ペルシャ湾向け戦争危険担保を撤回・再設定——保険料率が48時間以内に船体価値の約0.2%から約1%へ急騰・オマーンの要衝サラーラ港がドローン攻撃を受け閉鎖、パキスタン向け貨物の代替輸送ルートに深刻な打撃・MSCがペルシャ湾向け全貨物について「航海終了(End of Voyage)」を宣言し最寄りの安全港へ転送——顧客側での引き取り対応を要請",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Closure 2026 ライブトラッカー（3/3の保険担保撤回を記録）",
+          "url": "https://militaryspend.org/strait-of-hormuz",
+          "sourceLabel": "militaryspend.org"
+        },
+        {
+          "title": "Strait of Hormuz Crisis 2026: Full Timeline",
+          "url": "https://www.seavantage.com/blog/strait-of-hormuz-crisis-2026-shipping-disruption-timeline",
+          "sourceLabel": "Seavantage"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
+      "date": "2026-03-04",
+      "dateLabel": "2026/03/04（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "マルタ籍コンテナ船「セーフィーン・プレスティージ」（1,700TEU、アブダビ・ポーツ・グループ運航）が、開戦後ホルムズ海峡で被弾した初のコンテナ船となる・アルファライナー集計によれば、3/2時点でペルシャ湾内に138隻・約47万TEU相当のコンテナ船が閉じ込められていたことが判明（MSC約10.9万TEU、CMA CGM約7万TEU等）",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Crisis 2026: Full Timeline（Safeen Prestige被弾に言及）",
+          "url": "https://www.seavantage.com/blog/strait-of-hormuz-crisis-2026-shipping-disruption-timeline",
+          "sourceLabel": "Seavantage"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
       "date": "2026-03-05",
       "dateLabel": "2026/03/05（事後調査）",
       "blockadeDay": null,
@@ -81,6 +116,21 @@
           "sourceLabel": "U.S. Department of War"
         }
       ]
+    },
+    {
+      "date": "2026-03-06",
+      "dateLabel": "2026/03/06（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "既に損傷していたセーフィーン・プレスティージの支援活動中だった曳船「ムサファ2」がホルムズ海峡内で被弾——乗組員8名の死亡が懸念される事態に",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Crisis 2026: Full Timeline（Mussafah-2曳船被弾に言及）",
+          "url": "https://www.seavantage.com/blog/strait-of-hormuz-crisis-2026-shipping-disruption-timeline",
+          "sourceLabel": "Seavantage"
+        }
+      ],
+      "fillType": "gap"
     },
     {
       "date": "2026-03-09",
@@ -200,6 +250,21 @@
       ]
     },
     {
+      "date": "2026-03-20",
+      "dateLabel": "2026/03/20（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "大手保険会社チャブが、ホルムズ海峡通過船舶向けの戦争リスク保険カバレッジ提供を独自に再開すると発表——市場全体の保険正常化にはなお程遠いものの、部分的な引き受け再開の動きとして注目される",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡危機：情勢と実務リスク（Chubbの保険再開に言及）",
+          "url": "https://global-scm.com/blog/?p=5464",
+          "sourceLabel": "Global SCM（一次情報源: Reuters）"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
       "date": "2026-03-22",
       "dateLabel": "2026/03/22（事後調査）",
       "blockadeDay": null,
@@ -212,6 +277,41 @@
           "sourceLabel": "Gulf News"
         }
       ]
+    },
+    {
+      "date": "2026-03-23",
+      "dateLabel": "2026/03/23（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "トランプ大統領、米国・イランの「生産的な」協議を経てホルムズ海峡が「近く開放される」と発言——ただしイラン国営メディアは、テレグラム上の匿名の「治安高官」を引用し「そのような協議自体が行われていない」と否定・同日、駐インド・イラン大使館は「海峡通航船舶に200万ドルの通行料を課している」との報道を「根拠がない」として否定",
+      "relatedNews": [
+        {
+          "title": "Trump says Strait of Hormuz could \"open very soon\"",
+          "url": "https://fortune.com/videos/watch/Trump-says-Strait-of-Hormuz-could-open-very-soon/1af87783-e9e1-4730-86e4-f21908bd9cd8",
+          "sourceLabel": "Fortune"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
+      "date": "2026-03-24",
+      "dateLabel": "2026/03/24（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "イラン外務省が国連安保理・IMO（国際海事機関）に書簡（3/22付、3/24に176加盟国へ回覧）を送付——「非敵対的な船舶」はイラン当局との調整を条件にホルムズ海峡の通航が認められると通告・米国・イスラエルに関連する船舶・資産は「無害通航」の対象外と明記・トランプ大統領は同日、イラン側から石油・ガス・海峡に関する「非常に重要な申し出」があったと述べ、合意の可能性に期待感を示す",
+      "relatedNews": [
+        {
+          "title": "Iran tells UN: 'Non-hostile' ships can transit Strait of Hormuz",
+          "url": "https://www.aol.com/articles/iran-says-non-hostile-ships-192913896.html",
+          "sourceLabel": "Reuters（AOL配信）"
+        },
+        {
+          "title": "Iran Says Non-Hostile Ships Can Cross Hormuz on Its Terms",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-24/iran-says-non-hostile-ships-can-cross-hormuz-on-its-terms",
+          "sourceLabel": "Bloomberg"
+        }
+      ],
+      "fillType": "gap"
     },
     {
       "date": "2026-03-26",
@@ -259,6 +359,41 @@
           "sourceLabel": "Global SCM"
         }
       ]
+    },
+    {
+      "date": "2026-03-30",
+      "dateLabel": "2026/03/30（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "イラン革命防衛隊(IRGC)が、3/26の空爆で負傷したタンギシーリー海軍司令官の死亡を正式に確認・イランの承認を得た船舶による限定的な護衛付き通航が再開されたと報告される",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Closure 2026 ライブトラッカー（Tangsiri死亡確認を記録）",
+          "url": "https://militaryspend.org/strait-of-hormuz",
+          "sourceLabel": "militaryspend.org"
+        },
+        {
+          "title": "Iran confirms Revolutionary Guards Navy Commander Tangsiri died",
+          "url": "https://www.newsonair.gov.in/iran-confirms-that-revolutionary-guards-navy-commander-alireza-tangsiri-died-after-sustaining-severe-injuries",
+          "sourceLabel": "News On AIR"
+        }
+      ],
+      "fillType": "gap"
+    },
+    {
+      "date": "2026-04-04",
+      "dateLabel": "2026/04/04（事後調査）",
+      "blockadeDay": null,
+      "sourceType": "researched",
+      "summary": "イランがホルムズ海峡内でコンテナ船「MSC Ishyka」をドローンで攻撃したと主張・国連安全保障理事会でホルムズ海峡の自由通航回復を求める決議案が、ロシア・中国の拒否権行使により否決される",
+      "relatedNews": [
+        {
+          "title": "Strait of Hormuz Crisis 2026: Full Timeline（MSC Ishyka攻撃・安保理決議否決に言及）",
+          "url": "https://www.seavantage.com/blog/strait-of-hormuz-crisis-2026-shipping-disruption-timeline",
+          "sourceLabel": "Seavantage"
+        }
+      ],
+      "fillType": "gap"
     },
     {
       "date": "2026-04-05",
@@ -374,6 +509,7 @@
     {
       "date": "2026-04-16",
       "dateLabel": "2026/04/16",
+      "blockadeDay": 3,
       "summary": "【重大更新】Hegseth「bombing再開」直接脅迫・封鎖3日目13隻進路転換・封鎖対象全域拡大・Pakistan Field Marshal Munirテヘラン到着・Netanyahu-Aoun初電話予定・Iran Petrochemical全停止・WTI $92.46反発・シナリオ確率更新・次の注目日更新",
       "relatedNews": [],
       "sourceType": "site-log"

@@ -140,6 +140,15 @@
     border:1px dashed var(--line-strong);background:rgba(255,255,255,0.02);
     padding:2px 9px;border-radius:3px;letter-spacing:.03em;white-space:nowrap;
   }
+  .day .datehead .gapfill-badge{
+    font-family:var(--mono);font-size:.65rem;color:#7fb8c9;
+    border:1px dotted rgba(127,184,201,0.5);background:rgba(127,184,201,0.08);
+    padding:2px 9px;border-radius:3px;letter-spacing:.03em;white-space:nowrap;
+  }
+  .day.gapfill .summary{
+    border-style:dotted;
+    border-color:rgba(127,184,201,0.35);
+  }
   .day.researched .summary{
     border-style:dashed;
   }
@@ -285,19 +294,20 @@
 
   function renderRangeNotice(entries){
     const el = document.getElementById('range-notice');
-    const researched = entries.filter(e => e.sourceType === 'researched');
-    const siteLog = entries.filter(e => e.sourceType !== 'researched');
+    const SITE_START = '2026-04-08'; // 本サイト開設日（固定）
+    const preSite = entries.filter(e => e.date < SITE_START);
+    const siteEra = entries.filter(e => e.date >= SITE_START);
     let html = '<strong>収録範囲について：</strong><br>';
-    if(researched.length){
-      const rStart = fmtJpDate(researched[0].date);
-      const rEnd = fmtJpDate(researched[researched.length-1].date);
+    if(preSite.length){
+      const rStart = fmtJpDate(preSite[0].date);
+      const rEnd = fmtJpDate(preSite[preSite.length-1].date);
       html += `${rStart}〜${rEnd}分は本サイト開設前のため、公開情報をもとに事後調査でまとめた記録です（<span style="border:1px dashed var(--line-strong);padding:1px 6px;border-radius:3px;">事後調査</span> バッジ表示）。`;
     }
-    if(siteLog.length){
-      const sStart = fmtJpDate(siteLog[0].date);
-      html += ` ${sStart}以降は、本サイトが実際にその日に発信した速報本文をそのまま収録しています。`;
+    if(siteEra.length){
+      html += ` ${fmtJpDate(SITE_START)}以降は、本サイトが実際にその日に発信した速報本文をそのまま収録しています。`;
     }
-    html += ' 本サイトが速報を発信しなかった日は記録対象外としています。';
+    html += ' 一部、本サイトが速報を発信し忘れていた日について後日調査で補完した記録には<span style="border:1px dotted rgba(127,184,201,0.5);padding:1px 6px;border-radius:3px;">🧩欠損補完</span>バッジを表示しています。';
+    html += ' 本サイトが速報を発信せず、かつ重要な動きも確認できなかった日は記録対象外としています。';
     el.innerHTML = html;
   }
 
@@ -358,6 +368,7 @@
 
       const isCrit = /超重大更新|重大更新/.test(e.summary);
       const isResearched = e.sourceType === 'researched';
+      const isGapFill = e.fillType === 'gap';
       const summaryHtml = escapeHtml(e.summary).split('・').join('<span class="sep">・</span>');
 
       let newsHtml = '';
@@ -368,12 +379,12 @@
       }
 
       html += `
-      <div class="day${isCrit ? ' crit' : ''}${isResearched ? ' researched' : ''}" id="d-${e.date}">
+      <div class="day${isCrit ? ' crit' : ''}${isResearched ? ' researched' : ''}${isGapFill ? ' gapfill' : ''}" id="d-${e.date}">
         <div class="marker"></div>
         <div class="datehead">
           <span class="date">${fmtDate(e.date)}</span>
           ${e.blockadeDay ? `<span class="stamp">封鎖${e.blockadeDay}日目</span>` : ''}
-          ${isResearched ? `<span class="researched-badge">🔍 事後調査</span>` : ''}
+          ${isGapFill ? `<span class="gapfill-badge">🧩 欠損補完</span>` : (isResearched ? `<span class="researched-badge">🔍 事後調査</span>` : '')}
           <span class="time">${escapeHtml(e.dateLabel || '')}</span>
         </div>
         <div class="summary">${summaryHtml}</div>

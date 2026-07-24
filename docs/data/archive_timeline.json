@@ -2230,6 +2230,30 @@
         }
       ],
       "sourceType": "site-log"
+    },
+    {
+      "date": "2026-07-24",
+      "dateLabel": "2026/07/24 09:23",
+      "blockadeDay": 147,
+      "summary": "フーシ派、サウジアラビアの原油タンカー2隻を紅海で攻撃——サウジ海上封鎖宣言を実行・トランプ大統領はイランへの「大規模攻撃」検討を警告・カザフスタンがドローン攻撃を受けCPCターミナル経由原油輸出を停止・クウェート国境で火災発生（鎮圧）・バーレーンも再攻撃・ルビオ国務長官「複数国がホルムズ護衛に関心」も法的障壁で未実現・Windward報告：南側迂回ルートでタンカー3隻被弾・通航は北側ルートに集中・原油はブレント7/23終値100.65ドル（前日比+7.00%・5月22日以来の高値）・日本関係船は残り4隻で変化なし・封鎖147日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "フーシ派、サウジアラビアの原油タンカー2隻を紅海で攻撃——トランプ氏「大規模攻撃」検討を警告",
+          "url": "https://www.barchart.com/futures/quotes/CBN26",
+          "sourceLabel": "Trading Economics / Barchart"
+        },
+        {
+          "title": "原油ブレント100ドル突破——カザフスタンもドローン攻撃受けCPCターミナル原油輸出停止",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "sourceLabel": "Trading Economics"
+        },
+        {
+          "title": "ルビオ国務長官「複数国がホルムズ護衛参加に関心」——法的障壁で正式化せず",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-of-hormuz-oil-07-22-26",
+          "sourceLabel": "Fox News Digital"
+        }
+      ],
+      "sourceType": "site-log"
     }
   ]
 }

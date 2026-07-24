@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月22日 09:15 日本時間JST",
+  "updated": "2026年7月24日 09:23 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-houthi-saudi-tanker-attack-0723",
+      "title": "フーシ派、サウジアラビアの原油タンカー2隻を紅海で攻撃——トランプ氏「大規模攻撃」検討を警告",
+      "body": "イエメンの親イラン武装組織フーシ派は、サウジアラビアの原油タンカー2隻を紅海で攻撃したと発表した。7月20日に宣言していたサウジへの海上封鎖の実行とみられる。米国側はイランがこの攻撃に責任を負うとの立場を示し、トランプ大統領は「大規模攻撃を検討中」と発言した。ホルムズ海峡に加え紅海側でも輸送リスクが顕在化している。",
+      "sourceLabel": "Trading Economics / Barchart",
+      "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
+      "label": "⚓ 海上輸送",
+      "url": "https://www.barchart.com/futures/quotes/CBN26",
+      "isLatest": true
+    },
+    {
+      "id": "latest-brent-100-kazakhstan-cpc-0723",
+      "title": "原油ブレント100ドル突破——カザフスタンもドローン攻撃受けCPCターミナル原油輸出停止",
+      "body": "ブレント原油先物は7月23日終値で100.65ドル（前日比+7.00%）に達し、5月22日以来の高値を記録した。フーシ派によるサウジタンカー攻撃に加え、カザフスタンがドローン攻撃を受けCPC（カスピ海パイプラインコンソーシアム）ターミナル経由の原油輸出を停止したことも供給不安を増幅させた。WTIも90ドル台に上昇している。",
+      "sourceLabel": "Trading Economics",
+      "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
+      "label": "🛢️ 原油市場",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+      "isLatest": false
+    },
+    {
+      "id": "latest-rubio-escort-coalition-0722",
+      "title": "ルビオ国務長官「複数国がホルムズ護衛参加に関心」——法的障壁で正式化せず",
+      "body": "ルビオ国務長官は記者団に対し、複数国がホルムズ海峡での商船護衛への参加に関心を示していると明らかにした一方、法的・政治的な障壁により正式な合意には至っていないと説明した。同長官はホルムズ海峡が国際水域であり、全ての商船に対して通行料や制約のない自由な航行が確保されるべきだと改めて強調した。",
+      "sourceLabel": "Fox News Digital",
+      "date": "2026年7月22日（現地）/ 2026年7月23日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-of-hormuz-oil-07-22-26",
+      "isLatest": false
+    },
     {
       "id": "latest-hormuz-tankers-fire-0721",
       "title": "ホルムズ海峡でタンカー2隻炎上——IRGC発表、UKMTOも別途損傷を報告",
@@ -10,7 +40,7 @@
       "date": "2026年7月21日（現地）/ 2026年7月22日 JST",
       "label": "⚔️ 軍事",
       "url": "https://www.aljazeera.com/news/2026/7/21/hormuz-tankers-on-fire-as-us-iran-continue-attacks-whats-the-latest",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-10day-ceasefire-proposal-0721",
@@ -31,39 +61,23 @@
       "label": "⚓ 海上輸送",
       "url": "https://www.afpbb.com/articles/-/3644879",
       "isLatest": false
-    },
-    {
-      "id": "latest-mou-crisis-stage-0719",
-      "title": "イラン外務省「米イラン停戦覚書は危機段階に入った」——トランプ大統領も事実上の破棄を示唆",
-      "body": "イラン外務省報道官エスマイル・バゲイー氏は会見で、米イラン間のMOU（覚書）が「危機段階に入った」と発言。イランが履行していない点があるとすれば米側の義務違反が直接の原因だと主張した。週末のオマーンでの協議はホルムズ海峡の安全通航に限定した内容だったが合意に至らず、「米国のオマーンへの公然・非公然の圧力」が原因だと説明した。トランプ大統領も「（イランとの合意を）もう終わったと思っている」と述べ、事実上MOUの形骸化を認めた形となっている。",
-      "sourceLabel": "ABC News",
-      "date": "2026年7月13日〜18日（現地）/ 2026年7月18日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://abcnews.com/International/live-updates/iran-live-updates-kuwait-reports-attacks-after-latest/?id=134704698",
-      "isLatest": false
-    },
-    {
-      "id": "latest-jordan-us-troops-killed-0718",
-      "title": "ヨルダンで米兵2名戦死・1名不明——3月以来初の米軍戦闘死者",
-      "body": "米中央軍（CENTCOM）は、7月17日にヨルダンのムワッファク・サルティ空軍基地でイランの弾道ミサイル・ドローン攻撃に対応中、米兵2名が交戦中に死亡したと発表した。1名が現在も行方不明となっているほか、4名がヨルダン国内の病院に搬送されたが既に退院している。米軍の戦闘死者は今年3月以来初めてで、CENTCOMは戦死者の氏名を近親者への通知から24時間経過後に公表するとしている。",
-      "sourceLabel": "CNN / Bloomberg",
-      "date": "2026年7月17日（現地）/ 2026年7月18日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.cnn.com/2026/07/18/politics/iran-war-us-service-members-killed-jordan",
-      "isLatest": false
-    },
-    {
-      "id": "latest-kuwait-oil-facility-attack-0718",
-      "title": "クウェート石油公社施設が「甚大な物的損害」——イラン、5カ国へ同時報復攻撃",
-      "body": "クウェート石油公社は、石油部門の重要施設がイランの度重なる攻撃を受け「甚大な物的損害」と負傷者が発生したと発表した。同日、イランはヨルダン・バーレーン・カタール・イラク（クルド人自治区）へも攻撃を実施。カタール外務省は「主権・領土保全への重大な違反、国際法違反」だとして最も強い言葉で非難し、ヨルダン軍は7/19未明にもイランのミサイル10発を迎撃したと発表した。",
-      "sourceLabel": "Fox News / Al Jazeera",
-      "date": "2026年7月18日（現地）/ 2026年7月18日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】トランプ氏「大規模攻撃」を警告——クウェート国境で火災・バーレーンも再攻撃",
+      "titleEn": "Iran war updates: Trump warns of unprecedented 'massive attack' on Iran",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/7/23/iran-war-live-us-launches-new-attacks-houthis-attack-2-saudi-oil-tankers",
+      "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
+      "isLatest": true
+    },
     {
       "id": "osint-us-10th-night-strikes-kuwait-0721",
       "titleJa": "【Al Jazeera】米、10夜連続の対イラン空爆——ホルムズでタンカー炎上・クウェートも攻撃",
@@ -77,7 +91,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/21/iran-war-live-us-launches-10th-night-of-strikes-tehran-attacks-kuwait",
       "date": "2026年7月21日（現地）/ 2026年7月22日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-jordan-strikes-us-troops-live-0718",
@@ -883,6 +897,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月24日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-mou-crisis-stage-0719",
+          "title": "イラン外務省「米イラン停戦覚書は危機段階に入った」——トランプ大統領も事実上の破棄を示唆",
+          "body": "イラン外務省報道官エスマイル・バゲイー氏は会見で、米イラン間のMOU（覚書）が「危機段階に入った」と発言。イランが履行していない点があるとすれば米側の義務違反が直接の原因だと主張した。週末のオマーンでの協議はホルムズ海峡の安全通航に限定した内容だったが合意に至らず、「米国のオマーンへの公然・非公然の圧力」が原因だと説明した。トランプ大統領も「（イランとの合意を）もう終わったと思っている」と述べ、事実上MOUの形骸化を認めた形となっている。",
+          "sourceLabel": "ABC News",
+          "date": "2026年7月13日〜18日（現地）/ 2026年7月18日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://abcnews.com/International/live-updates/iran-live-updates-kuwait-reports-attacks-after-latest/?id=134704698",
+          "isLatest": false
+        },
+        {
+          "id": "latest-jordan-us-troops-killed-0718",
+          "title": "ヨルダンで米兵2名戦死・1名不明——3月以来初の米軍戦闘死者",
+          "body": "米中央軍（CENTCOM）は、7月17日にヨルダンのムワッファク・サルティ空軍基地でイランの弾道ミサイル・ドローン攻撃に対応中、米兵2名が交戦中に死亡したと発表した。1名が現在も行方不明となっているほか、4名がヨルダン国内の病院に搬送されたが既に退院している。米軍の戦闘死者は今年3月以来初めてで、CENTCOMは戦死者の氏名を近親者への通知から24時間経過後に公表するとしている。",
+          "sourceLabel": "CNN / Bloomberg",
+          "date": "2026年7月17日（現地）/ 2026年7月18日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.cnn.com/2026/07/18/politics/iran-war-us-service-members-killed-jordan",
+          "isLatest": false
+        },
+        {
+          "id": "latest-kuwait-oil-facility-attack-0718",
+          "title": "クウェート石油公社施設が「甚大な物的損害」——イラン、5カ国へ同時報復攻撃",
+          "body": "クウェート石油公社は、石油部門の重要施設がイランの度重なる攻撃を受け「甚大な物的損害」と負傷者が発生したと発表した。同日、イランはヨルダン・バーレーン・カタール・イラク（クルド人自治区）へも攻撃を実施。カタール外務省は「主権・領土保全への重大な違反、国際法違反」だとして最も強い言葉で非難し、ヨルダン軍は7/19未明にもイランのミサイル10発を迎撃したと発表した。",
+          "sourceLabel": "Fox News / Al Jazeera",
+          "date": "2026年7月18日（現地）/ 2026年7月18日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月21日 更新分（アーカイブ）",
       "items": [

@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月24日 09:23 日本時間JST",
+  "updated": "2026年7月26日 10:30 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-us-strikes-pause-0725",
+      "title": "米、13夜連続の対イラン空爆を停止——開戦後初めての小康状態",
+      "body": "米軍による対イランへの空爆は、7月25日未明（現地時間）、13夜連続の攻撃の後、開戦後初めて途絶した。イラン保健省報道官はX（旧Twitter）に「イランは平穏な夜を過ごした」と投稿。米中央軍（CENTCOM）は取材への即時のコメントを行っていない。",
+      "sourceLabel": "Washington Post",
+      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.washingtonpost.com/world/2026/07/25/iran-us-hormuz-strait-war-25-july-2026/db469ab4-880e-11f1-9cec-0fb26676f07e_story.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oman-iran-talks-progress-0725",
+      "title": "オマーン・イラン、ホルムズ海峡再開・領海管理を巡る協議で進展",
+      "body": "オマーンとイランの間で、ホルムズ海峡の再開及び両国領海の管理を巡る協議に進展があったと、地域筋2名がCBS Newsに証言した。イラン国営通信IRNAによれば、オマーン外交団は7月24日にテヘランを訪問し、海峡での船舶交通を管理する「適切なメカニズム」の構築について協議したという。",
+      "sourceLabel": "CBS News",
+      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-irgc-warning-shots-houthi-aramco-0725",
+      "title": "IRGC、南ルート不正通航船4隻に警告射撃／フーシ派はサウジアラムコ拠点攻撃を表明",
+      "body": "イラン革命防衛隊（IRGC）は、南側（オマーン沿岸）迂回ルートを通じ不正・危険な経路での通航を試みた船舶4隻に対し、直近24時間で警告射撃を実施し進路変更させたと発表した。一方、イエメンの親イラン武装組織フーシ派は、サウジアラムコのジザン・ヤンブー両拠点への攻撃を表明し、紅海方面での攻撃継続姿勢を改めて示した。",
+      "sourceLabel": "CBS News",
+      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
+      "isLatest": false
+    },
     {
       "id": "latest-houthi-saudi-tanker-attack-0723",
       "title": "フーシ派、サウジアラビアの原油タンカー2隻を紅海で攻撃——トランプ氏「大規模攻撃」検討を警告",
@@ -10,7 +40,7 @@
       "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
       "label": "⚓ 海上輸送",
       "url": "https://www.barchart.com/futures/quotes/CBN26",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-brent-100-kazakhstan-cpc-0723",
@@ -31,39 +61,23 @@
       "label": "🕊️ 外交",
       "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-of-hormuz-oil-07-22-26",
       "isLatest": false
-    },
-    {
-      "id": "latest-hormuz-tankers-fire-0721",
-      "title": "ホルムズ海峡でタンカー2隻炎上——IRGC発表、UKMTOも別途損傷を報告",
-      "body": "イラン革命防衛隊（IRGC）は、南側迂回ルートを航行しようとしたタンカー2隻が爆発・炎上し航行不能になったと発表し、「米軍の誤誘導」によるものと主張した。英国海事貿易機関（UKMTO）は同日、オマーン沖で別のタンカー1隻が正体不明の飛翔体により損傷し、乗員が救命艇で退避したと報告——IRGC発表と同一事案かは未確認。米軍は同日、対イラン10夜連続空爆を実施した。",
-      "sourceLabel": "Al Jazeera",
-      "date": "2026年7月21日（現地）/ 2026年7月22日 JST",
-      "label": "⚔️ 軍事",
-      "url": "https://www.aljazeera.com/news/2026/7/21/hormuz-tankers-on-fire-as-us-iran-continue-attacks-whats-the-latest",
-      "isLatest": false
-    },
-    {
-      "id": "latest-10day-ceasefire-proposal-0721",
-      "title": "仲介国「10日間停戦」提案——トランプ氏、受諾か大規模軍事作戦かの二択に直面",
-      "body": "イラン政府高官はロイター通信に対し、仲介国（カタール・パキスタン等）から10日間の停戦提案を受領したことを認めた。案は6月17日署名のMOU（覚書）の立て直しとホルムズ海峡開放への道筋回復を狙う。Axiosは米・イスラエル当局者の話として、トランプ大統領がこの停戦案受諾かイスラエルと共同での大規模軍事作戦かという二択に直面していると報道。数日内に方針が決まる見通し。",
-      "sourceLabel": "産経新聞（Yahoo!ニュース）/ Axios",
-      "date": "2026年7月20日（現地）/ 2026年7月21日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://news.yahoo.co.jp/articles/a756ce18793f140cb21858ea5545aee428925e86",
-      "isLatest": false
-    },
-    {
-      "id": "latest-houthi-saudi-blockade-0720",
-      "title": "フーシ派がサウジアラビアへ海上封鎖を宣言——紅海迂回ルートにも新戦線",
-      "body": "イエメンの親イラン武装組織フーシ派は、サウジアラビアが「約12年にわたり不当な包囲を続けている」と非難した上で、「目には目を」の原則に基づきサウジアラビアへの即時海上封鎖実施を宣言した。バブ・エル・マンデブ海峡経由のサウジ船舶封鎖が懸念され、サウジ主導のアラブ連合軍は「断固たる対抗措置を講じる」と反発。ホルムズ海峡封鎖に加え、サウジの紅海迂回ルートにも新たな不確実性が生じている。",
-      "sourceLabel": "AFPBB News",
-      "date": "2026年7月20日（現地）/ 2026年7月21日 JST",
-      "label": "⚓ 海上輸送",
-      "url": "https://www.afpbb.com/articles/-/3644879",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】米、13夜ぶりに対イラン空爆停止——オマーン仲介進展もフーシ派は紅海攻撃継続",
+      "titleEn": "Iran war live: US pauses strikes after 13 nights as Oman mediation advances, Houthis continue Red Sea attacks",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/",
+      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+      "isLatest": true
+    },
     {
       "titleJa": "【Al Jazeera】トランプ氏「大規模攻撃」を警告——クウェート国境で火災・バーレーンも再攻撃",
       "titleEn": "Iran war updates: Trump warns of unprecedented 'massive attack' on Iran",
@@ -76,7 +90,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/7/23/iran-war-live-us-launches-new-attacks-houthis-attack-2-saudi-oil-tankers",
       "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-us-10th-night-strikes-kuwait-0721",
@@ -897,6 +911,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月20日〜21日 更新分（アーカイブ）",
+      "items": [
+        {
+          "id": "latest-hormuz-tankers-fire-0721",
+          "title": "ホルムズ海峡でタンカー2隻炎上——IRGC発表、UKMTOも別途損傷を報告",
+          "body": "イラン革命防衛隊（IRGC）は、南側迂回ルートを航行しようとしたタンカー2隻が爆発・炎上し航行不能になったと発表し、「米軍の誤誘導」によるものと主張した。英国海事貿易機関（UKMTO）は同日、オマーン沖で別のタンカー1隻が正体不明の飛翔体により損傷し、乗員が救命艇で退避したと報告——IRGC発表と同一事案かは未確認。米軍は同日、対イラン10夜連続空爆を実施した。",
+          "sourceLabel": "Al Jazeera",
+          "date": "2026年7月21日（現地）/ 2026年7月22日 JST",
+          "label": "⚔️ 軍事",
+          "url": "https://www.aljazeera.com/news/2026/7/21/hormuz-tankers-on-fire-as-us-iran-continue-attacks-whats-the-latest",
+          "isLatest": false
+        },
+        {
+          "id": "latest-10day-ceasefire-proposal-0721",
+          "title": "仲介国「10日間停戦」提案——トランプ氏、受諾か大規模軍事作戦かの二択に直面",
+          "body": "イラン政府高官はロイター通信に対し、仲介国（カタール・パキスタン等）から10日間の停戦提案を受領したことを認めた。案は6月17日署名のMOU（覚書）の立て直しとホルムズ海峡開放への道筋回復を狙う。Axiosは米・イスラエル当局者の話として、トランプ大統領がこの停戦案受諾かイスラエルと共同での大規模軍事作戦かという二択に直面していると報道。数日内に方針が決まる見通し。",
+          "sourceLabel": "産経新聞（Yahoo!ニュース）/ Axios",
+          "date": "2026年7月20日（現地）/ 2026年7月21日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://news.yahoo.co.jp/articles/a756ce18793f140cb21858ea5545aee428925e86",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-saudi-blockade-0720",
+          "title": "フーシ派がサウジアラビアへ海上封鎖を宣言——紅海迂回ルートにも新戦線",
+          "body": "イエメンの親イラン武装組織フーシ派は、サウジアラビアが「約12年にわたり不当な包囲を続けている」と非難した上で、「目には目を」の原則に基づきサウジアラビアへの即時海上封鎖実施を宣言した。バブ・エル・マンデブ海峡経由のサウジ船舶封鎖が懸念され、サウジ主導のアラブ連合軍は「断固たる対抗措置を講じる」と反発。ホルムズ海峡封鎖に加え、サウジの紅海迂回ルートにも新たな不確実性が生じている。",
+          "sourceLabel": "AFPBB News",
+          "date": "2026年7月20日（現地）/ 2026年7月21日 JST",
+          "label": "⚓ 海上輸送",
+          "url": "https://www.afpbb.com/articles/-/3644879",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月24日 更新分（アーカイブ）",
       "items": [

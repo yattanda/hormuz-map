@@ -2254,6 +2254,30 @@
         }
       ],
       "sourceType": "site-log"
+    },
+    {
+      "date": "2026-07-26",
+      "dateLabel": "2026/07/26 10:30",
+      "blockadeDay": 149,
+      "summary": "米軍、13夜連続の対イラン空爆後7/25未明に初めて停止——一時的な小康状態・オマーンとイランがホルムズ海峡再開・両国領海管理を巡る協議で進展（オマーン外交団7/24テヘラン訪問）・IRGC、南側迂回ルートの不正通航船4隻に警告射撃し進路変更させたと発表・フーシ派、サウジアラムコのジザン・ヤンブー拠点への攻撃を表明・原油はブレント7/24終値98.38ドルまで反落（前日比-2.29%・週間+10%超維持）・米ガソリン価格は週間+11セントの1ガロン4.11ドルへ上昇・日本関係船は残り4隻で変化なし・封鎖149日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "米、13夜連続の対イラン空爆を停止——開戦後初めての小康状態",
+          "url": "https://www.washingtonpost.com/world/2026/07/25/iran-us-hormuz-strait-war-25-july-2026/db469ab4-880e-11f1-9cec-0fb26676f07e_story.html",
+          "sourceLabel": "Washington Post"
+        },
+        {
+          "title": "オマーン・イラン、ホルムズ海峡再開・領海管理を巡る協議で進展",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
+          "sourceLabel": "CBS News"
+        },
+        {
+          "title": "IRGC、南ルート不正通航船4隻に警告射撃／フーシ派はサウジアラムコ拠点攻撃を表明",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
+          "sourceLabel": "CBS News"
+        }
+      ],
+      "sourceType": "site-log"
     }
   ]
 }

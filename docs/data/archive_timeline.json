@@ -2278,6 +2278,30 @@
         }
       ],
       "sourceType": "site-log"
+    },
+    {
+      "date": "2026-07-28",
+      "dateLabel": "2026/07/28 10:19",
+      "blockadeDay": 151,
+      "summary": "トランプ大統領「イランと協議中、合意に近づく可能性」（7/27）——一方イラン外務省バガイ報道官は米との直接協議要請を否定し通航状況も不変と主張・イラン・オマーンは7/25〜26テヘランで次官級協議「建設的」——共通原則・運用メカニズムを協議も合意文書は非公表・ホルムズ通航は7/26も7隻に留まり全船が北側航路に集中——イランは無許可船6隻を引き返させたと主張（Kpler/Windward）・フーシ派、サウジ東西輸送網へ無人機攻撃を発表——紅海側にもリスク拡大・原油は攻撃休止・外交期待で急落しブレント89.68ドル（前日比-7.3%）・インドMRPLが原油スポット入札で紅海・ホルムズ経由の除外条項を初めて明記・日本関係船は残り4隻で変化なし・封鎖151日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "トランプ氏「イランと協議中、合意に近づく可能性」——ウォルツ大使は空爆停止の理由を説明",
+          "url": "https://www.reuters.com/world/middle-east/iran-says-it-still-controls-strait-not-seeking-talks-after-trump-halts-bombing-2026-07-27/",
+          "sourceLabel": "Reuters"
+        },
+        {
+          "title": "イラン、米との協議否定も「オマーンとの通航協議は建設的」——次官級でテヘラン協議",
+          "url": "https://www.reuters.com/world/middle-east/iran-has-not-asked-resumption-talks-with-us-iranian-spokesperson-says-2026-07-27/",
+          "sourceLabel": "Reuters / IRNA"
+        },
+        {
+          "title": "ホルムズ通航、7/26も7隻に留まる——原油は攻撃休止・外交期待で急落",
+          "url": "https://www.reuters.com/business/energy/oil-slips-more-than-5-after-us-pauses-strikes-iran-2026-07-26/",
+          "sourceLabel": "Kpler / Windward / Reuters"
+        }
+      ],
+      "sourceType": "site-log"
     }
   ]
 }

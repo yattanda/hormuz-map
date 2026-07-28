@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月26日 10:30 日本時間JST",
+  "updated": "2026年7月28日 10:19 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-trump-talks-progress-0727",
+      "title": "トランプ氏「イランと協議中、合意に近づく可能性」——ウォルツ大使は空爆停止の理由を説明",
+      "body": "トランプ大統領は7月27日、米国とイランが協議を行っており合意に至る可能性があると述べた。協議が失敗すれば攻撃を再開する可能性にも言及。ウォルツ国連大使は、大統領が「協議に時間的余地を与えるため」攻撃を休止したと説明した。報道によれば米軍指揮官は攻撃対象の枯渇や防空兵器の消耗への懸念を進言していたという。",
+      "sourceLabel": "Reuters",
+      "date": "2026年7月27日（現地）/ 2026年7月27日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.reuters.com/world/middle-east/iran-says-it-still-controls-strait-not-seeking-talks-after-trump-halts-bombing-2026-07-27/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-oman-talks-constructive-0726",
+      "title": "イラン、米との協議否定も「オマーンとの通航協議は建設的」——次官級でテヘラン協議",
+      "body": "イラン外務省のバガイ報道官は、米国との協議再開を要請したとの報道を否定し、ホルムズ海峡の通航状況にも変更はないと説明した。一方、イランとオマーンは7月25〜26日にテヘランで次官級協議を実施し、沿岸国の主権を尊重しつつ安全な通航を管理する共通原則・運用メカニズムについて意見交換した。対象船舶・航路・料金・発効時期を定めた合意文書は公表されていない。",
+      "sourceLabel": "Reuters / IRNA",
+      "date": "2026年7月26日〜27日（現地）/ 2026年7月27日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.reuters.com/world/middle-east/iran-has-not-asked-resumption-talks-with-us-iranian-spokesperson-says-2026-07-27/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-hormuz-7ships-oil-slump-0727",
+      "title": "ホルムズ通航、7/26も7隻に留まる——原油は攻撃休止・外交期待で急落",
+      "body": "Kpler・Windward双方の集計で、7月26日のホルムズ海峡通航は7隻にとどまったことが判明。全船がイラン指定の北側航路を利用し、イランは無許可で通過を試みた船舶6隻を引き返させたと主張。原油先物は攻撃休止と外交進展期待を受け急落し、ブレントは7月27日夜時点で89.68ドル（前日比-7.3%）、WTIは83.18ドル（同-6.9%）。インド国営MRPLは原油スポット入札で紅海・ホルムズ経由の除外条項を初めて明記した。",
+      "sourceLabel": "Kpler / Windward / Reuters",
+      "date": "2026年7月26日〜27日（現地）/ 2026年7月28日 JST",
+      "label": "⚓ 海上輸送",
+      "url": "https://www.reuters.com/business/energy/oil-slips-more-than-5-after-us-pauses-strikes-iran-2026-07-26/",
+      "isLatest": false
+    },
     {
       "id": "latest-us-strikes-pause-0725",
       "title": "米、13夜連続の対イラン空爆を停止——開戦後初めての小康状態",
@@ -10,7 +40,7 @@
       "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.washingtonpost.com/world/2026/07/25/iran-us-hormuz-strait-war-25-july-2026/db469ab4-880e-11f1-9cec-0fb26676f07e_story.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-oman-iran-talks-progress-0725",
@@ -31,39 +61,23 @@
       "label": "⚔️ 軍事衝突",
       "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
       "isLatest": false
-    },
-    {
-      "id": "latest-houthi-saudi-tanker-attack-0723",
-      "title": "フーシ派、サウジアラビアの原油タンカー2隻を紅海で攻撃——トランプ氏「大規模攻撃」検討を警告",
-      "body": "イエメンの親イラン武装組織フーシ派は、サウジアラビアの原油タンカー2隻を紅海で攻撃したと発表した。7月20日に宣言していたサウジへの海上封鎖の実行とみられる。米国側はイランがこの攻撃に責任を負うとの立場を示し、トランプ大統領は「大規模攻撃を検討中」と発言した。ホルムズ海峡に加え紅海側でも輸送リスクが顕在化している。",
-      "sourceLabel": "Trading Economics / Barchart",
-      "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
-      "label": "⚓ 海上輸送",
-      "url": "https://www.barchart.com/futures/quotes/CBN26",
-      "isLatest": false
-    },
-    {
-      "id": "latest-brent-100-kazakhstan-cpc-0723",
-      "title": "原油ブレント100ドル突破——カザフスタンもドローン攻撃受けCPCターミナル原油輸出停止",
-      "body": "ブレント原油先物は7月23日終値で100.65ドル（前日比+7.00%）に達し、5月22日以来の高値を記録した。フーシ派によるサウジタンカー攻撃に加え、カザフスタンがドローン攻撃を受けCPC（カスピ海パイプラインコンソーシアム）ターミナル経由の原油輸出を停止したことも供給不安を増幅させた。WTIも90ドル台に上昇している。",
-      "sourceLabel": "Trading Economics",
-      "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
-      "label": "🛢️ 原油市場",
-      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-      "isLatest": false
-    },
-    {
-      "id": "latest-rubio-escort-coalition-0722",
-      "title": "ルビオ国務長官「複数国がホルムズ護衛参加に関心」——法的障壁で正式化せず",
-      "body": "ルビオ国務長官は記者団に対し、複数国がホルムズ海峡での商船護衛への参加に関心を示していると明らかにした一方、法的・政治的な障壁により正式な合意には至っていないと説明した。同長官はホルムズ海峡が国際水域であり、全ての商船に対して通行料や制約のない自由な航行が確保されるべきだと改めて強調した。",
-      "sourceLabel": "Fox News Digital",
-      "date": "2026年7月22日（現地）/ 2026年7月23日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-of-hormuz-oil-07-22-26",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】米・イラン戦争に新戦線——フーシ派がサウジ石油施設を攻撃",
+      "titleEn": "New front in US-Iran war escalates as Houthis fire at Saudi oil facilities",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/7/26/new-front-in-us-iran-war-escalates-as-houthis-fire-at-saudi-oil-facilities",
+      "date": "2026年7月26日（現地）/ 2026年7月27日 JST",
+      "isLatest": true
+    },
     {
       "titleJa": "【Al Jazeera】米、13夜ぶりに対イラン空爆停止——オマーン仲介進展もフーシ派は紅海攻撃継続",
       "titleEn": "Iran war live: US pauses strikes after 13 nights as Oman mediation advances, Houthis continue Red Sea attacks",
@@ -76,7 +90,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/",
       "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Al Jazeera】トランプ氏「大規模攻撃」を警告——クウェート国境で火災・バーレーンも再攻撃",
@@ -911,6 +925,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月23日〜24日",
+      "items": [
+        {
+          "id": "latest-houthi-saudi-tanker-attack-0723",
+          "title": "フーシ派、サウジアラビアの原油タンカー2隻を紅海で攻撃——トランプ氏「大規模攻撃」検討を警告",
+          "body": "イエメンの親イラン武装組織フーシ派は、サウジアラビアの原油タンカー2隻を紅海で攻撃したと発表した。7月20日に宣言していたサウジへの海上封鎖の実行とみられる。米国側はイランがこの攻撃に責任を負うとの立場を示し、トランプ大統領は「大規模攻撃を検討中」と発言した。ホルムズ海峡に加え紅海側でも輸送リスクが顕在化している。",
+          "sourceLabel": "Trading Economics / Barchart",
+          "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
+          "label": "⚓ 海上輸送",
+          "url": "https://www.barchart.com/futures/quotes/CBN26",
+          "isLatest": false
+        },
+        {
+          "id": "latest-brent-100-kazakhstan-cpc-0723",
+          "title": "原油ブレント100ドル突破——カザフスタンもドローン攻撃受けCPCターミナル原油輸出停止",
+          "body": "ブレント原油先物は7月23日終値で100.65ドル（前日比+7.00%）に達し、5月22日以来の高値を記録した。フーシ派によるサウジタンカー攻撃に加え、カザフスタンがドローン攻撃を受けCPC（カスピ海パイプラインコンソーシアム）ターミナル経由の原油輸出を停止したことも供給不安を増幅させた。WTIも90ドル台に上昇している。",
+          "sourceLabel": "Trading Economics",
+          "date": "2026年7月23日（現地）/ 2026年7月24日 JST",
+          "label": "🛢️ 原油市場",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "isLatest": false
+        },
+        {
+          "id": "latest-rubio-escort-coalition-0722",
+          "title": "ルビオ国務長官「複数国がホルムズ護衛参加に関心」——法的障壁で正式化せず",
+          "body": "ルビオ国務長官は記者団に対し、複数国がホルムズ海峡での商船護衛への参加に関心を示していると明らかにした一方、法的・政治的な障壁により正式な合意には至っていないと説明した。同長官はホルムズ海峡が国際水域であり、全ての商船に対して通行料や制約のない自由な航行が確保されるべきだと改めて強調した。",
+          "sourceLabel": "Fox News Digital",
+          "date": "2026年7月22日（現地）/ 2026年7月23日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-of-hormuz-oil-07-22-26",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月20日〜21日 更新分（アーカイブ）",
       "items": [

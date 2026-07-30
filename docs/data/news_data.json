@@ -1,7 +1,37 @@
 {
-  "updated": "2026年7月28日 10:19 日本時間JST",
+  "updated": "2026年7月30日 10:08 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-surprise-attack-us-bases-0728",
+      "title": "IRGC、米軍拠点へ弾道ミサイル奇襲——全弾迎撃、攻撃休止は3日で終了",
+      "body": "米中央軍（CENTCOM）は7月28日夜、イラン革命防衛隊（IRGC）が中東の米軍拠点へ弾道ミサイルによる奇襲攻撃を試みたが、全弾を迎撃したと発表した。7月25日未明から続いていた攻撃休止は3日で終了した。米・サウジ両軍は合同で、直近72時間に30件超の攻撃を行っていた親イラン系民兵拠点をイラク国内で空爆した。",
+      "sourceLabel": "Reuters / CENTCOM",
+      "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.pressdemocrat.com/2026/07/28/iran-us-troops-missile-attack/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-retaliation-strikes-0729",
+      "title": "トランプ氏「対イラン報復攻撃を実施」——7/29夜（米時間）に新たな空爆開始",
+      "body": "トランプ大統領はイランの奇襲攻撃を受け、対イランへの強い報復攻撃を実施すると警告し、7月29日夜（米東部時間）に新たな対イラン空爆を開始したと報じられた。CENTCOMは同日、米・サウジ両軍によるイラク国内の親イラン系民兵拠点への攻撃も発表している。",
+      "sourceLabel": "CBS News",
+      "date": "2026年7月29日（現地）/ 2026年7月30日 JST",
+      "label": "⚔️ 軍事衝突",
+      "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-saudi-arabia-strait-of-hormuz/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-iran-rejects-oman-5050-proposal-0728",
+      "title": "イラン、オマーンの海峡共同管理（50-50）案を拒否——単独管理の立場を維持",
+      "body": "イランは、ホルムズ海峡の管理をオマーンと折半する共同管理案を拒否し、入航路線・出航路線の一部について単独での完全管理を維持する立場を崩さなかったと報じられた。米国のAPIデータでは原油在庫が前週比330万バレル減少し、供給逼迫の継続も示された。",
+      "sourceLabel": "Trading Economics",
+      "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+      "isLatest": false
+    },
     {
       "id": "latest-trump-talks-progress-0727",
       "title": "トランプ氏「イランと協議中、合意に近づく可能性」——ウォルツ大使は空爆停止の理由を説明",
@@ -10,7 +40,7 @@
       "date": "2026年7月27日（現地）/ 2026年7月27日 JST",
       "label": "🕊️ 外交",
       "url": "https://www.reuters.com/world/middle-east/iran-says-it-still-controls-strait-not-seeking-talks-after-trump-halts-bombing-2026-07-27/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-oman-talks-constructive-0726",
@@ -31,39 +61,23 @@
       "label": "⚓ 海上輸送",
       "url": "https://www.reuters.com/business/energy/oil-slips-more-than-5-after-us-pauses-strikes-iran-2026-07-26/",
       "isLatest": false
-    },
-    {
-      "id": "latest-us-strikes-pause-0725",
-      "title": "米、13夜連続の対イラン空爆を停止——開戦後初めての小康状態",
-      "body": "米軍による対イランへの空爆は、7月25日未明（現地時間）、13夜連続の攻撃の後、開戦後初めて途絶した。イラン保健省報道官はX（旧Twitter）に「イランは平穏な夜を過ごした」と投稿。米中央軍（CENTCOM）は取材への即時のコメントを行っていない。",
-      "sourceLabel": "Washington Post",
-      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.washingtonpost.com/world/2026/07/25/iran-us-hormuz-strait-war-25-july-2026/db469ab4-880e-11f1-9cec-0fb26676f07e_story.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oman-iran-talks-progress-0725",
-      "title": "オマーン・イラン、ホルムズ海峡再開・領海管理を巡る協議で進展",
-      "body": "オマーンとイランの間で、ホルムズ海峡の再開及び両国領海の管理を巡る協議に進展があったと、地域筋2名がCBS Newsに証言した。イラン国営通信IRNAによれば、オマーン外交団は7月24日にテヘランを訪問し、海峡での船舶交通を管理する「適切なメカニズム」の構築について協議したという。",
-      "sourceLabel": "CBS News",
-      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc-warning-shots-houthi-aramco-0725",
-      "title": "IRGC、南ルート不正通航船4隻に警告射撃／フーシ派はサウジアラムコ拠点攻撃を表明",
-      "body": "イラン革命防衛隊（IRGC）は、南側（オマーン沿岸）迂回ルートを通じ不正・危険な経路での通航を試みた船舶4隻に対し、直近24時間で警告射撃を実施し進路変更させたと発表した。一方、イエメンの親イラン武装組織フーシ派は、サウジアラムコのジザン・ヤンブー両拠点への攻撃を表明し、紅海方面での攻撃継続姿勢を改めて示した。",
-      "sourceLabel": "CBS News",
-      "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】イラン、ヨルダンの米軍拠点を攻撃——トランプ氏はネタニヤフ氏と会談中",
+      "titleEn": "Iran attacks US forces in Jordan as Trump meets Netanyahu",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/7/29/iran-attacks-us-bases-in-middle-east-as-trump-meets-netanyahu",
+      "date": "2026年7月29日（現地）/ 2026年7月29日 JST",
+      "isLatest": true
+    },
     {
       "titleJa": "【Al Jazeera】米・イラン戦争に新戦線——フーシ派がサウジ石油施設を攻撃",
       "titleEn": "New front in US-Iran war escalates as Houthis fire at Saudi oil facilities",
@@ -76,7 +90,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/7/26/new-front-in-us-iran-war-escalates-as-houthis-fire-at-saudi-oil-facilities",
       "date": "2026年7月26日（現地）/ 2026年7月27日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Al Jazeera】米、13夜ぶりに対イラン空爆停止——オマーン仲介進展もフーシ派は紅海攻撃継続",
@@ -925,6 +939,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月25日〜26日",
+      "items": [
+        {
+          "id": "latest-us-strikes-pause-0725",
+          "title": "米、13夜連続の対イラン空爆を停止——開戦後初めての小康状態",
+          "body": "米軍による対イランへの空爆は、7月25日未明（現地時間）、13夜連続の攻撃の後、開戦後初めて途絶した。イラン保健省報道官はX（旧Twitter）に「イランは平穏な夜を過ごした」と投稿。米中央軍（CENTCOM）は取材への即時のコメントを行っていない。",
+          "sourceLabel": "Washington Post",
+          "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.washingtonpost.com/world/2026/07/25/iran-us-hormuz-strait-war-25-july-2026/db469ab4-880e-11f1-9cec-0fb26676f07e_story.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oman-iran-talks-progress-0725",
+          "title": "オマーン・イラン、ホルムズ海峡再開・領海管理を巡る協議で進展",
+          "body": "オマーンとイランの間で、ホルムズ海峡の再開及び両国領海の管理を巡る協議に進展があったと、地域筋2名がCBS Newsに証言した。イラン国営通信IRNAによれば、オマーン外交団は7月24日にテヘランを訪問し、海峡での船舶交通を管理する「適切なメカニズム」の構築について協議したという。",
+          "sourceLabel": "CBS News",
+          "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-warning-shots-houthi-aramco-0725",
+          "title": "IRGC、南ルート不正通航船4隻に警告射撃／フーシ派はサウジアラムコ拠点攻撃を表明",
+          "body": "イラン革命防衛隊（IRGC）は、南側（オマーン沿岸）迂回ルートを通じ不正・危険な経路での通航を試みた船舶4隻に対し、直近24時間で警告射撃を実施し進路変更させたと発表した。一方、イエメンの親イラン武装組織フーシ派は、サウジアラムコのジザン・ヤンブー両拠点への攻撃を表明し、紅海方面での攻撃継続姿勢を改めて示した。",
+          "sourceLabel": "CBS News",
+          "date": "2026年7月25日（現地）/ 2026年7月26日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月23日〜24日",
       "items": [

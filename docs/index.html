@@ -1417,7 +1417,6 @@ Copy
 <div style="margin: 20px auto; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1e3a5f;">
   <iframe
     id="hormuz-dashboard"
-    src="https://yattanda.github.io/hormuz-data-/?embed=1"
     width="100%"
     height="400"
     frameborder="0"
@@ -1428,6 +1427,11 @@ Copy
   ></iframe>
 </div>
 <script>
+  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ドメイン/リポジトリ名移行時はここのみ変更）
+  window.SITE_CONFIG = window.SITE_CONFIG || {
+    DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
+  };
+  document.getElementById('hormuz-dashboard').src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
   function adjustIframeHeight() {
     const iframe = document.getElementById('hormuz-dashboard');
     if (!iframe) return;
@@ -4137,7 +4141,7 @@ function loadNewsData() {
 // SCENARIO SYNC（hormuz-data- の manual.json から確率を同期）
 // ============================================================
 function syncScenarioFromDashboard() {
-  fetch('https://yattanda.github.io/hormuz-data-/data/manual-update.json?t=' + Date.now())
+  fetch(SITE_CONFIG.DASHBOARD_BASE + '/data/manual-update.json?t=' + Date.now())
     .then(r => r.json())
     .then(d => {
       if (!d.scenario) return;
@@ -4753,7 +4757,7 @@ function scrollToJapanFlow(e) {
 </div>
 <script>
 (function loadRouteTableFlow() {
-  const OIL_FLOW_URL = 'https://yattanda.github.io/hormuz-data-/data/oil-flow.json';
+  const OIL_FLOW_URL = SITE_CONFIG.DASHBOARD_BASE + '/data/oil-flow.json';
 
   fetch(OIL_FLOW_URL + '?t=' + Date.now())
     .then(r => r.json())

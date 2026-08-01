@@ -1,7 +1,47 @@
 {
-  "updated": "2026年7月30日 10:08 日本時間JST",
+  "updated": "2026年8月1日 10:51 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-damietta-drone-attack-lng-0729",
+      "title": "エジプト・ダミエッタ港でLNG貯蔵船2隻がドローン攻撃——今次紛争で初のエジプト領内攻撃",
+      "body": "エジプト北部ダミエッタ港で7月29日（現地）、米企業所有のLNG貯蔵再ガス化船「エナゴス・ウィンター」がドローン攻撃を受け出火し、隣接するLNGタンカー「ガスログ・セーラム」にも延焼した。エジプト内閣府は7月30日、ドローン攻撃であったことを確認。乗組員は避難し負傷者はいない。犯行声明は出ていないが、イラン国営テレビが2日前にダミエッタを対ウクライナ報復の候補地として名指ししていたと報じられている。",
+      "sourceLabel": "Reuters / CNBC",
+      "date": "2026年7月29日（現地）/ 2026年7月30日 JST",
+      "label": "🔥 施設攻撃",
+      "url": "https://www.cnbc.com/2026/07/30/egypt-drone-gas-ship-damietta-port-iran-war.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-claims-tanker-seizure-0731",
+      "title": "イラン、ホルムズ海峡でタンカー2隻を拿捕・4隻を引き返させたと主張——西側は未確認",
+      "body": "イランは、「米軍護衛下」でホルムズ海峡を出域しようとしたタンカー2隻を拿捕し、別の4隻についてもイラン部隊の介入を受けて引き返したと発表した。ロイターによれば、これらの主張は独立した第三者機関による確認が取れていない。同日、大型タンカー2隻の通航自体は確認されており、原油価格は1%超上昇した。",
+      "sourceLabel": "Reuters",
+      "date": "2026年7月31日（現地）/ 2026年7月31日 JST",
+      "label": "⚓ 海上輸送",
+      "url": "https://www.investing.com/news/commodities-news/oil-price-rises-after-iran-says-it-stops-ships-in-hormuz-4828985",
+      "isLatest": false
+    },
+    {
+      "id": "latest-cpc-novorossiysk-suspended-again-0730",
+      "title": "カザフスタンCPCターミナル、タンカー攻撃受け3日で再停止——7月中8隻超が被弾",
+      "body": "カザフスタンの主要原油輸出ルートであるカスピ海パイプラインコンソーシアム（CPC）は、黒海ノヴォロシースク近郊でタンカー「ニソス・シフノス」（積み込み中に被弾・火災）と「マラティ」（接近中に攻撃）が攻撃を受けたことを受け、積み出しを再び停止した。7月27日の再開からわずか3日での再停止で、7月中にCPC関連で攻撃を受けたタンカーは少なくとも8隻に達した。",
+      "sourceLabel": "The Times of Central Asia",
+      "date": "2026年7月30日（現地）/ 2026年7月30日 JST",
+      "label": "🛢️ エネルギー",
+      "url": "https://timesca.com/breaking-cpc-halts-oil-loadings-again-after-two-more-tankers-attacked-near-novorossiysk/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-surge-brent-90-july-0731",
+      "title": "原油続伸、ブレント90ドル台——7月月間ではブレント+23%の見通し",
+      "body": "原油価格は7月31日、イランのタンカー拿捕主張とダミエッタ港攻撃を受けて上昇し、ブレントは90.12ドル、WTIは84.67ドルで終値を付けた（ともに前日比+1%超）。ベンチマークのブレント原油先物は7月の月間上昇率で+23%となる見通しで、ロイターが調査したエコノミスト・アナリストは今後さらなる価格上昇を予想している。",
+      "sourceLabel": "CNBC / Reuters",
+      "date": "2026年7月31日（現地）/ 2026年7月31日 JST",
+      "label": "🛢️ エネルギー",
+      "url": "https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html",
+      "isLatest": false
+    },
     {
       "id": "latest-irgc-surprise-attack-us-bases-0728",
       "title": "IRGC、米軍拠点へ弾道ミサイル奇襲——全弾迎撃、攻撃休止は3日で終了",
@@ -10,7 +50,7 @@
       "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
       "label": "⚔️ 軍事衝突",
       "url": "https://www.pressdemocrat.com/2026/07/28/iran-us-troops-missile-attack/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-retaliation-strikes-0729",
@@ -21,49 +61,23 @@
       "label": "⚔️ 軍事衝突",
       "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-saudi-arabia-strait-of-hormuz/",
       "isLatest": false
-    },
-    {
-      "id": "latest-iran-rejects-oman-5050-proposal-0728",
-      "title": "イラン、オマーンの海峡共同管理（50-50）案を拒否——単独管理の立場を維持",
-      "body": "イランは、ホルムズ海峡の管理をオマーンと折半する共同管理案を拒否し、入航路線・出航路線の一部について単独での完全管理を維持する立場を崩さなかったと報じられた。米国のAPIデータでは原油在庫が前週比330万バレル減少し、供給逼迫の継続も示された。",
-      "sourceLabel": "Trading Economics",
-      "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-talks-progress-0727",
-      "title": "トランプ氏「イランと協議中、合意に近づく可能性」——ウォルツ大使は空爆停止の理由を説明",
-      "body": "トランプ大統領は7月27日、米国とイランが協議を行っており合意に至る可能性があると述べた。協議が失敗すれば攻撃を再開する可能性にも言及。ウォルツ国連大使は、大統領が「協議に時間的余地を与えるため」攻撃を休止したと説明した。報道によれば米軍指揮官は攻撃対象の枯渇や防空兵器の消耗への懸念を進言していたという。",
-      "sourceLabel": "Reuters",
-      "date": "2026年7月27日（現地）/ 2026年7月27日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.reuters.com/world/middle-east/iran-says-it-still-controls-strait-not-seeking-talks-after-trump-halts-bombing-2026-07-27/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-oman-talks-constructive-0726",
-      "title": "イラン、米との協議否定も「オマーンとの通航協議は建設的」——次官級でテヘラン協議",
-      "body": "イラン外務省のバガイ報道官は、米国との協議再開を要請したとの報道を否定し、ホルムズ海峡の通航状況にも変更はないと説明した。一方、イランとオマーンは7月25〜26日にテヘランで次官級協議を実施し、沿岸国の主権を尊重しつつ安全な通航を管理する共通原則・運用メカニズムについて意見交換した。対象船舶・航路・料金・発効時期を定めた合意文書は公表されていない。",
-      "sourceLabel": "Reuters / IRNA",
-      "date": "2026年7月26日〜27日（現地）/ 2026年7月27日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.reuters.com/world/middle-east/iran-has-not-asked-resumption-talks-with-us-iranian-spokesperson-says-2026-07-27/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-hormuz-7ships-oil-slump-0727",
-      "title": "ホルムズ通航、7/26も7隻に留まる——原油は攻撃休止・外交期待で急落",
-      "body": "Kpler・Windward双方の集計で、7月26日のホルムズ海峡通航は7隻にとどまったことが判明。全船がイラン指定の北側航路を利用し、イランは無許可で通過を試みた船舶6隻を引き返させたと主張。原油先物は攻撃休止と外交進展期待を受け急落し、ブレントは7月27日夜時点で89.68ドル（前日比-7.3%）、WTIは83.18ドル（同-6.9%）。インド国営MRPLは原油スポット入札で紅海・ホルムズ経由の除外条項を初めて明記した。",
-      "sourceLabel": "Kpler / Windward / Reuters",
-      "date": "2026年7月26日〜27日（現地）/ 2026年7月28日 JST",
-      "label": "⚓ 海上輸送",
-      "url": "https://www.reuters.com/business/energy/oil-slips-more-than-5-after-us-pauses-strikes-iran-2026-07-26/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】エジプト、ダミエッタ港の船舶火災はドローン攻撃と確認",
+      "titleEn": "Egypt says fire on ships at Damietta port caused by drone",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/7/29/fire-erupts-on-ships-at-egypts-damietta-port",
+      "date": "2026年7月30日（現地）/ 2026年7月30日 JST",
+      "isLatest": true
+    },
     {
       "titleJa": "【Al Jazeera】イラン、ヨルダンの米軍拠点を攻撃——トランプ氏はネタニヤフ氏と会談中",
       "titleEn": "Iran attacks US forces in Jordan as Trump meets Netanyahu",
@@ -76,7 +90,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/7/29/iran-attacks-us-bases-in-middle-east-as-trump-meets-netanyahu",
       "date": "2026年7月29日（現地）/ 2026年7月29日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Al Jazeera】米・イラン戦争に新戦線——フーシ派がサウジ石油施設を攻撃",
@@ -939,6 +953,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月28日〜29日",
+      "items": [
+        {
+          "id": "latest-iran-rejects-oman-5050-proposal-0728",
+          "title": "イラン、オマーンの海峡共同管理（50-50）案を拒否——単独管理の立場を維持",
+          "body": "イランは、ホルムズ海峡の管理をオマーンと折半する共同管理案を拒否し、入航路線・出航路線の一部について単独での完全管理を維持する立場を崩さなかったと報じられた。米国のAPIデータでは原油在庫が前週比330万バレル減少し、供給逼迫の継続も示された。",
+          "sourceLabel": "Trading Economics",
+          "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-talks-progress-0727",
+          "title": "トランプ氏「イランと協議中、合意に近づく可能性」——ウォルツ大使は空爆停止の理由を説明",
+          "body": "トランプ大統領は7月27日、米国とイランが協議を行っており合意に至る可能性があると述べた。協議が失敗すれば攻撃を再開する可能性にも言及。ウォルツ国連大使は、大統領が「協議に時間的余地を与えるため」攻撃を休止したと説明した。報道によれば米軍指揮官は攻撃対象の枯渇や防空兵器の消耗への懸念を進言していたという。",
+          "sourceLabel": "Reuters",
+          "date": "2026年7月27日（現地）/ 2026年7月27日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.reuters.com/world/middle-east/iran-says-it-still-controls-strait-not-seeking-talks-after-trump-halts-bombing-2026-07-27/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-oman-talks-constructive-0726",
+          "title": "イラン、米との協議否定も「オマーンとの通航協議は建設的」——次官級でテヘラン協議",
+          "body": "イラン外務省のバガイ報道官は、米国との協議再開を要請したとの報道を否定し、ホルムズ海峡の通航状況にも変更はないと説明した。一方、イランとオマーンは7月25〜26日にテヘランで次官級協議を実施し、沿岸国の主権を尊重しつつ安全な通航を管理する共通原則・運用メカニズムについて意見交換した。対象船舶・航路・料金・発効時期を定めた合意文書は公表されていない。",
+          "sourceLabel": "Reuters / IRNA",
+          "date": "2026年7月26日〜27日（現地）/ 2026年7月27日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.reuters.com/world/middle-east/iran-has-not-asked-resumption-talks-with-us-iranian-spokesperson-says-2026-07-27/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-hormuz-7ships-oil-slump-0727",
+          "title": "ホルムズ通航、7/26も7隻に留まる——原油は攻撃休止・外交期待で急落",
+          "body": "Kpler・Windward双方の集計で、7月26日のホルムズ海峡通航は7隻にとどまったことが判明。全船がイラン指定の北側航路を利用し、イランは無許可で通過を試みた船舶6隻を引き返させたと主張。原油先物は攻撃休止と外交進展期待を受け急落し、ブレントは7月27日夜時点で89.68ドル（前日比-7.3%）、WTIは83.18ドル（同-6.9%）。インド国営MRPLは原油スポット入札で紅海・ホルムズ経由の除外条項を初めて明記した。",
+          "sourceLabel": "Kpler / Windward / Reuters",
+          "date": "2026年7月26日〜27日（現地）/ 2026年7月28日 JST",
+          "label": "⚓ 海上輸送",
+          "url": "https://www.reuters.com/business/energy/oil-slips-more-than-5-after-us-pauses-strikes-iran-2026-07-26/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月25日〜26日",
       "items": [

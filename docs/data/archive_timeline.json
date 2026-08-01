@@ -2326,6 +2326,35 @@
         }
       ],
       "sourceType": "site-log"
+    },
+    {
+      "date": "2026-08-01",
+      "dateLabel": "2026/08/01 10:51",
+      "blockadeDay": 155,
+      "summary": "戦線が中東域外へ拡大——エジプト・ダミエッタ港でLNG貯蔵船「エナゴス・ウィンター」がドローン攻撃を受け出火、隣接LNG船「ガスログ・セーラム」にも延焼（今次紛争で初のエジプト領内攻撃・Reuters/CNBC）・カザフスタンのCPCノヴォロシースク積出ターミナルもタンカー攻撃を受け3日で再停止（7月中8隻超が被弾）・イランは「米軍護衛下」で海峡を出域しようとしたタンカー2隻を拿捕・4隻を引き返させたと主張したが西側は未確認（Reuters）・オマーンとの海峡共同管理協議はイラン高官が「成功の見込みなし」と改めて拒否・米・イラン間の直接空爆は7/30夜〜31未明は報告なし・原油はブレント90.12ドル・WTI84.67ドル（ともに前日比+1%超・7月月間+23%見通し）・日本関係船は残り4隻で変化なし・封鎖155日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "エジプト・ダミエッタ港でLNG貯蔵船2隻がドローン攻撃——今次紛争で初のエジプト領内攻撃",
+          "url": "https://www.cnbc.com/2026/07/30/egypt-drone-gas-ship-damietta-port-iran-war.html",
+          "sourceLabel": "Reuters / CNBC"
+        },
+        {
+          "title": "イラン、ホルムズ海峡でタンカー2隻を拿捕・4隻を引き返させたと主張——西側は未確認",
+          "url": "https://www.investing.com/news/commodities-news/oil-price-rises-after-iran-says-it-stops-ships-in-hormuz-4828985",
+          "sourceLabel": "Reuters"
+        },
+        {
+          "title": "カザフスタンCPCターミナル、タンカー攻撃受け3日で再停止——7月中8隻超が被弾",
+          "url": "https://timesca.com/breaking-cpc-halts-oil-loadings-again-after-two-more-tankers-attacked-near-novorossiysk/",
+          "sourceLabel": "The Times of Central Asia"
+        },
+        {
+          "title": "原油続伸、ブレント90ドル台——7月月間ではブレント+23%の見通し",
+          "url": "https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html",
+          "sourceLabel": "CNBC / Reuters"
+        }
+      ],
+      "sourceType": "site-log"
     }
   ]
 }

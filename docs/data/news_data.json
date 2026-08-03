@@ -1,45 +1,45 @@
 {
-  "updated": "2026年8月1日 10:51 日本時間JST",
+  "updated": "2026年8月3日 09:46 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-damietta-drone-attack-lng-0729",
-      "title": "エジプト・ダミエッタ港でLNG貯蔵船2隻がドローン攻撃——今次紛争で初のエジプト領内攻撃",
-      "body": "エジプト北部ダミエッタ港で7月29日（現地）、米企業所有のLNG貯蔵再ガス化船「エナゴス・ウィンター」がドローン攻撃を受け出火し、隣接するLNGタンカー「ガスログ・セーラム」にも延焼した。エジプト内閣府は7月30日、ドローン攻撃であったことを確認。乗組員は避難し負傷者はいない。犯行声明は出ていないが、イラン国営テレビが2日前にダミエッタを対ウクライナ報復の候補地として名指ししていたと報じられている。",
-      "sourceLabel": "Reuters / CNBC",
-      "date": "2026年7月29日（現地）/ 2026年7月30日 JST",
-      "label": "🔥 施設攻撃",
-      "url": "https://www.cnbc.com/2026/07/30/egypt-drone-gas-ship-damietta-port-iran-war.html",
+      "id": "latest-trump-halts-strikes-saudi-mbs-0801",
+      "title": "トランプ氏、対イラン攻撃を土壇場で中止——サウジ皇太子の説得受け「枠組み合意」に言及",
+      "body": "トランプ大統領は8月1日夜（米時間）、週末に計画していたイランへの大規模攻撃を中止すると表明した。サウジアラビアのムハンマド皇太子から電話で説得を受けたことがきっかけとされ、トランプ氏はTruth Socialで「イラン及び他の中東諸国から、合意の大枠がまとまったとして攻撃の見合わせを求められた」と投稿。合意には「ホルムズ海峡の即時・完全・全面的な開放」とイランの核脅威終結が含まれるとし、イスラエルも同様の立場を共有しているとした。攻撃中止は「迅速に合意をまとめられること」を条件とする留保付きである。",
+      "sourceLabel": "Newsweek / NPR",
+      "date": "2026年8月1日（現地）/ 2026年8月2日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.newsweek.com/trump-calls-off-iran-strikes-demands-strait-of-hormuz-reopened-12274699",
       "isLatest": true
     },
     {
-      "id": "latest-iran-claims-tanker-seizure-0731",
-      "title": "イラン、ホルムズ海峡でタンカー2隻を拿捕・4隻を引き返させたと主張——西側は未確認",
-      "body": "イランは、「米軍護衛下」でホルムズ海峡を出域しようとしたタンカー2隻を拿捕し、別の4隻についてもイラン部隊の介入を受けて引き返したと発表した。ロイターによれば、これらの主張は独立した第三者機関による確認が取れていない。同日、大型タンカー2隻の通航自体は確認されており、原油価格は1%超上昇した。",
-      "sourceLabel": "Reuters",
-      "date": "2026年7月31日（現地）/ 2026年7月31日 JST",
+      "id": "latest-trump-talks-monday-iran-0802",
+      "title": "トランプ氏「イランとの交渉、月曜から開始」——ホルムズ海峡開放めぐる最終合意目指す",
+      "body": "トランプ大統領は記者団に対し「（イランとの）交渉は月曜日の午後から始まる」と述べ、合意がまとまれば「多くの命を救い、多くの無用な力の行使を避けられる」と説明した。イランの acting 国防相はこの攻撃見合わせ発言を「心理作戦」と一蹴しており、公式な受諾表明はまだない。",
+      "sourceLabel": "The Times of Israel",
+      "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
+      "label": "🕊️ 外交",
+      "url": "https://www.timesofisrael.com/liveblog-august-2-2026/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-drops-465-brent-83-0802",
+      "title": "原油急落、ブレント83.84ドルへ——イラン合意期待で4.65%下落",
+      "body": "ブレント原油は8月2日、前日比4.65%安の1バレル83.84ドルまで急落した。7月は月間で16〜24%程度上昇していたが、トランプ氏の攻撃中止表明と月曜開始予定の米イラン交渉を受け、地政学リスクプレミアムの一部が剥落した。",
+      "sourceLabel": "Trading Economics",
+      "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
+      "label": "🛢️ エネルギー",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+      "isLatest": false
+    },
+    {
+      "id": "latest-gaslog-shanghai-hit-ukmto-0731",
+      "title": "オマーン沖でタンカー「ガスログ・シャンハイ」が飛翔体を受け機関室損傷——UKMTO発表",
+      "body": "UKMTOは、バミューダ籍タンカー「ガスログ・シャンハイ」がオマーン・リマ沖11海里で飛翔体を受け機関室が損傷したと発表した。負傷者はいない。同日、ハサブ沖21海里でも別の船舶付近に飛翔体が着弾したが被害はなかった。イランは南側のオマーン領海回廊を経由する船舶への攻撃を繰り返している。",
+      "sourceLabel": "UKMTO / Critical Threats",
+      "date": "2026年7月31日（現地）/ 2026年8月1日 JST",
       "label": "⚓ 海上輸送",
-      "url": "https://www.investing.com/news/commodities-news/oil-price-rises-after-iran-says-it-stops-ships-in-hormuz-4828985",
-      "isLatest": false
-    },
-    {
-      "id": "latest-cpc-novorossiysk-suspended-again-0730",
-      "title": "カザフスタンCPCターミナル、タンカー攻撃受け3日で再停止——7月中8隻超が被弾",
-      "body": "カザフスタンの主要原油輸出ルートであるカスピ海パイプラインコンソーシアム（CPC）は、黒海ノヴォロシースク近郊でタンカー「ニソス・シフノス」（積み込み中に被弾・火災）と「マラティ」（接近中に攻撃）が攻撃を受けたことを受け、積み出しを再び停止した。7月27日の再開からわずか3日での再停止で、7月中にCPC関連で攻撃を受けたタンカーは少なくとも8隻に達した。",
-      "sourceLabel": "The Times of Central Asia",
-      "date": "2026年7月30日（現地）/ 2026年7月30日 JST",
-      "label": "🛢️ エネルギー",
-      "url": "https://timesca.com/breaking-cpc-halts-oil-loadings-again-after-two-more-tankers-attacked-near-novorossiysk/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-surge-brent-90-july-0731",
-      "title": "原油続伸、ブレント90ドル台——7月月間ではブレント+23%の見通し",
-      "body": "原油価格は7月31日、イランのタンカー拿捕主張とダミエッタ港攻撃を受けて上昇し、ブレントは90.12ドル、WTIは84.67ドルで終値を付けた（ともに前日比+1%超）。ベンチマークのブレント原油先物は7月の月間上昇率で+23%となる見通しで、ロイターが調査したエコノミスト・アナリストは今後さらなる価格上昇を予想している。",
-      "sourceLabel": "CNBC / Reuters",
-      "date": "2026年7月31日（現地）/ 2026年7月31日 JST",
-      "label": "🛢️ エネルギー",
-      "url": "https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html",
+      "url": "https://www.criticalthreats.org/analysis/iran-update-evening-special-report-august-1-2026",
       "isLatest": false
     },
     {
@@ -65,6 +65,20 @@
   ],
   "osint": [
     {
+      "titleJa": "【Al Jazeera】ホルムズ海峡、打開なし——トランプ氏は攻撃中止も合意は成立せず",
+      "titleEn": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/2/no-breakthrough-on-strait-of-hormuz-as-trump-halts-attack-on-iran",
+      "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
+      "isLatest": true
+    },
+    {
       "titleJa": "【Al Jazeera】エジプト、ダミエッタ港の船舶火災はドローン攻撃と確認",
       "titleEn": "Egypt says fire on ships at Damietta port caused by drone",
       "country": "カタール",
@@ -76,7 +90,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/7/29/fire-erupts-on-ships-at-egypts-damietta-port",
       "date": "2026年7月30日（現地）/ 2026年7月30日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Al Jazeera】イラン、ヨルダンの米軍拠点を攻撃——トランプ氏はネタニヤフ氏と会談中",
@@ -953,6 +967,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月29日〜31日",
+      "items": [
+        {
+          "id": "latest-damietta-drone-attack-lng-0729",
+          "title": "エジプト・ダミエッタ港でLNG貯蔵船2隻がドローン攻撃——今次紛争で初のエジプト領内攻撃",
+          "body": "エジプト北部ダミエッタ港で7月29日（現地）、米企業所有のLNG貯蔵再ガス化船「エナゴス・ウィンター」がドローン攻撃を受け出火し、隣接するLNGタンカー「ガスログ・セーラム」にも延焼した。エジプト内閣府は7月30日、ドローン攻撃であったことを確認。乗組員は避難し負傷者はいない。犯行声明は出ていないが、イラン国営テレビが2日前にダミエッタを対ウクライナ報復の候補地として名指ししていたと報じられている。",
+          "sourceLabel": "Reuters / CNBC",
+          "date": "2026年7月29日（現地）/ 2026年7月30日 JST",
+          "label": "🔥 施設攻撃",
+          "url": "https://www.cnbc.com/2026/07/30/egypt-drone-gas-ship-damietta-port-iran-war.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-claims-tanker-seizure-0731",
+          "title": "イラン、ホルムズ海峡でタンカー2隻を拿捕・4隻を引き返させたと主張——西側は未確認",
+          "body": "イランは、「米軍護衛下」でホルムズ海峡を出域しようとしたタンカー2隻を拿捕し、別の4隻についてもイラン部隊の介入を受けて引き返したと発表した。ロイターによれば、これらの主張は独立した第三者機関による確認が取れていない。同日、大型タンカー2隻の通航自体は確認されており、原油価格は1%超上昇した。",
+          "sourceLabel": "Reuters",
+          "date": "2026年7月31日（現地）/ 2026年7月31日 JST",
+          "label": "⚓ 海上輸送",
+          "url": "https://www.investing.com/news/commodities-news/oil-price-rises-after-iran-says-it-stops-ships-in-hormuz-4828985",
+          "isLatest": false
+        },
+        {
+          "id": "latest-cpc-novorossiysk-suspended-again-0730",
+          "title": "カザフスタンCPCターミナル、タンカー攻撃受け3日で再停止——7月中8隻超が被弾",
+          "body": "カザフスタンの主要原油輸出ルートであるカスピ海パイプラインコンソーシアム（CPC）は、黒海ノヴォロシースク近郊でタンカー「ニソス・シフノス」（積み込み中に被弾・火災）と「マラティ」（接近中に攻撃）が攻撃を受けたことを受け、積み出しを再び停止した。7月27日の再開からわずか3日での再停止で、7月中にCPC関連で攻撃を受けたタンカーは少なくとも8隻に達した。",
+          "sourceLabel": "The Times of Central Asia",
+          "date": "2026年7月30日（現地）/ 2026年7月30日 JST",
+          "label": "🛢️ エネルギー",
+          "url": "https://timesca.com/breaking-cpc-halts-oil-loadings-again-after-two-more-tankers-attacked-near-novorossiysk/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-surge-brent-90-july-0731",
+          "title": "原油続伸、ブレント90ドル台——7月月間ではブレント+23%の見通し",
+          "body": "原油価格は7月31日、イランのタンカー拿捕主張とダミエッタ港攻撃を受けて上昇し、ブレントは90.12ドル、WTIは84.67ドルで終値を付けた（ともに前日比+1%超）。ベンチマークのブレント原油先物は7月の月間上昇率で+23%となる見通しで、ロイターが調査したエコノミスト・アナリストは今後さらなる価格上昇を予想している。",
+          "sourceLabel": "CNBC / Reuters",
+          "date": "2026年7月31日（現地）/ 2026年7月31日 JST",
+          "label": "🛢️ エネルギー",
+          "url": "https://www.cnbc.com/2026/07/31/oil-prices-today-brent-wti-hormuz-trump-iran-.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月28日〜29日",
       "items": [

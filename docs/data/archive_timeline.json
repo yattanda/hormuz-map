@@ -2355,6 +2355,35 @@
         }
       ],
       "sourceType": "site-log"
+    },
+    {
+      "date": "2026-08-03",
+      "dateLabel": "2026/08/03 09:46",
+      "blockadeDay": 157,
+      "summary": "トランプ氏、サウジのムハンマド皇太子から電話で説得を受け8/1夜（米時間）に週末の対イラン大規模攻撃を土壇場で中止——「ホルムズ海峡の即時・完全開放」を含む枠組み合意に言及し月曜（8/3）から交渉開始へ（Newsweek/NPR）・イラン軍代行国防相は「心理作戦」と一蹴、半官営メール通信も「新たな虚偽」と反発——イラン政府は公式受諾を表明せず（Al Jazeera）・イラン国営ファールス通信は北側航路になお多数の船舶が足止めされたままと報道・UKMTOはオマーン沖でタンカー「ガスログ・シャンハイ」の被弾（機関室損傷・7/31）を発表・クウェート軍はイラン系ドローンを迎撃（8/1）——NYTはIRGCが4月停戦中にフーシ派・ヒズボラ・イラク民兵と共謀し戦線拡大を図っていたと報道・原油はブレントが前日比4.65%安の83.84ドルへ急落（8/2）・日本関係船は残り4隻で変化なし・封鎖157日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "トランプ氏、対イラン攻撃を土壇場で中止——サウジ皇太子の説得受け「枠組み合意」に言及",
+          "url": "https://www.newsweek.com/trump-calls-off-iran-strikes-demands-strait-of-hormuz-reopened-12274699",
+          "sourceLabel": "Newsweek / NPR"
+        },
+        {
+          "title": "トランプ氏「イランとの交渉、月曜から開始」——ホルムズ海峡開放めぐる最終合意目指す",
+          "url": "https://www.timesofisrael.com/liveblog-august-2-2026/",
+          "sourceLabel": "The Times of Israel"
+        },
+        {
+          "title": "原油急落、ブレント83.84ドルへ——イラン合意期待で4.65%下落",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "sourceLabel": "Trading Economics"
+        },
+        {
+          "title": "オマーン沖でタンカー「ガスログ・シャンハイ」が飛翔体を受け機関室損傷——UKMTO発表",
+          "url": "https://www.criticalthreats.org/analysis/iran-update-evening-special-report-august-1-2026",
+          "sourceLabel": "UKMTO / Critical Threats"
+        }
+      ],
+      "sourceType": "site-log"
     }
   ]
 }

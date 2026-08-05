@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月3日 09:46 日本時間JST",
+  "updated": "2026年8月5日 10:24 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-bessent-rubio-deal-close-0804",
+      "title": "ベッセント財務長官「合意は今日か明日にも」——ルビオ氏はオマーン・イラン協議の進展を確認",
+      "body": "ベッセント米財務長官は8月4日、CNBCのインタビューでホルムズ海峡の「自由な航行」再開に向けた合意が「今日か明日にも」まとまる可能性があると発言した。ルビオ国務長官も同日、米国が関与するオマーンとイランの協議で進展があったと確認したが、最終合意にはまだ至っていないと留保。「イランの非核化こそが最終的な目標」とも述べた。",
+      "sourceLabel": "Washington Times / Al Jazeera",
+      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+      "label": "🤝 外交",
+      "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-two-route-proposal-0804",
+      "title": "浮上する合意案は入域イラン管理・出域オマーン管理の二経路方式——米の封鎖解除が前提",
+      "body": "米・中東関係者によれば、検討されている合意案は湾内への入域をイラン管理ルート、湾外への出域をオマーン管理ルートとする二経路方式。合意成立には米側による対イラン封鎖の解除が前提条件とされる。イラン交渉委員のサイード・アジョルル氏は国営IRIBに対し、米との直接交渉を否定した上で「治安・機雷除去・海事サービスはイランが担う」1〜3ヶ月の暫定管理案が基本方針だと説明した。",
+      "sourceLabel": "AP / Washington Times",
+      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+      "label": "📝 交渉内容",
+      "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-minoan-pioneer-hit-0803",
+      "title": "オマーン沖でリベリア籍バルカー「ミノアン・パイオニア」が被弾——乗員1名行方不明",
+      "body": "UKMTOは、オマーン・アルハサブ沖北東20海里で3日22時（UTC）、リベリア籍バルカー「ミノアン・パイオニア」が正体不明の飛翔体を受けたと発表した。機関室への被弾で船体が完全停電し、居住区で火災が発生、乗員1名が行方不明となっている。2日にも別の2隻（VLCC「エジプト・プロスペリティ」、アフラマックス「オン・プライド」）がオマーン海域で爆発・警告射撃に遭遇したが被害はなかった。",
+      "sourceLabel": "Seatrade Maritime / UKMTO",
+      "date": "2026年8月3日（現地）/ 2026年8月4日 JST",
+      "label": "🚢 海事インシデント",
+      "url": "https://www.seatrade-maritime.com/security/cargo-ship-struck-in-the-strait-of-hormuz",
+      "isLatest": false
+    },
+    {
+      "id": "latest-dow-record-oil-drop-0804",
+      "title": "NYダウが907ドル高で連日最高値、原油は75ドル台へ続落——ホルムズ合意期待が市場を牽引",
+      "body": "4日のニューヨーク株式市場でNYダウは前日比907.47ドル高の54,085.88ドルと連日で史上最高値を更新、S&P500も1.8%高の7,736.52と6月2日以来2ヶ月ぶりの高値をつけた。ホルムズ海峡合意への期待が主因とされ、原油（WTI）は前日比4.57ドル安の75.77ドルまで続落した。カザフスタンはCPCノヴォロシースク積出ターミナルからの原油積み出しを再開した。",
+      "sourceLabel": "日本経済新聞 / TradingEconomics",
+      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+      "label": "📈 市場",
+      "url": "https://www.nikkei.com/article/DGXZQOGN04BAY0U6A800C2000000/",
+      "isLatest": false
+    },
     {
       "id": "latest-trump-halts-strikes-saudi-mbs-0801",
       "title": "トランプ氏、対イラン攻撃を土壇場で中止——サウジ皇太子の説得受け「枠組み合意」に言及",
@@ -10,7 +50,7 @@
       "date": "2026年8月1日（現地）/ 2026年8月2日 JST",
       "label": "🕊️ 外交",
       "url": "https://www.newsweek.com/trump-calls-off-iran-strikes-demands-strait-of-hormuz-reopened-12274699",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-talks-monday-iran-0802",
@@ -21,49 +61,37 @@
       "label": "🕊️ 外交",
       "url": "https://www.timesofisrael.com/liveblog-august-2-2026/",
       "isLatest": false
-    },
-    {
-      "id": "latest-oil-drops-465-brent-83-0802",
-      "title": "原油急落、ブレント83.84ドルへ——イラン合意期待で4.65%下落",
-      "body": "ブレント原油は8月2日、前日比4.65%安の1バレル83.84ドルまで急落した。7月は月間で16〜24%程度上昇していたが、トランプ氏の攻撃中止表明と月曜開始予定の米イラン交渉を受け、地政学リスクプレミアムの一部が剥落した。",
-      "sourceLabel": "Trading Economics",
-      "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
-      "label": "🛢️ エネルギー",
-      "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
-      "isLatest": false
-    },
-    {
-      "id": "latest-gaslog-shanghai-hit-ukmto-0731",
-      "title": "オマーン沖でタンカー「ガスログ・シャンハイ」が飛翔体を受け機関室損傷——UKMTO発表",
-      "body": "UKMTOは、バミューダ籍タンカー「ガスログ・シャンハイ」がオマーン・リマ沖11海里で飛翔体を受け機関室が損傷したと発表した。負傷者はいない。同日、ハサブ沖21海里でも別の船舶付近に飛翔体が着弾したが被害はなかった。イランは南側のオマーン領海回廊を経由する船舶への攻撃を繰り返している。",
-      "sourceLabel": "UKMTO / Critical Threats",
-      "date": "2026年7月31日（現地）/ 2026年8月1日 JST",
-      "label": "⚓ 海上輸送",
-      "url": "https://www.criticalthreats.org/analysis/iran-update-evening-special-report-august-1-2026",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc-surprise-attack-us-bases-0728",
-      "title": "IRGC、米軍拠点へ弾道ミサイル奇襲——全弾迎撃、攻撃休止は3日で終了",
-      "body": "米中央軍（CENTCOM）は7月28日夜、イラン革命防衛隊（IRGC）が中東の米軍拠点へ弾道ミサイルによる奇襲攻撃を試みたが、全弾を迎撃したと発表した。7月25日未明から続いていた攻撃休止は3日で終了した。米・サウジ両軍は合同で、直近72時間に30件超の攻撃を行っていた親イラン系民兵拠点をイラク国内で空爆した。",
-      "sourceLabel": "Reuters / CENTCOM",
-      "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.pressdemocrat.com/2026/07/28/iran-us-troops-missile-attack/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-retaliation-strikes-0729",
-      "title": "トランプ氏「対イラン報復攻撃を実施」——7/29夜（米時間）に新たな空爆開始",
-      "body": "トランプ大統領はイランの奇襲攻撃を受け、対イランへの強い報復攻撃を実施すると警告し、7月29日夜（米東部時間）に新たな対イラン空爆を開始したと報じられた。CENTCOMは同日、米・サウジ両軍によるイラク国内の親イラン系民兵拠点への攻撃も発表している。",
-      "sourceLabel": "CBS News",
-      "date": "2026年7月29日（現地）/ 2026年7月30日 JST",
-      "label": "⚔️ 軍事衝突",
-      "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-saudi-arabia-strait-of-hormuz/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Al Jazeera】米、ホルムズ再開合意近しと発言——オマーン・イランは「前向きな」協議",
+      "titleEn": "US says deal on reopening Hormuz close as Iran, Oman hold 'positive' talks",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/4/us-says-deal-on-reopening-hormuz-close-as-iran-oman-hold-positive-talks",
+      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+      "isLatest": true
+    },
+    {
+      "titleJa": "【CNN】イラン、ホルムズ海峡の新ルート統制を狙う——米側協議の行方は不透明",
+      "titleEn": "Iran aiming to control a new Strait of Hormuz route, amid uncertainty over US talks",
+      "country": "アメリカ",
+      "media": "CNN",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.cnn.com/2026/08/04/world/live-news/iran-war-trump",
+      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+      "isLatest": false
+    },
     {
       "titleJa": "【Al Jazeera】ホルムズ海峡、打開なし——トランプ氏は攻撃中止も合意は成立せず",
       "titleEn": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran",
@@ -76,7 +104,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/8/2/no-breakthrough-on-strait-of-hormuz-as-trump-halts-attack-on-iran",
       "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Al Jazeera】エジプト、ダミエッタ港の船舶火災はドローン攻撃と確認",
@@ -967,6 +995,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年7月28日〜8月2日",
+      "items": [
+        {
+          "id": "latest-oil-drops-465-brent-83-0802",
+          "title": "原油急落、ブレント83.84ドルへ——イラン合意期待で4.65%下落",
+          "body": "ブレント原油は8月2日、前日比4.65%安の1バレル83.84ドルまで急落した。7月は月間で16〜24%程度上昇していたが、トランプ氏の攻撃中止表明と月曜開始予定の米イラン交渉を受け、地政学リスクプレミアムの一部が剥落した。",
+          "sourceLabel": "Trading Economics",
+          "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
+          "label": "🛢️ エネルギー",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "isLatest": false
+        },
+        {
+          "id": "latest-gaslog-shanghai-hit-ukmto-0731",
+          "title": "オマーン沖でタンカー「ガスログ・シャンハイ」が飛翔体を受け機関室損傷——UKMTO発表",
+          "body": "UKMTOは、バミューダ籍タンカー「ガスログ・シャンハイ」がオマーン・リマ沖11海里で飛翔体を受け機関室が損傷したと発表した。負傷者はいない。同日、ハサブ沖21海里でも別の船舶付近に飛翔体が着弾したが被害はなかった。イランは南側のオマーン領海回廊を経由する船舶への攻撃を繰り返している。",
+          "sourceLabel": "UKMTO / Critical Threats",
+          "date": "2026年7月31日（現地）/ 2026年8月1日 JST",
+          "label": "⚓ 海上輸送",
+          "url": "https://www.criticalthreats.org/analysis/iran-update-evening-special-report-august-1-2026",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-surprise-attack-us-bases-0728",
+          "title": "IRGC、米軍拠点へ弾道ミサイル奇襲——全弾迎撃、攻撃休止は3日で終了",
+          "body": "米中央軍（CENTCOM）は7月28日夜、イラン革命防衛隊（IRGC）が中東の米軍拠点へ弾道ミサイルによる奇襲攻撃を試みたが、全弾を迎撃したと発表した。7月25日未明から続いていた攻撃休止は3日で終了した。米・サウジ両軍は合同で、直近72時間に30件超の攻撃を行っていた親イラン系民兵拠点をイラク国内で空爆した。",
+          "sourceLabel": "Reuters / CENTCOM",
+          "date": "2026年7月28日（現地）/ 2026年7月29日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.pressdemocrat.com/2026/07/28/iran-us-troops-missile-attack/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-retaliation-strikes-0729",
+          "title": "トランプ氏「対イラン報復攻撃を実施」——7/29夜（米時間）に新たな空爆開始",
+          "body": "トランプ大統領はイランの奇襲攻撃を受け、対イランへの強い報復攻撃を実施すると警告し、7月29日夜（米東部時間）に新たな対イラン空爆を開始したと報じられた。CENTCOMは同日、米・サウジ両軍によるイラク国内の親イラン系民兵拠点への攻撃も発表している。",
+          "sourceLabel": "CBS News",
+          "date": "2026年7月29日（現地）/ 2026年7月30日 JST",
+          "label": "⚔️ 軍事衝突",
+          "url": "https://www.cbsnews.com/live-updates/us-iran-war-trump-saudi-arabia-strait-of-hormuz/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月29日〜31日",
       "items": [

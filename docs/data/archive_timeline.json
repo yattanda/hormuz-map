@@ -2384,6 +2384,34 @@
         }
       ],
       "sourceType": "site-log"
+    },
+    {
+      "date": "2026-08-05",
+      "dateLabel": "2026/08/05 10:24",
+      "blockadeDay": 159,
+      "summary": "ベッセント財務長官「合意は今日か明日にも」・ルビオ国務長官はオマーン・イラン協議の進展を確認するも最終合意は未成立と留保（8/4）・浮上する合意案は入域イラン管理・出域オマーン管理の二経路方式で米の封鎖解除が前提（AP/Washington Times）・イランは直接交渉を否定し「イラン主導1〜3ヶ月の暫定管理」案を提示（IRIB）・レザイー最高指導者上級顧問は代替航路を強制する米艦船への攻撃も辞さないと警告・UKMTOはオマーン沖でリベリア籍バルカー「ミノアン・パイオニア」の被弾を発表（乗員1名行方不明）・イラン国営メディアはクウェート米軍基地への攻撃を主張したが米側未確認・NYダウは907ドル高の54,085ドルで連日最高値、原油はWTIが75.77ドルへ続落・日本関係船は残り4隻で変化なし・封鎖159日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "ベッセント財務長官「合意は今日か明日にも」——ルビオ氏はオマーン・イラン協議の進展を確認",
+          "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
+          "sourceLabel": "Washington Times / Al Jazeera"
+        },
+        {
+          "title": "浮上する合意案は入域イラン管理・出域オマーン管理の二経路方式——米の封鎖解除が前提",
+          "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
+          "sourceLabel": "AP / Washington Times"
+        },
+        {
+          "title": "オマーン沖でリベリア籍バルカー「ミノアン・パイオニア」が被弾——乗員1名行方不明",
+          "url": "https://www.seatrade-maritime.com/security/cargo-ship-struck-in-the-strait-of-hormuz",
+          "sourceLabel": "Seatrade Maritime / UKMTO"
+        },
+        {
+          "title": "NYダウが907ドル高で連日最高値、原油は75ドル台へ続落——ホルムズ合意期待が市場を牽引",
+          "url": "https://www.nikkei.com/article/DGXZQOGN04BAY0U6A800C2000000/",
+          "sourceLabel": "日本経済新聞 / TradingEconomics"
+        }
+      ]
     }
   ]
 }

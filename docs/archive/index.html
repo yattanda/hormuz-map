@@ -422,6 +422,13 @@
     return `${parseInt(y)}年${parseInt(m)}月${parseInt(d)}日`;
   }
 
+  // 封鎖日数の起算日：2026年2月28日を「1日目」とする（月は0始まりのため 1 = 2月）
+  const BLOCKADE_BASE_UTC = Date.UTC(2026, 1, 28);
+  function calcBlockadeDay(iso){
+    const [y, m, d] = iso.split('-').map(Number);
+    return Math.round((Date.UTC(y, m - 1, d) - BLOCKADE_BASE_UTC) / 86400000) + 1;
+  }
+
   function renderRangeNotice(entries){
     const el = document.getElementById('range-notice');
     const SITE_START = '2026-04-08'; // 本サイト開設日（固定）
@@ -439,6 +446,7 @@
     html += ' 一部、本サイトが速報を発信し忘れていた日について後日調査で補完した記録には<span style="border:1px dotted rgba(127,184,201,0.5);padding:1px 6px;border-radius:3px;">🧩欠損補完</span>バッジを表示しています。';
     html += ' 本サイトが速報を発信せず、かつ重要な動きも確認できなかった日は記録対象外としています。';
     html += ' <strong>フェーズ別で見る</strong>を選ぶと、危機の展開を6つの局面（Act1〜6）に分けて通しで追うことができます。';
+    html += ' なお<strong>封鎖日数は2026年2月28日を1日目として再計算した値</strong>を表示しています。2026年6月24日以前の速報本文中の「封鎖◯日目」という表記は、当時採用していた起算日（2月27日）に基づくため、スタンプの数字と1日ずれている場合があります。';
     el.innerHTML = html;
   }
 
@@ -447,7 +455,7 @@
     statEls[0].textContent = entries.length + '日';
     const rs = data.meta && data.meta.rangeStart, re = data.meta && data.meta.rangeEnd;
     statEls[1].textContent = rs && re ? `${rs.slice(0,7).replace('-','/')}〜${re.slice(0,7).replace('-','/')}` : '—';
-    const days = entries.map(e => e.blockadeDay).filter(Boolean);
+    const days = entries.map(e => calcBlockadeDay(e.date));
     if(days.length){
       statEls[2].textContent = Math.min(...days) + '〜' + Math.max(...days) + '日目';
     }
@@ -604,7 +612,7 @@
         <div class="marker"></div>
         <div class="datehead">
           <span class="date">${fmtDate(e.date)}</span>
-          ${e.blockadeDay ? `<span class="stamp">封鎖${e.blockadeDay}日目</span>` : ''}
+          <span class="stamp">封鎖${calcBlockadeDay(e.date)}日目</span>
           ${isGapFill ? `<span class="gapfill-badge">🧩 欠損補完</span>` : (isResearched ? `<span class="researched-badge">🔍 事後調査</span>` : '')}
           <span class="time">${escapeHtml(e.dateLabel || '')}</span>
         </div>

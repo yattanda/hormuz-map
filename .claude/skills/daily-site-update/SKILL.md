@@ -166,7 +166,7 @@ description: Daily update workflow for hormuz-map site / ホルムズマップ�
 {
   "date": "YYYY-MM-DD",
   "dateLabel": "YYYY/MM/DD HH:MM",
-  "blockadeDay": 143,
+  "blockadeDay": 143,   // ⚠️ 任意項目・表示には未使用（2026-08-07以降）
   "summary": "（更新ログ本文と同一）",
   "relatedNews": [
     {"title": "...", "url": "...", "sourceLabel": "..."}
@@ -175,6 +175,12 @@ description: Daily update workflow for hormuz-map site / ホルムズマップ�
 ```
 
 - `summary` は同日の更新ログ本文と同一の内容にする
+- **`blockadeDay` は表示に使用されない（2026-08-07以降）**
+  → `docs/archive/index.html` の `calcBlockadeDay()` が `date` から動的に算出するため、
+    このフィールドの値はアーカイブページのスタンプ・統計欄のいずれにも反映されない。
+  → 既存エントリーとの構造的な整合のため記入は継続してよいが、**値の正確性は問われない**。
+  → 記入する場合の正しい値は「2026-02-28 を1日目とした通算日数」
+    （例：2026-08-05 → 159）。
 - `relatedNews` は本日 `news_data.json` の `latest` に追加した新規記事から転記する（最大5件・タイトル/URL/出典のみ）
 - 速報を出さなかった日はエントリーを作成しない（スキップしてよい——アーカイブ側は自動的に「◯日分の速報なし」と表示する）
 

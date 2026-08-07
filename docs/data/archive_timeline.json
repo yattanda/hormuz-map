@@ -2412,6 +2412,34 @@
           "sourceLabel": "日本経済新聞 / TradingEconomics"
         }
       ]
+    },
+    {
+      "date": "2026-08-07",
+      "dateLabel": "2026/08/07 09:45",
+      "blockadeDay": 161,
+      "summary": "イラン外務省、ホルムズ海峡の安全航路座標についてオマーンと合意したと発表——共同声明は最終調整段階（IRNA、8/5）・米メディアはオマーンが入域イラン管理・出域オマーン管理の暫定枠組みに合意と報道（MS NOW、8/6）・一方イラン議会委員会は米・イスラエル船の恒久排除と他国船への最大7%通行料・違反時20%罰金の法案を審議（Fars通信）・米政府はこの案を即座に拒否し無条件の自由航行を要求（CNBC）・フーシ派はサウジタンカー「Wafa」への攻撃を主張——紅海封鎖開始以降8隻目、29隻が引き返し（Reuters）・NYダウは263ドル高の54,349.12ドルで3日連続最高値も6日は反落・原油は乱高下しブレントが一時81ドル台へ反発・日本関係船は残り4隻で変化なし・封鎖161日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "イラン・オマーンがホルムズ海峡の安全航路座標に合意——共同声明は最終調整段階",
+          "url": "https://www.cnn.com/2026/08/05/world/live-news/iran-war-trump",
+          "sourceLabel": "CNN / Bloomberg / Euronews"
+        },
+        {
+          "title": "イラン議会、米・イスラエル船の排除と他国船への通行料課税の法案を審議",
+          "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
+          "sourceLabel": "Reuters / NPR"
+        },
+        {
+          "title": "米政府、イランの通行料・排除案を即座に拒否——「無条件の自由航行」を要求",
+          "url": "https://www.cnbc.com/2026/08/06/us-iran-war-hormuz-trump-bessent-deal.html",
+          "sourceLabel": "CNBC"
+        },
+        {
+          "title": "フーシ派、サウジタンカー「Wafa」への攻撃を主張——紅海封鎖開始以降8隻目",
+          "url": "https://www.dailysabah.com/world/mid-east/yemens-houthis-reportedly-strike-saudi-tanker-transiting-red-sea",
+          "sourceLabel": "Reuters / AFP"
+        }
+      ]
     }
   ]
 }

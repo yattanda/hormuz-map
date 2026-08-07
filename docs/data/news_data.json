@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月5日 10:24 日本時間JST",
+  "updated": "2026年8月7日 09:45 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-oman-route-agree-0805",
+      "title": "イラン・オマーンがホルムズ海峡の安全航路座標に合意——共同声明は最終調整段階",
+      "body": "イラン外務省報道官エスマイル・バガイ氏は8月5日、対岸のオマーンと進めてきたホルムズ海峡の航行ルート協議について、両国提案ルートの地理的座標について合意に達したと発表した。共同声明は「特定の第三者が妨害しない限り」最終レビュー・起草段階にあるとした。イラン副外相ガリババディ氏は、この合意が海峡の自動的な全面再開を意味するわけではないと述べている。",
+      "sourceLabel": "CNN / Bloomberg / Euronews",
+      "date": "2026年8月5日（現地）/ 2026年8月6日 JST",
+      "label": "🤝 外交",
+      "url": "https://www.cnn.com/2026/08/05/world/live-news/iran-war-trump",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-parliament-ban-toll-0806",
+      "title": "イラン議会、米・イスラエル船の排除と他国船への通行料課税の法案を審議",
+      "body": "イラン議会の委員会は8月6日、米・イスラエル関連船舶を恒久的にホルムズ海峡通過から排除し、その他の「敵対国」船には貨物価値最大7%の通行料を、条件違反時には20%の罰金を課す法案を審議していると国営ファールス通信が報じた。法案はなお専門家審査中で、議会は確定前に専門家の意見提出を招請しているという。",
+      "sourceLabel": "Reuters / NPR",
+      "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
+      "label": "🇮🇷 政治",
+      "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
+      "isLatest": true
+    },
+    {
+      "id": "latest-us-rejects-iran-toll-plan-0806",
+      "title": "米政府、イランの通行料・排除案を即座に拒否——「無条件の自由航行」を要求",
+      "body": "イラン議会の対米船排除・通行料法案の報道を受け、米政府高官はCNBCに対し「暫定ルートは承認・許可・通行料を一切伴わない自由な航行でなければならない」と述べ、この案を拒否する姿勢を明確にした。トランプ大統領は「ホルムズ海峡はまもなく開放される」としつつ、「（イランが）再び後退すれば手痛い報いを受けるだろう」とも述べている。",
+      "sourceLabel": "CNBC",
+      "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://www.cnbc.com/2026/08/06/us-iran-war-hormuz-trump-bessent-deal.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-houthi-saudi-tanker-wafa-0805",
+      "title": "フーシ派、サウジタンカー「Wafa」への攻撃を主張——紅海封鎖開始以降8隻目",
+      "body": "イエメンの親イラン武装組織フーシ派は8月5日、サウジアラビアの紅海側港湾都市ヤンブー沖でサウジ籍タンカー「Wafa」に複数のミサイルを撃ち込んだと発表した。フーシ派報道官ヤヒヤ・サリア氏は、7月22日の紅海封鎖宣言以降、攻撃を受けたサウジタンカーは8隻目、引き返した船舶は29隻に達したと述べ、サウジが南側を避け北側ルートへタンカーを迂回させていることへの対抗措置として攻撃を継続・激化させると表明した。",
+      "sourceLabel": "Reuters / AFP",
+      "date": "2026年8月5日（現地）/ 2026年8月5日 JST",
+      "label": "⚔️ 軍事",
+      "url": "https://www.dailysabah.com/world/mid-east/yemens-houthis-reportedly-strike-saudi-tanker-transiting-red-sea",
+      "isLatest": true
+    },
     {
       "id": "latest-bessent-rubio-deal-close-0804",
       "title": "ベッセント財務長官「合意は今日か明日にも」——ルビオ氏はオマーン・イラン協議の進展を確認",
@@ -21,49 +61,37 @@
       "label": "📝 交渉内容",
       "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
       "isLatest": false
-    },
-    {
-      "id": "latest-minoan-pioneer-hit-0803",
-      "title": "オマーン沖でリベリア籍バルカー「ミノアン・パイオニア」が被弾——乗員1名行方不明",
-      "body": "UKMTOは、オマーン・アルハサブ沖北東20海里で3日22時（UTC）、リベリア籍バルカー「ミノアン・パイオニア」が正体不明の飛翔体を受けたと発表した。機関室への被弾で船体が完全停電し、居住区で火災が発生、乗員1名が行方不明となっている。2日にも別の2隻（VLCC「エジプト・プロスペリティ」、アフラマックス「オン・プライド」）がオマーン海域で爆発・警告射撃に遭遇したが被害はなかった。",
-      "sourceLabel": "Seatrade Maritime / UKMTO",
-      "date": "2026年8月3日（現地）/ 2026年8月4日 JST",
-      "label": "🚢 海事インシデント",
-      "url": "https://www.seatrade-maritime.com/security/cargo-ship-struck-in-the-strait-of-hormuz",
-      "isLatest": false
-    },
-    {
-      "id": "latest-dow-record-oil-drop-0804",
-      "title": "NYダウが907ドル高で連日最高値、原油は75ドル台へ続落——ホルムズ合意期待が市場を牽引",
-      "body": "4日のニューヨーク株式市場でNYダウは前日比907.47ドル高の54,085.88ドルと連日で史上最高値を更新、S&P500も1.8%高の7,736.52と6月2日以来2ヶ月ぶりの高値をつけた。ホルムズ海峡合意への期待が主因とされ、原油（WTI）は前日比4.57ドル安の75.77ドルまで続落した。カザフスタンはCPCノヴォロシースク積出ターミナルからの原油積み出しを再開した。",
-      "sourceLabel": "日本経済新聞 / TradingEconomics",
-      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
-      "label": "📈 市場",
-      "url": "https://www.nikkei.com/article/DGXZQOGN04BAY0U6A800C2000000/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-halts-strikes-saudi-mbs-0801",
-      "title": "トランプ氏、対イラン攻撃を土壇場で中止——サウジ皇太子の説得受け「枠組み合意」に言及",
-      "body": "トランプ大統領は8月1日夜（米時間）、週末に計画していたイランへの大規模攻撃を中止すると表明した。サウジアラビアのムハンマド皇太子から電話で説得を受けたことがきっかけとされ、トランプ氏はTruth Socialで「イラン及び他の中東諸国から、合意の大枠がまとまったとして攻撃の見合わせを求められた」と投稿。合意には「ホルムズ海峡の即時・完全・全面的な開放」とイランの核脅威終結が含まれるとし、イスラエルも同様の立場を共有しているとした。攻撃中止は「迅速に合意をまとめられること」を条件とする留保付きである。",
-      "sourceLabel": "Newsweek / NPR",
-      "date": "2026年8月1日（現地）/ 2026年8月2日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.newsweek.com/trump-calls-off-iran-strikes-demands-strait-of-hormuz-reopened-12274699",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-talks-monday-iran-0802",
-      "title": "トランプ氏「イランとの交渉、月曜から開始」——ホルムズ海峡開放めぐる最終合意目指す",
-      "body": "トランプ大統領は記者団に対し「（イランとの）交渉は月曜日の午後から始まる」と述べ、合意がまとまれば「多くの命を救い、多くの無用な力の行使を避けられる」と説明した。イランの acting 国防相はこの攻撃見合わせ発言を「心理作戦」と一蹴しており、公式な受諾表明はまだない。",
-      "sourceLabel": "The Times of Israel",
-      "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
-      "label": "🕊️ 外交",
-      "url": "https://www.timesofisrael.com/liveblog-august-2-2026/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【NPR】イラン、米・イスラエル船のホルムズ海峡締め出しと通行料徴収を狙う",
+      "titleEn": "Iran aims to ban U.S. and Israeli ships from Strait of Hormuz and charge others a toll",
+      "country": "アメリカ",
+      "media": "NPR",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
+      "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
+      "isLatest": true
+    },
+    {
+      "titleJa": "【Euronews】イラン・オマーン、ホルムズ海峡の航路で合意——米は関与せずとイラン主張",
+      "titleEn": "Iran and Oman agree route for ships in Strait of Hormuz, Tehran says",
+      "country": "イラン",
+      "media": "Euronews",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.euronews.com/2026/08/05/iran-and-oman-agree-route-for-ships-in-strait-of-hormuz-tehran-says",
+      "date": "2026年8月5日（現地）/ 2026年8月6日 JST",
+      "isLatest": false
+    },
     {
       "titleJa": "【Al Jazeera】米、ホルムズ再開合意近しと発言——オマーン・イランは「前向きな」協議",
       "titleEn": "US says deal on reopening Hormuz close as Iran, Oman hold 'positive' talks",
@@ -76,7 +104,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/8/4/us-says-deal-on-reopening-hormuz-close-as-iran-oman-hold-positive-talks",
       "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【CNN】イラン、ホルムズ海峡の新ルート統制を狙う——米側協議の行方は不透明",
@@ -995,6 +1023,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月1日〜4日",
+      "items": [
+        {
+          "id": "latest-minoan-pioneer-hit-0803",
+          "title": "オマーン沖でリベリア籍バルカー「ミノアン・パイオニア」が被弾——乗員1名行方不明",
+          "body": "UKMTOは、オマーン・アルハサブ沖北東20海里で3日22時（UTC）、リベリア籍バルカー「ミノアン・パイオニア」が正体不明の飛翔体を受けたと発表した。機関室への被弾で船体が完全停電し、居住区で火災が発生、乗員1名が行方不明となっている。2日にも別の2隻（VLCC「エジプト・プロスペリティ」、アフラマックス「オン・プライド」）がオマーン海域で爆発・警告射撃に遭遇したが被害はなかった。",
+          "sourceLabel": "Seatrade Maritime / UKMTO",
+          "date": "2026年8月3日（現地）/ 2026年8月4日 JST",
+          "label": "🚢 海事インシデント",
+          "url": "https://www.seatrade-maritime.com/security/cargo-ship-struck-in-the-strait-of-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-dow-record-oil-drop-0804",
+          "title": "NYダウが907ドル高で連日最高値、原油は75ドル台へ続落——ホルムズ合意期待が市場を牽引",
+          "body": "4日のニューヨーク株式市場でNYダウは前日比907.47ドル高の54,085.88ドルと連日で史上最高値を更新、S&P500も1.8%高の7,736.52と6月2日以来2ヶ月ぶりの高値をつけた。ホルムズ海峡合意への期待が主因とされ、原油（WTI）は前日比4.57ドル安の75.77ドルまで続落した。カザフスタンはCPCノヴォロシースク積出ターミナルからの原油積み出しを再開した。",
+          "sourceLabel": "日本経済新聞 / TradingEconomics",
+          "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+          "label": "📈 市場",
+          "url": "https://www.nikkei.com/article/DGXZQOGN04BAY0U6A800C2000000/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-halts-strikes-saudi-mbs-0801",
+          "title": "トランプ氏、対イラン攻撃を土壇場で中止——サウジ皇太子の説得受け「枠組み合意」に言及",
+          "body": "トランプ大統領は8月1日夜（米時間）、週末に計画していたイランへの大規模攻撃を中止すると表明した。サウジアラビアのムハンマド皇太子から電話で説得を受けたことがきっかけとされ、トランプ氏はTruth Socialで「イラン及び他の中東諸国から、合意の大枠がまとまったとして攻撃の見合わせを求められた」と投稿。合意には「ホルムズ海峡の即時・完全・全面的な開放」とイランの核脅威終結が含まれるとし、イスラエルも同様の立場を共有しているとした。攻撃中止は「迅速に合意をまとめられること」を条件とする留保付きである。",
+          "sourceLabel": "Newsweek / NPR",
+          "date": "2026年8月1日（現地）/ 2026年8月2日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.newsweek.com/trump-calls-off-iran-strikes-demands-strait-of-hormuz-reopened-12274699",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-talks-monday-iran-0802",
+          "title": "トランプ氏「イランとの交渉、月曜から開始」——ホルムズ海峡開放めぐる最終合意目指す",
+          "body": "トランプ大統領は記者団に対し「（イランとの）交渉は月曜日の午後から始まる」と述べ、合意がまとまれば「多くの命を救い、多くの無用な力の行使を避けられる」と説明した。イランの acting 国防相はこの攻撃見合わせ発言を「心理作戦」と一蹴しており、公式な受諾表明はまだない。",
+          "sourceLabel": "The Times of Israel",
+          "date": "2026年8月2日（現地）/ 2026年8月2日 JST",
+          "label": "🕊️ 外交",
+          "url": "https://www.timesofisrael.com/liveblog-august-2-2026/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年7月28日〜8月2日",
       "items": [

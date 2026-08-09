@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月7日 09:45 日本時間JST",
+  "updated": "2026年8月9日 10:06 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-uae-adnoc-missile-attack-0808",
+      "title": "UAE、ADNOC関連タンカーへのイランのミサイル攻撃を非難——「海賊行為」と表現、負傷者なし",
+      "body": "UAE外務省は8月8日未明、国営石油会社ADNOC関連のタンカーがホルムズ海峡通航中にイランからミサイル攻撃を受けたと発表し、「敵対的なイランの攻撃」であり「海賊行為」に当たると非難する声明を出した。国営通信WAMは当初、ADNOC発表として被弾したタンカーの船名や積荷の詳細は明らかにせず「状況は制御下にある」と伝えた。負傷者の報告はない。",
+      "sourceLabel": "Reuters / US News",
+      "date": "2026年8月8日（現地）/ 2026年8月8日 JST",
+      "label": "⚔️ 軍事",
+      "url": "https://www.usnews.com/news/world/articles/2026-08-08/uae-says-iran-attacked-adnoc-vessel-with-missile-in-strait-of-hormuz",
+      "isLatest": true
+    },
+    {
+      "id": "latest-adnoc-15-vessels-attacked-0807",
+      "title": "ADNOC「紛争開始以来15隻が被弾」——今週だけで3隻・死者1名負傷20名",
+      "body": "アブダビ国営石油会社ADNOCは8月7日、紛争開始以来15隻の関連船舶がホルムズ海峡通航中にミサイル・ドローン攻撃を受けたとする声明を発表した。今週だけで3隻が被弾し、死者1名・負傷者20名に達したという。ADNOCは攻撃の実行主体を特定していないが、乗員・資産の保護のため関係当局と連携し必要な措置を講じているとした。",
+      "sourceLabel": "Bloomberg / Gulf News",
+      "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
+      "label": "⚔️ 軍事",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-07/adnoc-says-three-vessels-hit-this-week-while-transiting-hormuz",
+      "isLatest": false
+    },
+    {
+      "id": "latest-us-lift-blockade-condition-0807",
+      "title": "米当局者「無制限の航行再開合意が出れば対イラン港湾封鎖を解除」",
+      "body": "米当局者はロイターに対し、ホルムズ海峡での商用航行が制限なく再開されるとの合意が発表され次第、米国は対イラン港湾封鎖を解除する方針だと明らかにした。イラン交渉団は同国最高国家安全保障会議の最終承認を待っている段階だとする仲介国外交官の見方をAxiosが伝えたという。今週の海峡通航は月曜〜木曜でわずか33隻にとどまり、前週の50隻からさらに減少している。",
+      "sourceLabel": "Shafaq News / Reuters",
+      "date": "2026年8月7日（現地）/ 2026年8月8日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://shafaq.com/en/World/US-to-lift-Iran-port-blockade-after-Hormuz-deal",
+      "isLatest": false
+    },
+    {
+      "id": "latest-saudi-pakistan-turkey-pact-0807",
+      "title": "サウジ・パキスタン・トルコがNATO第5条型の相互防衛協定に署名——フーシ派激化への対応",
+      "body": "サウジアラビアは8月7日、パキスタン・トルコとメッカで相互防衛協定に署名した。参加国への攻撃を全参加国への攻撃とみなす集団防衛条項を含み、サウジがイスラム圏屈指の軍事大国2カ国と安全保障関係を強化する形となった。同日、イエメンの親イラン武装組織フーシ派が政府軍拠点を攻撃するなど、対サウジ圧力の激化が背景にある。",
+      "sourceLabel": "CNN",
+      "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
+      "label": "🌍 地域安保",
+      "url": "https://www.cnn.com/2026/08/07/world/live-news/iran-war-trump",
+      "isLatest": false
+    },
     {
       "id": "latest-iran-oman-route-agree-0805",
       "title": "イラン・オマーンがホルムズ海峡の安全航路座標に合意——共同声明は最終調整段階",
@@ -10,7 +50,7 @@
       "date": "2026年8月5日（現地）/ 2026年8月6日 JST",
       "label": "🤝 外交",
       "url": "https://www.cnn.com/2026/08/05/world/live-news/iran-war-trump",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-parliament-ban-toll-0806",
@@ -20,50 +60,38 @@
       "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
       "label": "🇮🇷 政治",
       "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
-      "isLatest": true
-    },
-    {
-      "id": "latest-us-rejects-iran-toll-plan-0806",
-      "title": "米政府、イランの通行料・排除案を即座に拒否——「無条件の自由航行」を要求",
-      "body": "イラン議会の対米船排除・通行料法案の報道を受け、米政府高官はCNBCに対し「暫定ルートは承認・許可・通行料を一切伴わない自由な航行でなければならない」と述べ、この案を拒否する姿勢を明確にした。トランプ大統領は「ホルムズ海峡はまもなく開放される」としつつ、「（イランが）再び後退すれば手痛い報いを受けるだろう」とも述べている。",
-      "sourceLabel": "CNBC",
-      "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
-      "label": "🇺🇸 外交",
-      "url": "https://www.cnbc.com/2026/08/06/us-iran-war-hormuz-trump-bessent-deal.html",
-      "isLatest": true
-    },
-    {
-      "id": "latest-houthi-saudi-tanker-wafa-0805",
-      "title": "フーシ派、サウジタンカー「Wafa」への攻撃を主張——紅海封鎖開始以降8隻目",
-      "body": "イエメンの親イラン武装組織フーシ派は8月5日、サウジアラビアの紅海側港湾都市ヤンブー沖でサウジ籍タンカー「Wafa」に複数のミサイルを撃ち込んだと発表した。フーシ派報道官ヤヒヤ・サリア氏は、7月22日の紅海封鎖宣言以降、攻撃を受けたサウジタンカーは8隻目、引き返した船舶は29隻に達したと述べ、サウジが南側を避け北側ルートへタンカーを迂回させていることへの対抗措置として攻撃を継続・激化させると表明した。",
-      "sourceLabel": "Reuters / AFP",
-      "date": "2026年8月5日（現地）/ 2026年8月5日 JST",
-      "label": "⚔️ 軍事",
-      "url": "https://www.dailysabah.com/world/mid-east/yemens-houthis-reportedly-strike-saudi-tanker-transiting-red-sea",
-      "isLatest": true
-    },
-    {
-      "id": "latest-bessent-rubio-deal-close-0804",
-      "title": "ベッセント財務長官「合意は今日か明日にも」——ルビオ氏はオマーン・イラン協議の進展を確認",
-      "body": "ベッセント米財務長官は8月4日、CNBCのインタビューでホルムズ海峡の「自由な航行」再開に向けた合意が「今日か明日にも」まとまる可能性があると発言した。ルビオ国務長官も同日、米国が関与するオマーンとイランの協議で進展があったと確認したが、最終合意にはまだ至っていないと留保。「イランの非核化こそが最終的な目標」とも述べた。",
-      "sourceLabel": "Washington Times / Al Jazeera",
-      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
-      "label": "🤝 外交",
-      "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
-      "isLatest": true
-    },
-    {
-      "id": "latest-iran-two-route-proposal-0804",
-      "title": "浮上する合意案は入域イラン管理・出域オマーン管理の二経路方式——米の封鎖解除が前提",
-      "body": "米・中東関係者によれば、検討されている合意案は湾内への入域をイラン管理ルート、湾外への出域をオマーン管理ルートとする二経路方式。合意成立には米側による対イラン封鎖の解除が前提条件とされる。イラン交渉委員のサイード・アジョルル氏は国営IRIBに対し、米との直接交渉を否定した上で「治安・機雷除去・海事サービスはイランが担う」1〜3ヶ月の暫定管理案が基本方針だと説明した。",
-      "sourceLabel": "AP / Washington Times",
-      "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
-      "label": "📝 交渉内容",
-      "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "titleJa": "【Türkiye Today】UAE、ホルムズ海峡でイランがADNOCタンカーを標的にしたと発表",
+      "titleEn": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz",
+      "country": "アラブ首長国連邦",
+      "media": "Türkiye Today",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.turkiyetoday.com/region/uae-says-iran-targeted-adnoc-tanker-in-strait-of-hormuz-3225648",
+      "date": "2026年8月8日（現地）/ 2026年8月8日 JST",
+      "isLatest": true
+    },
+    {
+      "titleJa": "【Al Jazeera】サウジがフーシ派攻撃に備える中、イエメンで戦闘激化——現状まとめ",
+      "titleEn": "Houthi strikes in Yemen as Saudi Arabia braces for attacks: What we know",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/7/houthi-strikes-hit-yemen-as-saudi-arabia-braces-for-attacks-what-we-know",
+      "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
+      "isLatest": false
+    },
     {
       "titleJa": "【NPR】イラン、米・イスラエル船のホルムズ海峡締め出しと通行料徴収を狙う",
       "titleEn": "Iran aims to ban U.S. and Israeli ships from Strait of Hormuz and charge others a toll",
@@ -76,7 +104,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
       "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Euronews】イラン・オマーン、ホルムズ海峡の航路で合意——米は関与せずとイラン主張",
@@ -1023,6 +1051,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月4日〜6日",
+      "items": [
+        {
+          "id": "latest-us-rejects-iran-toll-plan-0806",
+          "title": "米政府、イランの通行料・排除案を即座に拒否——「無条件の自由航行」を要求",
+          "body": "イラン議会の対米船排除・通行料法案の報道を受け、米政府高官はCNBCに対し「暫定ルートは承認・許可・通行料を一切伴わない自由な航行でなければならない」と述べ、この案を拒否する姿勢を明確にした。トランプ大統領は「ホルムズ海峡はまもなく開放される」としつつ、「（イランが）再び後退すれば手痛い報いを受けるだろう」とも述べている。",
+          "sourceLabel": "CNBC",
+          "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
+          "label": "🇺🇸 外交",
+          "url": "https://www.cnbc.com/2026/08/06/us-iran-war-hormuz-trump-bessent-deal.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-saudi-tanker-wafa-0805",
+          "title": "フーシ派、サウジタンカー「Wafa」への攻撃を主張——紅海封鎖開始以降8隻目",
+          "body": "イエメンの親イラン武装組織フーシ派は8月5日、サウジアラビアの紅海側港湾都市ヤンブー沖でサウジ籍タンカー「Wafa」に複数のミサイルを撃ち込んだと発表した。フーシ派報道官ヤヒヤ・サリア氏は、7月22日の紅海封鎖宣言以降、攻撃を受けたサウジタンカーは8隻目、引き返した船舶は29隻に達したと述べた。",
+          "sourceLabel": "Reuters / AFP",
+          "date": "2026年8月5日（現地）/ 2026年8月5日 JST",
+          "label": "⚔️ 軍事",
+          "url": "https://www.dailysabah.com/world/mid-east/yemens-houthis-reportedly-strike-saudi-tanker-transiting-red-sea",
+          "isLatest": false
+        },
+        {
+          "id": "latest-bessent-rubio-deal-close-0804",
+          "title": "ベッセント財務長官「合意は今日か明日にも」——ルビオ氏はオマーン・イラン協議の進展を確認",
+          "body": "ベッセント米財務長官は8月4日、CNBCのインタビューでホルムズ海峡の「自由な航行」再開に向けた合意が「今日か明日にも」まとまる可能性があると発言した。ルビオ国務長官も同日、米国が関与するオマーンとイランの協議で進展があったと確認したが、最終合意にはまだ至っていないと留保した。",
+          "sourceLabel": "Washington Times / Al Jazeera",
+          "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+          "label": "🤝 外交",
+          "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-two-route-proposal-0804",
+          "title": "浮上する合意案は入域イラン管理・出域オマーン管理の二経路方式——米の封鎖解除が前提",
+          "body": "米・中東関係者によれば、検討されている合意案は湾内への入域をイラン管理ルート、湾外への出域をオマーン管理ルートとする二経路方式。合意成立には米側による対イラン封鎖の解除が前提条件とされる。",
+          "sourceLabel": "AP / Washington Times",
+          "date": "2026年8月4日（現地）/ 2026年8月5日 JST",
+          "label": "📝 交渉内容",
+          "url": "https://www.washingtontimes.com/news/2026/aug/4/strait-talk-us-regional-partners-see-progress-toward-reopening-hormuz/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月1日〜4日",
       "items": [

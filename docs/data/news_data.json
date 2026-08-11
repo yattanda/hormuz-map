@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月9日 10:06 日本時間JST",
+  "updated": "2026年8月11日 09:26 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-snsc-rezaei-secretary-0809",
+      "title": "イラン最高国家安全保障会議、新書記にレザイー氏——対米強硬路線を継続",
+      "body": "イラン最高国家安全保障会議は9日、書記をゾルガドル氏から革命防衛隊元司令官のモフセン・レザイー氏に交代させた。ゾルガドル氏は最高指導者モジュタバ・ハメネイ師の政治顧問に転じる。米シンクタンクISWは、レザイー氏がホルムズ海峡の管理権を含む最大限の要求実現を志向する一方、具体的な譲歩には消極的とみている。",
+      "sourceLabel": "NBC News",
+      "date": "2026年8月9日（現地）/ 2026年8月10日 JST",
+      "label": "🇮🇷 外交",
+      "url": "https://www.nbcnews.com/world/iran/iran-sets-steep-demands-reopening-hormuz-hopes-oman-deal-break-impasse-rcna591553",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-counter-compensation-0810",
+      "title": "トランプ氏、イランの賠償要求に「同様の賠償」で応酬——対話は一段と硬直化",
+      "body": "トランプ大統領は10日、イランが求める戦争賠償要求を一蹴し、米国側も同様にイランへの賠償を求めると表明した。2000年のUSSコール事件や、イラン国内でのデモ弾圧犠牲者への補償も交渉に含めるよう代表団に指示したという。",
+      "sourceLabel": "Euronews",
+      "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://www.euronews.com/2026/08/10/trump-says-will-demand-conflict-compensation-from-iran-as-part-of-peace-talks",
+      "isLatest": false
+    },
+    {
+      "id": "latest-takaichi-oman-call-0810",
+      "title": "高市首相、オマーン国王と電話会談——追加費用のない自由航行の回復を要請",
+      "body": "高市早苗首相は10日夕、オマーンのハイサム国王と約20分間電話会談し、「追加的費用のない形での自由で安全な航行の一刻も早い回復」の重要性を伝え、海峡利用国を含む国際社会との協議を求めた。ハイサム国王からは、海峡利用国と協議することを確約し各国の意思も尊重する考えが示された。",
+      "sourceLabel": "日テレNEWS（infoseek）",
+      "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
+      "label": "🇯🇵 外交",
+      "url": "https://news.infoseek.co.jp/article/ntv_2026081008237911/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-houthi-mokha-attack-0810",
+      "title": "フーシ派、紅海の要衝モカを2日連続攻撃——7人死亡、イエメン内戦拡大の懸念",
+      "body": "イエメンのフーシ派は9日夜と10日、紅海沿岸の政府軍支配下の港町モカを2日連続で攻撃し、少なくとも7人（政府軍関係者4人・民間人3人）が死亡、30人が負傷した。マリブ・ハドラマウト両州での大規模攻撃（8/6〜7）に続く動きで、2022年停戦の事実上の失効とイエメン内戦再燃の懸念が強まっている。",
+      "sourceLabel": "AP通信",
+      "date": "2026年8月9〜10日（現地）/ 2026年8月10日 JST",
+      "label": "🇾🇪 軍事",
+      "url": "https://www.usnews.com/news/world/articles/2026-08-10/iran-wont-reopen-strait-of-hormuz-without-us-concessions-and-other-mideast-developments",
+      "isLatest": false
+    },
     {
       "id": "latest-uae-adnoc-missile-attack-0808",
       "title": "UAE、ADNOC関連タンカーへのイランのミサイル攻撃を非難——「海賊行為」と表現、負傷者なし",
@@ -10,7 +50,7 @@
       "date": "2026年8月8日（現地）/ 2026年8月8日 JST",
       "label": "⚔️ 軍事",
       "url": "https://www.usnews.com/news/world/articles/2026-08-08/uae-says-iran-attacked-adnoc-vessel-with-missile-in-strait-of-hormuz",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-adnoc-15-vessels-attacked-0807",
@@ -21,49 +61,24 @@
       "label": "⚔️ 軍事",
       "url": "https://www.bloomberg.com/news/articles/2026-08-07/adnoc-says-three-vessels-hit-this-week-while-transiting-hormuz",
       "isLatest": false
-    },
-    {
-      "id": "latest-us-lift-blockade-condition-0807",
-      "title": "米当局者「無制限の航行再開合意が出れば対イラン港湾封鎖を解除」",
-      "body": "米当局者はロイターに対し、ホルムズ海峡での商用航行が制限なく再開されるとの合意が発表され次第、米国は対イラン港湾封鎖を解除する方針だと明らかにした。イラン交渉団は同国最高国家安全保障会議の最終承認を待っている段階だとする仲介国外交官の見方をAxiosが伝えたという。今週の海峡通航は月曜〜木曜でわずか33隻にとどまり、前週の50隻からさらに減少している。",
-      "sourceLabel": "Shafaq News / Reuters",
-      "date": "2026年8月7日（現地）/ 2026年8月8日 JST",
-      "label": "🇺🇸 外交",
-      "url": "https://shafaq.com/en/World/US-to-lift-Iran-port-blockade-after-Hormuz-deal",
-      "isLatest": false
-    },
-    {
-      "id": "latest-saudi-pakistan-turkey-pact-0807",
-      "title": "サウジ・パキスタン・トルコがNATO第5条型の相互防衛協定に署名——フーシ派激化への対応",
-      "body": "サウジアラビアは8月7日、パキスタン・トルコとメッカで相互防衛協定に署名した。参加国への攻撃を全参加国への攻撃とみなす集団防衛条項を含み、サウジがイスラム圏屈指の軍事大国2カ国と安全保障関係を強化する形となった。同日、イエメンの親イラン武装組織フーシ派が政府軍拠点を攻撃するなど、対サウジ圧力の激化が背景にある。",
-      "sourceLabel": "CNN",
-      "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
-      "label": "🌍 地域安保",
-      "url": "https://www.cnn.com/2026/08/07/world/live-news/iran-war-trump",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-oman-route-agree-0805",
-      "title": "イラン・オマーンがホルムズ海峡の安全航路座標に合意——共同声明は最終調整段階",
-      "body": "イラン外務省報道官エスマイル・バガイ氏は8月5日、対岸のオマーンと進めてきたホルムズ海峡の航行ルート協議について、両国提案ルートの地理的座標について合意に達したと発表した。共同声明は「特定の第三者が妨害しない限り」最終レビュー・起草段階にあるとした。イラン副外相ガリババディ氏は、この合意が海峡の自動的な全面再開を意味するわけではないと述べている。",
-      "sourceLabel": "CNN / Bloomberg / Euronews",
-      "date": "2026年8月5日（現地）/ 2026年8月6日 JST",
-      "label": "🤝 外交",
-      "url": "https://www.cnn.com/2026/08/05/world/live-news/iran-war-trump",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-parliament-ban-toll-0806",
-      "title": "イラン議会、米・イスラエル船の排除と他国船への通行料課税の法案を審議",
-      "body": "イラン議会の委員会は8月6日、米・イスラエル関連船舶を恒久的にホルムズ海峡通過から排除し、その他の「敵対国」船には貨物価値最大7%の通行料を、条件違反時には20%の罰金を課す法案を審議していると国営ファールス通信が報じた。法案はなお専門家審査中で、議会は確定前に専門家の意見提出を招請しているという。",
-      "sourceLabel": "Reuters / NPR",
-      "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
-      "label": "🇮🇷 政治",
-      "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-oil-prices-climb-iran-demands",
+      "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
+      "titleJa": "ブレント原油続伸——イランの新たな要求が海峡見通しに影を落とす",
+      "titleEn": "Oil prices climb as Iranian demands cloud outlook for Strait of Hormuz",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/economy/2026/8/10/oil-prices-climb-as-iranian-demands-cloud-outlook-for-strait-of-hormuz",
+      "isLatest": true
+    },
     {
       "titleJa": "【Türkiye Today】UAE、ホルムズ海峡でイランがADNOCタンカーを標的にしたと発表",
       "titleEn": "UAE says Iran targeted ADNOC tanker in Strait of Hormuz",
@@ -76,7 +91,7 @@
       "textColor": "#7dd3fc",
       "url": "https://www.turkiyetoday.com/region/uae-says-iran-targeted-adnoc-tanker-in-strait-of-hormuz-3225648",
       "date": "2026年8月8日（現地）/ 2026年8月8日 JST",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Al Jazeera】サウジがフーシ派攻撃に備える中、イエメンで戦闘激化——現状まとめ",
@@ -1051,6 +1066,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月5日〜8日",
+      "items": [
+        {
+          "id": "latest-us-lift-blockade-condition-0807",
+          "title": "米当局者「無制限の航行再開合意が出れば対イラン港湾封鎖を解除」",
+          "body": "米当局者はロイターに対し、ホルムズ海峡での商用航行が制限なく再開されるとの合意が発表され次第、米国は対イラン港湾封鎖を解除する方針だと明らかにした。イラン交渉団は同国最高国家安全保障会議の最終承認を待っている段階だとする仲介国外交官の見方をAxiosが伝えたという。今週の海峡通航は月曜〜木曜でわずか33隻にとどまり、前週の50隻からさらに減少している。",
+          "sourceLabel": "Shafaq News / Reuters",
+          "date": "2026年8月7日（現地）/ 2026年8月8日 JST",
+          "label": "🇺🇸 外交",
+          "url": "https://shafaq.com/en/World/US-to-lift-Iran-port-blockade-after-Hormuz-deal",
+          "isLatest": false
+        },
+        {
+          "id": "latest-saudi-pakistan-turkey-pact-0807",
+          "title": "サウジ・パキスタン・トルコがNATO第5条型の相互防衛協定に署名——フーシ派激化への対応",
+          "body": "サウジアラビアは8月7日、パキスタン・トルコとメッカで相互防衛協定に署名した。参加国への攻撃を全参加国への攻撃とみなす集団防衛条項を含み、サウジがイスラム圏屈指の軍事大国2カ国と安全保障関係を強化する形となった。同日、イエメンの親イラン武装組織フーシ派が政府軍拠点を攻撃するなど、対サウジ圧力の激化が背景にある。",
+          "sourceLabel": "CNN",
+          "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
+          "label": "🌍 地域安保",
+          "url": "https://www.cnn.com/2026/08/07/world/live-news/iran-war-trump",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-oman-route-agree-0805",
+          "title": "イラン・オマーンがホルムズ海峡の安全航路座標に合意——共同声明は最終調整段階",
+          "body": "イラン外務省報道官エスマイル・バガイ氏は8月5日、対岸のオマーンと進めてきたホルムズ海峡の航行ルート協議について、両国提案ルートの地理的座標について合意に達したと発表した。共同声明は「特定の第三者が妨害しない限り」最終レビュー・起草段階にあるとした。イラン副外相ガリババディ氏は、この合意が海峡の自動的な全面再開を意味するわけではないと述べている。",
+          "sourceLabel": "CNN / Bloomberg / Euronews",
+          "date": "2026年8月5日（現地）/ 2026年8月6日 JST",
+          "label": "🤝 外交",
+          "url": "https://www.cnn.com/2026/08/05/world/live-news/iran-war-trump",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-parliament-ban-toll-0806",
+          "title": "イラン議会、米・イスラエル船の排除と他国船への通行料課税の法案を審議",
+          "body": "イラン議会の委員会は8月6日、米・イスラエル関連船舶を恒久的にホルムズ海峡通過から排除し、その他の「敵対国」船には貨物価値最大7%の通行料を、条件違反時には20%の罰金を課す法案を審議していると国営ファールス通信が報じた。法案はなお専門家審査中で、議会は確定前に専門家の意見提出を招請しているという。",
+          "sourceLabel": "Reuters / NPR",
+          "date": "2026年8月6日（現地）/ 2026年8月6日 JST",
+          "label": "🇮🇷 政治",
+          "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月4日〜6日",
       "items": [

@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月11日 09:26 日本時間JST",
+  "updated": "2026年8月13日 10:37 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-naqdi-prolong-war-0812",
+      "title": "IRGC上級顧問「トランプ政権終了まで戦争長期化も選択肢」——テヘランの戦略計算を異例に開示",
+      "body": "革命防衛隊（IRGC）司令官の上級顧問モハンマド・レザ・ナグディ将軍は12日、米PBSとのインタビューで、イランが対米戦争をトランプ大統領の任期終了（2029年）まで意図的に長期化させ消耗戦に持ち込む選択肢を検討していると明らかにした。米国の戦略が一貫性を欠くとも批判した。発言は独立検証されたものではないが、イラン側の時間軸認識を示す数少ない公的な手掛かりとなっている。",
+      "sourceLabel": "Iran International",
+      "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
+      "label": "🇮🇷 軍事",
+      "url": "https://www.iranintl.com/en/202608124129",
+      "isLatest": true
+    },
+    {
+      "id": "latest-houthi-tihamah-doubletap-0811",
+      "title": "フーシ派、紅海で今次紛争初の死者——エジプト所有船「ティハマ」二重攻撃で6人死亡",
+      "body": "イエメン政府によれば、フーシ派は11日、バブエルマンデブ海峡で食料輸送中のエジプト所有・タンザニア籍貨物船「ティハマ」に弾道ミサイル3発を発射する二重攻撃を実施。乗組員4名（パキスタン人3名・インドネシア人1名）と救助中の国家抵抗軍隊員2名の計6名が死亡、10名が負傷した。2/28の紛争開始以降、フーシ派関連の攻撃による初の確認死者。",
+      "sourceLabel": "PBS News",
+      "date": "2026年8月11日（現地）/ 2026年8月11日 JST",
+      "label": "🐹 軍事",
+      "url": "https://www.pbs.org/newshour/amp/world/iranian-backed-houthis-kill-6-in-attack-on-vessel-and-other-developments-in-the-mideast",
+      "isLatest": false
+    },
+    {
+      "id": "latest-us-helicopter-velanova-strike-0811",
+      "title": "米軍ヘリ、封鎖破り試みたパナマ籍船「ヴェラ・ノヴァ」にヘルファイア発射——3週間で3件目の摘発",
+      "body": "米中央軍は、対イラン港湾封鎖の突破を試みたとするパナマ籍コンテナ船「ヴェラ・ノヴァ」（オマーン湾）に海軍ヘリコプターがヘルファイア・ミサイル2発を発射したと発表。船体火災は鎮火し乗組員17名全員の無事を確認。7/15のBELMA号・7/24のM/T LAVINE号に続き、3週間で3件目の摘発となった。",
+      "sourceLabel": "Fox News",
+      "date": "2026年8月11日（現地）/ 2026年8月12日 JST",
+      "label": "⚓ 軍事",
+      "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-august-12",
+      "isLatest": false
+    },
+    {
+      "id": "latest-trump-total-control-transit-drop-0812",
+      "title": "トランプ氏「米国はホルムズを完全支配」と主張——実際の通航量は週間最低の8隻に低下",
+      "body": "トランプ大統領は12日、Truth Socialで「米国はホルムズ海峡を完全に支配している」と改めて主張したが、ロイターによれば11日の通航量はわずか8隻にとどまり、戦前（1日130〜140隻）を大きく下回る一週間ぶりの低水準となった。専門家からは「イランは依然として海峡の海上交通を妨害する十分な能力を保持している」との反論が出ている。",
+      "sourceLabel": "CNBC",
+      "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://www.cnbc.com/2026/08/12/us-iran-war-trump-hormuz-houthi-attack-blockade-.html",
+      "isLatest": false
+    },
     {
       "id": "latest-snsc-rezaei-secretary-0809",
       "title": "イラン最高国家安全保障会議、新書記にレザイー氏——対米強硬路線を継続",
@@ -10,7 +50,7 @@
       "date": "2026年8月9日（現地）/ 2026年8月10日 JST",
       "label": "🇮🇷 外交",
       "url": "https://www.nbcnews.com/world/iran/iran-sets-steep-demands-reopening-hormuz-hopes-oman-deal-break-impasse-rcna591553",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-counter-compensation-0810",
@@ -21,49 +61,24 @@
       "label": "🇺🇸 外交",
       "url": "https://www.euronews.com/2026/08/10/trump-says-will-demand-conflict-compensation-from-iran-as-part-of-peace-talks",
       "isLatest": false
-    },
-    {
-      "id": "latest-takaichi-oman-call-0810",
-      "title": "高市首相、オマーン国王と電話会談——追加費用のない自由航行の回復を要請",
-      "body": "高市早苗首相は10日夕、オマーンのハイサム国王と約20分間電話会談し、「追加的費用のない形での自由で安全な航行の一刻も早い回復」の重要性を伝え、海峡利用国を含む国際社会との協議を求めた。ハイサム国王からは、海峡利用国と協議することを確約し各国の意思も尊重する考えが示された。",
-      "sourceLabel": "日テレNEWS（infoseek）",
-      "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
-      "label": "🇯🇵 外交",
-      "url": "https://news.infoseek.co.jp/article/ntv_2026081008237911/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-houthi-mokha-attack-0810",
-      "title": "フーシ派、紅海の要衝モカを2日連続攻撃——7人死亡、イエメン内戦拡大の懸念",
-      "body": "イエメンのフーシ派は9日夜と10日、紅海沿岸の政府軍支配下の港町モカを2日連続で攻撃し、少なくとも7人（政府軍関係者4人・民間人3人）が死亡、30人が負傷した。マリブ・ハドラマウト両州での大規模攻撃（8/6〜7）に続く動きで、2022年停戦の事実上の失効とイエメン内戦再燃の懸念が強まっている。",
-      "sourceLabel": "AP通信",
-      "date": "2026年8月9〜10日（現地）/ 2026年8月10日 JST",
-      "label": "🇾🇪 軍事",
-      "url": "https://www.usnews.com/news/world/articles/2026-08-10/iran-wont-reopen-strait-of-hormuz-without-us-concessions-and-other-mideast-developments",
-      "isLatest": false
-    },
-    {
-      "id": "latest-uae-adnoc-missile-attack-0808",
-      "title": "UAE、ADNOC関連タンカーへのイランのミサイル攻撃を非難——「海賊行為」と表現、負傷者なし",
-      "body": "UAE外務省は8月8日未明、国営石油会社ADNOC関連のタンカーがホルムズ海峡通航中にイランからミサイル攻撃を受けたと発表し、「敵対的なイランの攻撃」であり「海賊行為」に当たると非難する声明を出した。国営通信WAMは当初、ADNOC発表として被弾したタンカーの船名や積荷の詳細は明らかにせず「状況は制御下にある」と伝えた。負傷者の報告はない。",
-      "sourceLabel": "Reuters / US News",
-      "date": "2026年8月8日（現地）/ 2026年8月8日 JST",
-      "label": "⚔️ 軍事",
-      "url": "https://www.usnews.com/news/world/articles/2026-08-08/uae-says-iran-attacked-adnoc-vessel-with-missile-in-strait-of-hormuz",
-      "isLatest": false
-    },
-    {
-      "id": "latest-adnoc-15-vessels-attacked-0807",
-      "title": "ADNOC「紛争開始以来15隻が被弾」——今週だけで3隻・死者1名負傷20名",
-      "body": "アブダビ国営石油会社ADNOCは8月7日、紛争開始以来15隻の関連船舶がホルムズ海峡通航中にミサイル・ドローン攻撃を受けたとする声明を発表した。今週だけで3隻が被弾し、死者1名・負傷者20名に達したという。ADNOCは攻撃の実行主体を特定していないが、乗員・資産の保護のため関係当局と連携し必要な措置を講じているとした。",
-      "sourceLabel": "Bloomberg / Gulf News",
-      "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
-      "label": "⚔️ 軍事",
-      "url": "https://www.bloomberg.com/news/articles/2026-08-07/adnoc-says-three-vessels-hit-this-week-while-transiting-hormuz",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-hormuz-transit-drop-trump-control-0812",
+      "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
+      "titleJa": "通航量が一週間ぶり低水準に落ち込む中、トランプ氏は「完全支配」を改めて主張",
+      "titleEn": "As Strait of Hormuz transit drops, Trump again says US has control",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/12/as-strait-of-hormuz-transit-drops-trump-again-says-us-has-control",
+      "isLatest": true
+    },
     {
       "id": "osint-oil-prices-climb-iran-demands",
       "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
@@ -77,7 +92,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/economy/2026/8/10/oil-prices-climb-as-iranian-demands-cloud-outlook-for-strait-of-hormuz",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "titleJa": "【Türkiye Today】UAE、ホルムズ海峡でイランがADNOCタンカーを標的にしたと発表",
@@ -1066,6 +1081,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月7日〜10日",
+      "items": [
+        {
+          "id": "latest-takaichi-oman-call-0810",
+          "title": "高市首相、オマーン国王と電話会談——追加費用のない自由航行の回復を要請",
+          "body": "高市早苗首相は10日夕、オマーンのハイサム国王と約20分間電話会談し、「追加的費用のない形での自由で安全な航行の一刻も早い回復」の重要性を伝え、海峡利用国を含む国際社会との協議を求めた。ハイサム国王からは、海峡利用国と協議することを確約し各国の意思も尊重する考えが示された。",
+          "sourceLabel": "日テレNEWS（infoseek）",
+          "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
+          "label": "🇯🇵 外交",
+          "url": "https://news.infoseek.co.jp/article/ntv_2026081008237911/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-mokha-attack-0810",
+          "title": "フーシ派、紅海の要衝モカを2日連続攻撃——7人死亡、イエメン内戦拡大の懸念",
+          "body": "イエメンのフーシ派は9日夜と10日、紅海沿岸の政府軍支配下の港町モカを2日連続で攻撃し、少なくとも7人（政府軍関係者4人・民間人3人）が死亡、30人が負傷した。マリブ・ハドラマウト両州での大規模攻撃（8/6〜7）に続く動きで、2022年停戦の事実上の失効とイエメン内戦再燃の懸念が強まっている。",
+          "sourceLabel": "AP通信",
+          "date": "2026年8月9〜10日（現地）/ 2026年8月10日 JST",
+          "label": "🇾🇪 軍事",
+          "url": "https://www.usnews.com/news/world/articles/2026-08-10/iran-wont-reopen-strait-of-hormuz-without-us-concessions-and-other-mideast-developments",
+          "isLatest": false
+        },
+        {
+          "id": "latest-uae-adnoc-missile-attack-0808",
+          "title": "UAE、ADNOC関連タンカーへのイランのミサイル攻撃を非難——「海賊行為」と表現、負傷者なし",
+          "body": "UAE外務省は8月8日未明、国営石油会社ADNOC関連のタンカーがホルムズ海峡通航中にイランからミサイル攻撃を受けたと発表し、「敵対的なイランの攻撃」であり「海賊行為」に当たると非難する声明を出した。国営通信WAMは当初、ADNOC発表として被弾したタンカーの船名や積荷の詳細は明らかにせず「状況は制御下にある」と伝えた。負傷者の報告はない。",
+          "sourceLabel": "Reuters / US News",
+          "date": "2026年8月8日（現地）/ 2026年8月8日 JST",
+          "label": "⚔️ 軍事",
+          "url": "https://www.usnews.com/news/world/articles/2026-08-08/uae-says-iran-attacked-adnoc-vessel-with-missile-in-strait-of-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-adnoc-15-vessels-attacked-0807",
+          "title": "ADNOC「紛争開始以来15隻が被弾」——今週だけで3隻・死者1名負傷20名",
+          "body": "アブダビ国営石油会社ADNOCは8月7日、紛争開始以来15隻の関連船舶がホルムズ海峡通航中にミサイル・ドローン攻撃を受けたとする声明を発表した。今週だけで3隻が被弾し、死者1名・負傷者20名に達したという。ADNOCは攻撃の実行主体を特定していないが、乗員・資産の保護のため関係当局と連携し必要な措置を講じているとした。",
+          "sourceLabel": "Bloomberg / Gulf News",
+          "date": "2026年8月7日（現地）/ 2026年8月7日 JST",
+          "label": "⚔️ 軍事",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-07/adnoc-says-three-vessels-hit-this-week-while-transiting-hormuz",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月5日〜8日",
       "items": [

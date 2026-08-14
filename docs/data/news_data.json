@@ -1,7 +1,37 @@
 {
-  "updated": "2026年8月13日 10:37 日本時間JST",
+  "updated": "2026年8月15日 06:37 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-adnoc-tankers-drone-attack-0813",
+      "title": "ADNOC関連タンカー2隻が再び被弾——ホルムズ海峡通航中にイランのドローン攻撃、紛争開始来15隻目",
+      "body": "UAE外務省は14日、ADNOC関連タンカー2隻が13日夜ホルムズ海峡通航中にイランのドローン攻撃を受けたと発表し「海賊行為」と非難した。負傷者はなく状況は制御下にあるという。英UKMTOも2隻が軽微な損傷を受けたと確認。ADNOC関連船が被弾するのは紛争開始来15隻目となる。",
+      "sourceLabel": "AP",
+      "date": "2026年8月13日（現地）/ 2026年8月14日 JST",
+      "label": "🇦🇪 軍事",
+      "url": "https://www.usnews.com/news/world/articles/2026-08-14/2-uae-tankers-attacked-while-transiting-strait-of-hormuz-and-other-news-from-the-middle-east",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-hormuz-us-territory-0814",
+      "title": "トランプ氏「イラン敗北後、ホルムズ海峡を米国領に宣言する」——国際法上の疑問符",
+      "body": "トランプ大統領は14日、ニューヨーク州ロングアイランドでの集会で「イランを完全に打ち負かした後、近くホルムズ海峡を米国領と宣言する」と発言した。具体的な法的根拠や手続きには言及しておらず、国際法上の重大な疑問を招く発言となった。",
+      "sourceLabel": "Epoch Times",
+      "date": "2026年8月14日（現地）/ 2026年8月14日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://www.theepochtimes.com/us/trump-says-hell-declare-the-hormuz-strait-a-us-territory-pretty-soon-6075391",
+      "isLatest": false
+    },
+    {
+      "id": "latest-iran-strategic-defeat-araghchi-0814",
+      "title": "イラン副外相「米が戦略的敗北認めるまで封鎖継続」——アラグチー外相は対話再開「未決定」",
+      "body": "イラン副外相カゼム・ガリババディ氏は14日、「ホルムズ海峡はイランのものであり、イランの命令の下でのみ開閉される」と述べ、米国が「戦略的敗北」を受け入れるまで封鎖を継続すると表明した。アラグチー外相も同日、対話再開について「決定はしていない」と述べ、6月のイスラマバード覚書は「戦争終結」を意味し60日休戦の延長は不要との立場を示した。",
+      "sourceLabel": "Iran International",
+      "date": "2026年8月14日（現地）/ 2026年8月14日 JST",
+      "label": "🇮🇷 外交",
+      "url": "https://www.iranintl.com/en/liveblog/202608084952",
+      "isLatest": false
+    },
     {
       "id": "latest-irgc-naqdi-prolong-war-0812",
       "title": "IRGC上級顧問「トランプ政権終了まで戦争長期化も選択肢」——テヘランの戦略計算を異例に開示",
@@ -10,7 +40,7 @@
       "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
       "label": "🇮🇷 軍事",
       "url": "https://www.iranintl.com/en/202608124129",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-houthi-tihamah-doubletap-0811",
@@ -31,39 +61,24 @@
       "label": "⚓ 軍事",
       "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-august-12",
       "isLatest": false
-    },
-    {
-      "id": "latest-trump-total-control-transit-drop-0812",
-      "title": "トランプ氏「米国はホルムズを完全支配」と主張——実際の通航量は週間最低の8隻に低下",
-      "body": "トランプ大統領は12日、Truth Socialで「米国はホルムズ海峡を完全に支配している」と改めて主張したが、ロイターによれば11日の通航量はわずか8隻にとどまり、戦前（1日130〜140隻）を大きく下回る一週間ぶりの低水準となった。専門家からは「イランは依然として海峡の海上交通を妨害する十分な能力を保持している」との反論が出ている。",
-      "sourceLabel": "CNBC",
-      "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
-      "label": "🇺🇸 外交",
-      "url": "https://www.cnbc.com/2026/08/12/us-iran-war-trump-hormuz-houthi-attack-blockade-.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-snsc-rezaei-secretary-0809",
-      "title": "イラン最高国家安全保障会議、新書記にレザイー氏——対米強硬路線を継続",
-      "body": "イラン最高国家安全保障会議は9日、書記をゾルガドル氏から革命防衛隊元司令官のモフセン・レザイー氏に交代させた。ゾルガドル氏は最高指導者モジュタバ・ハメネイ師の政治顧問に転じる。米シンクタンクISWは、レザイー氏がホルムズ海峡の管理権を含む最大限の要求実現を志向する一方、具体的な譲歩には消極的とみている。",
-      "sourceLabel": "NBC News",
-      "date": "2026年8月9日（現地）/ 2026年8月10日 JST",
-      "label": "🇮🇷 外交",
-      "url": "https://www.nbcnews.com/world/iran/iran-sets-steep-demands-reopening-hormuz-hopes-oman-deal-break-impasse-rcna591553",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-counter-compensation-0810",
-      "title": "トランプ氏、イランの賠償要求に「同様の賠償」で応酬——対話は一段と硬直化",
-      "body": "トランプ大統領は10日、イランが求める戦争賠償要求を一蹴し、米国側も同様にイランへの賠償を求めると表明した。2000年のUSSコール事件や、イラン国内でのデモ弾圧犠牲者への補償も交渉に含めるよう代表団に指示したという。",
-      "sourceLabel": "Euronews",
-      "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
-      "label": "🇺🇸 外交",
-      "url": "https://www.euronews.com/2026/08/10/trump-says-will-demand-conflict-compensation-from-iran-as-part-of-peace-talks",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-uae-adnoc-attack-piracy-0814",
+      "date": "2026年8月14日（現地）/ 2026年8月14日 JST",
+      "titleJa": "UAE、ADNOC関連タンカー2隻へのイラン攻撃を非難——紛争開始来15隻目の被弾",
+      "titleEn": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/14/uae-accuses-iran-of-attacks-on-two-adnoc-vessels-in-strait-of-hormuz",
+      "isLatest": true
+    },
     {
       "id": "osint-hormuz-transit-drop-trump-control-0812",
       "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
@@ -77,7 +92,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/8/12/as-strait-of-hormuz-transit-drops-trump-again-says-us-has-control",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-oil-prices-climb-iran-demands",
@@ -1081,6 +1096,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月中旬（8/9〜8/12）",
+      "items": [
+        {
+          "id": "latest-trump-total-control-transit-drop-0812",
+          "title": "トランプ氏「米国はホルムズを完全支配」と主張——実際の通航量は週間最低の8隻に低下",
+          "body": "トランプ大統領は12日、Truth Socialで「米国はホルムズ海峡を完全に支配している」と改めて主張したが、ロイターによれば11日の通航量はわずか8隻にとどまり、戦前（1日130〜140隻）を大きく下回る一週間ぶりの低水準となった。専門家からは「イランは依然として海峡の海上交通を妨害する十分な能力を保持している」との反論が出ている。",
+          "sourceLabel": "CNBC",
+          "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
+          "label": "🇺🇸 外交",
+          "url": "https://www.cnbc.com/2026/08/12/us-iran-war-trump-hormuz-houthi-attack-blockade-.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-snsc-rezaei-secretary-0809",
+          "title": "イラン最高国家安全保障会議、新書記にレザイー氏——対米強硬路線を継続",
+          "body": "イラン最高国家安全保障会議は9日、書記をゾルガドル氏から革命防衛隊元司令官のモフセン・レザイー氏に交代させた。ゾルガドル氏は最高指導者モジュタバ・ハメネイ師の政治顧問に転じる。米シンクタンクISWは、レザイー氏がホルムズ海峡の管理権を含む最大限の要求実現を志向する一方、具体的な譲歩には消極的とみている。",
+          "sourceLabel": "NBC News",
+          "date": "2026年8月9日（現地）/ 2026年8月10日 JST",
+          "label": "🇮🇷 外交",
+          "url": "https://www.nbcnews.com/world/iran/iran-sets-steep-demands-reopening-hormuz-hopes-oman-deal-break-impasse-rcna591553",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-counter-compensation-0810",
+          "title": "トランプ氏、イランの賠償要求に「同様の賠償」で応酬——対話は一段と硬直化",
+          "body": "トランプ大統領は10日、イランが求める戦争賠償要求を一蹴し、米国側も同様にイランへの賠償を求めると表明した。2000年のUSSコール事件や、イラン国内でのデモ弾圧犠牲者への補償も交渉に含めるよう代表団に指示したという。",
+          "sourceLabel": "Euronews",
+          "date": "2026年8月10日（現地）/ 2026年8月10日 JST",
+          "label": "🇺🇸 外交",
+          "url": "https://www.euronews.com/2026/08/10/trump-says-will-demand-conflict-compensation-from-iran-as-part-of-peace-talks",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月7日〜10日",
       "items": [

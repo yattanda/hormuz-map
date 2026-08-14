@@ -2440,6 +2440,34 @@
           "sourceLabel": "Reuters / AFP"
         }
       ]
+    },
+    {
+      "date": "2026-08-15",
+      "dateLabel": "2026/08/15 06:37",
+      "blockadeDay": 169,
+      "summary": "UAE、ADNOC関連タンカー2隻が13日夜ホルムズ海峡通航中にイランのドローン攻撃を受けたと発表——紛争開始来15隻目の被弾・負傷者なし（8/14）・トランプ大統領はロングアイランドの集会で「イラン敗北後、ホルムズ海峡を米国領に宣言する」と発言（8/14）・イラン副外相ガリババディ氏は「米が戦略的敗北を認めるまで封鎖継続」と応酬、アラグチー外相は対話再開「未決定」とし60日休戦の延長は不要と主張（8/14）・米はルビオ国務長官がオーストリア・ギリシャ両外相と接触し仲介国を欧州へ拡大、カナダは対イラン制裁5名追加（8/11〜14）・ブレント原油は週央89.53ドルから87ドル台へ反落、IEAは供給不足拡大に警鐘・日本関係船は残り4隻で変化なし・封鎖169日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "ADNOC関連タンカー2隻が再び被弾——ホルムズ海峡通航中にイランのドローン攻撃、紛争開始来15隻目",
+          "url": "https://www.usnews.com/news/world/articles/2026-08-14/2-uae-tankers-attacked-while-transiting-strait-of-hormuz-and-other-news-from-the-middle-east",
+          "sourceLabel": "AP"
+        },
+        {
+          "title": "トランプ氏「イラン敗北後、ホルムズ海峡を米国領に宣言する」——国際法上の疑問符",
+          "url": "https://www.theepochtimes.com/us/trump-says-hell-declare-the-hormuz-strait-a-us-territory-pretty-soon-6075391",
+          "sourceLabel": "Epoch Times"
+        },
+        {
+          "title": "イラン副外相「米が戦略的敗北認めるまで封鎖継続」——アラグチー外相は対話再開「未決定」",
+          "url": "https://www.iranintl.com/en/liveblog/202608084952",
+          "sourceLabel": "Iran International"
+        },
+        {
+          "title": "米、仲介国を欧州へ拡大——ルビオ氏がオーストリア・ギリシャ外相と接触",
+          "url": "https://lasvegassun.com/news/2026/aug/14/with-us-iran-talks-stalled-diplomatic-efforts-expa/",
+          "sourceLabel": "AP"
+        }
+      ]
     }
   ]
 }

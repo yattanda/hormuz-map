@@ -2468,6 +2468,29 @@
           "sourceLabel": "AP"
         }
       ]
+    },
+    {
+      "date": "2026-08-17",
+      "dateLabel": "2026/08/17 09:04",
+      "blockadeDay": 171,
+      "summary": "米イラン間の60日間停戦・最終合意期限「イスラマバード覚書」が8月16日に到来し延長合意なく事実上形骸化（共同通信・時事通信）・アラグチー外相「米との対話再開はまだ決定していない」（8/15 Telegram）——オマーンとの新航路協議は継続も「政治的解決が前提」・トランプ大統領は「ホルムズ海峡米国領化」路線を維持、ベッセント財務長官は「前例のない」対イラン措置を予告・イラン副外相「海峡はイランのものであり、イランのものであり続ける」と応酬・米シンクタンク（スティムソン・センター）は米の迎撃ミサイル・戦略石油備蓄逼迫を指摘し「対イラン圧力手段は乏しい」と分析・イラン国会議長ガリバフ氏「軍事的にも政治的にも真に勝利した」（8/15）・ブレント原油88ドル台後半へ上昇・日本関係船は残り4隻で変化なし・封鎖171日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "米イラン「不安定な膠着」 覚書期限、海峡開放見えず",
+          "url": "https://news.yahoo.co.jp/articles/c180d898d2b9321ba1560f65adc67dd5b988c589",
+          "sourceLabel": "共同通信"
+        },
+        {
+          "title": "米イラン合意期限が失効——「イランのものだ」海峡巡り対立続く",
+          "url": "https://www.thenationalnews.com/news/us/2026/08/16/deadline-for-us-iran-agreement-expires-with-stalemate-set-to-continue/",
+          "sourceLabel": "The National"
+        },
+        {
+          "title": "ブレント原油88ドル台後半へ上昇——覚書失効を受け海峡再開観測が一段と後退",
+          "url": "https://www.investing.com/commodities/brent-oil",
+          "sourceLabel": "Investing.com"
+        }
+      ]
     }
   ]
 }

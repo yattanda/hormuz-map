@@ -1,7 +1,37 @@
 {
-  "updated": "2026年8月15日 06:37 日本時間JST",
+  "updated": "2026年8月17日 09:04 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-mou-deadline-expires-stalemate-0816",
+      "title": "米イラン覚書60日期限、延長合意なく到来——「不安定な膠着」長期化の観測強まる",
+      "body": "米国とイランは16日、戦闘終結に向けた最終合意の交渉期限とされたイスラマバード覚書の60日期限を迎えた。期限は延長可能だが双方とも延長に言及せず、覚書は事実上形骸化。ホルムズ海峡の開放に向けてイランとオマーンが協議を続けるが正常化には至らず、戦闘でも平和でもない「不安定な膠着状態」の長期化が懸念されている。",
+      "sourceLabel": "共同通信",
+      "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
+      "label": "⏳ 外交",
+      "url": "https://news.yahoo.co.jp/articles/c180d898d2b9321ba1560f65adc67dd5b988c589",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-iran-hormuz-territory-rebuttal-0816",
+      "title": "トランプ氏「間もなく米国領に」に応酬、イラン副外相「海峡はイランのものであり続ける」",
+      "body": "米・イラン覚書の期限失効を受け、トランプ大統領は改めてホルムズ海峡の米国領化路線に言及、イラン副外相は「海峡はイランのものであり、イランのものであり、イランのものであり続ける」と真っ向から反論した。両国が海峡の実効支配を各々主張し、経済的圧力による揺さぶり合いが続いている。",
+      "sourceLabel": "The National",
+      "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://www.thenationalnews.com/news/us/2026/08/16/deadline-for-us-iran-agreement-expires-with-stalemate-set-to-continue/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-brent-rally-deadlock-0817",
+      "title": "ブレント原油88ドル台後半へ上昇——覚書失効を受け海峡再開観測が一段と後退",
+      "body": "米イラン覚書の期限失効を受け、ホルムズ海峡再開の見通しが一段と後退したとの見方から、ブレント原油先物は週明け88ドル台後半まで上昇、WTIも82ドル台へ上げ幅を広げた。IEAは2026年の世界的な供給不足幅が過去5年で最大になるとの見通しを既に示している。",
+      "sourceLabel": "Investing.com",
+      "date": "2026年8月17日 JST",
+      "label": "🛢️ 市場",
+      "url": "https://www.investing.com/commodities/brent-oil",
+      "isLatest": false
+    },
     {
       "id": "latest-adnoc-tankers-drone-attack-0813",
       "title": "ADNOC関連タンカー2隻が再び被弾——ホルムズ海峡通航中にイランのドローン攻撃、紛争開始来15隻目",
@@ -10,7 +40,7 @@
       "date": "2026年8月13日（現地）/ 2026年8月14日 JST",
       "label": "🇦🇪 軍事",
       "url": "https://www.usnews.com/news/world/articles/2026-08-14/2-uae-tankers-attacked-while-transiting-strait-of-hormuz-and-other-news-from-the-middle-east",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-hormuz-us-territory-0814",
@@ -31,39 +61,24 @@
       "label": "🇮🇷 外交",
       "url": "https://www.iranintl.com/en/liveblog/202608084952",
       "isLatest": false
-    },
-    {
-      "id": "latest-irgc-naqdi-prolong-war-0812",
-      "title": "IRGC上級顧問「トランプ政権終了まで戦争長期化も選択肢」——テヘランの戦略計算を異例に開示",
-      "body": "革命防衛隊（IRGC）司令官の上級顧問モハンマド・レザ・ナグディ将軍は12日、米PBSとのインタビューで、イランが対米戦争をトランプ大統領の任期終了（2029年）まで意図的に長期化させ消耗戦に持ち込む選択肢を検討していると明らかにした。米国の戦略が一貫性を欠くとも批判した。発言は独立検証されたものではないが、イラン側の時間軸認識を示す数少ない公的な手掛かりとなっている。",
-      "sourceLabel": "Iran International",
-      "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
-      "label": "🇮🇷 軍事",
-      "url": "https://www.iranintl.com/en/202608124129",
-      "isLatest": false
-    },
-    {
-      "id": "latest-houthi-tihamah-doubletap-0811",
-      "title": "フーシ派、紅海で今次紛争初の死者——エジプト所有船「ティハマ」二重攻撃で6人死亡",
-      "body": "イエメン政府によれば、フーシ派は11日、バブエルマンデブ海峡で食料輸送中のエジプト所有・タンザニア籍貨物船「ティハマ」に弾道ミサイル3発を発射する二重攻撃を実施。乗組員4名（パキスタン人3名・インドネシア人1名）と救助中の国家抵抗軍隊員2名の計6名が死亡、10名が負傷した。2/28の紛争開始以降、フーシ派関連の攻撃による初の確認死者。",
-      "sourceLabel": "PBS News",
-      "date": "2026年8月11日（現地）/ 2026年8月11日 JST",
-      "label": "🐹 軍事",
-      "url": "https://www.pbs.org/newshour/amp/world/iranian-backed-houthis-kill-6-in-attack-on-vessel-and-other-developments-in-the-mideast",
-      "isLatest": false
-    },
-    {
-      "id": "latest-us-helicopter-velanova-strike-0811",
-      "title": "米軍ヘリ、封鎖破り試みたパナマ籍船「ヴェラ・ノヴァ」にヘルファイア発射——3週間で3件目の摘発",
-      "body": "米中央軍は、対イラン港湾封鎖の突破を試みたとするパナマ籍コンテナ船「ヴェラ・ノヴァ」（オマーン湾）に海軍ヘリコプターがヘルファイア・ミサイル2発を発射したと発表。船体火災は鎮火し乗組員17名全員の無事を確認。7/15のBELMA号・7/24のM/T LAVINE号に続き、3週間で3件目の摘発となった。",
-      "sourceLabel": "Fox News",
-      "date": "2026年8月11日（現地）/ 2026年8月12日 JST",
-      "label": "⚓ 軍事",
-      "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-august-12",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-mou-expires-what-to-know-0816",
+      "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
+      "titleJa": "米イラン覚書、期限失効へ——何が起き、何が起きなかったのか",
+      "titleEn": "US-Iran MoU is set to expire: What to know",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/16/us-iran-mou-is-set-to-expire-what-to-know",
+      "isLatest": true
+    },
     {
       "id": "osint-uae-adnoc-attack-piracy-0814",
       "date": "2026年8月14日（現地）/ 2026年8月14日 JST",
@@ -77,8 +92,9 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/8/14/uae-accuses-iran-of-attacks-on-two-adnoc-vessels-in-strait-of-hormuz",
-      "isLatest": true
+      "isLatest": false
     },
+
     {
       "id": "osint-hormuz-transit-drop-trump-control-0812",
       "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
@@ -1096,6 +1112,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月中旬（8/11〜8/12）",
+      "items": [
+        {
+          "id": "latest-irgc-naqdi-prolong-war-0812",
+          "title": "IRGC上級顧問「トランプ政権終了まで戦争長期化も選択肢」——テヘランの戦略計算を異例に開示",
+          "body": "革命防衛隊（IRGC）司令官の上級顧問モハンマド・レザ・ナグディ将軍は12日、米PBSとのインタビューで、イランが対米戦争をトランプ大統領の任期終了（2029年）まで意図的に長期化させ消耗戦に持ち込む選択肢を検討していると明らかにした。米国の戦略が一貫性を欠くとも批判した。発言は独立検証されたものではないが、イラン側の時間軸認識を示す数少ない公的な手掛かりとなっている。",
+          "sourceLabel": "Iran International",
+          "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
+          "label": "🇮🇷 軍事",
+          "url": "https://www.iranintl.com/en/202608124129",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-tihamah-doubletap-0811",
+          "title": "フーシ派、紅海で今次紛争初の死者——エジプト所有船「ティハマ」二重攻撃で6人死亡",
+          "body": "イエメン政府によれば、フーシ派は11日、バブエルマンデブ海峡で食料輸送中のエジプト所有・タンザニア籍貨物船「ティハマ」に弾道ミサイル3発を発射する二重攻撃を実施。乗組員4名（パキスタン人3名・インドネシア人1名）と救助中の国家抵抗軍隊員2名の計6名が死亡、10名が負傷した。2/28の紛争開始以降、フーシ派関連の攻撃による初の確認死者。",
+          "sourceLabel": "PBS News",
+          "date": "2026年8月11日（現地）/ 2026年8月11日 JST",
+          "label": "🐹 軍事",
+          "url": "https://www.pbs.org/newshour/amp/world/iranian-backed-houthis-kill-6-in-attack-on-vessel-and-other-developments-in-the-mideast",
+          "isLatest": false
+        },
+        {
+          "id": "latest-us-helicopter-velanova-strike-0811",
+          "title": "米軍ヘリ、封鎖破り試みたパナマ籍船「ヴェラ・ノヴァ」にヘルファイア発射——3週間で3件目の摘発",
+          "body": "米中央軍は、対イラン港湾封鎖の突破を試みたとするパナマ籍コンテナ船「ヴェラ・ノヴァ」（オマーン湾）に海軍ヘリコプターがヘルファイア・ミサイル2発を発射したと発表。船体火災は鎮火し乗組員17名全員の無事を確認。7/15のBELMA号・7/24のM/T LAVINE号に続き、3週間で3件目の摘発となった。",
+          "sourceLabel": "Fox News",
+          "date": "2026年8月11日（現地）/ 2026年8月12日 JST",
+          "label": "⚓ 軍事",
+          "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-august-12",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月中旬（8/9〜8/12）",
       "items": [

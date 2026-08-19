@@ -2491,6 +2491,29 @@
           "sourceLabel": "Investing.com"
         }
       ]
+    },
+    {
+      "date": "2026-08-19",
+      "dateLabel": "2026/08/19 08:51",
+      "blockadeDay": 173,
+      "summary": "トランプ大統領がイラン・オマーンのホルムズ航路協議を巡り「オマーンが邪魔なら地獄まで爆撃する」と2度目の軍事威嚇（8/17）・米上院ケイン議員は対オマーン武力行使禁止決議案の提出を表明・トランプ氏はクルディスタン地域政府バルザニ議長経由のIRGC直接裏チャンネルの存在を認めるも、IRGC報道官は「完全な虚偽」と全面否定（8/17）・18日未明、オマーン方面へ出航中の船舶が未確認飛翔体で被弾し乗組員1名負傷、UKMTOが調査中・イラン国会議長ガリバフ氏「米国が資産凍結解除・制裁解除・海上封鎖解除を履行するまで封鎖継続」（8/18）・イラン・オマーンは新航路地図に「了解」も包括合意・共同声明は調整中（イラン外務省バガイ報道官、8/18）・フーシ派はサウジ・アラムコのジザン製油所をドローン攻撃（8/18）・ブレント原油90ドル台後半へ上昇（8/18時点90.97ドル）・サウジアラムコはフジャイラ沖STS移送で出荷再開・日本関係船は残り4隻で変化なし・封鎖173日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "トランプ氏、オマーンへ2度目の爆撃威嚇——ホルムズ海峡巡る対立エスカレート",
+          "url": "https://www.washingtonpost.com/world/2026/08/17/trump-threatens-bomb-oman-if-it-gets-way/",
+          "sourceLabel": "Washington Post"
+        },
+        {
+          "title": "トランプ氏のIRGC裏チャンネル舞台裏——クルディスタン議長バルザニ氏の役割",
+          "url": "https://www.axios.com/2026/08/16/iran-backchannel-trump-gabbard-barzani-war",
+          "sourceLabel": "Axios"
+        },
+        {
+          "title": "船舶が未確認飛翔体で被弾——ホルムズ海峡、乗組員1名負傷",
+          "url": "https://www.arabnews.com/node/2655036/middle-east",
+          "sourceLabel": "Arab News（Reuters）"
+        }
+      ]
     }
   ]
 }

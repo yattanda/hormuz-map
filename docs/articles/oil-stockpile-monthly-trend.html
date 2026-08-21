@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<title>石油備蓄はどう推移したか──月次まとめとグラフで見る現在地｜ホルムズ海峡危機マップ</title>
+<meta name="description" content="開戦前248日分から現在204日分へ。日本の石油備蓄（国家・民間・産油国共同）が危機発生後どう推移したかを月ごとに整理し、折れ線グラフでひと目で分かるように解説する。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://yattanda.github.io/hormuz-map/articles/oil-stockpile-monthly-trend.html">
+<link rel="stylesheet" href="_article.css">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ホルムズ海峡危機マップ">
+<meta property="og:title" content="石油備蓄はどう推移したか──月次まとめとグラフで見る現在地｜ホルムズ海峡危機マップ">
+<meta property="og:description" content="開戦前248日分から現在204日分へ。日本の石油備蓄が危機発生後どう推移したかを月ごとに整理し、折れ線グラフで解説する。">
+<meta property="og:url" content="https://yattanda.github.io/hormuz-map/articles/oil-stockpile-monthly-trend.html">
+<meta property="og:image" content="https://yattanda.github.io/hormuz-map/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hormuz_map_jp">
+<meta name="twitter:title" content="石油備蓄はどう推移したか──月次まとめとグラフで見る現在地">
+<meta name="twitter:description" content="開戦前248日分から現在204日分へ。月次推移を折れ線グラフで解説する。">
+<meta name="twitter:image" content="https://yattanda.github.io/hormuz-map/ogp.jpg">
+
+<!-- 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "石油備蓄はどう推移したか──月次まとめとグラフで見る現在地",
+  "description": "開戦前248日分から現在204日分へ。日本の石油備蓄（国家・民間・産油国共同）が危機発生後どう推移したかを月ごとに整理し、折れ線グラフでひと目で分かるように解説する。",
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-08-21",
+  "author": { "@type": "Organization", "name": "ホルムズ海峡危機マップ" },
+  "publisher": { "@type": "Organization", "name": "ホルムズ海峡危機マップ" },
+  "mainEntityOfPage": "https://yattanda.github.io/hormuz-map/articles/oil-stockpile-monthly-trend.html"
+}
+</script>
+</head>
+<body>
+
+<div class="article-container">
+
+  <nav class="breadcrumb">
+    <a href="../index.html">ホーム</a>
+    <span>›</span>
+    <a href="../index.html#special-commentary">特別解説コラム</a>
+    <span>›</span>
+    <span>石油備蓄の月次推移まとめ</span>
+  </nav>
+
+  <div class="article-eyebrow">📉 特別解説コラム</div>
+  <h1 class="article-title">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h1>
+  <p class="article-lead">開戦前248日分 → 現在204日分。取り崩しの山場はどこだったのか、なぜ今は下げ止まっているのか。月ごとの動きを一次資料（資源エネルギー庁）ベースで整理する。</p>
+  <div class="article-meta">
+    <span>初出：<strong>2026/08/21</strong></span>
+    <span>最終更新：<strong>2026/08/21</strong></span>
+  </div>
+
+  <div class="article-body">
+
+    <!-- 結論を先に -->
+    <div class="article-summary-box">
+      <div class="article-section-title">📋 まず結論</div>
+      <p>
+        日本の石油備蓄（国家＋民間＋産油国共同、備蓄法基準）は、危機発生前の<strong>248日分</strong>（2026年1月末確報）から、
+        <strong>2026年8月17日時点の速報値で204日分</strong>まで減少した。約半年で44日分の取り崩しだが、内訳を見ると
+        <strong>減少の大半は3〜5月に集中</strong>しており、6月以降はほぼ横ばい（201〜205日分のレンジ）で推移している。
+        国家備蓄の放出は7月中旬でほぼ止まり、<strong>103日分前後で高止まり</strong>している状態だ。
+      </p>
+    </div>
+
+    <!-- グラフ -->
+    <div>
+      <div class="article-section-title">📉 合計備蓄日数の推移（折れ線グラフ）</div>
+      <p>資源エネルギー庁「石油備蓄の状況（推計値の速報）」および月次「石油備蓄の現況」を基に、各月末時点（8月のみ直近速報日）の合計備蓄日数をプロットした。</p>
+
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:10px;padding:12px 8px 6px;margin-top:10px;">
+        <svg viewBox="0 0 700 320" width="100%" height="auto" role="img" aria-label="日本の石油備蓄 合計日数の月次推移グラフ。1月末248日分から8月17日時点204日分まで推移。">
+
+          <!-- 横グリッド線＋ラベル -->
+          <line x1="55" y1="56.9" x2="670" y2="56.9" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="55" y1="124.6" x2="670" y2="124.6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="55" y1="192.3" x2="670" y2="192.3" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="55" y1="260" x2="670" y2="260" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+
+          <text x="48" y="60" text-anchor="end" font-size="12" fill="#64748b" font-family="'Noto Sans JP',sans-serif">250日</text>
+          <text x="48" y="128" text-anchor="end" font-size="12" fill="#64748b" font-family="'Noto Sans JP',sans-serif">230日</text>
+          <text x="48" y="196" text-anchor="end" font-size="12" fill="#64748b" font-family="'Noto Sans JP',sans-serif">210日</text>
+          <text x="48" y="264" text-anchor="end" font-size="12" fill="#64748b" font-family="'Noto Sans JP',sans-serif">190日</text>
+
+          <!-- エリア塗り -->
+          <polygon points="60,63.7 160,100.9 260,188.9 360,216 460,222.8 560,216 660,212.6 660,260 60,260"
+            fill="rgba(56,189,248,0.10)"/>
+
+          <!-- 折れ線 -->
+          <polyline points="60,63.7 160,100.9 260,188.9 360,216 460,222.8 560,216 660,212.6"
+            fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+          <!-- データ点 -->
+          <circle cx="60" cy="63.7" r="4.5" fill="#38bdf8"/>
+          <circle cx="160" cy="100.9" r="4.5" fill="#38bdf8"/>
+          <circle cx="260" cy="188.9" r="4.5" fill="#38bdf8"/>
+          <circle cx="360" cy="216" r="4.5" fill="#38bdf8"/>
+          <circle cx="460" cy="222.8" r="4.5" fill="#38bdf8"/>
+          <circle cx="560" cy="216" r="4.5" fill="#38bdf8"/>
+          <circle cx="660" cy="212.6" r="5.5" fill="#fbbf24" stroke="#071828" stroke-width="1.5"/>
+
+          <!-- 数値ラベル -->
+          <text x="60" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#e0e8f0" font-family="'Noto Sans JP',sans-serif">248日</text>
+          <text x="160" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#e0e8f0" font-family="'Noto Sans JP',sans-serif">237日</text>
+          <text x="260" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#e0e8f0" font-family="'Noto Sans JP',sans-serif">211日</text>
+          <text x="360" y="203" text-anchor="middle" font-size="13" font-weight="700" fill="#e0e8f0" font-family="'Noto Sans JP',sans-serif">203日</text>
+          <text x="460" y="238" text-anchor="middle" font-size="13" font-weight="700" fill="#e0e8f0" font-family="'Noto Sans JP',sans-serif">201日</text>
+          <text x="560" y="203" text-anchor="middle" font-size="13" font-weight="700" fill="#e0e8f0" font-family="'Noto Sans JP',sans-serif">203日</text>
+          <text x="660" y="198" text-anchor="middle" font-size="13" font-weight="800" fill="#fbbf24" font-family="'Noto Sans JP',sans-serif">204日</text>
+
+          <!-- X軸ラベル -->
+          <text x="60" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">1月末</text>
+          <text x="60" y="303" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="'Noto Sans JP',sans-serif">(危機前)</text>
+          <text x="160" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">3月末</text>
+          <text x="260" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">4月末</text>
+          <text x="360" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">5月末</text>
+          <text x="460" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">6月末</text>
+          <text x="560" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">7月末</text>
+          <text x="660" y="290" text-anchor="middle" font-size="11" fill="#94a3b8" font-family="'Noto Sans JP',sans-serif">8/17</text>
+          <text x="660" y="303" text-anchor="middle" font-size="9.5" fill="#64748b" font-family="'Noto Sans JP',sans-serif">(直近速報)</text>
+
+        </svg>
+      </div>
+      <p style="font-size:0.72rem;color:#64748b;margin-top:6px;">
+        ※合計＝国家備蓄＋民間備蓄＋産油国共同備蓄（備蓄法基準）。1〜7月は各月末値、8月のみ直近速報値（8月17日時点）。速報値は確報と差異が生じる場合がある。
+      </p>
+    </div>
+
+    <!-- 月次表 -->
+    <div>
+      <div class="article-section-title">🗓️ 月次推移データ</div>
+      <div class="article-table-wrap">
+        <table class="article-table">
+          <thead>
+            <tr><th>時点</th><th>合計</th><th>国家備蓄</th><th>民間備蓄</th><th>産油国共同</th><th>備考</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1月末（危機前・確報）</td><td>248日</td><td>146日</td><td>96日</td><td>6日</td><td>平時水準</td></tr>
+            <tr><td>3月末（速報）</td><td>237日</td><td>146日</td><td>85日</td><td>6日</td><td>放出開始直後・国家備蓄はまだ未反映</td></tr>
+            <tr><td>4月末（速報）</td><td>211日</td><td>128日</td><td>81日</td><td>2日</td><td>第2弾放出決定・取り崩し本格化</td></tr>
+            <tr><td>5月末（速報）</td><td>203日</td><td>109日</td><td>92日</td><td>2日</td><td>国家備蓄の減少ペース最大</td></tr>
+            <tr><td>6月末（速報）</td><td>201日</td><td>106日</td><td>92日</td><td>3日</td><td>下げ止まり・追加放出なし方針</td></tr>
+            <tr><td>7月末（速報）</td><td>203日</td><td>103日</td><td>96日</td><td>4日</td><td>国家備蓄の放出が事実上停止</td></tr>
+            <tr><td>8月17日（直近速報）</td><td>204日</td><td>103日</td><td>98日</td><td>4日</td><td>高止まり継続</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.72rem;color:#64748b;margin-top:6px;">出典：資源エネルギー庁「石油備蓄の状況（推計値の速報）」「石油備蓄の現況」各月分</p>
+    </div>
+
+    <!-- 月ごとの解説 -->
+    <div>
+      <div class="article-section-title">🕰️ 何が起きていたか：月ごとの経緯</div>
+
+      <p><strong>2〜3月：危機発生と第1弾放出</strong><br>
+      2月28日、ホルムズ海峡情勢の緊迫化で危機が始まった。政府は<span class="at-the-time">3月16日</span>から民間備蓄義務量を70日分→55日分へ15日分引き下げ、
+      <span class="at-the-time">3月26日</span>から当面1か月分（約850万kl）の国家備蓄原油の放出と、約6日分の産油国共同備蓄の放出を開始した。
+      国家備蓄は「精製事業者の受入れが確認された日」をもって速報値に反映される仕組みのため、3月末時点ではまだ放出量の大部分が数字に表れていない。</p>
+
+      <p><strong>4月：第2弾放出、取り崩しが本格化</strong><br>
+      <span class="at-the-time">4月15日・4月24日</span>に経済産業省が第2弾の国家備蓄放出（約20日分）を発表。あわせて民間備蓄引き下げも延長された。
+      3月放出分の反映が進み、国家備蓄は146日分から128日分へ、合計も211日分へと大きく低下した。</p>
+
+      <p><strong>5月：国家備蓄の減少が最大ペースに</strong><br>
+      国家備蓄は月内に109日分まで低下し、月間の減少幅は今回の危機で最大となった。一方で民間備蓄は季節要因もあり回復基調に転じ、
+      合計の下げ幅自体は4月ほど大きくなかった（211日→203日）。</p>
+
+      <p><strong>6月：政策の転換点</strong><br>
+      <span class="at-the-time">6月11日</span>、政府は「追加放出なし」の方針を公表。<span class="at-the-time">6月26日</span>の中東情勢に関する関係閣僚会議では、
+      高市首相が赤澤経済産業大臣に対し、8月末までに「エネルギー需給構造強靱化のための総合パッケージ」を取りまとめるよう指示した。
+      国家備蓄の減少ペースは大きく鈍化し、合計備蓄も201日分で下げ止まりの兆しを見せ始めた。</p>
+
+      <p><strong>7月：代替調達の進展と放出の実質停止</strong><br>
+      政府は7月の原油調達について前年平月比で必要量を上回る見通しを示し、代替調達（中東以外のルート）が本格的に軌道に乗ったことを背景に、
+      国家備蓄の取り崩しはほぼ止まった（103〜105日分で推移）。同時にナフサ（石油備蓄の対象外）の供給混乱を踏まえ、経産省はナフサ備蓄制度の創設検討に着手した。</p>
+
+      <p><strong>8月：高止まりと次の焦点</strong><br>
+      直近（<span class="at-the-time">8月17日時点</span>）は合計204日分（国家103・民間98・産油国共同4）。国家備蓄はほぼ横ばいが続き、
+      民間備蓄側の日々の増減（92〜99日分のレンジ）が合計の細かい変動要因になっている。焦点は8月末に予定される「総合パッケージ」の内容──
+      特に調達先分散の制度化とナフサ備蓄新設の行方に移っている。</p>
+    </div>
+
+    <div class="article-note-box">
+      <div>📌 <strong>放出フェーズは概ね終了</strong>。3〜5月に集中した取り崩しに対し、6月以降は「維持フェーズ」に移行している</div>
+      <div>📌 <strong>国家備蓄は146日分→103日分</strong>で計43日分放出、7月中旬以降はほぼ横ばい</div>
+      <div>📌 <strong>8月末が次の節目</strong>。「エネルギー需給構造強靱化のための総合パッケージ」発表予定</div>
+    </div>
+
+    <!-- 結論 -->
+    <div class="article-summary-box">
+      <div class="article-section-title">📋 結論</div>
+      <p>
+        今回の石油備蓄放出は、2022年のウクライナ危機対応に続く制度創設以来2回目の国家備蓄放出となった。危機発生から半年弱で
+        備蓄日数は248日分から204日分まで低下したが、代替調達網の拡大が進んだことで、7月以降は取り崩しに頼らずに「維持」できる水準に落ち着いている。
+        今後の焦点は、危機対応としての備蓄放出そのものよりも、8月末の総合パッケージに示される<strong>中長期的な供給構造の作り直し</strong>（調達先分散の制度化、ナフサ備蓄の新設など）に移りつつある。
+      </p>
+    </div>
+
+  </div>
+
+  <div class="related-articles">
+    <h2>関連コラム</h2>
+    <div class="related-list">
+      <a href="oil-diversification-africa-brazil.html">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達</a>
+      <a href="route-c-alaska-oil.html">ルートC・アラスカ原油の現実</a>
+      <a href="saudi-pipeline-attack.html">サウジ東西パイプライン攻撃の深層</a>
+    </div>
+  </div>
+
+  <div class="back-to-main">
+    <a href="../index.html#special-commentary">← ホルムズ海峡危機マップ 本編へ戻る</a>
+  </div>
+
+</div>
+
+</body>
+</html>

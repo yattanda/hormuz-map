@@ -1649,13 +1649,13 @@ Copy
   <!-- STATS -->
   <div class="stats-row">
     <div class="stat-card">
-  <div style="font-size:0.65rem; color:#64748b; margin-bottom:6px; font-weight:600;">2026年4月8日現在</div>
+  <div style="font-size:0.65rem; color:#64748b; margin-bottom:6px; font-weight:600;">2026年8月17日時点（速報）</div>
   <div style="font-size:0.75rem; color:#93c5fd; margin-bottom:8px; font-weight:700;">📊 日本の石油備蓄</div>
-  <div class="stat-num" style="font-size:1.4rem; color:#38bdf8; line-height:1.2; margin-bottom:6px;">209～214<span style="font-size:0.8rem">日分</span></div>
+  <div class="stat-num" style="font-size:1.4rem; color:#38bdf8; line-height:1.2; margin-bottom:6px;">204<span style="font-size:0.8rem">日分</span></div>
   <div class="stat-label" style="font-size:0.68rem; line-height:1.6; color:#cbd5e1;">
-    <strong style="color:#93c5fd;">国家：</strong>146日分（放出中）<br>
-    <strong style="color:#93c5fd;">民間：</strong>101日分（放出中）<br>
-    <small style="color:#64748b;">※IEA基準</small>
+    <strong style="color:#93c5fd;">国家：</strong>103日分（放出停止・横ばい）<br>
+    <strong style="color:#93c5fd;">民間：</strong>98日分（産油国共同4日分含む）<br>
+    <small style="color:#64748b;">※資源エネルギー庁 速報値（備蓄法基準）</small>
   </div>
 </div>
     <div class="stat-card"><div class="stat-num c-red">20<span style="font-size:0.9rem">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
@@ -3310,7 +3310,7 @@ japanRefineryMarker.bindPopup(`
   <div style="font-family:'Noto Sans JP',sans-serif;min-width:220px;padding:4px;">
     <div style="font-size:0.85rem;font-weight:800;color:#38bdf8;margin-bottom:6px;">🇯🇵 日本の受入拠点</div>
     <div style="font-size:0.75rem;color:#1e293b;line-height:1.8;margin-bottom:6px;">
-      <strong style="color:#1e293b;">石油備蓄：</strong>209〜214日分（国家＋民間）<br>
+      <strong style="color:#1e293b;">石油備蓄：</strong>204日分（国家103＋民間98＋産油国共同4）<br>
       <strong style="color:#1e293b;">中東依存度：</strong>原油輸入の約95%<br>
       <strong style="color:#1e293b;">ルートA着：</strong>ENEOS向け2船 到着済み ✅<br>
       <strong style="color:#1e293b;">ルートB着：</strong>3/28 太陽石油（愛媛）✅<br>
@@ -4373,6 +4373,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </div><!-- /特別レポートカード -->
 
+<!-- 石油備蓄の月次推移まとめコラムカード -->
+<div style="background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+
+  <!-- タイトル行 -->
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span style="font-size:1.2rem;">📉</span>
+    <div style="flex:1;min-width:0;">
+      <div style="font-size:0.85rem;font-weight:800;color:#a78bfa;line-height:1.4;">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</div>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">開戦前248日分→現在204日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</div>
+    </div>
+    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/08/21</span>
+  </div>
+
+  <!-- 要約 -->
+  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+    日本の石油備蓄は危機発生前の248日分から、直近（8月17日時点速報）で204日分まで減少した。ただし取り崩しの大半は3〜5月に集中しており、6月以降はほぼ横ばい。国家備蓄の放出は7月中旬で事実上停止し、103日分前後で高止まりしている。折れ線グラフと月次表で推移をひと目で確認できる。</p>
+
+  <!-- 全文リンク -->
+  <a href="articles/oil-stockpile-monthly-trend.html"
+    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);border-radius:6px;color:#a78bfa;font-size:0.78rem;font-weight:700;padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
+    📄 全文を読む
+  </a>
+
+</div><!-- /石油備蓄月次推移コラムカード -->
 
   </div>
 </div>
@@ -4807,7 +4831,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <!-- 注記 -->
     <div style="font-size:0.7rem;color:#475569;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
-      ⚠️ 処理能力は石油連盟公式データ（2025年3月現在）。bbl/日＝バレル/日。国家備蓄は約146日分、民間備蓄含む合計は約209〜214日分（2026年4月時点）。
+      ⚠️ 処理能力は石油連盟公式データ（2025年3月現在）。bbl/日＝バレル/日。国家備蓄は約103日分、民間備蓄・産油国共同備蓄を含む合計は約204日分（2026年8月17日時点）。
     </div>
 
   </div>

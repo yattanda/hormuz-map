@@ -2440,6 +2440,104 @@
           "sourceLabel": "Reuters / AFP"
         }
       ]
+    },
+    {
+      "date": "2026-08-15",
+      "dateLabel": "2026/08/15 06:37",
+      "blockadeDay": 169,
+      "summary": "UAE、ADNOC関連タンカー2隻が13日夜ホルムズ海峡通航中にイランのドローン攻撃を受けたと発表——紛争開始来15隻目の被弾・負傷者なし（8/14）・トランプ大統領はロングアイランドの集会で「イラン敗北後、ホルムズ海峡を米国領に宣言する」と発言（8/14）・イラン副外相ガリババディ氏は「米が戦略的敗北を認めるまで封鎖継続」と応酬、アラグチー外相は対話再開「未決定」とし60日休戦の延長は不要と主張（8/14）・米はルビオ国務長官がオーストリア・ギリシャ両外相と接触し仲介国を欧州へ拡大、カナダは対イラン制裁5名追加（8/11〜14）・ブレント原油は週央89.53ドルから87ドル台へ反落、IEAは供給不足拡大に警鐘・日本関係船は残り4隻で変化なし・封鎖169日目・ニュース4件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "ADNOC関連タンカー2隻が再び被弾——ホルムズ海峡通航中にイランのドローン攻撃、紛争開始来15隻目",
+          "url": "https://www.usnews.com/news/world/articles/2026-08-14/2-uae-tankers-attacked-while-transiting-strait-of-hormuz-and-other-news-from-the-middle-east",
+          "sourceLabel": "AP"
+        },
+        {
+          "title": "トランプ氏「イラン敗北後、ホルムズ海峡を米国領に宣言する」——国際法上の疑問符",
+          "url": "https://www.theepochtimes.com/us/trump-says-hell-declare-the-hormuz-strait-a-us-territory-pretty-soon-6075391",
+          "sourceLabel": "Epoch Times"
+        },
+        {
+          "title": "イラン副外相「米が戦略的敗北認めるまで封鎖継続」——アラグチー外相は対話再開「未決定」",
+          "url": "https://www.iranintl.com/en/liveblog/202608084952",
+          "sourceLabel": "Iran International"
+        },
+        {
+          "title": "米、仲介国を欧州へ拡大——ルビオ氏がオーストリア・ギリシャ外相と接触",
+          "url": "https://lasvegassun.com/news/2026/aug/14/with-us-iran-talks-stalled-diplomatic-efforts-expa/",
+          "sourceLabel": "AP"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "dateLabel": "2026/08/17 09:04",
+      "blockadeDay": 171,
+      "summary": "米イラン間の60日間停戦・最終合意期限「イスラマバード覚書」が8月16日に到来し延長合意なく事実上形骸化（共同通信・時事通信）・アラグチー外相「米との対話再開はまだ決定していない」（8/15 Telegram）——オマーンとの新航路協議は継続も「政治的解決が前提」・トランプ大統領は「ホルムズ海峡米国領化」路線を維持、ベッセント財務長官は「前例のない」対イラン措置を予告・イラン副外相「海峡はイランのものであり、イランのものであり続ける」と応酬・米シンクタンク（スティムソン・センター）は米の迎撃ミサイル・戦略石油備蓄逼迫を指摘し「対イラン圧力手段は乏しい」と分析・イラン国会議長ガリバフ氏「軍事的にも政治的にも真に勝利した」（8/15）・ブレント原油88ドル台後半へ上昇・日本関係船は残り4隻で変化なし・封鎖171日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "米イラン「不安定な膠着」 覚書期限、海峡開放見えず",
+          "url": "https://news.yahoo.co.jp/articles/c180d898d2b9321ba1560f65adc67dd5b988c589",
+          "sourceLabel": "共同通信"
+        },
+        {
+          "title": "米イラン合意期限が失効——「イランのものだ」海峡巡り対立続く",
+          "url": "https://www.thenationalnews.com/news/us/2026/08/16/deadline-for-us-iran-agreement-expires-with-stalemate-set-to-continue/",
+          "sourceLabel": "The National"
+        },
+        {
+          "title": "ブレント原油88ドル台後半へ上昇——覚書失効を受け海峡再開観測が一段と後退",
+          "url": "https://www.investing.com/commodities/brent-oil",
+          "sourceLabel": "Investing.com"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "dateLabel": "2026/08/19 08:51",
+      "blockadeDay": 173,
+      "summary": "トランプ大統領がイラン・オマーンのホルムズ航路協議を巡り「オマーンが邪魔なら地獄まで爆撃する」と2度目の軍事威嚇（8/17）・米上院ケイン議員は対オマーン武力行使禁止決議案の提出を表明・トランプ氏はクルディスタン地域政府バルザニ議長経由のIRGC直接裏チャンネルの存在を認めるも、IRGC報道官は「完全な虚偽」と全面否定（8/17）・18日未明、オマーン方面へ出航中の船舶が未確認飛翔体で被弾し乗組員1名負傷、UKMTOが調査中・イラン国会議長ガリバフ氏「米国が資産凍結解除・制裁解除・海上封鎖解除を履行するまで封鎖継続」（8/18）・イラン・オマーンは新航路地図に「了解」も包括合意・共同声明は調整中（イラン外務省バガイ報道官、8/18）・フーシ派はサウジ・アラムコのジザン製油所をドローン攻撃（8/18）・ブレント原油90ドル台後半へ上昇（8/18時点90.97ドル）・サウジアラムコはフジャイラ沖STS移送で出荷再開・日本関係船は残り4隻で変化なし・封鎖173日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "トランプ氏、オマーンへ2度目の爆撃威嚇——ホルムズ海峡巡る対立エスカレート",
+          "url": "https://www.washingtonpost.com/world/2026/08/17/trump-threatens-bomb-oman-if-it-gets-way/",
+          "sourceLabel": "Washington Post"
+        },
+        {
+          "title": "トランプ氏のIRGC裏チャンネル舞台裏——クルディスタン議長バルザニ氏の役割",
+          "url": "https://www.axios.com/2026/08/16/iran-backchannel-trump-gabbard-barzani-war",
+          "sourceLabel": "Axios"
+        },
+        {
+          "title": "船舶が未確認飛翔体で被弾——ホルムズ海峡、乗組員1名負傷",
+          "url": "https://www.arabnews.com/node/2655036/middle-east",
+          "sourceLabel": "Arab News（Reuters）"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "dateLabel": "2026/08/21 09:09",
+      "blockadeDay": 175,
+      "sourceType": "realtime",
+      "summary": "UAE国防省が18日探知した弾道ミサイル2発を受け、UAE外務省は19日、イランとの全ての貿易・商業交流・金融取引を追って通知があるまで停止すると発表——イラン外務省は「根拠がない」「偽旗作戦」の可能性と全面否定・同日トランプ大統領はSNSで「史上最も壊滅的な経済作戦」の実施を予告——石油密輸・スワップライン・ダミー企業等を通じたイラン支援国への経済的報いを警告・トランプ氏「現時点では状況は非常に良好」とホルムズ海峡の「完全支配」を改めて主張・20日、バンス副大統領は経済圧力を「最も効果的な手段」としつつ「慎重な舵取りが必要」と発言・同日、イラン軍参謀総長アブドラヒ氏は湾岸諸国に「米軍支援は軍事作戦への加担とみなす」と警告・米国防総省データでは開戦以来の米兵死者18人・負傷757人に増加・トランプ政権はヒズボラをイラン代理勢力として再指定し追加制裁・CNN/ケプラー分析によれば直近2週間の通航船の8割超がオマーン側ルートを採用——イランは実効支配の大部分喪失との見方・ブレント原油は91ドル台後半へ上昇し約1か月ぶり高値圏・日本関係船は残り4隻で変化なし",
+      "relatedNews": [
+        {
+          "title": "UAEがイランとの貿易・金融取引を停止",
+          "url": "https://www.bloomberg.com/jp/news/articles/2026-08-19/TK0CQCT96OSG00",
+          "sourceLabel": "Bloomberg"
+        },
+        {
+          "title": "イランに対する「壊滅的な経済作戦」、トランプ氏が表明",
+          "url": "https://www.cnn.co.jp/usa/35251748.html",
+          "sourceLabel": "CNN.co.jp"
+        },
+        {
+          "title": "イラン、ホルムズ海峡の支配の大部分失う",
+          "url": "https://www.cnn.co.jp/world/35251671.html",
+          "sourceLabel": "CNN.co.jp"
+        }
+      ]
     }
   ]
 }

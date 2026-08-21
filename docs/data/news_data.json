@@ -1,7 +1,37 @@
 {
-  "updated": "2026年8月19日 08:51 日本時間JST",
+  "updated": "2026年8月21日 09:09 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-uae-suspends-trade-iran-0819",
+      "title": "UAE、イランとの全面取引停止を発表——弾道ミサイル2発検知への対抗措置",
+      "body": "UAE国防省は18日、イランから発射された弾道ミサイル2発を防空システムが探知したと発表。1発は領海内、1発は領海外に落下し「海上交通が標的」と分析した。イラン外務省は主張を「根拠がない」と否定。UAE外務省は19日、事態悪化を理由にイランとの全ての貿易・金融取引を追って通知があるまで停止すると発表した。",
+      "sourceLabel": "Bloomberg",
+      "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
+      "label": "🇦🇪 外交",
+      "url": "https://www.bloomberg.com/jp/news/articles/2026-08-19/TK0CQCT96OSG00",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-devastating-economic-operation-0819",
+      "title": "トランプ氏「史上最も壊滅的な経済作戦」を予告——イラン支援国に経済的報い",
+      "body": "トランプ大統領は19日、SNS投稿で「どの国に対しても行われたことのない史上最も壊滅的な経済作戦」を開始すると表明。石油密輸・スワップライン・現金送金・両替所・船舶登録・ダミー企業を通じたイラン支援に対し経済的な報いがあると警告したが、具体的な対象・時期は明らかにしなかった。",
+      "sourceLabel": "CNN",
+      "date": "2026年8月19日（現地）/ 2026年8月20日 JST",
+      "label": "💰 外交",
+      "url": "https://www.cnn.co.jp/usa/35251748.html",
+      "isLatest": false
+    },
+    {
+      "id": "latest-iran-military-warns-gulf-states-0819",
+      "title": "イラン軍参謀総長、湾岸諸国に警告——米軍支援は「軍事作戦への加担」",
+      "body": "イラン軍のアブドラヒ参謀総長は19日、湾岸諸国に対し米軍への支援・便宜供与は米国の軍事作戦への参加とみなすと警告。空母ジョージ・ワシントンの中東再配備の中での発言で、米軍基地を抱える湾岸諸国への圧力強化と受け止められている。",
+      "sourceLabel": "AFP",
+      "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
+      "label": "⚔️ 軍事",
+      "url": "https://news.yahoo.co.jp/articles/27efd6080cd8449493b146f79c63dadb7c031261",
+      "isLatest": false
+    },
     {
       "id": "latest-trump-bomb-oman-threat-0817",
       "title": "トランプ氏、オマーンへ2度目の爆撃威嚇——「邪魔をするなら地獄まで爆撃する」",
@@ -10,7 +40,7 @@
       "date": "2026年8月17日（現地）/ 2026年8月18日 JST",
       "label": "💣 外交",
       "url": "https://www.washingtonpost.com/world/2026/08/17/trump-threatens-bomb-oman-if-it-gets-way/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-irgc-backchannel-denial-0817",
@@ -31,39 +61,27 @@
       "label": "🚢 軍事",
       "url": "https://www.arabnews.com/node/2655036/middle-east",
       "isLatest": false
-    },
-    {
-      "id": "latest-mou-deadline-expires-stalemate-0816",
-      "title": "米イラン覚書60日期限、延長合意なく到来——「不安定な膠着」長期化の観測強まる",
-      "body": "米国とイランは16日、戦闘終結に向けた最終合意の交渉期限とされたイスラマバード覚書の60日期限を迎えた。期限は延長可能だが双方とも延長に言及せず、覚書は事実上形骸化。ホルムズ海峡の開放に向けてイランとオマーンが協議を続けるが正常化には至らず、戦闘でも平和でもない「不安定な膠着状態」の長期化が懸念されている。",
-      "sourceLabel": "共同通信",
-      "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
-      "label": "⏳ 外交",
-      "url": "https://news.yahoo.co.jp/articles/c180d898d2b9321ba1560f65adc67dd5b988c589",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-iran-hormuz-territory-rebuttal-0816",
-      "title": "トランプ氏「間もなく米国領に」に応酬、イラン副外相「海峡はイランのものであり続ける」",
-      "body": "米・イラン覚書の期限失効を受け、トランプ大統領は改めてホルムズ海峡の米国領化路線に言及、イラン副外相は「海峡はイランのものであり、イランのものであり、イランのものであり続ける」と真っ向から反論した。両国が海峡の実効支配を各々主張し、経済的圧力による揺さぶり合いが続いている。",
-      "sourceLabel": "The National",
-      "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
-      "label": "🇺🇸 外交",
-      "url": "https://www.thenationalnews.com/news/us/2026/08/16/deadline-for-us-iran-agreement-expires-with-stalemate-set-to-continue/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-brent-rally-deadlock-0817",
-      "title": "ブレント原油88ドル台後半へ上昇——覚書失効を受け海峡再開観測が一段と後退",
-      "body": "米イラン覚書の期限失効を受け、ホルムズ海峡再開の見通しが一段と後退したとの見方から、ブレント原油先物は週明け88ドル台後半まで上昇、WTIも82ドル台へ上げ幅を広げた。IEAは2026年の世界的な供給不足幅が過去5年で最大になるとの見通しを既に示している。",
-      "sourceLabel": "Investing.com",
-      "date": "2026年8月17日 JST",
-      "label": "🛢️ 市場",
-      "url": "https://www.investing.com/commodities/brent-oil",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-tehran-economic-warfare-fail-0820",
+      "titleJa": "イラン、トランプ氏の「経済戦争」は失敗すると反論",
+      "titleEn": "Iran says Trump's 'economic war' will fail",
+      "title": "【Al Jazeera】イラン、トランプ氏の「経済戦争」は失敗すると反論",
+      "summary": "Al Jazeeraのライブブログは、トランプ氏の「壊滅的経済作戦」予告に対しテヘランが強く反発し、制裁強化は奏功しないとの立場を示したと伝えている。イラン当局者は自国と中国・ロシアとの深い貿易関係が米国の圧力を複雑にするとの見方も紹介している。",
+      "source": "Al Jazeera",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "date": "2026年8月20日（現地）/ 2026年8月20日 JST",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/8/20/iran-war-live-trump-announces-most-crushing-iran-sanctions",
+      "isLatest": true
+    },
     {
       "id": "osint-trump-bomb-oman-second-time-0818",
       "date": "2026年8月18日（現地）/ 2026年8月18日 JST",
@@ -77,7 +95,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/8/18/why-has-trump-threatened-to-bomb-oman-for-a-second-time",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-mou-expires-what-to-know-0816",
@@ -109,7 +127,6 @@
       "url": "https://www.aljazeera.com/news/2026/8/14/uae-accuses-iran-of-attacks-on-two-adnoc-vessels-in-strait-of-hormuz",
       "isLatest": false
     },
-
     {
       "id": "osint-hormuz-transit-drop-trump-control-0812",
       "date": "2026年8月12日（現地）/ 2026年8月12日 JST",
@@ -1127,6 +1144,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月16〜17日",
+      "items": [
+        {
+          "id": "latest-mou-deadline-expires-stalemate-0816",
+          "title": "米イラン覚書60日期限、延長合意なく到来——「不安定な膠着」長期化の観測強まる",
+          "body": "米国とイランは16日、戦闘終結に向けた最終合意の交渉期限とされたイスラマバード覚書の60日期限を迎えた。期限は延長可能だが双方とも延長に言及せず、覚書は事実上形骸化。ホルムズ海峡の開放に向けてイランとオマーンが協議を続けるが正常化には至らず、戦闘でも平和でもない「不安定な膠着状態」の長期化が懸念されている。",
+          "sourceLabel": "共同通信",
+          "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
+          "label": "⏳ 外交",
+          "url": "https://news.yahoo.co.jp/articles/c180d898d2b9321ba1560f65adc67dd5b988c589",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-iran-hormuz-territory-rebuttal-0816",
+          "title": "トランプ氏「間もなく米国領に」に応酬、イラン副外相「海峡はイランのものであり続ける」",
+          "body": "米・イラン覚書の期限失効を受け、トランプ大統領は改めてホルムズ海峡の米国領化路線に言及、イラン副外相は「海峡はイランのものであり、イランのものであり、イランのものであり続ける」と真っ向から反論した。両国が海峡の実効支配を各々主張し、経済的圧力による揺さぶり合いが続いている。",
+          "sourceLabel": "The National",
+          "date": "2026年8月16日（現地）/ 2026年8月16日 JST",
+          "label": "🇺🇸 外交",
+          "url": "https://www.thenationalnews.com/news/us/2026/08/16/deadline-for-us-iran-agreement-expires-with-stalemate-set-to-continue/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-brent-rally-deadlock-0817",
+          "title": "ブレント原油88ドル台後半へ上昇——覚書失効を受け海峡再開観測が一段と後退",
+          "body": "米イラン覚書の期限失効を受け、ホルムズ海峡再開の見通しが一段と後退したとの見方から、ブレント原油先物は週明け88ドル台後半まで上昇、WTIも82ドル台へ上げ幅を広げた。IEAは2026年の世界的な供給不足幅が過去5年で最大になるとの見通しを既に示している。",
+          "sourceLabel": "Investing.com",
+          "date": "2026年8月17日 JST",
+          "label": "🛢️ 市場",
+          "url": "https://www.investing.com/commodities/brent-oil",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月中旬（8/13〜8/14）",
       "items": [

@@ -1,7 +1,37 @@
 {
-  "updated": "2026年8月21日 09:09 日本時間JST",
+  "updated": "2026年8月23日 09:03 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-trump-hormuz-american-territory-0821",
+      "title": "トランプ氏「ホルムズ海峡は今や米国領土」——現在形での領有主張に転じる",
+      "body": "トランプ大統領は21日、サウスカロライナ州の集会で「勝ったかどうかも分からない、今はホルムズ海峡を米国領土だと考えているからだ」と発言。「もう少しイランを爆撃しないといけないのか」とも冗談交じりに述べた。従来の「将来宣言する」という予告的表現から、現在形での領有主張へと踏み込んだ。",
+      "sourceLabel": "CNN",
+      "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
+      "label": "🇺🇸 外交",
+      "url": "https://www.cnn.com/2026/08/22/politics/video/trump-view-strait-of-hormuz-american-territory-digvid-vrtc",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-declaration-of-war-sanctions-0822",
+      "title": "イラン外務省、新制裁を「全ての国家への宣戦布告」と猛反発",
+      "body": "イラン外務省のバガイ報道官は22日、月曜発表予定の対イラン新制裁について「単一国への経済戦争にとどまらず、国連加盟国全体への治外法権的主権の主張だ」とX投稿で非難。二次制裁は主権平等原則やICJ判例が示す内政不干渉原則に違反し国際法上の根拠がないと主張、制裁と海上封鎖の組み合わせは「全面的な古典的植民地主義への回帰」を招くと警告した。",
+      "sourceLabel": "Al Jazeera",
+      "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
+      "label": "🇮🇷 外交",
+      "url": "https://www.aljazeera.com/news/2026/8/22/iran-says-new-us-sanctions-violate-sovereignty-of-other-states",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oman-iran-fm-call-hormuz-0821",
+      "title": "オマーン・イラン両外相が電話会談——海峡開放へ調整継続も打開は不透明",
+      "body": "オマーン外務省は21日、バドル外相がイランのアラグチー外相と電話会談し、封鎖状態が続くホルムズ海峡の開放に向けた調整や対話環境整備を協議したと発表。イランは開放条件を引き上げる姿勢を崩しておらず、膠着状態の打開につながるかは不明。",
+      "sourceLabel": "共同通信",
+      "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
+      "label": "🇴🇲 外交",
+      "url": "https://www.hokkaido-np.co.jp/article/1356995/",
+      "isLatest": false
+    },
     {
       "id": "latest-uae-suspends-trade-iran-0819",
       "title": "UAE、イランとの全面取引停止を発表——弾道ミサイル2発検知への対抗措置",
@@ -10,7 +40,7 @@
       "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
       "label": "🇦🇪 外交",
       "url": "https://www.bloomberg.com/jp/news/articles/2026-08-19/TK0CQCT96OSG00",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-devastating-economic-operation-0819",
@@ -31,39 +61,27 @@
       "label": "⚔️ 軍事",
       "url": "https://news.yahoo.co.jp/articles/27efd6080cd8449493b146f79c63dadb7c031261",
       "isLatest": false
-    },
-    {
-      "id": "latest-trump-bomb-oman-threat-0817",
-      "title": "トランプ氏、オマーンへ2度目の爆撃威嚇——「邪魔をするなら地獄まで爆撃する」",
-      "body": "トランプ大統領は17日、Fox Newsの電話取材でイラン・オマーンのホルムズ海峡航路協議を巡り「オマーンが邪魔をするなら地獄まで爆撃してやる」と発言。5月の「吹き飛ばす」発言に続き2度目の対オマーン軍事威嚇となった。米上院ケイン議員は対オマーン武力行使を禁じる決議案の提出を表明した。",
-      "sourceLabel": "Washington Post",
-      "date": "2026年8月17日（現地）/ 2026年8月18日 JST",
-      "label": "💣 外交",
-      "url": "https://www.washingtonpost.com/world/2026/08/17/trump-threatens-bomb-oman-if-it-gets-way/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc-backchannel-denial-0817",
-      "title": "トランプ氏「IRGCと直接裏チャンネル」と表明——IRGC報道官は「完全な虚偽」と全面否定",
-      "body": "トランプ氏はクルディスタン地域政府バルザニ議長を仲介役としたIRGCとの直接裏チャンネルの存在を認めたが、IRGC報道官モヘッビ准将はタスニム通信に対し「純然たる虚偽」であり米側との対話は一切行われていないと否定した。双方の主張が真っ向から対立している。",
-      "sourceLabel": "Axios",
-      "date": "2026年8月17日（現地）/ 2026年8月18日 JST",
-      "label": "🤝 外交",
-      "url": "https://www.axios.com/2026/08/16/iran-backchannel-trump-gabbard-barzani-war",
-      "isLatest": false
-    },
-    {
-      "id": "latest-vessel-unknown-projectile-0818",
-      "title": "船舶が未確認飛翔体で被弾——機関室損傷、乗組員1名負傷",
-      "body": "英海運当局UKMTOは18日未明、オマーン方面へ出航中の船舶が未確認の飛翔体により被弾したとの報告を受けたと発表。機関室が損傷し乗組員1名が負傷、残る乗組員はオマーン沿岸警備隊が支援している。環境影響の報告はなく当局が調査中。",
-      "sourceLabel": "Arab News（Reuters）",
-      "date": "2026年8月18日（現地）/ 2026年8月18日 JST",
-      "label": "🚢 軍事",
-      "url": "https://www.arabnews.com/node/2655036/middle-east",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-iran-sovereignty-sanctions-0822",
+      "titleJa": "イラン、新制裁は「主権の侵害」——「植民地主義への回帰」と非難",
+      "titleEn": "Iran says new US sanctions violate sovereignty of other states",
+      "title": "【Al Jazeera】イラン、新制裁は「主権の侵害」——「植民地主義への回帰」と非難",
+      "summary": "Al Jazeeraは、月曜発表予定の対イラン新制裁についてイラン外務省が「国連加盟国全体への治外法権的主権の主張」と非難したと報道。アラグチー外相も「失敗する運命」とXで皮肉り、2012年の過去制裁を引き合いに出したと伝えている。",
+      "source": "Al Jazeera",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
+      "url": "https://www.aljazeera.com/news/2026/8/22/iran-says-new-us-sanctions-violate-sovereignty-of-other-states",
+      "isLatest": true
+    },
     {
       "id": "osint-tehran-economic-warfare-fail-0820",
       "titleJa": "イラン、トランプ氏の「経済戦争」は失敗すると反論",
@@ -80,7 +98,7 @@
       "textColor": "#7dd3fc",
       "date": "2026年8月20日（現地）/ 2026年8月20日 JST",
       "url": "https://www.aljazeera.com/news/liveblog/2026/8/20/iran-war-live-trump-announces-most-crushing-iran-sanctions",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-trump-bomb-oman-second-time-0818",
@@ -1144,6 +1162,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月17〜18日",
+      "items": [
+        {
+          "id": "latest-trump-bomb-oman-threat-0817",
+          "title": "トランプ氏、オマーンへ2度目の爆撃威嚇——「邪魔をするなら地獄まで爆撃する」",
+          "body": "トランプ大統領は17日、Fox Newsの電話取材でイラン・オマーンのホルムズ海峡航路協議を巡り「オマーンが邪魔をするなら地獄まで爆撃してやる」と発言。5月の「吹き飛ばす」発言に続き2度目の対オマーン軍事威嚇となった。米上院ケイン議員は対オマーン武力行使を禁じる決議案の提出を表明した。",
+          "sourceLabel": "Washington Post",
+          "date": "2026年8月17日（現地）/ 2026年8月18日 JST",
+          "label": "💣 外交",
+          "url": "https://www.washingtonpost.com/world/2026/08/17/trump-threatens-bomb-oman-if-it-gets-way/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-backchannel-denial-0817",
+          "title": "トランプ氏「IRGCと直接裏チャンネル」と表明——IRGC報道官は「完全な虚偽」と全面否定",
+          "body": "トランプ氏はクルディスタン地域政府バルザニ議長を仲介役としたIRGCとの直接裏チャンネルの存在を認めたが、IRGC報道官モヘッビ准将はタスニム通信に対し「純然たる虚偽」であり米側との対話は一切行われていないと否定した。双方の主張が真っ向から対立している。",
+          "sourceLabel": "Axios",
+          "date": "2026年8月17日（現地）/ 2026年8月18日 JST",
+          "label": "🤝 外交",
+          "url": "https://www.axios.com/2026/08/16/iran-backchannel-trump-gabbard-barzani-war",
+          "isLatest": false
+        },
+        {
+          "id": "latest-vessel-unknown-projectile-0818",
+          "title": "船舶が未確認飛翔体で被弾——機関室損傷、乗組員1名死亡（当初は負傷と発表）",
+          "body": "英海運当局UKMTOは18日未明、オマーン方面へ出航中の船舶が未確認の飛翔体により被弾したとの報告を受けたと発表。機関室が損傷し、乗組員1名が死亡した（当初は負傷と発表されていたが、その後の報道で死亡が確認された）。環境影響の報告はなく当局が調査中。",
+          "sourceLabel": "Arab News（Reuters）/ CNBC",
+          "date": "2026年8月18日（現地）/ 2026年8月18日 JST",
+          "label": "🚢 軍事",
+          "url": "https://www.arabnews.com/node/2655036/middle-east",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月16〜17日",
       "items": [

@@ -1,7 +1,37 @@
 {
-  "updated": "2026年8月23日 09:03 日本時間JST",
+  "updated": "2026年8月25日 12:11 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-bessent-economic-dday-sanctions-0824",
+      "title": "ベッセント財務長官「経済的Dデイ」発動——5分野に二次制裁拡大、対中名指しは回避",
+      "body": "ベッセント財務長官は24日、対イラン新制裁「Operation Economic Outcast（経済的Dデイ）」を正式発表した。デジタル資産・先端技術・金・航空・海運の5分野を二次制裁対象に加え、船舶・企業・個人ほぼ60件を新規制裁指定。対象国には猶予期間を設けるが期限は非公表。記者から中国系銀行が標的になり得るか問われると「いかなる者も対象外ではない」と述べ、中国の名指しは避けた。",
+      "sourceLabel": "Axios / NPR / PBS",
+      "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
+      "label": "💰 経済制裁",
+      "url": "https://www.axios.com/2026/08/24/bessent-dday-iran-secondary-sanctions",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-rial-record-low-china-warning-0824",
+      "title": "イランリアル過去最安値199万2000リアル/ドルに——中国は対中制裁なら「正当な権益守る」と警告",
+      "body": "イラン通貨リアルは24日、非公式市場で1ドル＝199万2000リアルの過去最安値を記録した。トランプ大統領が「史上最も壊滅的な経済作戦」を予告して以降4.5%下落し、対アジア原油出荷も制裁発表を前にほぼ途絶したとブルームバーグが報道。中国外務省の林剣副報道局長は24日、対中制裁が発動されれば「正当な権益を守るため必要な措置を講じる」と米側をけん制した。",
+      "sourceLabel": "Bloomberg / 共同通信",
+      "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
+      "label": "📉 通貨・市場",
+      "url": "https://news.yahoo.co.jp/articles/88caa19f3a4d8e99d250195aca51f4ba00b3a2f4",
+      "isLatest": false
+    },
+    {
+      "id": "latest-southern-route-traffic-surge-0822",
+      "title": "南側航路の通航量が開戦前の半分に到達——米軍護衛下15〜20隻/日、イラン監視能力低下か",
+      "body": "米ニュースサイトAxiosは政府関係者の情報として、米軍の保護を受けたタンカーが1日15〜20隻のペースでホルムズ海峡の南側航路を通過していると報じた。石油の輸送量は戦闘開始前の半分にあたる日量約1000万バレルに達しており、米軍によるレーダー等への攻撃でイラン側の監視能力が低下したことが要因とみられる。トランプ大統領は海峡が「開放されている」と主張する一方、イラン側は「覚書が実行されない限り開放されない」としている。",
+      "sourceLabel": "Axios（KSB瀬戸内海放送 経由）",
+      "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
+      "label": "🚢 海上輸送",
+      "url": "https://news.ksb.co.jp/ann/article/16823689",
+      "isLatest": false
+    },
     {
       "id": "latest-trump-hormuz-american-territory-0821",
       "title": "トランプ氏「ホルムズ海峡は今や米国領土」——現在形での領有主張に転じる",
@@ -10,7 +40,7 @@
       "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
       "label": "🇺🇸 外交",
       "url": "https://www.cnn.com/2026/08/22/politics/video/trump-view-strait-of-hormuz-american-territory-digvid-vrtc",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-declaration-of-war-sanctions-0822",
@@ -31,39 +61,27 @@
       "label": "🇴🇲 外交",
       "url": "https://www.hokkaido-np.co.jp/article/1356995/",
       "isLatest": false
-    },
-    {
-      "id": "latest-uae-suspends-trade-iran-0819",
-      "title": "UAE、イランとの全面取引停止を発表——弾道ミサイル2発検知への対抗措置",
-      "body": "UAE国防省は18日、イランから発射された弾道ミサイル2発を防空システムが探知したと発表。1発は領海内、1発は領海外に落下し「海上交通が標的」と分析した。イラン外務省は主張を「根拠がない」と否定。UAE外務省は19日、事態悪化を理由にイランとの全ての貿易・金融取引を追って通知があるまで停止すると発表した。",
-      "sourceLabel": "Bloomberg",
-      "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
-      "label": "🇦🇪 外交",
-      "url": "https://www.bloomberg.com/jp/news/articles/2026-08-19/TK0CQCT96OSG00",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-devastating-economic-operation-0819",
-      "title": "トランプ氏「史上最も壊滅的な経済作戦」を予告——イラン支援国に経済的報い",
-      "body": "トランプ大統領は19日、SNS投稿で「どの国に対しても行われたことのない史上最も壊滅的な経済作戦」を開始すると表明。石油密輸・スワップライン・現金送金・両替所・船舶登録・ダミー企業を通じたイラン支援に対し経済的な報いがあると警告したが、具体的な対象・時期は明らかにしなかった。",
-      "sourceLabel": "CNN",
-      "date": "2026年8月19日（現地）/ 2026年8月20日 JST",
-      "label": "💰 外交",
-      "url": "https://www.cnn.co.jp/usa/35251748.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-military-warns-gulf-states-0819",
-      "title": "イラン軍参謀総長、湾岸諸国に警告——米軍支援は「軍事作戦への加担」",
-      "body": "イラン軍のアブドラヒ参謀総長は19日、湾岸諸国に対し米軍への支援・便宜供与は米国の軍事作戦への参加とみなすと警告。空母ジョージ・ワシントンの中東再配備の中での発言で、米軍基地を抱える湾岸諸国への圧力強化と受け止められている。",
-      "sourceLabel": "AFP",
-      "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
-      "label": "⚔️ 軍事",
-      "url": "https://news.yahoo.co.jp/articles/27efd6080cd8449493b146f79c63dadb7c031261",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-us-sanctions-ripple-global-markets-0824",
+      "titleJa": "【Al Jazeera】対イラン制裁が世界市場に波及——航空・技術・海運分野を直撃",
+      "titleEn": "How US sanctions on Iran ripple through global markets and consumers",
+      "title": "【Al Jazeera】対イラン制裁が世界市場に波及——航空・技術・海運分野を直撃",
+      "summary": "Al Jazeeraは、ベッセント財務長官が発表した新制裁が航空・デジタル資産・金・技術・海運の各分野を対象とし、60件の個人・船舶を指定したと報道。テヘラン在住の分析者は「イランが制裁を回避する余地は従来より大幅に狭まっている」と指摘し、シンガポール・中国・香港関連の船舶も対象に含まれると伝えている。",
+      "source": "Al Jazeera",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
+      "url": "https://www.aljazeera.com/economy/2026/8/24/how-us-sanctions-on-iran-ripple-through-global-markets-and-consumers",
+      "isLatest": true
+    },
     {
       "id": "osint-iran-sovereignty-sanctions-0822",
       "titleJa": "イラン、新制裁は「主権の侵害」——「植民地主義への回帰」と非難",
@@ -80,7 +98,7 @@
       "textColor": "#7dd3fc",
       "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
       "url": "https://www.aljazeera.com/news/2026/8/22/iran-says-new-us-sanctions-violate-sovereignty-of-other-states",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-tehran-economic-warfare-fail-0820",
@@ -1162,6 +1180,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月19日",
+      "items": [
+        {
+          "id": "latest-uae-suspends-trade-iran-0819",
+          "title": "UAE、イランとの全面取引停止を発表——弾道ミサイル2発検知への対抗措置",
+          "body": "UAE国防省は18日、イランから発射された弾道ミサイル2発を防空システムが探知したと発表。1発は領海内、1発は領海外に落下し「海上交通が標的」と分析した。イラン外務省は主張を「根拠がない」と否定。UAE外務省は19日、事態悪化を理由にイランとの全ての貿易・金融取引を追って通知があるまで停止すると発表した。",
+          "sourceLabel": "Bloomberg",
+          "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
+          "label": "🇦🇪 外交",
+          "url": "https://www.bloomberg.com/jp/news/articles/2026-08-19/TK0CQCT96OSG00",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-devastating-economic-operation-0819",
+          "title": "トランプ氏「史上最も壊滅的な経済作戦」を予告——イラン支援国に経済的報い",
+          "body": "トランプ大統領は19日、SNS投稿で「どの国に対しても行われたことのない史上最も壊滅的な経済作戦」を開始すると表明。石油密輸・スワップライン・現金送金・両替所・船舶登録・ダミー企業を通じたイラン支援に対し経済的な報いがあると警告したが、具体的な対象・時期は明らかにしなかった。",
+          "sourceLabel": "CNN",
+          "date": "2026年8月19日（現地）/ 2026年8月20日 JST",
+          "label": "💰 外交",
+          "url": "https://www.cnn.co.jp/usa/35251748.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-military-warns-gulf-states-0819",
+          "title": "イラン軍参謀総長、湾岸諸国に警告——米軍支援は「軍事作戦への加担」",
+          "body": "イラン軍のアブドラヒ参謀総長は19日、湾岸諸国に対し米軍への支援・便宜供与は米国の軍事作戦への参加とみなすと警告。空母ジョージ・ワシントンの中東再配備の中での発言で、米軍基地を抱える湾岸諸国への圧力強化と受け止められている。",
+          "sourceLabel": "AFP",
+          "date": "2026年8月19日（現地）/ 2026年8月19日 JST",
+          "label": "⚔️ 軍事",
+          "url": "https://news.yahoo.co.jp/articles/27efd6080cd8449493b146f79c63dadb7c031261",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月17〜18日",
       "items": [

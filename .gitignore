@@ -18,3 +18,5 @@ tools/*.lnk
 # OS生成ファイル
 .DS_Store
 Thumbs.db
+# セッション引き継ぎメモ（ローカルパス等を含むため非公開）
+.claude/handovers/

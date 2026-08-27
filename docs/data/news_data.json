@@ -1,7 +1,37 @@
 {
-  "updated": "2026年8月25日 12:11 日本時間JST",
+  "updated": "2026年8月27日 10:00 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-oman-temporary-corridor-0825",
+      "title": "イラン・オマーン、ホルムズ海峡の暫定通航回廊で合意——機雷除去も共同実施へ",
+      "body": "イランのアラグチー外相とオマーンのアルブサイディ外相は25日、テヘランで会談し、ホルムズ海峡に「共同の暫定航行回廊」を設置し機雷除去を共同で行う枠組みで合意したと共同声明で発表した。恒久的な航路と海峡の将来管理については今後30〜60日間、技術協議を継続するとしている。",
+      "sourceLabel": "Al Jazeera / Reuters",
+      "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
+      "label": "🇮🇷🇴🇲 外交",
+      "url": "https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-mines-cleared-iran-denies-0826",
+      "title": "トランプ氏「ホルムズ海峡の機雷は全て除去」と主張——イラン副外相は海峡開放を否定",
+      "body": "トランプ米大統領は25日、米海軍がホルムズ海峡国際水域の機雷を全て除去・爆破したとSNSに投稿し、新たな敷設船は即時破壊すると警告した。米政府・軍から裏付ける公式発表はない。イランのガリババディ副外相は26日、オマーンとの暫定合意後も海峡は開放されていないとして、トランプ氏の主張を否定した。",
+      "sourceLabel": "CNN / BBC",
+      "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
+      "label": "💣 軍事",
+      "url": "https://news.yahoo.co.jp/articles/7fc5c824919766b70ad5829b2e3b00e35a795e2c",
+      "isLatest": false
+    },
+    {
+      "id": "latest-brent-crude-drop-hormuz-talks-0826",
+      "title": "ブレント原油、一時87ドル割れ——イラン・オマーンの通航協議進展を好感し週間8%安",
+      "body": "イランとオマーンがホルムズ海峡の暫定通航回廊で協議を進めたことを受け、原油価格は3営業日続落した。北海ブレントは25日に一時1バレル＝87ドルを割り込み、週間の下落率は約8%に達した。米国産WTIも81ドル近辺まで下げた。",
+      "sourceLabel": "Bloomberg",
+      "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
+      "label": "🛢️ 市場",
+      "url": "https://news.yahoo.co.jp/articles/da55639f462a19c3d962294f0a1c65e3ecefd8a4",
+      "isLatest": false
+    },
     {
       "id": "latest-bessent-economic-dday-sanctions-0824",
       "title": "ベッセント財務長官「経済的Dデイ」発動——5分野に二次制裁拡大、対中名指しは回避",
@@ -10,7 +40,7 @@
       "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
       "label": "💰 経済制裁",
       "url": "https://www.axios.com/2026/08/24/bessent-dday-iran-secondary-sanctions",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-rial-record-low-china-warning-0824",
@@ -31,39 +61,27 @@
       "label": "🚢 海上輸送",
       "url": "https://news.ksb.co.jp/ann/article/16823689",
       "isLatest": false
-    },
-    {
-      "id": "latest-trump-hormuz-american-territory-0821",
-      "title": "トランプ氏「ホルムズ海峡は今や米国領土」——現在形での領有主張に転じる",
-      "body": "トランプ大統領は21日、サウスカロライナ州の集会で「勝ったかどうかも分からない、今はホルムズ海峡を米国領土だと考えているからだ」と発言。「もう少しイランを爆撃しないといけないのか」とも冗談交じりに述べた。従来の「将来宣言する」という予告的表現から、現在形での領有主張へと踏み込んだ。",
-      "sourceLabel": "CNN",
-      "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
-      "label": "🇺🇸 外交",
-      "url": "https://www.cnn.com/2026/08/22/politics/video/trump-view-strait-of-hormuz-american-territory-digvid-vrtc",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-declaration-of-war-sanctions-0822",
-      "title": "イラン外務省、新制裁を「全ての国家への宣戦布告」と猛反発",
-      "body": "イラン外務省のバガイ報道官は22日、月曜発表予定の対イラン新制裁について「単一国への経済戦争にとどまらず、国連加盟国全体への治外法権的主権の主張だ」とX投稿で非難。二次制裁は主権平等原則やICJ判例が示す内政不干渉原則に違反し国際法上の根拠がないと主張、制裁と海上封鎖の組み合わせは「全面的な古典的植民地主義への回帰」を招くと警告した。",
-      "sourceLabel": "Al Jazeera",
-      "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
-      "label": "🇮🇷 外交",
-      "url": "https://www.aljazeera.com/news/2026/8/22/iran-says-new-us-sanctions-violate-sovereignty-of-other-states",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oman-iran-fm-call-hormuz-0821",
-      "title": "オマーン・イラン両外相が電話会談——海峡開放へ調整継続も打開は不透明",
-      "body": "オマーン外務省は21日、バドル外相がイランのアラグチー外相と電話会談し、封鎖状態が続くホルムズ海峡の開放に向けた調整や対話環境整備を協議したと発表。イランは開放条件を引き上げる姿勢を崩しておらず、膠着状態の打開につながるかは不明。",
-      "sourceLabel": "共同通信",
-      "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
-      "label": "🇴🇲 外交",
-      "url": "https://www.hokkaido-np.co.jp/article/1356995/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-hormuz-high-risk-despite-mine-clearing-0826",
+      "titleJa": "【Al Jazeera】機雷除去主張でも海峡は依然高リスク——専門家「安全な通航の回復とは別問題」",
+      "titleEn": "Why Hormuz remains high risk for ships despite US claims of mine-clearing",
+      "title": "【Al Jazeera】機雷除去主張でも海峡は依然高リスク——専門家「安全な通航の回復とは別問題」",
+      "summary": "Al Jazeeraは、トランプ大統領が主張する機雷の全除去について、主要航路での評価自体は信頼できる可能性があるとしつつ、監視網の外にある「漂流機雷」の残存やイランが新たな機雷を敷設する能力を保持し続けている点を専門家が指摘していると報道。機雷除去だけでは商業船舶が戦前水準の航行を安全に再開できることを意味しないと論じている。",
+      "source": "Al Jazeera",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "date": "2026年8月26日（現地）/ 2026年8月26日 JST",
+      "url": "https://www.aljazeera.com/news/2026/8/26/why-hormuz-remains-high-risk-for-ships-despite-us-claims-of-mine-clearing",
+      "isLatest": true
+    },
     {
       "id": "osint-us-sanctions-ripple-global-markets-0824",
       "titleJa": "【Al Jazeera】対イラン制裁が世界市場に波及——航空・技術・海運分野を直撃",
@@ -80,7 +98,7 @@
       "textColor": "#7dd3fc",
       "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
       "url": "https://www.aljazeera.com/economy/2026/8/24/how-us-sanctions-on-iran-ripple-through-global-markets-and-consumers",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-iran-sovereignty-sanctions-0822",
@@ -1180,6 +1198,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月27日",
+      "items": [
+        {
+          "id": "latest-trump-hormuz-american-territory-0821",
+          "title": "トランプ氏「ホルムズ海峡は今や米国領土」——現在形での領有主張に転じる",
+          "body": "トランプ大統領は21日、サウスカロライナ州の集会で「勝ったかどうかも分からない、今はホルムズ海峡を米国領土だと考えているからだ」と発言。「もう少しイランを爆撃しないといけないのか」とも冗談交じりに述べた。従来の「将来宣言する」という予告的表現から、現在形での領有主張へと踏み込んだ。",
+          "sourceLabel": "CNN",
+          "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
+          "label": "🇺🇸 外交",
+          "url": "https://www.cnn.com/2026/08/22/politics/video/trump-view-strait-of-hormuz-american-territory-digvid-vrtc",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-declaration-of-war-sanctions-0822",
+          "title": "イラン外務省、新制裁を「全ての国家への宣戦布告」と猛反発",
+          "body": "イラン外務省のバガイ報道官は22日、月曜発表予定の対イラン新制裁について「単一国への経済戦争にとどまらず、国連加盟国全体への治外法権的主権の主張だ」とX投稿で非難。二次制裁は主権平等原則やICJ判例が示す内政不干渉原則に違反し国際法上の根拠がないと主張、制裁と海上封鎖の組み合わせは「全面的な古典的植民地主義への回帰」を招くと警告した。",
+          "sourceLabel": "Al Jazeera",
+          "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
+          "label": "🇮🇷 外交",
+          "url": "https://www.aljazeera.com/news/2026/8/22/iran-says-new-us-sanctions-violate-sovereignty-of-other-states",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oman-iran-fm-call-hormuz-0821",
+          "title": "オマーン・イラン両外相が電話会談——海峡開放へ調整継続も打開は不透明",
+          "body": "オマーン外務省は21日、バドル外相がイランのアラグチー外相と電話会談し、封鎖状態が続くホルムズ海峡の開放に向けた調整や対話環境整備を協議したと発表。イランは開放条件を引き上げる姿勢を崩しておらず、膠着状態の打開につながるかは不明。",
+          "sourceLabel": "共同通信",
+          "date": "2026年8月21日（現地）/ 2026年8月22日 JST",
+          "label": "🇴🇲 外交",
+          "url": "https://www.hokkaido-np.co.jp/article/1356995/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月19日",
       "items": [

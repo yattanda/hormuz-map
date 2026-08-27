@@ -727,3 +727,101 @@ const SHIP_CONFIG = {
 - **日本関係船**：4隻で変化なし（4クエリ確認済み）。
 - **封鎖日数**：181日目（Day1=2026年2月28日起算）。
 - **フェーズ更新**：Phase 27 → Phase 28。
+
+---
+
+## [ARCHIVE] docs/data/archive_timeline.json 追記（8/25・8/27の2日分、速報日のため追記）
+
+**注記：** 前回セッション終了時点で `archive_timeline.json` への8/25分の追記が漏れていたことが判明したため、8/25・8/27の2エントリーをまとめて追記します。本ファイルは `apply_diffs.py` の対象外のため、Claude Codeによる手動 `str_replace` 適用が必要です。
+
+### エントリー追加（entries配列の末尾に2件追加）
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+        {
+          "title": "オマーン・イラン両外相が電話会談——海峡開放へ調整継続も打開は不透明",
+          "url": "https://www.hokkaido-np.co.jp/article/1356995/",
+          "sourceLabel": "共同通信"
+        }
+      ]
+    }
+  ]
+}
+<!-- OLD:END -->
+<!-- NEW:START -->
+        {
+          "title": "オマーン・イラン両外相が電話会談——海峡開放へ調整継続も打開は不透明",
+          "url": "https://www.hokkaido-np.co.jp/article/1356995/",
+          "sourceLabel": "共同通信"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "dateLabel": "2026/08/25 12:11",
+      "blockadeDay": 179,
+      "sourceType": "realtime",
+      "summary": "ベッセント財務長官が対イラン新制裁「経済的Dデイ」（Operation Economic Outcast）を発表——デジタル資産・先端技術・金・航空・海運の5分野に対象拡大、船舶・企業等ほぼ60件を新規制裁指定・中国の名指しは避けつつ「対象外はない」と圧力（8/24）・イラン通貨リアルは非公式市場で過去最安値199万2000リアル/ドルを記録、対アジア原油出荷はほぼ途絶（8/24）・中国外務省「正当な権益を守る」と対抗警告（8/24）・イラン安保高官レザイー氏「経済戦争加担国は敵」と再警告（8/22）・原油はブレント92.17ドルへ反落（-2.35%、8/24）・米メディア報道：南側航路で護衛下タンカーが1日15〜20隻通過、石油輸送量は開戦前の半分・日量約1000万バレルに到達（8/22）・日本関係船は残り4隻で変化なし",
+      "relatedNews": [
+        {
+          "title": "米国が対イランで二次制裁拡大、デジタル資産など5分野「例外ない」",
+          "url": "https://www.nikkei.com/article/DGXZQOGN24AA70U6A820C2000000/",
+          "sourceLabel": "日本経済新聞"
+        },
+        {
+          "title": "イランリアル過去最安値199万2000リアル/ドルに——中国は対中制裁なら「正当な権益守る」と警告",
+          "url": "https://news.yahoo.co.jp/articles/88caa19f3a4d8e99d250195aca51f4ba00b3a2f4",
+          "sourceLabel": "Yahoo!ニュース"
+        },
+        {
+          "title": "中国、対イラン米制裁をけん制——違法な一方的制裁と反発",
+          "url": "https://news.yahoo.co.jp/articles/d46f27a4fd3a264cd6a0e84dfde316d639b1459b",
+          "sourceLabel": "FNNプライムオンライン"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "dateLabel": "2026/08/27 10:00",
+      "blockadeDay": 181,
+      "sourceType": "realtime",
+      "summary": "イランのアラグチー外相とオマーンのアルブサイディ外相がテヘランで会談し、ホルムズ海峡に共同暫定航行回廊を設置・機雷除去を共同実施する枠組みで合意（8/25）・イラン副外相ガリババディ氏は恒久ルートを30〜60日以内に協議するとしつつ暫定合意後も海峡は開放されていないと表明、南側回廊（国連承認TSS）は閉鎖の見通しと説明（8/26）・トランプ大統領は米海軍がホルムズ海峡国際水域の機雷を全て除去・爆破したとSNS投稿し新規敷設船は即時破壊と警告するも米政府の公式裏付けなし、イラン側は「虚偽」と全面否定（8/25〜26）・24日夜オマーン東岸沖でタンカー1隻が正体不明の飛翔体で被弾・機関停止、UKMTO確認（乗員無事・犯行声明なし）・原油はブレントが一時87ドル割れ・週間約8%安（8/25）・中国外務省は対中制裁計画に「中国・イラン協力は妨害されるべきでない」と改めて反発・日本関係船は残り4隻で変化なし",
+      "relatedNews": [
+        {
+          "title": "イラン・オマーン、ホルムズ海峡の暫定通航回廊で合意——恒久ルートは30〜60日以内に協議へ",
+          "url": "https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know",
+          "sourceLabel": "Al Jazeera"
+        },
+        {
+          "title": "トランプ氏、ホルムズ海峡で機雷を全て除去と投稿",
+          "url": "https://news.yahoo.co.jp/articles/7fc5c824919766b70ad5829b2e3b00e35a795e2c",
+          "sourceLabel": "BBC News（Yahoo!ニュース）"
+        },
+        {
+          "title": "ブレント原油87ドル割れ、イランとオマーンがホルムズ通航再開へ協議",
+          "url": "https://news.yahoo.co.jp/articles/da55639f462a19c3d962294f0a1c65e3ecefd8a4",
+          "sourceLabel": "Bloomberg（Yahoo!ニュース）"
+        }
+      ]
+    }
+  ]
+}
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+### meta.rangeEnd の更新（本日日付に合わせて更新）
+
+<!-- APPLY:START -->
+<!-- OLD:START -->
+"rangeEnd": "2026-07-19"
+<!-- OLD:END -->
+<!-- NEW:START -->
+"rangeEnd": "2026-08-27"
+<!-- NEW:END -->
+<!-- APPLY:END -->
+
+> ⚠️ Claude Codeでの適用手順：
+> 1. `docs/data/archive_timeline.json` を `view` で開く
+> 2. 上記の str_replace を entries配列末尾／meta.rangeEnd の2箇所に適用
+> 3. `python3 -c "import json; json.load(open('docs/data/archive_timeline.json'))"` でJSON構文を検証
+> 4. commit（push は確認後に指示）

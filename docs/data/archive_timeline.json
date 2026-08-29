@@ -2610,6 +2610,30 @@
           "sourceLabel": "Bloomberg（Yahoo!ニュース）"
         }
       ]
+    },
+    {
+      "date": "2026-08-29",
+      "dateLabel": "2026/08/29 10:05",
+      "blockadeDay": 183,
+      "sourceType": "realtime",
+      "summary": "カタールのシェイク・モハンマド首相兼外相が開戦後初のテヘラン訪問——アラグチー外相・ペゼシュキアン大統領・レザイー最高国家安全保障会議事務局長と会談（8/27）・レザイー氏は通航再開の条件リストを策定中と表明、中央航路（一部オマーン領海・一部イラン領海）で合意済みと説明・米中央軍クーパー司令官はSNS動画で「国際航路は開通・勢いを増す」と主張し商船1,500隻・原油7.5億バレル分の支援実績を発表（8/27）・トランプ大統領は「MISSION ACCOMPLISHED 2026」とSNS投稿し勝利宣言（8/26）も、その直後の25日17:30UTCにタンカー「AL SALAM II」被弾をJMICが確認・ホワイトハウス報道官は米イラン交渉が現時点でないと明言（8/27）・JMICデータでは8/25〜26の通航はわずか37隻（2025年平均は日量約138隻）・ブレント原油は4営業日続落後87ドル台後半で下げ止まり（8/28時点87.58ドル）・日本関係船は残り4隻で変化なし",
+      "relatedNews": [
+        {
+          "sourceLabel": "Reuters（Arab News）",
+          "title": "カタール首相がテヘラン訪問——イランが通航再開の条件リスト策定に合意",
+          "url": "https://www.arabnews.jp/article/middle-east/article_185141/"
+        },
+        {
+          "sourceLabel": "gCaptain",
+          "title": "タンカー「AL SALAM II」被弾——トランプ氏「Mission Accomplished」投稿の直後",
+          "url": "https://gcaptain.com/tanker-hit-in-strait-of-hormuz-as-trump-declares-mission-accomplished-in-iran/"
+        },
+        {
+          "sourceLabel": "CNBC",
+          "title": "ブレント原油、4営業日続落後に87ドル台後半で下げ止まり",
+          "url": "https://sundayguardianlive.com/world/brent-crude-price-today-oil-falls-108-to-8758-as-us-says-hormuz-shipping-lanes-are-free-of-iranian-sea-mines-iran-sets-reopening-conditions-272036/"
+        }
+      ]
     }
   ]
 }

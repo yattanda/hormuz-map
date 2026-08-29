@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月27日 10:00 日本時間JST",
+  "updated": "2026年8月29日 10:05 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-qatar-pm-tehran-visit-0827",
+      "title": "カタール首相がテヘラン訪問——開戦後初の高官級訪問、航行の自由の尊重を要求",
+      "body": "カタールのシェイク・モハンマド首相兼外相が27日、開戦後初めてテヘランを訪問し、アラグチー外相・ペゼシュキアン大統領・ガリバフ国会議長・最高国家安全保障会議のレザイー事務局長と相次いで会談した。同首相は国際法に基づく航行の自由と近隣国の主権尊重の重要性を強調し、対話継続を呼びかけた。",
+      "sourceLabel": "Reuters（Arab News）",
+      "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
+      "label": "🇶🇦 外交",
+      "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-conditions-list-0827",
+      "title": "イラン、通航再開に向けた「条件リスト」の策定に合意——カタールの働きかけ受け",
+      "body": "カタール高官の要請を受け、イラン最高国家安全保障会議のレザイー事務局長は、通常の船舶通航を回復するための条件リストを準備中だと表明。イラン・オマーンは一部オマーン領海・一部イラン領海を通る中央航路で合意しており、米国が条件を満たせば同航路が使用可能になるとした。従来の6条件を修正する意向かは不明。",
+      "sourceLabel": "Reuters（Arab News）",
+      "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
+      "label": "🇮🇷 外交",
+      "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-al-salam-ii-attack-0825",
+      "title": "タンカー「AL SALAM II」被弾をJMICが確認——トランプ氏「Mission Accomplished」投稿の直後",
+      "body": "JMICは25日17時30分（UTC）、ホルムズ海峡を東行中のタンカー「AL SALAM II」が飛翔体を受け喫水線上に小孔と火災が発生したと発表。火は乗組員により消火され乗員は全員無事。ジャジラト・タワックル北西で錨泊し曳船支援を待つ。同日、トランプ大統領は「MISSION ACCOMPLISHED 2026」とSNS投稿していた。",
+      "sourceLabel": "gCaptain",
+      "date": "2026年8月25日（現地）/ 2026年8月28日 JST",
+      "label": "⚓ インシデント",
+      "url": "https://gcaptain.com/tanker-hit-in-strait-of-hormuz-as-trump-declares-mission-accomplished-in-iran/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-centcom-cooper-open-route-0827",
+      "title": "米中央軍司令官「国際航路は開通・勢いを増している」——実際の通航は依然低水準",
+      "body": "米中央軍のクーパー司令官はSNS動画で、数カ月前にIRGCが敷設した機雷を除去済みとした上で「今日、国際航路は開通し勢いを増している」と主張、最近数カ月で約1,500隻・原油約7億5,000万バレル分の商船通過を支援したと述べた。船舶追跡データでは通航量は依然戦前比5〜15％にとどまり、IMOによれば開戦以来70件の事案・船員19人死亡が発生している。",
+      "sourceLabel": "Arab News（Reuters）",
+      "date": "2026年8月27日 / 2026年8月28日 JST",
+      "label": "🎖️ 米軍発表",
+      "url": "https://www.arabnews.jp/article/middle-east/article_185130/",
+      "isLatest": false
+    },
     {
       "id": "latest-iran-oman-temporary-corridor-0825",
       "title": "イラン・オマーン、ホルムズ海峡の暫定通航回廊で合意——機雷除去も共同実施へ",
@@ -10,7 +50,7 @@
       "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
       "label": "🇮🇷🇴🇲 外交",
       "url": "https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-mines-cleared-iran-denies-0826",
@@ -21,49 +61,27 @@
       "label": "💣 軍事",
       "url": "https://news.yahoo.co.jp/articles/7fc5c824919766b70ad5829b2e3b00e35a795e2c",
       "isLatest": false
-    },
-    {
-      "id": "latest-brent-crude-drop-hormuz-talks-0826",
-      "title": "ブレント原油、一時87ドル割れ——イラン・オマーンの通航協議進展を好感し週間8%安",
-      "body": "イランとオマーンがホルムズ海峡の暫定通航回廊で協議を進めたことを受け、原油価格は3営業日続落した。北海ブレントは25日に一時1バレル＝87ドルを割り込み、週間の下落率は約8%に達した。米国産WTIも81ドル近辺まで下げた。",
-      "sourceLabel": "Bloomberg",
-      "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
-      "label": "🛢️ 市場",
-      "url": "https://news.yahoo.co.jp/articles/da55639f462a19c3d962294f0a1c65e3ecefd8a4",
-      "isLatest": false
-    },
-    {
-      "id": "latest-bessent-economic-dday-sanctions-0824",
-      "title": "ベッセント財務長官「経済的Dデイ」発動——5分野に二次制裁拡大、対中名指しは回避",
-      "body": "ベッセント財務長官は24日、対イラン新制裁「Operation Economic Outcast（経済的Dデイ）」を正式発表した。デジタル資産・先端技術・金・航空・海運の5分野を二次制裁対象に加え、船舶・企業・個人ほぼ60件を新規制裁指定。対象国には猶予期間を設けるが期限は非公表。記者から中国系銀行が標的になり得るか問われると「いかなる者も対象外ではない」と述べ、中国の名指しは避けた。",
-      "sourceLabel": "Axios / NPR / PBS",
-      "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
-      "label": "💰 経済制裁",
-      "url": "https://www.axios.com/2026/08/24/bessent-dday-iran-secondary-sanctions",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-rial-record-low-china-warning-0824",
-      "title": "イランリアル過去最安値199万2000リアル/ドルに——中国は対中制裁なら「正当な権益守る」と警告",
-      "body": "イラン通貨リアルは24日、非公式市場で1ドル＝199万2000リアルの過去最安値を記録した。トランプ大統領が「史上最も壊滅的な経済作戦」を予告して以降4.5%下落し、対アジア原油出荷も制裁発表を前にほぼ途絶したとブルームバーグが報道。中国外務省の林剣副報道局長は24日、対中制裁が発動されれば「正当な権益を守るため必要な措置を講じる」と米側をけん制した。",
-      "sourceLabel": "Bloomberg / 共同通信",
-      "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
-      "label": "📉 通貨・市場",
-      "url": "https://news.yahoo.co.jp/articles/88caa19f3a4d8e99d250195aca51f4ba00b3a2f4",
-      "isLatest": false
-    },
-    {
-      "id": "latest-southern-route-traffic-surge-0822",
-      "title": "南側航路の通航量が開戦前の半分に到達——米軍護衛下15〜20隻/日、イラン監視能力低下か",
-      "body": "米ニュースサイトAxiosは政府関係者の情報として、米軍の保護を受けたタンカーが1日15〜20隻のペースでホルムズ海峡の南側航路を通過していると報じた。石油の輸送量は戦闘開始前の半分にあたる日量約1000万バレルに達しており、米軍によるレーダー等への攻撃でイラン側の監視能力が低下したことが要因とみられる。トランプ大統領は海峡が「開放されている」と主張する一方、イラン側は「覚書が実行されない限り開放されない」としている。",
-      "sourceLabel": "Axios（KSB瀬戸内海放送 経由）",
-      "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
-      "label": "🚢 海上輸送",
-      "url": "https://news.ksb.co.jp/ann/article/16823689",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-iran-qatar-hormuz-talks-0827",
+      "titleJa": "【Al Jazeera】イラン・カタール、ホルムズ海峡巡り協議——対話再開への国際的期待",
+      "titleEn": "Iran, Qatar hold Hormuz talks amid intl hopes dialogue with US will resume",
+      "title": "【Al Jazeera】イラン・カタール、ホルムズ海峡巡り協議——対話再開への国際的期待",
+      "country": "カタール/イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年8月27日（現地）/ 2026年8月27日 JST",
+      "summary": "Al Jazeeraは、カタール首相のテヘラン訪問と、暫定海上回廊・機雷除去共同事業を含む枠組みを巡る協議を詳報。イラン最高国家安全保障会議のレザイー事務局長は、米国が条件を満たせば指定の中央航路を利用可能になると説明した一方、対米対話再開の時期は不透明だと分析。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/8/27/iran-qatar-hold-hormuz-talks-amid-intl-hopes-dialogue-with-us-will-resume",
+      "isLatest": true
+    },
     {
       "id": "osint-hormuz-high-risk-despite-mine-clearing-0826",
       "titleJa": "【Al Jazeera】機雷除去主張でも海峡は依然高リスク——専門家「安全な通航の回復とは別問題」",
@@ -80,7 +98,7 @@
       "textColor": "#7dd3fc",
       "date": "2026年8月26日（現地）/ 2026年8月26日 JST",
       "url": "https://www.aljazeera.com/news/2026/8/26/why-hormuz-remains-high-risk-for-ships-despite-us-claims-of-mine-clearing",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-us-sanctions-ripple-global-markets-0824",
@@ -1198,6 +1216,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月29日",
+      "items": [
+        {
+          "id": "latest-brent-crude-drop-hormuz-talks-0826",
+          "title": "ブレント原油、一時87ドル割れ——イラン・オマーンの通航協議進展を好感し週間8%安",
+          "body": "イランとオマーンがホルムズ海峡の暫定通航回廊で協議を進めたことを受け、原油価格は3営業日続落した。北海ブレントは25日に一時1バレル＝87ドルを割り込み、週間の下落率は約8%に達した。米国産WTIも81ドル近辺まで下げた。",
+          "sourceLabel": "Bloomberg",
+          "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
+          "label": "🛢️ 市場",
+          "url": "https://news.yahoo.co.jp/articles/da55639f462a19c3d962294f0a1c65e3ecefd8a4",
+          "isLatest": false
+        },
+        {
+          "id": "latest-bessent-economic-dday-sanctions-0824",
+          "title": "ベッセント財務長官「経済的Dデイ」発動——5分野に二次制裁拡大、対中名指しは回避",
+          "body": "ベッセント財務長官は24日、対イラン新制裁「Operation Economic Outcast（経済的Dデイ）」を正式発表した。デジタル資産・先端技術・金・航空・海運の5分野を二次制裁対象に加え、船舶・企業・個人ほぼ60件を新規制裁指定。対象国には猶予期間を設けるが期限は非公表。記者から中国系銀行が標的になり得るか問われると「いかなる者も対象外ではない」と述べ、中国の名指しは避けた。",
+          "sourceLabel": "Axios / NPR / PBS",
+          "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
+          "label": "💰 経済制裁",
+          "url": "https://www.axios.com/2026/08/24/bessent-dday-iran-secondary-sanctions",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-rial-record-low-china-warning-0824",
+          "title": "イランリアル過去最安値199万2000リアル/ドルに——中国は対中制裁なら「正当な権益守る」と警告",
+          "body": "イラン通貨リアルは24日、非公式市場で1ドル＝199万2000リアルの過去最安値を記録した。トランプ大統領が「史上最も壊滅的な経済作戦」を予告して以降4.5%下落し、対アジア原油出荷も制裁発表を前にほぼ途絶したとブルームバーグが報道。中国外務省の林剣副報道局長は24日、対中制裁が発動されれば「正当な権益を守るため必要な措置を講じる」と米側をけん制した。",
+          "sourceLabel": "Bloomberg / 共同通信",
+          "date": "2026年8月24日（現地）/ 2026年8月24日 JST",
+          "label": "📉 通貨・市場",
+          "url": "https://news.yahoo.co.jp/articles/88caa19f3a4d8e99d250195aca51f4ba00b3a2f4",
+          "isLatest": false
+        },
+        {
+          "id": "latest-southern-route-traffic-surge-0822",
+          "title": "南側航路の通航量が開戦前の半分に到達——米軍護衛下15〜20隻/日、イラン監視能力低下か",
+          "body": "米ニュースサイトAxiosは政府関係者の情報として、米軍の保護を受けたタンカーが1日15〜20隻のペースでホルムズ海峡の南側航路を通過していると報じた。石油の輸送量は戦闘開始前の半分にあたる日量約1000万バレルに達しており、米軍によるレーダー等への攻撃でイラン側の監視能力が低下したことが要因とみられる。トランプ大統領は海峡が「開放されている」と主張する一方、イラン側は「覚書が実行されない限り開放されない」としている。",
+          "sourceLabel": "Axios（KSB瀬戸内海放送 経由）",
+          "date": "2026年8月22日（現地）/ 2026年8月22日 JST",
+          "label": "🚢 海上輸送",
+          "url": "https://news.ksb.co.jp/ann/article/16823689",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月27日",
       "items": [

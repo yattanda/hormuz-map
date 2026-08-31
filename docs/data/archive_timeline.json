@@ -2634,6 +2634,30 @@
           "url": "https://sundayguardianlive.com/world/brent-crude-price-today-oil-falls-108-to-8758-as-us-says-hormuz-shipping-lanes-are-free-of-iranian-sea-mines-iran-sets-reopening-conditions-272036/"
         }
       ]
+    },
+    {
+      "date": "2026-08-31",
+      "dateLabel": "2026/08/31 09:49",
+      "blockadeDay": 185,
+      "sourceType": "realtime",
+      "summary": "米中央軍は30日、IRGCがホルムズ海峡ララク島から機雷搭載ロケット弾を発射する準備をしていたとしてロケットランチャー2基を攻撃した。米軍による対イラン軍事行動は約1カ月ぶりで、機雷除去完了発表からわずか1週間足らずでの再開だった。IRGCはこの攻撃で「犠牲者」が出たと主張し、31日にヨルダン駐留のキング・フセイン空軍基地とアルアズラク空軍基地へ弾道ミサイルで報復。ヨルダン軍は侵入した8発を迎撃し、市民・施設への被害はなかったと発表した。米中央軍は30日時点で商船83隻の迂回・3隻の航行不能化・2隻の臨検を発表。並行してIRGC海軍と米中央軍が海峡の実効支配を巡り対立する発表を続け、モジュタバ・ハメネイ最高指導者は経済的苦境を初めて公に認めた。原油はブレントが90ドル台、WTIも86ドル近辺まで反発。日本関係船は残り4隻で変化なし。",
+      "relatedNews": [
+        {
+          "sourceLabel": "AFP通信 / 時事通信",
+          "title": "イラン、ヨルダンの米軍基地2カ所へ報復ミサイル攻撃——ヨルダン軍は侵入した8発を迎撃",
+          "url": "https://www.afpbb.com/articles/-/3650590"
+        },
+        {
+          "sourceLabel": "Fox News Digital",
+          "title": "IRGC海軍「海峡支配は完全に決定的」、米中央軍は「イランは支配していない」と反論",
+          "url": "https://www.foxnews.com/live-news/iran-war-us-sanctions-trump-strait-hormuz-oman-oil-prices-08-29-2026"
+        },
+        {
+          "sourceLabel": "UKMTO / Gulf News",
+          "title": "オマーン・ハサブ沖でタンカーが被弾——AL SALAM IIと同一海域で別事案",
+          "url": "https://gulfnews.com/world/mena/tanker-struck-by-unknown-projectile-in-strait-of-hormuz-ukmto-warning-1.500657396"
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,47 @@
 {
-  "updated": "2026年8月29日 10:05 日本時間JST",
+  "updated": "2026年8月31日 09:49 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-us-strikes-larak-island-0830",
+      "title": "米軍、ホルムズ海峡ララク島のイラン軍施設を攻撃——機雷搭載ロケット発射を阻止、約1カ月ぶりの軍事行動",
+      "body": "米中央軍のティム・ホーキンス報道官によれば、イラン革命防衛隊(IRGC)が30日、ホルムズ海峡のイラン領ララク島から機雷を搭載したロケット弾を海峡へ発射する準備をしていたため、米軍がロケットランチャー2基を攻撃した。米軍は先週、同海峡国際航路の機雷除去作業を完了したと発表したばかりで、対イラン軍事行動としては約1カ月ぶりとなる。IRGCはこの攻撃で「犠牲者」が出たと主張し、正確な人数は示さないまま即座に報復を表明した。",
+      "sourceLabel": "AP通信 / NBC News（8/30 現地時間）",
+      "date": "2026年8月30日（現地）/ 2026年8月31日 JST",
+      "label": "⚔️ 軍事行動",
+      "url": "https://apnews.com/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-iran-retaliates-jordan-0831",
+      "title": "イラン、ヨルダンの米軍基地2カ所へ報復ミサイル攻撃——ヨルダン軍は侵入した8発を迎撃と発表",
+      "body": "IRGCは31日、ヨルダンに駐留する米軍が運用するキング・フセイン空軍基地とアルアズラク空軍基地の技術インフラ・整備施設・戦闘機駐機位置を弾道ミサイルで標的にし「甚大な被害」を与えたと国営テレビ・IRIBを通じ発表した。ヨルダン軍広報官は31日未明、同国領空に侵入した8発のミサイルを防空システムが交戦規則に基づき迎撃したと発表し、市民・施設への被害はなかったと強調した。",
+      "sourceLabel": "AFP通信 / 時事通信 / ヨルダン軍公式発表（8/31 JST）",
+      "date": "2026年8月31日（現地・JST）",
+      "label": "🇯🇴 報復攻撃",
+      "url": "https://www.afpbb.com/articles/-/3650590",
+      "isLatest": false
+    },
+    {
+      "id": "latest-irgc-navy-centcom-dispute-0830",
+      "title": "IRGC海軍「海峡支配は完全に決定的」、米中央軍は「イランは支配していない」と反論——発表合戦が激化",
+      "body": "IRGC海軍は、海峡を巡る「戦士たちの支配は完全に決定的」であり、米側の「開通」発表は原油価格を操作し自らの失敗を覆い隠すための「明白な嘘」だと非難した。これに対し米中央軍のホーキンス報道官は「イランは海峡を支配していない。国際水域であり、米軍の支援の下で商船は引き続き通航している」と反論。UKMTOはホルムズ海峡の脅威評価を「Severe（深刻）」で維持していると発表した。",
+      "sourceLabel": "Tasnim通信 / Fox News Digital（8/29〜30 JST）",
+      "date": "2026年8月29日〜30日（現地）/ 2026年8月30日 JST",
+      "label": "🗣️ 発表合戦",
+      "url": "https://www.foxnews.com/live-news/iran-war-us-sanctions-trump-strait-hormuz-oman-oil-prices-08-29-2026",
+      "isLatest": false
+    },
+    {
+      "id": "latest-tanker-khasab-projectile-0829",
+      "title": "オマーン・ハサブ沖でタンカーが被弾——UKMTOが遅延報告、AL SALAM IIと同一海域で別事案",
+      "body": "UKMTOは29日20時53分（UTC）、オマーン・ハサブ北方約12海里の地点でホルムズ海峡へ向け内航中のタンカーが正体不明の飛翔体で被弾したとする遅延報告（Warning 122-26）を30日付で公表した。負傷者・環境影響の報告はなく、当局が調査中。8/25に発生した「AL SALAM II」被弾（Warning 121-26）と同一海域での別事案で、南側航路（オマーン沿岸ルート）の残存リスクを改めて示した。",
+      "sourceLabel": "UKMTO / Gulf News（8/30 JST）",
+      "date": "2026年8月29日（現地）/ 2026年8月30日 JST",
+      "label": "⚓ インシデント",
+      "url": "https://gulfnews.com/world/mena/tanker-struck-by-unknown-projectile-in-strait-of-hormuz-ukmto-warning-1.500657396",
+      "isLatest": true
+    },
     {
       "id": "latest-qatar-pm-tehran-visit-0827",
       "title": "カタール首相がテヘラン訪問——開戦後初の高官級訪問、航行の自由の尊重を要求",
@@ -10,7 +50,7 @@
       "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
       "label": "🇶🇦 外交",
       "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-conditions-list-0827",
@@ -21,49 +61,27 @@
       "label": "🇮🇷 外交",
       "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
       "isLatest": false
-    },
-    {
-      "id": "latest-al-salam-ii-attack-0825",
-      "title": "タンカー「AL SALAM II」被弾をJMICが確認——トランプ氏「Mission Accomplished」投稿の直後",
-      "body": "JMICは25日17時30分（UTC）、ホルムズ海峡を東行中のタンカー「AL SALAM II」が飛翔体を受け喫水線上に小孔と火災が発生したと発表。火は乗組員により消火され乗員は全員無事。ジャジラト・タワックル北西で錨泊し曳船支援を待つ。同日、トランプ大統領は「MISSION ACCOMPLISHED 2026」とSNS投稿していた。",
-      "sourceLabel": "gCaptain",
-      "date": "2026年8月25日（現地）/ 2026年8月28日 JST",
-      "label": "⚓ インシデント",
-      "url": "https://gcaptain.com/tanker-hit-in-strait-of-hormuz-as-trump-declares-mission-accomplished-in-iran/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-centcom-cooper-open-route-0827",
-      "title": "米中央軍司令官「国際航路は開通・勢いを増している」——実際の通航は依然低水準",
-      "body": "米中央軍のクーパー司令官はSNS動画で、数カ月前にIRGCが敷設した機雷を除去済みとした上で「今日、国際航路は開通し勢いを増している」と主張、最近数カ月で約1,500隻・原油約7億5,000万バレル分の商船通過を支援したと述べた。船舶追跡データでは通航量は依然戦前比5〜15％にとどまり、IMOによれば開戦以来70件の事案・船員19人死亡が発生している。",
-      "sourceLabel": "Arab News（Reuters）",
-      "date": "2026年8月27日 / 2026年8月28日 JST",
-      "label": "🎖️ 米軍発表",
-      "url": "https://www.arabnews.jp/article/middle-east/article_185130/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-oman-temporary-corridor-0825",
-      "title": "イラン・オマーン、ホルムズ海峡の暫定通航回廊で合意——機雷除去も共同実施へ",
-      "body": "イランのアラグチー外相とオマーンのアルブサイディ外相は25日、テヘランで会談し、ホルムズ海峡に「共同の暫定航行回廊」を設置し機雷除去を共同で行う枠組みで合意したと共同声明で発表した。恒久的な航路と海峡の将来管理については今後30〜60日間、技術協議を継続するとしている。",
-      "sourceLabel": "Al Jazeera / Reuters",
-      "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
-      "label": "🇮🇷🇴🇲 外交",
-      "url": "https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know",
-      "isLatest": false
-    },
-    {
-      "id": "latest-trump-mines-cleared-iran-denies-0826",
-      "title": "トランプ氏「ホルムズ海峡の機雷は全て除去」と主張——イラン副外相は海峡開放を否定",
-      "body": "トランプ米大統領は25日、米海軍がホルムズ海峡国際水域の機雷を全て除去・爆破したとSNSに投稿し、新たな敷設船は即時破壊すると警告した。米政府・軍から裏付ける公式発表はない。イランのガリババディ副外相は26日、オマーンとの暫定合意後も海峡は開放されていないとして、トランプ氏の主張を否定した。",
-      "sourceLabel": "CNN / BBC",
-      "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
-      "label": "💣 軍事",
-      "url": "https://news.yahoo.co.jp/articles/7fc5c824919766b70ad5829b2e3b00e35a795e2c",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-irgc-strait-control-claim-0829",
+      "titleJa": "【Al Jazeera】イラン戦争ライブ：IRGCが海峡支配を主張、米は封鎖を執行",
+      "titleEn": "Iran war live: IRGC asserts strait control, US enforces blockade",
+      "title": "【Al Jazeera】イラン戦争ライブ：IRGCが海峡支配を主張、米は封鎖を執行",
+      "country": "イラン/米国",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年8月29日（現地）/ 2026年8月29日 JST",
+      "summary": "Al JazeeraはIRGC海軍による「海峡支配は完全に決定的」との主張と、米中央軍による対イラン港湾封鎖の執行状況を並列で詳報。イスラエルのコーヘン・エネルギー相が、将来の米・イラン合意後もイランが核・ミサイル計画を再建すれば再攻撃すると警告した点も紹介し、軍事的圧力と外交的枠組みが同時に進行する複雑な構図を分析。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/8/29/iran-war-live-irgc-asserts-strait-control-us-enforces-blockade",
+      "isLatest": true
+    },
     {
       "id": "osint-iran-qatar-hormuz-talks-0827",
       "titleJa": "【Al Jazeera】イラン・カタール、ホルムズ海峡巡り協議——対話再開への国際的期待",
@@ -80,7 +98,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/8/27/iran-qatar-hold-hormuz-talks-amid-intl-hopes-dialogue-with-us-will-resume",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-hormuz-high-risk-despite-mine-clearing-0826",
@@ -1216,6 +1234,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月31日",
+      "items": [
+        {
+          "id": "latest-al-salam-ii-attack-0825",
+          "title": "タンカー「AL SALAM II」被弾をJMICが確認——トランプ氏「Mission Accomplished」投稿の直後",
+          "body": "JMICは25日17時30分（UTC）、ホルムズ海峡を東行中のタンカー「AL SALAM II」が飛翔体を受け喫水線上に小孔と火災が発生したと発表。火は乗組員により消火され乗員は全員無事。ジャジラト・タワックル北西で錨泊し曳船支援を待つ。同日、トランプ大統領は「MISSION ACCOMPLISHED 2026」とSNS投稿していた。",
+          "sourceLabel": "gCaptain",
+          "date": "2026年8月25日（現地）/ 2026年8月28日 JST",
+          "label": "⚓ インシデント",
+          "url": "https://gcaptain.com/tanker-hit-in-strait-of-hormuz-as-trump-declares-mission-accomplished-in-iran/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-oman-temporary-corridor-0825",
+          "title": "イラン・オマーン、ホルムズ海峡の暫定通航回廊で合意——機雷除去も共同実施へ",
+          "body": "イランのアラグチー外相とオマーンのアルブサイディ外相は25日、テヘランで会談し、ホルムズ海峡に「共同の暫定航行回廊」を設置し機雷除去を共同で行う枠組みで合意したと共同声明で発表した。恒久的な航路と海峡の将来管理については今後30〜60日間、技術協議を継続するとしている。",
+          "sourceLabel": "Al Jazeera / Reuters",
+          "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
+          "label": "🇮🇷🇴🇲 外交",
+          "url": "https://www.aljazeera.com/news/2026/8/26/iran-oman-agree-on-temporary-hormuz-route-what-we-know",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-mines-cleared-iran-denies-0826",
+          "title": "トランプ氏「ホルムズ海峡の機雷は全て除去」と主張——イラン副外相は海峡開放を否定",
+          "body": "トランプ米大統領は25日、米海軍がホルムズ海峡国際水域の機雷を全て除去・爆破したとSNSに投稿し、新たな敷設船は即時破壊すると警告した。米政府・軍から裏付ける公式発表はない。イランのガリババディ副外相は26日、オマーンとの暫定合意後も海峡は開放されていないとして、トランプ氏の主張を否定した。",
+          "sourceLabel": "CNN / BBC",
+          "date": "2026年8月25日（現地）/ 2026年8月26日 JST",
+          "label": "💣 軍事",
+          "url": "https://news.yahoo.co.jp/articles/7fc5c824919766b70ad5829b2e3b00e35a795e2c",
+          "isLatest": false
+        },
+        {
+          "id": "latest-centcom-cooper-open-route-0827",
+          "title": "米中央軍司令官「国際航路は開通・勢いを増している」——実際の通航は依然低水準",
+          "body": "米中央軍のクーパー司令官はSNS動画で、数カ月前にIRGCが敷設した機雷を除去済みとした上で「今日、国際航路は開通し勢いを増している」と主張、最近数カ月で約1,500隻・原油約7億5,000万バレル分の商船通過を支援したと述べた。船舶追跡データでは通航量は依然戦前比5〜15％にとどまり、IMOによれば開戦以来70件の事案・船員19人死亡が発生している。",
+          "sourceLabel": "Arab News（Reuters）",
+          "date": "2026年8月27日 / 2026年8月28日 JST",
+          "label": "🎖️ 米軍発表",
+          "url": "https://www.arabnews.jp/article/middle-east/article_185130/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月29日",
       "items": [

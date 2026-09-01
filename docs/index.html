@@ -722,6 +722,7 @@ footer {
 .label-analysis { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.4); color:#fbbf24; }
 .label-scenario { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.4); color:#d8b4fe; }
 .label-unconfirmed { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(100,116,139,0.2); border:1px solid rgba(100,116,139,0.4); color:#94a3b8; }
+.label-ai { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; }
 /* ===== ルートテーブル列幅最適化 ===== */
 .rtable { table-layout: fixed !important; }
 .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%; }
@@ -3066,7 +3067,10 @@ document.addEventListener('keydown', function(e) {
   <div style="font-size:0.75rem;color:#94a3b8;text-align:center;margin-top:8px;">
     各シナリオ確率は 2026年8月31日 09:49 JST 時点での分析に基づく自動同期
   </div>
-  <span style="font-size:0.7rem;color:#64748b;">※ 確率数値は hormuz-data- の manual-update.json を Gemini AI が自動更新。syncScenarioFromDashboard() がフェッチして sc-tag-A/B/C/D に反映。</span>
+  <div style="margin-top:10px;padding:9px 13px;border-radius:6px;background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.28);font-size:0.78rem;color:#cbd5e1;line-height:1.75;">
+    <span class="label-ai">AI推定</span><strong style="color:#e2e8f0;">A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
+    <span style="font-size:0.73rem;color:#94a3b8;">生成手段：Google Gemini（gemini-2.5-flash）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行　／　<a href="editorial/" style="color:#7dd3fc;">編集方針</a></span>
+  </div>
 </div>
   <div class="sc-grid" style="grid-template-columns:repeat(2,1fr);">
 

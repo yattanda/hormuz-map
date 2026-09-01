@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>編集方針｜チョークポイント・ラボ</title>
+<meta name="description" content="チョークポイント・ラボの編集方針。情報源の選び方、事実と推定と分析の区別、AIの利用範囲、公開までの流れと人間による判断、公開後の確認と訂正について説明します。">
+<link rel="canonical" href="{{base_url}}/editorial/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="チョークポイント・ラボ">
+<meta property="og:title" content="編集方針｜チョークポイント・ラボ">
+<meta property="og:description" content="情報源の選び方、事実と推定の区別、AIの利用範囲、公開までの流れと人間による判断について説明します。">
+<meta property="og:url" content="{{base_url}}/editorial/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@chokepointlab">
+<style>
+:root{
+  --fg:#1a1d21; --muted:#5b636c; --bg:#ffffff; --line:#e2e5e9;
+  --accent:#2f5d8a; --maxw:720px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.8; font-size:16px;
+}
+a{color:var(--accent)}
+.site-header,.site-footer{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.site-header{border-bottom:1px solid var(--line);padding-top:18px;padding-bottom:14px}
+.site-header .brand{font-size:15px;font-weight:700;color:var(--fg);text-decoration:none;letter-spacing:.02em}
+.site-header nav{margin-top:8px;font-size:13px;line-height:1.6}
+.site-header nav a{color:var(--muted);text-decoration:none;margin-right:14px;white-space:nowrap}
+.site-header nav a:hover{color:var(--accent);text-decoration:underline}
+main{max-width:var(--maxw);margin:0 auto;padding:28px 20px 8px}
+main h1{font-size:26px;line-height:1.4;margin:0 0 6px}
+.updated{color:var(--muted);font-size:13px;margin:0 0 28px}
+main h2{font-size:19px;margin:34px 0 10px;padding-top:4px}
+main p{margin:0 0 16px}
+main ul{margin:0 0 16px;padding-left:1.4em}
+main li{margin:0 0 6px}
+.note{color:var(--muted);font-size:14px}
+.toplink{margin:32px 0 0}
+.site-footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;padding-bottom:40px;font-size:13px;color:var(--muted)}
+.site-footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
+.site-footer nav a:hover{color:var(--accent);text-decoration:underline}
+.site-footer .copyright{margin-top:14px}
+</style>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="{{base_url}}/">チョークポイント・ラボ</a>
+<nav>
+<a href="{{base_url}}/">トップ</a>
+<a href="{{base_url}}/about/">このサイトについて</a>
+<a href="{{base_url}}/editorial/">編集方針</a>
+<a href="{{base_url}}/disclaimer/">免責事項</a>
+</nav>
+</header>
+
+<main>
+<h1>編集方針</h1>
+<p class="updated">最終更新：2026年8月31日</p>
+
+<p>チョークポイント・ラボ（以下「本サイト」）が、どのように情報を集め、どう扱い、どのような工程を経て公開しているかを説明します。本サイトは進行中の危機を扱うため、情報が不確実なまま更新される場面が避けられません。だからこそ、何が確かで何が確かでないかを読者が判断できるよう、工程そのものを開示します。</p>
+
+<h2>1. 情報源の選び方</h2>
+<p>政府機関、軍の公式発表、国際機関、企業の公式リリースなどの一次情報を優先します。報道は、事実が起きたことを確認する手段として用い、可能な限り一次情報に置き換えます。</p>
+<p>報道から引用する場合は、事実のみを抽出して自分の言葉で再構成し、表現をなぞりません。引用が必要な場合は、引用箇所を明確に区分して出典を示します。二次引用に依存した記述は、確認が取れ次第、一次情報に置き換えます。</p>
+<p>情報源、取得日、基準日、対象範囲、適用時点は、要素ごとに明示します。本サイトの各要素は基準日が異なることがあり、ページ全体で一つの時点を表しているわけではないためです。</p>
+
+<h2>2. 事実・推定・見解の区別</h2>
+<p>掲載する内容を次の3つに区別し、混ぜて提示しません。</p>
+<ul>
+<li><strong>事実</strong>：出典によって確認できる事象や数値。出典と基準日を示します。</li>
+<li><strong>推定値</strong>：計算やモデル化によって導いた値。算出の根拠と前提を併記します。</li>
+<li><strong>分析・見解</strong>：編集部による解釈。事実そのものではないことが分かる形で示します。</li>
+</ul>
+<p>断定を避け、不確実なことは不確実なものとして書きます。過度に不安を煽る表現や、根拠のない断定的な見通しは用いません。</p>
+
+<h2>3. AIによる推定値の扱い</h2>
+<p>掲載する数値には、実測されたデータのほか、AIによる推定値が含まれる場合があります。たとえばホルムズ海峡の通過流量の一部がこれにあたります。</p>
+<p>AIが生成した推定値については、それが推定であること、および生成に用いた手段と入力の前提を明示する方針です。推定値は算出根拠を完全に再現できない場合があり、実際の値と大きく異なる可能性があります。可能な場合は、公開データからの計算に置き換え、計算式を公開します。</p>
+<p class="note">※実測値と推定値の視覚的な区別は、現在サイト全体での統一作業を進めています。区別が十分でない箇所が残っている可能性があります。数値をご利用の際は、それが実測値か推定値かを個別にご確認ください。</p>
+
+<h2>4. AIの利用範囲</h2>
+<p>本サイトは、情報の収集と整理、および更新案の作成にAIを利用しています。具体的には、公開されている情報の収集、更新内容の下書きの作成、記述の整理などです。</p>
+<p>AIが利用するのは公開情報に限られます。また、出典として示すURLについては、実在が確認できないものを用いない運用としています。</p>
+
+<h2>5. 公開までの流れと人間による判断</h2>
+<p>本サイトの更新は、運営者の指示によって始まります。AIが単独で判断して公開することはありません。外部のスケジュールやコードの変更をきっかけに、内容が自動的に公開される仕組みも設けていません。</p>
+<p>一方で、公開前の内容確認については、更新の種類によって扱いが異なります。この点を正確にお伝えします。</p>
+<ul>
+<li><strong>日次のダッシュボード更新など、定型的な更新</strong>：公開前の内容確認を省略し、<strong>公開後にすみやかに実際のサイトで表示と内容を確認する</strong>運用としています。定型的で表示上の問題が生じにくいこと、確認手順の負担が更新頻度に見合わないことによる判断です。</li>
+<li><strong>本ページを含む方針・法務に関するページ</strong>：公開前に運営者が内容を確認しています。</li>
+</ul>
+<p>いずれの場合も、公開そのものは運営者の操作を経ます。つまり本サイトにおける人間の判断は、「公開するかどうかの決定」と「公開後の確認」の二段階で機能しており、すべての更新について公開前の内容確認が行われているわけではありません。</p>
+
+<h2>6. 公開後の確認と訂正</h2>
+<p>前項のとおり、本サイトの品質管理は公開後の確認に相当程度を依存しています。そのため、誤りが公開された状態で一定時間残る可能性を否定できません。これを補うため、誤りが判明した場合の訂正を明確な手続きとして定めています。</p>
+<p>掲載時点ですでに誤っていた内容を正した場合は、その内容と日時を<a href="{{base_url}}/corrections/">訂正履歴</a>に記録して公開します。誤りにお気づきの際は、同ページのフォームよりお知らせください。読者からのご指摘は、この運用を成り立たせるうえで重要な役割を担っています。</p>
+<p>なお、状況の変化にあわせて内容を最新化する「更新」と、掲載時点の誤りを正す「訂正」は区別して扱います。区別の詳細は訂正履歴のページに記載しています。</p>
+
+<h2>7. 工程の検証可能性</h2>
+<p>本サイトのソースコードと更新履歴は公開されています。更新履歴では、AIによる更新と人間による更新が異なる名義で記録されており、どの更新がどちらによるものかを判別できる状態を意図的に維持しています。本ページの説明が実際の運用と一致しているかは、この履歴から確認できます。</p>
+
+<h2>8. 本方針の変更</h2>
+<p>運用の実態が変わった場合は、本ページの記述もあわせて改めます。記述と実態が食い違った状態を放置しないことを、本方針の一部として位置づけます。変更した場合は、本ページの最終更新日を改めます。</p>
+
+<p class="toplink"><a href="{{base_url}}/">チョークポイント・ラボ トップへ</a></p>
+</main>
+
+<footer class="site-footer">
+<nav>
+<a href="{{base_url}}/about/">このサイトについて</a>
+<a href="{{base_url}}/editorial/">編集方針</a>
+<a href="{{base_url}}/disclaimer/">免責事項</a>
+<a href="{{base_url}}/contact/">お問い合わせ</a>
+<a href="{{base_url}}/privacy/">プライバシーポリシー</a>
+<a href="{{base_url}}/corrections/">訂正履歴</a>
+</nav>
+<div class="copyright">© チョークポイント・ラボ</div>
+</footer>
+</body>
+</html>

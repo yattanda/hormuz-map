@@ -2793,7 +2793,7 @@ document.addEventListener('keydown', function(e) {
           <th style="padding:8px 10px;">輸送能力</th>
           <th class="jf-col" style="padding:8px 10px;color:#38bdf8;white-space:nowrap;min-width:90px;max-width:110px;">
             🇯🇵 日本向け<br>
-            <span style="font-size:0.62rem;color:#475569;font-weight:400;">万BPD・隻/週（推定）</span>
+            <span style="font-size:0.66rem;color:#94a3b8;font-weight:400;">万BPD・隻/週（推定）</span>
           </th>
           <th style="padding:8px 10px;">現況詳細</th>
           <th style="padding:8px 10px;">主なリスク</th>
@@ -2965,6 +2965,10 @@ document.addEventListener('keydown', function(e) {
 
       </tbody>
     </table>
+  </div>
+  <div class="jf-col" style="font-size:0.74rem;color:#cbd5e1;margin-top:8px;padding:8px 12px;border-radius:6px;background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.25);line-height:1.7;">
+    <span class="label-analysis">推定</span>表中の「日本向け（万BPD・隻/週）」の列は<strong style="color:#e2e8f0;">手動で集計・更新している推定値</strong>であり、実測値ではありません。<br>
+    <span style="font-size:0.72rem;color:#94a3b8;">基準日：<span id="jf-basis-date" style="color:#fbbf24;font-weight:700;">—</span>　／　同じ表の他の列（現況詳細・主なリスク・状態）は別に更新しており、基準日が異なります。</span>
   </div>
   <div style="font-size:0.72rem;color:#64748b;margin-top:8px;padding:6px 10px;border-top:1px solid rgba(255,255,255,0.06);">
     ※ EIA（5/12）はホルムズが5月末まで閉鎖継続・6月から通航回復を基本シナリオとして策定。UAE が5/1よりOPEC離脱（スペア生産能力見通しに影響）。
@@ -4967,6 +4971,8 @@ function scrollToJapanFlow(e) {
     .then(r => r.json())
     .then(data => {
       const routes = data.routes;
+      const basisEl = document.getElementById('jf-basis-date');
+      if (basisEl && data.updated) basisEl.textContent = data.updated;
       const MAP = {
         'A':    { bpd: 'jf-A-bpd',    tanker: 'jf-A-tanker' },
         'B':    { bpd: 'jf-B-bpd',    tanker: 'jf-B-tanker' },

@@ -370,6 +370,12 @@ footer {
   font-size:0.68rem; color:#334155;
   border-top:1px solid #1e293b; margin-top:8px;
 }
+.footer-legal {
+  display:flex; flex-wrap:wrap; gap:6px 14px;
+  justify-content:center; margin-bottom:10px;
+}
+.footer-legal a { color:#64748b; text-decoration:none; font-size:0.72rem; }
+.footer-legal a:hover { color:#94a3b8; text-decoration:underline; }
 
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:860px){
@@ -3128,6 +3134,14 @@ document.addEventListener('keydown', function(e) {
 </div>
 
 <footer>
+  <nav class="footer-legal">
+    <a href="about/">このサイトについて</a>
+    <a href="editorial/">編集方針</a>
+    <a href="disclaimer/">免責事項</a>
+    <a href="contact/">お問い合わせ</a>
+    <a href="privacy/">プライバシーポリシー</a>
+    <a href="corrections/">訂正履歴</a>
+  </nav>
   データソース：テレ朝NEWS・時事通信・FNNプライム・BBC日本語・Reuters日本語・東洋経済・NRI（野村総研）・IEA　／　地図：© OpenStreetMap contributors © CARTO　／　本コンテンツは公開情報を元にした情報整理目的のものです。
 </footer>
 

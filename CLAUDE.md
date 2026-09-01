@@ -22,6 +22,18 @@
 - 「最終更新」は作業日ではなく**内容を変更した日**を書く。
   レイアウトのみの変更や、表示に影響しない修正では更新しない
 
+## スクリプトでファイルを書き換えるときのルール
+
+- **原本を直接 `open(path, "w")` しない。**一時ファイルに書いてから `os.replace()` で差し替える
+  - 理由：`"w"` は開いた時点でファイルを空にするため、書き込み中に例外が出ると**原本が失われる**。
+    2026-09-01 に `docs/index.html`（5,015行）を実際に全消ししている
+    （直前のコミットが push 済みだったため `git checkout` で復旧）
+- 書き込み前に `s.encode("utf-8")` を単体で実行し、エンコードできることを確かめてからファイルに触る
+- **絵文字をサロゲートペアのエスケープ（`\ud83c\uddef` 形式）で書かない。**
+  Python では単独サロゲート扱いになり UTF-8 に変換できず例外になる。
+  `\U0001F1EF` 形式を使うか、置換文字列に絵文字を含めない
+- 大きな書き換えの前には、直前の状態をコミットして復旧点を作っておく
+
 ## Git操作ルール
 
 - commit後のpushは必ずユーザーの指示を待ってから実行する
@@ -114,7 +126,9 @@
 - `data/manual-update.json` の `scenario` フィールド（A/B/C/D確率）がシナリオ確率の正として自動同期される
 - `syncScenarioFromDashboard()` がページ読み込み時にfetchして `sc-tag-A/B/C/D` を上書き（手動更新不要）
 - fetch URL：`https://yattanda.github.io/hormuz-data-/data/manual-update.json`
-- `docs/data/oil-flow.json` が日本原油調達フローの単一ソース（`loadRouteTableFlow()` がfetchして値を注入）
+- **`hormuz-data-` の `data/oil-flow.json`** が日本原油調達フローの単一ソース（`loadRouteTableFlow()` が `SITE_CONFIG.DASHBOARD_BASE + '/data/oil-flow.json'` をfetchして値を注入）
+  - `hormuz-map` 側に `docs/data/oil-flow.json` は**存在しない**。従来の記述は誤りで、実測により訂正した
+  - 同ファイルの `updated` はルートテーブルの**基準日表示に直結**する（`jf-basis-date` に注入）。値を更新するときは `updated` も必ず更新する
 - **LiveServer では iframe 内容は更新が反映されない**（GitHub Pages URL から読み込むため）。hormuz-data- の変更は push して GitHub Pages 経由で確認すること
 
 ## 専門エージェント

@@ -256,6 +256,50 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 #map.mz-near .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.78); }
 /* /マーカーズームスケーリング */
 
+/* MAP JUMP（地点ジャンプ） */
+.map-jump {
+  background:rgba(7,14,28,0.95) !important;
+  border:1px solid #1e3a5f !important;
+  border-radius:10px;
+  padding:8px 9px;
+  color:#e2e8f0;
+  line-height:1.4;
+}
+.map-jump .mj-title {
+  font-size:0.62rem;
+  font-weight:700;
+  color:#64748b;
+  letter-spacing:0.08em;
+  margin-bottom:6px;
+}
+.map-jump .mj-btns { display:flex; flex-direction:column; gap:4px; }
+.mj-btn {
+  background:rgba(103,232,249,0.10);
+  border:1px solid rgba(103,232,249,0.45);
+  color:#a5f3fc;
+  font-family:inherit;
+  font-size:0.68rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:12px;
+  cursor:pointer;
+  white-space:nowrap;
+  text-align:left;
+  transition:background 0.2s;
+}
+.mj-btn:hover { background:rgba(103,232,249,0.25); }
+.mj-btn.mj-reset {
+  background:rgba(148,163,184,0.10);
+  border-color:rgba(148,163,184,0.45);
+  color:#cbd5e1;
+}
+.mj-btn.mj-reset:hover { background:rgba(148,163,184,0.25); }
+@media (max-width: 600px) {
+  .map-jump { padding:6px 7px; }
+  .map-jump .mj-title { font-size:0.52rem; margin-bottom:4px; }
+  .mj-btn { font-size:0.58rem; padding:2px 7px; }
+}
+
 /* MAP LEGEND */
 .map-legend {
   background:rgba(7,14,28,0.95) !important;
@@ -3828,7 +3872,10 @@ L.polyline(routeAngola,{color:'#fb923c',weight:2,dashArray:'8 6',opacity:0.75})
 L.polyline(routeSuez,{color:'#67e8f9',weight:4,opacity:0.95})
   .addTo(map).bindTooltip('スエズ運河（全長193km）',{sticky:true});
 
-L.polyline(routePanama,{color:'#67e8f9',weight:4,opacity:0.95})
+// 運河は水域上を通るため、シアン単色では海面（青）に埋没して見えない。
+// 暗色のケーシング（縁取り）を下に敷いてコントラストを確保する。
+L.polyline(routePanama,{color:'#04101f',weight:9,opacity:0.9,interactive:false}).addTo(map);
+L.polyline(routePanama,{color:'#67e8f9',weight:4.5,opacity:1})
   .addTo(map).bindTooltip('パナマ運河（全長約82km）',{sticky:true});
 
 
@@ -4118,6 +4165,50 @@ L.marker([18.0, 63.0], {icon: L.divIcon({
 }), interactive:false}).addTo(map);
 
 // ============================================================
+// 5-B. MAP JUMP（地点ジャンプ）
+// ============================================================
+// 初期表示（center:[22,68] / zoom:3）の可視範囲は西端が経度 -11° 付近のため、
+// パナマ運河（経度 -80°）は画面外にあり、パンしないと到達できない。
+// ワンクリックで各チョークポイントへ移動できる手段を用意する。
+const MAP_JUMP_HOME = { center: [22, 68], zoom: 3 };
+const MAP_JUMP_POINTS = [
+  { label: '⛔ ホルムズ海峡', center: [26.5, 56.5], zoom: 6 },
+  { label: '⚓ スエズ運河',   center: [30.6, 32.4], zoom: 8 },
+  { label: '⚓ パナマ運河',   center: [9.13, -79.72], zoom: 9 },
+];
+
+function jumpMapTo(idx) {
+  const p = MAP_JUMP_POINTS[idx];
+  if (!p) return;
+  map.flyTo(p.center, p.zoom, { duration: 1.2 });
+}
+function jumpMapHome() {
+  map.flyTo(MAP_JUMP_HOME.center, MAP_JUMP_HOME.zoom, { duration: 1.2 });
+}
+
+const MapJump = L.Control.extend({
+  options: { position: 'topright' },
+  onAdd() {
+    const div = L.DomUtil.create('div', 'map-jump');
+    div.id = 'map-jump-ctrl';
+    div.innerHTML = `
+      <div class="mj-title">🧭 地点へ移動</div>
+      <div class="mj-btns">
+        ${MAP_JUMP_POINTS.map((p, i) =>
+          `<button class="mj-btn" onclick="jumpMapTo(${i})">${p.label}</button>`
+        ).join('')}
+        <button class="mj-btn mj-reset" onclick="jumpMapHome()">🌏 全体表示に戻す</button>
+      </div>
+    `;
+    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.disableScrollPropagation(div);
+    return div;
+  }
+});
+new MapJump().addTo(map);
+
+
+// ============================================================
 // 6. MAP LEGEND
 // ============================================================
 const Legend = L.Control.extend({
@@ -4141,6 +4232,7 @@ const Legend = L.Control.extend({
         <div class="leg-row"><div class="leg-dash" style="border-color:#fb923c"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）🆕</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過（友好国限定）</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・封鎖中）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#67e8f9;border-top-style:solid"></div><span>運河（スエズ／パナマ）※右上「🧭 地点へ移動」で表示</span></div>
 
         <!-- 主要拠点マーカー（非表示）
         <div class="leg-section" style="margin-top:8px;">主要拠点マーカー</div>

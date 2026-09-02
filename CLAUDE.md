@@ -38,6 +38,17 @@
 
 - commit後のpushは必ずユーザーの指示を待ってから実行する
 - 自動pushは行わない
+- **コミットメッセージに GitHub API ドキュメントのサンプル文言を使わない。**
+  `Change 'Hello World' to 'Goodbye World'` / `Update print statement from 'Hello' to 'Goodbye'` は
+  Contents API のドキュメント例であり、実際に 2026-08-29・08-31・09-02 の3回、
+  スマホから `docs/tools/index_html_diffs.md` を更新した際にそのまま記録されている
+- スマホ（Claude Code on the Web）から GitHub API 経由でファイルを上書きする場合、
+  コミットメッセージは次の形式にする
+  ```
+  mobile: update <ファイル名> (M/D HH:MM JST)
+  ```
+  例：`mobile: update index_html_diffs.md (9/2 10:45 JST)`
+- 日次更新の commit は、何を更新したかが後から履歴だけで分かる文言にする
 
 ## ブランチルール
 

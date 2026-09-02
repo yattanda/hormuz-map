@@ -3885,18 +3885,38 @@ if (!map.getPane('canalPane')) {
   map.getPane('canalPane').style.zIndex = 590;
 }
 
-// ガトゥン湖。国土ポリゴンが陸地色で塗り潰すため、そのままでは湖が見えない。
-// パナマ運河は全長82kmのうち約33kmがこの湖上を通るため、水域として描き分ける。
-// 形状データ：OpenStreetMap relation/1410768（ODbL）を簡略化して同梱。
-fetch('data/gatun-lake.geojson')
+// パナマ運河の水系。国土ポリゴンが陸地色で塗り潰すため、そのままでは湖が見えない。
+// 形状データは OpenStreetMap（ODbL）を簡略化して同梱している。
+const PANAMA_WATERS = [
+  { file:'data/gatun-lake.geojson',
+    tip:'ガトゥン湖（面積約425km²・運河の約33kmが湖上を通る）' },
+  { file:'data/alajuela-lake.geojson',
+    tip:'アラフエラ湖（マッデンダム・1935年完成／運河用水の約45%を供給）' },
+];
+PANAMA_WATERS.forEach(w => {
+  fetch(w.file)
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(gj => {
+      L.geoJSON(gj, {
+        pane: 'lakePane',
+        style: { color:'#3b82f6', weight:0.8, opacity:0.9, fillColor:'#0a1b33', fillOpacity:0.95 }
+      }).addTo(map).bindTooltip(w.tip,{sticky:true});
+    })
+    .catch(e => console.warn(w.file + ' の読み込みに失敗:', e));
+});
+
+// リオ・インディオ川。運河の水不足対策として貯水池の建設が計画されている。
+// 描画するのは OSM 登録の河道のみで、ダム・貯水池の位置は公表資料で
+// 座標が確認できないため描いていない（マーカーのポップアップで補足する）。
+fetch('data/rio-indio.geojson')
   .then(r => r.ok ? r.json() : Promise.reject(r.status))
   .then(gj => {
     L.geoJSON(gj, {
       pane: 'lakePane',
-      style: { color:'#3b82f6', weight:0.8, opacity:0.9, fillColor:'#0a1b33', fillOpacity:0.95 }
-    }).addTo(map).bindTooltip('ガトゥン湖（面積約425km²・運河の約33kmが湖上を通る）',{sticky:true});
+      style: { color:'#60a5fa', weight:2, opacity:0.95 }
+    }).addTo(map).bindTooltip('リオ・インディオ川（全長約98km・貯水池建設の計画地）',{sticky:true});
   })
-  .catch(e => console.warn('gatun-lake.geojson の読み込みに失敗:', e));
+  .catch(e => console.warn('rio-indio.geojson の読み込みに失敗:', e));
 // 水域上ではシアン単色が海面の青に埋没するため、暗色のケーシングを下に敷く。
 L.polyline(routePanama,{pane:'canalPane',color:'#04101f',weight:9,opacity:0.9,interactive:false}).addTo(map);
 L.polyline(routePanama,{pane:'canalPane',color:'#67e8f9',weight:4.5,opacity:1})
@@ -4034,6 +4054,23 @@ L.marker([26.0,50.5],{icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
 L.marker([30.6,32.3],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#94a3b8">⚓ スエズ運河</div>
   <div class="p-body">紅海とヨーロッパを結ぶ要衝。ルートBはバベルマンデブからアジア方面へ向かう。</div>`);
+
+L.marker([9.15,-80.19],{icon:mkIcon('🏞️','#78350f',26)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#fbbf24">🏞️ リオ・インディオ / Río Indio</div>
+  <div class="p-body"><strong>位置：</strong>パナマ中部・コスタアバホ地方。ガトゥン湖の西側を並行して流れ、カリブ海へ注ぐ全長約98kmの河川<br>
+  <strong>計画：</strong>運河の水不足対策として貯水池（ダム湖）を建設。<strong>8.7kmの導水トンネル</strong>で自然流下によりガトゥン湖へ送水する<br>
+  <strong>規模：</strong>湛水面積4,600ha（流域の約8%）／事業費15億ドル<br>
+  <strong>工期：</strong>2027年着工予定・約4年<br>
+  <strong>課題：</strong>38の農村コミュニティ・約2,000人が移転対象となり、住民の反対運動が続いている</div>
+  <span class="p-badge" style="background:rgba(251,191,36,0.18);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">🚧 計画段階</span>
+  <div style="font-size:0.62rem;color:#64748b;margin-top:5px;line-height:1.5;">※地図の水色の線はOSM登録の河道。ダム本体・貯水池の位置は公表資料で座標が確認できないため未表示。</div>`);
+
+L.marker([9.24,-79.60],{icon:mkIcon('💧','#0c4a6e',24)}).addTo(map).bindPopup(`
+  <div class="p-title" style="color:#7dd3fc">💧 アラフエラ湖 / Lago Alajuela</div>
+  <div class="p-body"><strong>位置：</strong>ガトゥン湖の上流（東側）・チャグレス川<br>
+  <strong>成立：</strong>1935年完成のマッデンダムによる人造湖<br>
+  <strong>役割：</strong>閘門で消費される<strong>運河用水の約45%</strong>を供給。パナマ市・コロン市の上水源も兼ねる<br>
+  <strong>治水：</strong>雨季の洪水を貯留し、ガトゥン湖の氾濫リスクを抑える</div>`);
 
 L.marker([9.08,-79.68],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#94a3b8">⚓ パナマ運河 / Panama Canal</div>
@@ -4198,7 +4235,9 @@ const MAP_JUMP_HOME = { center: [22, 68], zoom: 3 };
 const MAP_JUMP_POINTS = [
   { label: '⛔ ホルムズ海峡', center: [26.5, 56.5], zoom: 6 },
   { label: '⚓ スエズ運河',   center: [30.6, 32.4], zoom: 8 },
-  { label: '⚓ パナマ運河',   center: [9.13, -79.72], zoom: 9 },
+  // パナマは運河本体だけでなく水系（ガトゥン湖・アラフエラ湖・リオ・インディオ）も
+  // 収まるよう、やや西寄り・広めの画角にする
+  { label: '⚓ パナマ運河',   center: [9.15, -79.88], zoom: 9 },
   { label: '🚢 マラッカ海峡', center: [1.5, 103.5], zoom: 7 },
 ];
 
@@ -4265,6 +4304,12 @@ const Legend = L.Control.extend({
         <div class="leg-row"><span class="leg-emoji">⚓</span><span>スエズ運河（全長193km）</span></div>
         <div class="leg-row"><span class="leg-emoji">⚓</span><span>パナマ運河（全長約82km）</span></div>
         <div class="leg-row"><span class="leg-emoji">🚢</span><span>マラッカ海峡（ルートA・B・D共通の通過点）</span></div>
+
+        <div class="leg-section" style="margin-top:8px;">パナマ運河の水系</div>
+
+        <div class="leg-row"><span class="leg-emoji">🟦</span><span>ガトゥン湖（運河の約33kmが湖上）</span></div>
+        <div class="leg-row"><span class="leg-emoji">💧</span><span>アラフエラ湖（運河用水の約45%を供給）</span></div>
+        <div class="leg-row"><span class="leg-emoji">🏞️</span><span>リオ・インディオ（貯水池を計画中）🚧</span></div>
         <div class="leg-note" style="margin-top:4px;">🧭 右上「地点へ移動」で各地点へジャンプ</div>
 
         <!-- 主要拠点マーカー（非表示）

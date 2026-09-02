@@ -3872,13 +3872,31 @@ L.polyline(routeAngola,{color:'#fb923c',weight:2,dashArray:'8 6',opacity:0.75})
 L.polyline(routeSuez,{color:'#67e8f9',weight:4,opacity:0.95})
   .addTo(map).bindTooltip('スエズ運河（全長193km）',{sticky:true});
 
-// 運河専用ペイン。後から追加される海域ポリゴン（fill:#1e3a7a）が
-// 既定の overlayPane（z-index 400）内で運河の線を覆い隠すため、
-// markerPane（600）より下・overlayPane より上の階層に分離する。
+// countries.geojson の国土ポリゴン（fill:#1e3a7a）は fetch 完了後に
+// 既定の overlayPane（z-index 400）へ追加されるため、先に描いた運河の線を
+// 覆い隠してしまう。湖・運河は専用ペインへ分離して重なり順を固定する。
+//   overlayPane(400) < lakePane(580) < canalPane(590) < markerPane(600)
+if (!map.getPane('lakePane')) {
+  map.createPane('lakePane');
+  map.getPane('lakePane').style.zIndex = 580;
+}
 if (!map.getPane('canalPane')) {
   map.createPane('canalPane');
   map.getPane('canalPane').style.zIndex = 590;
 }
+
+// ガトゥン湖。国土ポリゴンが陸地色で塗り潰すため、そのままでは湖が見えない。
+// パナマ運河は全長82kmのうち約33kmがこの湖上を通るため、水域として描き分ける。
+// 形状データ：OpenStreetMap relation/1410768（ODbL）を簡略化して同梱。
+fetch('data/gatun-lake.geojson')
+  .then(r => r.ok ? r.json() : Promise.reject(r.status))
+  .then(gj => {
+    L.geoJSON(gj, {
+      pane: 'lakePane',
+      style: { color:'#3b82f6', weight:0.8, opacity:0.9, fillColor:'#0a1b33', fillOpacity:0.95 }
+    }).addTo(map).bindTooltip('ガトゥン湖（面積約425km²・運河の約33kmが湖上を通る）',{sticky:true});
+  })
+  .catch(e => console.warn('gatun-lake.geojson の読み込みに失敗:', e));
 // 水域上ではシアン単色が海面の青に埋没するため、暗色のケーシングを下に敷く。
 L.polyline(routePanama,{pane:'canalPane',color:'#04101f',weight:9,opacity:0.9,interactive:false}).addTo(map);
 L.polyline(routePanama,{pane:'canalPane',color:'#67e8f9',weight:4.5,opacity:1})

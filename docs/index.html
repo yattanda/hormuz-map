@@ -4181,6 +4181,7 @@ const MAP_JUMP_POINTS = [
   { label: '⛔ ホルムズ海峡', center: [26.5, 56.5], zoom: 6 },
   { label: '⚓ スエズ運河',   center: [30.6, 32.4], zoom: 8 },
   { label: '⚓ パナマ運河',   center: [9.13, -79.72], zoom: 9 },
+  { label: '🚢 マラッカ海峡', center: [1.5, 103.5], zoom: 7 },
 ];
 
 function jumpMapTo(idx) {
@@ -4238,7 +4239,15 @@ const Legend = L.Control.extend({
         <div class="leg-row"><div class="leg-dash" style="border-color:#fb923c"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）🆕</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過（友好国限定）</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・封鎖中）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#67e8f9;border-top-style:solid"></div><span>運河（スエズ／パナマ）※右上「🧭 地点へ移動」で表示</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#67e8f9;border-top-style:solid"></div><span>運河（スエズ／パナマ）</span></div>
+
+        <div class="leg-section" style="margin-top:8px;">チョークポイント</div>
+
+        <div class="leg-row"><span class="leg-emoji">⛔</span><span>ホルムズ海峡（封鎖中）</span></div>
+        <div class="leg-row"><span class="leg-emoji">⚓</span><span>スエズ運河（全長193km）</span></div>
+        <div class="leg-row"><span class="leg-emoji">⚓</span><span>パナマ運河（全長約82km）</span></div>
+        <div class="leg-row"><span class="leg-emoji">🚢</span><span>マラッカ海峡（ルートA・B・D共通の通過点）</span></div>
+        <div class="leg-note" style="margin-top:4px;">🧭 右上「地点へ移動」で各地点へジャンプ</div>
 
         <!-- 主要拠点マーカー（非表示）
         <div class="leg-section" style="margin-top:8px;">主要拠点マーカー</div>

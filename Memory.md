@@ -1,6 +1,6 @@
 # Memory.md — ホルムズ海峡危機マップ 引き継ぎドキュメント
 
-最終更新: 2026-09-02（ダッシュボード iframe 高さを実測方式へ変更）
+最終更新: 2026-09-02（日次更新の Claude Code 主体化に着手・フェーズ0完了）
 
 ---
 
@@ -17,6 +17,7 @@
 
 - **公開中**: GitHub Pages で稼働中。日次更新を継続中
 - **現フェーズ**: 基盤整備（法務ページ整備・独自ドメイン移行準備）。日常のコンテンツ更新は並行して継続
+- **並行して進行中**: 日次更新の Claude Code 主体化（2026-09-02 着手・フェーズ0完了）
 
 ---
 
@@ -160,11 +161,64 @@ if (window.innerWidth <= 480) {
 ## 今後の最重要課題（次フェーズ）
 
 - **基盤整備（現在進行中）**: 法務ページ整備・独自ドメイン移行。詳細な方針・手順は上流の戦略文書が持つ（この文書には固有名詞・戦略詳細を書かない）
-- **更新作業の自動化**（現在は手動）
-  - news_data.json の自動生成
-  - index_html_diffs.md の自動生成
-  - Claude Code への自動適用
+- **日次更新の Claude Code 主体化**（2026-09-02 着手）→ 下記セクション参照
 - **Xへの投稿自動化**（別スレッドで対応中）
+
+---
+
+## 日次更新の運用移行 — Claude Code 主体化（2026-09-02 着手）
+
+### 背景
+
+従来フローは「Claude.ai が `index_html_diffs.md` を生成 → 人が運搬 → Claude Code が適用」。
+スマホ運用では **78KB の差分ファイルを手でコピペ**しており、これが最大の非効率かつ事故要因だった
+（GitHub の自動提案コミットメッセージ `Change 'Hello World' to 'Goodbye World'` が
+7/24〜9/2 でほぼ隔日・20件以上記録されていたのがその痕跡）。
+
+### 決定事項
+
+| 論点 | 決定 |
+|---|---|
+| スマホ運用 | Claude Code on the Web（クラウドセッション）へ移行。旧経路は2〜3週凍結してから削除 |
+| Claude.ai の役割 | 日次から外す。戦略・特別解説コラム執筆・週次レビューのみ。ただし初週は情報収集を並行させて WebSearch の品質を比較 |
+| 完全自動化（無人公開） | **採用しない**。報道系のため「トリガーは人・作業は Claude Code・公開承認は人」の半自動が上限 |
+
+### フェーズ
+
+- **フェーズ0（完了・2026-09-02）**: 残骸ファイル11件の棚卸し、クラウド向け設定の整備
+- **フェーズ1（次）**: 検証の自動化。現状 `publish-checklist` の目視14項目しか品質保証がない
+  - `news_data.json` の必須6フィールド・`latest` 件数・`osint` の `isLatest` 単一性・禁止フィールド
+  - 日付整合（ヘッダー / `updated` / `dateModified` / 更新ログ先頭 / ルートサマリー）
+  - `update_log.json` と `index.html` のログ件数整合、`archive_timeline.json` の妥当性
+  - ニュース URL の死活確認（捏造URL禁止ルールの機械的担保）
+  - JSON更新を1コマンド化するヘルパー（`add_news.py` / `add_log.py`）
+- **フェーズ2**: `/daily-site-update` を Claude Code 完結型に書き換え、diffs 経路を凍結
+- **フェーズ3（任意）**: 機械取得できるデータのみ Actions で定時取得
+
+### 実測で判明した技術事実（重要）
+
+- `.gitignore` が `.claude/settings.json` と `settings.local.json` の**両方**を除外しており、
+  hook がクラウドに引き継がれていなかった → settings.json を追跡対象に変更済み
+- **クラウド環境はシステム時刻が UTC**。素の `date` は JST と9時間ずれる。
+  `TZ='Asia/Tokyo'` は Git Bash に tzdata がなく機能しない（UTCにフォールバック）。
+  → `date -u -d '+9 hours'` が両環境で正しい唯一の方法
+- ユーザーの `~/.claude/CLAUDE.md` はクラウドに引き継がれない
+  → 応答ルール（日本語・結論先出し・確度提示）をプロジェクト CLAUDE.md に再掲済み
+- クラウド環境のネットワークは既定 **Trusted**（GitHub・パッケージレジストリのみ）で
+  報道各社に WebFetch できない → **Full に変更済み**（Custom との比較は別途検討）
+- **クラウドセッションからは Claude in Chrome / コンピューター使用が利用できない**（PCと隔離のため）。
+  ブラウザでの目視確認が要る作業（レイアウト崩れ確認等）は PC 作業として残る
+
+### 次回の検証項目（お試し実施時）
+
+1. クラウドで WebSearch が結果を返すか（Full 設定後の実測）
+2. `[現在日時 JST]` の hook が注入されるか
+3. スマホでの差分レビュー・PRマージの使い勝手
+
+### 未確認の懸案
+
+- `docs/data/news_data.json` の `latest` が **6件**ある（スキルのルールは4件）。
+  ルール違反かルールの陳腐化か未判定。フェーズ1で確認する
 
 ---
 
@@ -253,6 +307,10 @@ function calcBlockadeDay(iso){
 
 ## 完了済み主要作業
 
+- ✅ 運用移行フェーズ0：残骸ファイル11件の棚卸し・クラウド向け設定整備（2026-09-02）
+  - `/docs` 再編（2026-06-02 `fc2807f`）で置き去りになった `data/news_data.json` や
+    適用済みパッチ類を削除。うち5件は `docs/` 配下のため GitHub Pages で公開状態だった
+  - hook・応答ルール・permission をリポジトリ側に移し、クラウドセッションへ引き継ぎ可能にした
 - ✅ サブエージェント作成（mobile-ui-reviewer / responsive-css-specialist）（2026-05-07）
 - ✅ デザイン基準書・スマホUIルール作成（docs/design-system.md / docs/mobile-ui-rules.md）（2026-05-07）
 - ✅ CLAUDE.mdにスマホUI改善ルール・専門エージェント使い分けを追記（2026-05-07）
@@ -276,9 +334,11 @@ function calcBlockadeDay(iso){
 - **OS**: Windows 11（Macなし）
 - **ffmpeg パス**: `C:\ffmpeg\bin\ffmpeg.exe`（PATH未設定環境対応）
 - **Python**: venv 使用 → `venv\Scripts\python`
-- **Claude.ai**: 戦略・情報収集・差分ファイル生成
-- **Claude Code**: index.html更新・commit（pushはユーザー確認後）
-- **auto_push.py**: DownloadsフォルダからGitHub API直接push
+- **Claude.ai**: 戦略・特別解説コラム・週次レビュー（2026-09-02 の決定により日次からは外す方針。移行完了までは従来どおり差分ファイル生成も担う）
+- **Claude Code（PC）**: index.html更新・commit（pushはユーザー確認後）
+- **Claude Code（クラウド／スマホ）**: 移行先。ネットワークは Full 設定済み。
+  ブラウザ操作・コンピューター使用は PC と隔離のため利用不可
+- **auto_push.py / run.bat**: DownloadsフォルダからGitHub API直接push（旧経路・凍結予定）
 
 ---
 

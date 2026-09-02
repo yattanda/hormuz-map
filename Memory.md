@@ -1,6 +1,6 @@
 # Memory.md — ホルムズ海峡危機マップ 引き継ぎドキュメント
 
-最終更新: 2026-08-07（封鎖日数カウンター調査・動的計算方式へ移行）
+最終更新: 2026-09-02（ダッシュボード iframe 高さを実測方式へ変更）
 
 ---
 
@@ -113,6 +113,47 @@ if (window.innerWidth <= 480) {
 ### ⏸️ ルートテーブル スマホ右余白
 - `<colgroup>` を変更するとテーブルが崩壊することを確認済み
 - 複数回試みたが未解決 → 次回は colgroup を触らない別アプローチで検討
+
+### ⏸️ ダッシュボード iframe の postMessage 高さ通知 — 検証はドメイン移行後（2026-09-02 記録）
+
+**現状：表示は直っている。ただし postMessage 経路だけ未検証。**
+
+- `docs/index.html` のダッシュボード iframe は、固定高さ（PC 1110px / スマホ 2110〜2200px）をやめ、
+  **iframe 内の body 直下要素の下端から実コンテンツ高さを測る方式**に変更済み
+  （2026-09-02 / commit `2c903a1` `075ac2f`、push 済み）
+- 本番実測：PC 1400px 幅で 1110px → **721px**、スマホ 375px 幅で 2110px → **1644px**。
+  約 390〜466px の空白が解消（残 9px は意図的な下マージン）
+- 実測が成立するのは `hormuz-map` と `hormuz-data-` が **どちらも yattanda.github.io ＝ 同一オリジン**だから
+- 独自ドメイン移行後は別オリジンになり `contentDocument` を読めなくなるため、
+  子（`hormuz-data-/index.html`）から `postMessage({type:'iframeHeight', height})` を送る経路を用意し、
+  親側に受信処理を実装済み。**子側の送信スクリプトも投入済み（2026-09-02）**
+
+**なぜ今は検証しないか（意図的な保留）**
+
+- 親側に `directMeasureOk` ガードを入れてあり、**同一オリジンで実測できている間は postMessage を無視する**。
+  子側が誤った高さを送っても現在の表示が壊れない設計
+- その代償として、**移行前は送信スクリプトの実挙動を確認できない**。DevTools での事前確認は行わず、
+  ドメイン移行後に確認する方針とした
+
+**ドメイン移行後にやること**
+
+1. 移行後のトップページを開き、DevTools のコンソールで受信値を観測する
+
+   ```javascript
+   const f = document.getElementById('hormuz-dashboard');
+   window.addEventListener('message', e => {
+     if (e.data?.type === 'iframeHeight')
+       console.log('受信:', e.data.height, '/ iframe:', f.getBoundingClientRect().height);
+   });
+   ```
+
+2. 再読み込みし、**受信値と iframe 高さがほぼ一致**すること（PC 720px 前後 / スマホ 1640px 前後）を確認
+3. **異常の見分け方**
+   - 受信値が 1110 や 2110（＝固定値そのもの）→ 子側が `documentElement.scrollHeight` を使っている。
+     iframe 内ではこの値が iframe の高さまで引き伸ばされて返るため縮小判定ができない。
+     子側も親と同じ「body 直下要素の下端」方式に直す
+   - 何も受信しない → 子側スクリプトが未反映、または `window.parent === window` 判定で早期 return している
+   - 受信がないまま固定値のまま表示 → フォールバック動作。崩れはしないが余白は戻る
 
 ---
 

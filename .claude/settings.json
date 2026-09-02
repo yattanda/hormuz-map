@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "date -u -d '+9 hours' '+[現在日時 JST] %Y-%m-%d %H:%M (%a) ／ 日付を書き込むときは必ずこの値を使い、セッション開始時の日付を使い回さないこと'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -9,6 +9,20 @@ description: Daily update workflow for hormuz-map site / ホルムズマップ�
 
 ---
 
+## 作業開始時に必ず実行（省略禁止）
+
+日付を1文字でも書き込む前に、以下を実行して当日の JST を実測する。
+
+```bash
+date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
+```
+
+- 素の `date` は使わない。クラウド環境（Claude Code on the Web）は UTC のため JST と9時間ずれる
+- プロンプトに `[現在日時 JST]` が注入されている場合はその値を使ってよい
+- セッション開始時に取得した日付を後半で使い回さない（日をまたぐため）
+
+---
+
 ## 毎日の定常更新フロー
 
 1. Claude.ai で最新情報収集・`index_html_diffs.md` を生成（news_data.json は生成しない）

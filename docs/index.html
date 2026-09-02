@@ -1442,35 +1442,125 @@ Copy
   window.SITE_CONFIG = window.SITE_CONFIG || {
     DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
   };
-  document.getElementById('hormuz-dashboard').src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
-  function adjustIframeHeight() {
+  (function () {
     const iframe = document.getElementById('hormuz-dashboard');
     if (!iframe) return;
-    if (window.innerWidth <= 480) {
-      iframe.style.height = '2110px';
-    } else if (window.innerWidth <= 768) {
-      iframe.style.height = '2200px';
-    } else {
-      iframe.style.height = '1110px';
+    iframe.src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
+
+    // 実測できないとき（別オリジン移行後など）だけ使う暫定値
+    function fallbackHeight() {
+      if (window.innerWidth <= 480) return 2110;
+      if (window.innerWidth <= 768) return 2200;
+      return 1110;
     }
-  }
-  adjustIframeHeight();
-  window.addEventListener('resize', adjustIframeHeight);
-  const iframe = document.getElementById('hormuz-dashboard');
-  iframe.addEventListener('load', function() {
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      // 米国中東原油比率カードを非表示
-      const cards = doc.querySelectorAll('.card');
-      cards.forEach(card => {
-        if (card.textContent.includes('米国の中東原油')) {
-          card.style.display = 'none';
+
+    let measured = false;
+
+    function applyHeight(h) {
+      h = Math.ceil(h);
+      if (!(h > 200)) return;
+      if (Math.abs(parseFloat(iframe.style.height || '0') - h) < 2) return;
+      iframe.style.height = h + 'px';
+    }
+
+    // iframe 内の最終要素の下端から実コンテンツ高さを測る。
+    // documentElement.scrollHeight は iframe の高さまで引き伸ばされるため、
+    // 「縮める方向」の判定に使えない（これが余白の残る原因だった）。
+    function measureInner(doc) {
+      const body = doc.body;
+      if (!body) return 0;
+      const win = doc.defaultView;
+      let bottom = 0;
+      for (let i = 0; i < body.children.length; i++) {
+        const el = body.children[i];
+        if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) continue;
+        if (rect.bottom > bottom) bottom = rect.bottom;
+      }
+      if (!bottom) return 0;
+      bottom += win.scrollY || 0;
+      const cs = win.getComputedStyle(body);
+      bottom += parseFloat(cs.paddingBottom) || 0;
+      bottom += parseFloat(cs.marginBottom) || 0;
+      return bottom + 8;
+    }
+
+    function syncHeight() {
+      let doc = null;
+      try {
+        doc = iframe.contentDocument || iframe.contentWindow.document;
+      } catch (e) {
+        doc = null; // 別オリジン：postMessage 経由の通知を待つ
+      }
+      if (!doc) {
+        if (!measured) applyHeight(fallbackHeight());
+        return;
+      }
+      const h = measureInner(doc);
+      if (h > 200) {
+        measured = true;
+        applyHeight(h);
+      } else if (!measured) {
+        applyHeight(fallbackHeight());
+      }
+    }
+
+    let timer = null;
+    function scheduleSync() {
+      clearTimeout(timer);
+      timer = setTimeout(syncHeight, 120);
+    }
+
+    applyHeight(fallbackHeight());
+
+    iframe.addEventListener('load', function () {
+      let doc = null;
+      try {
+        doc = iframe.contentDocument || iframe.contentWindow.document;
+      } catch (e) {
+        doc = null;
+      }
+      if (doc) {
+        try {
+          // 米国中東原油比率カードを非表示
+          const cards = doc.querySelectorAll('.card');
+          cards.forEach(function (card) {
+            if (card.textContent.includes('米国の中東原油')) {
+              card.style.display = 'none';
+            }
+          });
+        } catch (e) {
+          console.warn('card hide error:', e);
         }
-      });
-    } catch(e) {
-      console.warn('card hide error:', e);
-    }
-  });
+        // 内部の非同期描画（fetch 後のカード更新など）に追従させる
+        if (doc.body && window.ResizeObserver) {
+          new ResizeObserver(scheduleSync).observe(doc.body);
+        }
+        if (doc.body && window.MutationObserver) {
+          new MutationObserver(scheduleSync).observe(doc.body, {
+            childList: true, subtree: true, characterData: true
+          });
+        }
+        if (iframe.contentWindow) {
+          iframe.contentWindow.addEventListener('resize', scheduleSync);
+        }
+      }
+      syncHeight();
+      [300, 1000, 2500, 5000].forEach(function (ms) { setTimeout(syncHeight, ms); });
+    });
+
+    window.addEventListener('resize', scheduleSync);
+
+    // 別オリジンに移行した場合の受け口（子側が iframeHeight を送ってくる場合）
+    window.addEventListener('message', function (ev) {
+      const data = ev.data;
+      if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
+      if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;
+      measured = true;
+      applyHeight(data.height);
+    });
+  })();
 </script>
 <!-- /ダッシュボード -->
   <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->

@@ -3872,10 +3872,16 @@ L.polyline(routeAngola,{color:'#fb923c',weight:2,dashArray:'8 6',opacity:0.75})
 L.polyline(routeSuez,{color:'#67e8f9',weight:4,opacity:0.95})
   .addTo(map).bindTooltip('スエズ運河（全長193km）',{sticky:true});
 
-// 運河は水域上を通るため、シアン単色では海面（青）に埋没して見えない。
-// 暗色のケーシング（縁取り）を下に敷いてコントラストを確保する。
-L.polyline(routePanama,{color:'#04101f',weight:9,opacity:0.9,interactive:false}).addTo(map);
-L.polyline(routePanama,{color:'#67e8f9',weight:4.5,opacity:1})
+// 運河専用ペイン。後から追加される海域ポリゴン（fill:#1e3a7a）が
+// 既定の overlayPane（z-index 400）内で運河の線を覆い隠すため、
+// markerPane（600）より下・overlayPane より上の階層に分離する。
+if (!map.getPane('canalPane')) {
+  map.createPane('canalPane');
+  map.getPane('canalPane').style.zIndex = 590;
+}
+// 水域上ではシアン単色が海面の青に埋没するため、暗色のケーシングを下に敷く。
+L.polyline(routePanama,{pane:'canalPane',color:'#04101f',weight:9,opacity:0.9,interactive:false}).addTo(map);
+L.polyline(routePanama,{pane:'canalPane',color:'#67e8f9',weight:4.5,opacity:1})
   .addTo(map).bindTooltip('パナマ運河（全長約82km）',{sticky:true});
 
 

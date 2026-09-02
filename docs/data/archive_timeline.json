@@ -2658,6 +2658,30 @@
           "url": "https://gulfnews.com/world/mena/tanker-struck-by-unknown-projectile-in-strait-of-hormuz-ukmto-warning-1.500657396"
         }
       ]
+    },
+    {
+      "date": "2026-09-01",
+      "dateLabel": "2026/09/02 10:30",
+      "blockadeDay": 187,
+      "sourceType": "realtime",
+      "summary": "米中央軍は9月1日正午（米東部時間）、バンダレアッバース近郊・ケシュム島・シリク・ジロフト空港周辺のレーダー・防空システム・対艦巡航ミサイル発射拠点など数十カ所を攻撃した。トランプ大統領は機雷再敷設の失敗した試みとヨルダン基地攻撃への報復と説明し、再報復なら『これまでで最大級』の攻撃で応じると警告。イランは同日『決断作戦』を発動し、ヨルダンへ13発の弾道ミサイルを発射（10発迎撃・3発は無人地帯着弾）、クウェート・バーレーンでもイラン発ドローンへの防空発動が確認された。イラン当局者は南部ホルモズガン州の結婚式会場が米攻撃を受け2人死亡と発表。米側は『タンカー・フォー・タンカー』政策を新設したと関係者証言があり、ベッセント財務長官は8/31だけで原油1700万バレルが海峡を通過したと指摘した。ペゼシュキアン大統領はSCO首脳会議でMOU復帰なら即応と表明したが、トランプ氏は拒否。原油はブレントが96ドル台へ上昇し6週間ぶり高値。日本関係船は残り4隻で変化なし。",
+      "relatedNews": [
+        {
+          "sourceLabel": "CENTCOM / CNBC",
+          "title": "米、対イラン攻撃を数十カ所へ拡大——トランプ氏「再報復ならこれまでで最大級」",
+          "url": "https://www.cnbc.com/2026/09/01/us-strikes-iran-after-new-hormuz-strait-shipping-attacks-centcom.html"
+        },
+        {
+          "sourceLabel": "The Times of Israel",
+          "title": "イラン『決断作戦』でヨルダンに13発発射・10発迎撃——クウェート・バーレーンも防空発動",
+          "url": "https://www.timesofisrael.com/liveblog-september-1-2026/"
+        },
+        {
+          "sourceLabel": "Trading Economics",
+          "title": "ブレント原油、96ドル台へ3営業日続伸——直近6週間で最高値",
+          "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+        }
+      ]
     }
   ]
 }

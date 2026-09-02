@@ -1,7 +1,27 @@
 {
-  "updated": "2026年8月31日 09:49 日本時間JST",
+  "updated": "2026年9月2日 10:30 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-us-strikes-expanded-0901",
+      "title": "米軍、対イラン攻撃を数十カ所へ拡大——バンダレアッバース近郊やレーダー網など攻撃、トランプ氏が最大級の警告",
+      "body": "CENTCOMは9月1日正午（米東部時間）、IRGCによる商船攻撃未遂・米軍要員への攻撃を受け、レーダー・防空システム・対艦巡航ミサイル発射拠点など数十カ所への攻撃を開始したと発表した。イラン国営メディアはバンダレアッバース近郊・ケシュム島・シリク・南部ケルマーン州ジロフト空港周辺での爆発を報告。トランプ大統領はイランによる機雷再敷設の失敗した試みとヨルダン基地攻撃への報復だと説明し、再報復なら「これまでで最大級」の攻撃で応じると警告した。",
+      "sourceLabel": "CENTCOM / CNBC / The Times of Israel（9/1）",
+      "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
+      "label": "⚔️ 軍事行動拡大",
+      "url": "https://www.cnbc.com/2026/09/01/us-strikes-iran-after-new-hormuz-strait-shipping-attacks-centcom.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-decisive-operation-jordan-0901",
+      "title": "イラン『決断作戦』で報復拡大——ヨルダンに13発発射・10発迎撃、クウェート・バーレーンも防空発動",
+      "body": "イラン国営タスニム通信は「決断作戦」の開始を発表し即座に報復に着手した。ヨルダン軍は自国領空に侵入した13発の弾道ミサイルのうち10発を迎撃、3発は無人地帯へ着弾し死傷者はなかったと発表——8/31の8発から規模が拡大した。同日、クウェート・バーレーンでも自国上空でイラン発ドローンに対し防空システムが作動、被害報告はない。イラン当局者は南部ホルモズガン州の結婚式会場が米攻撃を受け2人死亡・複数負傷と発表した。",
+      "sourceLabel": "The Times of Israel / AFP（9/1）",
+      "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
+      "label": "🇯🇴 報復拡大",
+      "url": "https://www.timesofisrael.com/liveblog-september-1-2026/",
+      "isLatest": false
+    },
     {
       "id": "latest-us-strikes-larak-island-0830",
       "title": "米軍、ホルムズ海峡ララク島のイラン軍施設を攻撃——機雷搭載ロケット発射を阻止、約1カ月ぶりの軍事行動",
@@ -40,30 +60,28 @@
       "date": "2026年8月29日（現地）/ 2026年8月30日 JST",
       "label": "⚓ インシデント",
       "url": "https://gulfnews.com/world/mena/tanker-struck-by-unknown-projectile-in-strait-of-hormuz-ukmto-warning-1.500657396",
-      "isLatest": true
-    },
-    {
-      "id": "latest-qatar-pm-tehran-visit-0827",
-      "title": "カタール首相がテヘラン訪問——開戦後初の高官級訪問、航行の自由の尊重を要求",
-      "body": "カタールのシェイク・モハンマド首相兼外相が27日、開戦後初めてテヘランを訪問し、アラグチー外相・ペゼシュキアン大統領・ガリバフ国会議長・最高国家安全保障会議のレザイー事務局長と相次いで会談した。同首相は国際法に基づく航行の自由と近隣国の主権尊重の重要性を強調し、対話継続を呼びかけた。",
-      "sourceLabel": "Reuters（Arab News）",
-      "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
-      "label": "🇶🇦 外交",
-      "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-conditions-list-0827",
-      "title": "イラン、通航再開に向けた「条件リスト」の策定に合意——カタールの働きかけ受け",
-      "body": "カタール高官の要請を受け、イラン最高国家安全保障会議のレザイー事務局長は、通常の船舶通航を回復するための条件リストを準備中だと表明。イラン・オマーンは一部オマーン領海・一部イラン領海を通る中央航路で合意しており、米国が条件を満たせば同航路が使用可能になるとした。従来の6条件を修正する意向かは不明。",
-      "sourceLabel": "Reuters（Arab News）",
-      "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
-      "label": "🇮🇷 外交",
-      "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-us-new-strikes-0901",
+      "titleJa": "【Al Jazeera】米軍、対イラン攻撃を再開・拡大——ホルムズ海峡での攻撃未遂への対応と説明",
+      "titleEn": "US launches new strikes against Iran as war escalates",
+      "title": "【Al Jazeera】米軍、対イラン攻撃を再開・拡大——ホルムズ海峡での攻撃未遂への対応と説明",
+      "country": "イラン/米国",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
+      "summary": "Al Jazeeraは、CENTCOMがホルムズ海峡での商船攻撃未遂と米軍要員への攻撃を理由にIRGC標的への攻撃を再開・拡大したと報道。過去にも同様の米攻撃の後にイランが報復してきた経緯を踏まえ、今回の攻撃再開が新たな戦闘サイクルを引き起こすリスクがあると分析し、地域の軍事的緊張が再び高まっている構図を詳報している。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/9/1/us-military-says-launching-new-attacks-on-iran",
+      "isLatest": true
+    },
     {
       "id": "osint-irgc-strait-control-claim-0829",
       "titleJa": "【Al Jazeera】イラン戦争ライブ：IRGCが海峡支配を主張、米は封鎖を執行",
@@ -80,7 +98,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/8/29/iran-war-live-irgc-asserts-strait-control-us-enforces-blockade",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-iran-qatar-hormuz-talks-0827",
@@ -1234,6 +1252,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月27日〜29日",
+      "items": [
+        {
+          "id": "latest-qatar-pm-tehran-visit-0827",
+          "title": "カタール首相がテヘラン訪問——開戦後初の高官級訪問、航行の自由の尊重を要求",
+          "body": "カタールのシェイク・モハンマド首相兼外相が27日、開戦後初めてテヘランを訪問し、アラグチー外相・ペゼシュキアン大統領・ガリバフ国会議長・最高国家安全保障会議のレザイー事務局長と相次いで会談した。同首相は国際法に基づく航行の自由と近隣国の主権尊重の重要性を強調し、対話継続を呼びかけた。",
+          "sourceLabel": "Reuters（Arab News）",
+          "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
+          "label": "🇶🇦 外交",
+          "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-conditions-list-0827",
+          "title": "イラン、通航再開に向けた「条件リスト」の策定に合意——カタールの働きかけ受け",
+          "body": "カタール高官の要請を受け、イラン最高国家安全保障会議のレザイー事務局長は、通常の船舶通航を回復するための条件リストを準備中だと表明。イラン・オマーンは一部オマーン領海・一部イラン領海を通る中央航路で合意しており、米国が条件を満たせば同航路が使用可能になるとした。従来の6条件を修正する意向かは不明。",
+          "sourceLabel": "Reuters（Arab News）",
+          "date": "2026年8月27日（現地）/ 2026年8月28日 JST",
+          "label": "🇮🇷 外交",
+          "url": "https://www.arabnews.jp/article/middle-east/article_185141/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月31日",
       "items": [

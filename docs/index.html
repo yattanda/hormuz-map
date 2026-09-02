@@ -1455,6 +1455,8 @@ Copy
     }
 
     let measured = false;
+    // 同一オリジンで実測できているか。できている間は postMessage を採用しない
+    let directMeasureOk = false;
 
     function applyHeight(h) {
       h = Math.ceil(h);
@@ -1500,6 +1502,7 @@ Copy
       const h = measureInner(doc);
       if (h > 200) {
         measured = true;
+        directMeasureOk = true;
         applyHeight(h);
       } else if (!measured) {
         applyHeight(fallbackHeight());
@@ -1557,6 +1560,8 @@ Copy
       const data = ev.data;
       if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
       if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;
+      // 直接測定が効いている間は無視する（子側が誤った高さを送っても壊れないようにする保険）
+      if (directMeasureOk) return;
       measured = true;
       applyHeight(data.height);
     });

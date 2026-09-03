@@ -295,9 +295,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 }
 .mj-btn.mj-reset:hover { background:rgba(148,163,184,0.25); }
 @media (max-width: 600px) {
-  .map-jump { padding:6px 7px; }
-  .map-jump .mj-title { font-size:0.52rem; margin-bottom:4px; }
-  .mj-btn { font-size:0.58rem; padding:2px 7px; }
+  /* スマホでは地図面積を優先し、枠ごと一段小さくする（2026-09-03 調整） */
+  .map-jump { padding:5px 6px; border-radius:8px; }
+  .map-jump .mj-title { font-size:0.42rem; margin-bottom:3px; }
+  .map-jump .mj-btns { gap:3px; }
+  .mj-btn { font-size:0.47rem; padding:2px 6px; border-radius:10px; }
 }
 
 /* MAP LEGEND */
@@ -352,6 +354,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   flex-shrink: 0;
 }
 .leg-note { margin-top:8px; padding-top:7px; border-top:1px solid #1e3a5f; font-size:0.66rem; color:#64748b; }
+/* 閉じるボタンはパネル下端・右下に固定する。本文をスクロールさせても
+   位置が動かないよう .legend-body の外に置いている */
+.legend-close-wrap { display:none; }
+.map-legend.open .legend-close-wrap { display:flex; justify-content:flex-end; margin-top:8px; }
+.map-legend.open #legend-btn { display:none; }
 
 /* 凡例ボディ折りたたみ（PC・スマホ共通） */
 .legend-body {
@@ -359,6 +366,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 }
 .map-legend.open .legend-body {
   display: block;
+  /* 凡例が地図（PC:580px / スマホ:400px）を縦にはみ出さないよう上限を設ける。
+     閉じるボタンは .legend-body の外にあるため常に下端に残る（2026-09-03 調整） */
+  max-height: 420px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 /* STATS */
@@ -469,7 +481,15 @@ footer {
   }
   .map-legend.open .legend-body {
     display: block;
+    /* 凡例が地図（高さ400px）を縦にはみ出さないよう上限を設けて中身をスクロール。
+       閉じるボタンは .legend-body の外にあるため常に下端に残る（2026-09-03 調整） */
+    max-height: 236px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
+  .leg-row { margin-bottom: 4px; gap: 6px; }
+  .leg-note { margin-top: 6px; padding-top: 5px; }
 
   .deadline { flex-direction:column; align-items:flex-start; }
   .dl-boxes { justify-content:flex-start; }
@@ -706,11 +726,12 @@ footer {
 }
 @media (max-width: 600px) {
   #tanker-value-thumb {
-    width: 60px;
-    right: 210px;   /* スマホ時はオーバーレイが折り畳まれるため詰める */
+    width: 44px;    /* 地図面積を優先して縮小（2026-09-03 調整） */
+    right: 202px;   /* tanker-overlay(186px) + gap(6px) + right(10px) */
     bottom: 24px;
+    padding: 3px;
   }
-  #tanker-value-thumb .tv-label { font-size: 7px; }
+  #tanker-value-thumb .tv-label { font-size: 6px; margin-top: 2px; }
 }
 
 /* ================================================
@@ -723,19 +744,34 @@ footer {
   border-radius: 10px; padding: 10px 12px 8px; backdrop-filter: blur(4px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55); transition: width 0.3s ease; font-family: sans-serif;
 }
-#tanker-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-#tanker-title span { font-size: 11px; color: #93c5fd; font-weight: bold; letter-spacing: 0.04em; }
+/* 折畳ボタンは左寄せ。右上は「🧭 地点へ移動」コントロールと重なり、
+   スマホ縦向きでタップできなくなるため（2026-09-03 修正） */
+#tanker-title { display: flex; justify-content: flex-start; align-items: center; gap: 7px; margin-bottom: 5px; }
+#tanker-title span { font-size: 11px; color: #93c5fd; font-weight: bold; letter-spacing: 0.04em; min-width: 0; }
+/* 確認ログは既定2行までに省略し、タップで全文表示する */
+#tanker-date-confirmed {
+  font-size: 9px; color: #4ade80; margin-top: 2px; line-height: 1.45; cursor: pointer;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+#tanker-date-confirmed.expanded { -webkit-line-clamp: unset; overflow: visible; }
 #tanker-toggle {
   background: none; border: 1px solid #4b6fa8; color: #93c5fd; border-radius: 4px;
   font-size: 10px; padding: 1px 6px; cursor: pointer; transition: background 0.2s;
 }
 #tanker-toggle:hover { background: rgba(96, 165, 250, 0.2); }
 @media (max-width: 600px) {
-  #tanker-title span { font-size: 10px; }
-  #tanker-toggle { font-size: 8px; }
-  #tanker-date { font-size: 8px; }
-  .ship-icon { font-size: 6px; }
-  #tanker-stats { font-size: 4px; }
+  /* 地図面積を確保するため枠ごと縮小する（2026-09-03 調整） */
+  #tanker-overlay { width: 186px; padding: 7px 8px 6px; bottom: 24px; }
+  #tanker-overlay.zoom-close { width: 186px; }
+  #tanker-title { gap: 5px; margin-bottom: 3px; }
+  #tanker-title span { font-size: 9px; letter-spacing: 0; }
+  #tanker-toggle { font-size: 8px; padding: 1px 5px; }
+  #tanker-date { font-size: 8px; margin-bottom: 3px; }
+  #tanker-date-confirmed { font-size: 8px; }
+  .ship-icon { font-size: 13px; }
+  #ship-grid { max-height: 44px; gap: 2px; }
+  #tanker-stats { font-size: 9px; margin-top: 5px; }
+  #tanker-note { display: none; }   /* 注記は情報密度を優先して非表示 */
 }
 #tanker-date { font-size: 10px; color: #7dd3fc; text-align: right; margin-bottom: 6px; }
 #ship-grid {
@@ -758,6 +794,13 @@ footer {
 #tanker-overlay.zoom-close { width: 300px; }
 #tanker-overlay.zoom-close .ship-icon { font-size: 20px; }
 #tanker-overlay.zoom-close #ship-grid { max-height: 160px; }
+/* スマホでは拡大時も枠を広げない。上の .zoom-close 定義より後に置かないと
+   ソース順で負けるため、ここで打ち消す（2026-09-03 調整） */
+@media (max-width: 600px) {
+  #tanker-overlay.zoom-close { width: 186px; }
+  #tanker-overlay.zoom-close .ship-icon { font-size: 13px; }
+  #tanker-overlay.zoom-close #ship-grid { max-height: 44px; }
+}
 #tanker-overlay.zoom-far { width: 200px; }
 #tanker-overlay.zoom-far .ship-icon { font-size: 13px; }
 #tanker-overlay.zoom-far #ship-grid { max-height: 100px; }
@@ -1768,11 +1811,11 @@ Copy
 
   <div id="tanker-overlay">
     <div id="tanker-title">
-      <span>🚢 日本関連船 足止め状況</span>
       <button id="tanker-toggle">折畳</button>
+      <span>🚢 日本関連船 足止め状況</span>
     </div>
     <div id="tanker-date"></div>
-    <div id="tanker-date-confirmed" style="font-size:0.7rem;color:#4ade80;margin-top:2px;"></div>
+    <div id="tanker-date-confirmed" title="タップで全文表示"></div>
     <div id="ship-grid"></div>
     <div id="tanker-stats">
       <div class="stat-row">
@@ -1788,7 +1831,7 @@ Copy
         <span id="t-total" style="color:#93c5fd;">-</span>
       </div>
     </div>
-    <div style="font-size:7.5px;color:#475569;padding:2px 6px 0;line-height:1.4;">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
+    <div id="tanker-note" style="font-size:7.5px;color:#475569;padding:2px 6px 0;line-height:1.4;">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
     <div id="tanker-progress-wrap">
       <div id="tanker-progress-bar" style="width:100%"></div>
     </div>
@@ -1855,7 +1898,13 @@ const SHIP_CONFIG = {
 
     document.getElementById('tanker-date').textContent = date + '現在';
     const confirmedEl = document.getElementById('tanker-date-confirmed');
-    if (confirmedEl) confirmedEl.textContent = cfg.dateConfirmed || '';
+    if (confirmedEl) {
+      confirmedEl.textContent = cfg.dateConfirmed || '';
+      // 既定は2行に省略。根拠（確認手順）は削らず、タップで全文を出す
+      confirmedEl.addEventListener('click', function () {
+        this.classList.toggle('expanded');
+      });
+    }
 
     const grid = document.getElementById('ship-grid');
     grid.innerHTML = '';
@@ -4282,7 +4331,7 @@ const Legend = L.Control.extend({
     div.id = 'map-legend-ctrl';
     div.innerHTML = `
       <h4>🗺️ 凡 例
-        <button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn">閉じる</button>
+        <button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn">開く</button>
       </h4>
       <div class="legend-body" id="legend-body">
 
@@ -4311,7 +4360,6 @@ const Legend = L.Control.extend({
         <div class="leg-row"><span class="leg-emoji">💧</span><span>アラフエラ湖（運河用水の約45%を供給）</span></div>
         <div class="leg-row"><span class="leg-emoji">🏞️</span><span>リオ・インディオ（貯水池を計画中）🚧</span></div>
         <div class="leg-note" style="margin-top:4px;">🧭 右上「地点へ移動」で各地点へジャンプ</div>
-
         <!-- 主要拠点マーカー（非表示）
         <div class="leg-section" style="margin-top:8px;">主要拠点マーカー</div>
 
@@ -4329,6 +4377,9 @@ const Legend = L.Control.extend({
         <div class="leg-note">💡 各マーカー・ラインをクリックで詳細表示</div>
         <div class="leg-note" style="color:#475569;margin-top:4px;">最終更新：2026/04/13 07:00 JST</div>
       </div>
+      <div class="legend-close-wrap">
+        <button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn-close">閉じる</button>
+      </div>
     `;
     L.DomEvent.disableClickPropagation(div);
     L.DomEvent.disableScrollPropagation(div);
@@ -4337,35 +4388,24 @@ const Legend = L.Control.extend({
 });
 new Legend().addTo(map);
 
+// 開閉ボタンは2つある。ヘッダーの #legend-btn（開く）は閉じているときだけ表示し、
+// 展開時は本文末尾・右下の #legend-btn-close（閉じる）を使う。
+// 凡例は左下に置かれるため、閉じるボタンが上端にあるとスマホ縦向きで
+// 地図の外に押し出されて押せなくなる（2026-09-03 修正）。
 function toggleLegend(e) {
   if (e) {
     e.stopPropagation();
     e.preventDefault();
   }
   const legend = document.getElementById('map-legend-ctrl');
-  const btn    = document.getElementById('legend-btn');
-  const isOpen = legend.classList.contains('open');
-  legend.classList.toggle('open', !isOpen);
-  btn.textContent = isOpen ? '開く' : '閉じる';
+  legend.classList.toggle('open', !legend.classList.contains('open'));
 }
 
 // スマホ時はデフォルト閉じた状態にする
 function initLegendState() {
-  if (window.innerWidth <= 600) {
-    const legend = document.getElementById('map-legend-ctrl');
-    const btn    = document.getElementById('legend-btn');
-    if (legend && btn) {
-      legend.classList.remove('open');
-      btn.textContent = '開く';
-    }
-  } else {
-    const legend = document.getElementById('map-legend-ctrl');
-    const btn    = document.getElementById('legend-btn');
-    if (legend && btn) {
-      legend.classList.add('open');
-      btn.textContent = '閉じる';
-    }
-  }
+  const legend = document.getElementById('map-legend-ctrl');
+  if (!legend) return;
+  legend.classList.toggle('open', window.innerWidth > 600);
 }
 
 window.addEventListener('DOMContentLoaded', () => {

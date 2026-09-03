@@ -57,7 +57,7 @@
 - **コミットメッセージに GitHub API ドキュメントのサンプル文言を使わない。**
   `Change 'Hello World' to 'Goodbye World'` / `Update print statement from 'Hello' to 'Goodbye'` は
   Contents API のドキュメント例であり、実際に 2026-08-29・08-31・09-02 の3回、
-  スマホから `docs/tools/index_html_diffs.md` を更新した際にそのまま記録されている
+  スマホから `tools/index_html_diffs.md` を更新した際にそのまま記録されている
 - スマホ（Claude Code on the Web）から GitHub API 経由でファイルを上書きする場合、
   コミットメッセージは次の形式にする
   ```
@@ -137,7 +137,11 @@
 
 ## 触ってはいけないファイル
 
-- `docs/tools/index_html_diffs.md` は `mobile-update.yml` / `.github/scripts/apply_diffs.py` の参照先。**移動・削除しない**。やむを得ず動かす場合は `apply_diffs.py` のパスも同時に修正する
+- `tools/index_html_diffs.md` は `mobile-update.yml` / `.github/scripts/apply_diffs.py` / `auto_push.py` の参照先。**移動・削除しない**。
+  やむを得ず動かす場合は、`apply_diffs.py` の `DIFFS_FILE`、`auto_push.py` の `repo_path`、
+  `.claude/skills/daily-site-update/SKILL.md` の定型文を同時に修正する
+- **`docs/` 配下は GitHub Pages の公開範囲。内部作業用ファイルを置かない。**
+  作業用スクリプト・テンプレート・手順書はリポジトリルートの `tools/` に置く（配信範囲外）
 - `.env`（`GITHUB_TOKEN` を格納）は追跡対象外を維持する
 
 ## 上位の方針文書について

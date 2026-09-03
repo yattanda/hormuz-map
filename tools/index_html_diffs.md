@@ -650,7 +650,7 @@ URL捏造チェック：全URLをweb検索で実在確認済み（CENTCOM系はC
 ## Claude Code への引き継ぎ指示
 
 ```
-git pull --rebase してから、docs/tools/index_html_diffs.mdに従ってdocs/index.htmlを更新してください。
+git pull --rebase してから、tools/index_html_diffs.mdに従ってdocs/index.htmlを更新してください。
 また、本ファイル内の[S10]セクションに従ってdocs/data/news_data.jsonを直接str_replaceで更新し、
 [S12]セクションに従ってdocs/data/archive_timeline.jsonにも新規エントリーを直接str_replaceで追加してください
 （いずれもapply_diffs.pyの対象外です）。

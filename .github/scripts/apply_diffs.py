@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 apply_diffs.py
-docs/tools/index_html_diffs.md の <!-- APPLY --> ブロックを解析して
+tools/index_html_diffs.md の <!-- APPLY --> ブロックを解析して
 docs/index.html に str_replace を適用する。
 
 ブロック形式:
@@ -18,7 +18,7 @@ import re
 import sys
 from pathlib import Path
 
-DIFFS_FILE = Path("docs/tools/index_html_diffs.md")
+DIFFS_FILE = Path("tools/index_html_diffs.md")
 HTML_FILE  = Path("docs/index.html")
 
 # ブロックを抽出する正規表現

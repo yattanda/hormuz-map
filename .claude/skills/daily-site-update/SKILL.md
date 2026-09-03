@@ -64,7 +64,7 @@ WebFetch が接続エラーになる場合はこの設定を最初に疑う。
 3. `run.bat` をダブルクリック（index_html_diffs.md のみ push）
    └ 「完了: 1/1 ファイル push成功」を確認してウィンドウを閉じる
 4. Claude Code に以下の定型文を送る：
-   「docs/tools/index_html_diffs.md に従って docs/index.html を更新してください。
+   「tools/index_html_diffs.md に従って docs/index.html を更新してください。
     docs/data/news_data.json は [S10] の指示に従い、既存ファイルに対して
     新規追加分をマージする形で更新してください。
     更新完了後に commit してください。push は確認後に指示します。」

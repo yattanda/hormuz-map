@@ -1,6 +1,6 @@
 # index_html_diffs.md 生成ルール
 
-> **注意：このファイルは Claude.ai で `docs/tools/index_html_diffs.md` を生成・更新する際の参照ルールであり、Claude Code の通常作業では常時参照しない。**
+> **注意：このファイルは Claude.ai で `tools/index_html_diffs.md` を生成・更新する際の参照ルールであり、Claude Code の通常作業では常時参照しない。**
 
 ---
 
@@ -701,7 +701,7 @@ APPLY ブロック2
 
 run.bat が自動 push する対象は以下の **1ファイルのみ**：
 
-- `docs/tools/index_html_diffs.md`
+- `tools/index_html_diffs.md`
 
 それ以外のファイル（例：diffs-generation-rules.md・CLAUDE.md・Memory.md・news_data.json 等）は
 run.bat では push されない。

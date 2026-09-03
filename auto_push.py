@@ -29,7 +29,7 @@ REPO_OWNER   = os.getenv("REPO_OWNER", "yattanda")
 FILE_MAP = [
     {
         "repo":       "hormuz-map",
-        "repo_path":  "docs/tools/index_html_diffs.md",
+        "repo_path":  "tools/index_html_diffs.md",
         "local_name": "index_html_diffs.md",
         "local_repo": r"C:\Users\yutay\Documents\GitHub\hormuz-map",
     },

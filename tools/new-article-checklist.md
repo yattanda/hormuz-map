@@ -15,7 +15,7 @@
 ## 1. テンプレートをコピーする
 
 ```
-docs/tools/article-template.html を docs/articles/{slug}.html としてコピー
+tools/article-template.html を docs/articles/{slug}.html としてコピー
 ```
 
 ## 2. プレースホルダーを埋める

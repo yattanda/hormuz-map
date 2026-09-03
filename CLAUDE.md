@@ -119,7 +119,7 @@
 
 - 「特別解説コラム」の各コラムは `docs/articles/{slug}.html` として個別ページ化されている（一覧：`docs/articles/index.html`）
 - `docs/index.html` 側の各カードは要約＋「全文を読む」リンクのみを表示し、本文全文は個別ページ側が正とする
-- 新規コラムを追加する場合は `docs/tools/new-article-checklist.md` の手順に従うこと
+- 新規コラムを追加する場合は `tools/new-article-checklist.md` の手順に従うこと
 
 ## 法務ページ・ドメイン移行フェーズのルール
 

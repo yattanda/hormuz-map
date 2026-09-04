@@ -297,7 +297,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   padding:14px 20px;
   display:flex; align-items:center; gap:16px; flex-wrap:wrap;
 }
-.dl-label { font-size:0.78rem; color:#fca5a5; font-weight:700; white-space:nowrap; }
+/* white-space:nowrap を解除（2026-09-04）。
+   ここには毎日更新で長さの変わるフェーズ見出しが入るため、nowrap のままだと
+   テキストが伸びた際に画面幅を超え、ページ全体に横スクロールが発生していた。
+   広い画面では1行のままで表示は変わらず、狭い画面でのみ折り返して破綻を防ぐ。 */
+.dl-label { font-size:0.78rem; color:#fca5a5; font-weight:700; line-height:1.5; }
 .dl-boxes { display:flex; gap:10px; align-items:center; flex-wrap:wrap; flex:1; }
 .dl-box { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.4); border-radius:8px; padding:8px 14px; text-align:center; min-width:90px; }
 .dl-num { font-size:1.3rem; font-weight:800; color:#ef4444; line-height:1; }

@@ -180,11 +180,11 @@ body {
     padding-right: 4px !important;
   }
 
-  /* ルートテーブルは端まで広げる */
+  /* ルートテーブルは端まで広げる。
+     親の #routes は body 直下で padding が 0 のため、以前あった
+     margin -4px / width calc(100% + 8px) の打ち消しは過剰で、
+     375px 幅で右に 4px はみ出していた（2026-09-05 実測）。 */
   .rtable-wrap {
-    margin-left: -4px !important;
-    margin-right: -4px !important;
-    width: calc(100% + 8px) !important;
     overflow-x: auto;
   }
   /* ステータスバッジを横並び維持 */

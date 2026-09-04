@@ -59,16 +59,58 @@ WebFetch が接続エラーになる場合はこの設定を最初に疑う。
 
 ## 毎日の定常更新フロー
 
-1. Claude.ai で最新情報収集・`index_html_diffs.md` を生成（news_data.json は生成しない）
-2. `index_html_diffs.md` をダウンロード
-3. `run.bat` をダブルクリック（index_html_diffs.md のみ push）
-   └ 「完了: 1/1 ファイル push成功」を確認してウィンドウを閉じる
-4. Claude Code に以下の定型文を送る：
-   「tools/index_html_diffs.md に従って docs/index.html を更新してください。
-    docs/data/news_data.json は [S10] の指示に従い、既存ファイルに対して
-    新規追加分をマージする形で更新してください。
-    更新完了後に commit してください。push は確認後に指示します。」
-5. 内容確認後、push を指示
+### 1. 差分の生成（PC・スマホ共通）
+
+Claude.ai に以下を送る（日付は当日のものに差し替える）。news_data.json は生成しない。
+
+```
+ホルムズ海峡危機マップの更新の為、本日2026年9月4日09:13日本時間JSTにおける最新重要情報の取得と纏めを行ってください。
+"
+tools/diffs-generation-rules.md の内容に従って、
+本日の tools/index_html_diffs.md を生成してください。各カラムや項目に書く文章は、重複しないように書いてください。
+つまり、同じことを繰り返し書かないでください。極力別の内容を書いてください。同じ内容を書かなくちゃいけない場合は、少なくともカラムや項目の性格に合わせて書き方を変えてください"
+```
+
+### 2. `tools/index_html_diffs.md` をリポジトリへ反映
+
+経路は2つ。どちらを通っても、以後の手順は同じ。
+
+#### 経路A：PC（`run.bat`）
+
+1. `index_html_diffs.md` を Downloads フォルダへダウンロード
+2. `run.bat` をダブルクリック（`auto_push.py` が index_html_diffs.md のみ push）
+   - 「push : 1/1 ファイル成功」を確認してウィンドウを閉じる
+   - push 先は `auto_push.py` の `FILE_MAP` の `repo_path` で決まる
+
+#### 経路B：スマホ（GitHub の Web UI で直接編集）
+
+1. スマホのブラウザで GitHub の `tools/index_html_diffs.md` を開き、編集して貼り付ける
+2. コミットメッセージは次の形式にする（既定の文言や GitHub API ドキュメントの例文を使わない）
+
+   ```
+   mobile: update index_html_diffs.md (M/D HH:MM JST)
+   ```
+
+3. ローカルで作業を続ける場合は `git pull` してから着手する
+
+> **注意**：`docs/tools/` は 2026-09-03 に廃止した（§11-8）。編集先は `tools/index_html_diffs.md`。
+> `docs/` 配下は GitHub Pages の公開範囲のため、内部作業用ファイルを置かない。
+
+### 3. Claude Code に適用させる
+
+以下の定型文を送る。
+
+```
+tools/index_html_diffs.md に従って docs/index.html を更新してください。
+news_data.json の既存 isLatest: true を false に変更してから新記事を先頭追加
+docs/data/news_data.json は [S10] の指示に従い、既存ファイルに対して
+新規追加分をマージする形で更新してください。
+/html-safe-edit で今回の更新が HTML 構造に影響しないか確認してください。
+/publish-checklist で公開前チェックを実施してください。
+完了後に commit してください。push は確認後に指示します。
+```
+
+### 4. 内容確認後、push を指示
 
 ---
 

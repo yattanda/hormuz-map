@@ -423,7 +423,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   min-width:252px;
   line-height:1.5;
 }
-.map-legend h4 { color:#7dd3fc; font-size:0.8rem; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
+.map-legend h3 { color:#7dd3fc; font-size:0.8rem; margin-top:1.33em; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
 .legend-toggle-btn {
   display:inline-block;
   background:rgba(239,68,68,0.15);
@@ -565,7 +565,7 @@ footer {
     max-width: 290px !important;
     padding: 12px 14px !important;
   }
-  .map-legend h4 {
+  .map-legend h3 {
     font-size: 13px !important;
     white-space: nowrap;
     cursor: pointer;
@@ -1389,9 +1389,9 @@ Copy
   <div style="background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%);border:2px solid rgba(56,189,248,0.45);box-shadow:0 0 18px rgba(56,189,248,0.08),inset 0 0 0 1px rgba(56,189,248,0.06);border-radius:14px;padding:16px 12px;">
 
     <!-- 30秒で全体像を把握 -->
-    <div style="font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:#38bdf8;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(56,189,248,0.15);">
+    <h2 style="font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:#38bdf8;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid rgba(56,189,248,0.15);">
       🗺️ 30秒で全体像を把握
-    </div>
+    </h2>
 
 <!-- 3行サマリー -->
 <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:10px;border:1.5px solid rgba(56,189,248,0.3);border-radius:14px;padding:8px 10px;background:rgba(15,23,42,0.6);">
@@ -1551,7 +1551,7 @@ Copy
   </div><!-- /30秒カラム内側 -->
 </div><!-- /30秒カラム外側 -->
 <!-- SITUATION CARDS -->
-<div style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 海峡・外交・市場の現状をリアルタイムで確認</div>
+<h2 style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 海峡・外交・市場の現状をリアルタイムで確認</h2>
 <div id="situation" class="sit-grid"></div>
 <div class="sit-grid">
 <!-- カード① タンカー・フォー・タンカー初適用 -->
@@ -3381,7 +3381,7 @@ document.addEventListener('keydown', function(e) {
   <!-- SCENARIOS -->
    <div id="scenario"></div>
 <div>
-<div class="sec-title">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></div>
+<h2 class="sec-title" style="margin-top:0;font-weight:inherit;">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></h2>
   <!-- シナリオ確率更新補足 -->
 <div style="background:rgba(239,68,68,0.07);border:1px dashed rgba(239,68,68,0.35);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.78rem;color:#fca5a5;line-height:1.8;">
   <span style="font-weight:800;color:#f87171;">📊 2026年9月4日 11:40 JST 更新</span><br>
@@ -4454,9 +4454,9 @@ const Legend = L.Control.extend({
     const div = L.DomUtil.create('div','map-legend');
     div.id = 'map-legend-ctrl';
     div.innerHTML = `
-      <h4>🗺️ 凡 例
+      <h3>🗺️ 凡 例
         <button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn">開く</button>
-      </h4>
+      </h3>
       <div class="legend-body" id="legend-body">
 
         <div class="leg-section">輸送ルート</div>
@@ -4841,9 +4841,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- 特別解説コラム -->
 <div id="special-commentary" style="width:100%;margin:24px 0 0;padding:0 16px;">
 
-  <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#f87171;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(248,113,113,0.25);">
+  <h2 style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#f87171;text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(248,113,113,0.25);">
     🔬 特別解説コラム
-  </div>
+  </h2>
 
   <!-- 機雷コラムカード -->
   <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
@@ -4852,7 +4852,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
       <span style="font-size:1.2rem;">💣</span>
       <div style="flex:1;min-width:0;">
-        <div style="font-size:0.85rem;font-weight:800;color:#f87171;line-height:1.4;">ホルムズ海峡「機雷問題」の深層</div>
+        <h3 style="font-size:0.85rem;font-weight:800;color:#f87171;line-height:1.4;margin:0;">ホルムズ海峡「機雷問題」の深層</h3>
         <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</div>
       </div>
       <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/12</span>
@@ -4875,7 +4875,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
     <span style="font-size:1.2rem;">🛢️</span>
     <div style="flex:1;min-width:0;">
-      <div style="font-size:0.85rem;font-weight:800;color:#fbbf24;line-height:1.4;">サウジ東西パイプライン攻撃の深層</div>
+      <h3 style="font-size:0.85rem;font-weight:800;color:#fbbf24;line-height:1.4;margin:0;">サウジ東西パイプライン攻撃の深層</h3>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</div>
     </div>
     <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/09</span>
@@ -4899,7 +4899,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
     <span style="font-size:1.2rem;">🌊</span>
     <div style="flex:1;min-width:0;">
-      <div style="font-size:0.85rem;font-weight:800;color:#38bdf8;line-height:1.4;">ルートC・アラスカ原油の現実</div>
+      <h3 style="font-size:0.85rem;font-weight:800;color:#38bdf8;line-height:1.4;margin:0;">ルートC・アラスカ原油の現実</h3>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ・紅海の二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</div>
     </div>
     <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/12</span>
@@ -4923,7 +4923,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
     <span style="font-size:1.2rem;">🌍</span>
     <div style="flex:1;min-width:0;">
-      <div style="font-size:0.85rem;font-weight:800;color:#34d399;line-height:1.4;">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</div>
+      <h3 style="font-size:0.85rem;font-weight:800;color:#34d399;line-height:1.4;margin:0;">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</h3>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</div>
     </div>
     <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/13</span>
@@ -4948,7 +4948,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
     <span style="font-size:1.2rem;">📊</span>
     <div style="flex:1;min-width:0;">
-      <div style="font-size:0.85rem;font-weight:800;color:#fb923c;line-height:1.4;">不完全な停戦、動かない海峡</div>
+      <h3 style="font-size:0.85rem;font-weight:800;color:#fb923c;line-height:1.4;margin:0;">不完全な停戦、動かない海峡</h3>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ海峡危機、1か月で見えた供給正常化の壁 ― 予測 vs 現実ダッシュボード</div>
     </div>
     <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/05/08</span>
@@ -4973,7 +4973,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
     <span style="font-size:1.2rem;">📉</span>
     <div style="flex:1;min-width:0;">
-      <div style="font-size:0.85rem;font-weight:800;color:#a78bfa;line-height:1.4;">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</div>
+      <h3 style="font-size:0.85rem;font-weight:800;color:#a78bfa;line-height:1.4;margin:0;">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h3>
       <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">開戦前248日分→現在204日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</div>
     </div>
     <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/08/21</span>
@@ -5214,7 +5214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- NEWS COLUMN -->
 <div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
-  <div class="news-section-title">📰 関連最新ニュース</div>
+  <h2 class="news-section-title">📰 関連最新ニュース</h2>
   <div id="news-latest-container">
     <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
   </div>
@@ -5230,9 +5230,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <section style="margin:20px 0 10px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
 
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-        <h3 style="font-size:0.82rem;font-weight:700;color:#94a3b8;letter-spacing:0.06em;text-transform:uppercase;margin:0;">
+        <h2 style="font-size:0.82rem;font-weight:700;color:#94a3b8;letter-spacing:0.06em;text-transform:uppercase;margin:0;">
           🕐 更新履歴 &amp; 主要出典
-        </h3>
+        </h2>
       </div>
 
       <!-- 常時表示: 最新3件 -->
@@ -5298,9 +5298,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!--🌐 現地メディア視点-->
 <div id="osint-panel">
-  <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
+  <h2 style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
     🌐 現地メディア視点
-  </div>
+  </h2>
 
   <div id="osint-container">
     <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>

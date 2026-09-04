@@ -169,14 +169,26 @@
 
 ### クラウドセッションからの参照
 
-セッションの対象リポジトリが `hormuz-map` でも `gh` 経由で読める。
+セッションの対象リポジトリが `hormuz-map` でも読める。
+**2026-09-04 にクラウドセッションから実測で確認済み。**
 
-```bash
-gh api repos/yattanda/hormuz-ops/contents/handovers --jq '.[].name'
-gh api repos/yattanda/hormuz-ops/contents/handovers/INDEX.md --jq '.content' | base64 -d
+手順は次のとおり。**`gh` CLI はクラウド環境に入っていない**ので使えない。
+
+1. 既定ではセッションのリポジトリスコープが対象リポジトリのみのため、
+   `hormuz-ops` へのアクセスは拒否される
+2. `add_repo` で `yattanda/hormuz-ops` を **read 権限で**セッションに追加する
+3. GitHub MCP のファイル取得ツール（`get_file_contents`）で
+   `handovers/INDEX.md` を読む
+
+クラウドセッションにはこう頼めばよい。
+
+```
+private リポジトリ yattanda/hormuz-ops を read で追加して、
+handovers/INDEX.md を読んで現状を把握して。変更・コミットはしないこと。
 ```
 
-読めない場合は GitHub App の許可対象に `hormuz-ops` を追加する。
+`add_repo` はそのセッションのスコープに `hormuz-ops` を追加する。
+読み取り専用で追加すること。
 
 ### 書くときのルール
 

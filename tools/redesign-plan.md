@@ -279,3 +279,53 @@ Web では `max-width: 70ch`（全角約35字）で中央寄せするのが正�
    `loadRouteTableFlow()` の `MAP` にキーを足す必要がある。
 3. `tankers_week` は「週あたり寄港タンカー隻数推定」だが、算出根拠が
    `_comment` の一文しかなく、サイト側にも「算出方法の詳細は現在整理中です」と表示されている。
+
+### 変更後の検証手順（必須）
+
+`oil-flow.json` を編集するのは `hormuz-data-` 側だが、**影響は `hormuz-map` にも出る**。
+気づかないまま公開される経路があるため、必ず両方を確認する。
+
+**前提: `file://` や LiveServer では確認できない。** iframe と fetch が動かないため、
+必ず GitHub Pages に push してから確認すること。
+
+1. `hormuz-data-` を push し、Pages の反映を待つ（1〜2分）
+2. https://yattanda.github.io/hormuz-map/ を**強制リロード**（Ctrl+F5）で開く
+3. ブラウザのコンソールで以下を実行する
+
+```javascript
+// ルートテーブルへの注入結果を一覧する
+(() => {
+  const r = ['A','B','C_US','C_GL'].map(k => ({
+    route: k,
+    bpd: document.getElementById('jf-'+k+'-bpd')?.textContent,
+    tanker: document.getElementById('jf-'+k+'-tanker')?.textContent
+  }));
+  console.table(r);
+  console.log('基準日:', document.getElementById('jf-basis-date')?.textContent);
+})();
+```
+
+**判定基準**
+
+| 症状 | 意味 |
+|---|---|
+| `bpd` が `—` のまま | そのルートキーが JSON 側に無い（改称・削除された） |
+| `tanker` が `— 隻/週` のまま | `tankers_week` が 0 か欠落 |
+| 基準日が `—` | `updated` が欠落 |
+| 基準日が古い日付 | `updated` の更新漏れ（値を変えたら `updated` も必ず更新する） |
+| コンソールに `oil-flow fetch error` | JSON が壊れている / URL が変わった |
+
+4. `hormuz-data-` 側のダッシュボードでも「日本向け調達フロー」の
+   合計値・平常比%・各ルートのバーと ▲▼ が正しいことを確認する
+   （`normal_total_bpd` と `prev_bpd` はこちらでしか使われていないため、
+   hormuz-map 側の確認だけでは検出できない）
+
+### 依頼6を始める前に決めておくこと
+
+`old` と `D` を hormuz-map のルートテーブルにも反映させるかどうかで、
+作業範囲が変わる。
+
+| 方針 | 作業 |
+|---|---|
+| 反映させない（現状維持） | `hormuz-data-` 側のみ。hormuz-map は無変更 |
+| 反映させる | `docs/index.html` に `id="jf-old-bpd"` 等を追加し、`loadRouteTableFlow()` の `MAP` にキーを追記する。**hormuz-map 側の変更が必要**になるため、フェーズ1a/1b と作業が競合しないよう順序を決めること |

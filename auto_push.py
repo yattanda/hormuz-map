@@ -4,6 +4,10 @@ auto_push.py  ― hormuz-map / hormuz-data- 自動push スクリプト
 変更点:
   - news_data.json を FILE_MAP から除外（Claude Code 側でマージ管理する方式に変更）
   - hormuz-map の push 対象は index_html_diffs.md のみに変更
+改訂: 2026-09-04 (rev4)
+変更点:
+  - oil-flow.json を FILE_MAP から除外（上書き事故の再発防止。詳細は FILE_MAP 内のコメント）
+  - push 対象は index_html_diffs.md のみになった
 """
 
 import os
@@ -33,12 +37,14 @@ FILE_MAP = [
         "local_name": "index_html_diffs.md",
         "local_repo": r"C:\Users\yutay\Documents\GitHub\hormuz-map",
     },
-    {
-        "repo":       "hormuz-data-",
-        "repo_path":  "data/oil-flow.json",
-        "local_name": "oil-flow.json",
-        "local_repo": r"C:\Users\yutay\Documents\GitHub\hormuz-data-",
-    },
+    # data/oil-flow.json は 2026-09-04 に FILE_MAP から除外した。
+    # 理由: 本スクリプトは Downloads 側を無条件に正として上書きし、
+    #       ローカル/リモートのどちらが新しいかを比較しない。
+    #       2026-05-09 に 5/4 時点の古い Downloads ファイルを push した結果、
+    #       5/8 の手動更新（フジャイラ攻撃の反映）を巻き戻す事故が発生した
+    #       （hormuz-data- の 7dd5085 が 1f8e90f を打ち消している）。
+    #       oil-flow.json は hormuz-data- 側の GitHub Actions で更新する方式に
+    #       移行したため、この経路は不要。復活させないこと。
 ]
 
 DOWNLOADS_DIR = Path(r"C:\Users\yutay\Downloads")

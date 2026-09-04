@@ -155,8 +155,8 @@
   ローカルでは `~/Documents/GitHub/hormuz-ops/handovers/` に相当する
 - `/handover` を実行する場合も保存先はここ。**この指定はグローバルの
   `~/.claude/commands/handover.md` の既定（`.claude/handovers/`）より優先する**
-- `hormuz-map/.claude/handovers/` は 2026-09-04 までの過去分が残っているだけで、
-  以後は使わない（`.gitignore` 対象のまま）
+- `hormuz-map/.claude/handovers/` は **2026-09-04 に削除済み**。
+  過去14ファイルは `hormuz-ops/handovers/` へ移設した。ここに再び作らない
 - ファイル名は `YYYY-MM-DD_HHmm.md`。追加したら `handovers/INDEX.md` に1行足す
 
 ### なぜ別リポジトリなのか

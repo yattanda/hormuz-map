@@ -493,6 +493,29 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 
 /* ROUTE TABLE */
 .sec-title { font-size:0.92rem; color:#7dd3fc; margin-bottom:12px; padding-bottom:7px; border-bottom:1px solid #1e3a5f; }
+
+/* ===== セクション見出し（フェーズ1a-2 / 2026-09-05 追加） =====
+   主要セクションの h2 はすべて .sec-h2 を使う。
+   従来 0.75〜1.2rem の4サイズに散っていたものを1段階へ統一した。
+   今後サイズを変えるときは各所ではなくこの1箇所を変更する。
+   色はセクションごとのアクセントを保つため、必要な場合のみ style で上書きする。 */
+.sec-h2 {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--c-accent);
+  margin: 0 0 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--c-surface-deep);
+}
+/* 見出し内の補足（日付・サブタイトル）。見出し本体より小さく弱く出す */
+.sec-h2 .sec-h2-sub {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--c-text-dim);
+  margin-left: 8px;
+}
 .rtable { width:100%; border-collapse:separate; border-spacing:0 5px; font-size:0.76rem; }
 .rtable th { text-align:left; color:#64748b; font-size:0.68rem; font-weight:600; letter-spacing:0.07em; padding:0 10px 7px; }
 .rtable td { padding:10px; background:rgba(255,255,255,0.025); color:#cbd5e1; vertical-align:middle; border-top:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); }
@@ -1389,7 +1412,7 @@ Copy
   <div style="background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%);border:2px solid rgba(56,189,248,0.45);box-shadow:0 0 18px rgba(56,189,248,0.08),inset 0 0 0 1px rgba(56,189,248,0.06);border-radius:14px;padding:16px 12px;">
 
     <!-- 30秒で全体像を把握 -->
-    <h2 style="font-size:1.2rem;font-weight:800;letter-spacing:0.06em;color:#38bdf8;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid rgba(56,189,248,0.15);">
+    <h2 class="sec-h2" style="color:#38bdf8;border-bottom-color:rgba(56,189,248,0.15);">
       🗺️ 30秒で全体像を把握
     </h2>
 
@@ -1551,7 +1574,7 @@ Copy
   </div><!-- /30秒カラム内側 -->
 </div><!-- /30秒カラム外側 -->
 <!-- SITUATION CARDS -->
-<h2 style="font-size:0.75rem;font-weight:800;letter-spacing:0.07em;color:#64748b;text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.08);">🌐 最新情勢カード ― 海峡・外交・市場の現状をリアルタイムで確認</h2>
+<h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);">🌐 最新情勢カード<span class="sec-h2-sub">海峡・外交・市場の現状をリアルタイムで確認</span></h2>
 <div id="situation" class="sit-grid"></div>
 <div class="sit-grid">
 <!-- カード① タンカー・フォー・タンカー初適用 -->
@@ -3381,7 +3404,7 @@ document.addEventListener('keydown', function(e) {
   <!-- SCENARIOS -->
    <div id="scenario"></div>
 <div>
-<h2 class="sec-title" style="margin-top:0;font-weight:inherit;">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></h2>
+<h2 class="sec-h2" style="color:#7dd3fc;">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></h2>
   <!-- シナリオ確率更新補足 -->
 <div style="background:rgba(239,68,68,0.07);border:1px dashed rgba(239,68,68,0.35);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.78rem;color:#fca5a5;line-height:1.8;">
   <span style="font-weight:800;color:#f87171;">📊 2026年9月4日 11:40 JST 更新</span><br>
@@ -4841,7 +4864,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- 特別解説コラム -->
 <div id="special-commentary" style="width:100%;margin:24px 0 0;padding:0 16px;">
 
-  <h2 style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#f87171;text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(248,113,113,0.25);">
+  <h2 class="sec-h2" style="color:#f87171;border-bottom-color:rgba(248,113,113,0.25);">
     🔬 特別解説コラム
   </h2>
 
@@ -5214,7 +5237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- NEWS COLUMN -->
 <div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
-  <h2 class="news-section-title">📰 関連最新ニュース</h2>
+  <h2 class="sec-h2" style="margin-top:24px;">📰 関連最新ニュース</h2>
   <div id="news-latest-container">
     <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
   </div>
@@ -5230,7 +5253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <section style="margin:20px 0 10px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
 
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-        <h2 style="font-size:0.82rem;font-weight:700;color:#94a3b8;letter-spacing:0.06em;text-transform:uppercase;margin:0;">
+        <h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);flex:1 1 100%;">
           🕐 更新履歴 &amp; 主要出典
         </h2>
       </div>
@@ -5298,7 +5321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!--🌐 現地メディア視点-->
 <div id="osint-panel">
-  <h2 style="font-size:0.75rem;font-weight:800;letter-spacing:0.08em;color:#a78bfa;text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.25);">
+  <h2 class="sec-h2" style="color:#a78bfa;border-bottom-color:rgba(167,139,250,0.25);">
     🌐 現地メディア視点
   </h2>
 

@@ -149,6 +149,42 @@
   作業用スクリプト・テンプレート・手順書はリポジトリルートの `tools/` に置く（配信範囲外）
 - `.env`（`GITHUB_TOKEN` を格納）は追跡対象外を維持する
 
+## セッション引き継ぎの保存先
+
+- **引き継ぎノートは private リポジトリ `yattanda/hormuz-ops` の `handovers/` に置く。**
+  ローカルでは `~/Documents/GitHub/hormuz-ops/handovers/` に相当する
+- `/handover` を実行する場合も保存先はここ。**この指定はグローバルの
+  `~/.claude/commands/handover.md` の既定（`.claude/handovers/`）より優先する**
+- `hormuz-map/.claude/handovers/` は 2026-09-04 までの過去分が残っているだけで、
+  以後は使わない（`.gitignore` 対象のまま）
+- ファイル名は `YYYY-MM-DD_HHmm.md`。追加したら `handovers/INDEX.md` に1行足す
+
+### なぜ別リポジトリなのか
+
+`hormuz-map` と `hormuz-data-` はどちらも **public** で、引き継ぎには
+上流の戦略・法務判断・第三者とのやり取り・運用上の弱点が入り込む。
+一方、ローカルにしか無いとクラウドセッション（Claude Code on the Web）から
+読めず、PC が手元に無いときに作業を継続できない。
+「どこからでも読める」と「公開しない」を両立させるための構成。
+
+### クラウドセッションからの参照
+
+セッションの対象リポジトリが `hormuz-map` でも `gh` 経由で読める。
+
+```bash
+gh api repos/yattanda/hormuz-ops/contents/handovers --jq '.[].name'
+gh api repos/yattanda/hormuz-ops/contents/handovers/INDEX.md --jq '.content' | base64 -d
+```
+
+読めない場合は GitHub App の許可対象に `hormuz-ops` を追加する。
+
+### 書くときのルール
+
+- **API キー・トークンの実値は書かない。**private であっても書かない。
+  Secret 名（`GEMINI_API_KEY` 等）までは可
+- 複数リポジトリにまたがる作業では、どのリポジトリの話かを冒頭に明記する
+- それ単体で読めるように書く。他のノートを読まないと意味が通らない書き方をしない
+
 ## 上位の方針文書について
 
 - サイトの**技術・実装の現状**は `Memory.md` を参照する（従来どおり）

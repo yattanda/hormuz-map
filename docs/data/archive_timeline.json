@@ -2682,6 +2682,30 @@
           "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
         }
       ]
+    },
+    {
+      "date": "2026-09-04",
+      "dateLabel": "2026/09/04 11:40",
+      "blockadeDay": 189,
+      "sourceType": "realtime",
+      "summary": "CENTCOMは9月1日、ホルムズ海峡周辺のIRGC関連目標約100カ所を攻撃したと発表——7/29以来最大規模で、封鎖ラインより北側に錨泊中のイラン国営タンカー2隻への攻撃を史上初めて含んだ・ドローン発射のミサイルで機関室を狙い乗員の死傷者報告なし、トランプ氏承認の新方針「タンカー・フォー・タンカー」の初適用とみられる（CENTCOM/CNBC/Axios）・イランは「2隻がホルムズの機雷に接触した」と主張も米側は否定・Gulf News報道では9/1の米攻撃でイラン国内は少なくとも11人（Al Jazeeraは18人と報道）死亡、イランはクウェート・バーレーン・ヨルダン・イラクの米関連拠点を攻撃したと主張し「ヨルダンで多数の米兵を殺害」とも発表したが米当局は死傷者なしと否定、結婚式会場攻撃の主張もCENTCOMは否定（Gulf News/Al Jazeera）・ヴァンス副大統領は9/3「イランと話していないし、商船攻撃をやめない限り話すつもりもない」と表明・同日ネタニヤフ首相「イラン体制転覆が中心的使命であり目標は手の届く範囲内」、カッツ国防相はエネルギーインフラ含む全インフラ標的化を警告（The Times of Israel liveblog）・原油はブレント95〜96ドル台・WTI90ドル台前半で高止まり・日本関係船は残り4隻で変化なし・封鎖189日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "CENTCOM / CNBC / Axios",
+          "title": "米軍、ホルムズ海峡でイラン国営タンカー2隻を史上初攻撃——『タンカー・フォー・タンカー』方針の初適用",
+          "url": "https://www.cnbc.com/2026/09/02/us-iran-war-trump-hormuz-irgc-jordan-bahrain.html"
+        },
+        {
+          "sourceLabel": "The Times of Israel liveblog",
+          "title": "ヴァンス副大統領『イランと対話せず』、ネタニヤフ首相『体制転覆が中心的使命』",
+          "url": "https://www.timesofisrael.com/liveblog-september-03-2026/"
+        },
+        {
+          "sourceLabel": "Al Jazeera",
+          "title": "イラン・米、新たな攻撃応酬——最新の空爆で誰が標的になったか",
+          "url": "https://www.aljazeera.com/news/2026/9/2/iran-us-exchange-new-attacks-who-was-hit-in-latest-strikes"
+        }
+      ]
     }
   ]
 }

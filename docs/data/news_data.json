@@ -1,7 +1,27 @@
 {
-  "updated": "2026年9月2日 10:30 日本時間JST",
+  "updated": "2026年9月4日 11:40 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-vance-not-talking-netanyahu-regime-0903",
+      "title": "ヴァンス副大統領『イランと対話せず』、ネタニヤフ首相『体制転覆が中心的使命』——強硬発言が相次ぐ",
+      "body": "ヴァンス米副大統領は9月3日、『われわれはイランと話していないし、商船への攻撃をやめない限り話すつもりもない』と述べ、イランに対し『crazy peopleのように振る舞うのをやめろ』と発言した。戦争終結の時期はホルムズ海峡の通航が自由に流れるようになるかに懸かるとの趣旨も示した。同日、イスラエルのネタニヤフ首相はロシュ・ハシャナ集会で、イラン体制転覆が『中心的使命』であり目標は『手の届く範囲内』と発言。カッツ国防相はイランが攻撃すればエネルギーインフラを含む全インフラを標的にすると警告した。",
+      "sourceLabel": "The Times of Israel liveblog（9/3）",
+      "date": "2026年9月3日（現地）/ 2026年9月4日 JST",
+      "label": "🗣️ 強硬発言",
+      "url": "https://www.timesofisrael.com/liveblog-september-03-2026/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-tanker-for-tanker-strikes-0901",
+      "title": "米軍、ホルムズ海峡でイラン国営タンカー2隻を初めて攻撃——『タンカー・フォー・タンカー』方針の初適用、IRGC関連約100カ所も同時攻撃",
+      "body": "CENTCOMは9月1日、ホルムズ海峡周辺のIRGC関連目標約100カ所を攻撃したと発表した。7月29日以来最大規模で、封鎖ラインより北側に錨泊中のイラン国営タンカー2隻への攻撃を史上初めて含んだ。ドローン発射のミサイルで機関室を狙い、乗員の死傷者報告はない。トランプ大統領が承認した新方針『タンカー・フォー・タンカー』（イランが商船を攻撃するたびイラン国営タンカーを攻撃する）の初適用とみられる。攻撃対象にはIRGCの防空拠点・レーダー・機雷敷設能力・通信施設・対艦巡航ミサイル発射拠点も含まれた。イランは『2隻がホルムズの機雷に接触した』と主張したが、米側はこれを否定している。",
+      "sourceLabel": "CENTCOM / CNBC / Axios（9/1〜9/2）",
+      "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
+      "label": "🛢️ タンカー攻撃",
+      "url": "https://www.cnbc.com/2026/09/02/us-iran-war-trump-hormuz-irgc-jordan-bahrain.html",
+      "isLatest": false
+    },
     {
       "id": "latest-us-strikes-expanded-0901",
       "title": "米軍、対イラン攻撃を数十カ所へ拡大——バンダレアッバース近郊やレーダー網など攻撃、トランプ氏が最大級の警告",
@@ -10,7 +30,7 @@
       "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
       "label": "⚔️ 軍事行動拡大",
       "url": "https://www.cnbc.com/2026/09/01/us-strikes-iran-after-new-hormuz-strait-shipping-attacks-centcom.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-decisive-operation-jordan-0901",
@@ -21,49 +41,27 @@
       "label": "🇯🇴 報復拡大",
       "url": "https://www.timesofisrael.com/liveblog-september-1-2026/",
       "isLatest": false
-    },
-    {
-      "id": "latest-us-strikes-larak-island-0830",
-      "title": "米軍、ホルムズ海峡ララク島のイラン軍施設を攻撃——機雷搭載ロケット発射を阻止、約1カ月ぶりの軍事行動",
-      "body": "米中央軍のティム・ホーキンス報道官によれば、イラン革命防衛隊(IRGC)が30日、ホルムズ海峡のイラン領ララク島から機雷を搭載したロケット弾を海峡へ発射する準備をしていたため、米軍がロケットランチャー2基を攻撃した。米軍は先週、同海峡国際航路の機雷除去作業を完了したと発表したばかりで、対イラン軍事行動としては約1カ月ぶりとなる。IRGCはこの攻撃で「犠牲者」が出たと主張し、正確な人数は示さないまま即座に報復を表明した。",
-      "sourceLabel": "AP通信 / NBC News（8/30 現地時間）",
-      "date": "2026年8月30日（現地）/ 2026年8月31日 JST",
-      "label": "⚔️ 軍事行動",
-      "url": "https://apnews.com/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-retaliates-jordan-0831",
-      "title": "イラン、ヨルダンの米軍基地2カ所へ報復ミサイル攻撃——ヨルダン軍は侵入した8発を迎撃と発表",
-      "body": "IRGCは31日、ヨルダンに駐留する米軍が運用するキング・フセイン空軍基地とアルアズラク空軍基地の技術インフラ・整備施設・戦闘機駐機位置を弾道ミサイルで標的にし「甚大な被害」を与えたと国営テレビ・IRIBを通じ発表した。ヨルダン軍広報官は31日未明、同国領空に侵入した8発のミサイルを防空システムが交戦規則に基づき迎撃したと発表し、市民・施設への被害はなかったと強調した。",
-      "sourceLabel": "AFP通信 / 時事通信 / ヨルダン軍公式発表（8/31 JST）",
-      "date": "2026年8月31日（現地・JST）",
-      "label": "🇯🇴 報復攻撃",
-      "url": "https://www.afpbb.com/articles/-/3650590",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc-navy-centcom-dispute-0830",
-      "title": "IRGC海軍「海峡支配は完全に決定的」、米中央軍は「イランは支配していない」と反論——発表合戦が激化",
-      "body": "IRGC海軍は、海峡を巡る「戦士たちの支配は完全に決定的」であり、米側の「開通」発表は原油価格を操作し自らの失敗を覆い隠すための「明白な嘘」だと非難した。これに対し米中央軍のホーキンス報道官は「イランは海峡を支配していない。国際水域であり、米軍の支援の下で商船は引き続き通航している」と反論。UKMTOはホルムズ海峡の脅威評価を「Severe（深刻）」で維持していると発表した。",
-      "sourceLabel": "Tasnim通信 / Fox News Digital（8/29〜30 JST）",
-      "date": "2026年8月29日〜30日（現地）/ 2026年8月30日 JST",
-      "label": "🗣️ 発表合戦",
-      "url": "https://www.foxnews.com/live-news/iran-war-us-sanctions-trump-strait-hormuz-oman-oil-prices-08-29-2026",
-      "isLatest": false
-    },
-    {
-      "id": "latest-tanker-khasab-projectile-0829",
-      "title": "オマーン・ハサブ沖でタンカーが被弾——UKMTOが遅延報告、AL SALAM IIと同一海域で別事案",
-      "body": "UKMTOは29日20時53分（UTC）、オマーン・ハサブ北方約12海里の地点でホルムズ海峡へ向け内航中のタンカーが正体不明の飛翔体で被弾したとする遅延報告（Warning 122-26）を30日付で公表した。負傷者・環境影響の報告はなく、当局が調査中。8/25に発生した「AL SALAM II」被弾（Warning 121-26）と同一海域での別事案で、南側航路（オマーン沿岸ルート）の残存リスクを改めて示した。",
-      "sourceLabel": "UKMTO / Gulf News（8/30 JST）",
-      "date": "2026年8月29日（現地）/ 2026年8月30日 JST",
-      "label": "⚓ インシデント",
-      "url": "https://gulfnews.com/world/mena/tanker-struck-by-unknown-projectile-in-strait-of-hormuz-ukmto-warning-1.500657396",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-who-was-hit-latest-strikes-0902",
+      "titleJa": "【Al Jazeera】イラン・米、新たな攻撃応酬——最新の空爆で誰が標的になったか",
+      "titleEn": "Iran, US exchange new attacks: Who was hit in latest strikes?",
+      "title": "【Al Jazeera】イラン・米、新たな攻撃応酬——最新の空爆で誰が標的になったか",
+      "country": "イラン/米国",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月2日（現地・JST）",
+      "summary": "Al Jazeeraは、米軍がイラン南部沿岸の軍事目標を空爆しクヘスタク市の結婚式会場を含む複数都市が攻撃を受けたと報道。イラン側は少なくとも18人の死亡・68人超の負傷を主張しており、これに対しイランはヨルダン・バーレーン・クウェート・イラク北部クルド地域の米軍基地へ弾道ミサイルとドローンで反撃したと詳報。双方の主張・被害規模の食い違いを整理し、攻撃応酬が地域全体へ拡散する構図を解説している。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/9/2/iran-us-exchange-new-attacks-who-was-hit-in-latest-strikes",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-us-new-strikes-0901",
       "titleJa": "【Al Jazeera】米軍、対イラン攻撃を再開・拡大——ホルムズ海峡での攻撃未遂への対応と説明",
@@ -80,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/9/1/us-military-says-launching-new-attacks-on-iran",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-irgc-strait-control-claim-0829",
@@ -1252,6 +1250,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年8月29日〜31日",
+      "items": [
+        {
+          "id": "latest-us-strikes-larak-island-0830",
+          "title": "米軍、ホルムズ海峡ララク島のイラン軍施設を攻撃——機雷搭載ロケット発射を阻止、約1カ月ぶりの軍事行動",
+          "body": "米中央軍のティム・ホーキンス報道官によれば、イラン革命防衛隊(IRGC)が30日、ホルムズ海峡のイラン領ララク島から機雷を搭載したロケット弾を海峡へ発射する準備をしていたため、米軍がロケットランチャー2基を攻撃した。米軍は先週、同海峡国際航路の機雷除去作業を完了したと発表したばかりで、対イラン軍事行動としては約1カ月ぶりとなる。IRGCはこの攻撃で「犠牲者」が出たと主張し、正確な人数は示さないまま即座に報復を表明した。",
+          "sourceLabel": "AP通信 / NBC News（8/30 現地時間）",
+          "date": "2026年8月30日（現地）/ 2026年8月31日 JST",
+          "label": "⚔️ 軍事行動",
+          "url": "https://apnews.com/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-retaliates-jordan-0831",
+          "title": "イラン、ヨルダンの米軍基地2カ所へ報復ミサイル攻撃——ヨルダン軍は侵入した8発を迎撃と発表",
+          "body": "IRGCは31日、ヨルダンに駐留する米軍が運用するキング・フセイン空軍基地とアルアズラク空軍基地の技術インフラ・整備施設・戦闘機駐機位置を弾道ミサイルで標的にし「甚大な被害」を与えたと国営テレビ・IRIBを通じ発表した。ヨルダン軍広報官は31日未明、同国領空に侵入した8発のミサイルを防空システムが交戦規則に基づき迎撃したと発表し、市民・施設への被害はなかったと強調した。",
+          "sourceLabel": "AFP通信 / 時事通信 / ヨルダン軍公式発表（8/31 JST）",
+          "date": "2026年8月31日（現地・JST）",
+          "label": "🇯🇴 報復攻撃",
+          "url": "https://www.afpbb.com/articles/-/3650590",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-navy-centcom-dispute-0830",
+          "title": "IRGC海軍「海峡支配は完全に決定的」、米中央軍は「イランは支配していない」と反論——発表合戦が激化",
+          "body": "IRGC海軍は、海峡を巡る「戦士たちの支配は完全に決定的」であり、米側の「開通」発表は原油価格を操作し自らの失敗を覆い隠すための「明白な嘘」だと非難した。これに対し米中央軍のホーキンス報道官は「イランは海峡を支配していない。国際水域であり、米軍の支援の下で商船は引き続き通航している」と反論。UKMTOはホルムズ海峡の脅威評価を「Severe（深刻）」で維持していると発表した。",
+          "sourceLabel": "Tasnim通信 / Fox News Digital（8/29〜30 JST）",
+          "date": "2026年8月29日〜30日（現地）/ 2026年8月30日 JST",
+          "label": "🗣️ 発表合戦",
+          "url": "https://www.foxnews.com/live-news/iran-war-us-sanctions-trump-strait-hormuz-oman-oil-prices-08-29-2026",
+          "isLatest": false
+        },
+        {
+          "id": "latest-tanker-khasab-projectile-0829",
+          "title": "オマーン・ハサブ沖でタンカーが被弾——UKMTOが遅延報告、AL SALAM IIと同一海域で別事案",
+          "body": "UKMTOは29日20時53分（UTC）、オマーン・ハサブ北方約12海里の地点でホルムズ海峡へ向け内航中のタンカーが正体不明の飛翔体で被弾したとする遅延報告（Warning 122-26）を30日付で公表した。負傷者・環境影響の報告はなく、当局が調査中。8/25に発生した「AL SALAM II」被弾（Warning 121-26）と同一海域での別事案で、南側航路（オマーン沿岸ルート）の残存リスクを改めて示した。",
+          "sourceLabel": "UKMTO / Gulf News（8/30 JST）",
+          "date": "2026年8月29日（現地）/ 2026年8月30日 JST",
+          "label": "⚓ インシデント",
+          "url": "https://gulfnews.com/world/mena/tanker-struck-by-unknown-projectile-in-strait-of-hormuz-ukmto-warning-1.500657396",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年8月27日〜29日",
       "items": [

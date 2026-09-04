@@ -3397,13 +3397,14 @@ document.addEventListener('keydown', function(e) {
   <div style="margin-top:10px;padding:9px 13px;border-radius:6px;background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.28);font-size:0.78rem;color:#cbd5e1;line-height:1.75;">
     <span class="label-ai">AI推定</span><strong style="color:#e2e8f0;">A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
     <span style="font-size:0.73rem;color:#94a3b8;">生成手段：Google Gemini（gemini-2.5-flash）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行　／　<a href="editorial/" style="color:#7dd3fc;">編集方針</a></span>
+    <div id="sc-ctx-note" style="display:none;margin-top:7px;padding:6px 9px;border-radius:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.4);font-size:0.74rem;color:#fbbf24;line-height:1.65;"></div>
   </div>
 </div>
   <div class="sc-grid" style="grid-template-columns:repeat(2,1fr);">
 
     <!-- シナリオ A：外交解決 -->
     <div class="sc-card sc-best">
-      <span class="sc-tag" id="sc-tag-A"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ A</span> ― 段階的MOU履行成功　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率</span> <span style="color:#4ade80;">↑</span></span>
+      <span class="sc-tag" id="sc-tag-A"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ A</span> ― 段階的MOU履行成功　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-A">—</span></span> <span style="color:#4ade80;">↑</span></span>
       <div class="sc-title">🟢 シナリオA：IMO避難計画成功→核査察スケジュール合意→Hormuz主ルート再開</div>
       <div class="sc-body">
         <p>ヴァンス副大統領は9月3日、「イランと話していないし、商船への攻撃をやめない限り話すつもりもない」と明言し、対話再開の条件を「攻撃停止」に一本化した。これは外交チャンネルが完全に閉ざされたわけではないことを示す一方、イラン側が攻撃を継続する限り米側から歩み寄る意思がないことを裏付けており、段階的合意への回帰は当面見込みにくい状況が続く。</p>
@@ -3412,7 +3413,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ B：部分的封鎖継続（膠着） -->
     <div class="sc-card sc-mid">
-      <span class="sc-tag" id="sc-tag-B"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率</span> →</span>
+      <span class="sc-tag" id="sc-tag-B"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-B">—</span></span> →</span>
       <div class="sc-title">🟡 シナリオB：核査察問題長期化→期間延長交渉、機雷除去は先行</div>
       <div class="sc-body">
         <p>イランが主張する湾岸諸国・ヨルダン・イラクへの反撃や米兵殺害を米側が軒並み否定しており、双方の情報戦の応酬に対し実際の軍事的損害が確認レベルでは限定的にとどまっている可能性がある。「タンカー・フォー・タンカー」政策のような新たな応酬の枠組みが導入されても、双方が決定打を欠いたまま被害を限定的に抑え合う構図が続けば、拡大と沈静化を繰り返す膠着状態が長期化する可能性がある。</p>
@@ -3421,7 +3422,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ C：完全封鎖の制度化・経済疲弊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-C"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ C</span> ― 完全封鎖の制度化・経済疲弊深刻化　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率</span> <span style="color:#4ade80;">↓</span></span>
+      <span class="sc-tag" id="sc-tag-C"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ C</span> ― 完全封鎖の制度化・経済疲弊深刻化　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-C">—</span></span> <span style="color:#4ade80;">↓</span></span>
       <div class="sc-title">🔴 シナリオC：南レバノン大規模衝突再発→Hormuz再閉鎖宣言</div>
       <div class="sc-body">
         <p>米が「タンカー・フォー・タンカー」政策を実際にイラン国営タンカーへの攻撃という形で初適用したことは、単発の応酬ではなく恒常的な攻撃応酬パターンへ制度として定着したことを示している。イランの機雷接触主張と米の否定という情報戦が続く中で、双方が引き下がる兆しを見せていない状況は、経済的疲弊や外交圧力が必ずしも軍事的抑制につながっていないことを裏付けている。</p>
@@ -3430,7 +3431,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ D：軍事エスカレーション・停戦崩壊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-D"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ D</span> ― 全面対決・無期限封鎖　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率</span> <span style="color:#4ade80;">↓</span></span>
+      <span class="sc-tag" id="sc-tag-D"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ D</span> ― 全面対決・無期限封鎖　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-D">—</span></span> <span style="color:#4ade80;">↓</span></span>
       <div class="sc-title">⚫ シナリオD：核査察問題で交渉打ち切り→Hormuz武力制圧→全面戦争再開</div>
       <div class="sc-body">
         <p>ネタニヤフ首相が「イラン体制転覆が中心的使命であり目標は手の届く範囲内」と明言し、カッツ国防相がエネルギーインフラを含む全インフラの標的化を警告したことは、イスラエル側が対イラン圧力の水準を一段引き上げる意思を示したことを意味する。イランの報復対象がクウェート・バーレーン・ヨルダン・イラクへ拡散したとの主張とあわせ、双方とも次の一手として更なるエスカレーションを選択肢から排除していない点が懸念材料である。</p>
@@ -4798,21 +4799,32 @@ function syncScenarioFromDashboard() {
     .then(r => r.json())
     .then(d => {
       if (!d.scenario) return;
-      const map = {
-        A: { id: 'sc-tag-A', label: 'シナリオ A ― 外交妥結・段階的解決',   pct: d.scenario.A_diplomacy_pct       },
-        B: { id: 'sc-tag-B', label: 'シナリオ B ― 停戦延長・膠着継続',     pct: d.scenario.B_partial_blockade_pct },
-        C: { id: 'sc-tag-C', label: 'シナリオ C ― 全面衝突・完全再封鎖',   pct: d.scenario.C_full_blockade_pct    },
-        D: { id: 'sc-tag-D', label: 'シナリオ D ― 軍事エスカレーション',   pct: d.scenario.D_escalation_pct       },
+      // シナリオの見出しは HTML 側（日次更新で編集される）を正とし、JS は確率の数値だけを入れる。
+      // 以前は innerHTML ごと差し替えていたため、カード見出しと増減矢印が毎回上書きされ、
+      // Gemini 側の定義（外交解決／部分封鎖…）と表示上の定義がずれていた。
+      const pctMap = {
+        'sc-pct-A': d.scenario.A_diplomacy_pct,
+        'sc-pct-B': d.scenario.B_partial_blockade_pct,
+        'sc-pct-C': d.scenario.C_full_blockade_pct,
+        'sc-pct-D': d.scenario.D_escalation_pct,
       };
-      Object.values(map).forEach(sc => {
-        const tag = document.getElementById(sc.id);
-        if (tag && sc.pct !== undefined) {
-          const parts = sc.label.split(' ― ');
-          const name = parts[0];
-          const desc = parts[1] || '';
-          tag.innerHTML = `<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">${name}</span> ― ${desc}　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 約${sc.pct}%</span>`;
-        }
+      Object.keys(pctMap).forEach(id => {
+        const el = document.getElementById(id);
+        const pct = pctMap[id];
+        if (el && pct !== undefined && pct !== null) el.textContent = `約${pct}%`;
       });
+
+      // 推計に与えた前提（hormuz-data- の data/context.json）が古い場合に読者へ伝える
+      const note = document.getElementById('sc-ctx-note');
+      const ctx = d.context;
+      if (note) {
+        if (ctx && ctx.stale === true && ctx.updated) {
+          note.textContent = `⚠️ この確率の推計に与えた前提は ${ctx.updated} 基準で、${ctx.age_days} 日更新されていません。数値は前提が古いまま生成されている可能性があります。`;
+          note.style.display = 'block';
+        } else {
+          note.style.display = 'none';
+        }
+      }
     })
     .catch(e => console.warn('scenario sync failed:', e));
 }

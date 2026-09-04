@@ -209,3 +209,76 @@
 ## 6. 検証手順
 
 `tools/redesign-plan.md` §7「変更後の検証手順（必須）」に従う。LiveServer では確認不可、GitHub Pages に push してから両サイトを確認すること。
+
+---
+
+## 7. 実装記録（2026-09-04）
+
+方針は案1（公開統計ベースの月次自動更新）＋鮮度検知で合意。以下を実装した。**push は未実行。**
+
+### hormuz-map 側
+
+| コミット | 内容 |
+|---|---|
+| 59e41f1 | 本調査メモの作成 |
+| 071f1b1 | `auto_push.py` の `FILE_MAP` から `oil-flow.json` を除外（上書き事故の再発防止） |
+| bb2f308 | `docs/corrections/index.html` に訂正2件を追加 |
+
+### hormuz-data- 側
+
+| コミット | 内容 |
+|---|---|
+| 2041ccb | ルートAを 5/8 の値に復元（blob `ca271e6` と一致することを確認）。`updated` を 5月8日 に |
+| 0d370c2 | `docs/oil-flow-method.md` / `scripts/fetch_oil_flow.py` / `tools/diag_estat.py` / `.github/workflows/update_oil_flow.yml` |
+| 0a7c827 | `index.html` の出典表記訂正・鮮度検知・「前週比」→「前回比」 |
+
+### 新スキーマ（`fetch_oil_flow.py` が生成する）
+
+既存キー（`updated` `bpd` `tankers_week` `prev_bpd` `label` `color` `normal_total_bpd`）は
+すべて維持しており、§7 の破壊条件には触れていない。追加されるのは以下。
+
+| キー | 内容 |
+|---|---|
+| `updated_iso` | 取得日時（ISO8601）。鮮度判定に使う |
+| `stale_after_days` | 鮮度の許容日数（既定 45） |
+| `method` | 版・計算式・換算定数・公開文書URL |
+| `route_mapping` | ルート ↔ 相手国の対応（仮定の明示） |
+| `source` | 統計表ID・概況品コード・対象月・取得日時 |
+| `_audit` | 相手国別の原油輸入数量[kL]と対応済み合計 |
+| `routes.*.derivation` | `estimated_from_trade_statistics`（自動）／ `manual`（手動） |
+
+`updated` の値は日付から `"2026年7月分（財務省貿易統計）"` の形式に変わる。
+hormuz-map の `#jf-basis-date`（ラベルは「基準日」）にそのまま入る。
+
+### 検算
+
+- `period_to_year_month`：e-Stat の時間軸コードは月が末尾2桁。当初 `digits[4:6]` を月として
+  取り出す実装で `2026000707 → (2026, 0)` となるバグがあり、修正済み。年次コードは例外で弾く
+- 隻数の式が変わるため値も変わる（125万BPD → 旧6隻/週・新4隻/週）。`docs/oil-flow-method.md` に明記済み
+- `index.html` の全 script ブロックを `node --check` で構文検証済み
+- 編集はすべて一時ファイル＋`os.replace()`。CRLF の増減が想定どおりであること、
+  LF 単独行が混入していないことを毎回検証した
+
+---
+
+## 8. 残作業（順序が重要）
+
+1. **`ESTAT_APP_ID` の取得と登録**（ユーザー作業）
+   - https://www.e-stat.go.jp/api/ で登録し、`hormuz-data-` の Actions secrets に `ESTAT_APP_ID` として設定する
+2. `python tools/diag_estat.py list` / `meta <id>` を叩き、分類コードが想定どおり解決できるか実測する
+   - 解決に失敗する場合は `fetch_oil_flow.py` の `ROUTE_MAPPING` の国名表記を実データに合わせる
+3. `update_oil_flow.yml` を `workflow_dispatch` で手動実行し、値が入ることを確認する
+4. **その後**に `hormuz-map/docs/index.html` の注記を差し替える
+   - 現在の注記「生成AI（Claude）への指示によって構築した推定値」「更新は手動で行っています」
+     「算出方法の詳細は現在整理中です」は、**新方式では3つとも事実でなくなる**
+   - ただし新しい値が入る前に差し替えると、今度は逆向きの誤表示になる。**順序を守ること**
+   - この変更は `docs/index.html` に触れるため、§7 の「hormuz-data- 側のみで完結」という
+     スコープを一部超える。実施前にユーザーの確認を取る
+5. 両リポジトリを push し、`tools/redesign-plan.md` §7 の検証手順を実行する
+
+### 未決事項
+
+- `note` / `status`（死にフィールド）を削除するか、hormuz-data- 側で表示させるか
+  - 現状は削除せず残し、`_comment` に「どの表示側でも未使用」と明記する扱いにしている
+- ルート表の他列（現況詳細・主なリスク・状態）が「2026年5月22日」で止まっている件
+  - 依頼6の範囲外だが、`updated` だけ新しくなると表内の基準日がさらに乖離する

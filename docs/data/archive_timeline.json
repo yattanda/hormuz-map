@@ -2706,6 +2706,30 @@
           "url": "https://www.aljazeera.com/news/2026/9/2/iran-us-exchange-new-attacks-who-was-hit-in-latest-strikes"
         }
       ]
+    },
+    {
+      "date": "2026-09-06",
+      "dateLabel": "2026/09/06 09:24",
+      "blockadeDay": 191,
+      "sourceType": "realtime",
+      "summary": "CENTCOMは9月5日、IRGCが哨戒中の米空母・イージス駆逐艦の2隻へ弾道ミサイルを発射したことへの報復として、イランの原油タンカー3隻を攻撃したと発表——米艦艇に被害はなかった・カーグ島沖の「M/T Downy」とジャスク近郊の「M/T Stark 1」の2隻を航行不能化、オマーン湾の無積載タンカー「M/T Kylo（別名Noxen）」を完全に破壊、CENTCOM司令官ブラッド・クーパー提督は「米艦2隻を撃てば代償として3隻沈める」と述べた（CENTCOM/NBC News/CNBC/Washington Post/CNN）・IRGCは米艦艇3隻・石油タンカー3隻への攻撃を主張したが独立検証は取れていない・これに先立つ9/3〜4、イラン軍は結婚式会場攻撃への報復としてクウェートのアフマド・アルジャビル空軍基地とUAEのアルミンハド空軍基地の米軍関連資産をミサイル・ドローンで標的にしたと発表（AFP）・同時期IDFはレバノンのヒズボラ地下施設制圧を発表、ISWは対イスラエル反撃の可能性は低いと分析・オマーンはイランが求める「通行料」協定を拒否したとISW9/4分析が指摘・原油はブレント95〜96ドル台・WTI90〜91ドル台で高止まり・日本関係船は残り4隻で変化なし・封鎖191日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "CENTCOM / NBC News / CNBC / Washington Post / CNN",
+          "title": "米軍、イラン原油タンカー3隻を攻撃——IRGCが米艦艇2隻へ弾道ミサイル発射した報復",
+          "url": "https://www.cnbc.com/2026/09/05/us-iran-oil-tankers-navy-missile-attack.html"
+        },
+        {
+          "sourceLabel": "AFP通信",
+          "title": "イラン、クウェート・UAEの米軍基地をミサイル・ドローンで攻撃——結婚式会場攻撃への報復と説明",
+          "url": "https://www.afpbb.com/articles/-/3651363"
+        },
+        {
+          "sourceLabel": "Al Jazeera",
+          "title": "米、イラン石油タンカーを攻撃——『地域代理勢力への資金供給』を理由に",
+          "url": "https://www.aljazeera.com/news/2026/9/5/us-says-it-hit-iran-oil-tankers-helping-finance-regional-proxies"
+        }
+      ]
     }
   ]
 }

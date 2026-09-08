@@ -1,7 +1,27 @@
 {
-  "updated": "2026年9月6日 09:24 日本時間JST",
+  "updated": "2026年9月8日 09:23 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-exclusion-zone-plan-0907",
+      "title": "イラン、海峡外に新たな「排他水域」設置を計画——最高国家安全保障委員会が発表",
+      "body": "イラン最高国家安全保障委員会のモフセン・レザイー議長は9月7日、国営放送に対し、米海軍の封鎖ラインを起点にホルムズ海峡を経てペルシャ湾へ続く新たな「排他水域」を設定する計画を明らかにした。無許可で通航を試みるとみなした船舶を対象とする方針とみられるが、詳細は「数日から数週間以内」に発表するとして明らかにしていない。同日、イラン外務省のバガイ報道官はオマーンとの通航ルート協議が「最終段階」に達し、合意ルートは国際海事機関（IMO）に登録される見通しだと説明しており、協調的な航路整備と一方的な排他水域という相反する動きが同時に語られている。",
+      "sourceLabel": "Arab News / Korea Herald / CBS News（9/7）",
+      "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
+      "label": "🚫 排他水域計画",
+      "url": "https://www.arabnews.com/middle-east/iran-says-it-plans-to-announce-a-new-exclusion-zone-near-the-strait-of-hormuz-3000708",
+      "isLatest": true
+    },
+    {
+      "id": "latest-hormuz-traffic-lowest-since-may-0907",
+      "title": "ホルムズ海峡の通航量、5月以来の最低水準に——原油はブレントが約7週間ぶり高値",
+      "body": "Kpler調べでは、ホルムズ海峡の通航量が5月以来の最低水準に落ち込んでおり、9月5日（土）はわずか2隻、9月6日（日）の平均は10隻、同日の実数は12隻（入航7隻・出航5隻）にとどまった——戦前水準（130隻超/日）を大きく下回る状態が続く。イラン国会議長ガリバフは同時期、「イランの利益・安全への攻撃には、より迅速かつ重大で苦痛を伴う対応で応じる」「比例対応の時代は終わった」と述べ、報復基準の転換を示唆した。原油はブレントが一時97ドル近辺まで上昇し約7週間ぶりの高値、週間で約8％上昇。米国のレギュラーガソリン平均価格も1ガロン4.14ドルに達した。",
+      "sourceLabel": "Reuters経由CBS News Live Updates（9/7）",
+      "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
+      "label": "📉 通航量急減",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/",
+      "isLatest": false
+    },
     {
       "id": "latest-us-strikes-iran-tankers-kharg-0905",
       "title": "米軍、イラン原油タンカー3隻を攻撃——IRGCが米艦艇2隻へ弾道ミサイル発射した報復、カーグ島沖・ジャスク近郊・オマーン湾で",
@@ -10,7 +30,7 @@
       "date": "2026年9月5日（現地）/ 2026年9月6日 JST",
       "label": "🛢️ タンカー攻撃",
       "url": "https://www.cnbc.com/2026/09/05/us-iran-oil-tankers-navy-missile-attack.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-strikes-kuwait-uae-bases-0903",
@@ -20,26 +40,6 @@
       "date": "2026年9月3〜4日（現地）/ 2026年9月4日 JST",
       "label": "🇰🇼🇦🇪 報復攻撃",
       "url": "https://www.afpbb.com/articles/-/3651363",
-      "isLatest": false
-    },
-    {
-      "id": "latest-vance-not-talking-netanyahu-regime-0903",
-      "title": "ヴァンス副大統領『イランと対話せず』、ネタニヤフ首相『体制転覆が中心的使命』——強硬発言が相次ぐ",
-      "body": "ヴァンス米副大統領は9月3日、『われわれはイランと話していないし、商船への攻撃をやめない限り話すつもりもない』と述べ、イランに対し『crazy peopleのように振る舞うのをやめろ』と発言した。戦争終結の時期はホルムズ海峡の通航が自由に流れるようになるかに懸かるとの趣旨も示した。同日、イスラエルのネタニヤフ首相はロシュ・ハシャナ集会で、イラン体制転覆が『中心的使命』であり目標は『手の届く範囲内』と発言。カッツ国防相はイランが攻撃すればエネルギーインフラを含む全インフラを標的にすると警告した。",
-      "sourceLabel": "The Times of Israel liveblog（9/3）",
-      "date": "2026年9月3日（現地）/ 2026年9月4日 JST",
-      "label": "🗣️ 強硬発言",
-      "url": "https://www.timesofisrael.com/liveblog-september-03-2026/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-tanker-for-tanker-strikes-0901",
-      "title": "米軍、ホルムズ海峡でイラン国営タンカー2隻を初めて攻撃——『タンカー・フォー・タンカー』方針の初適用、IRGC関連約100カ所も同時攻撃",
-      "body": "CENTCOMは9月1日、ホルムズ海峡周辺のIRGC関連目標約100カ所を攻撃したと発表した。7月29日以来最大規模で、封鎖ラインより北側に錨泊中のイラン国営タンカー2隻への攻撃を史上初めて含んだ。ドローン発射のミサイルで機関室を狙い、乗員の死傷者報告はない。トランプ大統領が承認した新方針『タンカー・フォー・タンカー』（イランが商船を攻撃するたびイラン国営タンカーを攻撃する）の初適用とみられる。攻撃対象にはIRGCの防空拠点・レーダー・機雷敷設能力・通信施設・対艦巡航ミサイル発射拠点も含まれた。イランは『2隻がホルムズの機雷に接触した』と主張したが、米側はこれを否定している。",
-      "sourceLabel": "CENTCOM / CNBC / Axios（9/1〜9/2）",
-      "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
-      "label": "🛢️ タンカー攻撃",
-      "url": "https://www.cnbc.com/2026/09/02/us-iran-war-trump-hormuz-irgc-jordan-bahrain.html",
       "isLatest": false
     }
   ],
@@ -60,6 +60,24 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/9/5/us-says-it-hit-iran-oil-tankers-helping-finance-regional-proxies",
+      "isLatest": false
+    },
+    {
+      "id": "osint-aljazeera-hormuz-traffic-falls-us-insists-open-0907",
+      "titleJa": "【Al Jazeera】イラン戦争ライブ：ホルムズ通航量が減少——米は『海峡は完全開放』と主張",
+      "titleEn": "Iran war updates: Hormuz traffic falls as US insists waterway 'fully open'",
+      "title": "【Al Jazeera】イラン戦争ライブ：ホルムズ通航量が減少——米は『海峡は完全開放』と主張",
+      "country": "イラン/米国",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月7日（現地・JST）",
+      "summary": "Al Jazeeraのライブブログは、ホルムズ海峡の通航量がKpler調べで5月以来の最低水準に落ち込む一方、米側は依然として海峡は『完全に開放されている』と主張していると詳報。イラン最高国家安全保障委員会が海峡外への新たな『排他水域』設置を計画していることや、テヘランが近く新たな通航ルートを発表する見通しであることも伝え、協調的な航路整備と一方的な管理権主張が同時進行する矛盾した状況を整理している。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/7/iran-war-live-tehran-to-announce-new-hormuz-shipping-route-in-coming-days",
       "isLatest": true
     },
     {
@@ -1268,6 +1286,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月3日〜1日",
+      "items": [
+        {
+          "id": "latest-vance-not-talking-netanyahu-regime-0903",
+          "title": "ヴァンス副大統領『イランと対話せず』、ネタニヤフ首相『体制転覆が中心的使命』——強硬発言が相次ぐ",
+          "body": "ヴァンス米副大統領は9月3日、『われわれはイランと話していないし、商船への攻撃をやめない限り話すつもりもない』と述べ、イランに対し『crazy peopleのように振る舞うのをやめろ』と発言した。戦争終結の時期はホルムズ海峡の通航が自由に流れるようになるかに懸かるとの趣旨も示した。同日、イスラエルのネタニヤフ首相はロシュ・ハシャナ集会で、イラン体制転覆が『中心的使命』であり目標は『手の届く範囲内』と発言。カッツ国防相はイランが攻撃すればエネルギーインフラを含む全インフラを標的にすると警告した。",
+          "sourceLabel": "The Times of Israel liveblog（9/3）",
+          "date": "2026年9月3日（現地）/ 2026年9月4日 JST",
+          "label": "🗣️ 強硬発言",
+          "url": "https://www.timesofisrael.com/liveblog-september-03-2026/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-tanker-for-tanker-strikes-0901",
+          "title": "米軍、ホルムズ海峡でイラン国営タンカー2隻を初めて攻撃——『タンカー・フォー・タンカー』方針の初適用、IRGC関連約100カ所も同時攻撃",
+          "body": "CENTCOMは9月1日、ホルムズ海峡周辺のIRGC関連目標約100カ所を攻撃したと発表した。7月29日以来最大規模で、封鎖ラインより北側に錨泊中のイラン国営タンカー2隻への攻撃を史上初めて含んだ。ドローン発射のミサイルで機関室を狙い、乗員の死傷者報告はない。トランプ大統領が承認した新方針『タンカー・フォー・タンカー』（イランが商船を攻撃するたびイラン国営タンカーを攻撃する）の初適用とみられる。攻撃対象にはIRGCの防空拠点・レーダー・機雷敷設能力・通信施設・対艦巡航ミサイル発射拠点も含まれた。イランは『2隻がホルムズの機雷に接触した』と主張したが、米側はこれを否定している。",
+          "sourceLabel": "CENTCOM / CNBC / Axios（9/1〜9/2）",
+          "date": "2026年9月1日（現地）/ 2026年9月2日 JST",
+          "label": "🛢️ タンカー攻撃",
+          "url": "https://www.cnbc.com/2026/09/02/us-iran-war-trump-hormuz-irgc-jordan-bahrain.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月1日",
       "items": [

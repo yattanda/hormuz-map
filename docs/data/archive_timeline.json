@@ -2730,6 +2730,25 @@
           "url": "https://www.aljazeera.com/news/2026/9/5/us-says-it-hit-iran-oil-tankers-helping-finance-regional-proxies"
         }
       ]
+    },
+    {
+      "date": "2026-09-08",
+      "dateLabel": "2026/09/08 09:23",
+      "blockadeDay": 193,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】イラン最高国家安全保障委員会のモフセン・レザイー議長は9月7日、米海軍の封鎖ラインからホルムズ海峡を経てペルシャ湾に至る新たな「排他水域」を数日〜数週間以内に設定すると発表（Arab News/Korea Herald）・イラン国会議長ガリバフは9月5日の米軍によるイランタンカー3隻攻撃を受け「比例対応の時代は終わった」とより迅速・苛烈な報復を予告（Fox News）・イラン外務省バガイ報道官はオマーンとの航路協議が「最終段階」に達し国際海事機関（IMO）へ登録予定と説明——排他水域計画と同時に語られる矛盾した動き（CBS News）・通航量はKpler調べで直近平均日量10隻、9/5はわずか2隻・9/6は12隻（入航7隻・出航5隻）と5月以来の最低水準に沈む・原油はブレントが一時97ドル近辺まで上昇し約7週間ぶり高値・週間+8%・米ガソリン価格は1ガロン4.14ドル・日本関係船は残り4隻で変化なし・封鎖193日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Arab News / Korea Herald / CBS News",
+          "title": "イラン、海峡外に新たな「排他水域」設置を計画——最高国家安全保障委員会が発表",
+          "url": "https://www.arabnews.com/middle-east/iran-says-it-plans-to-announce-a-new-exclusion-zone-near-the-strait-of-hormuz-3000708"
+        },
+        {
+          "sourceLabel": "Reuters経由CBS News",
+          "title": "ホルムズ海峡の通航量、5月以来の最低水準に——原油はブレントが約7週間ぶり高値",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/"
+        }
+      ]
     }
   ]
 }

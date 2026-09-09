@@ -1,7 +1,27 @@
 {
-  "updated": "2026年9月8日 09:23 日本時間JST",
+  "updated": "2026年9月10日 08:02 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-drone-capture-claim-0908",
+      "title": "IRGC、米軍の先進無人潜水艇を拿捕したと主張——ホルムズ海峡入口で、米側の確認はなし",
+      "body": "イラン革命防衛隊（IRGC）海軍は9月8日未明、ホルムズ海峡入口付近で「複雑な情報・作戦行動」により米軍の無人潜水艇（UUV）を拿捕したと発表した。イラン側は米国防技術企業アンドゥリル製の「Dive-LD」型（全長約5.8m・重量約3トン・最大10日間の自律航行・最大深度6000m）とし、2025年に米海軍第1無人潜水艇群に納入されたものだと主張、画像を近く公開するとした。米軍からの公式な確認・反応はまだ出ていない。事実関係は独立検証が取れておらず、イラン側の一方的発表にとどまる。",
+      "sourceLabel": "Arab News / Defense News / Iran International / Jerusalem Post（9/8〜9）",
+      "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
+      "label": "🤖 無人潜水艇拿捕主張",
+      "url": "https://www.arabnews.com/middle-east/iran-guards-say-seized-unmanned-us-submarine-drone-in-hormuz-3000956",
+      "isLatest": true
+    },
+    {
+      "id": "latest-qatar-industrial-catastrophe-warning-0908",
+      "title": "カタール外務省、ホルムズ海峡危機の長期化に「産業的破局」を警告——通航量は依然として5月以来の最低水準",
+      "body": "カタール外務省のマジェド・アル・アンサリ報道官は9月8日、ホルムズ海峡の混乱が続けば「産業的破局」を招きかねないと警告し、海峡再開が引き続き最優先課題だと述べた。直近10日間の商業船の平均通航量は日量約10隻にとどまり、5月以来の最低水準が続いている——戦前は日量約120隻超だった。9月7日時点で海峡通過を待つタンカーは42隻、うち原油積載は18隻に上るとされる。QatarEnergyは3月のラスラファン工業団地への攻撃と海峡閉鎖以降、一部契約で不可抗力（フォースマジュール）状態が続いている。",
+      "sourceLabel": "Al Jazeera Live Updates / The Libertarian Institute（9/8）",
+      "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
+      "label": "⚠️ 産業的破局 警告",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues",
+      "isLatest": false
+    },
     {
       "id": "latest-iran-exclusion-zone-plan-0907",
       "title": "イラン、海峡外に新たな「排他水域」設置を計画——最高国家安全保障委員会が発表",
@@ -10,7 +30,7 @@
       "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
       "label": "🚫 排他水域計画",
       "url": "https://www.arabnews.com/middle-east/iran-says-it-plans-to-announce-a-new-exclusion-zone-near-the-strait-of-hormuz-3000708",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-hormuz-traffic-lowest-since-may-0907",
@@ -21,29 +41,27 @@
       "label": "📉 通航量急減",
       "url": "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/",
       "isLatest": false
-    },
-    {
-      "id": "latest-us-strikes-iran-tankers-kharg-0905",
-      "title": "米軍、イラン原油タンカー3隻を攻撃——IRGCが米艦艇2隻へ弾道ミサイル発射した報復、カーグ島沖・ジャスク近郊・オマーン湾で",
-      "body": "CENTCOMは9月5日、IRGCが哨戒中の米空母・イージス駆逐艦の2隻へ弾道ミサイルを発射したことへの報復として、イランの原油タンカー3隻を攻撃したと発表した。米艦艇に被害はなかった。カーグ島沖の「M/T Downy」とジャスク近郊の「M/T Stark 1」の2隻を航行不能化し、オマーン湾の無積載タンカー「M/T Kylo（別名Noxen）」を完全に破壊した。CENTCOM司令官ブラッド・クーパー提督は『米艦2隻を撃てば、その代償としてイラン船3隻を沈める』と述べ、対象タンカーはIRGCと地域代理勢力に資金供給する数十億ドル規模のネットワークの一部だと主張した。IRGCは米艦艇3隻を攻撃したと発表し、別途ホルムズ海峡で石油タンカー3隻も攻撃したと主張している。",
-      "sourceLabel": "CENTCOM / NBC News / CNBC / Washington Post / CNN（9/5）",
-      "date": "2026年9月5日（現地）/ 2026年9月6日 JST",
-      "label": "🛢️ タンカー攻撃",
-      "url": "https://www.cnbc.com/2026/09/05/us-iran-oil-tankers-navy-missile-attack.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-strikes-kuwait-uae-bases-0903",
-      "title": "イラン、クウェート・UAEの米軍基地をミサイル・ドローンで攻撃——結婚式会場攻撃への報復と説明",
-      "body": "イラン軍は9月3〜4日、米側の仕業と主張する結婚式会場攻撃への報復として、クウェートのアフマド・アルジャビル空軍基地とUAEのアルミンハド空軍基地の米軍関連資産を「ミサイルとドローンを用いて」標的にしたと発表した。米中央軍による直接の被害確認は明らかになっていない。同時期、イスラエル国防軍（IDF）は9月3日、レバノンのアリアルタヘル尾根にあるヒズボラの主要地下施設を制圧したと発表しており、ISW（米シンクタンク）はイラン・ヒズボラが近く対イスラエル反撃に出る可能性は低いと分析している。",
-      "sourceLabel": "AFP通信（9/4）",
-      "date": "2026年9月3〜4日（現地）/ 2026年9月4日 JST",
-      "label": "🇰🇼🇦🇪 報復攻撃",
-      "url": "https://www.afpbb.com/articles/-/3651363",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-qatar-industrial-catastrophe-0908",
+      "titleJa": "【Al Jazeera】カタール、ホルムズ危機の長期化に『産業的破局』を警告",
+      "titleEn": "Iran war live: Qatar warns of 'industrial catastrophe' if crisis continues",
+      "title": "【Al Jazeera】カタール、ホルムズ危機の長期化に『産業的破局』を警告",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月8日（現地・JST）",
+      "summary": "Al Jazeeraのライブブログは、カタール外務省のアル・アンサリ報道官が、ホルムズ海峡の混乱長期化は『産業的破局』を招きかねないと警告したと詳報。直近10日間の平均通航量が日量約10隻と5月以来の最低水準にとどまる一方、米側は依然として『石油輸送量は戦前水準に近い』と主張しており、独立監視機関のデータとの食い違いが大きいと指摘。9月7日時点で海峡通過待ちのタンカーが42隻（うち原油18隻）に上ることも伝え、同日未明にはIRGCが米軍の無人潜水艇を拿捕したと主張する事案も併せて起きており、外交と軍事双方で緊張が高止まりする構図を整理している。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-us-hit-iran-tankers-financing-0905",
       "titleJa": "【Al Jazeera】米、イラン石油タンカーを攻撃——『地域代理勢力への資金供給』を理由に",
@@ -78,7 +96,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/7/iran-war-live-tehran-to-announce-new-hormuz-shipping-route-in-coming-days",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-who-was-hit-latest-strikes-0902",
@@ -1289,6 +1307,26 @@
     {
       "batchLabel": "2026年9月3日〜1日",
       "items": [
+        {
+          "id": "latest-us-strikes-iran-tankers-kharg-0905",
+          "title": "米軍、イラン原油タンカー3隻を攻撃——IRGCが米艦艇2隻へ弾道ミサイル発射した報復、カーグ島沖・ジャスク近郊・オマーン湾で",
+          "body": "CENTCOMは9月5日、IRGCが哨戒中の米空母・イージス駆逐艦の2隻へ弾道ミサイルを発射したことへの報復として、イランの原油タンカー3隻を攻撃したと発表した。米艦艇に被害はなかった。カーグ島沖の「M/T Downy」とジャスク近郊の「M/T Stark 1」の2隻を航行不能化し、オマーン湾の無積載タンカー「M/T Kylo（別名Noxen）」を完全に破壊した。CENTCOM司令官ブラッド・クーパー提督は『米艦2隻を撃てば、その代償としてイラン船3隻を沈める』と述べ、対象タンカーはIRGCと地域代理勢力に資金供給する数十億ドル規模のネットワークの一部だと主張した。IRGCは米艦艇3隻を攻撃したと発表し、別途ホルムズ海峡で石油タンカー3隻も攻撃したと主張している。",
+          "sourceLabel": "CENTCOM / NBC News / CNBC / Washington Post / CNN（9/5）",
+          "date": "2026年9月5日（現地）/ 2026年9月6日 JST",
+          "label": "🛢️ タンカー攻撃",
+          "url": "https://www.cnbc.com/2026/09/05/us-iran-oil-tankers-navy-missile-attack.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-strikes-kuwait-uae-bases-0903",
+          "title": "イラン、クウェート・UAEの米軍基地をミサイル・ドローンで攻撃——結婚式会場攻撃への報復と説明",
+          "body": "イラン軍は9月3〜4日、米側の仕業と主張する結婚式会場攻撃への報復として、クウェートのアフマド・アルジャビル空軍基地とUAEのアルミンハド空軍基地の米軍関連資産を「ミサイルとドローンを用いて」標的にしたと発表した。米中央軍による直接の被害確認は明らかになっていない。同時期、イスラエル国防軍（IDF）は9月3日、レバノンのアリアルタヘル尾根にあるヒズボラの主要地下施設を制圧したと発表しており、ISW（米シンクタンク）はイラン・ヒズボラが近く対イスラエル反撃に出る可能性は低いと分析している。",
+          "sourceLabel": "AFP通信（9/4）",
+          "date": "2026年9月3〜4日（現地）/ 2026年9月4日 JST",
+          "label": "🇰🇼🇦🇪 報復攻撃",
+          "url": "https://www.afpbb.com/articles/-/3651363",
+          "isLatest": false
+        },
         {
           "id": "latest-vance-not-talking-netanyahu-regime-0903",
           "title": "ヴァンス副大統領『イランと対話せず』、ネタニヤフ首相『体制転覆が中心的使命』——強硬発言が相次ぐ",

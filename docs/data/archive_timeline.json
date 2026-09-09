@@ -2749,6 +2749,25 @@
           "url": "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/"
         }
       ]
+    },
+    {
+      "date": "2026-09-10",
+      "dateLabel": "2026/09/10 08:02",
+      "blockadeDay": 195,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】イラン革命防衛隊（IRGC）海軍は9月8日未明、ホルムズ海峡入口付近で米軍の先進無人潜水艇（アンドゥリル製「Dive-LD」型と主張）を拿捕したと発表——米側の公式な確認・反応はなく独立検証も取れていない（Arab News/Defense News/Iran International/Jerusalem Post）・同日、カタール外務省のアル・アンサリ報道官はホルムズ海峡危機の長期化が『産業的破局』を招きかねないと警告——直近10日間の平均通航量は日量約10隻にとどまり5月以来の最低水準が続く、9月7日時点で通過待ちタンカーは42隻（うち原油18隻）（Al Jazeera Live Updates/The Libertarian Institute）・WTI原油は9月8日16:59時点で94.25ドル（前日比+3.02%）、ブレントは前回更新時点の約7週間ぶり高値（97ドル近辺）を維持（日本経済新聞）・イランの新「排他水域」計画・オマーンとのIMO登録協議には9/9〜10時点で新たな進展の確認なし・日本関係船舶は外務省・国交省へ日英クエリで新規発表なしを確認し、残り4隻のまま変化なし・封鎖195日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Arab News / Defense News / Iran International / Jerusalem Post",
+          "title": "IRGC、米軍の先進無人潜水艇を拿捕したと主張——ホルムズ海峡入口で、米側の確認はなし",
+          "url": "https://www.arabnews.com/middle-east/iran-guards-say-seized-unmanned-us-submarine-drone-in-hormuz-3000956"
+        },
+        {
+          "sourceLabel": "Al Jazeera Live Updates / The Libertarian Institute",
+          "title": "カタール外務省、ホルムズ海峡危機の長期化に「産業的破局」を警告",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues"
+        }
+      ]
     }
   ]
 }

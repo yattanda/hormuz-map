@@ -2768,6 +2768,30 @@
           "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues"
         }
       ]
+    },
+    {
+      "date": "2026-09-12",
+      "dateLabel": "2026/09/12 07:45",
+      "blockadeDay": 197,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】イラン外相と湾岸協力会議（GCC）加盟6カ国の外相が9月14日、オマーンの仲介でサラーラにて会合しホルムズ海峡の通航取り決めを協議すると判明——開戦後初めてイランとGCC6カ国の高官が一堂に会する見通し（Oman Observer/Bloomberg/TASS）・サウジアラビアは9月10日、東西原油パイプラインがイラクから飛来した複数のドローン攻撃を受け一時停止したと発表、GCCのアルブダイウィ事務総長は『危険なエスカレーションであり国際法の明白な違反』と非難しイラクに発射拠点化防止の強化を要求（Arab News/CNN/CNBC/OilPrice）・IAEA理事会は9月9日、未申告施設でのウラン粒子検出問題を巡りイランを国連安保理へ付託する決議を賛成23・反対3（ロシア・中国・ニジェール）・棄権8で採択——20年ぶりだが両国の拒否権で実効的な行動は見通せず（Al Jazeera/RFE・RL/FDD）・原油はWTIが約4カ月ぶりに1バレル100ドルを突破、ブレントも高値圏を維持・日本関係船は残り4隻で変化なし・封鎖197日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Oman Observer / Bloomberg / TASS",
+          "title": "イラン・湾岸6カ国、9月14日にオマーンでホルムズ海峡巡り外相会合——開戦後初の一堂会",
+          "url": "https://www.omanobserver.om/article/1195967/world/region/iran-gulf-ministers-to-meet-in-salalah-for-hormuz-deal-reports"
+        },
+        {
+          "sourceLabel": "Arab News / CNN / CNBC / OilPrice",
+          "title": "サウジ東西パイプライン、イラク発ドローン攻撃で一時停止——GCCは『危険なエスカレーション』と非難",
+          "url": "https://www.arabnews.com/saudi-arabia/saudi-arabia-condemns-drone-attack-from-iraq-after-east-west-pipeline-shut-as-precaution-3001403"
+        },
+        {
+          "sourceLabel": "Al Jazeera / RFE/RL / FDD",
+          "title": "IAEA理事会、イランを国連安保理へ付託——核不拡散義務の不履行巡り20年ぶり",
+          "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program"
+        }
+      ]
     }
   ]
 }

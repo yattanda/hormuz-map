@@ -1,7 +1,37 @@
 {
-  "updated": "2026年9月10日 08:02 日本時間JST",
+  "updated": "2026年9月12日 07:45 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-oman-salalah-meeting-0911",
+      "title": "イラン・湾岸6カ国、9月14日にオマーンでホルムズ海峡巡り外相会合——開戦後初の一堂会",
+      "body": "オマーンの仲介により、イラン外相と湾岸協力会議（GCC）加盟6カ国の外相が9月14日（月）、オマーン南部サラーラで会合すると報じられた。ホルムズ海峡での商船通航の取り決めを巡る協議で、開戦（2月）以降、イランとGCC6カ国の高官が一堂に会するのは初めて。8月下旬には両国が「湾入域はイラン領海・出域はオマーン領海を通航するルート」で暫定合意したと伝えられており、今回の会合はその後継協議と位置付けられる。イラン外務省は「地域諸国間の相互理解の促進と、共有される地域安全保障の強化」が目的だとしている。",
+      "sourceLabel": "Oman Observer / Bloomberg / TASS（9/11）",
+      "date": "2026年9月11日（現地）/ 2026年9月12日 JST",
+      "label": "🤝 外交・会合",
+      "url": "https://www.omanobserver.om/article/1195967/world/region/iran-gulf-ministers-to-meet-in-salalah-for-hormuz-deal-reports",
+      "isLatest": true
+    },
+    {
+      "id": "latest-saudi-pipeline-drone-attack-0911",
+      "title": "サウジ東西パイプライン、イラク発ドローン攻撃で一時停止——GCCは『危険なエスカレーション』と非難",
+      "body": "サウジアラビアは9月10日（木）朝、リヤド州・マディーナ州で東西原油パイプラインが複数のドローン攻撃を受けたため、予防的に操業を一時停止したと発表した。サウジ外務省はイラクから飛来したドローンによる攻撃だとして非難し、負傷者と一部損害が出たとしている。GCCのアルブダイウィ事務総長は「危険なエスカレーションであり国際法の明白な違反」と述べ、イラク政府に対し自国領域が攻撃の発射拠点として使われるのを防ぐための「必要かつ断固たる措置」を強化するよう求めた。",
+      "sourceLabel": "Arab News / CNN / CNBC / OilPrice（9/11）",
+      "date": "2026年9月10日（現地）/ 2026年9月11日 JST",
+      "label": "🛢️ パイプライン攻撃",
+      "url": "https://www.arabnews.com/saudi-arabia/saudi-arabia-condemns-drone-attack-from-iraq-after-east-west-pipeline-shut-as-precaution-3001403",
+      "isLatest": false
+    },
+    {
+      "id": "latest-iaea-refers-iran-unsc-0909",
+      "title": "IAEA理事会、イランを国連安保理へ付託——核不拡散義務の不履行巡り20年ぶり",
+      "body": "国際原子力機関（IAEA）理事会は9月9日、未申告の複数施設でウラン粒子が検出された問題を巡り、イランが説明責任を果たしていないとして国連安保理へ付託する決議を採択した。英仏独米提出の決議は賛成23・反対3（ロシア・中国・ニジェール）・棄権8で可決。イランの安保理付託は20年ぶり。ただしロシア・中国が拒否権を持つため、安保理での実際の行動は見通せないとの分析が多い。",
+      "sourceLabel": "Al Jazeera / RFE/RL / FDD（9/9〜10）",
+      "date": "2026年9月9日（現地）/ 2026年9月10日 JST",
+      "label": "☢️ 核問題・国連",
+      "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program",
+      "isLatest": false
+    },
     {
       "id": "latest-irgc-drone-capture-claim-0908",
       "title": "IRGC、米軍の先進無人潜水艇を拿捕したと主張——ホルムズ海峡入口で、米側の確認はなし",
@@ -10,40 +40,28 @@
       "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
       "label": "🤖 無人潜水艇拿捕主張",
       "url": "https://www.arabnews.com/middle-east/iran-guards-say-seized-unmanned-us-submarine-drone-in-hormuz-3000956",
-      "isLatest": true
-    },
-    {
-      "id": "latest-qatar-industrial-catastrophe-warning-0908",
-      "title": "カタール外務省、ホルムズ海峡危機の長期化に「産業的破局」を警告——通航量は依然として5月以来の最低水準",
-      "body": "カタール外務省のマジェド・アル・アンサリ報道官は9月8日、ホルムズ海峡の混乱が続けば「産業的破局」を招きかねないと警告し、海峡再開が引き続き最優先課題だと述べた。直近10日間の商業船の平均通航量は日量約10隻にとどまり、5月以来の最低水準が続いている——戦前は日量約120隻超だった。9月7日時点で海峡通過を待つタンカーは42隻、うち原油積載は18隻に上るとされる。QatarEnergyは3月のラスラファン工業団地への攻撃と海峡閉鎖以降、一部契約で不可抗力（フォースマジュール）状態が続いている。",
-      "sourceLabel": "Al Jazeera Live Updates / The Libertarian Institute（9/8）",
-      "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
-      "label": "⚠️ 産業的破局 警告",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-exclusion-zone-plan-0907",
-      "title": "イラン、海峡外に新たな「排他水域」設置を計画——最高国家安全保障委員会が発表",
-      "body": "イラン最高国家安全保障委員会のモフセン・レザイー議長は9月7日、国営放送に対し、米海軍の封鎖ラインを起点にホルムズ海峡を経てペルシャ湾へ続く新たな「排他水域」を設定する計画を明らかにした。無許可で通航を試みるとみなした船舶を対象とする方針とみられるが、詳細は「数日から数週間以内」に発表するとして明らかにしていない。同日、イラン外務省のバガイ報道官はオマーンとの通航ルート協議が「最終段階」に達し、合意ルートは国際海事機関（IMO）に登録される見通しだと説明しており、協調的な航路整備と一方的な排他水域という相反する動きが同時に語られている。",
-      "sourceLabel": "Arab News / Korea Herald / CBS News（9/7）",
-      "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
-      "label": "🚫 排他水域計画",
-      "url": "https://www.arabnews.com/middle-east/iran-says-it-plans-to-announce-a-new-exclusion-zone-near-the-strait-of-hormuz-3000708",
-      "isLatest": false
-    },
-    {
-      "id": "latest-hormuz-traffic-lowest-since-may-0907",
-      "title": "ホルムズ海峡の通航量、5月以来の最低水準に——原油はブレントが約7週間ぶり高値",
-      "body": "Kpler調べでは、ホルムズ海峡の通航量が5月以来の最低水準に落ち込んでおり、9月5日（土）はわずか2隻、9月6日（日）の平均は10隻、同日の実数は12隻（入航7隻・出航5隻）にとどまった——戦前水準（130隻超/日）を大きく下回る状態が続く。イラン国会議長ガリバフは同時期、「イランの利益・安全への攻撃には、より迅速かつ重大で苦痛を伴う対応で応じる」「比例対応の時代は終わった」と述べ、報復基準の転換を示唆した。原油はブレントが一時97ドル近辺まで上昇し約7週間ぶりの高値、週間で約8％上昇。米国のレギュラーガソリン平均価格も1ガロン4.14ドルに達した。",
-      "sourceLabel": "Reuters経由CBS News Live Updates（9/7）",
-      "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
-      "label": "📉 通航量急減",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-iaea-refers-iran-unsc-0909",
+      "titleJa": "【Al Jazeera】IAEA理事会、イランを核不履行で国連安保理へ付託——20年ぶり",
+      "titleEn": "IAEA board refers Iran to UN Security Council over nuclear 'non-compliance'",
+      "title": "【Al Jazeera】IAEA理事会、イランを核不履行で国連安保理へ付託——20年ぶり",
+      "country": "イラン/国際",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月9日（現地・JST）",
+      "summary": "Al Jazeeraは、IAEA理事会が9月9日、未申告施設でのウラン粒子検出問題を巡りイランを国連安保理へ付託する決議を賛成23・反対3・棄権8で採択したと報じた。英仏独米が決議を提出し、イランの安保理付託は20年ぶりとなる。ロシア・中国・ニジェールが反対票を投じ、両国が安保理常任理事国として拒否権を持つため、実際の制裁・行動に直結する可能性は低いとの見方を併せて伝えている。ホルムズ海峡の軍事的緊張に加え、核問題を巡る外交ルートでも対イラン圧力が強まっている構図を示す動きとして位置付けられる。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-qatar-industrial-catastrophe-0908",
       "titleJa": "【Al Jazeera】カタール、ホルムズ危機の長期化に『産業的破局』を警告",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-us-hit-iran-tankers-financing-0905",
@@ -1304,6 +1322,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月8日〜7日",
+      "items": [
+        {
+          "id": "latest-qatar-industrial-catastrophe-warning-0908",
+          "title": "カタール外務省、ホルムズ海峡危機の長期化に「産業的破局」を警告——通航量は依然として5月以来の最低水準",
+          "body": "カタール外務省のマジェド・アル・アンサリ報道官は9月8日、ホルムズ海峡の混乱が続けば「産業的破局」を招きかねないと警告し、海峡再開が引き続き最優先課題だと述べた。直近10日間の商業船の平均通航量は日量約10隻にとどまり、5月以来の最低水準が続いている——戦前は日量約120隻超だった。9月7日時点で海峡通過を待つタンカーは42隻、うち原油積載は18隻に上るとされる。QatarEnergyは3月のラスラファン工業団地への攻撃と海峡閉鎖以降、一部契約で不可抗力（フォースマジュール）状態が続いている。",
+          "sourceLabel": "Al Jazeera Live Updates / The Libertarian Institute（9/8）",
+          "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
+          "label": "⚠️ 産業的破局 警告",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/9/8/iran-war-live-qatar-warns-of-industrial-catastrophe-if-crisis-continues",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-exclusion-zone-plan-0907",
+          "title": "イラン、海峡外に新たな「排他水域」設置を計画——最高国家安全保障委員会が発表",
+          "body": "イラン最高国家安全保障委員会のモフセン・レザイー議長は9月7日、国営放送に対し、米海軍の封鎖ラインを起点にホルムズ海峡を経てペルシャ湾へ続く新たな「排他水域」を設定する計画を明らかにした。無許可で通航を試みるとみなした船舶を対象とする方針とみられるが、詳細は「数日から数週間以内」に発表するとして明らかにしていない。同日、イラン外務省のバガイ報道官はオマーンとの通航ルート協議が「最終段階」に達し、合意ルートは国際海事機関（IMO）に登録される見通しだと説明しており、協調的な航路整備と一方的な排他水域という相反する動きが同時に語られている。",
+          "sourceLabel": "Arab News / Korea Herald / CBS News（9/7）",
+          "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
+          "label": "🚫 排他水域計画",
+          "url": "https://www.arabnews.com/middle-east/iran-says-it-plans-to-announce-a-new-exclusion-zone-near-the-strait-of-hormuz-3000708",
+          "isLatest": false
+        },
+        {
+          "id": "latest-hormuz-traffic-lowest-since-may-0907",
+          "title": "ホルムズ海峡の通航量、5月以来の最低水準に——原油はブレントが約7週間ぶり高値",
+          "body": "Kpler調べでは、ホルムズ海峡の通航量が5月以来の最低水準に落ち込んでおり、9月5日（土）はわずか2隻、9月6日（日）の平均は10隻、同日の実数は12隻（入航7隻・出航5隻）にとどまった——戦前水準（130隻超/日）を大きく下回る状態が続く。イラン国会議長ガリバフは同時期、「イランの利益・安全への攻撃には、より迅速かつ重大で苦痛を伴う対応で応じる」「比例対応の時代は終わった」と述べ、報復基準の転換を示唆した。原油はブレントが一時97ドル近辺まで上昇し約7週間ぶりの高値、週間で約8％上昇。米国のレギュラーガソリン平均価格も1ガロン4.14ドルに達した。",
+          "sourceLabel": "Reuters経由CBS News Live Updates（9/7）",
+          "date": "2026年9月7日（現地）/ 2026年9月8日 JST",
+          "label": "📉 通航量急減",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月3日〜1日",
       "items": [

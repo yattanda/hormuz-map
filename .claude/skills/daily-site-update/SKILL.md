@@ -91,11 +91,27 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 ### 4. 自己チェック
 
-`/publish-checklist` の項目を1件ずつ確認する。特に次は毎回外せない。
+**まず機械検証を通す。** 読み取り専用でファイルは変更しない。
 
-- 4ファイルすべての日付が**同じ JST 日時**で揃っているか
-- `news_data.json` の `latest` が4件・`osint` の `isLatest: true` が1件だけか
-- `dateModified` を当日に更新したか
+```bash
+python tools/validate_daily.py
+```
+
+`NG 0` になるまで直す。終了コードが 1 のまま commit しない。
+チェック内容は日付整合（`dateModified` / ヘッダー / 速報バナー / ルートサマリー /
+`news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）、
+`latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複。
+
+ニュース URL を実際に叩いて確認する場合（捏造・誤記の検出）:
+
+```bash
+python tools/validate_daily.py --check-urls
+```
+
+- **WARN は自動では落とさない。** 内容を読んで判断する
+  （例：`archive_timeline` 末尾が当日でない → 速報を出さなかった日なら正常）
+- 機械検証を通したうえで、`/publish-checklist` の目視項目を確認する。
+  文章の内容・整合・重複は機械では判定できない
 
 ### 5. commit
 

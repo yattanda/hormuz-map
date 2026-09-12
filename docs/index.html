@@ -523,6 +523,37 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   color: var(--c-text-dim);
   margin-left: 8px;
 }
+/* 3層ピラミッドの層ラベル。見出し(h1/h2/h3)ではなく視覚的なグルーピングとして置く。
+   セクション見出しは .sec-h2 のまま据え置き、階層は文書構造に持ち込まない。 */
+.layer-band {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 34px 16px 14px;
+}
+.layer-band::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--layer-accent), transparent);
+  opacity: 0.45;
+}
+.layer-band-num {
+  font-size: var(--fs-2xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0f2027;
+  background: var(--layer-accent);
+  border-radius: 4px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.layer-band-text {
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--layer-accent);
+}
 .rtable { width:100%; border-collapse:separate; border-spacing:0 5px; font-size:0.76rem; }
 .rtable th { text-align:left; color:#64748b; font-size:0.68rem; font-weight:600; letter-spacing:0.07em; padding:0 10px 7px; }
 .rtable td { padding:10px; background:rgba(255,255,255,0.025); color:#cbd5e1; vertical-align:middle; border-top:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); }
@@ -1402,6 +1433,12 @@ Copy
     </span>
   </div>
 </div>
+
+<!-- ===== 第1層：いま何が起きているか ===== -->
+<div class="layer-band" style="--layer-accent:var(--c-danger-light);">
+  <span class="layer-band-num">第1層</span>
+  <span class="layer-band-text">いま何が起きているか</span>
+</div>
 <!-- 旧ティッカー（4/13 7:00版）コメントアウト済み -->
 <!--【4/13 7:00 】🚨【重大局面】トランプ大統領「米海軍がホルムズ海峡を封鎖する。イランに通航料を支払った全船舶を公海上で追跡・拿捕せよと海軍に命令した」（4/12夜SNS投稿）｜米中央軍（CENTCOM）「4月13日よりイランの港湾への海上封鎖を開始する」と正式発表｜イラン「敵が誤った行動をとればホルムズで"deadly vortex（死の渦）"に飲み込まれる」と警告｜🛢️WTI $115超への急騰予測が浮上―Kobeissi Letter「今月中に+21%上昇の可能性」｜交渉は事実上決裂（バンス副大統領、21時間交渉後「合意なし」で帰国）｜停戦期限4/22前後が迫る中、再交渉か米の再攻撃判断が次の焦点｜✅サウジ東西パイプライン（7,00万bpd）は4/12全面回復・ヤンブー経由代替ルートB復活｜🇯🇵日本：5月から北米産原油到着・備蓄254日分で当面対応可能だが今夏〜秋が正念場-->
 
@@ -1578,562 +1615,6 @@ Copy
           style="width:100%;display:block;">
       </div>
     </div>
-<!-- SITUATION CARDS -->
-<h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);">🌐 最新情勢カード<span class="sec-h2-sub">海峡・外交・市場の現状をリアルタイムで確認</span></h2>
-<div id="situation" class="sit-grid"></div>
-<div class="sit-grid">
-<!-- カード① イラン・GCC外相会合 -->
-  <div class="sit-card info">
-    <div class="s-icon">🤝</div>
-        <div class="s-title">🤝 イランと湾岸6カ国の外相、9月14日にオマーンで会合——開戦後初の一堂会、ホルムズ通航取り決めを協議</div>
-        <div class="s-body">オマーンの仲介により、イラン外相と湾岸協力会議（GCC）加盟6カ国（サウジアラビア・UAE・カタール・クウェート・バーレーン・オマーン）の外相が9月14日（月）、オマーン南部サラーラで会合すると報じられた。ホルムズ海峡での商船通航の取り決めを巡る協議で、2月の開戦以降、イランとGCC6カ国の高官が一堂に会するのは初めて。8月下旬にはイラン・オマーン間で「湾入域はイラン領海・出域はオマーン領海を通航するルート」の暫定合意が伝えられており、今回はその後継協議と位置付けられる。イラン外務省は「地域諸国間の相互理解の促進と共有される地域安全保障の強化」が目的と説明。</div>
-        <div class="s-src">出典: Oman Observer / Bloomberg / TASS（9/11）</div>
-  </div>
-
-  <!-- カード② サウジ東西パイプライン ドローン攻撃 -->
-  <div class="sit-card danger">
-    <div class="s-icon">🛢️</div>
-        <div class="s-title">🛢️ サウジ東西パイプライン、イラク発ドローン攻撃で一時停止——GCCは「危険なエスカレーション」と非難</div>
-        <div class="s-body">サウジアラビアは9月10日（木）朝、リヤド州・マディーナ州で東西原油パイプラインが複数のドローン攻撃を受けたため、予防的に操業を一時停止したと発表した。サウジ外務省はイラクから飛来したドローンによる攻撃だと非難し、負傷者と一部損害が出たとしている。GCCのアルブダイウィ事務総長は「危険なエスカレーションであり国際法の明白な違反」と述べ、イラク政府に自国領域が発射拠点として使われるのを防ぐための「必要かつ断固たる措置」の強化を要求した。</div>
-        <div class="s-src">出典: Arab News / CNN / CNBC / OilPrice（9/11）</div>
-  </div>
-
-  <!-- カード③ IAEA、イランを国連安保理へ付託 -->
-  <div class="sit-card warning">
-    <div class="s-icon">☢️</div>
-        <div class="s-title">☢️ IAEA理事会、イランを国連安保理へ付託——核不拡散義務の不履行巡り20年ぶり、WTIは約4カ月ぶり100ドル突破</div>
-        <div class="s-body">国際原子力機関（IAEA）理事会は9月9日、未申告の複数施設でウラン粒子が検出された問題を巡り、イランが説明責任を果たしていないとして国連安保理へ付託する決議を賛成23・反対3（ロシア・中国・ニジェール）・棄権8で採択した。付託は20年ぶりだが、ロシア・中国が拒否権を持つため安保理での実効的な行動は見通せないとの分析が多い。並行して原油はWTIが約4カ月ぶりに1バレル100ドルを突破、ブレントも高値圏を維持している。日本関係船は外務省・国土交通省への日英クエリ調査で新規発表がないことを再確認し、残り4隻のまま変化はない。</div>
-        <div class="s-src">出典: Al Jazeera / RFE/RL / FDD（9/9〜10）／外務省・国土交通省への確認（9/12）</div>
-  </div>
-
-</div>
-  <!-- COUNTDOWN -->
-  <div class="deadline">
-    <div class="dl-label" id="cd-phase-label">⏱️ Phase 35「IRGCが米無人潜水艇の拿捕を主張、カタールは危機長期化で『産業的破局』を警告」——封鎖195日目</div>
-    <div class="dl-boxes">
-      <div class="dl-box" style="min-width:200px;">
-        <div id="cd-display">
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-h">--</span>
-            <div class="cd-label">時間</div>
-          </div>
-          <span class="cd-sep">:</span>
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-m">--</span>
-            <div class="cd-label">分</div>
-          </div>
-          <span class="cd-sep">:</span>
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-s">--</span>
-            <div class="cd-label">秒</div>
-          </div>
-        </div>
-        <div class="dl-sub" style="margin-top:4px;">リアルタイムカウントダウン</div>
-      </div>
-      <div class="dl-arrow">→</div>
-      <div class="dl-box">
-        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">イラン・米国による二重封鎖（Iran-US dual blockade）</div>
-        <div class="dl-sub">2026年2月28日 起算</div>
-      </div>
-      <div class="dl-arrow">→</div>
-      <div class="dl-box">
-        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">「交渉決裂・軍事衝突」：ハメネイ「交渉中止・完全閉鎖」最終宣言（6/1）</div>
-        <div class="dl-sub">2026年6月16日 08:14 日本時間JST 現在</div>
-      </div>
-      <div class="dl-note">
-        🌐 <strong>前回更新（9/8）で焦点としていたイランの新「排他水域」計画・オマーンとのIMO登録協議は、9/9〜10時点で進展の確認が取れない一方、9/8未明にIRGCが米軍の先進無人潜水艇を拿捕したと新たに主張した——米側の公式な反応はまだなく事実関係は未確認だが、事実であれば米軍の水中監視・機雷探知能力への直接的な打撃を意味しうる。同日、カタール外務省は危機長期化が「産業的破局」を招きかねないと警告し、独立監視機関のデータ（直近10日平均日量約10隻）と米側の「戦前水準に近い」との主張との食い違いを改めて浮き彫りにした。</strong>
-        <br><span style="color:#fde68a;">⚡ 次の24〜48時間の焦点：①IRGCが主張する無人潜水艇拿捕の実物画像が公開され独立検証が進むか ②米側がこの主張に公式反応を示すか ③排他水域計画・IMO登録協議のいずれかが具体化するか ④通航待ちタンカー42隻（原油18隻）の滞留がさらに拡大するか ⑤WTI94ドル台・ブレント97ドル近辺からのさらなる上振れの有無</span>
-        <br><span style="color:#fca5a5;">⏳ 軍事面（無人潜水艇拿捕主張）と外交・経済面（カタールの警告）の双方で緊張材料が並行して積み上がっており、いずれかが具体化した場合の連鎖的なエスカレーションに注意が必要とみられる</span>
-      </div>
-      </div>
-    </div>
-<!-- ホルムズ データ監視ダッシュボード -->
-<h2 class="sec-h2">📡 ホルムズ データ監視ダッシュボード</h2>
-<div id="japan-flow"></div>
-<div style="margin: 20px auto; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1e3a5f;">
-  <iframe
-    id="hormuz-dashboard"
-    width="100%"
-    height="400"
-    frameborder="0"
-    scrolling="no"
-    title="ホルムズ データ監視ダッシュボード"
-    style="display:block; background:#0a0e1a;"
-    loading="lazy"
-  ></iframe>
-</div>
-<script>
-  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ドメイン/リポジトリ名移行時はここのみ変更）
-  window.SITE_CONFIG = window.SITE_CONFIG || {
-    DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
-  };
-  (function () {
-    const iframe = document.getElementById('hormuz-dashboard');
-    if (!iframe) return;
-    iframe.src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
-
-    // 実測できないとき（別オリジン移行後など）だけ使う暫定値
-    function fallbackHeight() {
-      if (window.innerWidth <= 480) return 2110;
-      if (window.innerWidth <= 768) return 2200;
-      return 1110;
-    }
-
-    let measured = false;
-    // 同一オリジンで実測できているか。できている間は postMessage を採用しない
-    let directMeasureOk = false;
-
-    function applyHeight(h) {
-      h = Math.ceil(h);
-      if (!(h > 200)) return;
-      if (Math.abs(parseFloat(iframe.style.height || '0') - h) < 2) return;
-      iframe.style.height = h + 'px';
-    }
-
-    // iframe 内の最終要素の下端から実コンテンツ高さを測る。
-    // documentElement.scrollHeight は iframe の高さまで引き伸ばされるため、
-    // 「縮める方向」の判定に使えない（これが余白の残る原因だった）。
-    function measureInner(doc) {
-      const body = doc.body;
-      if (!body) return 0;
-      const win = doc.defaultView;
-      let bottom = 0;
-      for (let i = 0; i < body.children.length; i++) {
-        const el = body.children[i];
-        if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') continue;
-        const rect = el.getBoundingClientRect();
-        if (rect.width === 0 && rect.height === 0) continue;
-        if (rect.bottom > bottom) bottom = rect.bottom;
-      }
-      if (!bottom) return 0;
-      bottom += win.scrollY || 0;
-      const cs = win.getComputedStyle(body);
-      bottom += parseFloat(cs.paddingBottom) || 0;
-      bottom += parseFloat(cs.marginBottom) || 0;
-      return bottom + 8;
-    }
-
-    function syncHeight() {
-      let doc = null;
-      try {
-        doc = iframe.contentDocument || iframe.contentWindow.document;
-      } catch (e) {
-        doc = null; // 別オリジン：postMessage 経由の通知を待つ
-      }
-      if (!doc) {
-        if (!measured) applyHeight(fallbackHeight());
-        return;
-      }
-      const h = measureInner(doc);
-      if (h > 200) {
-        measured = true;
-        directMeasureOk = true;
-        applyHeight(h);
-      } else if (!measured) {
-        applyHeight(fallbackHeight());
-      }
-    }
-
-    let timer = null;
-    function scheduleSync() {
-      clearTimeout(timer);
-      timer = setTimeout(syncHeight, 120);
-    }
-
-    applyHeight(fallbackHeight());
-
-    iframe.addEventListener('load', function () {
-      let doc = null;
-      try {
-        doc = iframe.contentDocument || iframe.contentWindow.document;
-      } catch (e) {
-        doc = null;
-      }
-      if (doc) {
-        try {
-          // 米国中東原油比率カードを非表示
-          const cards = doc.querySelectorAll('.card');
-          cards.forEach(function (card) {
-            if (card.textContent.includes('米国の中東原油')) {
-              card.style.display = 'none';
-            }
-          });
-        } catch (e) {
-          console.warn('card hide error:', e);
-        }
-        // 内部の非同期描画（fetch 後のカード更新など）に追従させる
-        if (doc.body && window.ResizeObserver) {
-          new ResizeObserver(scheduleSync).observe(doc.body);
-        }
-        if (doc.body && window.MutationObserver) {
-          new MutationObserver(scheduleSync).observe(doc.body, {
-            childList: true, subtree: true, characterData: true
-          });
-        }
-        if (iframe.contentWindow) {
-          iframe.contentWindow.addEventListener('resize', scheduleSync);
-        }
-      }
-      syncHeight();
-      [300, 1000, 2500, 5000].forEach(function (ms) { setTimeout(syncHeight, ms); });
-    });
-
-    window.addEventListener('resize', scheduleSync);
-
-    // 別オリジンに移行した場合の受け口（子側が iframeHeight を送ってくる場合）
-    window.addEventListener('message', function (ev) {
-      const data = ev.data;
-      if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
-      if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;
-      // 直接測定が効いている間は無視する（子側が誤った高さを送っても壊れないようにする保険）
-      if (directMeasureOk) return;
-      measured = true;
-      applyHeight(data.height);
-    });
-  })();
-</script>
-<!-- /ダッシュボード -->
-  <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
- <h2 class="sec-h2" style="color:#4ade80;border-bottom-color:rgba(74,222,128,0.25);">💰 リアルタイム市場（原油・為替・貴金属）</h2>
- <div id="wtiWidget" style="margin-top:8px; background: #131722; padding: 12px 20px 8px 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; font-family: sans-serif; border: 1px solid #1e3a5f;">
-    
-    <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-      
-      <!-- 1. WTI原油 -->
-      <div style="overflow: hidden; border-radius: 4px;">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:USOIL", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 2. ドル円 -->
-      <div style="overflow: hidden; border-radius: 4px;">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "FX_IDC:USDJPY", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-    </div>
-  
-    <!-- ▼ サブセクション（小さく表示：高さ150） ▼ -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-      
-      <!-- 3. ゴールド -->
-      <div style="overflow: hidden; border-radius: 4px;">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:GOLD", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 4. シルバー -->
-      <div style="overflow: hidden; border-radius: 4px;">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:SILVER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 5. 銅 -->
-      <div style="overflow: hidden; border-radius: 4px;">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "CAPITALCOM:COPPER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 6. プラチナ -->
-      <div style="overflow: hidden; border-radius: 4px;">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:PLATINUM", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-    </div>
-  
-    <!-- ▼ 包括的な但し書き ▼ -->
-     <div style="text-align: right; font-size: 0.75rem; color: #868993; border-top: 1px solid #2B3139; padding-top: 6px; margin-top: 2px; margin-bottom: 0; padding-bottom: 0;">
-      ※表示価格はCFD等のデータであり、実際の先物・現物価格とは微小な差異や遅延が生じる場合があります。
-    </div>
-  </div>
-  <!-- ==================== 💰 ダッシュボード終了 ==================== -->
-<!-- TRUMP STATEMENT MODAL -->
-<div class="modal-overlay" id="trump-modal" onclick="closeTrumpModalOutside(event)">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeTrumpModal()">✕ 閉じる</button>
-    <div class="modal-title">
-      📜 トランプ大統領 Truth Social声明（4/8 JST）<br>
-      「2週間の爆撃停止」― 原文・翻訳・解釈分析
-    </div>
-
-    <div class="modal-section red">
-      <div class="modal-section-title">🔴 英語原文（Truth Social）</div>
-      <div class="modal-quote">
-        "Based on conversations with Prime Minister Shehbaz Sharif and Field Marshal Asim Munir, of Pakistan, and wherein they requested that I hold off the destructive force being sent tonight to Iran, and subject to the Islamic Republic of Iran agreeing to the COMPLETE, IMMEDIATE, and SAFE OPENING of the Strait of Hormuz, I agree to suspend the bombing and attack of Iran for a period of two weeks."
-      </div>
-    </div>
-
-    <div class="modal-section yellow">
-      <div class="modal-section-title">🟡 日本語翻訳（原文に忠実）</div>
-      <div style="color:#fde68a; font-size:0.77rem; line-height:1.8;">
-        「Pakistanの Shehbaz Sharif 首相及び Asim Munir 統合参謀総長との会話に基づき、そして彼らが本夜 Iran に送られるべき破壊力を一時停止するよう要請した際、及び Islamic Republic of Iran が Hormuz 海峡の<strong style="color:#fbbf24">完全な、直ちな、かつ安全な開放</strong>に同意することを条件として、私は Iran への爆撃及び攻撃を<strong style="color:#fbbf24">2週間の期間の間、一時停止（suspend）</strong>することに同意する。」
-      </div>
-    </div>
-
-    <div class="modal-section blue">
-      <div class="modal-section-title">🔍 曖昧性の分析：2通りの解釈</div>
-      <div style="color:#7dd3fc; font-size:0.73rem; margin-bottom:10px;">
-        核心は <strong>"for a period of two weeks"</strong> の解釈にあります。
-      </div>
-      <div class="modal-interp">
-        <div class="modal-interp-box a">
-          <div class="i-title">解釈A：「2週間のみ停止」</div>
-          <div style="color:#fca5a5; font-size:0.72rem; line-height:1.65;">
-            2週間後に攻撃再開の可能性。Iranがホルムズを開放しても2週間後は再度攻撃できる。期限が2週間後に再発生するリスク。
-          </div>
-        </div>
-        <div class="modal-interp-box b">
-          <div class="i-title">解釈B：「2週間で恒久停戦へ」</div>
-          <div style="color:#86efac; font-size:0.72rem; line-height:1.65;">
-            2週間の協議期間を設けて永続的な解決を目指す。Iranが誠実に交渉すれば2週間後も停戦継続の可能性。
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-section gray">
-      <div class="modal-section-title" style="color:#94a3b8;">📌 言語学的な微妙さ</div>
-      <div style="color:#94a3b8; font-size:0.73rem; line-height:1.75;">
-        英語の <strong style="color:#cbd5e1;">"suspend"</strong> という動詞自体が曖昧です。<br>
-        <strong style="color:#cbd5e1;">条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong style="color:#fbbf24;">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが正常化を維持することが前提の可能性があります。<br><br>
-        <strong style="color:#f87171;">🔴 重要：</strong>この曖昧性はおそらく<strong style="color:#fbbf24;">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
-      </div>
-    </div>
-
-    <div class="modal-section gray">
-      <div class="modal-section-title" style="color:#94a3b8;">💡 メディア解釈の分裂</div>
-      <div class="modal-media">
-        <div class="modal-media-pill pill-optimist">
-          楽観派：「2週間停戦＝戦争一時停止」
-        </div>
-        <div class="modal-media-pill pill-cautious">
-          慎重派：「2週間猶予のみ＝再開の可能性」
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- MAP -->
-  <h2 class="sec-h2">🗺️ 海峡周辺マップ</h2>
-  <div class="map-wrap">
-<div id="map">
-  <!-- タンカー1隻の価値 サムネイルボタン -->
-  <div id="tanker-value-thumb" onclick="toggleTankerValuePopup()" title="タンカー1隻の価値をポップアップ表示">
-    <img src="images/tanker-value.png" alt="タンカー1隻の価値">
-    <div class="tv-label">📊 タンカー<br>1隻の価値</div>
-  </div>
-
-  <div id="tanker-overlay">
-    <div id="tanker-title">
-      <button id="tanker-toggle">折畳</button>
-      <span>🚢 日本関連船 足止め状況</span>
-    </div>
-    <div id="tanker-date"></div>
-    <div id="tanker-date-confirmed" title="タップで全文表示"></div>
-    <div id="ship-grid"></div>
-    <div id="tanker-stats">
-      <div class="stat-row">
-        <span>🔴 足止め中</span>
-        <span id="t-stuck">-</span>
-      </div>
-      <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px; margin-top:4px; border-top:1px solid rgba(148,163,184,0.2); padding-bottom:5px; margin-bottom:2px;">
-        <span>🚢 船種別内訳</span>
-        <span style="color:#94a3b8; font-weight:bold;">内訳確認中</span>
-      </div>
-      <div class="stat-row">
-        <span>合計</span>
-        <span id="t-total" style="color:#93c5fd;">-</span>
-      </div>
-    </div>
-    <div id="tanker-note" style="font-size:7.5px;color:#475569;padding:2px 6px 0;line-height:1.4;">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
-    <div id="tanker-progress-wrap">
-      <div id="tanker-progress-bar" style="width:100%"></div>
-    </div>
-  </div>
-</div>
-  </div>
-
-  <!-- STATS -->
-  <h2 class="sec-h2">📊 主要指標</h2>
-  <div class="stats-row">
-    <div class="stat-card">
-  <div style="font-size:0.65rem; color:#64748b; margin-bottom:6px; font-weight:600;">2026年8月17日時点（速報）</div>
-  <div style="font-size:0.75rem; color:#93c5fd; margin-bottom:8px; font-weight:700;">📊 日本の石油備蓄</div>
-  <div class="stat-num" style="font-size:1.4rem; color:#38bdf8; line-height:1.2; margin-bottom:6px;">204<span style="font-size:0.8rem">日分</span></div>
-  <div class="stat-label" style="font-size:0.68rem; line-height:1.6; color:#cbd5e1;">
-    <strong style="color:#93c5fd;">国家：</strong>103日分（放出停止・横ばい）<br>
-    <strong style="color:#93c5fd;">民間：</strong>98日分（産油国共同4日分含む）<br>
-    <small style="color:#64748b;">※資源エネルギー庁 速報値（備蓄法基準）</small>
-  </div>
-</div>
-    <div class="stat-card"><div class="stat-num c-red">20<span style="font-size:0.9rem">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
-    <div class="stat-card"><div class="stat-num c-red">+5<span style="font-size:0.9rem">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
-    <div class="stat-card"><div class="stat-num c-yellow">3<span style="font-size:0.9rem">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
-    <!-- 既存のスクロールリンクは維持 -->
-    <div class="stat-card" id="wtiStatCard"
-     style="background:linear-gradient(135deg,#0a1a10,#0f2820);border-color:#1e5f3a;cursor:pointer;"
-     onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
-    <div class="stat-num c-green" id="wtiStatNum" style="font-size:1.35rem;">Live表示中</div>
-    <div class="stat-label">市場ダッシュボード<br>
-    <span id="wtiStatChange" style="font-size:0.65rem;color:#64748b;">稼働中</span><br>
-    ▲クリックで詳細
-   </div>
-  </div>
-    <div class="stat-card"><div class="stat-num c-orange">40<span style="font-size:0.9rem">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
-  </div>
-
-  <script>
-// ============================================================
-// タンカー1隻の価値 ポップアップ
-// ============================================================
-function toggleTankerValuePopup() {
-  const overlay = document.getElementById('lightbox-overlay');
-  if (!overlay) return;
-  if (overlay.classList.contains('active')) {
-    closeLightbox();
-  } else {
-    openLightbox('images/tanker-value.png');
-  }
-}
-
-// ============================================================
-// 日本関連タンカー足止め可視化 v2.1
-// ============================================================
-const SHIP_CONFIG = {
-  totalShips:    4,
-  passableShips: 0,
-  date:          '2026年7月10日',
-  dateConfirmed: '2026年9月12日 07:45 JST 確認・変化なし（4隻のまま。外務省・国交省へ日英クエリで新規発表なしを確認。金子国交相の直近確定発言は7/10会見の「残り4隻」）'
-};
-
-(function () {
-  function renderShipPanel(cfg) {
-    const { totalShips, passableShips, date } = cfg;
-    const stuck = totalShips - passableShips;
-
-    document.getElementById('tanker-date').textContent = date + '現在';
-    const confirmedEl = document.getElementById('tanker-date-confirmed');
-    if (confirmedEl) {
-      confirmedEl.textContent = cfg.dateConfirmed || '';
-      // 既定は2行に省略。根拠（確認手順）は削らず、タップで全文を出す
-      confirmedEl.addEventListener('click', function () {
-        this.classList.toggle('expanded');
-      });
-    }
-
-    const grid = document.getElementById('ship-grid');
-    grid.innerHTML = '';
-
-    const SHIP_TYPES = [
-      { icon: '🚢', count: totalShips, label: '内訳確認中', color: 'rgba(148,163,184,0.9)' },
-    ];
-
-    let idx = 0;
-    SHIP_TYPES.forEach(function(type) {
-      for (let i = 0; i < type.count; i++) {
-        idx++;
-        const el       = document.createElement('span');
-        el.className   = 'ship-icon';
-        el.textContent = type.icon;
-        el.title       = `#${idx}　${type.label}　足止め中 🔴`;
-        el.style.filter = `drop-shadow(0 0 3px ${type.color})`;
-        grid.appendChild(el);
-      }
-    });
-
-    document.getElementById('t-stuck').textContent = stuck     + '隻';
-    document.getElementById('t-total').textContent = totalShips + '隻';
-
-    const stuckPct = totalShips > 0
-      ? Math.round((stuck / totalShips) * 100)
-      : 0;
-    document.getElementById('tanker-progress-bar').style.width = stuckPct + '%';
-  }
-
-  document.getElementById('tanker-toggle')
-    .addEventListener('click', function () {
-      const overlay   = document.getElementById('tanker-overlay');
-      const grid      = document.getElementById('ship-grid');
-      const stats     = document.getElementById('tanker-stats');
-      const bar       = document.getElementById('tanker-progress-wrap');
-      const dateEl    = document.getElementById('tanker-date');
-      const collapsed = overlay.classList.toggle('collapsed');
-
-      grid.style.display   = collapsed ? 'none' : 'flex';
-      stats.style.display  = collapsed ? 'none' : 'block';
-      bar.style.display    = collapsed ? 'none' : 'block';
-      dateEl.style.display = collapsed ? 'none' : 'block';
-      this.textContent     = collapsed ? '展開' : '折畳';
-    });
-
-  function updateMarkerScale(z) {
-    var scale = z <= 4 ? 0.35 : z <= 5 ? 0.57 : z <= 6 ? 0.78 : 1.0;
-    document.querySelectorAll(
-      '#map .leaflet-marker-icon:not(.country-label) > div'
-    ).forEach(function(el) {
-      el.style.transformOrigin = 'center center';
-      el.style.transition = 'transform 0.25s ease';
-      el.style.transform = scale < 1.0 ? 'scale(' + scale + ')' : '';
-    });
-  }
-
-  function attachLeafletZoom() {
-    const leafletMap = (typeof map !== 'undefined' && typeof map.on === 'function') ? map : null;
-    if (!leafletMap) return;
-
-    leafletMap.on('zoomend', function () {
-      const z       = leafletMap.getZoom();
-      const overlay = document.getElementById('tanker-overlay');
-
-      overlay.classList.remove('zoom-close', 'zoom-far');
-
-      if      (z >= 8) overlay.classList.add('zoom-close');
-      else if (z <= 5) overlay.classList.add('zoom-far');
-
-      updateMarkerScale(z);
-    });
-
-    // 軍事レイヤーfetch完了後に初期スケール適用
-    setTimeout(function() { updateMarkerScale(leafletMap.getZoom()); }, 2000);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      renderShipPanel(SHIP_CONFIG);
-      attachLeafletZoom();
-    });
-  } else {
-    renderShipPanel(SHIP_CONFIG);
-    attachLeafletZoom();
-  }
-})();
-  </script>
 
 <!-- ROUTE TABLE -->
 <div id="incident" style="border-radius:12px;overflow:hidden;border:1px solid rgba(239,68,68,0.35);">
@@ -3167,6 +2648,121 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeLightbox();
 });
 </script>
+<!-- SITUATION CARDS -->
+<h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);">🌐 最新情勢カード<span class="sec-h2-sub">海峡・外交・市場の現状をリアルタイムで確認</span></h2>
+<div id="situation" class="sit-grid"></div>
+<div class="sit-grid">
+<!-- カード① イラン・GCC外相会合 -->
+  <div class="sit-card info">
+    <div class="s-icon">🤝</div>
+        <div class="s-title">🤝 イランと湾岸6カ国の外相、9月14日にオマーンで会合——開戦後初の一堂会、ホルムズ通航取り決めを協議</div>
+        <div class="s-body">オマーンの仲介により、イラン外相と湾岸協力会議（GCC）加盟6カ国（サウジアラビア・UAE・カタール・クウェート・バーレーン・オマーン）の外相が9月14日（月）、オマーン南部サラーラで会合すると報じられた。ホルムズ海峡での商船通航の取り決めを巡る協議で、2月の開戦以降、イランとGCC6カ国の高官が一堂に会するのは初めて。8月下旬にはイラン・オマーン間で「湾入域はイラン領海・出域はオマーン領海を通航するルート」の暫定合意が伝えられており、今回はその後継協議と位置付けられる。イラン外務省は「地域諸国間の相互理解の促進と共有される地域安全保障の強化」が目的と説明。</div>
+        <div class="s-src">出典: Oman Observer / Bloomberg / TASS（9/11）</div>
+  </div>
+
+  <!-- カード② サウジ東西パイプライン ドローン攻撃 -->
+  <div class="sit-card danger">
+    <div class="s-icon">🛢️</div>
+        <div class="s-title">🛢️ サウジ東西パイプライン、イラク発ドローン攻撃で一時停止——GCCは「危険なエスカレーション」と非難</div>
+        <div class="s-body">サウジアラビアは9月10日（木）朝、リヤド州・マディーナ州で東西原油パイプラインが複数のドローン攻撃を受けたため、予防的に操業を一時停止したと発表した。サウジ外務省はイラクから飛来したドローンによる攻撃だと非難し、負傷者と一部損害が出たとしている。GCCのアルブダイウィ事務総長は「危険なエスカレーションであり国際法の明白な違反」と述べ、イラク政府に自国領域が発射拠点として使われるのを防ぐための「必要かつ断固たる措置」の強化を要求した。</div>
+        <div class="s-src">出典: Arab News / CNN / CNBC / OilPrice（9/11）</div>
+  </div>
+
+  <!-- カード③ IAEA、イランを国連安保理へ付託 -->
+  <div class="sit-card warning">
+    <div class="s-icon">☢️</div>
+        <div class="s-title">☢️ IAEA理事会、イランを国連安保理へ付託——核不拡散義務の不履行巡り20年ぶり、WTIは約4カ月ぶり100ドル突破</div>
+        <div class="s-body">国際原子力機関（IAEA）理事会は9月9日、未申告の複数施設でウラン粒子が検出された問題を巡り、イランが説明責任を果たしていないとして国連安保理へ付託する決議を賛成23・反対3（ロシア・中国・ニジェール）・棄権8で採択した。付託は20年ぶりだが、ロシア・中国が拒否権を持つため安保理での実効的な行動は見通せないとの分析が多い。並行して原油はWTIが約4カ月ぶりに1バレル100ドルを突破、ブレントも高値圏を維持している。日本関係船は外務省・国土交通省への日英クエリ調査で新規発表がないことを再確認し、残り4隻のまま変化はない。</div>
+        <div class="s-src">出典: Al Jazeera / RFE/RL / FDD（9/9〜10）／外務省・国土交通省への確認（9/12）</div>
+  </div>
+
+</div>
+  <!-- COUNTDOWN -->
+  <div class="deadline">
+    <div class="dl-label" id="cd-phase-label">⏱️ Phase 35「IRGCが米無人潜水艇の拿捕を主張、カタールは危機長期化で『産業的破局』を警告」——封鎖195日目</div>
+    <div class="dl-boxes">
+      <div class="dl-box" style="min-width:200px;">
+        <div id="cd-display">
+          <div class="cd-unit">
+            <span class="cd-val" id="cd-h">--</span>
+            <div class="cd-label">時間</div>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-val" id="cd-m">--</span>
+            <div class="cd-label">分</div>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-val" id="cd-s">--</span>
+            <div class="cd-label">秒</div>
+          </div>
+        </div>
+        <div class="dl-sub" style="margin-top:4px;">リアルタイムカウントダウン</div>
+      </div>
+      <div class="dl-arrow">→</div>
+      <div class="dl-box">
+        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">イラン・米国による二重封鎖（Iran-US dual blockade）</div>
+        <div class="dl-sub">2026年2月28日 起算</div>
+      </div>
+      <div class="dl-arrow">→</div>
+      <div class="dl-box">
+        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">「交渉決裂・軍事衝突」：ハメネイ「交渉中止・完全閉鎖」最終宣言（6/1）</div>
+        <div class="dl-sub">2026年6月16日 08:14 日本時間JST 現在</div>
+      </div>
+      <div class="dl-note">
+        🌐 <strong>前回更新（9/8）で焦点としていたイランの新「排他水域」計画・オマーンとのIMO登録協議は、9/9〜10時点で進展の確認が取れない一方、9/8未明にIRGCが米軍の先進無人潜水艇を拿捕したと新たに主張した——米側の公式な反応はまだなく事実関係は未確認だが、事実であれば米軍の水中監視・機雷探知能力への直接的な打撃を意味しうる。同日、カタール外務省は危機長期化が「産業的破局」を招きかねないと警告し、独立監視機関のデータ（直近10日平均日量約10隻）と米側の「戦前水準に近い」との主張との食い違いを改めて浮き彫りにした。</strong>
+        <br><span style="color:#fde68a;">⚡ 次の24〜48時間の焦点：①IRGCが主張する無人潜水艇拿捕の実物画像が公開され独立検証が進むか ②米側がこの主張に公式反応を示すか ③排他水域計画・IMO登録協議のいずれかが具体化するか ④通航待ちタンカー42隻（原油18隻）の滞留がさらに拡大するか ⑤WTI94ドル台・ブレント97ドル近辺からのさらなる上振れの有無</span>
+        <br><span style="color:#fca5a5;">⏳ 軍事面（無人潜水艇拿捕主張）と外交・経済面（カタールの警告）の双方で緊張材料が並行して積み上がっており、いずれかが具体化した場合の連鎖的なエスカレーションに注意が必要とみられる</span>
+      </div>
+      </div>
+    </div>
+
+<!-- ===== 第2層：どう影響するか ===== -->
+<div class="layer-band" style="--layer-accent:var(--c-accent-pale);">
+  <span class="layer-band-num">第2層</span>
+  <span class="layer-band-text">どう影響するか</span>
+</div>
+
+  <!-- MAP -->
+  <h2 class="sec-h2">🗺️ 海峡周辺マップ</h2>
+  <div class="map-wrap">
+<div id="map">
+  <!-- タンカー1隻の価値 サムネイルボタン -->
+  <div id="tanker-value-thumb" onclick="toggleTankerValuePopup()" title="タンカー1隻の価値をポップアップ表示">
+    <img src="images/tanker-value.png" alt="タンカー1隻の価値">
+    <div class="tv-label">📊 タンカー<br>1隻の価値</div>
+  </div>
+
+  <div id="tanker-overlay">
+    <div id="tanker-title">
+      <button id="tanker-toggle">折畳</button>
+      <span>🚢 日本関連船 足止め状況</span>
+    </div>
+    <div id="tanker-date"></div>
+    <div id="tanker-date-confirmed" title="タップで全文表示"></div>
+    <div id="ship-grid"></div>
+    <div id="tanker-stats">
+      <div class="stat-row">
+        <span>🔴 足止め中</span>
+        <span id="t-stuck">-</span>
+      </div>
+      <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px; margin-top:4px; border-top:1px solid rgba(148,163,184,0.2); padding-bottom:5px; margin-bottom:2px;">
+        <span>🚢 船種別内訳</span>
+        <span style="color:#94a3b8; font-weight:bold;">内訳確認中</span>
+      </div>
+      <div class="stat-row">
+        <span>合計</span>
+        <span id="t-total" style="color:#93c5fd;">-</span>
+      </div>
+    </div>
+    <div id="tanker-note" style="font-size:7.5px;color:#475569;padding:2px 6px 0;line-height:1.4;">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
+    <div id="tanker-progress-wrap">
+      <div id="tanker-progress-bar" style="width:100%"></div>
+    </div>
+  </div>
+</div>
+  </div>
 
 <div id="routes">
   <h2 class="sec-h2" style="color:#7dd3fc;">🚢 全ルート現況サマリー<span class="sec-h2-sub">2026年9月12日 07:45 JST 更新</span></h2>
@@ -3533,24 +3129,452 @@ document.addEventListener('keydown', function(e) {
 
 </div>
 
-
-<div style="text-align:center;margin:0 16px 18px;">
-  <a href="archive/index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:#c9a869;text-decoration:none;border:1px solid rgba(201,168,105,0.35);background:rgba(201,168,105,0.08);padding:8px 16px;border-radius:20px;">
-    📚 ホルムズ危機 全記録（日次アーカイブ）を見る
-  </a>
+  <!-- STATS -->
+  <h2 class="sec-h2">📊 主要指標</h2>
+  <div class="stats-row">
+    <div class="stat-card">
+  <div style="font-size:0.65rem; color:#64748b; margin-bottom:6px; font-weight:600;">2026年8月17日時点（速報）</div>
+  <div style="font-size:0.75rem; color:#93c5fd; margin-bottom:8px; font-weight:700;">📊 日本の石油備蓄</div>
+  <div class="stat-num" style="font-size:1.4rem; color:#38bdf8; line-height:1.2; margin-bottom:6px;">204<span style="font-size:0.8rem">日分</span></div>
+  <div class="stat-label" style="font-size:0.68rem; line-height:1.6; color:#cbd5e1;">
+    <strong style="color:#93c5fd;">国家：</strong>103日分（放出停止・横ばい）<br>
+    <strong style="color:#93c5fd;">民間：</strong>98日分（産油国共同4日分含む）<br>
+    <small style="color:#64748b;">※資源エネルギー庁 速報値（備蓄法基準）</small>
+  </div>
 </div>
+    <div class="stat-card"><div class="stat-num c-red">20<span style="font-size:0.9rem">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
+    <div class="stat-card"><div class="stat-num c-red">+5<span style="font-size:0.9rem">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
+    <div class="stat-card"><div class="stat-num c-yellow">3<span style="font-size:0.9rem">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
+    <!-- 既存のスクロールリンクは維持 -->
+    <div class="stat-card" id="wtiStatCard"
+     style="background:linear-gradient(135deg,#0a1a10,#0f2820);border-color:#1e5f3a;cursor:pointer;"
+     onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
+    <div class="stat-num c-green" id="wtiStatNum" style="font-size:1.35rem;">Live表示中</div>
+    <div class="stat-label">市場ダッシュボード<br>
+    <span id="wtiStatChange" style="font-size:0.65rem;color:#64748b;">稼働中</span><br>
+    ▲クリックで詳細
+   </div>
+  </div>
+    <div class="stat-card"><div class="stat-num c-orange">40<span style="font-size:0.9rem">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
+  </div>
 
-<footer>
-  <nav class="footer-legal">
-    <a href="about/">このサイトについて</a>
-    <a href="editorial/">編集方針</a>
-    <a href="disclaimer/">免責事項</a>
-    <a href="contact/">お問い合わせ</a>
-    <a href="privacy/">プライバシーポリシー</a>
-    <a href="corrections/">訂正履歴</a>
-  </nav>
-  データソース：テレ朝NEWS・時事通信・FNNプライム・BBC日本語・Reuters日本語・東洋経済・NRI（野村総研）・IEA　／　地図：© OpenStreetMap contributors © CARTO　／　本コンテンツは公開情報を元にした情報整理目的のものです。
-</footer>
+  <script>
+// ============================================================
+// タンカー1隻の価値 ポップアップ
+// ============================================================
+function toggleTankerValuePopup() {
+  const overlay = document.getElementById('lightbox-overlay');
+  if (!overlay) return;
+  if (overlay.classList.contains('active')) {
+    closeLightbox();
+  } else {
+    openLightbox('images/tanker-value.png');
+  }
+}
+
+// ============================================================
+// 日本関連タンカー足止め可視化 v2.1
+// ============================================================
+const SHIP_CONFIG = {
+  totalShips:    4,
+  passableShips: 0,
+  date:          '2026年7月10日',
+  dateConfirmed: '2026年9月12日 07:45 JST 確認・変化なし（4隻のまま。外務省・国交省へ日英クエリで新規発表なしを確認。金子国交相の直近確定発言は7/10会見の「残り4隻」）'
+};
+
+(function () {
+  function renderShipPanel(cfg) {
+    const { totalShips, passableShips, date } = cfg;
+    const stuck = totalShips - passableShips;
+
+    document.getElementById('tanker-date').textContent = date + '現在';
+    const confirmedEl = document.getElementById('tanker-date-confirmed');
+    if (confirmedEl) {
+      confirmedEl.textContent = cfg.dateConfirmed || '';
+      // 既定は2行に省略。根拠（確認手順）は削らず、タップで全文を出す
+      confirmedEl.addEventListener('click', function () {
+        this.classList.toggle('expanded');
+      });
+    }
+
+    const grid = document.getElementById('ship-grid');
+    grid.innerHTML = '';
+
+    const SHIP_TYPES = [
+      { icon: '🚢', count: totalShips, label: '内訳確認中', color: 'rgba(148,163,184,0.9)' },
+    ];
+
+    let idx = 0;
+    SHIP_TYPES.forEach(function(type) {
+      for (let i = 0; i < type.count; i++) {
+        idx++;
+        const el       = document.createElement('span');
+        el.className   = 'ship-icon';
+        el.textContent = type.icon;
+        el.title       = `#${idx}　${type.label}　足止め中 🔴`;
+        el.style.filter = `drop-shadow(0 0 3px ${type.color})`;
+        grid.appendChild(el);
+      }
+    });
+
+    document.getElementById('t-stuck').textContent = stuck     + '隻';
+    document.getElementById('t-total').textContent = totalShips + '隻';
+
+    const stuckPct = totalShips > 0
+      ? Math.round((stuck / totalShips) * 100)
+      : 0;
+    document.getElementById('tanker-progress-bar').style.width = stuckPct + '%';
+  }
+
+  document.getElementById('tanker-toggle')
+    .addEventListener('click', function () {
+      const overlay   = document.getElementById('tanker-overlay');
+      const grid      = document.getElementById('ship-grid');
+      const stats     = document.getElementById('tanker-stats');
+      const bar       = document.getElementById('tanker-progress-wrap');
+      const dateEl    = document.getElementById('tanker-date');
+      const collapsed = overlay.classList.toggle('collapsed');
+
+      grid.style.display   = collapsed ? 'none' : 'flex';
+      stats.style.display  = collapsed ? 'none' : 'block';
+      bar.style.display    = collapsed ? 'none' : 'block';
+      dateEl.style.display = collapsed ? 'none' : 'block';
+      this.textContent     = collapsed ? '展開' : '折畳';
+    });
+
+  function updateMarkerScale(z) {
+    var scale = z <= 4 ? 0.35 : z <= 5 ? 0.57 : z <= 6 ? 0.78 : 1.0;
+    document.querySelectorAll(
+      '#map .leaflet-marker-icon:not(.country-label) > div'
+    ).forEach(function(el) {
+      el.style.transformOrigin = 'center center';
+      el.style.transition = 'transform 0.25s ease';
+      el.style.transform = scale < 1.0 ? 'scale(' + scale + ')' : '';
+    });
+  }
+
+  function attachLeafletZoom() {
+    const leafletMap = (typeof map !== 'undefined' && typeof map.on === 'function') ? map : null;
+    if (!leafletMap) return;
+
+    leafletMap.on('zoomend', function () {
+      const z       = leafletMap.getZoom();
+      const overlay = document.getElementById('tanker-overlay');
+
+      overlay.classList.remove('zoom-close', 'zoom-far');
+
+      if      (z >= 8) overlay.classList.add('zoom-close');
+      else if (z <= 5) overlay.classList.add('zoom-far');
+
+      updateMarkerScale(z);
+    });
+
+    // 軍事レイヤーfetch完了後に初期スケール適用
+    setTimeout(function() { updateMarkerScale(leafletMap.getZoom()); }, 2000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      renderShipPanel(SHIP_CONFIG);
+      attachLeafletZoom();
+    });
+  } else {
+    renderShipPanel(SHIP_CONFIG);
+    attachLeafletZoom();
+  }
+})();
+  </script>
+<!-- ホルムズ データ監視ダッシュボード -->
+<h2 class="sec-h2">📡 ホルムズ データ監視ダッシュボード</h2>
+<div id="japan-flow"></div>
+<div style="margin: 20px auto; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1e3a5f;">
+  <iframe
+    id="hormuz-dashboard"
+    width="100%"
+    height="400"
+    frameborder="0"
+    scrolling="no"
+    title="ホルムズ データ監視ダッシュボード"
+    style="display:block; background:#0a0e1a;"
+    loading="lazy"
+  ></iframe>
+</div>
+<script>
+  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ドメイン/リポジトリ名移行時はここのみ変更）
+  window.SITE_CONFIG = window.SITE_CONFIG || {
+    DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
+  };
+  (function () {
+    const iframe = document.getElementById('hormuz-dashboard');
+    if (!iframe) return;
+    iframe.src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
+
+    // 実測できないとき（別オリジン移行後など）だけ使う暫定値
+    function fallbackHeight() {
+      if (window.innerWidth <= 480) return 2110;
+      if (window.innerWidth <= 768) return 2200;
+      return 1110;
+    }
+
+    let measured = false;
+    // 同一オリジンで実測できているか。できている間は postMessage を採用しない
+    let directMeasureOk = false;
+
+    function applyHeight(h) {
+      h = Math.ceil(h);
+      if (!(h > 200)) return;
+      if (Math.abs(parseFloat(iframe.style.height || '0') - h) < 2) return;
+      iframe.style.height = h + 'px';
+    }
+
+    // iframe 内の最終要素の下端から実コンテンツ高さを測る。
+    // documentElement.scrollHeight は iframe の高さまで引き伸ばされるため、
+    // 「縮める方向」の判定に使えない（これが余白の残る原因だった）。
+    function measureInner(doc) {
+      const body = doc.body;
+      if (!body) return 0;
+      const win = doc.defaultView;
+      let bottom = 0;
+      for (let i = 0; i < body.children.length; i++) {
+        const el = body.children[i];
+        if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) continue;
+        if (rect.bottom > bottom) bottom = rect.bottom;
+      }
+      if (!bottom) return 0;
+      bottom += win.scrollY || 0;
+      const cs = win.getComputedStyle(body);
+      bottom += parseFloat(cs.paddingBottom) || 0;
+      bottom += parseFloat(cs.marginBottom) || 0;
+      return bottom + 8;
+    }
+
+    function syncHeight() {
+      let doc = null;
+      try {
+        doc = iframe.contentDocument || iframe.contentWindow.document;
+      } catch (e) {
+        doc = null; // 別オリジン：postMessage 経由の通知を待つ
+      }
+      if (!doc) {
+        if (!measured) applyHeight(fallbackHeight());
+        return;
+      }
+      const h = measureInner(doc);
+      if (h > 200) {
+        measured = true;
+        directMeasureOk = true;
+        applyHeight(h);
+      } else if (!measured) {
+        applyHeight(fallbackHeight());
+      }
+    }
+
+    let timer = null;
+    function scheduleSync() {
+      clearTimeout(timer);
+      timer = setTimeout(syncHeight, 120);
+    }
+
+    applyHeight(fallbackHeight());
+
+    iframe.addEventListener('load', function () {
+      let doc = null;
+      try {
+        doc = iframe.contentDocument || iframe.contentWindow.document;
+      } catch (e) {
+        doc = null;
+      }
+      if (doc) {
+        try {
+          // 米国中東原油比率カードを非表示
+          const cards = doc.querySelectorAll('.card');
+          cards.forEach(function (card) {
+            if (card.textContent.includes('米国の中東原油')) {
+              card.style.display = 'none';
+            }
+          });
+        } catch (e) {
+          console.warn('card hide error:', e);
+        }
+        // 内部の非同期描画（fetch 後のカード更新など）に追従させる
+        if (doc.body && window.ResizeObserver) {
+          new ResizeObserver(scheduleSync).observe(doc.body);
+        }
+        if (doc.body && window.MutationObserver) {
+          new MutationObserver(scheduleSync).observe(doc.body, {
+            childList: true, subtree: true, characterData: true
+          });
+        }
+        if (iframe.contentWindow) {
+          iframe.contentWindow.addEventListener('resize', scheduleSync);
+        }
+      }
+      syncHeight();
+      [300, 1000, 2500, 5000].forEach(function (ms) { setTimeout(syncHeight, ms); });
+    });
+
+    window.addEventListener('resize', scheduleSync);
+
+    // 別オリジンに移行した場合の受け口（子側が iframeHeight を送ってくる場合）
+    window.addEventListener('message', function (ev) {
+      const data = ev.data;
+      if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
+      if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;
+      // 直接測定が効いている間は無視する（子側が誤った高さを送っても壊れないようにする保険）
+      if (directMeasureOk) return;
+      measured = true;
+      applyHeight(data.height);
+    });
+  })();
+</script>
+<!-- /ダッシュボード -->
+  <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
+ <h2 class="sec-h2" style="color:#4ade80;border-bottom-color:rgba(74,222,128,0.25);">💰 リアルタイム市場（原油・為替・貴金属）</h2>
+ <div id="wtiWidget" style="margin-top:8px; background: #131722; padding: 12px 20px 8px 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; font-family: sans-serif; border: 1px solid #1e3a5f;">
+    
+    <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+      
+      <!-- 1. WTI原油 -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:USOIL", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 2. ドル円 -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "FX_IDC:USDJPY", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+    </div>
+  
+    <!-- ▼ サブセクション（小さく表示：高さ150） ▼ -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+      
+      <!-- 3. ゴールド -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:GOLD", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 4. シルバー -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:SILVER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 5. 銅 -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "CAPITALCOM:COPPER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 6. プラチナ -->
+      <div style="overflow: hidden; border-radius: 4px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:PLATINUM", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- ▼ 包括的な但し書き ▼ -->
+     <div style="text-align: right; font-size: 0.75rem; color: #868993; border-top: 1px solid #2B3139; padding-top: 6px; margin-top: 2px; margin-bottom: 0; padding-bottom: 0;">
+      ※表示価格はCFD等のデータであり、実際の先物・現物価格とは微小な差異や遅延が生じる場合があります。
+    </div>
+  </div>
+  <!-- ==================== 💰 ダッシュボード終了 ==================== -->
+<!-- TRUMP STATEMENT MODAL -->
+<div class="modal-overlay" id="trump-modal" onclick="closeTrumpModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeTrumpModal()">✕ 閉じる</button>
+    <div class="modal-title">
+      📜 トランプ大統領 Truth Social声明（4/8 JST）<br>
+      「2週間の爆撃停止」― 原文・翻訳・解釈分析
+    </div>
+
+    <div class="modal-section red">
+      <div class="modal-section-title">🔴 英語原文（Truth Social）</div>
+      <div class="modal-quote">
+        "Based on conversations with Prime Minister Shehbaz Sharif and Field Marshal Asim Munir, of Pakistan, and wherein they requested that I hold off the destructive force being sent tonight to Iran, and subject to the Islamic Republic of Iran agreeing to the COMPLETE, IMMEDIATE, and SAFE OPENING of the Strait of Hormuz, I agree to suspend the bombing and attack of Iran for a period of two weeks."
+      </div>
+    </div>
+
+    <div class="modal-section yellow">
+      <div class="modal-section-title">🟡 日本語翻訳（原文に忠実）</div>
+      <div style="color:#fde68a; font-size:0.77rem; line-height:1.8;">
+        「Pakistanの Shehbaz Sharif 首相及び Asim Munir 統合参謀総長との会話に基づき、そして彼らが本夜 Iran に送られるべき破壊力を一時停止するよう要請した際、及び Islamic Republic of Iran が Hormuz 海峡の<strong style="color:#fbbf24">完全な、直ちな、かつ安全な開放</strong>に同意することを条件として、私は Iran への爆撃及び攻撃を<strong style="color:#fbbf24">2週間の期間の間、一時停止（suspend）</strong>することに同意する。」
+      </div>
+    </div>
+
+    <div class="modal-section blue">
+      <div class="modal-section-title">🔍 曖昧性の分析：2通りの解釈</div>
+      <div style="color:#7dd3fc; font-size:0.73rem; margin-bottom:10px;">
+        核心は <strong>"for a period of two weeks"</strong> の解釈にあります。
+      </div>
+      <div class="modal-interp">
+        <div class="modal-interp-box a">
+          <div class="i-title">解釈A：「2週間のみ停止」</div>
+          <div style="color:#fca5a5; font-size:0.72rem; line-height:1.65;">
+            2週間後に攻撃再開の可能性。Iranがホルムズを開放しても2週間後は再度攻撃できる。期限が2週間後に再発生するリスク。
+          </div>
+        </div>
+        <div class="modal-interp-box b">
+          <div class="i-title">解釈B：「2週間で恒久停戦へ」</div>
+          <div style="color:#86efac; font-size:0.72rem; line-height:1.65;">
+            2週間の協議期間を設けて永続的な解決を目指す。Iranが誠実に交渉すれば2週間後も停戦継続の可能性。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section gray">
+      <div class="modal-section-title" style="color:#94a3b8;">📌 言語学的な微妙さ</div>
+      <div style="color:#94a3b8; font-size:0.73rem; line-height:1.75;">
+        英語の <strong style="color:#cbd5e1;">"suspend"</strong> という動詞自体が曖昧です。<br>
+        <strong style="color:#cbd5e1;">条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong style="color:#fbbf24;">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが正常化を維持することが前提の可能性があります。<br><br>
+        <strong style="color:#f87171;">🔴 重要：</strong>この曖昧性はおそらく<strong style="color:#fbbf24;">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
+      </div>
+    </div>
+
+    <div class="modal-section gray">
+      <div class="modal-section-title" style="color:#94a3b8;">💡 メディア解釈の分裂</div>
+      <div class="modal-media">
+        <div class="modal-media-pill pill-optimist">
+          楽観派：「2週間停戦＝戦争一時停止」
+        </div>
+        <div class="modal-media-pill pill-cautious">
+          慎重派：「2週間猶予のみ＝再開の可能性」
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 // ============================================================
@@ -4910,6 +4934,12 @@ document.addEventListener('DOMContentLoaded', () => {
   applyIncidentFold();
 });
 </script>
+
+<!-- ===== 第3層：なぜそうなのか ===== -->
+<div class="layer-band" style="--layer-accent:var(--c-special);">
+  <span class="layer-band-num">第3層</span>
+  <span class="layer-band-text">なぜそうなのか</span>
+</div>
 <!-- OSINT PANEL -->
 <div style="width:100%;margin:24px 0 0;padding:0 16px;text-align:left;">
 
@@ -5297,6 +5327,28 @@ document.addEventListener('DOMContentLoaded', () => {
   <div id="news-archive-container" style="display:none;"></div>
 </div><!-- /NEWS COLUMN wrapper -->
 
+<!--🌐 現地メディア視点-->
+<div id="osint-panel">
+  <h2 class="sec-h2" style="color:#a78bfa;border-bottom-color:rgba(167,139,250,0.25);">
+    🌐 現地メディア視点
+  </h2>
+
+  <div id="osint-container">
+    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
+  </div>
+</div><!-- /#osint-panel -->
+<!-- /OSINT PANEL -->
+
+
+    <!-- 数値注記 -->
+    <div style="margin-top:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 16px;font-size:0.7rem;color:#64748b;line-height:1.8;">
+      <strong style="color:#94a3b8;">⚠️ 数値・データに関する注記</strong><br>
+      WTI原油価格はCFD（差金決済取引）データをもとに表示しており、実際の先物・現物価格と微小な差異や遅延が生じる場合があります。／
+      石油備蓄日数はIEA基準による推定値です（国家備蓄＋民間備蓄＋産油国在庫の合計）。／
+      ホルムズ海峡の通過量および4つのシナリオ確率は、生成AI（Google Gemini）が公開ニュース記事から生成した推定値です（毎日 09:30 JST 更新）。実測・観測に基づく値ではありません。／
+      シナリオ記述は編集部による分析であり、確定的な予測ではありません。
+    </div>
+
 <!-- SOURCE & UPDATE LOG -->
 <div style="max-width:960px;margin:32px auto 0;padding:0 16px 40px;">
   <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
@@ -5371,27 +5423,24 @@ document.addEventListener('DOMContentLoaded', () => {
   </div><!-- /news-list -->
 </div><!-- /NEWS COLUMN wrapper -->
 
-<!--🌐 現地メディア視点-->
-<div id="osint-panel">
-  <h2 class="sec-h2" style="color:#a78bfa;border-bottom-color:rgba(167,139,250,0.25);">
-    🌐 現地メディア視点
-  </h2>
 
-  <div id="osint-container">
-    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
-  </div>
-</div><!-- /#osint-panel -->
-<!-- /OSINT PANEL -->
+<div style="text-align:center;margin:0 16px 18px;">
+  <a href="archive/index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:#c9a869;text-decoration:none;border:1px solid rgba(201,168,105,0.35);background:rgba(201,168,105,0.08);padding:8px 16px;border-radius:20px;">
+    📚 ホルムズ危機 全記録（日次アーカイブ）を見る
+  </a>
+</div>
 
-
-    <!-- 数値注記 -->
-    <div style="margin-top:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 16px;font-size:0.7rem;color:#64748b;line-height:1.8;">
-      <strong style="color:#94a3b8;">⚠️ 数値・データに関する注記</strong><br>
-      WTI原油価格はCFD（差金決済取引）データをもとに表示しており、実際の先物・現物価格と微小な差異や遅延が生じる場合があります。／
-      石油備蓄日数はIEA基準による推定値です（国家備蓄＋民間備蓄＋産油国在庫の合計）。／
-      ホルムズ海峡の通過量および4つのシナリオ確率は、生成AI（Google Gemini）が公開ニュース記事から生成した推定値です（毎日 09:30 JST 更新）。実測・観測に基づく値ではありません。／
-      シナリオ記述は編集部による分析であり、確定的な予測ではありません。
-    </div>
+<footer>
+  <nav class="footer-legal">
+    <a href="about/">このサイトについて</a>
+    <a href="editorial/">編集方針</a>
+    <a href="disclaimer/">免責事項</a>
+    <a href="contact/">お問い合わせ</a>
+    <a href="privacy/">プライバシーポリシー</a>
+    <a href="corrections/">訂正履歴</a>
+  </nav>
+  データソース：テレ朝NEWS・時事通信・FNNプライム・BBC日本語・Reuters日本語・東洋経済・NRI（野村総研）・IEA　／　地図：© OpenStreetMap contributors © CARTO　／　本コンテンツは公開情報を元にした情報整理目的のものです。
+</footer>
 
 <!-- 日本製油所モーダル -->
 <div id="refinery-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px 0;">

@@ -13,8 +13,8 @@ description: Planning guide for new features, mobile UI, responsive improvements
 
 スマホ表示や CSS レイアウトを修正する場合は、必ず以下を参照する。
 
-- [@docs/design-system.md](docs/design-system.md)
-- [@docs/mobile-ui-rules.md](docs/mobile-ui-rules.md)
+- [@tools/design-system.md](tools/design-system.md)
+- [@tools/mobile-ui-rules.md](tools/mobile-ui-rules.md)
 
 ---
 

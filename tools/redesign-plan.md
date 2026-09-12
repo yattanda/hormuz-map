@@ -91,7 +91,7 @@
 
 ### 実測された問題（2026-09-04）
 
-- `:root` 定義が存在しない（`design-system.md` のトークンは未実装）
+- `:root` 定義が存在しない（`tools/design-system.md` のトークンは未実装）
 - `font-size` rem指定の分布: `0.75rem`×63 / `0.72rem`×62 / `0.78rem`×40 / `0.8rem`×29 / `0.85rem`×21
   - PC（16px基準）では 11〜12px 相当。可読下限 14px を大きく下回る
   - スマホは `@media (max-width:768px){html{font-size:18px}}` に救われているが、PC には救済がない

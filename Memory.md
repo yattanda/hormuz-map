@@ -90,7 +90,7 @@ if (window.innerWidth <= 480) {
 - 表は横スクロールまたはカード型を基本にする
 - 共通CSSで直せるものを優先し、ページ固有の場当たり的CSSを増やさない
 - 修正時は `mobile-ui-reviewer` → `responsive-css-specialist` の順で進める
-- 詳細ルールは `docs/design-system.md` / `docs/mobile-ui-rules.md` を参照
+- 詳細ルールは `tools/design-system.md` / `tools/mobile-ui-rules.md` を参照
 
 #### 4. インフォグラフィック導線改善
 - **対象**: 30秒カラム末尾の「📊 解説インフォグラフィック」→「ホルムズ海峡危機を6枚の図解で俯瞰する」
@@ -434,7 +434,7 @@ function calcBlockadeDay(iso){
     適用済みパッチ類を削除。うち5件は `docs/` 配下のため GitHub Pages で公開状態だった
   - hook・応答ルール・permission をリポジトリ側に移し、クラウドセッションへ引き継ぎ可能にした
 - ✅ サブエージェント作成（mobile-ui-reviewer / responsive-css-specialist）（2026-05-07）
-- ✅ デザイン基準書・スマホUIルール作成（docs/design-system.md / docs/mobile-ui-rules.md）（2026-05-07）
+- ✅ デザイン基準書・スマホUIルール作成（tools/design-system.md / tools/mobile-ui-rules.md）（2026-05-07）
 - ✅ CLAUDE.mdにスマホUI改善ルール・専門エージェント使い分けを追記（2026-05-07）
 - ✅ Memory.md 新規作成・Claude.aiプロジェクト知識連携（2026-05-06）
 - ✅ スマホフォントサイズ底上げ（`@media (max-width:768px) { html { font-size:18px } }`）（2026-05-06）

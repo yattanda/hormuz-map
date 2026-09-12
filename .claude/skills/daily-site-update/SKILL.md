@@ -23,9 +23,9 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 ---
 
-## 情報収集（Claude Code で実施する場合）
+## 情報収集（省略禁止）
 
-Claude.ai ではなく Claude Code 側で情報収集する場合は、以下の観測点を**毎回すべて**確認する。
+以下の観測点を**毎回すべて**確認する。
 「変化がなさそうだから省略する」をしない。変化がないこと自体が記載事項になるため。
 
 ### 毎日必ず叩く検索クエリ
@@ -48,69 +48,82 @@ Claude.ai ではなく Claude Code 側で情報収集する場合は、以下の
 - **記事URLは検索結果に実際に出たものだけを使う。推測・生成による URL は禁止**
 - URL を確認する場合は WebFetch を使う
 
-### クラウドセッションでのネットワーク制約
+### WebSearch / WebFetch が失敗するときの確認先
 
-クラウド環境（Claude Code on the Web）のネットワークアクセスは既定が **Trusted**（パッケージレジストリ・
-GitHub のみ）のため、**そのままでは報道各社のサイトに WebFetch できない**。
-環境設定を **Custom**（必要ドメインを許可）または **Full** に変更しておくこと。
-WebFetch が接続エラーになる場合はこの設定を最初に疑う。
+クラウド環境（Claude Code on the Web）のネットワークアクセスは、既定の **Trusted**
+（パッケージレジストリ・GitHub のみ）では報道各社のサイトに WebFetch できない。
+**2026-09-02 に Full へ変更済み**のため通常は問題ないが、接続エラーが出たらここを最初に疑う。
+
+確認場所：claude.ai/code の新規タスク画面 → 入力欄の上の環境セレクタ（雲アイコン）
+→ 「クラウド」にホバー → `Default` の歯車 → **ネットワークアクセス**
+
+同じダイアログの **環境変数**には `TZ=Asia/Tokyo` を設定済み（2026-09-04〜06 に適用）。
+これがないとクラウドのシステム時刻が UTC になり、git のコミット時刻が9時間ずれる。
 
 ---
 
 ## 毎日の定常更新フロー
 
-### 1. 差分の生成（PC・スマホ共通）
+**このスキルを起動したら、Claude Code がそのまま最後まで実行する。**
+差分ファイル（`tools/index_html_diffs.md`）は経由しない。PC・スマホとも手順は同じ。
 
-Claude.ai に以下を送る（日付は当日のものに差し替える）。news_data.json は生成しない。
+### 1. 日付を実測する
 
-```
-ホルムズ海峡危機マップの更新の為、本日2026年9月4日09:13日本時間JSTにおける最新重要情報の取得と纏めを行ってください。
-"
-tools/diffs-generation-rules.md の内容に従って、
-本日の tools/index_html_diffs.md を生成してください。各カラムや項目に書く文章は、重複しないように書いてください。
-つまり、同じことを繰り返し書かないでください。極力別の内容を書いてください。同じ内容を書かなくちゃいけない場合は、少なくともカラムや項目の性格に合わせて書き方を変えてください"
-```
+冒頭の「作業開始時に必ず実行」のとおり。ここで得た JST を以後すべての日付表記に使う。
 
-### 2. `tools/index_html_diffs.md` をリポジトリへ反映
+### 2. 情報収集
 
-経路は2つ。どちらを通っても、以後の手順は同じ。
+上記「情報収集（省略禁止）」の検索クエリ7点をすべて実行する。
 
-#### 経路A：PC（`run.bat`）
+### 3. ファイルを直接編集する
 
-1. `index_html_diffs.md` を Downloads フォルダへダウンロード
-2. `run.bat` をダブルクリック（`auto_push.py` が index_html_diffs.md のみ push）
-   - 「push : 1/1 ファイル成功」を確認してウィンドウを閉じる
-   - push 先は `auto_push.py` の `FILE_MAP` の `repo_path` で決まる
+後述の「毎日更新の作業順序（厳守）」の番号順に進める。触るのは次の4ファイル。
 
-#### 経路B：スマホ（GitHub の Web UI で直接編集）
+| ファイル | 内容 |
+|---|---|
+| `docs/data/news_data.json` | ニュース・OSINT（`latest` 4件・`osint`・`updated`） |
+| `docs/index.html` | TICKER・30秒カラム・情勢カード・シナリオ・ヘッダー日時・`dateModified` ほか |
+| `docs/data/update_log.json` | 更新ログ（先頭に追記し、index.html 側は最新10件を維持） |
+| `docs/data/archive_timeline.json` | 当日分のエントリーを1件追記（速報を出した日のみ） |
 
-1. スマホのブラウザで GitHub の `tools/index_html_diffs.md` を開き、編集して貼り付ける
-2. コミットメッセージは次の形式にする（既定の文言や GitHub API ドキュメントの例文を使わない）
+- `docs/index.html` を触る前に `/html-safe-edit` の制約を確認する
+- 文章表記・メディア選定は `/content-style-guide` に従う
 
-   ```
-   mobile: update index_html_diffs.md (M/D HH:MM JST)
-   ```
+### 4. 自己チェック
 
-3. ローカルで作業を続ける場合は `git pull` してから着手する
+`/publish-checklist` の項目を1件ずつ確認する。特に次は毎回外せない。
 
-> **注意**：`docs/tools/` は 2026-09-03 に廃止した（§11-8）。編集先は `tools/index_html_diffs.md`。
-> `docs/` 配下は GitHub Pages の公開範囲のため、内部作業用ファイルを置かない。
+- 4ファイルすべての日付が**同じ JST 日時**で揃っているか
+- `news_data.json` の `latest` が4件・`osint` の `isLatest: true` が1件だけか
+- `dateModified` を当日に更新したか
 
-### 3. Claude Code に適用させる
+### 5. commit
 
-以下の定型文を送る。
+何を更新したかが履歴だけで分かる文言にする。
 
 ```
-tools/index_html_diffs.md に従って docs/index.html を更新してください。
-news_data.json の既存 isLatest: true を false に変更してから新記事を先頭追加
-docs/data/news_data.json は [S10] の指示に従い、既存ファイルに対して
-新規追加分をマージする形で更新してください。
-/html-safe-edit で今回の更新が HTML 構造に影響しないか確認してください。
-/publish-checklist で公開前チェックを実施してください。
-完了後に commit してください。push は確認後に指示します。
+daily: YYYY年M月D日 HH:MM JST更新——（主な変更点を簡潔に）
 ```
 
-### 4. 内容確認後、push を指示
+### 6. push / マージはユーザーの指示を待つ
+
+- **PC（main で作業）**：commit まで。push はユーザーの指示を待つ
+- **クラウド（仮想ブランチ）**：仮想ブランチへの push まで。**main へのマージは必ずユーザーの指示を待つ**
+
+---
+
+## 旧フロー（凍結中・2026-09-03 以降未使用）
+
+Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはスマホの GitHub Web UI で
+リポジトリへ反映し、Claude Code が適用する方式。**通常は使わない。**
+
+関連ファイル：`tools/index_html_diffs.md` / `tools/diffs-generation-rules.md` / `tools/run.bat` /
+`auto_push.py` / `.github/scripts/apply_diffs.py` / `.github/workflows/mobile-update.yml`
+
+- 上記一式は削除予定。削除の判断がつくまでは残してあるだけで、**新規に使わない**
+- やむを得ず使う場合、スマホからの手編集のコミットメッセージは
+  `mobile: update index_html_diffs.md (M/D HH:MM JST)` の形式にする
+  （GitHub が自動提案する `Change 'Hello World' to 'Goodbye World'` 等をそのまま使わない）
 
 ---
 
@@ -212,9 +225,9 @@ docs/data/news_data.json は [S10] の指示に従い、既存ファイルに対
 - `archive` は更新バッチ単位（`batchLabel` 付き）で管理。1バッチ10件前後が目安
 - `osint` は各メディア1件ずつ。`isLatest: true` は最新記事1件のみに付与（複数不可）
 - `updated` フィールドは `YYYY年MM月DD日 HH:MM 日本時間JST` 形式で必ず更新
-- Claude.ai は news_data.json を単体ファイルとして生成しない
-- 新規追加分は index_html_diffs.md の [S10] に記載し、Claude Code がマージする
-- run.bat（auto_push.py）は news_data.json を push しない
+- **既存ファイルを全面的に書き直さない。**新規追加分をマージする形で編集する
+  （`archive` に過去の全バッチが入っており、書き直すと履歴が失われる）
+- 新記事を `latest` の先頭へ追加する前に、既存の `isLatest: true` を `false` に戻す
 
 ### 必須フィールド
 
@@ -245,12 +258,11 @@ docs/data/news_data.json は [S10] の指示に従い、既存ファイルに対
 - 毎日の更新時に新エントリを1件追加したら、`index.html` から11件目を削除し、その内容を `update_log.json` の先頭に追加する
 - `update_log.json` の編集は `index.html` の更新と同じ commit に含める
 
-## archive_timeline.json 運用ルール（S12・日次フロー追加分）
+## archive_timeline.json 運用ルール
 
 - `docs/archive/index.html`（全記録アーカイブ）は `docs/data/archive_timeline.json` を読み込んで表示する
-- 日次更新のたびに、このJSONへ **1日1エントリを追記**する（既存配列に追加するのみ・既存エントリーの本文は変更しない）
-- Claude.ai は日次更新時、`index_html_diffs.md` に加えて `docs/data/archive_timeline.json` への追記分（新規1エントリのJSON）も出力する
-- Claude Code への指示文には「`docs/data/archive_timeline.json` の `entries` 配列末尾に、以下のエントリーを追加してください（既存エントリーは変更しないこと）」の一文を含める
+- 日次更新のたびに、`entries` 配列の**末尾に1日1エントリを追記**する
+- **追記のみ。既存エントリーの本文は変更しない**（過去に公開した速報の改変にあたるため）
 
 ### エントリーのスキーマ
 

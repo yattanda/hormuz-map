@@ -1,6 +1,6 @@
 # Memory.md — ホルムズ海峡危機マップ 引き継ぎドキュメント
 
-最終更新: 2026-09-04（クラウドセッションでの日次更新お試しが成功。運用移行フェーズ1へ）
+最終更新: 2026-09-12（運用移行フェーズ2完了。日次スキルを Claude Code 完結型に書き換え）
 
 ---
 
@@ -275,14 +275,45 @@ AISstream.io はこれを踏まなかったために4.5か月ぶんの誤デー�
   - 続けて 2026-09-03（§11-8）に `docs/tools/` を廃止し、内部作業用ファイルを `tools/` へ移動。
     `apply_diffs.py` / `auto_push.py` / `daily-site-update` スキルの参照先も同時に修正済み（整合確認済み）
 - **お試し（完了・2026-09-04）**: スマホのクラウドセッションで日次更新が完走。下記「お試し結果」参照
+- **フェーズ2（完了・2026-09-12）**: `/daily-site-update` を Claude Code 完結型に書き換え、
+  旧フロー（差分ファイル経由）を「凍結中」として同スキル内に隔離した
+  - 実運用は 2026-09-06 に先行して移行済みで、スキルの記述だけが旧フローのまま残っていた
+    （9/4 の日付がハードコードされた定型文も残存していた）ため、実態に合わせた
 - **フェーズ1（次）**: 検証の自動化。現状 `publish-checklist` の目視14項目しか品質保証がない
   - `news_data.json` の必須6フィールド・`latest` 件数・`osint` の `isLatest` 単一性・禁止フィールド
   - 日付整合（ヘッダー / `updated` / `dateModified` / 更新ログ先頭 / ルートサマリー）
   - `update_log.json` と `index.html` のログ件数整合、`archive_timeline.json` の妥当性
   - ニュース URL の死活確認（捏造URL禁止ルールの機械的担保）
   - JSON更新を1コマンド化するヘルパー（`add_news.py` / `add_log.py`）
-- **フェーズ2**: `/daily-site-update` を Claude Code 完結型に書き換え、diffs 経路を凍結
 - **フェーズ3（任意）**: 機械取得できるデータのみ Actions で定時取得
+
+### 移行後の定着状況（2026-09-12 時点）
+
+**移行は実質完了している。** クラウドセッションからの日次更新が 09-06 / 08 / 10 / 12 と
+4回連続で成功しており、いずれも `docs/index.html` と JSON 3本を**直接編集**している
+（`tools/index_html_diffs.md` は一度も経由していない）。
+
+旧経路は **2026-09-03 以降まったく使われていない**（実測）:
+
+| 確認項目 | 結果 |
+|---|---|
+| `tools/index_html_diffs.md` の内容更新 | 0件（09-03 の移動が最後） |
+| `mobile:` コミット（スマホ手編集） | 0件 |
+| `Change 'Hello World' to...` の再発 | 0件 |
+| `mobile-update.yml`（Actions）の実行 | 0件 |
+
+### 旧経路ファイルの削除判断（保留中）
+
+下記6件は「2〜3週間の凍結後に削除」と決めてある。凍結開始は 2026-09-03、
+判断の目安は **2026-09-17〜24**。上記のとおり未使用は確認済み。
+
+```
+tools/index_html_diffs.md / tools/diffs-generation-rules.md / tools/run.bat
+auto_push.py / .github/scripts/apply_diffs.py / .github/workflows/mobile-update.yml
+```
+
+削除するときは `auto_push.py` の `FILE_MAP` に `hormuz-data-` の `oil-flow.json` も
+入っている点に注意する（そちらを使い続けるなら `auto_push.py` は残す）。
 
 ### 実測で判明した技術事実（重要）
 
@@ -313,20 +344,14 @@ AISstream.io はこれを踏まなかったために4.5か月ぶんの誤デー�
 `dateModified` / `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾 /
 ヘッダー日時がすべて 9/4 11:40 JST で一致、`latest` 4件、`osint` の `isLatest` 1件。
 
-### 残る懸念 — コミット時刻が UTC で記録される
-
-クラウドセッションのコミットは author date が **`+0000`（UTC）**、PC からのコミットは `+0900`。
-例：`dc36adf` は `2026-09-04 02:52 +0000`（＝11:52 JST）。
-コミットメッセージ内の JST 表記は hook のおかげで正しいため**実害は小さい**が、
-`git log --since` などで日付境界がずれ、履歴を時系列で追うときに紛らわしい。
-
-対処案（未実施）：クラウド環境の **Environment variables に `TZ=Asia/Tokyo` を追加**する。
-クラウドは Ubuntu で tzdata を持つため、Windows の Git Bash と違い `TZ` が正しく効く。
-設定場所は環境セレクタ → クラウド → Default の歯車 → Environment variables。
-
 ### 解消済みの懸案
 
 - ~~`news_data.json` の `latest` が 6件~~ → **2026-09-04 時点で 4件**。ルールどおりに戻っている
+- ~~クラウドのコミット時刻が UTC（`+0000`）で記録される~~
+  → **解消済み**。クラウド環境の Environment variables に `TZ=Asia/Tokyo` を追加した
+  （2026-09-04〜06 に適用）。09-06 以降のクラウドコミットは全て `+0900` であることを実測で確認。
+  クラウドは Ubuntu で tzdata を持つため、Windows の Git Bash と違い `TZ` が正しく効く。
+  設定場所は環境セレクタ → クラウド → Default の歯車 → Environment variables
 
 ### 移行が安定してから着手すること
 
@@ -336,6 +361,8 @@ AISstream.io はこれを踏まなかったために4.5か月ぶんの誤デー�
     運用フローが安定してから着手する
   - 判断の目安：旧経路（`index_html_diffs.md` / `run.bat`）の凍結解除がないまま
     2〜3週間クラウドセッションでの日次更新が回り、フェーズ2まで完了した時点
+  - 進捗（2026-09-12）：**フェーズ2は完了。凍結も9日間維持されている。**
+    残るのはフェーズ1（検証スクリプト）と旧経路6件の削除。この2つが片付けば着手条件を満たす
   - CLAUDE.md（ルール）・Memory.md（現状）・各 Project Skill（手順）と
     重複させない。マニュアルは「どれをいつ見るか」の入口に徹する
 

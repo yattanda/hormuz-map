@@ -1,16 +1,36 @@
 {
-  "updated": "2026年9月12日 07:45 日本時間JST",
+  "updated": "2026年9月13日 10:03 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
+      "id": "latest-bahrain-declines-hormuz-meeting-0912",
+      "title": "バーレーン、サラーラでのイラン・GCCホルムズ会合に不参加表明——『対イラン外交関係再開が先』",
+      "body": "バーレーン外務省は9月12日、9月14日にオマーン・サラーラで予定されるイランとGCC加盟国によるホルムズ海峡通航協議への不参加を表明した。同国は対話継続への意欲を示しつつ「イランとの外交関係が再開されるまで、イランを含む合同会合には参加しない」との立場を明らかにした。バーレーンは2016年、サウジ大使館襲撃事件を機にイランと国交を断絶している。同国はホルムズ海峡の開放が「差別・料金・許可なし」でGCC全6カ国が関与する形で実現すべきだと主張し、直近のサウジ東西パイプライン攻撃やバーレーン国内のアンモニアタンク攻撃を挙げ「地域の安全は、攻撃を見過ごしたり沈黙したり、宥和政策によっては築けない」と強調した。",
+      "sourceLabel": "Al Jazeera / Arab News / Sweden Herald（9/12）",
+      "date": "2026年9月12日（現地）/ 2026年9月13日 JST",
+      "label": "🚫 会合不参加表明",
+      "url": "https://www.aljazeera.com/news/2026/9/12/bahrain-says-it-will-not-participate-in-irans-proposed-hormuz-meeting",
+      "isLatest": true
+    },
+    {
+      "id": "latest-houthi-red-sea-coast-capture-0911",
+      "title": "フーシ派、イエメン紅海沿岸を完全制圧・バブエルマンデブ海峡の要衝ペリム島も掌握——『第二のホルムズ化』を懸念",
+      "body": "イエメンの親イラン武装組織フーシ派は9月11日までに、政府軍支配下にあった紅海沿岸最後の拠点を制圧し、紅海沿岸全域の実効支配を確立した。前日にはモカ港を掌握し、バブエルマンデブ海峡内のペリム島にも進出したと複数メディアが報じた。バブエルマンデブ海峡は紅海とアデン湾・スエズ運河を結ぶ世界有数の海上輸送路で、世界貿易の約12％が通過するとされる。専門家はフーシ派が同海峡の実効支配を強めれば、ホルムズ海峡に続き中東の主要チョークポイント2カ所をイラン系勢力が同時に脅かす構図になりかねないと警告している。",
+      "sourceLabel": "Al Jazeera / NPR / CNBC / Fox News（9/11〜12）",
+      "date": "2026年9月11日（現地）/ 2026年9月12日 JST",
+      "label": "⚓ 紅海沿岸制圧",
+      "url": "https://www.aljazeera.com/news/2026/9/11/houthis-take-control-of-yemens-red-sea-coast-key-shipping-route",
+      "isLatest": false
+    },
+    {
       "id": "latest-oman-salalah-meeting-0911",
       "title": "イラン・湾岸6カ国、9月14日にオマーンでホルムズ海峡巡り外相会合——開戦後初の一堂会",
-      "body": "オマーンの仲介により、イラン外相と湾岸協力会議（GCC）加盟6カ国の外相が9月14日（月）、オマーン南部サラーラで会合すると報じられた。ホルムズ海峡での商船通航の取り決めを巡る協議で、開戦（2月）以降、イランとGCC6カ国の高官が一堂に会するのは初めて。8月下旬には両国が「湾入域はイラン領海・出域はオマーン領海を通航するルート」で暫定合意したと伝えられており、今回の会合はその後継協議と位置付けられる。イラン外務省は「地域諸国間の相互理解の促進と、共有される地域安全保障の強化」が目的だとしている。",
+      "body": "オマーンの仲介により、イラン外相と湾岸協力会議（GCC）加盟6カ国の外相が9月14日（月）、オマーン南部サラーラで会合すると報じられた。ホルムズ海峡での商船通航の取り決めを巡る協議で、開戦（2月）以降、イランとGCC6カ国の高官が一堂に会するのは初めて。8月下旬には両国が「湾入域はイラン領海・出域はオマーン領海を通航するルート」で暫定合意したと伝えられており、今回の会合はその後継協議と位置付けられる。イラン外務省は「地域諸国間の相互理解の促進と、共有される地域安全保障の強化」が目的だとしている。バーレーンは対イラン国交未再開を理由に不参加を表明した。",
       "sourceLabel": "Oman Observer / Bloomberg / TASS（9/11）",
       "date": "2026年9月11日（現地）/ 2026年9月12日 JST",
       "label": "🤝 外交・会合",
       "url": "https://www.omanobserver.om/article/1195967/world/region/iran-gulf-ministers-to-meet-in-salalah-for-hormuz-deal-reports",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-saudi-pipeline-drone-attack-0911",
@@ -21,29 +41,27 @@
       "label": "🛢️ パイプライン攻撃",
       "url": "https://www.arabnews.com/saudi-arabia/saudi-arabia-condemns-drone-attack-from-iraq-after-east-west-pipeline-shut-as-precaution-3001403",
       "isLatest": false
-    },
-    {
-      "id": "latest-iaea-refers-iran-unsc-0909",
-      "title": "IAEA理事会、イランを国連安保理へ付託——核不拡散義務の不履行巡り20年ぶり",
-      "body": "国際原子力機関（IAEA）理事会は9月9日、未申告の複数施設でウラン粒子が検出された問題を巡り、イランが説明責任を果たしていないとして国連安保理へ付託する決議を採択した。英仏独米提出の決議は賛成23・反対3（ロシア・中国・ニジェール）・棄権8で可決。イランの安保理付託は20年ぶり。ただしロシア・中国が拒否権を持つため、安保理での実際の行動は見通せないとの分析が多い。",
-      "sourceLabel": "Al Jazeera / RFE/RL / FDD（9/9〜10）",
-      "date": "2026年9月9日（現地）/ 2026年9月10日 JST",
-      "label": "☢️ 核問題・国連",
-      "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc-drone-capture-claim-0908",
-      "title": "IRGC、米軍の先進無人潜水艇を拿捕したと主張——ホルムズ海峡入口で、米側の確認はなし",
-      "body": "イラン革命防衛隊（IRGC）海軍は9月8日未明、ホルムズ海峡入口付近で「複雑な情報・作戦行動」により米軍の無人潜水艇（UUV）を拿捕したと発表した。イラン側は米国防技術企業アンドゥリル製の「Dive-LD」型（全長約5.8m・重量約3トン・最大10日間の自律航行・最大深度6000m）とし、2025年に米海軍第1無人潜水艇群に納入されたものだと主張、画像を近く公開するとした。米軍からの公式な確認・反応はまだ出ていない。事実関係は独立検証が取れておらず、イラン側の一方的発表にとどまる。",
-      "sourceLabel": "Arab News / Defense News / Iran International / Jerusalem Post（9/8〜9）",
-      "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
-      "label": "🤖 無人潜水艇拿捕主張",
-      "url": "https://www.arabnews.com/middle-east/iran-guards-say-seized-unmanned-us-submarine-drone-in-hormuz-3000956",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-bahrain-declines-hormuz-meeting-0912",
+      "titleJa": "【Al Jazeera】バーレーン、イラン提案のホルムズ会合に不参加表明",
+      "titleEn": "Bahrain says it will not participate in Iran's proposed Hormuz meeting",
+      "title": "【Al Jazeera】バーレーン、イラン提案のホルムズ会合に不参加表明",
+      "country": "バーレーン/イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月12日（現地・JST）",
+      "summary": "Al Jazeeraは、バーレーン外務省が9月12日、9月14日にオマーン・サラーラで予定されるイランとGCC加盟国のホルムズ海峡通航協議への不参加を表明したと報道。同国はイランとの外交関係が2016年から断絶している経緯を踏まえ「関係再開まではイランを含む合同会合に参加しない」との立場を明らかにし、海峡開放は「差別・料金・許可なし」でGCC全6カ国が関与する形で実現すべきだと主張したと伝えている。サウジ東西パイプライン攻撃やバーレーン国内のアンモニアタンク攻撃を踏まえ「攻撃を見過ごす宥和政策では地域の安全は築けない」との同国の立場も紹介し、外交統一の乱れが会合の実効性に影を落とす可能性を指摘している。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/9/12/bahrain-says-it-will-not-participate-in-irans-proposed-hormuz-meeting",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-iaea-refers-iran-unsc-0909",
       "titleJa": "【Al Jazeera】IAEA理事会、イランを核不履行で国連安保理へ付託——20年ぶり",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-qatar-industrial-catastrophe-0908",
@@ -1322,6 +1340,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月9日〜8日",
+      "items": [
+        {
+          "id": "latest-iaea-refers-iran-unsc-0909",
+          "title": "IAEA理事会、イランを国連安保理へ付託——核不拡散義務の不履行巡り20年ぶり",
+          "body": "国際原子力機関（IAEA）理事会は9月9日、未申告の複数施設でウラン粒子が検出された問題を巡り、イランが説明責任を果たしていないとして国連安保理へ付託する決議を採択した。英仏独米提出の決議は賛成23・反対3（ロシア・中国・ニジェール）・棄権8で可決。イランの安保理付託は20年ぶり。ただしロシア・中国が拒否権を持つため、安保理での実際の行動は見通せないとの分析が多い。",
+          "sourceLabel": "Al Jazeera / RFE/RL / FDD（9/9〜10）",
+          "date": "2026年9月9日（現地）/ 2026年9月10日 JST",
+          "label": "☢️ 核問題・国連",
+          "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-drone-capture-claim-0908",
+          "title": "IRGC、米軍の先進無人潜水艇を拿捕したと主張——ホルムズ海峡入口で、米側の確認はなし",
+          "body": "イラン革命防衛隊（IRGC）海軍は9月8日未明、ホルムズ海峡入口付近で「複雑な情報・作戦行動」により米軍の無人潜水艇（UUV）を拿捕したと発表した。イラン側は米国防技術企業アンドゥリル製の「Dive-LD」型（全長約5.8m・重量約3トン・最大10日間の自律航行・最大深度6000m）とし、2025年に米海軍第1無人潜水艇群に納入されたものだと主張、画像を近く公開するとした。米軍からの公式な確認・反応はまだ出ていない。事実関係は独立検証が取れておらず、イラン側の一方的発表にとどまる。",
+          "sourceLabel": "Arab News / Defense News / Iran International / Jerusalem Post（9/8〜9）",
+          "date": "2026年9月8日（現地）/ 2026年9月9日 JST",
+          "label": "🤖 無人潜水艇拿捕主張",
+          "url": "https://www.arabnews.com/middle-east/iran-guards-say-seized-unmanned-us-submarine-drone-in-hormuz-3000956",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月8日〜7日",
       "items": [

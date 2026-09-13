@@ -2792,6 +2792,25 @@
           "url": "https://www.aljazeera.com/news/2026/9/9/iaea-board-resolves-to-report-iran-to-security-council-over-nuclear-program"
         }
       ]
+    },
+    {
+      "date": "2026-09-13",
+      "dateLabel": "2026/09/13 10:03",
+      "blockadeDay": 198,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】フーシ派は9月11日までにイエメン紅海沿岸の政府軍最後の拠点を制圧し沿岸全域の実効支配を確立、バブエルマンデブ海峡内のペリム島にも進出——『第二のホルムズ化』への懸念が浮上（Al Jazeera/NPR/CNBC/Fox News）・バーレーン外務省は9月12日、9月14日にオマーン・サラーラで予定されるイラン・GCCホルムズ会合への不参加を表明——対イラン国交未再開（2016年断絶）を理由に挙げた（Al Jazeera/Arab News/Sweden Herald）・イラン・GCC6カ国の外相会合は9/14に予定どおり実施される見通しだがバーレーン不参加で参加国構成に乱れ・WTI原油は9/11に99.99ドルへ反落、約4カ月ぶり突破の100ドル台から一服・日本関係船は残り4隻で変化なし・封鎖198日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Al Jazeera / Arab News / Sweden Herald",
+          "title": "バーレーン、サラーラでのイラン・GCCホルムズ会合に不参加表明——『対イラン外交関係再開が先』",
+          "url": "https://www.aljazeera.com/news/2026/9/12/bahrain-says-it-will-not-participate-in-irans-proposed-hormuz-meeting"
+        },
+        {
+          "sourceLabel": "Al Jazeera / NPR / CNBC / Fox News",
+          "title": "フーシ派、イエメン紅海沿岸を完全制圧・バブエルマンデブ海峡の要衝ペリム島も掌握——『第二のホルムズ化』を懸念",
+          "url": "https://www.aljazeera.com/news/2026/9/11/houthis-take-control-of-yemens-red-sea-coast-key-shipping-route"
+        }
+      ]
     }
   ]
 }

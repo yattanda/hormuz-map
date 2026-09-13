@@ -5,6 +5,8 @@
 差が出た項目だけを調べれば、移行が壊したものを切り分けられる。
 
 計測時点：`a8e6ae5`（フェーズ1b・§11-18 反映後、日次更新 `4df149f` 反映後）
+**2026-09-13 追記**：計測後に移行前の是正3件（`b028d54` / `6a81ecf` / `d2432ce`）を入れたため、
+影響を受けた §5・§6 の値を更新した。§1〜§4・§7 は計測時のまま。
 計測方法：`curl` によるステータス取得と、ブラウザ実機での DOM 計測。
 
 ---
@@ -71,10 +73,12 @@ Leaflet はマーカー80個を描画。`#situation` / `#scenario` / `#japan-flo
 ## 5. canonical / og:url の現在値（移行スクリプトの置換対象）
 
 全15ページとも `https://yattanda.github.io/hormuz-map/<path>` の絶対URL。
-`docs/archive/index.html` のみ **`og:url` を持たない**（canonical はある）。
+~~`docs/archive/index.html` のみ `og:url` を持たない~~
+→ **2026-09-13 に解消**（`d2432ce`）。OGP が丸ごと無かったため about と同じ7項目を追加した。
 
 `tools/migrate-domain.sh` が置換するリテラルは `yattanda.github.io/hormuz-map`。
-**23ファイル・81箇所**（2026-09-13 時点。`git grep -c` で計測）。内訳の上位：
+**22ファイル・82箇所**（2026-09-13 の B1〜B3 反映後。`git grep -c` で計測）。
+除外により対象外：`CLAUDE.md`（説明文）と本ファイル（実測記録）。内訳の上位：
 `docs/sitemap.xml` 14／`docs/index.html` 8／`tools/article-template.html` 5／
 記事5枚 各5／`docs/infographic/index.html` 4／`docs/articles/index.html` 4。
 
@@ -84,10 +88,11 @@ Leaflet はマーカー80個を描画。`#situation` / `#scenario` / `#japan-flo
 
 ## 6. sitemap.xml / robots.txt
 
-`sitemap.xml` は **14 URL**。`robots.txt` は `User-agent: * / Allow: /` と
+`sitemap.xml` は **15 URL**。`robots.txt` は `User-agent: * / Allow: /` と
 `Sitemap: https://yattanda.github.io/hormuz-map/sitemap.xml` の1行。
 
-**既知の欠落：`/archive/` が sitemap に載っていない**（トップからリンクされ HTTP 200 の公開ページ）。
+~~既知の欠落：`/archive/` が sitemap に載っていない~~
+→ **2026-09-13 に解消**（`6a81ecf`・14→15 URL）。
 
 ## 7. DNS（2026-09-13 実測・**未設定**）
 

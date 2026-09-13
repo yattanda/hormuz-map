@@ -60,8 +60,13 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
-# 除外パターン: 画像・バイナリ、このスクリプト自身
-EXCLUDES=(':!*.png' ':!*.jpg' ':!*.jpeg' ':!*.ico' ':!*.gif' ':!*.woff' ':!*.woff2' ':!tools/migrate-domain.sh')
+# 除外パターン: 画像・バイナリ、このスクリプト自身、
+# および「旧ドメインの文字列そのものが記録内容である」ファイル。
+#   - tools/migration-baseline-*.md … 旧ドメインで測った実測記録。書き換えると記録が壊れる
+#   - CLAUDE.md … 「このスクリプトはリテラル文字列 yattanda.github.io/hormuz-map を置換する」
+#                 という説明文を含むため、置換すると記述が自己矛盾になる
+# 除外したファイルは末尾の残存検証の対象からも外れる（collect_targets を共用しているため）。
+EXCLUDES=(':!*.png' ':!*.jpg' ':!*.jpeg' ':!*.ico' ':!*.gif' ':!*.woff' ':!*.woff2' ':!tools/migrate-domain.sh' ':!tools/migration-baseline-*.md' ':!CLAUDE.md')
 
 collect_targets() {
   local pattern="$1"

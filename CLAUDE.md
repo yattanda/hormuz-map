@@ -153,6 +153,17 @@
   `/privacy/` が「アクセス解析ツールを導入しておらず」と書いたまま3日間公開された。
   同種の食い違い（訂正指摘フォームの必須設定）は 2026-08-31 にも起きている
 
+### 所有権確認のために消してはいけないもの（2026-09-13 追加）
+
+- **`docs/index.html` の GA4 タグ（`gtag.js?id=G-T0KCXP29E5` の読み込みと `gtag('config', ...)`）は、
+  Search Console の旧 URL プロパティの所有権確認に使っている。**削除しない・`<head>` の外へ動かさない。
+  外すと確認が外れる（2026-09-13 に GA4 方式で確認したため）
+- `docs/index.html:38` 付近の `google-site-verification` メタは 2026-05-02 に**専用アカウント以外**で
+  発行されたもので、現在の確認には使っていない。ただし発行元アカウントが不明なので当面は残す
+- `docs/CNAME` はドメイン移行時に GitHub が自動でコミットする。**手で作成・編集・削除しない**
+- ドメイン移行の当日手順は `tools/migration-runbook.md`、突き合わせる基準値は
+  `tools/migration-baseline-2026-09-13.md`
+
 ## 触ってはいけないファイル
 
 - `tools/index_html_diffs.md` は `mobile-update.yml` / `.github/scripts/apply_diffs.py` / `auto_push.py` の参照先。**移動・削除しない**。

@@ -103,3 +103,27 @@ Leaflet はマーカー80個を描画。`#situation` / `#scenario` / `#japan-flo
 - リポジトリに `docs/CNAME` は**存在しない**（手動作成しない方針どおり）
 
 → 移行手順（§6）のステップ1がまだ着手されていない状態。
+
+### 2026-09-13 追記：計測後に DNS と所有権確認を設定した
+
+上の §7 は計測時点の記録として残す。同日中に次を設定し、公開 DNS（8.8.8.8 / 1.1.1.1）で実測した。
+
+| レコード | 値 | 実測 |
+|---|---|---|
+| A `@` ×4 | `185.199.108.153` / `109` / `110` / `111` | ✅ 両 DNS で4件。GitHub の IP がそのまま返る＝**プロキシは DNS only** |
+| CNAME `www` | `yattanda.github.io` | ✅ 別名として解決 |
+| TXT `_github-pages-challenge-yattanda` | GitHub の確認値 | ✅ GitHub アカウントで **Verified** |
+| TXT `@` `google-site-verification=…` | Search Console の確認値 | ✅ Cloudflare 連携で自動追加。**専用アカウント**で確認済み |
+| MX ×3・TXT DKIM・TXT SPF | Email Routing（既存） | ✅ **無傷** |
+
+Cloudflare の DNS レコードは全12件（MX 3・TXT 4・A 4・CNAME 1）。
+
+- `http://chokepointlab.com` → **404「Site not found · GitHub Pages」**。
+  DNS は GitHub まで届いており、どのリポジトリで配信するかが未設定という意味で**正常**
+- GitHub Pages 設定（`gh api`）：公開元 `main` の `/docs`、`cname` なし、`https_enforced` true。
+  **`yattanda.github.io` ユーザーサイトのリポジトリは存在しない**（他のプロジェクトサイトは移行の影響を受けない）
+- Search Console（専用アカウント `chokepointlab@gmail.com`）：
+  新ドメイン `chokepointlab.com`（Domain 型）と旧 URL `https://yattanda.github.io/hormuz-map/`
+  （URL プレフィックス型・GA4 方式）の2件を登録
+
+当日の手順は `tools/migration-runbook.md`。

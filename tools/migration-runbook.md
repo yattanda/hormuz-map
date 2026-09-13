@@ -1,0 +1,159 @@
+# ドメイン移行 当日手順書（§11-13）
+
+作成：2026-09-13。予定日：**2026-09-18（木）頃**。
+移行先：`https://yattanda.github.io/hormuz-map/` → **`https://chokepointlab.com/`**
+
+この手順書は `PROJECT_CONTEXT.md` §6「ドメイン移行手順（確定）」を、
+2026-09-13 までに判明した事実で具体化したもの。**順序を入れ替えないこと。**
+突き合わせに使う基準値は `tools/migration-baseline-2026-09-13.md`。
+
+---
+
+## 0. 前日までに済んでいること（2026-09-13 時点）
+
+| 項目 | 状態 | 確認方法 |
+|---|---|---|
+| Cloudflare DNS：apex に A×4、`www` に CNAME | ✅ 9/13 設定 | 公開 DNS（8.8.8.8 / 1.1.1.1）で実測済み |
+| Cloudflare のプロキシ | ✅ **DNS only（灰色）** | GitHub の IP（185.199.x）がそのまま返ることで確認 |
+| GitHub アカウントでのドメイン所有権確認 | ✅ 9/13 Verified | TXT `_github-pages-challenge-yattanda` |
+| Search Console 新ドメイン（Domain 型） | ✅ 9/13 | **専用アカウント**。TXT `google-site-verification`（Cloudflare 連携で自動追加） |
+| Search Console 旧 URL（URL プレフィックス型） | ✅ 9/13 | **専用アカウント**。GA4 方式で確認 |
+| 移行スクリプトの除外設定 | ✅ `b028d54` | 基準値ファイルと CLAUDE.md を置換対象外に |
+| 基準値の採取 | ✅ `64e4133` / `c740024` | `tools/migration-baseline-2026-09-13.md` |
+| `@chokepointlab` の本運用開始 | **未** | 未開始でも移行は進めてよい。X リンク差し替え（手順8）だけ延期する |
+
+### GitHub Pages の現在設定（2026-09-13 `gh api` で実測）
+
+- 公開元：`main` ブランチの `/docs`（ブランチ公開方式・legacy ビルド）
+- `cname`：なし／`https_enforced`：true
+- **`yattanda.github.io` というユーザーサイトのリポジトリは存在しない**
+  → `hormuz-map` にカスタムドメインを設定しても、**`hormuz-data-` と
+  `hormuz-crisis-report` は `yattanda.github.io` のまま動かない**
+  （ダッシュボードの iframe と特別レポートへのリンクは切れない）
+
+---
+
+## 1. 当日の直前確認
+
+**日次更新と時間をずらす。** 日次更新は `docs/index.html` を書き換えるため、
+移行コミットと重なると競合する。**その日の日次更新が push された後**に始める。
+
+```bash
+cd ~/Documents/GitHub/hormuz-map
+git pull
+git status            # clean であること
+```
+
+- 凍結期間（9/15〜9/17）が破られていないか、`tools/redesign-plan.md`
+  「凍結期間の定義 → 凍結を破る場合」の記録を確認する
+- 公開 DNS で apex の A×4 と `www` が引けることを確認する（Cloudflare 側で誰かが変えていないか）
+
+## 2. 移行スクリプトの dry-run（本番はまだ変えない）
+
+```bash
+bash tools/migrate-domain.sh --new-site chokepointlab.com
+```
+
+- 置換は `yattanda.github.io/hormuz-map` → `chokepointlab.com` のリテラル置換。
+  `https://yattanda.github.io/hormuz-map/about/` が `https://chokepointlab.com/about/` になる
+- 対象は **22ファイル前後・82箇所前後**（9/13 計測。日次更新で増減していれば実数を控える）
+- 差分を目で見て、`//` の二重スラッシュや `chokepointlab.com/hormuz-map` のような
+  **パスの取り残しが無いこと**を確認する
+- 置換対象外が正しく外れていること：`CLAUDE.md`・`tools/migration-baseline-*.md`・
+  `yattanda.github.io/hormuz-data-`（`SITE_CONFIG`）・`yattanda.github.io/hormuz-crisis-report`
+
+> 注：2026-09-13 に Claude Code のセッションからこのスクリプトを実行しようとしたところ、
+> 自動許可の判定で実行が止められた。当日は実行の許可を明示するか、ターミナルで自分で実行する。
+
+## 3. GitHub でカスタムドメインを設定する（ここから本番が変わる）
+
+1. `https://github.com/yattanda/hormuz-map` → **Settings** → 左メニュー **Pages**
+2. **Custom domain** に `chokepointlab.com` → **Save**
+3. 「DNS check successful」の表示を待つ
+
+この操作で起きること：
+
+- **GitHub が `docs/CNAME` を `main` に自動コミットする**（手で作らない・編集しない）
+- **旧 URL から新ドメインへの 301 転送が即座に始まる**
+- この時点では canonical・OGP・sitemap はまだ旧ドメインを指している。
+  **手順5の push までを、なるべく間を空けずに進める**
+
+## 4. HTTPS 証明書の発行を待つ
+
+- Pages の設定画面で証明書の発行が進む。通常は数分〜1時間程度、長いと24時間程度かかることがある（確度：中）
+- 発行が終わると **Enforce HTTPS** のチェックが入れられるようになるので、チェックする
+- 発行前は `https://chokepointlab.com` が証明書エラーになることがある。異常ではない
+- **Cloudflare のプロキシは DNS only（灰色）のまま。** オレンジにすると証明書が発行されない
+
+## 5. ホスト名を置換してコミットする
+
+```bash
+git pull                                   # 手順3で GitHub が作った CNAME のコミットを取り込む
+bash tools/migrate-domain.sh --new-site chokepointlab.com --apply
+```
+
+- 終了コード 0 と「旧文字列の残存はありません」を確認する
+- `git diff` を確認し、**ホスト名置換だけの単独コミット**にする
+  （CLAUDE.md「パス変更とホスト名置換を同一コミットに混ぜない」）
+- push する
+
+## 6. 本番検証（基準値と突き合わせる）
+
+`tools/migration-baseline-2026-09-13.md` の各節と同じ項目を新ドメインで測る。
+
+| 基準値の節 | 確認すること |
+|---|---|
+| §1 | 新ドメインで18件すべて 200 |
+| §1 | **旧 URL → 新 URL の 301**：トップ・`/about/`・記事1本・`/sitemap.xml` を `curl -I` で |
+| — | `http://` → `https://`、`www.` → apex の転送 |
+| §2 | 内部ファイル6件と `/tools/` が 404 のまま |
+| §3 | コンソールエラー 0、横スクロールなし（1280px / 375px） |
+| §3 | **ダッシュボード iframe の高さ同期**。移行で別オリジンになり、`postMessage` 経由に切り替わる（初めての動作）。iframe の高さが暫定値（1110 / 2200 / 2110px）で固定されず、実寸に追随していること |
+| §4 | `<body>` 直下 41要素、Leaflet のマーカー描画 |
+| §5 | 全15ページの canonical / og:url が `https://chokepointlab.com/...` |
+| §6 | `sitemap.xml` 15 URL が新ドメイン、`robots.txt` の Sitemap 行が新ドメイン |
+
+## 7. 外部サービスの設定
+
+- **Search Console**（専用アカウント）
+  - 新ドメインのプロパティで `https://chokepointlab.com/sitemap.xml` を送信する
+  - 旧 URL のプロパティは**削除しない**（旧 URL が検索結果から抜けていく推移を見る）
+  - 「アドレス変更ツール」は、旧サイトがパス付き（`/hormuz-map/`）のため使えない見込み（確度：中）。301 転送で足りる
+- **GA4**（専用アカウント）
+  - 管理 → データストリーム → `hormuz-map` → 鉛筆アイコン → ストリーム URL を `https://chokepointlab.com` に変更
+  - 測定 ID `G-T0KCXP29E5` は変わらないので、データは同じプロパティに届き続ける
+
+## 8. X リンクの差し替え（§11-12(C)）
+
+- **`@chokepointlab` の本運用を開始している場合のみ**行う
+- **移行コミットとは別の独立コミットにする**
+
+## 9. 記録
+
+- `PROJECT_CONTEXT.md`（§11-13 完了、§6、DNS / ホスティング方針）
+- 引き継ぎノート（`hormuz-ops/handovers/`）
+- 基準値と差が出た項目があれば、その内容と対処
+
+---
+
+## 触ってはいけないもの
+
+| 対象 | 理由 |
+|---|---|
+| Cloudflare の MX×3・TXT（DKIM `cf2024-1._domainkey`・SPF） | 問い合わせ用メール（Email Routing）が止まる |
+| TXT `_github-pages-challenge-yattanda` | GitHub のドメイン所有権確認が外れる |
+| apex の TXT `google-site-verification=bewJul…` | Search Console 新ドメインの所有権確認が外れる |
+| `docs/index.html` の GA4 タグ（7行目 `gtag.js`・13行目 `config`） | Search Console 旧 URL の所有権確認が外れる（GA4 方式で確認しているため） |
+| `docs/CNAME` | GitHub が管理する。手で作成・編集・削除しない |
+| ワイルドカード DNS（`*.chokepointlab.com`） | 作らない。サブドメイン乗っ取り防止 |
+| Cloudflare のプロキシ（オレンジ） | 証明書発行前は切り替えない |
+
+## 切り戻し（重大な問題が出た場合）
+
+1. 手順5の置換コミットを `git revert` して push（canonical 等を旧ドメインに戻す）
+2. Settings → Pages → Custom domain を **Remove**（GitHub が `docs/CNAME` を削除するコミットを作る）→ `git pull`
+3. DNS レコードと各所有権確認は**残してよい**（再挑戦時にそのまま使える）
+
+注意：301 転送はブラウザや検索エンジンにキャッシュされるため、
+切り戻しても**しばらく新ドメインへ飛ばされる読者が残る**ことがある。
+切り戻しは「表示が壊れて読めない」ような重大な場合に限る。

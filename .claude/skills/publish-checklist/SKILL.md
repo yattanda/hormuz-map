@@ -22,6 +22,7 @@ python tools/validate_daily.py
 
 ここで確認されるのは次のとおり。**以下は目視しなくてよい。**
 
+- **基準日が実測の今日（JST）と一致するか**（未来日・2日以上前は NG／前日は WARN）
 - 日付整合：`dateModified` / ヘッダー日時 / 速報バナー / 全ルート現況サマリー /
   `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾
 - `news_data.json` の `latest` 4件・必須フィールド・旧スキーマの混入

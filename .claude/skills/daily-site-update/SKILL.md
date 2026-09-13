@@ -97,10 +97,13 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 python tools/validate_daily.py
 ```
 
-`NG 0` になるまで直す。終了コードが 1 のまま commit しない。
-チェック内容は日付整合（`dateModified` / ヘッダー / 速報バナー / ルートサマリー /
-`news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）、
-`latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複。
+`NG 0` になるまで直す。終了コードが 1 のまま commit しない。チェック内容は次のとおり。
+
+- **基準日そのものが実測の今日（JST）と一致するか**
+  （未来日・2日以上前は NG／前日は WARN。日付の取り違えと日またぎを検出する）
+- 日付整合（`dateModified` / ヘッダー / 速報バナー / ルートサマリー /
+  `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）
+- `latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複
 
 ニュース URL を実際に叩いて確認する場合（捏造・誤記の検出）:
 

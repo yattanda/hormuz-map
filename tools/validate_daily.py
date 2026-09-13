@@ -17,6 +17,8 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
     - 過去データ（osint 85件・archive 259件）は旧スキーマが混在しているため、
       スキーマ検査は「当日更新される範囲」に限定する。過去分を責めない
     - 判定できない状態は黙って通さず、必ず NG か WARN として出す
+    - ファイル間の整合だけでなく、基準日そのものを実測日と照合する。
+      揃ったまま間違った日付で書かれていると内部整合では気づけないため
 """
 from __future__ import annotations
 
@@ -24,7 +26,10 @@ import argparse
 import json
 import re
 import sys
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+
+JST = timezone(timedelta(hours=9))
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -82,6 +87,38 @@ PAT_UPDATED = re.compile(r'(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\
 
 def ymd(y, m, d) -> str:
     return f"{int(y):04d}-{int(m):02d}-{int(d):02d}"
+
+
+def today_jst() -> str:
+    """実測の今日（JST）。UTC 基準で計算するのでクラウド（UTC）でも PC でも同じ値になる。"""
+    return datetime.now(JST).strftime("%Y-%m-%d")
+
+
+def check_base_date(base: str) -> None:
+    """基準日そのものが正しいかを実測日と照合する。
+
+    ファイル間で日付が揃っていても、揃ったまま間違った日付で書かれていれば
+    内部整合だけでは気づけない。日をまたぐ作業と日付の取り違えは実際に起きている
+    （2026-08-31→09-01 の誤り、2026-09-13 の 9/14 との取り違え）。
+    """
+    today = today_jst()
+    try:
+        delta = (date.fromisoformat(base) - date.fromisoformat(today)).days
+    except ValueError:
+        ng(f"基準日 {base} を日付として解釈できません")
+        return
+
+    if delta > 0:
+        ng(f"基準日 {base} が実測の今日（{today} JST）より {delta}日 未来です。"
+           "未来日付のまま公開しないこと")
+    elif delta == 0:
+        ok(f"基準日が実測の今日と一致（{today} JST）")
+    elif delta == -1:
+        warn(f"基準日 {base} は実測の今日（{today} JST）の前日です。"
+             "日付をまたいで作業した場合は正常。意図したものか確認すること")
+    else:
+        ng(f"基準日 {base} が実測の今日（{today} JST）より {-delta}日 前です。"
+           "更新対象の日付を取り違えていないか確認すること")
 
 
 def collect_dates(html: str, news: dict) -> dict[str, str | None]:
@@ -261,9 +298,10 @@ def main() -> int:
         base = ymd(*m.groups()[:3])
         src = "news_data.json の updated"
 
-    print(f"基準日: {base}（{src}）\n")
+    print(f"基準日: {base}（{src}）／実測の今日: {today_jst()} JST\n")
 
-    # 日付整合
+    # 基準日そのものの妥当性 → そのうえでファイル間の整合
+    check_base_date(base)
     found = collect_dates(html, news)
     for name, val in found.items():
         if val is None:

@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月13日 10:03 日本時間JST",
+  "updated": "2026年9月14日 20:57 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-saudi-58-airstrikes-yemen-0914",
+      "title": "フーシ派、サウジによる「24時間で58回空爆」を主張——南部シャルーラ基地へのミサイル・ドローン攻撃への報復か（未検証）",
+      "body": "イエメンの親イラン武装組織フーシ派（アンサール・アッラー）の軍事報道官ヤヒヤ・サリーは9月14日、テレグラムで「サウジの敵は過去24時間で58回の空爆を実施した」と発表し、対象はタイズ・ラハジ・アル・ジャウフ・ハッジャ・アル・バイダ・サアダの6県に及んだと主張、カミース・ムシェイト空軍基地から発進したF-15戦闘機による攻撃としている。死傷者・被害の詳細は示されておらず、サウジアラビア政府は回数を公式確認していない。前日13日にはフーシ派が南部サウジのシャルーラ軍事基地を弾道ミサイル・ドローンで攻撃したと発表、武器庫・司令部施設を狙ったとしサリー報道官は「サウジによる対イエメン攻撃継続への報復」と説明した。サウジ民間防衛当局は12日、南西部ジザーン州アル・トゥワル地区に飛翔体が着弾し2人が負傷、モスクや建物・車両が損壊したと発表している。",
+      "sourceLabel": "TASS / Xinhua / Taipei Times（AFP）（9/13〜14）",
+      "date": "2026年9月14日（現地）/ 2026年9月14日 JST",
+      "label": "🎯 空爆58回主張（未検証）",
+      "url": "https://tass.com/emergencies/2187093",
+      "isLatest": true
+    },
     {
       "id": "latest-bahrain-declines-hormuz-meeting-0912",
       "title": "バーレーン、サラーラでのイラン・GCCホルムズ会合に不参加表明——『対イラン外交関係再開が先』",
@@ -10,7 +20,7 @@
       "date": "2026年9月12日（現地）/ 2026年9月13日 JST",
       "label": "🚫 会合不参加表明",
       "url": "https://www.aljazeera.com/news/2026/9/12/bahrain-says-it-will-not-participate-in-irans-proposed-hormuz-meeting",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-houthi-red-sea-coast-capture-0911",
@@ -30,16 +40,6 @@
       "date": "2026年9月11日（現地）/ 2026年9月12日 JST",
       "label": "🤝 外交・会合",
       "url": "https://www.omanobserver.om/article/1195967/world/region/iran-gulf-ministers-to-meet-in-salalah-for-hormuz-deal-reports",
-      "isLatest": false
-    },
-    {
-      "id": "latest-saudi-pipeline-drone-attack-0911",
-      "title": "サウジ東西パイプライン、イラク発ドローン攻撃で一時停止——GCCは『危険なエスカレーション』と非難",
-      "body": "サウジアラビアは9月10日（木）朝、リヤド州・マディーナ州で東西原油パイプラインが複数のドローン攻撃を受けたため、予防的に操業を一時停止したと発表した。サウジ外務省はイラクから飛来したドローンによる攻撃だとして非難し、負傷者と一部損害が出たとしている。GCCのアルブダイウィ事務総長は「危険なエスカレーションであり国際法の明白な違反」と述べ、イラク政府に対し自国領域が攻撃の発射拠点として使われるのを防ぐための「必要かつ断固たる措置」を強化するよう求めた。",
-      "sourceLabel": "Arab News / CNN / CNBC / OilPrice（9/11）",
-      "date": "2026年9月10日（現地）/ 2026年9月11日 JST",
-      "label": "🛢️ パイプライン攻撃",
-      "url": "https://www.arabnews.com/saudi-arabia/saudi-arabia-condemns-drone-attack-from-iraq-after-east-west-pipeline-shut-as-precaution-3001403",
       "isLatest": false
     }
   ],
@@ -1340,6 +1340,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月10日",
+      "items": [
+        {
+          "id": "latest-saudi-pipeline-drone-attack-0911",
+          "title": "サウジ東西パイプライン、イラク発ドローン攻撃で一時停止——GCCは『危険なエスカレーション』と非難",
+          "body": "サウジアラビアは9月10日（木）朝、リヤド州・マディーナ州で東西原油パイプラインが複数のドローン攻撃を受けたため、予防的に操業を一時停止したと発表した。サウジ外務省はイラクから飛来したドローンによる攻撃だとして非難し、負傷者と一部損害が出たとしている。GCCのアルブダイウィ事務総長は「危険なエスカレーションであり国際法の明白な違反」と述べ、イラク政府に対し自国領域が攻撃の発射拠点として使われるのを防ぐための「必要かつ断固たる措置」を強化するよう求めた。",
+          "sourceLabel": "Arab News / CNN / CNBC / OilPrice（9/11）",
+          "date": "2026年9月10日（現地）/ 2026年9月11日 JST",
+          "label": "🛢️ パイプライン攻撃",
+          "url": "https://www.arabnews.com/saudi-arabia/saudi-arabia-condemns-drone-attack-from-iraq-after-east-west-pipeline-shut-as-precaution-3001403",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月9日〜8日",
       "items": [

@@ -131,15 +131,19 @@ daily: YYYY年M月D日 HH:MM JST更新——（主な変更点を簡潔に）
 
 ---
 
-## 旧フロー（凍結中・2026-09-03 以降未使用）
+## 旧フロー（バックアップ経路・通常は使わない）
 
 Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはスマホの GitHub Web UI で
-リポジトリへ反映し、Claude Code が適用する方式。**通常は使わない。**
+リポジトリへ反映し、Claude Code（または Actions の `mobile-update.yml`）が適用する方式。
 
 関連ファイル：`tools/index_html_diffs.md` / `tools/diffs-generation-rules.md` / `tools/run.bat` /
 `auto_push.py` / `.github/scripts/apply_diffs.py` / `.github/workflows/mobile-update.yml`
 
-- 上記一式は削除予定。削除の判断がつくまでは残してあるだけで、**新規に使わない**
+- **バックアップとして残している。削除・移動しない。**通常の日次更新では使わない
+- 使うのは、クラウドセッションや Claude Code が使えない日など、上の通常フローが回らないときに限る。
+  `mobile-update.yml` を手動実行すれば、Claude Code を使わずに差分を適用できる
+- 差分は**現在の `docs/index.html` を元に作る**。古いファイルを元にした差分は
+  `old_str` が一致せず適用に失敗する（壊れはしないがスキップされる）
 - やむを得ず使う場合、スマホからの手編集のコミットメッセージは
   `mobile: update index_html_diffs.md (M/D HH:MM JST)` の形式にする
   （GitHub が自動提案する `Change 'Hello World' to 'Goodbye World'` 等をそのまま使わない）

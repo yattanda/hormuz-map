@@ -2825,6 +2825,25 @@
           "url": "https://tass.com/emergencies/2187093"
         }
       ]
+    },
+    {
+      "date": "2026-09-15",
+      "dateLabel": "2026/09/15 07:21",
+      "blockadeDay": 200,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】オマーンの仲介で予定されていたイラン外相・GCC加盟6カ国外相のホルムズ通航協議は開催前に延期——オマーン外相は『合意形成のため』、イラン当局者は『一部地域諸国の要請』によるものと説明（NPR/France24）・9月13日朝、ゲシュム島沖〜ヘンガム島付近で商船が攻撃を受け1人死亡・3〜4人負傷（未検証）、同時期にパナマ籍タンカー『エル・ガイア』も再被弾——米中央軍はイランの機雷主張を否定（CGTN/CNN/Iran International/France24）・フーシ派は9/14『サウジが24時間で58回空爆』と主張・ブレント原油は9/14に108.34ドルへ急伸（TradingEconomics）、別報道では終値105.68ドルとの数値も・日本関係船は残り4隻で変化なし・封鎖200日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "NPR / France24（9/14）",
+          "title": "イラン・GCCのホルムズ協議、開催前に延期——オマーン『合意形成のため』、サウジの懸念指摘も",
+          "url": "https://www.npr.org/2026/09/14/nx-s1-5968072/talks-between-iran-and-gulf-states-to-discuss-strait-of-hormuz-postponed"
+        },
+        {
+          "sourceLabel": "CGTN / globalsecurity.org経由RFE・RL / CNN / Iran International（9/13〜14）",
+          "title": "ゲシュム島沖で商船攻撃、1人死亡・3〜4人負傷——同時期にタンカー『エル・ガイア』も再被弾",
+          "url": "https://news.cgtn.com/news/2026-09-13/news-1QoWEnq8Fl6/p.html"
+        }
+      ]
     }
   ]
 }

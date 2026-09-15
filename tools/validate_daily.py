@@ -19,6 +19,9 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
     - 判定できない状態は黙って通さず、必ず NG か WARN として出す
     - ファイル間の整合だけでなく、基準日そのものを実測日と照合する。
       揃ったまま間違った日付で書かれていると内部整合では気づけないため
+    - 全ルート現況サマリーは見出しの日付更新だけで本文が古いまま、という事故が
+      2026-09-15 に実際に発生した。見出しの日付一致（NG）とは別に、各行本文中の
+      M/D 日付表記の鮮度を WARN として見る（本文の内容自体は機械判定できないため）
 """
 from __future__ import annotations
 
@@ -83,6 +86,13 @@ PAT_ROUTES = re.compile(
 )
 # news_data.json の updated
 PAT_UPDATED = re.compile(r'(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*日本時間JST')
+
+# 全ルート現況サマリーの表と、行ごとの本文中の日付表記（鮮度チェック用）
+PAT_ROUTE_TABLE = re.compile(r'<table class="rtable">.*?</table>', re.S)
+PAT_ROUTE_ROW = re.compile(r'<tr\b[^>]*>.*?</tr>', re.S)
+PAT_ROUTE_ROW_ID = re.compile(r'id="jf-td-(\w+)"')
+PAT_ROUTE_ROW_MD = re.compile(r'(\d{1,2})/(\d{1,2})')
+STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に無ければ WARN
 
 
 def ymd(y, m, d) -> str:
@@ -153,6 +163,64 @@ def check_ticker(html: str, base: str) -> None:
         ng(f"index.html の速報バナーの日付が基準日と違います: {', '.join(bad)}（基準 {want[0]}/{want[1]}）")
     else:
         ok(f"速報バナーの日付 {want[0]}/{want[1]}（{len(hits)}箇所）")
+
+
+def check_route_freshness(html: str, base: str) -> None:
+    """全ルート現況サマリーの各行本文が、見出しの日付更新だけで放置されていないかを見る。
+
+    見出し（sec-h2-sub）の日付は collect_dates() で当日一致を確認できるが、
+    見出しだけ更新して本文（現況詳細セル）が古いまま、という事故は日付整合では検出できない
+    （2026-09-15 にルートB＝サウジ東西PLで実際に発生：見出しは当日日付なのに本文は4/12時点のままだった）。
+    そこで各行の本文中に出てくる M/D 形式の日付表記を拾い、最新のものが基準日から
+    どれだけ離れているかを見る。あくまで見出し語による推定なので、NG ではなく WARN に留める。
+    """
+    table_m = PAT_ROUTE_TABLE.search(html)
+    if not table_m:
+        warn("全ルート現況サマリーの表を検出できませんでした（構造が変わった可能性）")
+        return
+
+    try:
+        base_date = date.fromisoformat(base)
+    except ValueError:
+        return  # 基準日自体の異常は check_base_date 側で NG 済み
+
+    rows = PAT_ROUTE_ROW.findall(table_m.group(0))
+    seen_any_row = False
+    for row_html in rows:
+        id_m = PAT_ROUTE_ROW_ID.search(row_html)
+        if not id_m:
+            continue  # ヘッダー行など、ルート行以外
+        seen_any_row = True
+        route = id_m.group(1)
+        text = re.sub(r"<[^>]+>", " ", row_html)  # href 等はタグごと除去されるので誤検出しない
+
+        newest: date | None = None
+        for mm, dd in PAT_ROUTE_ROW_MD.findall(text):
+            try:
+                d = date(base_date.year, int(mm), int(dd))
+            except ValueError:
+                continue
+            if d > base_date + timedelta(days=1):
+                continue  # 表記ゆれ等で未来日になったものは日付として扱わない
+            if newest is None or d > newest:
+                newest = d
+
+        if newest is None:
+            warn(f"全ルート現況サマリー / ルート{route} 行に本文中の日付表記が見つかりません（鮮度確認不可）")
+            continue
+
+        age = (base_date - newest).days
+        if age > STALE_ROUTE_DAYS:
+            warn(
+                f"全ルート現況サマリー / ルート{route} 行の本文中で最も新しい日付表記が "
+                f"{newest.isoformat()}（基準日から{age}日前）。見出しの日付だけ更新して"
+                "本文が古いままになっていないか確認すること"
+            )
+        else:
+            ok(f"全ルート現況サマリー / ルート{route} 行の鮮度（本文中の最新日付表記 {newest.isoformat()}、{age}日前）")
+
+    if not seen_any_row:
+        warn("全ルート現況サマリーの表からルート行（jf-td-* を含む行）を検出できませんでした（構造が変わった可能性）")
 
 
 # ── 個別チェック ────────────────────────────────────────────
@@ -311,6 +379,7 @@ def main() -> int:
         else:
             ng(f"{name} が基準日と違います: {val}（基準 {base}）")
     check_ticker(html, base)
+    check_route_freshness(html, base)
 
     check_news(news, base)
     if log is not None:

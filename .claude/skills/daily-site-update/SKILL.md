@@ -104,6 +104,10 @@ python tools/validate_daily.py
 - 日付整合（`dateModified` / ヘッダー / 速報バナー / ルートサマリー /
   `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）
 - `latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複
+- **全ルート現況サマリーの行ごとの鮮度（WARN）**：見出し（`sec-h2-sub`）の日付更新だけでは
+  検出できない「本文が古いまま」を、各行本文中の M/D 日付表記から推定する
+  （2026-09-15、ルートB＝サウジ東西PLで見出しだけ更新され本文が4/12時点のまま、という事故が
+  実際に発生したための追加）。WARN が出た行は本文の内容が実態と合っているか目視確認すること
 
 ニュース URL を実際に叩いて確認する場合（捏造・誤記の検出）:
 

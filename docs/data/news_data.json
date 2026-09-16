@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月15日 07:21 日本時間JST",
+  "updated": "2026年9月16日 08:53 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-centcom-denies-el-gaia-mine-pipeline-timeline-0915",
+      "title": "米中央軍、タンカー『エル・ガイア』の機雷被弾主張を否定——ミサイル・ドローン攻撃と説明、サウジ東西パイプラインは『数日内』復旧との米高官発言も",
+      "body": "米中央軍(CENTCOM)は9月15日、イラン革命防衛隊(IRGC)がパナマ籍タンカー『エル・ガイア』はホルムズ海峡で機雷に接触したとした主張を否定し、『同船は先月イランのミサイル攻撃で既に航行不能になっており、週末にイランがドローンで再攻撃し、現在はオマーン海域で地域のパートナーによって曳航中』と発表した。乗組員13人は救助され1人が行方不明のままとされる。同日、米エネルギー長官クリス・ライト氏は、9月10日の攻撃で操業停止したサウジアラビアの東西原油パイプラインについて『数日内に石油輸送が再開する見通し』と述べた。これは中東当局者らが伝えていた『復旧に3〜5週間』との従来の見通しと食い違っており、どちらが実態に近いかは現時点で未検証。",
+      "sourceLabel": "Al Jazeera（9/15）",
+      "date": "2026年9月15日（現地）/ 2026年9月16日 JST",
+      "label": "⚓ 機雷主張を否定",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
+      "isLatest": true
+    },
     {
       "id": "latest-iran-gcc-hormuz-meeting-postponed-0914",
       "title": "イラン・GCCのホルムズ協議、開催前に延期——オマーン『合意形成のため』、サウジの懸念指摘も",
@@ -10,7 +20,7 @@
       "date": "2026年9月14日（現地）/ 2026年9月14日 JST",
       "label": "⏸️ 会合延期",
       "url": "https://www.npr.org/2026/09/14/nx-s1-5968072/talks-between-iran-and-gulf-states-to-discuss-strait-of-hormuz-postponed",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-qeshm-hengam-ship-attack-0913",
@@ -31,19 +41,27 @@
       "label": "🎯 空爆58回主張（未検証）",
       "url": "https://tass.com/emergencies/2187093",
       "isLatest": false
-    },
-    {
-      "id": "latest-bahrain-declines-hormuz-meeting-0912",
-      "title": "バーレーン、サラーラでのイラン・GCCホルムズ会合に不参加表明——『対イラン外交関係再開が先』",
-      "body": "バーレーン外務省は9月12日、9月14日にオマーン・サラーラで予定されるイランとGCC加盟国によるホルムズ海峡通航協議への不参加を表明した。同国は対話継続への意欲を示しつつ「イランとの外交関係が再開されるまで、イランを含む合同会合には参加しない」との立場を明らかにした。バーレーンは2016年、サウジ大使館襲撃事件を機にイランと国交を断絶している。同国はホルムズ海峡の開放が「差別・料金・許可なし」でGCC全6カ国が関与する形で実現すべきだと主張し、直近のサウジ東西パイプライン攻撃やバーレーン国内のアンモニアタンク攻撃を挙げ「地域の安全は、攻撃を見過ごしたり沈黙したり、宥和政策によっては築けない」と強調した。",
-      "sourceLabel": "Al Jazeera / Arab News / Sweden Herald（9/12）",
-      "date": "2026年9月12日（現地）/ 2026年9月13日 JST",
-      "label": "🚫 会合不参加表明",
-      "url": "https://www.aljazeera.com/news/2026/9/12/bahrain-says-it-will-not-participate-in-irans-proposed-hormuz-meeting",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-centcom-el-gaia-mine-denial-pipeline-0915",
+      "titleJa": "【Al Jazeera】米中央軍、『エル・ガイア』機雷被弾を否定——パイプラインは『数日内』復旧の見方も",
+      "titleEn": "CENTCOM refutes Iran claim supertanker hit Hormuz mines",
+      "title": "【Al Jazeera】米中央軍、『エル・ガイア』機雷被弾を否定——パイプラインは『数日内』復旧の見方も",
+      "country": "米国/イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月15日（現地・JST）",
+      "summary": "Al Jazeeraのライブブログは、米中央軍(CENTCOM)がイランのタンカー『エル・ガイア』機雷被弾主張を否定し、ミサイル・ドローンによる攻撃で現在は曳航中と説明したと報道。同ブログは、米エネルギー長官がサウジ東西パイプラインの『数日内』復旧見通しを示したことや、フーシ派のサウジ空爆主張、イエメン情勢の悪化も伝えている。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
+      "isLatest": true
+    },
     {
       "id": "osint-france24-iran-gcc-meeting-postponed-qeshm-attack-0914",
       "titleJa": "【France24】イラン・GCCのホルムズ協議が延期、ゲシュム島沖では商船攻撃も",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.france24.com/en/middle-east/20260914-iranian-ship-qeshm-island-tehran-hormuz",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-bahrain-declines-hormuz-meeting-0912",
@@ -1358,6 +1376,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月12日",
+      "items": [
+        {
+          "id": "latest-bahrain-declines-hormuz-meeting-0912",
+          "title": "バーレーン、サラーラでのイラン・GCCホルムズ会合に不参加表明——『対イラン外交関係再開が先』",
+          "body": "バーレーン外務省は9月12日、9月14日にオマーン・サラーラで予定されるイランとGCC加盟国によるホルムズ海峡通航協議への不参加を表明した。同国は対話継続への意欲を示しつつ「イランとの外交関係が再開されるまで、イランを含む合同会合には参加しない」との立場を明らかにした。バーレーンは2016年、サウジ大使館襲撃事件を機にイランと国交を断絶している。同国はホルムズ海峡の開放が「差別・料金・許可なし」でGCC全6カ国が関与する形で実現すべきだと主張し、直近のサウジ東西パイプライン攻撃やバーレーン国内のアンモニアタンク攻撃を挙げ「地域の安全は、攻撃を見過ごしたり沈黙したり、宥和政策によっては築けない」と強調した。",
+          "sourceLabel": "Al Jazeera / Arab News / Sweden Herald（9/12）",
+          "date": "2026年9月12日（現地）/ 2026年9月13日 JST",
+          "label": "🚫 会合不参加表明",
+          "url": "https://www.aljazeera.com/news/2026/9/12/bahrain-says-it-will-not-participate-in-irans-proposed-hormuz-meeting",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月11日",
       "items": [

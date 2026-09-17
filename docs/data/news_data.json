@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月16日 08:53 日本時間JST",
+  "updated": "2026年9月18日 06:59 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-saudi-pipeline-bypass-half-capacity-6weeks-0916",
+      "title": "サウジ東西パイプライン、迂回路設置で『数日内に能力の半分』再開目指す——全面復旧は『約6週間』の見通し（Bloomberg）",
+      "body": "ブルームバーグ通信は9月16日、サウジアラビアが9月10日の攻撃で操業停止した東西原油パイプラインについて、損傷箇所を迂回するルートの設置を進めており、数日以内に輸送能力の半分程度の再開を目指していると報じた。ロイター通信によれば攻撃でポンプ場2カ所が損傷しており、全面復旧には約6週間かかる見通しだという。これは中東当局者らが伝えていた『復旧に3〜5週間』、米エネルギー長官の『数日内に再開』という従来の2つの見通しのいずれとも異なる新たな数字であり、どの見通しが実態に近いかは引き続き未検証。ヤンブー港では9月15日から石油積み出しが停止したままで、ホルムズ海峡の封鎖とイエメン沖でのフーシ派による海上封鎖も継続しており、迂回路による供給拡大の効果は不透明とされる。",
+      "sourceLabel": "Bloomberg / Reuters経由 共同通信・地方紙各紙（9/16〜17）",
+      "date": "2026年9月16日（現地）/ 2026年9月17日 JST",
+      "label": "🛢️ 迂回路設置・全面復旧6週間の見方",
+      "url": "https://www.sakigake.jp/news/article/20260917CO0017/",
+      "isLatest": true
+    },
     {
       "id": "latest-centcom-denies-el-gaia-mine-pipeline-timeline-0915",
       "title": "米中央軍、タンカー『エル・ガイア』の機雷被弾主張を否定——ミサイル・ドローン攻撃と説明、サウジ東西パイプラインは『数日内』復旧との米高官発言も",
@@ -10,7 +20,7 @@
       "date": "2026年9月15日（現地）/ 2026年9月16日 JST",
       "label": "⚓ 機雷主張を否定",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-gcc-hormuz-meeting-postponed-0914",
@@ -31,19 +41,27 @@
       "label": "⚓ 商船攻撃・複数事案",
       "url": "https://news.cgtn.com/news/2026-09-13/news-1QoWEnq8Fl6/p.html",
       "isLatest": false
-    },
-    {
-      "id": "latest-saudi-58-airstrikes-yemen-0914",
-      "title": "フーシ派、サウジによる「24時間で58回空爆」を主張——南部シャルーラ基地へのミサイル・ドローン攻撃への報復か（未検証）",
-      "body": "イエメンの親イラン武装組織フーシ派（アンサール・アッラー）の軍事報道官ヤヒヤ・サリーは9月14日、テレグラムで「サウジの敵は過去24時間で58回の空爆を実施した」と発表し、対象はタイズ・ラハジ・アル・ジャウフ・ハッジャ・アル・バイダ・サアダの6県に及んだと主張、カミース・ムシェイト空軍基地から発進したF-15戦闘機による攻撃としている。死傷者・被害の詳細は示されておらず、サウジアラビア政府は回数を公式確認していない。前日13日にはフーシ派が南部サウジのシャルーラ軍事基地を弾道ミサイル・ドローンで攻撃したと発表、武器庫・司令部施設を狙ったとしサリー報道官は「サウジによる対イエメン攻撃継続への報復」と説明した。サウジ民間防衛当局は12日、南西部ジザーン州アル・トゥワル地区に飛翔体が着弾し2人が負傷、モスクや建物・車両が損壊したと発表している。",
-      "sourceLabel": "TASS / Xinhua / Taipei Times（AFP）（9/13〜14）",
-      "date": "2026年9月14日（現地）/ 2026年9月14日 JST",
-      "label": "🎯 空爆58回主張（未検証）",
-      "url": "https://tass.com/emergencies/2187093",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-bloomberg-saudi-pipeline-bypass-6weeks-0916",
+      "titleJa": "【Bloomberg】サウジ東西パイプライン、迂回路で『数日内に能力半分』再開目指す——全面復旧は『約6週間』",
+      "titleEn": "Saudi Arabia targets partial pipeline restart within days via bypass route, full repair in ~6 weeks",
+      "title": "【Bloomberg】サウジ東西パイプライン、迂回路で『数日内に能力半分』再開目指す——全面復旧は『約6週間』",
+      "country": "サウジアラビア",
+      "media": "Bloomberg",
+      "source": "Bloomberg",
+      "date": "2026年9月16日（現地）/ 2026年9月17日 JST",
+      "summary": "Bloombergは、9月10日の攻撃で停止したサウジ東西原油パイプラインについて、サウジ側が損傷箇所を迂回するルートを設置中で、数日以内に輸送能力の半分程度の再開を目指していると報道。Reutersはポンプ場2カ所の損傷を伝え、全面復旧には約6週間かかる見通しとした。従来の『3〜5週間』『数日内』という2つの見通しとも異なる新情報で、どれが実態に近いかは未検証。",
+      "cardBg": "rgba(251,191,36,0.05)",
+      "cardBorder": "rgba(251,191,36,0.25)",
+      "badgeColor": "#fbbf24",
+      "borderColor": "rgba(251,191,36,0.4)",
+      "textColor": "#fde68a",
+      "url": "https://www.sakigake.jp/news/article/20260917CO0017/",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-centcom-el-gaia-mine-denial-pipeline-0915",
       "titleJa": "【Al Jazeera】米中央軍、『エル・ガイア』機雷被弾を否定——パイプラインは『数日内』復旧の見方も",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-france24-iran-gcc-meeting-postponed-qeshm-attack-0914",
@@ -1376,6 +1394,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月14日",
+      "items": [
+        {
+          "id": "latest-saudi-58-airstrikes-yemen-0914",
+          "title": "フーシ派、サウジによる「24時間で58回空爆」を主張——南部シャルーラ基地へのミサイル・ドローン攻撃への報復か（未検証）",
+          "body": "イエメンの親イラン武装組織フーシ派（アンサール・アッラー）の軍事報道官ヤヒヤ・サリーは9月14日、テレグラムで「サウジの敵は過去24時間で58回の空爆を実施した」と発表し、対象はタイズ・ラハジ・アル・ジャウフ・ハッジャ・アル・バイダ・サアダの6県に及んだと主張、カミース・ムシェイト空軍基地から発進したF-15戦闘機による攻撃としている。死傷者・被害の詳細は示されておらず、サウジアラビア政府は回数を公式確認していない。前日13日にはフーシ派が南部サウジのシャルーラ軍事基地を弾道ミサイル・ドローンで攻撃したと発表、武器庫・司令部施設を狙ったとしサリー報道官は「サウジによる対イエメン攻撃継続への報復」と説明した。サウジ民間防衛当局は12日、南西部ジザーン州アル・トゥワル地区に飛翔体が着弾し2人が負傷、モスクや建物・車両が損壊したと発表している。",
+          "sourceLabel": "TASS / Xinhua / Taipei Times（AFP）（9/13〜14）",
+          "date": "2026年9月14日（現地）/ 2026年9月14日 JST",
+          "label": "🎯 空爆58回主張（未検証）",
+          "url": "https://tass.com/emergencies/2187093",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月12日",
       "items": [

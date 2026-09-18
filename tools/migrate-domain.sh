@@ -65,8 +65,10 @@ fi
 #   - tools/migration-baseline-*.md … 旧ドメインで測った実測記録。書き換えると記録が壊れる
 #   - CLAUDE.md … 「このスクリプトはリテラル文字列 yattanda.github.io/hormuz-map を置換する」
 #                 という説明文を含むため、置換すると記述が自己矛盾になる
+#   - tools/migration-runbook.md … 移行当日の手順書。旧→新の対応や旧 URL プロパティ名を記述しており、
+#                 置換すると「移行先：chokepointlab.com → chokepointlab.com」のように壊れる（2026-09-18 追加）
 # 除外したファイルは末尾の残存検証の対象からも外れる（collect_targets を共用しているため）。
-EXCLUDES=(':!*.png' ':!*.jpg' ':!*.jpeg' ':!*.ico' ':!*.gif' ':!*.woff' ':!*.woff2' ':!tools/migrate-domain.sh' ':!tools/migration-baseline-*.md' ':!CLAUDE.md')
+EXCLUDES=(':!*.png' ':!*.jpg' ':!*.jpeg' ':!*.ico' ':!*.gif' ':!*.woff' ':!*.woff2' ':!tools/migrate-domain.sh' ':!tools/migration-baseline-*.md' ':!CLAUDE.md' ':!tools/migration-runbook.md')
 
 collect_targets() {
   local pattern="$1"

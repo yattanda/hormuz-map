@@ -3,6 +3,12 @@
 作成：2026-09-13。予定日：**2026-09-18（木）頃**。
 移行先：`https://yattanda.github.io/hormuz-map/` → **`https://chokepointlab.com/`**
 
+> **【2026-09-18 実施・完了】** 手順1〜7・9 を実施した。手順8（X 切り替え）は別日。
+> 当日の差分：dry-run で**この手順書自体が置換対象に入っていた**ため除外に追加（`41c66d1`）。
+> Custom domain（`75bbdac` CNAME 自動コミット）→ 証明書は直後に発行済み → 置換 `60b62a1` → Enforce HTTPS。
+> 本番検証の結果は `tools/migration-baseline-2026-09-13.md` §8。
+> Search Console 新ドメインで sitemap 成功・検出15。GA4 ストリーム URL 変更済み。X のウェブサイト欄は後日。
+
 この手順書は `PROJECT_CONTEXT.md` §6「ドメイン移行手順（確定）」を、
 2026-09-13 までに判明した事実で具体化したもの。**順序を入れ替えないこと。**
 突き合わせに使う基準値は `tools/migration-baseline-2026-09-13.md`。

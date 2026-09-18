@@ -127,3 +127,32 @@ Cloudflare の DNS レコードは全12件（MX 3・TXT 4・A 4・CNAME 1）。
   （URL プレフィックス型・GA4 方式）の2件を登録
 
 当日の手順は `tools/migration-runbook.md`。
+
+---
+
+## 8. 移行後の実測（2026-09-18）— 基準値との突き合わせ
+
+移行コミット：Custom domain 設定（GitHub 自動 `75bbdac`）→ ホスト名置換 `60b62a1`（22ファイル・82箇所）。
+HTTPS 証明書は Custom domain 設定の直後に発行済み（approved・期限 2026-12-17・`chokepointlab.com` / `www`）。Enforce HTTPS 有効。
+
+| 基準値の節 | 移行後（`https://chokepointlab.com`） | 判定 |
+|---|---|---|
+| §1 | 18件すべて 200 | ✅ 一致 |
+| §1 旧→新 301 | トップ・`/archive/`・`/articles/`・`/infographic/`・`/corrections/`・記事・`/sitemap.xml`・`/robots.txt` は `https://chokepointlab.com/...` へ直接 301 | ✅ |
+| — | `http://` → `https://`、`www.` → apex がいずれも 301 | ✅ |
+| §2 | 内部ファイル6件すべて 404 | ✅ 一致 |
+| §3 横スクロール | `/` 1280px で 1265、375px で6ページとも 375 | ✅ 一致 |
+| §3 コンソール | エラー 0件 | ✅ 一致 |
+| §3 iframe 高さ同期 | PC 1476px／スマホ 2338px。暫定値（1110 / 2200 / 2110）ではない＝**postMessage 経由の同期が初めて動作** | ✅ |
+| §4 | `<body>` 直下 41要素、Leaflet マーカー 80個 | ✅ 一致 |
+| §5 | 15ページとも canonical / og:url が `https://chokepointlab.com/<path>` | ✅ |
+| §6 | sitemap 15 URL すべて新ドメイン（旧ドメイン 0件）、robots.txt の Sitemap 行も新ドメイン | ✅ |
+| 別リポジトリ | `yattanda.github.io/hormuz-data-/`・`/hormuz-crisis-report/` は 200 のまま | ✅ 影響なし |
+
+**差が出た1件**：旧 URL `/hormuz-map/about/` のみ、転送先が `http://chokepointlab.com/about/`（http）。
+そこから `https://` へもう一度 301 し、最終的に 200 で表示されるため読者への実害はない。
+応答に `X-Cache: HIT` があり、Enforce HTTPS 有効化前の転送が GitHub の CDN キャッシュに残っていると考えられる（確度：中）。
+クエリ付き（`?v=1`）でも同じだった。後日に再測する。
+
+Search Console（新ドメインのプロパティ）：`https://chokepointlab.com/sitemap.xml` を送信 → **成功・検出 15**（2026-09-18 当日）。
+旧 URL のプロパティでは 4/30 送信のまま「取得できませんでした」だった sitemap が、新ドメインでは初めて読み込まれた。

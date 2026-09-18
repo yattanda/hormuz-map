@@ -1391,8 +1391,21 @@ p, li,
 .sec-lead,
 .news-body,
 .jf-col,
-#incident > strong {   /* 速報インシデントの更新要約（display:block の strong） */
+#incident > strong,                        /* 速報インシデントの更新要約（display:block の strong） */
+#incident .incident-item > div,            /* 過去のインシデント（展開時） */
+.badges .badge-item,                       /* ヘッダーの警戒レベル */
+div:has(> .sc-grid) > div:not(.sc-grid),   /* シナリオの確率補足・次の焦点 */
+#osint-container a > div,                  /* 現地メディア視点の英語要約 */
+#osint-panel + div,                        /* WTI の注記 */
+section > div > div {                      /* 更新履歴の各行（ページ内の section はここだけ） */
   max-width: var(--measure);
+}
+/* フッターは上罫線を全幅に保ったまま、文字の幅だけを余白で絞る。
+   ルート表の脚注（td[colspan]）は、表のセルでは余白の % の基準が安定せず
+   画面が広いほど狭くなったため、対象外とした（右揃えの小さな注記で読み物ではない） */
+footer {                                   /* フッター（中央揃え・上罫線は全幅のまま） */
+  padding-left: max(16px, calc((100% - var(--measure)) / 2));
+  padding-right: max(16px, calc((100% - var(--measure)) / 2));
 }
 
 /* --- 2-c カラム ---

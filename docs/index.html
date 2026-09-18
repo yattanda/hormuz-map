@@ -113,12 +113,14 @@
   --c-surface-deep:  #1e3a5f;  /* 濃い面 */
 
   /* --- ブレークポイント方針（CSSの @media では変数を使えないため覚書） ---
-     現状 480 / 600 / 640 / 768 / 860px の5種が21箇所に混在している。
-     フェーズ0b 以降、以下の2点へ統一する。
-       スマホ   : ~767px
-       タブレット: 768px 〜 1023px   → @media (min-width: 768px)
-       PC       : 1024px 〜         → @media (min-width: 1024px)
-     ※ html{font-size:18px} の 768px 境界と一致させるため 768 を採用する */
+     フェーズ2 2-c（2026-09-18）で 480 / 600 / 640 / 768 / 860px の5種を、
+     役割ごとに次の3つへ整理した。境界の値は「以下（max-width）」側に含める。
+       600px  : スマホ縦の詰め（余白・小物）       … max-width:600px  / min-width:601px
+       768px  : 文字サイズ（絶対ルールの html 18px） … max-width:768px  / min-width:769px
+       1023px : 表・地図凡例の狭幅対応、PC との境 … max-width:1023px / min-width:1024px
+     カラム数: 〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列（末尾のフェーズ2ブロック）
+     タブレット（iPad mini 縦 744px・iPad 縦 768〜834px）は 2列 になる。
+     例外: .annot-popup の 480px（注記ポップアップの位置補正。値を変えると位置がずれる） */
 }
 
 /* ===== フォント・基本設定 ===== */
@@ -608,10 +610,8 @@ footer {
 .footer-legal a:hover { color:#94a3b8; text-decoration:underline; }
 
 /* ===================== RESPONSIVE ===================== */
-@media(max-width:860px){
+@media(max-width:1023px){
   header h1 { font-size:0.92rem; }
-  .sit-grid,.sc-grid { grid-template-columns:1fr; }
-  .stats-row { grid-template-columns:repeat(2,1fr); }
   #map { height:400px; }
 
   .map-legend {
@@ -669,13 +669,15 @@ footer {
   .dl-boxes { justify-content:flex-start; }
   .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .rtable { min-width:600px; }
+}
+/* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
+   （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */
+@media(max-width:768px){
   #jf-td-old, #jf-td-A, #jf-td-B,
   #jf-td-C_US, #jf-td-C_GL, #jf-td-D { display: none; }
-  /* スマホでは列を非表示にしてテーブル崩れを防ぐ */
   .jf-col { display: none !important; }
 }
-@media(max-width:480px){
-  .stats-row { grid-template-columns:repeat(2,1fr); }
+@media(max-width:600px){
   header h1 { font-size:0.82rem; }
   .cd-val { font-size:1.2rem; }
 }
@@ -829,7 +831,7 @@ footer {
 .pill-optimist { background:rgba(52,211,153,0.15); color:#34d399; border:1px solid rgba(52,211,153,0.3); }
 .pill-cautious { background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.3); }
 
-@media(max-width:860px){
+@media(max-width:1023px){
   .modal-box { padding:18px 16px; }
   .modal-interp { grid-template-columns:1fr; }
 }
@@ -858,7 +860,7 @@ footer {
 .news-hidden{display:none;}
 .news-more-btn{width:100%;margin-top:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px;color:#64748b;font-size:0.73rem;cursor:pointer;transition:all 0.2s;font-family:inherit;}
 .news-more-btn:hover{background:rgba(255,255,255,0.07);color:#94a3b8;}
-@media(max-width:860px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
+@media(max-width:1023px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
 
 /* ================================================
    タンカー1隻の価値 サムネイルボタン
@@ -1231,13 +1233,13 @@ footer {
 .bw-footer-l { font-size: .6rem; color: #334155; }
 .bw-footer-r { font-size: .6rem; color: rgba(201,168,76,0.4); letter-spacing: .1em; }
 /* レスポンシブ */
-@media (max-width: 860px) {
+@media (max-width: 1023px) {
   .bw-title { font-size: .95rem; }
   .bw-table th:first-child { width: 32%; }
   .bw-card { padding: 16px 14px 14px; }
   .bw-inner { padding: 0 12px 20px; }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .bw-title { font-size: .88rem; }
   .bw-trans-body { font-size: .76rem; }
   .bw-orig-text { font-size: .68rem; }
@@ -1343,7 +1345,7 @@ footer {
       inset 0 1px 0 rgba(0,0,0,0.2);
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 600px) {
     .infographic-button {
       font-size: 12px;
       padding: 5px 20px;
@@ -1378,6 +1380,60 @@ footer {
   div[style*="font-size:0.7"] {
     font-size: 0.8rem !important;
   }
+}
+
+/* --- 2-b 長文の1行の長さ ---
+   1行を 70ch（全角でおよそ35〜40字）までにする。左揃えのまま幅だけを制限する
+   （見出しが左揃えなので、本文だけ中央寄せにすると視線の起点がずれるため）。
+   クラスの無いインライン style だけの箱（シナリオ注記・更新履歴など）は
+   HTML にクラスを付けられる 10/2 以降に対応する。 */
+p, li,
+.sec-lead,
+.news-body,
+.jf-col {
+  max-width: var(--measure);
+}
+
+/* --- 2-c カラム ---
+   〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列。
+   .sc-grid は HTML のインライン style（2列）に勝つため !important が要る。 */
+.sit-grid { grid-template-columns: 1fr; }
+.sc-grid  { grid-template-columns: 1fr !important; }
+.stats-row { grid-template-columns: repeat(2, 1fr); }
+
+@media (min-width: 601px) {
+  .sit-grid,
+  .sc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+
+  /* 関連最新ニュース：2列。「過去の記事を見る」で開く分も同じ並びにする */
+  #news-latest-container,
+  #news-latest-extra[style*="block"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-items: start;
+  }
+  #news-latest-container > :not(.news-item) { grid-column: 1 / -1; }
+  #news-latest-container .news-item { margin: 0; }
+
+  /* 特別解説コラム：先頭の記事（機雷）を全幅、残りの記事カードを格子に並べる。
+     現状は2本目以降の記事が先頭記事の箱の中に入れ子になっているため、
+     その箱を grid にして、先頭記事の3要素（タイトル行・要約・リンク）を全幅にする */
+  #special-commentary > div:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-items: start;
+  }
+  #special-commentary > div:first-of-type > :nth-child(-n+3) { grid-column: 1 / -1; }
+  #special-commentary > div:first-of-type > div:nth-child(n+4) { margin: 0 !important; }
+}
+
+@media (min-width: 1024px) {
+  .sit-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .stats-row { grid-template-columns: repeat(6, 1fr); }
+  #special-commentary > div:first-of-type { grid-template-columns: repeat(3, 1fr); }
 }
 </style>
 <!-- 構造化データ（JSON-LD）-->

@@ -153,6 +153,7 @@ HTTPS 証明書は Custom domain 設定の直後に発行済み（approved・期
 そこから `https://` へもう一度 301 し、最終的に 200 で表示されるため読者への実害はない。
 応答に `X-Cache: HIT` があり、Enforce HTTPS 有効化前の転送が GitHub の CDN キャッシュに残っていると考えられる（確度：中）。
 クエリ付き（`?v=1`）でも同じだった。後日に再測する。
+→ **同日 14:28 に再測し解消**：転送先は `https://chokepointlab.com/about/`（`Age: 0`）。CDN キャッシュの失効で直ったとみられる。
 
 Search Console（新ドメインのプロパティ）：`https://chokepointlab.com/sitemap.xml` を送信 → **成功・検出 15**（2026-09-18 当日）。
 旧 URL のプロパティでは 4/30 送信のまま「取得できませんでした」だった sitemap が、新ドメインでは初めて読み込まれた。

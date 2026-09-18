@@ -6,7 +6,7 @@
 
 ## プロジェクト概要
 
-- **サイト**: https://yattanda.github.io/hormuz-map/
+- **サイト**: https://chokepointlab.com/
 - **構成**: `docs/index.html`（HTML/CSS/JS全集約）+ `docs/data/news_data.json`
 - **更新頻度**: 毎日〜数日に1回
 - **目標**: 継続可能な媒体化（信頼性の確立 → 独自ドメイン移行 → 収益化）。※媒体名・ドメイン・法務・収益化などの上流の方針、および三媒体連携の構想はリポジトリ外の戦略文書が正本。この Memory.md は技術・実装の現状に限定する

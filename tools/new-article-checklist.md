@@ -72,7 +72,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 
 ```xml
 <url>
-  <loc>https://yattanda.github.io/hormuz-map/articles/{slug}.html</loc>
+  <loc>https://chokepointlab.com/articles/{slug}.html</loc>
   <lastmod>{{YYYY-MM-DD}}</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>

@@ -426,7 +426,7 @@ Web では `max-width: 70ch`（全角約35字）で中央寄せするのが正�
 必ず GitHub Pages に push してから確認すること。
 
 1. `hormuz-data-` を push し、Pages の反映を待つ（1〜2分）
-2. https://yattanda.github.io/hormuz-map/ を**強制リロード**（Ctrl+F5）で開く
+2. https://chokepointlab.com/ を**強制リロード**（Ctrl+F5）で開く
 3. ブラウザのコンソールで以下を実行する
 
 ```javascript

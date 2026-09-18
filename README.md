@@ -1,6 +1,6 @@
 # ホルムズ海峡危機マップ - 地政学マップで読む世界情勢
 
-[![Website](https://img.shields.io/badge/公式サイト-アクセス-blue?style=for-the-badge)](https://yattanda.github.io/hormuz-map/)
+[![Website](https://img.shields.io/badge/公式サイト-アクセス-blue?style=for-the-badge)](https://chokepointlab.com/)
 [![X](https://img.shields.io/badge/X-フォロー-black?style=for-the-badge)](https://x.com/hormuz_map_jp)
 [![YouTube](https://img.shields.io/badge/YouTube-チャンネル登録-red?style=for-the-badge)](https://www.youtube.com/@%E5%8D%B1%E6%A9%9F%E5%9C%B0%E5%9B%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB)
 
@@ -37,7 +37,7 @@
 
 ## 各プラットフォームでの発信
 
-### [公式サイト](https://yattanda.github.io/hormuz-map/) - メインコンテンツ
+### [公式サイト](https://chokepointlab.com/) - メインコンテンツ
 - 詳細記事・地図・データ分析
 - 毎日更新
 

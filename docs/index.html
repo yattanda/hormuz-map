@@ -145,10 +145,13 @@
 
    前提: .dl-label の white-space:nowrap を解除済み（commit 5ce8800）。
    解除前は底上げすると横スクロールが発生した。
-   検証: 1440px / 909px の双方で横スクロール0を確認（2026-09-04）。 */
+   検証: 1440px / 909px の双方で横スクロール0を確認（2026-09-04）。
+   フェーズ2 2-a（2026-09-18 試作）: 18px → 20px。
+   18px では文字量の約6割が 14px 未満（中央値 14px）だった。20px で 14px 未満は約1割、
+   本文の中央値は 15〜16px になる。768px 以下（スマホ）は上の絶対ルールのまま変えない。 */
 @media (min-width: 769px) {
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -1347,6 +1350,36 @@ Copy
       padding: 5px 20px;
     }
   }
+
+/* ============================================================
+   フェーズ2：レイアウト・文字サイズ（2026-09-18 試作・未 push）
+   HTML は変えず、この CSS だけで適用する。フェーズ2を戻すときは
+   このブロックと上の html{font-size:20px} を戻せばよい。
+   ============================================================ */
+
+/* --- 2-a スマホ：本文系の文字の下限を 0.8rem（14.4px）へ ---
+   スマホの 1rem は絶対ルールで 18px のまま。見出しやバッジは変えず、
+   長い文章を含む要素だけ下限を引き上げる。
+   div[style*="font-size:0.7"] は 0.7〜0.78rem のインライン指定に当たる
+   （span・a・button のラベル類は対象外）。 */
+@media (max-width: 768px) {
+  .sit-card .s-body,
+  .sc-body,
+  .sc-impact,
+  .news-item,
+  .news-item a,
+  .dl-note,
+  .annot-popup,
+  .modal-section,
+  .modal-quote,
+  .modal-interp-box,
+  .bw-analysis p,
+  .bw-tl-body,
+  .bw-trans-body,
+  div[style*="font-size:0.7"] {
+    font-size: 0.8rem !important;
+  }
+}
 </style>
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">

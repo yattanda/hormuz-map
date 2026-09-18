@@ -13,7 +13,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 - **7列構成**：状態 / ルート名 / BPD / タンカー/週 / 備考 / 日本フロー実績 / 同前週比
 - `<colgroup>` は必ず7列（`<col>` 7個）に保つこと。列追加時は colgroup・nth-child CSS・JS の3箇所を同時更新する
-- `.jf-col` クラスの列はモバイル（600px以下）で `display:none` により自動非表示
+- `.jf-col` クラスの列はスマホ（768px以下）で `display:none` により自動非表示（2026-09-18 フェーズ2で 860px 以下 → 768px 以下に変更。タブレットは横スクロールで表示）
 - `loadRouteTableFlow()` が `oil-flow.json` から `.jf-*-bpd` / `.jf-*-tanker` 要素に値を注入（手動編集不要）
 - Route C は `C_US`（米国）と `C_GL`（南半球）の2行に分割済み
 - 日本原油調達フロー説明カードへのアンカー `<div id="japan-flow">` が iframe wrapper 直前に設置済み

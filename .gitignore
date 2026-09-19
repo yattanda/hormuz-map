@@ -6,6 +6,9 @@ __pycache__/
 tools/*.lnk
 # Claude Code ローカル設定
 .claude/settings.local.json
+**/.claude/settings.local.json
+# tools/ 配下の Claude Code 設定（未使用・ローカルパスを含むため追跡しない）
+tools/.claude/
 
 # バックアップ・一時ファイル
 *.bak

@@ -2872,6 +2872,20 @@
           "url": "https://www.sakigake.jp/news/article/20260917CO0017/"
         }
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "dateLabel": "2026/09/20 08:28",
+      "blockadeDay": 205,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】イラン革命防衛隊（IRGC）海軍は9月18日、トーゴ籍プロダクトタンカー「Trend」が9月17日夜「不法通航」を試みたとして攻撃し、火災・航行停止させたと発表——英国海事貿易活動機関（UKMTO）もオマーン沿岸ハサブ沖での被弾・乗組員無事を報告したが、同一船舶かは独立検証が取れていない（RFE/RL、Anadolu Agency）・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/18終値100.30ドル前後で推移・日本関係船は残り4隻で変化なし・封鎖205日目・ニュース1件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "RFE/RL（globalsecurity.org経由）/ Anadolu Agency（9/18）",
+          "title": "イラン革命防衛隊、トーゴ籍タンカー『Trend』を攻撃——ホルムズ海峡で火災・航行停止、米の『扇動』と主張",
+          "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260918-rferl01.htm"
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月18日 06:59 日本時間JST",
+  "updated": "2026年9月20日 08:28 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-strikes-trend-tanker-hormuz-0917",
+      "title": "イラン革命防衛隊、トーゴ籍タンカー『Trend』を攻撃——ホルムズ海峡で火災・航行停止、米の『扇動』と主張",
+      "body": "イラン革命防衛隊（IRGC）海軍は9月18日、トーゴ籍プロダクトタンカー『Trend』が9月17日夜、米軍の『扇動』により『不法通航』を試みたとしてこれを攻撃し、火災を発生させ航行を停止させたと発表した。これに先立ち英国海事貿易活動機関（UKMTO）は、オマーン沿岸の町ハサブの北東約16海里の地点で商船が投射体により被弾・出火し、その後鎮火したと報告——乗組員は全員無事で、現時点で環境への影響は確認されていないとした。UKMTOは船舶名・国籍を公表しておらず、IRGCの発表との同一船舶かどうかは独立検証が取れていない。米側からの公式な被害確認も現時点でない。",
+      "sourceLabel": "RFE/RL（globalsecurity.org経由）/ Anadolu Agency（9/18）",
+      "date": "2026年9月17日（現地）/ 2026年9月18日 JST",
+      "label": "⚓ タンカー被弾・航行停止（未検証）",
+      "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260918-rferl01.htm",
+      "isLatest": true
+    },
     {
       "id": "latest-saudi-pipeline-bypass-half-capacity-6weeks-0916",
       "title": "サウジ東西パイプライン、迂回路設置で『数日内に能力の半分』再開目指す——全面復旧は『約6週間』の見通し（Bloomberg）",
@@ -10,7 +20,7 @@
       "date": "2026年9月16日（現地）/ 2026年9月17日 JST",
       "label": "🛢️ 迂回路設置・全面復旧6週間の見方",
       "url": "https://www.sakigake.jp/news/article/20260917CO0017/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-centcom-denies-el-gaia-mine-pipeline-timeline-0915",
@@ -31,19 +41,27 @@
       "label": "⏸️ 会合延期",
       "url": "https://www.npr.org/2026/09/14/nx-s1-5968072/talks-between-iran-and-gulf-states-to-discuss-strait-of-hormuz-postponed",
       "isLatest": false
-    },
-    {
-      "id": "latest-qeshm-hengam-ship-attack-0913",
-      "title": "ゲシュム島沖で商船攻撃、1人死亡・3〜4人負傷——同時期にタンカー『エル・ガイア』も再被弾",
-      "body": "イラン国営メディア（IRNA）を引用したゲシュム州知事の発表によれば、現地時間9月13日朝5時頃、ゲシュム島シブ・ダラズ沿岸からヘンガム島付近にかけて商船が攻撃を受け、1人が死亡、3〜4人が負傷した（負傷者数は情報源により幅があり、CGTNは『1人死亡・3人負傷』、France24は『1人死亡・4人負傷』と報道）。同知事は『テロリストの敵』による攻撃と主張しているが未検証で、米軍からの公式確認もない。同時期・同海域では、パナマ籍・インド人乗組員のプロダクトタンカー『エル・ガイア』が再び被弾する事案も報告された。イラン革命防衛隊（IRGC）海軍は機雷への接触と主張しているが、米中央軍（CENTCOM）はこれを否定し『同船は先月イランのミサイルで既に航行不能になっており、週末にイランがドローンで再攻撃した』と発表。乗組員13人は救助され1人が行方不明。ゲシュム商船攻撃とエル・ガイア再被弾は同じ海域・時期に起きたが、報道からは同一事案か別事案かを断定できないため、同時期に複数の船舶関連インシデントが報告されている状況として扱う。",
-      "sourceLabel": "CGTN / globalsecurity.org経由RFE・RL / CNN / Iran International（9/13〜14）",
-      "date": "2026年9月13日（現地）/ 2026年9月14日 JST",
-      "label": "⚓ 商船攻撃・複数事案",
-      "url": "https://news.cgtn.com/news/2026-09-13/news-1QoWEnq8Fl6/p.html",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-rferl-irgc-trend-tanker-strike-0918",
+      "titleJa": "【RFE/RL】IRGC、トーゴ籍タンカー『Trend』への攻撃を発表——UKMTOも投射体による被弾を報告",
+      "titleEn": "IRGC Says It Struck Another Oil Tanker In Strait of Hormuz",
+      "title": "【RFE/RL】IRGC、トーゴ籍タンカー『Trend』への攻撃を発表——UKMTOも投射体による被弾を報告",
+      "country": "イラン/トーゴ",
+      "media": "RFE/RL",
+      "source": "RFE/RL",
+      "date": "2026年9月18日（現地・JST）",
+      "summary": "RFE/RLは、イラン革命防衛隊（IRGC）海軍が9月17日夜、米軍の『扇動』により『不法通航』を試みたとしてトーゴ籍タンカー『Trend』を攻撃し火災・航行停止に追い込んだと発表したと報道。これに先立ち英国海事貿易活動機関（UKMTO）は、オマーン沿岸ハサブの北東約16海里の地点で投射体により商船が被弾・出火し、その後鎮火したと報告——乗組員は全員無事で環境影響は確認されていないとした。UKMTOは船舶名・国籍を公表しておらず、IRGCの発表との同一船舶かどうかは独立検証が取れていない。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260918-rferl01.htm",
+      "isLatest": true
+    },
     {
       "id": "osint-bloomberg-saudi-pipeline-bypass-6weeks-0916",
       "titleJa": "【Bloomberg】サウジ東西パイプライン、迂回路で『数日内に能力半分』再開目指す——全面復旧は『約6週間』",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(251,191,36,0.4)",
       "textColor": "#fde68a",
       "url": "https://www.sakigake.jp/news/article/20260917CO0017/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-centcom-el-gaia-mine-denial-pipeline-0915",
@@ -1394,6 +1412,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月13日",
+      "items": [
+        {
+          "id": "latest-qeshm-hengam-ship-attack-0913",
+          "title": "ゲシュム島沖で商船攻撃、1人死亡・3〜4人負傷——同時期にタンカー『エル・ガイア』も再被弾",
+          "body": "イラン国営メディア（IRNA）を引用したゲシュム州知事の発表によれば、現地時間9月13日朝5時頃、ゲシュム島シブ・ダラズ沿岸からヘンガム島付近にかけて商船が攻撃を受け、1人が死亡、3〜4人が負傷した（負傷者数は情報源により幅があり、CGTNは『1人死亡・3人負傷』、France24は『1人死亡・4人負傷』と報道）。同知事は『テロリストの敵』による攻撃と主張しているが未検証で、米軍からの公式確認もない。同時期・同海域では、パナマ籍・インド人乗組員のプロダクトタンカー『エル・ガイア』が再び被弾する事案も報告された。イラン革命防衛隊（IRGC）海軍は機雷への接触と主張しているが、米中央軍（CENTCOM）はこれを否定し『同船は先月イランのミサイルで既に航行不能になっており、週末にイランがドローンで再攻撃した』と発表。乗組員13人は救助され1人が行方不明。ゲシュム商船攻撃とエル・ガイア再被弾は同じ海域・時期に起きたが、報道からは同一事案か別事案かを断定できないため、同時期に複数の船舶関連インシデントが報告されている状況として扱う。",
+          "sourceLabel": "CGTN / globalsecurity.org経由RFE・RL / CNN / Iran International（9/13〜14）",
+          "date": "2026年9月13日（現地）/ 2026年9月14日 JST",
+          "label": "⚓ 商船攻撃・複数事案",
+          "url": "https://news.cgtn.com/news/2026-09-13/news-1QoWEnq8Fl6/p.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月14日",
       "items": [

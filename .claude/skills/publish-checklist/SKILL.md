@@ -29,6 +29,7 @@ python tools/validate_daily.py
 - `latest` と `osint` の `isLatest: true` が各1件
 - `archive_timeline.json` の日付重複
 - `sitemap.xml` の `/` の `lastmod` が基準日と一致／`/archive/` の `lastmod` が `archive_timeline` 末尾より古くない
+- hormuz-data- の経緯（`data/context.json` の `timeline`）の最新日が実測の今日から5日超なら WARN（NG にはしない。読めなければ WARN「未確認」）
 
 ---
 

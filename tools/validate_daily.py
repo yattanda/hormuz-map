@@ -22,6 +22,10 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
     - 全ルート現況サマリーは見出しの日付更新だけで本文が古いまま、という事故が
       2026-09-15 に実際に発生した。見出しの日付一致（NG）とは別に、各行本文中の
       M/D 日付表記の鮮度を WARN として見る（本文の内容自体は機械判定できないため）
+    - hormuz-data- の経緯（data/context.json の timeline）は手動追記で、日次手順に
+      入っていなかったため 9/3 で止まり、ダッシュボードに ⚠ が出た（2026-09-19 に発覚）。
+      最新日が実測の今日から 5日を超えたら WARN を出す（別リポジトリのため NG にはしない）。
+      ローカルの ../hormuz-data- を優先し、無ければ公開 URL を取得する。どちらも失敗したら WARN
 """
 from __future__ import annotations
 
@@ -98,6 +102,12 @@ STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に�
 # sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
 PAT_SITEMAP_TOP = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 PAT_SITEMAP_ARCHIVE = re.compile(r'<loc>https?://[^/<]+/archive/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
+
+# hormuz-data- の経緯（Gemini に渡す確定した事実）。ローカルはリポジトリの親ディレクトリ基準
+DATA_CONTEXT_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "context.json"
+DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
+# ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
+DATA_TIMELINE_WARN_DAYS = 5
 
 
 def ymd(y, m, d) -> str:
@@ -343,6 +353,64 @@ def check_sitemap(tl, base: str) -> None:
         ok(f"sitemap.xml /archive/ の lastmod {m.group(1)}（archive_timeline 末尾 {last}）")
 
 
+def load_data_context() -> tuple[dict | None, str]:
+    """hormuz-data- の context.json を読む。ローカル → 公開 URL の順。
+
+    戻り値は (内容, 取得元または失敗理由)。どちらも失敗したら内容は None。
+    """
+    import urllib.request
+
+    reasons: list[str] = []
+    if DATA_CONTEXT_LOCAL.is_file():
+        try:
+            return json.loads(DATA_CONTEXT_LOCAL.read_text(encoding="utf-8")), "ローカル ../hormuz-data-"
+        except (OSError, ValueError) as e:
+            reasons.append(f"ローカル読み込み失敗（{type(e).__name__}）")
+    else:
+        reasons.append("ローカルの ../hormuz-data- なし")
+
+    req = urllib.request.Request(DATA_CONTEXT_URL, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as res:
+            return json.loads(res.read().decode("utf-8")), "公開 URL"
+    except Exception as e:  # ネットワーク到達不能・HTTP エラー・タイムアウト・JSON 破損等
+        reasons.append(f"公開 URL 取得失敗（{type(e).__name__}）")
+    return None, "／".join(reasons)
+
+
+def check_data_timeline() -> None:
+    """hormuz-data- の経緯（context.json の timeline）の最新日が古すぎないか。
+
+    WARN のみ。別リポジトリの状態で hormuz-map の commit を止めないため NG にはしない。
+    基準日ではなく実測の今日（JST）から数える（ダッシュボードの判定と同じ）。
+    """
+    ctx, src = load_data_context()
+    if ctx is None:
+        warn(f"hormuz-data- の経緯（context.json の timeline）の最新日は未確認: {src}")
+        return
+
+    items = ctx.get("timeline") if isinstance(ctx, dict) else None
+    dates: list[date] = []
+    for item in items if isinstance(items, list) else []:
+        try:
+            dates.append(date.fromisoformat(str(item.get("date", ""))))
+        except (AttributeError, ValueError):
+            continue
+    if not dates:
+        warn(f"hormuz-data- の経緯（context.json の timeline）の最新日は未確認: 日付を読み取れません（{src}）")
+        return
+
+    latest = max(dates)
+    today = today_jst()
+    age = (date.fromisoformat(today) - latest).days
+    if age > DATA_TIMELINE_WARN_DAYS:
+        warn(f"hormuz-data- の経緯（context.json の timeline）の最新日が {latest.isoformat()}"
+             f"（実測の今日 {today} から{age}日前、{src}）。確定した事実を追記すること"
+             f"（{DATA_TIMELINE_WARN_DAYS}日超で WARN／7日超でダッシュボードに ⚠）")
+    else:
+        ok(f"hormuz-data- の経緯の最新日 {latest.isoformat()}（{age}日前、{src}）")
+
+
 def check_urls(news: dict) -> None:
     """latest の URL が生きているか。捏造URL禁止ルールの機械的な担保。"""
     import urllib.error
@@ -428,6 +496,7 @@ def main() -> int:
     if tl is not None:
         check_timeline(tl, base)
     check_sitemap(tl, base)
+    check_data_timeline()
     if args.check_urls:
         print("URL を確認しています…\n")
         check_urls(news)

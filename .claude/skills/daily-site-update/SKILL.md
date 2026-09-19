@@ -89,6 +89,8 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 - `docs/index.html` を触る前に `/html-safe-edit` の制約を確認する
 - 文章表記・メディア選定は `/content-style-guide` に従う
+- 上の5ファイルとは別に、条件を満たす日は **hormuz-data- の経緯（`data/context.json` の `timeline`）を追記する**
+  （別リポジトリ。末尾「hormuz-data- の経緯（timeline）追記」参照）
 
 ### 4. 自己チェック
 
@@ -111,6 +113,9 @@ python tools/validate_daily.py
   実際に発生したための追加）。WARN が出た行は本文の内容が実態と合っているか目視確認すること
 - `sitemap.xml` の `/` の `lastmod` が基準日と一致するか（NG）、
   `/archive/` の `lastmod` が `archive_timeline` 末尾の日付より古くないか（NG）
+- **hormuz-data- の経緯（`timeline`）の最新日が実測の今日から5日を超えていないか（WARN のみ）**。
+  ローカルの `../hormuz-data-/data/context.json` を優先し、無ければ公開 URL を読む。
+  どちらも読めなければ WARN「未確認」。WARN が出たら追記の要否を判断する
 
 ニュース URL を実際に叩いて確認する場合（捏造・誤記の検出）:
 
@@ -130,6 +135,8 @@ python tools/validate_daily.py --check-urls
 ```
 daily: YYYY年M月D日 HH:MM JST更新——（主な変更点を簡潔に）
 ```
+
+hormuz-data- の経緯を追記した場合、そちらは**別リポジトリで別コミット**にする（末尾「hormuz-data- の経緯（timeline）追記」参照）。
 
 ### 6. push / マージはユーザーの指示を待つ
 
@@ -176,6 +183,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 11. 更新ログ 追記
 12. `archive_timeline.json` への当日分追記（速報を出した日のみ）
 13. `docs/sitemap.xml` の `<lastmod>` 更新（`/` は毎回、`/archive/` は 12 を行った日のみ）
+14. hormuz-data- の経緯（`data/context.json` の `timeline`）追記（確定した事実に変化があった日のみ。ただし最低でも7日に1回）
 
 ---
 
@@ -204,6 +212,9 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - **インフォグラフィック画像**：`docs/images/` に配置。追加時は `openLightbox('images/xxx.png')` を参照（引数は `index.html` からの相対パス）
 - **MAPタンカー可視化**：毎日、作業前に「日本関係船舶 ホルムズ海峡 通過 足止め」等を web 検索し、足止め数・通過数の変化を調査すること（省略禁止）。変化あり時は SHIP_CONFIG（totalShips・passableShips・date・dateConfirmed）を全て更新。変化なし時も dateConfirmed に調査日時（JST）と「変更なし」を記録すること。
 - **シナリオ確率**：ページ読み込み時に `syncScenarioFromDashboard()` が hormuz-data- から自動上書きするため手動更新不要。ただし矢印（↑↓）や補足テキストは手動で情勢に合わせて更新する
+  - 手動更新が不要なのは**確率の数値の転記**だけ。その数値は hormuz-data- の Gemini が
+    `data/context.json` の `timeline`（確定した経緯）を前提に算出しており、**`timeline` への事実の追記は手動**。
+    追記が止まると、確率は古い現況認識のまま自動更新され続ける（作業順序 14）
 - **sc-tag の確率表示**：styled な HTML スパン（`innerHTML`）で構成されている。`textContent` で上書きすると装飾が消えるため **必ず `innerHTML` を使うこと**
 
 ---
@@ -318,6 +329,54 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
     （例：2026-08-05 → 159）。
 - `relatedNews` は本日 `news_data.json` の `latest` に追加した新規記事から転記する（最大5件・タイトル/URL/出典のみ）
 - 速報を出さなかった日はエントリーを作成しない（スキップしてよい——アーカイブ側は自動的に「◯日分の速報なし」と表示する）
+
+---
+
+## hormuz-data- の経緯（timeline）追記
+
+hormuz-data- の `data/context.json` の `timeline` は、ダッシュボードの Gemini（`scripts/fetch_manual.py`）に
+「確定した経緯」として渡される。自動では増えない。最新日から7日を超えるとダッシュボードに ⚠ が出る
+（`timeline_stale_after_days: 7`）。
+
+### 追記する条件
+
+- **確定した事実に変化があった日だけ追記する。ただし最低でも7日に1回は追記する**
+- 目安として、`validate_daily.py` が WARN（最新日から5日超）を出したら、その日のうちに追記を検討する
+
+### 書き方
+
+`timeline` 配列の**末尾に** `{"date", "fact", "source"}` を1件ずつ追記する（既存エントリーは変更しない）。
+
+```json
+{
+  "date": "YYYY-MM-DD",
+  "fact": "（確定した事実。日本語・1〜3文）",
+  "source": "媒体名 YYYY-MM-DD（一次情報の発表元があれば括弧で併記）"
+}
+```
+
+- `date` は**事実が起きた日**（または発表された日）。作業日ではない
+- **確定した事実のみ。**推測・見通し・論評は入れない
+- **AI 生成値は入れない。**ダッシュボードの推計値（シナリオ確率・推計通航隻数等）や、
+  サイトの AI 推計に基づく記述を入れると、Gemini の出力が Gemini の入力に戻る**循環参照**になる
+- 出典は一次情報（政府・軍・国際機関の発表）か主要報道で、**実際に開いて内容を確認した記事のみ**。
+  検索結果の見出しだけで書かない（ニュース URL と同じく推測・生成は禁止）
+- 通航隻数は、**Kpler・Lloyd's List Intelligence 等の実測系集計**が出ていればそれを優先する
+- `context_updated` は前提値（流量・隻数・係数）を変えたときの日付なので、`timeline` の追記だけなら動かさない
+- `data/context.json` は **LF** のファイル。改行コードを変えない
+- Gemini の定時実行は毎日 09:30 JST（`update_manual.yml`）。それ以降に追記した分は翌日の推計から反映される
+
+### コミットと push
+
+hormuz-data- は**別リポジトリ**なので、hormuz-map の日次コミットには含めない。
+
+- **PC（ローカル）**：`../hormuz-data-` で `data/context.json` だけを `git add` し、単独でコミットする。
+  メッセージ例：`data: 経緯(timeline)に M/D の事実を追記する`。
+  push はユーザーの指示を待つ。hormuz-data- は Actions が毎日 main へ push しているため、
+  push 前に `git pull --rebase` が必要になることがある
+- **クラウドセッション（スマホ）**：セッションの対象は hormuz-map のみなので、hormuz-data- は編集しない。
+  代わりに、**追記すべきエントリーを上記の JSON 形式で報告に書き、運営者に追記を依頼する**
+  （追記不要と判断した日は、その旨と `validate_daily.py` の経緯の最新日を報告に書く）
 
 ---
 

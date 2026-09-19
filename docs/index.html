@@ -4061,7 +4061,7 @@ const COUNTRIES = [
   {name:'トルコ',iso:'TR',lat:39.0,lng:35.0},
 ];
 
-fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+fetch('/data/countries.geojson')  // Natural Earth 10m（datasets/geo-countries・ODC-PDDL）を地域別精度で簡略化して同梱（2026-09-19）
   .then(r => r.json())
   .then(data => {
     L.geoJSON(data, {

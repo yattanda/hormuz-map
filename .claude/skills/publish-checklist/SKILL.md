@@ -28,6 +28,7 @@ python tools/validate_daily.py
 - `news_data.json` の `latest` 4件・必須フィールド・旧スキーマの混入
 - `latest` と `osint` の `isLatest: true` が各1件
 - `archive_timeline.json` の日付重複
+- `sitemap.xml` の `/` の `lastmod` が基準日と一致／`/archive/` の `lastmod` が `archive_timeline` 末尾より古くない
 
 ---
 

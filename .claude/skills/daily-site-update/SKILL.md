@@ -77,7 +77,7 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 ### 3. ファイルを直接編集する
 
-後述の「毎日更新の作業順序（厳守）」の番号順に進める。触るのは次の4ファイル。
+後述の「毎日更新の作業順序（厳守）」の番号順に進める。触るのは次の5ファイル。
 
 | ファイル | 内容 |
 |---|---|
@@ -85,6 +85,7 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 | `docs/index.html` | TICKER・30秒カラム・情勢カード・シナリオ・ヘッダー日時・`dateModified` ほか |
 | `docs/data/update_log.json` | 更新ログ（先頭に追記し、index.html 側は最新10件を維持） |
 | `docs/data/archive_timeline.json` | 当日分のエントリーを1件追記（速報を出した日のみ） |
+| `docs/sitemap.xml` | `/` と `/archive/` の `<lastmod>`（末尾「sitemap.xml の lastmod」参照） |
 
 - `docs/index.html` を触る前に `/html-safe-edit` の制約を確認する
 - 文章表記・メディア選定は `/content-style-guide` に従う
@@ -108,6 +109,8 @@ python tools/validate_daily.py
   検出できない「本文が古いまま」を、各行本文中の M/D 日付表記から推定する
   （2026-09-15、ルートB＝サウジ東西PLで見出しだけ更新され本文が4/12時点のまま、という事故が
   実際に発生したための追加）。WARN が出た行は本文の内容が実態と合っているか目視確認すること
+- `sitemap.xml` の `/` の `lastmod` が基準日と一致するか（NG）、
+  `/archive/` の `lastmod` が `archive_timeline` 末尾の日付より古くないか（NG）
 
 ニュース URL を実際に叩いて確認する場合（捏造・誤記の検出）:
 
@@ -172,6 +175,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 10. ヘッダー（日時・警戒レベル）更新
 11. 更新ログ 追記
 12. `archive_timeline.json` への当日分追記（速報を出した日のみ）
+13. `docs/sitemap.xml` の `<lastmod>` 更新（`/` は毎回、`/archive/` は 12 を行った日のみ）
 
 ---
 
@@ -327,3 +331,23 @@ docs/index.html 内の以下の行を本日のJST日付（YYYY-MM-DD）に更新
   "dateModified": "2026-05-21",
 
 ※ この行を更新し忘れると、Googleに「更新なし」と判断される。
+
+---
+
+## sitemap.xml の lastmod（毎回必須）
+
+`docs/sitemap.xml` の次の `<lastmod>` を当日の JST 日付（YYYY-MM-DD）に更新すること。
+日付は次のコマンドで算出する（素の `date` は使わない）：
+
+```bash
+date -u -d '+9 hours' +%F
+```
+
+- `https://chokepointlab.com/` の `<lastmod>` ← **毎回**
+- `https://chokepointlab.com/archive/` の `<lastmod>` ← `archive_timeline.json` に当日分を追記した日のみ
+  （追記しない日はアーカイブの中身が変わらないため動かさない）
+
+※ 触るのは上記2つの `<lastmod>` の値だけ。URL の追加削除・`<loc>`・`changefreq`・`priority` は変えない
+（`tools/redesign-plan.md` §1「凍結期間の定義」）。他の URL の `lastmod` は日次更新では触らない。
+※ Google は `lastmod` が一貫して正確な場合にのみ利用する。内容を変えていない日に動かさないこと。
+※ CRLF のファイルなので `sed -i` を使わない（CLAUDE.md「スクリプトでファイルを書き換えるときのルール」）。

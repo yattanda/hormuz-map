@@ -42,6 +42,7 @@ HTML = ROOT / "docs" / "index.html"
 NEWS = ROOT / "docs" / "data" / "news_data.json"
 LOG = ROOT / "docs" / "data" / "update_log.json"
 TIMELINE = ROOT / "docs" / "data" / "archive_timeline.json"
+SITEMAP = ROOT / "docs" / "sitemap.xml"
 
 # latest の必須フィールド（daily-site-update スキル準拠）
 LATEST_REQUIRED = ["title", "body", "sourceLabel", "date", "label", "url"]
@@ -93,6 +94,10 @@ PAT_ROUTE_ROW = re.compile(r'<tr\b[^>]*>.*?</tr>', re.S)
 PAT_ROUTE_ROW_ID = re.compile(r'id="jf-td-(\w+)"')
 PAT_ROUTE_ROW_MD = re.compile(r'(\d{1,2})/(\d{1,2})')
 STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に無ければ WARN
+
+# sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
+PAT_SITEMAP_TOP = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
+PAT_SITEMAP_ARCHIVE = re.compile(r'<loc>https?://[^/<]+/archive/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 
 
 def ymd(y, m, d) -> str:
@@ -302,6 +307,42 @@ def check_timeline(tl, base: str) -> None:
         ng(f"archive_timeline.json に日付の重複があります: {', '.join(sorted(dup))}")
 
 
+def check_sitemap(tl, base: str) -> None:
+    """sitemap.xml の lastmod が実態に追従しているか。
+
+    Google は lastmod が一貫して正確な場合にのみ利用する。トップが日次更新されているのに
+    lastmod が 2026-05-20 のまま放置されていた（2026-09-19 に発覚）ための追加。
+    - `/` は日次更新のたびに変わるので基準日と一致すること（NG）
+    - `/archive/` は archive_timeline に追記した日だけ変わるので、末尾の日付より古くないこと（NG）
+    """
+    try:
+        xml = SITEMAP.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        ng("docs/sitemap.xml が見つかりません")
+        return
+
+    m = PAT_SITEMAP_TOP.search(xml)
+    if not m:
+        ng("sitemap.xml の / の lastmod を検出できませんでした（構造が変わった可能性）")
+    elif m.group(1) == base:
+        ok(f"sitemap.xml / の lastmod {m.group(1)}")
+    else:
+        ng(f"sitemap.xml / の lastmod が基準日と違います: {m.group(1)}（基準 {base}）")
+
+    entries = (tl or {}).get("entries")
+    last = entries[-1].get("date", "") if isinstance(entries, list) and entries else ""
+    m = PAT_SITEMAP_ARCHIVE.search(xml)
+    if not m:
+        ng("sitemap.xml の /archive/ の lastmod を検出できませんでした（構造が変わった可能性）")
+    elif not last:
+        warn("archive_timeline.json の末尾日付が取れないため、/archive/ の lastmod を照合できません")
+    elif m.group(1) < last:
+        ng(f"sitemap.xml /archive/ の lastmod が archive_timeline 末尾より古いです: "
+           f"{m.group(1)}（末尾 {last}）")
+    else:
+        ok(f"sitemap.xml /archive/ の lastmod {m.group(1)}（archive_timeline 末尾 {last}）")
+
+
 def check_urls(news: dict) -> None:
     """latest の URL が生きているか。捏造URL禁止ルールの機械的な担保。"""
     import urllib.error
@@ -386,6 +427,7 @@ def main() -> int:
         check_log(log, base)
     if tl is not None:
         check_timeline(tl, base)
+    check_sitemap(tl, base)
     if args.check_urls:
         print("URL を確認しています…\n")
         check_urls(news)

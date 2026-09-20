@@ -21,7 +21,7 @@
 **途絶の真因は「更新を忘れた」ではない。自動 push が手動更新を上書きした事故である。**
 
 - 発生源は `hormuz-map/auto_push.py`。`FILE_MAP` に `data/oil-flow.json` ← `Downloads/oil-flow.json` の対応が定義されている（auto_push.py:36-41）。コミットメッセージ `auto: update {repo_path}` も同ファイル（:149）
-- `C:\Users\yutay\Downloads\oil-flow.json` のタイムスタンプは **2026-05-04 13:02**。中身は現在の本番と完全一致
+- `C:\Users\<ユーザー名>\Downloads\oil-flow.json` のタイムスタンプは **2026-05-04 13:02**。中身は現在の本番と完全一致
 - つまり 5/9 の `run.bat` 実行時、5日前の古い Downloads ファイルが無条件に push され、5/8 の手動修正が消えた
 - 構造的欠陥：auto_push.py は Downloads 側とリポジトリ側の **どちらが新しいかを比較していない**。常に Downloads を正として上書きする
 - 以後4か月、Downloads のファイルが更新されていないため push も走らず、5/4 の値が固定されたまま
@@ -477,7 +477,7 @@ hormuz-map の `#jf-basis-date`（ラベルは「基準日」）にそのまま�
 
 ### 極小：後片付け
 
-9. **`C:\Users\yutay\Downloads\oil-flow.json`（2026-05-04 のファイル）が残っている。**
+9. **`C:\Users\<ユーザー名>\Downloads\oil-flow.json`（2026-05-04 のファイル）が残っている。**
    `auto_push.py` の FILE_MAP から外したので push されないが、
    紛らわしいので削除してよい（削除はユーザー判断のため未実施）
 10. **`actions/checkout@v4` / `setup-python@v5` の Node.js 20 非推奨警告。**

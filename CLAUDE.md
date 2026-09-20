@@ -110,7 +110,7 @@
 - バックスラッシュ（`\`）はPython書換えやbash経由でエスケープが剥がれる事故あり
 - hookやコマンドパスは**forward slash推奨**：
   ```json
-  "command": "node C:/Users/yutay/.claude/hooks/session-summary.js"
+  "command": "node C:/Users/<ユーザー名>/.claude/hooks/session-summary.js"
   ```
 - Node.jsはWindows上でもforward slashに対応している
 

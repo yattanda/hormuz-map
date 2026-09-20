@@ -1,4 +1,4 @@
 @echo off
-cd /d C:\Users\yutay\Documents\GitHub\hormuz-map
+cd /d "%~dp0.."
 python auto_push.py
 pause

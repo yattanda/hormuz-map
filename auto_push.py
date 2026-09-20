@@ -25,6 +25,10 @@ load_dotenv()
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_OWNER   = os.getenv("REPO_OWNER", "yattanda")
 
+# このスクリプトが置かれているディレクトリ = hormuz-map のリポジトリルート。
+# 環境に依存する絶対パスを書かないため、__file__ から導出する
+REPO_ROOT = Path(__file__).resolve().parent
+
 # push先の定義（複数リポジトリ対応）
 # - repo       : GitHubリポジトリ名
 # - repo_path  : リポジトリ内のファイルパス
@@ -35,7 +39,7 @@ FILE_MAP = [
         "repo":       "hormuz-map",
         "repo_path":  "tools/index_html_diffs.md",
         "local_name": "index_html_diffs.md",
-        "local_repo": r"C:\Users\yutay\Documents\GitHub\hormuz-map",
+        "local_repo": str(REPO_ROOT),
     },
     # data/oil-flow.json は 2026-09-04 に FILE_MAP から除外した。
     # 理由: 本スクリプトは Downloads 側を無条件に正として上書きし、
@@ -47,7 +51,8 @@ FILE_MAP = [
     #       移行したため、この経路は不要。復活させないこと。
 ]
 
-DOWNLOADS_DIR = Path(r"C:\Users\yutay\Downloads")
+# 既定は現在のユーザーの Downloads。別の場所を使うときは環境変数 DOWNLOADS_DIR で上書きする
+DOWNLOADS_DIR = Path(os.getenv("DOWNLOADS_DIR") or Path.home() / "Downloads")
 
 # ─── ガード設定 ────────────────────────────────────────────
 MAX_FILE_SIZE_KB = 512

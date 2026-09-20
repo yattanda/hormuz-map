@@ -376,7 +376,7 @@
 
   function fmtDate(iso){
     const [y,m,d] = iso.split('-');
-    const wd = ['日','月','火','水','木','金','土'][new Date(iso+'T00:00:00+09:00').getUTCDay()];
+    const wd = ['日','月','火','水','木','金','土'][new Date(Date.UTC(+y, +m - 1, +d)).getUTCDay()];
     return `${parseInt(m)}月${parseInt(d)}日（${wd}）`;
   }
 

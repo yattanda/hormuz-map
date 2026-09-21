@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月20日 08:28 日本時間JST",
+  "updated": "2026年9月22日 07:25 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-tanker-projectile-hormuz-entrance-0921",
+      "title": "ホルムズ海峡入口でタンカーに正体不明の飛翔体が着弾、乗組員2人が軽傷——UKMTO、攻撃主体は特定せず",
+      "body": "英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向けて航行中のタンカー1隻が正体不明の飛翔体（unknown projectile）により被弾したと発表した。乗組員2人が軽傷を負ったが、船体は自力で航行を継続し次の寄港地へ向かったという。環境への影響は報告されていない。AP通信によれば、攻撃を行った主体は特定されておらず、イラン側・米側とも公式な関与の表明はない。同日、イラン革命防衛隊（IRGC）報道官ホセイン・モヘッビ氏は、米国がさらにエスカレートさせた場合『戦争の地理を変える』として新型兵器・戦術の導入を示唆したと伝えられているが、今回のタンカー被弾との関連は不明。",
+      "sourceLabel": "AP通信（Al Arabiya English / clickorlando.com経由）/ UKMTO（9/21）",
+      "date": "2026年9月21日（現地）/ 2026年9月22日 JST",
+      "label": "⚓ タンカー被弾・攻撃主体不明",
+      "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/",
+      "isLatest": true
+    },
     {
       "id": "latest-irgc-strikes-trend-tanker-hormuz-0917",
       "title": "イラン革命防衛隊、トーゴ籍タンカー『Trend』を攻撃——ホルムズ海峡で火災・航行停止、米の『扇動』と主張",
@@ -10,7 +20,7 @@
       "date": "2026年9月17日（現地）/ 2026年9月18日 JST",
       "label": "⚓ タンカー被弾・航行停止（未検証）",
       "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260918-rferl01.htm",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-saudi-pipeline-bypass-half-capacity-6weeks-0916",
@@ -31,19 +41,27 @@
       "label": "⚓ 機雷主張を否定",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
       "isLatest": false
-    },
-    {
-      "id": "latest-iran-gcc-hormuz-meeting-postponed-0914",
-      "title": "イラン・GCCのホルムズ協議、開催前に延期——オマーン『合意形成のため』、サウジの懸念指摘も",
-      "body": "オマーンの仲介で予定されていたイラン外相とGCC加盟6カ国外相によるホルムズ海峡通航協議は、開催前に延期された。オマーンのバドル・アルブサイディ外相は『合意形成のため（in the interests of consensus）』延期したと説明。イラン当局者によれば『一部地域諸国の要請』により延期されたとされ、サウジアラビアがイラン・オマーン間で進んでいた合意が他の湾岸諸国に与える影響について懸念を提出したとの見方があるが未検証。会合の当初予定日については報道に幅があり（NPR等は9月14日、France24は9月16日と報道）、断定はできないが延期されたこと自体は複数媒体が伝えている。バーレーンは対イラン国交未再開を理由に既に不参加を表明していた。",
-      "sourceLabel": "NPR / France24（9/14）",
-      "date": "2026年9月14日（現地）/ 2026年9月14日 JST",
-      "label": "⏸️ 会合延期",
-      "url": "https://www.npr.org/2026/09/14/nx-s1-5968072/talks-between-iran-and-gulf-states-to-discuss-strait-of-hormuz-postponed",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-ap-tanker-projectile-hormuz-entrance-0921",
+      "titleJa": "【AP通信】ホルムズ海峡入口でタンカーに飛翔体が着弾——乗組員2人軽傷、攻撃主体は不明",
+      "titleEn": "Tanker struck by projectile as it enters the Strait of Hormuz, UKMTO says",
+      "title": "【AP通信】ホルムズ海峡入口でタンカーに飛翔体が着弾——乗組員2人軽傷、攻撃主体は不明",
+      "country": "不明（攻撃主体未特定）",
+      "media": "AP通信",
+      "source": "AP通信",
+      "date": "2026年9月21日（現地・JST）",
+      "summary": "AP通信は、英国海事貿易活動機関（UKMTO）の発表として、ホルムズ海峡入口へ向けて航行中のタンカー1隻が正体不明の飛翔体により被弾し、乗組員2人が軽傷を負ったと報道。船体は自力で航行を継続し、環境への影響は報告されていない。攻撃を行った主体は特定されておらず、イラン・米国いずれも公式な関与表明はない。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/",
+      "isLatest": true
+    },
     {
       "id": "osint-rferl-irgc-trend-tanker-strike-0918",
       "titleJa": "【RFE/RL】IRGC、トーゴ籍タンカー『Trend』への攻撃を発表——UKMTOも投射体による被弾を報告",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260918-rferl01.htm",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-bloomberg-saudi-pipeline-bypass-6weeks-0916",
@@ -1415,6 +1433,16 @@
     {
       "batchLabel": "2026年9月13日",
       "items": [
+        {
+          "id": "latest-iran-gcc-hormuz-meeting-postponed-0914",
+          "title": "イラン・GCCのホルムズ協議、開催前に延期——オマーン『合意形成のため』、サウジの懸念指摘も",
+          "body": "オマーンの仲介で予定されていたイラン外相とGCC加盟6カ国外相によるホルムズ海峡通航協議は、開催前に延期された。オマーンのバドル・アルブサイディ外相は『合意形成のため（in the interests of consensus）』延期したと説明。イラン当局者によれば『一部地域諸国の要請』により延期されたとされ、サウジアラビアがイラン・オマーン間で進んでいた合意が他の湾岸諸国に与える影響について懸念を提出したとの見方があるが未検証。会合の当初予定日については報道に幅があり（NPR等は9月14日、France24は9月16日と報道）、断定はできないが延期されたこと自体は複数媒体が伝えている。バーレーンは対イラン国交未再開を理由に既に不参加を表明していた。",
+          "sourceLabel": "NPR / France24（9/14）",
+          "date": "2026年9月14日（現地）/ 2026年9月14日 JST",
+          "label": "⏸️ 会合延期",
+          "url": "https://www.npr.org/2026/09/14/nx-s1-5968072/talks-between-iran-and-gulf-states-to-discuss-strait-of-hormuz-postponed",
+          "isLatest": false
+        },
         {
           "id": "latest-qeshm-hengam-ship-attack-0913",
           "title": "ゲシュム島沖で商船攻撃、1人死亡・3〜4人負傷——同時期にタンカー『エル・ガイア』も再被弾",

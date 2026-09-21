@@ -2886,6 +2886,20 @@
           "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260918-rferl01.htm"
         }
       ]
+    },
+    {
+      "date": "2026-09-22",
+      "dateLabel": "2026/09/22 07:25",
+      "blockadeDay": 207,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向かうタンカーが正体不明の飛翔体により被弾し乗組員2人が軽傷を負ったと発表——船体は自力航行を継続、攻撃主体は特定されず（AP通信）・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃からは続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/21終値97.56ドル・ブレント100.06ドルまで下落（3日続落）・日本関係船は残り4隻で変化なし・封鎖207日目・ニュース1件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "AP通信（Al Arabiya English / clickorlando.com経由）/ UKMTO（9/21）",
+          "title": "ホルムズ海峡入口でタンカーに正体不明の飛翔体が着弾、乗組員2人が軽傷——UKMTO、攻撃主体は特定せず",
+          "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/"
+        }
+      ]
     }
   ]
 }

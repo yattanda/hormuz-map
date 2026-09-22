@@ -364,7 +364,10 @@ hormuz-data- の `data/context.json` の `timeline` は、ダッシュボード�
 - 通航隻数は、**Kpler・Lloyd's List Intelligence 等の実測系集計**が出ていればそれを優先する
 - `context_updated` は前提値（流量・隻数・係数）を変えたときの日付なので、`timeline` の追記だけなら動かさない
 - `data/context.json` は **LF** のファイル。改行コードを変えない
-- Gemini の定時実行は毎日 09:30 JST（`update_manual.yml`）。それ以降に追記した分は翌日の推計から反映される
+- Gemini の推計（`update_manual.yml`）は**1日2回**動く。**09:30 JST** に外部の cron サービスが
+  起動し（時刻は正確）、**13〜14時台**に GitHub Actions の schedule が予備として起動する（cron の宣言は 09:30 だが
+  GitHub 側で4〜5時間遅れる）。09:30 より前に追記した分はその日の 09:30 の推計に、予備の実行より前なら
+  その日の午後の推計に、それ以降は翌日の推計に反映される。経緯は `chokepointlab-notes/2026_9_20_自動実行の所見.md`
 
 ### コミットと push
 

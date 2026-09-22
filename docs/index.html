@@ -1554,6 +1554,11 @@ footer {                                   /* フッター（中央揃え・上�
     ▶ YouTube動画を発信中
   </a>
 </div>
+<!-- YouTube から来た方へ（動画で扱った地点へ地図を寄せる。項目は focusOn() のキーと対応） -->
+<div id="yt-visitors" style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px;padding:8px 12px;border:1px solid rgba(248,113,113,0.3);border-radius:12px;background:rgba(248,113,113,0.06);font-size:0.8rem;">
+  <span style="color:#fca5a5;font-weight:700;white-space:nowrap;">▶ YouTube から来た方へ</span>
+  <button type="button" onclick="focusOn('minamitori')" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#e2e8f0;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:20px;cursor:pointer;font-family:inherit;">🏝️ 南鳥島のレアアース泥 → 地図で見る</button>
+</div>
 <div style="width:100%;margin:0 0 28px 0;padding:0;">
   <div style="background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%);border:2px solid rgba(56,189,248,0.45);box-shadow:0 0 18px rgba(56,189,248,0.08),inset 0 0 0 1px rgba(56,189,248,0.06);border-radius:14px;padding:16px 12px;">
 
@@ -4503,6 +4508,21 @@ L.marker([61.2,210.0],{icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPop
   <div class="p-title" style="color:#a78bfa">🇺🇸 米国（アラスカ）</div>
   <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>4/25に第1便が日本到着予定。</strong></div>`);
 
+// 南鳥島（レアアース泥）— ?focus=minamitori と「YouTube から来た方へ」枠から開く
+const minamitoriMarker = L.marker([24.28, 153.98], {
+  icon: mkIcon('🏝️', '#0e7490', 30)
+}).addTo(map).bindTooltip('南鳥島（レアアース泥）', {sticky:true}).bindPopup(`
+  <div style="font-family:'Noto Sans JP',sans-serif;min-width:220px;padding:4px;">
+    <div style="font-size:0.85rem;font-weight:800;color:#0e7490;margin-bottom:6px;">🏝️ 南鳥島（東京都小笠原村）</div>
+    <div style="font-size:0.75rem;color:#1e293b;line-height:1.8;">
+      周辺の排他的経済水域（EEZ）、水深約5,600mの海底にレアアースを含む泥がある。<br>
+      <strong>試験：</strong>2026年1〜2月、探査船「ちきゅう」が約50トンを引き揚げ。総量の約54%がイットリウム・ジスプロシウムなどの中重レアアース。埋蔵量は公表されていない<br>
+      <strong>次：</strong>2027年2月から本格採鉱試験。採算性・精製コスト・環境影響が課題<br>
+      <span style="color:#64748b;">出典：<a href="https://www.jamstec.go.jp/j/about/press_release/20260724/" target="_blank" rel="noopener">JAMSTEC・内閣府SIP（2026/7/24）</a>・<a href="https://scienceportal.jst.go.jp/stories/20260818_s01/" target="_blank" rel="noopener">サイエンスポータル（2026/8/18）</a></span>
+    </div>
+  </div>
+`, { maxWidth: 260, maxHeight: window.innerWidth <= 600 ? 220 : null });
+
 L.marker([-10.0,-38.0],{icon:mkIcon('🇧🇷','#4c1d95',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#c084fc">🇧🇷 ブラジル</div>
   <div class="p-body"><strong>ルートC（南米）</strong>の供給源。喜望峰→インド洋経由で日本へ。製油所の品質調整が必要。</div>`);
@@ -4736,6 +4756,43 @@ const MapJump = L.Control.extend({
 });
 new MapJump().addTo(map);
 
+// ============================================================
+// 5-C. FOCUS（?focus=<キー> で指定の印へ寄せる）
+// ============================================================
+// YouTube 等からの流入を、動画で扱った地点の印へ直接案内する。
+// キーは小文字英字。追加したら「YouTube から来た方へ」枠とリンク台帳にも足す。
+// #アンカーにしないのは、GA4 の page_location にクエリとして残すため。
+const FOCUS_TARGETS = {
+  minamitori: { marker: minamitoriMarker, zoom: 6 },
+};
+function focusOn(key, opts) {
+  if (!key || !Object.prototype.hasOwnProperty.call(FOCUS_TARGETS, key)) return false;
+  const t = FOCUS_TARGETS[key];
+  const smooth = !(opts && opts.instant);
+  // 幅601px以上では凡例が開いた状態で始まり、左下からポップアップに重なるため閉じる
+  const legend = document.getElementById('map-legend-ctrl');
+  if (legend) legend.classList.remove('open');
+  document.getElementById('map').scrollIntoView({ block: 'center', behavior: smooth ? 'smooth' : 'auto' });
+  map.setView(t.marker.getLatLng(), t.zoom, { animate: false });
+  t.marker.openPopup();
+  return true;
+}
+let focusAppliedOnLoad = false;
+(function () {
+  const key = new URLSearchParams(location.search).get('focus');
+  if (!focusOn(key, { instant: true })) return;
+  focusAppliedOnLoad = true;
+  // 地図より上の画像・iframe が読み込まれると位置がずれるため、
+  // 読み込み完了時に一度だけ合わせ直す（その前に閲覧者が操作していれば何もしない）
+  let touched = false;
+  const mark = () => { touched = true; };
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(ev =>
+    window.addEventListener(ev, mark, { once: true, passive: true }));
+  window.addEventListener('load', () => {
+    if (!touched) document.getElementById('map').scrollIntoView({ block: 'center' });
+  }, { once: true });
+})();
+
 
 // ============================================================
 // 6. MAP LEGEND
@@ -4821,7 +4878,8 @@ function toggleLegend(e) {
 function initLegendState() {
   const legend = document.getElementById('map-legend-ctrl');
   if (!legend) return;
-  legend.classList.toggle('open', window.innerWidth > 600);
+  // ?focus= で印のポップアップを開いたときは、重ならないよう閉じたままにする
+  legend.classList.toggle('open', window.innerWidth > 600 && !focusAppliedOnLoad);
 }
 
 window.addEventListener('DOMContentLoaded', () => {

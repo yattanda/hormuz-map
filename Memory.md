@@ -315,7 +315,9 @@ if (window.innerWidth <= 480) {
   - **新しいページを作るときは、`<head>` の viewport の直後に同じ GA4 タグを入れる**（入れないと `/privacy/` の「すべてのページに設置」と食い違う）。
     記事は `tools/article-template.html` に入れてあるので、テンプレートからコピーすれば入る
 - **UTM**：YouTube のスマホアプリからの流入は参照元が落ちて direct に紛れやすい（確度：中〜高）。
-  概要欄のリンクには UTM を付ける。命名規則は未決（案：`utm_source=youtube&utm_medium=video&utm_campaign=<動画ID か回の番号>`）
+  概要欄のリンクには UTM を付ける。**命名規則は 2026-09-22 に決定**：
+  `?utm_source=youtube&utm_medium=video&utm_campaign=<公開日YYYYMMDD>-<短い英語>&utm_content=<description|pinned_comment|community|channel_links>`
+  （すべて小文字。サイト内リンクには付けない。台帳は上流の非公開ノート側）
 - **直リンク化**：リンク先となるアンカー（`id`）の棚卸しが必要
 
 ---

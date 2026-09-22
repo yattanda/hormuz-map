@@ -293,6 +293,9 @@ if (window.innerWidth <= 480) {
    マージはその日の日次更新の後。記事のディレクトリ化は別 PR。リポジトリ名（ホスト）の変更とは混ぜない
 4. **他リポジトリ側の追従**：`hormuz-data-/index.html` の戻りリンク（2か所）を `https://chokepointlab.com/hormuz/` へ。
    `/corrections/` の `href="../"` は `../hormuz/` へ（注記済み）。他の法務ページ6枚の `../` はハブを指すのが正しいので据え置き
+5. **（2026-09-22 追加）ハブは `?focus=` 付きのアクセスをクエリごと `/hormuz/` へ送る。**
+   `location.replace('/hormuz/' + location.search + location.hash)` 相当。これが無いと、それまでに YouTube に貼った
+   `https://chokepointlab.com/?focus=…` が地図に届かなくなる。トップの「YouTube から来た方へ」枠もハブへ引き継ぐ
 
 ### 実施時の注意（2026-09-21 実測）
 
@@ -318,6 +321,10 @@ if (window.innerWidth <= 480) {
   概要欄のリンクには UTM を付ける。**命名規則は 2026-09-22 に決定**：
   `?utm_source=youtube&utm_medium=video&utm_campaign=<公開日YYYYMMDD>-<短い英語>&utm_content=<description|pinned_comment|community|channel_links>`
   （すべて小文字。サイト内リンクには付けない。台帳は上流の非公開ノート側）
+- **`?focus=<キー>`（2026-09-22 実装、`ca84606`）**：トップの地図を指定の印へ寄せてポップアップを開く。UTM ではなく表示を決めるパラメータ。
+  書く順は `?focus=<キー>&utm_…`。キーは小文字英字で、`docs/index.html` の `FOCUS_TARGETS`（5-C）に定義する。
+  現在のキー：`minamitori`（南鳥島）。キーを足したら、トップの「YouTube から来た方へ」枠（`#yt-visitors`）と台帳にも足す。
+  `#アンカー` を使わないのは、§11-10 実施条件1に反し、GA4 の page_location にも残らないため
 - **直リンク化**：リンク先となるアンカー（`id`）の棚卸しが必要
 
 ---

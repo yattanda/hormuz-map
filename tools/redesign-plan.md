@@ -404,8 +404,13 @@ HTML は変えず、`docs/index.html` の `<style>` 内だけで行った。フ�
   id・構造の位置で指定した（`#osint-panel + div`、`div:has(> .sc-grid) > div:not(.sc-grid)`、`section > div > div` など）。
   **HTML にクラスを付けたら、これらの位置指定のセレクタはクラスに置き換える**（構造が変わると外れるため）。
   ルート表の脚注（`td[colspan]`）だけは、表のセルでは余白の % の基準が安定せず対象外のまま
-- 特別解説コラムの入れ子：2本目以降の記事カードが1本目（機雷）の箱の中に入っている（閉じタグの位置ずれとみられる・確度：中）。
-  今は CSS で「先頭記事を全幅＋残りを格子」に見せている。直すときは `#special-commentary > div:first-of-type` の規則も見直す
+  → **2026-09-23 置き換え済み**（ブランチ `redesign/phase2-markup`・`6b76c10`）。`.sc-section`・`.data-note`・`.update-log`・`.osint-card`。
+  **更新ログの行を入れる箱と速報インシデントの `<strong>` にはクラスを付けていない。**開始タグがスマホ経路の日次差分
+  （`tools/diffs-generation-rules.md` S11 のテンプレート）の `old_str` にそのまま引用されており、変えると `apply_diffs.py` の
+  完全一致が外れるため。クラスは引用されない親（`<section>` 等）に付けた。`#incident > strong` は id 起点のまま残す（S03 は ② で作り直す）
+- ~~特別解説コラムの入れ子：2本目以降の記事カードが1本目（機雷）の箱の中に入っている~~
+  → **2026-09-23 修正**（`1c8d2ca`）。閉じタグの位置ずれだった（確定）。機雷の箱を「全文を読む」の直後で閉じ、6本を `.commentary-grid` で包んだ。
+  新しいコラムカードは `.commentary-grid` の中に入れる（`tools/new-article-checklist.md` §4）
 - インライン `font-size` のクラス化（フェーズ0b の本来の目的）。これが済めば、スマホの本文の下限（`div[style*="font-size:0.7"]` など）を属性セレクタで拾う必要が無くなる
 
 ---

@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月22日 07:25 日本時間JST",
+  "updated": "2026年9月24日 08:03 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-us-iran-unga-talks-hormuz-0923",
+      "title": "米・イラン、UNGAで仲介協議——イラン『封鎖解除・資産凍結解除で海峡は7日以内に再開可能』と伝えられる",
+      "body": "国連総会（UNGA）開催中のニューヨークで9月22〜23日、米国とイランの代表が仲介者を介した間接協議を実施したとAl Jazeeraが報じた。米国側はスティーブ・ウィトコフ中東担当特使、イラン側はアッバス・アラグチ外相が参加し、カタール・オマーンなどが仲介したという。トランプ大統領は『非常に良く、生産的な会合』とし『合意に向けて勢いがある』と述べた。イラン当局者はAl Jazeeraに対し、米国が軍事圧力を緩和し海軍による封鎖を解除すればホルムズ海峡は『7日以内に再開可能』と述べたと伝えられている。イラン側が条件として挙げているのは、米海軍による封鎖の解除・凍結資産の放出・『抵抗勢力』への戦争終結の3点という。両国代表が直接接触したのは数週間ぶりで、仲介者による外交努力は今後も継続される見通しだが、具体的な合意内容や日程は現時点で発表されていない。",
+      "sourceLabel": "Al Jazeera（9/23）",
+      "date": "2026年9月22〜23日（現地）/ 2026年9月24日 JST",
+      "label": "🕊️ 米・イラン仲介協議",
+      "url": "https://www.aljazeera.com/news/2026/9/23/us-iran-hold-mediated-unga-talks-on-ending-war-opening-strait-of-hormuz",
+      "isLatest": true
+    },
     {
       "id": "latest-tanker-projectile-hormuz-entrance-0921",
       "title": "ホルムズ海峡入口でタンカーに正体不明の飛翔体が着弾、乗組員2人が軽傷——UKMTO、攻撃主体は特定せず",
@@ -10,7 +20,7 @@
       "date": "2026年9月21日（現地）/ 2026年9月22日 JST",
       "label": "⚓ タンカー被弾・攻撃主体不明",
       "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-irgc-strikes-trend-tanker-hormuz-0917",
@@ -31,19 +41,27 @@
       "label": "🛢️ 迂回路設置・全面復旧6週間の見方",
       "url": "https://www.sakigake.jp/news/article/20260917CO0017/",
       "isLatest": false
-    },
-    {
-      "id": "latest-centcom-denies-el-gaia-mine-pipeline-timeline-0915",
-      "title": "米中央軍、タンカー『エル・ガイア』の機雷被弾主張を否定——ミサイル・ドローン攻撃と説明、サウジ東西パイプラインは『数日内』復旧との米高官発言も",
-      "body": "米中央軍(CENTCOM)は9月14日、イラン革命防衛隊(IRGC)がパナマ籍タンカー『エル・ガイア』はホルムズ海峡で機雷に接触したとした主張を否定し、『同船は先月イランのミサイル攻撃で既に航行不能になっており、週末にイランがドローンで再攻撃し、現在はオマーン海域で地域のパートナーによって曳航中』と発表した。乗組員の人数は情報源により食い違い、インド外務省は乗組員14人が全員インド人で13人が救助され1人が行方不明としている一方、オマーン海事保安センターは23人を救助し2人が行方不明としている（未検証）。同日、米エネルギー長官クリス・ライト氏は、9月10日の攻撃で操業停止したサウジアラビアの東西原油パイプラインについて『数日内に石油輸送が再開する見通し』と述べた。これは中東当局者らが伝えていた『復旧に3〜5週間』との従来の見通しと食い違っており、どちらが実態に近いかは現時点で未検証。",
-      "sourceLabel": "Al Jazeera / gCaptain（9/15）",
-      "date": "2026年9月15日（現地）/ 2026年9月16日 JST",
-      "label": "⚓ 機雷主張を否定",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-us-iran-unga-talks-0923",
+      "titleJa": "【Al Jazeera】米・イラン、UNGAで仲介協議——イランは封鎖解除で『7日以内の海峡再開』条件提示と伝えられる",
+      "titleEn": "US, Iran hold mediated UNGA talks on ending war, opening Strait of Hormuz",
+      "title": "【Al Jazeera】米・イラン、UNGAで仲介協議——イランは封鎖解除で『7日以内の海峡再開』条件提示と伝えられる",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月23日（現地）/ 2026年9月24日 JST",
+      "summary": "Al Jazeeraは、UNGA開催中のニューヨークで9月22〜23日に米国・イラン代表（ウィトコフ特使、アラグチ外相）がカタール・オマーンなどの仲介で間接協議を行ったと報道。トランプ大統領は『生産的な会合』『合意に向けて勢いがある』とコメント。イラン当局者は、米国が海軍封鎖を解除し軍事圧力を緩和すればホルムズ海峡は『7日以内に再開可能』と伝えたとされ、条件として封鎖解除・凍結資産の放出・戦争終結を挙げているという。具体的な合意・日程は未発表。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/9/23/us-iran-hold-mediated-unga-talks-on-ending-war-opening-strait-of-hormuz",
+      "isLatest": true
+    },
     {
       "id": "osint-ap-tanker-projectile-hormuz-entrance-0921",
       "titleJa": "【AP通信】ホルムズ海峡入口でタンカーに飛翔体が着弾——乗組員2人軽傷、攻撃主体は不明",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-rferl-irgc-trend-tanker-strike-0918",
@@ -1430,6 +1448,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月15日",
+      "items": [
+        {
+          "id": "latest-centcom-denies-el-gaia-mine-pipeline-timeline-0915",
+          "title": "米中央軍、タンカー『エル・ガイア』の機雷被弾主張を否定——ミサイル・ドローン攻撃と説明、サウジ東西パイプラインは『数日内』復旧との米高官発言も",
+          "body": "米中央軍(CENTCOM)は9月14日、イラン革命防衛隊(IRGC)がパナマ籍タンカー『エル・ガイア』はホルムズ海峡で機雷に接触したとした主張を否定し、『同船は先月イランのミサイル攻撃で既に航行不能になっており、週末にイランがドローンで再攻撃し、現在はオマーン海域で地域のパートナーによって曳航中』と発表した。乗組員の人数は情報源により食い違い、インド外務省は乗組員14人が全員インド人で13人が救助され1人が行方不明としている一方、オマーン海事保安センターは23人を救助し2人が行方不明としている（未検証）。同日、米エネルギー長官クリス・ライト氏は、9月10日の攻撃で操業停止したサウジアラビアの東西原油パイプラインについて『数日内に石油輸送が再開する見通し』と述べた。これは中東当局者らが伝えていた『復旧に3〜5週間』との従来の見通しと食い違っており、どちらが実態に近いかは現時点で未検証。",
+          "sourceLabel": "Al Jazeera / gCaptain（9/15）",
+          "date": "2026年9月15日（現地）/ 2026年9月16日 JST",
+          "label": "⚓ 機雷主張を否定",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/9/15/iran-war-live-centcom-refutes-iran-claim-supertanker-hit-hormuz-mines",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月13日",
       "items": [

@@ -888,6 +888,7 @@ footer {
 }
 #tanker-value-thumb img {
   width: 100%;
+  height: auto;
   border-radius: 5px;
   display: block;
   pointer-events: none;
@@ -1500,7 +1501,7 @@ footer {                                   /* フッター（中央揃え・上�
                 flex-shrink:0;transition:transform 0.15s,box-shadow 0.15s;"
          onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 6px 24px rgba(67,217,255,0.3)'"
          onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 18px rgba(0,0,0,0.55)'">
-        <img src="./infographic/assets/final/slide-04-core-players.png"
+        <img src="./infographic/assets/final/slide-04-core-players.png" width="1672" height="941"
              alt="主要プレイヤー分析図（イラン・米国・イスラエル・湾岸諸国）"
              style="height:72px;width:auto;display:block;">
       </a>
@@ -1699,7 +1700,7 @@ footer {                                   /* フッター（中央揃え・上�
             style="display:flex;align-items:center;gap:10px;width:100%;margin-top:8px;background:rgba(251,146,60,0.08);border:1.5px solid rgba(251,146,60,0.4);border-radius:10px;overflow:hidden;text-decoration:none;transition:box-shadow 0.2s;"
             onmouseover="this.style.boxShadow='0 0 14px rgba(251,146,60,0.35)'"
             onmouseout="this.style.boxShadow='none'">
-            <img src="images/crisis-report-ogp.png" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート"
+            <img src="images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート"
               style="width:72px;height:56px;object-fit:cover;object-position:center 20%;border-radius:4px;flex-shrink:0;">
             <div style="padding:6px 10px 6px 0;flex:1;min-width:0;">
               <div style="font-size:0.62rem;font-weight:800;color:#fb923c;letter-spacing:0.06em;margin-bottom:2px;">📊 特別レポート</div>
@@ -1718,9 +1719,9 @@ footer {                                   /* フッター（中央揃え・上�
       <div style="font-size:0.72rem;font-weight:700;color:#64748b;letter-spacing:0.06em;margin-bottom:10px;">📊 解説インフォグラフィック</div>
       <div class="infographic-thumb" onclick="openLightbox('images/infographic-0420.png')"
         style="width:25%;min-width:120px;">
-        <img src="images/infographic-0420.png"
+        <img src="images/infographic-0420.png" width="2814" height="1536" loading="lazy"
           alt="ホルムズの火薬庫：平和への階段はなぜ違いのか"
-          style="width:100%;display:block;">
+          style="width:100%;height:auto;display:block;">
       </div>
     </div>
 
@@ -2914,7 +2915,7 @@ document.addEventListener('keydown', function(e) {
 <div id="map">
   <!-- タンカー1隻の価値 サムネイルボタン -->
   <div id="tanker-value-thumb" onclick="toggleTankerValuePopup()" title="タンカー1隻の価値をポップアップ表示">
-    <img src="images/tanker-value.png" alt="タンカー1隻の価値">
+    <img src="images/tanker-value.png" width="1055" height="1491" loading="lazy" alt="タンカー1隻の価値">
     <div class="tv-label">📊 タンカー<br>1隻の価値</div>
   </div>
 
@@ -5315,8 +5316,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!-- サムネイル＋外部リンクボタン -->
   <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
-    <img src="images/crisis-report-ogp.png" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート"
-      style="width:10%;min-width:52px;max-width:72px;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;border-radius:6px;flex-shrink:0;border:1px solid rgba(251,146,60,0.25);">
+    <img src="images/crisis-report-ogp.png" width="640" height="632" loading="lazy" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート"
+      style="width:10%;min-width:52px;max-width:72px;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;border-radius:6px;flex-shrink:0;border:1px solid rgba(251,146,60,0.25);">
     <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener"
       style="flex:1;display:block;background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.3);border-radius:6px;color:#fb923c;font-size:0.78rem;font-weight:700;padding:9px 0;text-align:center;text-decoration:none;letter-spacing:0.03em;">
       📊 特別レポートを読む ↗（別タブ）

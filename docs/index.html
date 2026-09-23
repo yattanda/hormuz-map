@@ -4103,7 +4103,7 @@ fetch('/data/countries.geojson')  // Natural Earth 10mï¼ˆdatasets/geo-countriesã
         fillColor:'#1e3a7a',fillOpacity:0.96, opacity:1.0
       },
       onEachFeature(feature, layer) {
-        const iso = feature.properties.ISO_A2;
+        const iso = feature.properties['ISO3166-1-Alpha-2'];
         const found = COUNTRIES.find(c => c.iso === iso);
         if (found) {
           layer.bindTooltip(found.name, {
@@ -4134,7 +4134,7 @@ fetch('/data/countries.geojson')  // Natural Earth 10mï¼ˆdatasets/geo-countriesã
         L.geoJSON({type:'FeatureCollection', features:features}, {
           interactive: false,
           style: function(ft) {
-            return hi.includes(ft.properties.ISO_A2)
+            return hi.includes(ft.properties['ISO3166-1-Alpha-2'])
               ? {fillColor:'#1e3d28', fillOpacity:0.75, color:'#2e5a3a', weight:1.3}
               : {color:'#2e5a8a', weight:0.9, fillColor:'#1e3a7a', fillOpacity:0.96, opacity:1.0};
           }

@@ -2774,19 +2774,6 @@ footer {                                   /* フッター（中央揃え・上�
   </div>
 
 <script>
-function toggleIncident() {
-  var body = document.getElementById('incident-body');
-  var arrow = document.getElementById('incident-arrow');
-  if (!body) return;
-  if (body.style.display === 'none') {
-    body.style.display = 'block';
-    arrow.textContent = '▲ 閉じる';
-  } else {
-    body.style.display = 'none';
-    arrow.textContent = '▼ 開いて表示';
-  }
-}
-
 // LIGHTBOX
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;

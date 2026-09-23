@@ -1385,8 +1385,9 @@ footer {
 /* --- 2-b 長文の1行の長さ ---
    1行を 70ch（全角でおよそ35〜40字）までにする。左揃えのまま幅だけを制限する
    （見出しが左揃えなので、本文だけ中央寄せにすると視線の起点がずれるため）。
-   クラスの無いインライン style だけの箱（シナリオ注記・更新履歴など）は
-   HTML にクラスを付けられる 10/2 以降に対応する。 */
+   インライン style だけの箱は、日次差分（tools/diffs-generation-rules.md）の old_str に
+   引用されない親要素にクラスを付けて指定する（2026-09-23）。
+   #incident > strong は日次で差し替わる要素のため id 起点のまま残す。 */
 p, li,
 .sec-lead,
 .news-body,
@@ -1394,10 +1395,10 @@ p, li,
 #incident > strong,                        /* 速報インシデントの更新要約（display:block の strong） */
 #incident .incident-item > div,            /* 過去のインシデント（展開時） */
 .badges .badge-item,                       /* ヘッダーの警戒レベル */
-div:has(> .sc-grid) > div:not(.sc-grid),   /* シナリオの確率補足・次の焦点 */
-#osint-container a > div,                  /* 現地メディア視点の英語要約 */
-#osint-panel + div,                        /* WTI の注記 */
-section > div > div {                      /* 更新履歴の各行（ページ内の section はここだけ） */
+.sc-section > div:not(.sc-grid),          /* シナリオの確率補足・次の焦点 */
+.osint-card > div,                         /* 現地メディア視点の英語要約 */
+.data-note,                                /* WTI の注記 */
+.update-log > div > div {                  /* 更新履歴の各行（行を入れる箱の開始タグは日次差分の old_str に引用されるため、クラスは section に付ける） */
   max-width: var(--measure);
 }
 /* フッターは上罫線を全幅に保ったまま、文字の幅だけを余白で絞る。
@@ -3251,7 +3252,7 @@ document.addEventListener('keydown', function(e) {
 
   <!-- SCENARIOS -->
    <div id="scenario"></div>
-<div>
+<div class="sc-section">
 <h2 class="sec-h2" style="color:#7dd3fc;">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></h2>
   <!-- シナリオ確率更新補足 -->
 <div style="background:rgba(239,68,68,0.07);border:1px dashed rgba(239,68,68,0.35);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.78rem;color:#fca5a5;line-height:1.8;">
@@ -5007,7 +5008,7 @@ function renderOsint(data) {
   const LIMIT = 3;
   const items = data.osint;
   const makeCard = item => `
-    <a href="${item.url}" target="_blank" rel="noopener"
+    <a class="osint-card" href="${item.url}" target="_blank" rel="noopener"
       style="display:block;background:${item.cardBg};border:1px solid ${item.cardBorder};border-radius:8px;padding:12px 14px;text-decoration:none;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
         <span style="font-size:0.85rem;">${item.country}</span>
@@ -5592,7 +5593,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     <!-- 数値注記 -->
-    <div style="margin-top:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 16px;font-size:0.7rem;color:#64748b;line-height:1.8;">
+    <div class="data-note" style="margin-top:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 16px;font-size:0.7rem;color:#64748b;line-height:1.8;">
       <strong style="color:#94a3b8;">⚠️ 数値・データに関する注記</strong><br>
       WTI原油価格はCFD（差金決済取引）データをもとに表示しており、実際の先物・現物価格と微小な差異や遅延が生じる場合があります。／
       石油備蓄日数はIEA基準による推定値です（国家備蓄＋民間備蓄＋産油国在庫の合計）。／
@@ -5605,7 +5606,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
 
     <!--出典・更新ログ-->
-    <section style="margin:20px 0 10px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
+    <section class="update-log" style="margin:20px 0 10px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
 
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
         <h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);flex:1 1 100%;">

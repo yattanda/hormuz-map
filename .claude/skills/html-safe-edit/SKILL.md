@@ -22,7 +22,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 ## 折り畳み表示ルール（3件表示統一）
 
-- **速報インシデント**：最新3件常時表示、4件目以降は「過去のインシデントを見る」で折り畳み
+- **速報インシデント**：最新3件常時表示、4件目以降は「過去のインシデントを見る」で折り畳み（`applyIncidentFold()`）。項目は `li.incident-item` の型で書く（daily-site-update スキル「速報インシデントの型」）。ページには直近30日分だけを置き、古い項目は `docs/data/incident_archive.json`
   - 上ボタン（3件目直後）：その場で折りたたむ（scrollBy 補正でジャンプ抑制）
   - 下ボタン（展開末尾）：押すと上ボタン位置にスムーズスクロール
 - **関連最新ニュース**：最新3件常時表示、4件目以降は「さらに見る」で折り畳み（scrollBy 補正）

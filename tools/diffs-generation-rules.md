@@ -351,6 +351,32 @@ footer（法務リンク・データソース）
 
 → **対策：必ず diffs.md の S03 スロットを先に作り、そこに書く**
 
+#### ⚠️ 2026-09-24 に構造が変わった（② PR1）
+
+- 「【M/D HH:MM 更新】…」の要約段落（`display:block` の `<strong>`）は**廃止**。OLD/NEW に書かない
+- 見出し部の件名は `<strong class="incident-headline">`、日付バッジは `<span class="incident-badge">📅 M/D HH:MM 更新</span>`
+- 一覧の項目はクラスだけで書く（インライン style 禁止）。型と色の使い分けは `.claude/skills/daily-site-update/SKILL.md`「速報インシデントの型」
+- 新しい項目の追加は、`<ul id="incident-list" class="incident-list">` の行と現在の先頭項目の1行目を OLD にして、その間に挿入する：
+
+```html
+<!-- APPLY:START -->
+<!-- OLD:START -->
+<ul id="incident-list" class="incident-list">
+<li class="incident-item incident-item--danger">
+  <span class="incident-tag">⚓ 9/21 現地・攻撃主体不明</span>
+<!-- OLD:END -->
+<!-- NEW:START -->
+<ul id="incident-list" class="incident-list">
+<li class="incident-item incident-item--warning">
+  <span class="incident-tag">🛢️ 9/25 現地</span>
+  <span class="incident-body">新しい項目の本文</span>
+</li>
+<li class="incident-item incident-item--danger">
+  <span class="incident-tag">⚓ 9/21 現地・攻撃主体不明</span>
+<!-- NEW:END -->
+<!-- APPLY:END -->
+```
+
 ### [S06] シナリオ確率補足バナー が漏れる理由
 
 - CLAUDE.md に「シナリオ確率の数値は自動同期・手動更新不要」と書かれているため「補足バナーのテキストも不要」と誤解しやすい

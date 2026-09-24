@@ -72,8 +72,8 @@
   色の種類（`#f87171`・`#fbbf24`・`#4ade80` など）はモディファイアクラスにする。既存の `div.incident-item` と li の混在も解消
 - 直近30日（2026-08-25 以降）だけ残す（E1）。外した項目は `docs/data/incident_archive.json`（日付・タグ・本文・出典）へ退避。
   日付が `M/D` で書かれていない24件は、すべて「2026年5月30日」形式の4〜5月の項目（実測）
-- `applyIncidentFold()` は `.incident-item` 前提に簡素化（表示3件＋開閉は維持）
-- `validate_daily.py` の `PAT_TICKER` をクラス基準（例：`class="incident-badge"`）に変更、`#incident > strong` の CSS を撤去
+- `applyIncidentFold()` は `#incident-list` の子要素を数えるだけなので**変更不要**（実装時に確認）
+- `validate_daily.py` の `PAT_TICKER` はバッジの文字（`📅 M/D HH:MM 更新`）だけを見るので**変更不要**。バッジの文字の形は変えない。`#incident > strong` の CSS は撤去
 - 目印コメントの全角空白を文書側と揃える。`<!-- ROUTE TABLE -->` を正しい位置へ
 
 ### PR2：情勢カード（S04）を30秒カラム（S09）へ吸収
@@ -141,3 +141,18 @@
 |---|---|---|---|
 | U2 | 【中央航路】【南側航路】【代替輸送路】と表の行の対応 | 中央航路→旧ルート行、南側航路→？（ルート A・B の両方に関係）、代替輸送路（バブエルマンデブ）→ルート B の行 | PR3 着手時 |
 | U3 | 「主な動き」から速報インシデントの各項目へのリンク | 項目に id を付ける（日次の手間が増える）か、`#incident` へのリンクで済ませるか | PR2 着手時 |
+
+---
+
+## 7. 実施記録
+
+### PR1（2026-09-24・ブランチ `redesign/phase2-sections`）
+
+- `docs/index.html`：要約段落を削除、見出し部を `.incident-headline`・`.incident-badge` に、残した35件（8/25〜9/21）を `li.incident-item`＋色のモディファイア4種に。
+  `<!-- ROUTE TABLE -->` をルート表の直前へ移し、S03 の目印コメントの全角空白を半角に
+- `docs/data/incident_archive.json`（新設）：186件（8/24 以前。元の HTML と本文）。ブラウザで数えた項目数（221＝35＋186）と一致、本文の全文一致を確認
+- 検証：タグを除いたテキストの差分は「退避した186件」と「要約段落5本」だけ／対応の無い閉じタグ0／`validate_daily.py` OK 22・WARN 0・NG 0／
+  1280px・375px で項目の文字・色・余白・幅が変更前と一致、件名だけ 17.6→17px（1280px）・15.84→15.3px（375px）＝トークン集約による想定内の変化／
+  `#incident` の高さ 2,932→858px（1280px）／折りたたみの開閉が動く・コンソールエラー0
+- スキル（daily-site-update「速報インシデントの型」・月1回の退避）、`diffs-generation-rules.md`（S03 の新しい型の APPLY 例）、html-safe-edit を更新
+

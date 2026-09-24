@@ -408,6 +408,8 @@ HTML は変えず、`docs/index.html` の `<style>` 内だけで行った。フ�
   **更新ログの行を入れる箱と速報インシデントの `<strong>` にはクラスを付けていない。**開始タグがスマホ経路の日次差分
   （`tools/diffs-generation-rules.md` S11 のテンプレート）の `old_str` にそのまま引用されており、変えると `apply_diffs.py` の
   完全一致が外れるため。クラスは引用されない親（`<section>` 等）に付けた。`#incident > strong` は id 起点のまま残す（S03 は ② で作り直す）
+  → **2026-09-24 ② PR1 で S03 を作り直し、`#incident > strong`（要約段落）ごと廃止。**なお日次更新の本流は 9/3 以降「直接編集」で、
+  `apply_diffs.py` はバックアップ経路（`tools/phase2-sections-design.md` §1）。② 以降の設計・実施記録は同ファイル
 - ~~特別解説コラムの入れ子：2本目以降の記事カードが1本目（機雷）の箱の中に入っている~~
   → **2026-09-23 修正**（`1c8d2ca`）。閉じタグの位置ずれだった（確定）。機雷の箱を「全文を読む」の直後で閉じ、6本を `.commentary-grid` で包んだ。
   新しいコラムカードは `.commentary-grid` の中に入れる（`tools/new-article-checklist.md` §4）

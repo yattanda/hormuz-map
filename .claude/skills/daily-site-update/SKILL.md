@@ -170,7 +170,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 1. 最新情報収集（Web 検索・複数ソース確認）
 2. `docs/data/news_data.json` 更新（latest 4件・osint）
-3. 速報インシデント 更新
+3. 速報インシデント 更新（型は下の「速報インシデントの型」。**毎月1日（またはその月最初の日次更新）は、30日より古い項目を `docs/data/incident_archive.json` へ移す**）
 4. 速報ティッカー（TICKER）決定
 5. 情勢カード（SITUATION CARDS）更新
 6. COUNTDOWN 更新
@@ -198,7 +198,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | `<!-- 💰 リアルタイム市場ダッシュボード -->` | 通常変更なし | |
 | `<!-- MAP -->` | 適宜 | タンカー可視化オーバーレイを毎回確認 |
 | `<!-- STATS -->` | 週1 | |
-| `<!-- 速報インシデント トグルボタン -->` | 毎日 | |
+| `<!-- 速報インシデント トグルボタン -->` | 毎日 | 型は「速報インシデントの型」 |
 | `<!-- SCENARIOS -->` | 毎日 | sc-tag-A/B/C/D の確率は自動同期 |
 | `<!-- シナリオ フッター -->` | 毎日 | |
 | `<!-- 特別解説コラム -->` | 手動指示時のみ | |
@@ -216,6 +216,36 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
     `data/context.json` の `timeline`（確定した経緯）を前提に算出しており、**`timeline` への事実の追記は手動**。
     追記が止まると、確率は古い現況認識のまま自動更新され続ける（作業順序 14）
 - **sc-tag の確率表示**：styled な HTML スパン（`innerHTML`）で構成されている。`textContent` で上書きすると装飾が消えるため **必ず `innerHTML` を使うこと**
+
+---
+
+## 速報インシデントの型（2026-09-24〜・② PR1）
+
+**インライン style を書かない。**既存の項目の見た目をまねて `style="..."` を足すと、CSS のクラス指定が効かなくなる。
+
+- 見出し部（毎日）：件名は `<strong class="incident-headline">`、日付バッジは `<span class="incident-badge">📅 M/D HH:MM 更新</span>`。
+  バッジの文字の形は `tools/validate_daily.py` が照合するので変えない
+- 以前あった「【M/D HH:MM 更新】…」の要約段落（`display:block` の `<strong>`）は**廃止した。書かない**
+- 一覧：新しい項目を `<ul id="incident-list" class="incident-list">` の**先頭**に足す
+
+```html
+<li class="incident-item incident-item--danger">
+  <span class="incident-tag">⚓ 9/21 現地・攻撃主体不明</span>
+  <span class="incident-body">本文（出典を文中に書く）</span>
+</li>
+```
+
+| モディファイア | 使う場面 | 色 |
+|---|---|---|
+| `incident-item--danger` | 攻撃・被弾・死傷・封鎖強化 | 赤 |
+| `incident-item--warning` | 供給障害・延期・未確認の続報 | 黄 |
+| `incident-item--info` | 声明・手続き・中立の情報 | 灰 |
+| `incident-item--positive` | 合意・再開・緩和 | 緑 |
+
+- 表示は先頭3件。4件目以降は `applyIncidentFold()` が自動で折りたたむ（手で折りたたみ用の箱を作らない）
+- **月1回の退避**：ページに残すのは直近30日分。30日より古い項目を `<li>` ごと切り取り、
+  `docs/data/incident_archive.json` の `items` の**先頭**に、ページ上の順序のまま
+  `{"text": タグを除いた本文, "html": 切り取った <li> の HTML}` として挿入する（`items` は新しい順）
 
 ---
 

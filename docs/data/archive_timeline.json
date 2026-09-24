@@ -2914,6 +2914,25 @@
           "url": "https://www.aljazeera.com/news/2026/9/23/us-iran-hold-mediated-unga-talks-on-ending-war-opening-strait-of-hormuz"
         }
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "dateLabel": "2026/09/25 07:16",
+      "blockadeDay": 210,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】英字紙The Nationalは9月23日、国連総会（UNGA）中の米・イラン協議でイランが米国に「60日間の地域規模停戦・ホルムズ海峡の段階的再開・封鎖解除」を含む文書ロードマップを提示したと報道——ルビオ国務長官は合意に「相応の時間をかけた努力」が必要との見方を示し、共同声明には至らず。イラン最高国家安全保障会議レザイ書記の「米国は4〜5日以内に受諾を」との期限発言も伝えられるが一次情報での確認は取れておらず未検証・サウジ東西パイプラインは9/13の攻撃停止から一転、9/22（火）に実際に低速で再開したとThe Nationalが報道、全面復旧は「数週間」の見方（globalsecurity.org経由、未検証）・9/21発表のUKMTOタンカー被弾（攻撃主体不明）からは続報なし・WTI原油は9/23時点92.16ドル・ブレント103.08ドル前後（globalsecurity.org経由、報道間で数値に幅あり）・日本関係船は残り4隻で変化なし・封鎖210日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "The National（9/23）",
+          "title": "イラン、米に『60日間停戦・海峡段階的再開』の文書ロードマップ提示——共同声明に至らず、レザイ書記『4〜5日以内』の受諾要求と伝えられる",
+          "url": "https://www.thenationalnews.com/news/mena/2026/09/23/iran-us-meeting-new-york/"
+        },
+        {
+          "sourceLabel": "The National（9/22）",
+          "title": "サウジ東西パイプライン、9月22日に実際に再開——低速稼働から開始、全面復旧は『数週間』の見方",
+          "url": "https://www.thenationalnews.com/business/energy/2026/09/22/saudi-arabia-restarts-east-west-pipeline-for-crude-exports/"
+        }
+      ]
     }
   ]
 }

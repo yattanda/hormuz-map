@@ -35,9 +35,9 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 | 1 | `ホルムズ海峡 タンカー 通過 足止め 日本` | MAP の SHIP_CONFIG・30秒カラム |
 | 2 | `Strait of Hormuz tanker traffic latest` | 同上（英語ソースでの裏取り） |
 | 3 | `原油価格 WTI ブレント 最新` | 30秒カラム「海峡の今」 |
-| 4 | `イラン 米国 攻撃 最新` | TICKER・速報インシデント・情勢カード |
+| 4 | `イラン 米国 攻撃 最新` | TICKER・速報インシデント・30秒カラム「主な動き」 |
 | 5 | `ホルムズ海峡 封鎖 日本 影響` | シナリオ・日本フロー |
-| 6 | `Iran Israel US military latest`（英語） | 情勢カード・シナリオ |
+| 6 | `Iran Israel US military latest`（英語） | 速報インシデント・シナリオ |
 | 7 | 現地メディア（Al Jazeera / Tehran Times 等）の当日記事 | 🌐 現地メディア視点 |
 
 - 検索結果は**必ず日付を確認**する。数か月前の記事が上位に来ることがある
@@ -82,7 +82,7 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 | ファイル | 内容 |
 |---|---|
 | `docs/data/news_data.json` | ニュース・OSINT（`latest` 4件・`osint`・`updated`） |
-| `docs/index.html` | TICKER・30秒カラム・情勢カード・シナリオ・ヘッダー日時・`dateModified` ほか |
+| `docs/index.html` | TICKER・30秒カラム（主な動きを含む）・速報インシデント・シナリオ・ヘッダー日時・`dateModified` ほか |
 | `docs/data/update_log.json` | 更新ログ（先頭に追記し、index.html 側は最新10件を維持） |
 | `docs/data/archive_timeline.json` | 当日分のエントリーを1件追記（速報を出した日のみ） |
 | `docs/sitemap.xml` | `/` と `/archive/` の `<lastmod>`（末尾「sitemap.xml の lastmod」参照） |
@@ -172,12 +172,12 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 2. `docs/data/news_data.json` 更新（latest 4件・osint）
 3. 速報インシデント 更新（型は下の「速報インシデントの型」。**毎月1日（またはその月最初の日次更新）は、30日より古い項目を `docs/data/incident_archive.json` へ移す**）
 4. 速報ティッカー（TICKER）決定
-5. 情勢カード（SITUATION CARDS）更新
-6. COUNTDOWN 更新
+5. （欠番。旧・情勢カードは 2026-09-25 に廃止し、9 の「主な動き」へ吸収した）
+6. COUNTDOWN 更新（型は下の「COUNTDOWN セクションのルール」）
 7. 4つのシナリオ内容決定（1〜6を踏まえて初めて書く）
 8. シナリオフッター 更新
 8.5. **全ルート現況サマリー 更新**（S08完了後・30秒カラムの直前）
-9. **30秒カラム（3行サマリー＋ステータスバッジ）― 必ず最後に書く**
+9. **30秒カラム（3行サマリー＋主な動き3件＋ステータスバッジ）― 必ず最後に書く**（型は下の「30秒カラムの型」）
    └ 全セクションの総括のため、他が確定してから書くこと
 10. ヘッダー（日時・警戒レベル）更新
 11. 更新ログ 追記
@@ -192,8 +192,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | セクション識別子 | 更新頻度 | 備考 |
 |---|---|---|
 | `/* TICKER */` | 毎日 | |
-| `<!-- 30秒で全体像を把握 -->` | 毎日 | 末尾にインフォグラフィックブロックあり |
-| `<!-- SITUATION CARDS -->` | 毎日 | |
+| `<!-- 30秒で全体像を把握 -->` | 毎日 | 3行サマリー・主な動き・ステータスバッジ。型は「30秒カラムの型」 |
 | `<!-- COUNTDOWN -->` | 適宜 | |
 | `<!-- 💰 リアルタイム市場ダッシュボード -->` | 通常変更なし | |
 | `<!-- MAP -->` | 適宜 | タンカー可視化オーバーレイを毎回確認 |
@@ -249,7 +248,47 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ---
 
+## 30秒カラムの型（2026-09-25〜・② PR2）
+
+**インライン style を書かない。**旧・情勢カード（`<!-- SITUATION CARDS -->`）は廃止した。**情勢カードは書かない。**
+出来事の本文は速報インシデントに書き、30秒カラムには「主な動き」として見出し・日付・出典だけを置く。
+
+- **3行サマリー**：`<span class="glance-text">` の中の文だけを書き換える。ラベル（`glance-label--now`・`--strait`・`--next`）はそのまま
+- **主な動き**：`<ol class="key-moves-list">` の中を**ちょうど3件・新しい順**にする。原則として**速報インシデントの先頭3件と同じ出来事・同じモディファイア**
+  （速報インシデントに無い出来事をここだけに書かない）。リンク先は `#incident` 固定（項目ごとの id は付けない。2026-09-25 決定 U3）
+
+```html
+<li class="key-move key-move--danger"><a href="#incident">
+  <time class="key-move-date" datetime="2026-09-21">9/21</time>
+  <span class="key-move-title">⚓ ホルムズ海峡入口でタンカーに飛翔体が着弾、乗組員2人軽傷——攻撃主体は特定されず</span>
+  <span class="key-move-src">UKMTO・AP通信</span>
+</a></li>
+```
+
+  - `datetime` は出来事の日付（現地）を `YYYY-MM-DD` で。表示は `M/D`
+  - 件名は1文（40〜60字）。出典は主なもの1〜2件を短く（「ほか」で省略してよい）
+  - モディファイアは速報インシデントと同じ4種（`key-move--danger` 赤／`--warning` 黄／`--info` 灰／`--positive` 緑）
+- **ステータスバッジ**：`<div class="glance-badges">` の中に3〜6枚
+
+```html
+<span class="status-badge status-badge--warning">🛢️パイプライン9/22低速再開・全面復旧未検証</span>
+```
+
+| モディファイア | 使う場面 | 色 |
+|---|---|---|
+| `status-badge--danger` | 攻撃・封鎖強化・重大な悪化 | 赤 |
+| `status-badge--warning` | 供給障害・未確認・注意 | 黄 |
+| `status-badge--info` | 外交・声明などの動き | 水色 |
+| `status-badge--neutral` | 価格など中立の数値 | 灰 |
+| `status-badge--positive` | 再開・緩和・変化なしの安定 | 緑 |
+
+- `tools/validate_daily.py` が「30秒カラムのインライン style」「主な動きの件数・並び・最新日」を WARN で確認する
+
+---
+
 ## COUNTDOWN セクションのルール
+
+- `<div class="dl-note">` の本文は `<strong>`、焦点・見通しの行は `<br><span class="dl-focus">⚡ …</span>` で書く（インライン style を書かない。2026-09-25〜）
 
 - カウントダウンの期限時刻は日本時間（JST）を基準とする
 - 表示には必ず「日本時間JST」と明記する

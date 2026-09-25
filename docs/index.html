@@ -245,7 +245,12 @@ header {
 header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .badges { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 .badge-item { border-radius:20px; padding:4px 12px; font-size:0.72rem; font-weight:600; }
-.badge-alert { background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#fca5a5; animation:badgeBlink 2s ease-in-out infinite; }
+/* 警戒レベル（2026-09-25 見直し）：点滅と赤い面をやめ、赤は先頭の点だけにする。
+   中身は「警戒レベル：最高」の一語だけ。情勢の要約は30秒カラムに書く（ここに括弧書きで足さない） */
+.badge-alert { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.04);
+  border:1px solid rgba(248,113,113,0.35); color:#e2e8f0; }
+.badge-alert::before { content:""; width:7px; height:7px; border-radius:50%; background:#ef4444; flex-shrink:0; }
+.badge-days  { background:rgba(255,255,255,0.04); border:1px solid rgba(148,163,184,0.3); color:#cbd5e1; font-variant-numeric:tabular-nums; }
 .badge-date  { background:#1e3a5f; border:1px solid #2d6ca8; color:#93c5fd; }
 @keyframes badgeBlink{0%,100%{opacity:1}50%{opacity:0.5}}
 
@@ -1558,7 +1563,8 @@ footer {                                   /* フッター（中央揃え・上�
     </div>
   </div>
   <div class="badges">
-    <span class="badge-item badge-alert">🚨 警戒レベル：最高（英字紙The Nationalは、UNGA中の米・イラン協議でイランが「60日間の地域規模停戦・海峡段階的再開・封鎖解除」を含む文書ロードマップを提示したと報道——ルビオ国務長官は合意に時間を要するとし共同声明には至らず、レザイ書記の「米国は4〜5日以内に受諾を」との期限発言も伝えられるが未検証／サウジ東西パイプラインは9月22日に実際に低速で再開（The National）、全面復旧は「数週間」の見方だが独立確認なし／9月21日発表のUKMTOタンカー被弾（攻撃主体不明）・9月18日発表のIRGCによるトーゴ籍タンカー『Trend』攻撃はいずれも続報なし／WTIは9月23日92.16ドル・ブレントは同日103.08ドル前後（globalsecurity.org経由、数値に報道間で幅あり）／日本関係船は残り4隻で変化なし／封鎖210日目）</span>
+    <span class="badge-item badge-alert">警戒レベル：最高</span>
+    <span class="badge-item badge-days" id="blockade-days">封鎖210日目</span>
     <span class="badge-item badge-date">📅2026年9月25日 07:16 JST</span>
     <button onclick="hardReload()" style="
      background:rgba(56,189,248,0.15);
@@ -1575,6 +1581,12 @@ footer {                                   /* フッター（中央揃え・上�
        onmouseout="this.style.background='rgba(56,189,248,0.15)'">
      🔄 強制再表示
     </button>
+  
+  <script>
+  // 封鎖の日数（2026-02-28 を1日目・日本時間）。HTML の数字は JS が動かないときの表示
+  (function(){var el=document.getElementById('blockade-days');if(!el)return;
+    var d=Math.floor((Date.now()+9*3600e3-Date.UTC(2026,1,28))/864e5)+1;if(d>0)el.textContent='封鎖'+d+'日目';})();
+  </script>
   </div>
 </header>
 

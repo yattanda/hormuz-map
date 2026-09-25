@@ -468,6 +468,11 @@ def check_types(html: str, base: str) -> None:
                 warn(f"30秒カラム / 主な動きの最新が {dates[0]}（{age}日前）です。速報インシデントの先頭と揃っているか確認")
             else:
                 ok(f"30秒カラム / 主な動き 3件（最新 {dates[0]}）")
+    a = re.search(r'<span class="badge-item badge-alert">(.*?)</span>', html, re.S)
+    if a and (len(a.group(1)) > 12 or "（" in a.group(1)):
+        warn(f"ヘッダーの警戒レベルに要約が書かれています（{len(a.group(1))}字）。「警戒レベル：最高」の一語だけにする")
+    elif a:
+        ok(f"ヘッダーの警戒レベル「{a.group(1)}」")
     m = PAT_INCIDENT_LIST.search(html)
     if m:
         n_style = m.group(0).count('style="')

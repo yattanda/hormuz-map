@@ -407,9 +407,18 @@ hormuz-data- は**別リポジトリ**なので、hormuz-map の日次コミッ�
   メッセージ例：`data: 経緯(timeline)に M/D の事実を追記する`。
   push はユーザーの指示を待つ。hormuz-data- は Actions が毎日 main へ push しているため、
   push 前に `git pull --rebase` が必要になることがある
-- **クラウドセッション（スマホ）**：セッションの対象は hormuz-map のみなので、hormuz-data- は編集しない。
-  代わりに、**追記すべきエントリーを上記の JSON 形式で報告に書き、運営者に追記を依頼する**
-  （追記不要と判断した日は、その旨と `validate_daily.py` の経緯の最新日を報告に書く）
+- **クラウドセッション（スマホ）**（2026-09-25 から。それまでは報告して運営者に依頼していたが、追記が 9/19 で止まった）：
+  1. `add_repo` で `yattanda/hormuz-data-` を**書き込み権限で**セッションに追加する（hormuz-ops と同じ手順）
+  2. hormuz-data- に `timeline/YYYYMMDD`（当日の日付）のブランチを作る（GitHub MCP の `create_branch`、元は `main`）
+  3. `get_file_contents` で `data/context.json` の**最新の main** を読み、`timeline` の末尾に追記した全文を
+     `create_or_update_file` でそのブランチへ書く（`sha` は読んだときの値。**このファイル以外は触らない**）。
+     コミットメッセージ：`data: 経緯(timeline)に M/D の事実を追記する`
+  4. `create_pull_request` で main 宛ての PR を出す。本文に追記したエントリーと、開いて確認した記事の URL を書く
+  5. **マージはしない**（運営者がスマホで内容を確かめてマージする）。報告に PR の URL を書く
+  - `context.json` は Actions が書き換えないので、PR が衝突することはまず無い
+  - 書き込めなかった場合は従来どおり、追記すべきエントリーを上記の JSON 形式で報告に書き、運営者に追記を依頼する
+    （hormuz-map など別のリポジトリに代わりに書かない）
+  - 追記不要と判断した日は、その旨と `validate_daily.py` の経緯の最新日を報告に書く
 
 ---
 

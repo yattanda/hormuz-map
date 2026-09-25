@@ -140,7 +140,7 @@
 | # | 論点 | 案 | 決める時期 |
 |---|---|---|---|
 | U2 | 【中央航路】【南側航路】【代替輸送路】と表の行の対応 | 中央航路→旧ルート行、南側航路→？（ルート A・B の両方に関係）、代替輸送路（バブエルマンデブ）→ルート B の行 | PR3 着手時 |
-| U3 | 「主な動き」から速報インシデントの各項目へのリンク | 項目に id を付ける（日次の手間が増える）か、`#incident` へのリンクで済ませるか | PR2 着手時 |
+| U3 | 「主な動き」から速報インシデントの各項目へのリンク | **決定（2026-09-25）：`#incident` だけ**。主な動き3件＝速報インシデントの先頭3件（折りたたまれず見えている）なので id は不要。日次の手間と、月1回の退避で id が消えるリスクを避ける | 済 |
 
 ---
 
@@ -156,3 +156,21 @@
   `#incident` の高さ 2,932→858px（1280px）／折りたたみの開閉が動く・コンソールエラー0
 - スキル（daily-site-update「速報インシデントの型」・月1回の退避）、`diffs-generation-rules.md`（S03 の新しい型の APPLY 例）、html-safe-edit を更新
 
+### PR2（2026-09-25・ブランチ `redesign/phase2-sections`）
+
+- 前提：9/25 07:16 の日次更新（`4ddc0db`）が PR1 の型で通った（新規2件は `li.incident-item`＋モディファイア・インライン style なし・要約段落なし・validate OK 22）
+- 決定：U3 は `#incident` だけ。ステータスバッジは残してクラス化のみ（主な動きとの重複整理は ②'）
+- `docs/index.html`
+  - S04：見出し・空の `div#situation`・`.sit-grid`（カード8枚）を削除。撤去したカードの出来事8件はすべて速報インシデントに残っていることを確認
+  - S09：30秒カラムの全要素をクラス化（`.glance*`・`.key-move*`・`.status-badge--*`・`.jump-pill--*`・`.report-banner*`、インライン style 47→0、`onmouseover` は `:hover` へ）。
+    3行サマリーの下に「主な動き」3件（`<ol class="key-moves-list">`・`<time datetime>`・行ごと `#incident` へのリンク）。
+    `href="#situation"` の「🌐 情勢カード」ボタンは「🚨 速報インシデント」（`#incident`）に付け替え、ジャンプ行の重複リンクを外した。「🇯🇵 日本向け調達フロー」だけ形が違っていたのをほかのピルに揃えた
+  - S05：`dl-box` の min-width・`dl-num` の文字サイズ・`dl-note` の焦点行をクラス化（`.dl-box--timer`・`.dl-num--text`・`.dl-focus`）
+  - CSS：`.sit-*` 一式、S09 専用だった属性セレクタ `[style*="display:flex;flex-wrap:wrap;gap:8px;"]`・`[style*="font-size:0.95rem"]`、
+    一致する要素が無かった `[style*="font-size:1.2rem;font-weight:800;letter-spacing:0.06em"]`、未使用の `.summary-row` を削除。
+    属性セレクタのスマホ時の効果（0.88rem・0.8rem）は `.glance-text` などのクラスで引き継いだ。`div[style*="font-size:0.7"]` は区域外に54か所残るので PR3
+- `tools/validate_daily.py`：`check_types()` を追加（30秒カラムのインライン style・主な動きの件数/並び/最新日、速報インシデント一覧のインライン style。いずれも WARN）
+- スキル・文書：daily-site-update（作業順序5を欠番、「30秒カラムの型」、COUNTDOWN の `dl-focus`）、publish-checklist、content-style-guide、`diffs-generation-rules.md`（[S04] 欠番・[S09] の APPLY 例）
+- 検証：タグを除いたテキストの差分は「情勢カード8枚」「主な動き3件」「ボタンの付け替え」だけ／対応の無い閉じタグ0／validate OK 25・WARN 0・NG 0／
+  1280px・375px で30秒カラムの各要素の色・余白・角丸が変更前と一致、文字サイズはトークン集約分だけ変化（例：ラベル 0.75→0.78rem、ボタン 0.82→0.85rem、地図リンク 0.9→0.95rem）／
+  横はみ出し0／ページの高さ（375px）35,765→32,346px／速報インシデントの折りたたみ（3＋34件）・カウントダウンが動く・コンソールエラー0

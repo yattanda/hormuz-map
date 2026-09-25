@@ -192,31 +192,12 @@ body {
   .rtable-wrap {
     overflow-x: auto;
   }
-  /* ステータスバッジを横並び維持 */
-  [style*="display:flex;flex-wrap:wrap;gap:8px;"] {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  flex-direction: row !important;
-  }
-
-/* いま何が・海峡の今・次に見る の行を縦積みに */
-.summary-row {
-  flex-direction: column !important;
-  gap: 4px !important;
-}
-
-  /* フォントサイズ微調整 */
-  [style*="font-size:0.95rem"] {
-    font-size: 0.88rem !important;
-  }
-
   /* ティッカー余白削減 */
   .ticker {
     padding: 7px 10px !important;
   }
 
   /* カード系の余白削減 */
-  .sit-card,
   .news-item {
     padding: 10px 12px !important;
   }
@@ -228,30 +209,16 @@ body {
   body {
     line-height: 1.8;
   }
-  .s-body {
-    line-height: 1.8 !important;
-  }
   /* ニュースアイテム行間 */
   .news-item,
   .news-item a {
     line-height: 1.7 !important;
   }
-  /* 情勢カード・シナリオ本文行間 */
-  .sit-card p, .sit-card li,
+  /* シナリオ本文行間 */
   .sc-body, .sc-impact {
     line-height: 1.75 !important;
   }
 }
-/* ===== 情勢カード余白最適化 ===== */
-@media (max-width: 768px) {
-  .sit-grid {
-    gap: 12px !important;
-  }
-  .sit-card {
-    padding: 14px 14px !important;
-  }
-}
-
 /* ===== ニュースリスト余白最適化 ===== */
 @media (max-width: 768px) {
   .news-item {
@@ -278,7 +245,12 @@ header {
 header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .badges { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 .badge-item { border-radius:20px; padding:4px 12px; font-size:0.72rem; font-weight:600; }
-.badge-alert { background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#fca5a5; animation:badgeBlink 2s ease-in-out infinite; }
+/* 警戒レベル（2026-09-25 見直し）：点滅と赤い面をやめ、赤は先頭の点だけにする。
+   中身は「警戒レベル：最高」の一語だけ。情勢の要約は30秒カラムに書く（ここに括弧書きで足さない） */
+.badge-alert { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.04);
+  border:1px solid rgba(248,113,113,0.35); color:#e2e8f0; }
+.badge-alert::before { content:""; width:7px; height:7px; border-radius:50%; background:#ef4444; flex-shrink:0; }
+.badge-days  { background:rgba(255,255,255,0.04); border:1px solid rgba(148,163,184,0.3); color:#cbd5e1; font-variant-numeric:tabular-nums; }
 .badge-date  { background:#1e3a5f; border:1px solid #2d6ca8; color:#93c5fd; }
 @keyframes badgeBlink{0%,100%{opacity:1}50%{opacity:0.5}}
 
@@ -296,21 +268,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 
 /* MAIN CONTAINER */
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
-
-/* SITUATION CARDS */
-.sit-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.sit-card { border-radius:12px; padding:14px 16px; border:1px solid; }
-.sit-card.danger  { background:linear-gradient(135deg,#1c0808,#2d1010); border-color:#dc2626; }
-.sit-card.warning { background:linear-gradient(135deg,#1c1408,#2d2010); border-color:#d97706; }
-.sit-card.info    { background:linear-gradient(135deg,#080e1c,#0d1a30); border-color:#2563eb; }
-.sit-card .s-icon  { font-size:1.3rem; margin-bottom:5px; }
-.sit-card .s-title { font-size:0.8rem; font-weight:700; margin-bottom:7px; }
-.sit-card.danger  .s-title { color:#fca5a5; }
-.sit-card.warning .s-title { color:#fde68a; }
-.sit-card.info    .s-title { color:#93c5fd; }
-.sit-card .s-body { font-size:0.73rem; color:#94a3b8; line-height:1.65; }
-.sit-card .s-body strong { color:#cbd5e1; }
-.sit-card .s-src  { display:block; margin-top:7px; font-size:0.65rem; color:#475569; border-top:1px solid rgba(255,255,255,0.05); padding-top:6px; }
 
 /* DEADLINE / COUNTDOWN */
 .deadline {
@@ -370,6 +327,106 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .incident-item--info     .incident-tag { color:#94a3b8; }
 .incident-item--positive .incident-tag { color:#4ade80; }
 .incident-body { color:#e2e8f0; }
+
+/* GLANCE（30秒カラム・② PR2 2026-09-25）
+   旧・情勢カードは「主な動き」（.key-moves）に吸収した。日次更新は3行サマリーの本文・主な動き3件・
+   ステータスバッジを書き換える。いずれもインライン style を書かず、この型（クラス＋色のモディファイア）で書く。
+   色はモディファイアごとに --c（RGB）を決め、背景・枠・影はその透明度違いで出す。 */
+.glance { width:100%; margin:0 0 28px 0; padding:0; }
+.glance-panel { background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%); border:2px solid rgba(56,189,248,0.45);
+  box-shadow:0 0 18px rgba(56,189,248,0.08), inset 0 0 0 1px rgba(56,189,248,0.06); border-radius:14px; padding:16px 12px; }
+.sec-h2.glance-title { color:#38bdf8; border-bottom-color:rgba(56,189,248,0.15); }
+.glance-summary { display:flex; flex-direction:column; gap:6px; margin-bottom:10px; border:1.5px solid rgba(56,189,248,0.3);
+  border-radius:14px; padding:8px 10px; background:rgba(15,23,42,0.6); }
+.glance-row { display:flex; align-items:flex-start; gap:10px; }
+.glance-label { --c:100,116,139; background:rgba(var(--c),0.15); border:1px solid rgba(var(--c),0.4); color:#94a3b8;
+  font-size:var(--fs-sm); font-weight:700; padding:2px 8px; border-radius:4px; white-space:nowrap; }
+.glance-label--now    { --c:239,68,68;  color:#fca5a5; }
+.glance-label--strait { --c:251,191,36; color:#fbbf24; }
+.glance-text { color:#e2e8f0; font-size:var(--fs-md); line-height:1.6; }
+
+/* 主な動き：新しい順に3件。見出し・日付・出典だけを置き、行ごと #incident へリンクする（U3） */
+.key-moves { border-top:1px solid rgba(56,189,248,0.15); margin-top:4px; padding-top:8px; }
+.key-moves-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin-bottom:6px;
+  font-size:var(--fs-sm); font-weight:800; color:#7dd3fc; letter-spacing:0.04em; }
+.key-moves-more { margin-left:auto; font-size:var(--fs-xs); font-weight:600; color:#64748b; text-decoration:none; letter-spacing:0; }
+.key-moves-more:hover { color:#94a3b8; }
+.key-moves-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; }
+.key-move { --c:148,163,184; max-width:none; }
+.key-move > a { display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:1px; padding:5px 8px;
+  border-left:3px solid rgb(var(--c)); border-radius:4px; background:rgba(var(--c),0.06); text-decoration:none; }
+.key-move > a:hover { background:rgba(var(--c),0.14); }
+.key-move-date { grid-row:span 2; font-size:var(--fs-sm); font-weight:800; color:rgb(var(--c));
+  font-variant-numeric:tabular-nums; line-height:1.6; min-width:2.6em; }
+.key-move-title { font-size:var(--fs-base); font-weight:700; color:#e2e8f0; line-height:1.55; }
+.key-move-src { font-size:var(--fs-xs); color:#64748b; }
+.key-move--danger   { --c:248,113,113; }
+.key-move--warning  { --c:251,191,36; }
+.key-move--positive { --c:74,222,128; }
+
+.glance-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+.glance-btn { --c:56,189,248; display:inline-flex; align-items:center; gap:7px;
+  background:linear-gradient(135deg,rgba(var(--c),0.22),rgba(var(--c),0.08)); border:1.5px solid rgba(var(--c),0.65);
+  color:#38bdf8; font-size:var(--fs-base); font-weight:700; padding:9px 20px; border-radius:8px; text-decoration:none;
+  letter-spacing:0.03em; box-shadow:0 2px 10px rgba(var(--c),0.25); transition:all 0.2s; }
+.glance-btn:hover { background:linear-gradient(135deg,rgba(var(--c),0.38),rgba(var(--c),0.18)); box-shadow:0 4px 16px rgba(var(--c),0.4); }
+.glance-btn--danger  { --c:239,68,68;  color:#fca5a5; }
+.glance-btn--warning { --c:251,191,36; color:#fbbf24; }
+
+.glance-badges { display:flex; flex-wrap:wrap; gap:8px; }
+.status-badge { --c:148,163,184; display:inline-block; background:rgba(var(--c),0.15); border:1px solid rgba(var(--c),0.3);
+  color:#cbd5e1; font-size:var(--fs-xs); padding:3px 10px; border-radius:12px; margin:3px; }
+.status-badge--danger   { --c:239,68,68;  color:#fca5a5; }
+.status-badge--warning  { --c:251,191,36; color:#fbbf24; }
+.status-badge--info     { --c:56,189,248; color:#7dd3fc; }
+.status-badge--positive { --c:34,197,94;  color:#86efac; }
+
+.glance-jump { display:flex; flex-wrap:wrap; gap:8px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.07); }
+.glance-jump-label { width:100%; font-size:var(--fs-sm); color:#64748b; font-weight:600; margin-bottom:2px; }
+.jump-pill { --c:56,189,248; display:inline-flex; align-items:center; gap:5px; background:rgba(var(--c),0.12);
+  border:1px solid rgba(var(--c),0.35); color:#38bdf8; font-size:var(--fs-sm); font-weight:700; padding:5px 14px;
+  border-radius:20px; text-decoration:none; white-space:nowrap; }
+.jump-pill--danger  { --c:239,68,68;   color:#f87171; }
+.jump-pill--warning { --c:251,191,36;  color:#fbbf24; }
+.jump-pill--violet  { --c:167,139,250; color:#a78bfa; }
+.jump-pill--emerald { --c:52,211,153;  color:#34d399; }
+.jump-pill--gold    { --c:201,168,105; color:#c9a869; border-color:rgba(201,168,105,0.4); }
+.jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%); border:1px solid rgba(56,189,248,0.5);
+  color:#7dd3fc; font-size:var(--fs-md); font-weight:800; padding:7px 18px; border-radius:24px; text-decoration:none;
+  letter-spacing:0.03em; transition:all 0.2s; white-space:nowrap; }
+
+.glance-special { margin-top:16px; border:1.5px solid rgba(248,113,113,0.45); border-radius:12px; padding:12px 16px; background:rgba(239,68,68,0.04); }
+.glance-special-head { font-size:var(--fs-md); font-weight:800; color:#ff6b6b; letter-spacing:0.06em; margin-bottom:10px;
+  display:flex; align-items:center; gap:7px; }
+.glance-special-icon { font-size:var(--fs-lg); }
+.glance-special-sub { font-size:var(--fs-xs); font-weight:600; color:#94a3b8; margin-left:4px; }
+.glance-special-links { display:flex; flex-wrap:wrap; gap:6px; }
+.report-banner { display:flex; align-items:center; gap:10px; width:100%; margin-top:8px; background:rgba(251,146,60,0.08);
+  border:1.5px solid rgba(251,146,60,0.4); border-radius:10px; overflow:hidden; text-decoration:none; transition:box-shadow 0.2s; }
+.report-banner:hover { box-shadow:0 0 14px rgba(251,146,60,0.35); }
+.report-banner-img { width:72px; height:56px; object-fit:cover; object-position:center 20%; border-radius:4px; flex-shrink:0; }
+.report-banner-body { padding:6px 10px 6px 0; flex:1; min-width:0; }
+.report-banner-kicker { font-size:var(--fs-2xs); font-weight:800; color:#fb923c; letter-spacing:0.06em; margin-bottom:2px; }
+.report-banner-title { font-size:var(--fs-xs); font-weight:700; color:#fed7aa; line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.report-banner-sub { font-size:var(--fs-2xs); color:#94a3b8; margin-top:1px; }
+
+/* 旧インライン style に当たっていた属性セレクタ（[style*="font-size:0.95rem"] 0.88rem・
+   div[style*="font-size:0.7"] 0.8rem）の効果をクラスで引き継ぐ */
+@media (max-width: 768px) {
+  .glance-jump-label,
+  .report-banner-title { font-size:0.8rem; }
+}
+@media (max-width: 600px) {
+  .glance-text,
+  .glance-special-head { font-size:0.88rem; }
+}
+
+/* COUNTDOWN の本文側（② PR2）。日次更新は dl-note 内の焦点を <span class="dl-focus"> で書く */
+.dl-box--timer { min-width:200px; }
+.dl-box--timer .dl-sub { margin-top:4px; }
+.dl-num--text { font-size:var(--fs-lg); color:#f87171; }
+.dl-focus { color:#fde68a; }
 
 /* MAP */
 .map-wrap { border-radius:14px; overflow:hidden; border:1px solid #1e3a5f; position:relative; }
@@ -717,17 +774,6 @@ footer {
   .infographic-button {
     font-size: 14px !important;
     padding: 11px 14px !important;
-  }
-
-  /* ④ 30秒セクション タイトル縮小 + バッジ縦積み */
-  [style*="font-size:1.2rem;font-weight:800;letter-spacing:0.06em"] {
-    font-size: 0.88rem !important;
-    line-height: 1.4 !important;
-  }
-  [style*="font-size:1.2rem;font-weight:800;letter-spacing:0.06em"] > div {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 6px !important;
   }
 }
 
@@ -1380,7 +1426,6 @@ footer {
    div[style*="font-size:0.7"] は 0.7〜0.78rem のインライン指定に当たる
    （span・a・button のラベル類は対象外）。 */
 @media (max-width: 768px) {
-  .sit-card .s-body,
   .sc-body,
   .sc-impact,
   .news-item,
@@ -1426,12 +1471,10 @@ footer {                                   /* フッター（中央揃え・上�
 /* --- 2-c カラム ---
    〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列。
    .sc-grid は HTML のインライン style（2列）に勝つため !important が要る。 */
-.sit-grid { grid-template-columns: 1fr; }
 .sc-grid  { grid-template-columns: 1fr !important; }
 .stats-row { grid-template-columns: repeat(2, 1fr); }
 
 @media (min-width: 601px) {
-  .sit-grid,
   .sc-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .stats-row { grid-template-columns: repeat(3, 1fr); }
 
@@ -1460,7 +1503,6 @@ footer {                                   /* フッター（中央揃え・上�
 }
 
 @media (min-width: 1024px) {
-  .sit-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .stats-row { grid-template-columns: repeat(6, 1fr); }
   .commentary-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -1521,7 +1563,8 @@ footer {                                   /* フッター（中央揃え・上�
     </div>
   </div>
   <div class="badges">
-    <span class="badge-item badge-alert">🚨 警戒レベル：最高（英字紙The Nationalは、UNGA中の米・イラン協議でイランが「60日間の地域規模停戦・海峡段階的再開・封鎖解除」を含む文書ロードマップを提示したと報道——ルビオ国務長官は合意に時間を要するとし共同声明には至らず、レザイ書記の「米国は4〜5日以内に受諾を」との期限発言も伝えられるが未検証／サウジ東西パイプラインは9月22日に実際に低速で再開（The National）、全面復旧は「数週間」の見方だが独立確認なし／9月21日発表のUKMTOタンカー被弾（攻撃主体不明）・9月18日発表のIRGCによるトーゴ籍タンカー『Trend』攻撃はいずれも続報なし／WTIは9月23日92.16ドル・ブレントは同日103.08ドル前後（globalsecurity.org経由、数値に報道間で幅あり）／日本関係船は残り4隻で変化なし／封鎖210日目）</span>
+    <span class="badge-item badge-alert">警戒レベル：最高</span>
+    <span class="badge-item badge-days" id="blockade-days">封鎖210日目</span>
     <span class="badge-item badge-date">📅2026年9月25日 07:16 JST</span>
     <button onclick="hardReload()" style="
      background:rgba(56,189,248,0.15);
@@ -1538,6 +1581,12 @@ footer {                                   /* フッター（中央揃え・上�
        onmouseout="this.style.background='rgba(56,189,248,0.15)'">
      🔄 強制再表示
     </button>
+  
+  <script>
+  // 封鎖の日数（2026-02-28 を1日目・日本時間）。HTML の数字は JS が動かないときの表示
+  (function(){var el=document.getElementById('blockade-days');if(!el)return;
+    var d=Math.floor((Date.now()+9*3600e3-Date.UTC(2026,1,28))/864e5)+1;if(d>0)el.textContent='封鎖'+d+'日目';})();
+  </script>
   </div>
 </header>
 
@@ -1574,157 +1623,111 @@ footer {                                   /* フッター（中央揃え・上�
   <span style="color:#fca5a5;font-weight:700;white-space:nowrap;">▶ YouTube から来た方へ</span>
   <button type="button" onclick="focusOn('minamitori')" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#e2e8f0;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:20px;cursor:pointer;font-family:inherit;">🏝️ 南鳥島のレアアース泥 → 地図で見る</button>
 </div>
-<div style="width:100%;margin:0 0 28px 0;padding:0;">
-  <div style="background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%);border:2px solid rgba(56,189,248,0.45);box-shadow:0 0 18px rgba(56,189,248,0.08),inset 0 0 0 1px rgba(56,189,248,0.06);border-radius:14px;padding:16px 12px;">
+<div class="glance">
+  <div class="glance-panel">
 
     <!-- 30秒で全体像を把握 -->
-    <h2 class="sec-h2" style="color:#38bdf8;border-bottom-color:rgba(56,189,248,0.15);">
+    <h2 class="sec-h2 glance-title">
       🗺️ 30秒で全体像を把握
     </h2>
 
-<!-- 3行サマリー -->
-<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:10px;border:1.5px solid rgba(56,189,248,0.3);border-radius:14px;padding:8px 10px;background:rgba(15,23,42,0.6);">
-  <div style="display:flex;align-items:flex-start;gap:10px;">
-    <span style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#fca5a5;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">いま何が</span>
-    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">
+<!-- 3行サマリー（型は daily-site-update スキル「30秒カラムの型」。インライン style を書かない） -->
+<div class="glance-summary">
+  <div class="glance-row">
+    <span class="glance-label glance-label--now">いま何が</span>
+    <span class="glance-text">
 🕊️ The Nationalは、UNGA中の米・イラン協議でイランが「60日間停戦・海峡段階的再開」の文書ロードマップを提示したと報道——共同声明には至らず、レザイ書記「4〜5日以内に受諾を」の期限発言も伝えられるが未検証。
 </span>
   </div>
-  <div style="display:flex;align-items:flex-start;gap:10px;">
-    <span style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.4);color:#fbbf24;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">海峡の今</span>
-    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">
+  <div class="glance-row">
+    <span class="glance-label glance-label--strait">海峡の今</span>
+    <span class="glance-text">
 🛢️ サウジ東西パイプラインは9/22に実際に低速で再開（全面復旧は数週間の見方・未検証）。WTIは9/23時点92.16ドル・ブレント103.08ドル前後（報道間で数値に幅あり）。
 </span>
   </div>
-  <div style="display:flex;align-items:flex-start;gap:10px;">
-    <span style="background:rgba(100,116,139,0.15);border:1px solid rgba(100,116,139,0.4);color:#94a3b8;font-size:0.75rem;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;">次の焦点</span>
-    <span style="color:#e2e8f0;font-size:0.95rem;line-height:1.6;">
+  <div class="glance-row">
+    <span class="glance-label glance-label--next">次の焦点</span>
+    <span class="glance-text">
 📊 イラン提示のロードマップへの米側対応・レザイ発言の真偽・パイプライン全面復旧の実際の時期——封鎖210日目。
 </span>
   </div>
 
+  <!-- 主な動き（旧・情勢カード。新しい順に3件、見出し・日付・出典だけ。本文は速報インシデントに書く） -->
+  <div class="key-moves">
+    <div class="key-moves-head">📌 主な動き<a href="#incident" class="key-moves-more">速報インシデントで全文を読む ↓</a></div>
+    <ol class="key-moves-list">
+      <li class="key-move key-move--info"><a href="#incident">
+        <time class="key-move-date" datetime="2026-09-23">9/23</time>
+        <span class="key-move-title">🕊️ イラン、米に「60日間停戦・海峡段階的再開」の文書ロードマップ提示——共同声明に至らず</span>
+        <span class="key-move-src">The National ほか</span>
+      </a></li>
+      <li class="key-move key-move--warning"><a href="#incident">
+        <time class="key-move-date" datetime="2026-09-22">9/22</time>
+        <span class="key-move-title">🛢️ サウジ東西パイプライン、低速で再開——全面復旧は「数週間」の見方</span>
+        <span class="key-move-src">The National ほか</span>
+      </a></li>
+      <li class="key-move key-move--danger"><a href="#incident">
+        <time class="key-move-date" datetime="2026-09-21">9/21</time>
+        <span class="key-move-title">⚓ ホルムズ海峡入口でタンカーに飛翔体が着弾、乗組員2人軽傷——攻撃主体は特定されず</span>
+        <span class="key-move-src">UKMTO・AP通信</span>
+      </a></li>
+    </ol>
+  </div>
+
       <!-- テキストリンク行 -->
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;">
-        <a href="#situation"
-           style="display:inline-flex;align-items:center;gap:7px;
-                  background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(239,68,68,0.08));
-                  border:1.5px solid rgba(239,68,68,0.65);
-                  color:#fca5a5;font-size:0.82rem;font-weight:700;
-                  padding:9px 20px;border-radius:8px;text-decoration:none;
-                  letter-spacing:0.03em;
-                  box-shadow:0 2px 10px rgba(239,68,68,0.25);
-                  transition:all 0.2s;"
-           onmouseover="this.style.background='linear-gradient(135deg,rgba(239,68,68,0.38),rgba(239,68,68,0.18))';this.style.boxShadow='0 4px 16px rgba(239,68,68,0.4)'"
-           onmouseout="this.style.background='linear-gradient(135deg,rgba(239,68,68,0.22),rgba(239,68,68,0.08))';this.style.boxShadow='0 2px 10px rgba(239,68,68,0.25)'">
-          🌐 情勢カード
-        </a>
-        <a href="#routes"
-           style="display:inline-flex;align-items:center;gap:7px;
-                  background:linear-gradient(135deg,rgba(251,191,36,0.22),rgba(251,191,36,0.08));
-                  border:1.5px solid rgba(251,191,36,0.65);
-                  color:#fbbf24;font-size:0.82rem;font-weight:700;
-                  padding:9px 20px;border-radius:8px;text-decoration:none;
-                  letter-spacing:0.03em;
-                  box-shadow:0 2px 10px rgba(251,191,36,0.25);
-                  transition:all 0.2s;"
-           onmouseover="this.style.background='linear-gradient(135deg,rgba(251,191,36,0.38),rgba(251,191,36,0.18))';this.style.boxShadow='0 4px 16px rgba(251,191,36,0.4)'"
-           onmouseout="this.style.background='linear-gradient(135deg,rgba(251,191,36,0.22),rgba(251,191,36,0.08))';this.style.boxShadow='0 2px 10px rgba(251,191,36,0.25)'">
-          🚢 ルート表
-        </a>
-        <a href="#scenario"
-           style="display:inline-flex;align-items:center;gap:7px;
-                  background:linear-gradient(135deg,rgba(56,189,248,0.22),rgba(56,189,248,0.08));
-                  border:1.5px solid rgba(56,189,248,0.65);
-                  color:#38bdf8;font-size:0.82rem;font-weight:700;
-                  padding:9px 20px;border-radius:8px;text-decoration:none;
-                  letter-spacing:0.03em;
-                  box-shadow:0 2px 10px rgba(56,189,248,0.25);
-                  transition:all 0.2s;"
-           onmouseover="this.style.background='linear-gradient(135deg,rgba(56,189,248,0.38),rgba(56,189,248,0.18))';this.style.boxShadow='0 4px 16px rgba(56,189,248,0.4)'"
-           onmouseout="this.style.background='linear-gradient(135deg,rgba(56,189,248,0.22),rgba(56,189,248,0.08))';this.style.boxShadow='0 2px 10px rgba(56,189,248,0.25)'">
-          📊 シナリオ
-        </a>
+      <div class="glance-links">
+        <a href="#incident" class="glance-btn glance-btn--danger">🚨 速報インシデント</a>
+        <a href="#routes" class="glance-btn glance-btn--warning">🚢 ルート表</a>
+        <a href="#scenario" class="glance-btn glance-btn--info">📊 シナリオ</a>
       </div>
 
       <!-- ステータスバッジ（クリック不可） -->
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-<span style="display:inline-block;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);color:#7dd3fc;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">🕊️イラン、60日停戦ロードマップ提示（9/23）</span>
-<span style="display:inline-block;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">🛢️パイプライン9/22低速再開・全面復旧未検証</span>
-<span style="display:inline-block;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">⚓タンカー被弾（9/21）・攻撃主体不明</span>
-<span style="display:inline-block;background:rgba(148,163,184,0.15);border:1px solid rgba(148,163,184,0.3);color:#cbd5e1;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">🛢️WTI92.16ドル・ブレント103.08ドル前後</span>
-<span style="display:inline-block;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#86efac;font-size:0.72rem;padding:3px 10px;border-radius:12px;margin:3px;">🇯🇵日本関係船残り4隻(変化なし)</span>
+      <div class="glance-badges">
+<span class="status-badge status-badge--info">🕊️イラン、60日停戦ロードマップ提示（9/23）</span>
+<span class="status-badge status-badge--warning">🛢️パイプライン9/22低速再開・全面復旧未検証</span>
+<span class="status-badge status-badge--warning">⚓タンカー被弾（9/21）・攻撃主体不明</span>
+<span class="status-badge status-badge--neutral">🛢️WTI92.16ドル・ブレント103.08ドル前後</span>
+<span class="status-badge status-badge--positive">🇯🇵日本関係船残り4隻(変化なし)</span>
         </div>
 
         </div>
       </div>
 
       <!-- ジャンプ＋クリッカブルバッジ -->
-      <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);">
-        <div style="width:100%;font-size:0.75rem;color:#64748b;font-weight:600;margin-bottom:2px;">👇 気になるセクションへジャンプ</div>
-        <a href="#incident" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          🚨 速報インシデント
-        </a>
-        <a href="#news-column" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          📰 最新ニュース
-        </a>
-        <a href="#osint-panel" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          🌐 現地メディア視点
-        </a>
-        <a href="#" onclick="scrollToJapanFlow(event)" style="display:inline-flex;align-items:center;
-          gap:5px;padding:6px 12px;border-radius:6px;font-size:0.75rem;
-          font-weight:700;text-decoration:none;
-          background:rgba(56,189,248,0.12);
-          border:1px solid rgba(56,189,248,0.35);
-          color:#38bdf8;">
-          🇯🇵 日本向け調達フロー
-        </a>
-        <a href="archive/index.html" style="display:inline-flex;align-items:center;gap:5px;background:rgba(201,168,105,0.12);border:1px solid rgba(201,168,105,0.4);color:#c9a869;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-          📚 ホルムズ危機 全記録（日次アーカイブ）を見る
-        </a>
-        <a href="#map" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%);border:1px solid rgba(56,189,248,0.5);color:#7dd3fc;font-size:0.9rem;font-weight:800;padding:7px 18px;border-radius:24px;text-decoration:none;letter-spacing:0.03em;transition:all 0.2s;white-space:nowrap;">
-          🗺️ 地図はここ &nbsp;→
-        </a>
+      <div class="glance-jump">
+        <div class="glance-jump-label">👇 気になるセクションへジャンプ</div>
+        <a href="#news-column" class="jump-pill jump-pill--info">📰 最新ニュース</a>
+        <a href="#osint-panel" class="jump-pill jump-pill--violet">🌐 現地メディア視点</a>
+        <a href="#" onclick="scrollToJapanFlow(event)" class="jump-pill jump-pill--info">🇯🇵 日本向け調達フロー</a>
+        <a href="archive/index.html" class="jump-pill jump-pill--gold">📚 ホルムズ危機 全記録（日次アーカイブ）を見る</a>
+        <a href="#map" class="jump-map">🗺️ 地図はここ &nbsp;→</a>
       </div>
 
       <!-- 特別解説グループ -->
-      <div style="margin-top:16px;border:1.5px solid rgba(248,113,113,0.45);border-radius:12px;padding:12px 16px;background:rgba(239,68,68,0.04);">
-        <div style="font-size:0.95rem;font-weight:800;color:#ff6b6b;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:7px;">
-          <span style="font-size:1.1rem;">🔬</span> 特別解説コラム
-          <span style="font-size:0.68rem;font-weight:600;color:#94a3b8;margin-left:4px;">― 深掘り分析記事</span>
+      <div class="glance-special">
+        <div class="glance-special-head">
+          <span class="glance-special-icon">🔬</span> 特別解説コラム
+          <span class="glance-special-sub">― 深掘り分析記事</span>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);color:#f87171;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-            💣 機雷問題
-          </a>
-          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.35);color:#fbbf24;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-            🛢️ サウジ危機
-          </a>
-          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.35);color:#38bdf8;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-            🌊 ルートC・アラスカ
-          </a>
-          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.35);color:#34d399;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-            🌍 西アフリカ・南米調達
-          </a>
-          <a href="#special-commentary" style="display:inline-flex;align-items:center;gap:5px;background:rgba(167,139,250,0.12);border:1px solid rgba(167,139,250,0.35);color:#a78bfa;font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;">
-            📉 石油備蓄推移
-          </a>
+        <div class="glance-special-links">
+          <a href="#special-commentary" class="jump-pill jump-pill--danger">💣 機雷問題</a>
+          <a href="#special-commentary" class="jump-pill jump-pill--warning">🛢️ サウジ危機</a>
+          <a href="#special-commentary" class="jump-pill jump-pill--info">🌊 ルートC・アラスカ</a>
+          <a href="#special-commentary" class="jump-pill jump-pill--emerald">🌍 西アフリカ・南米調達</a>
+          <a href="#special-commentary" class="jump-pill jump-pill--violet">📉 石油備蓄推移</a>
           <!-- 特別レポート サムネイル付きバナー -->
-          <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener"
-            style="display:flex;align-items:center;gap:10px;width:100%;margin-top:8px;background:rgba(251,146,60,0.08);border:1.5px solid rgba(251,146,60,0.4);border-radius:10px;overflow:hidden;text-decoration:none;transition:box-shadow 0.2s;"
-            onmouseover="this.style.boxShadow='0 0 14px rgba(251,146,60,0.35)'"
-            onmouseout="this.style.boxShadow='none'">
-            <img src="images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート"
-              style="width:72px;height:56px;object-fit:cover;object-position:center 20%;border-radius:4px;flex-shrink:0;">
-            <div style="padding:6px 10px 6px 0;flex:1;min-width:0;">
-              <div style="font-size:0.62rem;font-weight:800;color:#fb923c;letter-spacing:0.06em;margin-bottom:2px;">📊 特別レポート</div>
-              <div style="font-size:0.72rem;font-weight:700;color:#fed7aa;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">不完全な停戦、動かない海峡</div>
-              <div style="font-size:0.65rem;color:#94a3b8;margin-top:1px;">予測 vs 現実ダッシュボード ↗</div>
+          <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="report-banner">
+            <img src="images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="report-banner-img">
+            <div class="report-banner-body">
+              <div class="report-banner-kicker">📊 特別レポート</div>
+              <div class="report-banner-title">不完全な停戦、動かない海峡</div>
+              <div class="report-banner-sub">予測 vs 現実ダッシュボード ↗</div>
             </div>
           </a>
         </div>
       </div>
 
-    </div><!-- /30秒カラム ラッパー -->
+    <!-- /30秒カラム ラッパー -->
   </div><!-- /.container -->
 
     <!-- 📊 解説インフォグラフィック -->
@@ -1934,80 +1937,11 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeLightbox();
 });
 </script>
-<!-- SITUATION CARDS -->
-<h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);">🌐 最新情勢カード<span class="sec-h2-sub">海峡・外交・市場の現状をリアルタイムで確認</span></h2>
-<div id="situation" class="sit-grid"></div>
-<div class="sit-grid">
-<!-- カード⓪-2026-09-25 イラン、60日停戦ロードマップ提示 -->
-  <div class="sit-card warning">
-    <div class="s-icon">🕊️</div>
-        <div class="s-title">🕊️ イラン、米に「60日間停戦・海峡段階的再開」の文書ロードマップ提示——共同声明に至らず</div>
-        <div class="s-body">英字紙The Nationalは9月23日、国連総会（UNGA）に合わせてニューヨークで行われた米・イラン協議で、イラン側が米国に対し紛争終結に向けた文書化されたロードマップを提示したと報じた。内容は最大60日間の地域規模停戦・ホルムズ海峡の段階的再開・米国による経済封鎖の解除・イランによるアラブ近隣諸国への攻撃停止など。協議はイラン外相アッバス・アラグチ氏とウィトコフ特使・クシュナー氏の間でカタール仲介により約3時間行われたが、ルビオ国務長官は合意には「相応の時間をかけた多大な努力」が必要との見方を示し、共同声明には至らなかった。イラン最高国家安全保障会議のモフセン・レザイ書記が「米国は4〜5日以内に条件を受け入れなければ海峡は閉鎖されたまま」と期限を付けたと伝える報道もあるが、一次情報での直接確認は取れておらず未検証。</div>
-        <div class="s-src">出典: The National（9/23）／globalsecurity.org・Gulf News経由（レザイ発言、未検証）</div>
-  </div>
-
-<!-- カード⓪-2026-09-25b サウジ東西パイプライン 実際に再開 -->
-  <div class="sit-card warning">
-    <div class="s-icon">🛢️</div>
-        <div class="s-title">🛢️ サウジ東西パイプライン、9/22に実際に再開——低速稼働、全面復旧は「数週間」の見方</div>
-        <div class="s-body">The Nationalは9月22日、9月13日のドローン攻撃で停止していたサウジ東西原油パイプライン（全長約1,200km）が同日（火）に再開し、低速でのポンプ輸送を開始したと報じた。サウジアラムコは日量400万バレル（世界供給の約4%）規模への復旧を目指しているとされる。全面復旧の具体的な時期はThe National記事では示されていないが、別報道（globalsecurity.org経由）では治安関係筋の見立てとして「数週間」かかる可能性があると伝えられている——9月16日時点でBloomberg・Reutersが報じていた「約6週間」との従来見通しと大きくは矛盾しないが、独立した確認は取れていない。再開のニュースを受けブレント原油は一時1週間ぶりに1バレル100ドルを割り込んだ。</div>
-        <div class="s-src">出典: The National（9/22）／globalsecurity.org経由（全面復旧時期、未検証）</div>
-  </div>
-
-<!-- カード⓪-new ホルムズ海峡入口でタンカー被弾（攻撃主体不明） -->
-  <div class="sit-card danger">
-    <div class="s-icon">⚓</div>
-        <div class="s-title">⚓ ホルムズ海峡入口でタンカーに飛翔体が着弾、乗組員2人軽傷——攻撃主体は特定されず</div>
-        <div class="s-body">英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向けて航行中のタンカー1隻が正体不明の飛翔体（unknown projectile）により被弾したと発表した。乗組員2人が軽傷を負ったが、船体は自力で航行を継続し次の寄港地へ向かったという。環境への影響は報告されていない。AP通信によれば、攻撃を行った主体は特定されておらず、イラン側・米側とも公式な関与の表明はない。同日、イラン革命防衛隊（IRGC）報道官ホセイン・モヘッビ氏が、米国がさらにエスカレートさせた場合「戦争の地理を変える」として新型兵器・戦術の導入を示唆したと伝えられているが、今回のタンカー被弾との関連は不明。</div>
-        <div class="s-src">出典: AP通信（Al Arabiya English / clickorlando.com経由）/ UKMTO（9/21）</div>
-  </div>
-
-<!-- カード⓪ タンカー「Trend」被弾 -->
-  <div class="sit-card danger">
-    <div class="s-icon">⚓</div>
-        <div class="s-title">⚓ IRGC、トーゴ籍タンカー『Trend』を攻撃——火災・航行停止させたと発表（未検証）</div>
-        <div class="s-body">イラン革命防衛隊（IRGC）海軍は9月18日、トーゴ籍プロダクトタンカー「Trend」が9月17日夜、米軍の「扇動」により「不法通航」を試みたとしてこれを攻撃し、火災を発生させ航行を停止させたと発表した。これに先立ち英国海事貿易活動機関（UKMTO）は、オマーン沿岸の町ハサブの北東約16海里の地点で商船が投射体により被弾・出火し、その後鎮火したと報告——乗組員は全員無事で、環境への影響は現時点で確認されていないとした。UKMTOは船舶名・国籍を公表しておらず、IRGCの発表との同一船舶かどうかは独立検証が取れていない。米側からの公式な被害確認もない。</div>
-        <div class="s-src">出典: RFE/RL（globalsecurity.org経由）/ Anadolu Agency（9/18）</div>
-  </div>
-
-<!-- カード① フーシ派 紅海沿岸完全制圧 -->
-  <div class="sit-card danger">
-    <div class="s-icon">⚓</div>
-        <div class="s-title">⚓ フーシ派、イエメン紅海沿岸を完全制圧・バブエルマンデブ要衝も掌握——「第二のホルムズ化」を懸念</div>
-        <div class="s-body">イエメンの親イラン武装組織フーシ派は9月11日までに、政府軍支配下にあった紅海沿岸最後の拠点を制圧し、紅海沿岸全域の実効支配を確立した。前日にはモカ港を掌握し、バブエルマンデブ海峡内のペリム島にも進出したと複数メディアが報じた。同海峡は紅海とアデン湾・スエズ運河を結ぶ世界有数の海上輸送路で、世界貿易の約12％が通過するとされる。専門家はフーシ派が同海峡の実効支配を強めれば、ホルムズ海峡に続き中東の主要チョークポイント2カ所をイラン系勢力が同時に脅かす構図になりかねないと警告している。</div>
-        <div class="s-src">出典: Al Jazeera / NPR / CNBC / Fox News（9/11〜12）</div>
-  </div>
-
-  <!-- カード② バーレーン 会合不参加表明 -->
-  <div class="sit-card warning">
-    <div class="s-icon">🚫</div>
-        <div class="s-title">🚫 バーレーン、9/14サラーラのイラン・GCCホルムズ会合に不参加表明</div>
-        <div class="s-body">バーレーン外務省は9月12日、9月14日にオマーン・サラーラで予定されるイランとGCC加盟国のホルムズ海峡通航協議への不参加を表明した。対話継続への意欲を示しつつ「イランとの外交関係が再開されるまで、イランを含む合同会合には参加しない」との立場を明らかにした。バーレーンは2016年、サウジ大使館襲撃事件を機にイランと国交を断絶している。海峡開放は「差別・料金・許可なし」でGCC全6カ国が関与する形で実現すべきだと主張し、サウジ東西パイプライン攻撃やバーレーン国内のアンモニアタンク攻撃を挙げ「攻撃を見過ごす宥和政策では地域の安全は築けない」と強調した。</div>
-        <div class="s-src">出典: Al Jazeera / Arab News / Sweden Herald（9/12）</div>
-  </div>
-
-  <!-- カード③ イラン・GCC会合が延期 -->
-  <div class="sit-card warning">
-    <div class="s-icon">⏸️</div>
-        <div class="s-title">⏸️ イラン・GCCのホルムズ協議、開催前に延期——オマーン「合意形成のため」</div>
-        <div class="s-body">オマーンの仲介で予定されていたイラン外相とGCC加盟6カ国外相によるホルムズ海峡通航協議は、開催前に延期された。オマーンのバドル・アルブサイディ外相は「合意形成のため（in the interests of consensus）」延期したと説明。イラン当局者によれば「一部地域諸国の要請」により延期されたとされ、サウジアラビアがイラン・オマーン間で進んでいた合意が他の湾岸諸国に与える影響に懸念を示したとの見方があるが未検証。会合の（9/22 追記）会合は9月14日にサラーラで予定されていたもので、延期はその前日の9月13日にオマーンのアルブサイディ外相が発表した（当初は予定日の報道に9月14日・16日と幅があったが、同外相の発言で確定。RFE/RL）。バーレーンは対イラン国交未再開を理由に既に不参加を表明していた。</div>
-        <div class="s-src">出典: NPR / France24（9/14）</div>
-  </div>
-
-  <!-- カード④ ゲシュム島沖 商船攻撃 -->
-  <div class="sit-card danger">
-    <div class="s-icon">⚓</div>
-        <div class="s-title">⚓ ゲシュム島沖で商船攻撃、1人死亡・3〜4人負傷（未検証）——同時期にタンカーも再被弾</div>
-        <div class="s-body">イラン国営メディア（IRNA）を引用したゲシュム州知事の発表によれば、現地時間9月13日朝5時頃、ゲシュム島シブ・ダラズ沿岸からヘンガム島付近にかけて商船が攻撃を受け、1人が死亡、3〜4人が負傷した（負傷者数は情報源により幅——CGTNは3人、France24は4人と報道）。同知事は「テロリストの敵」による攻撃と主張しているが未検証で、米軍からの公式確認もない。同時期・同海域では、パナマ籍・インド人乗組員のプロダクトタンカー「エル・ガイア」が再び被弾する事案も報告された。IRGCは機雷への接触と主張しているが、米中央軍（CENTCOM）はこれを否定し「同船は先月イランのミサイルで既に航行不能になっており、週末にイランがドローンで再攻撃した」と発表。乗組員はインド外務省が13人救助・1人不明、オマーン海事保安センターが23人救助・2人不明としており人数が食い違う（未検証）。両事案が同一事案か別事案かは断定できず、同時期に複数の船舶関連インシデントが報告されている状況として扱う。</div>
-        <div class="s-src">出典: CGTN / CNN / Iran International / France24（9/13〜14）</div>
-  </div>
-
-</div>
   <!-- COUNTDOWN -->
   <div class="deadline">
     <div class="dl-label" id="cd-phase-label">⏱️ Phase 42「イラン、米に『60日停戦・海峡段階的再開』ロードマップ提示——共同声明に至らず」——封鎖210日目</div>
     <div class="dl-boxes">
-      <div class="dl-box" style="min-width:200px;">
+      <div class="dl-box dl-box--timer">
         <div id="cd-display">
           <div class="cd-unit">
             <span class="cd-val" id="cd-h">--</span>
@@ -2024,22 +1958,22 @@ document.addEventListener('keydown', function(e) {
             <div class="cd-label">秒</div>
           </div>
         </div>
-        <div class="dl-sub" style="margin-top:4px;">リアルタイムカウントダウン</div>
+        <div class="dl-sub">リアルタイムカウントダウン</div>
       </div>
       <div class="dl-arrow">→</div>
       <div class="dl-box">
-        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">イラン・米国による二重封鎖（Iran-US dual blockade）</div>
+        <div class="dl-num dl-num--text">イラン・米国による二重封鎖（Iran-US dual blockade）</div>
         <div class="dl-sub">2026年2月28日 起算</div>
       </div>
       <div class="dl-arrow">→</div>
       <div class="dl-box">
-        <div class="dl-num" style="font-size:1.05rem;color:#f87171;">「交渉決裂・軍事衝突」：ハメネイ「交渉中止・完全閉鎖」最終宣言（6/1）</div>
+        <div class="dl-num dl-num--text">「交渉決裂・軍事衝突」：ハメネイ「交渉中止・完全閉鎖」最終宣言（6/1）</div>
         <div class="dl-sub">2026年6月16日 08:14 日本時間JST 現在</div>
       </div>
       <div class="dl-note">
         🌐 <strong>The Nationalは、UNGA中の米・イラン協議でイランが「60日間の地域規模停戦・海峡段階的再開・封鎖解除」を含む文書ロードマップを提示したと報道。ルビオ国務長官は合意に時間を要するとし共同声明には至らず、レザイ書記「米国は4〜5日以内に受諾を」との期限発言も伝えられるが未検証。サウジ東西パイプラインは9/22に実際に低速で再開（The National）、全面復旧は「数週間」の見方だが独立確認はなお得られていない。9/21発表のUKMTOタンカー被弾（攻撃主体不明）からは続報なし。</strong>
-        <br><span style="color:#fde68a;">⚡ 次の24〜48時間の焦点：①イラン提示のロードマップに米側が応じる動きがあるか ②レザイ書記の「4〜5日以内」期限発言の真偽・実際の交渉期限になるか ③サウジ東西パイプラインの全面復旧時期の確認 ④9/21タンカー被弾の攻撃主体・船名の特定 ⑤WTI・ブレントの価格動向</span>
-        <br><span style="color:#fde68a;">⏳ イラン側から具体的な文書提案が出た点は前回発表より一歩進んだ動きだが、共同声明には至っておらず、米側の受諾可否は依然不透明</span>
+        <br><span class="dl-focus">⚡ 次の24〜48時間の焦点：①イラン提示のロードマップに米側が応じる動きがあるか ②レザイ書記の「4〜5日以内」期限発言の真偽・実際の交渉期限になるか ③サウジ東西パイプラインの全面復旧時期の確認 ④9/21タンカー被弾の攻撃主体・船名の特定 ⑤WTI・ブレントの価格動向</span>
+        <br><span class="dl-focus">⏳ イラン側から具体的な文書提案が出た点は前回発表より一歩進んだ動きだが、共同声明には至っておらず、米側の受諾可否は依然不透明</span>
       </div>
       </div>
     </div>

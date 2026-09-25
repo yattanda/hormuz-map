@@ -438,6 +438,50 @@ def check_urls(news: dict) -> None:
             ok(f"latest[{i}] の url {code}")
 
 
+PAT_GLANCE = re.compile(r'<div class="glance">.*?<!-- /30秒カラム ラッパー -->', re.S)
+PAT_KEY_MOVE = re.compile(r'<li class="key-move key-move--(\w+)">.*?<time class="key-move-date" datetime="(\d{4}-\d{2}-\d{2})">', re.S)
+PAT_INCIDENT_LIST = re.compile(r'<ul id="incident-list"[^>]*>.*?</ul>', re.S)
+
+
+def check_types(html: str, base: str) -> None:
+    """② で決めた型（クラス＋モディファイア・インライン style なし）で書かれているか。
+    30秒カラム（主な動き3件を含む）と速報インシデントの一覧が対象。見た目は壊れないので WARN にとどめる。"""
+    g = PAT_GLANCE.search(html)
+    if not g:
+        warn("30秒カラム（<div class=\"glance\">）を検出できませんでした（構造が変わった可能性）")
+    else:
+        body = g.group(0)
+        n_style = body.count('style="')
+        if n_style:
+            warn(f"30秒カラムにインライン style が {n_style}箇所あります（型はクラス。daily-site-update「30秒カラムの型」）")
+        else:
+            ok("30秒カラムにインライン style なし")
+        moves = PAT_KEY_MOVE.findall(body)
+        if len(moves) != 3:
+            warn(f"30秒カラム / 主な動きが {len(moves)}件です（ルールは3件）")
+        else:
+            dates = [d for _, d in moves]
+            age = (date.fromisoformat(base) - date.fromisoformat(dates[0])).days
+            if dates != sorted(dates, reverse=True):
+                warn(f"30秒カラム / 主な動きが新しい順になっていません: {', '.join(dates)}")
+            elif age > 7:
+                warn(f"30秒カラム / 主な動きの最新が {dates[0]}（{age}日前）です。速報インシデントの先頭と揃っているか確認")
+            else:
+                ok(f"30秒カラム / 主な動き 3件（最新 {dates[0]}）")
+    a = re.search(r'<span class="badge-item badge-alert">(.*?)</span>', html, re.S)
+    if a and (len(a.group(1)) > 12 or "（" in a.group(1)):
+        warn(f"ヘッダーの警戒レベルに要約が書かれています（{len(a.group(1))}字）。「警戒レベル：最高」の一語だけにする")
+    elif a:
+        ok(f"ヘッダーの警戒レベル「{a.group(1)}」")
+    m = PAT_INCIDENT_LIST.search(html)
+    if m:
+        n_style = m.group(0).count('style="')
+        if n_style:
+            warn(f"速報インシデントの一覧にインライン style が {n_style}箇所あります（型は li.incident-item＋モディファイア）")
+        else:
+            ok("速報インシデントの一覧にインライン style なし")
+
+
 # ── main ────────────────────────────────────────────────────
 def main() -> int:
     ap = argparse.ArgumentParser(description="日次更新の機械検証（読み取り専用）")
@@ -489,6 +533,7 @@ def main() -> int:
             ng(f"{name} が基準日と違います: {val}（基準 {base}）")
     check_ticker(html, base)
     check_route_freshness(html, base)
+    check_types(html, base)
 
     check_news(news, base)
     if log is not None:

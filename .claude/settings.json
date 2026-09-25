@@ -5,7 +5,11 @@
     "allow": [
       "WebSearch",
       "WebFetch",
-      "Bash(date*)"
+      "Bash(date*)",
+      "mcp__github__get_file_contents",
+      "mcp__github__create_branch",
+      "mcp__github__create_or_update_file",
+      "mcp__github__create_pull_request"
     ]
   },
   "hooks": {

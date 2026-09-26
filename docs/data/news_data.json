@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月25日 07:16 日本時間JST",
+  "updated": "2026年9月26日 09:33 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-7day-roadmap-araghchi-unga-0925",
+      "title": "イラン外相アラグチ、国連で『7日間ロードマップ』発表——完全停戦・凍結資産解放・封鎖解除から6日目に海峡再開、7日目に核協議再開を提案",
+      "body": "イランのアッバス・アラグチ外相は9月25日、国連安全保障理事会での発言後、記者団に対しカタールを通じて米国に具体的な『7日間ロードマップ』を伝えたと明らかにした。Al Jazeeraによれば、提案は(1)レバノンを含む全戦線での完全停戦、(2)凍結されているイラン資産120億ドル超の解放、(3)米国による海上封鎖の解除と石油制裁の適用除外——を最初の4〜5日間で実施し、6日目にホルムズ海峡を再開、7日目からイラン核問題を巡る協議を再開する内容という。これは6月に署名されたMoU（覚書）をベースに『タイムラインを短縮し順序を入れ替えた』ものとされる。アラグチ氏は『選択は今や米国側にある』『イランは威圧・脅迫・強要を受け入れず、主権的権利を放棄しない』と述べた。米側の受諾可否・回答期限は現時点で示されていない。9/23に報じられていた『60日間停戦ロードマップ』『レザイ書記の4〜5日以内期限発言』との関係（同一提案の具体化か別提案か）は一次情報で明確にされておらず未検証。",
+      "sourceLabel": "Al Jazeera（9/25）／Euronews・Times of Israel等複数メディア",
+      "date": "2026年9月25日（現地）/ 2026年9月26日 JST",
+      "label": "🕊️ イラン、7日間ロードマップ発表",
+      "url": "https://www.aljazeera.com/news/2026/9/25/whats-in-irans-seven-day-plan-to-reopen-the-strait-of-hormuz",
+      "isLatest": true
+    },
     {
       "id": "latest-iran-roadmap-60day-ceasefire-rezaei-deadline-0924",
       "title": "イラン、米に『60日間停戦・海峡段階的再開』の文書ロードマップ提示——共同声明に至らず、レザイ書記『4〜5日以内』の受諾要求と伝えられる",
@@ -10,7 +20,7 @@
       "date": "2026年9月23日（現地）/ 2026年9月24〜25日 JST",
       "label": "🕊️ イラン、60日停戦ロードマップ提示",
       "url": "https://www.thenationalnews.com/news/mena/2026/09/23/iran-us-meeting-new-york/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-saudi-pipeline-actually-restarted-low-rate-0922",
@@ -31,19 +41,27 @@
       "label": "🕊️ 米・イラン仲介協議",
       "url": "https://www.aljazeera.com/news/2026/9/23/us-iran-hold-mediated-unga-talks-on-ending-war-opening-strait-of-hormuz",
       "isLatest": false
-    },
-    {
-      "id": "latest-tanker-projectile-hormuz-entrance-0921",
-      "title": "ホルムズ海峡入口でタンカーに正体不明の飛翔体が着弾、乗組員2人が軽傷——UKMTO、攻撃主体は特定せず",
-      "body": "英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向けて航行中のタンカー1隻が正体不明の飛翔体（unknown projectile）により被弾したと発表した。乗組員2人が軽傷を負ったが、船体は自力で航行を継続し次の寄港地へ向かったという。環境への影響は報告されていない。AP通信によれば、攻撃を行った主体は特定されておらず、イラン側・米側とも公式な関与の表明はない。同日、イラン革命防衛隊（IRGC）報道官ホセイン・モヘッビ氏は、米国がさらにエスカレートさせた場合『戦争の地理を変える』として新型兵器・戦術の導入を示唆したと伝えられているが、今回のタンカー被弾との関連は不明。",
-      "sourceLabel": "AP通信（Al Arabiya English / clickorlando.com経由）/ UKMTO（9/21）",
-      "date": "2026年9月21日（現地）/ 2026年9月22日 JST",
-      "label": "⚓ タンカー被弾・攻撃主体不明",
-      "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-iran-7day-roadmap-0925",
+      "titleJa": "【Al Jazeera】イラン外相アラグチ、国連で『7日間ロードマップ』発表——6日目に海峡再開・7日目に核協議",
+      "titleEn": "What's in Iran's seven-day plan to reopen the Strait of Hormuz?",
+      "title": "【Al Jazeera】イラン外相アラグチ、国連で『7日間ロードマップ』発表——6日目に海峡再開・7日目に核協議",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月25日（現地）/ 2026年9月26日 JST",
+      "summary": "Al Jazeeraは、イラン外相アラグチ氏が国連安保理での発言後、カタール経由で米国に『7日間ロードマップ』を伝えたと報道。完全停戦・凍結資産解放・封鎖解除を4〜5日で実施し、6日目にホルムズ海峡再開、7日目に核協議再開という内容。アラグチ氏は『選択は米国側にある』と発言。米側の回答は現時点で示されていない。",
+      "cardBg": "rgba(56,189,248,0.05)",
+      "cardBorder": "rgba(56,189,248,0.25)",
+      "badgeColor": "#38bdf8",
+      "borderColor": "rgba(56,189,248,0.4)",
+      "textColor": "#7dd3fc",
+      "url": "https://www.aljazeera.com/news/2026/9/25/whats-in-irans-seven-day-plan-to-reopen-the-strait-of-hormuz",
+      "isLatest": true
+    },
     {
       "id": "osint-thenational-iran-roadmap-60day-ceasefire-0923",
       "titleJa": "【The National】イラン、米に60日停戦・海峡段階的再開のロードマップ提示——共同声明には至らず",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.thenationalnews.com/news/mena/2026/09/23/iran-us-meeting-new-york/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-thenational-saudi-pipeline-restart-0922",
@@ -1484,6 +1502,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月21日",
+      "items": [
+        {
+          "id": "latest-tanker-projectile-hormuz-entrance-0921",
+          "title": "ホルムズ海峡入口でタンカーに正体不明の飛翔体が着弾、乗組員2人が軽傷——UKMTO、攻撃主体は特定せず",
+          "body": "英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向けて航行中のタンカー1隻が正体不明の飛翔体（unknown projectile）により被弾したと発表した。乗組員2人が軽傷を負ったが、船体は自力で航行を継続し次の寄港地へ向かったという。環境への影響は報告されていない。AP通信によれば、攻撃を行った主体は特定されておらず、イラン側・米側とも公式な関与の表明はない。同日、イラン革命防衛隊（IRGC）報道官ホセイン・モヘッビ氏は、米国がさらにエスカレートさせた場合『戦争の地理を変える』として新型兵器・戦術の導入を示唆したと伝えられているが、今回のタンカー被弾との関連は不明。",
+          "sourceLabel": "AP通信（Al Arabiya English / clickorlando.com経由）/ UKMTO（9/21）",
+          "date": "2026年9月21日（現地）/ 2026年9月22日 JST",
+          "label": "⚓ タンカー被弾・攻撃主体不明",
+          "url": "https://www.clickorlando.com/news/2026/09/21/a-projectile-strikes-a-tanker-as-it-sails-into-the-strait-of-hormuz-and-other-mideast-developments/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月16〜17日",
       "items": [

@@ -448,8 +448,10 @@ hormuz-data- の `data/context.json` の `timeline` は、ダッシュボード�
   検索結果の見出しだけで書かない（ニュース URL と同じく推測・生成は禁止）
 - **`fact` に書く要素（場所・日数・金額・発言）は、すべて `source` に挙げた記事に書かれていること。**
   複数の記事から組み合わせたなら `source` に全部挙げる。サイト本文（速報インシデント等）から写さない。
-  （2026-09-26：出典の Al Jazeera に無い「安保理」「120億ドル超」「4〜5日間」「6日目」「選択は米国側に」が
-  入った PR が出た。マージ前に記事どおりに直した）
+- **URL は、その内容が書かれている記事そのものを指すこと。**同じ媒体・同じ日に似た記事が複数あることがある
+  （2026-09-26：7日間ロードマップの内容は Al Jazeera「Iran says it awaits US response…」にあったが、URL は前日の
+  発言を扱った同社の別記事を指していた。サイトの news_data.json・archive_timeline.json と timeline の3系統に同じ URL が
+  入り、訂正履歴に記録した。news_data.json の `url` も同じ注意が要る）
 - 通航隻数は、**Kpler・Lloyd's List Intelligence 等の実測系集計**が出ていればそれを優先する
 - `context_updated` は前提値（流量・隻数・係数）を変えたときの日付なので、`timeline` の追記だけなら動かさない
 - `data/context.json` は **LF** のファイル。改行コードを変えない

@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月26日 09:33 日本時間JST",
+  "updated": "2026年9月27日 07:35 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-trump-rejects-7day-roadmap-0926",
+      "title": "トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ報道、『イランは資金繰りに窮しているだけ』",
+      "body": "Al Jazeeraは9月26日、ウォール・ストリート・ジャーナル（WSJ）の報道として、トランプ大統領がイランの提示した『7日間でホルムズ海峡を再開する』ロードマップを事実上拒否したと伝えた。匿名の米政府当局者によれば、トランプ氏はイラン側が要求（凍結資産120億ドルの返金・石油制裁解除・海上封鎖の解除）を実際に履行するかについて懐疑的だという。トランプ氏は、イランが取引を望む理由について『（イランは）資金繰りに窮しているだけで、金が入ってこない』と述べたと報じられている。専門家は、トランプ氏が11月の中間選挙後にイランへの新たな軍事作戦（爆撃キャンペーン）に踏み切る可能性を指摘する一方、カタール仲介の外交チャネル自体は閉じていないとされる。米政府としての公式な拒否声明は現時点で確認されておらず、WSJの匿名情報源による報道の域を出ない。",
+      "sourceLabel": "Al Jazeera（9/26、WSJ経由）",
+      "date": "2026年9月26日（現地）/ 2026年9月26〜27日 JST",
+      "label": "🚫 米、7日間ロードマップを事実上拒否",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days",
+      "isLatest": true
+    },
     {
       "id": "latest-iran-7day-roadmap-araghchi-unga-0925",
       "title": "イラン外相アラグチ、国連で『7日間ロードマップ』発表——完全停戦・凍結資産解放・封鎖解除から6日目に海峡再開、7日目に核協議再開を提案",
@@ -10,7 +20,7 @@
       "date": "2026年9月25日（現地）/ 2026年9月26日 JST",
       "label": "🕊️ イラン、7日間ロードマップ発表",
       "url": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-roadmap-60day-ceasefire-rezaei-deadline-0924",
@@ -31,19 +41,27 @@
       "label": "🛢️ パイプライン、実際に再開（低速）",
       "url": "https://www.thenationalnews.com/business/energy/2026/09/22/saudi-arabia-restarts-east-west-pipeline-for-crude-exports/",
       "isLatest": false
-    },
-    {
-      "id": "latest-us-iran-unga-talks-hormuz-0923",
-      "title": "米・イラン、UNGAで仲介協議——イラン『封鎖解除・資産凍結解除で海峡は7日以内に再開可能』と伝えられる",
-      "body": "国連総会（UNGA）開催中のニューヨークで9月22〜23日、米国とイランの代表が仲介者を介した間接協議を実施したとAl Jazeeraが報じた。米国側はスティーブ・ウィトコフ中東担当特使、イラン側はアッバス・アラグチ外相が参加し、カタール・オマーンなどが仲介したという。トランプ大統領は『非常に良く、生産的な会合』とし『合意に向けて勢いがある』と述べた。イラン当局者はAl Jazeeraに対し、米国が軍事圧力を緩和し海軍による封鎖を解除すればホルムズ海峡は『7日以内に再開可能』と述べたと伝えられている。イラン側が条件として挙げているのは、米海軍による封鎖の解除・凍結資産の放出・『抵抗勢力』への戦争終結の3点という。両国代表が直接接触したのは数週間ぶりで、仲介者による外交努力は今後も継続される見通しだが、具体的な合意内容や日程は現時点で発表されていない。",
-      "sourceLabel": "Al Jazeera（9/23）",
-      "date": "2026年9月22〜23日（現地）/ 2026年9月24日 JST",
-      "label": "🕊️ 米・イラン仲介協議",
-      "url": "https://www.aljazeera.com/news/2026/9/23/us-iran-hold-mediated-unga-talks-on-ending-war-opening-strait-of-hormuz",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-trump-rejects-7day-roadmap-0926",
+      "titleJa": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ経由",
+      "titleEn": "Trump 'rejects' Iran's seven-day ceasefire proposal. What's next?",
+      "title": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ経由",
+      "country": "米国",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月26日（現地）/ 2026年9月26〜27日 JST",
+      "summary": "Al Jazeeraは、WSJ報道としてトランプ大統領がイランの『7日間でホルムズ海峡を再開する』ロードマップを事実上拒否したと報道。匿名の米当局者によれば、トランプ氏はイラン側が要求（凍結資産返金・石油制裁解除・海上封鎖解除）を履行するかに懐疑的で、『イランは資金繰りに窮しているだけ』と発言したとされる。専門家は中間選挙後の新たな軍事作戦の可能性を指摘する一方、カタール仲介の外交チャネルは閉じていないという。米政府の公式な拒否声明は確認されていない。",
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-iran-7day-roadmap-0925",
       "titleJa": "【Al Jazeera】イラン外相アラグチ、国連で『7日間ロードマップ』発表——6日目に海峡再開・7日目に核協議",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(56,189,248,0.4)",
       "textColor": "#7dd3fc",
       "url": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-thenational-iran-roadmap-60day-ceasefire-0923",
@@ -1502,6 +1520,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月22〜23日",
+      "items": [
+        {
+          "id": "latest-us-iran-unga-talks-hormuz-0923",
+          "title": "米・イラン、UNGAで仲介協議——イラン『封鎖解除・資産凍結解除で海峡は7日以内に再開可能』と伝えられる",
+          "body": "国連総会（UNGA）開催中のニューヨークで9月22〜23日、米国とイランの代表が仲介者を介した間接協議を実施したとAl Jazeeraが報じた。米国側はスティーブ・ウィトコフ中東担当特使、イラン側はアッバス・アラグチ外相が参加し、カタール・オマーンなどが仲介したという。トランプ大統領は『非常に良く、生産的な会合』とし『合意に向けて勢いがある』と述べた。イラン当局者はAl Jazeeraに対し、米国が軍事圧力を緩和し海軍による封鎖を解除すればホルムズ海峡は『7日以内に再開可能』と述べたと伝えられている。イラン側が条件として挙げているのは、米海軍による封鎖の解除・凍結資産の放出・『抵抗勢力』への戦争終結の3点という。両国代表が直接接触したのは数週間ぶりで、仲介者による外交努力は今後も継続される見通しだが、具体的な合意内容や日程は現時点で発表されていない。",
+          "sourceLabel": "Al Jazeera（9/23）",
+          "date": "2026年9月22〜23日（現地）/ 2026年9月24日 JST",
+          "label": "🕊️ 米・イラン仲介協議",
+          "url": "https://www.aljazeera.com/news/2026/9/23/us-iran-hold-mediated-unga-talks-on-ending-war-opening-strait-of-hormuz",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月21日",
       "items": [

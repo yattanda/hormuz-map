@@ -2933,6 +2933,20 @@
           "url": "https://www.thenationalnews.com/business/energy/2026/09/22/saudi-arabia-restarts-east-west-pipeline-for-crude-exports/"
         }
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "dateLabel": "2026/09/26 09:33",
+      "blockadeDay": 211,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】イラン外相アラグチ氏は9/25、国連安全保障理事会での発言後、カタール経由で米国に「7日間ロードマップ」を伝えたと発表——完全停戦・凍結資産120億ドル超の解放・封鎖解除を4〜5日で実施し、6日目にホルムズ海峡再開、7日目に核協議再開を提案する内容（Al Jazeeraなど複数メディア）。「選択は米国側にある」と述べ、米側の回答期限は現時点で不明。9/23報道の「60日間停戦ロードマップ」との関係（具体化か別提案か）は未検証・サウジ東西パイプライン（9/22低速再開）・9/21タンカー被弾（攻撃主体不明）はいずれも続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし・封鎖211日目・ニュース1件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Al Jazeera（9/25）",
+          "title": "イラン外相アラグチ、国連で『7日間ロードマップ』発表——完全停戦・凍結資産解放・封鎖解除から6日目に海峡再開、7日目に核協議再開を提案",
+          "url": "https://www.aljazeera.com/news/2026/9/25/whats-in-irans-seven-day-plan-to-reopen-the-strait-of-hormuz"
+        }
+      ]
     }
   ]
 }

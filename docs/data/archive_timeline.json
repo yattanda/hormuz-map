@@ -2947,6 +2947,20 @@
           "url": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war"
         }
       ]
+    },
+    {
+      "date": "2026-09-27",
+      "dateLabel": "2026/09/27 07:35",
+      "blockadeDay": 212,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】Al JazeeraはWSJ報道として、トランプ大統領がイランの「7日間ロードマップ」（9/25発表）を事実上拒否したと9/26に伝えた——匿名の米当局者によれば「イランは資金繰りに窮しているだけ」と発言、米政府の公式声明は現時点で確認されていない。またムサンダム沖でアンティグア・バーブーダ籍貨物船「CAPE DAO」が9月23日に攻撃を受け出火、インド人乗組員1人が死亡・27人がオマーン海軍に救助されたことが本日判明——攻撃主体は不明（Oman Observer、Arab News）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/27確認）・封鎖212日目・ニュース1件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Al Jazeera（9/26、WSJ経由）",
+          "title": "トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ報道、『イランは資金繰りに窮しているだけ』",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days"
+        }
+      ]
     }
   ]
 }

@@ -20,8 +20,9 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
     - ファイル間の整合だけでなく、基準日そのものを実測日と照合する。
       揃ったまま間違った日付で書かれていると内部整合では気づけないため
     - 全ルート現況サマリーは見出しの日付更新だけで本文が古いまま、という事故が
-      2026-09-15 に実際に発生した。見出しの日付一致（NG）とは別に、各行本文中の
-      M/D 日付表記の鮮度を WARN として見る（本文の内容自体は機械判定できないため）
+      2026-09-15 に実際に発生した。見出しの日付一致（NG）とは別に、各行の「最新」
+      （p.route-latest の <time datetime>。② PR3 以降の型）の鮮度を WARN として見る。
+      型で書かれていない行は、本文中の M/D 日付表記で推定する（本文の内容自体は機械判定できないため）
     - hormuz-data- の経緯（data/context.json の timeline）は手動追記で、日次手順に
       入っていなかったため 9/3 で止まり、ダッシュボードに ⚠ が出た（2026-09-19 に発覚）。
       最新日が実測の今日から 5日を超えたら WARN を出す（別リポジトリのため NG にはしない）。
@@ -97,6 +98,7 @@ PAT_ROUTE_TABLE = re.compile(r'<table class="rtable">.*?</table>', re.S)
 PAT_ROUTE_ROW = re.compile(r'<tr\b[^>]*>.*?</tr>', re.S)
 PAT_ROUTE_ROW_ID = re.compile(r'id="jf-td-(\w+)"')
 PAT_ROUTE_ROW_MD = re.compile(r'(\d{1,2})/(\d{1,2})')
+PAT_ROUTE_LATEST = re.compile(r'<p class="route-latest">.*?<time datetime="(\d{4}-\d{2}-\d{2})', re.S)
 STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に無ければ WARN
 
 # sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
@@ -209,7 +211,7 @@ def check_route_freshness(html: str, base: str) -> None:
         route = id_m.group(1)
         text = re.sub(r"<[^>]+>", " ", row_html)  # href 等はタグごと除去されるので誤検出しない
 
-        newest: date | None = None
+        newest_md: date | None = None
         for mm, dd in PAT_ROUTE_ROW_MD.findall(text):
             try:
                 d = date(base_date.year, int(mm), int(dd))
@@ -217,8 +219,25 @@ def check_route_freshness(html: str, base: str) -> None:
                 continue
             if d > base_date + timedelta(days=1):
                 continue  # 表記ゆれ等で未来日になったものは日付として扱わない
-            if newest is None or d > newest:
-                newest = d
+            if newest_md is None or d > newest_md:
+                newest_md = d
+
+        # ② PR3 の型：「最新」は p.route-latest の <time datetime> を正とする
+        latest = PAT_ROUTE_LATEST.findall(row_html)
+        if len(latest) == 1:
+            newest = date.fromisoformat(latest[0])
+            if newest_md and newest_md > newest:
+                warn(
+                    f"全ルート現況サマリー / ルート{route} 行に「最新」（{newest.isoformat()}）より新しい日付表記 "
+                    f"{newest_md.isoformat()} があります。新しい情報は「最新」に書き、前の「最新」は経緯へ移す"
+                    "（daily-site-update「ルート表の型」）"
+                )
+        else:
+            warn(
+                f"全ルート現況サマリー / ルート{route} 行の「最新」（p.route-latest＋<time datetime>）が "
+                f"{len(latest)}件です（型は1件。daily-site-update「ルート表の型」）。本文中の日付表記で鮮度を推定します"
+            )
+            newest = newest_md
 
         if newest is None:
             warn(f"全ルート現況サマリー / ルート{route} 行に本文中の日付表記が見つかりません（鮮度確認不可）")
@@ -232,7 +251,7 @@ def check_route_freshness(html: str, base: str) -> None:
                 "本文が古いままになっていないか確認すること"
             )
         else:
-            ok(f"全ルート現況サマリー / ルート{route} 行の鮮度（本文中の最新日付表記 {newest.isoformat()}、{age}日前）")
+            ok(f"全ルート現況サマリー / ルート{route} 行の鮮度（最新 {newest.isoformat()}、{age}日前）")
 
     if not seen_any_row:
         warn("全ルート現況サマリーの表からルート行（jf-td-* を含む行）を検出できませんでした（構造が変わった可能性）")
@@ -445,7 +464,7 @@ PAT_INCIDENT_LIST = re.compile(r'<ul id="incident-list"[^>]*>.*?</ul>', re.S)
 
 def check_types(html: str, base: str) -> None:
     """② で決めた型（クラス＋モディファイア・インライン style なし）で書かれているか。
-    30秒カラム（主な動き3件を含む）と速報インシデントの一覧が対象。見た目は壊れないので WARN にとどめる。"""
+    30秒カラム（主な動き3件を含む）・速報インシデントの一覧・ルート表が対象。見た目は壊れないので WARN にとどめる。"""
     g = PAT_GLANCE.search(html)
     if not g:
         warn("30秒カラム（<div class=\"glance\">）を検出できませんでした（構造が変わった可能性）")
@@ -473,6 +492,16 @@ def check_types(html: str, base: str) -> None:
         warn(f"ヘッダーの警戒レベルに要約が書かれています（{len(a.group(1))}字）。「警戒レベル：最高」の一語だけにする")
     elif a:
         ok(f"ヘッダーの警戒レベル「{a.group(1)}」")
+    t = PAT_ROUTE_TABLE.search(html)
+    if t:
+        # <col> の幅だけは style のまま残す（html-safe-edit「colgroup を触らない」）
+        n_style = len(re.findall(r'<(?!col\b)\w+[^>]*\sstyle="', t.group(0)))
+        if n_style:
+            warn(f"ルート表にインライン style が {n_style}箇所あります（型はクラス。daily-site-update「ルート表の型」）")
+        else:
+            ok("ルート表にインライン style なし（<col> を除く）")
+    if 'class="sec-lead"' in html[html.find('全ルート現況サマリー'):html.find('<!-- ROUTE TABLE -->')]:
+        warn("全ルート現況サマリーの見出しの下にリード文（p.sec-lead）があります。② PR3 で廃止した。各行の「最新」に書く")
     m = PAT_INCIDENT_LIST.search(html)
     if m:
         n_style = m.group(0).count('style="')

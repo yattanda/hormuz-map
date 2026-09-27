@@ -108,11 +108,11 @@ python tools/validate_daily.py
   `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）
 - `latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複
 - **全ルート現況サマリーの行ごとの鮮度（WARN）**：見出し（`sec-h2-sub`）の日付更新だけでは
-  検出できない「本文が古いまま」を、各行本文中の M/D 日付表記から推定する
+  検出できない「本文が古いまま」を、各行の「最新」（`p.route-latest` の `<time datetime>`）から見る
   （2026-09-15、ルートB＝サウジ東西PLで見出しだけ更新され本文が4/12時点のまま、という事故が
   実際に発生したための追加）。**WARN が出た行は、その日のうちにそのルートを検索して確かめ直す**（読み流さない）：
-  - 変化があれば、その行の「現況詳細」に `M/D HH:MM JST追記` として書く
-  - 変化がなくても `<strong style="color:#94a3b8;">🔁 M/D JST再確認：</strong>` で、確かめた内容と出典
+  - 変化があれば、その行の「最新」を書き換える（前の「最新」は経緯へ移す。「ルート表の型」）
+  - 変化がなくても `🔁 最新 <time datetime="YYYY-MM-DD">M/D JST</time> 再確認：` で、確かめた内容と出典
     （記事が無いときは `確認方法：主要報道の検索（M/D）`）を書く。これで WARN が消える
   - **「予定」「未確認」と書いてある記述は、その予定の時期を過ぎたら必ず確かめ直す**
   - （2026-09-26：A・C🇺🇸・C🌍・D の4行が 9/15 の一括再確認のまま11日放置され、C🇺🇸 に「メキシコ産原油は7月初便予定・
@@ -196,7 +196,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 6. COUNTDOWN 更新（型は下の「COUNTDOWN セクションのルール」）
 7. 4つのシナリオ内容決定（1〜6を踏まえて初めて書く）
 8. シナリオフッター 更新
-8.5. **全ルート現況サマリー 更新**（S08完了後・30秒カラムの直前）
+8.5. **全ルート現況サマリー 更新**（S08完了後・30秒カラムの直前。見出しの日付と、変化のあった行の「最新」。型は下の「ルート表の型」）
 9. **30秒カラム（3行サマリー＋主な動き3件＋ステータスバッジ）― 必ず最後に書く**（型は下の「30秒カラムの型」）
    └ 全セクションの総括のため、他が確定してから書くこと
 10. ヘッダー（日時・警戒レベル）更新
@@ -306,6 +306,67 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ---
 
+## ルート表の型（2026-09-27〜・② PR3）
+
+**インライン style を書かない。**見出し `🚢 全ルート現況サマリー` の下にあった長文のリード文（`<p class="sec-lead">`、【外交】【中央航路】…の6分類）は**廃止した。書かない。**
+見出しの `sec-h2-sub` の日付だけは従来どおり毎回当日にする（ルール1）。
+
+### どの行に書くか（2026-09-27 決定 U2：ラベルではなく中身で振り分ける）
+
+| 出来事 | 書く行 |
+|---|---|
+| ホルムズ海峡の中を通る航行（中央航路・南側航路〈オマーン沿岸 TSS〉とも）、通航量、封鎖、海峡をめぐる協議 | 旧ルート（`jf-td-old`） |
+| サウジ東西パイプライン・ヤンブー港・紅海・バブエルマンデブ海峡（フーシ派） | ルートB（`jf-td-B`） |
+| ADCOP パイプライン・フジャイラ港 | ルートA（`jf-td-A`） |
+| 米国（アラスカ・メキシコ湾岸）・メキシコからの対日原油 | ルートC🇺🇸（`jf-td-C_US`） |
+| ブラジル・西アフリカなど南半球からの対日原油 | ルートC🌍（`jf-td-C_GL`） |
+| イランへの通航料を払っての通過 | ルートD（`jf-td-D`） |
+| 外交全般・船舶インシデント・原油価格 | 表には書かない（30秒カラム・速報インシデント・シナリオが担う） |
+
+### 「現況詳細」セルの型
+
+上から **最新（1件）→ 要点 → 経緯（折りたたみ）** の順。
+
+```html
+<td class="route-detail">
+  <p class="route-latest"><strong class="route-tag t-info">🕊️ 最新 <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>本文。
+    <small class="route-src">出典：The National（9/23）</small></p>
+  <p class="route-summary">そのルートの現況の要点（状態が変わったときだけ書き換える）。
+    <small class="route-src">出典：…</small></p>
+  <details class="route-history"><summary>経緯を見る</summary>
+    <p class="route-entry"><strong class="route-tag t-neutral">🔁 <time datetime="2026-09-22">9/22 07:25 JST</time> 再確認：</strong>本文。
+      <small class="route-src">出典：…</small></p>
+  </details>
+</td>
+```
+
+- **新しい情報を足すとき**：いまの `p.route-latest` を `p.route-entry` に変え（`class` と「最新 」の3文字を消すだけ）、
+  `details.route-history` の**先頭**へ移す。そのうえで新しい `p.route-latest` を書く。**`route-latest` は各行ちょうど1件**
+  （`details` が無い行は、そのとき `<details class="route-history"><summary>経緯を見る</summary>…</details>` を作る）
+- **変化がないとき**（鮮度 WARN が出た行）：同じ手順で `🔁 最新 <time datetime="YYYY-MM-DD">M/D JST</time> 再確認：` を書く。
+  確かめた内容と出典（記事が無いときは `<small class="route-src">確認方法：主要報道の検索（M/D）</small>`）
+- `<time datetime>` は**確かめた日（JST）**を `YYYY-MM-DD` で。表示は `M/D HH:MM JST` か `M/D JST`
+- 経緯（`details` の中）は新しい順。過去に書いた本文は**書き換えない・消さない**（移すだけ）
+- 出典は `<br><small style=…>` ではなく `<small class="route-src">`（ブロック表示になる）。段落の間の `<br><br>` も書かない
+- 文中の強調の色は `<strong class="t-*">`：
+
+| クラス | 使う場面 | 色 |
+|---|---|---|
+| `t-danger` | 攻撃・停止・封鎖 | 赤 |
+| `t-warning` | 見通し・未検証・注意 | 黄 |
+| `t-positive` | 再開・回復 | 緑 |
+| `t-info` | 外交・協議の動き | 水色 |
+| `t-neutral` | 再確認（変化なし） | 灰 |
+| `t-bright` | 中立の強調 | 白 |
+
+- 「主なリスク」「状態」（`pill`）の列は、変化があったときに書き換える
+- 「日本向け」列（`jf-*-bpd`・`jf-*-tanker`）は `loadRouteTableFlow()` が `oil-flow.json` から入れる。**手で書かない**
+- `tools/validate_daily.py` が「ルート表のインライン style（`<col>` を除く）」「各行の `route-latest` が1件か」
+  「`route-latest` より新しい日付が行の中にないか」「リード文 `sec-lead` の復活」を WARN で確認する。
+  鮮度は `route-latest` の `<time datetime>` で判定する
+
+---
+
 ## COUNTDOWN セクションのルール
 
 - `<div class="dl-note">` の本文は `<strong>`、焦点・見通しの行は `<br><span class="dl-focus">⚡ …</span>` で書く（インライン style を書かない。2026-09-25〜）
@@ -332,8 +393,8 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ### ルール1：全ルート現況サマリーの日付
 
 - `🚢 全ルート現況サマリー` の日付は毎回当日の日時（JST）に更新する
-- **日付の場所は見出し内の `<span class="sec-h2-sub">`**。本文は隣の `<p class="sec-lead">`
-  （2026-09-05 のフェーズ1a-2 で `div.sec-title` 1要素から2要素に分離した）
+- **日付の場所は見出し内の `<span class="sec-h2-sub">`**。見出しの下のリード文（`<p class="sec-lead">`）は
+  2026-09-27 に廃止した。ルートごとの内容は表の各行の「最新」に書く（「ルート表の型」）
 - ルート情報に変更がない週も日付を更新し末尾に「再確認済」を付ける
 - 形式：変更あり → `YYYY年MM月DD日 HH:MM JST 更新` ／ 変更なし → `YYYY年MM月DD日 HH:MM JST 再確認済`
 

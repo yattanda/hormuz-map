@@ -1,7 +1,17 @@
 {
-  "updated": "2026年9月27日 07:35 日本時間JST",
+  "updated": "2026年9月28日 08:12 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-hormuz-closed-economic-warfare-drone-0927",
+      "title": "イラン高官『海峡は米の経済戦争終結まで閉鎖継続』——革命防衛隊、第2の米無人潜水機拿捕も主張、米は否定",
+      "body": "Al Jazeeraのライブブログ（9/27）によれば、イランの高官（将軍、氏名は記事中で特定されず）は『戦争は終わっていない。われわれは勝利したが、この勝利を確立しなければならない』と述べ、ホルムズ海峡は米国の『経済戦争』が終わるまで閉鎖されたままになると警告した。同日、イラン革命防衛隊（IRGC）はホルムズ海峡で米国の無人潜水機（Remus 600型と主張）を新たに拿捕し諜報活動を行っていたとして分析中と発表したが、米軍はこの主張を直ちに否定し、全ての無人機資産について『完全な統制（positive control）』を維持しているとして、イラン側の主張を『明らかに絶望的』と評価した。IRGCは9月8日にも別の米無人潜水機（Anduril製Dive-LD）の拿捕を発表しており、発表上はこれで2件目となる。Al Jazeera経済面（9/27）はさらに、米エネルギー長官クリス・ライト氏が『日量平均約1,300万バレル』の原油がホルムズ海峡を通過していると主張し、米中央軍（CENTCOM）も『約2カ月間で10億バレル以上を移送した』と発表したと報道。イラン側はこれらの数字を、米国が海峡の実効支配を演出するための『誤情報』だと反論している。イラン軍報道官アボルファザル・シェカルチ氏は米国がさらに介入すれば『平手打ちを受ける』と警告し、陸軍報道官モハンマド・アクラミニア氏も米国による『さらなる軍事侵略』の可能性に言及した。IRGCは、イラン当局と調整しない船舶については海峡を閉鎖したままにしていると主張している。これらはいずれも当事者側の一方的発表であり独立検証は取れていない。特に無人機拿捕の主張と米側の否定は完全に対立しており実態は不明。",
+      "sourceLabel": "Al Jazeera（9/27、ライブブログ・経済面）",
+      "date": "2026年9月27日（現地）/ 2026年9月28日 JST",
+      "label": "⚔️ イラン、海峡閉鎖継続を表明——無人機拿捕は米が否定",
+      "url": "https://www.aljazeera.com/economy/2026/9/27/strait-of-hormuz-tensions-linger-as-iran-and-us-move-further-from-a-deal",
+      "isLatest": true
+    },
     {
       "id": "latest-trump-rejects-7day-roadmap-0926",
       "title": "トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ報道、『イランは資金繰りに窮しているだけ』",
@@ -10,7 +20,7 @@
       "date": "2026年9月26日（現地）/ 2026年9月26〜27日 JST",
       "label": "🚫 米、7日間ロードマップを事実上拒否",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iran-7day-roadmap-araghchi-unga-0925",
@@ -31,19 +41,27 @@
       "label": "🕊️ イラン、60日停戦ロードマップ提示",
       "url": "https://www.thenationalnews.com/news/mena/2026/09/23/iran-us-meeting-new-york/",
       "isLatest": false
-    },
-    {
-      "id": "latest-saudi-pipeline-actually-restarted-low-rate-0922",
-      "title": "サウジ東西パイプライン、9月22日に実際に再開——低速稼働から開始、全面復旧は『数週間』の見方",
-      "body": "英字紙The Nationalは9月22日、9月13日のドローン攻撃で停止していたサウジアラビアの東西原油パイプライン（全長約1,200km）が同日（火曜日）に再開し、低速でのポンプ輸送を開始したと報じた。サウジアラムコは日量400万バレル（世界供給の約4%）規模への復旧を目指しているとされる。全面復旧の具体的な時期はThe National記事では示されていないが、別報道（globalsecurity.org経由）では治安関係筋の見立てとして全面復旧には『数週間』かかる可能性があると伝えられている——これは9月16日時点でBloomberg・Reutersが報じていた『全面復旧は約6週間』という従来の見通しと大きくは矛盾しないが、独立した確認は取れていない。The Nationalによれば、パイプライン再開のニュースを受けてブレント原油は一時1週間ぶりに1バレル100ドルを割り込んだ。",
-      "sourceLabel": "The National（9/22）／globalsecurity.org経由（全面復旧時期、未検証）",
-      "date": "2026年9月22日（現地）/ 2026年9月25日 JST",
-      "label": "🛢️ パイプライン、実際に再開（低速）",
-      "url": "https://www.thenationalnews.com/business/energy/2026/09/22/saudi-arabia-restarts-east-west-pipeline-for-crude-exports/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-iran-hormuz-closed-drone-0927",
+      "titleJa": "【Al Jazeera】イラン高官『海峡は米の経済戦争終結まで閉鎖継続』——無人機拿捕は米が否定",
+      "titleEn": "Strait of Hormuz tensions linger as Iran and US move further from a deal",
+      "title": "【Al Jazeera】イラン高官『海峡は米の経済戦争終結まで閉鎖継続』——無人機拿捕は米が否定",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月27日（現地）/ 2026年9月28日 JST",
+      "summary": "Al Jazeeraは、イラン高官（将軍）が『戦争は終わっていない、勝利を確立しなければならない』と述べ海峡は米国の『経済戦争』終結まで閉鎖継続と警告したと報道。同日、IRGCは米無人潜水機の拿捕（2件目）を主張したが米軍は否定し『明らかに絶望的』と評価。米エネルギー長官の輸送量主張（日量1,300万バレル）にイラン側は『誤情報』と反論、軍報道官は米国のさらなる介入を警告した。",
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "url": "https://www.aljazeera.com/economy/2026/9/27/strait-of-hormuz-tensions-linger-as-iran-and-us-move-further-from-a-deal",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-trump-rejects-7day-roadmap-0926",
       "titleJa": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ経由",
@@ -60,7 +78,7 @@
       "borderColor": "rgba(239,68,68,0.4)",
       "textColor": "#fca5a5",
       "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-iran-7day-roadmap-0925",
@@ -1520,6 +1538,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月22日",
+      "items": [
+        {
+          "id": "latest-saudi-pipeline-actually-restarted-low-rate-0922",
+          "title": "サウジ東西パイプライン、9月22日に実際に再開——低速稼働から開始、全面復旧は『数週間』の見方",
+          "body": "英字紙The Nationalは9月22日、9月13日のドローン攻撃で停止していたサウジアラビアの東西原油パイプライン（全長約1,200km）が同日（火曜日）に再開し、低速でのポンプ輸送を開始したと報じた。サウジアラムコは日量400万バレル（世界供給の約4%）規模への復旧を目指しているとされる。全面復旧の具体的な時期はThe National記事では示されていないが、別報道（globalsecurity.org経由）では治安関係筋の見立てとして全面復旧には『数週間』かかる可能性があると伝えられている——これは9月16日時点でBloomberg・Reutersが報じていた『全面復旧は約6週間』という従来の見通しと大きくは矛盾しないが、独立した確認は取れていない。The Nationalによれば、パイプライン再開のニュースを受けてブレント原油は一時1週間ぶりに1バレル100ドルを割り込んだ。",
+          "sourceLabel": "The National（9/22）／globalsecurity.org経由（全面復旧時期、未検証）",
+          "date": "2026年9月22日（現地）/ 2026年9月25日 JST",
+          "label": "🛢️ パイプライン、実際に再開（低速）",
+          "url": "https://www.thenationalnews.com/business/energy/2026/09/22/saudi-arabia-restarts-east-west-pipeline-for-crude-exports/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月22〜23日",
       "items": [

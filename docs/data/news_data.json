@@ -14,12 +14,12 @@
     },
     {
       "id": "latest-trump-rejects-7day-roadmap-0926",
-      "title": "トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ報道、『イランは資金繰りに窮しているだけ』",
-      "body": "Al Jazeeraは9月26日、ウォール・ストリート・ジャーナル（WSJ）の報道として、トランプ大統領がイランの提示した『7日間でホルムズ海峡を再開する』ロードマップを事実上拒否したと伝えた。匿名の米政府当局者によれば、トランプ氏はイラン側が要求（凍結資産120億ドルの返金・石油制裁解除・海上封鎖の解除）を実際に履行するかについて懐疑的だという。トランプ氏は、イランが取引を望む理由について『（イランは）資金繰りに窮しているだけで、金が入ってこない』と述べたと報じられている。専門家は、トランプ氏が11月の中間選挙後にイランへの新たな軍事作戦（爆撃キャンペーン）に踏み切る可能性を指摘する一方、カタール仲介の外交チャネル自体は閉じていないとされる。米政府としての公式な拒否声明は現時点で確認されておらず、WSJの匿名情報源による報道の域を出ない。",
-      "sourceLabel": "Al Jazeera（9/26、WSJ経由）",
+      "title": "トランプ氏、イランの『7日間ロードマップ』を拒否——ホワイトハウスで記者団に『受け入れられない』",
+      "body": "トランプ大統領は9月26日、ホワイトハウスで記者団に対し、イランが9月25日に示した『7日間でホルムズ海峡を再開する』ロードマップは『受け入れられない』と述べた。イランが取引を望むのは『大敗しているから』とする一方、『私も取引はしたい』とも語った。ウォール・ストリート・ジャーナル（WSJ）は匿名の米当局者の話として、トランプ氏はイランが要求に応じるかに内心では懐疑的で、11月の中間選挙後に爆撃を再開する見通しを側近に語ったと報じた。イランのアラグチ外相は『米大統領の最初の反応は見たが、仲介者からはまだ何も伝えられていない』と述べ、仲介者から正式な見解が届いてから判断するとした。（2026年9月28日訂正：当初は『米政府としての公式な拒否声明は確認されておらず、WSJの匿名情報源による報道の域を出ない』と記載していました）",
+      "sourceLabel": "Al Jazeera（9/26）",
       "date": "2026年9月26日（現地）/ 2026年9月26〜27日 JST",
-      "label": "🚫 米、7日間ロードマップを事実上拒否",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days",
+      "label": "🚫 トランプ氏、7日間ロードマップを拒否",
+      "url": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-irans-seven-day-roadmap-to-reopen-strait-of-hormuz",
       "isLatest": false
     },
     {
@@ -64,20 +64,20 @@
     },
     {
       "id": "osint-aljazeera-trump-rejects-7day-roadmap-0926",
-      "titleJa": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ経由",
-      "titleEn": "Trump 'rejects' Iran's seven-day ceasefire proposal. What's next?",
-      "title": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を事実上拒否——WSJ経由",
+      "titleJa": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を拒否——記者団に『受け入れられない』",
+      "titleEn": "Trump rejects Iran's seven-day roadmap to end war and reopen Hormuz",
+      "title": "【Al Jazeera】トランプ氏、イランの『7日間ロードマップ』を拒否——記者団に『受け入れられない』",
       "country": "米国",
       "media": "Al Jazeera",
       "source": "Al Jazeera",
       "date": "2026年9月26日（現地）/ 2026年9月26〜27日 JST",
-      "summary": "Al Jazeeraは、WSJ報道としてトランプ大統領がイランの『7日間でホルムズ海峡を再開する』ロードマップを事実上拒否したと報道。匿名の米当局者によれば、トランプ氏はイラン側が要求（凍結資産返金・石油制裁解除・海上封鎖解除）を履行するかに懐疑的で、『イランは資金繰りに窮しているだけ』と発言したとされる。専門家は中間選挙後の新たな軍事作戦の可能性を指摘する一方、カタール仲介の外交チャネルは閉じていないという。米政府の公式な拒否声明は確認されていない。",
+      "summary": "Al Jazeeraは、トランプ大統領が9月26日にホワイトハウスで記者団に、イランの7日間ロードマップは『受け入れられない』と述べたと報道。WSJは匿名の米当局者の話として、トランプ氏が中間選挙後の爆撃再開の見通しを側近に語ったと報じた。イランのアラグチ外相は、仲介者から正式な見解が届いてから判断するとしている。（9/28訂正：当初は『米政府の公式な拒否声明は確認されていない』と記載）",
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
       "borderColor": "rgba(239,68,68,0.4)",
       "textColor": "#fca5a5",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days",
+      "url": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-irans-seven-day-roadmap-to-reopen-strait-of-hormuz",
       "isLatest": false
     },
     {

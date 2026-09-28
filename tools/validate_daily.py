@@ -27,6 +27,9 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
       入っていなかったため 9/3 で止まり、ダッシュボードに ⚠ が出た（2026-09-19 に発覚）。
       最新日が実測の今日から 5日を超えたら WARN を出す（別リポジトリのため NG にはしない）。
       ローカルの ../hormuz-data- を優先し、無ければ公開 URL を取得する。どちらも失敗したら WARN
+    - index.html には石油備蓄日数が2か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記）ある。
+      どちらも特別解説コラムの月次更新の対象外で、8/17時点の値が 9/28 まで残っていた。
+      「◯時点」の日付が実測の今日から 7日を超えたら WARN、2か所の値・日付が食い違ったら WARN を出す
 """
 from __future__ import annotations
 
@@ -110,6 +113,11 @@ DATA_CONTEXT_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "context.json"
 DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
 # ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
 DATA_TIMELINE_WARN_DAYS = 5
+
+# index.html の石油備蓄日数（コラムの月次更新とは別に、日次更新で見直す2か所）
+PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*?(\d{1,2})/(\d{1,2})時点）')
+PAT_STOCKPILE_NOTE = re.compile(r'合計は約(\d+)日分（(\d{4})年(\d{1,2})月(\d{1,2})日時点）')
+STOCKPILE_WARN_DAYS = 7
 
 
 def ymd(y, m, d) -> str:
@@ -430,6 +438,44 @@ def check_data_timeline() -> None:
         ok(f"hormuz-data- の経緯の最新日 {latest.isoformat()}（{age}日前、{src}）")
 
 
+def check_stockpile(html: str) -> None:
+    """index.html の石油備蓄日数2か所が古すぎないか、互いに食い違っていないか。
+
+    WARN のみ。値の正しさ（資源エネルギー庁の速報との一致）は機械では確かめられない。
+    基準日ではなく実測の今日（JST）から数える。
+    """
+    today = date.fromisoformat(today_jst())
+    found: dict[str, tuple[int, date]] = {}
+
+    m = PAT_STOCKPILE_POPUP.search(html)
+    if m:
+        total, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        asof = date(today.year, mo, d)
+        if asof > today:  # 年をまたいだ直後（1月に 12/28時点 など）
+            asof = date(today.year - 1, mo, d)
+        found["地図ポップアップ"] = (total, asof)
+    else:
+        warn("石油備蓄日数（地図の「日本の受入拠点」ポップアップ）を検出できません（書式が変わった可能性）")
+
+    m = PAT_STOCKPILE_NOTE.search(html)
+    if m:
+        found["精製所表の注記"] = (int(m.group(1)), date(*map(int, m.group(2, 3, 4))))
+    else:
+        warn("石油備蓄日数（精製所表の注記）を検出できません（書式が変わった可能性）")
+
+    for name, (total, asof) in found.items():
+        age = (today - asof).days
+        if age > STOCKPILE_WARN_DAYS:
+            warn(f"石油備蓄日数（{name}）が {asof.isoformat()}時点のまま（{age}日前）。"
+                 f"資源エネルギー庁の速報で最新値を確かめ、2か所とも更新すること")
+        else:
+            ok(f"石油備蓄日数（{name}）{total}日分・{asof.isoformat()}時点（{age}日前）")
+
+    if len(found) == 2 and len(set(found.values())) != 1:
+        detail = "／".join(f"{k} {t}日分・{a.isoformat()}" for k, (t, a) in found.items())
+        warn(f"石油備蓄日数の2か所が食い違っています: {detail}")
+
+
 def check_urls(news: dict) -> None:
     """latest の URL が生きているか。捏造URL禁止ルールの機械的な担保。"""
     import urllib.error
@@ -571,6 +617,7 @@ def main() -> int:
         check_timeline(tl, base)
     check_sitemap(tl, base)
     check_data_timeline()
+    check_stockpile(html)
     if args.check_urls:
         print("URL を確認しています…\n")
         check_urls(news)

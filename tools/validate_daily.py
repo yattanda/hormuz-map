@@ -125,6 +125,7 @@ STOCKPILE_WARN_DAYS = 7
 PAT_COLUMN_PILL = re.compile(
     r'<a href="articles/([\w-]+\.html)" class="jump-pill[^"]*"'
     r' data-published="(\d{4}-\d{2}-\d{2})" data-updated="(\d{4}-\d{2}-\d{2})"')
+PAT_COLUMN_PILL_ANY = re.compile(r'<a href="articles/([\w-]+\.html)"[^>]*class="jump-pill')
 PAT_ARTICLE_PUBLISHED = re.compile(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})"')
 PAT_ARTICLE_MODIFIED = re.compile(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"')
 
@@ -495,6 +496,13 @@ def check_column_pills(html: str) -> None:
     if not pills:
         warn("特別解説コラムのピル（data-published / data-updated 付き）を検出できません（書式が変わった可能性）")
         return
+    # 属性の付け忘れ・順番違いのピルは上の正規表現に掛からず黙って漏れるので、総数と突き合わせる
+    all_pills = PAT_COLUMN_PILL_ANY.findall(html)
+    missing = sorted(set(all_pills) - {p[0] for p in pills})
+    if missing:
+        warn(f"特別解説コラムのピルのうち、日付を読み取れないものがあります: "
+             f"{', '.join('articles/' + f for f in missing)}。"
+             f"data-published / data-updated を href・class の後にこの順で付けること（札が出ません）")
     for fname, pub, upd in pills:
         path = ROOT / "docs" / "articles" / fname
         try:

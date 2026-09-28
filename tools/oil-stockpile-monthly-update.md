@@ -33,6 +33,8 @@
 - `docs/index.html` の「石油備蓄の月次推移まとめコラムカード」のサブタイトルと要約
 - `docs/articles/index.html` の一覧カードの `idx-lead`
 - `docs/sitemap.xml` の該当 URL の `lastmod`
+- `docs/index.html` の「30秒で全体像」内の特別解説ピル（`📉 石油備蓄推移`）の `data-updated` を、記事の `dateModified` と同じ日付にする。
+  これで「◯月更新」の札が30日間表示される
 
 ## 4. 書いてはいけないこと
 

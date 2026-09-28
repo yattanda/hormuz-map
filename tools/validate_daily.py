@@ -30,6 +30,8 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
     - index.html には石油備蓄日数が2か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記）ある。
       どちらも特別解説コラムの月次更新の対象外で、8/17時点の値が 9/28 まで残っていた。
       「◯時点」の日付が実測の今日から 7日を超えたら WARN、2か所の値・日付が食い違ったら WARN を出す
+    - 特別解説コラムのピルの「NEW」「◯月更新」の札は、ピルの data-published / data-updated から決まる。
+      記事ページ（datePublished / dateModified）と揃っていなければ WARN を出す
 """
 from __future__ import annotations
 
@@ -118,6 +120,14 @@ DATA_TIMELINE_WARN_DAYS = 5
 PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*?(\d{1,2})/(\d{1,2})時点）')
 PAT_STOCKPILE_NOTE = re.compile(r'合計は約(\d+)日分（(\d{4})年(\d{1,2})月(\d{1,2})日時点）')
 STOCKPILE_WARN_DAYS = 7
+
+# 特別解説コラムのピル（「NEW」「◯月更新」の札の元になる日付）と記事ページの構造化データ
+PAT_COLUMN_PILL = re.compile(
+    r'<a href="articles/([\w-]+\.html)" class="jump-pill[^"]*"'
+    r' data-published="(\d{4}-\d{2}-\d{2})" data-updated="(\d{4}-\d{2}-\d{2})"')
+PAT_COLUMN_PILL_ANY = re.compile(r'<a href="articles/([\w-]+\.html)"[^>]*class="jump-pill')
+PAT_ARTICLE_PUBLISHED = re.compile(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})"')
+PAT_ARTICLE_MODIFIED = re.compile(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"')
 
 
 def ymd(y, m, d) -> str:
@@ -476,6 +486,40 @@ def check_stockpile(html: str) -> None:
         warn(f"石油備蓄日数の2か所が食い違っています: {detail}")
 
 
+def check_column_pills(html: str) -> None:
+    """特別解説コラムのピルの data-published / data-updated が記事ページと揃っているか。
+
+    札（NEW／◯月更新）はこの日付から表示を決めるので、記事だけ更新してピルを忘れると札が出ない。
+    WARN のみ。
+    """
+    pills = PAT_COLUMN_PILL.findall(html)
+    if not pills:
+        warn("特別解説コラムのピル（data-published / data-updated 付き）を検出できません（書式が変わった可能性）")
+        return
+    # 属性の付け忘れ・順番違いのピルは上の正規表現に掛からず黙って漏れるので、総数と突き合わせる
+    all_pills = PAT_COLUMN_PILL_ANY.findall(html)
+    missing = sorted(set(all_pills) - {p[0] for p in pills})
+    if missing:
+        warn(f"特別解説コラムのピルのうち、日付を読み取れないものがあります: "
+             f"{', '.join('articles/' + f for f in missing)}。"
+             f"data-published / data-updated を href・class の後にこの順で付けること（札が出ません）")
+    for fname, pub, upd in pills:
+        path = ROOT / "docs" / "articles" / fname
+        try:
+            text = path.read_text(encoding="utf-8")
+        except OSError:
+            warn(f"コラムのピルのリンク先が読めません: articles/{fname}")
+            continue
+        mp, mm = PAT_ARTICLE_PUBLISHED.search(text), PAT_ARTICLE_MODIFIED.search(text)
+        a_pub, a_mod = (mp.group(1) if mp else None), (mm.group(1) if mm else None)
+        if (pub, upd) == (a_pub, a_mod):
+            ok(f"コラムのピル articles/{fname}（公開 {pub}・更新 {upd}）")
+        else:
+            warn(f"コラムのピル articles/{fname} の日付が記事と違います: "
+                 f"ピル 公開 {pub}・更新 {upd}／記事 datePublished {a_pub}・dateModified {a_mod}。"
+                 f"ピルの data-published / data-updated を記事に揃えること")
+
+
 def check_urls(news: dict) -> None:
     """latest の URL が生きているか。捏造URL禁止ルールの機械的な担保。"""
     import urllib.error
@@ -618,6 +662,7 @@ def main() -> int:
     check_sitemap(tl, base)
     check_data_timeline()
     check_stockpile(html)
+    check_column_pills(html)
     if args.check_urls:
         print("URL を確認しています…\n")
         check_urls(news)

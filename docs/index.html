@@ -391,6 +391,8 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .jump-pill--violet  { --c:167,139,250; color:#a78bfa; }
 .jump-pill--emerald { --c:52,211,153;  color:#34d399; }
 .jump-pill--gold    { --c:201,168,105; color:#c9a869; border-color:rgba(201,168,105,0.4); }
+.jump-pill-badge { font-size:0.62rem; font-weight:800; line-height:1; padding:3px 6px; border-radius:8px;
+  background:rgba(var(--c),0.3); color:#fff; letter-spacing:0.02em; }
 .jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
   background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%); border:1px solid rgba(56,189,248,0.5);
   color:#7dd3fc; font-size:var(--fs-md); font-weight:800; padding:7px 18px; border-radius:24px; text-decoration:none;
@@ -1744,11 +1746,11 @@ footer {                                   /* フッター（中央揃え・上�
           <span class="glance-special-sub">― 深掘り分析記事</span>
         </div>
         <div class="glance-special-links">
-          <a href="#special-commentary" class="jump-pill jump-pill--danger">💣 機雷問題</a>
-          <a href="#special-commentary" class="jump-pill jump-pill--warning">🛢️ サウジ危機</a>
-          <a href="#special-commentary" class="jump-pill jump-pill--info">🌊 ルートC・アラスカ</a>
-          <a href="#special-commentary" class="jump-pill jump-pill--emerald">🌍 西アフリカ・南米調達</a>
-          <a href="#special-commentary" class="jump-pill jump-pill--violet">📉 石油備蓄推移</a>
+          <a href="articles/mine-clearance.html" class="jump-pill jump-pill--danger" data-published="2026-04-12" data-updated="2026-04-12">💣 機雷問題</a>
+          <a href="articles/saudi-pipeline-attack.html" class="jump-pill jump-pill--warning" data-published="2026-04-09" data-updated="2026-04-09">🛢️ サウジ危機</a>
+          <a href="articles/route-c-alaska-oil.html" class="jump-pill jump-pill--info" data-published="2026-04-12" data-updated="2026-04-12">🌊 ルートC・アラスカ</a>
+          <a href="articles/oil-diversification-africa-brazil.html" class="jump-pill jump-pill--emerald" data-published="2026-04-13" data-updated="2026-05-06">🌍 西アフリカ・南米調達</a>
+          <a href="articles/oil-stockpile-monthly-trend.html" class="jump-pill jump-pill--violet" data-published="2026-08-21" data-updated="2026-09-28">📉 石油備蓄推移</a>
           <!-- 特別レポート サムネイル付きバナー -->
           <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="report-banner">
             <img src="images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="report-banner-img">
@@ -4346,10 +4348,34 @@ function syncScenarioFromDashboard() {
     .catch(e => console.warn('scenario sync failed:', e));
 }
 
+// 特別解説コラムのピルに「NEW」「◯月更新」の札を付ける（公開・更新から30日以内のみ）
+// 日付は各ピルの data-published / data-updated（記事ページの datePublished / dateModified と揃える）
+function applyColumnBadges() {
+  const DAYS = 30;
+  const now = Date.now();
+  const within = (s) => {
+    const t = Date.parse(s + 'T00:00:00+09:00');
+    return !isNaN(t) && now - t >= 0 && now - t < DAYS * 86400000;
+  };
+  document.querySelectorAll('.glance-special-links .jump-pill[data-updated]').forEach(pill => {
+    const pub = pill.dataset.published || '';
+    const upd = pill.dataset.updated;
+    let label = '';
+    if (within(pub)) label = 'NEW';
+    else if (within(upd)) label = Number(upd.slice(5, 7)) + '月更新';
+    if (!label) return;
+    const b = document.createElement('span');
+    b.className = 'jump-pill-badge';
+    b.textContent = label;
+    pill.appendChild(b);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadNewsData();
   syncScenarioFromDashboard();
   applyIncidentFold();
+  applyColumnBadges();
 });
 </script>
 

@@ -70,6 +70,20 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 
 （色は既存カードの配色に合わせる）
 
+### 4-2. 「30秒で全体像」内の特別解説ピルを追加する
+
+`<div class="glance-special-links">` にピルを1つ足す。リンク先は記事ページ、日付は記事の
+構造化データ（`datePublished` / `dateModified`）と同じ値にする。
+
+```html
+<a href="articles/{slug}.html" class="jump-pill jump-pill--{色}" data-published="YYYY-MM-DD" data-updated="YYYY-MM-DD">📄 短い見出し</a>
+```
+
+- 公開から30日間は「NEW」、それ以降は更新から30日間「◯月更新」の札が自動で付く（`applyColumnBadges()`）
+- **既存コラムに加筆したときも**、記事の `dateModified` と一緒にピルの `data-updated` を書き換える。
+  忘れると札が出ない（`tools/validate_daily.py` が食い違いを WARN で出す）
+- 属性の順番（`href` → `class` → `data-published` → `data-updated`）は変えない。検証スクリプトがこの書式で検出している
+
 ## 5. sitemap.xmlに追加する
 
 `docs/sitemap.xml` に以下のURLを追加する。

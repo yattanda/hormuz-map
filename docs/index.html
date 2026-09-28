@@ -4358,6 +4358,8 @@ function applyColumnBadges() {
     return !isNaN(t) && now - t >= 0 && now - t < DAYS * 86400000;
   };
   document.querySelectorAll('.glance-special-links .jump-pill[data-updated]').forEach(pill => {
+    // 何度呼ばれても札が1つになるよう、付け直す前に既存の札を外す
+    pill.querySelectorAll('.jump-pill-badge').forEach(b => b.remove());
     const pub = pill.dataset.published || '';
     const upd = pill.dataset.updated;
     let label = '';

@@ -2961,6 +2961,20 @@
           "url": "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days"
         }
       ]
+    },
+    {
+      "date": "2026-09-28",
+      "dateLabel": "2026/09/28 08:12",
+      "blockadeDay": 213,
+      "sourceType": "site-log",
+      "summary": "【超重大更新】Al Jazeeraのライブブログ・経済面（9/27）によれば、イラン高官（将軍、氏名未特定）が「戦争は終わっていない、われわれは勝利したが、この勝利を確立しなければならない」と述べ、海峡は米国の「経済戦争」終結まで閉鎖継続と警告した——同日、革命防衛隊（IRGC）は米無人潜水機（Remus 600と主張、2件目）の拿捕も主張したが米軍は直ちに否定し「明らかに絶望的」と評価。米エネルギー長官の「日量約1,300万バレル」輸送主張にイラン側は「誤情報」と反論・トランプ氏の7日間ロードマップ事実上拒否報道（9/26）からは続報なし・サウジ東西パイプライン（9/22低速再開）も続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/28確認）・封鎖213日目・ニュース1件更新・osint更新",
+      "relatedNews": [
+        {
+          "sourceLabel": "Al Jazeera（9/27、ライブブログ・経済面）",
+          "title": "イラン高官『海峡は米の経済戦争終結まで閉鎖継続』——革命防衛隊、第2の米無人潜水機拿捕も主張、米は否定",
+          "url": "https://www.aljazeera.com/economy/2026/9/27/strait-of-hormuz-tensions-linger-as-iran-and-us-move-further-from-a-deal"
+        }
+      ]
     }
   ]
 }

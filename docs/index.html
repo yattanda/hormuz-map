@@ -702,6 +702,61 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .sc-worst .sc-title{ color:#f87171; }
 .sc-worst .sc-impact{ background:rgba(220,38,38,0.08); color:#fca5a5; }
 
+/* シナリオの補足・注記・次の焦点（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「シナリオの型」） */
+.sec-h2--sky { color:#7dd3fc; }
+.label-scenario.sc-h2-label { margin-left:8px; font-size:var(--fs-xs); }
+.sc-update { background:rgba(239,68,68,0.07); border:1px dashed rgba(239,68,68,0.35); border-radius:8px; padding:12px 16px;
+  margin-bottom:16px; font-size:var(--fs-sm); color:#fca5a5; line-height:1.8; }
+.sc-update-date { font-weight:800; color:#f87171; }
+.sc-update-caveat { color:#fbbf24; }
+.sc-trend { color:#94a3b8; }
+.sc-tag-em { font-size:1.15em; font-weight:900;
+  text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8); }
+.sc-sync-note { font-size:var(--fs-sm); color:#94a3b8; text-align:center; margin-top:8px; }
+.sc-ai-note { margin-top:10px; padding:9px 13px; border-radius:6px; background:rgba(56,189,248,0.07); border:1px solid rgba(56,189,248,0.28);
+  font-size:var(--fs-sm); color:#cbd5e1; line-height:1.75; }
+.sc-ai-note strong { color:#e2e8f0; }
+.sc-ai-meta { font-size:var(--fs-xs); color:#94a3b8; }
+.sc-ai-meta a { color:#7dd3fc; }
+.sc-ai-variance { margin-top:7px; padding:6px 9px; border-radius:5px; background:rgba(148,163,184,0.10); border:1px solid rgba(148,163,184,0.30);
+  font-size:var(--fs-xs); color:#cbd5e1; line-height:1.65; }
+/* 前提が古いときだけ syncScenarioFromDashboard() が style.display='block' で出す */
+.sc-ctx-note { display:none; margin-top:7px; padding:6px 9px; border-radius:5px; background:rgba(251,191,36,0.12); border:1px solid rgba(251,191,36,0.4);
+  font-size:var(--fs-xs); color:#fbbf24; line-height:1.65; }
+.sc-footer { margin-top:10px; padding:10px 14px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
+  font-size:var(--fs-xs); color:#64748b; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+.sc-footer .label-scenario { margin-left:auto; }
+.sc-focus-h { font-size:var(--fs-md); font-weight:700; color:#94a3b8; margin:0 0 10px; letter-spacing:0.05em; }
+.sc-focus-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
+.sc-focus-list > li { font-size:var(--fs-base); color:#cbd5e1; margin-bottom:5px; }
+.sc-focus-list strong { color:#fbbf24; }
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .sc-update, .sc-sync-note, .sc-ai-note, .sc-ai-variance, .sc-ctx-note, .sc-footer { font-size:0.8rem; }
+}
+
+/* 更新履歴（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「更新履歴の型」）。
+   日時の色は位置で決まる：常時表示の先頭（本日分）＝赤、常時表示の残り＝明るい灰、折りたたみの中＝灰 */
+.update-log { margin:20px 0 10px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; }
+.update-log-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; gap:8px; flex-wrap:wrap; }
+.update-log-head .sec-h2 { color:#94a3b8; border-bottom-color:rgba(255,255,255,0.08); flex:1 1 100%; }
+.log-recent { font-size:var(--fs-xs); color:#cbd5e1; line-height:2; }
+.log-older  { font-size:var(--fs-xs); color:#94a3b8; line-height:2; }
+.log-recent .log-date { color:#cbd5e1; }
+.log-recent > div:nth-child(2) .log-date { color:#f87171; }
+.log-older .log-date { color:#94a3b8; }
+.log-tag { color:#fca5a5; }
+.log-sources-start { margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.06); }
+.log-older a { color:#38bdf8; text-decoration:none; }
+.log-toggle { text-align:center; margin:8px 0 4px; }
+.log-toggle-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#94a3b8; font-size:var(--fs-sm);
+  padding:6px 18px; border-radius:20px; cursor:pointer; transition:all 0.2s; }
+.log-toggle-btn:hover { background:rgba(255,255,255,0.10); }
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .log-recent, .log-older { font-size:0.8rem; }
+}
+
 /* FOOTER */
 footer {
   text-align:center; padding:16px;
@@ -1504,12 +1559,12 @@ footer {                                   /* フッター（中央揃え・上�
 
 /* --- 2-c カラム ---
    〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列。
-   .sc-grid は HTML のインライン style（2列）に勝つため !important が要る。 */
-.sc-grid  { grid-template-columns: 1fr !important; }
+   .sc-grid のインライン style（2列）は ② PR4a で外したので !important は不要。 */
+.sc-grid  { grid-template-columns: 1fr; }
 .stats-row { grid-template-columns: repeat(2, 1fr); }
 
 @media (min-width: 601px) {
-  .sc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .sc-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-row { grid-template-columns: repeat(3, 1fr); }
 
   /* 関連最新ニュース：2列。「過去の記事を見る」で開く分も同じ並びにする */
@@ -2086,7 +2141,7 @@ document.addEventListener('keydown', function(e) {
   </div>
 
 <div id="routes">
-  <h2 class="sec-h2" style="color:#7dd3fc;">🚢 全ルート現況サマリー<span class="sec-h2-sub">2026年9月29日 09:12 JST 更新</span></h2>
+  <h2 class="sec-h2 sec-h2--sky">🚢 全ルート現況サマリー<span class="sec-h2-sub">2026年9月29日 09:12 JST 更新</span></h2>
   <div class="route-priority">
     <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
   </div>
@@ -2420,31 +2475,31 @@ document.addEventListener('keydown', function(e) {
   <!-- SCENARIOS -->
    <div id="scenario"></div>
 <div class="sc-section">
-<h2 class="sec-h2" style="color:#7dd3fc;">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario" style="margin-left:8px;font-size:0.7rem;">シナリオ分析</span></h2>
+<h2 class="sec-h2 sec-h2--sky">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario sc-h2-label">シナリオ分析</span></h2>
   <!-- シナリオ確率更新補足 -->
-<div style="background:rgba(239,68,68,0.07);border:1px dashed rgba(239,68,68,0.35);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.78rem;color:#fca5a5;line-height:1.8;">
-  <span style="font-weight:800;color:#f87171;">📊 2026年9月29日 09:12 JST 更新</span><br>
+<div class="sc-update">
+  <span class="sc-update-date">📊 2026年9月29日 09:12 JST 更新</span><br>
   📊 <strong>トランプ氏がイランの7日間ロードマップを拒否したことを受け、9/28にブレント原油が3%超上昇し一時108ドル近辺に。同日、米当局者が仲介者と会ったとトランプ氏が述べ、外交の窓口は閉じきっていない：</strong><br>
-  🅐 段階的MOU履行成功 <span style="color:#94a3b8;">→</span> — 米当局者と仲介者の接触が伝えられ協議再開の可能性は残るが、トランプ氏は提案を拒否しており、合意に向けた具体的な進展は確認できていない<br>
-  🅑 膠着継続 <span style="color:#94a3b8;">→</span> — 拒否と接触が同時に進み、双方が強硬姿勢を保ちつつ交渉の余地も残す、膠着の構図が続いている<br>
-  🅒 MOU形骸化・機能不全 <span style="color:#94a3b8;">→</span> — 原油価格が上昇し海峡の通航量も危機前を大きく下回ったままだが、公式な方針転換は確認されていない<br>
-  🅓 全面対決・無期限封鎖 <span style="color:#94a3b8;">→</span> — イランは戦争再開にも「完全に備えている」と述べ、トランプ氏も追加攻撃を排除していないが、新たな大規模攻撃は確認されていない<br>
-  <strong style="color:#fbbf24;">攻撃の成果や輸送量の数字はいずれも当事者側の主張で独立検証は取れていない。断定的な方向転換とはせず、協議再開の有無など一次情報の確認を待つ。</strong><br>
-  <div style="font-size:0.75rem;color:#94a3b8;text-align:center;margin-top:8px;">
+  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 米当局者と仲介者の接触が伝えられ協議再開の可能性は残るが、トランプ氏は提案を拒否しており、合意に向けた具体的な進展は確認できていない<br>
+  🅑 膠着継続 <span class="sc-trend">→</span> — 拒否と接触が同時に進み、双方が強硬姿勢を保ちつつ交渉の余地も残す、膠着の構図が続いている<br>
+  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 原油価格が上昇し海峡の通航量も危機前を大きく下回ったままだが、公式な方針転換は確認されていない<br>
+  🅓 全面対決・無期限封鎖 <span class="sc-trend">→</span> — イランは戦争再開にも「完全に備えている」と述べ、トランプ氏も追加攻撃を排除していないが、新たな大規模攻撃は確認されていない<br>
+  <strong class="sc-update-caveat">攻撃の成果や輸送量の数字はいずれも当事者側の主張で独立検証は取れていない。断定的な方向転換とはせず、協議再開の有無など一次情報の確認を待つ。</strong><br>
+  <div class="sc-sync-note">
     各シナリオ確率は 2026年9月29日 09:12 JST 時点での分析に基づく自動同期
   </div>
-  <div style="margin-top:10px;padding:9px 13px;border-radius:6px;background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.28);font-size:0.78rem;color:#cbd5e1;line-height:1.75;">
-    <span class="label-ai">AI推定</span><strong style="color:#e2e8f0;">A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
-    <span style="font-size:0.73rem;color:#94a3b8;">生成手段：Google Gemini（gemini-2.5-flash）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行　／　<a href="editorial/" style="color:#7dd3fc;">編集方針</a></span>
-    <div style="margin-top:7px;padding:6px 9px;border-radius:5px;background:rgba(148,163,184,0.10);border:1px solid rgba(148,163,184,0.30);font-size:0.74rem;color:#cbd5e1;line-height:1.65;"><strong style="color:#e2e8f0;">この確率は、同一のニュース入力に対しても実行のたびに変動します。</strong>2026年9月5日に同じ入力・同じ条件で3回実行したところ、Bは5〜50%、Cは30〜60%、Dは10〜35%の範囲で振れました。表示している1%刻みの数値が示すほどの精度はありません。幅を持ってお読みください。</div>
-    <div id="sc-ctx-note" style="display:none;margin-top:7px;padding:6px 9px;border-radius:5px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.4);font-size:0.74rem;color:#fbbf24;line-height:1.65;"></div>
+  <div class="sc-ai-note">
+    <span class="label-ai">AI推定</span><strong>A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
+    <span class="sc-ai-meta">生成手段：Google Gemini（gemini-2.5-flash）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行　／　<a href="editorial/">編集方針</a></span>
+    <div class="sc-ai-variance"><strong>この確率は、同一のニュース入力に対しても実行のたびに変動します。</strong>2026年9月5日に同じ入力・同じ条件で3回実行したところ、Bは5〜50%、Cは30〜60%、Dは10〜35%の範囲で振れました。表示している1%刻みの数値が示すほどの精度はありません。幅を持ってお読みください。</div>
+    <div id="sc-ctx-note" class="sc-ctx-note"></div>
   </div>
 </div>
-  <div class="sc-grid" style="grid-template-columns:repeat(2,1fr);">
+  <div class="sc-grid">
 
     <!-- シナリオ A：外交解決 -->
     <div class="sc-card sc-best">
-      <span class="sc-tag" id="sc-tag-A"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ A</span> ― 段階的MOU履行成功　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-A">—</span></span> <span style="color:#94a3b8;">→</span></span>
+      <span class="sc-tag" id="sc-tag-A"><span class="sc-tag-em">シナリオ A</span> ― 段階的MOU履行成功　<span class="sc-tag-em">確率 <span id="sc-pct-A">—</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🟢 シナリオA：IMO避難計画成功→核査察スケジュール合意→Hormuz主ルート再開</div>
       <div class="sc-body">
         <p>イラン外相アラグチ氏の「7日間ロードマップ」をトランプ氏は9月26日に「受け入れられない」と述べた。一方、トランプ氏は9/28に米当局者が仲介者と会ったと述べ、9/27には協議が今週中に再開されるとの見方も示しており、外交の窓口は閉じていない。ただし提案は拒否されたままで、イランは海峡を米国の「経済戦争」終結まで閉鎖すると警告している。合意に向けた具体的な進展は確認されておらず、実現には仲介者経由の正式な回答が不可欠となる。</p>
@@ -2453,7 +2508,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ B：部分的封鎖継続（膠着） -->
     <div class="sc-card sc-mid">
-      <span class="sc-tag" id="sc-tag-B"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-B">—</span></span> →</span>
+      <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span class="sc-tag-em">確率 <span id="sc-pct-B">—</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🟡 シナリオB：核査察問題長期化→期間延長交渉、機雷除去は先行</div>
       <div class="sc-body">
         <p>ロードマップの拒否（9月26日）、仲介者との接触（9月28日）、イランの強硬な発言が並行し、外交協議は膠着したまま。ブレントは9/28に一時108ドル近辺まで上昇したが、Kplerの集計でも通航は9/27までの週で19隻にとどまり、通航体制そのものを変える決定打はまだない。決定的な変化のないまま消耗戦が続く構図で、今週中とされる協議の再開が次の分かれ目となる。</p>
@@ -2462,7 +2517,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ C：完全封鎖の制度化・経済疲弊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-C"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ C</span> ― 完全封鎖の制度化・経済疲弊深刻化　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-C">—</span></span> <span style="color:#94a3b8;">→</span></span>
+      <span class="sc-tag" id="sc-tag-C"><span class="sc-tag-em">シナリオ C</span> ― 完全封鎖の制度化・経済疲弊深刻化　<span class="sc-tag-em">確率 <span id="sc-pct-C">—</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🔴 シナリオC：南レバノン大規模衝突再発→Hormuz再閉鎖宣言</div>
       <div class="sc-body">
         <p>イランは9/27に海峡を米国の「経済戦争」終結まで閉鎖すると警告し、9/28にはブレントが一時108ドル近辺へ上昇した。封鎖の常態化と経済負担の長期化を示す材料は増えているが、いずれも公式方針の確定とは言えない。フーシ派によるバブエルマンデブ海峡への脅威と併せ、監視を続ける。</p>
@@ -2471,7 +2526,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ D：軍事エスカレーション・停戦崩壊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-D"><span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">シナリオ D</span> ― 全面対決・無期限封鎖　<span style="font-size:1.15em;font-weight:900;text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8);">確率 <span id="sc-pct-D">—</span></span> <span style="color:#94a3b8;">→</span></span>
+      <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・無期限封鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">—</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">⚫ シナリオD：核査察問題で交渉打ち切り→Hormuz武力制圧→全面戦争再開</div>
       <div class="sc-body">
         <p>イランは9/28に戦争再開にも「完全に備えている」と表明し、ハーメネイー師は米軍が「痛烈な打撃」で前進できずにいると主張した。トランプ氏は9/27に追加攻撃の可能性を否定しなかった。9/27の無人潜水機拿捕の主張は米軍が否定しており、ムサンダム沖のCAPE DAO攻撃（9/23）も攻撃主体は特定されていない。新たな大規模攻撃は確認されておらず、いずれも断定的な判断は避ける。</p>
@@ -2481,16 +2536,16 @@ document.addEventListener('keydown', function(e) {
   </div>
 
   <!-- シナリオ フッター -->
-  <div style="margin-top:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);font-size:0.7rem;color:#64748b;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-    <h3 style="font-size:0.9rem;font-weight:700;color:#94a3b8;margin:0 0 10px;letter-spacing:0.05em;">🔍 次の焦点 5つ</h3>
-    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
-      <li style="font-size:0.85rem;color:#cbd5e1;margin-bottom:5px;">① <strong style="color:#fbbf24;">今週中とされる米・イラン協議が実際に再開されるか</strong></li>
-      <li style="font-size:0.85rem;color:#cbd5e1;margin-bottom:5px;">② <strong style="color:#fbbf24;">米国が仲介者経由でイランに正式な回答を伝えるか</strong></li>
-      <li style="font-size:0.85rem;color:#cbd5e1;margin-bottom:5px;">③ <strong style="color:#fbbf24;">CAPE DAO攻撃（9/23）の攻撃主体が特定されるか</strong></li>
-      <li style="font-size:0.85rem;color:#cbd5e1;margin-bottom:5px;">④ <strong style="color:#fbbf24;">サウジ東西パイプラインの全面復旧時期の確認（「数週間」見通しの妥当性）</strong></li>
-      <li style="font-size:0.85rem;color:#cbd5e1;margin-bottom:5px;">⑤ <strong style="color:#fbbf24;">ブレントが108ドル近辺を維持するか（WTI・ブレントの価格動向）</strong></li>
+  <div class="sc-footer">
+    <h3 class="sc-focus-h">🔍 次の焦点 5つ</h3>
+    <ul class="sc-focus-list">
+      <li>① <strong>今週中とされる米・イラン協議が実際に再開されるか</strong></li>
+      <li>② <strong>米国が仲介者経由でイランに正式な回答を伝えるか</strong></li>
+      <li>③ <strong>CAPE DAO攻撃（9/23）の攻撃主体が特定されるか</strong></li>
+      <li>④ <strong>サウジ東西パイプラインの全面復旧時期の確認（「数週間」見通しの妥当性）</strong></li>
+      <li>⑤ <strong>ブレントが108ドル近辺を維持するか（WTI・ブレントの価格動向）</strong></li>
     </ul>
-    <span class="label-scenario" style="margin-left:auto;">分析：2026年9月29日 09:12 JST情勢分析</span>
+    <span class="label-scenario">分析：2026年9月29日 09:12 JST情勢分析</span>
   </div>
 
 </div>
@@ -4813,67 +4868,63 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
 
     <!--出典・更新ログ-->
-    <section class="update-log" style="margin:20px 0 10px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;">
+    <section class="update-log">
 
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap;">
-        <h2 class="sec-h2" style="color:#94a3b8;border-bottom-color:rgba(255,255,255,0.08);flex:1 1 100%;">
+      <div class="update-log-head">
+        <h2 class="sec-h2">
           🕐 更新履歴 &amp; 主要出典
         </h2>
       </div>
 
       <!-- 常時表示: 最新3件 -->
-      <div style="font-size:0.72rem;color:#cbd5e1;line-height:2;">
+      <div class="log-recent">
         <div>📅 <strong>2026年9月29日 09:12 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/09/29 09:12</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>Al Jazeera経済面（9/28）によれば、トランプ大統領がイランの7日間ロードマップを「受け入れられない」と述べたことを受け、9/28のブレント原油は3%超上昇し一時108ドル近辺（11月物は08:00 GMT時点107.35ドル）・トランプ氏は9/28に米当局者がイラン戦争の仲介者と会ったと述べたが詳細は不明（9/27には協議が今週中に再開されるとの見方を示した）・Kplerの集計で9/27までの週の通過タンカーは19隻（超大型原油タンカー17隻）、9月の海峡経由の原油輸出は日量平均740万バレルの見込みで米側の主張（日量約1,300万バレル）と食い違う・ハーメネイー師は米軍が「痛烈な打撃」で前進できずにいると主張（イラン側の一方的な発言）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTIは9/28 18:07時点93.38ドル（検索結果表示値）・日本関係船は残り4隻で変化なし（9/29確認）・封鎖214日目・ニュース2件更新・osint更新</div>
+        <div><span class="log-date">2026/09/29 09:12</span> — <strong class="log-tag">【超重大更新】</strong>Al Jazeera経済面（9/28）によれば、トランプ大統領がイランの7日間ロードマップを「受け入れられない」と述べたことを受け、9/28のブレント原油は3%超上昇し一時108ドル近辺（11月物は08:00 GMT時点107.35ドル）・トランプ氏は9/28に米当局者がイラン戦争の仲介者と会ったと述べたが詳細は不明（9/27には協議が今週中に再開されるとの見方を示した）・Kplerの集計で9/27までの週の通過タンカーは19隻（超大型原油タンカー17隻）、9月の海峡経由の原油輸出は日量平均740万バレルの見込みで米側の主張（日量約1,300万バレル）と食い違う・ハーメネイー師は米軍が「痛烈な打撃」で前進できずにいると主張（イラン側の一方的な発言）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTIは9/28 18:07時点93.38ドル（検索結果表示値）・日本関係船は残り4隻で変化なし（9/29確認）・封鎖214日目・ニュース2件更新・osint更新</div>
         <div>📅 <strong>2026年9月28日 08:12 JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/09/28 08:12</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>Al Jazeeraのライブブログ・経済面（9/27）によれば、イラン高官（将軍、氏名未特定）が「戦争は終わっていない、われわれは勝利したが、この勝利を確立しなければならない」と述べ、海峡は米国の「経済戦争」終結まで閉鎖継続と警告した——同日、革命防衛隊（IRGC）は米無人潜水機（Remus 600と主張、2件目）の拿捕も主張したが米軍は直ちに否定し「明らかに絶望的」と評価。米エネルギー長官の「日量約1,300万バレル」輸送主張にイラン側は「誤情報」と反論・トランプ氏の7日間ロードマップ事実上拒否報道（9/26）からは続報なし・サウジ東西パイプライン（9/22低速再開）も続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/28確認）・封鎖213日目・ニュース1件更新・osint更新</div>
+        <div><span class="log-date">2026/09/28 08:12</span> — <strong class="log-tag">【超重大更新】</strong>Al Jazeeraのライブブログ・経済面（9/27）によれば、イラン高官（将軍、氏名未特定）が「戦争は終わっていない、われわれは勝利したが、この勝利を確立しなければならない」と述べ、海峡は米国の「経済戦争」終結まで閉鎖継続と警告した——同日、革命防衛隊（IRGC）は米無人潜水機（Remus 600と主張、2件目）の拿捕も主張したが米軍は直ちに否定し「明らかに絶望的」と評価。米エネルギー長官の「日量約1,300万バレル」輸送主張にイラン側は「誤情報」と反論・トランプ氏の7日間ロードマップ事実上拒否報道（9/26）からは続報なし・サウジ東西パイプライン（9/22低速再開）も続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/28確認）・封鎖213日目・ニュース1件更新・osint更新</div>
         <div>📅 <strong>2026年9月27日 07:35 JST</strong> 更新</div>
-        <div><span style="color:#cbd5e1;">2026/09/27 07:35</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>Al JazeeraはWSJ報道として、トランプ大統領がイランの「7日間ロードマップ」（9/25発表）を事実上拒否したと9/26に伝えた——匿名の米当局者によれば「イランは資金繰りに窮しているだけ」と発言。トランプ氏本人も同日、ホワイトハウスで記者団に「受け入れられない」と述べていた（9/28訂正：当初は「米政府の公式声明は現時点で確認されていない」と記載）。またムサンダム沖でアンティグア・バーブーダ籍貨物船「CAPE DAO」が9月23日に攻撃を受け出火、インド人乗組員1人が死亡・27人がオマーン海軍に救助されたことが本日判明——攻撃主体は不明（Oman Observer、Arab News）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/27確認）・封鎖212日目・ニュース1件更新・osint更新</div>
+        <div><span class="log-date">2026/09/27 07:35</span> — <strong class="log-tag">【超重大更新】</strong>Al JazeeraはWSJ報道として、トランプ大統領がイランの「7日間ロードマップ」（9/25発表）を事実上拒否したと9/26に伝えた——匿名の米当局者によれば「イランは資金繰りに窮しているだけ」と発言。トランプ氏本人も同日、ホワイトハウスで記者団に「受け入れられない」と述べていた（9/28訂正：当初は「米政府の公式声明は現時点で確認されていない」と記載）。またムサンダム沖でアンティグア・バーブーダ籍貨物船「CAPE DAO」が9月23日に攻撃を受け出火、インド人乗組員1人が死亡・27人がオマーン海軍に救助されたことが本日判明——攻撃主体は不明（Oman Observer、Arab News）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/27確認）・封鎖212日目・ニュース1件更新・osint更新</div>
       </div>
 
       <!-- 折り畳みボタン（上） -->
-      <div id="log-toggle-top" style="text-align:center;margin:8px 0 4px;">
-        <button
+      <div id="log-toggle-top" class="log-toggle">
+        <button type="button"
           onclick="(function(){var c=document.getElementById('log-collapse');var t=document.getElementById('log-toggle-top');var b=document.getElementById('log-toggle-bottom');var isOpen=(c.style.display!=='none');if(isOpen){c.style.display='none';t.querySelector('button').textContent='📂 過去の履歴を見る';b.style.display='none';}else{c.style.display='block';t.querySelector('button').textContent='📂 閉じる';b.style.display='block';window.scrollBy({top:0,behavior:'smooth'});}})()"
-          style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#94a3b8;font-size:0.78rem;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all 0.2s;"
-          onmouseover="this.style.background='rgba(255,255,255,0.10)'"
-          onmouseout="this.style.background='rgba(255,255,255,0.06)'">📂 過去の履歴を見る
+          class="log-toggle-btn">📂 過去の履歴を見る
         </button>
       </div>
 
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+        <div class="log-older">
         <div>📅 <strong>2026年9月26日 09:33 JST</strong> 更新</div>
-        <div><span style="color:#cbd5e1;">2026/09/26 09:33</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>イラン外相アラグチ氏は9/25、国連安全保障理事会での発言後、カタール経由で米国に「7日間ロードマップ」を伝えたと発表——完全停戦・凍結資産120億ドル超の解放・封鎖解除を4〜5日で実施し、6日目にホルムズ海峡再開、7日目に核協議再開を提案する内容（Al Jazeeraなど複数メディア）。「選択は米国側にある」と述べ、米側の回答期限は現時点で不明。9/23報道の「60日間停戦ロードマップ」との関係（具体化か別提案か）は未検証・サウジ東西パイプライン（9/22低速再開）・9/21タンカー被弾（攻撃主体不明）はいずれも続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし・封鎖211日目・ニュース1件更新・osint更新</div>
+        <div><span class="log-date">2026/09/26 09:33</span> — <strong class="log-tag">【超重大更新】</strong>イラン外相アラグチ氏は9/25、国連安全保障理事会での発言後、カタール経由で米国に「7日間ロードマップ」を伝えたと発表——完全停戦・凍結資産120億ドル超の解放・封鎖解除を4〜5日で実施し、6日目にホルムズ海峡再開、7日目に核協議再開を提案する内容（Al Jazeeraなど複数メディア）。「選択は米国側にある」と述べ、米側の回答期限は現時点で不明。9/23報道の「60日間停戦ロードマップ」との関係（具体化か別提案か）は未検証・サウジ東西パイプライン（9/22低速再開）・9/21タンカー被弾（攻撃主体不明）はいずれも続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし・封鎖211日目・ニュース1件更新・osint更新</div>
           <div>📅 <strong>2026年9月25日 07:16 JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/09/25 07:16</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>英字紙The Nationalは9月23日、国連総会（UNGA）中の米・イラン協議でイランが米国に「60日間の地域規模停戦・ホルムズ海峡の段階的再開・封鎖解除」を含む文書ロードマップを提示したと報道——ルビオ国務長官は合意に「相応の時間をかけた努力」が必要との見方を示し、共同声明には至らず。イラン最高国家安全保障会議レザイ書記の「米国は4〜5日以内に受諾を」との期限発言も伝えられるが一次情報での確認は取れておらず未検証・サウジ東西パイプラインは9/13の攻撃停止から一転、9/22（火）に実際に低速で再開したとThe Nationalが報道、全面復旧は「数週間」の見方（globalsecurity.org経由、未検証）・9/21発表のUKMTOタンカー被弾（攻撃主体不明）からは続報なし・WTI原油は9/23時点92.16ドル・ブレント103.08ドル前後（globalsecurity.org経由、報道間で数値に幅あり）・日本関係船は残り4隻で変化なし・封鎖210日目・ニュース2件更新・osint更新</div>
+          <div><span class="log-date">2026/09/25 07:16</span> — <strong class="log-tag">【超重大更新】</strong>英字紙The Nationalは9月23日、国連総会（UNGA）中の米・イラン協議でイランが米国に「60日間の地域規模停戦・ホルムズ海峡の段階的再開・封鎖解除」を含む文書ロードマップを提示したと報道——ルビオ国務長官は合意に「相応の時間をかけた努力」が必要との見方を示し、共同声明には至らず。イラン最高国家安全保障会議レザイ書記の「米国は4〜5日以内に受諾を」との期限発言も伝えられるが一次情報での確認は取れておらず未検証・サウジ東西パイプラインは9/13の攻撃停止から一転、9/22（火）に実際に低速で再開したとThe Nationalが報道、全面復旧は「数週間」の見方（globalsecurity.org経由、未検証）・9/21発表のUKMTOタンカー被弾（攻撃主体不明）からは続報なし・WTI原油は9/23時点92.16ドル・ブレント103.08ドル前後（globalsecurity.org経由、報道間で数値に幅あり）・日本関係船は残り4隻で変化なし・封鎖210日目・ニュース2件更新・osint更新</div>
           <div>📅 <strong>2026年9月24日 08:03 JST</strong> 更新</div>
-          <div><span style="color:#f87171;">2026/09/24 08:03</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>国連総会（UNGA）開催中のニューヨークで9月22〜23日、米国（ウィトコフ特使）・イラン（アラグチ外相）代表が仲介者（カタール・オマーン）を介し数週間ぶりに間接協議を実施——トランプ大統領「生産的な会合」「合意に向け勢いがある」と発言。イラン当局者は、米国が海軍封鎖を解除し軍事圧力を緩和すればホルムズ海峡は「7日以内に再開可能」と伝えたとされる（Al Jazeera）。イラン側の条件は封鎖解除・凍結資産の放出・戦争終結の3点とされ、具体的合意・日程は未発表・9/21発表のUKMTOタンカー被弾・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃はいずれも続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・WTI原油は9/23終値92.90ドル・ブレント101.61ドル前後（ともに上昇）・日本関係船は残り4隻で変化なし・封鎖209日目・ニュース1件更新・osint更新</div>
+          <div><span class="log-date">2026/09/24 08:03</span> — <strong class="log-tag">【超重大更新】</strong>国連総会（UNGA）開催中のニューヨークで9月22〜23日、米国（ウィトコフ特使）・イラン（アラグチ外相）代表が仲介者（カタール・オマーン）を介し数週間ぶりに間接協議を実施——トランプ大統領「生産的な会合」「合意に向け勢いがある」と発言。イラン当局者は、米国が海軍封鎖を解除し軍事圧力を緩和すればホルムズ海峡は「7日以内に再開可能」と伝えたとされる（Al Jazeera）。イラン側の条件は封鎖解除・凍結資産の放出・戦争終結の3点とされ、具体的合意・日程は未発表・9/21発表のUKMTOタンカー被弾・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃はいずれも続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・WTI原油は9/23終値92.90ドル・ブレント101.61ドル前後（ともに上昇）・日本関係船は残り4隻で変化なし・封鎖209日目・ニュース1件更新・osint更新</div>
           <div>📅 <strong>2026年9月22日 07:25 JST</strong> 更新</div>
-          <div><span style="color:#cbd5e1;">2026/09/22 07:25</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向かうタンカーが正体不明の飛翔体により被弾し乗組員2人が軽傷を負ったと発表——船体は自力航行を継続、攻撃主体は特定されず（AP通信）・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃からは続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/21終値97.56ドル・ブレント100.06ドルまで下落（3日続落）・日本関係船は残り4隻で変化なし・封鎖207日目・ニュース1件更新・osint更新</div>
+          <div><span class="log-date">2026/09/22 07:25</span> — <strong class="log-tag">【超重大更新】</strong>英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向かうタンカーが正体不明の飛翔体により被弾し乗組員2人が軽傷を負ったと発表——船体は自力航行を継続、攻撃主体は特定されず（AP通信）・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃からは続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/21終値97.56ドル・ブレント100.06ドルまで下落（3日続落）・日本関係船は残り4隻で変化なし・封鎖207日目・ニュース1件更新・osint更新</div>
           <div>📅 <strong>2026年9月20日 08:28 JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/09/20 08:28</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>イラン革命防衛隊（IRGC）海軍は9月18日、トーゴ籍プロダクトタンカー「Trend」が9月17日夜「不法通航」を試みたとして攻撃し、火災・航行停止させたと発表——英国海事貿易活動機関（UKMTO）もオマーン沿岸ハサブ沖での被弾・乗組員無事を報告したが、同一船舶かは独立検証が取れていない（RFE/RL、Anadolu Agency）・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/18終値100.30ドル前後で推移・日本関係船は残り4隻で変化なし・封鎖205日目・ニュース1件更新・osint更新</div>
+          <div><span class="log-date">2026/09/20 08:28</span> — <strong class="log-tag">【超重大更新】</strong>イラン革命防衛隊（IRGC）海軍は9月18日、トーゴ籍プロダクトタンカー「Trend」が9月17日夜「不法通航」を試みたとして攻撃し、火災・航行停止させたと発表——英国海事貿易活動機関（UKMTO）もオマーン沿岸ハサブ沖での被弾・乗組員無事を報告したが、同一船舶かは独立検証が取れていない（RFE/RL、Anadolu Agency）・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/18終値100.30ドル前後で推移・日本関係船は残り4隻で変化なし・封鎖205日目・ニュース1件更新・osint更新</div>
           <div>📅 <strong>2026年9月18日 06:59 JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/09/18 06:59</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>Bloomberg・Reutersは9月16日、9月10日の攻撃で停止したサウジ東西パイプラインについて、迂回路設置により数日内に輸送能力の半分を再開目指す、全面復旧は約6週間との見通しを報道——従来の「数日内に再開」（米エネルギー長官）・「3〜5週間」（中東当局者）いずれとも食い違う新たな数字で未検証（Bloomberg/Reuters経由 共同通信）・CENTCOMのエル・ガイア機雷主張否定（9/14）、イラン・GCC会合延期（9/14）からは続報なし・IMF PortWatch速報値で9/17通航5隻(10日平均14隻)・9/16は12隻・WTI原油は9/17時点で1バレル101ドル台に下落（前日比約1.3%安）・日本関係船は残り4隻で変化なし・封鎖203日目・ニュース1件更新・osint更新</div>
+          <div><span class="log-date">2026/09/18 06:59</span> — <strong class="log-tag">【超重大更新】</strong>Bloomberg・Reutersは9月16日、9月10日の攻撃で停止したサウジ東西パイプラインについて、迂回路設置により数日内に輸送能力の半分を再開目指す、全面復旧は約6週間との見通しを報道——従来の「数日内に再開」（米エネルギー長官）・「3〜5週間」（中東当局者）いずれとも食い違う新たな数字で未検証（Bloomberg/Reuters経由 共同通信）・CENTCOMのエル・ガイア機雷主張否定（9/14）、イラン・GCC会合延期（9/14）からは続報なし・IMF PortWatch速報値で9/17通航5隻(10日平均14隻)・9/16は12隻・WTI原油は9/17時点で1バレル101ドル台に下落（前日比約1.3%安）・日本関係船は残り4隻で変化なし・封鎖203日目・ニュース1件更新・osint更新</div>
           <div>📅 <strong>2026年9月16日 08:53 JST</strong> 更新</div>
-          <div><span style="color:#94a3b8;">2026/09/16 08:53</span> — <strong style="color:#fca5a5;">【超重大更新】</strong>米中央軍(CENTCOM)は9月14日、イランのIRGCがタンカー「エル・ガイア」の機雷被弾を主張していたことを否定し、ミサイル・ドローンによる攻撃で現在はオマーン海域で曳航中と発表——乗組員の人数は食い違い、インド外務省13人救助・1人不明／オマーン海事保安センター23人救助・2人不明（未検証。Al Jazeera、gCaptain）・同日、米エネルギー長官はサウジ東西パイプラインが「数日内」に復旧する見通しだと発言、中東当局者らの「3〜5週間」見通しとは食い違い未検証（Al Jazeera）・イラン・GCCホルムズ会合の新たな開催日は依然不明・WTI原油は日本経済新聞報道で1バレル103ドル台まで上昇し約4カ月ぶりの高水準（日本経済新聞）・日本関係船は残り4隻で変化なし・封鎖201日目・ニュース1件更新・osint更新</div>
-          <div style="margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);">① <a href="https://jp.reuters.com/world/us/XFYI674QIBLRJJY2HCA3T2LZCA-2026-04-12/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters日本語 — トランプ「米軍がホルムズ封鎖へ」・CENTCOM正式発表（4/12〜13）</a></div>
-          <div>② <a href="https://www.nationalreview.com/news/trump-announces-blockade-of-strait-of-hormuz-after-iran-peace-talks-collapse/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">National Review — トランプ Truth Social 投稿原文・封鎖宣言の全文引用（4/12）</a></div>
-          <div>③ <a href="https://x.com/whitehouse/status/2043650546112860166" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">X / ホワイトハウス公式 — 「4月13日 10:00 AM ET よりイラン港湾封鎖開始」声明（4/13）</a></div>
-          <div>④ <a href="https://www.cbsnews.com/live-updates/iran-war-us-iran-ports-blockade-strait-of-hormuz-trump/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">CBS News Live Updates — CENTCOM・イラン港湾封鎖・ホルムズ海峡最新動向（4/13）</a></div>
-          <div>⑤ <a href="https://global-scm.com/blog/?p=6085" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Global-SCM — ホルムズ海峡危機：情勢と実務リスク 総合分析（4/13 更新）</a></div>
-          <div>⑥ <a href="https://jp.reuters.com/markets/commodities/BILJFT2L7NKPVLXTZUPGTBPA74-2026-04-06/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">Reuters — ホルムズ封鎖で中東産油国に明暗・イラクに打撃・サウジは恩恵（4/6）</a></div>
-          <div>⑦ <a href="https://www.jns.org/trump-orders-blockade-of-strait-of-hormuz" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">JNS.org — 封鎖宣言の背景・停戦期限・バンス声明の詳細（4/12）</a></div>
-          <div>⑧ <a href="https://houseofsaud.com/centcom-naval-blockade-iranian-ports/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;">House of Saud — CENTCOM封鎖分析：Kharg Island・94%輸出への影響（4/13）</a></div>
+          <div><span class="log-date">2026/09/16 08:53</span> — <strong class="log-tag">【超重大更新】</strong>米中央軍(CENTCOM)は9月14日、イランのIRGCがタンカー「エル・ガイア」の機雷被弾を主張していたことを否定し、ミサイル・ドローンによる攻撃で現在はオマーン海域で曳航中と発表——乗組員の人数は食い違い、インド外務省13人救助・1人不明／オマーン海事保安センター23人救助・2人不明（未検証。Al Jazeera、gCaptain）・同日、米エネルギー長官はサウジ東西パイプラインが「数日内」に復旧する見通しだと発言、中東当局者らの「3〜5週間」見通しとは食い違い未検証（Al Jazeera）・イラン・GCCホルムズ会合の新たな開催日は依然不明・WTI原油は日本経済新聞報道で1バレル103ドル台まで上昇し約4カ月ぶりの高水準（日本経済新聞）・日本関係船は残り4隻で変化なし・封鎖201日目・ニュース1件更新・osint更新</div>
+          <div class="log-sources-start">① <a href="https://jp.reuters.com/world/us/XFYI674QIBLRJJY2HCA3T2LZCA-2026-04-12/" target="_blank" rel="noopener">Reuters日本語 — トランプ「米軍がホルムズ封鎖へ」・CENTCOM正式発表（4/12〜13）</a></div>
+          <div>② <a href="https://www.nationalreview.com/news/trump-announces-blockade-of-strait-of-hormuz-after-iran-peace-talks-collapse/" target="_blank" rel="noopener">National Review — トランプ Truth Social 投稿原文・封鎖宣言の全文引用（4/12）</a></div>
+          <div>③ <a href="https://x.com/whitehouse/status/2043650546112860166" target="_blank" rel="noopener">X / ホワイトハウス公式 — 「4月13日 10:00 AM ET よりイラン港湾封鎖開始」声明（4/13）</a></div>
+          <div>④ <a href="https://www.cbsnews.com/live-updates/iran-war-us-iran-ports-blockade-strait-of-hormuz-trump/" target="_blank" rel="noopener">CBS News Live Updates — CENTCOM・イラン港湾封鎖・ホルムズ海峡最新動向（4/13）</a></div>
+          <div>⑤ <a href="https://global-scm.com/blog/?p=6085" target="_blank" rel="noopener">Global-SCM — ホルムズ海峡危機：情勢と実務リスク 総合分析（4/13 更新）</a></div>
+          <div>⑥ <a href="https://jp.reuters.com/markets/commodities/BILJFT2L7NKPVLXTZUPGTBPA74-2026-04-06/" target="_blank" rel="noopener">Reuters — ホルムズ封鎖で中東産油国に明暗・イラクに打撃・サウジは恩恵（4/6）</a></div>
+          <div>⑦ <a href="https://www.jns.org/trump-orders-blockade-of-strait-of-hormuz" target="_blank" rel="noopener">JNS.org — 封鎖宣言の背景・停戦期限・バンス声明の詳細（4/12）</a></div>
+          <div>⑧ <a href="https://houseofsaud.com/centcom-naval-blockade-iranian-ports/" target="_blank" rel="noopener">House of Saud — CENTCOM封鎖分析：Kharg Island・94%輸出への影響（4/13）</a></div>
         </div>
 
-        <div id="log-toggle-bottom" style="text-align:center;margin:8px 0 4px;display:none;">
-          <button
+        <div id="log-toggle-bottom" class="log-toggle" style="display:none;">
+          <button type="button"
             onclick="(function(){var c=document.getElementById('log-collapse');var t=document.getElementById('log-toggle-top');var b=document.getElementById('log-toggle-bottom');c.style.display='none';b.style.display='none';t.querySelector('button').textContent='📂 過去の履歴を見る';var btn=t.querySelector('button');var rect=btn.getBoundingClientRect();window.scrollBy({top:rect.top-80,behavior:'smooth'});})()"
-            style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#94a3b8;font-size:0.78rem;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all 0.2s;"
-            onmouseover="this.style.background='rgba(255,255,255,0.10)'"
-            onmouseout="this.style.background='rgba(255,255,255,0.06)'">▲ 閉じる
+            class="log-toggle-btn">▲ 閉じる
           </button>
         </div>
       </div>

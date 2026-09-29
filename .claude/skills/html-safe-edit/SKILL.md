@@ -26,6 +26,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 - **速報インシデント**：最新3件常時表示、4件目以降は「過去のインシデントを見る」で折り畳み（`applyIncidentFold()`）。項目は `li.incident-item` の型で書く（daily-site-update スキル「速報インシデントの型」）。ページには直近30日分だけを置き、古い項目は `docs/data/incident_archive.json`
   - 上ボタン（3件目直後）：その場で折りたたむ（scrollBy 補正でジャンプ抑制）
   - 下ボタン（展開末尾）：押すと上ボタン位置にスムーズスクロール
+- **更新履歴**：最新3件（`div.log-recent`）常時表示、4〜10件目は「📂 過去の履歴を見る」で折り畳み（`#log-collapse`）。項目は daily-site-update「更新履歴の型」で書く。`#log-collapse`・`#log-toggle-bottom` の `style="display:none;"` は開閉ボタンの JS が読むので消さない（② PR4a）
 - **関連最新ニュース**：最新3件常時表示、4件目以降は「さらに見る」で折り畳み（scrollBy 補正）
 - **現地メディア視点**：LIMIT=3（3件表示）
 - 折り畳み/展開時にページが飛ぶ場合は必ず scrollBy 補正を入れること

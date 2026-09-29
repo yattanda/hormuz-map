@@ -554,7 +554,7 @@ PAT_INCIDENT_LIST = re.compile(r'<ul id="incident-list"[^>]*>.*?</ul>', re.S)
 
 def check_types(html: str, base: str) -> None:
     """② で決めた型（クラス＋モディファイア・インライン style なし）で書かれているか。
-    30秒カラム（主な動き3件を含む）・速報インシデントの一覧・ルート表が対象。見た目は壊れないので WARN にとどめる。"""
+    30秒カラム（主な動き3件を含む）・速報インシデントの一覧・ルート表・シナリオ・更新履歴が対象。見た目は壊れないので WARN にとどめる。"""
     g = PAT_GLANCE.search(html)
     if not g:
         warn("30秒カラム（<div class=\"glance\">）を検出できませんでした（構造が変わった可能性）")
@@ -599,6 +599,34 @@ def check_types(html: str, base: str) -> None:
             warn(f"速報インシデントの一覧にインライン style が {n_style}箇所あります（型は li.incident-item＋モディファイア）")
         else:
             ok("速報インシデントの一覧にインライン style なし")
+    # ② PR4a：シナリオ（S06〜S08）と更新履歴
+    i, j = html.find("<!-- SCENARIOS -->"), html.find("<!-- STATS -->")
+    if i < 0 or j < i:
+        warn("シナリオ（<!-- SCENARIOS -->〜<!-- STATS -->）を検出できませんでした（構造が変わった可能性）")
+    else:
+        n_style = html[i:j].count('style="')
+        if n_style:
+            warn(f"シナリオにインライン style が {n_style}箇所あります（型はクラス。daily-site-update「シナリオの型」）")
+        else:
+            ok("シナリオにインライン style なし")
+    m = re.search(r'<section class="update-log".*?</section>', html, re.S)
+    if not m:
+        warn("更新履歴（section.update-log）を検出できませんでした（構造が変わった可能性）")
+    else:
+        log = m.group(0)
+        # 開閉の状態を JS が読む #log-collapse・#log-toggle-bottom の display:none だけは残す
+        n_style = log.count('style="') - log.count('style="display:none;"')
+        if n_style:
+            warn(f"更新履歴にインライン style が {n_style}箇所あります（型はクラス。daily-site-update「更新履歴の型」）")
+        else:
+            ok("更新履歴にインライン style なし（開閉の display:none を除く）")
+        k = log.find('id="log-collapse"')
+        recent = log[:k].count('class="log-date"') if k >= 0 else -1
+        total = log.count('class="log-date"')
+        if recent != 3 or total > 10:
+            warn(f"更新履歴の件数：常時表示 {recent}件・合計 {total}件（ルールは常時表示3件・合計10件まで）")
+        else:
+            ok(f"更新履歴の件数：常時表示 3件・合計 {total}件")
 
 
 # ── main ────────────────────────────────────────────────────

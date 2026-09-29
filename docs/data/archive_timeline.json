@@ -2994,6 +2994,24 @@
           "sourceLabel": "Al Jazeera（9/28）"
         }
       ]
+    },
+    {
+      "date": "2026-09-30",
+      "dateLabel": "2026/09/30 07:08",
+      "blockadeDay": 215,
+      "summary": "【超重大更新】Al Jazeera（9/29）によれば、イランのアラグチ外相はニューヨークでカタールの仲介者と会談してホルムズ海峡再開案を協議し、米国の最終回答を火曜（9/30）までに受け取りたいと述べた一方、米当局者は核問題が扱われない限り戦争終結の合意はないと述べた（トランプ氏は9/26に7日間ロードマップを拒否）・Rigzone配信記事（9/28）によれば、9/10の攻撃で停止していたサウジ東西パイプラインは日量350万バレル（全能力700万バレルの約半分）まで復旧し、ヤンブー港の積み出しも先週から再開、全面復旧は約6週間の見通し・9/29のブレントは報道により約102〜105ドルと幅があり未検証・日本関係船は残り4隻で変化なし（9/30確認）・封鎖215日目・ニュース2件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "イラン外相アラグチ、NYでカタール仲介者と会談——米の最終回答を9/30までに期待、米当局者は「核問題が扱われない限り合意なし」",
+          "url": "https://www.aljazeera.com/news/2026/9/29/irans-araghchi-meets-qatari-mediators-as-us-insists-on-nuclear-talks",
+          "sourceLabel": "Al Jazeera（9/29）"
+        },
+        {
+          "title": "サウジ東西パイプライン、日量350万バレルまで復旧——能力の約半分、ヤンブー港の積み出しも再開",
+          "url": "https://www.rigzone.com/news/wire/saudi_arabia_restores_key_pipeline_to_half_its_capacity-28-sep-2026-184718-article/",
+          "sourceLabel": "Rigzone（9/28）"
+        }
+      ]
     }
   ]
 }

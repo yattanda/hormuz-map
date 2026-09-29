@@ -1,7 +1,27 @@
 {
-  "updated": "2026年9月28日 08:12 日本時間JST",
+  "updated": "2026年09月29日 09:12 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-oil-surge-trump-rejects-iran-plan-0928",
+      "title": "トランプ氏のイラン案拒否でブレント原油が3%超上昇、一時108ドル近辺——アジア株は下落",
+      "body": "Al Jazeera経済面（9/28）によれば、トランプ大統領が土曜（9/26）にイランの最新提案は「受け入れられない」と述べたことを受け、月曜のアジア取引でブレント原油は3%超上昇し、一時1バレル108ドル近辺に達した（11月物は08:00 GMT時点で107.35ドル）。イランの提案は、凍結資金の返却・制裁解除・海上封鎖の終了と引き換えに、ホルムズ海峡を7日以内に再開するというもの。同日のアジア株は日経平均が0.73%、韓国KOSPIが2.70%下落した一方、香港ハンセン指数と豪S&P/ASX200は上昇し、まちまちの展開だった。なお、CBS News（9/27）によれば、トランプ氏は協議が今週中に再開されるとの見方を示す一方、「私が望む取引ではない」と述べている。原油価格はいずれも市場の報道値で、時点や限月により異なる。",
+      "sourceLabel": "Al Jazeera（9/28、経済面）",
+      "date": "2026年9月28日（現地・JST）",
+      "label": "🛢️ ブレント一時108ドル近辺へ——トランプ氏の提案拒否を受け",
+      "url": "https://www.aljazeera.com/economy/2026/9/28/oil-prices-surge-after-trump-rejects-irans-plan-to-reopen-strait-of-hormuz",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-touts-attacks-kpler-flows-0928",
+      "title": "イラン、対米攻撃の成果を主張——Kplerは9/27までの週の通過19隻と集計、米側の輸送量主張とは食い違い",
+      "body": "Al Jazeera（9/28）によれば、イランの最高指導者ハーメネイー師は、米軍が「痛烈な打撃」を受けたためイラン沖から遠ざかっていると主張した（イラン側の一方的な発言で、独立した検証は確認できていない）。同記事は、エネルギー分析会社Kplerの集計として、9/27までの週にホルムズ海峡を通過したタンカーは超大型原油タンカー17隻を含む19隻、9月の海峡経由の原油輸出は日量平均740万バレルの見込みと伝えた。一方、米エネルギー長官は日量約1,300万バレル、米財務長官は日量1,500万〜2,200万バレル、イラン国営テレビの分析者は「少なくとも日量700万バレル」と述べ、当事者ごとに数字は大きく食い違っている。同記事は、中東域内の9月の原油輸出が日量1,280万バレルと開戦以来の最高になっているとも伝えている。",
+      "sourceLabel": "Al Jazeera（9/28）",
+      "date": "2026年9月28日（現地・JST）",
+      "label": "🚢 通航はなお低水準——当事者の数字は食い違い",
+      "url": "https://www.aljazeera.com/news/2026/9/28/iran-touts-hormuz-attacks-as-oil-flows-increase-despite-tensions",
+      "isLatest": false
+    },
     {
       "id": "latest-iran-hormuz-closed-economic-warfare-drone-0927",
       "title": "イラン高官『海峡は米の経済戦争終結まで閉鎖継続』——革命防衛隊、第2の米無人潜水機拿捕も主張、米は否定",
@@ -10,7 +30,7 @@
       "date": "2026年9月27日（現地）/ 2026年9月28日 JST",
       "label": "⚔️ イラン、海峡閉鎖継続を表明——無人機拿捕は米が否定",
       "url": "https://www.aljazeera.com/economy/2026/9/27/strait-of-hormuz-tensions-linger-as-iran-and-us-move-further-from-a-deal",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-trump-rejects-7day-roadmap-0926",
@@ -21,29 +41,45 @@
       "label": "🚫 トランプ氏、7日間ロードマップを拒否",
       "url": "https://www.aljazeera.com/news/2026/9/26/trump-rejects-irans-seven-day-roadmap-to-reopen-strait-of-hormuz",
       "isLatest": false
-    },
-    {
-      "id": "latest-iran-7day-roadmap-araghchi-unga-0925",
-      "title": "イラン外相アラグチ、国連で『7日間ロードマップ』発表——完全停戦・凍結資産解放・封鎖解除から6日目に海峡再開、7日目に核協議再開を提案",
-      "body": "イランのアッバス・アラグチ外相は9月25日、国連安全保障理事会での発言後、記者団に対しカタールを通じて米国に具体的な『7日間ロードマップ』を伝えたと明らかにした。Al Jazeeraによれば、提案は(1)レバノンを含む全戦線での完全停戦、(2)凍結されているイラン資産120億ドル超の解放、(3)米国による海上封鎖の解除と石油制裁の適用除外——を最初の4〜5日間で実施し、6日目にホルムズ海峡を再開、7日目からイラン核問題を巡る協議を再開する内容という。これは6月に署名されたMoU（覚書）をベースに『タイムラインを短縮し順序を入れ替えた』ものとされる。アラグチ氏は『選択は今や米国側にある』『イランは威圧・脅迫・強要を受け入れず、主権的権利を放棄しない』と述べた。米側の受諾可否・回答期限は現時点で示されていない。9/23に報じられていた『60日間停戦ロードマップ』『レザイ書記の4〜5日以内期限発言』との関係（同一提案の具体化か別提案か）は一次情報で明確にされておらず未検証。",
-      "sourceLabel": "Al Jazeera（9/25）／Euronews・Times of Israel等複数メディア",
-      "date": "2026年9月25日（現地）/ 2026年9月26日 JST",
-      "label": "🕊️ イラン、7日間ロードマップ発表",
-      "url": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-roadmap-60day-ceasefire-rezaei-deadline-0924",
-      "title": "イラン、米に『60日間停戦・海峡段階的再開』の文書ロードマップ提示——共同声明に至らず、レザイ書記『4〜5日以内』の受諾要求と伝えられる",
-      "body": "英字紙The Nationalは9月23日、国連総会（UNGA）に合わせてニューヨークで行われた米・イラン協議で、イラン側が米国に対し紛争終結に向けた文書化されたロードマップを提示したと報じた。内容は、最大60日間の地域規模停戦・ホルムズ海峡の段階的再開・米国による経済封鎖の解除・イランによるアラブ近隣諸国への攻撃停止などで、停戦期間中に実質協議の日程について米側の合意を求める内容という。協議はイラン外相アッバス・アラグチ氏とウィトコフ特使・クシュナー氏の間でカタール仲介により約3時間行われた。ウィトコフ特使はX上で『仲介者を通じてイラン代表団と長時間の協議に従事した』と述べた一方、トランプ大統領は封鎖解除の前提として『イランが十分な善意を示す措置を講じること』を条件としている。ルビオ国務長官は、合意には『相応の時間をかけた多大な努力』が必要になるとの見方を示し、共同声明には至らなかった。複数メディアによれば、イラン最高国家安全保障会議のモフセン・レザイ書記は、米国が『4〜5日以内』に条件を受け入れなければ海峡は閉鎖されたままだと期限を付けたと伝えられているが、この発言について一次情報での直接確認は取れておらず、実際の交渉期限になるかは未検証。",
-      "sourceLabel": "The National（9/23）／globalsecurity.org・Gulf News経由報道（9/24、レザイ発言は未検証）",
-      "date": "2026年9月23日（現地）/ 2026年9月24〜25日 JST",
-      "label": "🕊️ イラン、60日停戦ロードマップ提示",
-      "url": "https://www.thenationalnews.com/news/mena/2026/09/23/iran-us-meeting-new-york/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-oil-surge-0928",
+      "titleJa": "【Al Jazeera】トランプ氏のイラン案拒否でブレント3%超上昇、一時108ドル近辺",
+      "titleEn": "Oil prices surge after Trump rejects Iran’s plan to reopen Strait of Hormuz",
+      "title": "【Al Jazeera】トランプ氏のイラン案拒否でブレント3%超上昇、一時108ドル近辺",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月28日（現地・JST）",
+      "summary": "Al Jazeeraは、トランプ大統領がイランの7日間提案を「受け入れられない」と述べたことを受け、9/28のアジア取引でブレント原油が3%超上昇し一時108ドル近辺（11月物は08:00 GMTで107.35ドル）に達したと報道。日経平均は0.73%、KOSPIは2.70%下落した。",
+      "url": "https://www.aljazeera.com/economy/2026/9/28/oil-prices-surge-after-trump-rejects-irans-plan-to-reopen-strait-of-hormuz",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
+    {
+      "id": "osint-aljazeera-iran-touts-kpler-0928",
+      "titleJa": "【Al Jazeera】イラン、対米攻撃の成果を主張——Kplerは9/27までの週の通過19隻",
+      "titleEn": "Iran touts Hormuz attacks as oil flows increase despite tensions",
+      "title": "【Al Jazeera】イラン、対米攻撃の成果を主張——Kplerは9/27までの週の通過19隻",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月28日（現地・JST）",
+      "summary": "Al Jazeeraは、ハーメネイー師が米軍は「痛烈な打撃」で遠ざかったと主張したと報道。Kplerの集計では9/27までの週の通過タンカーは19隻（超大型原油タンカー17隻）、9月の海峡経由の原油輸出は日量平均740万バレルの見込みで、米側の主張（約1,300万バレル）と食い違う。",
+      "url": "https://www.aljazeera.com/news/2026/9/28/iran-touts-hormuz-attacks-as-oil-flows-increase-despite-tensions",
+      "isLatest": false,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-iran-hormuz-closed-drone-0927",
       "titleJa": "【Al Jazeera】イラン高官『海峡は米の経済戦争終結まで閉鎖継続』——無人機拿捕は米が否定",
@@ -60,7 +96,7 @@
       "borderColor": "rgba(239,68,68,0.4)",
       "textColor": "#fca5a5",
       "url": "https://www.aljazeera.com/economy/2026/9/27/strait-of-hormuz-tensions-linger-as-iran-and-us-move-further-from-a-deal",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-trump-rejects-7day-roadmap-0926",
@@ -1538,6 +1574,36 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年9月25日",
+      "items": [
+        {
+          "id": "latest-iran-7day-roadmap-araghchi-unga-0925",
+          "title": "イラン外相アラグチ、国連で『7日間ロードマップ』発表——完全停戦・凍結資産解放・封鎖解除から6日目に海峡再開、7日目に核協議再開を提案",
+          "body": "イランのアッバス・アラグチ外相は9月25日、国連安全保障理事会での発言後、記者団に対しカタールを通じて米国に具体的な『7日間ロードマップ』を伝えたと明らかにした。Al Jazeeraによれば、提案は(1)レバノンを含む全戦線での完全停戦、(2)凍結されているイラン資産120億ドル超の解放、(3)米国による海上封鎖の解除と石油制裁の適用除外——を最初の4〜5日間で実施し、6日目にホルムズ海峡を再開、7日目からイラン核問題を巡る協議を再開する内容という。これは6月に署名されたMoU（覚書）をベースに『タイムラインを短縮し順序を入れ替えた』ものとされる。アラグチ氏は『選択は今や米国側にある』『イランは威圧・脅迫・強要を受け入れず、主権的権利を放棄しない』と述べた。米側の受諾可否・回答期限は現時点で示されていない。9/23に報じられていた『60日間停戦ロードマップ』『レザイ書記の4〜5日以内期限発言』との関係（同一提案の具体化か別提案か）は一次情報で明確にされておらず未検証。",
+          "sourceLabel": "Al Jazeera（9/25）／Euronews・Times of Israel等複数メディア",
+          "date": "2026年9月25日（現地）/ 2026年9月26日 JST",
+          "label": "🕊️ イラン、7日間ロードマップ発表",
+          "url": "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war",
+          "isLatest": false
+        }
+      ]
+    },
+    {
+      "batchLabel": "2026年9月23日",
+      "items": [
+        {
+          "id": "latest-iran-roadmap-60day-ceasefire-rezaei-deadline-0924",
+          "title": "イラン、米に『60日間停戦・海峡段階的再開』の文書ロードマップ提示——共同声明に至らず、レザイ書記『4〜5日以内』の受諾要求と伝えられる",
+          "body": "英字紙The Nationalは9月23日、国連総会（UNGA）に合わせてニューヨークで行われた米・イラン協議で、イラン側が米国に対し紛争終結に向けた文書化されたロードマップを提示したと報じた。内容は、最大60日間の地域規模停戦・ホルムズ海峡の段階的再開・米国による経済封鎖の解除・イランによるアラブ近隣諸国への攻撃停止などで、停戦期間中に実質協議の日程について米側の合意を求める内容という。協議はイラン外相アッバス・アラグチ氏とウィトコフ特使・クシュナー氏の間でカタール仲介により約3時間行われた。ウィトコフ特使はX上で『仲介者を通じてイラン代表団と長時間の協議に従事した』と述べた一方、トランプ大統領は封鎖解除の前提として『イランが十分な善意を示す措置を講じること』を条件としている。ルビオ国務長官は、合意には『相応の時間をかけた多大な努力』が必要になるとの見方を示し、共同声明には至らなかった。複数メディアによれば、イラン最高国家安全保障会議のモフセン・レザイ書記は、米国が『4〜5日以内』に条件を受け入れなければ海峡は閉鎖されたままだと期限を付けたと伝えられているが、この発言について一次情報での直接確認は取れておらず、実際の交渉期限になるかは未検証。",
+          "sourceLabel": "The National（9/23）／globalsecurity.org・Gulf News経由報道（9/24、レザイ発言は未検証）",
+          "date": "2026年9月23日（現地）/ 2026年9月24〜25日 JST",
+          "label": "🕊️ イラン、60日停戦ロードマップ提示",
+          "url": "https://www.thenationalnews.com/news/mena/2026/09/23/iran-us-meeting-new-york/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月22日",
       "items": [

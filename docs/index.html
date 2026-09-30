@@ -757,6 +757,88 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   .log-recent, .log-older { font-size:0.8rem; }
 }
 
+/* 本文の残り（② PR4b-1・2026-10-01）：その他の検討中ルート・主要指標・特別解説コラム・第3層の外枠。
+   日次更新は触らない区域。文字サイズは phase2-sections-design.md「#14 の割り振り」の対応表どおりトークンに寄せた（0.68・0.7→xs、0.75・0.8→sm、0.9・1→md、1.2→lg、1.4→xl） */
+.sec-h2--red    { color:#f87171; border-bottom-color:rgba(248,113,113,0.25); }
+.sec-h2--violet { color:#a78bfa; border-bottom-color:rgba(167,139,250,0.25); }
+.sec-h2--spaced { margin-top:24px; }
+.sec-block { width:100%; margin:24px 0 0; padding:0 16px; }
+.sec-block--left { text-align:left; }
+.sec-block--news { margin:24px 0; text-align:left; }
+.loading-note { color:#64748b; font-size:var(--fs-sm); padding:16px; }
+
+/* その他の検討中ルート（折りたたみ）。開閉の状態は onclick が #other-routes-body の style.display で読む */
+.or-wrap { margin-top:16px; margin-bottom:8px; }
+.or-toggle { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:8px; color:#94a3b8;
+  font-size:var(--fs-sm); font-weight:700; padding:12px 18px; cursor:pointer; text-align:left; letter-spacing:0.03em; }
+.or-toggle-em { color:#fbbf24; }
+.or-panel { margin-top:14px; }
+.or-list { display:flex; flex-direction:column; gap:14px; }
+.or-card { background:var(--or-bg); border:1px solid var(--or-bd); border-radius:10px; padding:14px 18px; }
+.or-card--br { --or-bg:rgba(192,132,252,0.05); --or-bd:rgba(192,132,252,0.2);  --or-c:#c084fc; --or-badge-bg:rgba(192,132,252,0.15); --or-badge-bd:rgba(192,132,252,0.3); }
+.or-card--mx { --or-bg:rgba(52,211,153,0.04);  --or-bd:rgba(52,211,153,0.15);  --or-c:#34d399; --or-badge-bg:rgba(52,211,153,0.12);  --or-badge-bd:rgba(52,211,153,0.25); }
+.or-card--iq { --or-bg:rgba(251,191,36,0.04);  --or-bd:rgba(251,191,36,0.15);  --or-c:#fbbf24; --or-badge-bg:rgba(251,191,36,0.12);  --or-badge-bd:rgba(251,191,36,0.25); }
+.or-card--ca { --or-bg:rgba(56,189,248,0.04);  --or-bd:rgba(56,189,248,0.12);  --or-c:#7dd3fc; --or-badge-bg:rgba(56,189,248,0.1);   --or-badge-bd:rgba(56,189,248,0.2); }
+.or-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+.or-flag { font-size:var(--fs-md); }
+.or-title { color:var(--or-c); font-size:var(--fs-base); }
+.or-badge { font-size:var(--fs-xs); background:var(--or-badge-bg); border:1px solid var(--or-badge-bd); color:var(--or-c);
+  padding:2px 8px; border-radius:4px; margin-left:auto; }
+.or-text { font-size:var(--fs-sm); color:#94a3b8; line-height:1.75; }
+.or-text strong { color:#e2e8f0; }
+.or-text .or-ok { color:#4ade80; }
+.or-text .or-alert { color:#f87171; }
+.or-note { font-size:var(--fs-xs); color:#64748b; margin-top:6px; }
+
+/* 主要指標 */
+.stat-asof { font-size:var(--fs-2xs); color:#64748b; margin-bottom:6px; font-weight:600; }
+.stat-head { font-size:var(--fs-sm); color:#93c5fd; margin-bottom:8px; font-weight:700; }
+.stat-num.stat-num--stock { font-size:var(--fs-xl); color:#38bdf8; line-height:1.2; margin-bottom:6px; }
+.stat-num.stat-num--wti { font-size:var(--fs-xl); }
+.stat-unit { font-size:var(--fs-md); }
+.stat-unit.stat-unit--sm { font-size:var(--fs-sm); }
+.stat-label.stat-label--stock { font-size:var(--fs-xs); line-height:1.6; color:#cbd5e1; }
+.stat-label--stock strong { color:#93c5fd; }
+.stat-label--stock small { color:#64748b; }
+.stat-sub { font-size:var(--fs-2xs); color:#64748b; }
+.stat-card.stat-card--wti { background:linear-gradient(135deg,#0a1a10,#0f2820); border-color:#1e5f3a; cursor:pointer; }
+
+/* 特別解説コラムのカード。色は --cc（RGB）と --cc-accent で決める（新しいカードは col-card--{色} を付ける） */
+.col-card { background:rgba(var(--cc),0.05); border:1px solid rgba(var(--cc),0.2); border-radius:10px; padding:14px 18px; margin-bottom:20px; }
+.col-card--red    { --cc:239,68,68;   --cc-accent:#f87171; }
+.col-card--amber  { --cc:251,191,36;  --cc-accent:#fbbf24; }
+.col-card--sky    { --cc:56,189,248;  --cc-accent:#38bdf8; }
+.col-card--green  { --cc:52,211,153;  --cc-accent:#34d399; }
+.col-card--orange { --cc:251,146,60;  --cc-accent:#fb923c; }
+.col-card--violet { --cc:167,139,250; --cc-accent:#a78bfa; }
+.col-card-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.col-card-icon { font-size:var(--fs-lg); }
+.col-card-titles { flex:1; min-width:0; }
+.col-card-title { font-size:var(--fs-base); font-weight:800; color:var(--cc-accent); line-height:1.4; margin:0; }
+.col-card-sub { font-size:var(--fs-xs); color:#94a3b8; margin-top:2px; }
+.col-card-date { font-size:var(--fs-xs); color:#64748b; white-space:nowrap; }
+.col-card-lead { margin-top:12px; font-size:var(--fs-sm); color:#cbd5e1; line-height:1.75; }
+.col-card-link { display:block; margin-top:12px; width:100%; text-align:center; background:rgba(var(--cc),0.1); border:1px solid rgba(var(--cc),0.3);
+  border-radius:6px; color:var(--cc-accent); font-size:var(--fs-sm); font-weight:700; padding:9px 0; text-decoration:none; letter-spacing:0.03em; }
+.col-card-thumbrow { display:flex; align-items:center; gap:12px; margin-top:12px; }
+.col-card-thumb { width:10%; min-width:52px; max-width:72px; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:center 20%;
+  border-radius:6px; flex-shrink:0; border:1px solid rgba(var(--cc),0.25); }
+.col-card-link.col-card-link--inrow { flex:1; margin-top:0; width:auto; }
+
+/* 数値の注記・日次アーカイブへのリンク */
+.data-note { margin-top:12px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:12px 16px;
+  font-size:var(--fs-xs); color:#64748b; line-height:1.8; }
+.data-note strong { color:#94a3b8; }
+.archive-link-wrap { text-align:center; margin:0 16px 18px; }
+.archive-link { display:inline-flex; align-items:center; gap:6px; font-size:var(--fs-sm); color:#c9a869; text-decoration:none;
+  border:1px solid rgba(201,168,105,0.35); background:rgba(201,168,105,0.08); padding:8px 16px; border-radius:20px; }
+
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .or-text, .or-note, .stat-head, .col-card-sub, .data-note { font-size:0.8rem; }
+  .col-card-lead { font-size:0.8rem; }   /* 長文。2-a のスマホ本文の下限（0.8rem）を割らない */
+}
+
 /* FOOTER */
 footer {
   text-align:center; padding:16px;
@@ -2395,78 +2477,75 @@ document.addEventListener('keydown', function(e) {
   </div>
 
 <!-- ▼ その他の検討中ルート（折り畳み） -->
-<div style="margin-top:16px;margin-bottom:8px;">
-  <button onclick="
+<div class="or-wrap">
+  <button class="or-toggle" onclick="
     var body = document.getElementById('other-routes-body');
     var isOpen = body.style.display !== 'none';
     body.style.display = isOpen ? 'none' : 'block';
     this.innerHTML = isOpen
-      ? '▼ その他の検討中ルート（実績少・計画段階）― <span style=&quot;color:#fbbf24&quot;>影響度高い順</span>に表示'
+      ? '▼ その他の検討中ルート（実績少・計画段階）― <span class=&quot;or-toggle-em&quot;>影響度高い順</span>に表示'
       : '▲ その他の検討中ルートを閉じる';
-  "
-    style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);
-           border-radius:8px;color:#94a3b8;font-size:0.8rem;font-weight:700;
-           padding:12px 18px;cursor:pointer;text-align:left;letter-spacing:0.03em;">
-    ▼ その他の検討中ルート（実績少・計画段階）― <span style="color:#fbbf24">影響度高い順</span>に表示
+  ">
+    ▼ その他の検討中ルート（実績少・計画段階）― <span class="or-toggle-em">影響度高い順</span>に表示
   </button>
 
-  <div id="other-routes-body" style="display:none;margin-top:14px;">
-    <div style="display:flex;flex-direction:column;gap:14px;">
+  <div id="other-routes-body" class="or-panel" style="display:none;">
+    <div class="or-list">
 
       <!-- ① ブラジル -->
-      <div style="background:rgba(192,132,252,0.05);border:1px solid rgba(192,132,252,0.2);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇧🇷</span>
-          <strong style="color:#c084fc;font-size:0.85rem;">ブラジル→喜望峰→インド洋→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(192,132,252,0.15);border:1px solid rgba(192,132,252,0.3);color:#c084fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約40〜45日</span>
+      <div class="or-card or-card--br">
+        <div class="or-head">
+          <span class="or-flag">🇧🇷</span>
+          <strong class="or-title">ブラジル→喜望峰→インド洋→日本</strong>
+          <span class="or-badge">約40〜45日</span>
         </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
+        <div class="or-text">
           チュピ・ブジオス油田からの良質原油。3大チョークポイント完全回避。
-          <strong style="color:#e2e8f0;">課題：</strong>日本向け到着は2026年後半以降の見込み。中国との競合・長距離コスト。精製時の品質調整が必要。
+          <strong>課題：</strong>日本向け到着は2026年後半以降の見込み。中国との競合・長距離コスト。精製時の品質調整が必要。
         </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：確認なし（計画・スポット交渉段階）</div>
+        <div class="or-note">📌 実績：確認なし（計画・スポット交渉段階）</div>
       </div>
 
       <!-- ② メキシコ -->
-      <div style="background:rgba(52,211,153,0.04);border:1px solid rgba(52,211,153,0.15);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇲🇽</span>
-          <strong style="color:#34d399;font-size:0.85rem;">メキシコ→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);color:#34d399;padding:2px 8px;border-radius:4px;margin-left:auto;">喜望峰経由 約70日（初便）</span>
+      <div class="or-card or-card--mx">
+        <div class="or-head">
+          <span class="or-flag">🇲🇽</span>
+          <strong class="or-title">メキシコ→日本</strong>
+          <span class="or-badge">喜望峰経由 約70日（初便）</span>
         </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          <strong style="color:#4ade80;">✅ 2026年7月17日 初便到着：</strong>コスモ石油が調達した約100万バレルが、メキシコから喜望峰経由で約70日かけて三重県四日市沖に到着（中東情勢の緊迫後で初めて）。太平洋を直行する輸送の実績はない。
-          <strong style="color:#e2e8f0;">課題：</strong>輸出余力は日量40〜50万BPDのみ。日量換算では小規模。
+        <div class="or-text">
+          <strong class="or-ok">✅ 2026年7月17日 初便到着：</strong>コスモ石油が調達した約100万バレルが、メキシコから喜望峰経由で約70日かけて三重県四日市沖に到着（中東情勢の緊迫後で初めて）。太平洋を直行する輸送の実績はない。
+          <strong>課題：</strong>輸出余力は日量40〜50万BPDのみ。日量換算では小規模。
         </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：1便（2026年7月17日着・約100万バレル・喜望峰経由）／典拠：日本経済新聞（7/15）・CBC（7/17）／2026-09-29 訂正</div>
+        <div class="or-note">📌 実績：1便（2026年7月17日着・約100万バレル・喜望峰経由）／典拠：日本経済新聞（7/15）・CBC（7/17）／2026-09-29 訂正</div>
       </div>
 
       <!-- ③ イラク・キルクーク→トルコ・チェイハン -->
-      <div style="background:rgba(251,191,36,0.04);border:1px solid rgba(251,191,36,0.15);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇮🇶</span>
-          <strong style="color:#fbbf24;font-size:0.85rem;">イラク・キルクーク→🇹🇷トルコ・チェイハン（地中海）</strong>
-          <span style="font-size:0.72rem;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25);color:#fbbf24;padding:2px 8px;border-radius:4px;margin-left:auto;">🆕 3月再開</span>
+      <div class="or-card or-card--iq">
+        <div class="or-head">
+          <span class="or-flag">🇮🇶</span>
+          <strong class="or-title">イラク・キルクーク→🇹🇷トルコ・チェイハン（地中海）</strong>
+          <span class="or-badge">🆕 3月再開</span>
         </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
-          <strong style="color:#4ade80;">✅ 2026年3月再開：</strong>10年以上の閉鎖から復活。初期25万BPD。地中海直結でホルムズ完全回避。
-          <strong style="color:#e2e8f0;">課題：</strong>ISIS・PKKによる攻撃リスク。<strong style="color:#f87171;">⚠️ 2026年7月27日：</strong>イラク・トルコ1973年条約が期限切れ。欧州向け主体で日本向け実績なし。
+        <div class="or-text">
+          <strong class="or-ok">✅ 2026年3月再開：</strong>10年以上の閉鎖から復活。初期25万BPD。地中海直結でホルムズ完全回避。
+          <strong>課題：</strong>ISIS・PKKによる攻撃リスク。<strong class="or-alert">⚠️ 2026年7月27日：</strong>イラク・トルコ1973年条約が期限切れ。欧州向け主体で日本向け実績なし。
         </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：欧州向けのみ。日本向けは確認なし。</div>
+        <div class="or-note">📌 実績：欧州向けのみ。日本向けは確認なし。</div>
       </div>
 
       <!-- ④ カナダ西岸 -->
-      <div style="background:rgba(56,189,248,0.04);border:1px solid rgba(56,189,248,0.12);border-radius:10px;padding:14px 18px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
-          <span style="font-size:1rem;">🇨🇦</span>
-          <strong style="color:#7dd3fc;font-size:0.85rem;">カナダ西岸（Trans Mountain）→太平洋直行→日本</strong>
-          <span style="font-size:0.72rem;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:#7dd3fc;padding:2px 8px;border-radius:4px;margin-left:auto;">約14〜16日</span>
+      <div class="or-card or-card--ca">
+        <div class="or-head">
+          <span class="or-flag">🇨🇦</span>
+          <strong class="or-title">カナダ西岸（Trans Mountain）→太平洋直行→日本</strong>
+          <span class="or-badge">約14〜16日</span>
         </div>
-        <div style="font-size:0.78rem;color:#94a3b8;line-height:1.75;">
+        <div class="or-text">
           Trans Mountain拡張パイプライン（2024年完成）でバンクーバー港から太平洋最短ルート。地政学リスクほぼゼロ。
-          <strong style="color:#e2e8f0;">課題：</strong>日本向け長期契約の締結実績が未確認。重質油主体で製油所適合性要確認。
+          <strong>課題：</strong>日本向け長期契約の締結実績が未確認。重質油主体で製油所適合性要確認。
         </div>
-        <div style="font-size:0.72rem;color:#64748b;margin-top:6px;">📌 実績：日本向け契約なし（可能性段階）</div>
+        <div class="or-note">📌 実績：日本向け契約なし（可能性段階）</div>
       </div>
 
     </div>
@@ -2557,29 +2636,28 @@ document.addEventListener('keydown', function(e) {
   <h2 class="sec-h2">📊 主要指標</h2>
   <div class="stats-row">
     <div class="stat-card">
-  <div style="font-size:0.65rem; color:#64748b; margin-bottom:6px; font-weight:600;">2026年8月17日時点（速報）</div>
-  <div style="font-size:0.75rem; color:#93c5fd; margin-bottom:8px; font-weight:700;">📊 日本の石油備蓄</div>
-  <div class="stat-num" style="font-size:1.4rem; color:#38bdf8; line-height:1.2; margin-bottom:6px;">204<span style="font-size:0.8rem">日分</span></div>
-  <div class="stat-label" style="font-size:0.68rem; line-height:1.6; color:#cbd5e1;">
-    <strong style="color:#93c5fd;">国家：</strong>103日分（放出停止・横ばい）<br>
-    <strong style="color:#93c5fd;">民間：</strong>98日分（産油国共同4日分含む）<br>
-    <small style="color:#64748b;">※資源エネルギー庁 速報値（備蓄法基準）</small>
+  <div class="stat-asof">2026年8月17日時点（速報）</div>
+  <div class="stat-head">📊 日本の石油備蓄</div>
+  <div class="stat-num stat-num--stock">204<span class="stat-unit stat-unit--sm">日分</span></div>
+  <div class="stat-label stat-label--stock">
+    <strong>国家：</strong>103日分（放出停止・横ばい）<br>
+    <strong>民間：</strong>98日分（産油国共同4日分含む）<br>
+    <small>※資源エネルギー庁 速報値（備蓄法基準）</small>
   </div>
 </div>
-    <div class="stat-card"><div class="stat-num c-red">20<span style="font-size:0.9rem">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
-    <div class="stat-card"><div class="stat-num c-red">+5<span style="font-size:0.9rem">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
-    <div class="stat-card"><div class="stat-num c-yellow">3<span style="font-size:0.9rem">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
+    <div class="stat-card"><div class="stat-num c-red">20<span class="stat-unit">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
+    <div class="stat-card"><div class="stat-num c-red">+5<span class="stat-unit">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
+    <div class="stat-card"><div class="stat-num c-yellow">3<span class="stat-unit">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
     <!-- 既存のスクロールリンクは維持 -->
-    <div class="stat-card" id="wtiStatCard"
-     style="background:linear-gradient(135deg,#0a1a10,#0f2820);border-color:#1e5f3a;cursor:pointer;"
+    <div class="stat-card stat-card--wti" id="wtiStatCard"
      onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
-    <div class="stat-num c-green" id="wtiStatNum" style="font-size:1.35rem;">Live表示中</div>
+    <div class="stat-num stat-num--wti c-green" id="wtiStatNum">Live表示中</div>
     <div class="stat-label">市場ダッシュボード<br>
-    <span id="wtiStatChange" style="font-size:0.65rem;color:#64748b;">稼働中</span><br>
+    <span id="wtiStatChange" class="stat-sub">稼働中</span><br>
     ▲クリックで詳細
    </div>
   </div>
-    <div class="stat-card"><div class="stat-num c-orange">40<span style="font-size:0.9rem">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
+    <div class="stat-card"><div class="stat-num c-orange">40<span class="stat-unit">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相協議参加国（日本含む）</div></div>
   </div>
 
   <script>
@@ -4456,132 +4534,126 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="layer-band-text">なぜそうなのか</span>
 </div>
 <!-- OSINT PANEL -->
-<div style="width:100%;margin:24px 0 0;padding:0 16px;text-align:left;">
+<div class="sec-block sec-block--left">
 
 <!-- 特別解説コラム -->
-<div id="special-commentary" style="width:100%;margin:24px 0 0;padding:0 16px;">
+<div id="special-commentary" class="sec-block">
 
-  <h2 class="sec-h2" style="color:#f87171;border-bottom-color:rgba(248,113,113,0.25);">
+  <h2 class="sec-h2 sec-h2--red">
     🔬 特別解説コラム
   </h2>
 
   <div class="commentary-grid">
   <!-- 機雷コラムカード -->
-  <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+  <div class="col-card col-card--red">
 
     <!-- タイトル行 -->
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-      <span style="font-size:1.2rem;">💣</span>
-      <div style="flex:1;min-width:0;">
-        <h3 style="font-size:0.85rem;font-weight:800;color:#f87171;line-height:1.4;margin:0;">ホルムズ海峡「機雷問題」の深層</h3>
-        <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</div>
+    <div class="col-card-head">
+      <span class="col-card-icon">💣</span>
+      <div class="col-card-titles">
+        <h3 class="col-card-title">ホルムズ海峡「機雷問題」の深層</h3>
+        <div class="col-card-sub">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</div>
       </div>
-      <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/12</span>
+      <span class="col-card-date">2026/04/12</span>
     </div>
 
     <!-- 要約 -->
-    <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+    <p class="col-card-lead">
       イランは自国が敷設した機雷の位置を正確に把握できておらず、これが安全航行再開の最大の障害となっている。米中央軍は掃海作戦を開始したが完全除去には数ヶ月を要する見通し。日本は自衛隊派遣を否定しつつ、外交的な非難にとどめている。
     </p>
 
     <!-- 全文リンク -->
-    <a href="articles/mine-clearance.html"
-      style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:6px;color:#f87171;font-size:0.78rem;font-weight:700;padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
+    <a href="articles/mine-clearance.html" class="col-card-link">
       📄 全文を読む
     </a>
   </div><!-- /機雷コラムカード -->
     <!-- サウジパイプラインコラムカード -->
-<div style="background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div class="col-card col-card--amber">
 
   <!-- タイトル行 -->
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:1.2rem;">🛢️</span>
-    <div style="flex:1;min-width:0;">
-      <h3 style="font-size:0.85rem;font-weight:800;color:#fbbf24;line-height:1.4;margin:0;">サウジ東西パイプライン攻撃の深層</h3>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</div>
+  <div class="col-card-head">
+    <span class="col-card-icon">🛢️</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">サウジ東西パイプライン攻撃の深層</h3>
+      <div class="col-card-sub">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</div>
     </div>
-    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/09</span>
+    <span class="col-card-date">2026/04/09</span>
   </div>
 
   <!-- 要約 -->
-  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+  <p class="col-card-lead">
     ホルムズ封鎖下で唯一の代替輸出ルートだったサウジ東西パイプラインが停戦合意直後に攻撃を受け、流量・生産能力・精製施設に影響が広がった。日本の原油輸入の約4割を占めるサウジ産の代替ルート自体が標的となり、備蓄放出とルートCへの切り替え検討が進んだ。</p>
 
   <!-- 全文リンク -->
-  <a href="articles/saudi-pipeline-attack.html"
-    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);border-radius:6px;color:#fbbf24;font-size:0.78rem;font-weight:700;padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
+  <a href="articles/saudi-pipeline-attack.html" class="col-card-link">
     📄 全文を読む
   </a>
 
 </div><!-- /サウジコラムカード -->
 <!-- ルートC・アラスカ原油コラムカード -->
-<div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div class="col-card col-card--sky">
 
   <!-- タイトル行 -->
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:1.2rem;">🌊</span>
-    <div style="flex:1;min-width:0;">
-      <h3 style="font-size:0.85rem;font-weight:800;color:#38bdf8;line-height:1.4;margin:0;">ルートC・アラスカ原油の現実</h3>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ・紅海の二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</div>
+  <div class="col-card-head">
+    <span class="col-card-icon">🌊</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">ルートC・アラスカ原油の現実</h3>
+      <div class="col-card-sub">ホルムズ・紅海の二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</div>
     </div>
-    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/12</span>
+    <span class="col-card-date">2026/04/12</span>
   </div>
 
   <!-- 要約 -->
-  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+  <p class="col-card-lead">
     中東ルートが同時多発的に遮断されるリスクの高まりを受け、地政学リスクゼロのアラスカ産原油と喜望峰迂回ルートへの期待が高まった。ただし港湾インフラ不足・原油の質・供給量の限界・価格プレミアムなど課題は多く、いずれも短期の「答え」ではなく中長期の出口戦略という位置づけ。</p>
 
   <!-- 全文リンク -->
-  <a href="articles/route-c-alaska-oil.html"
-    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.3);border-radius:6px;color:#38bdf8;font-size:0.78rem;font-weight:700;padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
+  <a href="articles/route-c-alaska-oil.html" class="col-card-link">
     📄 全文を読む
   </a>
 
 </div><!-- /ルートCコラムカード -->
 <!-- ナイジェリア・アンゴラ・ブラジル調達コラムカード -->
-<div style="background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div class="col-card col-card--green">
 
   <!-- タイトル行 -->
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:1.2rem;">🌍</span>
-    <div style="flex:1;min-width:0;">
-      <h3 style="font-size:0.85rem;font-weight:800;color:#34d399;line-height:1.4;margin:0;">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</h3>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</div>
+  <div class="col-card-head">
+    <span class="col-card-icon">🌍</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</h3>
+      <div class="col-card-sub">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</div>
     </div>
-    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/13</span>
+    <span class="col-card-date">2026/04/13</span>
   </div>
 
   <!-- 要約 -->
-  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+  <p class="col-card-lead">
     政府は非中東ルートで輸入の半分以上を確保する目標を掲げ、ナイジェリア・アンゴラ・ブラジルへの緊急接触を開始した。いずれも喜望峰経由で到着まで35〜45日を要し、中国との調達競合や精製上の課題もあるが、中東以外で安定供給を見込める数少ない選択肢として調整が進んだ。</p>
 
   <!-- 全文リンク -->
-  <a href="articles/oil-diversification-africa-brazil.html"
-    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:6px;color:#34d399;font-size:0.78rem;font-weight:700;padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
+  <a href="articles/oil-diversification-africa-brazil.html" class="col-card-link">
     📄 全文を読む
   </a>
 
 </div><!-- /ナイジェリア・アンゴラ・ブラジルコラムカード -->
 
 <!-- 特別レポートカード：停戦1か月レポート -->
-<div style="background:rgba(251,146,60,0.05);border:1px solid rgba(251,146,60,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div class="col-card col-card--orange">
 
   <!-- タイトル行 -->
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:1.2rem;">📊</span>
-    <div style="flex:1;min-width:0;">
-      <h3 style="font-size:0.85rem;font-weight:800;color:#fb923c;line-height:1.4;margin:0;">不完全な停戦、動かない海峡</h3>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">ホルムズ海峡危機、1か月で見えた供給正常化の壁 ― 予測 vs 現実ダッシュボード</div>
+  <div class="col-card-head">
+    <span class="col-card-icon">📊</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">不完全な停戦、動かない海峡</h3>
+      <div class="col-card-sub">ホルムズ海峡危機、1か月で見えた供給正常化の壁 ― 予測 vs 現実ダッシュボード</div>
     </div>
-    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/05/08</span>
+    <span class="col-card-date">2026/05/08</span>
   </div>
 
   <!-- サムネイル＋外部リンクボタン -->
-  <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
-    <img src="images/crisis-report-ogp.png" width="640" height="632" loading="lazy" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート"
-      style="width:10%;min-width:52px;max-width:72px;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;border-radius:6px;flex-shrink:0;border:1px solid rgba(251,146,60,0.25);">
-    <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener"
-      style="flex:1;display:block;background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.3);border-radius:6px;color:#fb923c;font-size:0.78rem;font-weight:700;padding:9px 0;text-align:center;text-decoration:none;letter-spacing:0.03em;">
+  <div class="col-card-thumbrow">
+    <img src="images/crisis-report-ogp.png" width="640" height="632" loading="lazy" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="col-card-thumb">
+    <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="col-card-link col-card-link--inrow">
       📊 特別レポートを読む ↗（別タブ）
     </a>
   </div>
@@ -4589,25 +4661,24 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!-- /特別レポートカード -->
 
 <!-- 石油備蓄の月次推移まとめコラムカード -->
-<div style="background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div class="col-card col-card--violet">
 
   <!-- タイトル行 -->
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:1.2rem;">📉</span>
-    <div style="flex:1;min-width:0;">
-      <h3 style="font-size:0.85rem;font-weight:800;color:#a78bfa;line-height:1.4;margin:0;">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h3>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">開戦前248日分→現在198日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</div>
+  <div class="col-card-head">
+    <span class="col-card-icon">📉</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h3>
+      <div class="col-card-sub">開戦前248日分→現在198日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</div>
     </div>
-    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/08/21</span>
+    <span class="col-card-date">2026/08/21</span>
   </div>
 
   <!-- 要約 -->
-  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+  <p class="col-card-lead">
     日本の石油備蓄は危機発生前の248日分から、直近（9月22日時点速報）で198日分まで減少した。ただし取り崩しの大半は3〜5月に集中しており、6月以降はおおむね横ばい。国家備蓄の放出は7月中旬で事実上停止し、102〜103日分で高止まりしている。8月下旬からは民間備蓄の減少で合計200日分前後に。折れ線グラフと月次表で推移をひと目で確認できる（毎月更新）。</p>
 
   <!-- 全文リンク -->
-  <a href="articles/oil-stockpile-monthly-trend.html"
-    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.3);border-radius:6px;color:#a78bfa;font-size:0.78rem;font-weight:700;padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
+  <a href="articles/oil-stockpile-monthly-trend.html" class="col-card-link">
     📄 全文を読む
   </a>
 
@@ -4835,10 +4906,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!-- /special-commentary -->
 
 <!-- NEWS COLUMN -->
-<div id="news-column" style="width:100%;margin:24px 0;padding:0 16px;text-align:left;">
-  <h2 class="sec-h2" style="margin-top:24px;">📰 関連最新ニュース</h2>
+<div id="news-column" class="sec-block sec-block--news">
+  <h2 class="sec-h2 sec-h2--spaced">📰 関連最新ニュース</h2>
   <div id="news-latest-container">
-    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
+    <div class="loading-note">読み込み中...</div>
   </div>
   <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
   <div id="news-archive-container" style="display:none;"></div>
@@ -4846,20 +4917,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!--🌐 現地メディア視点-->
 <div id="osint-panel">
-  <h2 class="sec-h2" style="color:#a78bfa;border-bottom-color:rgba(167,139,250,0.25);">
+  <h2 class="sec-h2 sec-h2--violet">
     🌐 現地メディア視点
   </h2>
 
   <div id="osint-container">
-    <div style="color:#64748b;font-size:0.8rem;padding:16px;">読み込み中...</div>
+    <div class="loading-note">読み込み中...</div>
   </div>
 </div><!-- /#osint-panel -->
 <!-- /OSINT PANEL -->
 
 
     <!-- 数値注記 -->
-    <div class="data-note" style="margin-top:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 16px;font-size:0.7rem;color:#64748b;line-height:1.8;">
-      <strong style="color:#94a3b8;">⚠️ 数値・データに関する注記</strong><br>
+    <div class="data-note">
+      <strong>⚠️ 数値・データに関する注記</strong><br>
       WTI原油価格はCFD（差金決済取引）データをもとに表示しており、実際の先物・現物価格と微小な差異や遅延が生じる場合があります。／
       石油備蓄日数はIEA基準による推定値です（国家備蓄＋民間備蓄＋産油国在庫の合計）。／
       ホルムズ海峡の通過量および4つのシナリオ確率は、生成AI（Google Gemini）が公開ニュース記事から生成した推定値です（毎日 09:30 JST 更新）。実測・観測に基づく値ではありません。／
@@ -4937,8 +5008,8 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!-- /NEWS COLUMN wrapper -->
 
 
-<div style="text-align:center;margin:0 16px 18px;">
-  <a href="archive/index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:#c9a869;text-decoration:none;border:1px solid rgba(201,168,105,0.35);background:rgba(201,168,105,0.08);padding:8px 16px;border-radius:20px;">
+<div class="archive-link-wrap">
+  <a href="archive/index.html" class="archive-link">
     📚 ホルムズ危機 全記録（日次アーカイブ）を見る
   </a>
 </div>

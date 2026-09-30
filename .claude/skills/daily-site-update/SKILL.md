@@ -197,13 +197,13 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 4. 速報ティッカー（TICKER）決定
 5. （欠番。旧・情勢カードは 2026-09-25 に廃止し、9 の「主な動き」へ吸収した）
 6. COUNTDOWN 更新（型は下の「COUNTDOWN セクションのルール」）
-7. 4つのシナリオ内容決定（1〜6を踏まえて初めて書く）
-8. シナリオフッター 更新
+7. 4つのシナリオ内容決定（1〜6を踏まえて初めて書く。型は下の「シナリオの型」）
+8. シナリオフッター 更新（次の焦点。型は下の「シナリオの型」）
 8.5. **全ルート現況サマリー 更新**（S08完了後・30秒カラムの直前。見出しの日付と、変化のあった行の「最新」。型は下の「ルート表の型」）
 9. **30秒カラム（3行サマリー＋主な動き3件＋ステータスバッジ）― 必ず最後に書く**（型は下の「30秒カラムの型」）
    └ 全セクションの総括のため、他が確定してから書くこと
 10. ヘッダー（日時・警戒レベル）更新
-11. 更新ログ 追記
+11. 更新ログ 追記（型は下の「更新履歴の型」）
 12. `archive_timeline.json` への当日分追記（速報を出した日のみ）
 13. `docs/sitemap.xml` の `<lastmod>` 更新（`/` は毎回、`/archive/` は 12 を行った日のみ）
 14. hormuz-data- の経緯（`data/context.json` の `timeline`）追記（確定した事実に変化があった日のみ。ただし最低でも7日に1回）
@@ -221,12 +221,12 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | `<!-- MAP -->` | 適宜 | タンカー可視化オーバーレイを毎回確認 |
 | `<!-- STATS -->` | 週1 | |
 | `<!-- 速報インシデント トグルボタン -->` | 毎日 | 型は「速報インシデントの型」 |
-| `<!-- SCENARIOS -->` | 毎日 | sc-tag-A/B/C/D の確率は自動同期 |
-| `<!-- シナリオ フッター -->` | 毎日 | |
+| `<!-- SCENARIOS -->` | 毎日 | sc-tag-A/B/C/D の確率は自動同期。型は「シナリオの型」 |
+| `<!-- シナリオ フッター -->` | 毎日 | 型は「シナリオの型」 |
 | `<!-- 特別解説コラム -->` | 手動指示時のみ | |
 | `<!-- NEWS COLUMN -->` | 毎日 | |
 | `<!--🌐 現地メディア視点-->` | 毎日 | |
-| `<!--出典・更新ログ-->` | 毎日 | |
+| `<!--出典・更新ログ-->` | 毎日 | 型は「更新履歴の型」 |
 | `<!-- 数値注記 -->` | 適宜 | |
 
 ### セクション補足
@@ -237,7 +237,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   - 手動更新が不要なのは**確率の数値の転記**だけ。その数値は hormuz-data- の Gemini が
     `data/context.json` の `timeline`（確定した経緯）を前提に算出しており、**`timeline` への事実の追記は手動**。
     追記が止まると、確率は古い現況認識のまま自動更新され続ける（作業順序 14）
-- **sc-tag の確率表示**：styled な HTML スパン（`innerHTML`）で構成されている。`textContent` で上書きすると装飾が消えるため **必ず `innerHTML` を使うこと**
+- **sc-tag の確率表示**：`syncScenarioFromDashboard()` が `<span id="sc-pct-A">` などの**中の数値だけ**を入れる。`sc-tag` の見出し・矢印は HTML 側（日次更新）が正。`sc-pct-*` の span は消さない
 
 ### 石油備蓄日数の見直し（2026-09-28〜）
 
@@ -386,6 +386,71 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ---
 
+## シナリオの型（2026-09-29〜・② PR4a）
+
+**インライン style を書かない。**色・文字サイズはクラスで決まる。書き換えるのは文字だけ。
+
+### 確率補足バナー（[S06]・`div.sc-update`）
+
+```html
+<div class="sc-update">
+  <span class="sc-update-date">📊 2026年9月29日 09:12 JST 更新</span><br>
+  📊 <strong>今日の動きの要約：</strong><br>
+  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 根拠<br>
+  🅑 膠着継続 <span class="sc-trend">↑</span> — 根拠<br>
+  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
+  🅓 全面対決・無期限封鎖 <span class="sc-trend">↓</span> — 根拠<br>
+  <strong class="sc-update-caveat">断定を避ける注記。</strong><br>
+  <div class="sc-sync-note">
+    各シナリオ確率は 2026年9月29日 09:12 JST 時点での分析に基づく自動同期
+  </div>
+  <div class="sc-ai-note">…（AI推定の注記。日次では触らない）…</div>
+</div>
+```
+
+- 日付は2か所（`sc-update-date` と `sc-sync-note`）。両方を当日にする
+- 矢印（→・↑・↓）は `<span class="sc-trend">` の中の文字だけを変える
+- `sc-ai-note`・`sc-ai-variance`・`#sc-ctx-note` は日次では触らない（`#sc-ctx-note` は JS が出し入れする）
+
+### シナリオ4本（[S07]・`div.sc-card`）
+
+- 見出しの `sc-tag` は `<span class="sc-tag-em">シナリオ A</span> ― 名称　<span class="sc-tag-em">確率 <span id="sc-pct-A">—</span></span> <span class="sc-trend">→</span>`。
+  変えるのは名称と矢印の文字だけ。`sc-pct-*` の中身は JS が入れる
+- 本文は `<div class="sc-body"><p>…</p></div>` の `<p>` の中だけを書き換える
+
+### シナリオフッター（[S08]・`div.sc-footer`）
+
+```html
+<ul class="sc-focus-list">
+  <li>① <strong>焦点1</strong></li>
+  …
+</ul>
+<span class="label-scenario">分析：2026年9月29日 09:12 JST情勢分析</span>
+```
+
+- `<li>` と `<strong>` にクラスも style も付けない（色は `.sc-focus-list` が決める）。見出しは「🔍 次の焦点 N つ」を件数に合わせる
+- `tools/validate_daily.py` が「シナリオ（`<!-- SCENARIOS -->`〜`<!-- STATS -->`）のインライン style」を WARN で確認する
+
+---
+
+## 更新履歴の型（2026-09-29〜・② PR4a）
+
+**インライン style を書かない。**1件は2行：
+
+```html
+<div>📅 <strong>2026年9月29日 09:12 JST</strong> 更新</div>
+<div><span class="log-date">2026/09/29 09:12</span> — <strong class="log-tag">【超重大更新】</strong>本文</div>
+```
+
+- 置き場所は2つ：常時表示（`div.log-recent`）に最新3件、折りたたみ（`#log-collapse` の中の `div.log-older`）に4〜10件目。
+  新しい1件を `log-recent` の先頭に足したら、`log-recent` の4件目を `log-older` の先頭へ移し、11件目は `update_log.json` へ（「update_log.json 運用ルール」）
+- **日時の色は位置で決まる**（常時表示の先頭＝赤、常時表示の2・3件目＝明るい灰、折りたたみの中＝灰）。移すときに色を書き換える必要はない
+- `#log-collapse`・`#log-toggle-bottom` の `style="display:none;"` は開閉の状態なので**残す**（ボタンの JS が読む）。ほかの style は書かない
+- 出典リンク①〜⑧（`div.log-sources-start` から）は折りたたみの末尾に固定。触らない
+- `tools/validate_daily.py` が「更新履歴のインライン style（上の display:none を除く）」「常時表示3件・合計10件まで」を WARN で確認する
+
+---
+
 ## COUNTDOWN セクションのルール
 
 - `<div class="dl-note">` の本文は `<strong>`、焦点・見通しの行は `<br><span class="dl-focus">⚡ …</span>` で書く（インライン style を書かない。2026-09-25〜）
@@ -466,7 +531,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - `docs/data/update_log.json` が更新ログの完全アーカイブ
 - 形式：`[{"date":"YYYY/MM/DD HH:MM","text":"..."},...]`（新しい順）
 - `index.html` の `<!--出典・更新ログ-->` セクションは**常に最新10件のみ**掲載する
-  - 常時表示：最新3件 ／ 折り畳み（`log-collapse`）：4〜10件目
+  - 常時表示：最新3件 ／ 折り畳み（`log-collapse`）：4〜10件目（型は「更新履歴の型」）
   - 出典リンク①〜⑧は折り畳み末尾に固定（削除しない）
 - 毎日の更新時に新エントリを1件追加したら、`index.html` から11件目を削除し、その内容を `update_log.json` の先頭に追加する
 - `update_log.json` の編集は `index.html` の更新と同じ commit に含める

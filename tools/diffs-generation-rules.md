@@ -405,6 +405,9 @@ footer（法務リンク・データソース）
 
 - ステータスバッジは `<div class="glance-badges">` の直後から `        </div>` までを置き換える（1枚1行の `<span class="status-badge status-badge--…">`）
 
+> **② PR4a（2026-09-29）以降、[S06]〜[S08] はクラスで書く**（`div.sc-update`・`span.sc-trend`・`ul.sc-focus-list` など。インライン style なし）。
+> 型の正本は daily-site-update「シナリオの型」。APPLY の new_str もその型で書く。
+
 ### [S06] シナリオ確率補足バナー が漏れる理由
 
 - CLAUDE.md に「シナリオ確率の数値は自動同期・手動更新不要」と書かれているため「補足バナーのテキストも不要」と誤解しやすい
@@ -680,16 +683,19 @@ osint：配列先頭に新記事を追加、既存記事は isLatest: false に�
 
 ## [S11] 更新ログ — 折り畳み維持ルール（詳細）
 
+> **② PR4a（2026-09-29）以降、更新ログはクラスで書く。**日時は `<span class="log-date">`（色は位置で決まるので書かない）、
+> 札は `<strong class="log-tag">`。型の正本は daily-site-update「更新履歴の型」。
+
 ### 構造要件（常時維持すること）
 
 ```
-常時表示エリア (color:#cbd5e1)
+常時表示エリア (div.log-recent)
   ├── エントリー1 (本日更新分 = 最新)
   ├── エントリー2 (前回更新分)
   └── エントリー3 (前々回更新分)
 log-toggle-top  ← 「📂 過去の履歴を見る」ボタン
 log-collapse (display:none)
-  └── (color:#94a3b8 div)
+  └── (div.log-older)
        ├── エントリー4 以降（旧3件目から順に蓄積）
        ├── 出典リンク ①〜⑧（削除不可）
        └── log-toggle-bottom (display:none)  ← 「▲ 閉じる」ボタン
@@ -723,19 +729,19 @@ APPLY ブロック1
 <!-- APPLY:START -->
 <!-- OLD:START -->
         <div>📅 <strong>2026年XX月YY日 HH:MM JST</strong> 更新</div>
-        <div><span style="color:#...;">2026/XX/YY HH:MM</span> — [旧1件目内容]</div>
+        <div><span class="log-date">2026/XX/YY HH:MM</span> — [旧1件目内容]</div>
         <div>📅 <strong>2026年XX月ZZ日 HH:MM JST</strong> 更新</div>
-        <div><span style="color:#...;">2026/XX/ZZ HH:MM</span> — [旧2件目内容]</div>
+        <div><span class="log-date">2026/XX/ZZ HH:MM</span> — [旧2件目内容]</div>
         <div>📅 <strong>2026年XX月WW日 HH:MM JST</strong> 更新</div>
-        <div><span style="color:#...;">2026/XX/WW HH:MM</span> — [旧3件目内容]</div>
+        <div><span class="log-date">2026/XX/WW HH:MM</span> — [旧3件目内容]</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
         <div>📅 <strong>2026年MM月DD日 HH:MM JST</strong> 更新</div>
-        <div><span style="color:#f87171;">2026/MM/DD HH:MM</span> — [本日分内容]</div>
+        <div><span class="log-date">2026/MM/DD HH:MM</span> — [本日分内容]</div>
         <div>📅 <strong>2026年XX月YY日 HH:MM JST</strong> 更新</div>
-        <div><span style="color:#...;">2026/XX/YY HH:MM</span> — [旧1件目内容]</div>
+        <div><span class="log-date">2026/XX/YY HH:MM</span> — [旧1件目内容]</div>
         <div>📅 <strong>2026年XX月ZZ日 HH:MM JST</strong> 更新</div>
-        <div><span style="color:#...;">2026/XX/ZZ HH:MM</span> — [旧2件目内容]</div>
+        <div><span class="log-date">2026/XX/ZZ HH:MM</span> — [旧2件目内容]</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -756,15 +762,15 @@ APPLY ブロック2
 <!-- OLD:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+        <div class="log-older">
           <div>📅 <strong>[現在のlog-collapse先頭エントリーの日付]</strong> 更新</div>
 <!-- OLD:END -->
 <!-- NEW:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
-        <div style="font-size:0.72rem;color:#94a3b8;line-height:2;">
+        <div class="log-older">
           <div>📅 <strong>2026年XX月WW日 HH:MM JST</strong> 更新</div>
-          <div><span style="color:#...;">2026/XX/WW HH:MM</span> — [旧3件目内容]</div>
+          <div><span class="log-date">2026/XX/WW HH:MM</span> — [旧3件目内容]</div>
           <div>📅 <strong>[現在のlog-collapse先頭エントリーの日付]</strong> 更新</div>
 <!-- NEW:END -->
 <!-- APPLY:END -->

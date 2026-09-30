@@ -28,8 +28,9 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
       最新日が実測の今日から 5日を超えたら WARN を出す（別リポジトリのため NG にはしない）。
       ローカルの ../hormuz-data- を優先し、無ければ公開 URL を取得する。どちらも失敗したら WARN
     - index.html には石油備蓄日数が2か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記）ある。
-      どちらも特別解説コラムの月次更新の対象外で、8/17時点の値が 9/28 まで残っていた。
-      「◯時点」の日付が実測の今日から 7日を超えたら WARN、2か所の値・日付が食い違ったら WARN を出す
+      当初はどちらも特別解説コラムの月次更新の対象外で、8/17時点の値が 9/28 まで残っていた。
+      クラウドの日次では速報 PDF を取れない（403 / 202）ため、2026-10-01 から毎月4日の PC タスクで更新する。
+      「◯時点」の日付が実測の今日から 40日を超えたら WARN、2か所の値・日付が食い違ったら WARN を出す
     - 特別解説コラムのピルの「NEW」「◯月更新」の札は、ピルの data-published / data-updated から決まる。
       記事ページ（datePublished / dateModified）と揃っていなければ WARN を出す
 """
@@ -116,10 +117,10 @@ DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
 # ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
 DATA_TIMELINE_WARN_DAYS = 5
 
-# index.html の石油備蓄日数（コラムの月次更新とは別に、日次更新で見直す2か所）
+# index.html の石油備蓄日数2か所（毎月4日の PC タスクがコラムとあわせて更新する）
 PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*?(\d{1,2})/(\d{1,2})時点）')
 PAT_STOCKPILE_NOTE = re.compile(r'合計は約(\d+)日分（(\d{4})年(\d{1,2})月(\d{1,2})日時点）')
-STOCKPILE_WARN_DAYS = 7
+STOCKPILE_WARN_DAYS = 40  # 月1回の更新で最長 約34日。PC が止まった数日分の余裕を足す
 
 # 特別解説コラムのピル（「NEW」「◯月更新」の札の元になる日付）と記事ページの構造化データ
 PAT_COLUMN_PILL = re.compile(
@@ -477,7 +478,8 @@ def check_stockpile(html: str) -> None:
         age = (today - asof).days
         if age > STOCKPILE_WARN_DAYS:
             warn(f"石油備蓄日数（{name}）が {asof.isoformat()}時点のまま（{age}日前）。"
-                 f"資源エネルギー庁の速報で最新値を確かめ、2か所とも更新すること")
+                 f"毎月4日の PC タスクが止まっている可能性。日次では書き換えず、報告に書くこと"
+                 f"（PC 側で tools/oil-stockpile-monthly-update.md の手順で2か所とも更新する）")
         else:
             ok(f"石油備蓄日数（{name}）{total}日分・{asof.isoformat()}時点（{age}日前）")
 

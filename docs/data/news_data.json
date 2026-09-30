@@ -1,7 +1,37 @@
 {
-  "updated": "2026年09月30日 07:08 日本時間JST",
+  "updated": "2026年10月01日 07:50 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-anews-us-response-0930",
+      "title": "イラン政府報道官、アラグチ外相がカタール経由で米国の回答を受け取ったと発表——内容・次の対応は非公表",
+      "body": "A News（9/30）によれば、イラン政府報道官のモハジェラニ氏は、アラグチ外相がカタールの仲介を通じて提示した提案への米国の回答を受け取ったと述べたが、米側の回答の内容やイランの次の対応は明らかにしなかった。ペゼシュキアン大統領は、イランは原則を譲っておらず「イスラマバード覚書」の成功に全力を尽くしていると述べた。イランがホルムズ海峡再開の条件として挙げてきたのは、米国の経済・軍事的圧力の終了、凍結資産の解放、安全な航路の確保など。回答の中身は報じられておらず、本稿の時点では確認できていない。",
+      "sourceLabel": "A News（9/30）",
+      "date": "2026年9月30日（現地）",
+      "label": "🤝 米国の回答がイランに到着——内容は非公表",
+      "url": "https://www.anews.com.tr/middle-east/2026/09/30/iran-receives-us-response-to-qatari-mediated-proposal-spokesperson",
+      "isLatest": true
+    },
+    {
+      "id": "latest-aljazeera-kpler-80pct-0930",
+      "title": "Kpler引用：ホルムズ海峡の原油流量は戦前の約8割、日量約970万バレル——IRGC報道官は「継続的な軍事紛争」を主張",
+      "body": "Al Jazeera（9/30）は、Kplerのデータを引き、ホルムズ海峡経由の原油流量が戦前の約8割に当たる日量約970万バレルまで回復したと伝えた（戦前は日量約2,000万バレル）。一方、イラン革命防衛隊（IRGC）報道官は「継続的な軍事紛争」が続いていると主張し、タンカーの保険料は高止まりしている。9/28付の同紙報道（Kpler集計で9月の海峡経由の原油輸出は日量平均740万バレルの見込み）とは数字が異なるが、集計期間・方法の違いによるものかは記事から確認できない。",
+      "sourceLabel": "Al Jazeera（9/30）",
+      "date": "2026年9月30日（現地）",
+      "label": "🚢 海峡の流量は戦前の約8割——Kpler引用",
+      "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
+      "isLatest": false
+    },
+    {
+      "id": "latest-rigzone-oil-futures-0930",
+      "title": "ブレント12月物98.03ドル（+1.9%）、期近11月物103.53ドル——JPモルガン推計で中東原油輸出は戦前の98%",
+      "body": "Rigzone配信記事（9/30）によれば、水曜（9/30）のブレント12月物は1バレル98.03ドル（+1.9%）、期限前の期近11月物は103.53ドル（+0.9%）、WTI11月物は90.42ドル（+1.2%）で取引を終えた。中東からの原油流量が戦前水準に近づく中でも、蒸留油・ガソリン在庫が季節的な歴史的低水準にあること、米・イラン交渉の不透明さ、海峡での船舶攻撃が続くことが価格を支えた。ゴールドマン・サックスは直近1週間に中東から日量約2,300万バレルが出たと推計し、JPモルガンは中東の原油輸出の10日平均が日量1,750万バレルで戦前の98%に達したとしている（いずれも同記事の引用で、独立検証は取れていない）。",
+      "sourceLabel": "Rigzone（9/30）",
+      "date": "2026年9月30日（現地）",
+      "label": "🛢️ ブレント12月物98ドル・期近103.5ドル",
+      "url": "https://rigzone.com/news/wire/oil_futures_rise_despite_increasing_flows-30-sep-2026-184743-article",
+      "isLatest": false
+    },
     {
       "id": "latest-araghchi-qatari-mediators-0929",
       "title": "イラン外相アラグチ、NYでカタール仲介者と会談——米の最終回答を9/30までに期待、米当局者は「核問題が扱われない限り合意なし」",
@@ -10,40 +40,28 @@
       "date": "2026年9月29日（現地）",
       "label": "🤝 アラグチ外相、カタール仲介者と会談——米の最終回答を待つ",
       "url": "https://www.aljazeera.com/news/2026/9/29/irans-araghchi-meets-qatari-mediators-as-us-insists-on-nuclear-talks",
-      "isLatest": true
-    },
-    {
-      "id": "latest-saudi-pipeline-350k-0928",
-      "title": "サウジ東西パイプライン、日量350万バレルまで復旧——能力の約半分、ヤンブー港の積み出しも再開",
-      "body": "Rigzone配信記事（9/28）によれば、9/10のドローン攻撃で停止していたサウジ東西パイプラインは日量350万バレルまで復旧した（全能力は日量700万バレルで、約半分）。ヤンブー港では先週から積み出しが再開し、週末にかけて複数の大型タンカーが入港した。全面復旧までは約6週間との見通し。9/22の「低速再開」報道（The National）から稼働量の数字が出た形で、ホルムズ海峡を迂回するルートBの供給は部分的に回復しつつあるが、全面復旧は確認されていない。",
-      "sourceLabel": "Rigzone（9/28）",
-      "date": "2026年9月28日（現地）",
-      "label": "🛢️ 東西パイプライン、能力の約半分まで復旧",
-      "url": "https://www.rigzone.com/news/wire/saudi_arabia_restores_key_pipeline_to_half_its_capacity-28-sep-2026-184718-article/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-surge-trump-rejects-iran-plan-0928",
-      "title": "トランプ氏のイラン案拒否でブレント原油が3%超上昇、一時108ドル近辺——アジア株は下落",
-      "body": "Al Jazeera経済面（9/28）によれば、トランプ大統領が土曜（9/26）にイランの最新提案は「受け入れられない」と述べたことを受け、月曜のアジア取引でブレント原油は3%超上昇し、一時1バレル108ドル近辺に達した（11月物は08:00 GMT時点で107.35ドル）。イランの提案は、凍結資金の返却・制裁解除・海上封鎖の終了と引き換えに、ホルムズ海峡を7日以内に再開するというもの。同日のアジア株は日経平均が0.73%、韓国KOSPIが2.70%下落した一方、香港ハンセン指数と豪S&P/ASX200は上昇し、まちまちの展開だった。なお、CBS News（9/27）によれば、トランプ氏は協議が今週中に再開されるとの見方を示す一方、「私が望む取引ではない」と述べている。原油価格はいずれも市場の報道値で、時点や限月により異なる。",
-      "sourceLabel": "Al Jazeera（9/28、経済面）",
-      "date": "2026年9月28日（現地・JST）",
-      "label": "🛢️ ブレント一時108ドル近辺へ——トランプ氏の提案拒否を受け",
-      "url": "https://www.aljazeera.com/economy/2026/9/28/oil-prices-surge-after-trump-rejects-irans-plan-to-reopen-strait-of-hormuz",
-      "isLatest": false
-    },
-    {
-      "id": "latest-iran-touts-attacks-kpler-flows-0928",
-      "title": "イラン、対米攻撃の成果を主張——Kplerは9/27までの週の通過19隻と集計、米側の輸送量主張とは食い違い",
-      "body": "Al Jazeera（9/28）によれば、イランの最高指導者ハーメネイー師は、米軍が「痛烈な打撃」を受けたためイラン沖から遠ざかっていると主張した（イラン側の一方的な発言で、独立した検証は確認できていない）。同記事は、エネルギー分析会社Kplerの集計として、9/27までの週にホルムズ海峡を通過したタンカーは超大型原油タンカー17隻を含む19隻、9月の海峡経由の原油輸出は日量平均740万バレルの見込みと伝えた。一方、米エネルギー長官は日量約1,300万バレル、米財務長官は日量1,500万〜2,200万バレル、イラン国営テレビの分析者は「少なくとも日量700万バレル」と述べ、当事者ごとに数字は大きく食い違っている。同記事は、中東域内の9月の原油輸出が日量1,280万バレルと開戦以来の最高になっているとも伝えている。",
-      "sourceLabel": "Al Jazeera（9/28）",
-      "date": "2026年9月28日（現地・JST）",
-      "label": "🚢 通航はなお低水準——当事者の数字は食い違い",
-      "url": "https://www.aljazeera.com/news/2026/9/28/iran-touts-hormuz-attacks-as-oil-flows-increase-despite-tensions",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-kpler-80pct-0930",
+      "titleJa": "【Al Jazeera】Kpler：ホルムズ流量は戦前の約8割——IRGC報道官「継続的な軍事紛争」",
+      "titleEn": "Economic war: Is Iran losing its leverage over the Strait of Hormuz?",
+      "title": "【Al Jazeera】Kpler：ホルムズ流量は戦前の約8割——IRGC報道官「継続的な軍事紛争」",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年9月30日（現地）",
+      "summary": "Al Jazeeraは、Kplerのデータを引き、海峡経由の原油流量が戦前の約8割（日量約970万バレル）まで回復したと報道。IRGC報道官は「継続的な軍事紛争」を主張し、保険料は高止まりしている。",
+      "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-araghchi-qatar-0929",
       "titleJa": "【Al Jazeera】イラン外相、カタール仲介者と会談——米の最終回答を9/30までに期待、米側は「核問題が先」",
@@ -55,7 +73,7 @@
       "date": "2026年9月29日（現地）",
       "summary": "Al Jazeeraは、アラグチ外相がNYでカタールの仲介者とホルムズ海峡再開案を協議し、米国の最終回答を9/30までに受け取りたいと述べたと報道。米当局者は核問題が扱われない限り戦争終結の合意はないと述べた。",
       "url": "https://www.aljazeera.com/news/2026/9/29/irans-araghchi-meets-qatari-mediators-as-us-insists-on-nuclear-talks",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1592,6 +1610,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月1日",
+      "items": [
+        {
+          "id": "latest-saudi-pipeline-350k-0928",
+          "title": "サウジ東西パイプライン、日量350万バレルまで復旧——能力の約半分、ヤンブー港の積み出しも再開",
+          "body": "Rigzone配信記事（9/28）によれば、9/10のドローン攻撃で停止していたサウジ東西パイプラインは日量350万バレルまで復旧した（全能力は日量700万バレルで、約半分）。ヤンブー港では先週から積み出しが再開し、週末にかけて複数の大型タンカーが入港した。全面復旧までは約6週間との見通し。9/22の「低速再開」報道（The National）から稼働量の数字が出た形で、ホルムズ海峡を迂回するルートBの供給は部分的に回復しつつあるが、全面復旧は確認されていない。",
+          "sourceLabel": "Rigzone（9/28）",
+          "date": "2026年9月28日（現地）",
+          "label": "🛢️ 東西パイプライン、能力の約半分まで復旧",
+          "url": "https://www.rigzone.com/news/wire/saudi_arabia_restores_key_pipeline_to_half_its_capacity-28-sep-2026-184718-article/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-surge-trump-rejects-iran-plan-0928",
+          "title": "トランプ氏のイラン案拒否でブレント原油が3%超上昇、一時108ドル近辺——アジア株は下落",
+          "body": "Al Jazeera経済面（9/28）によれば、トランプ大統領が土曜（9/26）にイランの最新提案は「受け入れられない」と述べたことを受け、月曜のアジア取引でブレント原油は3%超上昇し、一時1バレル108ドル近辺に達した（11月物は08:00 GMT時点で107.35ドル）。イランの提案は、凍結資金の返却・制裁解除・海上封鎖の終了と引き換えに、ホルムズ海峡を7日以内に再開するというもの。同日のアジア株は日経平均が0.73%、韓国KOSPIが2.70%下落した一方、香港ハンセン指数と豪S&P/ASX200は上昇し、まちまちの展開だった。なお、CBS News（9/27）によれば、トランプ氏は協議が今週中に再開されるとの見方を示す一方、「私が望む取引ではない」と述べている。原油価格はいずれも市場の報道値で、時点や限月により異なる。",
+          "sourceLabel": "Al Jazeera（9/28、経済面）",
+          "date": "2026年9月28日（現地・JST）",
+          "label": "🛢️ ブレント一時108ドル近辺へ——トランプ氏の提案拒否を受け",
+          "url": "https://www.aljazeera.com/economy/2026/9/28/oil-prices-surge-after-trump-rejects-irans-plan-to-reopen-strait-of-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-touts-attacks-kpler-flows-0928",
+          "title": "イラン、対米攻撃の成果を主張——Kplerは9/27までの週の通過19隻と集計、米側の輸送量主張とは食い違い",
+          "body": "Al Jazeera（9/28）によれば、イランの最高指導者ハーメネイー師は、米軍が「痛烈な打撃」を受けたためイラン沖から遠ざかっていると主張した（イラン側の一方的な発言で、独立した検証は確認できていない）。同記事は、エネルギー分析会社Kplerの集計として、9/27までの週にホルムズ海峡を通過したタンカーは超大型原油タンカー17隻を含む19隻、9月の海峡経由の原油輸出は日量平均740万バレルの見込みと伝えた。一方、米エネルギー長官は日量約1,300万バレル、米財務長官は日量1,500万〜2,200万バレル、イラン国営テレビの分析者は「少なくとも日量700万バレル」と述べ、当事者ごとに数字は大きく食い違っている。同記事は、中東域内の9月の原油輸出が日量1,280万バレルと開戦以来の最高になっているとも伝えている。",
+          "sourceLabel": "Al Jazeera（9/28）",
+          "date": "2026年9月28日（現地・JST）",
+          "label": "🚢 通航はなお低水準——当事者の数字は食い違い",
+          "url": "https://www.aljazeera.com/news/2026/9/28/iran-touts-hormuz-attacks-as-oil-flows-increase-despite-tensions",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年9月30日",
       "items": [

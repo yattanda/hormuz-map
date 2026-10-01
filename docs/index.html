@@ -270,6 +270,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
 
 /* DEADLINE / COUNTDOWN */
+/* 2026-10-01 COUNTDOWN は休止中。.deadline / .dl-* / .cd-* は現在どの要素にも当たっていない（残すか消すかは tools/redesign-plan.md §9 の再定義で決める） */
 .deadline {
   background:linear-gradient(135deg,#1a0808,#2d1010);
   border:2px solid #dc2626; border-radius:12px;
@@ -2049,45 +2050,12 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
   <!-- COUNTDOWN -->
-  <div class="deadline">
-    <div class="dl-label" id="cd-phase-label">⏱️ Phase 47「米国の回答がイランに到着、内容は非公表——海峡の原油流量は戦前の約8割へ」——封鎖216日目</div>
-    <div class="dl-boxes">
-      <div class="dl-box dl-box--timer">
-        <div id="cd-display">
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-h">--</span>
-            <div class="cd-label">時間</div>
-          </div>
-          <span class="cd-sep">:</span>
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-m">--</span>
-            <div class="cd-label">分</div>
-          </div>
-          <span class="cd-sep">:</span>
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-s">--</span>
-            <div class="cd-label">秒</div>
-          </div>
-        </div>
-        <div class="dl-sub">リアルタイムカウントダウン</div>
-      </div>
-      <div class="dl-arrow">→</div>
-      <div class="dl-box">
-        <div class="dl-num dl-num--text">イラン・米国による二重封鎖（Iran-US dual blockade）</div>
-        <div class="dl-sub">2026年2月28日 起算</div>
-      </div>
-      <div class="dl-arrow">→</div>
-      <div class="dl-box">
-        <div class="dl-num dl-num--text">「交渉決裂・軍事衝突」：ハメネイ「交渉中止・完全閉鎖」最終宣言（6/1）</div>
-        <div class="dl-sub">2026年6月16日 08:14 日本時間JST 現在</div>
-      </div>
-      <div class="dl-note">
-        🌐 <strong>イラン政府報道官は9/30、アラグチ外相がカタール経由で米国の回答を受け取ったと述べたが、内容と次の対応は明らかにしていない。Al Jazeera（9/30）はKplerのデータを引き、海峡経由の原油流量が戦前の約8割まで回復したと伝えた一方、UKMTOはホルムズ海峡で原油タンカー1隻が飛翔体を受けたと発表している（被害・攻撃主体は未確認）。ブレント12月物は98.03ドル、期近11月物は103.53ドル（Rigzone・9/30）。</strong>
-        <br><span class="dl-focus">⚡ 次の24〜48時間の焦点：①イランが米国の回答にどう応じるか（回答の中身は未公表） ②米・イランの協議が再開されるか ③UKMTO報告のタンカー被弾の被害・攻撃主体の確認 ④海峡の流量回復が続くか ⑤サウジ東西パイプラインの全面復旧時期の確認</span>
-        <br><span class="dl-focus">⏳ 米国の回答の中身は報じられておらず、通航量も集計元ごとに数字が異なる。断定的な情勢判断とはせず、今後の一次情報の確認を待つ</span>
-      </div>
-      </div>
-    </div>
+  <!-- 2026-10-01 休止。ここにあった赤いカラム（フェーズ見出し・リアルタイムカウントダウン・展望ノート）は外した。
+       ・タイマーの期限は 5/22 が最後で、以後は「猶予期限経過」の固定表示だった
+       ・フェーズ見出しと展望ノートは、30秒カラム・速報インシデントと同じ内容だった
+       ・過去の期限と当時の経緯は日次アーカイブ（docs/data/archive_timeline.json）にある
+       日次更新では、再定義が済むまでこのセクションに何も書かない（daily-site-update スキル）。
+       再定義の計画は tools/redesign-plan.md §9。 -->
 
 <!-- ===== 第2層：どう影響するか ===== -->
 <div class="layer-band" style="--layer-accent:var(--c-accent-pale);">
@@ -3087,87 +3055,11 @@ function renderMilitaryLayer() {
 }
 
 // ============================================================
-// 0. COUNTDOWN TIMER（停戦期限 4/23 JST早朝 = 米国4/22水曜夜ET）
+// 0. COUNTDOWN TIMER — 2026-10-01 休止
+//    期限は 4/17・4/23・5/1・5/14・5/22（いずれも JST）の5本で、5/22 を過ぎてからは
+//    「猶予期限経過」の固定表示になっていた。HTML 側のカラムとあわせて外した。
+//    経緯と再定義の計画は tools/redesign-plan.md §9。
 // ============================================================
-const DEADLINE_1 = new Date('2026-04-17T12:00:00+09:00'); // Pakistan 2nd round（過去・通過済み）
-const DEADLINE_2 = new Date('2026-04-23T02:00:00+09:00'); // 停戦期限（4/23 JST早朝・通過済み）
-const DEADLINE_3 = new Date('2026-05-01T23:00:00+09:00'); // 米封鎖法的期限（Operation Epic Fury）
-const DEADLINE_4 = new Date('2026-05-14T09:00:00+09:00'); // トランプ-Xi北京会談開始予定（5/14-15 北京）
-const DEADLINE_5 = new Date('2026-05-22T23:59:00+09:00'); // トランプ「22日期限」暫定設定（記者に示唆）
-
-function updateCountdown() {
-  const now  = new Date();
-
-  // --- メイン：4/17 Critical Window ---
-  const diff1 = DEADLINE_1 - now;
-  if (diff1 > 0) {
-    const totalSec = Math.floor(diff1 / 1000);
-    const h = Math.floor(totalSec / 3600);
-    const m = Math.floor((totalSec % 3600) / 60);
-    const s = totalSec % 60;
-    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-    document.getElementById('cd-phase-label').textContent = '🔴 Pakistan 2nd round まで';
-  } else {
-    // 4/17 超過後 → 停戦期限 4/23 JST早朝 に切り替え
-    const diff2 = DEADLINE_2 - now;
-    if (diff2 > 0) {
-      const totalSec = Math.floor(diff2 / 1000);
-      const h = Math.floor(totalSec / 3600);
-      const m = Math.floor((totalSec % 3600) / 60);
-      const s = totalSec % 60;
-      document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-      document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-      document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-      document.getElementById('cd-phase-label').textContent = '🟡 停戦無期限延長中 ─ Witkoff/Kushner 本日イスラマバード入り・直接会談の成否が次の分岐点';
-    } else {
-      // 4/23 超過後 → 米封鎖法的期限 5/1 23:00 JST に切り替え
-      const diff3 = DEADLINE_3 - now;
-      if (diff3 > 0) {
-        const totalSec = Math.floor(diff3 / 1000);
-        const h = Math.floor(totalSec / 3600);
-        const m = Math.floor((totalSec % 3600) / 60);
-        const s = totalSec % 60;
-        document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-        document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-        document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-        document.getElementById('cd-phase-label').textContent = '🟡 Phase: イラン・米国による二重封鎖（Iran-US dual blockade）継続 ― 外交再開待ち';
-      } else {
-        // 5/1 超過後 → トランプ=習近平主席首脳会談前日 5/13 23:59 JST に切り替え
-        const diff4 = DEADLINE_4 - now;
-        if (diff4 > 0) {
-          const totalSec = Math.floor(diff4 / 1000);
-          const h = Math.floor(totalSec / 3600);
-          const m = Math.floor((totalSec % 3600) / 60);
-          const s = totalSec % 60;
-          document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-          document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-          document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-          document.getElementById('cd-phase-label').textContent = '⚠️ 交渉デッドライン：北京首脳会談（5/14-15）まで — ホルムズ再開の鍵となる米中首脳会談';
-        } else {
-          // DEADLINE_4超過後 → イスラエル・レバノン停戦延長期限（6/29）にカウントダウン切替
-          const diff5 = DEADLINE_5 - now;
-          if (diff5 > 0) {
-            const totalSec = Math.floor(diff5 / 1000);
-            const h = Math.floor(totalSec / 3600);
-            const m = Math.floor((totalSec % 3600) / 60);
-            const s = totalSec % 60;
-            document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-            document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-            document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-            document.getElementById('cd-phase-label').textContent = '⏱️ 停戦脆弱フェーズ——攻撃一時延期中・2〜3日の猶予';
-          } else {
-            document.getElementById('cd-display').innerHTML =
-              '<span class="cd-expired">⏰ 猶予期限経過 — 交渉状況を確認中 / 2026年5月20日 07:40 JST</span>';
-          }
-        }
-      }
-    }
-  }
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 
 // ============================================================

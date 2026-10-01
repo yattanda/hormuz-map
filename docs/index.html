@@ -392,6 +392,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .jump-pill--violet  { --c:167,139,250; color:#a78bfa; }
 .jump-pill--emerald { --c:52,211,153;  color:#34d399; }
 .jump-pill--gold    { --c:201,168,105; color:#c9a869; border-color:rgba(201,168,105,0.4); }
+.jump-pill--neutral { --c:148,163,184; color:#cbd5e1; }
 .jump-pill-badge { font-size:0.62rem; font-weight:800; line-height:1; padding:3px 6px; border-radius:8px;
   background:rgba(var(--c),0.3); color:#fff; letter-spacing:0.02em; }
 .jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
@@ -1774,6 +1775,8 @@ footer {                                   /* フッター（中央揃え・上�
           <a href="articles/route-c-alaska-oil.html" class="jump-pill jump-pill--info" data-published="2026-04-12" data-updated="2026-04-12">🌊 ルートC・アラスカ</a>
           <a href="articles/oil-diversification-africa-brazil.html" class="jump-pill jump-pill--emerald" data-published="2026-04-13" data-updated="2026-05-06">🌍 西アフリカ・南米調達</a>
           <a href="articles/oil-stockpile-monthly-trend.html" class="jump-pill jump-pill--violet" data-published="2026-08-21" data-updated="2026-09-28">📉 石油備蓄推移</a>
+          <!-- トランプ声明（4/8）は記事ページではなくモーダル。JS が動かないときは特別解説コラムのカードへ飛ぶ -->
+          <a href="#trump-statement" class="jump-pill jump-pill--neutral" onclick="event.preventDefault();openTrumpModal();">📜 トランプ声明（4/8）</a>
           <!-- 特別レポート サムネイル付きバナー -->
           <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="report-banner">
             <img src="images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="report-banner-img">
@@ -4458,7 +4461,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- トランプ声明バナー（移動） -->
 <!-- 2026-10-01 第1層の末尾（速報インシデントの下）から、特別解説コラムのカードへ移した。全文はモーダル #trump-modal -->
-<div style="background:rgba(148,163,184,0.05);border:1px solid rgba(148,163,184,0.25);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div id="trump-statement" style="background:rgba(148,163,184,0.05);border:1px solid rgba(148,163,184,0.25);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
 
   <!-- タイトル行 -->
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">

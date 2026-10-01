@@ -1,7 +1,37 @@
 {
-  "updated": "2026年10月01日 07:50 日本時間JST",
+  "updated": "2026年10月02日 08:36 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-aljazeera-live-sanctions-1001",
+      "title": "財務省がイランの自動車・鉄道部門に追加制裁、米当局者「11月末までに空母3隻体制」——サウジ連合はフーシ派ドローン4機を迎撃",
+      "body": "Al Jazeeraのライブ報道（10/1）によれば、ベセント財務長官はイランの鉄道・自動車部門を対象とする追加制裁を発表し、「イランは9月に原油を1バレルもタンカーに積まなかった」と主張した（米側の主張で、記事から検証はできない）。米当局者は、11月末までにイラン周辺へ空母3隻と揚陸群2隻が展開すると述べたという。同ライブ報道は、サウジ主導の連合がサウジ南部上空でフーシ派のドローン4機を迎撃したこと、ホルムズ海峡で超大型タンカーが被弾して火災が起き、UKMTOが正体不明の飛翔体による損傷を確認したこと、イランのペゼシュキアン大統領が「対話を避けたことはない」「交渉中に3回攻撃された」と述べたことも伝えた。",
+      "sourceLabel": "Al Jazeera（10/1）",
+      "date": "2026年10月1日（現地）",
+      "label": "🚨 追加制裁・空母3隻体制へ——ホルムズで超大型タンカー被弾",
+      "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
+      "isLatest": true
+    },
+    {
+      "id": "latest-asiae-trump-midterms-1001",
+      "title": "トランプ氏「中間選挙後の対イラン攻撃強化は可能」——7日間計画は「十分でなかった」、空母セオドア・ルーズベルトが中東へ",
+      "body": "Asia Business Daily（10/1）によれば、トランプ氏は9/28に行ったインタビュー（10/1公開）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、イランの7日間計画（海峡再開の条件提示）について「十分ではなかった」と語った。空母セオドア・ルーズベルトは9/27にサンディエゴを出港、強襲揚陸群マキン・アイランドは9/28に出航しており、域内の空母は3隻になりうる。ルビオ国務長官は9/28にイランの代表団へ米国からの即時退去を求め、代表団は9/29早朝にニューヨークを発ったという。",
+      "sourceLabel": "Asia Business Daily（10/1）",
+      "date": "2026年10月1日（現地）",
+      "label": "🇺🇸 中間選挙後の攻撃強化に含み・空母増派",
+      "url": "https://view.asiae.co.kr/en/article/2026100205164613722",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oilprice-three-tankers-1001",
+      "title": "ホルムズ海峡でリベリア籍タンカー3隻が正体不明の飛翔体を受ける——1隻で火災、乗組員は無事・攻撃主体は不明",
+      "body": "OilPrice（10/1）によれば、UKMTOは3件の事後報告として、ホルムズ海峡を通航中のタンカー3隻が正体不明の飛翔体を受けたと発表した（発生は9/29とされる）。船は石油製品タンカー「Al Ruwais」、VLCC「Mersin Prosperity」、Aframax型「Sinbad」で、いずれもリベリア籍。1隻で火災が起きたが消火され、乗組員は全員無事と報じられた。攻撃主体は不明。情報源はMarisks・Reuters・UKMTO・Kplerのデータで、同記事は「事後の第三者報告」であり直接観測ではないとし、原油流量の回復が伝えられる中でも運航上のリスクは残ると指摘している。",
+      "sourceLabel": "OilPrice（10/1）",
+      "date": "2026年10月1日（現地）",
+      "label": "⚓ タンカー3隻が被弾——UKMTO",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Three-Tankers-Struck-by-Unknown-Projectiles-in-Strait-of-Hormuz.html",
+      "isLatest": false
+    },
     {
       "id": "latest-anews-us-response-0930",
       "title": "イラン政府報道官、アラグチ外相がカタール経由で米国の回答を受け取ったと発表——内容・次の対応は非公表",
@@ -10,40 +40,28 @@
       "date": "2026年9月30日（現地）",
       "label": "🤝 米国の回答がイランに到着——内容は非公表",
       "url": "https://www.anews.com.tr/middle-east/2026/09/30/iran-receives-us-response-to-qatari-mediated-proposal-spokesperson",
-      "isLatest": true
-    },
-    {
-      "id": "latest-aljazeera-kpler-80pct-0930",
-      "title": "Kpler引用：ホルムズ海峡の原油流量は戦前の約8割、日量約970万バレル——IRGC報道官は「継続的な軍事紛争」を主張",
-      "body": "Al Jazeera（9/30）は、Kplerのデータを引き、ホルムズ海峡経由の原油流量が戦前の約8割に当たる日量約970万バレルまで回復したと伝えた（戦前は日量約2,000万バレル）。一方、イラン革命防衛隊（IRGC）報道官は「継続的な軍事紛争」が続いていると主張し、タンカーの保険料は高止まりしている。9/28付の同紙報道（Kpler集計で9月の海峡経由の原油輸出は日量平均740万バレルの見込み）とは数字が異なるが、集計期間・方法の違いによるものかは記事から確認できない。",
-      "sourceLabel": "Al Jazeera（9/30）",
-      "date": "2026年9月30日（現地）",
-      "label": "🚢 海峡の流量は戦前の約8割——Kpler引用",
-      "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
-      "isLatest": false
-    },
-    {
-      "id": "latest-rigzone-oil-futures-0930",
-      "title": "ブレント12月物98.03ドル（+1.9%）、期近11月物103.53ドル——JPモルガン推計で中東原油輸出は戦前の98%",
-      "body": "Rigzone配信記事（9/30）によれば、水曜（9/30）のブレント12月物は1バレル98.03ドル（+1.9%）、期限前の期近11月物は103.53ドル（+0.9%）、WTI11月物は90.42ドル（+1.2%）で取引を終えた。中東からの原油流量が戦前水準に近づく中でも、蒸留油・ガソリン在庫が季節的な歴史的低水準にあること、米・イラン交渉の不透明さ、海峡での船舶攻撃が続くことが価格を支えた。ゴールドマン・サックスは直近1週間に中東から日量約2,300万バレルが出たと推計し、JPモルガンは中東の原油輸出の10日平均が日量1,750万バレルで戦前の98%に達したとしている（いずれも同記事の引用で、独立検証は取れていない）。",
-      "sourceLabel": "Rigzone（9/30）",
-      "date": "2026年9月30日（現地）",
-      "label": "🛢️ ブレント12月物98ドル・期近103.5ドル",
-      "url": "https://rigzone.com/news/wire/oil_futures_rise_despite_increasing_flows-30-sep-2026-184743-article",
-      "isLatest": false
-    },
-    {
-      "id": "latest-araghchi-qatari-mediators-0929",
-      "title": "イラン外相アラグチ、NYでカタール仲介者と会談——米の最終回答を9/30までに期待、米当局者は「核問題が扱われない限り合意なし」",
-      "body": "Al Jazeera（9/29）によれば、イランのアラグチ外相はニューヨークでカタールの仲介者と会談し、ホルムズ海峡の再開案を協議した。仲介者はここで話し合われた考えを米国側に伝える見通しで、アラグチ氏はイラン国営メディアに対し、米国の最終回答を火曜（9/30）までに受け取りたいと語った。一方、米当局者は、イランの核計画が扱われない限り戦争終結の合意はないと述べた。イランの提案は、地域全域での7日間の敵対行為停止や120億ドル以上の凍結資産の解放などと引き換えに、イランとオマーンが定める新たな航路でホルムズ海峡を再開するというもの（トランプ氏は9/26に「受け入れられない」と拒否）。米側の最終回答の有無と内容は、本稿の時点で確認できていない。",
-      "sourceLabel": "Al Jazeera（9/29）",
-      "date": "2026年9月29日（現地）",
-      "label": "🤝 アラグチ外相、カタール仲介者と会談——米の最終回答を待つ",
-      "url": "https://www.aljazeera.com/news/2026/9/29/irans-araghchi-meets-qatari-mediators-as-us-insists-on-nuclear-talks",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-live-1001",
+      "titleJa": "【Al Jazeera】イラン戦争ライブ：追加制裁・空母3隻体制へ、ホルムズで超大型タンカー被弾",
+      "titleEn": "Iran war live: US deploys strike group to Middle East, Houthi drones foiled",
+      "title": "【Al Jazeera】イラン戦争ライブ：追加制裁・空母3隻体制へ、ホルムズで超大型タンカー被弾",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月1日（現地）",
+      "summary": "Al Jazeeraのライブ報道は、米財務省のイラン自動車・鉄道部門への追加制裁、米当局者による「11月末までに空母3隻体制」との説明、ホルムズ海峡での超大型タンカー被弾（UKMTO確認）、サウジ連合によるフーシ派ドローン迎撃を伝えた。",
+      "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-kpler-80pct-0930",
       "titleJa": "【Al Jazeera】Kpler：ホルムズ流量は戦前の約8割——IRGC報道官「継続的な軍事紛争」",
@@ -55,7 +73,7 @@
       "date": "2026年9月30日（現地）",
       "summary": "Al Jazeeraは、Kplerのデータを引き、海峡経由の原油流量が戦前の約8割（日量約970万バレル）まで回復したと報道。IRGC報道官は「継続的な軍事紛争」を主張し、保険料は高止まりしている。",
       "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1610,6 +1628,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月2日",
+      "items": [
+        {
+          "id": "latest-aljazeera-kpler-80pct-0930",
+          "title": "Kpler引用：ホルムズ海峡の原油流量は戦前の約8割、日量約970万バレル——IRGC報道官は「継続的な軍事紛争」を主張",
+          "body": "Al Jazeera（9/30）は、Kplerのデータを引き、ホルムズ海峡経由の原油流量が戦前の約8割に当たる日量約970万バレルまで回復したと伝えた（戦前は日量約2,000万バレル）。一方、イラン革命防衛隊（IRGC）報道官は「継続的な軍事紛争」が続いていると主張し、タンカーの保険料は高止まりしている。9/28付の同紙報道（Kpler集計で9月の海峡経由の原油輸出は日量平均740万バレルの見込み）とは数字が異なるが、集計期間・方法の違いによるものかは記事から確認できない。",
+          "sourceLabel": "Al Jazeera（9/30）",
+          "date": "2026年9月30日（現地）",
+          "label": "🚢 海峡の流量は戦前の約8割——Kpler引用",
+          "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-rigzone-oil-futures-0930",
+          "title": "ブレント12月物98.03ドル（+1.9%）、期近11月物103.53ドル——JPモルガン推計で中東原油輸出は戦前の98%",
+          "body": "Rigzone配信記事（9/30）によれば、水曜（9/30）のブレント12月物は1バレル98.03ドル（+1.9%）、期限前の期近11月物は103.53ドル（+0.9%）、WTI11月物は90.42ドル（+1.2%）で取引を終えた。中東からの原油流量が戦前水準に近づく中でも、蒸留油・ガソリン在庫が季節的な歴史的低水準にあること、米・イラン交渉の不透明さ、海峡での船舶攻撃が続くことが価格を支えた。ゴールドマン・サックスは直近1週間に中東から日量約2,300万バレルが出たと推計し、JPモルガンは中東の原油輸出の10日平均が日量1,750万バレルで戦前の98%に達したとしている（いずれも同記事の引用で、独立検証は取れていない）。",
+          "sourceLabel": "Rigzone（9/30）",
+          "date": "2026年9月30日（現地）",
+          "label": "🛢️ ブレント12月物98ドル・期近103.5ドル",
+          "url": "https://rigzone.com/news/wire/oil_futures_rise_despite_increasing_flows-30-sep-2026-184743-article",
+          "isLatest": false
+        },
+        {
+          "id": "latest-araghchi-qatari-mediators-0929",
+          "title": "イラン外相アラグチ、NYでカタール仲介者と会談——米の最終回答を9/30までに期待、米当局者は「核問題が扱われない限り合意なし」",
+          "body": "Al Jazeera（9/29）によれば、イランのアラグチ外相はニューヨークでカタールの仲介者と会談し、ホルムズ海峡の再開案を協議した。仲介者はここで話し合われた考えを米国側に伝える見通しで、アラグチ氏はイラン国営メディアに対し、米国の最終回答を火曜（9/30）までに受け取りたいと語った。一方、米当局者は、イランの核計画が扱われない限り戦争終結の合意はないと述べた。イランの提案は、地域全域での7日間の敵対行為停止や120億ドル以上の凍結資産の解放などと引き換えに、イランとオマーンが定める新たな航路でホルムズ海峡を再開するというもの（トランプ氏は9/26に「受け入れられない」と拒否）。米側の最終回答の有無と内容は、本稿の時点で確認できていない。",
+          "sourceLabel": "Al Jazeera（9/29）",
+          "date": "2026年9月29日（現地）",
+          "label": "🤝 アラグチ外相、カタール仲介者と会談——米の最終回答を待つ",
+          "url": "https://www.aljazeera.com/news/2026/9/29/irans-araghchi-meets-qatari-mediators-as-us-insists-on-nuclear-talks",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月1日",
       "items": [

@@ -240,3 +240,30 @@
   同一オリジンの iframe で計算済みスタイルを要素ごとに比較（1280px・800px・375px、その他の検討中ルートは開閉の両方）：色・背景・枠線・余白は一致、違いはトークン集約分の文字サイズと、それに比例する幅・高さ・`letter-spacing`（em 指定）・`margin-left:auto` の計算値だけ／
   375px で横はみ出し0／開閉ボタンの黄色の強調が開閉後も同じ／コンソールエラー0
 - 見つけたこと（PR の範囲外）：主要指標の備蓄カードが「2026年8月17日時点（速報）・204日分」のまま。validate の備蓄日数の検査（地図ポップアップ・精製所表の注記の2か所）の対象外だった → 2026-10-01 に main で 9/27 時点（198日分）へ直し、validate と毎月4日のタスクの対象に加えた（`777e05e`）
+
+### PR4b-2（2026-10-01・ブランチ `redesign/phase2-pr4b2`。PR4b-1 の上に積む）
+
+- `docs/index.html`（CSS は「部品の残り（② PR4b-2）」にまとめた。既存のクラスより前に置くので、上書きは複合セレクタで書いた）
+  - ヘッダー：`.h1-title`・`.h1-sub`（スマホの `header h1 span:first/last-of-type` の `!important` は不要になったのでクラスの指定に置き換え）、
+    `.infographic-cta-row`・`.infographic-thumb-link`（`onmouseover`/`onmouseout` は `:hover` へ）・`.reload-btn`（同）
+  - 層の帯：`.layer-band--1`〜`--3`（`--layer-accent` を CSS へ）
+  - X・YouTube のリンク `.social-link`（`--yt`）、YouTube から来た方へ `.yt-visitors`・`-label`・`-btn`
+  - 解説インフォグラフィック `.infographic-block`、速報インシデントの枠 `.incident-box`・`.incident-head`・`.sec-h2--incident`、トランプ声明バナーの外枠
+  - 地図のタンカー欄：`#tanker-stats .stat-row--breakdown`・`.stat-row-val`、`#t-total`、`#tanker-note`（地図に重ねる表示なので px のまま）
+  - データ監視 `.dash-frame`・`#hormuz-dashboard`、リアルタイム市場 `.sec-h2--green`・`.market-widget`・`.market-grid--main/--sub`・`.market-cell`・`.market-note`
+  - トランプ声明モーダル：`.modal-trans`・`.modal-interp-lead`・`.i-text--a/--b`・`.modal-ling`（灰色の節の見出しのインライン色は `.modal-section.gray .modal-section-title` と同じなので削除）
+  - 比較ブロック：`.bw-flag--end`・`.bw-toggle`・`.bw-em`・`.bw-sec--spaced`
+  - 出典・更新履歴の外枠 `.source-wrap`・`.source-inner`、製油所モーダル `.ref-modal`・`.ref-modal-*`・`.ref-area*`・`.ref-base-grid`
+  - `<body>` のインライン style 100→8。残りは JS が状態として読み書きするもの：`display:none` 7か所（`#other-routes-body`・`#bw-timeline-detail`・`#bw-detail-body`・`#news-archive-container`・`#log-collapse`・`#log-toggle-bottom`・`#refinery-modal`）と `#tanker-progress-bar` の `width:100%`
+- 属性セレクタ・重複の撤去
+  - `[style*="max-width:960px"]`（2か所）→ `.source-wrap`（`.container` と同じ指定）
+  - `#news-latest-extra[style*="block"]` → `#news-latest-extra.is-open`（`toggleNewsExtra()` が開閉で `is-open` を付け外し）
+  - `#jf-td-*` の `display:none`（`.jf-col` の `!important` と重複）を削除
+  - **`div[style*="font-size:0.7"]` は残した**：HTML には当たらなくなったが、JS が組み立てる HTML（地図のポップアップ5か所・関連最新ニュースの項目）にまだ当たる。JS のテンプレートをクラスにするまで残す（コメントに明記）
+- `tools/validate_daily.py`：`check_types()` に「ページ全体のインライン style（上の8か所・`<col>` を除く）」を追加（WARN）。PR4b 前の HTML で WARN 214件
+- スキル：daily-site-update に「ページ全体」の節（どこにも `style` を書き足さない）
+- 検証：タグを除いたテキストの差分0／対応の無い閉じタグは変更前と同数／validate OK 39・WARN 0・NG 0／
+  PR4b-1 の HTML と計算済みスタイルを要素ごとに比較（1280px・800px・375px。製油所・トランプ声明の両モーダル、比較ブロックの2つの開閉、ニュースの「さらに見る」を開いた状態も）：
+  色・背景・枠線・余白は一致、違いはトークン集約分の文字サイズとそれに比例する値、比べた瞬間が違うアニメーション（`.bw-dot`・バナーの枠の色）だけ。地図のタンカー欄は差分0／
+  スマホで旧属性セレクタの 0.8rem を引き継ぎ（`.market-note` は旧インラインが「font-size: 0.75rem」（空白入り）で当たっていなかったので引き継がない）、製油所モーダルの概要文は 2-a の下限 0.8rem を保つ／
+  ニュースの「さらに見る」は開く＝`is-open`・grid、閉じる＝none／375px で横はみ出し0／コンソールエラー0

@@ -453,6 +453,12 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - 出典リンク①〜⑧（`div.log-sources-start` から）は折りたたみの末尾に固定。触らない
 - `tools/validate_daily.py` が「更新履歴のインライン style（上の display:none を除く）」「常時表示3件・合計10件まで」を WARN で確認する
 
+### ページ全体（2026-10-01〜・② PR4b）
+
+`<body>` のインライン style は、JS が開閉の状態として読む `display:none`（`#other-routes-body`・`#bw-timeline-detail`・`#bw-detail-body`・
+`#news-archive-container`・`#log-collapse`・`#log-toggle-bottom`・`#refinery-modal`）と `#tanker-progress-bar` の `width:100%` だけ。
+日次が触らない区域も含め、**どこにも `style="..."` を書き足さない**。`tools/validate_daily.py` が「ページ全体のインライン style」を WARN で確認する
+
 ---
 
 ## COUNTDOWN セクションのルール

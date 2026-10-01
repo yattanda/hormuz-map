@@ -164,7 +164,7 @@ body {
 }
 
 /* ===== コンテナ幅をフル活用 ===== */
-.container, [style*="max-width:960px"], [style*="max-width: 960px"] {
+.container, .source-wrap {
   max-width: 100% !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
@@ -179,8 +179,7 @@ body {
   }
 
   .container,
-  [style*="max-width:960px"],
-  [style*="max-width: 960px"] {
+  .source-wrap {
     padding-left: 4px !important;
     padding-right: 4px !important;
   }
@@ -839,6 +838,119 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   .col-card-lead { font-size:0.8rem; }   /* 長文。2-a のスマホ本文の下限（0.8rem）を割らない */
 }
 
+/* 部品の残り（② PR4b-2・2026-10-01）：ヘッダー・層の帯・SNS と動画の導線・速報インシデントの枠・地図のタンカー欄・
+   データ監視・リアルタイム市場・トランプ声明（モーダルと比較ブロック）・出典の外枠・製油所モーダル。
+   既存のクラスより後ろで定義されている規則（.bw-sec・.stat-row など）に勝つよう、上書きは複合セレクタで書く */
+.h1-title { color:#7dd3fc; font-size:var(--fs-lg); font-weight:800; letter-spacing:0.5px; }
+.h1-sub { color:#94a3b8; font-size:var(--fs-xs); font-weight:400; margin-left:0; display:block; }
+.infographic-cta-row { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+.infographic-thumb-link { display:block; line-height:0; border-radius:6px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,0.55);
+  border:1.5px solid rgba(67,217,255,0.35); flex-shrink:0; transition:transform 0.15s,box-shadow 0.15s; }
+.infographic-thumb-link:hover { transform:scale(1.04); box-shadow:0 6px 24px rgba(67,217,255,0.3); }
+.infographic-thumb-img { height:72px; width:auto; display:block; }
+.reload-btn { background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:var(--fs-xs); font-weight:700;
+  padding:4px 14px; border-radius:20px; cursor:pointer; font-family:inherit; transition:background 0.2s; }
+.reload-btn:hover { background:rgba(56,189,248,0.3); }
+.layer-band.layer-band--1 { --layer-accent:var(--c-danger-light); }
+.layer-band.layer-band--2 { --layer-accent:var(--c-accent-pale); }
+.layer-band.layer-band--3 { --layer-accent:var(--c-special); }
+
+.social-links { text-align:right; margin-bottom:6px; }
+.social-link { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15);
+  color:#94a3b8; font-size:var(--fs-sm); font-weight:600; padding:4px 12px; border-radius:20px; text-decoration:none; white-space:nowrap; letter-spacing:0.02em; }
+.social-link--yt { color:#f87171; }
+.yt-visitors { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin:0 0 10px; padding:8px 12px;
+  border:1px solid rgba(248,113,113,0.3); border-radius:12px; background:rgba(248,113,113,0.06); font-size:var(--fs-sm); }
+.yt-visitors-label { color:#fca5a5; font-weight:700; white-space:nowrap; }
+.yt-visitors-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#e2e8f0; font-size:var(--fs-sm); font-weight:600;
+  padding:4px 12px; border-radius:20px; cursor:pointer; font-family:inherit; }
+
+.infographic-block { margin-top:18px; padding-top:16px; border-top:1px solid rgba(56,189,248,0.15); }
+.infographic-block-h { font-size:var(--fs-xs); font-weight:700; color:#64748b; letter-spacing:0.06em; margin-bottom:10px; }
+.infographic-thumb.infographic-thumb--quarter { width:25%; min-width:120px; }
+.infographic-thumb-full { width:100%; height:auto; display:block; }
+.incident-box { border-radius:12px; overflow:hidden; border:1px solid rgba(239,68,68,0.35); }
+.incident-head { width:100%; background:linear-gradient(135deg,#1a0808,#2d1010); border-bottom:1px solid rgba(239,68,68,0.3); padding:13px 18px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:8px; font-family:inherit; }
+.sec-h2.sec-h2--incident { color:#f87171; border-bottom-color:rgba(239,68,68,0.3); width:100%; }
+.trump-banner-wrap { margin-top:14px; }
+
+/* 地図のタンカー欄（地図に重ねる小さな表示なので px のまま） */
+#tanker-stats .stat-row--breakdown { font-size:9px; color:#94a3b8; padding-left:8px; margin-top:4px; border-top:1px solid rgba(148,163,184,0.2);
+  padding-bottom:5px; margin-bottom:2px; }
+#tanker-stats .stat-row-val { color:#94a3b8; font-weight:bold; }
+#t-total { color:#93c5fd; }
+#tanker-note { font-size:7.5px; color:#475569; padding:2px 6px 0; line-height:1.4; }
+
+.dash-frame { margin:20px auto; width:100%; border-radius:12px; overflow:hidden; border:1px solid #1e3a5f; }
+#hormuz-dashboard { display:block; background:#0a0e1a; }
+.sec-h2.sec-h2--green { color:#4ade80; border-bottom-color:rgba(74,222,128,0.25); }
+.market-widget { margin-top:8px; background:#131722; padding:12px 20px 8px 20px; border-radius:8px; display:flex; flex-direction:column; gap:8px;
+  font-family:sans-serif; border:1px solid #1e3a5f; }
+.market-grid { display:grid; gap:16px; }
+.market-grid--main { grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); }
+.market-grid--sub  { grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); }
+.market-cell { overflow:hidden; border-radius:4px; }
+.market-note { text-align:right; font-size:var(--fs-sm); color:#868993; border-top:1px solid #2B3139; padding:6px 0 0; margin:2px 0 0; }
+
+/* トランプ声明モーダル（灰色の節の見出し色は .modal-section.gray .modal-section-title が持つ） */
+.modal-trans { color:#fde68a; font-size:var(--fs-sm); line-height:1.8; }
+.modal-trans strong { color:#fbbf24; }
+.modal-interp-lead { color:#7dd3fc; font-size:var(--fs-xs); margin-bottom:10px; }
+.i-text { font-size:var(--fs-xs); line-height:1.65; }
+.i-text--a { color:#fca5a5; }
+.i-text--b { color:#86efac; }
+.modal-ling { color:#94a3b8; font-size:var(--fs-xs); line-height:1.75; }
+.modal-ling strong { color:#cbd5e1; }
+.modal-ling .modal-em { color:#fbbf24; }
+.modal-ling .modal-alert { color:#f87171; }
+
+/* トランプ声明の比較ブロック。#bw-timeline-detail・#bw-detail-body の display:none は toggle*() が読むのでインラインに残す */
+.bw-flag.bw-flag--end { margin-left:auto; }
+.bw-toggle { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); border-radius:6px; color:#94a3b8;
+  font-size:var(--fs-sm); font-weight:700; padding:8px 0; cursor:pointer; margin-bottom:8px; letter-spacing:0.03em; }
+.bw-em { color:#e2e8f0; }
+.bw-sec.bw-sec--spaced { padding-top:14px; }
+
+/* 出典・更新履歴の外枠（旧 [style*="max-width:960px"] の上書きをそのまま引き継ぐ：幅は 100%・左右の余白は .container と同じ） */
+.source-wrap { margin:32px auto 0; padding-bottom:40px; }
+.source-inner { border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; }
+
+/* 製油所モーダル。表示は開閉ボタンが style.display（none / flex）で切り替える */
+.ref-modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999;
+  align-items:flex-start; justify-content:center; overflow-y:auto; padding:20px 0; }
+.ref-modal-box { background:linear-gradient(135deg,#0f2027,#1a2a3a); border:1px solid rgba(56,189,248,0.3); border-radius:14px;
+  max-width:780px; width:95%; margin:auto; padding:28px 24px; position:relative; }
+.ref-modal-close { position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15);
+  color:#94a3b8; font-size:var(--fs-md); width:32px; height:32px; border-radius:50%; cursor:pointer; }
+.ref-modal-title { font-size:var(--fs-md); font-weight:800; color:#38bdf8; margin-bottom:6px; }
+.ref-modal-sub { font-size:var(--fs-sm); color:#64748b; margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.ref-modal-lead { background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.15); border-radius:8px; padding:12px 16px; margin-bottom:20px;
+  font-size:var(--fs-sm); color:#94a3b8; line-height:1.7; }
+.ref-modal-lead strong { color:#e2e8f0; }
+.ref-modal-h { font-size:var(--fs-sm); font-weight:800; color:#7dd3fc; margin-bottom:10px; letter-spacing:0.05em; }
+.ref-area-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-bottom:20px; }
+.ref-area { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px; }
+.ref-area--main { background:rgba(56,189,248,0.05); border-color:rgba(56,189,248,0.2); }
+.ref-area--bases { margin-bottom:20px; }
+.ref-area-h { font-size:var(--fs-xs); font-weight:700; margin-bottom:8px; }
+.ref-area-h--amber  { color:#fbbf24; }
+.ref-area-h--sky    { color:#38bdf8; }
+.ref-area-h--violet { color:#a78bfa; }
+.ref-area-h--green  { color:#34d399; }
+.ref-area-h--orange { color:#fb923c; }
+.ref-area-list { font-size:var(--fs-xs); color:#cbd5e1; line-height:1.8; }
+.ref-base-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:4px; font-size:var(--fs-xs); color:#94a3b8; line-height:1.9; }
+.ref-modal-note { font-size:var(--fs-xs); color:#475569; line-height:1.6; padding-top:12px; border-top:1px solid rgba(255,255,255,0.06); }
+
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .infographic-block-h, .modal-trans, .modal-interp-lead, .i-text, .modal-ling,
+  .ref-modal-sub, .ref-modal-h, .ref-area-h, .ref-area-list, .ref-base-grid, .ref-modal-note { font-size:0.8rem; }
+  .ref-modal-lead { font-size:0.8rem; }   /* 長文。2-a のスマホ本文の下限（0.8rem）を割らない */
+}
+/* .market-note は旧インラインが「font-size: 0.75rem」（空白入り）で属性セレクタに当たっていなかったので引き継がない */
+
 /* FOOTER */
 footer {
   text-align:center; padding:16px;
@@ -916,8 +1028,6 @@ footer {
 /* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
    （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */
 @media(max-width:768px){
-  #jf-td-old, #jf-td-A, #jf-td-B,
-  #jf-td-C_US, #jf-td-C_GL, #jf-td-D { display: none; }
   .jf-col { display: none !important; }
 }
 @media(max-width:600px){
@@ -932,14 +1042,9 @@ footer {
     padding: 10px 14px !important;
   }
 
-  /* ② ヘッダーh1 span: inline font-sizeをCSS側から上書き */
-  header h1 span:first-of-type {
-    font-size: 1.0rem !important;
-  }
-  header h1 span:last-of-type {
-    font-size: 0.8rem !important;
-    margin-left: 4px !important;
-  }
+  /* ② ヘッダーh1 の題字・副題（② PR4b-2 でインライン style をクラスにしたので !important は不要） */
+  .h1-title { font-size: 1.0rem; }
+  .h1-sub { font-size: 0.8rem; margin-left: 4px; }
 
   /* ③ infographic CTAボタン: 1行に収める */
   .infographic-button {
@@ -1595,7 +1700,9 @@ footer {
    スマホの 1rem は絶対ルールで 18px のまま。見出しやバッジは変えず、
    長い文章を含む要素だけ下限を引き上げる。
    div[style*="font-size:0.7"] は 0.7〜0.78rem のインライン指定に当たる
-   （span・a・button のラベル類は対象外）。 */
+   （span・a・button のラベル類は対象外）。
+   ② PR4b（2026-10-01）で HTML のインライン style はクラスにしたので、いまこの指定が当たるのは
+   JS が組み立てる HTML（地図のポップアップ・関連最新ニュースの項目）だけ。JS のテンプレートをクラスにしたら外す。 */
 @media (max-width: 768px) {
   .sc-body,
   .sc-impact,
@@ -1651,7 +1758,7 @@ footer {                                   /* フッター（中央揃え・上�
 
   /* 関連最新ニュース：2列。「過去の記事を見る」で開く分も同じ並びにする */
   #news-latest-container,
-  #news-latest-extra[style*="block"] {
+  #news-latest-extra.is-open {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -1713,23 +1820,17 @@ footer {                                   /* フッター（中央揃え・上�
 <body>
 
 <header>
-  <h1>🗺️ <span style="color: #7dd3fc; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.5px;">ホルムズ海峡危機マップ</span><span style="color: #94a3b8; font-size: 0.72rem; font-weight: 400; margin-left: 0; display: block;">通航状況・代替ルート・市場波及</span></h1>
+  <h1>🗺️ <span class="h1-title">ホルムズ海峡危機マップ</span><span class="h1-sub">通航状況・代替ルート・市場波及</span></h1>
   <div class="infographic-cta">
-    <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
+    <div class="infographic-cta-row">
       <a href="./infographic/" class="infographic-button">
         ☞ 全体を6枚の図解で俯瞰
       </a>
       <a href="./infographic/#slide-04"
          title="主要プレイヤー分析図を見る"
-         style="display:block;line-height:0;border-radius:6px;overflow:hidden;
-                box-shadow:0 4px 18px rgba(0,0,0,0.55);
-                border:1.5px solid rgba(67,217,255,0.35);
-                flex-shrink:0;transition:transform 0.15s,box-shadow 0.15s;"
-         onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 6px 24px rgba(67,217,255,0.3)'"
-         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 18px rgba(0,0,0,0.55)'">
+         class="infographic-thumb-link">
         <img src="./infographic/assets/final/slide-04-core-players.png" width="1672" height="941"
-             alt="主要プレイヤー分析図（イラン・米国・イスラエル・湾岸諸国）"
-             style="height:72px;width:auto;display:block;">
+             alt="主要プレイヤー分析図（イラン・米国・イスラエル・湾岸諸国）" class="infographic-thumb-img">
       </a>
     </div>
   </div>
@@ -1737,19 +1838,7 @@ footer {                                   /* フッター（中央揃え・上�
     <span class="badge-item badge-alert">警戒レベル：最高</span>
     <span class="badge-item badge-days" id="blockade-days">封鎖215日目</span>
     <span class="badge-item badge-date">📅2026年10月1日 07:50 JST</span>
-    <button onclick="hardReload()" style="
-     background:rgba(56,189,248,0.15);
-     border:1px solid #38bdf8;
-     color:#38bdf8;
-     font-size:0.72rem;
-     font-weight:700;
-     padding:4px 14px;
-     border-radius:20px;
-     cursor:pointer;
-     font-family:inherit;
-     transition:background 0.2s;
-     " onmouseover="this.style.background='rgba(56,189,248,0.3)'"
-       onmouseout="this.style.background='rgba(56,189,248,0.15)'">
+    <button onclick="hardReload()" class="reload-btn">
      🔄 強制再表示
     </button>
   
@@ -1772,7 +1861,7 @@ footer {                                   /* フッター（中央揃え・上�
 </div>
 
 <!-- ===== 第1層：いま何が起きているか ===== -->
-<div class="layer-band" style="--layer-accent:var(--c-danger-light);">
+<div class="layer-band layer-band--1">
   <span class="layer-band-num">第1層</span>
   <span class="layer-band-text">いま何が起きているか</span>
 </div>
@@ -1781,19 +1870,19 @@ footer {                                   /* フッター（中央揃え・上�
 
 <div class="container">
 
-<div style="text-align:right;margin-bottom:6px;">
-  <a href="https://x.com/hormuz_map_jp" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#94a3b8;font-size:0.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;">
+<div class="social-links">
+  <a href="https://x.com/hormuz_map_jp" target="_blank" rel="noopener" class="social-link">
     𝕏 このマップの更新情報はXで発信中
   </a>
-  <a href="https://www.youtube.com/@%E5%8D%B1%E6%A9%9F%E5%9C%B0%E5%9B%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#f87171;font-size:0.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-decoration:none;white-space:nowrap;letter-spacing:0.02em;">
+  <a href="https://www.youtube.com/@%E5%8D%B1%E6%A9%9F%E5%9C%B0%E5%9B%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB" target="_blank" rel="noopener" class="social-link social-link--yt">
     ▶ YouTube動画を発信中、チャンネルはこちら
   </a>
 </div>
 <!-- YouTube から来た方へ（動画で扱った地点へ地図を寄せる。項目は focusOn() のキーと対応） -->
-<div id="yt-visitors" style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px;padding:8px 12px;border:1px solid rgba(248,113,113,0.3);border-radius:12px;background:rgba(248,113,113,0.06);font-size:0.8rem;">
-  <span style="color:#fca5a5;font-weight:700;white-space:nowrap;">▶ YouTube から来た方へ</span>
-  <button type="button" onclick="focusOn('minamitori')" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#e2e8f0;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:20px;cursor:pointer;font-family:inherit;">🏝️ 南鳥島のレアアース泥 → 地図で見る</button>
-  <button type="button" onclick="focusOn('tsugaru')" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#e2e8f0;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:20px;cursor:pointer;font-family:inherit;">⚓ 津軽海峡のタンカーの荷 → 地図で見る</button>
+<div id="yt-visitors" class="yt-visitors">
+  <span class="yt-visitors-label">▶ YouTube から来た方へ</span>
+  <button type="button" onclick="focusOn('minamitori')" class="yt-visitors-btn">🏝️ 南鳥島のレアアース泥 → 地図で見る</button>
+  <button type="button" onclick="focusOn('tsugaru')" class="yt-visitors-btn">⚓ 津軽海峡のタンカーの荷 → 地図で見る</button>
 </div>
 <div class="glance">
   <div class="glance-panel">
@@ -1904,22 +1993,20 @@ footer {                                   /* フッター（中央揃え・上�
   </div><!-- /.container -->
 
     <!-- 📊 解説インフォグラフィック -->
-    <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(56,189,248,0.15);">
-      <div style="font-size:0.72rem;font-weight:700;color:#64748b;letter-spacing:0.06em;margin-bottom:10px;">📊 解説インフォグラフィック</div>
-      <div class="infographic-thumb" onclick="openLightbox('images/infographic-0420.png')"
-        style="width:25%;min-width:120px;">
+    <div class="infographic-block">
+      <div class="infographic-block-h">📊 解説インフォグラフィック</div>
+      <div class="infographic-thumb infographic-thumb--quarter" onclick="openLightbox('images/infographic-0420.png')">
         <img src="images/infographic-0420.png" width="2814" height="1536" loading="lazy"
           alt="ホルムズの火薬庫：平和への階段はなぜ違いのか"
-          style="width:100%;height:auto;display:block;">
+          class="infographic-thumb-full">
       </div>
     </div>
 
-<div id="incident" style="border-radius:12px;overflow:hidden;border:1px solid rgba(239,68,68,0.35);">
+<div id="incident" class="incident-box">
 
   <!-- 速報インシデント トグルボタン -->
-  <div id="incident-toggle-btn"
-    style="width:100%;background:linear-gradient(135deg,#1a0808,#2d1010);border-bottom:1px solid rgba(239,68,68,0.3);padding:13px 18px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-family:inherit;">
-    <h2 class="sec-h2" style="color:#f87171;border-bottom-color:rgba(239,68,68,0.3);width:100%;">🚨 速報インシデント</h2>
+  <div id="incident-toggle-btn" class="incident-head">
+    <h2 class="sec-h2 sec-h2--incident">🚨 速報インシデント</h2>
     <span class="incident-headline-row">
       <strong class="incident-headline">米国の回答がイランに到着、内容は非公表——海峡の原油流量は戦前の約8割へ回復も、タンカー被弾の報告が続く</strong>
       <span class="incident-badge">📅 10/1 07:50 更新</span>
@@ -2098,7 +2185,7 @@ footer {                                   /* フッター（中央揃え・上�
 </li>
 </ul>
         <!-- トランプ声明バナー（移動） -->
-    <div style="margin-top:14px;">
+    <div class="trump-banner-wrap">
       <div class="trump-banner" onclick="openTrumpModal()">
         <div class="trump-banner-icon">📜</div>
         <div class="trump-banner-text">
@@ -2172,7 +2259,7 @@ document.addEventListener('keydown', function(e) {
     </div>
 
 <!-- ===== 第2層：どう影響するか ===== -->
-<div class="layer-band" style="--layer-accent:var(--c-accent-pale);">
+<div class="layer-band layer-band--2">
   <span class="layer-band-num">第2層</span>
   <span class="layer-band-text">どう影響するか</span>
 </div>
@@ -2200,16 +2287,16 @@ document.addEventListener('keydown', function(e) {
         <span>🔴 足止め中</span>
         <span id="t-stuck">-</span>
       </div>
-      <div class="stat-row" style="font-size:9px; color:#94a3b8; padding-left:8px; margin-top:4px; border-top:1px solid rgba(148,163,184,0.2); padding-bottom:5px; margin-bottom:2px;">
+      <div class="stat-row stat-row--breakdown">
         <span>🚢 船種別内訳</span>
-        <span style="color:#94a3b8; font-weight:bold;">内訳確認中</span>
+        <span class="stat-row-val">内訳確認中</span>
       </div>
       <div class="stat-row">
         <span>合計</span>
-        <span id="t-total" style="color:#93c5fd;">-</span>
+        <span id="t-total">-</span>
       </div>
     </div>
-    <div id="tanker-note" style="font-size:7.5px;color:#475569;padding:2px 6px 0;line-height:1.4;">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
+    <div id="tanker-note">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
     <div id="tanker-progress-wrap">
       <div id="tanker-progress-bar" style="width:100%"></div>
     </div>
@@ -2789,7 +2876,7 @@ const SHIP_CONFIG = {
 <!-- ホルムズ データ監視ダッシュボード -->
 <h2 class="sec-h2">📡 ホルムズ データ監視ダッシュボード</h2>
 <div id="japan-flow"></div>
-<div style="margin: 20px auto; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1e3a5f;">
+<div class="dash-frame">
   <iframe
     id="hormuz-dashboard"
     width="100%"
@@ -2797,7 +2884,6 @@ const SHIP_CONFIG = {
     frameborder="0"
     scrolling="no"
     title="ホルムズ データ監視ダッシュボード"
-    style="display:block; background:#0a0e1a;"
     loading="lazy"
   ></iframe>
 </div>
@@ -2933,14 +3019,14 @@ const SHIP_CONFIG = {
 </script>
 <!-- /ダッシュボード -->
   <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
- <h2 class="sec-h2" style="color:#4ade80;border-bottom-color:rgba(74,222,128,0.25);">💰 リアルタイム市場（原油・為替・貴金属）</h2>
- <div id="wtiWidget" style="margin-top:8px; background: #131722; padding: 12px 20px 8px 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; font-family: sans-serif; border: 1px solid #1e3a5f;">
+ <h2 class="sec-h2 sec-h2--green">💰 リアルタイム市場（原油・為替・貴金属）</h2>
+ <div id="wtiWidget" class="market-widget">
     
     <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+    <div class="market-grid market-grid--main">
       
       <!-- 1. WTI原油 -->
-      <div style="overflow: hidden; border-radius: 4px;">
+      <div class="market-cell">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
@@ -2950,7 +3036,7 @@ const SHIP_CONFIG = {
       </div>
   
       <!-- 2. ドル円 -->
-      <div style="overflow: hidden; border-radius: 4px;">
+      <div class="market-cell">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
@@ -2961,10 +3047,10 @@ const SHIP_CONFIG = {
     </div>
   
     <!-- ▼ サブセクション（小さく表示：高さ150） ▼ -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+    <div class="market-grid market-grid--sub">
       
       <!-- 3. ゴールド -->
-      <div style="overflow: hidden; border-radius: 4px;">
+      <div class="market-cell">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
@@ -2974,7 +3060,7 @@ const SHIP_CONFIG = {
       </div>
   
       <!-- 4. シルバー -->
-      <div style="overflow: hidden; border-radius: 4px;">
+      <div class="market-cell">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
@@ -2984,7 +3070,7 @@ const SHIP_CONFIG = {
       </div>
   
       <!-- 5. 銅 -->
-      <div style="overflow: hidden; border-radius: 4px;">
+      <div class="market-cell">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
@@ -2994,7 +3080,7 @@ const SHIP_CONFIG = {
       </div>
   
       <!-- 6. プラチナ -->
-      <div style="overflow: hidden; border-radius: 4px;">
+      <div class="market-cell">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
@@ -3006,7 +3092,7 @@ const SHIP_CONFIG = {
     </div>
   
     <!-- ▼ 包括的な但し書き ▼ -->
-     <div style="text-align: right; font-size: 0.75rem; color: #868993; border-top: 1px solid #2B3139; padding-top: 6px; margin-top: 2px; margin-bottom: 0; padding-bottom: 0;">
+     <div class="market-note">
       ※表示価格はCFD等のデータであり、実際の先物・現物価格とは微小な差異や遅延が生じる場合があります。
     </div>
   </div>
@@ -3029,26 +3115,26 @@ const SHIP_CONFIG = {
 
     <div class="modal-section yellow">
       <div class="modal-section-title">🟡 日本語翻訳（原文に忠実）</div>
-      <div style="color:#fde68a; font-size:0.77rem; line-height:1.8;">
-        「Pakistanの Shehbaz Sharif 首相及び Asim Munir 統合参謀総長との会話に基づき、そして彼らが本夜 Iran に送られるべき破壊力を一時停止するよう要請した際、及び Islamic Republic of Iran が Hormuz 海峡の<strong style="color:#fbbf24">完全な、直ちな、かつ安全な開放</strong>に同意することを条件として、私は Iran への爆撃及び攻撃を<strong style="color:#fbbf24">2週間の期間の間、一時停止（suspend）</strong>することに同意する。」
+      <div class="modal-trans">
+        「Pakistanの Shehbaz Sharif 首相及び Asim Munir 統合参謀総長との会話に基づき、そして彼らが本夜 Iran に送られるべき破壊力を一時停止するよう要請した際、及び Islamic Republic of Iran が Hormuz 海峡の<strong>完全な、直ちな、かつ安全な開放</strong>に同意することを条件として、私は Iran への爆撃及び攻撃を<strong>2週間の期間の間、一時停止（suspend）</strong>することに同意する。」
       </div>
     </div>
 
     <div class="modal-section blue">
       <div class="modal-section-title">🔍 曖昧性の分析：2通りの解釈</div>
-      <div style="color:#7dd3fc; font-size:0.73rem; margin-bottom:10px;">
+      <div class="modal-interp-lead">
         核心は <strong>"for a period of two weeks"</strong> の解釈にあります。
       </div>
       <div class="modal-interp">
         <div class="modal-interp-box a">
           <div class="i-title">解釈A：「2週間のみ停止」</div>
-          <div style="color:#fca5a5; font-size:0.72rem; line-height:1.65;">
+          <div class="i-text i-text--a">
             2週間後に攻撃再開の可能性。Iranがホルムズを開放しても2週間後は再度攻撃できる。期限が2週間後に再発生するリスク。
           </div>
         </div>
         <div class="modal-interp-box b">
           <div class="i-title">解釈B：「2週間で恒久停戦へ」</div>
-          <div style="color:#86efac; font-size:0.72rem; line-height:1.65;">
+          <div class="i-text i-text--b">
             2週間の協議期間を設けて永続的な解決を目指す。Iranが誠実に交渉すれば2週間後も停戦継続の可能性。
           </div>
         </div>
@@ -3056,16 +3142,16 @@ const SHIP_CONFIG = {
     </div>
 
     <div class="modal-section gray">
-      <div class="modal-section-title" style="color:#94a3b8;">📌 言語学的な微妙さ</div>
-      <div style="color:#94a3b8; font-size:0.73rem; line-height:1.75;">
-        英語の <strong style="color:#cbd5e1;">"suspend"</strong> という動詞自体が曖昧です。<br>
-        <strong style="color:#cbd5e1;">条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong style="color:#fbbf24;">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが正常化を維持することが前提の可能性があります。<br><br>
-        <strong style="color:#f87171;">🔴 重要：</strong>この曖昧性はおそらく<strong style="color:#fbbf24;">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
+      <div class="modal-section-title">📌 言語学的な微妙さ</div>
+      <div class="modal-ling">
+        英語の <strong>"suspend"</strong> という動詞自体が曖昧です。<br>
+        <strong>条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong class="modal-em">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが正常化を維持することが前提の可能性があります。<br><br>
+        <strong class="modal-alert">🔴 重要：</strong>この曖昧性はおそらく<strong class="modal-em">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
       </div>
     </div>
 
     <div class="modal-section gray">
-      <div class="modal-section-title" style="color:#94a3b8;">💡 メディア解釈の分裂</div>
+      <div class="modal-section-title">💡 メディア解釈の分裂</div>
       <div class="modal-media">
         <div class="modal-media-pill pill-optimist">
           楽観派：「2週間停戦＝戦争一時停止」
@@ -4366,11 +4452,13 @@ function toggleNewsExtra() {
   if (isHidden) {
     // 展開
     extra.style.display = 'block';
+    extra.classList.add('is-open');   // 2列の並びは CSS の #news-latest-extra.is-open
     if (btn) btn.textContent = '▲ 折りたたむ';
   } else {
     // 折りたたむ前にボタン位置を記録してジャンプ防止
     const btnY = btn ? btn.getBoundingClientRect().top : 0;
     extra.style.display = 'none';
+    extra.classList.remove('is-open');
     if (btn) {
       btn.textContent = '▼ さらに見る';
       const newBtnY = btn.getBoundingClientRect().top;
@@ -4529,7 +4617,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- ===== 第3層：なぜそうなのか ===== -->
-<div class="layer-band" style="--layer-accent:var(--c-special);">
+<div class="layer-band layer-band--3">
   <span class="layer-band-num">第3層</span>
   <span class="layer-band-text">なぜそうなのか</span>
 </div>
@@ -4698,7 +4786,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <span class="bw-flag">🇺🇸</span>
     <span class="bw-badge">⚠ 原文英語＋日本語訳付</span>
     <span class="bw-sub">２声明 精査比較付き &nbsp;／&nbsp; 2026年4月12〜13日 &nbsp;｜&nbsp; Truth Social &amp; @WhiteHouse (X)</span>
-    <span class="bw-flag" style="margin-left:auto;">🇮🇷</span>
+    <span class="bw-flag bw-flag--end">🇮🇷</span>
     <div class="bw-dot"></div>
   </div>
 
@@ -4733,7 +4821,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- タイムライン トグルボタン -->
-    <button onclick="toggleTimeline(this)" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#94a3b8;font-size:0.78rem;font-weight:700;padding:8px 0;cursor:pointer;margin-bottom:8px;letter-spacing:0.03em;">
+    <button onclick="toggleTimeline(this)" class="bw-toggle">
       ▼ 時系列タイムラインと原文/翻訳を表示する
     </button>
 
@@ -4752,14 +4840,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="bw-tl-time">4月12日（日）午後〜夕方　米東部時間　【声明①】</div>
         <div class="bw-tl-body">
           <span class="pill pill-o">声明①</span>
-          Truth Social投稿。「<strong style="color:#e2e8f0;">ホルムズ海峡全体の封鎖を即時発効</strong>」と宣言。機雷除去・通航料支払い船舶の拿捕・砲撃警告を含む広域宣言。
+          Truth Social投稿。「<strong class="bw-em">ホルムズ海峡全体の封鎖を即時発効</strong>」と宣言。機雷除去・通航料支払い船舶の拿捕・砲撃警告を含む広域宣言。
         </div>
       </div>
       <div class="bw-tl tl-b">
         <div class="bw-tl-time">4月13日 0:43 AM EST（日本時間13:43）　【声明②】</div>
         <div class="bw-tl-body">
           <span class="pill pill-p">声明②</span>
-          Truth Social第2投稿、@WhiteHouseがXで転載。「<strong style="color:#e2e8f0;">イランの港に出入りする船舶の封鎖を4月13日午前10時ESTより開始</strong>」と時刻明示の正式通告。
+          Truth Social第2投稿、@WhiteHouseがXで転載。「<strong class="bw-em">イランの港に出入りする船舶の封鎖を4月13日午前10時ESTより開始</strong>」と時刻明示の正式通告。
         </div>
       </div>
       <div class="bw-tl tl-b">
@@ -4787,13 +4875,13 @@ document.addEventListener('DOMContentLoaded', () => {
     </div><!-- /#bw-timeline-detail -->
 
     <!-- 差分比較・声明全文 トグルボタン -->
-    <button onclick="toggleBwDetail(this)" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#94a3b8;font-size:0.78rem;font-weight:700;padding:8px 0;cursor:pointer;margin-bottom:8px;letter-spacing:0.03em;">
+    <button onclick="toggleBwDetail(this)" class="bw-toggle">
       ▼ 2声明の比較・声明全文を表示する
     </button>
 
     <div id="bw-detail-body" style="display:none;">
     <!-- 差分比較 -->
-    <div class="bw-sec" style="padding-top:14px;">🔍 2声明の比較・主な違い</div>
+    <div class="bw-sec bw-sec--spaced">🔍 2声明の比較・主な違い</div>
     <div class="bw-diff">
       <div class="bw-diff-head">▶ 声明①（広域宣言）vs 声明②（正式通告）— 比較表</div>
       <table class="bw-table">
@@ -4816,7 +4904,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- 声明① -->
-    <div class="bw-sec" style="padding-top:14px;">📜 声明全文 日本語訳</div>
+    <div class="bw-sec bw-sec--spaced">📜 声明全文 日本語訳</div>
 
     <div class="bw-card bw-gold">
       <span class="bw-card-badge">日本語訳</span>
@@ -4938,8 +5026,8 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
 <!-- SOURCE & UPDATE LOG -->
-<div style="max-width:960px;margin:32px auto 0;padding:0 16px 40px;">
-  <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;">
+<div class="source-wrap">
+  <div class="source-inner">
 
     <!--出典・更新ログ-->
     <section class="update-log">
@@ -5028,39 +5116,39 @@ document.addEventListener('DOMContentLoaded', () => {
 </footer>
 
 <!-- 日本製油所モーダル -->
-<div id="refinery-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px 0;">
-  <div style="background:linear-gradient(135deg,#0f2027,#1a2a3a);border:1px solid rgba(56,189,248,0.3);border-radius:14px;max-width:780px;width:95%;margin:auto;padding:28px 24px;position:relative;">
+<div id="refinery-modal" class="ref-modal" style="display:none;">
+  <div class="ref-modal-box">
 
     <!-- 閉じるボタン -->
     <button onclick="document.getElementById('refinery-modal').style.display='none'"
-      style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#94a3b8;font-size:1rem;width:32px;height:32px;border-radius:50%;cursor:pointer;">✕</button>
+      class="ref-modal-close">✕</button>
 
     <!-- タイトル -->
-    <div style="font-size:1rem;font-weight:800;color:#38bdf8;margin-bottom:6px;">🛢️ 中東OILタンカー — 日本の受入拠点</div>
-    <div style="font-size:0.75rem;color:#64748b;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.08);">製油所19か所・国家備蓄基地10か所（2025年3月現在）</div>
+    <div class="ref-modal-title">🛢️ 中東OILタンカー — 日本の受入拠点</div>
+    <div class="ref-modal-sub">製油所19か所・国家備蓄基地10か所（2025年3月現在）</div>
 
     <!-- 概要 -->
-    <div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:0.8rem;color:#94a3b8;line-height:1.7;">
-      中東からの原油は<strong style="color:#e2e8f0;">ホルムズ海峡→インド洋→マラッカ海峡→日本</strong>（約20日・6,500海里）のルートで輸送。VLCCが全国各地の製油所・備蓄基地へ<strong style="color:#e2e8f0;">分散直送</strong>される。
+    <div class="ref-modal-lead">
+      中東からの原油は<strong>ホルムズ海峡→インド洋→マラッカ海峡→日本</strong>（約20日・6,500海里）のルートで輸送。VLCCが全国各地の製油所・備蓄基地へ<strong>分散直送</strong>される。
     </div>
 
     <!-- 製油所エリア別 -->
-    <div style="font-size:0.78rem;font-weight:800;color:#7dd3fc;margin-bottom:10px;letter-spacing:0.05em;">📍 主要製油所（エリア別）</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">
+    <div class="ref-modal-h">📍 主要製油所（エリア別）</div>
+    <div class="ref-area-grid">
 
       <!-- 北海道・東北 -->
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
-        <div style="font-size:0.72rem;font-weight:700;color:#fbbf24;margin-bottom:8px;">🗾 北海道・東北</div>
-        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+      <div class="ref-area">
+        <div class="ref-area-h ref-area-h--amber">🗾 北海道・東北</div>
+        <div class="ref-area-list">
           出光興産 北海道製油所（苫小牧）14万bbl/日<br>
           ENEOS 仙台製油所（仙台）14.5万bbl/日
         </div>
       </div>
 
       <!-- 関東 -->
-      <div style="background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:12px;">
-        <div style="font-size:0.72rem;font-weight:700;color:#38bdf8;margin-bottom:8px;">🏙️ 関東（最大集積地）</div>
-        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+      <div class="ref-area ref-area--main">
+        <div class="ref-area-h ref-area-h--sky">🏙️ 関東（最大集積地）</div>
+        <div class="ref-area-list">
           ENEOS 川崎製油所 24.9万bbl/日<br>
           鹿島石油 鹿島製油所 21万bbl/日<br>
           出光興産 千葉事業所 19.5万bbl/日<br>
@@ -5073,9 +5161,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <!-- 中部 -->
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
-        <div style="font-size:0.72rem;font-weight:700;color:#a78bfa;margin-bottom:8px;">🏭 中部</div>
-        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+      <div class="ref-area">
+        <div class="ref-area-h ref-area-h--violet">🏭 中部</div>
+        <div class="ref-area-list">
           昭和四日市石油 四日市 25.5万bbl/日 ★国内最大級<br>
           出光興産 愛知事業所 16.5万bbl/日<br>
           コスモ石油 四日市製油所 8.6万bbl/日
@@ -5083,9 +5171,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <!-- 近畿・中国 -->
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
-        <div style="font-size:0.72rem;font-weight:700;color:#34d399;margin-bottom:8px;">🌊 近畿・中国</div>
-        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+      <div class="ref-area">
+        <div class="ref-area-h ref-area-h--green">🌊 近畿・中国</div>
+        <div class="ref-area-list">
           ENEOS 水島製油所（倉敷）35万bbl/日 ★国内最大<br>
           コスモ石油 堺製油所 10万bbl/日<br>
           ENEOS 堺製油所 14.1万bbl/日<br>
@@ -5094,9 +5182,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <!-- 四国・九州 -->
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
-        <div style="font-size:0.72rem;font-weight:700;color:#fb923c;margin-bottom:8px;">🌅 四国・九州</div>
-        <div style="font-size:0.72rem;color:#cbd5e1;line-height:1.8;">
+      <div class="ref-area">
+        <div class="ref-area-h ref-area-h--orange">🌅 四国・九州</div>
+        <div class="ref-area-list">
           太陽石油 四国事業所（菊間）13.8万bbl/日<br>
           ※2026/3 代替ルート初到着地点<br>
           ENEOS 大分製油所 13.6万bbl/日<br>
@@ -5107,9 +5195,9 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- 国家備蓄基地 -->
-    <div style="font-size:0.78rem;font-weight:800;color:#7dd3fc;margin-bottom:10px;letter-spacing:0.05em;">🏛️ 国家石油備蓄基地（JOGMEC管轄）</div>
-    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;margin-bottom:20px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:4px;font-size:0.72rem;color:#94a3b8;line-height:1.9;">
+    <div class="ref-modal-h">🏛️ 国家石油備蓄基地（JOGMEC管轄）</div>
+    <div class="ref-area ref-area--bases">
+      <div class="ref-base-grid">
         <div>🔹 苫小牧東部（北海道）地上タンク</div>
         <div>🔹 むつ小川原（青森）地上タンク</div>
         <div>🔹 久慈（岩手）水封式地下岩盤</div>
@@ -5124,7 +5212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- 注記 -->
-    <div style="font-size:0.7rem;color:#475569;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="ref-modal-note">
       ⚠️ 処理能力は石油連盟公式データ（2025年3月現在）。bbl/日＝バレル/日。国家備蓄は約102日分、民間備蓄・産油国共同備蓄を含む合計は約198日分（2026年9月27日時点）。
     </div>
 

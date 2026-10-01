@@ -27,10 +27,11 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
       入っていなかったため 9/3 で止まり、ダッシュボードに ⚠ が出た（2026-09-19 に発覚）。
       最新日が実測の今日から 5日を超えたら WARN を出す（別リポジトリのため NG にはしない）。
       ローカルの ../hormuz-data- を優先し、無ければ公開 URL を取得する。どちらも失敗したら WARN
-    - index.html には石油備蓄日数が2か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記）ある。
+    - index.html には石油備蓄日数が3か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記・主要指標の備蓄カード）ある。
       当初はどちらも特別解説コラムの月次更新の対象外で、8/17時点の値が 9/28 まで残っていた。
       クラウドの日次では速報 PDF を取れない（403 / 202）ため、2026-10-01 から毎月4日の PC タスクで更新する。
-      「◯時点」の日付が実測の今日から 40日を超えたら WARN、2か所の値・日付が食い違ったら WARN を出す
+      「◯時点」の日付が実測の今日から 40日を超えたら WARN、値・日付が食い違ったら WARN を出す。
+      2026-10-01 に主要指標の備蓄カード（8/17時点・204日分のまま残っていた）を3か所目として加えた
     - 特別解説コラムのピルの「NEW」「◯月更新」の札は、ピルの data-published / data-updated から決まる。
       記事ページ（datePublished / dateModified）と揃っていなければ WARN を出す
 """
@@ -117,9 +118,13 @@ DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
 # ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
 DATA_TIMELINE_WARN_DAYS = 5
 
-# index.html の石油備蓄日数2か所（毎月4日の PC タスクがコラムとあわせて更新する）
+# index.html の石油備蓄日数3か所（毎月4日の PC タスクがコラムとあわせて更新する）
 PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*?(\d{1,2})/(\d{1,2})時点）')
 PAT_STOCKPILE_NOTE = re.compile(r'合計は約(\d+)日分（(\d{4})年(\d{1,2})月(\d{1,2})日時点）')
+# 主要指標の備蓄カード（時点の行 → 見出し → 合計の数字）。インライン style・クラスのどちらの書き方でも拾う
+PAT_STOCKPILE_CARD = re.compile(
+    r'>(\d{4})年(\d{1,2})月(\d{1,2})日時点（速報）</div>\s*<div[^>]*>📊 日本の石油備蓄</div>\s*'
+    r'<div class="stat-num[^"]*"[^>]*>(\d+)<span')
 STOCKPILE_WARN_DAYS = 40  # 月1回の更新で最長 約34日。PC が止まった数日分の余裕を足す
 
 # 特別解説コラムのピル（「NEW」「◯月更新」の札の元になる日付）と記事ページの構造化データ
@@ -450,7 +455,7 @@ def check_data_timeline() -> None:
 
 
 def check_stockpile(html: str) -> None:
-    """index.html の石油備蓄日数2か所が古すぎないか、互いに食い違っていないか。
+    """index.html の石油備蓄日数3か所が古すぎないか、互いに食い違っていないか。
 
     WARN のみ。値の正しさ（資源エネルギー庁の速報との一致）は機械では確かめられない。
     基準日ではなく実測の今日（JST）から数える。
@@ -474,18 +479,24 @@ def check_stockpile(html: str) -> None:
     else:
         warn("石油備蓄日数（精製所表の注記）を検出できません（書式が変わった可能性）")
 
+    m = PAT_STOCKPILE_CARD.search(html)
+    if m:
+        found["主要指標の備蓄カード"] = (int(m.group(4)), date(*map(int, m.group(1, 2, 3))))
+    else:
+        warn("石油備蓄日数（主要指標の備蓄カード）を検出できません（書式が変わった可能性）")
+
     for name, (total, asof) in found.items():
         age = (today - asof).days
         if age > STOCKPILE_WARN_DAYS:
             warn(f"石油備蓄日数（{name}）が {asof.isoformat()}時点のまま（{age}日前）。"
                  f"毎月4日の PC タスクが止まっている可能性。日次では書き換えず、報告に書くこと"
-                 f"（PC 側で tools/oil-stockpile-monthly-update.md の手順で2か所とも更新する）")
+                 f"（PC 側で tools/oil-stockpile-monthly-update.md の手順で3か所とも更新する）")
         else:
             ok(f"石油備蓄日数（{name}）{total}日分・{asof.isoformat()}時点（{age}日前）")
 
-    if len(found) == 2 and len(set(found.values())) != 1:
+    if len(found) >= 2 and len(set(found.values())) != 1:
         detail = "／".join(f"{k} {t}日分・{a.isoformat()}" for k, (t, a) in found.items())
-        warn(f"石油備蓄日数の2か所が食い違っています: {detail}")
+        warn(f"石油備蓄日数の{len(found)}か所が食い違っています: {detail}")
 
 
 def check_column_pills(html: str) -> None:

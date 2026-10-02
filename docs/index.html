@@ -270,6 +270,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
 
 /* DEADLINE / COUNTDOWN */
+/* 2026-10-01 COUNTDOWN は休止中。.deadline / .dl-* / .cd-* は現在どの要素にも当たっていない（残すか消すかは tools/redesign-plan.md §9 の再定義で決める） */
 .deadline {
   background:linear-gradient(135deg,#1a0808,#2d1010);
   border:2px solid #dc2626; border-radius:12px;
@@ -391,6 +392,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .jump-pill--violet  { --c:167,139,250; color:#a78bfa; }
 .jump-pill--emerald { --c:52,211,153;  color:#34d399; }
 .jump-pill--gold    { --c:201,168,105; color:#c9a869; border-color:rgba(201,168,105,0.4); }
+.jump-pill--neutral { --c:148,163,184; color:#cbd5e1; }
 .jump-pill-badge { font-size:0.62rem; font-weight:800; line-height:1; padding:3px 6px; border-radius:8px;
   background:rgba(var(--c),0.3); color:#fff; letter-spacing:0.02em; }
 .jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
@@ -953,39 +955,6 @@ footer {
   50%      { border-left-color: #ff6666; }
 }
 /* TRUMP STATEMENT MODAL */
-.trump-banner {
-  background:linear-gradient(135deg,#1a0808,#2d1010);
-  border:2px solid #ef4444;
-  border-radius:12px;
-  padding:14px 18px;
-  cursor:pointer;
-  transition:all 0.2s;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  animation:borderBlink 1.5s ease-in-out infinite;
-}
-.trump-banner:hover {
-  background:linear-gradient(135deg,#2d1010,#3d1515);
-  transform:translateY(-2px);
-}
-.trump-banner-icon { font-size:1.8rem; flex-shrink:0; }
-.trump-banner-text { flex:1; }
-.trump-banner-title {
-  font-size:0.88rem;
-  font-weight:800;
-  color:#f87171;
-  margin-bottom:4px;
-}
-.trump-banner-sub {
-  font-size:0.73rem;
-  color:#94a3b8;
-}
-.trump-banner-arrow {
-  font-size:1.2rem;
-  color:#ef4444;
-  flex-shrink:0;
-}
 
 /* モーダルオーバーレイ */
 .modal-overlay {
@@ -1687,7 +1656,7 @@ footer {                                   /* フッター（中央揃え・上�
   "description": "ホルムズ海峡危機の通航状況、代替ルート、原油輸送・海運・市場への波及を地図で整理。中東情勢を煽らず、構造と論点をわかりやすく解説します。",
   "url": "https://chokepointlab.com/",
   "datePublished": "2026-04-18T00:00:00+09:00",
-  "dateModified": "2026-10-01T07:50:00+09:00",
+  "dateModified": "2026-10-02T08:36:00+09:00",
   "image": {
     "@type": "ImageObject",
     "url": "https://chokepointlab.com/ogp.jpg",
@@ -1736,7 +1705,7 @@ footer {                                   /* フッター（中央揃え・上�
   <div class="badges">
     <span class="badge-item badge-alert">警戒レベル：最高</span>
     <span class="badge-item badge-days" id="blockade-days">封鎖215日目</span>
-    <span class="badge-item badge-date">📅2026年10月1日 07:50 JST</span>
+    <span class="badge-item badge-date">📅2026年10月2日 08:36 JST</span>
     <button onclick="hardReload()" style="
      background:rgba(56,189,248,0.15);
      border:1px solid #38bdf8;
@@ -1765,8 +1734,8 @@ footer {                                   /* フッター（中央揃え・上�
   <span class="ticker-label">🔴 速報</span>
   <div class="ticker-scroll">
     <span class="ticker-text">
-<!-- 新ティッカー（2026年10月1日 07:50 JST） -->
-      🤝【米国の回答がイランに到着】A News（9/30）：イラン政府報道官は、アラグチ外相がカタール仲介の提案への米国の回答を受け取ったと述べたが、内容と次の対応は明らかにせず。米当局者は「核問題が扱われない限り合意はない」との立場（トランプ氏は9/26に7日間ロードマップを拒否）｜🚢【Kpler：海峡の原油流量は戦前の約8割】Al Jazeera（9/30）：日量約970万バレル（戦前は約2,000万）。一方、IRGC報道官は「継続的な軍事紛争」を主張し、保険料は高止まり｜⚓【UKMTO：原油タンカーが飛翔体被弾】ホルムズ海峡で9/29〜30に1隻（日付に食い違い・被害と攻撃主体は未確認）｜🛢️【ブレント12月物98.03ドル（+1.9%）】Rigzone配信（9/30）：期近11月物は103.53ドル、WTI11月物は90.42ドル。JPモルガンは中東原油輸出の10日平均が日量1,750万バレル（戦前の98%）と推計｜🇯🇵 日本関係船は残り4隻で変化なし（10/1確認）｜封鎖216日目
+<!-- 新ティッカー（2026年10月2日 08:36 JST） -->
+      🚢【ホルムズ海峡でタンカー3隻が被弾】OilPrice（10/1）：UKMTOは9/30、タンカー3隻が正体不明の飛翔体を受けたと発表（発生は9/29とされる）。1隻で火災が起きたが消火され乗組員は無事、攻撃主体は不明｜🇺🇸【トランプ氏「中間選挙後の攻撃強化は可能」】Asia Business Daily（10/1）：9/28収録のインタビューで、イランの7日間計画は「十分でなかった」と述べた。空母セオドア・ルーズベルトなどが中東へ向かい、財務省は自動車・鉄道部門に追加制裁（Al Jazeera・10/1）｜🛢️【WTI11月物92.87ドル（+2.7%）】日経（10/1）：米・イラン情勢の不透明感で続伸｜🤝 イランが受け取った米国の回答（9/30）の内容は未公表｜🇯🇵 日本関係船は残り4隻で変化なし（10/2確認）｜封鎖217日目
     </span>
   </div>
 </div>
@@ -1808,19 +1777,19 @@ footer {                                   /* フッター（中央揃え・上�
   <div class="glance-row">
     <span class="glance-label glance-label--now">いま何が</span>
     <span class="glance-text">
-🤝 イラン政府報道官は9/30、アラグチ外相がカタール経由で米国の回答を受け取ったと述べたが、内容と次の対応は明らかにしていない。米当局者は核問題が扱われない限り合意はないとしており、トランプ氏は9/26にイランの提案を拒否済み（A News・Al Jazeera）。
+🇺🇸 トランプ氏は9/28収録のインタビュー（10/1公開）で、11/3の中間選挙後にイランへの攻撃を強める可能性は「ある」と述べ、7日間計画は「十分でなかった」とした。米国は空母セオドア・ルーズベルトを中東へ向かわせ、財務省は自動車・鉄道部門に追加制裁を発表。イランが9/30に受け取った米国の回答の内容は未公表（Asia Business Daily・Al Jazeera）。
 </span>
   </div>
   <div class="glance-row">
     <span class="glance-label glance-label--strait">海峡の今</span>
     <span class="glance-text">
-🚢 Kplerのデータを引くAl Jazeera（9/30）は、海峡経由の原油流量を日量約970万バレル（戦前の約8割）と伝えた一方、IRGC報道官は軍事紛争の継続を主張。UKMTOは原油タンカー1隻が飛翔体を受けたと発表（日付に食い違い・被害は未確認）。ブレント12月物は98.03ドル、期近11月物は103.53ドル（Rigzone・9/30）。
+🚢 UKMTOは9/30、ホルムズ海峡でタンカー3隻が正体不明の飛翔体を受けたと発表（9/29発生とされる。1隻で火災・乗組員は無事、攻撃主体は不明）。Windwardは通航を9/28に16隻・9/29に17隻と集計。Kplerを引くAl Jazeera（9/30）は原油流量を戦前の約8割とした。WTI11月物は10/1に92.87ドル（日経）。
 </span>
   </div>
   <div class="glance-row">
     <span class="glance-label glance-label--next">次の焦点</span>
     <span class="glance-text">
-📊 イランが米国の回答にどう応じるか（回答の中身は未公表）・協議の再開有無・海峡の流量回復が続くか（被弾報告との関係）・サウジ東西パイプラインの全面復旧（約6週間の見通し）の進み具合——封鎖216日目。
+📊 イランが米国の回答にどう応じるか・被弾3隻の攻撃主体の特定・米空母の増派と中間選挙後の攻撃強化観測が外交に響くか・被弾が続く中で海峡の流量回復が保たれるか・サウジ東西パイプラインの全面復旧——封鎖217日目。
 </span>
   </div>
 
@@ -1828,20 +1797,20 @@ footer {                                   /* フッター（中央揃え・上�
   <div class="key-moves">
     <div class="key-moves-head">📌 主な動き<a href="#incident" class="key-moves-more">速報インシデントで全文を読む ↓</a></div>
     <ol class="key-moves-list">
-      <li class="key-move key-move--info"><a href="#incident">
-        <time class="key-move-date" datetime="2026-09-30">9/30</time>
-        <span class="key-move-title">🤝 イラン政府報道官、アラグチ外相がカタール経由で米国の回答を受け取ったと発表——内容・次の対応は非公表</span>
-        <span class="key-move-src">A News</span>
-      </a></li>
-      <li class="key-move key-move--danger"><a href="#incident">
-        <time class="key-move-date" datetime="2026-09-30">9/30</time>
-        <span class="key-move-title">⚓ UKMTO、ホルムズ海峡で原油タンカー1隻が飛翔体を受けたと発表——被害・攻撃主体は未確認</span>
-        <span class="key-move-src">UKMTO・Newsquawk</span>
+      <li class="key-move key-move--warning"><a href="#incident">
+        <time class="key-move-date" datetime="2026-10-01">10/1</time>
+        <span class="key-move-title">🇺🇸 トランプ氏「中間選挙後の対イラン攻撃強化は可能」、空母増派・自動車鉄道部門に追加制裁</span>
+        <span class="key-move-src">Asia Business Daily・Al Jazeera</span>
       </a></li>
       <li class="key-move key-move--warning"><a href="#incident">
-        <time class="key-move-date" datetime="2026-09-30">9/30</time>
-        <span class="key-move-title">🛢️ ブレント12月物98.03ドル（+1.9%）、期近11月物103.53ドル——JPモルガン推計で中東原油輸出は戦前の98%</span>
-        <span class="key-move-src">Rigzone配信</span>
+        <time class="key-move-date" datetime="2026-10-01">10/1</time>
+        <span class="key-move-title">🛢️ WTI11月物は92.87ドル（+2.7%）で続伸——米・イラン情勢の不透明感が買い材料</span>
+        <span class="key-move-src">日本経済新聞</span>
+      </a></li>
+      <li class="key-move key-move--danger"><a href="#incident">
+        <time class="key-move-date" datetime="2026-09-29">9/29</time>
+        <span class="key-move-title">⚓ ホルムズ海峡でタンカー3隻が飛翔体を受ける、1隻で火災——攻撃主体は不明</span>
+        <span class="key-move-src">UKMTO・OilPrice・Maritime Executive</span>
       </a></li>
     </ol>
   </div>
@@ -1855,12 +1824,12 @@ footer {                                   /* フッター（中央揃え・上�
 
       <!-- ステータスバッジ（クリック不可） -->
       <div class="glance-badges">
+<span class="status-badge status-badge--warning">🇺🇸トランプ氏「中間選挙後の攻撃強化は可能」・空母増派（10/1）</span>
+<span class="status-badge status-badge--danger">⚓ホルムズでタンカー3隻が被弾（UKMTO・9/29）・攻撃主体は不明</span>
 <span class="status-badge status-badge--info">🤝米国の回答、アラグチ外相に到着・内容は非公表（9/30）</span>
-<span class="status-badge status-badge--danger">⚓UKMTO、ホルムズで原油タンカー被弾を発表（9/29〜30）・被害と主体は未確認</span>
-<span class="status-badge status-badge--warning">🚢Kpler引用：海峡の原油流量は戦前の約8割（日量約970万バレル・9/30）</span>
-<span class="status-badge status-badge--positive">🛢️サウジ東西PL、日量350万バレルまで復旧（能力の約半分・9/28）</span>
-<span class="status-badge status-badge--neutral">🛢️ブレント12月物98.03ドル／期近11月物103.53ドル（9/30）</span>
-<span class="status-badge status-badge--positive">🇯🇵日本関係船残り4隻(変化なし・10/1確認)</span>
+<span class="status-badge status-badge--warning">🚢Kpler引用：海峡の原油流量は戦前の約8割（9/30）</span>
+<span class="status-badge status-badge--neutral">🛢️WTI11月物92.87ドル（+2.7%・10/1）</span>
+<span class="status-badge status-badge--positive">🇯🇵日本関係船残り4隻(変化なし・10/2確認)</span>
         </div>
 
         </div>
@@ -1888,6 +1857,8 @@ footer {                                   /* フッター（中央揃え・上�
           <a href="articles/route-c-alaska-oil.html" class="jump-pill jump-pill--info" data-published="2026-04-12" data-updated="2026-04-12">🌊 ルートC・アラスカ</a>
           <a href="articles/oil-diversification-africa-brazil.html" class="jump-pill jump-pill--emerald" data-published="2026-04-13" data-updated="2026-05-06">🌍 西アフリカ・南米調達</a>
           <a href="articles/oil-stockpile-monthly-trend.html" class="jump-pill jump-pill--violet" data-published="2026-08-21" data-updated="2026-09-28">📉 石油備蓄推移</a>
+          <!-- トランプ声明（4/8）は記事ページではなくモーダル。JS が動かないときは特別解説コラムのカードへ飛ぶ -->
+          <a href="#trump-statement" class="jump-pill jump-pill--neutral" onclick="event.preventDefault();openTrumpModal();">📜 トランプ声明（4/8）</a>
           <!-- 特別レポート サムネイル付きバナー -->
           <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="report-banner">
             <img src="images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="report-banner-img">
@@ -1921,13 +1892,25 @@ footer {                                   /* フッター（中央揃え・上�
     style="width:100%;background:linear-gradient(135deg,#1a0808,#2d1010);border-bottom:1px solid rgba(239,68,68,0.3);padding:13px 18px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-family:inherit;">
     <h2 class="sec-h2" style="color:#f87171;border-bottom-color:rgba(239,68,68,0.3);width:100%;">🚨 速報インシデント</h2>
     <span class="incident-headline-row">
-      <strong class="incident-headline">米国の回答がイランに到着、内容は非公表——海峡の原油流量は戦前の約8割へ回復も、タンカー被弾の報告が続く</strong>
-      <span class="incident-badge">📅 10/1 07:50 更新</span>
+      <strong class="incident-headline">ホルムズ海峡でタンカー3隻の被弾をUKMTOが発表、米は中間選挙後の攻撃強化に含みと空母増派——原油は続伸</strong>
+      <span class="incident-badge">📅 10/2 08:36 更新</span>
     </span>
   </div>
 
   <!-- 一覧（4件目以降は applyIncidentFold() が折りたたむ） -->
 <ul id="incident-list" class="incident-list">
+<li class="incident-item incident-item--warning">
+  <span class="incident-tag">🇺🇸 10/1 Asia Business Daily・Al Jazeera・米国</span>
+  <span class="incident-body"> Asia Business Daily（10/1）によれば、トランプ氏は9/28収録のインタビュー（10/1公開）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、イランの7日間計画は「十分でなかった」とした。空母セオドア・ルーズベルトは9/27にサンディエゴを出港、強襲揚陸群マキン・アイランドは9/28に出航しており、域内の空母は3隻になりうる。到着の時期について、Al Jazeera（10/1）は米当局者の話として「11月末までに空母3隻と揚陸群2隻」と伝えた一方、別の報道では10月末にも3隻体制とされ、見方は分かれる。同じ10/1、ベセント財務長官はイランの自動車・鉄道部門（IKCO・SAIPAなど）への追加制裁を発表し、「イランは9月に原油を1バレルもタンカーに積まなかった」と主張した（米側の主張で、Kplerの海峡流量との関係は記事から確認できない）。イランのペゼシュキアン大統領は、対話を避けたことはなく、交渉中に3回攻撃されたと述べた（Al Jazeera）。9/30にイランが受け取った米国の回答の内容は引き続き非公表。</span>
+</li>
+<li class="incident-item incident-item--warning">
+  <span class="incident-tag">🛢️ 10/1 日本経済新聞・市場</span>
+  <span class="incident-body"> 日本経済新聞（10/1）は、NY商品市場で原油が続伸し、米・イラン情勢の不透明感が買いを誘ったと伝えた。検索結果に出た同紙記事の要約によれば、WTI11月物は前日比2.45ドル（2.7%）高の1バレル92.87ドルで取引を終えた（9/30のRigzone配信は90.42ドル）。ブレントの10/1終値は確認できていない（9/30は12月物98.03ドル、期近11月物103.53ドル）。記事本文は開けておらず、値は要約に基づく。</span>
+</li>
+<li class="incident-item incident-item--danger">
+  <span class="incident-tag">⚓ 9/29〜10/1 UKMTO・OilPrice・攻撃主体不明</span>
+  <span class="incident-body"> OilPrice（10/1）によれば、UKMTOは9/30、ホルムズ海峡を通航中のタンカー3隻が正体不明の飛翔体を受けたとする3件の事後報告（9/29発生とされる）を出した。船は石油製品タンカー「Al Ruwais」とVLCC「Mersin Prosperity」（ともにADNOC Logistics &amp; Services管理）、Aframax型「Sinbad」（Anglo-Eastern管理）と報じられ、いずれもリベリア籍。1隻で火災が起きたが消火され、乗組員は全員無事とされる。攻撃主体は不明で当局が調査中。Maritime Executive（9/30）は3隻目を「未確認のLNG船」としており、船名の報道は割れている。同誌によれば、イランのFars通信はIRGCが「海峡で違反した船に警告射撃をした」と報じたが、この3隻への攻撃との関係は確認できない。Windward（同誌引用）は通航を9/28に16隻・9/29に17隻と集計した。前日掲載した「原油タンカー1隻の被弾（日付に食い違い）」の続報にあたる可能性があるが、同一の事案かは確認できていない。</span>
+</li>
 <li class="incident-item incident-item--info">
   <span class="incident-tag">🤝 9/30 A News・外交</span>
   <span class="incident-body"> A News（9/30）によれば、イラン政府報道官のモハジェラニ氏は、アラグチ外相がカタールの仲介を通じて提示した提案への米国の回答を受け取ったと述べたが、米側の回答の内容やイランの次の対応は明らかにしなかった。ペゼシュキアン大統領は、イランは原則を譲っておらず「イスラマバード覚書」の成功に全力を尽くしていると述べた。イランがホルムズ海峡再開の条件として挙げてきたのは、米国の経済・軍事的圧力の終了、凍結資産の解放、安全な航路の確保など。回答の中身は報じられておらず、本稿の時点では確認できていない。</span>
@@ -2097,22 +2080,6 @@ footer {                                   /* フッター（中央揃え・上�
   <span class="incident-body"> イラン・ホルモズガン州のナフィシ副知事は、州内の結婚式会場が米攻撃を受け2人が死亡、複数が負傷したと国営テレビで発表。真偽は独立検証できていない（AFP）。同日、イスラエルメディアは米側が今回からイランのタンカー攻撃に対しイラン国営タンカーを攻撃する「タンカー・フォー・タンカー」政策を導入したと関係者証言を報じた。</span>
 </li>
 </ul>
-        <!-- トランプ声明バナー（移動） -->
-    <div style="margin-top:14px;">
-      <div class="trump-banner" onclick="openTrumpModal()">
-        <div class="trump-banner-icon">📜</div>
-        <div class="trump-banner-text">
-          <div class="trump-banner-title">
-            🚨 トランプ声明（4/8 JST）：2週間停止に合意
-            ―― 「完全・即時・安全なホルムズ開放」を条件に
-          </div>
-          <div class="trump-banner-sub">
-            Truth Social投稿 原文＋日本語訳＋解釈分析 ▶ クリックで全文を読む
-          </div>
-        </div>
-        <div class="trump-banner-arrow">▶</div>
-      </div>
-    </div>
   </div>
 
 <script>
@@ -2131,45 +2098,12 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
   <!-- COUNTDOWN -->
-  <div class="deadline">
-    <div class="dl-label" id="cd-phase-label">⏱️ Phase 47「米国の回答がイランに到着、内容は非公表——海峡の原油流量は戦前の約8割へ」——封鎖216日目</div>
-    <div class="dl-boxes">
-      <div class="dl-box dl-box--timer">
-        <div id="cd-display">
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-h">--</span>
-            <div class="cd-label">時間</div>
-          </div>
-          <span class="cd-sep">:</span>
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-m">--</span>
-            <div class="cd-label">分</div>
-          </div>
-          <span class="cd-sep">:</span>
-          <div class="cd-unit">
-            <span class="cd-val" id="cd-s">--</span>
-            <div class="cd-label">秒</div>
-          </div>
-        </div>
-        <div class="dl-sub">リアルタイムカウントダウン</div>
-      </div>
-      <div class="dl-arrow">→</div>
-      <div class="dl-box">
-        <div class="dl-num dl-num--text">イラン・米国による二重封鎖（Iran-US dual blockade）</div>
-        <div class="dl-sub">2026年2月28日 起算</div>
-      </div>
-      <div class="dl-arrow">→</div>
-      <div class="dl-box">
-        <div class="dl-num dl-num--text">「交渉決裂・軍事衝突」：ハメネイ「交渉中止・完全閉鎖」最終宣言（6/1）</div>
-        <div class="dl-sub">2026年6月16日 08:14 日本時間JST 現在</div>
-      </div>
-      <div class="dl-note">
-        🌐 <strong>イラン政府報道官は9/30、アラグチ外相がカタール経由で米国の回答を受け取ったと述べたが、内容と次の対応は明らかにしていない。Al Jazeera（9/30）はKplerのデータを引き、海峡経由の原油流量が戦前の約8割まで回復したと伝えた一方、UKMTOはホルムズ海峡で原油タンカー1隻が飛翔体を受けたと発表している（被害・攻撃主体は未確認）。ブレント12月物は98.03ドル、期近11月物は103.53ドル（Rigzone・9/30）。</strong>
-        <br><span class="dl-focus">⚡ 次の24〜48時間の焦点：①イランが米国の回答にどう応じるか（回答の中身は未公表） ②米・イランの協議が再開されるか ③UKMTO報告のタンカー被弾の被害・攻撃主体の確認 ④海峡の流量回復が続くか ⑤サウジ東西パイプラインの全面復旧時期の確認</span>
-        <br><span class="dl-focus">⏳ 米国の回答の中身は報じられておらず、通航量も集計元ごとに数字が異なる。断定的な情勢判断とはせず、今後の一次情報の確認を待つ</span>
-      </div>
-      </div>
-    </div>
+  <!-- 2026-10-01 休止。ここにあった赤いカラム（フェーズ見出し・リアルタイムカウントダウン・展望ノート）は外した。
+       ・タイマーの期限は 5/22 が最後で、以後は「猶予期限経過」の固定表示だった
+       ・フェーズ見出しと展望ノートは、30秒カラム・速報インシデントと同じ内容だった
+       ・過去の期限と当時の経緯は日次アーカイブ（docs/data/archive_timeline.json）にある
+       日次更新では、再定義が済むまでこのセクションに何も書かない（daily-site-update スキル）。
+       再定義の計画は tools/redesign-plan.md §9。 -->
 
 <!-- ===== 第2層：どう影響するか ===== -->
 <div class="layer-band" style="--layer-accent:var(--c-accent-pale);">
@@ -2218,7 +2152,7 @@ document.addEventListener('keydown', function(e) {
   </div>
 
 <div id="routes">
-  <h2 class="sec-h2 sec-h2--sky">🚢 全ルート現況サマリー<span class="sec-h2-sub">2026年10月1日 07:50 JST 更新</span></h2>
+  <h2 class="sec-h2 sec-h2--sky">🚢 全ルート現況サマリー<span class="sec-h2-sub">2026年10月2日 08:36 JST 更新</span></h2>
   <div class="route-priority">
     <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
   </div>
@@ -2265,13 +2199,15 @@ document.addEventListener('keydown', function(e) {
             <small id="jf-old-tanker" class="t-mute">— 隻/週</small>
           </td>
           <td class="route-detail">
-            <p class="route-latest"><strong class="route-tag t-warning">🚢 最新 <time datetime="2026-10-01">10/1 07:50 JST</time> 追記：</strong>Al Jazeera（9/30）は、Kplerのデータを引き、海峡経由の原油流量が日量約970万バレル（戦前は約2,000万バレル）、戦前の約8割まで回復したと伝えた。一方、IRGC報道官は「継続的な軍事紛争」が続いていると主張し、保険料は高止まり。UKMTOは9/29〜30にホルムズ海峡で原油タンカー1隻が飛翔体を受けたと発表した（被害・攻撃主体は未確認）。9/28付の「9月日量740万バレル」（Kpler集計）とは数字が異なるが、理由は記事から確認できない。
-              <small class="route-src">出典：Al Jazeera（9/30、Kpler集計を引用）／UKMTO（Newsquawk配信）</small></p>
+            <p class="route-latest"><strong class="route-tag t-danger">⚓ 最新 <time datetime="2026-10-02">10/2 08:36 JST</time> 追記：</strong>OilPrice（10/1）・Maritime Executive（9/30）によれば、UKMTOは9/30、ホルムズ海峡を通航中のタンカー3隻が正体不明の飛翔体を受けたとする事後報告（9/29発生とされる）を出した。船名はAl Ruwais（石油製品船）・Mersin Prosperity（VLCC）・Sinbad（Aframax）と報じられ、1隻で火災が起きたが消火され乗組員は無事。攻撃主体は不明で、3隻目をLNG船とする報道もあり船名は割れている。Windwardは通航を9/28に16隻・9/29に17隻と集計し、イランが南側航路の通航を抑え込む力は夏より弱まっているとの見方を示した。
+              <small class="route-src">出典：OilPrice（10/1）／Maritime Executive（9/30、Windward分析を引用）</small></p>
             <p class="route-summary"><strong class="t-warning">🟠 商業航行は回復途上。</strong>
             Kplerの集計を引くAl Jazeera（9/30）は原油流量を戦前の約8割としつつ、当事者の数字は食い違い、船舶への攻撃報告も続く。米軍による対イラン海上封鎖・拿捕作戦も継続中。
               <small class="route-src">出典：Al Jazeera（9/30）</small></p>
             <p class="route-summary"><strong class="t-bright">中央航路（イラン・オマーン合意ベース）：</strong>イラン外相とGCC加盟6カ国外相のホルムズ通航協議は、9月14日にサラーラで予定されていたものが前日の9月13日に延期されたまま、9月25日朝時点でも新たな開催日は発表されていない。</p>
             <details class="route-history"><summary>経緯を見る</summary>
+              <p class="route-entry"><strong class="route-tag t-warning">🚢 <time datetime="2026-10-01">10/1 07:50 JST</time> 追記：</strong>Al Jazeera（9/30）は、Kplerのデータを引き、海峡経由の原油流量が日量約970万バレル（戦前は約2,000万バレル）、戦前の約8割まで回復したと伝えた。一方、IRGC報道官は「継続的な軍事紛争」が続いていると主張し、保険料は高止まり。UKMTOは9/29〜30にホルムズ海峡で原油タンカー1隻が飛翔体を受けたと発表した（被害・攻撃主体は未確認）。9/28付の「9月日量740万バレル」（Kpler集計）とは数字が異なるが、理由は記事から確認できない。
+                <small class="route-src">出典：Al Jazeera（9/30、Kpler集計を引用）／UKMTO（Newsquawk配信）</small></p>
               <p class="route-entry"><strong class="route-tag t-warning">🚢 <time datetime="2026-09-29">9/29 09:12 JST</time> 追記：</strong>Kplerの集計として、9/27までの週の通過タンカーは超大型原油タンカー17隻を含む19隻、9月の海峡経由の原油輸出は日量平均740万バレルの見込みと伝えられた。米エネルギー長官の「日量約1,300万バレル」、イラン国営テレビ分析者の「少なくとも日量700万バレル」など当事者の数字は食い違っており、独立した突き合わせは取れていない。
               <small class="route-src">出典：Al Jazeera（9/28、Kpler集計を引用）</small></p>
               <p class="route-entry"><strong class="route-tag t-info">🕊️ <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>The Nationalは、イランが米国に「60日間停戦・海峡段階的再開」を含む文書ロードマップを提示したと報道。ルビオ国務長官は合意に時間を要するとし共同声明には至らず、レザイ書記「4〜5日以内に受諾を」との期限発言も伝えられるが未検証。通航量の実測値に変化は確認されていない。
@@ -2560,15 +2496,15 @@ document.addEventListener('keydown', function(e) {
 <h2 class="sec-h2 sec-h2--sky">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario sc-h2-label">シナリオ分析</span></h2>
   <!-- シナリオ確率更新補足 -->
 <div class="sc-update">
-  <span class="sc-update-date">📊 2026年10月1日 07:50 JST 更新</span><br>
-  📊 <strong>イラン政府が米国の回答を受け取ったと発表し、Kpler引用の海峡流量は戦前の約8割まで回復した一方、ホルムズ海峡でのタンカー被弾報告が続いている：</strong><br>
-  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 回答の授受はあったが内容は非公表で、米側は核問題を先決とする姿勢を崩しておらず、トランプ氏は9/26に提案を拒否している。合意に向けた具体的な進展は確認できていない<br>
-  🅑 膠着継続 <span class="sc-trend">→</span> — 回答の授受とイラン側の検討という外交の往復が続く一方、双方が条件を譲らず、海峡の流量が回復しても通航体制を変える決定打はない。膠着の構図が続いている<br>
-  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 海峡の原油流量は戦前の約8割まで回復し迂回輸送も部分的に戻っているが、保険料は高止まりで、IRGC報道官は紛争の継続を主張している。公式な方針転換は確認されていない<br>
-  🅓 全面対決・無期限封鎖 <span class="sc-trend">→</span> — IRGC報道官は「継続的な軍事紛争」を主張し、UKMTOは原油タンカー1隻の被弾を発表したが、攻撃主体は未確認で、新たな大規模攻撃は確認されていない<br>
-  <strong class="sc-update-caveat">米国の回答の中身、通航量の数字、被弾の詳細はいずれも未確認で、集計元ごとに数字が異なる。断定的な方向転換とはせず、イランの対応など一次情報の確認を待つ。</strong><br>
+  <span class="sc-update-date">📊 2026年10月2日 08:36 JST 更新</span><br>
+  📊 <strong>トランプ氏が中間選挙後の攻撃強化に含みを持たせ空母の増派も伝えられる中、ホルムズ海峡ではタンカー3隻の被弾が報告された：</strong><br>
+  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 米国の回答の内容は非公表のままで、トランプ氏は7日間計画を「十分でなかった」としている。米側は核問題を先決とする姿勢を崩しておらず、合意に向けた具体的な進展は確認できていない<br>
+  🅑 膠着継続 <span class="sc-trend">→</span> — 回答の授受とイラン側の検討という外交の往復は続くが、双方が条件を譲らない構図は変わらない。海峡の流量は戦前の約8割まで回復しており、通航体制を変える決定打はない<br>
+  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 流量の回復と迂回輸送の部分的な復旧が続く一方、保険料は高止まりで、被弾報告も続いている。公式な方針転換は確認されていない<br>
+  🅓 全面対決・無期限封鎖 <span class="sc-trend">↑</span> — トランプ氏が中間選挙後の攻撃強化は「可能」と述べ、空母の増派と追加制裁も進んでいる。タンカー3隻の被弾も報じられたが攻撃主体は不明で、新たな大規模攻撃そのものは確認されていない<br>
+  <strong class="sc-update-caveat">トランプ氏の発言は「可能」にとどまり攻撃の決定ではない。被弾の攻撃主体、米国の回答の中身、空母の到着時期はいずれも未確認で、報道ごとに見方が分かれる。断定的な方向転換とはせず、一次情報の確認を待つ。</strong><br>
   <div class="sc-sync-note">
-    各シナリオ確率は 2026年10月1日 07:50 JST 時点での分析に基づく自動同期
+    各シナリオ確率は 2026年10月2日 08:36 JST 時点での分析に基づく自動同期
   </div>
   <div class="sc-ai-note">
     <span class="label-ai">AI推定</span><strong>A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
@@ -2593,7 +2529,7 @@ document.addEventListener('keydown', function(e) {
       <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span class="sc-tag-em">確率 <span id="sc-pct-B">—</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🟡 シナリオB：核査察問題長期化→期間延長交渉、機雷除去は先行</div>
       <div class="sc-body">
-        <p>ロードマップの拒否（9月26日）、仲介者を通じた会談（9月29日）、米国の回答の受領（9月30日）と外交の往復は続くが、米側の「核問題が先」という姿勢は変わらず、協議は膠着したまま。Kplerの集計では海峡の原油流量は戦前の約8割（日量約970万バレル）まで回復したが、ブレントは12月物98.03ドル・期近11月物103.53ドル（9/30）と高止まりしている。通航体制そのものを変える決定打はまだなく、イランの対応が次の分かれ目となる。</p>
+        <p>ロードマップの拒否（9月26日）、仲介者を通じた会談（9月29日）、米国の回答の受領（9月30日）と外交の往復は続くが、米側の「核問題が先」という姿勢は変わらず、協議は膠着したまま。トランプ氏は10/1公開のインタビュー（9/28収録）で7日間計画を「十分でなかった」とした。Kplerの集計では海峡の原油流量は戦前の約8割（日量約970万バレル）まで回復し、WTI11月物は92.87ドル（10/1）と続伸した。通航体制そのものを変える決定打はまだなく、イランの対応が次の分かれ目となる。</p>
       </div>
     </div>
 
@@ -2608,10 +2544,10 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ D：軍事エスカレーション・停戦崩壊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・無期限封鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">—</span></span> <span class="sc-trend">→</span></span>
+      <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・無期限封鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">—</span></span> <span class="sc-trend">↑</span></span>
       <div class="sc-title">⚫ シナリオD：核査察問題で交渉打ち切り→Hormuz武力制圧→全面戦争再開</div>
       <div class="sc-body">
-        <p>イランは9/28に戦争再開にも「完全に備えている」と表明し、トランプ氏は9/27に追加攻撃の可能性を否定しなかった。UKMTOは9/29〜30にホルムズ海峡で原油タンカー1隻が飛翔体を受けたと発表したが、被害と攻撃主体は確認されていない（9/23のCAPE DAO攻撃も攻撃主体は特定されていない）。新たな大規模攻撃は確認されておらず、いずれも断定的な判断は避ける。</p>
+        <p>トランプ氏は10/1公開のインタビュー（9/28収録）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、空母セオドア・ルーズベルトなどが中東へ向かっている。UKMTOはタンカー3隻が9/29に正体不明の飛翔体を受けたと発表したが、攻撃主体は確認されていない（9/21・9/23の被弾も主体は未特定）。発言は「可能」にとどまり、新たな大規模攻撃は確認されておらず、断定的な判断は避ける。</p>
       </div>
     </div>
 
@@ -2622,12 +2558,12 @@ document.addEventListener('keydown', function(e) {
     <h3 class="sc-focus-h">🔍 次の焦点 5つ</h3>
     <ul class="sc-focus-list">
       <li>① <strong>イランが米国の回答にどう応じるか（回答の中身は未公表）</strong></li>
-      <li>② <strong>核問題の扱いをめぐる米・イランの溝が埋まるか（米当局者「核問題が先」）</strong></li>
-      <li>③ <strong>UKMTO報告のタンカー被弾の被害と攻撃主体（CAPE DAO攻撃（9/23）も未特定）</strong></li>
-      <li>④ <strong>海峡の流量回復（Kpler：戦前の約8割）が続くか・サウジ東西パイプライン全面復旧（約6週間の見通し）の進み具合</strong></li>
-      <li>⑤ <strong>ブレントの価格動向（12月物98.03ドル・期近11月物103.53ドル、9/30）</strong></li>
+      <li>② <strong>被弾したタンカー3隻の攻撃主体の特定（UKMTOは調査中。9/21・9/23の被弾も未特定）</strong></li>
+      <li>③ <strong>米空母の増派（3隻体制の時期）と、中間選挙（11/3）後の攻撃強化観測が外交にどう響くか</strong></li>
+      <li>④ <strong>被弾が続く中で海峡の流量回復（Kpler：戦前の約8割）が保たれるか・サウジ東西パイプライン全面復旧の進み</strong></li>
+      <li>⑤ <strong>原油価格の動向（WTI11月物92.87ドル・10/1。ブレント12月物は98.03ドル・9/30）</strong></li>
     </ul>
-    <span class="label-scenario">分析：2026年10月1日 07:50 JST情勢分析</span>
+    <span class="label-scenario">分析：2026年10月2日 08:36 JST情勢分析</span>
   </div>
 
 </div>
@@ -2681,7 +2617,7 @@ const SHIP_CONFIG = {
   totalShips:    4,
   passableShips: 0,
   date:          '2026年7月10日',
-  dateConfirmed: '2026年10月1日 07:50 JST 確認・変化なし（4隻のまま。日英の検索で新規の発表は確認できず。金子国交相の直近確定発言は7/10会見の「残り4隻」）'
+  dateConfirmed: '2026年10月2日 08:36 JST 確認・変化なし（4隻のまま。日英の検索で新規の発表は確認できず。金子国交相の直近確定発言は7/10会見の「残り4隻」）'
 };
 
 (function () {
@@ -3165,87 +3101,11 @@ function renderMilitaryLayer() {
 }
 
 // ============================================================
-// 0. COUNTDOWN TIMER（停戦期限 4/23 JST早朝 = 米国4/22水曜夜ET）
+// 0. COUNTDOWN TIMER — 2026-10-01 休止
+//    期限は 4/17・4/23・5/1・5/14・5/22（いずれも JST）の5本で、5/22 を過ぎてからは
+//    「猶予期限経過」の固定表示になっていた。HTML 側のカラムとあわせて外した。
+//    経緯と再定義の計画は tools/redesign-plan.md §9。
 // ============================================================
-const DEADLINE_1 = new Date('2026-04-17T12:00:00+09:00'); // Pakistan 2nd round（過去・通過済み）
-const DEADLINE_2 = new Date('2026-04-23T02:00:00+09:00'); // 停戦期限（4/23 JST早朝・通過済み）
-const DEADLINE_3 = new Date('2026-05-01T23:00:00+09:00'); // 米封鎖法的期限（Operation Epic Fury）
-const DEADLINE_4 = new Date('2026-05-14T09:00:00+09:00'); // トランプ-Xi北京会談開始予定（5/14-15 北京）
-const DEADLINE_5 = new Date('2026-05-22T23:59:00+09:00'); // トランプ「22日期限」暫定設定（記者に示唆）
-
-function updateCountdown() {
-  const now  = new Date();
-
-  // --- メイン：4/17 Critical Window ---
-  const diff1 = DEADLINE_1 - now;
-  if (diff1 > 0) {
-    const totalSec = Math.floor(diff1 / 1000);
-    const h = Math.floor(totalSec / 3600);
-    const m = Math.floor((totalSec % 3600) / 60);
-    const s = totalSec % 60;
-    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-    document.getElementById('cd-phase-label').textContent = '🔴 Pakistan 2nd round まで';
-  } else {
-    // 4/17 超過後 → 停戦期限 4/23 JST早朝 に切り替え
-    const diff2 = DEADLINE_2 - now;
-    if (diff2 > 0) {
-      const totalSec = Math.floor(diff2 / 1000);
-      const h = Math.floor(totalSec / 3600);
-      const m = Math.floor((totalSec % 3600) / 60);
-      const s = totalSec % 60;
-      document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-      document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-      document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-      document.getElementById('cd-phase-label').textContent = '🟡 停戦無期限延長中 ─ Witkoff/Kushner 本日イスラマバード入り・直接会談の成否が次の分岐点';
-    } else {
-      // 4/23 超過後 → 米封鎖法的期限 5/1 23:00 JST に切り替え
-      const diff3 = DEADLINE_3 - now;
-      if (diff3 > 0) {
-        const totalSec = Math.floor(diff3 / 1000);
-        const h = Math.floor(totalSec / 3600);
-        const m = Math.floor((totalSec % 3600) / 60);
-        const s = totalSec % 60;
-        document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-        document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-        document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-        document.getElementById('cd-phase-label').textContent = '🟡 Phase: イラン・米国による二重封鎖（Iran-US dual blockade）継続 ― 外交再開待ち';
-      } else {
-        // 5/1 超過後 → トランプ=習近平主席首脳会談前日 5/13 23:59 JST に切り替え
-        const diff4 = DEADLINE_4 - now;
-        if (diff4 > 0) {
-          const totalSec = Math.floor(diff4 / 1000);
-          const h = Math.floor(totalSec / 3600);
-          const m = Math.floor((totalSec % 3600) / 60);
-          const s = totalSec % 60;
-          document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-          document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-          document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-          document.getElementById('cd-phase-label').textContent = '⚠️ 交渉デッドライン：北京首脳会談（5/14-15）まで — ホルムズ再開の鍵となる米中首脳会談';
-        } else {
-          // DEADLINE_4超過後 → イスラエル・レバノン停戦延長期限（6/29）にカウントダウン切替
-          const diff5 = DEADLINE_5 - now;
-          if (diff5 > 0) {
-            const totalSec = Math.floor(diff5 / 1000);
-            const h = Math.floor(totalSec / 3600);
-            const m = Math.floor((totalSec % 3600) / 60);
-            const s = totalSec % 60;
-            document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-            document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-            document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-            document.getElementById('cd-phase-label').textContent = '⏱️ 停戦脆弱フェーズ——攻撃一時延期中・2〜3日の猶予';
-          } else {
-            document.getElementById('cd-display').innerHTML =
-              '<span class="cd-expired">⏰ 猶予期限経過 — 交渉状況を確認中 / 2026年5月20日 07:40 JST</span>';
-          }
-        }
-      }
-    }
-  }
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 
 // ============================================================
@@ -4684,6 +4544,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </div><!-- /石油備蓄月次推移コラムカード -->
 
+<!-- トランプ声明バナー（移動） -->
+<!-- 2026-10-01 第1層の末尾（速報インシデントの下）から、特別解説コラムのカードへ移した。全文はモーダル #trump-modal -->
+<div id="trump-statement" style="background:rgba(148,163,184,0.05);border:1px solid rgba(148,163,184,0.25);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+
+  <!-- タイトル行 -->
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span style="font-size:1.2rem;">📜</span>
+    <div style="flex:1;min-width:0;">
+      <h3 style="font-size:0.85rem;font-weight:800;color:#cbd5e1;line-height:1.4;margin:0;">トランプ声明（4/8 JST）：2週間停止に合意</h3>
+      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">「完全・即時・安全なホルムズ開放」を条件に ― Truth Social 投稿の原文・日本語訳・解釈分析</div>
+    </div>
+    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/08</span>
+  </div>
+
+  <!-- 要約 -->
+  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+    トランプ大統領は、パキスタンのシャリフ首相・ムニール氏との協議を受け、イランがホルムズ海峡の「完全・即時・安全な開放」に同意することを条件に、イランへの爆撃と攻撃を2週間停止すると Truth Social に投稿した。「2週間」が期限つきの猶予なのか、恒久停戦へ向けた協議期間なのか、2通りに読める点を原文と日本語訳で整理している。</p>
+
+  <!-- 全文（モーダル） -->
+  <button type="button" onclick="openTrumpModal()"
+    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(148,163,184,0.1);border:1px solid rgba(148,163,184,0.3);border-radius:6px;color:#cbd5e1;font-size:0.78rem;font-weight:700;padding:9px 0;letter-spacing:0.03em;cursor:pointer;font-family:inherit;">
+    📜 全文を読む
+  </button>
+
+</div><!-- /トランプ声明カード -->
+
   </div><!-- /.commentary-grid -->
 </div>
 <!-- ================================================
@@ -4952,12 +4838,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- 常時表示: 最新3件 -->
       <div class="log-recent">
+        <div>📅 <strong>2026年10月2日 08:36 JST</strong> 更新</div>
+        <div><span class="log-date">2026/10/02 08:36</span> — <strong class="log-tag">【重大更新】</strong>OilPrice（10/1）・Maritime Executive（9/30）によれば、UKMTOはホルムズ海峡でタンカー3隻が9/29に正体不明の飛翔体を受けたと発表し、1隻で火災が起きたが消火され乗組員は無事、攻撃主体は不明（船名はAl Ruwais・Mersin Prosperity・Sinbadと報じられるが3隻目は報道が割れている）・Asia Business Daily（10/1）：トランプ氏は9/28収録のインタビューで、11/3の中間選挙後に対イラン攻撃を強めることは「可能」と述べ、空母セオドア・ルーズベルトなどが中東へ向かっている・Al Jazeera（10/1）：財務省がイランの自動車・鉄道部門に追加制裁、米当局者は11月末までに空母3隻体制になると説明・日経（10/1）：WTI11月物は92.87ドル（+2.7%）で続伸・日本関係船は残り4隻で変化なし（10/2確認）・封鎖217日目・ニュース3件更新・osint更新</div>
         <div>📅 <strong>2026年10月1日 07:50 JST</strong> 更新</div>
         <div><span class="log-date">2026/10/01 07:50</span> — <strong class="log-tag">【重大更新】</strong>A News（9/30）によれば、イラン政府報道官はアラグチ外相がカタール仲介の提案への米国の回答を受け取ったと述べたが、内容と次の対応は非公表・Al Jazeera（9/30）はKplerのデータを引き、ホルムズ海峡経由の原油流量が戦前の約8割（日量約970万バレル）まで回復したと伝えた一方、IRGC報道官は「継続的な軍事紛争」を主張・UKMTOがホルムズ海峡で原油タンカー1隻の飛翔体被弾を発表（日付に食い違い・被害と攻撃主体は未確認）・Rigzone配信（9/30）：ブレント12月物98.03ドル（+1.9%）・期近11月物103.53ドル・WTI11月物90.42ドル、JPモルガン推計で中東原油輸出は戦前の98%・The National（9/29）：サウジの9月ホルムズ経由出荷は日量約258万バレルに増加・日本関係船は残り4隻で変化なし（10/1確認）・封鎖216日目・ニュース3件更新・osint更新・速報インシデント8/30以前の7件をアーカイブへ退避（月次）</div>
         <div>📅 <strong>2026年9月30日 07:08 JST</strong> 更新</div>
         <div><span class="log-date">2026/09/30 07:08</span> — <strong class="log-tag">【超重大更新】</strong>Al Jazeera（9/29）によれば、イランのアラグチ外相はニューヨークでカタールの仲介者と会談してホルムズ海峡再開案を協議し、米国の最終回答を火曜（9/30）までに受け取りたいと述べた一方、米当局者は核問題が扱われない限り戦争終結の合意はないと述べた（トランプ氏は9/26に7日間ロードマップを拒否）・Rigzone配信記事（9/28）によれば、9/10の攻撃で停止していたサウジ東西パイプラインは日量350万バレル（全能力700万バレルの約半分）まで復旧し、ヤンブー港の積み出しも先週から再開、全面復旧は約6週間の見通し・9/29のブレントは報道により約102〜105ドルと幅があり未検証・日本関係船は残り4隻で変化なし（9/30確認）・封鎖215日目・ニュース2件更新・osint更新</div>
-        <div>📅 <strong>2026年9月29日 09:12 JST</strong> 更新</div>
-        <div><span class="log-date">2026/09/29 09:12</span> — <strong class="log-tag">【超重大更新】</strong>Al Jazeera経済面（9/28）によれば、トランプ大統領がイランの7日間ロードマップを「受け入れられない」と述べたことを受け、9/28のブレント原油は3%超上昇し一時108ドル近辺（11月物は08:00 GMT時点107.35ドル）・トランプ氏は9/28に米当局者がイラン戦争の仲介者と会ったと述べたが詳細は不明（9/27には協議が今週中に再開されるとの見方を示した）・Kplerの集計で9/27までの週の通過タンカーは19隻（超大型原油タンカー17隻）、9月の海峡経由の原油輸出は日量平均740万バレルの見込みで米側の主張（日量約1,300万バレル）と食い違う・ハーメネイー師は米軍が「痛烈な打撃」で前進できずにいると主張（イラン側の一方的な発言）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTIは9/28 18:07時点93.38ドル（検索結果表示値）・日本関係船は残り4隻で変化なし（9/29確認）・封鎖214日目・ニュース2件更新・osint更新</div>
       </div>
 
       <!-- 折り畳みボタン（上） -->
@@ -4971,6 +4857,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div class="log-older">
+        <div>📅 <strong>2026年9月29日 09:12 JST</strong> 更新</div>
+        <div><span class="log-date">2026/09/29 09:12</span> — <strong class="log-tag">【超重大更新】</strong>Al Jazeera経済面（9/28）によれば、トランプ大統領がイランの7日間ロードマップを「受け入れられない」と述べたことを受け、9/28のブレント原油は3%超上昇し一時108ドル近辺（11月物は08:00 GMT時点107.35ドル）・トランプ氏は9/28に米当局者がイラン戦争の仲介者と会ったと述べたが詳細は不明（9/27には協議が今週中に再開されるとの見方を示した）・Kplerの集計で9/27までの週の通過タンカーは19隻（超大型原油タンカー17隻）、9月の海峡経由の原油輸出は日量平均740万バレルの見込みで米側の主張（日量約1,300万バレル）と食い違う・ハーメネイー師は米軍が「痛烈な打撃」で前進できずにいると主張（イラン側の一方的な発言）・サウジ東西パイプライン（9/22低速再開）は続報なし・WTIは9/28 18:07時点93.38ドル（検索結果表示値）・日本関係船は残り4隻で変化なし（9/29確認）・封鎖214日目・ニュース2件更新・osint更新</div>
         <div>📅 <strong>2026年9月28日 08:12 JST</strong> 更新</div>
         <div><span class="log-date">2026/09/28 08:12</span> — <strong class="log-tag">【超重大更新】</strong>Al Jazeeraのライブブログ・経済面（9/27）によれば、イラン高官（将軍、氏名未特定）が「戦争は終わっていない、われわれは勝利したが、この勝利を確立しなければならない」と述べ、海峡は米国の「経済戦争」終結まで閉鎖継続と警告した——同日、革命防衛隊（IRGC）は米無人潜水機（Remus 600と主張、2件目）の拿捕も主張したが米軍は直ちに否定し「明らかに絶望的」と評価。米エネルギー長官の「日量約1,300万バレル」輸送主張にイラン側は「誤情報」と反論・トランプ氏の7日間ロードマップ事実上拒否報道（9/26）からは続報なし・サウジ東西パイプライン（9/22低速再開）も続報なし・WTI原油は9/25時点92.55ドル・ブレント104.37ドル前後（tradingeconomics経由）・日本関係船は残り4隻で変化なし（9/28確認）・封鎖213日目・ニュース1件更新・osint更新</div>
         <div>📅 <strong>2026年9月27日 07:35 JST</strong> 更新</div>
@@ -4983,8 +4871,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <div><span class="log-date">2026/09/24 08:03</span> — <strong class="log-tag">【超重大更新】</strong>国連総会（UNGA）開催中のニューヨークで9月22〜23日、米国（ウィトコフ特使）・イラン（アラグチ外相）代表が仲介者（カタール・オマーン）を介し数週間ぶりに間接協議を実施——トランプ大統領「生産的な会合」「合意に向け勢いがある」と発言。イラン当局者は、米国が海軍封鎖を解除し軍事圧力を緩和すればホルムズ海峡は「7日以内に再開可能」と伝えたとされる（Al Jazeera）。イラン側の条件は封鎖解除・凍結資産の放出・戦争終結の3点とされ、具体的合意・日程は未発表・9/21発表のUKMTOタンカー被弾・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃はいずれも続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・WTI原油は9/23終値92.90ドル・ブレント101.61ドル前後（ともに上昇）・日本関係船は残り4隻で変化なし・封鎖209日目・ニュース1件更新・osint更新</div>
           <div>📅 <strong>2026年9月22日 07:25 JST</strong> 更新</div>
           <div><span class="log-date">2026/09/22 07:25</span> — <strong class="log-tag">【超重大更新】</strong>英国海事貿易活動機関（UKMTO）は9月21日、ホルムズ海峡入口へ向かうタンカーが正体不明の飛翔体により被弾し乗組員2人が軽傷を負ったと発表——船体は自力航行を継続、攻撃主体は特定されず（AP通信）・9/18発表のIRGCによるトーゴ籍タンカー「Trend」攻撃からは続報なし・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/21終値97.56ドル・ブレント100.06ドルまで下落（3日続落）・日本関係船は残り4隻で変化なし・封鎖207日目・ニュース1件更新・osint更新</div>
-          <div>📅 <strong>2026年9月20日 08:28 JST</strong> 更新</div>
-          <div><span class="log-date">2026/09/20 08:28</span> — <strong class="log-tag">【超重大更新】</strong>イラン革命防衛隊（IRGC）海軍は9月18日、トーゴ籍プロダクトタンカー「Trend」が9月17日夜「不法通航」を試みたとして攻撃し、火災・航行停止させたと発表——英国海事貿易活動機関（UKMTO）もオマーン沿岸ハサブ沖での被弾・乗組員無事を報告したが、同一船舶かは独立検証が取れていない（RFE/RL、Anadolu Agency）・サウジ東西パイプラインは「迂回路で数日内に能力半分、全面復旧約6週間」（Bloomberg・9/16）から実際の再開確認はなし・イラン・GCCホルムズ会合の新開催日も依然不明・WTI原油は9/18終値100.30ドル前後で推移・日本関係船は残り4隻で変化なし・封鎖205日目・ニュース1件更新・osint更新</div>
         <div class="log-sources-start">① <a href="https://jp.reuters.com/world/us/XFYI674QIBLRJJY2HCA3T2LZCA-2026-04-12/" target="_blank" rel="noopener">Reuters日本語 — トランプ「米軍がホルムズ封鎖へ」・CENTCOM正式発表（4/12〜13）</a></div>
           <div>② <a href="https://www.nationalreview.com/news/trump-announces-blockade-of-strait-of-hormuz-after-iran-peace-talks-collapse/" target="_blank" rel="noopener">National Review — トランプ Truth Social 投稿原文・封鎖宣言の全文引用（4/12）</a></div>
           <div>③ <a href="https://x.com/whitehouse/status/2043650546112860166" target="_blank" rel="noopener">X / ホワイトハウス公式 — 「4月13日 10:00 AM ET よりイラン港湾封鎖開始」声明（4/13）</a></div>
@@ -5023,8 +4909,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="privacy/">プライバシーポリシー</a>
     <a href="terms/">利用規約</a>
     <a href="corrections/">訂正履歴</a>
+    <a href="https://www.youtube.com/@%E5%8D%B1%E6%A9%9F%E5%9C%B0%E5%9B%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB" target="_blank" rel="noopener">▶ YouTube（危機地図チャンネル）</a>
   </nav>
-  データソース：テレ朝NEWS・時事通信・FNNプライム・BBC日本語・Reuters日本語・東洋経済・NRI（野村総研）・IEA　／　地図：© OpenStreetMap contributors © CARTO　／　本コンテンツは公開情報を元にした情報整理目的のものです。
+  データソース：政府・軍・国際機関の公式発表（CENTCOM・UKMTO・IEA・EIA ほか）と、国内外の報道（ロイター・ブルームバーグ・AFP・CNBC・Al Jazeera ほか）。出典は項目ごとに示しています。　／　地図：© OpenStreetMap contributors © CARTO　／　本コンテンツは公開情報を元にした情報整理目的のものです。
 </footer>
 
 <!-- 日本製油所モーダル -->

@@ -1806,16 +1806,17 @@ footer {                                   /* フッター（中央揃え・上�
   </div>
   <div class="badges">
     <span class="badge-item badge-alert">警戒レベル：最高</span>
-    <span class="badge-item badge-days" id="blockade-days">封鎖215日目</span>
+    <span class="badge-item badge-days" id="blockade-days">危機217日目（2/28〜）</span>
     <span class="badge-item badge-date">📅2026年10月2日 08:36 JST</span>
     <button onclick="hardReload()" class="reload-btn">
      🔄 強制再表示
     </button>
   
   <script>
-  // 封鎖の日数（2026-02-28 を1日目・日本時間）。HTML の数字は JS が動かないときの表示
+  // 危機の日数＝開戦（2026-02-28）を1日目とした日本時間の経過日数。特定の封鎖の日数ではない
+  // （呼び名を「封鎖N日目」から改めた。tools/blockade-term-policy.md）。HTML の数字は JS が動かないときの表示
   (function(){var el=document.getElementById('blockade-days');if(!el)return;
-    var d=Math.floor((Date.now()+9*3600e3-Date.UTC(2026,1,28))/864e5)+1;if(d>0)el.textContent='封鎖'+d+'日目';})();
+    var d=Math.floor((Date.now()+9*3600e3-Date.UTC(2026,1,28))/864e5)+1;if(d>0)el.textContent='危機'+d+'日目（2/28〜）';})();
   </script>
   </div>
 </header>

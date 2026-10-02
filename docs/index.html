@@ -567,6 +567,8 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .stats-row { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
 .stat-card { background:linear-gradient(135deg,#0d1b2a,#132540); border:1px solid #1e3a5f; border-radius:12px; padding:14px; text-align:center; transition:transform 0.2s; }
 .stat-card:hover { transform:translateY(-3px); }
+/* カードは5枚。備蓄のカードを2列ぶんにして、2列・3列・6列のどの並びでも端が空かないようにする */
+.stats-row > .stat-card:first-child { grid-column: span 2; }
 .stat-num   { font-size:1.6rem; font-weight:800; line-height:1; margin-bottom:4px; }
 .stat-label { font-size:0.67rem; color:#94a3b8; line-height:1.4; }
 .c-blue{color:#38bdf8} .c-red{color:#f87171} .c-yellow{color:#fbbf24} .c-orange{color:#fb923c} .c-green{color:#34d399}
@@ -2315,7 +2317,7 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>米軍‑IRGC偶発衝突リスク。米海軍による拿捕・機雷除去作戦継続中。イラン「誤れば"死の渦"」と警告。</td>
-          <td><span class="pill pill-r">🔴 封鎖中</span></td>
+          <td><span class="pill pill-o">🟠 イランによる通航制限下・回復途上</span></td>
         </tr>
 
         <tr class="rb">
@@ -2670,8 +2672,7 @@ document.addEventListener('keydown', function(e) {
     <small>※資源エネルギー庁 速報値（備蓄法基準）</small>
   </div>
 </div>
-    <div class="stat-card"><div class="stat-num c-red">20<span class="stat-unit">%</span></div><div class="stat-label">ホルムズ封鎖による<br>世界原油供給の減少</div></div>
-    <div class="stat-card"><div class="stat-num c-red">+5<span class="stat-unit">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
+    <div class="stat-card"><div class="stat-num c-red">20<span class="stat-unit">%</span></div><div class="stat-label">世界の石油消費に占める<br>ホルムズ海峡の通過量（開戦前）</div></div>
     <div class="stat-card"><div class="stat-num c-yellow">3<span class="stat-unit">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
     <!-- 既存のスクロールリンクは維持 -->
     <div class="stat-card stat-card--wti" id="wtiStatCard"
@@ -3564,7 +3565,7 @@ const routePanama = [
 // 4. DRAW ROUTES
 // ============================================================
 L.polyline(routeOld,{color:'#6b7280',weight:2,dashArray:'10 7',opacity:0.55})
-  .addTo(map).bindTooltip('旧ルート（ホルムズ経由・封鎖中）',{sticky:true});
+  .addTo(map).bindTooltip('旧ルート（ホルムズ経由・通航制限下）',{sticky:true});
 
 L.polyline(routeD,{color:'#f59e0b',weight:2.5,dashArray:'8 5',opacity:0.88})
   .addTo(map).bindTooltip('ルートD：通航料払いホルムズ通過（友好国限定）',{sticky:true});
@@ -3660,7 +3661,7 @@ L.marker([26.5,56.5],{icon:L.divIcon({
   iconSize:[44,44],iconAnchor:[22,22],className:''
 })}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">⛔ ホルムズ海峡 / Strait of Hormuz</div>
-  <div class="p-body"><strong>状態：</strong>事実上封鎖中（2026年2月末〜）<br>
+  <div class="p-body"><strong>状態：</strong>イランによる通航制限下（2026年2月末〜）。通航は一部回復（2026年10月2日時点）<br>
   <strong>通過量：</strong>世界原油の約20%（日量2,000万bbl）<br>
   <strong>通航料ルート：</strong>友好国限定・1bbl≒$1（1隻≒3億円）<br>
   <strong>トランプ期限：</strong>4月7日午前9時（日本時間）</div>
@@ -3925,13 +3926,13 @@ L.marker([30.34, 48.30], {icon:mkIcon('🔥','#7f1d1d',30)}).addTo(map).bindPopu
 L.marker([27.18, 56.27], {icon:mkIcon('⚠️','#7f1d1d',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#fbbf24">⚠️ バンダルアッバース / Bandar Abbas</div>
   <div class="p-body"><strong>位置：</strong>イラン南部・ホルムズ海峡北岸<br>
-  <strong>役割：</strong>イラン海軍主要基地・ホルムズ封鎖の拠点<br>
+  <strong>役割：</strong>イラン海軍主要基地・海峡の通航制限の拠点<br>
   <strong>状況：</strong>革命防衛隊の海峡管理拠点</div>`);
 
 L.marker([25.87, 55.03], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#fbbf24">⚠️ アブムーサ島 / Abu Musa Island</div>
   <div class="p-body"><strong>位置：</strong>ホルムズ海峡・UAE沖<br>
-  <strong>役割：</strong>イランが実効支配・ホルムズ封鎖の前線基地</div>`);
+  <strong>役割：</strong>イランが実効支配・海峡の通航制限の前線基地</div>`);
 
 L.marker([24.35, 54.47], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
   <div class="p-title" style="color:#f87171">💥 ムサッファ港（UAE）/ Musaffah</div>
@@ -4081,12 +4082,12 @@ const Legend = L.Control.extend({
         <div class="leg-row"><div class="leg-dash" style="border-color:#fbbf24"></div><span>ナイジェリア発：喜望峰経由→日本（約35〜40日）🆕</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#fb923c"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）🆕</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過（友好国限定）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・封鎖中）</span></div>
+        <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・通航制限下）</span></div>
         <div class="leg-row"><div class="leg-dash" style="border-color:#67e8f9;border-top-style:solid"></div><span>運河（スエズ／パナマ）</span></div>
 
         <div class="leg-section" style="margin-top:8px;">チョークポイント</div>
 
-        <div class="leg-row"><span class="leg-emoji">⛔</span><span>ホルムズ海峡（封鎖中）</span></div>
+        <div class="leg-row"><span class="leg-emoji">⛔</span><span>ホルムズ海峡（イランが通航制限）</span></div>
         <div class="leg-row"><span class="leg-emoji">⚓</span><span>スエズ運河（全長193km）</span></div>
         <div class="leg-row"><span class="leg-emoji">⚓</span><span>パナマ運河（全長約82km）</span></div>
         <div class="leg-row"><span class="leg-emoji">🚢</span><span>マラッカ海峡（ルートA・B・D共通の通過点）</span></div>

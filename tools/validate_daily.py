@@ -127,6 +127,18 @@ PAT_STOCKPILE_CARD = re.compile(
     r'<div class="stat-num[^"]*"[^>]*>(\d+)<span')
 STOCKPILE_WARN_DAYS = 40  # 月1回の更新で最長 約34日。PC が止まった数日分の余裕を足す
 
+# <body> に残してよいインライン style（JS が style.display / style.width を状態として読み書きする要素の初期値）
+STYLE_ALLOWED = {
+    ('other-routes-body', 'display:none;'),      # その他の検討中ルート（onclick）
+    ('bw-timeline-detail', 'display:none;'),     # toggleTimeline()
+    ('bw-detail-body', 'display:none;'),         # toggleBwDetail()
+    ('news-archive-container', 'display:none;'), # toggleArchive()
+    ('log-collapse', 'display:none;'),           # 更新履歴の開閉
+    ('log-toggle-bottom', 'display:none;'),      # 更新履歴の開閉
+    ('refinery-modal', 'display:none;'),         # 製油所モーダル（none / flex）
+    ('tanker-progress-bar', 'width:100%'),       # 足止め船の割合（JS が style.width を書く）
+}
+
 # 特別解説コラムのピル（「NEW」「◯月更新」の札の元になる日付）と記事ページの構造化データ
 PAT_COLUMN_PILL = re.compile(
     r'<a href="articles/([\w-]+\.html)" class="jump-pill[^"]*"'
@@ -640,6 +652,21 @@ def check_types(html: str, base: str) -> None:
             warn(f"更新履歴の件数：常時表示 {recent}件・合計 {total}件（ルールは常時表示3件・合計10件まで）")
         else:
             ok(f"更新履歴の件数：常時表示 3件・合計 {total}件")
+
+    # ページ全体（② PR4b・2026-10-01 で <body> のインライン style は JS が状態として読む8か所だけになった）
+    bi = html.find('<body')
+    page = re.sub(r'<script\b[^>]*>.*?</script\b[^>]*>', '', html[bi:], flags=re.S | re.I) if bi >= 0 else ''
+    extra = []
+    for m in re.finditer(r'<(\w+)\b([^>]*?)\sstyle="([^"]*)"', page):
+        tag, attrs, val = m.group(1), m.group(2), m.group(3)
+        idm = re.search(r'\bid="([^"]+)"', attrs + m.group(0))
+        if tag == 'col' or (idm and (idm.group(1), val.strip()) in STYLE_ALLOWED):
+            continue
+        extra.append(f"<{tag}{' #' + idm.group(1) if idm else ''}> {val.strip()[:40]}")
+    if extra:
+        warn(f"ページにインライン style が {len(extra)}箇所あります（JS が読む開閉の状態を除く。型はクラス）: " + "／".join(extra[:5]))
+    else:
+        ok("ページ全体にインライン style なし（JS が読む開閉の状態・<col> を除く）")
 
 
 # ── main ────────────────────────────────────────────────────

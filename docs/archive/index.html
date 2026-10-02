@@ -698,6 +698,9 @@
     document.getElementById('timeline').addEventListener('click', ev => {
       const a = ev.target.closest('a.jump');
       if(!a) return;
+      // Ctrl / Cmd / Shift / Alt を押したクリックは、新しいタブで開くなどブラウザの動作に任せる
+      // （開いた先は読み込み時の #d-YYYY-MM-DD の処理が受ける）
+      if(ev.button !== 0 || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
       ev.preventDefault();
       const date = a.getAttribute('data-date');
       resetSearch();

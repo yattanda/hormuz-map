@@ -3035,6 +3035,29 @@
           "sourceLabel": "Rigzone（9/30）"
         }
       ]
+    },
+    {
+      "date": "2026-10-02",
+      "dateLabel": "2026/10/02 08:36",
+      "blockadeDay": 217,
+      "summary": "【重大更新】OilPrice（10/1）・Maritime Executive（9/30）によれば、UKMTOはホルムズ海峡でタンカー3隻が9/29に正体不明の飛翔体を受けたと発表し、1隻で火災が起きたが消火され乗組員は無事、攻撃主体は不明（船名はAl Ruwais・Mersin Prosperity・Sinbadと報じられるが3隻目は報道が割れている）・Asia Business Daily（10/1）：トランプ氏は9/28収録のインタビューで、11/3の中間選挙後に対イラン攻撃を強めることは「可能」と述べ、空母セオドア・ルーズベルトなどが中東へ向かっている・Al Jazeera（10/1）：財務省がイランの自動車・鉄道部門に追加制裁、米当局者は11月末までに空母3隻体制になると説明・日経（10/1）：WTI11月物は92.87ドル（+2.7%）で続伸・日本関係船は残り4隻で変化なし（10/2確認）・封鎖217日目・ニュース3件更新・osint更新",
+      "relatedNews": [
+        {
+          "title": "財務省がイランの自動車・鉄道部門に追加制裁、米当局者「11月末までに空母3隻体制」——サウジ連合はフーシ派ドローン4機を迎撃",
+          "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
+          "sourceLabel": "Al Jazeera（10/1）"
+        },
+        {
+          "title": "トランプ氏「中間選挙後の対イラン攻撃強化は可能」——7日間計画は「十分でなかった」、空母セオドア・ルーズベルトが中東へ",
+          "url": "https://view.asiae.co.kr/en/article/2026100205164613722",
+          "sourceLabel": "Asia Business Daily（10/1）"
+        },
+        {
+          "title": "ホルムズ海峡でリベリア籍タンカー3隻が正体不明の飛翔体を受ける——1隻で火災、乗組員は無事・攻撃主体は不明",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Three-Tankers-Struck-by-Unknown-Projectiles-in-Strait-of-Hormuz.html",
+          "sourceLabel": "OilPrice（10/1）"
+        }
+      ]
     }
   ]
 }

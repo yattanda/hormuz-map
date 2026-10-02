@@ -567,6 +567,8 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .stats-row { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
 .stat-card { background:linear-gradient(135deg,#0d1b2a,#132540); border:1px solid #1e3a5f; border-radius:12px; padding:14px; text-align:center; transition:transform 0.2s; }
 .stat-card:hover { transform:translateY(-3px); }
+/* カードは5枚。備蓄のカードを2列ぶんにして、2列・3列・6列のどの並びでも端が空かないようにする */
+.stats-row > .stat-card:first-child { grid-column: span 2; }
 .stat-num   { font-size:1.6rem; font-weight:800; line-height:1; margin-bottom:4px; }
 .stat-label { font-size:0.67rem; color:#94a3b8; line-height:1.4; }
 .c-blue{color:#38bdf8} .c-red{color:#f87171} .c-yellow{color:#fbbf24} .c-orange{color:#fb923c} .c-green{color:#34d399}
@@ -2671,7 +2673,6 @@ document.addEventListener('keydown', function(e) {
   </div>
 </div>
     <div class="stat-card"><div class="stat-num c-red">20<span class="stat-unit">%</span></div><div class="stat-label">世界の石油消費に占める<br>ホルムズ海峡の通過量（開戦前）</div></div>
-    <div class="stat-card"><div class="stat-num c-red">+5<span class="stat-unit">%</span></div><div class="stat-label">紅海も封鎖時の<br>追加供給減少推定</div></div>
     <div class="stat-card"><div class="stat-num c-yellow">3<span class="stat-unit">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>大型タンカー1隻当たり</div></div>
     <!-- 既存のスクロールリンクは維持 -->
     <div class="stat-card stat-card--wti" id="wtiStatCard"

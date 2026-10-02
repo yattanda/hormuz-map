@@ -339,7 +339,7 @@
   <div class="stats" id="stats">
     <div class="stat"><div class="n">—</div><div class="l">記録日数</div></div>
     <div class="stat"><div class="n">—</div><div class="l">対象期間</div></div>
-    <div class="stat"><div class="n">—</div><div class="l">封鎖経過日数</div></div>
+    <div class="stat"><div class="n">—</div><div class="l">開戦からの日数</div></div>
   </div>
 
   <div class="notice" id="range-notice">
@@ -398,9 +398,9 @@
     },
     {
       num: 3, key: 'act3',
-      label: '二重封鎖と長期膠着',
+      label: 'イラン・米国による二重封鎖と長期膠着',
       start: '2026-04-13', end: '2026-05-31',
-      desc: 'イスラマバード協議決裂を受け、CENTCOMが対イラン海上封鎖を発動（本サイトの「封鎖◯日目」カウントの起点）。提案と拒否の反復が続いた長期膠着期。'
+      desc: 'イスラマバード協議決裂を受け、CENTCOMが対イラン海上封鎖を発動。イランによる海峡の通航制限と重なった。提案と拒否の反復が続いた長期膠着期。'
     },
     {
       num: 4, key: 'act4',
@@ -416,9 +416,9 @@
     },
     {
       num: 6, key: 'act6',
-      label: '封鎖再発効と衝突再燃',
+      label: '米軍の対イラン海上封鎖の再発効と衝突再燃',
       start: '2026-07-09', end: null,
-      desc: '対イラン海上封鎖が再発効。連夜の空爆とイランによる多方面への報復攻撃が続き、現在に至る。'
+      desc: '米軍の対イラン海上封鎖が再発効。連夜の空爆とイランによる多方面への報復攻撃が続き、現在に至る。'
     }
   ];
 
@@ -499,7 +499,8 @@
     return `${parseInt(y)}年${parseInt(m)}月${parseInt(d)}日`;
   }
 
-  // 封鎖日数の起算日：2026年2月28日を「1日目」とする（月は0始まりのため 1 = 2月）
+  // 危機の日数の起算日：2026年2月28日（開戦日）を「1日目」とする（月は0始まりのため 1 = 2月）
+  // 特定の封鎖の日数ではない。表示名は「危機N日目」（tools/blockade-term-policy.md）
   const BLOCKADE_BASE_UTC = Date.UTC(2026, 1, 28);
   function calcBlockadeDay(iso){
     const [y, m, d] = iso.split('-').map(Number);
@@ -523,7 +524,7 @@
     html += ' 一部、本サイトが速報を発信し忘れていた日について後日調査で補完した記録には<span style="border:1px dotted rgba(127,184,201,0.5);padding:1px 6px;border-radius:3px;">🧩欠損補完</span>バッジを表示しています。';
     html += ' 本サイトが速報を発信せず、かつ重要な動きも確認できなかった日は記録対象外としています。';
     html += ' <strong>フェーズ別で見る</strong>を選ぶと、危機の展開を6つの局面（Act1〜6）に分けて通しで追うことができます。';
-    html += ' なお<strong>封鎖日数は2026年2月28日を1日目として再計算した値</strong>を表示しています。2026年6月24日以前の速報本文中の「封鎖◯日目」という表記は、当時採用していた起算日（2月27日）に基づくため、スタンプの数字と1日ずれている場合があります。';
+    html += ' なお、各日の<strong>「危機◯日目」は、2026年2月28日（開戦日）を1日目として数えた日数</strong>です。2026年10月上旬までは「封鎖◯日目」と表示していましたが、数えているのは特定の封鎖の日数ではなく開戦からの日数であるため、呼び名を改めました（数字は同じです）。過去の速報本文に残る「封鎖◯日目」「二重封鎖◯日目」は当時の表記のままにしています。2026年6月24日以前の本文は、当時採用していた起算日（2月27日）に基づくため、スタンプの数字と1日ずれている場合があります。';
     el.innerHTML = html;
   }
 
@@ -837,7 +838,7 @@
         <div class="marker"></div>
         <div class="datehead">
           <span class="date">${fmtDate(e.date)}</span>
-          <span class="stamp">封鎖${calcBlockadeDay(e.date)}日目</span>
+          <span class="stamp">危機${calcBlockadeDay(e.date)}日目</span>
           ${isGapFill ? `<span class="gapfill-badge">🧩 欠損補完</span>` : (isResearched ? `<span class="researched-badge">🔍 事後調査</span>` : '')}
           <span class="time">${escapeHtml(e.dateLabel || '')}</span>
         </div>

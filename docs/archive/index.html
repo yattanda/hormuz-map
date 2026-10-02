@@ -106,6 +106,48 @@
   }
   .notice strong{color:var(--ink);}
 
+  /* ===== SEARCH ===== */
+  .search{padding:20px 0 0;}
+  .search-label{
+    display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+    color:var(--muted);margin-bottom:6px;
+  }
+  .search-box{position:relative;}
+  /* 16px 未満にしない（iOS Safari はフォーカス時に画面を拡大する） */
+  #q{
+    width:100%;font-family:var(--sans);font-size:16px;line-height:1.5;
+    color:var(--ink);background:var(--bg-raised);
+    border:1px solid var(--line-strong);border-radius:10px;
+    padding:10px 46px 10px 14px;-webkit-appearance:none;appearance:none;
+  }
+  #q::placeholder{color:var(--muted-dim);}
+  #q:focus{outline:none;border-color:var(--amber-line);}
+  #q::-webkit-search-cancel-button{-webkit-appearance:none;display:none;}
+  .search-clear{
+    position:absolute;right:0;top:0;width:44px;height:100%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;line-height:1;color:var(--muted);
+    background:transparent;border:none;cursor:pointer;
+  }
+  .search-clear[hidden]{display:none;}
+  .search-clear:hover{color:var(--amber);}
+  .search-hint{margin:6px 0 0;font-size:.72rem;color:var(--muted-dim);}
+  .search-status{
+    margin:16px 0 0;padding:10px 14px;border:1px solid var(--line-strong);
+    border-radius:8px;font-size:.82rem;color:var(--muted);
+    background:rgba(255,255,255,0.015);
+  }
+  mark{
+    background:var(--amber-dim);color:#f2ead9;
+    border-bottom:1px solid var(--amber-line);padding:0 1px;border-radius:2px;
+  }
+  .day .jump{
+    display:inline-block;margin-top:9px;font-size:.74rem;color:var(--muted);
+    text-decoration:none;border:1px solid var(--line-strong);
+    padding:4px 11px;border-radius:20px;
+  }
+  .day .jump:hover{border-color:var(--amber-line);color:var(--amber);}
+
   /* ===== VIEW TOGGLE ===== */
   .view-toggle{
     display:flex;gap:8px;padding:20px 0 0;
@@ -307,6 +349,16 @@
 
   <div id="loading">記録を読み込み中…</div>
 
+  <form class="search" id="search" role="search" style="display:none;">
+    <label class="search-label" for="q">キーワード検索</label>
+    <div class="search-box">
+      <input type="search" id="q" autocomplete="off" enterkeyhint="search" placeholder="例：機雷　CENTCOM　通航料">
+      <button type="button" class="search-clear" id="q-clear" hidden aria-label="検索語を消す">×</button>
+    </div>
+    <p class="search-hint">全期間の記録から探します。空白で区切ると、すべての語を含む日だけに絞ります。</p>
+  </form>
+  <div class="search-status" id="search-status" aria-live="polite" style="display:none;"></div>
+
   <div class="view-toggle" id="view-toggle" style="display:none;">
     <button class="view-btn active" data-view="month">📅 月別で見る</button>
     <button class="view-btn" data-view="act">📖 フェーズ別で見る</button>
@@ -382,6 +434,7 @@
   let CURRENT_MONTH = null;
   let CURRENT_ACT = null;
   let MONTHS = [];
+  let CURRENT_QUERY = ''; // 空文字 = 通常表示（月別 / フェーズ別）
 
   function fmtDate(iso){
     const [y,m,d] = iso.split('-');
@@ -407,15 +460,33 @@
       renderMonth(CURRENT_MONTH);
 
       document.getElementById('loading').style.display = 'none';
+      document.getElementById('search').style.display = 'block';
       document.getElementById('view-toggle').style.display = 'flex';
       document.getElementById('month-tabs').style.display = 'flex';
       document.getElementById('timeline').style.display = 'block';
 
       setupViewToggle();
+      setupSearch();
 
-      // deep-link support: #2026-07 (month) or #act-3 (phase)
+      // deep-link support: #2026-07 (month) or #act-3 (phase) or #q=機雷 (search)
+      //                    or #d-2026-07-14 (その日。検索結果の「この月の一覧で見る」を新しいタブで開いた場合)
       if(location.hash){
         const h = location.hash.slice(1);
+        const hq = readHashQuery();
+        if(hq){
+          document.getElementById('q').value = hq;
+          runSearch(hq);
+          return;
+        }
+        const dm = /^d-(\d{4}-\d{2})-\d{2}$/.exec(h);
+        if(dm && MONTHS.some(m => m.key === dm[1])){
+          CURRENT_VIEW = 'month';
+          CURRENT_MONTH = dm[1];
+          applyView();
+          const target = document.getElementById(h);
+          if(target) target.scrollIntoView({block:'start'});
+          return;
+        }
         if(/^\d{4}-\d{2}$/.test(h) && MONTHS.some(m => m.key === h)){
           CURRENT_VIEW = 'month';
           CURRENT_MONTH = h;
@@ -493,8 +564,152 @@
     document.querySelectorAll('.view-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         CURRENT_VIEW = btn.getAttribute('data-view');
+        resetSearch();
         applyView();
       });
+    });
+  }
+
+  // ============================================================
+  // キーワード検索（全期間・部分一致・空白区切りで AND）
+  // 入力した語は URL に書かない（#q= は読むだけ）
+  // ============================================================
+  function norm(s){
+    return String(s || '').normalize('NFKC').toLowerCase();
+  }
+
+  function buildHaystack(e){
+    const parts = [e.summary, e.dateLabel, e.date, fmtJpDate(e.date)];
+    (e.relatedNews || []).forEach(n => { parts.push(n.title, n.sourceLabel); });
+    return norm(parts.join('\n'));
+  }
+
+  function parseQuery(raw){
+    return Array.from(new Set(norm(raw).split(/\s+/).filter(Boolean))).slice(0, 5);
+  }
+
+  // 正規化で文字数が変わるため、元の文字列に当たる正規表現を語から作る。
+  // 英数字・記号は半角と全角の両方に当て、大文字・小文字は i フラグで同一視する
+  function buildHighlight(terms){
+    const parts = terms.slice().sort((a,b) => b.length - a.length).map(t =>
+      Array.from(t).map(ch => {
+        const code = ch.codePointAt(0);
+        if(code >= 0x21 && code <= 0x7e){
+          return '[' + ch.replace(/[\\\]\[^-]/g, '\\$&') + String.fromCodePoint(code + 0xFEE0) + ']';
+        }
+        return ch;
+      }).join('')
+    );
+    try { return new RegExp(parts.join('|'), 'giu'); }
+    catch(err){ return null; }
+  }
+
+  // エスケープ前の文字列を分割してから、各片をエスケープする
+  function highlightHtml(text, re){
+    const s = String(text || '');
+    if(!re) return escapeHtml(s);
+    let out = '', last = 0, m;
+    re.lastIndex = 0;
+    while((m = re.exec(s))){
+      if(m[0] === ''){ re.lastIndex++; continue; }
+      out += escapeHtml(s.slice(last, m.index)) + '<mark>' + escapeHtml(m[0]) + '</mark>';
+      last = m.index + m[0].length;
+    }
+    return out + escapeHtml(s.slice(last));
+  }
+
+  function readHashQuery(){
+    if(location.hash.slice(0,3) !== '#q=') return '';
+    try { return decodeURIComponent(location.hash.slice(3)).trim(); }
+    catch(err){ return ''; }
+  }
+
+  function resetSearch(){
+    CURRENT_QUERY = '';
+    document.getElementById('q').value = '';
+    document.getElementById('q-clear').hidden = true;
+    document.getElementById('search-status').style.display = 'none';
+  }
+
+  function runSearch(raw){
+    const terms = parseQuery(raw);
+    const wasSearching = CURRENT_QUERY !== '';
+    document.getElementById('q-clear').hidden = !document.getElementById('q').value;
+    if(!terms.length){
+      CURRENT_QUERY = '';
+      document.getElementById('search-status').style.display = 'none';
+      if(wasSearching) applyView();
+      return;
+    }
+    CURRENT_QUERY = terms.join(' ');
+    document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('month-tabs').style.display = 'none';
+    document.getElementById('act-tabs').style.display = 'none';
+    document.getElementById('act-banner').style.display = 'none';
+
+    const hits = ALL_ENTRIES.filter(e => terms.every(t => e._hay.includes(t)))
+                            .sort((a,b) => a.date < b.date ? 1 : -1); // newest first
+    // 件数の行には入力したままの表記で出す（textContent に入れるのでエスケープ不要）
+    const shown = Array.from(new Set(String(raw).trim().split(/\s+/).filter(Boolean))).slice(0, 5);
+    const label = shown.map(t => `「${t}」`).join('');
+    const statusEl = document.getElementById('search-status');
+    statusEl.textContent = hits.length
+      ? `${label}を含む記録：${hits.length}日分（全${ALL_ENTRIES.length}日）`
+      : `${label}を含む記録は見つかりません。表記を変えてお試しください（例：ゲシュム島／ケシュム島、CENTCOM／米中央軍）。`;
+    statusEl.style.display = 'block';
+
+    renderEntriesList(hits, {order:'desc', showMonthDivider:true, noGap:true, noEmpty:true,
+                             highlight:buildHighlight(terms), jump:true});
+  }
+
+  function setupSearch(){
+    const form = document.getElementById('search');
+    const input = document.getElementById('q');
+    let timer = null;
+    let composing = false; // 日本語入力の変換中は検索しない
+
+    ALL_ENTRIES.forEach(e => { e._hay = buildHaystack(e); });
+
+    function schedule(){
+      clearTimeout(timer);
+      timer = setTimeout(() => runSearch(input.value), 150);
+    }
+    input.addEventListener('compositionstart', () => { composing = true; });
+    input.addEventListener('compositionend', () => { composing = false; schedule(); });
+    input.addEventListener('input', () => { if(!composing) schedule(); });
+    input.addEventListener('keydown', ev => {
+      if(ev.key === 'Escape' && !composing){ clearTimeout(timer); input.value = ''; runSearch(''); }
+    });
+    form.addEventListener('submit', ev => {
+      ev.preventDefault();
+      clearTimeout(timer);
+      runSearch(input.value);
+      input.blur();
+    });
+    document.getElementById('q-clear').addEventListener('click', () => {
+      clearTimeout(timer);
+      input.value = '';
+      runSearch('');
+      input.focus();
+    });
+
+    // 検索結果のカードから、その日のある月別ビューへ
+    document.getElementById('timeline').addEventListener('click', ev => {
+      const a = ev.target.closest('a.jump');
+      if(!a) return;
+      ev.preventDefault();
+      const date = a.getAttribute('data-date');
+      resetSearch();
+      CURRENT_VIEW = 'month';
+      CURRENT_MONTH = date.slice(0,7);
+      applyView();
+      const target = document.getElementById('d-' + date);
+      if(target) target.scrollIntoView({block:'start'});
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hq = readHashQuery();
+      if(hq){ input.value = hq; runSearch(hq); }
     });
   }
 
@@ -603,7 +818,7 @@
         lastDate = null; // 月をまたぐ場合はギャップ表示をリセット
       }
 
-      if(lastDate){
+      if(lastDate && !opts.noGap){
         const gap = dayGap(lastDate, e.date, opts.order);
         if(gap > 1){
           html += `<div class="gap-note">（${gap - 1}日分の速報なし・スキップ）</div>`;
@@ -614,14 +829,18 @@
       const isCrit = /超重大更新|重大更新/.test(e.summary);
       const isResearched = e.sourceType === 'researched';
       const isGapFill = e.fillType === 'gap';
-      const summaryHtml = escapeHtml(e.summary).split('・').join('<span class="sep">・</span>');
+      const hl = s => highlightHtml(s, opts.highlight);
+      const summaryHtml = hl(e.summary).split('・').join('<span class="sep">・</span>');
 
       let newsHtml = '';
       if(e.relatedNews && e.relatedNews.length){
         newsHtml = `<div class="news"><div class="newslabel">関連ニュース</div><ul>` +
-          e.relatedNews.map(n => `<li><a href="${escapeAttr(n.url)}" target="_blank" rel="noopener">${escapeHtml(n.title)}</a> <span class="src">— ${escapeHtml(n.sourceLabel||'')}</span></li>`).join('') +
+          e.relatedNews.map(n => `<li><a href="${escapeAttr(n.url)}" target="_blank" rel="noopener">${hl(n.title)}</a> <span class="src">— ${hl(n.sourceLabel||'')}</span></li>`).join('') +
           `</ul></div>`;
       }
+      const jumpHtml = opts.jump
+        ? `<a class="jump" href="#d-${e.date}" data-date="${e.date}">この月の一覧で見る →</a>`
+        : '';
 
       html += `
       <div class="day${isCrit ? ' crit' : ''}${isResearched ? ' researched' : ''}${isGapFill ? ' gapfill' : ''}" id="d-${e.date}">
@@ -634,10 +853,11 @@
         </div>
         <div class="summary">${summaryHtml}</div>
         ${newsHtml}
+        ${jumpHtml}
       </div>`;
     });
 
-    if(!entries.length){
+    if(!entries.length && !opts.noEmpty){
       html = `<p style="color:var(--muted);font-size:.85rem;padding:20px 0;">この範囲の記録はまだありません。</p>`;
     }
 

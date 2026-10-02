@@ -64,14 +64,14 @@
     },
     {
       "id": "osint-aljazeera-kpler-80pct-0930",
-      "titleJa": "【Al Jazeera】Kpler：ホルムズ流量は戦前の約8割——IRGC報道官「継続的な軍事紛争」",
+      "titleJa": "【Al Jazeera】Kpler：中東の原油輸出は戦前の8割弱、ホルムズ経由は日量約970万バレル——IRGC報道官「継続的な軍事紛争」",
       "titleEn": "Economic war: Is Iran losing its leverage over the Strait of Hormuz?",
-      "title": "【Al Jazeera】Kpler：ホルムズ流量は戦前の約8割——IRGC報道官「継続的な軍事紛争」",
+      "title": "【Al Jazeera】Kpler：中東の原油輸出は戦前の8割弱、ホルムズ経由は日量約970万バレル——IRGC報道官「継続的な軍事紛争」",
       "country": "イラン",
       "media": "Al Jazeera",
       "source": "Al Jazeera",
       "date": "2026年9月30日（現地）",
-      "summary": "Al Jazeeraは、Kplerのデータを引き、海峡経由の原油流量が戦前の約8割（日量約970万バレル）まで回復したと報道。IRGC報道官は「継続的な軍事紛争」を主張し、保険料は高止まりしている。",
+      "summary": "Al Jazeeraは、Kplerのデータを引き、中東の原油輸出が戦前の8割弱（9月・日量約1,630万バレル）まで回復し、うちホルムズ海峡経由は日量約970万バレルと報道。IRGC報道官は「継続的な軍事紛争」を主張し、保険料は高止まりしている。",
       "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
       "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
@@ -1633,11 +1633,11 @@
       "items": [
         {
           "id": "latest-aljazeera-kpler-80pct-0930",
-          "title": "Kpler引用：ホルムズ海峡の原油流量は戦前の約8割、日量約970万バレル——IRGC報道官は「継続的な軍事紛争」を主張",
-          "body": "Al Jazeera（9/30）は、Kplerのデータを引き、ホルムズ海峡経由の原油流量が戦前の約8割に当たる日量約970万バレルまで回復したと伝えた（戦前は日量約2,000万バレル）。一方、イラン革命防衛隊（IRGC）報道官は「継続的な軍事紛争」が続いていると主張し、タンカーの保険料は高止まりしている。9/28付の同紙報道（Kpler集計で9月の海峡経由の原油輸出は日量平均740万バレルの見込み）とは数字が異なるが、集計期間・方法の違いによるものかは記事から確認できない。",
+          "title": "Kpler引用：中東の原油輸出は戦前の8割弱、ホルムズ海峡経由は日量約970万バレル——IRGC報道官は「継続的な軍事紛争」を主張",
+          "body": "Al Jazeera（9/30）は、Kplerのデータを引き、中東の原油輸出が9月に日量約1,630万バレル（戦前の2月は約1,950万バレル）と戦前の8割弱まで回復し、うちホルムズ海峡経由は日量約970万バレルになる見込みだと伝えた（同記事によれば、戦前に海峡を通っていたのは日量約2,000万バレル）。一方、イラン革命防衛隊（IRGC）報道官は「継続的な軍事紛争」が続いていると主張し、タンカーの保険料は高止まりしている。9/28付の同紙報道（Kpler集計で9月の海峡経由の原油輸出は日量平均740万バレルの見込み）とは数字が異なるが、集計期間・方法の違いによるものかは記事から確認できない。",
           "sourceLabel": "Al Jazeera（9/30）",
           "date": "2026年9月30日（現地）",
-          "label": "🚢 海峡の流量は戦前の約8割——Kpler引用",
+          "label": "🚢 中東の原油輸出は戦前の8割弱・海峡経由は日量約970万バレル——Kpler引用",
           "url": "https://www.aljazeera.com/news/2026/9/30/economic-war-is-iran-losing-its-leverage-over-the-strait-of-hormuz",
           "isLatest": false
         },

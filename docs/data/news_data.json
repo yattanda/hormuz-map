@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月02日 08:36 日本時間JST",
+  "updated": "2026年10月03日 07:24 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-gcaptain-six-vessels-1002",
+      "title": "ホルムズ海峡で10/2にもタンカー1隻が正体不明の飛翔体を受ける——9/28以降の被弾は少なくとも6隻、攻撃主体は特定されず",
+      "body": "gCaptain（10/2）によれば、UKMTOは10/2、ホルムズ海峡で船が正体不明の飛翔体を受けたと報告した。同記事は、9/28（日）以降に海峡で被弾した船を少なくとも6隻（9/28に1隻、9/29に3隻、10/1に1隻、10/2に1隻）と数え、いずれも「正体不明の飛翔体」で、火災は後に消火され乗組員は概ね無事としている。UKMTOは今回の船名も攻撃主体も明らかにしていない。別の報道の要約では、船は出航中で小規模な火災と船内停電が起きたが航行を続け、死傷者や環境被害は報告されていないとされるが、その原文は本稿では開けておらず、被害の詳細は確認できていない。",
+      "sourceLabel": "gCaptain（10/2）",
+      "date": "2026年10月2日（現地）",
+      "label": "⚓ 10/2もタンカー被弾——9/28以降少なくとも6隻・攻撃主体は不明",
+      "url": "https://gcaptain.com/six-vessels-hit-in-strait-of-hormuz-since-sunday",
+      "isLatest": true
+    },
+    {
+      "id": "latest-maritimeexec-yanbu-1001",
+      "title": "サウジ紅海側のヤンブー港に正体不明の飛翔体が着弾、タンク群付近で火災——東西パイプライン復旧後の積み出し拠点、攻撃主体は不明",
+      "body": "Maritime Executive（10/1）によれば、10/1（木）、サウジアラビアが紅海側に持つ主要な石油積出港ヤンブー港の域内に正体不明の飛翔体が着弾し、タンク群付近で火災が起きた。警備会社Vanguard Techが着弾を確認し、積み込みは一時止まったと伝えられるが、その後の状況は記事からは確認できていない。犯行声明はなく、過去の同種の攻撃はイエメンのフーシ派と結び付けられてきたものの、今回の主体は未確認。ヤンブーは9/10〜11の東西パイプラインへのドローン攻撃で17日間止まり、Aramcoが積み出しを再開したばかりだった。同記事によれば、マクロン仏大統領は同港を防空で守る意向を示していた。",
+      "sourceLabel": "Maritime Executive（10/1）",
+      "date": "2026年10月1日（現地）",
+      "label": "🛢️ ヤンブー港に飛翔体——タンク群付近で火災・主体は不明",
+      "url": "https://maritime-executive.com/article/explosion-and-fire-reported-at-yanbu",
+      "isLatest": false
+    },
     {
       "id": "latest-aljazeera-live-sanctions-1001",
       "title": "財務省がイランの自動車・鉄道部門に追加制裁、米当局者「11月末までに空母3隻体制」——サウジ連合はフーシ派ドローン4機を迎撃",
@@ -10,7 +30,7 @@
       "date": "2026年10月1日（現地）",
       "label": "🚨 追加制裁・空母3隻体制へ——ホルムズで超大型タンカー被弾",
       "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-asiae-trump-midterms-1001",
@@ -21,29 +41,27 @@
       "label": "🇺🇸 中間選挙後の攻撃強化に含み・空母増派",
       "url": "https://view.asiae.co.kr/en/article/2026100205164613722",
       "isLatest": false
-    },
-    {
-      "id": "latest-oilprice-three-tankers-1001",
-      "title": "ホルムズ海峡でリベリア籍タンカー3隻が正体不明の飛翔体を受ける——1隻で火災、乗組員は無事・攻撃主体は不明",
-      "body": "OilPrice（10/1）によれば、UKMTOは3件の事後報告として、ホルムズ海峡を通航中のタンカー3隻が正体不明の飛翔体を受けたと発表した（発生は9/29とされる）。船は石油製品タンカー「Al Ruwais」、VLCC「Mersin Prosperity」、Aframax型「Sinbad」で、いずれもリベリア籍。1隻で火災が起きたが消火され、乗組員は全員無事と報じられた。攻撃主体は不明。情報源はMarisks・Reuters・UKMTO・Kplerのデータで、同記事は「事後の第三者報告」であり直接観測ではないとし、原油流量の回復が伝えられる中でも運航上のリスクは残ると指摘している。",
-      "sourceLabel": "OilPrice（10/1）",
-      "date": "2026年10月1日（現地）",
-      "label": "⚓ タンカー3隻が被弾——UKMTO",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Three-Tankers-Struck-by-Unknown-Projectiles-in-Strait-of-Hormuz.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-anews-us-response-0930",
-      "title": "イラン政府報道官、アラグチ外相がカタール経由で米国の回答を受け取ったと発表——内容・次の対応は非公表",
-      "body": "A News（9/30）によれば、イラン政府報道官のモハジェラニ氏は、アラグチ外相がカタールの仲介を通じて提示した提案への米国の回答を受け取ったと述べたが、米側の回答の内容やイランの次の対応は明らかにしなかった。ペゼシュキアン大統領は、イランは原則を譲っておらず「イスラマバード覚書」の成功に全力を尽くしていると述べた。イランがホルムズ海峡再開の条件として挙げてきたのは、米国の経済・軍事的圧力の終了、凍結資産の解放、安全な航路の確保など。回答の中身は報じられておらず、本稿の時点では確認できていない。",
-      "sourceLabel": "A News（9/30）",
-      "date": "2026年9月30日（現地）",
-      "label": "🤝 米国の回答がイランに到着——内容は非公表",
-      "url": "https://www.anews.com.tr/middle-east/2026/09/30/iran-receives-us-response-to-qatari-mediated-proposal-spokesperson",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-carrier-10000-troops-1002",
+      "titleJa": "【Al Jazeera】第3空母と米兵約1万人を増派——イラン戦争はエスカレートするのか",
+      "titleEn": "New aircraft carrier, 10,000 US troops: Is the Iran war about to escalate?",
+      "title": "【Al Jazeera】第3空母と米兵約1万人を増派——イラン戦争はエスカレートするのか",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月2日（現地）",
+      "summary": "Al Jazeera（10/2）は、第3空母打撃群（セオドア・ルーズベルト）と海兵隊遠征部隊の中東派遣、追加で約9,000〜1万人の兵力投入、11月末までの空母3隻・揚陸群2隻の展開見通しを伝えた。トランプ氏が中間選挙後の攻撃強化に含みを持たせる一方、イランは7日間の海峡再開案を示しており、交渉は行き詰まっている。",
+      "url": "https://www.aljazeera.com/news/2026/10/2/new-aircraft-carrier-10000-us-troops-is-the-iran-war-about-to-escalate",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-live-1001",
       "titleJa": "【Al Jazeera】イラン戦争ライブ：追加制裁・空母3隻体制へ、ホルムズで超大型タンカー被弾",
@@ -55,7 +73,7 @@
       "date": "2026年10月1日（現地）",
       "summary": "Al Jazeeraのライブ報道は、米財務省のイラン自動車・鉄道部門への追加制裁、米当局者による「11月末までに空母3隻体制」との説明、ホルムズ海峡での超大型タンカー被弾（UKMTO確認）、サウジ連合によるフーシ派ドローン迎撃を伝えた。",
       "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1628,6 +1646,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月3日",
+      "items": [
+        {
+          "id": "latest-oilprice-three-tankers-1001",
+          "title": "ホルムズ海峡でリベリア籍タンカー3隻が正体不明の飛翔体を受ける——1隻で火災、乗組員は無事・攻撃主体は不明",
+          "body": "OilPrice（10/1）によれば、UKMTOは3件の事後報告として、ホルムズ海峡を通航中のタンカー3隻が正体不明の飛翔体を受けたと発表した（発生は9/29とされる）。船は石油製品タンカー「Al Ruwais」、VLCC「Mersin Prosperity」、Aframax型「Sinbad」で、いずれもリベリア籍。1隻で火災が起きたが消火され、乗組員は全員無事と報じられた。攻撃主体は不明。情報源はMarisks・Reuters・UKMTO・Kplerのデータで、同記事は「事後の第三者報告」であり直接観測ではないとし、原油流量の回復が伝えられる中でも運航上のリスクは残ると指摘している。",
+          "sourceLabel": "OilPrice（10/1）",
+          "date": "2026年10月1日（現地）",
+          "label": "⚓ タンカー3隻が被弾——UKMTO",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/Three-Tankers-Struck-by-Unknown-Projectiles-in-Strait-of-Hormuz.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-anews-us-response-0930",
+          "title": "イラン政府報道官、アラグチ外相がカタール経由で米国の回答を受け取ったと発表——内容・次の対応は非公表",
+          "body": "A News（9/30）によれば、イラン政府報道官のモハジェラニ氏は、アラグチ外相がカタールの仲介を通じて提示した提案への米国の回答を受け取ったと述べたが、米側の回答の内容やイランの次の対応は明らかにしなかった。ペゼシュキアン大統領は、イランは原則を譲っておらず「イスラマバード覚書」の成功に全力を尽くしていると述べた。イランがホルムズ海峡再開の条件として挙げてきたのは、米国の経済・軍事的圧力の終了、凍結資産の解放、安全な航路の確保など。回答の中身は報じられておらず、本稿の時点では確認できていない。",
+          "sourceLabel": "A News（9/30）",
+          "date": "2026年9月30日（現地）",
+          "label": "🤝 米国の回答がイランに到着——内容は非公表",
+          "url": "https://www.anews.com.tr/middle-east/2026/09/30/iran-receives-us-response-to-qatari-mediated-proposal-spokesperson",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月2日",
       "items": [

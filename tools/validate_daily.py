@@ -32,6 +32,9 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
       クラウドの日次では速報 PDF を取れない（403 / 202）ため、2026-10-01 から毎月4日の PC タスクで更新する。
       「◯時点」の日付が実測の今日から 40日を超えたら WARN、値・日付が食い違ったら WARN を出す。
       2026-10-01 に主要指標の備蓄カード（8/17時点・204日分のまま残っていた）を3か所目として加えた
+    - 日数の呼び名は 2026-10-02 に「封鎖N日目」から「危機N日目」へ改めた（数えているのは開戦 2/28 からの日数で、
+      特定の封鎖の日数ではない）。当日に書いた update_log / archive_timeline の本文に「封鎖N日目」や
+      主語のない「二重封鎖」があれば WARN を出す。過去分は書き換えない方針なので見ない
     - 特別解説コラムのピルの「NEW」「◯月更新」の札は、ピルの data-published / data-updated から決まる。
       記事ページ（datePublished / dateModified）と揃っていなければ WARN を出す
 """
@@ -349,8 +352,24 @@ def check_log(log, base: str) -> None:
         ng(f"update_log.json の先頭の date を解釈できません: {head!r}")
     elif ymd(*m.groups()) == base:
         ok(f"update_log.json の先頭が基準日（{head}）")
+        check_blockade_wording("update_log.json の当日分", log[0].get("text", ""))
     else:
         ng(f"update_log.json の先頭が基準日ではありません: {head}（基準 {base}）")
+
+
+# 日数の呼び名は「危機N日目」（2026-10-02〜）。「封鎖」は主語を付けて書く。
+# 過去の本文は書き換えない方針なので、当日に書いた分だけを見る（tools/blockade-term-policy.md）
+PAT_BLOCKADE_DAY = re.compile(r'封鎖\s*\d+\s*日目')
+PAT_DUAL_BLOCKADE_BARE = re.compile(r'(?<!による)(?<!紅海の)二重封鎖')
+
+
+def check_blockade_wording(label: str, text: str) -> None:
+    found = PAT_BLOCKADE_DAY.findall(text or "")
+    if found:
+        warn(f"{label} に「{found[0]}」があります。日数は「危機N日目」と書く（開戦 2/28 からの日数）")
+    if PAT_DUAL_BLOCKADE_BARE.search(text or ""):
+        warn(f"{label} に主語のない「二重封鎖」があります。「イラン・米国による二重封鎖」"
+             "「ホルムズ・紅海の二重封鎖」のどちらかで書く")
 
 
 def check_timeline(tl, base: str) -> None:
@@ -361,6 +380,7 @@ def check_timeline(tl, base: str) -> None:
     last = entries[-1].get("date", "")
     if last == base:
         ok(f"archive_timeline.json の末尾が基準日（{last}）")
+        check_blockade_wording("archive_timeline.json の当日分", entries[-1].get("summary", ""))
     else:
         # 速報を出さなかった日は追記しないルールなので、これは警告に留める
         warn(f"archive_timeline.json の末尾が基準日ではありません: {last}（基準 {base}）"

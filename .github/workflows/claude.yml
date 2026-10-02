@@ -16,13 +16,14 @@ on:
   pull_request_review:
     types: [submitted]
 
-# 同じ PR・Issue では1本ずつ動かす（途中で止めず、次の依頼は前の実行が終わってから）
-concurrency:
-  group: claude-${{ github.event.issue.number || github.event.pull_request.number }}
-  cancel-in-progress: false
-
 jobs:
   claude:
+    # 同じ PR・Issue では1本ずつ動かす（途中で止めず、次の依頼は前の実行が終わってから）。
+    # ワークフロー単位ではなくジョブ単位に置く：ワークフロー単位だと、@claude を含まない普通のコメントも
+    # 同じ組に入り、順番待ちの @claude の依頼を押し出して取り消してしまう
+    concurrency:
+      group: claude-${{ github.event.issue.number || github.event.pull_request.number }}
+      cancel-in-progress: false
     # public リポジトリなので、書き込み権限のある人（OWNER・MEMBER・COLLABORATOR）の投稿でだけジョブを起こす。
     # アクション自身も書き込み権限を確かめるが、権限のない人の @claude ではランナーも起動させない
     if: |

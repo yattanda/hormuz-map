@@ -655,7 +655,7 @@ def check_types(html: str, base: str) -> None:
 
     # ページ全体（② PR4b・2026-10-01 で <body> のインライン style は JS が状態として読む8か所だけになった）
     bi = html.find('<body')
-    page = re.sub(r'<script\b.*?</script>', '', html[bi:], flags=re.S) if bi >= 0 else ''
+    page = re.sub(r'<script\b[^>]*>.*?</script\b[^>]*>', '', html[bi:], flags=re.S | re.I) if bi >= 0 else ''
     extra = []
     for m in re.finditer(r'<(\w+)\b([^>]*?)\sstyle="([^"]*)"', page):
         tag, attrs, val = m.group(1), m.group(2), m.group(3)

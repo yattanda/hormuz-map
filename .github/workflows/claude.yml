@@ -1,5 +1,11 @@
 name: Claude Code
 
+# PR・Issue のコメントに @claude と書くと、その依頼に Claude が応える（2026-10-02 導入）。
+# - 認証は運営者の Claude サブスクリプション（Secret: CLAUDE_CODE_OAUTH_TOKEN）。API の従量課金ではないが、
+#   PC・スマホでの利用と同じ利用枠を使う
+# - PR を開くたびに自動でレビューするワークフローは入れていない（毎朝の日次更新の PR でも枠を使うため）
+# - 使い方と注意は CLAUDE.md「ブランチ＋PR の場合」のレビューの項
+
 on:
   issue_comment:
     types: [created]
@@ -10,14 +16,26 @@ on:
   pull_request_review:
     types: [submitted]
 
+# 同じ PR・Issue では1本ずつ動かす（途中で止めず、次の依頼は前の実行が終わってから）
+concurrency:
+  group: claude-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
 jobs:
   claude:
+    # public リポジトリなので、書き込み権限のある人（OWNER・MEMBER・COLLABORATOR）の投稿でだけジョブを起こす。
+    # アクション自身も書き込み権限を確かめるが、権限のない人の @claude ではランナーも起動させない
     if: |
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
-      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude') &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude') &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
+      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude') &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.review.author_association)) ||
+      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')) &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association))
     runs-on: ubuntu-latest
+    timeout-minutes: 20 # 1回の実行の上限（利用枠の使いすぎを防ぐ）
     permissions:
       contents: read
       pull-requests: read
@@ -43,8 +61,7 @@ jobs:
           # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
           # prompt: 'Update the pull request description to include a summary of changes.'
 
-          # Optional: Add claude_args to customize behavior and configuration
+          # 1回の実行の手数の上限。レビューが途中で切れるようなら増やす
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://code.claude.com/docs/en/cli-reference for available options
-          # claude_args: '--allowed-tools Bash(gh pr *)'
-
+          claude_args: '--max-turns 40'

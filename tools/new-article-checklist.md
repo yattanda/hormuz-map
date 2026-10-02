@@ -57,15 +57,34 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 
 - カード本文は要約（3〜5行程度、新しい主張やデータを加えない）
 - カード末尾に「全文を読む」ボタンを設置し `articles/{slug}.html` へリンク
+- **インライン style を書かない**（② PR4b-1・2026-10-01 からクラスで書く）。
+  色は `col-card--{色}` で選ぶ：`red`・`amber`・`sky`・`green`・`orange`・`violet`。
+  新しい色が要るときは `docs/index.html` の CSS「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
 
 ```html
-<a href="articles/{slug}.html"
-  style="display:block;margin-top:12px;width:100%;text-align:center;
-  background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);
-  border-radius:6px;color:#f87171;font-size:0.78rem;font-weight:700;
-  padding:9px 0;text-decoration:none;letter-spacing:0.03em;">
-  📄 全文を読む
-</a>
+<!-- ○○コラムカード -->
+<div class="col-card col-card--red">
+
+  <!-- タイトル行 -->
+  <div class="col-card-head">
+    <span class="col-card-icon">💣</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">記事タイトル</h3>
+      <div class="col-card-sub">サブタイトル</div>
+    </div>
+    <span class="col-card-date">2026/04/12</span>
+  </div>
+
+  <!-- 要約 -->
+  <p class="col-card-lead">
+    要約（3〜5行）
+  </p>
+
+  <!-- 全文リンク -->
+  <a href="articles/{slug}.html" class="col-card-link">
+    📄 全文を読む
+  </a>
+</div><!-- /○○コラムカード -->
 ```
 
 （色は既存カードの配色に合わせる）

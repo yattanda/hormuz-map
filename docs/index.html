@@ -813,6 +813,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .col-card--green  { --cc:52,211,153;  --cc-accent:#34d399; }
 .col-card--orange { --cc:251,146,60;  --cc-accent:#fb923c; }
 .col-card--violet { --cc:167,139,250; --cc-accent:#a78bfa; }
+.col-card--slate  { --cc:148,163,184; --cc-accent:#cbd5e1; border-color:rgba(148,163,184,0.25); }
 .col-card-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .col-card-icon { font-size:var(--fs-lg); }
 .col-card-titles { flex:1; min-width:0; }
@@ -822,6 +823,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .col-card-lead { margin-top:12px; font-size:var(--fs-sm); color:#cbd5e1; line-height:1.75; }
 .col-card-link { display:block; margin-top:12px; width:100%; text-align:center; background:rgba(var(--cc),0.1); border:1px solid rgba(var(--cc),0.3);
   border-radius:6px; color:var(--cc-accent); font-size:var(--fs-sm); font-weight:700; padding:9px 0; text-decoration:none; letter-spacing:0.03em; }
+button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモーダルで開くカード（トランプ声明） */
 .col-card-thumbrow { display:flex; align-items:center; gap:12px; margin-top:12px; }
 .col-card-thumb { width:10%; min-width:52px; max-width:72px; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:center 20%;
   border-radius:6px; flex-shrink:0; border:1px solid rgba(var(--cc),0.25); }
@@ -4546,25 +4548,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- トランプ声明バナー（移動） -->
 <!-- 2026-10-01 第1層の末尾（速報インシデントの下）から、特別解説コラムのカードへ移した。全文はモーダル #trump-modal -->
-<div id="trump-statement" style="background:rgba(148,163,184,0.05);border:1px solid rgba(148,163,184,0.25);border-radius:10px;padding:14px 18px;margin-bottom:20px;">
+<div id="trump-statement" class="col-card col-card--slate">
 
   <!-- タイトル行 -->
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <span style="font-size:1.2rem;">📜</span>
-    <div style="flex:1;min-width:0;">
-      <h3 style="font-size:0.85rem;font-weight:800;color:#cbd5e1;line-height:1.4;margin:0;">トランプ声明（4/8 JST）：2週間停止に合意</h3>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:2px;">「完全・即時・安全なホルムズ開放」を条件に ― Truth Social 投稿の原文・日本語訳・解釈分析</div>
+  <div class="col-card-head">
+    <span class="col-card-icon">📜</span>
+    <div class="col-card-titles">
+      <h3 class="col-card-title">トランプ声明（4/8 JST）：2週間停止に合意</h3>
+      <div class="col-card-sub">「完全・即時・安全なホルムズ開放」を条件に ― Truth Social 投稿の原文・日本語訳・解釈分析</div>
     </div>
-    <span style="font-size:0.68rem;color:#64748b;white-space:nowrap;">2026/04/08</span>
+    <span class="col-card-date">2026/04/08</span>
   </div>
 
   <!-- 要約 -->
-  <p style="margin-top:12px;font-size:0.8rem;color:#cbd5e1;line-height:1.75;">
+  <p class="col-card-lead">
     トランプ大統領は、パキスタンのシャリフ首相・ムニール氏との協議を受け、イランがホルムズ海峡の「完全・即時・安全な開放」に同意することを条件に、イランへの爆撃と攻撃を2週間停止すると Truth Social に投稿した。「2週間」が期限つきの猶予なのか、恒久停戦へ向けた協議期間なのか、2通りに読める点を原文と日本語訳で整理している。</p>
 
   <!-- 全文（モーダル） -->
-  <button type="button" onclick="openTrumpModal()"
-    style="display:block;margin-top:12px;width:100%;text-align:center;background:rgba(148,163,184,0.1);border:1px solid rgba(148,163,184,0.3);border-radius:6px;color:#cbd5e1;font-size:0.78rem;font-weight:700;padding:9px 0;letter-spacing:0.03em;cursor:pointer;font-family:inherit;">
+  <button type="button" onclick="openTrumpModal()" class="col-card-link">
     📜 全文を読む
   </button>
 

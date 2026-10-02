@@ -3058,6 +3058,24 @@
           "sourceLabel": "OilPrice（10/1）"
         }
       ]
+    },
+    {
+      "date": "2026-10-03",
+      "dateLabel": "2026/10/03 07:24",
+      "blockadeDay": 218,
+      "summary": "【重大更新】gCaptain（10/2）によれば、ホルムズ海峡では10/2にもUKMTOが正体不明の飛翔体による被弾を報告し、9/28以降の被弾は少なくとも6隻に上る（攻撃主体はいずれも特定されていない）・Maritime Executive（10/1）：サウジ紅海側のヤンブー港の域内に正体不明の飛翔体が着弾してタンク群付近で火災が起き、積み込みは一時止まったと伝えられる（東西パイプライン復旧後の積み出し拠点・攻撃主体は不明）・Al Jazeera（10/2）：第3空母打撃群と海兵隊遠征部隊が中東へ向かい、追加で約9,000〜1万人の兵力が派遣される（11月末までに空母3隻・揚陸群2隻の見通し）・Fox Newsのライブ報道（10/1・要約）：ブレントは+4.37%の102.31ドルで終了・日本関係船は残り4隻で変化なし（10/3確認）・危機218日目・ニュース2件更新・osint更新・ルート表（旧ルート・A・B・C・D）更新",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡で10/2にもタンカー1隻が正体不明の飛翔体を受ける——9/28以降の被弾は少なくとも6隻、攻撃主体は特定されず",
+          "url": "https://gcaptain.com/six-vessels-hit-in-strait-of-hormuz-since-sunday",
+          "sourceLabel": "gCaptain（10/2）"
+        },
+        {
+          "title": "サウジ紅海側のヤンブー港に正体不明の飛翔体が着弾、タンク群付近で火災——東西パイプライン復旧後の積み出し拠点、攻撃主体は不明",
+          "url": "https://maritime-executive.com/article/explosion-and-fire-reported-at-yanbu",
+          "sourceLabel": "Maritime Executive（10/1）"
+        }
+      ]
     }
   ]
 }

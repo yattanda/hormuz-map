@@ -3076,6 +3076,19 @@
           "sourceLabel": "Maritime Executive（10/1）"
         }
       ]
+    },
+    {
+      "date": "2026-10-04",
+      "dateLabel": "2026/10/04 07:23",
+      "blockadeDay": 219,
+      "summary": "【重大更新】Marine Insight（10/3）・Al Jazeeraのライブ報道（10/3）によれば、UKMTOは10/3、ホルムズ海峡周辺でタンカー2隻が正体不明の飛翔体を受けたと報告した（1隻は出航中に小規模火災と船内停電が起き消火済み、もう1隻は数時間後にオマーン東方で被弾。乗組員は無事で攻撃主体は不明。10/2のgCaptain報道との重なりは未確認）・Al Jazeera（10/3）：米高官は協議を「建設的」としつつ核問題が合意を遅らせていると述べた・日本関係船は残り4隻で変化なし（10/4確認）・危機219日目・ニュース1件・osint更新・ルート表（旧ルート）更新",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡周辺でタンカー2隻が正体不明の飛翔体を受ける——1隻は小規模火災後に消火、乗組員は無事・攻撃主体は不明",
+          "url": "https://www.marineinsight.com/two-oil-tankers-hit-by-unidentified-projectiles-near-strait-of-hormuz/",
+          "sourceLabel": "Marine Insight（10/3）"
+        }
+      ]
     }
   ]
 }

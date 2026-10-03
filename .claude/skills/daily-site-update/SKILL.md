@@ -403,7 +403,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 根拠<br>
   🅑 膠着継続 <span class="sc-trend">↑</span> — 根拠<br>
   🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
-  🅓 全面対決・無期限封鎖 <span class="sc-trend">↓</span> — 根拠<br>
+  🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↓</span> — 根拠<br>
   <strong class="sc-update-caveat">断定を避ける注記。</strong><br>
   <div class="sc-sync-note">
     各シナリオ確率は 2026年9月29日 09:12 JST 時点での分析に基づく自動同期

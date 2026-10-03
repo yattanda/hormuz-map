@@ -1,7 +1,17 @@
 {
-  "updated": "2026年10月03日 07:24 日本時間JST",
+  "updated": "2026年10月04日 07:23 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-marineinsight-two-tankers-1003",
+      "title": "ホルムズ海峡周辺でタンカー2隻が正体不明の飛翔体を受ける——1隻は小規模火災後に消火、乗組員は無事・攻撃主体は不明",
+      "body": "Marine Insight（10/3）によれば、UKMTOは10/3、石油タンカー2隻が正体不明の飛翔体を受けたと報告した。1隻目は海峡を出る途中で小規模な火災と船内停電が起きたが消火され、数時間後に2隻目の原油タンカーがオマーン東方で被弾した。いずれも乗組員は無事で環境被害はなく、UKMTOは飛翔体も攻撃主体も特定していない。船名と正確な時刻は記事から確認できない。1隻目の経緯は10/2のgCaptain報道の要約と似ており、同一の事案か別の事案かは確認できていない。Al Jazeeraのライブブログ（10/3）も同日に「2隻が被弾」と伝えている。",
+      "sourceLabel": "Marine Insight（10/3）",
+      "date": "2026年10月3日（現地）",
+      "label": "⚓ 10/3 タンカー2隻が被弾——UKMTO・主体は不明",
+      "url": "https://www.marineinsight.com/two-oil-tankers-hit-by-unidentified-projectiles-near-strait-of-hormuz/",
+      "isLatest": true
+    },
     {
       "id": "latest-gcaptain-six-vessels-1002",
       "title": "ホルムズ海峡で10/2にもタンカー1隻が正体不明の飛翔体を受ける——9/28以降の被弾は少なくとも6隻、攻撃主体は特定されず",
@@ -10,7 +20,7 @@
       "date": "2026年10月2日（現地）",
       "label": "⚓ 10/2もタンカー被弾——9/28以降少なくとも6隻・攻撃主体は不明",
       "url": "https://gcaptain.com/six-vessels-hit-in-strait-of-hormuz-since-sunday",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-maritimeexec-yanbu-1001",
@@ -31,19 +41,27 @@
       "label": "🚨 追加制裁・空母3隻体制へ——ホルムズで超大型タンカー被弾",
       "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
       "isLatest": false
-    },
-    {
-      "id": "latest-asiae-trump-midterms-1001",
-      "title": "トランプ氏「中間選挙後の対イラン攻撃強化は可能」——7日間計画は「十分でなかった」、空母セオドア・ルーズベルトが中東へ",
-      "body": "Asia Business Daily（10/1）によれば、トランプ氏は9/28に行ったインタビュー（10/1公開）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、イランの7日間計画（海峡再開の条件提示）について「十分ではなかった」と語った。空母セオドア・ルーズベルトは9/27にサンディエゴを出港、強襲揚陸群マキン・アイランドは9/28に出航しており、域内の空母は3隻になりうる。ルビオ国務長官は9/28にイランの代表団へ米国からの即時退去を求め、代表団は9/29早朝にニューヨークを発ったという。",
-      "sourceLabel": "Asia Business Daily（10/1）",
-      "date": "2026年10月1日（現地）",
-      "label": "🇺🇸 中間選挙後の攻撃強化に含み・空母増派",
-      "url": "https://view.asiae.co.kr/en/article/2026100205164613722",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-live-1003",
+      "titleJa": "【Al Jazeera】イラン戦争ライブ——ホルムズ海峡でタンカー被弾、米高官は協議を「建設的」と表現",
+      "titleEn": "Iran war live: Oil tankers hit in flurry of attacks around Strait of Hormuz",
+      "title": "【Al Jazeera】イラン戦争ライブ——ホルムズ海峡でタンカー被弾、米高官は協議を「建設的」と表現",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月3日（現地）",
+      "summary": "Al Jazeeraのライブブログ（10/3）は、UKMTOがホルムズ海峡でタンカー2隻が「正体不明の飛翔体」を受けたと報告したこと、米政府高官が米イラン協議を「建設的」としつつ核問題が合意を遅らせていると述べたこと、UAEが拘束していたイラン人を釈放しイランへ帰還させる予定であること、イエメンのタイズ西部での戦闘が続いていることを伝えた。",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/10/3/iran-war-live-fighting-intensifies-in-yemen-hundreds-killed-or-injured",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-carrier-10000-troops-1002",
       "titleJa": "【Al Jazeera】第3空母と米兵約1万人を増派——イラン戦争はエスカレートするのか",
@@ -55,7 +73,7 @@
       "date": "2026年10月2日（現地）",
       "summary": "Al Jazeera（10/2）は、第3空母打撃群（セオドア・ルーズベルト）と海兵隊遠征部隊の中東派遣、追加で約9,000〜1万人の兵力投入、11月末までの空母3隻・揚陸群2隻の展開見通しを伝えた。トランプ氏が中間選挙後の攻撃強化に含みを持たせる一方、イランは7日間の海峡再開案を示しており、交渉は行き詰まっている。",
       "url": "https://www.aljazeera.com/news/2026/10/2/new-aircraft-carrier-10000-us-troops-is-the-iran-war-about-to-escalate",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1646,6 +1664,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月4日",
+      "items": [
+        {
+          "id": "latest-asiae-trump-midterms-1001",
+          "title": "トランプ氏「中間選挙後の対イラン攻撃強化は可能」——7日間計画は「十分でなかった」、空母セオドア・ルーズベルトが中東へ",
+          "body": "Asia Business Daily（10/1）によれば、トランプ氏は9/28に行ったインタビュー（10/1公開）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、イランの7日間計画（海峡再開の条件提示）について「十分ではなかった」と語った。空母セオドア・ルーズベルトは9/27にサンディエゴを出港、強襲揚陸群マキン・アイランドは9/28に出航しており、域内の空母は3隻になりうる。ルビオ国務長官は9/28にイランの代表団へ米国からの即時退去を求め、代表団は9/29早朝にニューヨークを発ったという。",
+          "sourceLabel": "Asia Business Daily（10/1）",
+          "date": "2026年10月1日（現地）",
+          "label": "🇺🇸 中間選挙後の攻撃強化に含み・空母増派",
+          "url": "https://view.asiae.co.kr/en/article/2026100205164613722",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月3日",
       "items": [

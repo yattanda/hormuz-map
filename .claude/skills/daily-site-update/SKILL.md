@@ -82,12 +82,15 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 | ファイル | 内容 |
 |---|---|
 | `docs/data/news_data.json` | ニュース・OSINT（`latest` 4件・`osint`・`updated`） |
-| `docs/index.html` | TICKER・30秒カラム（主な動きを含む）・速報インシデント・シナリオ・ヘッダー日時・`dateModified` ほか |
+| `docs/hormuz/index.html` | TICKER・30秒カラム（主な動きを含む）・速報インシデント・シナリオ・ヘッダー日時・`dateModified` ほか |
 | `docs/data/update_log.json` | 更新ログ（先頭に追記し、index.html 側は最新10件を維持） |
 | `docs/data/archive_timeline.json` | 当日分のエントリーを1件追記（速報を出した日のみ） |
-| `docs/sitemap.xml` | `/` と `/archive/` の `<lastmod>`（末尾「sitemap.xml の lastmod」参照） |
+| `docs/sitemap.xml` | `/hormuz/` と `/archive/` の `<lastmod>`（末尾「sitemap.xml の lastmod」参照） |
 
-- `docs/index.html` を触る前に `/html-safe-edit` の制約を確認する
+- `docs/hormuz/index.html` を触る前に `/html-safe-edit` の制約を確認する
+- **日次更新の対象は `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）。`docs/index.html` は媒体トップ（ハブ）で、日次更新では触らない**
+  （2026-10 の構造再編で本体を `/hormuz/` へ移した。ハブの「最終更新」「最新の動き」は `news_data.json` を JS が読むので、書き換える場所は増えていない。
+   このスキルで単に `index.html` と書いてある箇所は、`docs/archive/index.html` と明記したものを除き `docs/hormuz/index.html` を指す）
 - 文章表記・メディア選定は `/content-style-guide` に従う
 - 上の5ファイルとは別に、条件を満たす日は **hormuz-data- の経緯（`data/context.json` の `timeline`）を追記する**
   （別リポジトリ。末尾「hormuz-data- の経緯（timeline）追記」参照）
@@ -117,14 +120,14 @@ python tools/validate_daily.py
   - **「予定」「未確認」と書いてある記述は、その予定の時期を過ぎたら必ず確かめ直す**
   - （2026-09-26：A・C🇺🇸・C🌍・D の4行が 9/15 の一括再確認のまま11日放置され、C🇺🇸 に「メキシコ産原油は7月初便予定・
     到着未確認」が残っていた。実際は 7/17 に到着済みで、訂正履歴に記録した）
-- `sitemap.xml` の `/` の `lastmod` が基準日と一致するか（NG）、
+- `sitemap.xml` の `/hormuz/` の `lastmod` が基準日と一致するか（NG）、
   `/archive/` の `lastmod` が `archive_timeline` 末尾の日付より古くないか（NG）
 - **hormuz-data- の経緯（`timeline`）の最新日が実測の今日から5日を超えていないか（WARN のみ）**。
   ローカルの `../hormuz-data-/data/context.json` を優先し、無ければ公開 URL を読む。
   どちらも読めなければ WARN「未確認」。WARN が出たら追記の要否を判断する
-- **`index.html` の石油備蓄日数3か所の「◯時点」が実測の今日から40日を超えていないか、食い違っていないか（WARN のみ）**。
+- **石油備蓄日数4か所（`docs/hormuz/index.html` の3か所とハブ `docs/index.html` の1か所）の「◯時点」が実測の今日から40日を超えていないか、食い違っていないか（WARN のみ）**。
   対象は地図の「🇯🇵 日本の受入拠点」ポップアップ（`石油備蓄：…日分（国家…、M/D時点）`）、
-  精製所表の下の注記（`合計は約…日分（YYYY年M月D日時点）`）、主要指標の備蓄カード（`YYYY年M月D日時点（速報）`）。更新は毎月4日の PC タスクの担当。
+  精製所表の下の注記（`合計は約…日分（YYYY年M月D日時点）`）、主要指標の備蓄カード（`YYYY年M月D日時点（速報）`）、ハブの主要な数字（`id="hub-stockpile"`）。更新は毎月4日の PC タスクの担当。
   WARN が出たら日次では直さず、報告に書く（「石油備蓄日数の見直し」）
 
 ニュース URL を実際に叩いて確認する場合（捏造・誤記の検出）:
@@ -180,7 +183,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - **バックアップとして残している。削除・移動しない。**通常の日次更新では使わない
 - 使うのは、クラウドセッションや Claude Code が使えない日など、上の通常フローが回らないときに限る。
   `mobile-update.yml` を手動実行すれば、Claude Code を使わずに差分を適用できる
-- 差分は**現在の `docs/index.html` を元に作る**。古いファイルを元にした差分は
+- 差分は**現在の `docs/hormuz/index.html` を元に作る**。古いファイルを元にした差分は
   `old_str` が一致せず適用に失敗する（壊れはしないがスキップされる）
 - やむを得ず使う場合、スマホからの手編集のコミットメッセージは
   `mobile: update index_html_diffs.md (M/D HH:MM JST)` の形式にする
@@ -206,7 +209,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 10. ヘッダー（日時・警戒レベル）更新
 11. 更新ログ 追記（型は下の「更新履歴の型」）
 12. `archive_timeline.json` への当日分追記（速報を出した日のみ）
-13. `docs/sitemap.xml` の `<lastmod>` 更新（`/` は毎回、`/archive/` は 12 を行った日のみ）
+13. `docs/sitemap.xml` の `<lastmod>` 更新（`/hormuz/` は毎回、`/archive/` は 12 を行った日のみ）
 14. hormuz-data- の経緯（`data/context.json` の `timeline`）追記（確定した事実に変化があった日のみ。ただし最低でも7日に1回）
 
 ---
@@ -232,7 +235,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ### セクション補足
 
-- **インフォグラフィック画像**：`docs/images/` に配置。追加時は `openLightbox('images/xxx.png')` を参照（引数は `index.html` からの相対パス）
+- **インフォグラフィック画像**：`docs/images/` に配置。追加時は `openLightbox('/images/xxx.png')` を参照（引数はルート相対パス。`<img src>` も `/images/…` と書く。ページ間のリンク `<a href>` は `../articles/…` のように文書相対）
 - **MAPタンカー可視化**：毎日、作業前に「日本関係船舶 ホルムズ海峡 通過 足止め」等を web 検索し、足止め数・通過数の変化を調査すること（省略禁止）。変化あり時は SHIP_CONFIG（totalShips・passableShips・date・dateConfirmed）を全て更新。変化なし時も dateConfirmed に調査日時（JST）と「変更なし」を記録すること。
 - **シナリオ確率**：ページ読み込み時に `syncScenarioFromDashboard()` が hormuz-data- から自動上書きするため手動更新不要。ただし矢印（↑↓）や補足テキストは手動で情勢に合わせて更新する
   - 手動更新が不要なのは**確率の数値の転記**だけ。その数値は hormuz-data- の Gemini が
@@ -242,7 +245,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ### 石油備蓄日数の見直し（2026-10-01〜：更新は毎月4日の PC タスク）
 
-`index.html` には石油備蓄日数が3か所ある（地図ポップアップ・精製所表の注記・主要指標の備蓄カード）。**更新は毎月4日の PC のスケジュールタスク
+`docs/hormuz/index.html` には石油備蓄日数が3か所（地図ポップアップ・精製所表の注記・主要指標の備蓄カード）、ハブ `docs/index.html` に1か所（主要な数字）ある。**更新は毎月4日の PC のスケジュールタスク
 （`tools/oil-stockpile-monthly-update.md` の「3. 周辺を追従させる」）が担当し、日次更新では書き換えない。**
 取得元の資源エネルギー庁「石油備蓄の状況（推計値の速報）」PDF は curl / WebFetch では取れず（bot 対策で 403 / 202）、
 クラウドの日次にはアプリ内ブラウザが無いため。合計は日ごとに ±1〜3日分上下するので、月1回の更新で足りる
@@ -465,7 +468,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 **2026-10-01 から休止中。日次更新ではこのセクションに何も書かない。**
 
-- `docs/index.html` には `<!-- COUNTDOWN -->` と休止の説明コメントだけが残っている。**このコメントは消さない・書き換えない**
+- `docs/hormuz/index.html` には `<!-- COUNTDOWN -->` と休止の説明コメントだけが残っている。**このコメントは消さない・書き換えない**
 - フェーズ見出し（`Phase NN「…」——封鎖N日目`）・リアルタイムカウントダウン・展望ノート（`dl-note`）は**復活させない**。
   最後のフェーズ番号は Phase 47（2026-10-01）。番号を続けるかどうかも再定義で決める
 - 休止の理由：タイマーの期限は 5/22 が最後で、以後は「猶予期限経過」の固定表示だった。
@@ -524,7 +527,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ## news_data.json 運用ルール
 
 - `docs/data/news_data.json` がニュース・OSINT 表示の単一ソース（NEWS COLUMN・現地メディア視点は JS で動的レンダリング）
-- 毎日の更新は `docs/data/news_data.json` のみを編集する（`docs/index.html` の NEWS COLUMN セクションは触らない）
+- 毎日の更新は `docs/data/news_data.json` のみを編集する（`docs/hormuz/index.html` の NEWS COLUMN セクションは触らない）
 - `latest` に最新4件を掲載。追加時は最古の1件を `archive` の先頭バッチへ移動する
 - `archive` は更新バッチ単位（`batchLabel` 付き）で管理。1バッチ10件前後が目安
 - `osint` は各メディア1件ずつ。`isLatest: true` は最新記事1件のみに付与（複数不可）
@@ -665,7 +668,7 @@ hormuz-data- は**別リポジトリ**なので、hormuz-map の日次コミッ�
 
 ## JSON-LD dateModified の更新（毎回必須）
 
-docs/index.html 内の以下の行を本日のJST日付（YYYY-MM-DD）に更新すること：
+docs/hormuz/index.html 内の以下の行を本日のJST日付（YYYY-MM-DD）に更新すること：
 
   "dateModified": "YYYY-MM-DD",
 
@@ -685,7 +688,8 @@ docs/index.html 内の以下の行を本日のJST日付（YYYY-MM-DD）に更新
 date -u -d '+9 hours' +%F
 ```
 
-- `https://chokepointlab.com/` の `<lastmod>` ← **毎回**
+- `https://chokepointlab.com/hormuz/` の `<lastmod>` ← **毎回**
+- `https://chokepointlab.com/`（ハブ）の `<lastmod>` は**動かさない**（ハブの HTML を変えた日だけ、その作業のなかで更新する）
 - `https://chokepointlab.com/archive/` の `<lastmod>` ← `archive_timeline.json` に当日分を追記した日のみ
   （追記しない日はアーカイブの中身が変わらないため動かさない）
 

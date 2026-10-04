@@ -145,7 +145,7 @@
 
   <div class="footer">
     yattanda/hormuz-map<br>
-    対象: docs/index.html &amp; docs/data/news_data.json<br>
+    対象: docs/hormuz/index.html &amp; docs/data/news_data.json<br>
     Token はページを閉じると消去されます
   </div>
 
@@ -153,7 +153,7 @@
 <script>
 const OWNER = 'yattanda';
 const REPO  = 'hormuz-map';
-const DEFAULT_PATH = 'docs/index.html';
+const DEFAULT_PATH = 'docs/hormuz/index.html';
 
 // APPLY ブロック正規表現（FILE: ディレクティブ対応）
 const BLOCK_RE = /<!--\s*APPLY:START\s*-->\s*\n(?:<!--\s*FILE:(.*?)\s*-->\s*\n)?<!--\s*OLD:START\s*-->\n([\s\S]*?)\n?<!--\s*OLD:END\s*-->\s*\n<!--\s*NEW:START\s*-->\n([\s\S]*?)\n?<!--\s*NEW:END\s*-->\s*\n<!--\s*APPLY:END\s*-->/g;

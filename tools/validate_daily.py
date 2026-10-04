@@ -27,11 +27,12 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
       入っていなかったため 9/3 で止まり、ダッシュボードに ⚠ が出た（2026-09-19 に発覚）。
       最新日が実測の今日から 5日を超えたら WARN を出す（別リポジトリのため NG にはしない）。
       ローカルの ../hormuz-data- を優先し、無ければ公開 URL を取得する。どちらも失敗したら WARN
-    - index.html には石油備蓄日数が3か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記・主要指標の備蓄カード）ある。
+    - /hormuz/ には石油備蓄日数が3か所（地図の「日本の受入拠点」ポップアップ・精製所表の注記・主要指標の備蓄カード）ある。
       当初はどちらも特別解説コラムの月次更新の対象外で、8/17時点の値が 9/28 まで残っていた。
       クラウドの日次では速報 PDF を取れない（403 / 202）ため、2026-10-01 から毎月4日の PC タスクで更新する。
       「◯時点」の日付が実測の今日から 40日を超えたら WARN、値・日付が食い違ったら WARN を出す。
-      2026-10-01 に主要指標の備蓄カード（8/17時点・204日分のまま残っていた）を3か所目として加えた
+      2026-10-01 に主要指標の備蓄カード（8/17時点・204日分のまま残っていた）を3か所目として加えた。
+      2026-10 の構造再編でハブ（docs/index.html）の主要な数字を4か所目として加えた
     - 日数の呼び名は 2026-10-02 に「封鎖N日目」から「危機N日目」へ改めた（数えているのは開戦 2/28 からの日数で、
       特定の封鎖の日数ではない）。当日に書いた update_log / archive_timeline の本文に「封鎖N日目」や
       主語のない「二重封鎖」があれば WARN を出す。過去分は書き換えない方針なので見ない
@@ -53,7 +54,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent.parent
-HTML = ROOT / "docs" / "index.html"
+HTML = ROOT / "docs" / "hormuz" / "index.html"   # ホルムズ海峡危機マップ本体（日次更新の対象）
+HUB = ROOT / "docs" / "index.html"               # 媒体トップ（ハブ）。日次では触らない
 NEWS = ROOT / "docs" / "data" / "news_data.json"
 LOG = ROOT / "docs" / "data" / "update_log.json"
 TIMELINE = ROOT / "docs" / "data" / "archive_timeline.json"
@@ -113,7 +115,7 @@ PAT_ROUTE_LATEST = re.compile(r'<p class="route-latest">.*?<time datetime="(\d{4
 STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に無ければ WARN
 
 # sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
-PAT_SITEMAP_TOP = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
+PAT_SITEMAP_TOP = re.compile(r'<loc>https?://[^/<]+/hormuz/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 PAT_SITEMAP_ARCHIVE = re.compile(r'<loc>https?://[^/<]+/archive/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 
 # hormuz-data- の経緯（Gemini に渡す確定した事実）。ローカルはリポジトリの親ディレクトリ基準
@@ -122,13 +124,17 @@ DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
 # ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
 DATA_TIMELINE_WARN_DAYS = 5
 
-# index.html の石油備蓄日数3か所（毎月4日の PC タスクがコラムとあわせて更新する）
+# /hormuz/ の石油備蓄日数3か所（毎月4日の PC タスクがコラムとあわせて更新する）
 PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*?(\d{1,2})/(\d{1,2})時点）')
 PAT_STOCKPILE_NOTE = re.compile(r'合計は約(\d+)日分（(\d{4})年(\d{1,2})月(\d{1,2})日時点）')
 # 主要指標の備蓄カード（時点の行 → 見出し → 合計の数字）。インライン style・クラスのどちらの書き方でも拾う
 PAT_STOCKPILE_CARD = re.compile(
     r'>(\d{4})年(\d{1,2})月(\d{1,2})日時点（速報）</div>\s*<div[^>]*>📊 日本の石油備蓄</div>\s*'
     r'<div class="stat-num[^"]*"[^>]*>(\d+)<span')
+# ハブ（docs/index.html）の「主要な数字」。4か所目（2026-10 の構造再編で追加・設計書 s11-10-design.md D6-補）
+PAT_STOCKPILE_HUB = re.compile(
+    r'id="hub-stockpile">(\d+)<span[^>]*>日分</span></div>\s*'
+    r'<div class="hub-stat-note">(\d{4})年(\d{1,2})月(\d{1,2})日時点（速報）')
 STOCKPILE_WARN_DAYS = 40  # 月1回の更新で最長 約34日。PC が止まった数日分の余裕を足す
 
 # <body> に残してよいインライン style（JS が style.display / style.width を状態として読み書きする要素の初期値）
@@ -145,9 +151,9 @@ STYLE_ALLOWED = {
 
 # 特別解説コラムのピル（「NEW」「◯月更新」の札の元になる日付）と記事ページの構造化データ
 PAT_COLUMN_PILL = re.compile(
-    r'<a href="articles/([\w-]+\.html)" class="jump-pill[^"]*"'
+    r'<a href="\.\./articles/([\w-]+\.html)" class="jump-pill[^"]*"'
     r' data-published="(\d{4}-\d{2}-\d{2})" data-updated="(\d{4}-\d{2}-\d{2})"')
-PAT_COLUMN_PILL_ANY = re.compile(r'<a href="articles/([\w-]+\.html)"[^>]*class="jump-pill')
+PAT_COLUMN_PILL_ANY = re.compile(r'<a href="\.\./articles/([\w-]+\.html)"[^>]*class="jump-pill')
 PAT_ARTICLE_PUBLISHED = re.compile(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})"')
 PAT_ARTICLE_MODIFIED = re.compile(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"')
 
@@ -426,7 +432,7 @@ def check_sitemap(tl, base: str) -> None:
 
     Google は lastmod が一貫して正確な場合にのみ利用する。トップが日次更新されているのに
     lastmod が 2026-05-20 のまま放置されていた（2026-09-19 に発覚）ための追加。
-    - `/` は日次更新のたびに変わるので基準日と一致すること（NG）
+    - `/hormuz/` は日次更新のたびに変わるので基準日と一致すること（NG）
     - `/archive/` は archive_timeline に追記した日だけ変わるので、末尾の日付より古くないこと（NG）
     """
     try:
@@ -437,11 +443,11 @@ def check_sitemap(tl, base: str) -> None:
 
     m = PAT_SITEMAP_TOP.search(xml)
     if not m:
-        ng("sitemap.xml の / の lastmod を検出できませんでした（構造が変わった可能性）")
+        ng("sitemap.xml の /hormuz/ の lastmod を検出できませんでした（構造が変わった可能性）")
     elif m.group(1) == base:
-        ok(f"sitemap.xml / の lastmod {m.group(1)}")
+        ok(f"sitemap.xml /hormuz/ の lastmod {m.group(1)}")
     else:
-        ng(f"sitemap.xml / の lastmod が基準日と違います: {m.group(1)}（基準 {base}）")
+        ng(f"sitemap.xml /hormuz/ の lastmod が基準日と違います: {m.group(1)}（基準 {base}）")
 
     entries = (tl or {}).get("entries")
     last = entries[-1].get("date", "") if isinstance(entries, list) and entries else ""
@@ -516,7 +522,7 @@ def check_data_timeline() -> None:
 
 
 def check_stockpile(html: str) -> None:
-    """index.html の石油備蓄日数3か所が古すぎないか、互いに食い違っていないか。
+    """石油備蓄日数4か所（/hormuz/ の3か所とハブの1か所）が古すぎないか、互いに食い違っていないか。
 
     WARN のみ。値の正しさ（資源エネルギー庁の速報との一致）は機械では確かめられない。
     基準日ではなく実測の今日（JST）から数える。
@@ -546,12 +552,21 @@ def check_stockpile(html: str) -> None:
     else:
         warn("石油備蓄日数（主要指標の備蓄カード）を検出できません（書式が変わった可能性）")
 
+    try:
+        m = PAT_STOCKPILE_HUB.search(HUB.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        m = None
+    if m:
+        found["ハブの主要な数字"] = (int(m.group(1)), date(*map(int, m.group(2, 3, 4))))
+    else:
+        warn("石油備蓄日数（ハブ docs/index.html の主要な数字）を検出できません（書式が変わった可能性）")
+
     for name, (total, asof) in found.items():
         age = (today - asof).days
         if age > STOCKPILE_WARN_DAYS:
             warn(f"石油備蓄日数（{name}）が {asof.isoformat()}時点のまま（{age}日前）。"
                  f"毎月4日の PC タスクが止まっている可能性。日次では書き換えず、報告に書くこと"
-                 f"（PC 側で tools/oil-stockpile-monthly-update.md の手順で3か所とも更新する）")
+                 f"（PC 側で tools/oil-stockpile-monthly-update.md の手順で4か所とも更新する）")
         else:
             ok(f"石油備蓄日数（{name}）{total}日分・{asof.isoformat()}時点（{age}日前）")
 
@@ -731,7 +746,7 @@ def main() -> int:
     try:
         html = HTML.read_text(encoding="utf-8")
     except FileNotFoundError:
-        ng("docs/index.html が見つかりません")
+        ng("docs/hormuz/index.html が見つかりません")
         html = ""
 
     if news is None or not html:

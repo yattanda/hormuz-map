@@ -99,6 +99,8 @@ def load_json(path: Path):
 PAT_DATEMODIFIED = re.compile(r'"dateModified":\s*"(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})')
 PAT_HEADER = re.compile(r'badge-date">\s*📅\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
 PAT_TICKER = re.compile(r'📅\s*(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})\s*更新')
+# ハブ（docs/index.html）の「危機マップの最終更新」の静的な予備。年を持たないので月日だけ照合する
+PAT_HUB_UPDATED = re.compile(r'id="hub-updated">(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})<')
 PAT_TICKER_COMMENT = re.compile(r'<!--\s*新ティッカー（(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST）\s*-->')
 PAT_ROUTES = re.compile(
     r'sec-h2-sub">\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST\s*(?:更新|再確認済)'
@@ -115,6 +117,7 @@ PAT_ROUTE_LATEST = re.compile(r'<p class="route-latest">.*?<time datetime="(\d{4
 STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に無ければ WARN
 
 # sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
+PAT_SITEMAP_HUB = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 PAT_SITEMAP_TOP = re.compile(r'<loc>https?://[^/<]+/hormuz/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 PAT_SITEMAP_ARCHIVE = re.compile(r'<loc>https?://[^/<]+/archive/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 
@@ -254,6 +257,33 @@ def check_ticker_comment(html: str, base: str) -> None:
         warn(f"速報ティッカーのコメントの時刻 {hm} がヘッダーの時刻 {m.group(4)} と違います")
     else:
         ok(f"速報ティッカーのコメントの日時 {got} {hm}")
+
+
+def check_hub_updated(html: str, base: str) -> None:
+    """ハブ（docs/index.html）の「危機マップの最終更新」が、本体のヘッダー日時と同じか。
+
+    ハブの表示は JS が news_data.json の updated で上書きするが、HTML に置いた静的な値は
+    日次更新が書き換える（JS が動かない環境・検索エンジン向けの予備）。書き換え漏れを NG にする。
+    """
+    try:
+        hub = HUB.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        ng("docs/index.html（ハブ）が見つかりません")
+        return
+    m = PAT_HUB_UPDATED.search(hub)
+    if not m:
+        ng("ハブ（docs/index.html）の「危機マップの最終更新」（id=\"hub-updated\" の M/D HH:MM）を検出できませんでした")
+        return
+    mo, d, hm = int(m.group(1)), int(m.group(2)), m.group(3)
+    want = (int(base[5:7]), int(base[8:10]))
+    if (mo, d) != want:
+        ng(f"ハブの「危機マップの最終更新」の日付が基準日と違います: {mo}/{d}（基準 {want[0]}/{want[1]}）")
+        return
+    h = PAT_HEADER.search(html)
+    if h and h.group(4) != hm:
+        warn(f"ハブの「危機マップの最終更新」の時刻 {hm} が本体のヘッダーの時刻 {h.group(4)} と違います")
+    else:
+        ok(f"ハブの「危機マップの最終更新」 {mo}/{d} {hm}")
 
 
 def check_route_freshness(html: str, base: str) -> None:
@@ -432,7 +462,7 @@ def check_sitemap(tl, base: str) -> None:
 
     Google は lastmod が一貫して正確な場合にのみ利用する。トップが日次更新されているのに
     lastmod が 2026-05-20 のまま放置されていた（2026-09-19 に発覚）ための追加。
-    - `/hormuz/` は日次更新のたびに変わるので基準日と一致すること（NG）
+    - `/hormuz/` と `/`（ハブ。「危機マップの最終更新」を書き換える）は日次更新のたびに変わるので基準日と一致すること（NG）
     - `/archive/` は archive_timeline に追記した日だけ変わるので、末尾の日付より古くないこと（NG）
     """
     try:
@@ -448,6 +478,14 @@ def check_sitemap(tl, base: str) -> None:
         ok(f"sitemap.xml /hormuz/ の lastmod {m.group(1)}")
     else:
         ng(f"sitemap.xml /hormuz/ の lastmod が基準日と違います: {m.group(1)}（基準 {base}）")
+
+    m = PAT_SITEMAP_HUB.search(xml)
+    if not m:
+        ng("sitemap.xml の /（ハブ）の lastmod を検出できませんでした（構造が変わった可能性）")
+    elif m.group(1) == base:
+        ok(f"sitemap.xml /（ハブ）の lastmod {m.group(1)}")
+    else:
+        ng(f"sitemap.xml /（ハブ）の lastmod が基準日と違います: {m.group(1)}（基準 {base}）")
 
     entries = (tl or {}).get("entries")
     last = entries[-1].get("date", "") if isinstance(entries, list) and entries else ""
@@ -784,6 +822,7 @@ def main() -> int:
             ng(f"{name} が基準日と違います: {val}（基準 {base}）")
     check_ticker(html, base)
     check_ticker_comment(html, base)
+    check_hub_updated(html, base)
     check_route_freshness(html, base)
     check_types(html, base)
 

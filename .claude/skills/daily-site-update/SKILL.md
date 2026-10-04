@@ -6,6 +6,7 @@ description: Daily update workflow for hormuz-map site / ホルムズマップ�
 # 日次定常更新スキル
 
 このスキルはホルムズマップの毎日の定常更新作業に使用する。
+「日次更新」は毎日行うのが基本だが、情勢が膠着している時期などには更新しない日もある（運営者の判断）。
 
 ---
 
@@ -77,7 +78,7 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 ### 3. ファイルを直接編集する
 
-後述の「毎日更新の作業順序（厳守）」の番号順に進める。触るのは次の5ファイル。
+後述の「毎日更新の作業順序（厳守）」の番号順に進める。触るのは次の6ファイル。
 
 | ファイル | 内容 |
 |---|---|
@@ -85,12 +86,16 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 | `docs/hormuz/index.html` | TICKER・30秒カラム（主な動きを含む）・速報インシデント・シナリオ・ヘッダー日時・`dateModified` ほか |
 | `docs/data/update_log.json` | 更新ログ（先頭に追記し、index.html 側は最新10件を維持） |
 | `docs/data/archive_timeline.json` | 当日分のエントリーを1件追記（速報を出した日のみ） |
-| `docs/sitemap.xml` | `/hormuz/` と `/archive/` の `<lastmod>`（末尾「sitemap.xml の lastmod」参照） |
+| `docs/index.html` | ハブの「危機マップの最終更新」の1か所だけ（`id="hub-updated"`） |
+| `docs/sitemap.xml` | `/`・`/hormuz/` と `/archive/` の `<lastmod>`（末尾「sitemap.xml の lastmod」参照） |
 
 - `docs/hormuz/index.html` を触る前に `/html-safe-edit` の制約を確認する
-- **日次更新の対象は `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）。`docs/index.html` は媒体トップ（ハブ）で、日次更新では触らない**
-  （2026-10 の構造再編で本体を `/hormuz/` へ移した。ハブの「最終更新」「最新の動き」は `news_data.json` を JS が読むので、書き換える場所は増えていない。
-   このスキルで単に `index.html` と書いてある箇所は、`docs/archive/index.html` と明記したものを除き `docs/hormuz/index.html` を指す）
+- **日次更新の対象は `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）。`docs/index.html` は媒体トップ（ハブ）で、日次更新で触るのは下の1か所だけ**
+  （2026-10 の構造再編で本体を `/hormuz/` へ移した。このスキルで単に `index.html` と書いてある箇所は、
+   `docs/archive/index.html` と明記したものを除き `docs/hormuz/index.html` を指す）
+  - **ハブの「危機マップの最終更新」**：`<div class="hub-stat-num hub-stat-num--text" id="hub-updated">10/4 07:23</div>` の `M/D HH:MM` を、
+    本体のヘッダー日時と同じ日時に書き換える（月日はゼロ埋めしない）。画面の表示は JS が `news_data.json` の `updated` で上書きするが、
+    HTML の値は JS が動かないときの予備として残るため、毎回そろえる。ハブのほかの箇所（主要な数字・地図・「最新の動き」）は触らない
 - 文章表記・メディア選定は `/content-style-guide` に従う
 - 上の5ファイルとは別に、条件を満たす日は **hormuz-data- の経緯（`data/context.json` の `timeline`）を追記する**
   （別リポジトリ。末尾「hormuz-data- の経緯（timeline）追記」参照）
@@ -120,7 +125,8 @@ python tools/validate_daily.py
   - **「予定」「未確認」と書いてある記述は、その予定の時期を過ぎたら必ず確かめ直す**
   - （2026-09-26：A・C🇺🇸・C🌍・D の4行が 9/15 の一括再確認のまま11日放置され、C🇺🇸 に「メキシコ産原油は7月初便予定・
     到着未確認」が残っていた。実際は 7/17 に到着済みで、訂正履歴に記録した）
-- `sitemap.xml` の `/hormuz/` の `lastmod` が基準日と一致するか（NG）、
+- ハブの「危機マップの最終更新」（`id="hub-updated"`）の月日が基準日と一致するか（NG）、時刻が本体のヘッダーと同じか（WARN）
+- `sitemap.xml` の `/` と `/hormuz/` の `lastmod` が基準日と一致するか（NG）、
   `/archive/` の `lastmod` が `archive_timeline` 末尾の日付より古くないか（NG）
 - **hormuz-data- の経緯（`timeline`）の最新日が実測の今日から5日を超えていないか（WARN のみ）**。
   ローカルの `../hormuz-data-/data/context.json` を優先し、無ければ公開 URL を読む。
@@ -209,7 +215,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 10. ヘッダー（日時・警戒レベル）更新
 11. 更新ログ 追記（型は下の「更新履歴の型」）
 12. `archive_timeline.json` への当日分追記（速報を出した日のみ）
-13. `docs/sitemap.xml` の `<lastmod>` 更新（`/hormuz/` は毎回、`/archive/` は 12 を行った日のみ）
+13. `docs/sitemap.xml` の `<lastmod>` 更新（`/` と `/hormuz/` は毎回、`/archive/` は 12 を行った日のみ）。あわせてハブ `docs/index.html` の「危機マップの最終更新」を書き換える
 14. hormuz-data- の経緯（`data/context.json` の `timeline`）追記（確定した事実に変化があった日のみ。ただし最低でも7日に1回）
 
 ---
@@ -689,11 +695,11 @@ date -u -d '+9 hours' +%F
 ```
 
 - `https://chokepointlab.com/hormuz/` の `<lastmod>` ← **毎回**
-- `https://chokepointlab.com/`（ハブ）の `<lastmod>` は**動かさない**（ハブの HTML を変えた日だけ、その作業のなかで更新する）
+- `https://chokepointlab.com/`（ハブ）の `<lastmod>` ← **毎回**（ハブの「危機マップの最終更新」を書き換えるため）
 - `https://chokepointlab.com/archive/` の `<lastmod>` ← `archive_timeline.json` に当日分を追記した日のみ
   （追記しない日はアーカイブの中身が変わらないため動かさない）
 
-※ 触るのは上記2つの `<lastmod>` の値だけ。URL の追加削除・`<loc>`・`changefreq`・`priority` は変えない
+※ 触るのは上記3つの `<lastmod>` の値だけ。URL の追加削除・`<loc>`・`changefreq`・`priority` は変えない
 （`tools/redesign-plan.md` §1「凍結期間の定義」）。他の URL の `lastmod` は日次更新では触らない。
 ※ Google は `lastmod` が一貫して正確な場合にのみ利用する。内容を変えていない日に動かさないこと。
 ※ CRLF のファイルなので `sed -i` を使わない（CLAUDE.md「スクリプトでファイルを書き換えるときのルール」）。

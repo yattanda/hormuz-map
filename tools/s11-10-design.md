@@ -227,14 +227,17 @@ D1 によりパスが消えるページは無いので、**③ ではスタブ�
 
 **設計から変えた・足したこと**
 
-- ハブの主要数値のうち「最終更新」の静的な予備は日付ではなく「毎日更新」にした（JS が `news_data.json` の `updated` で上書きする）。
-  日付を静的に置くと日次更新が書き換える場所が1つ増えるため（D2 の趣旨）
+- ハブの主要数値のうち「最終更新」は、D2 のとおり基準日時つきの静的な値（`M/D HH:MM`）を HTML に置き、JS が `news_data.json` の `updated` で上書きする。
+  静的な値は日次更新が毎回書き換える（スキルに1か所追加・`validate_daily.py` の `check_hub_updated()` が書き換え漏れを NG にする）。
+  いったん「毎日更新」という固定の文言にしたが、**運営者の指示（2026-10-04）で日時に戻した**。日次更新は毎日が基本だが更新しない日もあり、
+  「毎日更新」と言い切ると実態と合わないため
+- 同じ理由で、D5 の description の末尾「出典を示して毎日更新しています。」は「出典を示して、原則として毎日更新しています。」に改めた（運営者の指示・2026-10-04）
 - ハブは Google Fonts を読まない（端末のフォントで表示）。新しい外部送信先は無く、`/privacy/` の改訂は不要
   （ハブが読むのは同一オリジンの `data/news_data.json` と、`/hormuz/` と同じ `hormuz-data-` の `eia-weekly.json`）
 - `google-site-verification` は `/hormuz/` から外し、ハブにだけ置いた（§2-4）
 - 記事のパンくず「ホーム」は `../index.html` から `../` に改めた（ハブの URL を1つにそろえる）
-- sitemap の `/` は `changefreq` を weekly にし、`/hormuz/` を daily で足した。日次が更新するのは `/hormuz/` の `lastmod`
-- `validate_daily.py`：本体のパス・sitemap の `/hormuz/`・コラムのピルの `href`・石油備蓄日数の4か所目（ハブ）
+- sitemap に `/hormuz/` を daily で足した。日次が更新する `lastmod` は `/`・`/hormuz/` の2つ（と、追記した日の `/archive/`）
+- `validate_daily.py`：本体のパス・sitemap の `/` と `/hormuz/`・コラムのピルの `href`・石油備蓄日数の4か所目（ハブ）・ハブの最終更新
 
 **未実施（マージ後に行う）**
 

@@ -97,6 +97,7 @@ def load_json(path: Path):
 PAT_DATEMODIFIED = re.compile(r'"dateModified":\s*"(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})')
 PAT_HEADER = re.compile(r'badge-date">\s*📅\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
 PAT_TICKER = re.compile(r'📅\s*(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})\s*更新')
+PAT_TICKER_COMMENT = re.compile(r'<!--\s*新ティッカー（(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST）\s*-->')
 PAT_ROUTES = re.compile(
     r'sec-h2-sub">\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST\s*(?:更新|再確認済)'
 )
@@ -219,6 +220,34 @@ def check_ticker(html: str, base: str) -> None:
         ng(f"index.html の速報バナーの日付が基準日と違います: {', '.join(bad)}（基準 {want[0]}/{want[1]}）")
     else:
         ok(f"速報バナーの日付 {want[0]}/{want[1]}（{len(hits)}箇所）")
+
+
+def check_ticker_comment(html: str, base: str) -> None:
+    """速報ティッカー（上端を流れる帯）の書き換え漏れを、直前のコメントの日時で見る。
+
+    ティッカーの本文は日付の決まった形を持たないので、check_ticker() では拾えない。
+    日次更新のたびに本文と一緒に書き換える `<!-- 新ティッカー（YYYY年M月D日 HH:MM JST） -->` を
+    基準日・ヘッダーの時刻と照合する（2026-10-03 の日次でティッカーだけ書き換えが漏れ、
+    前日の内容と「封鎖217日目」が残ったまま OK 39 / WARN 0 で通った）。
+    """
+    hits = PAT_TICKER_COMMENT.findall(html)
+    if not hits:
+        ng("index.html のコメント「<!-- 新ティッカー（YYYY年M月D日 HH:MM JST） -->」を検出できませんでした"
+           "（ティッカーの書き換え漏れを検査できない）")
+        return
+    if len(hits) > 1:
+        warn(f"「新ティッカー」のコメントが {len(hits)} 箇所あります。先頭の1つで検査します")
+    y, mo, d, hm = hits[0]
+    got = ymd(y, mo, d)
+    if got != base:
+        ng(f"速報ティッカーのコメントの日付が基準日と違います: {got}（基準 {base}）。"
+           "ティッカーの本文を今日の内容に書き換えたか確認すること")
+        return
+    m = PAT_HEADER.search(html)
+    if m and m.group(4) != hm:
+        warn(f"速報ティッカーのコメントの時刻 {hm} がヘッダーの時刻 {m.group(4)} と違います")
+    else:
+        ok(f"速報ティッカーのコメントの日時 {got} {hm}")
 
 
 def check_route_freshness(html: str, base: str) -> None:
@@ -739,6 +768,7 @@ def main() -> int:
         else:
             ng(f"{name} が基準日と違います: {val}（基準 {base}）")
     check_ticker(html, base)
+    check_ticker_comment(html, base)
     check_route_freshness(html, base)
     check_types(html, base)
 

@@ -191,6 +191,9 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   `mobile-update.yml` を手動実行すれば、Claude Code を使わずに差分を適用できる
 - 差分は**現在の `docs/hormuz/index.html` を元に作る**。古いファイルを元にした差分は
   `old_str` が一致せず適用に失敗する（壊れはしないがスキップされる）
+- **この経路が書き換えるのは `docs/hormuz/index.html` だけ。**ハブ `docs/index.html` の「危機マップの最終更新」（`id="hub-updated"`）と
+  `sitemap.xml` の `lastmod` は古いまま残る（画面の表示は JS が `news_data.json` で上書きするので正しい）。
+  次に通常フローで更新するときに直る。それまで `validate_daily.py` はハブの日付で NG を出すが、この経路を使った直後に限っては想定どおり
 - やむを得ず使う場合、スマホからの手編集のコミットメッセージは
   `mobile: update index_html_diffs.md (M/D HH:MM JST)` の形式にする
   （GitHub が自動提案する `Change 'Hello World' to 'Goodbye World'` 等をそのまま使わない）

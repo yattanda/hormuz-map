@@ -28,7 +28,8 @@ python tools/validate_daily.py
 - `news_data.json` の `latest` 4件・必須フィールド・旧スキーマの混入
 - `latest` と `osint` の `isLatest: true` が各1件
 - `archive_timeline.json` の日付重複
-- `sitemap.xml` の `/` の `lastmod` が基準日と一致／`/archive/` の `lastmod` が `archive_timeline` 末尾より古くない
+- ハブ `docs/index.html` の「危機マップの最終更新」（`id="hub-updated"`）の月日が基準日と一致
+- `sitemap.xml` の `/`・`/hormuz/` の `lastmod` が基準日と一致／`/archive/` の `lastmod` が `archive_timeline` 末尾より古くない
 - hormuz-data- の経緯（`data/context.json` の `timeline`）の最新日が実測の今日から5日超なら WARN（NG にはしない。読めなければ WARN「未確認」）
 - ルート表の型（WARN）：インライン style（`<col>` を除く）・各行の「最新」（`p.route-latest`）が1件か・「最新」より新しい日付が行の中にないか・リード文 `sec-lead` の復活。
   各行の鮮度は「最新」の `<time datetime>` で判定

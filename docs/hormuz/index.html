@@ -3333,18 +3333,22 @@ map.on('layerremove', e => {
   cs.forEach(c => map.removeLayer(c));
 });
 
-// 中心が worlds×360° ずれたとき、開いているポップアップを同じ見た目の位置へ移す
+// 開いているポップアップを、いつも地図の中心にいちばん近い世界の印の上に置く。
+// 1周まわして同じ印（コピー）が戻ってきたとき、ポップアップもそこに出ている
 let wrapOpenPopup = null;
 map.on('popupopen',  e => { wrapOpenPopup = e.popup; });
 map.on('popupclose', e => { if (wrapOpenPopup === e.popup) wrapOpenPopup = null; });
-function carryPopup(worlds) {
-  if (!wrapOpenPopup || !worlds) return;
+function keepPopupNear() {
+  if (!wrapOpenPopup) return;
   const ll = wrapOpenPopup.getLatLng();
+  const worlds = Math.round((map.getCenter().lng - ll.lng) / 360);
+  if (!worlds) return;
   const ap = wrapOpenPopup.options.autoPan;
   wrapOpenPopup.options.autoPan = false;     // 位置を移すだけ。地図を動かさない
   wrapOpenPopup.setLatLng([ll.lat, ll.lng + worlds * 360]);
   wrapOpenPopup.options.autoPan = ap;
 }
+map.on('move', keepPopupNear);               // ドラッグ・慣性・flyTo・下の補正のどれでも出る
 
 // ドラッグ中：worldCopyJump が中心を 360° 戻した瞬間を、中心経度の飛びで見つける
 let wrapLastLng = map.getCenter().lng;
@@ -3356,7 +3360,6 @@ map.on('drag', () => {
   const worlds = Math.round((lng - wrapLastLng) / 360);
   wrapLastLng = lng;
   if (!worlds) return;
-  carryPopup(worlds);
   // 線・面（SVG）は moveend でしか描き直されない。戻した直後は SVG が画面の外に
   // 残るので、ここで描き直させる（無いと、指を離すまで線と国土が消える）
   map.fire('moveend');
@@ -3369,7 +3372,6 @@ map.on('moveend', () => {
   const worlds = -Math.round(c.lng / 360);
   if (!worlds) return;
   map.setView([c.lat, c.lng + worlds * 360], map.getZoom(), { animate: false });
-  carryPopup(worlds);
 });
 
 // worldCopyJump は「どこで戻すか」の基準を zoomend のときにしか計算し直さない。

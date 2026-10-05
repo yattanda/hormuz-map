@@ -1,4 +1,1489 @@
 {
-  "meta": { "updated": "", "count": 0 },
-  "terms": []
+  "meta": {
+    "updated": "2026-10-05",
+    "count": 47
+  },
+  "terms": [
+    {
+      "id": "irgc",
+      "term": "イラン革命防衛隊（IRGC）",
+      "reading": "いらんかくめいぼうえいたい",
+      "category": "org",
+      "match": [
+        "イラン革命防衛隊",
+        "革命防衛隊",
+        "IRGC"
+      ],
+      "aliases": [
+        "イスラム革命防衛隊"
+      ],
+      "tooltip": true,
+      "short": "イランで正規軍とは別系統に置かれた軍事組織。最高指導者に直属し、独自の海軍や国外活動部門を持つ。",
+      "body": [
+        "1979年のイラン革命後に創設された軍事組織。正規軍とは別の指揮系統を持ち、最高指導者に直属する。地上・海上・航空の各部隊のほか、国外での活動を担うコッズ部隊、民兵組織バシジを抱える（米外交問題評議会、2026年1月更新）。米国は外国テロ組織に指定している。ホルムズ海峡の危機では、海峡周辺を担当する海軍部門が、通航の許可・船舶の拿捕や攻撃の主体として、また通航隻数の発表元として繰り返し登場する。発表は当事者の主張として読む必要がある。公安調査庁の表記は「イスラム革命防衛隊」。"
+      ],
+      "sources": [
+        {
+          "label": "Council on Foreign Relations「Iran's Revolutionary Guards」（2026-01-30 更新）",
+          "url": "https://www.cfr.org/backgrounder/irans-revolutionary-guards"
+        },
+        {
+          "label": "米財務省プレスリリース sb0507（2026-05-27）",
+          "url": "https://home.treasury.gov/news/press-releases/sb0507"
+        },
+        {
+          "label": "公安調査庁「国際テロリズム要覧」イラン",
+          "url": "https://www.moj.go.jp/psia/ITH/situation/ME_N-africa/Iran.html"
+        }
+      ],
+      "related": [
+        "pgsa"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "centcom",
+      "term": "CENTCOM（米中央軍）",
+      "reading": "せんとこむ",
+      "category": "org",
+      "match": [
+        "CENTCOM",
+        "米中央軍"
+      ],
+      "aliases": [
+        "米軍中央司令部"
+      ],
+      "tooltip": true,
+      "short": "中東から中央・南アジアにかけての地域を担当する米軍の統合軍。司令部は米フロリダ州タンパ。",
+      "body": [
+        "米軍が世界を地域ごとに分けて置く統合軍の一つ。担当区域は北東アフリカから中東、中央・南アジアにまたがる21カ国（CENTCOM公式サイト）。司令部は米フロリダ州タンパのマクディール空軍基地にある。ホルムズ海峡の危機では、対イラン作戦と海上封鎖を実施する主体であり、迎撃・拿捕・進路変更させた船舶の数などを発表する米側の情報源として登場する。発表は交戦当事者によるものなので、独立した裏づけの有無を分けて読む。"
+      ],
+      "sources": [
+        {
+          "label": "U.S. Central Command「Area of Responsibility」",
+          "url": "https://www.centcom.mil/AREA-OF-RESPONSIBILITY/"
+        },
+        {
+          "label": "U.S. Central Command「About Us」",
+          "url": "https://www.centcom.mil/ABOUT-US/"
+        }
+      ],
+      "related": [
+        "blockade"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "ukmto",
+      "term": "UKMTO",
+      "reading": "ゆーけーえむてぃーおー",
+      "category": "org",
+      "match": [
+        "UKMTO"
+      ],
+      "aliases": [
+        "英国海事貿易活動機関",
+        "英国海事貿易機関",
+        "英国海事貿易オペレーション"
+      ],
+      "tooltip": true,
+      "short": "英国が運営する商船向けの海上安全情報の窓口。中東・インド洋で事案の通報を受け、警報を出す。",
+      "body": [
+        "United Kingdom Maritime Trade Operations の略。船員・海運会社・地域当局に、検証済みの海上安全情報を提供する英国の組織で、20年以上活動している。紅海・アラビア海・ペルシャ湾などを含む「任意通報海域」で船舶からの通報を受け付け、緊急時の最初の連絡先となる（UKMTO公式サイト）。ホルムズ海峡の危機では、商船の被弾や拿捕の第一報がここから出ることが多い。UKMTO の発表は「何が起きたか」が中心で、攻撃した主体を特定しない場合がある。"
+      ],
+      "sources": [
+        {
+          "label": "UKMTO「About UKMTO」",
+          "url": "https://www.ukmto.org/about-us"
+        }
+      ],
+      "related": [
+        "jmic"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "kpler",
+      "term": "Kpler",
+      "reading": "けぷらー",
+      "category": "org",
+      "match": [
+        "Kpler"
+      ],
+      "aliases": [
+        "ケプラー"
+      ],
+      "tooltip": true,
+      "short": "船舶の位置情報や港湾・通関データから、原油やLNGなど商品の海上輸送を追跡するデータ分析会社。",
+      "body": [
+        "原油・石油製品・LNG・石炭・穀物など40以上の商品について、世界の貿易の流れをほぼリアルタイムで追跡する民間のデータ会社。衛星AIS（船舶自動識別装置）による船舶追跡、港湾・ターミナルの情報、通関データ、パイプライン流量などを組み合わせて推計する（Kpler公式サイト）。ホルムズ海峡の危機では、海峡を通過したタンカーの隻数や原油の流量の推計が、報道を通じて引用される。あくまで推計値で、集計の期間や方法によって数字が変わる。"
+      ],
+      "sources": [
+        {
+          "label": "Kpler「Commodity Market Intelligence」",
+          "url": "https://www.kpler.com/product/commodities"
+        },
+        {
+          "label": "Kpler「MarineTraffic Data Services」",
+          "url": "https://www.kpler.com/product/maritime/data-services"
+        }
+      ],
+      "related": [
+        "ais"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "houthi",
+      "term": "フーシ派",
+      "reading": "ふーしは",
+      "category": "org",
+      "match": [
+        "フーシ派",
+        "フーシ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン北部を拠点とするシーア派系の武装勢力。自称はアンサール・アッラー。紅海で商船を攻撃してきた。",
+      "body": [
+        "イエメンのシーア派系武装勢力で、アブドゥルマリク・アル・フーシーが率いる。2014年9月に首都サヌアの政府施設を占拠した（公安調査庁）。2023年11月からは紅海を通る商船への攻撃を始め、多くの船が喜望峰回りに迂回した（米EIA、2026年3月更新）。ホルムズ海峡の危機で出てくるのは、海峡を避けてサウジのヤンブー港から出す原油が、同派の勢力圏に近いバブ・エル・マンデブ海峡を通るためである。同派の動きは迂回路の安全を左右する。"
+      ],
+      "sources": [
+        {
+          "label": "公安調査庁「国際テロリズム要覧」イエメン",
+          "url": "https://www.moj.go.jp/psia/ITH/situation/ME_N-africa/Yemen.html"
+        },
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        }
+      ],
+      "related": [
+        "bab-el-mandeb"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "gcc",
+      "term": "湾岸協力会議（GCC）",
+      "reading": "わんがんきょうりょくかいぎ",
+      "category": "org",
+      "match": [
+        "湾岸協力会議",
+        "GCC"
+      ],
+      "aliases": [
+        "湾岸協力理事会"
+      ],
+      "tooltip": true,
+      "short": "サウジアラビアなどペルシャ湾岸のアラブ6カ国でつくる地域協力機構。1981年設立、本部はリヤド。",
+      "body": [
+        "正式名称は Cooperation Council for the Arab States of the Gulf。サウジアラビア、アラブ首長国連邦、バーレーン、オマーン、カタール、クウェートの6カ国が1981年に設立し、防衛・経済を含む各分野で調整と協力を進める（外務省）。ホルムズ海峡の危機では、加盟国の多くが海峡の内側に輸出港を持つため、封鎖の影響を直接受ける当事者となる。外務省の表記は「湾岸協力理事会」。"
+      ],
+      "site_note": [
+        "イランとの通航協議の相手方として、また加盟国への攻撃に対する声明の出し手として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "外務省「湾岸協力理事会（GCC）概要」",
+          "url": "https://www.mofa.go.jp/mofaj/area/page23_000547.html"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "iea",
+      "term": "IEA",
+      "reading": "あいいーえー",
+      "category": "org",
+      "match": [
+        "IEA"
+      ],
+      "aliases": [
+        "国際エネルギー機関"
+      ],
+      "tooltip": true,
+      "short": "石油危機を機に1974年に設立された、主に石油消費国でつくる国際機関。加盟国に石油備蓄を義務づける。",
+      "body": [
+        "国際エネルギー機関。1974年11月、OECD（経済協力開発機構）の枠内に設立された。石油の供給が途絶えたときに加盟国が協調して対応する仕組みが中核で、加盟国は純輸入量の90日分以上の石油備蓄を持つ義務を負い、必要なときは備蓄を協調して放出する。ホルムズ海峡の危機では、備蓄の協調放出を決める主体として、また需給見通しや備蓄日数の基準の出どころとして登場する。"
+      ],
+      "site_note": [
+        "2026年3月11日に過去最大の4億バレルの協調放出を決めたことを記録している。"
+      ],
+      "sources": [
+        {
+          "label": "JOGMEC 石油・天然ガス用語辞典「国際エネルギー機関」",
+          "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/ko/iea.html"
+        },
+        {
+          "label": "資源エネルギー庁「世界のエネルギー安定供給の今〜進化するIEAと日本の国際協力」",
+          "url": "https://www.enecho.meti.go.jp/about/special/tokushu/anzenhosho/iea.html"
+        }
+      ],
+      "related": [
+        "eia",
+        "stockpile-days"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "imo",
+      "term": "IMO",
+      "reading": "あいえむおー",
+      "category": "org",
+      "match": [
+        "IMO"
+      ],
+      "aliases": [
+        "国際海事機関"
+      ],
+      "tooltip": true,
+      "short": "船舶の安全・保安と、船舶による海洋・大気汚染の防止を担当する国連の専門機関。本部はロンドン。",
+      "body": [
+        "国際海事機関。国際海運の安全・保安・環境について世界共通の基準を定める国連の専門機関で、本部はロンドンにある（IMO公式サイト）。ホルムズ海峡の危機では、商船や船員の被害をまとめて発表する機関として、また航路や船員の退避をめぐる調整の場として登場する。"
+      ],
+      "site_note": [
+        "開戦以降の攻撃件数と船員の死者数の集計、船員の避難計画の発動、強制的な通航料への反対、合意された航路の登録先として名前が出てくる。"
+      ],
+      "sources": [
+        {
+          "label": "IMO「About IMO」",
+          "url": "https://www.imo.org/en/About/Pages/Default.aspx"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "iaea",
+      "term": "IAEA",
+      "reading": "あいえーいーえー",
+      "category": "org",
+      "match": [
+        "IAEA"
+      ],
+      "aliases": [
+        "国際原子力機関"
+      ],
+      "tooltip": true,
+      "short": "原子力の平和利用を進めつつ、核物質が軍事目的に転用されないよう査察を行う国際機関。本部はウィーン。",
+      "body": [
+        "国際原子力機関。1957年に発足した。原子力の平和的利用の促進と、原子力が軍事利用に転用されることを防ぐ「保障措置」（査察など）の実施が二つの柱である（外務省）。ホルムズ海峡の危機は、イランの核開発をめぐる対立と結びついているため、IAEA の動きが交渉の進み具合を測る材料になる。"
+      ],
+      "site_note": [
+        "核施設への攻撃に対する警告、濃縮ウランの希釈の検証、未申告施設の問題でイランを国連安保理に付託する理事会決議（2026年9月）などで登場する。"
+      ],
+      "sources": [
+        {
+          "label": "外務省「国際原子力機関（IAEA）の概要」",
+          "url": "https://www.mofa.go.jp/mofaj/gaiko/atom/iaea/iaea_g.html"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "opec",
+      "term": "OPEC・OPEC+",
+      "reading": "おぺっく",
+      "category": "org",
+      "match": [
+        "OPEC+",
+        "OPECプラス",
+        "OPEC"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "synonyms": false,
+      "short": "OPECは産油国が石油政策を調整する機構（1960年設立）。OPEC+はOPECと非加盟の産油国による協調の枠組み。",
+      "body": [
+        "OPEC（石油輸出国機構）は1960年9月、イラン・イラク・クウェート・サウジアラビア・ベネズエラの5カ国が設立した。加盟国の石油政策を調整・統一することを目的とし、事務局はウィーンにある（JOGMEC）。OPEC+は、OPEC と非加盟の産油国が生産量を協調して調整する枠組みで、2016年に原油価格の急落を受けてできた（米EIA）。ホルムズ海峡の危機では、供給不足を増産で補えるかという文脈で登場する。アラブ首長国連邦は2026年5月1日に脱退した（米EIA、2026年6月）。"
+      ],
+      "sources": [
+        {
+          "label": "JOGMEC 石油・天然ガス用語辞典「石油輸出国機構」",
+          "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/seso/opec.html"
+        },
+        {
+          "label": "米EIA Today in Energy「UAE's exit from OPEC+ reduced the group's share of crude oil production and capacity」（2026-06-23）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=67804"
+        }
+      ],
+      "related": [
+        "bpd"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "adnoc",
+      "term": "ADNOC",
+      "reading": "あどのっく",
+      "category": "org",
+      "match": [
+        "ADNOC"
+      ],
+      "aliases": [
+        "アブダビ国営石油"
+      ],
+      "tooltip": true,
+      "short": "アブダビ首長国政府が全額を出資する国営エネルギー企業。1971年設立。アブダビ国営石油会社。",
+      "body": [
+        "Abu Dhabi National Oil Company の略。1971年に設立され、アブダビ政府が全額を所有する。原油・天然ガスの生産から精製、石油化学、取引までを傘下の企業群で手がける（ADNOC公式サイト）。ホルムズ海峡の危機では、海峡を通らずにフジャイラ港へ原油を送るパイプライン（ADCOP）の運営者として、また自社関連のタンカーが攻撃を受けた当事者として登場する。同社は海峡を迂回する2本目のパイプラインを建設中で、2027年の稼働を見込む（米EIA、2026年7月更新）。"
+      ],
+      "sources": [
+        {
+          "label": "ADNOC「Who We Are」",
+          "url": "https://www.adnoc.ae/en/our-story/who-we-are"
+        },
+        {
+          "label": "米EIA「Country Analysis Brief: United Arab Emirates」（2026-07-28 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/United_Arab_Emirates/"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "windward",
+      "term": "Windward",
+      "reading": "うぃんどわーど",
+      "category": "org",
+      "match": [
+        "Windward"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "AIS（船舶自動識別装置）や衛星画像などのデータをAIで解析し、船舶の動きとリスクを分析する海事データ企業。",
+      "body": [
+        "自社を「Maritime AI（海事AI）企業」と称する民間企業で、元海軍士官が創業した。船舶の行動分析と複数のセンサーのデータを組み合わせ、防衛・情報機関・税関などの公的部門と、エネルギー・商品取引・海運・保険などの企業に海事情報を提供する（Windward公式サイト）。ホルムズ海峡の危機では、海峡を通過した船の隻数や、AIS を切って航行する船（いわゆるダーク船）の割合の分析が、報道を通じて引用される。民間企業の推計であり、公的な統計ではない。"
+      ],
+      "sources": [
+        {
+          "label": "Windward「About Us」",
+          "url": "https://windward.ai/company/about-us/"
+        },
+        {
+          "label": "Windward トップページ",
+          "url": "https://windward.ai/"
+        }
+      ],
+      "related": [
+        "ais"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "pgsa",
+      "term": "PGSA（ペルシャ湾海峡局）",
+      "reading": "ぴーじーえすえー",
+      "category": "org",
+      "match": [
+        "PGSA",
+        "ペルシャ湾海峡局"
+      ],
+      "aliases": [
+        "ペルシャ湾海峡庁"
+      ],
+      "tooltip": true,
+      "short": "イランが2026年に新設した、ホルムズ海峡の通航の許可と規制を担うとする機関。英語名 Persian Gulf Strait Authority。",
+      "body": [
+        "イランが2026年の危機のさなかに設けた機関で、ホルムズ海峡を通る船舶に事前の申請と許可の取得を求める。船舶には乗組員・積み荷・所有者・保険・寄港歴などの申告が課され、通航料の徴収も伝えられている（Maritime Executive、2026年5月18日）。米財務省は同年5月27日、通航料が革命防衛隊に流れているとして PGSA を制裁対象に指定し、通航料を「不当」と位置づけた。国際的に認められた海峡の管理機関ではなく、権限そのものが争われている。日本語の定訳はない。イラン側の一次情報は確認できていない。"
+      ],
+      "site_note": [
+        "日本語の定訳がないため、「ペルシャ湾海峡局」と訳している。"
+      ],
+      "sources": [
+        {
+          "label": "米財務省プレスリリース sb0507「Economic Fury Targets Iranian Maritime Extortion」（2026-05-27）",
+          "url": "https://home.treasury.gov/news/press-releases/sb0507"
+        },
+        {
+          "label": "The Maritime Executive「Iran's \"Persian Gulf Strait Authority\" Takes Steps Towards Operations」（2026-05-18）",
+          "url": "https://maritime-executive.com/article/iran-s-persian-gulf-strait-authority-takes-steps-towards-operations"
+        },
+        {
+          "label": "Wikipedia（英語版）「Persian Gulf Strait Authority」",
+          "url": "https://en.wikipedia.org/wiki/Persian_Gulf_Strait_Authority"
+        }
+      ],
+      "related": [
+        "transit-fee",
+        "irgc"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "eia",
+      "term": "EIA（米エネルギー情報局）",
+      "reading": "いーあいえー",
+      "category": "org",
+      "match": [
+        "EIA",
+        "STEO"
+      ],
+      "aliases": [
+        "米国エネルギー情報局"
+      ],
+      "tooltip": true,
+      "synonyms": false,
+      "short": "米エネルギー省に属する統計・分析機関。エネルギーの統計と見通しを公表する。STEOは月次の短期見通し。",
+      "body": [
+        "米エネルギー情報局（U.S. Energy Information Administration）。エネルギーに関するデータを集め、分析して公表する米政府の機関で、「独立した統計と分析」を掲げる。STEO（Short-Term Energy Outlook、短期エネルギー見通し）は毎月公表され、原油価格や需給の先行きを示す（EIA公式サイト）。ホルムズ海峡の危機では、海峡の通過量など基礎的な数字の出典として、また STEO が置く「海峡がいつ再開するか」の前提と価格見通しが市場の目安として登場する。国際機関の IEA とは別の組織である。"
+      ],
+      "sources": [
+        {
+          "label": "EIA「About EIA」",
+          "url": "https://www.eia.gov/about/"
+        },
+        {
+          "label": "EIA「Short-Term Energy Outlook」",
+          "url": "https://www.eia.gov/outlooks/steo/"
+        }
+      ],
+      "related": [
+        "iea"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "jmic",
+      "term": "JMIC",
+      "reading": "じぇいみっく",
+      "category": "org",
+      "match": [
+        "JMIC"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "多国籍の連合海上部隊（CMF）の下で、商船向けに海上の脅威情報をまとめて発信する情報センター。",
+      "body": [
+        "Joint Maritime Information Center の略。紅海でのフーシ派による商船攻撃を受けて2024年2月に設けられ、複数国の海軍関係者が持ち寄った情報を、機密でない形で海運業界に提供する（連合海上部隊）。2025年2月には対象が紅海から、ペルシャ湾・オマーン湾を含む連合海上部隊の活動海域全体に広がった。拠点はバーレーンのマナマ（米軍の広報配信、2025年2月26日）。ホルムズ海峡の危機では、脅威の度合いの評価、被弾事案の確認、商船に勧める航路の案内の出どころとして登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Combined Maritime Forces「Joint Maritime Information Center」",
+          "url": "https://combinedmaritimeforces.com/combined-task-forces/joint-maritime-information-center/"
+        },
+        {
+          "label": "DVIDS「JMIC's Role Expands to Entire CMF Operating Area」（2025-02-26）",
+          "url": "https://www.dvidshub.net/news/491529/jmics-role-expands-entire-cmf-operating-area"
+        }
+      ],
+      "related": [
+        "ukmto"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "strait-of-hormuz",
+      "term": "ホルムズ海峡",
+      "reading": "ほるむずかいきょう",
+      "category": "place",
+      "match": [
+        "ホルムズ海峡"
+      ],
+      "aliases": [],
+      "tooltip": false,
+      "short": "ペルシャ湾とオマーン湾を結ぶ、イランとオマーンの間の海峡。中東産の原油・LNGが外洋へ出る主要な出口。",
+      "body": [
+        "イランとオマーンの間にあり、ペルシャ湾をオマーン湾・アラビア海につなぐ海峡。最も狭い所の幅は約21マイル（約34km）で、航路の幅は片方向2マイルしかない（米EIA、2017年）。2025年上半期には日量2,090万バレルの石油が通過し、世界の石油消費の約2割、LNG は世界貿易の2割超にあたる（米EIA、2026年3月更新）。2024年に通過した原油・コンデンセートの84%はアジア向けだった（米EIA、2025年6月）。迂回できるパイプラインは限られ、止まれば代わりがききにくい。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        },
+        {
+          "label": "米EIA Today in Energy「Amid regional conflict, the Strait of Hormuz remains critical oil chokepoint」（2025-06-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+        },
+        {
+          "label": "米EIA Today in Energy（2017-08-04）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=32352"
+        }
+      ],
+      "related": [
+        "chokepoint"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "east-west-pipeline",
+      "term": "東西パイプライン（サウジ）",
+      "reading": "とうざいぱいぷらいん",
+      "category": "place",
+      "match": [
+        "東西パイプライン"
+      ],
+      "aliases": [
+        "ペトロライン"
+      ],
+      "tooltip": true,
+      "short": "サウジアラビア東部のアブカイクから紅海側のヤンブー港まで原油を運ぶ、サウジアラムコのパイプライン。",
+      "body": [
+        "サウジアラビアを東西に横断する原油パイプライン。ペルシャ湾岸に近い石油処理拠点アブカイクと、紅海に面したヤンブー港を結び、サウジアラムコが運営する。ホルムズ海峡を通らずに原油を輸出できる最大の迂回路として登場する。輸送能力は日量500万バレルで、2019年に一時的に日量700万バレルへ拡張された（米EIA、2025年6月）。ただし紅海側から出した原油をアジアへ運ぶ船はバブ・エル・マンデブ海峡を通るため、別のチョークポイントに頼ることになる。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA Today in Energy（2025-06-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+        },
+        {
+          "label": "米EIA「Country Analysis Brief: Saudi Arabia」（2024-10-04 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/saudi_arabia/"
+        }
+      ],
+      "related": [
+        "yanbu",
+        "route"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "yanbu",
+      "term": "ヤンブー港",
+      "reading": "やんぶーこう",
+      "category": "place",
+      "match": [
+        "ヤンブー港",
+        "ヤンブー"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "紅海に面したサウジアラビア西部の港。東西パイプラインの終点で、同国の紅海側の主要な原油輸出基地。",
+      "body": [
+        "サウジアラビア西部、紅海沿岸にある港で、同国の紅海側で最大の原油輸出ターミナル。東西パイプラインの終点にあたる。2024年4〜6月期には、サウジの海上原油輸出の18%がヤンブーから出て、過去最高の割合になった（米EIA、2024年10月更新）。ホルムズ海峡の危機では、海峡を通らずにサウジ産原油を積み出せる港として登場する。ここからアジアへ向かう船はバブ・エル・マンデブ海峡を通るため、紅海側の情勢にも左右される。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「Country Analysis Brief: Saudi Arabia」（2024-10-04 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/saudi_arabia/"
+        },
+        {
+          "label": "米EIA Today in Energy（2025-06-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+        }
+      ],
+      "related": [
+        "east-west-pipeline"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "cape-route",
+      "term": "喜望峰ルート",
+      "reading": "きぼうほうるーと",
+      "category": "place",
+      "match": [
+        "喜望峰ルート",
+        "喜望峰"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "アフリカ大陸南端の喜望峰を回る航路。スエズ運河や紅海を通らずにすむが、日数と費用がかさむ。",
+      "body": [
+        "南アフリカの南端、喜望峰を回って大西洋とインド洋を行き来する航路。米EIA は喜望峰を「チョークポイントではない」が主要な貿易路としており、2025年上半期には日量910万バレル（海上石油貿易の11%）がここを回った。スエズ運河が使えない場合、アラビア海から欧州までは約15日余計にかかる（米EIA、2026年3月更新）。ホルムズ海峡の危機では、西アフリカや中南米など中東以外から日本へ原油を運ぶ経路として登場する。ペルシャ湾内の原油をこの航路で運び出せるわけではない。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        }
+      ],
+      "related": [
+        "route"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "qeshm",
+      "term": "ゲシュム島（ケシュム島）",
+      "reading": "げしゅむとう",
+      "category": "place",
+      "match": [
+        "ゲシュム島",
+        "ケシュム島"
+      ],
+      "aliases": [
+        "キシム島"
+      ],
+      "tooltip": true,
+      "short": "ホルムズ海峡の北側、イラン本土に沿って延びるペルシャ湾最大の島。イラン領。",
+      "body": [
+        "イラン南部の沖合にある細長い島で、ペルシャ湾で最も大きい。ホルムズ海峡の北側に位置し、長さはおよそ100km（米NASA、2007年）。島には2020年に稼働した石油ターミナルがある（米EIA、2021年更新）。ホルムズ海峡の危機で出てくるのは、海峡を通る航路のすぐ北に張り出しているためで、ここに置かれたレーダーや防空・対艦の装備が通航船への脅威になる。"
+      ],
+      "site_note": [
+        "米軍の攻撃対象として、また沖合での商船攻撃の現場として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "NASA Earth Observatory「Qeshm Island, Iran」（2007-03-04）",
+          "url": "https://science.nasa.gov/earth/earth-observatory/qeshm-island-iran-7460/"
+        },
+        {
+          "label": "米EIA「Background Reference: Iran」（2021-07-20 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/Iran/background.htm"
+        },
+        {
+          "label": "Wikipedia（英語版）「Qeshm Island」",
+          "url": "https://en.wikipedia.org/wiki/Qeshm_Island"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "fujairah",
+      "term": "フジャイラ港",
+      "reading": "ふじゃいらこう",
+      "category": "place",
+      "match": [
+        "フジャイラ港",
+        "フジャイラ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "アラブ首長国連邦の東岸、オマーン湾に面した港。ホルムズ海峡の外側にあり、原油の積み出しと燃料補給の拠点。",
+      "body": [
+        "アラブ首長国連邦（UAE）の東岸にあり、オマーン湾に面した港。ホルムズ海峡から約70海里の外側に位置し、UAE 東岸で唯一の多目的港である。1983年に本格稼働し、船舶への燃料補給（バンカリング）では世界有数の拠点、石油の商業貯蔵では中東最大の容量を持つ（フジャイラ港公式サイト）。アブダビの油田から延びる原油パイプライン（ADCOP）の終点でもある。ホルムズ海峡の危機では、UAE が海峡を通らずに原油を輸出できる出口として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Port of Fujairah「Our Story」",
+          "url": "https://fujairahport.ae/about-us/port-of-fujairah-overview/"
+        },
+        {
+          "label": "米EIA「Country Analysis Brief: United Arab Emirates」（2026-07-28 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/United_Arab_Emirates/"
+        }
+      ],
+      "related": [
+        "adcop"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "bab-el-mandeb",
+      "term": "バブ・エル・マンデブ海峡",
+      "reading": "ばぶえるまんでぶかいきょう",
+      "category": "place",
+      "match": [
+        "バブ・エル・マンデブ海峡",
+        "バブエルマンデブ海峡",
+        "バベルマンデブ海峡",
+        "バブ・エル・マンデブ",
+        "バブエルマンデブ",
+        "バベルマンデブ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "紅海とアデン湾を結ぶ、アラビア半島とアフリカ大陸の間の海峡。スエズ運河へ向かう航路の南の入口にあたる。",
+      "body": [
+        "イエメンと、対岸のジブチ・エリトリアの間にある海峡で、紅海をアデン湾・アラビア海につなぐ。最も狭い所の幅は約18マイル（約29km）（米EIA、2017年）。2023年11月にフーシ派が紅海で商船への攻撃を始めてから通航が減り、2025年上半期の石油の通過量は日量420万バレルと、2023年のほぼ半分だった（米EIA、2026年3月更新）。ホルムズ海峡の危機では、海峡を避けてサウジのヤンブー港から出した原油がアジアへ向かう際にここを通るため、迂回路の弱点として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        },
+        {
+          "label": "米EIA Today in Energy（2017-08-04）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=32352"
+        }
+      ],
+      "related": [
+        "chokepoint",
+        "houthi"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "kharg",
+      "term": "カーグ島",
+      "reading": "かーぐとう",
+      "category": "place",
+      "match": [
+        "カーグ島"
+      ],
+      "aliases": [
+        "ハールク島",
+        "ハルグ島"
+      ],
+      "tooltip": true,
+      "short": "ペルシャ湾の北東部にあるイランの島。同国最大の原油輸出ターミナルがある。",
+      "body": [
+        "ペルシャ湾の北東部、イラン本土の沖にある島で、イラン最大の原油輸出ターミナルが置かれている（米EIA、2021年更新）。ホルムズ海峡の内側にあるため、イランが自国の原油を輸出するときも海峡を通る必要がある。海峡の外側のジャスクへ原油を送るパイプラインもあるが、実際に運べる量は日量30万バレル程度にとどまる（米EIA、2026年3月更新）。ホルムズ海峡の危機では、イランの輸出を止めようとする側の標的として登場する。"
+      ],
+      "site_note": [
+        "同島へ向かうタンカーの無力化などを伝えている。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「Background Reference: Iran」（2021-07-20 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/Iran/background.htm"
+        },
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "chokepoint",
+      "term": "チョークポイント",
+      "reading": "ちょーくぽいんと",
+      "category": "place",
+      "match": [
+        "チョークポイント"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "except": [
+        "チョークポイント・ラボ"
+      ],
+      "short": "世界の海上輸送路のうち、交通が集中する狭い海峡や運河。封鎖や事故が起きると物流全体が滞る要衝。",
+      "body": [
+        "広く使われる海上輸送路の途中にある、狭い水路のこと。米EIA は「世界の主要な海上輸送路にある狭い水路で、大量の石油や LNG が通るためエネルギーの貿易と安全保障にとって重要なもの」と説明する（2026年3月更新）。ホルムズ海峡、バブ・エル・マンデブ海峡、スエズ運河、パナマ運河などが代表例。一方、喜望峰は主要な航路だがチョークポイントではないとされる。ホルムズ海峡は通過量が大きいうえに迂回手段が限られるため、チョークポイントのなかでも止まったときの影響が特に大きい。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        }
+      ],
+      "related": [
+        "strait-of-hormuz",
+        "bab-el-mandeb"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "adcop",
+      "term": "ADCOP（ハブシャン〜フジャイラ原油パイプライン）",
+      "reading": "あどこっぷ",
+      "category": "place",
+      "match": [
+        "ADCOP",
+        "ハブシャン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "synonyms": false,
+      "short": "アブダビの陸上油田地帯とオマーン湾岸のフジャイラ港を結ぶ、アラブ首長国連邦の原油パイプライン。",
+      "body": [
+        "Abu Dhabi Crude Oil Pipeline の略。アブダビの陸上油田地帯から、ホルムズ海峡の外側にあるフジャイラ港まで原油を運ぶ。輸送能力は日量180万バレルで、アブダビの主力油種マーバン原油を、海峡の内側から外側へ送り出す（米EIA、2026年7月更新）。ホルムズ海峡の危機では、アラブ首長国連邦が海峡を通らずに輸出を続けるための迂回路として登場する。アブダビ国営石油会社（ADNOC）は日量150万バレルの2本目を建設中で、2027年の稼働を見込む（同）。"
+      ],
+      "sources": [
+        {
+          "label": "米EIA「Country Analysis Brief: United Arab Emirates」（2026-07-28 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/countries_long/United_Arab_Emirates/"
+        },
+        {
+          "label": "米EIA Today in Energy（2025-06-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+        }
+      ],
+      "related": [
+        "fujairah",
+        "route"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "wti",
+      "term": "WTI",
+      "reading": "だぶりゅーてぃーあい",
+      "category": "market",
+      "match": [
+        "WTI"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "米国産の軽質・低硫黄原油。オクラホマ州クッシング渡しで値付けされ、米国の原油価格の指標になっている。",
+      "body": [
+        "WTI（ウエスト・テキサス・インターミディエート）は、米国で産出する軽質・低硫黄の原油で、オクラホマ州クッシングを受け渡し地として取引される。ニューヨーク商業取引所（NYMEX）の原油先物（1枚1,000バレル、現物受け渡し型）の対象で、その価格が米国産や米州産の原油の値決めの基準に使われる。ホルムズ海峡の通航が滞ると、中東産原油の供給不安から原油全体の価格が動く。「11月物」のような表記は、先物の受け渡し月（限月）を指す。"
+      ],
+      "site_note": [
+        "危機の緊張度を映す数字として、終値を記録している。"
+      ],
+      "sources": [
+        {
+          "label": "米エネルギー情報局（EIA）Glossary「West Texas Intermediate (WTI - Cushing)」",
+          "url": "https://www.eia.gov/tools/glossary/index.php?id=W"
+        },
+        {
+          "label": "CME Group「Crude Oil Futures - Contract Specs」",
+          "url": "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html"
+        },
+        {
+          "label": "EIA Today in Energy「Benchmarks play an important role in pricing crude oil」（2014-10-28）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=18571"
+        }
+      ],
+      "related": [
+        "brent",
+        "futures"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "brent",
+      "term": "ブレント（ブレント原油）",
+      "reading": "ぶれんと",
+      "category": "market",
+      "match": [
+        "ブレント原油",
+        "ブレント"
+      ],
+      "aliases": [
+        "Brent"
+      ],
+      "tooltip": true,
+      "short": "北海産の軽質・低硫黄原油をもとにした価格指標。国際的な原油取引の値決めの基準として広く使われる。",
+      "body": [
+        "ブレントは、北海で産出する複数の軽質・低硫黄原油を束ねた価格指標。EIA の2014年の解説では、英国沖のブレントとフォーティーズ、ノルウェー沖のエコフィスクとオセバーグの4油種で構成されていた。先物はロンドンの ICE フューチャーズ・ヨーロッパに上場され、1枚1,000バレル。米国内の指標である WTI に対し、ブレントは海上輸送される原油の国際的な指標とされるため、ホルムズ海峡の情勢を伝える報道で併記される。"
+      ],
+      "site_note": [
+        "WTI と並べて記録している。限月によって価格が数ドル違う日がある。"
+      ],
+      "sources": [
+        {
+          "label": "EIA Today in Energy「Benchmarks play an important role in pricing crude oil」（2014-10-28）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=18571"
+        },
+        {
+          "label": "ICE「Brent Crude Futures」（商品仕様）",
+          "url": "https://www.ice.com/products/219/Brent-Crude-Futures"
+        }
+      ],
+      "related": [
+        "wti",
+        "futures"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "bpd",
+      "term": "BPD・日量（バレル／日）",
+      "reading": "にちりょう",
+      "category": "market",
+      "match": [
+        "BPD",
+        "bpd",
+        "日量"
+      ],
+      "aliases": [
+        "バレル／日",
+        "b/d"
+      ],
+      "tooltip": true,
+      "short": "「バレル／日」の略で、原油の生産量や輸送量を1日あたりで表す単位。1バレルは約159リットル。",
+      "body": [
+        "BPD（b/d、bbl/d とも書く）は barrels per day の略で、原油や石油製品の生産・輸送・処理の量を1日あたりのバレル数で表す。1バレルは42米ガロン（約159リットル）。日本語では「日量○万バレル」と書く。ホルムズ海峡を通る石油は2024年平均で日量約2,000万バレル、世界の石油消費の約2割に当たる（米エネルギー情報局、2025年6月公表）。「万BPD」は1万バレル／日を単位にした表記。"
+      ],
+      "site_note": [
+        "海峡の流量、パイプラインの輸送能力、日本向けの調達量を比べる共通の物差しとして使っている。"
+      ],
+      "sources": [
+        {
+          "label": "EIA Glossary「Barrel」「b/d」",
+          "url": "https://www.eia.gov/tools/glossary/index.php?id=B"
+        },
+        {
+          "label": "EIA Today in Energy「Amid regional conflict, the Strait of Hormuz remains critical oil chokepoint」（2025-06-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+        }
+      ],
+      "related": [
+        "vlcc",
+        "opec"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "futures",
+      "term": "先物",
+      "reading": "さきもの",
+      "category": "market",
+      "match": [
+        "先物"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "将来の決まった期日に、いま決めた価格で商品を売買すると約束する取引。原油価格の報道の多くは先物価格を指す。",
+      "body": [
+        "先物取引は、将来のあらかじめ定められた期日に、特定の商品を、現時点で取り決めた価格で売買することを約束する取引。受け渡しの月ごとに別々の銘柄があり、「11月物」「12月物」と呼び分ける（限月）。ニュースで原油が1バレル何ドルと言うとき、多くは NYMEX の WTI 先物や ICE のブレント先物の価格を指す。限月によって価格は違う。価格を比べるときは、どの限月の数字かを確かめる必要がある。"
+      ],
+      "site_note": [
+        "ブレントの期近11月物と12月物に約5.5ドルの差がついた日を記録している（2026年9月30日、Rigzone 配信記事による）。"
+      ],
+      "sources": [
+        {
+          "label": "大阪取引所（日本取引所グループ）北浜投資塾「先物取引とは」",
+          "url": "https://www.jpx.co.jp/ose-toshijuku/column/futures_option/futures/01.html"
+        },
+        {
+          "label": "CME Group「Crude Oil Futures - Contract Specs」",
+          "url": "https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html"
+        },
+        {
+          "label": "ICE「Brent Crude Futures」",
+          "url": "https://www.ice.com/products/219/Brent-Crude-Futures"
+        }
+      ],
+      "related": [
+        "wti",
+        "brent"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "national-stockpile",
+      "term": "国家備蓄",
+      "reading": "こっかびちく",
+      "category": "market",
+      "match": [
+        "国家備蓄"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "国が保有する石油の備蓄。全国の国家石油備蓄基地と、借り上げた民間タンクに蓄えている。",
+      "body": [
+        "国家備蓄は、石油備蓄法（石油の備蓄の確保等に関する法律）に基づき国が保有する石油の備蓄で、1978年度に始まった。全国10か所の国家石油備蓄基地と、借り上げた民間のタンクに貯蔵し、JOGMEC が統合管理する。2026年7月末時点で103日分（確報。資源エネルギー庁「石油備蓄の現況」令和8年9月）。最新の速報値はトップページに載せている。ホルムズ海峡の危機では、政府が2026年3月26日から放出を始めた。制度創設以来2回目の放出に当たる。放出分は精製事業者の受け入れが確認された日に統計へ反映されるため、放出の発表から日数が減るまでに時間差がある。"
+      ],
+      "sources": [
+        {
+          "label": "資源エネルギー庁「石油備蓄の現況」令和8年9月（7月末現在）",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf/2026/260915oil.pdf"
+        },
+        {
+          "label": "資源エネルギー庁 エネこれ「今こそ知りたい、日本の『石油備蓄』のしくみとは？」（2026-04-13）",
+          "url": "https://www.enecho.meti.go.jp/about/special/johoteikyo/government_stockpiled_oil.html"
+        },
+        {
+          "label": "資源エネルギー庁「石油備蓄の状況（推計値の速報）」",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf-oil-res/oil_daily.pdf"
+        }
+      ],
+      "related": [
+        "private-stockpile",
+        "joint-stockpile",
+        "stockpile-days"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "private-stockpile",
+      "term": "民間備蓄",
+      "reading": "みんかんびちく",
+      "category": "market",
+      "match": [
+        "民間備蓄"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "石油精製業者や輸入業者などが、法律で義務づけられて保有する石油の備蓄。原油と石油製品の両方で持つ。",
+      "body": [
+        "民間備蓄は、石油備蓄法により石油精製業者・特定石油販売業者・石油輸入業者に義務づけられた備蓄。義務量は1993年度以降「消費量の70日分」で、原油と、ガソリンや灯油などの製品の両方で持つ。2026年7月末時点で98日分（資源エネルギー庁「石油備蓄の現況」令和8年9月）。ホルムズ海峡の危機では、政府が義務量を55日分へ引き下げ、各社が在庫を供給に回せるようにした。速報値では国家備蓄より日々の増減が大きく、2026年8〜9月は89〜99日分の幅で動いた。"
+      ],
+      "sources": [
+        {
+          "label": "資源エネルギー庁「石油備蓄の現況」令和8年9月",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf/2026/260915oil.pdf"
+        },
+        {
+          "label": "資源エネルギー庁「石油備蓄の状況（推計値の速報）」",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf-oil-res/oil_daily.pdf"
+        },
+        {
+          "label": "資源エネルギー庁 エネこれ（2026-04-13）",
+          "url": "https://www.enecho.meti.go.jp/about/special/johoteikyo/government_stockpiled_oil.html"
+        }
+      ],
+      "related": [
+        "national-stockpile",
+        "joint-stockpile",
+        "stockpile-days"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "joint-stockpile",
+      "term": "産油国共同備蓄",
+      "reading": "さんゆこくきょうどうびちく",
+      "category": "market",
+      "match": [
+        "産油国共同備蓄"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "産油国の国営石油会社が日本国内のタンクに置く原油。供給が不足したときは日本向けに優先して供給される。",
+      "body": [
+        "産油国共同備蓄は、日本国内の民間原油タンクを、政府の支援のもとで産油国の国営石油会社に貸す事業。相手は東アジア向けの中継・備蓄基地としてタンクを使い、日本への原油供給が不足したときは、中の原油を日本向けに優先供給する。量は国家備蓄や民間備蓄より小さく、2026年7月末時点で4日分（資源エネルギー庁「石油備蓄の現況」令和8年9月）。ホルムズ海峡の危機では、2026年3月26日から国家備蓄とあわせて放出が始まった。国の備蓄目標では、この2分の1を国家備蓄と合算して数える。"
+      ],
+      "sources": [
+        {
+          "label": "資源エネルギー庁「石油備蓄の現況」令和8年9月",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf/2026/260915oil.pdf"
+        },
+        {
+          "label": "資源エネルギー庁 エネこれ（2026-04-13）",
+          "url": "https://www.enecho.meti.go.jp/about/special/johoteikyo/government_stockpiled_oil.html"
+        }
+      ],
+      "related": [
+        "national-stockpile",
+        "private-stockpile",
+        "stockpile-days"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "stockpile-days",
+      "term": "備蓄日数",
+      "reading": "びちくにっすう",
+      "category": "market",
+      "match": [
+        "備蓄日数"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "備蓄した石油が国内消費の何日分に当たるかを示す数字。保有量を1日あたりの国内石油消費量で割って求める。",
+      "body": [
+        "備蓄日数は、国家・民間・産油国共同の保有量を「我が国の1日あたりの石油の消費量」で割った値で、石油備蓄法に基づく計算（備蓄法基準）である。国内の消費を全て備蓄でまかなうと仮定した目安で、輸入が続いていれば実際の減り方はこれより緩やかになる。資源エネルギー庁は輸入量をもとにした IEA 基準の日数も併記しており、2026年7月末は備蓄法基準206日分に対し IEA 基準176日分と、30日の差がある。"
+      ],
+      "site_note": [
+        "載せているのは備蓄法基準の日数で、毎日公表される速報（3日前時点の推計）と、月次の確報がある。"
+      ],
+      "sources": [
+        {
+          "label": "資源エネルギー庁「統計の概要（石油備蓄の現況）」（統計の作成方法）",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/summary.html"
+        },
+        {
+          "label": "資源エネルギー庁「石油備蓄の現況」令和8年9月（注2・項目3）",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf/2026/260915oil.pdf"
+        },
+        {
+          "label": "資源エネルギー庁「石油備蓄の状況（推計値の速報）」",
+          "url": "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl001/pdf-oil-res/oil_daily.pdf"
+        }
+      ],
+      "related": [
+        "national-stockpile",
+        "private-stockpile",
+        "joint-stockpile",
+        "iea"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "lng",
+      "term": "LNG",
+      "reading": "えるえぬじー",
+      "category": "market",
+      "match": [
+        "LNG"
+      ],
+      "aliases": [
+        "液化天然ガス"
+      ],
+      "tooltip": true,
+      "short": "天然ガスを約マイナス160度に冷やして液体にしたもの。体積が気体の約600分の1になり、専用船で運べる。",
+      "body": [
+        "LNG（液化天然ガス）は、メタンを主成分とする天然ガスから水分・硫黄化合物・二酸化炭素などの不純物を取り除き、超低温に冷却して液化したもの。約マイナス160度で液体になり、体積が気体の約600分の1に減るため、専用のタンカーで遠くまで運べる。2024年には世界の LNG 貿易の約5分の1がホルムズ海峡を通り、その大半はカタール産だった（米エネルギー情報局、2025年6月公表）。海峡の危機は原油だけでなく、発電や都市ガスに使うガスの供給にも及ぶ。"
+      ],
+      "site_note": [
+        "LNG 船の通過や被弾も記録している。"
+      ],
+      "sources": [
+        {
+          "label": "JOGMEC 石油・天然ガス用語辞典「液化天然ガス」",
+          "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/ueo/lng.html"
+        },
+        {
+          "label": "EIA Today in Energy（2025-06-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "seizure",
+      "term": "拿捕",
+      "reading": "だほ",
+      "category": "ship",
+      "match": [
+        "拿捕"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "軍艦や政府の船が、他の船を実力で支配下に置き、港へ連行したり留め置いたりすること。",
+      "body": [
+        "拿捕は、軍艦や政府の船が他の船舶を実力で支配下に置くこと。武力紛争時の海戦のルールを専門家がまとめたサンレモ・マニュアル（1994年）は、封鎖を破ろうとする商船や禁制品を運ぶ中立国の商船などは捕獲の対象になり得るとし、捕獲した中立国商船は審理に付すとしている。ホルムズ海峡の危機では、イラン革命防衛隊が商船や米国の無人潜水機を拿捕したと発表した例と、米軍が対イラン海上封鎖のもとで拿捕作戦を行っている例の両方が記録されている。個々の拿捕が国際法上正当かどうかは当事者の主張が対立しており、誰の発表かを確かめて読む必要がある。"
+      ],
+      "sources": [
+        {
+          "label": "ICRC 国際人道法データベース「San Remo Manual」146項（中立国商船の捕獲）",
+          "url": "https://ihl-databases.icrc.org/en/ihl-treaties/san-remo-manual-1994/article-146-152?activeTab="
+        },
+        {
+          "label": "同 98項（封鎖を破る商船の捕獲）",
+          "url": "https://ihl-databases.icrc.org/en/ihl-treaties/san-remo-manual-1994/article-93-108?activeTab="
+        }
+      ],
+      "related": [
+        "blockade"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "transit-fee",
+      "term": "通航料",
+      "reading": "つうこうりょう",
+      "category": "ship",
+      "match": [
+        "通航料",
+        "通行料"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "船が特定の水路を通るときに支払う料金。このサイトでは、イランがホルムズ海峡の通過に課すとされる料金を指す。",
+      "site_short": true,
+      "body": [
+        "通航料は、船舶が特定の水路を通る対価として支払う料金。国連海洋法条約は、領海を通るだけの外国船に課徴金を課してはならず、船に提供した特定の役務の対価に限り、差別なく徴収できると定める（26条）。国際航行に使われる海峡では、通過通航を妨げてはならないとする（38条・44条）。ホルムズ海峡の危機では、イランが通過する船に料金を課す制度を設けたと報じられ、米国は違法と主張し、イラン側は海峡の管理やサービスの対価だと主張している。"
+      ],
+      "site_note": [
+        "イランがホルムズ海峡の通過に課すとされる料金を指す。金額と運用の有無は時期と報道によって違い、確定した公表値は確認できていない。"
+      ],
+      "sources": [
+        {
+          "label": "国連 海洋法条約 第2部（26条）",
+          "url": "https://www.un.org/depts/los/convention_agreements/texts/unclos/part2.htm"
+        },
+        {
+          "label": "国連 海洋法条約 第3部（37・38・44条）",
+          "url": "https://www.un.org/depts/los/convention_agreements/texts/unclos/part3.htm"
+        }
+      ],
+      "related": [
+        "pgsa",
+        "route"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "vlcc",
+      "term": "VLCC",
+      "reading": "ぶいえるしーしー",
+      "category": "ship",
+      "match": [
+        "VLCC"
+      ],
+      "aliases": [
+        "大型原油タンカー"
+      ],
+      "tooltip": true,
+      "short": "載貨重量20万〜30万トン級の大型原油タンカー。1隻で原油およそ200万バレルを運ぶ。",
+      "body": [
+        "VLCC（Very Large Crude Carrier）は、一般に載貨重量20万〜30万トンの原油タンカーを指す（JOGMEC 石油・天然ガス用語辞典）。1隻で原油を約190万〜220万バレル積める（米エネルギー情報局、2014年）。中東から日本へ原油を運ぶ長距離航路で使われ、ホルムズ海峡の危機では、1隻の通過・足止め・被弾がそのまま約200万バレル分の供給の遅れにつながる。大きさゆえに入港できる港が限られ、小型のタンカーから沖合などで積み替える「ライタリング」が必要になる場合がある。"
+      ],
+      "sources": [
+        {
+          "label": "JOGMEC 石油・天然ガス用語辞典「VLCC」",
+          "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/alphanumeric/vlcc.html"
+        },
+        {
+          "label": "EIA Today in Energy「Oil tanker sizes range from general purpose to ultra-large crude carriers on AFRA scale」（2014-09-16）",
+          "url": "https://www.eia.gov/todayinenergy/detail.php?id=17991"
+        }
+      ],
+      "related": [
+        "bpd"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "ais",
+      "term": "AIS（船舶自動識別装置）",
+      "reading": "えーあいえす",
+      "category": "ship",
+      "match": [
+        "AIS"
+      ],
+      "aliases": [
+        "船舶自動識別装置"
+      ],
+      "tooltip": true,
+      "short": "船が自分の識別符号・位置・針路・速力などを電波で自動的に送受信する装置。一定以上の船に搭載義務がある。",
+      "body": [
+        "AIS（Automatic Identification System）は、船舶の識別符号、種類、位置、針路、速力、航行状態などを VHF 帯の電波で自動的に送受信し、船どうしや陸上局との間で情報を交換する仕組み。SOLAS 条約により、国際航海に従事する300総トン以上の船などに搭載が義務づけられている（IMO、海上保安庁）。通航隻数の集計の多くはこの信号をもとにするため、ホルムズ海峡の危機では、信号を切って航行する船（ダーク船）があると、集計値が実際の通航数を下回る。数字を読むときは、AIS の実測値か、報道などからの推計値かを区別する必要がある。"
+      ],
+      "sources": [
+        {
+          "label": "IMO「AIS transponders」",
+          "url": "https://www.imo.org/en/ourwork/safety/pages/ais.aspx"
+        },
+        {
+          "label": "海上保安庁「AISを活用した航行支援システム」",
+          "url": "https://www.kaiho.mlit.go.jp/soshiki/koutsuu/toudai/ais-info.html"
+        }
+      ],
+      "related": [
+        "windward",
+        "kpler"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "mou",
+      "term": "MOU（覚書）",
+      "reading": "えむおーゆー",
+      "category": "military",
+      "match": [
+        "MOU",
+        "MoU",
+        "覚書"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "当事者どうしの合意内容を記した文書。正式な条約より簡易な形式で、通常は批准を必要としない。",
+      "body": [
+        "MOU（Memorandum of Understanding、覚書）は、国家や国際機関が取り決めの内容を記す、条約より形式の軽い国際文書。多くは単一の文書で、批准を必要としない（国連条約集の用語解説）。"
+      ],
+      "site_note": [
+        "MOU・覚書と書く場合は、2026年6月に米国とイランが交わした14条項の「イスラマバード覚書」を指す。米国による封鎖の解除、イランによる60日間の無料通航の保証、30日以内の機雷除去などが盛り込まれたと記録している。その後、攻撃の再開と8月16日の期限到来を経て、延長の合意がないまま事実上形骸化したと記録している。"
+      ],
+      "sources": [
+        {
+          "label": "国連条約集（UNTC）「Definitions — Memoranda of Understanding」",
+          "url": "https://treaties.un.org/Pages/overview.aspx?path=overview/definition/page1_en.xml"
+        }
+      ],
+      "related": [
+        "ceasefire"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "naval-mine",
+      "term": "機雷",
+      "reading": "きらい",
+      "category": "military",
+      "match": [
+        "機雷"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "水中や海底に仕掛け、船が触れたり近づいたりすると爆発する兵器。少数でも航路を使えなくする。",
+      "body": [
+        "機雷は、水中に敷設し、船が接触するか、船の出す音・磁気・水圧の変化を感知して爆発する兵器。海底の重りにつないで水中に浮かせる係維機雷、海底に置く沈底機雷などがある。敷設された可能性があるだけで航行の安全を保証できなくなるため、狭い海峡では少数でも通航を止める効果を持つ。ホルムズ海峡の危機では、イランが敷設したとされる機雷と、その位置が正確に把握されていないと報じられた点が、通航再開の障害として繰り返し取り上げられている。海戦のルールをまとめたサンレモ・マニュアルは、敷設位置の記録と、戦闘終結後の除去を当事者に求めている。"
+      ],
+      "sources": [
+        {
+          "label": "ICRC 国際人道法データベース「San Remo Manual」80〜92項（機雷）",
+          "url": "https://ihl-databases.icrc.org/en/ihl-treaties/san-remo-manual-1994/article-78-92?activeTab="
+        },
+        {
+          "label": "MAMOR-WEB（扶桑社）「いま日本の防衛に欠かせない『掃討』と『掃海』とは？」（2023-02-03）",
+          "url": "https://mamor-web.jp/_ct/17583896"
+        }
+      ],
+      "related": [
+        "minesweeping"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "minesweeping",
+      "term": "掃海",
+      "reading": "そうかい",
+      "category": "military",
+      "match": [
+        "掃海"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "敷設された機雷を取り除き、船が安全に通れる航路を確保する作業。掃海艇や水中無人機を使う。",
+      "body": [
+        "掃海は、機雷を除去または無力化して航路の安全を確保する作業。狭い意味では、船に見せかけた信号で機雷を作動させて処分する方法を指し、探知機で1個ずつ見つけて水中無人機などで処分する「掃討」と区別する。一つの海域の安全を確認するには時間がかかる。1991年のペルシャ湾では、海上自衛隊の掃海部隊が99日間の作業で34個の機雷を処分した（防衛研究所）。ホルムズ海峡の危機では、機雷の除去が通航の正常化の前提とされ、誰が、どの範囲を、いつまでに行うかが交渉の論点になっている。"
+      ],
+      "sources": [
+        {
+          "label": "MAMOR-WEB（扶桑社）「いま日本の防衛に欠かせない『掃討』と『掃海』とは？」（2023-02-03）",
+          "url": "https://mamor-web.jp/_ct/17583896"
+        },
+        {
+          "label": "防衛研究所 NIDS NEWS 2014年12月号「ペルシャ湾掃海艇派遣の意義と教訓」",
+          "url": "https://www.nids.mod.go.jp/publication/briefing/pdf/2014/briefing_193.pdf"
+        },
+        {
+          "label": "ICRC「San Remo Manual」90〜92項（戦闘終結後の機雷除去）",
+          "url": "https://ihl-databases.icrc.org/en/ihl-treaties/san-remo-manual-1994/article-78-92?activeTab="
+        }
+      ],
+      "related": [
+        "naval-mine"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "blockade",
+      "term": "海上封鎖・二重封鎖",
+      "reading": "かいじょうふうさ",
+      "category": "military",
+      "match": [
+        "海上封鎖",
+        "二重封鎖"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "synonyms": false,
+      "short": "海上封鎖は、軍艦などで相手国の港や沿岸への船の出入りを実力で止めること。二重封鎖は二つの封鎖が重なった状態。",
+      "body": [
+        "海上封鎖は、武力紛争の当事国が軍艦などを使い、相手国の港や沿岸への船の出入りを止める行為。海戦のルールをまとめたサンレモ・マニュアルは、封鎖を宣言して全ての交戦国と中立国に通告すること、実効的であること、全ての国の船に公平に適用すること、中立国の港への出入りを妨げないことを要件に挙げる。ホルムズ海峡の危機では、イランによる海峡の通航制限に、米中央軍が2026年4月13日に始めた対イラン海上封鎖が重なった。いずれの措置も、適法かどうかは当事者の主張が対立している。"
+      ],
+      "site_note": [
+        "「二重封鎖」を2通りの意味で使ってきた。一つは、イランによる海峡の通航制限と米軍の対イラン海上封鎖が重なった状態（イラン・米国による二重封鎖）。もう一つは、ホルムズ海峡と紅海の両方が通りにくくなった状態（ホルムズ・紅海の二重封鎖）。どちらを指すかが分かるよう、誰が・どこを封鎖しているかを添えて書いている。"
+      ],
+      "sources": [
+        {
+          "label": "ICRC 国際人道法データベース「San Remo Manual」93〜104項（封鎖）",
+          "url": "https://ihl-databases.icrc.org/en/ihl-treaties/san-remo-manual-1994/article-93-108?activeTab="
+        }
+      ],
+      "related": [
+        "crisis-day",
+        "seizure",
+        "centcom"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "ceasefire",
+      "term": "停戦",
+      "reading": "ていせん",
+      "category": "military",
+      "match": [
+        "停戦"
+      ],
+      "aliases": [],
+      "tooltip": false,
+      "short": "戦っている当事者が、合意や宣言によって戦闘を止めること。戦争の終結とは限らず、期限や条件が付くことが多い。",
+      "body": [
+        "停戦は、紛争の当事者が戦闘を止める取り決め。国連の調停指針によれば、普遍的に受け入れられた単一の定義はなく、何を止めるか、いつ発効するか、どう監視するかは、当事者が合意のたびに決める。「敵対行為の停止」「休戦」といった語も、ほぼ同じ意味で使われることがある。政治的な解決とは別のものなので、期限切れや違反の非難の応酬で崩れることがある。ホルムズ海峡の危機では、2026年4月の停戦も、6月の覚書に伴う停戦の宣言も、適用範囲や期限の読み方が当事者の間で食い違った。"
+      ],
+      "site_note": [
+        "停戦の間も海峡の通航は元の水準に戻らなかったと記録している。"
+      ],
+      "sources": [
+        {
+          "label": "国連政務・平和構築局（UN Peacemaker）「Guidance on Mediation of Ceasefires」（2025年9月版）",
+          "url": "https://peacemaker.un.org/sites/default/files/document/files/2025/09/csg-desktop2025.pdf"
+        },
+        {
+          "label": "同 テーマ別ページ「Ceasefires & security arrangements」",
+          "url": "https://peacemaker.un.org/en/thematic-areas/ceasefires-security-arrangements"
+        }
+      ],
+      "related": [
+        "mou"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "crisis-day",
+      "term": "危機◯日目",
+      "reading": "ききなんにちめ",
+      "category": "site",
+      "match": [],
+      "aliases": [
+        "封鎖◯日目"
+      ],
+      "tooltip": false,
+      "synonyms": false,
+      "short": "2026年2月28日の開戦を1日目として数えた経過日数。特定の封鎖が続いた日数ではない。",
+      "body": [
+        "米国・イスラエルによる対イラン攻撃が始まった2026年2月28日を「1日目」として、日本時間で数えた経過日数。ホルムズ海峡危機マップの上部と、日次アーカイブの各日に表示している。イランによる海峡の通航制限や、米軍の対イラン海上封鎖（4月13日発動）が続いた日数ではない。2026年10月上旬までは「封鎖◯日目」と表示していたが、数えているものに合わせて呼び名を改めた。過去の速報本文には「封鎖◯日目」「二重封鎖◯日目」の表記が残っており、2026年6月24日以前の本文は当時の起算日（2月27日）によるため数字が1日ずれている場合がある。"
+      ],
+      "sources": [],
+      "related": [
+        "blockade"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "scenario",
+      "term": "シナリオ A〜D",
+      "reading": "しなりお",
+      "category": "site",
+      "match": [
+        "シナリオA",
+        "シナリオB",
+        "シナリオC",
+        "シナリオD"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "synonyms": false,
+      "short": "今後の展開を、収束から全面対決まで4通りに分けたこのサイトの見立て。確率はAIによる推計。",
+      "body": [
+        "ホルムズ海峡の危機が今後どう進むかを、A（もっとも良い展開）から D（もっとも悪い展開）までの4通りに分けて示したもの。各シナリオの内容は情勢に合わせて書き換えている。併記している確率は、公開されているニュース記事をもとに、生成AI（Google Gemini）が毎日算出した推計で、実測値でも専門機関の予測でもない。4つの合計が100%になるよう配分した相対的な目安として読む。"
+      ],
+      "sources": [],
+      "related": [],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "route",
+      "term": "ルート A〜D",
+      "reading": "るーと",
+      "category": "site",
+      "match": [
+        "ルートA",
+        "ルートB",
+        "ルートC",
+        "ルートD"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "synonyms": false,
+      "short": "ホルムズ海峡が使えないときの、日本向け原油の代替調達経路にこのサイトが付けている呼び名。",
+      "body": [
+        "日本が中東から原油を運ぶ従来の経路（旧ルート＝ホルムズ海峡を通る本線）に対して、代わりになる経路をこのサイトが整理して付けた呼び名。A はアラブ首長国連邦のフジャイラ港経由（ADCOP パイプライン）、B はサウジアラビアのヤンブー港経由（東西パイプライン）、C は中東以外からの調達（米国からの直輸入と、ブラジル・西アフリカからの南半球経由）、D はイランに通航料を払ってホルムズ海峡を通る経路を指す。業界や政府が使う正式な呼び名ではない。"
+      ],
+      "sources": [],
+      "related": [
+        "east-west-pipeline",
+        "adcop",
+        "cape-route",
+        "transit-fee"
+      ],
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "archive-badges",
+      "term": "事後調査・欠損補完（日次アーカイブの表示）",
+      "reading": "じごちょうさ",
+      "category": "site",
+      "match": [],
+      "aliases": [
+        "事後調査",
+        "欠損補完"
+      ],
+      "tooltip": false,
+      "synonyms": false,
+      "short": "日次アーカイブで、その日の速報をそのまま載せたのではなく、後から調べて書いた記録に付けている印。",
+      "body": [
+        "日次アーカイブは、このサイトがその日に発信した速報の本文をそのまま収録するのが原則である。例外が2種類ある。「事後調査」は、サイト開設（2026年4月8日）より前の日について、公開情報をもとに後から調べてまとめた記録。「欠損補完」は、開設後に速報を出しそびれた日について、後日の調査で補った記録。どちらも当日に書いたものではないため、印を付けて区別している。速報を出さず、重要な動きも確認できなかった日は収録していない。"
+      ],
+      "sources": [],
+      "related": [],
+      "updated": "2026-10-05"
+    }
+  ]
 }

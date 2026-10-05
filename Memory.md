@@ -38,6 +38,12 @@
     ホルムズ海峡危機マップの本体は `/hormuz/`（`docs/hormuz/index.html`）へ移した。**日次更新の対象は `docs/hormuz/index.html`**。
     ハブで日次が触るのは「危機マップの最終更新」（`id="hub-updated"`）の1か所だけ。`/?focus=<キー>` と `/#map` はハブの JS が `/hormuz/` へ送る。
     設計と実施記録は `tools/s11-10-design.md`（§12）。同日、本体ヘッダーの「危機N日目」の予備の数字を日次更新が毎回書き換える手順にした（`validate_daily.py` が WARN）。
+  - 【2026-10-05】**用語集を公開**（PR #51・merge commit `78144f3`）。`/glossary/`（47語）、`/archive/` の日別カードと記事5本のツールチップ、
+    アーカイブ検索の同義語（「米中央軍」で「CENTCOM」の日も当たる）。正本は `docs/data/glossary.json`、ページは `tools/build_glossary.py --write` が書き出す。
+    共通部品は `docs/assets/glossary.js`（本文に用語のタグは書かない・日次の作業は増えない）。確認前の原稿と確認用の一覧は private の `hormuz-ops/drafts/`。
+    「このサイト独自の用語」は札、一般の用語の中の「このサイトでは」は囲みで区別して出す。`/hormuz/` 本体へのツールチップは未実施（S4・再編の観測のあと）。
+    同日、読者に見える「OSINT」をやめた：更新履歴には「現地メディア視点を更新」と書く（日次の手順・`validate_daily.py` が WARN）。日次アーカイブの過去の本文は書き換えず、
+    「収録範囲について」に意味を1文足した。内部の名前（`osint-panel`・`news_data.json` の `osint`）はそのまま。設計と実施記録は `tools/glossary-search-design.md`（§11）。
     `hormuz-data-` の戻りリンク2か所も `/hormuz/` に変更。次は「表示の統一」（「リアルタイム表示」の実装を含む。決定は `tools/redesign-plan.md` §9）
 - **並行して進行中**: ~~日次更新の Claude Code 主体化（2026-09-02 着手・フェーズ0〜2完了。旧経路はバックアップとして保持）~~
   → 移行は実質完了（フェーズ0〜2完了・クラウドセッションが主経路）。旧経路はバックアップとして保持（2026-09-14 決定）

@@ -736,3 +736,23 @@ function search(terms){                         // AND・新しい順
 - `glossary.json` は約78KB（gzip で約21KB）。基本設計の見込み（15〜25KB）は転送量でみれば範囲内
 - ローカル確認：`/glossary/` 47語・札4語・囲み17語・ページ内リンク切れ0・原稿の印なし。`/archive/`「米中央軍」39日分・375px で横はみ出し0。記事 `saudi-pipeline-attack.html` で7語に印。コンソールエラー0。`validate_daily.py` OK 46 / WARN 0 / NG 0
 - 残り：`/editorial/` に1文（G4・単独コミット・文面は運営者の確認後）→ push → PR → レビュー → 日次のあとにマージ → 本番確認（§11-7 の 3・4・6・8・9・11）→ `Memory.md`・`redesign-plan.md`
+
+### 11-15. レビュー・マージ・本番確認（2026-10-05 14:10〜14:20）
+
+- PR [#51](https://github.com/yattanda/hormuz-map/pull/51)。`/code-review 51 --comment` の指摘5件を `7914b30` で修正：
+  - 【高】`build_glossary.py` が書き出しを常に CRLF にして比べていたため、LF の checkout（クラウドの日次）では `--check` が必ず不一致になる → 改行を既存ファイルに合わせる
+  - 【中】タップでリンクにフォーカスが入るブラウザでは、1回目のタップで用語集へ移動する → タッチ直後の `focusin` では出さず `click` に任せる（**実機は未確認**）
+  - 【中】検索欄に `constructor` と入れると例外 → 同義語の表を原型なしのオブジェクトに
+  - 【低】要素をまたぐ `except`（「チョークポイント・ラボ」）が効かない → 後ろに続く要素の文字も見る
+  - 【低】同義語でない語（6語）の日次記録リンクが先頭の表記だけ → 表記ごとにリンクを出す
+- `/editorial/` 第2章に用語集の定義文の扱いを1文（`b92a3a9`・単独コミット）。最終更新 2026-10-05
+- マージ `78144f3`（merge commit）。ブランチ `feature/glossary` はローカル・リモートとも削除
+- 本番確認（`https://chokepointlab.com/`）：
+  - `/glossary/`：47語・札4語・囲み17語。`#term-centcom` で画面上端（12px）。375px で横はみ出し0
+  - `/archive/#q=米中央軍`：39日分（全177日）・別表記の注記あり。印143か所・ポップアップが画面内に収まる。コンソールエラー0
+  - 記事 `mine-clearance.html`：「機雷」「米中央軍」「掃海」に印。コンソールエラー0
+  - 増えた通信は `/assets/glossary.js` と `/data/glossary.json`（1回）だけ。`/privacy/` の改訂は不要と判断（外部送信・Cookie・ストレージの追加なし）
+  - ハブと本体のフッターのリンク、sitemap の `/glossary/`、`/editorial/` の1文：反映を確認
+- **残り**：スマホ実機でのタップの確認（特に Android）、JS 無効での表示、PSI（変更前の値は取っていない）。アーカイブの本文では「・」を含む表記（「バブ・エル・マンデブ海峡」）に印が付かない（区切りのない表記には付く）。
+  `glossary.json` を軽くするか（`short` だけの別ファイル）は転送量を見てから。S4（`/hormuz/` のツールチップ）は ③ の観測のあと
+- 語を足す・定義文を直すとき：`hormuz-ops/drafts/glossary.staging.json` を直す → `glossary_staging.py publish <glossary.json> --write` → `build_glossary.py --write` → JSON とページを同じコミットに入れる

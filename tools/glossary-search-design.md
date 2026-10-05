@@ -545,6 +545,9 @@ function search(terms){                         // AND・新しい順
 | `sources` | 変更なし | `label` と `url`。URL は本文を開いて確認したものだけ（【検索】の印が付いた出典は、開いて確かめるか外すまで入れない） |
 
 - 改行コードは CRLF・BOM なし（`docs/data/archive_timeline.json` に合わせる。2026-10-05 実測）
+- 実装で足した項目（どちらも省略できる）：
+  - `except`：その表記で始まるときは印を付けない文字列（「チョークポイント」に対する「チョークポイント・ラボ」）
+  - `synonyms`：`false` の語は、検索で表記どうしを同義語として広げない。1つの項目に別々のものをまとめた語に付ける（「ルートA〜D」「シナリオA〜D」「海上封鎖・二重封鎖」「OPEC・OPEC+」「EIA・STEO」「ADCOP・ハブシャン」）
 - 数値は確報だけを時点つきで書く（原稿 §0-1 の #2）。速報値は入れない
 
 ### 11-2. `tools/build_glossary.py`
@@ -664,3 +667,33 @@ function search(terms){                         // AND・新しい順
 2. 運営者：原稿48語の確認（優先 A から）。Claude：【未確認】1か所と【検索】5か所を、開ける出典で確かめ直す
 3. 確認済みの語を `glossary.json` に入れ、§11-8 の順で実装 → PR → マージ
 4. S4（`/hormuz/` のツールチップ）は ③ の観測のあと。区域の id はそのときに列挙する
+
+### 11-11. 実施結果（2026-10-05・ブランチ `feature/glossary`・未 push）
+
+- 作ったもの：`docs/data/glossary.json`（**0語**）・`docs/glossary/index.html`（「準備中」）・`docs/assets/glossary.js`・`tools/build_glossary.py`。
+  変えたもの：`docs/archive/index.html`、記事5本と `tools/article-template.html`（`<script>` 1行）、ハブと本体のフッター、`docs/sitemap.xml`、`tools/validate_daily.py`、`CLAUDE.md`、`tools/new-article-checklist.md`
+- **用語は1語も入れていない。**原稿48語は運営者の確認前のため。確認用の一覧は `hormuz-ops/drafts/glossary-review.md`、確認待ちのデータは同 `glossary.staging.json`（`glossary_staging.py publish` が `confirmed` の語だけを公開用の JSON にする）
+- **このままではマージしない。**`/glossary/` が「準備中」のまま sitemap とフッターに載るため。確認済みの語を入れてからマージする
+- §11 からの変更：`Glossary.data`（`glossary.json` の中身で解決する Promise）を足した。`/archive/` の同義語はこれを使い、同じ JSON を2回読まない。
+  アーカイブの `<script>` には `data-zones=".day .summary"` も付けた（共通 JS の読み込みが描画より遅れた場合に、表示済みのカードへ印を付けるため）
+- ローカル確認（`http://localhost:8765/`。**未確認の48語を一時的に入れて行い、確認後に元へ戻した。コミットには入っていない**）。番号は §11-7
+
+| # | 結果 |
+|---|---|
+| 1 | 引数なしは何も書かない。`--write` のあと `--check` が 0 |
+| 2 | `id` の重複・表記の重複・原稿の印の残り・出典なし・存在しない `related`・80字超の `short`・不正な `id` で検査に掛かる（`validate()` を直接呼んで確認） |
+| 3 | `/glossary/#term-centcom` でその語が画面上端（12px）に来る。48語・6分類・JSON-LD 48件。JS 無効での表示は未確認（本文は静的 HTML） |
+| 4 | マウス：乗せると用語の上に出る・ポップアップの中へ移っても消えない・離すと消える。Tab で出る・Esc で消える。タッチ：1回目は移動せず説明が出て、2回目で移動。外を押すと消える（いずれもイベントを発火させて確認。**実機では未確認**） |
+| 5 | 「IAEA」を検索した結果で、`IEA` の印が `IAEA` の中に付いた箇所は0件。`IAEA` には付く |
+| 6 | 「米中央軍」「CENTCOM」とも39日分。「ケシュム島」「ゲシュム島」とも4日分。「通行料」で「通航料」の日も当たる。「ルートC」は広がらない（1日分）。件数の行に「※ 別表記（…）も含めて探しています」 |
+| 7 | `glossary.json` が0語の状態（現在のコミット）で、本文・検索とも今までどおり。コンソールエラー0 |
+| 8 | 375・430・768・1280px で横はみ出し0（`/archive/`・記事・`/glossary/`）。375px でポップアップは左右12pxの内側に収まる |
+| 9 | 増えた通信は同じオリジンの `/assets/glossary.js` と `/data/glossary.json`（1回）だけ |
+| 10 | `validate_daily.py`：OK 45 / WARN 0 / NG 0 |
+| 11 | PSI は未実施（本番に出てから。変更前の値も未取得） |
+
+- 記事 `mine-clearance.html` で印が付いたのは「機雷」「米中央軍」「掃海」の3か所。見出し（`.article-section-title`）には付かない
+- `glossary.json` は48語で約77KB（非圧縮）。基本設計の見込み（15〜25KB）より大きい。本文（`body`）と出典を含むため。
+  ツールチップが使うのは `short` までなので、重ければ `short` だけの軽いファイルを別に書き出す余地がある（未実施。本番で転送量を見てから判断）
+- 用語集ページの前書き（「定義文は…編集部が書いたものです」ほか2文）は Claude が書いた文面で、**運営者の確認が要る**
+- 残り：48語の確認 → 確認済みの語を入れる → `/editorial/` に1文（G4・単独コミット）→ PR → レビュー → マージ → 本番確認 → `Memory.md`・`redesign-plan.md` への記録

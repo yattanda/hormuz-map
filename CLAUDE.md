@@ -18,6 +18,10 @@
 - **「日次更新」は毎日行うのが基本だが、更新しない日もある**（情勢が膠着している時期は1日おきにした期間がある）。
   公開ページで「毎日更新」と言い切らず、「原則として毎日更新」と書く。最終更新は実際に更新した日時を示す
   - ハブの4海峡の地図は `tools/build_hub_map.py --write` が書き出す。目印 `<!-- hub-map:start -->`〜`<!-- hub-map:end -->` の間を手で編集しない
+- `docs/data/glossary.json` が用語集の正本（ツールチップ・`/glossary/`・アーカイブ検索の同義語が同じデータを使う。設計書 `tools/glossary-search-design.md`）
+  - 載せるのは運営者が確認した定義文だけ。確認前の原稿は private リポジトリ `hormuz-ops` の `drafts/` に置く
+  - 用語集ページ `docs/glossary/index.html` は `tools/build_glossary.py --write` が書き出す。目印 `<!-- glossary:start -->`〜`<!-- glossary:end -->`・`<!-- glossary-jsonld:start -->`〜`<!-- glossary-jsonld:end -->` の間を手で編集しない。JSON を直したら同じコミットでページも書き出す
+  - ツールチップの共通部品は `docs/assets/glossary.js`。**本文に用語のタグを手で書かない**（表示時に JS が印を付ける。日次更新の作業は増えない）
   - `/hormuz/` の中では、ページ間のリンクは文書相対（`../articles/…`）、画像・データはルート相対（`/images/…`・`/data/…`）で書く
 - `docs/data/news_data.json` がニュース・OSINT表示の単一ソース
 - `docs/images/` ディレクトリにインフォグラフィック画像を管理

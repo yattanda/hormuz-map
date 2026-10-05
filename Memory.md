@@ -9,8 +9,8 @@
 ## プロジェクト概要
 
 - **サイト**: https://chokepointlab.com/
-- **構成**: `docs/index.html`（HTML/CSS/JS全集約）+ `docs/data/news_data.json`
-- **更新頻度**: 毎日〜数日に1回
+- **構成**: `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体・HTML/CSS/JS全集約）+ `docs/index.html`（媒体トップ＝ハブ）+ `docs/data/news_data.json`
+- **更新頻度**: 日次更新が基本（毎日）。情勢が膠着している時期などは更新しない日もある
 - **目標**: 継続可能な媒体化（信頼性の確立 → 独自ドメイン移行 → 収益化）。※媒体名・ドメイン・法務・収益化などの上流の方針、および三媒体連携の構想はリポジトリ外の戦略文書が正本。この Memory.md は技術・実装の現状に限定する
 
 ---
@@ -330,8 +330,8 @@ if (window.innerWidth <= 480) {
   `?utm_source=youtube&utm_medium=video&utm_campaign=<公開日YYYYMMDD>-<短い英語>&utm_content=<description|pinned_comment|community|channel_links>`
   （すべて小文字。サイト内リンクには付けない。台帳は上流の非公開ノート側）
 - **`?focus=<キー>`（2026-09-22 実装、`ca84606`）**：トップの地図を指定の印へ寄せてポップアップを開く。UTM ではなく表示を決めるパラメータ。
-  書く順は `?focus=<キー>&utm_…`。キーは小文字英字で、`docs/index.html` の `FOCUS_TARGETS`（5-C）に定義する。
-  現在のキー：`minamitori`（南鳥島）。キーを足したら、トップの「YouTube から来た方へ」枠（`#yt-visitors`）と台帳にも足す。
+  書く順は `?focus=<キー>&utm_…`。キーは小文字英字で、`docs/hormuz/index.html` の `FOCUS_TARGETS`（5-C）に定義する。ルートに `?focus=` 付きで来たアクセスはハブの JS が `/hormuz/` へ送る。
+  現在のキー：`minamitori`（南鳥島）。キーを足したら、`/hormuz/` とハブの「YouTube から来た方へ」枠（`#yt-visitors`）と台帳にも足す。
   `#アンカー` を使わないのは、§11-10 実施条件1に反し、GA4 の page_location にも残らないため
 - **直リンク化**：リンク先となるアンカー（`id`）の棚卸しが必要
 

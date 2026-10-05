@@ -48,7 +48,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 
 ## 4. index.html側にリンクを追加する
 
-`docs/index.html` の「特別解説コラム」セクション（`#special-commentary`）内、
+`docs/hormuz/index.html` の「特別解説コラム」セクション（`#special-commentary`）内、
 該当カードに以下を追加する。
 
 - カードは `<div class="commentary-grid">` の**直下**に、他のカードと同じ階層で置く
@@ -56,10 +56,10 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
   先頭の1枚が全幅、2枚目以降が格子（PC 3列・タブレット 2列・スマホ 1列）になる
 
 - カード本文は要約（3〜5行程度、新しい主張やデータを加えない）
-- カード末尾に「全文を読む」ボタンを設置し `articles/{slug}.html` へリンク
+- カード末尾に「全文を読む」ボタンを設置し `../articles/{slug}.html` へリンク（`/hormuz/` からの文書相対）
 - **インライン style を書かない**（② PR4b-1・2026-10-01 からクラスで書く）。
   色は `col-card--{色}` で選ぶ：`red`・`amber`・`sky`・`green`・`orange`・`violet`。
-  新しい色が要るときは `docs/index.html` の CSS「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
+  新しい色が要るときは `docs/hormuz/index.html` の CSS「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
 
 ```html
 <!-- ○○コラムカード -->
@@ -81,7 +81,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
   </p>
 
   <!-- 全文リンク -->
-  <a href="articles/{slug}.html" class="col-card-link">
+  <a href="../articles/{slug}.html" class="col-card-link">
     📄 全文を読む
   </a>
 </div><!-- /○○コラムカード -->
@@ -95,7 +95,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 構造化データ（`datePublished` / `dateModified`）と同じ値にする。
 
 ```html
-<a href="articles/{slug}.html" class="jump-pill jump-pill--{色}" data-published="YYYY-MM-DD" data-updated="YYYY-MM-DD">📄 短い見出し</a>
+<a href="../articles/{slug}.html" class="jump-pill jump-pill--{色}" data-published="YYYY-MM-DD" data-updated="YYYY-MM-DD">📄 短い見出し</a>
 ```
 
 - 公開から30日間は「NEW」、それ以降は更新から30日間「◯月更新」の札が自動で付く（`applyColumnBadges()`）
@@ -122,6 +122,6 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 - [ ] canonical URL・OGP URL・構造化データのURLが一致しているか
 - [ ] パンくずのリンク先が正しいか
 - [ ] `docs/articles/index.html` にカードを追加したか
-- [ ] `docs/index.html` の該当カードに「全文を読む」リンクを追加したか
+- [ ] `docs/hormuz/index.html` の該当カードに「全文を読む」リンクを追加したか
 - [ ] `docs/sitemap.xml` に追加したか
 - [ ] `/publish-checklist` の対象範囲であれば併せて実行する

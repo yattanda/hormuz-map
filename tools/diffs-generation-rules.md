@@ -4,6 +4,21 @@
 
 ---
 
+## 対象ファイル（2026-10 の構造再編以降）
+
+- **この文書と diffs.md で単に `index.html` と書いたものは、`docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）を指す。**
+  old_str は必ず `docs/hormuz/index.html` から抽出する
+- `docs/index.html` は媒体トップ（ハブ）。**APPLY ブロックの対象にしない**（old_str をここから取らない）
+- diffs.md 冒頭の「Claude Code への指示」と末尾の依頼文には、対象を `docs/hormuz/index.html` と書く
+- new_str に新しくリンクや画像を書くときのパス（`/hormuz/` は1階層下にあるため）
+  - ページ間のリンク：`<a href="../articles/…">`・`<a href="../archive/…">` のように文書相対
+  - 画像・データ：`/images/…`・`/data/…` のようにルート相対（`openLightbox('/images/…')` も同じ）
+- **ハブの「危機マップの最終更新」（`id="hub-updated"`）と `sitemap.xml` の `lastmod` は diffs.md に含めない。**
+  差分を適用する Claude Code が、適用のあとに書き換える（`daily-site-update` スキル）
+- 「日次更新」は毎日行うのが基本だが、更新しない日もある。本文に「毎日更新」と言い切る表現を書かない
+
+---
+
 ## ⚡ モバイル更新対応：APPLY ブロック形式（必須）
 
 GitHub Actions による自動適用を有効にするため、

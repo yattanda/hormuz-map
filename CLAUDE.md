@@ -13,7 +13,12 @@
 
 ## プロジェクト概要
 
-- `docs/index.html` 1ファイルにHTML・CSS・JavaScript全て集約
+- `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）1ファイルにHTML・CSS・JavaScript全て集約。**日次更新の対象はこのファイル**
+- `docs/index.html` は媒体トップ（ハブ）。日次更新で触るのは「危機マップの最終更新」（`id="hub-updated"`）の1か所だけ（2026-10 の構造再編で本体を `/hormuz/` へ移した。設計書 `tools/s11-10-design.md`）
+- **「日次更新」は毎日行うのが基本だが、更新しない日もある**（情勢が膠着している時期は1日おきにした期間がある）。
+  公開ページで「毎日更新」と言い切らず、「原則として毎日更新」と書く。最終更新は実際に更新した日時を示す
+  - ハブの4海峡の地図は `tools/build_hub_map.py --write` が書き出す。目印 `<!-- hub-map:start -->`〜`<!-- hub-map:end -->` の間を手で編集しない
+  - `/hormuz/` の中では、ページ間のリンクは文書相対（`../articles/…`）、画像・データはルート相対（`/images/…`・`/data/…`）で書く
 - `docs/data/news_data.json` がニュース・OSINT表示の単一ソース
 - `docs/images/` ディレクトリにインフォグラフィック画像を管理
 - ※目標・URL・運用状況は `Memory.md` を参照
@@ -119,7 +124,7 @@
     `claude.ai/admin-settings/claude-code` にその設定が見えても有効にしない
   - 認証エラーで動かなくなったら、PC のターミナルで**このリポジトリのフォルダから** `claude` を起動し、`/install-github-app` をやり直す
     （2026-10-02 の初回は別リポジトリのフォルダで実行し、そちらに入った）
-- **ブランチは短期間で閉じる。**`docs/index.html` は日次更新で毎日書き換わるため、ブランチを長く開いたままにすると衝突が続けて起きる
+- **ブランチは短期間で閉じる。**`docs/hormuz/index.html` は日次更新で毎日書き換わるため、ブランチを長く開いたままにすると衝突が続けて起きる
   - 作業が数日にまたがる場合は、作業を再開するたびに main を取り込む（`git merge main`）
   - 大改造は、それぞれ単独でマージできる単位に分けて PR にする
 - マージ前に、main を取り込んだ状態でローカル表示を確認する。
@@ -171,14 +176,14 @@
 
 ## 運用ツール
 
-- Claude Code：`docs/index.html` 更新・commit担当（pushはユーザー確認後）
+- Claude Code：`docs/hormuz/index.html` 更新・commit担当（pushはユーザー確認後）
 - `auto_push.py` / `run.bat`：`news_data.json` と `index_html_diffs.md` を Downloads フォルダから GitHub API で直接 push
 - GenSpark：参照用アーカイブのみ（更新しない）
 
 ## 特別解説コラムの個別ページ化
 
 - 「特別解説コラム」の各コラムは `docs/articles/{slug}.html` として個別ページ化されている（一覧：`docs/articles/index.html`）
-- `docs/index.html` 側の各カードは要約＋「全文を読む」リンクのみを表示し、本文全文は個別ページ側が正とする
+- `docs/hormuz/index.html` 側の各カードは要約＋「全文を読む」リンクのみを表示し、本文全文は個別ページ側が正とする
 - 新規コラムを追加する場合は `tools/new-article-checklist.md` の手順に従うこと
 
 ## 法務ページ・ドメイン移行フェーズのルール
@@ -210,10 +215,10 @@
 
 ### 所有権確認のために消してはいけないもの（2026-09-13 追加）
 
-- **`docs/index.html` の GA4 タグ（`gtag.js?id=G-T0KCXP29E5` の読み込みと `gtag('config', ...)`）は、
+- **`docs/index.html`（ハブ＝ルートのページ）の GA4 タグ（`gtag.js?id=G-T0KCXP29E5` の読み込みと `gtag('config', ...)`）は、
   Search Console の旧 URL プロパティの所有権確認に使っている。**削除しない・`<head>` の外へ動かさない。
-  外すと確認が外れる（2026-09-13 に GA4 方式で確認したため）
-- `docs/index.html:38` 付近の `google-site-verification` メタは 2026-05-02 に**専用アカウント以外**で
+  外すと確認が外れる（2026-09-13 に GA4 方式で確認したため）。`<head>` 冒頭の `?focus=` 転送 JS は GA4 タグより前に置いたままにする
+- `docs/index.html`（ハブ）の `google-site-verification` メタは 2026-05-02 に**専用アカウント以外**で
   発行されたもので、現在の確認には使っていない。ただし発行元アカウントが不明なので当面は残す
 - `docs/CNAME` はドメイン移行時に GitHub が自動でコミットする。**手で作成・編集・削除しない**
 - ドメイン移行の当日手順は `tools/migration-runbook.md`、突き合わせる基準値は

@@ -5,7 +5,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 # HTML 安全編集スキル
 
-このスキルは `docs/index.html` の HTML 構造・CSS・JavaScript・折り畳み表示を編集する際に使用する。
+このスキルは `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）と `docs/index.html`（媒体トップ＝ハブ）の HTML 構造・CSS・JavaScript・折り畳み表示を編集する際に使用する。
 
 ---
 

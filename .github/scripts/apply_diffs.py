@@ -2,7 +2,7 @@
 """
 apply_diffs.py
 tools/index_html_diffs.md の <!-- APPLY --> ブロックを解析して
-docs/index.html に str_replace を適用する。
+docs/hormuz/index.html に str_replace を適用する。
 
 ブロック形式:
   <!-- APPLY:START -->
@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 DIFFS_FILE = Path("tools/index_html_diffs.md")
-HTML_FILE  = Path("docs/index.html")
+HTML_FILE  = Path("docs/hormuz/index.html")
 
 # ブロックを抽出する正規表現
 BLOCK_RE = re.compile(
@@ -95,7 +95,7 @@ def main() -> None:
 
     # ── 書き込み ───────────────────────────────────────────
     HTML_FILE.write_text(html_text, encoding="utf-8")
-    print(f"✅ 全 {applied} 件の変更を docs/index.html に適用しました")
+    print(f"✅ 全 {applied} 件の変更を docs/hormuz/index.html に適用しました")
 
 
 if __name__ == "__main__":

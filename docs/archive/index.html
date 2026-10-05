@@ -322,6 +322,7 @@
     .stats{grid-template-columns:repeat(3,1fr);}
   }
 </style>
+<script defer src="/assets/glossary.js" data-zones=".day .summary"></script>
 </head>
 <body>
 
@@ -467,6 +468,7 @@
 
       setupViewToggle();
       setupSearch();
+      loadSynonyms();
 
       // deep-link support: #2026-07 (month) or #act-3 (phase) or #q=機雷 (search)
       //                    or #d-2026-07-14 (その日。検索結果の「この月の一覧で見る」を新しいタブで開いた場合)
@@ -585,6 +587,27 @@
     return norm(parts.join('\n'));
   }
 
+  // 同義語：用語集（glossary.json）の表記を使って検索語を広げる。読めなければ広げないだけで、検索は動く
+  let SYNONYMS = {}; // 正規化した表記 → その用語の全表記（元の表記のまま）
+  let LAST_RAW = '';
+  function loadSynonyms(){
+    fetch('../data/glossary.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if(!data || !Array.isArray(data.terms)) return;
+        const map = {};
+        data.terms.forEach(t => {
+          if(t.synonyms === false) return;
+          const words = (t.match || []).concat(t.aliases || []).filter(Boolean);
+          if(words.length < 2) return;
+          words.forEach(w => { map[norm(w)] = words; });
+        });
+        SYNONYMS = map;
+        if(CURRENT_QUERY) runSearch(LAST_RAW); // 読み込みより先に検索していた場合はやり直す
+      })
+      .catch(() => {});
+  }
+
   function parseQuery(raw){
     return Array.from(new Set(norm(raw).split(/\s+/).filter(Boolean))).slice(0, 5);
   }
@@ -635,6 +658,7 @@
   function runSearch(raw){
     const terms = parseQuery(raw);
     const wasSearching = CURRENT_QUERY !== '';
+    LAST_RAW = raw;
     document.getElementById('q-clear').hidden = !document.getElementById('q').value;
     if(!terms.length){
       CURRENT_QUERY = '';
@@ -648,19 +672,28 @@
     document.getElementById('act-tabs').style.display = 'none';
     document.getElementById('act-banner').style.display = 'none';
 
-    const hits = ALL_ENTRIES.filter(e => terms.every(t => e._hay.includes(t)))
+    // 語ごとに別表記へ広げる（語の中は OR、語と語の間は AND）
+    const others = [];
+    const groups = terms.map(t => {
+      const words = SYNONYMS[t];
+      if(!words) return [t];
+      words.forEach(w => { if(norm(w) !== t && !others.includes(w)) others.push(w); });
+      return Array.from(new Set(words.map(norm)));
+    });
+    const hits = ALL_ENTRIES.filter(e => groups.every(g => g.some(w => e._hay.includes(w))))
                             .sort((a,b) => a.date < b.date ? 1 : -1); // newest first
     // 件数の行には入力したままの表記で出す（textContent に入れるのでエスケープ不要）
     const shown = Array.from(new Set(String(raw).trim().split(/\s+/).filter(Boolean))).slice(0, 5);
-    const label = shown.map(t => `「${t}」`).join('');
+    const label = shown.map(t => `「${t}」`).join('') +
+      (others.length ? `（別表記の ${others.join('・')} を含む）` : '');
     const statusEl = document.getElementById('search-status');
     statusEl.textContent = hits.length
       ? `${label}を含む記録：${hits.length}日分（全${ALL_ENTRIES.length}日）`
-      : `${label}を含む記録は見つかりません。表記を変えてお試しください（例：ゲシュム島／ケシュム島、CENTCOM／米中央軍）。`;
+      : `${label}を含む記録は見つかりません。別の表記や、短く区切った語でお試しください（例：「革命防衛隊海軍」→「革命防衛隊」）。`;
     statusEl.style.display = 'block';
 
     renderEntriesList(hits, {order:'desc', showMonthDivider:true, noGap:true, noEmpty:true,
-                             highlight:buildHighlight(terms), jump:true});
+                             highlight:buildHighlight([].concat(...groups)), jump:true});
   }
 
   function setupSearch(){
@@ -866,6 +899,8 @@
     }
 
     el.innerHTML = html;
+    // 用語集のツールチップ（docs/assets/glossary.js）。日別カード1枚を1区域として印を付ける
+    if(window.Glossary) window.Glossary.annotate(el.querySelectorAll('.day .summary'));
   }
 
   function dayGap(a, b, order){

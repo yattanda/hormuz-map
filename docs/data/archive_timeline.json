@@ -3107,6 +3107,24 @@
           "sourceLabel": "Iran International（10/4付）"
         }
       ]
+    },
+    {
+      "date": "2026-10-06",
+      "dateLabel": "2026/10/06 07:33",
+      "blockadeDay": 221,
+      "summary": "【重大更新】Al Jazeera（10/5）：イランが通航に事実上の通航料を課しているかを検証（Kplerのアナリストは湾岸諸国が積荷の10〜20%を払う可能性を推測、公的な証拠はないとの専門家の見方も併記）。同記事は9月の中東の原油輸出が戦前を上回ったと伝えるが、9/30の「戦前の8割弱」との食い違いは未解消・CGTN（10/4）：イラン系Fars通信が「IRGC海軍が過去5日間に違反タンカー7隻以上を標的にした」と主張（イラン側の主張で独立確認なし）・Al Jazeera（10/5）：ブレント101.59ドル（−0.71%）・WTI90.05ドル（−1.2%）（終値かは未確認）・日本関係船は残り4隻で変化なし（10/6確認）・危機221日目・ニュース2件更新・現地メディア視点を更新・ルート表（旧ルート）更新",
+      "relatedNews": [
+        {
+          "title": "イランは通航料を取っているのか——Kplerのアナリストは「湾岸諸国が積荷の10〜20%を払う可能性」を推測、公的な証拠はなし",
+          "url": "https://www.aljazeera.com/news/2026/10/5/is-iran-charging-a-toll-to-allow-oil-traffic-through-hormuz",
+          "sourceLabel": "Al Jazeera（10/5）"
+        },
+        {
+          "title": "イラン系Fars通信「IRGC海軍が過去5日間に違反タンカー7隻以上を標的」——船名も挙げるが独立した確認はなし",
+          "url": "https://news.cgtn.com/news/2026-10-04/Iran-s-IRGC-hits-7-violating-tankers-in-Strait-of-Hormuz-in-5-days-1QXsqlhSvlK/p.html",
+          "sourceLabel": "CGTN（10/4）"
+        }
+      ]
     }
   ]
 }

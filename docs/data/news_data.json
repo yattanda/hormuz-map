@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月05日 07:00 日本時間JST",
+  "updated": "2026年10月06日 07:33 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-aljazeera-toll-1005",
+      "title": "イランは通航料を取っているのか——Kplerのアナリストは「湾岸諸国が積荷の10〜20%を払う可能性」を推測、公的な証拠はなし",
+      "body": "Al Jazeera（10/5）は、イランがホルムズ海峡の通航に事実上の「通航料」を課しているのかを検証した。Kplerのアナリストは、湾岸諸国が安全な通航のためにイランへ支払っている可能性を推測し、積荷の10〜20%に上りうると述べた一方、リバプール・ジョン・ムーアズ大学の専門家は、国家運営の通航料制度を裏付ける公的な証拠はなく、あるとしても非公式の安全確保の仕組みだろうと述べた。同記事は、9月の中東の原油輸出が日量1,950万〜2,250万バレルと戦前（約1,800万）を上回り、原油の約4割が海峡を迂回していると伝える（集計元は要約から確認できない）。9/30の同社記事が引いたKplerの集計（戦前の8割弱）と数字が食い違い、定義の違いかは確認できていない。価格は同記事でブレント101.59ドル（−0.71%）、WTI90.05ドル（−1.2%）で、終値かは明記を確認できていない。本稿は記事の要約で確認しており、全文は読めていない。",
+      "sourceLabel": "Al Jazeera（10/5）",
+      "date": "2026年10月5日（現地）",
+      "label": "🛢️ 通航料の実態は未確認——9月の中東原油輸出は戦前超えと報道",
+      "url": "https://www.aljazeera.com/news/2026/10/5/is-iran-charging-a-toll-to-allow-oil-traffic-through-hormuz",
+      "isLatest": true
+    },
+    {
+      "id": "latest-cgtn-fars-violators-1004",
+      "title": "イラン系Fars通信「IRGC海軍が過去5日間に違反タンカー7隻以上を標的」——船名も挙げるが独立した確認はなし",
+      "body": "CGTN（10/4）は、イラン革命防衛隊系のFars通信が、IRGC海軍が過去5日間にホルムズ海峡で「違反」タンカー7隻以上を標的にしたと報じたと伝えた（独立した軍事監視機関MenchOsintの引用として）。船名として、クウェート船のAL FUNTASとKAZIMAH III、UAE船のSINBAD、MERSIN PROSPERITY、AL RUWAISが挙がり、10/3（金）には海峡の入口と出口で各1隻が爆発で被弾したとする。このうちAl Ruwais・Mersin Prosperity・Sinbadは9/29にUKMTOが報告した3隻と同じ船名で、そのときの被弾と重なる可能性がある。同記事にUKMTOへの言及はなく、イラン側メディアの主張として扱う。被弾の事実と船名の対応は独立の出典で確認できていない。",
+      "sourceLabel": "CGTN（10/4）",
+      "date": "2026年10月4日（現地）",
+      "label": "⚓ Fars「違反タンカー7隻以上を標的」——イラン側の主張・独立確認なし",
+      "url": "https://news.cgtn.com/news/2026-10-04/Iran-s-IRGC-hits-7-violating-tankers-in-Strait-of-Hormuz-in-5-days-1QXsqlhSvlK/p.html",
+      "isLatest": false
+    },
     {
       "id": "latest-aljazeera-ghalibaf-1004",
       "title": "イラン国会議長「米が7項目の計画を受け入れるまでホルムズ海峡は閉鎖」——米側は核協議を優先、トランプ氏は先週の再開案を拒否",
@@ -10,7 +30,7 @@
       "date": "2026年10月4日（現地）",
       "label": "🇮🇷 10/4 議長「7項目受け入れまで海峡閉鎖」",
       "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-iranintl-trump-decision-1003",
@@ -21,29 +41,27 @@
       "label": "🇺🇸 10/3 トランプ氏「簡単な道か厳しい道か」",
       "url": "https://www.iranintl.com/en/202610048164",
       "isLatest": false
-    },
-    {
-      "id": "latest-marineinsight-two-tankers-1003",
-      "title": "ホルムズ海峡周辺でタンカー2隻が正体不明の飛翔体を受ける——1隻は小規模火災後に消火、乗組員は無事・攻撃主体は不明",
-      "body": "Marine Insight（10/3）によれば、UKMTOは10/3、石油タンカー2隻が正体不明の飛翔体を受けたと報告した。1隻目は海峡を出る途中で小規模な火災と船内停電が起きたが消火され、数時間後に2隻目の原油タンカーがオマーン東方で被弾した。いずれも乗組員は無事で環境被害はなく、UKMTOは飛翔体も攻撃主体も特定していない。船名と正確な時刻は記事から確認できない。1隻目の経緯は10/2のgCaptain報道の要約と似ており、同一の事案か別の事案かは確認できていない。Al Jazeeraのライブブログ（10/3）も同日に「2隻が被弾」と伝えている。",
-      "sourceLabel": "Marine Insight（10/3）",
-      "date": "2026年10月3日（現地）",
-      "label": "⚓ 10/3 タンカー2隻が被弾——UKMTO・主体は不明",
-      "url": "https://www.marineinsight.com/two-oil-tankers-hit-by-unidentified-projectiles-near-strait-of-hormuz/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-gcaptain-six-vessels-1002",
-      "title": "ホルムズ海峡で10/2にもタンカー1隻が正体不明の飛翔体を受ける——9/28以降の被弾は少なくとも6隻、攻撃主体は特定されず",
-      "body": "gCaptain（10/2）によれば、UKMTOは10/2、ホルムズ海峡で船が正体不明の飛翔体を受けたと報告した。同記事は、9/28（日）以降に海峡で被弾した船を少なくとも6隻（9/28に1隻、9/29に3隻、10/1に1隻、10/2に1隻）と数え、いずれも「正体不明の飛翔体」で、火災は後に消火され乗組員は概ね無事としている。UKMTOは今回の船名も攻撃主体も明らかにしていない。別の報道の要約では、船は出航中で小規模な火災と船内停電が起きたが航行を続け、死傷者や環境被害は報告されていないとされるが、その原文は本稿では開けておらず、被害の詳細は確認できていない。",
-      "sourceLabel": "gCaptain（10/2）",
-      "date": "2026年10月2日（現地）",
-      "label": "⚓ 10/2もタンカー被弾——9/28以降少なくとも6隻・攻撃主体は不明",
-      "url": "https://gcaptain.com/six-vessels-hit-in-strait-of-hormuz-since-sunday",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-toll-1005",
+      "titleJa": "【Al Jazeera】イランは通航料を取っているのか——Kplerのアナリストは「積荷の10〜20%」を推測、公的な証拠はなし",
+      "titleEn": "Is Iran charging a toll to allow oil traffic through Hormuz?",
+      "title": "【Al Jazeera】イランは通航料を取っているのか——Kplerのアナリストは「積荷の10〜20%」を推測、公的な証拠はなし",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月5日（現地）",
+      "summary": "Al Jazeera（10/5）は、イランが海峡の通航に事実上の通航料を課しているのかを検証し、Kplerのアナリストが湾岸諸国の支払いを推測する一方、専門家は国家運営の制度を裏付ける公的な証拠はないとの見方を示したと伝えた。同記事は9月の中東の原油輸出が戦前を上回ったとも伝えるが、9/30の記事の集計（戦前の8割弱）とは食い違う。",
+      "url": "https://www.aljazeera.com/news/2026/10/5/is-iran-charging-a-toll-to-allow-oil-traffic-through-hormuz",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-ghalibaf-1004",
       "titleJa": "【Al Jazeera】イラン議長「米が7項目の計画を受け入れるまで海峡は閉鎖」——米側は核協議を優先",
@@ -55,7 +73,7 @@
       "date": "2026年10月4日（現地）",
       "summary": "Al Jazeera（10/4）は、イランのガリバフ国会議長が、米国が7項目の計画を受け入れるまでホルムズ海峡は閉鎖されたままだと述べたこと、アラグチ外相が外交的解決を望みつつ再攻撃には軍事的に対応する構えを示したこと、トランプ氏が先週の再開案を拒否し米側が核協議を優先していることを伝えた。同日のライブブログは、イエメン政府側がフーシ派支配地の奪還作戦の開始を発表したと伝えた。",
       "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1682,6 +1700,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月6日",
+      "items": [
+        {
+          "id": "latest-marineinsight-two-tankers-1003",
+          "title": "ホルムズ海峡周辺でタンカー2隻が正体不明の飛翔体を受ける——1隻は小規模火災後に消火、乗組員は無事・攻撃主体は不明",
+          "body": "Marine Insight（10/3）によれば、UKMTOは10/3、石油タンカー2隻が正体不明の飛翔体を受けたと報告した。1隻目は海峡を出る途中で小規模な火災と船内停電が起きたが消火され、数時間後に2隻目の原油タンカーがオマーン東方で被弾した。いずれも乗組員は無事で環境被害はなく、UKMTOは飛翔体も攻撃主体も特定していない。船名と正確な時刻は記事から確認できない。1隻目の経緯は10/2のgCaptain報道の要約と似ており、同一の事案か別の事案かは確認できていない。Al Jazeeraのライブブログ（10/3）も同日に「2隻が被弾」と伝えている。",
+          "sourceLabel": "Marine Insight（10/3）",
+          "date": "2026年10月3日（現地）",
+          "label": "⚓ 10/3 タンカー2隻が被弾——UKMTO・主体は不明",
+          "url": "https://www.marineinsight.com/two-oil-tankers-hit-by-unidentified-projectiles-near-strait-of-hormuz/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-gcaptain-six-vessels-1002",
+          "title": "ホルムズ海峡で10/2にもタンカー1隻が正体不明の飛翔体を受ける——9/28以降の被弾は少なくとも6隻、攻撃主体は特定されず",
+          "body": "gCaptain（10/2）によれば、UKMTOは10/2、ホルムズ海峡で船が正体不明の飛翔体を受けたと報告した。同記事は、9/28（日）以降に海峡で被弾した船を少なくとも6隻（9/28に1隻、9/29に3隻、10/1に1隻、10/2に1隻）と数え、いずれも「正体不明の飛翔体」で、火災は後に消火され乗組員は概ね無事としている。UKMTOは今回の船名も攻撃主体も明らかにしていない。別の報道の要約では、船は出航中で小規模な火災と船内停電が起きたが航行を続け、死傷者や環境被害は報告されていないとされるが、その原文は本稿では開けておらず、被害の詳細は確認できていない。",
+          "sourceLabel": "gCaptain（10/2）",
+          "date": "2026年10月2日（現地）",
+          "label": "⚓ 10/2もタンカー被弾——9/28以降少なくとも6隻・攻撃主体は不明",
+          "url": "https://gcaptain.com/six-vessels-hit-in-strait-of-hormuz-since-sunday",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月5日",
       "items": [

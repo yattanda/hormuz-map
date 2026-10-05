@@ -591,9 +591,11 @@
   let SYNONYMS = {}; // 正規化した表記 → その用語の全表記（元の表記のまま）
   let LAST_RAW = '';
   function loadSynonyms(){
-    fetch('../data/glossary.json')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
+    // glossary.js が読み込んだものを使う。glossary.js が無い・まだ動いていないときは自分で読む
+    const src = (window.Glossary && window.Glossary.data)
+      ? window.Glossary.data
+      : fetch('../data/glossary.json').then(r => r.ok ? r.json() : null);
+    src.then(data => {
         if(!data || !Array.isArray(data.terms)) return;
         const map = {};
         data.terms.forEach(t => {
@@ -684,11 +686,11 @@
                             .sort((a,b) => a.date < b.date ? 1 : -1); // newest first
     // 件数の行には入力したままの表記で出す（textContent に入れるのでエスケープ不要）
     const shown = Array.from(new Set(String(raw).trim().split(/\s+/).filter(Boolean))).slice(0, 5);
-    const label = shown.map(t => `「${t}」`).join('') +
-      (others.length ? `（別表記の ${others.join('・')} を含む）` : '');
+    const label = shown.map(t => `「${t}」`).join('');
+    const also = others.length ? `　※ 別表記（${others.join('・')}）も含めて探しています` : '';
     const statusEl = document.getElementById('search-status');
     statusEl.textContent = hits.length
-      ? `${label}を含む記録：${hits.length}日分（全${ALL_ENTRIES.length}日）`
+      ? `${label}を含む記録：${hits.length}日分（全${ALL_ENTRIES.length}日）${also}`
       : `${label}を含む記録は見つかりません。別の表記や、短く区切った語でお試しください（例：「革命防衛隊海軍」→「革命防衛隊」）。`;
     statusEl.style.display = 'block';
 

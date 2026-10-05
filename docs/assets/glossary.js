@@ -8,6 +8,7 @@
  *   <script defer src="/assets/glossary.js" data-zones=".article-body"></script>
  *   data-zones … 印を付ける区域のセレクタ。当たった要素1つが1区域で、各用語は区域ごとに最初の1回だけ印を付ける
  *   JS が後から描く区域は、描いた側が Glossary.annotate(要素または要素の並び) を呼ぶ
+ *   Glossary.data は glossary.json の中身で解決する Promise（読めなければ null）
  *
  * 外部送信・Cookie・ストレージは使わない。glossary.json を読めなければ何もしない（本文はそのまま読める）。
  */
@@ -240,6 +241,7 @@
       .then(function(data){
         build(data);
         ready = true;
+        resolveData(data);
         if(!matcher) return;
         ensurePop();
         setupEvents();
@@ -247,10 +249,15 @@
         queue.forEach(annotate);
         queue = [];
       })
-      .catch(function(){ failed = true; queue = []; });
+      .catch(function(){ failed = true; queue = []; resolveData(null); });
   }
 
-  window.Glossary = { annotate: annotate };
+  // data … glossary.json の中身で解決する Promise（読めなければ null）。
+  // 同じデータを使うページ（/archive/ の検索の同義語）が、もう一度読み込まずに済むようにする
+  var resolveData;
+  var dataPromise = new Promise(function(resolve){ resolveData = resolve; });
+
+  window.Glossary = { annotate: annotate, data: dataPromise };
 
   function idle(fn){
     if('requestIdleCallback' in window) window.requestIdleCallback(fn, {timeout: 2000});

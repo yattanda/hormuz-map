@@ -803,6 +803,7 @@ def check_glossary() -> None:
     ツールチップ（JSON を読む）と用語集ページ（HTML）で説明が食い違う。日次更新は用語集を触らないので
     普段は通るだけの検査。
     """
+    import os
     import subprocess
 
     script = ROOT / "tools" / "build_glossary.py"
@@ -810,7 +811,8 @@ def check_glossary() -> None:
         warn("tools/build_glossary.py が見つからないため、用語集の検査を省きました")
         return
     res = subprocess.run([sys.executable, str(script), "--check"],
-                         capture_output=True, text=True, encoding="utf-8", errors="replace")
+                         capture_output=True, text=True, encoding="utf-8", errors="replace",
+                         env={**os.environ, "PYTHONIOENCODING": "utf-8"})  # Windows の既定（cp932）で出力させない
     lines = [l.strip() for l in (res.stdout or "").splitlines() if l.strip()]
     if res.returncode == 0:
         ok(lines[-1].replace("OK", "", 1).strip() if lines else "用語集ページは glossary.json と一致")

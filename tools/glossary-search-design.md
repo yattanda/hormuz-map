@@ -728,3 +728,11 @@ function search(terms){                         // AND・新しい順
 | Kpler | 公式の MarineTraffic Data Services のページ（AIS 受信機1万3,000基超・沿岸と海上と宇宙で受信） | なし |
 | IEA | 資源エネルギー庁の解説（1974年11月設立・OECD の枠内・純輸入量の90日分の備蓄義務・協調行動） | 本文の「輸入量の90日分」を「純輸入量の90日分」に。IEA 公式サイトは確認画面が出て開けていない |
 | Windward | 公式トップ（「AIS, dark vessel signals, EO, SAR, RF, and more」「Maritime AI」） | なし |
+
+### 11-14. 47語を入れる（2026-10-05 14:05）
+
+- 運営者が47語を確認（「とりあえず全部 OK」）。`glossary.json` に47語（優先 A 35・B 12）を入れ、用語集ページを書き出した。`updated` は47語とも 2026-10-05
+- 関連する用語（`related`）を32組つないだ（IEA と EIA、WTI・ブレント・先物、備蓄の4語、機雷と掃海 など）。Claude が付けたもので、定義文ではない
+- `glossary.json` は約78KB（gzip で約21KB）。基本設計の見込み（15〜25KB）は転送量でみれば範囲内
+- ローカル確認：`/glossary/` 47語・札4語・囲み17語・ページ内リンク切れ0・原稿の印なし。`/archive/`「米中央軍」39日分・375px で横はみ出し0。記事 `saudi-pipeline-attack.html` で7語に印。コンソールエラー0。`validate_daily.py` OK 46 / WARN 0 / NG 0
+- 残り：`/editorial/` に1文（G4・単独コミット・文面は運営者の確認後）→ push → PR → レビュー → 日次のあとにマージ → 本番確認（§11-7 の 3・4・6・8・9・11）→ `Memory.md`・`redesign-plan.md`

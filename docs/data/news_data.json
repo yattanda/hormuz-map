@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月04日 07:23 日本時間JST",
+  "updated": "2026年10月05日 07:00 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-aljazeera-ghalibaf-1004",
+      "title": "イラン国会議長「米が7項目の計画を受け入れるまでホルムズ海峡は閉鎖」——米側は核協議を優先、トランプ氏は先週の再開案を拒否",
+      "body": "Al Jazeera（10/4）によれば、イランの首席交渉者ガリバフ国会議長は10/4、米国が7項目の計画（6月のイスラマバード覚書に基づく条件）を受け入れるまでホルムズ海峡は閉鎖されたままだと述べ、「時間を浪費し一方的な要求を押し付ける時代は終わった」と語った。アラグチ外相は外交的解決を望みつつ、再び攻撃されれば軍事的に対応する構えを示したという。トランプ氏は先週イランの再開案を拒否しており、米側は核協議を優先している。同記事は海峡が2/28の戦闘開始から7か月以上ほぼ閉鎖状態にあると記すが、Kplerの集計では中東の原油輸出は戦前の8割弱まで回復しており（9/30）、当事者の主張と実測は食い違う。発言は一方当事者の主張で、実際の通航への影響は確認できていない。",
+      "sourceLabel": "Al Jazeera（10/4）",
+      "date": "2026年10月4日（現地）",
+      "label": "🇮🇷 10/4 議長「7項目受け入れまで海峡閉鎖」",
+      "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iranintl-trump-decision-1003",
+      "title": "トランプ氏「簡単な道か厳しい道か」——イランについて近く決断、国防長官は「あらゆる選択肢」を維持",
+      "body": "Iran International（10/4付）によれば、トランプ氏は10/3（土）、「イランについて決断を下す。イランは壊滅しており、あとは簡単な道か厳しい道かだけだ」と述べた。ヘグセス国防長官は「あらゆる選択肢」を維持すると述べ、ベセント財務長官は米国の封鎖下でイランの原油は「今週海上に出荷がない」と語った（財務長官の発言はイラン側の見解と未照合）。トランプ氏はTIME誌に、合意に至らなければ11月の中間選挙後の再攻撃は「可能」と述べていた。決断の中身と時期は示されておらず、攻撃の決定ではない。",
+      "sourceLabel": "Iran International（10/4付）",
+      "date": "2026年10月3日（現地）",
+      "label": "🇺🇸 10/3 トランプ氏「簡単な道か厳しい道か」",
+      "url": "https://www.iranintl.com/en/202610048164",
+      "isLatest": false
+    },
     {
       "id": "latest-marineinsight-two-tankers-1003",
       "title": "ホルムズ海峡周辺でタンカー2隻が正体不明の飛翔体を受ける——1隻は小規模火災後に消火、乗組員は無事・攻撃主体は不明",
@@ -10,7 +30,7 @@
       "date": "2026年10月3日（現地）",
       "label": "⚓ 10/3 タンカー2隻が被弾——UKMTO・主体は不明",
       "url": "https://www.marineinsight.com/two-oil-tankers-hit-by-unidentified-projectiles-near-strait-of-hormuz/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-gcaptain-six-vessels-1002",
@@ -21,29 +41,27 @@
       "label": "⚓ 10/2もタンカー被弾——9/28以降少なくとも6隻・攻撃主体は不明",
       "url": "https://gcaptain.com/six-vessels-hit-in-strait-of-hormuz-since-sunday",
       "isLatest": false
-    },
-    {
-      "id": "latest-maritimeexec-yanbu-1001",
-      "title": "サウジ紅海側のヤンブー港に正体不明の飛翔体が着弾、タンク群付近で火災——東西パイプライン復旧後の積み出し拠点、攻撃主体は不明",
-      "body": "Maritime Executive（10/1）によれば、10/1（木）、サウジアラビアが紅海側に持つ主要な石油積出港ヤンブー港の域内に正体不明の飛翔体が着弾し、タンク群付近で火災が起きた。警備会社Vanguard Techが着弾を確認し、積み込みは一時止まったと伝えられるが、その後の状況は記事からは確認できていない。犯行声明はなく、過去の同種の攻撃はイエメンのフーシ派と結び付けられてきたものの、今回の主体は未確認。ヤンブーは9/10〜11の東西パイプラインへのドローン攻撃で17日間止まり、Aramcoが積み出しを再開したばかりだった。同記事によれば、マクロン仏大統領は同港を防空で守る意向を示していた。",
-      "sourceLabel": "Maritime Executive（10/1）",
-      "date": "2026年10月1日（現地）",
-      "label": "🛢️ ヤンブー港に飛翔体——タンク群付近で火災・主体は不明",
-      "url": "https://maritime-executive.com/article/explosion-and-fire-reported-at-yanbu",
-      "isLatest": false
-    },
-    {
-      "id": "latest-aljazeera-live-sanctions-1001",
-      "title": "財務省がイランの自動車・鉄道部門に追加制裁、米当局者「11月末までに空母3隻体制」——サウジ連合はフーシ派ドローン4機を迎撃",
-      "body": "Al Jazeeraのライブ報道（10/1）によれば、ベセント財務長官はイランの鉄道・自動車部門を対象とする追加制裁を発表し、「イランは9月に原油を1バレルもタンカーに積まなかった」と主張した（米側の主張で、記事から検証はできない）。米当局者は、11月末までにイラン周辺へ空母3隻と揚陸群2隻が展開すると述べたという。同ライブ報道は、サウジ主導の連合がサウジ南部上空でフーシ派のドローン4機を迎撃したこと、ホルムズ海峡で超大型タンカーが被弾して火災が起き、UKMTOが正体不明の飛翔体による損傷を確認したこと、イランのペゼシュキアン大統領が「対話を避けたことはない」「交渉中に3回攻撃された」と述べたことも伝えた。",
-      "sourceLabel": "Al Jazeera（10/1）",
-      "date": "2026年10月1日（現地）",
-      "label": "🚨 追加制裁・空母3隻体制へ——ホルムズで超大型タンカー被弾",
-      "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-ghalibaf-1004",
+      "titleJa": "【Al Jazeera】イラン議長「米が7項目の計画を受け入れるまで海峡は閉鎖」——米側は核協議を優先",
+      "titleEn": "Iran says Strait of Hormuz to remain closed until US meets conditions",
+      "title": "【Al Jazeera】イラン議長「米が7項目の計画を受け入れるまで海峡は閉鎖」——米側は核協議を優先",
+      "country": "イラン",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月4日（現地）",
+      "summary": "Al Jazeera（10/4）は、イランのガリバフ国会議長が、米国が7項目の計画を受け入れるまでホルムズ海峡は閉鎖されたままだと述べたこと、アラグチ外相が外交的解決を望みつつ再攻撃には軍事的に対応する構えを示したこと、トランプ氏が先週の再開案を拒否し米側が核協議を優先していることを伝えた。同日のライブブログは、イエメン政府側がフーシ派支配地の奪還作戦の開始を発表したと伝えた。",
+      "url": "https://www.aljazeera.com/news/2026/10/4/iran-says-strait-of-hormuz-to-remain-closed-until-us-meets-conditions",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-live-1003",
       "titleJa": "【Al Jazeera】イラン戦争ライブ——ホルムズ海峡でタンカー被弾、米高官は協議を「建設的」と表現",
@@ -55,7 +73,7 @@
       "date": "2026年10月3日（現地）",
       "summary": "Al Jazeeraのライブブログ（10/3）は、UKMTOがホルムズ海峡でタンカー2隻が「正体不明の飛翔体」を受けたと報告したこと、米政府高官が米イラン協議を「建設的」としつつ核問題が合意を遅らせていると述べたこと、UAEが拘束していたイラン人を釈放しイランへ帰還させる予定であること、イエメンのタイズ西部での戦闘が続いていることを伝えた。",
       "url": "https://www.aljazeera.com/news/liveblog/2026/10/3/iran-war-live-fighting-intensifies-in-yemen-hundreds-killed-or-injured",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1664,6 +1682,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月5日",
+      "items": [
+        {
+          "id": "latest-maritimeexec-yanbu-1001",
+          "title": "サウジ紅海側のヤンブー港に正体不明の飛翔体が着弾、タンク群付近で火災——東西パイプライン復旧後の積み出し拠点、攻撃主体は不明",
+          "body": "Maritime Executive（10/1）によれば、10/1（木）、サウジアラビアが紅海側に持つ主要な石油積出港ヤンブー港の域内に正体不明の飛翔体が着弾し、タンク群付近で火災が起きた。警備会社Vanguard Techが着弾を確認し、積み込みは一時止まったと伝えられるが、その後の状況は記事からは確認できていない。犯行声明はなく、過去の同種の攻撃はイエメンのフーシ派と結び付けられてきたものの、今回の主体は未確認。ヤンブーは9/10〜11の東西パイプラインへのドローン攻撃で17日間止まり、Aramcoが積み出しを再開したばかりだった。同記事によれば、マクロン仏大統領は同港を防空で守る意向を示していた。",
+          "sourceLabel": "Maritime Executive（10/1）",
+          "date": "2026年10月1日（現地）",
+          "label": "🛢️ ヤンブー港に飛翔体——タンク群付近で火災・主体は不明",
+          "url": "https://maritime-executive.com/article/explosion-and-fire-reported-at-yanbu",
+          "isLatest": false
+        },
+        {
+          "id": "latest-aljazeera-live-sanctions-1001",
+          "title": "財務省がイランの自動車・鉄道部門に追加制裁、米当局者「11月末までに空母3隻体制」——サウジ連合はフーシ派ドローン4機を迎撃",
+          "body": "Al Jazeeraのライブ報道（10/1）によれば、ベセント財務長官はイランの鉄道・自動車部門を対象とする追加制裁を発表し、「イランは9月に原油を1バレルもタンカーに積まなかった」と主張した（米側の主張で、記事から検証はできない）。米当局者は、11月末までにイラン周辺へ空母3隻と揚陸群2隻が展開すると述べたという。同ライブ報道は、サウジ主導の連合がサウジ南部上空でフーシ派のドローン4機を迎撃したこと、ホルムズ海峡で超大型タンカーが被弾して火災が起き、UKMTOが正体不明の飛翔体による損傷を確認したこと、イランのペゼシュキアン大統領が「対話を避けたことはない」「交渉中に3回攻撃された」と述べたことも伝えた。",
+          "sourceLabel": "Al Jazeera（10/1）",
+          "date": "2026年10月1日（現地）",
+          "label": "🚨 追加制裁・空母3隻体制へ——ホルムズで超大型タンカー被弾",
+          "url": "https://www.aljazeera.com/amp/news/liveblog/2026/10/1/iran-war-live-trump-hints-us-could-strike-iran-warns-time-coming",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月4日",
       "items": [

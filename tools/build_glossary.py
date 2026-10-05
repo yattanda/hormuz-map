@@ -35,6 +35,8 @@ CATEGORIES = [
 ]
 DRAFT_MARKS = ("【要確認】", "【未確認】", "【検索】", "【取得】")
 SHORT_MAX = 80
+SITE_BADGE = "このサイト独自の用語"      # docs/assets/glossary.js のポップアップにも同じ文言がある
+SITE_NOTE_LABEL = "このサイトでは"
 
 BODY_START, BODY_END = "<!-- glossary:start -->", "<!-- glossary:end -->"
 LD_START, LD_END = "<!-- glossary-jsonld:start -->", "<!-- glossary-jsonld:end -->"
@@ -66,6 +68,9 @@ def validate(data):
         body = t.get("body")
         if not isinstance(body, list) or not body or not all(isinstance(p, str) and p.strip() for p in body):
             errs.append(f"{where}：body は空でない段落の配列にする")
+        note = t.get("site_note", [])
+        if not isinstance(note, list) or not all(isinstance(p, str) and p.strip() for p in note):
+            errs.append(f"{where}：site_note は空でない段落の配列にする")
         if len(t.get("short", "")) > SHORT_MAX:
             errs.append(f"{where}：short が{SHORT_MAX}字を超えている（{len(t['short'])}字）")
         for w in list(t.get("match", [])) + list(t.get("aliases", [])):
@@ -83,7 +88,7 @@ def validate(data):
                 errs.append(f"{where}：出典の表示名が空")
             if not re.match(r"https?://", str(s.get("url", ""))):
                 errs.append(f"{where}：出典の URL が http(s):// で始まらない")
-        text = json.dumps([t.get("term"), t.get("short"), body, sources], ensure_ascii=False)
+        text = json.dumps([t.get("term"), t.get("short"), body, note, sources], ensure_ascii=False)
         for mark in DRAFT_MARKS:
             if mark in text:
                 errs.append(f"{where}：原稿の印 {mark} が残っている")
@@ -128,11 +133,20 @@ def render_body(data):
         out.append(f'<h2 id="cat-{key}">{esc(name)}</h2>')
         out.append("<dl>")
         for t in items:
-            out.append(f'<dt id="term-{esc(t["id"])}">{esc(t["term"])}</dt>')
+            # このサイト独自の用語は、見出しの横に札を付けて一般の用語と区別する
+            badge = f' <span class="gl-badge">{SITE_BADGE}</span>' if t["category"] == "site" else ""
+            out.append(f'<dt id="term-{esc(t["id"])}">{esc(t["term"])}{badge}</dt>')
             out.append("<dd>")
             out.append(f'<p class="gl-short">{esc(t["short"])}</p>')
             for p in t["body"]:
                 out.append(f"<p>{esc(p)}</p>")
+            # 一般の説明と、このサイトでの使い方を分けて見せる
+            if t.get("site_note"):
+                out.append('<div class="gl-site">')
+                out.append(f'<p class="gl-site-label">{SITE_NOTE_LABEL}</p>')
+                for p in t["site_note"]:
+                    out.append(f"<p>{esc(p)}</p>")
+                out.append("</div>")
             if t.get("sources"):
                 out.append('<ul class="gl-src">')
                 for s in t["sources"]:

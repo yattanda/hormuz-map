@@ -112,7 +112,7 @@
   // ------------------------------------------------------------
   // ポップアップ（画面に1個だけ作って使い回す）
   // ------------------------------------------------------------
-  var pop = null, popTerm = null, popShort = null, popMore = null;
+  var pop = null, popTerm = null, popBadge = null, popShort = null, popMore = null;
   var current = null;     // いま説明を出している用語の要素
   var hideTimer = null;
   var lastPointer = 'mouse';
@@ -127,6 +127,8 @@
       'box-shadow:0 6px 24px rgba(0,0,0,.35);}' +
     '.gl-pop[hidden]{display:none;}' +
     '.gl-pop-term{display:block;font-weight:700;font-size:14px;margin:0 0 2px;}' +
+    '.gl-pop-badge{display:inline-block;margin:2px 0 4px;padding:0 8px;border-radius:999px;background:#e8b85a;color:#1c2128;font-size:12px;font-weight:700;line-height:1.7;}' +
+    '.gl-pop-badge[hidden]{display:none;}' +
     '.gl-pop-short{margin:0 0 6px;color:var(--gl-fg);}' +
     '.gl-pop-more{display:inline-block;padding:6px 0;font-size:13px;color:var(--gl-link);text-decoration:none;}' +
     '.gl-pop-more:hover{text-decoration:underline;}';
@@ -144,12 +146,16 @@
     pop.hidden = true;
     popTerm = document.createElement('strong');
     popTerm.className = 'gl-pop-term';
+    popBadge = document.createElement('span');
+    popBadge.className = 'gl-pop-badge';
+    popBadge.hidden = true;
     popShort = document.createElement('p');
     popShort.className = 'gl-pop-short';
     popMore = document.createElement('a');
     popMore.className = 'gl-pop-more';
     popMore.textContent = '用語集で読む →';
     pop.appendChild(popTerm);
+    pop.appendChild(popBadge);
     pop.appendChild(popShort);
     pop.appendChild(popMore);
     document.body.appendChild(pop);
@@ -166,6 +172,11 @@
     if(current && current !== el) current.removeAttribute('aria-describedby');
     current = el;
     popTerm.textContent = term.term;
+    // このサイトが付けた呼び名・このサイトでの意味は、一般の用語と区別できるよう札を出す
+    var badge = term.category === 'site' ? 'このサイト独自の用語'
+              : (term.site_short ? 'このサイトでの意味を含みます' : '');
+    popBadge.textContent = badge;
+    popBadge.hidden = !badge;
     popShort.textContent = term.short;
     popMore.href = el.href;
     el.setAttribute('aria-describedby', 'gl-pop');

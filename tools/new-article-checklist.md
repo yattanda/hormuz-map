@@ -124,4 +124,5 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 - [ ] `docs/articles/index.html` にカードを追加したか
 - [ ] `docs/hormuz/index.html` の該当カードに「全文を読む」リンクを追加したか
 - [ ] `docs/sitemap.xml` に追加したか
+- [ ] `<head>` に用語集のツールチップの読み込み（`<script defer src="/assets/glossary.js" data-zones=".article-body"></script>`）があるか（テンプレートに入っている。本文に用語のタグを手で書く必要はない）
 - [ ] `/publish-checklist` の対象範囲であれば併せて実行する

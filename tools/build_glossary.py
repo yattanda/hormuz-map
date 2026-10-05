@@ -156,7 +156,11 @@ def render_body(data):
             if related:
                 links = "、".join(f'<a href="#term-{esc(r["id"])}">{esc(r["term"])}</a>' for r in related)
                 out.append(f'<p class="gl-rel">関連する用語：{links}</p>')
-            if t.get("match"):
+            if t.get("match") and t.get("synonyms") is False and len(t["match"]) > 1:
+                # 表記どうしが同義語でない語は、検索が別表記へ広がらない。表記ごとにリンクを出す
+                links = "・".join(f'<a href="../archive/#q={quote(w, safe="")}">「{esc(w)}」</a>' for w in t["match"])
+                out.append(f'<p class="gl-arch">日次記録を見る：{links}</p>')
+            elif t.get("match"):
                 q = quote(t["match"][0], safe="")
                 out.append(f'<p class="gl-arch"><a href="../archive/#q={q}">この用語を含む日次記録を見る →</a></p>')
             out.append("</dd>")
@@ -214,15 +218,17 @@ def main(argv):
     except (OSError, ValueError) as e:
         print(f"NG  {e}")
         return 1
-    new = page.replace("\n", "\r\n")        # 公開ページは CRLF・BOM なし
+    # 改行は既存のファイルに合わせる。PC の作業ツリーは CRLF、クラウド（Linux）の checkout は LF で、
+    # 常に CRLF にすると LF の環境で --check が必ず不一致になる
+    new = page.replace("\n", "\r\n") if "\r\n" in old else page
     new_bytes = new.encode("utf-8")         # 先にエンコードできることを確かめる
 
     count = len(data["terms"])
     if new == old:
         print(f"OK  用語集ページは glossary.json と一致（{count}語）")
         return 0
-    changed = sum(1 for a, b in zip(old.split("\r\n"), new.split("\r\n")) if a != b) \
-        + abs(len(old.split("\r\n")) - len(new.split("\r\n")))
+    changed = sum(1 for a, b in zip(old.splitlines(), new.splitlines()) if a != b) \
+        + abs(len(old.splitlines()) - len(new.splitlines()))
     if check:
         print(f"NG  用語集ページが glossary.json と食い違っている（{changed}行）。"
               "python tools/build_glossary.py --write で書き出す")

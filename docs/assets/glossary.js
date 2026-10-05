@@ -52,14 +52,22 @@
 
   // 英数字で始まる・終わる表記は、前後が英数字でないときだけ当てる（IAEA の中の IEA などを避ける）。
   // 後読み (?<!…) は古い iOS Safari で構文エラーになるため使わない
-  function accept(text, index, word, term){
+  // after … そのテキストノードの後ろに続く文字（except の判定用。語の途中で要素が分かれていても見られるようにする）
+  function accept(text, index, word, term, after){
     if(isAlnum(word.charAt(0)) && isAlnum(text.charAt(index - 1))) return false;
     if(isAlnum(word.charAt(word.length - 1)) && isAlnum(text.charAt(index + word.length))) return false;
     var ex = term.except || [];
     for(var i = 0; i < ex.length; i++){
-      if(text.substr(index, ex[i].length) === ex[i]) return false;
+      if((text + after).substr(index, ex[i].length) === ex[i]) return false;
     }
     return true;
+  }
+
+  // ノードの直後に続く文字を少しだけ集める（兄弟ノードの範囲。親はまたがない）
+  function textAfter(node){
+    var s = '', n = node.nextSibling;
+    while(n && s.length < 24){ s += n.textContent || ''; n = n.nextSibling; }
+    return s.slice(0, 24);
   }
 
   function annotateZone(zone){
@@ -78,10 +86,11 @@
     }
     nodes.forEach(function(node){
       var text = node.nodeValue, hits = [], m;
+      var after = textAfter(node);
       matcher.lastIndex = 0;
       while((m = matcher.exec(text))){
         var term = byMatch[m[0]];
-        if(!term || seen[term.id] || !accept(text, m.index, m[0], term)) continue;
+        if(!term || seen[term.id] || !accept(text, m.index, m[0], term, after)) continue;
         seen[term.id] = true;
         hits.push({index: m.index, word: m[0], term: term});
       }
@@ -116,6 +125,7 @@
   var current = null;     // いま説明を出している用語の要素
   var hideTimer = null;
   var lastPointer = 'mouse';
+  var lastTouchAt = 0;    // 直近のタッチ・ペンの pointerdown の時刻
 
   var CSS =
     'a.gl-term{color:inherit;text-decoration:underline dotted;text-decoration-thickness:1px;text-underline-offset:3px;cursor:help;}' +
@@ -209,7 +219,10 @@
   }
 
   function setupEvents(){
-    document.addEventListener('pointerdown', function(ev){ lastPointer = ev.pointerType || 'mouse'; }, true);
+    document.addEventListener('pointerdown', function(ev){
+      lastPointer = ev.pointerType || 'mouse';
+      if(lastPointer !== 'mouse') lastTouchAt = Date.now();
+    }, true);
     document.addEventListener('pointerover', function(ev){
       if(ev.pointerType !== 'mouse') return;
       var el = termOf(ev.target);
@@ -220,6 +233,9 @@
       if(termOf(ev.target)) scheduleHide();
     });
     document.addEventListener('focusin', function(ev){
+      // タップでリンクにフォーカスが入るブラウザでは、click より先にここへ来る。
+      // ここで出すと click 側が「もう出ている」と判断して1回目のタップで移動してしまうので、タッチの直後は click に任せる
+      if(Date.now() - lastTouchAt < 800) return;
       var el = termOf(ev.target);
       if(el) show(el);
     });

@@ -589,7 +589,7 @@
   }
 
   // 同義語：用語集（glossary.json）の表記を使って検索語を広げる。読めなければ広げないだけで、検索は動く
-  let SYNONYMS = {}; // 正規化した表記 → その用語の全表記（元の表記のまま）
+  let SYNONYMS = Object.create(null); // 「constructor」などの語で Object.prototype を引かないよう、原型なしで作る。正規化した表記 → その用語の全表記（元の表記のまま）
   let LAST_RAW = '';
   function loadSynonyms(){
     // glossary.js が読み込んだものを使う。glossary.js が無い・まだ動いていないときは自分で読む
@@ -598,7 +598,7 @@
       : fetch('../data/glossary.json').then(r => r.ok ? r.json() : null);
     src.then(data => {
         if(!data || !Array.isArray(data.terms)) return;
-        const map = {};
+        const map = Object.create(null);
         data.terms.forEach(t => {
           if(t.synonyms === false) return;
           const words = (t.match || []).concat(t.aliases || []).filter(Boolean);

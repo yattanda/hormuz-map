@@ -777,6 +777,22 @@ def check_types(html: str, base: str) -> None:
 
 
 # ── main ────────────────────────────────────────────────────
+def check_log_wording(html: str, base: str) -> None:
+    """基準日の更新履歴の本文に「OSINT」「osint」が出ていないか。
+
+    「OSINT」は開発の経緯で残った内部の呼び名で、読者に見える名前は「現地メディア視点」（2026-10-05 決定）。
+    過去の行は書き換えない方針なので、見るのは基準日の行だけ。
+    """
+    y, m, d = base.split("-")
+    lines = [l for l in html.splitlines() if f'log-date">{y}/{m}/{d}' in l]
+    if not lines:
+        return  # 行の有無は更新履歴の検査（check_types）が見る
+    if any(re.search(r"osint", l, re.I) for l in lines):
+        warn(f"基準日 {base} の更新履歴の本文に「OSINT／osint」があります。「現地メディア視点を更新」と書きます")
+    else:
+        ok(f"基準日 {base} の更新履歴の本文に「OSINT／osint」なし")
+
+
 def check_crisis_day(html: str, base: str) -> None:
     """本体ヘッダーの「危機N日目」の静的な数字が、基準日から計算した日数と同じか。
 
@@ -873,6 +889,7 @@ def main() -> int:
     check_ticker_comment(html, base)
     check_hub_updated(html, base)
     check_crisis_day(html, base)
+    check_log_wording(html, base)
     check_route_freshness(html, base)
     check_types(html, base)
 

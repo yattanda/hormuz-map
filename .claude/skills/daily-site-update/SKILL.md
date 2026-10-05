@@ -108,6 +108,9 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
   - **ハブの「危機マップの最終更新」**：`<div class="hub-stat-num hub-stat-num--text" id="hub-updated">10/4 07:23</div>` の `M/D HH:MM` を、
     本体のヘッダー日時と同じ日時に書き換える（月日はゼロ埋めしない）。画面の表示は JS が `news_data.json` の `updated` で上書きするが、
     HTML の値は JS が動かないときの予備として残るため、毎回そろえる。ハブのほかの箇所（主要な数字・地図・「最新の動き」）は触らない
+- **本体ヘッダーの「危機N日目」の数字も毎回書き換える**（2026-10-05〜）：`<span class="badge-item badge-days" id="blockade-days">危機220日目（2/28〜）</span>` の数字を、
+  ヘッダーの日付の日数にする（開戦 2026-02-28 を1日目として数える。10/5 は 220、1日進むごとに +1）。画面の表示は JS が計算して上書きするが、
+  HTML の数字は JS が動かないときの予備として残る（10/4 に 217 のまま残っているのが見つかった）。直後の JS と「（2/28〜）」は触らない
 - 文章表記・メディア選定は `/content-style-guide` に従う
 - 上の5ファイルとは別に、条件を満たす日は **hormuz-data- の経緯（`data/context.json` の `timeline`）を追記する**
   （別リポジトリ。末尾「hormuz-data- の経緯（timeline）追記」参照）
@@ -138,6 +141,7 @@ python tools/validate_daily.py
   - （2026-09-26：A・C🇺🇸・C🌍・D の4行が 9/15 の一括再確認のまま11日放置され、C🇺🇸 に「メキシコ産原油は7月初便予定・
     到着未確認」が残っていた。実際は 7/17 に到着済みで、訂正履歴に記録した）
 - ハブの「危機マップの最終更新」（`id="hub-updated"`）の月日が基準日と一致するか（NG）、時刻が本体のヘッダーと同じか（WARN）
+- 本体ヘッダーの「危機N日目」の静的な数字（`id="blockade-days"`）が、基準日から計算した日数と同じか（WARN）
 - `sitemap.xml` の `/` と `/hormuz/` の `lastmod` が基準日と一致するか（NG）、
   `/archive/` の `lastmod` が `archive_timeline` 末尾の日付より古くないか（NG）
 - **hormuz-data- の経緯（`timeline`）の最新日が実測の今日から5日を超えていないか（WARN のみ）**。

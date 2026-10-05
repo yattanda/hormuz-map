@@ -36,6 +36,8 @@ docs/ 配下の更新結果を読み取り専用で検査する。ファイル�
     - 日数の呼び名は 2026-10-02 に「封鎖N日目」から「危機N日目」へ改めた（数えているのは開戦 2/28 からの日数で、
       特定の封鎖の日数ではない）。当日に書いた update_log / archive_timeline の本文に「封鎖N日目」や
       主語のない「二重封鎖」があれば WARN を出す。過去分は書き換えない方針なので見ない
+    - 本体ヘッダーの「危機N日目」は JS が計算するが、HTML に置いた静的な数字（JS が動かないときの予備）が
+      217 のまま残っていた（2026-10-04 に発見）。日次更新が毎回書き換え、基準日から計算した日数と違えば WARN を出す
     - 特別解説コラムのピルの「NEW」「◯月更新」の札は、ピルの data-published / data-updated から決まる。
       記事ページ（datePublished / dateModified）と揃っていなければ WARN を出す
 """
@@ -101,6 +103,9 @@ PAT_HEADER = re.compile(r'badge-date">\s*📅\s*(\d{4})年(\d{1,2})月(\d{1,2})�
 PAT_TICKER = re.compile(r'📅\s*(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})\s*更新')
 # ハブ（docs/index.html）の「危機マップの最終更新」の静的な予備。年を持たないので月日だけ照合する
 PAT_HUB_UPDATED = re.compile(r'id="hub-updated">(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})<')
+# 本体ヘッダーの「危機N日目」の静的な予備（表示は JS が計算して上書きする）
+PAT_CRISIS_DAY = re.compile(r'id="blockade-days">危機(\d+)日目')
+CRISIS_START = date(2026, 2, 28)   # 開戦日＝1日目
 PAT_TICKER_COMMENT = re.compile(r'<!--\s*新ティッカー（(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST）\s*-->')
 PAT_ROUTES = re.compile(
     r'sec-h2-sub">\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST\s*(?:更新|再確認済)'
@@ -772,6 +777,25 @@ def check_types(html: str, base: str) -> None:
 
 
 # ── main ────────────────────────────────────────────────────
+def check_crisis_day(html: str, base: str) -> None:
+    """本体ヘッダーの「危機N日目」の静的な数字が、基準日から計算した日数と同じか。
+
+    表示は JS が毎回計算して上書きするので通常は正しく見えるが、HTML に置いた数字は
+    JS が動かないときの予備として残る。2026-10-04 に 217 のまま（実際は 219）残っているのが
+    見つかったため、日次更新が毎回書き換える。表示に出るのは JS が動かないときだけなので WARN にとどめる。
+    """
+    m = PAT_CRISIS_DAY.search(html)
+    if not m:
+        warn("本体ヘッダーの「危機N日目」（id=\"blockade-days\"）を検出できませんでした")
+        return
+    got = int(m.group(1))
+    want = (date.fromisoformat(base) - CRISIS_START).days + 1
+    if got != want:
+        warn(f"本体ヘッダーの「危機N日目」の静的な数字が {got} です。基準日 {base} は {want}日目（2/28 を1日目として計算）")
+    else:
+        ok(f"本体ヘッダーの「危機N日目」の静的な数字 {got}（基準日 {base}）")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="日次更新の機械検証（読み取り専用）")
     ap.add_argument("--date", help="基準日 YYYY-MM-DD。省略時は news_data.json の updated")
@@ -823,6 +847,7 @@ def main() -> int:
     check_ticker(html, base)
     check_ticker_comment(html, base)
     check_hub_updated(html, base)
+    check_crisis_day(html, base)
     check_route_freshness(html, base)
     check_types(html, base)
 

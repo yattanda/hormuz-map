@@ -796,6 +796,29 @@ def check_crisis_day(html: str, base: str) -> None:
         ok(f"本体ヘッダーの「危機N日目」の静的な数字 {got}（基準日 {base}）")
 
 
+def check_glossary() -> None:
+    """用語集ページ（docs/glossary/index.html）が docs/data/glossary.json と一致しているか。
+
+    ページは tools/build_glossary.py が JSON から書き出す。JSON だけ直して書き出しを忘れると、
+    ツールチップ（JSON を読む）と用語集ページ（HTML）で説明が食い違う。日次更新は用語集を触らないので
+    普段は通るだけの検査。
+    """
+    import subprocess
+
+    script = ROOT / "tools" / "build_glossary.py"
+    if not script.is_file():
+        warn("tools/build_glossary.py が見つからないため、用語集の検査を省きました")
+        return
+    res = subprocess.run([sys.executable, str(script), "--check"],
+                         capture_output=True, text=True, encoding="utf-8", errors="replace")
+    lines = [l.strip() for l in (res.stdout or "").splitlines() if l.strip()]
+    if res.returncode == 0:
+        ok(lines[-1].replace("OK", "", 1).strip() if lines else "用語集ページは glossary.json と一致")
+    else:
+        for l in lines or ["用語集の検査が失敗しました（出力なし）"]:
+            ng("用語集：" + l.replace("NG", "", 1).strip())
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="日次更新の機械検証（読み取り専用）")
     ap.add_argument("--date", help="基準日 YYYY-MM-DD。省略時は news_data.json の updated")
@@ -860,6 +883,7 @@ def main() -> int:
     check_data_timeline()
     check_stockpile(html)
     check_column_pills(html)
+    check_glossary()
     if args.check_urls:
         print("URL を確認しています…\n")
         check_urls(news)

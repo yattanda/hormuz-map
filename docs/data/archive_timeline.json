@@ -3125,6 +3125,24 @@
           "sourceLabel": "CGTN（10/4）"
         }
       ]
+    },
+    {
+      "date": "2026-10-07",
+      "dateLabel": "2026/10/07 07:29",
+      "blockadeDay": 222,
+      "summary": "【重大更新】gCaptain（10/6）：ホルムズ海峡で10/5に被弾したタンカーはパナマ船籍のアフラマックス「On Peace」で、乗員19人のうち12人（インド人11人）が負傷（インド政府は攻撃主体を特定せず）。UKMTO警報157-26が10/5に海峡を出る別の石油タンカーの被弾も報告（gCaptainのみ・負傷の情報なし）・ABC（10/6）・Euronews（10/6）：イエメン政府側の前進の主張をフーシ派は「全くの虚偽」と否定（Euronewsは政府側がドゥバーブなどを奪還と報じ、目撃者は戦車の進入を証言。フーシ派はリヤドの空港と製油所への攻撃を主張、サウジ当局の確認は確認できていない）・10/6終値：ブレント12月物100.58ドル（+0.3%）・WTI11月物89.44ドル（ほぼ横ばい）（Reuters・Rigzone）・日本関係船は残り4隻で変化なし（10/7確認）・危機222日目・ニュース2件更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡で被弾したタンカーはパナマ船籍「On Peace」——乗員19人のうち12人が負傷、インド政府は攻撃主体を特定せず",
+          "url": "https://gcaptain.com/a-dozen-seafarers-injured-in-strait-of-hormuz-tanker-attack-india-says/",
+          "sourceLabel": "gCaptain（10/6）"
+        },
+        {
+          "title": "イエメン政府側がドゥバーブなどの奪還を報じられる——フーシ派は否定、リヤドの空港と製油所への攻撃を主張",
+          "url": "https://www.euronews.com/2026/10/06/yemen-government-forces-advance-on-bab-el-mandeb-in-offensive-against-houthis",
+          "sourceLabel": "Euronews（10/6）"
+        }
+      ]
     }
   ]
 }

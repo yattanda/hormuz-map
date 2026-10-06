@@ -3335,6 +3335,8 @@ function flushWrapQueue() {
   const q = wrapQueue; wrapQueue = [];
   q.forEach(src => {
     if (!map.hasLayer(src)) { delete src._wrapCopies; return; }
+    // 座標が空の線・面は複製しない（範囲を求められず、ここで例外になると後ろの複製が全部止まる）
+    if (!(src instanceof L.Marker) && !src.getBounds().isValid()) return;
     const home = wrapHomeIndex(src);
     WORLD_INDEXES.filter(i => i !== home).forEach(i => {
       src._wrapCopies.push(makeWrapCopy(src, (i - home) * 360).addTo(map));

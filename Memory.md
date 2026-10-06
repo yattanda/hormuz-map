@@ -344,11 +344,12 @@ if (window.innerWidth <= 480) {
   書く順は `?focus=<キー>&utm_…`。キーは小文字英字で、`docs/hormuz/index.html` の `FOCUS_TARGETS`（5-C）に定義する。ルートに `?focus=` 付きで来たアクセスはハブの JS が `/hormuz/` へ送る。
   現在のキー：`minamitori`（南鳥島）。キーを足したら、`/hormuz/` とハブの「YouTube から来た方へ」枠（`#yt-visitors`）と台帳にも足す。
   `#アンカー` を使わないのは、§11-10 実施条件1に反し、GA4 の page_location にも残らないため
-- **地図の横方向エンドレス化（2026-10-05 実装・PR 1・ブランチ `feature/map-wraparound`）**：地図に足した印（`L.marker`）・線（`L.polyline`）・面（`L.polygon`・GeoJSON）は、`map.on('layeradd')` のフックが経度 ±360° に自動で複製する（`docs/hormuz/index.html` の「1-B. WORLD WRAP」）。**印を足すときに手で複製を書かない。**
+- **地図の横方向エンドレス化（2026-10-06 公開・PR #55・merge commit `a815220`）**：地図に足した印（`L.marker`）・線（`L.polyline`）・面（`L.polygon`・GeoJSON）は、`map.on('layeradd')` のフックが経度 ±360° に自動で複製する（`docs/hormuz/index.html` の「1-B. WORLD WRAP」）。**印を足すときに手で複製を書かない。**
   中心経度は常に −180〜180° に戻る（ドラッグ中は Leaflet の `worldCopyJump`、それ以外は `moveend` の補正）。点の経度は −180〜180° で書き、180° 線をまたぐ線は連続した値（…170, 180, 190…）で書く。
   `moveend` と `zoomend` はドラッグ中・地図の置き直し時にも出るので、この2つに処理を足すときは何度呼ばれても結果が同じになるように書く。
   あとから `setPopupContent()` で文面を書き換える印を作るときは、コピー（`印._wrapCopies`）にも反映する。設計と検証は `tools/map-wraparound-design.md`（実施記録は §15）。
-  PR 2（地点ジャンプの最短経路・最小ズームを幅に合わせる）は PR 1 の本番確認のあと
+  開いているポップアップは、地図が動くたびに中心に近い側の印（元かコピー）の上へ置き直している（`keepPopupNear`）。座標が空の線・面は複製しない。
+  残り：PR 2（地点ジャンプの最短経路・最小ズームを幅に合わせる）。PC で引ききると同じ印が左右に2回見える点と、そのとき端の印のポップアップが反対側へ移る点は PR 2 で解消する
 - **直リンク化**：リンク先となるアンカー（`id`）の棚卸しが必要
 
 ---

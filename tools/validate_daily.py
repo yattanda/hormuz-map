@@ -903,8 +903,16 @@ def check_upcoming(html: str) -> None:
             d = date(today.year, int(mo), int(dd))
         except ValueError:
             continue
-        if d > today:
-            future.append(f"{int(mo)}/{int(dd)}")
+        # 年末に翌年の日付（12月に書いた「1/10」など）を過去と読まないよう、過ぎた月日は翌年でも見る
+        # （120日以内に来るものだけ。前日・先週の日付を翌年の予定と読まないため）
+        if d <= today:
+            try:
+                d2 = date(today.year + 1, int(mo), int(dd))
+            except ValueError:
+                continue
+            if (d2 - today).days > 120:
+                continue
+        future.append(f"{int(mo)}/{int(dd)}")
     if future and not active:
         warn("「次の焦点」に先の日付（" + "・".join(future) + "）がありますが、今後の予定日（upcoming.json）は0件です。"
              "出典つきで日付が確定した予定なら1件足す（載せない判断ならそのままでよい）")

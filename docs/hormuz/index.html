@@ -3432,6 +3432,9 @@ function nearestLng(lng, refLng) {
   return lng + 360 * Math.round((refLng - lng) / 360);
 }
 function flyToNearest(center, zoom) {
+  // flyTo は setView と違ってズームを最小ズームに丸めない。幅の広い画面で
+  // fitMinZoom の値より引いた状態にならないよう、ここで丸める
+  zoom = Math.max(zoom, map.getMinZoom());
   map.flyTo([center[0], nearestLng(center[1], map.getCenter().lng)], zoom, { duration: 1.2 });
 }
 

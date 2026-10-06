@@ -62,6 +62,7 @@ NEWS = ROOT / "docs" / "data" / "news_data.json"
 LOG = ROOT / "docs" / "data" / "update_log.json"
 TIMELINE = ROOT / "docs" / "data" / "archive_timeline.json"
 SITEMAP = ROOT / "docs" / "sitemap.xml"
+UPCOMING = ROOT / "docs" / "data" / "upcoming.json"   # 今後の予定日（/hormuz/ の30秒カラムに JS が出す）
 
 # latest の必須フィールド（daily-site-update スキル準拠）
 LATEST_REQUIRED = ["title", "body", "sourceLabel", "date", "label", "url"]
@@ -106,6 +107,9 @@ PAT_HUB_UPDATED = re.compile(r'id="hub-updated">(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\
 # 本体ヘッダーの「危機N日目」の静的な予備（表示は JS が計算して上書きする）
 PAT_CRISIS_DAY = re.compile(r'id="blockade-days">危機(\d+)日目')
 CRISIS_START = date(2026, 2, 28)   # 開戦日＝1日目
+# 今後の予定日の必須項目と、30秒カラム「次の焦点」の本文
+UPCOMING_REQUIRED = ["kind", "title", "date", "source", "url", "added"]
+PAT_GLANCE_NEXT = re.compile(r'glance-label--next">次の焦点</span>\s*<span class="glance-text">(.*?)</span>', re.S)
 PAT_TICKER_COMMENT = re.compile(r'<!--\s*新ティッカー（(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST）\s*-->')
 PAT_ROUTES = re.compile(
     r'sec-h2-sub">\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST\s*(?:更新|再確認済)'
@@ -841,6 +845,79 @@ def check_crisis_day(html: str, base: str) -> None:
         ok(f"本体ヘッダーの「危機N日目」の静的な数字 {got}（基準日 {base}）")
 
 
+def check_upcoming(html: str) -> None:
+    """今後の予定日（docs/data/upcoming.json）。/hormuz/ の30秒カラム「次の焦点」の直下に JS が出す。
+
+    2026-10-01 に休止した COUNTDOWN は、期限を JS に直書きし、切れた後の扱いも検査も無かったために
+    古い表示が4か月残った。予定日はデータで持ち、ここで形と出典を確かめる（tools/display-unify-design.md §3-1）。
+    過ぎた項目は画面に出ないので、残っていても WARN にとどめる。
+    """
+    data = load_json(UPCOMING)
+    if data is None:
+        return
+    items = data.get("items") if isinstance(data, dict) else None
+    if not isinstance(items, list):
+        ng("upcoming.json に items（配列）がありません")
+        return
+    today = date.fromisoformat(today_jst())
+    bad = 0
+    active = 0
+    for i, it in enumerate(items):
+        label = f"upcoming.json items[{i}]"
+        if not isinstance(it, dict):
+            ng(f"{label} がオブジェクトではありません")
+            bad += 1
+            continue
+        label += f"「{it.get('title', '')}」"
+        missing = [k for k in UPCOMING_REQUIRED if not str(it.get(k, "")).strip()]
+        if missing:
+            ng(f"{label} に必須項目がありません: {', '.join(missing)}")
+            bad += 1
+        if it.get("kind") not in ("schedule", "deadline"):
+            ng(f"{label} の kind は schedule か deadline にしてください: {it.get('kind')!r}")
+            bad += 1
+        if str(it.get("url", "")).strip() and not str(it["url"]).startswith("https://"):
+            ng(f"{label} の url が https:// で始まっていません（画面でリンクになりません）")
+            bad += 1
+        try:
+            d = date.fromisoformat(str(it.get("date", "")))
+        except ValueError:
+            ng(f"{label} の date を YYYY-MM-DD として読めません: {it.get('date')!r}")
+            bad += 1
+            continue
+        if d >= today:
+            active += 1
+        elif (today - d).days >= 7:
+            warn(f"{label} は {d} に過ぎています（画面には出ていません）。upcoming.json から消してください")
+    if not bad:
+        ok(f"今後の予定日 {len(items)}件（うち今日以降 {active}件）")
+
+    # 「次の焦点」に未来の日付（M/D）が書いてあるのに予定日が0件なら、載せ忘れかもしれない
+    m = PAT_GLANCE_NEXT.search(html)
+    if not m:
+        warn("30秒カラムの「次の焦点」を検出できませんでした（予定日の載せ忘れの確認を省きました）")
+        return
+    future = []
+    for mo, dd in re.findall(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])", m.group(1)):
+        try:
+            d = date(today.year, int(mo), int(dd))
+        except ValueError:
+            continue
+        # 年末に翌年の日付（12月に書いた「1/10」など）を過去と読まないよう、過ぎた月日は翌年でも見る
+        # （120日以内に来るものだけ。前日・先週の日付を翌年の予定と読まないため）
+        if d <= today:
+            try:
+                d2 = date(today.year + 1, int(mo), int(dd))
+            except ValueError:
+                continue
+            if (d2 - today).days > 120:
+                continue
+        future.append(f"{int(mo)}/{int(dd)}")
+    if future and not active:
+        warn("「次の焦点」に先の日付（" + "・".join(future) + "）がありますが、今後の予定日（upcoming.json）は0件です。"
+             "出典つきで日付が確定した予定なら1件足す（載せない判断ならそのままでよい）")
+
+
 def check_glossary() -> None:
     """用語集ページ（docs/glossary/index.html）が docs/data/glossary.json と一致しているか。
 
@@ -918,6 +995,7 @@ def main() -> int:
     check_ticker_comment(html, base)
     check_hub_updated(html, base)
     check_crisis_day(html, base)
+    check_upcoming(html)
     check_log_wording(html, base)
     check_route_freshness(html, base)
     check_types(html, base)

@@ -117,8 +117,7 @@
        768px  : 文字サイズ（絶対ルールの html 18px） … max-width:768px  / min-width:769px
        1023px : 表・地図凡例の狭幅対応、PC との境 … max-width:1023px / min-width:1024px
      カラム数: 〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列（末尾のフェーズ2ブロック）
-     タブレット（iPad mini 縦 744px・iPad 縦 768〜834px）は 2列 になる。
-     例外: .annot-popup の 480px（注記ポップアップの位置補正。値を変えると位置がずれる） */
+     タブレット（iPad mini 縦 744px・iPad 縦 768〜834px）は 2列 になる。 */
 }
 
 /* ===== フォント・基本設定 ===== */
@@ -143,8 +142,6 @@
    これにより rem 指定の font-size 447箇所が一括で拡大する。
    今後サイズを調整する場合は、447箇所ではなくこの数値1箇所を変更する。
 
-   前提: .dl-label の white-space:nowrap を解除済み（commit 5ce8800）。
-   解除前は底上げすると横スクロールが発生した。
    検証: 1440px / 909px の双方で横スクロール0を確認（2026-09-04）。
    フェーズ2 2-a（2026-09-18 試作）: 18px → 20px。
    18px では文字量の約6割が 14px 未満（中央値 14px）だった。20px で 14px 未満は約1割、
@@ -266,51 +263,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 /* MAIN CONTAINER */
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
 
-/* DEADLINE / COUNTDOWN */
-/* 2026-10-01 COUNTDOWN は休止中。.deadline / .dl-* / .cd-* は現在どの要素にも当たっていない（残すか消すかは tools/redesign-plan.md §9 の再定義で決める） */
-.deadline {
-  background:linear-gradient(135deg,#1a0808,#2d1010);
-  border:2px solid #dc2626; border-radius:12px;
-  padding:14px 20px;
-  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
-}
-/* white-space:nowrap を解除（2026-09-04）。
-   ここには毎日更新で長さの変わるフェーズ見出しが入るため、nowrap のままだと
-   テキストが伸びた際に画面幅を超え、ページ全体に横スクロールが発生していた。
-   広い画面では1行のままで表示は変わらず、狭い画面でのみ折り返して破綻を防ぐ。 */
-.dl-label { font-size:0.78rem; color:#fca5a5; font-weight:700; line-height:1.5; }
-.dl-boxes { display:flex; gap:10px; align-items:center; flex-wrap:wrap; flex:1; }
-.dl-box { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.4); border-radius:8px; padding:8px 14px; text-align:center; min-width:90px; }
-.dl-num { font-size:1.3rem; font-weight:800; color:#ef4444; line-height:1; }
-.dl-num.blink { animation:cdBlink 1s ease-in-out infinite; }
-.dl-sub { font-size:0.65rem; color:#fca5a5; margin-top:3px; }
-.annot-wrap { position:relative; margin-top:4px; }
-.annot-trigger { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; color:#94a3b8; cursor:pointer; user-select:none; }
-.annot-trigger:hover { color:#e2e8f0; }
-.annot-trigger .dot { width:6px; height:6px; border-radius:50%; background:#f87171; flex-shrink:0; }
-.annot-popup { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); width:min(330px,90vw); background:rgba(15,23,42,0.97); border:1px solid rgba(248,113,113,0.45); border-radius:8px; padding:10px 12px; font-size:0.72rem; color:#e2e8f0; line-height:1.6; z-index:200; box-shadow:0 4px 24px rgba(0,0,0,0.6); }
-.annot-popup.open { display:block; }
-.annot-popup::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:rgba(248,113,113,0.45); }
-@media (max-width:480px) { .annot-popup { transform:translateX(calc(-50% - 70px)); } .annot-popup::after { left:calc(50% + 70px); transform:none; } }
-.dl-arrow { color:#6b7280; font-size:1.1rem; }
-.dl-note  { font-size:0.73rem; color:#fca5a5; flex:1; min-width:160px; padding-left:6px; }
-@keyframes cdBlink{0%,100%{opacity:1}50%{opacity:0.4}}
-
-/* countdown digits */
-#cd-display {
-  display:flex; gap:6px; align-items:center; justify-content:center;
-}
-.cd-unit { text-align:center; }
-.cd-val {
-  font-size:1.5rem; font-weight:800; color:#ef4444;
-  line-height:1; animation:cdBlink 1s ease-in-out infinite;
-  font-variant-numeric: tabular-nums;
-  min-width:2.2ch; display:inline-block;
-}
-.cd-sep { font-size:1.3rem; color:#ef4444; font-weight:800; margin-bottom:10px; }
-.cd-label { font-size:0.6rem; color:#fca5a5; margin-top:2px; }
-.cd-expired { font-size:1rem; font-weight:800; color:#f87171; animation:cdBlink 0.8s ease-in-out infinite; }
-
 /* INCIDENT（速報インシデント・② PR1 2026-09-24）
    日次更新で項目を足すときは、この型（li.incident-item＋色のモディファイア）で書く。 */
 .incident-headline-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
@@ -342,6 +294,15 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .glance-label--now    { --c:239,68,68;  color:#fca5a5; }
 .glance-label--strait { --c:251,191,36; color:#fbbf24; }
 .glance-text { color:#e2e8f0; font-size:var(--fs-md); line-height:1.6; }
+/* 今後の予定日（JS が /data/upcoming.json から「次の焦点」の直下に足す行。予定が無ければ行ごと出ない） */
+.glance-label--upcoming { --c:56,189,248; color:#7dd3fc; }
+.upcoming-item { display:inline-block; margin-right:14px; }
+.upcoming-item strong { color:#fde68a; }
+.upcoming-item a { color:#93c5fd; }
+/* 最終更新からの経過（JS がヘッダーの日時から計算。36時間を超えたら日時の横、72時間を超えたら注意書き） */
+.badge-elapsed { margin-left:2px; color:#fde68a; }
+.stale-notice { margin:0; padding:8px 16px; background:#3b2f0b; border-bottom:1px solid #a16207; color:#fde68a;
+  font-size:var(--fs-sm); line-height:1.6; text-align:center; }
 
 /* 主な動き：新しい順に3件。見出し・日付・出典だけを置き、行ごと #incident へリンクする（U3） */
 .key-moves { border-top:1px solid rgba(56,189,248,0.15); margin-top:4px; padding-top:8px; }
@@ -423,11 +384,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   .glance-special-head { font-size:0.88rem; }
 }
 
-/* COUNTDOWN の本文側（② PR2）。日次更新は dl-note 内の焦点を <span class="dl-focus"> で書く */
-.dl-box--timer { min-width:200px; }
-.dl-box--timer .dl-sub { margin-top:4px; }
-.dl-num--text { font-size:var(--fs-lg); color:#f87171; }
-.dl-focus { color:#fde68a; }
 
 /* MAP */
 .map-wrap { border-radius:14px; overflow:hidden; border:1px solid #1e3a5f; position:relative; }
@@ -1023,8 +979,6 @@ footer {
   .leg-row { margin-bottom: 4px; gap: 6px; }
   .leg-note { margin-top: 6px; padding-top: 5px; }
 
-  .deadline { flex-direction:column; align-items:flex-start; }
-  .dl-boxes { justify-content:flex-start; }
   .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .rtable { min-width:600px; }
 }
@@ -1035,7 +989,6 @@ footer {
 }
 @media(max-width:600px){
   header h1 { font-size:0.82rem; }
-  .cd-val { font-size:1.2rem; }
 }
 /* ===== スマホ ファーストビュー最適化 ===== */
 @media (max-width: 600px) {
@@ -1678,8 +1631,6 @@ footer {
   .sc-impact,
   .news-item,
   .news-item a,
-  .dl-note,
-  .annot-popup,
   .modal-section,
   .modal-quote,
   .modal-interp-box,
@@ -2245,12 +2196,13 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
   <!-- COUNTDOWN -->
-  <!-- 2026-10-01 休止。ここにあった赤いカラム（フェーズ見出し・リアルタイムカウントダウン・展望ノート）は外した。
+  <!-- ここにあった赤いカラム（フェーズ見出し・リアルタイムカウントダウン・展望ノート）は 2026-10-01 に外した。
        ・タイマーの期限は 5/22 が最後で、以後は「猶予期限経過」の固定表示だった
        ・フェーズ見出しと展望ノートは、30秒カラム・速報インシデントと同じ内容だった
        ・過去の期限と当時の経緯は日次アーカイブ（docs/data/archive_timeline.json）にある
-       日次更新では、再定義が済むまでこのセクションに何も書かない（daily-site-update スキル）。
-       再定義の計画は tools/redesign-plan.md §9。 -->
+       2026-10-06：日付の決まった予定は「今後の予定日」として30秒カラムの「次の焦点」の直下へ移した
+       （データは docs/data/upcoming.json。JS が出す）。ここには何も書かない（daily-site-update スキル）。
+       経緯は tools/redesign-plan.md §9、設計は tools/display-unify-design.md §3-1。 -->
 
 <!-- ===== 第2層：どう影響するか ===== -->
 <div class="layer-band layer-band--2">
@@ -3276,11 +3228,86 @@ function renderMilitaryLayer() {
 }
 
 // ============================================================
-// 0. COUNTDOWN TIMER — 2026-10-01 休止
-//    期限は 4/17・4/23・5/1・5/14・5/22（いずれも JST）の5本で、5/22 を過ぎてからは
-//    「猶予期限経過」の固定表示になっていた。HTML 側のカラムとあわせて外した。
-//    経緯と再定義の計画は tools/redesign-plan.md §9。
+// 0. リアルタイム表示（人の手を介さずに変わる表示）
+//    ここにあった COUNTDOWN TIMER（期限を JS に直書きした秒単位のタイマー）は 2026-10-01 に外した。
+//    代わりに次の2つを出す（tools/redesign-plan.md §9、tools/display-unify-design.md §3-1）。
+//    どちらも端末の時計から日本時間で計算する（ヘッダーの「危機N日目」と同じやり方）。
 // ============================================================
+
+// 0-A. 最終更新からの経過：ヘッダーの日時（日次更新が書く文字列）から計算する。
+//      36時間以内は何も足さない／36時間を超えたら日時の横に経過／72時間を超えたら注意書きを1行出す
+(function () {
+  const badge = document.querySelector('.badges .badge-date');
+  const m = badge && /(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})\s*JST/.exec(badge.textContent);
+  if (!m) return;
+  const hours = (Date.now() - Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4] - 9, +m[5])) / 3600e3;
+  if (!(hours > 36)) return;
+  const ago = hours < 48 ? Math.floor(hours) + '時間前' : Math.floor(hours / 24) + '日前';
+  const el = document.createElement('span');
+  el.className = 'badge-elapsed';
+  el.textContent = '（' + ago + '）';
+  badge.appendChild(el);
+  if (!(hours > 72)) return;
+  const note = document.createElement('p');
+  note.className = 'stale-notice';
+  note.setAttribute('role', 'note');
+  note.textContent = 'この内容は' + ago + '（' + m[0] + '）の更新です。最新の状況は各報道機関の発表をご確認ください。';
+  const header = badge.closest('header');
+  if (header) header.insertAdjacentElement('afterend', note);
+})();
+
+// 0-B. 今後の予定日：/data/upcoming.json（出典つきで日付が確定した予定だけ）。
+//      日単位で「あとN日」。当日は「今日」、翌日から出さない。0件・読めないときは行ごと出さない。
+//      過ぎた後の「期限経過」の表示は作らない（結果は速報インシデントに書く）
+(function () {
+  const label = document.querySelector('.glance-label--next');
+  const nextRow = label && label.closest('.glance-row');
+  if (!nextRow) return;
+  fetch('/data/upcoming.json?t=' + Date.now())
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      const today = Math.floor((Date.now() + 9 * 3600e3) / 864e5);
+      const items = (Array.isArray(data.items) ? data.items : []).map(it => {
+        const d = /^(\d{4})-(\d{2})-(\d{2})$/.exec((it && it.date) || '');
+        if (!d || !it.title) return null;
+        return { it: it, md: +d[2] + '/' + +d[3], left: Date.UTC(+d[1], +d[2] - 1, +d[3]) / 864e5 - today };
+      }).filter(x => x && x.left >= 0).sort((a, b) => a.left - b.left).slice(0, 3);
+      if (!items.length) return;
+
+      const row = document.createElement('div');
+      row.className = 'glance-row';
+      row.id = 'glance-upcoming';
+      const lab = document.createElement('span');
+      lab.className = 'glance-label glance-label--upcoming';
+      lab.textContent = '今後の予定';
+      const text = document.createElement('span');
+      text.className = 'glance-text';
+      items.forEach(x => {
+        const it = x.it;
+        const item = document.createElement('span');
+        item.className = 'upcoming-item';
+        const left = document.createElement('strong');
+        left.textContent = x.left === 0 ? '今日' : (it.kind === 'deadline' ? '期限まであと' : 'あと') + x.left + '日';
+        item.append('📅 ' + it.title + '　', left, '（' + x.md + (it.date_note ? '・' + it.date_note : ''));
+        if (it.source) {
+          item.append('／');
+          if (/^https:\/\//.test(it.url || '')) {
+            const a = document.createElement('a');
+            a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+            a.textContent = it.source;
+            item.append(a);
+          } else {
+            item.append(it.source);
+          }
+        }
+        item.append('）');
+        text.appendChild(item);
+      });
+      row.append(lab, text);
+      nextRow.insertAdjacentElement('afterend', row);
+    })
+    .catch(() => { /* 読めないときは行を出さない */ });
+})();
 
 
 // ============================================================

@@ -3292,8 +3292,132 @@ const map = L.map('map', {
   minZoom: 2,
   maxZoom: 10,
   zoomControl: true,
-  attributionControl: true
+  attributionControl: true,
+  worldCopyJump: true
 });
+
+// ============================================================
+// 1-B. WORLD WRAP（横方向エンドレス）
+//    印・線・面を経度 ±360° に自動で複製する。呼び出し側は何も変えなくてよい。
+//    設計：tools/map-wraparound-design.md
+// ============================================================
+const WORLD_INDEXES = [-1, 0, 1];   // 複製を置く世界（0 が経度 -180〜180°）
+
+function shiftLatLngs(lls, d) {
+  return lls.map(x => Array.isArray(x) ? shiftLatLngs(x, d) : L.latLng(x.lat, x.lng + d));
+}
+// その印・線が書かれている世界の番号。アラスカ（経度210°）は 1 になる
+function wrapHomeIndex(layer) {
+  const lng = layer instanceof L.Marker ? layer.getLatLng().lng : layer.getBounds().getCenter().lng;
+  return Math.round(lng / 360);
+}
+function makeWrapCopy(src, d) {
+  let c;
+  if (src instanceof L.Marker) {
+    const ll = src.getLatLng();
+    // コピーは Tab キーの対象にしない（停止位置を3倍にしないため）
+    c = L.marker([ll.lat, ll.lng + d], Object.assign({}, src.options, { keyboard: false }));
+  } else if (src instanceof L.Polygon) {
+    c = L.polygon(shiftLatLngs(src.getLatLngs(), d), src.options);
+  } else {
+    c = L.polyline(shiftLatLngs(src.getLatLngs(), d), src.options);
+  }
+  c._wrapOf = src;
+  const p = src.getPopup(), t = src.getTooltip();
+  if (p) c.bindPopup(p.getContent(), p.options);
+  if (t) c.bindTooltip(t.getContent(), t.options);
+  return c;
+}
+// 既存コードは .addTo(map).bindPopup(...) の順で書いてあり、layeradd の時点では
+// まだポップアップが付いていない。複製は1拍おいてからまとめて行う
+let wrapQueue = [];
+function flushWrapQueue() {
+  const q = wrapQueue; wrapQueue = [];
+  q.forEach(src => {
+    if (!map.hasLayer(src)) { delete src._wrapCopies; return; }
+    // 座標が空の線・面は複製しない（範囲を求められず、ここで例外になると後ろの複製が全部止まる）
+    if (!(src instanceof L.Marker) && !src.getBounds().isValid()) return;
+    const home = wrapHomeIndex(src);
+    WORLD_INDEXES.filter(i => i !== home).forEach(i => {
+      src._wrapCopies.push(makeWrapCopy(src, (i - home) * 360).addTo(map));
+    });
+  });
+}
+map.on('layeradd', e => {
+  const src = e.layer;
+  if (src._wrapOf || src._wrapCopies) return;                              // コピー自身・複製済み
+  if (!(src instanceof L.Marker) && !(src instanceof L.Polyline)) return;  // L.Polygon は L.Polyline の派生
+  src._wrapCopies = [];
+  if (wrapQueue.push(src) === 1) setTimeout(flushWrapQueue, 0);
+});
+map.on('layerremove', e => {
+  const cs = e.layer._wrapCopies;
+  if (!cs) return;
+  delete e.layer._wrapCopies;
+  cs.forEach(c => map.removeLayer(c));
+});
+
+// 開いているポップアップを、いつも地図の中心にいちばん近い世界の印の上に置く。
+// 1周まわして同じ印（コピー）が戻ってきたとき、ポップアップもそこに出ている
+let wrapOpenPopup = null;
+map.on('popupopen',  e => { wrapOpenPopup = e.popup; });
+map.on('popupclose', e => { if (wrapOpenPopup === e.popup) wrapOpenPopup = null; });
+function keepPopupNear() {
+  if (!wrapOpenPopup) return;
+  const ll = wrapOpenPopup.getLatLng();
+  const worlds = Math.round((map.getCenter().lng - ll.lng) / 360);
+  if (!worlds) return;
+  const ap = wrapOpenPopup.options.autoPan;
+  wrapOpenPopup.options.autoPan = false;     // 位置を移すだけ。地図を動かさない
+  wrapOpenPopup.setLatLng([ll.lat, ll.lng + worlds * 360]);
+  wrapOpenPopup.options.autoPan = ap;
+}
+map.on('move', keepPopupNear);               // ドラッグ・慣性・flyTo・下の補正のどれでも出る
+
+// ドラッグ中：worldCopyJump が中心を 360° 戻した瞬間を、中心経度の飛びで見つける
+let wrapLastLng = map.getCenter().lng;
+let wrapDragging = false;
+map.on('dragstart', () => { wrapDragging = true; wrapLastLng = map.getCenter().lng; });
+map.on('dragend',   () => { wrapDragging = false; });
+map.on('drag', () => {
+  const lng = map.getCenter().lng;
+  const worlds = Math.round((lng - wrapLastLng) / 360);
+  wrapLastLng = lng;
+  if (!worlds) return;
+  // 線・面（SVG）は moveend でしか描き直されない。戻した直後は SVG が画面の外に
+  // 残るので、ここで描き直させる（無いと、指を離すまで線と国土が消える）
+  map.fire('moveend');
+});
+
+// ドラッグ以外（flyTo・キーボード・慣性の終点）：止まった時点で中心を -180〜180° に戻す
+map.on('moveend', () => {
+  if (wrapDragging) return;                  // ドラッグ中は Leaflet の戻しに任せる
+  const c = map.getCenter();
+  const worlds = -Math.round(c.lng / 360);
+  if (!worlds) return;
+  map.setView([c.lat, c.lng + worlds * 360], map.getZoom(), { animate: false });
+});
+
+// worldCopyJump は「どこで戻すか」の基準を zoomend のときにしか計算し直さない。
+// ズームを変えずに遠くへ移ると（上の補正・focusOn・キーボード）基準が古くなり、
+// 戻す位置が ±180° からずれる。地図を置き直したら zoomend を出して計算し直させる
+map.on('viewreset', () => map.fire('zoomend'));
+
+const WRAP_OVERHANG = 45;   // 線が自分の世界からはみ出してよい経度（アラスカ航路は 180° を 30° 越える）
+
+// 慣性の途中は中心を戻せないので、進む距離の上限をいまのズームと地図の幅から決める
+// （複製が覆う範囲の外が見えないようにする）。
+// Leaflet の慣性の距離は inertiaMaxSpeed² ÷ (2 × inertiaDeceleration × easeLinearity)
+function limitInertia() {
+  const o = map.options;
+  const world = 256 * Math.pow(2, map.getZoom());
+  const room = world - map.getSize().x / 2 - world * WRAP_OVERHANG / 360;
+  o.inertiaMaxSpeed = Math.sqrt(Math.max(0, room) * 2 * o.inertiaDeceleration * o.easeLinearity);
+}
+limitInertia();
+map.on('zoomend', limitInertia);
+map.on('resize', limitInertia);
+
 // ナイジェリア（ボニー港）
 L.marker([4.5, 7.0], {
   icon: mkIcon('🇳🇬', 'rgba(251,191,36,0.85)', 32)
@@ -3456,32 +3580,6 @@ fetch('/data/countries.geojson')  // Natural Earth 10m（datasets/geo-countries�
         }
       }
     }).addTo(map);
-
-    // GeoJSONラッピング複製（右側・左側のタイル複製に対応）
-    (function addWrappedLayers(data) {
-      var hi = ['IR','SA','AE','YE','IQ','OM','BH','QA','KW'];
-      function shiftCoord(c, d) {
-        return typeof c[0] === 'number' ? [c[0] + d, c[1]] : c.map(function(x){ return shiftCoord(x, d); });
-      }
-      function makeWrapped(offset) {
-        var features = data.features.map(function(f) {
-          var fc = JSON.parse(JSON.stringify(f));
-          if (fc.geometry && fc.geometry.coordinates)
-            fc.geometry.coordinates = shiftCoord(fc.geometry.coordinates, offset);
-          return fc;
-        });
-        L.geoJSON({type:'FeatureCollection', features:features}, {
-          interactive: false,
-          style: function(ft) {
-            return hi.includes(ft.properties['ISO3166-1-Alpha-2'])
-              ? {fillColor:'#1e3d28', fillOpacity:0.75, color:'#2e5a3a', weight:1.3}
-              : {color:'#2e5a8a', weight:0.9, fillColor:'#1e3a7a', fillOpacity:0.96, opacity:1.0};
-          }
-        }).addTo(map);
-      }
-      makeWrapped(360);
-      makeWrapped(-360);
-    })(data);
 
     COUNTRIES.forEach(c => {
       L.marker([c.lat,c.lng], {

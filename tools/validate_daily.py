@@ -793,6 +793,35 @@ def check_log_wording(html: str, base: str) -> None:
         ok(f"基準日 {base} の更新履歴の本文に「OSINT／osint」なし")
 
 
+UNRESOLVED_WORDS = ("終値かは未確認", "終値未確認", "食い違", "未解消")
+PAT_TICKER_TEXT = re.compile(r'<span class="ticker-text">(.*?)</span>', re.S)
+PAT_SC_UPDATE = re.compile(r'<div class="sc-update">.*?<div class="sc-sync-note">', re.S)
+
+
+def check_unresolved(html: str) -> None:
+    """読者が最初に見る要約部に、裏取りで解消すべき表記が残っていないか（2026-10-06 追加）。
+
+    10/6 07:33 の更新で「食い違い（未解消）」「終値かは未確認」のまま公開し、のちに訂正した。
+    対象は 30秒カラム（主な動き・バッジを含む）・TICKER・シナリオの確率補足バナー。
+    速報インシデントとルート表の経緯は過去の記録を含むので見ない。
+    """
+    blocks = []
+    for label, pat, grp in (("30秒カラム", PAT_GLANCE, 0), ("TICKER", PAT_TICKER_TEXT, 1),
+                            ("シナリオの確率補足", PAT_SC_UPDATE, 0)):
+        m = pat.search(html)
+        if not m:
+            warn(f"{label}を検出できず、未解消の表記を確認できません（構造が変わった可能性）")
+            continue
+        blocks.append((label, m.group(grp)))
+    for label, text in blocks:
+        hits = [w for w in UNRESOLVED_WORDS if w in text]
+        if hits:
+            warn(f"{label}に未解消の表記があります：{'・'.join(hits)}。"
+                 "裏取り（daily-site-update「2.5 裏取り」）で解消して書き直すか、記述を外す")
+        else:
+            ok(f"{label}に未解消の表記なし")
+
+
 def check_crisis_day(html: str, base: str) -> None:
     """本体ヘッダーの「危機N日目」の静的な数字が、基準日から計算した日数と同じか。
 
@@ -892,6 +921,7 @@ def main() -> int:
     check_log_wording(html, base)
     check_route_freshness(html, base)
     check_types(html, base)
+    check_unresolved(html)
 
     check_news(news, base)
     if log is not None:

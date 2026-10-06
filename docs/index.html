@@ -185,7 +185,7 @@ a:focus-visible { outline: 2px solid var(--c-warn); outline-offset: 2px; }
     <li class="hub-stat">
       <div class="hub-stat-head">危機マップの最終更新</div>
       <div class="hub-stat-num hub-stat-num--text" id="hub-updated">10/6 09:43</div>
-      <div class="hub-stat-note">日本時間（JST）</div>
+      <div class="hub-stat-note" id="hub-updated-note">日本時間（JST）</div>
     </li>
     <!-- 石油備蓄日数：毎月4日の PC タスクが /hormuz/ の3か所とあわせて更新する（tools/oil-stockpile-monthly-update.md） -->
     <li class="hub-stat">
@@ -280,12 +280,33 @@ window.SITE_CONFIG = window.SITE_CONFIG || {
   var d = Math.floor((Date.now() + 9 * 3600e3 - Date.UTC(2026, 1, 28)) / 864e5) + 1;
   if (d > 0) setText('hub-days', '危機' + d + '日目');
 
+  // 最終更新からの経過（/hormuz/ のヘッダーと同じ決まり：36時間を超えたら出す。予定日はハブには出さない）
+  function showElapsed(y, mo, d, hh, mm) {
+    var hours = (Date.now() - Date.UTC(y, mo - 1, d, hh - 9, mm)) / 3600e3;
+    if (!(hours > 36)) return;
+    setText('hub-updated-note', '日本時間（JST）・' + (hours < 48 ? Math.floor(hours) + '時間前' : Math.floor(hours / 24) + '日前'));
+  }
+  // HTML の予備の値（M/D HH:MM）には年が無い。今年として読み、未来になるなら去年とみなす
+  function showElapsedFromStatic() {
+    var el = document.getElementById('hub-updated');
+    var s = /^(\d{1,2})\/(\d{1,2})\s+(\d{1,2}):(\d{2})$/.exec(el ? el.textContent.trim() : '');
+    if (!s) return;
+    var y = new Date(Date.now() + 9 * 3600e3).getUTCFullYear();
+    if (Date.UTC(y, s[1] - 1, +s[2], s[3] - 9, +s[4]) > Date.now() + 864e5) y -= 1;
+    showElapsed(y, +s[1], +s[2], +s[3], +s[4]);
+  }
+
   // 最終更新と最新の動き（/hormuz/ と同じ news_data.json）
   fetch('data/news_data.json?t=' + Date.now())
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (data) {
-      var m = /(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})/.exec(data.updated || '');
-      if (m) setText('hub-updated', Number(m[2]) + '/' + Number(m[3]) + ' ' + m[4]);
+      var m = /(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})/.exec(data.updated || '');
+      if (m) {
+        setText('hub-updated', Number(m[2]) + '/' + Number(m[3]) + ' ' + m[4] + ':' + m[5]);
+        showElapsed(+m[1], +m[2], +m[3], +m[4], +m[5]);
+      } else {
+        showElapsedFromStatic();
+      }
       var list = document.getElementById('hub-latest');
       (data.latest || []).slice(0, 3).forEach(function (item) {
         if (!item || !item.title) return;
@@ -301,7 +322,7 @@ window.SITE_CONFIG = window.SITE_CONFIG || {
         list.appendChild(li);
       });
     })
-    .catch(function () { /* 読めないときは静的な表示のまま */ });
+    .catch(function () { showElapsedFromStatic(); /* 読めないときは静的な表示のまま（経過だけ足す） */ });
 
   // WTI（hormuz-data- の EIA 週次。読めないときは HTML の静的な値と基準週のまま）
   fetch(window.SITE_CONFIG.DASHBOARD_BASE + '/data/eia-weekly.json?t=' + Date.now())

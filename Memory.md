@@ -46,7 +46,7 @@
     「収録範囲について」に意味を1文足した。内部の名前（`osint-panel`・`news_data.json` の `osint`）はそのまま。設計と実施記録は `tools/glossary-search-design.md`（§11）。
     `hormuz-data-` の戻りリンク2か所も `/hormuz/` に変更。次は「表示の統一」（「リアルタイム表示」の実装を含む。決定は `tools/redesign-plan.md` §9）
   - 【2026-10-06】**②' 表示の統一に着手**（設計書 `tools/display-unify-design.md`。判断 K1〜K10 は同日決定・WTI のカードは変えない）。
-    PR A「リアルタイム表示」を実装（ブランチ `feature/realtime-display`）：**今後の予定日**は `docs/data/upcoming.json` に持ち、30秒カラムの「次の焦点」の直下に JS が出す
+    PR A「リアルタイム表示」を公開（PR #57・merge commit `42bb23f`）：**今後の予定日**は `docs/data/upcoming.json` に持ち、30秒カラムの「次の焦点」の直下に JS が出す
     （出典つきで日付が確定した予定だけ・日単位・過ぎたら出ない・0件なら行ごと出ない）。**最終更新からの経過**はヘッダーの日時の文字を JS が読んで計算し、
     36時間を超えたら日時の横に「（N時間前）」、72時間を超えたら注意書きを出す（ハブは経過だけ）。日次の作業順序 6 は「今後の予定日（該当があるときだけ）」。
     `<!-- COUNTDOWN -->` には何も書かない。残していた CSS（`.deadline`・`.dl-*`・`.cd-*`・`.annot-*`）は削除。残りは PR B（日時の一元化）・C（「—」「確認中」の整理）・D（推定のラベル）

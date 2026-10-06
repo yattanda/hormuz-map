@@ -3418,6 +3418,26 @@ limitInertia();
 map.on('zoomend', limitInertia);
 map.on('resize', limitInertia);
 
+// 世界1周（256×2^zoom px）が地図の幅を下回らないようにする（同じ印が左右に2回見えない）。
+// 幅 1024px 以下では従来どおり 2。地図が隠れていて幅が 0 のときも 2
+function fitMinZoom() {
+  map.setMinZoom(Math.max(2, Math.log2(map.getSize().x / 256)));
+}
+fitMinZoom();
+map.on('resize', fitMinZoom);
+
+// 地点ジャンプ用：目的地の経度を、いまの中心から近い側（±180° 以内）の世界に読み替えて飛ぶ。
+// 着いた先の中心が -180〜180° の外なら、上の moveend の補正が戻す
+function nearestLng(lng, refLng) {
+  return lng + 360 * Math.round((refLng - lng) / 360);
+}
+function flyToNearest(center, zoom) {
+  // flyTo は setView と違ってズームを最小ズームに丸めない。幅の広い画面で
+  // fitMinZoom の値より引いた状態にならないよう、ここで丸める
+  zoom = Math.max(zoom, map.getMinZoom());
+  map.flyTo([center[0], nearestLng(center[1], map.getCenter().lng)], zoom, { duration: 1.2 });
+}
+
 // ナイジェリア（ボニー港）
 L.marker([4.5, 7.0], {
   icon: mkIcon('🇳🇬', 'rgba(251,191,36,0.85)', 32)
@@ -4175,10 +4195,10 @@ const MAP_JUMP_POINTS = [
 function jumpMapTo(idx) {
   const p = MAP_JUMP_POINTS[idx];
   if (!p) return;
-  map.flyTo(p.center, p.zoom, { duration: 1.2 });
+  flyToNearest(p.center, p.zoom);
 }
 function jumpMapHome() {
-  map.flyTo(MAP_JUMP_HOME.center, MAP_JUMP_HOME.zoom, { duration: 1.2 });
+  flyToNearest(MAP_JUMP_HOME.center, MAP_JUMP_HOME.zoom);
 }
 
 const MapJump = L.Control.extend({

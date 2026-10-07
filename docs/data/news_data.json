@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月07日 07:29 日本時間JST",
+  "updated": "2026年10月08日 07:01 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-national-aden-1007",
+      "title": "イエメン政府の運輸省、アデン国際空港へのミサイル・ドローン攻撃を発表——フーシ派はサウジ軍の物資を標的にしたと主張、リヤド北方では連合軍がミサイル1発を迎撃",
+      "body": "The National（10/7）によれば、イエメン政府の運輸省は、10/7（水）の夜明け頃、アデン国際空港に弾道ミサイル2発と爆発物を積んだドローン数機が撃ち込まれたと発表した（運輸省によれば死傷者の報告はない）。Al Jazeera（10/7）は、同省が滑走路と旅客ターミナルを「少なくとも弾道ミサイル2発とドローン数機」で狙ったと述べ、ミサイル1発がカイロ発便の着陸の数分前に滑走路近くへ落ち、同便はジェッダへ迂回したと伝える。フーシ派は、アデン近郊のバドル基地に着いたサウジ軍の物資を標的にしたと主張した。サウジ側の確認は、The Nationalの記事には書かれていない。リヤドでは、サウジ主導連合の報道官がフーシ派の弾道ミサイル1発を北方で迎撃・破壊したと発表した（Al Jazeera）。The Nationalは、リヤドのキング・ハリド国際空港の発着が水曜朝に1時間以上止まったと伝える。リヤドの空港の被害と死傷者の数は、確認が取れていないため本欄では書かない。",
+      "sourceLabel": "The National（10/7）・Al Jazeera（10/7）",
+      "date": "2026年10月7日（現地）",
+      "label": "🇾🇪 10/7 アデン空港攻撃・リヤド北方でミサイル迎撃",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-gcaptain-week12-1007",
+      "title": "ホルムズ周辺のタンカー攻撃、9/28〜10/5の週に少なくとも12件で開戦以降最多——海事セキュリティ筋3者の集計（IMOの記録では9件）",
+      "body": "gCaptain（10/7・Reuters配信）によれば、海事セキュリティ筋3者の集計で、9/28〜10/5の週に、ホルムズ海峡周辺で原油・LNG・LPGタンカーへの攻撃が少なくとも12件あり、2/28の戦争開始以降、1週間の件数として最多だった。国際海事機関（IMO）の記録では同じ週の件数は9件で、集計元が異なるため単純に比べられない（記事は、IMOは事案の検証と記録に時間がかかると説明している）。記事が挙げる最も近い週は7/13の週（IMOデータで8件）。本サイトの個別事案の累計は、主要媒体が数えていないため据え置く。",
+      "sourceLabel": "gCaptain（10/7・Reuters配信）",
+      "date": "2026年10月7日（現地）",
+      "label": "⚓ 10/7 タンカー攻撃が週12件・開戦以降最多",
+      "url": "https://gcaptain.com/attacks-on-tankers-in-hormuz-hit-highest-of-any-week-since-start-of-iran-war-sources-say/",
+      "isLatest": false
+    },
     {
       "id": "latest-gcaptain-onpeace-1006",
       "title": "ホルムズ海峡で被弾したタンカーはパナマ船籍「On Peace」——乗員19人のうち12人が負傷、インド政府は攻撃主体を特定せず",
@@ -10,7 +30,7 @@
       "date": "2026年10月6日（現地）",
       "label": "⚓ 10/6 On Peace被弾・乗員12人負傷",
       "url": "https://gcaptain.com/a-dozen-seafarers-injured-in-strait-of-hormuz-tanker-attack-india-says/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-euronews-yemen-1006",
@@ -21,29 +41,27 @@
       "label": "🇾🇪 10/6 イエメン戦況・フーシ派が否定",
       "url": "https://www.euronews.com/2026/10/06/yemen-government-forces-advance-on-bab-el-mandeb-in-offensive-against-houthis",
       "isLatest": false
-    },
-    {
-      "id": "latest-gcaptain-tanker-turnback-1005",
-      "title": "ホルムズ海峡でタンカーが飛翔体を受け機関室で火災——IRGCは入域中の別のタンカーに「引き返さなければ攻撃」と命令、攻撃主体は不明",
-      "body": "gCaptain（10/5）によれば、UKMTOは10/5 16:37 UTC（日本時間10/6 01:37）、ホルムズ海峡を通航中のタンカーが正体不明の飛翔体を受けて機関室で火災が起き、乗組員が消火にあたっていると警告した（警報156-26）。DPA（10/6）によれば、当初の時点で負傷者の報告はない。船名と正確な位置は明らかになっていない。UKMTOは10/4にも、入域中のLPGタンカー（17:16 UTC）と原油タンカー（19:07 UTC）の2隻の被弾を遅れて報告した。また、オマーン・ハサブの北方約11海里では、入域中のタンカーがIRGCから「引き返さなければ攻撃する」と命じられ、船長はこれに従った。いずれも攻撃主体は特定されていない。DPAによれば、イラン系Fars通信は10/5夜、イランが過去7日間に13隻の船舶に対して措置を取ったと報じた（イラン側の主張で独立確認なし）。",
-      "sourceLabel": "gCaptain（10/5）",
-      "date": "2026年10月5日（現地）",
-      "label": "⚓ 10/5 タンカー被弾・IRGCが引き返しを命令",
-      "url": "https://gcaptain.com/five-hormuz-incidents-reported-monday-as-tanker-attacks-mount",
-      "isLatest": false
-    },
-    {
-      "id": "latest-thenational-yemen-mokha-1005",
-      "title": "イエメン政府軍、バブエルマンデブ海峡とモカの制圧を主張——サウジ主導連合は戦闘機100機を投入、独立した検証はなし",
-      "body": "The National（10/5）によれば、イエメン政府軍は10/5、サウジ主導連合軍の航空支援を受け、バブエルマンデブ海峡、ドゥバーブ地区、港湾都市モカを制圧したと主張した（国営サバ通信が引く軍筋）。連合軍は戦闘機100機を投入し、324の目標を破壊したとする。同紙は、独立した検証はできておらず、フーシ派は確認していないと伝えている。Arab News（10/5）も政府軍の制圧を報じた。いずれも当事者の主張で、バブエルマンデブ海峡を通る輸送への影響は確認できていない。",
-      "sourceLabel": "The National（10/5）",
-      "date": "2026年10月5日（現地）",
-      "label": "🇾🇪 10/5 イエメン政府側がモカ・バブエルマンデブ制圧を主張",
-      "url": "https://www.thenationalnews.com/news/gulf/2026/10/05/yemen-government-forces-claim-bab-al-mandeb-gains-as-saudi-coalition-says-100-jets-join-houthi-offensive/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-national-airports-1007",
+      "titleJa": "【The National】フーシ派、サウジとイエメンの空港への夜明けのドローン・ミサイル攻撃を主張——アデン空港は運輸省が攻撃を発表",
+      "titleEn": "Houthis claim dawn drone and missile strikes on Saudi and Yemeni airports",
+      "title": "【The National】フーシ派、サウジとイエメンの空港への夜明けのドローン・ミサイル攻撃を主張——アデン空港は運輸省が攻撃を発表",
+      "country": "イエメン",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年10月7日（現地）",
+      "summary": "The National（10/7）は、イエメン政府の運輸省が、10/7の夜明け頃にアデン国際空港へ弾道ミサイル2発とドローン数機が撃ち込まれたと発表し、死傷者の報告はないと伝えた。フーシ派は空港近くのサウジ軍の物資を標的にしたと主張した。同記事は、リヤドのキング・ハリド国際空港の発着が水曜朝に1時間以上止まったとも伝える。サウジ側の確認は、アデンの件については記事に書かれていない。",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-aljazeera-exports-1006",
       "titleJa": "【Al Jazeera】ホルムズで被弾相次ぐ——増えた原油輸出は持続できるか（PVM「攻撃が再開されればいつでも持続不可能に」）",
@@ -55,7 +73,7 @@
       "date": "2026年10月6日（現地）",
       "summary": "Al Jazeera（10/6）は、被弾が相次ぐなかで増えた中東の原油輸出が持続できるのかを論じた。PVM Oil Associatesのアナリストは、方法とルートが安全である限り流れは維持できるが、攻撃が再開されればいつでも持続不可能になりうると述べた。同記事は被弾の例として、10/1のクウェート船籍VLCC「Kazimah III」（火災、乗員5人救出）と、10/4のリベリア船籍アフラマックス「Lipsi」（オマーン北東沖、機関室損傷）を挙げる。",
       "url": "https://www.aljazeera.com/news/2026/10/6/hormuz-ship-attacks-surge-are-increased-oil-exports-sustainable",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1718,6 +1736,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月8日",
+      "items": [
+        {
+          "id": "latest-gcaptain-tanker-turnback-1005",
+          "title": "ホルムズ海峡でタンカーが飛翔体を受け機関室で火災——IRGCは入域中の別のタンカーに「引き返さなければ攻撃」と命令、攻撃主体は不明",
+          "body": "gCaptain（10/5）によれば、UKMTOは10/5 16:37 UTC（日本時間10/6 01:37）、ホルムズ海峡を通航中のタンカーが正体不明の飛翔体を受けて機関室で火災が起き、乗組員が消火にあたっていると警告した（警報156-26）。DPA（10/6）によれば、当初の時点で負傷者の報告はない。船名と正確な位置は明らかになっていない。UKMTOは10/4にも、入域中のLPGタンカー（17:16 UTC）と原油タンカー（19:07 UTC）の2隻の被弾を遅れて報告した。また、オマーン・ハサブの北方約11海里では、入域中のタンカーがIRGCから「引き返さなければ攻撃する」と命じられ、船長はこれに従った。いずれも攻撃主体は特定されていない。DPAによれば、イラン系Fars通信は10/5夜、イランが過去7日間に13隻の船舶に対して措置を取ったと報じた（イラン側の主張で独立確認なし）。",
+          "sourceLabel": "gCaptain（10/5）",
+          "date": "2026年10月5日（現地）",
+          "label": "⚓ 10/5 タンカー被弾・IRGCが引き返しを命令",
+          "url": "https://gcaptain.com/five-hormuz-incidents-reported-monday-as-tanker-attacks-mount",
+          "isLatest": false
+        },
+        {
+          "id": "latest-thenational-yemen-mokha-1005",
+          "title": "イエメン政府軍、バブエルマンデブ海峡とモカの制圧を主張——サウジ主導連合は戦闘機100機を投入、独立した検証はなし",
+          "body": "The National（10/5）によれば、イエメン政府軍は10/5、サウジ主導連合軍の航空支援を受け、バブエルマンデブ海峡、ドゥバーブ地区、港湾都市モカを制圧したと主張した（国営サバ通信が引く軍筋）。連合軍は戦闘機100機を投入し、324の目標を破壊したとする。同紙は、独立した検証はできておらず、フーシ派は確認していないと伝えている。Arab News（10/5）も政府軍の制圧を報じた。いずれも当事者の主張で、バブエルマンデブ海峡を通る輸送への影響は確認できていない。",
+          "sourceLabel": "The National（10/5）",
+          "date": "2026年10月5日（現地）",
+          "label": "🇾🇪 10/5 イエメン政府側がモカ・バブエルマンデブ制圧を主張",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/10/05/yemen-government-forces-claim-bab-al-mandeb-gains-as-saudi-coalition-says-100-jets-join-houthi-offensive/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月7日",
       "items": [

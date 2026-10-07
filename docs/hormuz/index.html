@@ -682,7 +682,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   font-size:var(--fs-xs); color:#fbbf24; line-height:1.65; }
 .sc-footer { margin-top:10px; padding:10px 14px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
   font-size:var(--fs-xs); color:#64748b; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-.sc-footer .label-scenario { margin-left:auto; }
 .sc-focus-h { font-size:var(--fs-md); font-weight:700; color:#94a3b8; margin:0 0 10px; letter-spacing:0.05em; }
 .sc-focus-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
 .sc-focus-list > li { font-size:var(--fs-base); color:#cbd5e1; margin-bottom:5px; }
@@ -929,8 +928,10 @@ footer {
   #map { height:400px; }
 
   .map-legend {
-    min-width: 80px !important;
-    max-width: 80px !important;
+    /* 閉じた状態の幅。見出し「🗺️ 凡 例」と「開く」ボタン（min-width:44px）が収まる幅にする
+       （80px ではボタンが欠けて見えなかった。2026-10-07 調整） */
+    min-width: 148px !important;
+    max-width: 148px !important;
     padding: 8px 10px !important;
     transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
     overflow: hidden;
@@ -2695,7 +2696,7 @@ document.addEventListener('keydown', function(e) {
 
   <!-- シナリオ フッター -->
   <div class="sc-footer">
-    <h3 class="sc-focus-h">🔍 次の焦点 5つ</h3>
+    <h3 class="sc-focus-h">🔍 次の焦点 5つ<span class="label-scenario sc-h2-label">分析</span></h3>
     <ul class="sc-focus-list">
       <li>① <strong>イランが7項目の計画を巡り米国とどう折り合うか（米国の回答の中身は未公表）</strong></li>
       <li>② <strong>海峡の被弾（9/28以降少なくとも6隻、10/4・10/5にも報告。10/5の被弾船はOn Peaceと判明）とIRGCの引き返し命令、ヤンブー港への着弾の攻撃主体の特定、およびFarsが主張する「過去7日間に13隻」の独立確認、UKMTO警報157-26（10/5に海峡を出る別のタンカー）の主要媒体での裏付け（いずれも未確認）</strong></li>
@@ -2703,7 +2704,6 @@ document.addEventListener('keydown', function(e) {
       <li>④ <strong>流量の回復の実態（Kplerは9月の月間を戦前の8割弱、9月最終週の4日間を戦前の平均超えとする）と、イエメン政府側の前進の主張（フーシ派は否定）・ヤンブーの積み出しがルートBにどう響くか</strong></li>
       <li>⑤ <strong>原油価格の動向（10/6終値：ブレント12月物100.58ドル・WTI11月物89.44ドル。Reuters・Rigzone）</strong></li>
     </ul>
-    <span class="label-scenario">分析</span>
   </div>
 
 </div>

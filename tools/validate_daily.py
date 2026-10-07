@@ -803,7 +803,7 @@ PAT_SC_UPDATE = re.compile(r'<div class="sc-update">.*?<div class="sc-sync-note"
 PAT_SC_UPDATE_DATE = re.compile(r'sc-update-date">\s*📊\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
 PAT_LOG_FIRST = re.compile(r'<span class="log-date">(\d{4})/(\d{2})/(\d{2})\s+(\d{1,2}:\d{2})</span>')
 PAT_SC_SYNC_NOTE = re.compile(r'<div class="sc-sync-note">(.*?)</div>', re.S)
-PAT_SC_FOOTER_LABEL = re.compile(r'<div class="sc-footer">.*?<span class="label-scenario">(.*?)</span>\s*</div>', re.S)
+PAT_SC_FOOTER_LABEL = re.compile(r'<h3 class="sc-focus-h">[^<]*<span class="label-scenario[^"]*">(.*?)</span>\s*</h3>', re.S)
 
 
 def check_unresolved(html: str) -> None:
@@ -863,7 +863,7 @@ def check_scenario_dates(html: str, base: str) -> None:
         ok("シナリオの注記に日付の手書きなし（時点は JS が入れる）")
     m = PAT_SC_FOOTER_LABEL.search(html)
     if not m:
-        warn("シナリオのフッターのラベル（.sc-footer .label-scenario）を検出できませんでした")
+        warn("シナリオのフッターのラベル（h3.sc-focus-h の中の .label-scenario）を検出できませんでした")
     elif re.search(r"\d", m.group(1)):
         ng(f"シナリオのフッターのラベルに日付が書かれています（「{m.group(1).strip()[:30]}」）。「分析」の一語だけにする")
     else:

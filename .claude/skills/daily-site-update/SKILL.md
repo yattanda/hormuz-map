@@ -171,6 +171,8 @@ python tools/validate_daily.py
     到着未確認」が残っていた。実際は 7/17 に到着済みで、訂正履歴に記録した）
 - ハブの「危機マップの最終更新」（`id="hub-updated"`）の月日が基準日と一致するか（NG）、時刻が本体のヘッダーと同じか（WARN）
 - 本体ヘッダーの「危機N日目」の静的な数字（`id="blockade-days"`）が、基準日から計算した日数と同じか（WARN）
+- シナリオの補足バナー（`sc-update-date`）と更新履歴の先頭行の日付が基準日と一致するか（NG）、時刻がヘッダーと同じか（WARN）。
+  シナリオの注記（`sc-sync-note`）とフッターのラベルに日付が書かれていないか（NG）
 - 今後の予定日（`docs/data/upcoming.json`）の形・必須項目・出典 URL（NG）、過ぎて7日以上残っている項目（WARN）、
   「次の焦点」に先の日付があるのに予定日が0件（WARN。載せない判断ならそのままでよい）
 - `sitemap.xml` の `/` と `/hormuz/` の `lastmod` が基準日と一致するか（NG）、
@@ -482,14 +484,13 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
   🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↓</span> — 根拠<br>
   <strong class="sc-update-caveat">断定を避ける注記。</strong><br>
-  <div class="sc-sync-note">
-    各シナリオ確率は 2026年9月29日 09:12 JST 時点での分析に基づく自動同期
-  </div>
+  <div class="sc-sync-note">…（確率の同期の注記。日次では触らない）…</div>
   <div class="sc-ai-note">…（AI推定の注記。日次では触らない）…</div>
 </div>
 ```
 
-- 日付は2か所（`sc-update-date` と `sc-sync-note`）。両方を当日にする
+- 日付を書くのは `sc-update-date` の1か所だけ。ヘッダーと同じ日時にする
+- `sc-sync-note` は日次では触らない・**日付を書かない**（2026-10-07〜。確率がいつの値かは、JS が同期元の `updated_at` を `#sc-sync-at` に入れる）
 - 矢印（→・↑・↓）は `<span class="sc-trend">` の中の文字だけを変える
 - `sc-ai-note`・`sc-ai-variance`・`#sc-ctx-note` は日次では触らない（`#sc-ctx-note` は JS が出し入れする）
 
@@ -506,8 +507,10 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   <li>① <strong>焦点1</strong></li>
   …
 </ul>
-<span class="label-scenario">分析：2026年9月29日 09:12 JST情勢分析</span>
+<span class="label-scenario">分析</span>
 ```
+
+- ラベルは「分析」の一語のまま。**日付を書かない**（2026-10-07〜。同じ区域の `sc-update-date` と重複していたため外した）
 
 - `<li>` と `<strong>` にクラスも style も付けない（色は `.sc-focus-list` が決める）。見出しは「🔍 次の焦点 N つ」を件数に合わせる
 - `tools/validate_daily.py` が「シナリオ（`<!-- SCENARIOS -->`〜`<!-- STATS -->`）のインライン style」を WARN で確認する
@@ -604,7 +607,8 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - 警戒レベル表示：`<span class="badge-item badge-alert">警戒レベル：最高</span>` ← 情勢に応じて「最高／高／中」を変える。
   **括弧書きの要約・絵文字を足さない**（2026-09-25〜。要約は30秒カラムに書く。以前は約440字の要約が入り、スマホで冒頭を占領していた）
 - 更新日時表示（例：📅 2026年4月17日 11:12 JST）← 当日の JST 時刻に更新
-- 危機の日数（`#blockade-days`・表示は「危機N日目（2/28〜）」）はページの JS が計算するので**書き換えない**
+- 危機の日数（`#blockade-days`・表示は「危機N日目（2/28〜）」）は、**HTML の静的な数字を毎回書き換える**（上の「本体ヘッダーの『危機N日目』の数字も毎回書き換える」のとおり）。
+  画面の表示はページの JS が計算して上書きするが、HTML の数字は JS が動かないときの予備として残る。直後の JS は触らない
   - 2026-02-28（開戦日）を1日目とした日数。**特定の封鎖の日数ではない**（2026-10-02 に「封鎖N日目」から改名。`tools/blockade-term-policy.md`）
   - 更新履歴・`update_log.json`・`archive_timeline.json` の本文に日数を書く場合も「危機N日目」と書く。「封鎖N日目」「二重封鎖N日目」とは書かない
   - 「封鎖」と書くときは必ず主語を付ける（`/content-style-guide` の「『封鎖』には必ず主語を付ける」）
@@ -778,12 +782,14 @@ hormuz-data- は**別リポジトリ**なので、hormuz-map の日次コミッ�
 
 ## JSON-LD dateModified の更新（毎回必須）
 
-docs/hormuz/index.html 内の以下の行を本日のJST日付（YYYY-MM-DD）に更新すること：
+docs/hormuz/index.html 内の以下の行を、ヘッダーと同じ日時（JST・時刻つき）に更新すること：
 
-  "dateModified": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DDTHH:MM:00+09:00",
 
 例：
-  "dateModified": "2026-05-21",
+  "dateModified": "2026-10-07T07:29:00+09:00",
+
+日付だけ（`"2026-10-07"`）では書かない。`validate_daily.py` は時刻つきの形で読む。
 
 ※ この行を更新し忘れると、Googleに「更新なし」と判断される。
 

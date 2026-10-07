@@ -800,6 +800,10 @@ def check_log_wording(html: str, base: str) -> None:
 UNRESOLVED_WORDS = ("終値かは未確認", "終値未確認", "食い違", "未解消")
 PAT_TICKER_TEXT = re.compile(r'<span class="ticker-text">(.*?)</span>', re.S)
 PAT_SC_UPDATE = re.compile(r'<div class="sc-update">.*?<div class="sc-sync-note">', re.S)
+PAT_SC_UPDATE_DATE = re.compile(r'sc-update-date">\s*📊\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
+PAT_LOG_FIRST = re.compile(r'<span class="log-date">(\d{4})/(\d{2})/(\d{2})\s+(\d{1,2}:\d{2})</span>')
+PAT_SC_SYNC_NOTE = re.compile(r'<div class="sc-sync-note">(.*?)</div>', re.S)
+PAT_SC_FOOTER_LABEL = re.compile(r'<div class="sc-footer">.*?<span class="label-scenario">(.*?)</span>\s*</div>', re.S)
 
 
 def check_unresolved(html: str) -> None:
@@ -824,6 +828,46 @@ def check_unresolved(html: str) -> None:
                  "裏取り（daily-site-update「2.5 裏取り」）で解消して書き直すか、記述を外す")
         else:
             ok(f"{label}に未解消の表記なし")
+
+
+def check_scenario_dates(html: str, base: str) -> None:
+    """シナリオ区域と更新履歴の日時（②' PR B「日時の一元化」・2026-10-07 追加）。
+
+    ページをいつ更新したかの正本はヘッダー。シナリオの補足バナーと更新履歴の先頭は、
+    区域の更新時刻として残したので、ヘッダーと同じ日時かを見る。
+    シナリオの注記（sc-sync-note）とフッターのラベルには日付を書かない
+    （確率の時点は JS が同期元の updated_at から出す）。書いてあれば NG。
+    """
+    h = PAT_HEADER.search(html)
+    head_time = h.group(4).zfill(5) if h else None
+    for label, pat in (("シナリオの補足バナーの日時", PAT_SC_UPDATE_DATE), ("更新履歴の先頭の日時", PAT_LOG_FIRST)):
+        m = pat.search(html)
+        if not m:
+            ng(f"{label}を検出できませんでした（構造が変わった可能性）")
+            continue
+        got, tm = ymd(*m.groups()[:3]), m.group(4).zfill(5)
+        if got != base:
+            ng(f"{label}が基準日と違います: {got}（基準 {base}）")
+        elif head_time and tm != head_time:
+            warn(f"{label}の時刻 {tm} がヘッダーの {head_time} と違います（同じ更新なら揃える）")
+        else:
+            ok(f"{label} {got} {tm}")
+    m = PAT_SC_SYNC_NOTE.search(html)
+    if not m:
+        ng("シナリオの注記（div.sc-sync-note）を検出できませんでした（構造が変わった可能性）")
+    elif re.search(r"\d{4}年\d{1,2}月\d{1,2}日", m.group(1)):
+        ng("シナリオの注記（sc-sync-note）に日付が書かれています。日付は書かない（JS が同期元の updated_at から出す）")
+    elif 'id="sc-sync-at"' not in m.group(1):
+        ng("シナリオの注記（sc-sync-note）に <span id=\"sc-sync-at\"></span> がありません（JS が確率の時点を入れる場所）")
+    else:
+        ok("シナリオの注記に日付の手書きなし（時点は JS が入れる）")
+    m = PAT_SC_FOOTER_LABEL.search(html)
+    if not m:
+        warn("シナリオのフッターのラベル（.sc-footer .label-scenario）を検出できませんでした")
+    elif re.search(r"\d", m.group(1)):
+        ng(f"シナリオのフッターのラベルに日付が書かれています（「{m.group(1).strip()[:30]}」）。「分析」の一語だけにする")
+    else:
+        ok("シナリオのフッターのラベルに日付なし")
 
 
 def check_crisis_day(html: str, base: str) -> None:
@@ -995,6 +1039,7 @@ def main() -> int:
     check_ticker_comment(html, base)
     check_hub_updated(html, base)
     check_crisis_day(html, base)
+    check_scenario_dates(html, base)
     check_upcoming(html)
     check_log_wording(html, base)
     check_route_freshness(html, base)

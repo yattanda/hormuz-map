@@ -11,12 +11,18 @@ description: Content writing rules for media selection, date formats, and termin
 
 ## 日付フォーマット統一
 
-すべての日付表示は以下のフォーマットで統一する。
+日付の書き方は次の3つに絞る（2026-10-07〜・`tools/display-unify-design.md` K5）。**新しく書く分から揃える。過去の記録は書き換えない。**
 
-```
-YYYY年MM月DD日 HH:MM 日本時間JST
-例：2026年4月19日 12:00 日本時間JST
-```
+| 使う場面 | 形 | 例 |
+|---|---|---|
+| (i) ページ・区域をいつ更新したか | `YYYY年M月D日 HH:MM JST` | `2026年10月6日 09:43 JST` |
+| (ii) 文中の短い形（出来事の日・出典の日付） | `M/D HH:MM JST`。日付だけなら `M/D` | `10/6 09:43 JST`・`10/6` |
+| (iii) 数値がいつ時点か | `YYYY年M月D日時点` | `2026年9月29日時点` |
+
+- 月・日はゼロ埋めしない。時刻は24時間制で `HH:MM`
+- 機械が読む値は ISO 形式（`dateModified` は `2026-10-06T09:43:00+09:00`、`<time datetime>`・sitemap の `lastmod` は `2026-10-06`）
+- 既存のまま変えない例外：`news_data.json` の `updated`（`2026年10月6日 09:43 日本時間JST`。JS と検査がこの形で読む）、
+  更新履歴の `log-date`（`2026/10/06 09:43`）、TICKER とハブの `M/D HH:MM`
 
 - タイムスタンプの日付は必ずユーザーがプロンプトで明示したものを使用する
 - Claude が自動推測した日付は使わない

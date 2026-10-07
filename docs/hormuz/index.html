@@ -2644,7 +2644,7 @@ document.addEventListener('keydown', function(e) {
   🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↑</span> — トランプ氏は10/3に「決断を下す」「簡単な道か厳しい道か」と述べ、国防長官は「あらゆる選択肢」を維持。第3空母と約1万人の増派も進むが、決断の中身は未公表で、新たな大規模攻撃は確認されていない<br>
   <strong class="sc-update-caveat">トランプ氏の発言は「決断を下す」「可能」にとどまり攻撃の決定ではない。Farsの主張とイエメン政府側の制圧の主張はいずれも一方当事者のもので、独立の出典で確認できていない。10/5の被弾は船名がOn Peaceと判明したが、攻撃主体は明らかになっていない。イエメンの戦況は当事者の主張で、フーシ派は政府軍の前進を否定している。断定的な方向転換とはせず、一次情報の確認を待つ。</strong><br>
   <div class="sc-sync-note">
-    各シナリオ確率は 2026年10月7日 07:29 JST 時点での分析に基づく自動同期
+    A〜Dの確率は、ダッシュボードのデータをページの読み込み時に同期しています<span id="sc-sync-at"></span>
   </div>
   <div class="sc-ai-note">
     <span class="label-ai">AI推定</span><strong>A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
@@ -2703,7 +2703,7 @@ document.addEventListener('keydown', function(e) {
       <li>④ <strong>流量の回復の実態（Kplerは9月の月間を戦前の8割弱、9月最終週の4日間を戦前の平均超えとする）と、イエメン政府側の前進の主張（フーシ派は否定）・ヤンブーの積み出しがルートBにどう響くか</strong></li>
       <li>⑤ <strong>原油価格の動向（10/6終値：ブレント12月物100.58ドル・WTI11月物89.44ドル。Reuters・Rigzone）</strong></li>
     </ul>
-    <span class="label-scenario">分析：2026年10月7日 07:29 JST情勢分析</span>
+    <span class="label-scenario">分析</span>
   </div>
 
 </div>
@@ -4354,7 +4354,6 @@ const Legend = L.Control.extend({
         -->
 
         <div class="leg-note">💡 各マーカー・ラインをクリックで詳細表示</div>
-        <div class="leg-note" style="color:#475569;margin-top:4px;">最終更新：2026/04/13 07:00 JST</div>
       </div>
       <div class="legend-close-wrap">
         <button class="legend-toggle-btn" onclick="toggleLegend(event)" id="legend-btn-close">閉じる</button>
@@ -4671,6 +4670,15 @@ function syncScenarioFromDashboard() {
         const pct = pctMap[id];
         if (el && pct !== undefined && pct !== null) el.textContent = `約${pct}%`;
       });
+
+      // 確率がいつの値かを、同期元の updated_at から出す（HTML に日付を書かない。日次更新では触らない）
+      const at = document.getElementById('sc-sync-at');
+      const t = Date.parse(d.updated_at || '');
+      if (at && !isNaN(t)) {
+        const j = new Date(t + 9 * 3600000);  // JST の年月日・時刻を getUTC* で読む（閲覧者の時間帯に依存させない）
+        const p2 = n => String(n).padStart(2, '0');
+        at.textContent = `（最終取得：${j.getUTCFullYear()}年${j.getUTCMonth() + 1}月${j.getUTCDate()}日 ${p2(j.getUTCHours())}:${p2(j.getUTCMinutes())} JST）`;
+      }
 
       // 推計に与えた前提（hormuz-data- の data/context.json）が古い場合に読者へ伝える
       const note = document.getElementById('sc-ctx-note');

@@ -3143,6 +3143,24 @@
           "sourceLabel": "Euronews（10/6）"
         }
       ]
+    },
+    {
+      "date": "2026-10-08",
+      "dateLabel": "2026/10/08 07:01",
+      "blockadeDay": 223,
+      "summary": "【重大更新】The National（10/7）・Al Jazeera（10/7）：イエメン政府の運輸省は、10/7（水）夜明け頃にアデン国際空港へ弾道ミサイル2発とドローン数機が撃ち込まれたと発表（死傷者の報告なし。Al Jazeeraは「少なくとも弾道ミサイル2発」）。フーシ派はサウジ軍の物資を標的にしたと主張。サウジ主導連合はリヤド北方で弾道ミサイル1発を迎撃と発表（リヤドの空港の被害は確認中）・gCaptain（10/7・Reuters）：9/28〜10/5の週のホルムズ周辺のタンカー攻撃は少なくとも12件で開戦以降最多（海事セキュリティ筋3者の集計・IMOの記録は9件）・原油価格は10/6終値（ブレント12月物100.58ドル・WTI11月物89.44ドル）を据え置き・日本関係船は残り4隻で変化なし（10/8確認）・危機223日目・ニュース2件更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新",
+      "relatedNews": [
+        {
+          "title": "イエメン政府の運輸省、アデン国際空港へのミサイル・ドローン攻撃を発表——フーシ派はサウジ軍の物資を標的にしたと主張、リヤド北方では連合軍がミサイル1発を迎撃",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
+          "sourceLabel": "The National（10/7）"
+        },
+        {
+          "title": "ホルムズ周辺のタンカー攻撃、9/28〜10/5の週に少なくとも12件で開戦以降最多——海事セキュリティ筋3者の集計（IMOの記録では9件）",
+          "url": "https://gcaptain.com/attacks-on-tankers-in-hormuz-hit-highest-of-any-week-since-start-of-iran-war-sources-say/",
+          "sourceLabel": "gCaptain（10/7・Reuters配信）"
+        }
+      ]
     }
   ]
 }

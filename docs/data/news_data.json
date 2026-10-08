@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月08日 10:52 日本時間JST",
+  "updated": "2026年10月09日 08:07 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-time-houthi-riyadh-1008",
+      "title": "フーシ派がリヤド空港への再攻撃を主張、サウジ側は未確認——先の攻撃の死傷者はサウジ当局が発表",
+      "body": "TIME（10/8）によれば、フーシ派は10/8（木）にリヤドのキング・ハリド国際空港を標的にしたと主張したが、サウジ側はこの木曜の攻撃を確認していない。同記事は、先立つ攻撃（火・水曜。当局は各攻撃の日付を明示していない）の被害として、サウジ当局がリヤド空港への攻撃でスーダン人1人が死亡しサウジ国民5人が負傷、民間航空当局が水曜にアブハ国際空港への攻撃で2人が死亡し28人が負傷したと発表したと伝える。同記事は、空港攻撃をフーシ派が繰り返し用いる戦術と位置づける。",
+      "sourceLabel": "TIME（10/8）",
+      "date": "2026年10月8日（現地）",
+      "label": "🇾🇪 10/8 フーシ派がリヤド空港再攻撃を主張・サウジ空港の死傷者",
+      "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-rigzone-oil-surge-1008",
+      "title": "原油が急伸、ブレント12月物は4.1%高の104.28ドルで取引終了——Bloomberg「1か月で最大の上げ幅」",
+      "body": "Rigzone配信のBloomberg記事（10/8 米東部時間16:11）によれば、10/8（木）のニューヨーク市場でWTI11月物は3.6%高の1バレル91.49ドル、ブレント12月物は4.1%高の104.28ドルで取引を終えた（原文は「settle」）。Bloombergは、イランによる新たなタンカー攻撃（Bloombergの表現）が中東からの最近の流量回復を妨げかねないことと、今年最初の大西洋のハリケーンに伴う減産が相場を押し上げたと伝える。investingLive（10/8）もブレントは約104ドル、WTIは約91.5ドルで引けたと伝え、数値は一致する（同記事は端数を丸めている）。",
+      "sourceLabel": "Bloomberg配信（Rigzone 10/8）・investingLive",
+      "date": "2026年10月8日（現地）",
+      "label": "🛢️ 10/8 ブレント104.28ドル・WTI91.49ドル（終値）",
+      "url": "https://www.rigzone.com/news/oil_surges_as_iran_tanker_attacks_escalate-08-oct-2026-184807-article",
+      "isLatest": false
+    },
     {
       "id": "latest-dpa-qatar-tanker-1007",
       "title": "カタール北方のペルシャ湾でタンカーが複数の飛翔体を受け、死傷者の報告——UKMTO警報158-26、人数・船名・攻撃主体は未公表",
@@ -10,7 +30,7 @@
       "date": "2026年10月7日（現地）",
       "label": "⚓ 10/7 カタール北方でタンカー被弾・死傷者の報告",
       "url": "https://www.yahoo.com/news/world/articles/tanker-hit-several-projectiles-gulf-230329900.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-national-aden-1007",
@@ -21,29 +41,27 @@
       "label": "🇾🇪 10/7 アデン空港攻撃・リヤド北方でミサイル迎撃",
       "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
       "isLatest": false
-    },
-    {
-      "id": "latest-gcaptain-week12-1007",
-      "title": "ホルムズ周辺のタンカー攻撃、9/28〜10/5の週に少なくとも12件で開戦以降最多——海事セキュリティ筋3者の集計（IMOの記録では9件）",
-      "body": "gCaptain（10/7・Reuters配信）によれば、海事セキュリティ筋3者の集計で、9/28〜10/5の週に、ホルムズ海峡周辺で原油・LNG・LPGタンカーへの攻撃が少なくとも12件あり、2/28の戦争開始以降、1週間の件数として最多だった。国際海事機関（IMO）の記録では同じ週の件数は9件で、集計元が異なるため単純に比べられない（記事は、IMOは事案の検証と記録に時間がかかると説明している）。記事が挙げる最も近い週は7/13の週（IMOデータで8件）。本サイトの個別事案の累計は、主要媒体が数えていないため据え置く。",
-      "sourceLabel": "gCaptain（10/7・Reuters配信）",
-      "date": "2026年10月7日（現地）",
-      "label": "⚓ 10/7 タンカー攻撃が週12件・開戦以降最多",
-      "url": "https://gcaptain.com/attacks-on-tankers-in-hormuz-hit-highest-of-any-week-since-start-of-iran-war-sources-say/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-gcaptain-onpeace-1006",
-      "title": "ホルムズ海峡で被弾したタンカーはパナマ船籍「On Peace」——乗員19人のうち12人が負傷、インド政府は攻撃主体を特定せず",
-      "body": "gCaptain（10/6）によれば、10/5 16:37 UTC（日本時間10/6 01:37）に飛翔体を受けたのは、パナマ船籍のアフラマックス「On Peace」だった。乗員19人（うち17人がインド人）のうち12人（インド人11人）が負傷し、オマーン・ハサブへ搬送されて治療を受けた。同記事は、インド政府が攻撃主体を特定していないと伝える。同記事はまた、別の事案として、UKMTOの警報157-26が、10/5に海峡を出る側の石油タンカー1隻が正体不明の飛翔体を受けたと報告したと書く（遅れての報告で、負傷者の情報はない）。157-26については、UKMTO公式サイト（Recent Incidents）で警報の本文を確認した（主要媒体の報道は未確認）。UKMTOの被弾報告の累計は、主要媒体が数えていないため据え置く（少なくとも6隻）。",
-      "sourceLabel": "gCaptain（10/6）",
-      "date": "2026年10月6日（現地）",
-      "label": "⚓ 10/6 On Peace被弾・乗員12人負傷",
-      "url": "https://gcaptain.com/a-dozen-seafarers-injured-in-strait-of-hormuz-tanker-attack-india-says/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-time-saudi-airports-1008",
+      "titleJa": "【TIME】フーシ派、リヤド空港への再攻撃を主張——サウジ当局は先の空港攻撃でリヤド1人・アブハ2人の死亡を発表",
+      "titleEn": "Houthi rebels target Saudi airports (TIME, Oct 8)",
+      "title": "【TIME】フーシ派、リヤド空港への再攻撃を主張——サウジ当局は先の空港攻撃でリヤド1人・アブハ2人の死亡を発表",
+      "country": "サウジアラビア／イエメン",
+      "media": "TIME",
+      "source": "TIME",
+      "date": "2026年10月8日（現地）",
+      "summary": "TIME（10/8）は、フーシ派が10/8（木）にリヤドのキング・ハリド国際空港を標的にしたと主張し、サウジ側は確認していないと伝えた。先立つ攻撃では、サウジ当局がリヤド空港でスーダン人1人の死亡、民間航空当局がアブハ国際空港で2人の死亡と28人の負傷を発表した。同記事は、空港攻撃をフーシ派が繰り返し用いる戦術と位置づける。",
+      "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-national-airports-1007",
       "titleJa": "【The National】フーシ派、サウジとイエメンの空港への夜明けのドローン・ミサイル攻撃を主張——アデン空港は運輸省が攻撃を発表",
@@ -55,7 +73,7 @@
       "date": "2026年10月7日（現地）",
       "summary": "The National（10/7）は、イエメン政府の運輸省が、10/7の夜明け頃にアデン国際空港へ弾道ミサイル2発とドローン数機が撃ち込まれたと発表し、死傷者の報告はないと伝えた。フーシ派は空港近くのサウジ軍の物資を標的にしたと主張した。同記事は、リヤドのキング・ハリド国際空港の発着が水曜朝に1時間以上止まったとも伝える。サウジ側の確認は、アデンの件については記事に書かれていない。",
       "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1736,6 +1754,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月9日",
+      "items": [
+        {
+          "id": "latest-gcaptain-week12-1007",
+          "title": "ホルムズ周辺のタンカー攻撃、9/28〜10/5の週に少なくとも12件で開戦以降最多——海事セキュリティ筋3者の集計（IMOの記録では9件）",
+          "body": "gCaptain（10/7・Reuters配信）によれば、海事セキュリティ筋3者の集計で、9/28〜10/5の週に、ホルムズ海峡周辺で原油・LNG・LPGタンカーへの攻撃が少なくとも12件あり、2/28の戦争開始以降、1週間の件数として最多だった。国際海事機関（IMO）の記録では同じ週の件数は9件で、集計元が異なるため単純に比べられない（記事は、IMOは事案の検証と記録に時間がかかると説明している）。記事が挙げる最も近い週は7/13の週（IMOデータで8件）。本サイトの個別事案の累計は、主要媒体が数えていないため据え置く。",
+          "sourceLabel": "gCaptain（10/7・Reuters配信）",
+          "date": "2026年10月7日（現地）",
+          "label": "⚓ 10/7 タンカー攻撃が週12件・開戦以降最多",
+          "url": "https://gcaptain.com/attacks-on-tankers-in-hormuz-hit-highest-of-any-week-since-start-of-iran-war-sources-say/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-gcaptain-onpeace-1006",
+          "title": "ホルムズ海峡で被弾したタンカーはパナマ船籍「On Peace」——乗員19人のうち12人が負傷、インド政府は攻撃主体を特定せず",
+          "body": "gCaptain（10/6）によれば、10/5 16:37 UTC（日本時間10/6 01:37）に飛翔体を受けたのは、パナマ船籍のアフラマックス「On Peace」だった。乗員19人（うち17人がインド人）のうち12人（インド人11人）が負傷し、オマーン・ハサブへ搬送されて治療を受けた。同記事は、インド政府が攻撃主体を特定していないと伝える。同記事はまた、別の事案として、UKMTOの警報157-26が、10/5に海峡を出る側の石油タンカー1隻が正体不明の飛翔体を受けたと報告したと書く（遅れての報告で、負傷者の情報はない）。157-26については、UKMTO公式サイト（Recent Incidents）で警報の本文を確認した（主要媒体の報道は未確認）。UKMTOの被弾報告の累計は、主要媒体が数えていないため据え置く（少なくとも6隻）。",
+          "sourceLabel": "gCaptain（10/6）",
+          "date": "2026年10月6日（現地）",
+          "label": "⚓ 10/6 On Peace被弾・乗員12人負傷",
+          "url": "https://gcaptain.com/a-dozen-seafarers-injured-in-strait-of-hormuz-tanker-attack-india-says/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月8日",
       "items": [

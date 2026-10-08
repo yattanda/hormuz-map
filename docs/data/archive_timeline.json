@@ -3161,6 +3161,24 @@
           "sourceLabel": "gCaptain（10/7・Reuters配信）"
         }
       ]
+    },
+    {
+      "date": "2026-10-09",
+      "dateLabel": "2026/10/09 08:07",
+      "blockadeDay": 224,
+      "summary": "【重大更新】TASS（10/9）：イランのFars通信が、軍筋の話としてホルムズ海峡南側の航路でタンカーが機雷に接触したと報じた（船数不明・死傷者の報告なし・独立した裏付けなし）・TIME（10/8）：フーシ派がリヤド空港への再攻撃を主張（サウジ側は未確認）、先の攻撃の被害としてサウジ当局がリヤド空港でスーダン人1人の死亡、アブハ空港で2人の死亡・28人の負傷を発表・原油は10/8終値でブレント12月物104.28ドル（+4.1%）・WTI11月物91.49ドル（+3.6%）（Bloomberg配信・Rigzone。investingLiveも約104ドル・約91.5ドルで一致）・Newsquawk（10/8）：UKMTOが10/6発生のタンカー被弾を遅延報告（二次情報・UKMTO公式の本文は未確認・件数には加算せず）・CBS News（10/8）：トランプ氏がイランとの「productive conversations」に言及（具体策は示されず）、米財務省がイランの石油関連タンカー17隻を制裁・日本関係船は残り4隻で変化なし（10/9確認）・危機224日目・ニュース2件更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新",
+      "relatedNews": [
+        {
+          "title": "フーシ派がリヤド空港への再攻撃を主張、サウジ側は未確認——先の攻撃の死傷者はサウジ当局が発表",
+          "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
+          "sourceLabel": "TIME（10/8）"
+        },
+        {
+          "title": "原油が急伸、ブレント12月物は4.1%高の104.28ドルで取引終了——Bloomberg「1か月で最大の上げ幅」",
+          "url": "https://www.rigzone.com/news/oil_surges_as_iran_tanker_attacks_escalate-08-oct-2026-184807-article",
+          "sourceLabel": "Bloomberg配信（Rigzone 10/8）"
+        }
+      ]
     }
   ]
 }

@@ -54,6 +54,9 @@
     （確率の時点は JS が `manual-update.json` の `updated_at` を `#sc-sync-at` に入れる。日次の手数は2か所減）。地図の凡例の「最終更新：2026/04/13」は削除。
     `validate_daily.py` に `check_scenario_dates()`。日付の書式は3つに絞り、正本は `/content-style-guide`。ヘッダーの日時は `<time datetime>` にしていない。
     残りは PR C・D と `/editorial/` の暫定注記。記録は `tools/display-unify-design.md` §3-2-R
+  - 【2026-10-08】**②' PR C「値と状態の表示」を公開**（PR #62・merge commit `0232fd2`・本番確認済み）。JS が値を入れる場所の初期値は「読み込み中…」（シナリオ確率は「…」）、
+    取得できないときは「取得できず」／「取得できませんでした」（シナリオは注記も差し替える）。「内訳確認中」は JS が `SHIP_CONFIG.date` から「未公表（◯時点）」と出す。
+    日本向けフローの「基準日：」は「対象月：」に。**日次はこれらの場所を触らない**（`validate_daily.py` の `check_state_labels()` が NG にする・OK 58）。記録は `tools/display-unify-design.md` §3-3-R
 - **並行して進行中**: ~~日次更新の Claude Code 主体化（2026-09-02 着手・フェーズ0〜2完了。旧経路はバックアップとして保持）~~
   → 移行は実質完了（フェーズ0〜2完了・クラウドセッションが主経路）。旧経路はバックアップとして保持（2026-09-14 決定）
 

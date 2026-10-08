@@ -1,7 +1,17 @@
 {
-  "updated": "2026年10月08日 07:01 日本時間JST",
+  "updated": "2026年10月08日 10:52 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-dpa-qatar-tanker-1007",
+      "title": "カタール北方のペルシャ湾でタンカーが複数の飛翔体を受け、死傷者の報告——UKMTO警報158-26、人数・船名・攻撃主体は未公表",
+      "body": "UKMTOは警報158-26（10/8付）で、10/7 19:00（時間帯の記載なし）にカタールのマディナト・アッシュ・シャマールの北51海里でタンカーが複数の飛翔体を受け、死傷者が報告されていると発表した（UKMTO公式サイトで警報の本文を確認）。DPA（10/7）は、現場をカタールの北約90キロのペルシャ湾とし、UKMTOは死者か負傷者かを明らかにしていないと伝える。船名・船籍・積み荷と攻撃主体は公表されていない。現場はホルムズ海峡の中ではなく、ペルシャ湾の内側にあたる。当局が調査中で、UKMTOは付近の船舶に注意して航行するよう求めている。",
+      "sourceLabel": "DPA（10/7）・UKMTO警報158-26",
+      "date": "2026年10月7日（現地）",
+      "label": "⚓ 10/7 カタール北方でタンカー被弾・死傷者の報告",
+      "url": "https://www.yahoo.com/news/world/articles/tanker-hit-several-projectiles-gulf-230329900.html",
+      "isLatest": true
+    },
     {
       "id": "latest-national-aden-1007",
       "title": "イエメン政府の運輸省、アデン国際空港へのミサイル・ドローン攻撃を発表——フーシ派はサウジ軍の物資を標的にしたと主張、リヤド北方では連合軍がミサイル1発を迎撃",
@@ -10,7 +20,7 @@
       "date": "2026年10月7日（現地）",
       "label": "🇾🇪 10/7 アデン空港攻撃・リヤド北方でミサイル迎撃",
       "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-gcaptain-week12-1007",
@@ -30,16 +40,6 @@
       "date": "2026年10月6日（現地）",
       "label": "⚓ 10/6 On Peace被弾・乗員12人負傷",
       "url": "https://gcaptain.com/a-dozen-seafarers-injured-in-strait-of-hormuz-tanker-attack-india-says/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-euronews-yemen-1006",
-      "title": "イエメン政府側がドゥバーブなどの奪還を報じられる——フーシ派は否定、リヤドの空港と製油所への攻撃を主張",
-      "body": "ABC（10/6）によれば、サウジ主導連合の報道官は、戦闘機100機以上を投入し、バブエルマンデブ海峡の「航空保護」を確保したと述べた。これに対しフーシ派は、政府軍が前進したとの主張を「全くの虚偽」と否定し、サウジ領空を飛ぶ航空機への攻撃を警告した。Euronews（10/6）は、政府側の勢力が10/5（月）に海峡のすぐ北のドゥバーブと、バブ、ハデイドの町を奪還したと報じ、目撃者は政府軍の戦車と部隊が町に入るのを見たと証言したとする。同記事は、フーシ派の軍報道官が、サウジの首都リヤドのキング・ハリド国際空港と石油精製所を弾道ミサイル・巡航ミサイル・ドローンで攻撃したと主張したとも伝える（サウジ当局の確認は確認できていない）。領土の掌握は当事者の主張で、独立した検証は確認できていない。",
-      "sourceLabel": "Euronews（10/6）",
-      "date": "2026年10月6日（現地）",
-      "label": "🇾🇪 10/6 イエメン戦況・フーシ派が否定",
-      "url": "https://www.euronews.com/2026/10/06/yemen-government-forces-advance-on-bab-el-mandeb-in-offensive-against-houthis",
       "isLatest": false
     }
   ],
@@ -1739,6 +1739,16 @@
     {
       "batchLabel": "2026年10月8日",
       "items": [
+        {
+          "id": "latest-euronews-yemen-1006",
+          "title": "イエメン政府側がドゥバーブなどの奪還を報じられる——フーシ派は否定、リヤドの空港と製油所への攻撃を主張",
+          "body": "ABC（10/6）によれば、サウジ主導連合の報道官は、戦闘機100機以上を投入し、バブエルマンデブ海峡の「航空保護」を確保したと述べた。これに対しフーシ派は、政府軍が前進したとの主張を「全くの虚偽」と否定し、サウジ領空を飛ぶ航空機への攻撃を警告した。Euronews（10/6）は、政府側の勢力が10/5（月）に海峡のすぐ北のドゥバーブと、バブ、ハデイドの町を奪還したと報じ、目撃者は政府軍の戦車と部隊が町に入るのを見たと証言したとする。同記事は、フーシ派の軍報道官が、サウジの首都リヤドのキング・ハリド国際空港と石油精製所を弾道ミサイル・巡航ミサイル・ドローンで攻撃したと主張したとも伝える（サウジ当局の確認は確認できていない）。領土の掌握は当事者の主張で、独立した検証は確認できていない。",
+          "sourceLabel": "Euronews（10/6）",
+          "date": "2026年10月6日（現地）",
+          "label": "🇾🇪 10/6 イエメン戦況・フーシ派が否定",
+          "url": "https://www.euronews.com/2026/10/06/yemen-government-forces-advance-on-bab-el-mandeb-in-offensive-against-houthis",
+          "isLatest": false
+        },
         {
           "id": "latest-gcaptain-tanker-turnback-1005",
           "title": "ホルムズ海峡でタンカーが飛翔体を受け機関室で火災——IRGCは入域中の別のタンカーに「引き返さなければ攻撃」と命令、攻撃主体は不明",

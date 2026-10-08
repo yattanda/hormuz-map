@@ -899,7 +899,28 @@ def check_state_labels(html: str) -> None:
         ng(f"日本向けフローの初期値が「読み込み中…」ではありません: {'・'.join(bad)}。数値は HTML に書かない（JS が oil-flow.json から入れる）")
     else:
         ok("日本向けフローの初期値は「読み込み中…」（数値の手書きなし）")
-    hits = [w for w in ("内訳確認中", "読み込み中...", "データ読み込みエラー") if w in html]
+    # 同じ PR で型にした、ほかの初期値（JS が入れる場所。日次は触らない）
+    bad = []
+    for label, pat in (("t-stuck", r'<span id="t-stuck">(.*?)</span>'),
+                       ("t-total", r'<span id="t-total">(.*?)</span>'),
+                       ("t-breakdown", r'<span class="stat-row-val" id="t-breakdown">(.*?)</span>'),
+                       ("jf-basis-date", r'<span id="jf-basis-date">(.*?)</span>')):
+        m = re.search(pat, html)
+        if not m:
+            bad.append(f"{label}（検出できず）")
+        elif m.group(1) != "読み込み中…":
+            bad.append(f"{label}「{m.group(1)[:12]}」")
+    units = re.findall(r'<span class="jf-unit"([^>]*)>', html)
+    if len(units) != 4 or any("hidden" not in u for u in units):
+        bad.append(f"jf-unit（4個とも hidden つきのはず。検出 {len(units)}個）")
+    if bad:
+        ng(f"日本関係船・フローの対象月・単位の初期値が型と違います: {'・'.join(bad)}")
+    else:
+        ok("日本関係船・フローの対象月の初期値は「読み込み中…」、単位は hidden")
+    # 外した表記は、表示に出る場所（タグの中身・JS の文字列）だけを見る。
+    # 更新履歴や本文がこの語に触れただけでは NG にしない
+    hits = [w for w in ("内訳確認中", "読み込み中...", "データ読み込みエラー")
+            if re.search(r"[>'\"`]\s*" + re.escape(w), html)]
     if hits:
         ng(f"外した表記が残っています：{'・'.join(hits)}。"
            "「読み込み中…」「取得できませんでした」「内訳は未公表（時点）」の型で書く")

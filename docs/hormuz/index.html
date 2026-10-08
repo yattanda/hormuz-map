@@ -4657,12 +4657,13 @@ function loadNewsData() {
   fetch('/data/news_data.json?t=' + Date.now())
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(data => {
-      renderLatestNews(data);
-      renderArchive(data);
-      renderOsint(data);
+      // 1つの描画が例外を出しても、ほかの枠は描く（取得はできているので、枠ごとに扱う）
+      [renderLatestNews, renderArchive, renderOsint].forEach(fn => {
+        try { fn(data); } catch (e) { console.warn('news render error:', fn.name, e); }
+      });
     })
-    .catch(e => {
-      console.warn('news_data fetch error:', e);
+    .catch(e => console.warn('news_data fetch error:', e))
+    .finally(() => {
       // 「読み込み中…」のまま残っている枠だけを差し替える（描けた枠は消さない）
       ['news-latest-container', 'osint-container'].forEach(id => {
         const c = document.getElementById(id);
@@ -4682,6 +4683,7 @@ function syncScenarioFromDashboard() {
       // シナリオの見出しは HTML 側（日次更新で編集される）を正とし、JS は確率の数値だけを入れる。
       // 以前は innerHTML ごと差し替えていたため、カード見出しと増減矢印が毎回上書きされ、
       // Gemini 側の定義（外交解決／部分封鎖…）と表示上の定義がずれていた。
+      let missing = 0;
       const pctMap = {
         'sc-pct-A': d.scenario.A_diplomacy_pct,
         'sc-pct-B': d.scenario.B_partial_blockade_pct,
@@ -4692,8 +4694,11 @@ function syncScenarioFromDashboard() {
         const el = document.getElementById(id);
         const pct = pctMap[id];
         // 見出しの中は狭いので短い形にする（詳しい文は注記に出す）
-        if (el) el.textContent = (pct !== undefined && pct !== null) ? `約${pct}%` : '取得できず';
+        const has = pct !== undefined && pct !== null;
+        if (!has) missing++;
+        if (el) el.textContent = has ? `約${pct}%` : '取得できず';
       });
+      if (missing === Object.keys(pctMap).length) throw new Error('確率が1つもありません');
       synced = true;
 
       // 確率がいつの値かを、同期元の updated_at から出す（HTML に日付を書かない。日次更新では触らない）
@@ -4704,6 +4709,7 @@ function syncScenarioFromDashboard() {
         const p2 = n => String(n).padStart(2, '0');
         at.textContent = `（最終取得：${j.getUTCFullYear()}年${j.getUTCMonth() + 1}月${j.getUTCDate()}日 ${p2(j.getUTCHours())}:${p2(j.getUTCMinutes())} JST）`;
       }
+      if (at && missing > 0) at.textContent += '。一部の確率は取得できませんでした';
 
       // 推計に与えた前提（hormuz-data- の data/context.json）が古い場合に読者へ伝える
       const note = document.getElementById('sc-ctx-note');
@@ -5446,11 +5452,13 @@ function scrollToJapanFlow(e) {
       if (basisEl) basisEl.textContent = data.updated || FAIL;
       Object.entries(MAP).forEach(([key, ids]) => {
         const r = routes[key];
-        if (!r || typeof r.bpd !== 'number') { setCell(ids, FAIL_CELL, false, ''); return; }
+        // 値が無い・数値として読めないときは失敗の表示（null・空文字を 0 と読まない）
+        const bpd = (r && r.bpd !== null && r.bpd !== '') ? Number(r.bpd) : NaN;
+        if (!isFinite(bpd)) { setCell(ids, FAIL_CELL, false, ''); return; }
         // 0 のとき：old・D は「停止中」、ほかは 0 をそのまま出す。隻数が 0 の行は出さない
-        const stopped = r.bpd <= 0 && !!ids.zero;
+        const stopped = bpd <= 0 && !!ids.zero;
         setCell(ids,
-          stopped ? ids.zero : r.bpd + (ids.unit || ''),
+          stopped ? ids.zero : bpd + (ids.unit || ''),
           !stopped,
           r.tankers_week > 0 ? '🚢×' + r.tankers_week + ' 隻/週' : '');
       });

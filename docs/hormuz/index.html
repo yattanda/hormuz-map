@@ -722,6 +722,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .sec-block--left { text-align:left; }
 .sec-block--news { margin:24px 0; text-align:left; }
 .loading-note { color:#64748b; font-size:var(--fs-sm); padding:16px; }
+.loading-note--error { color:#f87171; }
 
 /* その他の検討中ルート（折りたたみ）。開閉の状態は onclick が #other-routes-body の style.display で読む */
 .or-wrap { margin-top:16px; margin-bottom:8px; }
@@ -2248,18 +2249,18 @@ document.addEventListener('keydown', function(e) {
     <div id="tanker-stats">
       <div class="stat-row">
         <span>🔴 足止め中</span>
-        <span id="t-stuck">-</span>
+        <span id="t-stuck">読み込み中…</span>
       </div>
       <div class="stat-row stat-row--breakdown">
         <span>🚢 船種別内訳</span>
-        <span class="stat-row-val">内訳確認中</span>
+        <span class="stat-row-val" id="t-breakdown">読み込み中…</span>
       </div>
       <div class="stat-row">
         <span>合計</span>
-        <span id="t-total">-</span>
+        <span id="t-total">読み込み中…</span>
       </div>
     </div>
-    <div id="tanker-note">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報未公表のため確認中。</div>
+    <div id="tanker-note">※上記の隻数はペルシャ湾内に残る足止め船舶数（開戦時45隻起算）。船種別内訳は一次情報で未公表。</div>
     <div id="tanker-progress-wrap">
       <div id="tanker-progress-bar" style="width:100%"></div>
     </div>
@@ -2311,8 +2312,8 @@ document.addEventListener('keydown', function(e) {
             <small>世界消費の約20%</small>
           </td>
           <td id="jf-td-old" class="jf-col jf-td t-danger">
-            <strong id="jf-old-bpd">停止中</strong><br>
-            <small id="jf-old-tanker" class="t-mute">— 隻/週</small>
+            <strong id="jf-old-bpd">読み込み中…</strong><br>
+            <small id="jf-old-tanker" class="t-mute"></small>
           </td>
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-danger">⚓ 最新 <time datetime="2026-10-08">10/8 07:01 JST</time> 追記：</strong>gCaptain（10/7・Reuters配信）によれば、海事セキュリティ筋3者の集計で、9/28〜10/5の週にホルムズ周辺で原油・LNG・LPGタンカーへの攻撃が少なくとも12件あり、開戦以降で1週間の件数として最多だった（IMOの記録では同じ週9件。集計元が異なる）。通航の実態は、攻撃が続くなかでの回復途上にとどまる。
@@ -2372,8 +2373,8 @@ document.addEventListener('keydown', function(e) {
             <small class="t-warning">⚠️ 9/22に低速で再開・全面復旧は数週間の見方（未検証）</small>
           </td>
           <td id="jf-td-B" class="jf-col jf-td t-danger">
-            <strong id="jf-B-bpd">—</strong> 万BPD<br>
-            <small id="jf-B-tanker" class="t-mute">— 隻/週</small>
+            <strong id="jf-B-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
+            <small id="jf-B-tanker" class="t-mute"></small>
           </td>
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-warning">🇾🇪 最新 <time datetime="2026-10-08">10/8 07:01 JST</time> 追記：</strong>The National（10/7）・Al Jazeera（10/7）によれば、イエメン政府の運輸省は、10/7の夜明け頃にアデン国際空港へ弾道ミサイルとドローンが撃ち込まれたと発表した（死傷者の報告なし）。フーシ派はサウジ軍の物資を標的にしたと主張した。ドゥバーブ・モカなどバブエルマンデブ海峡周辺の戦況、紅海の船舶への新たな攻撃、ヤンブー・東西パイプラインの10/7以降の稼働や被害は、主要媒体の報道を確認できなかった。
@@ -2422,8 +2423,8 @@ document.addEventListener('keydown', function(e) {
             日量 約150〜180万bbl
           </td>
           <td id="jf-td-A" class="jf-col jf-td t-blue">
-            <strong id="jf-A-bpd">—</strong> 万BPD<br>
-            <small id="jf-A-tanker" class="t-mute">— 隻/週</small>
+            <strong id="jf-A-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
+            <small id="jf-A-tanker" class="t-mute"></small>
           </td>
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-neutral">🔁 最新 <time datetime="2026-10-03">10/3 JST</time> 再確認：</strong>フジャイラ港・ADCOPパイプラインについて、9/26の再確認以降の新たな攻撃・操業障害・出荷統計は報道で確認できていない（ADCOPの能力は日量約180万バレル）。
@@ -2459,8 +2460,8 @@ document.addEventListener('keydown', function(e) {
             <small>太平洋直行 約15日</small>
           </td>
           <td id="jf-td-C_US" class="jf-col jf-td t-violet">
-            <strong id="jf-C_US-bpd">—</strong> 万BPD<br>
-            <small id="jf-C_US-tanker" class="t-mute">— 隻/週</small>
+            <strong id="jf-C_US-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
+            <small id="jf-C_US-tanker" class="t-mute"></small>
           </td>
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-neutral">🔁 最新 <time datetime="2026-10-03">10/3 JST</time> 再確認：</strong>米国産・メキシコ産原油の対日輸入について、9/26の再確認以降の新しい統計や政府発表は報道で確認できていない（財務省の8月分は国別の数量が未公表のまま）。
@@ -2491,8 +2492,8 @@ document.addEventListener('keydown', function(e) {
             <small>+40〜45日所要</small>
           </td>
           <td id="jf-td-C_GL" class="jf-col jf-td t-orange">
-            <strong id="jf-C_GL-bpd">—</strong> 万BPD<br>
-            <small id="jf-C_GL-tanker" class="t-mute">— 隻/週</small>
+            <strong id="jf-C_GL-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
+            <small id="jf-C_GL-tanker" class="t-mute"></small>
           </td>
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-neutral">🔁 最新 <time datetime="2026-10-03">10/3 JST</time> 再確認：</strong>ブラジル・西アフリカからの対日調達について、9/26の再確認以降の新しい統計や政府間の動きは報道で確認できていない（国別の8月分内訳は未公表のまま）。
@@ -2522,8 +2523,8 @@ document.addEventListener('keydown', function(e) {
             <small>拿捕リスク大</small>
           </td>
           <td id="jf-td-D" class="jf-col jf-td t-orange">
-            <strong id="jf-D-bpd">停止中</strong><br>
-            <small id="jf-D-tanker" class="t-mute">— 隻/週</small>
+            <strong id="jf-D-bpd">読み込み中…</strong><br>
+            <small id="jf-D-tanker" class="t-mute"></small>
           </td>
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-neutral">🔁 最新 <time datetime="2026-10-03">10/3 JST</time> 再確認：</strong>9/26の再確認以降も、通航料スキームの運用再開や、通航料を払った船舶の通過を伝える新しい報道は確認できていない。
@@ -2559,7 +2560,7 @@ document.addEventListener('keydown', function(e) {
   </div>
   <div class="jf-col jf-note">
     <span class="label-analysis">推定</span>表中の「日本向け（万BPD・隻/週）」の列は<strong class="t-bright">財務省貿易統計の相手国別 原油輸入数量から算出した推計値</strong>です。統計には輸送経路が含まれないため、封鎖下の状況をもとに相手国から経路を推定しています。実際の航路を観測した値ではありません。<br>
-    <span class="jf-note-meta">基準日：<span id="jf-basis-date">—</span>　／　同じ表の他の列（現況詳細・主なリスク・状態）は別に更新しており、基準日が異なります。<br>出典：政府統計の総合窓口(e-Stat)（財務省 普通貿易統計）を加工して作成　／　<a href="https://github.com/yattanda/hormuz-data-/blob/main/docs/oil-flow-method.md" target="_blank" rel="noopener">算出方法（計算式・前提・限界）</a></span>
+    <span class="jf-note-meta">対象月：<span id="jf-basis-date">読み込み中…</span>　／　同じ表の他の列（現況詳細・主なリスク・状態）は別に更新しており、時点が異なります。<br>出典：政府統計の総合窓口(e-Stat)（財務省 普通貿易統計）を加工して作成　／　<a href="https://github.com/yattanda/hormuz-data-/blob/main/docs/oil-flow-method.md" target="_blank" rel="noopener">算出方法（計算式・前提・限界）</a></span>
   </div>
   <div class="route-note">
     ※ EIA（5/12）はホルムズが5月末まで閉鎖継続・6月から通航回復を基本シナリオとして策定。UAE が5/1よりOPEC離脱（スペア生産能力見通しに影響）。
@@ -2670,7 +2671,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ A：外交解決 -->
     <div class="sc-card sc-best">
-      <span class="sc-tag" id="sc-tag-A"><span class="sc-tag-em">シナリオ A</span> ― 段階的MOU履行成功　<span class="sc-tag-em">確率 <span id="sc-pct-A">—</span></span> <span class="sc-trend">→</span></span>
+      <span class="sc-tag" id="sc-tag-A"><span class="sc-tag-em">シナリオ A</span> ― 段階的MOU履行成功　<span class="sc-tag-em">確率 <span id="sc-pct-A">…</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🟢 シナリオA：IMO避難計画成功→核査察スケジュール合意→Hormuz主ルート再開</div>
       <div class="sc-body">
         <p>イラン外相アラグチ氏の「7日間ロードマップ」をトランプ氏は9月26日に「受け入れられない」と述べた。9/30にはイラン政府が米国の回答を受け取ったと発表したが、内容は明かされていない。10/4にはガリバフ国会議長が、米国が7項目の計画を受け入れるまで海峡は閉鎖されたままだと述べ、米側は核問題を先決とする姿勢を崩していない。外交の窓口は閉じていないものの溝は埋まっていない。実現にはイラン側の対応と米側との歩み寄りが不可欠となる。</p>
@@ -2679,7 +2680,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ B：部分的封鎖継続（膠着） -->
     <div class="sc-card sc-mid">
-      <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span class="sc-tag-em">確率 <span id="sc-pct-B">—</span></span> <span class="sc-trend">→</span></span>
+      <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span class="sc-tag-em">確率 <span id="sc-pct-B">…</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🟡 シナリオB：核査察問題長期化→期間延長交渉、機雷除去は先行</div>
       <div class="sc-body">
         <p>ロードマップの拒否（9月26日）、仲介者を通じた会談（9月29日）、米国の回答の受領（9月30日）と外交の往復は続くが、米側の「核問題が先」という姿勢は変わらず、協議は膠着したまま。トランプ氏は10/1公開のインタビュー（9/28収録）で7日間計画を「十分でなかった」とした。Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、WTI11月物は10/2に91.11ドル（−1.9%）、ブレント12月物は102.25ドルで引け（EnergyNow・検索要約）、備蓄放出計画が重しになった。Kplerの速報では9月最終週の4日間に中東の原油輸出が戦前の平均を上回っており（Al Jazeera 10/5）、上の月間の値とは期間と基準が異なる。10/5の終値はブレント12月物100.32ドル、WTI11月物89.43ドルだった（investingLive・Free Malaysia Today）。通航体制そのものを変える決定打はまだなく、イランの対応が次の分かれ目となる。</p>
@@ -2688,7 +2689,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ C：完全封鎖の制度化・経済疲弊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-C"><span class="sc-tag-em">シナリオ C</span> ― イラン・米国による二重封鎖の制度化・経済疲弊深刻化　<span class="sc-tag-em">確率 <span id="sc-pct-C">—</span></span> <span class="sc-trend">→</span></span>
+      <span class="sc-tag" id="sc-tag-C"><span class="sc-tag-em">シナリオ C</span> ― イラン・米国による二重封鎖の制度化・経済疲弊深刻化　<span class="sc-tag-em">確率 <span id="sc-pct-C">…</span></span> <span class="sc-trend">→</span></span>
       <div class="sc-title">🔴 シナリオC：南レバノン大規模衝突再発→Hormuz再閉鎖宣言</div>
       <div class="sc-body">
         <p>イランは9/27に海峡を米国の「経済戦争」終結まで閉鎖すると警告し、IRGC報道官は9/30にも「継続的な軍事紛争」を主張した。イラン・米国による二重封鎖の常態化と経済負担の長期化を示す材料は残るが、Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、サウジ東西パイプラインも日量350万バレルまで復旧して迂回輸送は部分的に戻っている。一方、10/1にはその積出港ヤンブーに飛翔体が着弾して火災が起き（Maritime Executive。主体は不明）、海峡でも9/28以降少なくとも6隻が被弾した（gCaptain）。いずれも公式方針の確定とは言えず、フーシ派によるバブエルマンデブ海峡への脅威と併せ、監視を続ける。</p>
@@ -2697,7 +2698,7 @@ document.addEventListener('keydown', function(e) {
 
     <!-- シナリオ D：軍事エスカレーション・停戦崩壊 -->
     <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・ホルムズ海峡の無期限閉鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">—</span></span> <span class="sc-trend">↑</span></span>
+      <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・ホルムズ海峡の無期限閉鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">…</span></span> <span class="sc-trend">↑</span></span>
       <div class="sc-title">⚫ シナリオD：核査察問題で交渉打ち切り→Hormuz武力制圧→全面戦争再開</div>
       <div class="sc-body">
         <p>トランプ氏は10/1公開のインタビュー（9/28収録）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、第3空母打撃群（セオドア・ルーズベルト）と海兵隊遠征部隊が中東へ向かい、追加で約9,000〜1万人が派遣される（Al Jazeera 10/2）。海峡では9/28以降少なくとも6隻が飛翔体を受けたが、攻撃主体は確認されていない（9/21・9/23の被弾も主体は未特定）。トランプ氏は10/3にも「イランについて決断を下す。簡単な道か厳しい道かだ」と述べ、ヘグセス国防長官は「あらゆる選択肢」を維持するとしたが（Iran International）、決断の中身と時期は示されておらず、新たな大規模攻撃は確認されていない。断定的な判断は避ける。</p>
@@ -2790,8 +2791,13 @@ const SHIP_CONFIG = {
     const grid = document.getElementById('ship-grid');
     grid.innerHTML = '';
 
+    // 船種別の内訳は一次情報で未公表。時点は SHIP_CONFIG.date から出す（日付を2か所に書かない）
+    const breakdown = `未公表（${date}時点）`;
+    const breakdownEl = document.getElementById('t-breakdown');
+    if (breakdownEl) breakdownEl.textContent = breakdown;
+
     const SHIP_TYPES = [
-      { icon: '🚢', count: totalShips, label: '内訳確認中', color: 'rgba(148,163,184,0.9)' },
+      { icon: '🚢', count: totalShips, label: '内訳は' + breakdown, color: 'rgba(148,163,184,0.9)' },
     ];
 
     let idx = 0;
@@ -4649,25 +4655,30 @@ function applyIncidentFold() {
 }
 function loadNewsData() {
   fetch('/data/news_data.json?t=' + Date.now())
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(data => {
       renderLatestNews(data);
       renderArchive(data);
       renderOsint(data);
     })
-    .catch(() => {
-      const c = document.getElementById('news-latest-container');
-      if (c) c.innerHTML = '<div style="color:#f87171;font-size:0.8rem;padding:16px;">データ読み込みエラー</div>';
+    .catch(e => {
+      console.warn('news_data fetch error:', e);
+      // 「読み込み中…」のまま残っている枠だけを差し替える（描けた枠は消さない）
+      ['news-latest-container', 'osint-container'].forEach(id => {
+        const c = document.getElementById(id);
+        if (c && c.querySelector('.loading-note')) c.innerHTML = '<div class="loading-note loading-note--error">取得できませんでした</div>';
+      });
     });
 }
 // ============================================================
 // SCENARIO SYNC（hormuz-data- の manual.json から確率を同期）
 // ============================================================
 function syncScenarioFromDashboard() {
+  let synced = false;
   fetch(SITE_CONFIG.DASHBOARD_BASE + '/data/manual-update.json?t=' + Date.now())
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(d => {
-      if (!d.scenario) return;
+      if (!d.scenario) throw new Error('scenario がありません');
       // シナリオの見出しは HTML 側（日次更新で編集される）を正とし、JS は確率の数値だけを入れる。
       // 以前は innerHTML ごと差し替えていたため、カード見出しと増減矢印が毎回上書きされ、
       // Gemini 側の定義（外交解決／部分封鎖…）と表示上の定義がずれていた。
@@ -4680,8 +4691,10 @@ function syncScenarioFromDashboard() {
       Object.keys(pctMap).forEach(id => {
         const el = document.getElementById(id);
         const pct = pctMap[id];
-        if (el && pct !== undefined && pct !== null) el.textContent = `約${pct}%`;
+        // 見出しの中は狭いので短い形にする（詳しい文は注記に出す）
+        if (el) el.textContent = (pct !== undefined && pct !== null) ? `約${pct}%` : '取得できず';
       });
+      synced = true;
 
       // 確率がいつの値かを、同期元の updated_at から出す（HTML に日付を書かない。日次更新では触らない）
       const at = document.getElementById('sc-sync-at');
@@ -4704,7 +4717,16 @@ function syncScenarioFromDashboard() {
         }
       }
     })
-    .catch(e => console.warn('scenario sync failed:', e));
+    .catch(e => {
+      console.warn('scenario sync failed:', e);
+      if (synced) return;  // 確率を入れたあとの失敗では、入れた値を消さない
+      ['A', 'B', 'C', 'D'].forEach(k => {
+        const el = document.getElementById('sc-pct-' + k);
+        if (el) el.textContent = '取得できず';
+      });
+      const noteEl = document.querySelector('.sc-sync-note');
+      if (noteEl) noteEl.textContent = 'A〜Dの確率は、ダッシュボードのデータを取得できませんでした。時間をおいて再読み込みしてください。';
+    });
 }
 
 // 特別解説コラムのピルに「NEW」「◯月更新」の札を付ける（公開・更新から30日以内のみ）
@@ -5146,7 +5168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="news-column" class="sec-block sec-block--news">
   <h2 class="sec-h2 sec-h2--spaced">📰 関連最新ニュース</h2>
   <div id="news-latest-container">
-    <div class="loading-note">読み込み中...</div>
+    <div class="loading-note">読み込み中…</div>
   </div>
   <button class="news-more-btn" id="news-more-btn" onclick="toggleArchive()">▼ 過去の履歴を見る</button>
   <div id="news-archive-container" style="display:none;"></div>
@@ -5159,7 +5181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </h2>
 
   <div id="osint-container">
-    <div class="loading-note">読み込み中...</div>
+    <div class="loading-note">読み込み中…</div>
   </div>
 </div><!-- /#osint-panel -->
 <!-- /OSINT PANEL -->
@@ -5392,33 +5414,53 @@ function scrollToJapanFlow(e) {
 (function loadRouteTableFlow() {
   const OIL_FLOW_URL = SITE_CONFIG.DASHBOARD_BASE + '/data/oil-flow.json';
 
+  const FAIL = '取得できませんでした';
+  const FAIL_CELL = '取得できず';  // 列の幅が狭いので、セルの中は短い形にする（詳しい文は表の下の注記に出す）
+  // 値のセル・単位・隻数の行をまとめて書く。停止中・失敗のときは単位を出さない
+  function setCell(ids, text, showUnit, tanker) {
+    const bEl = document.getElementById(ids.bpd);
+    const tEl = document.getElementById(ids.tanker);
+    if (bEl) {
+      bEl.textContent = text;
+      const u = bEl.parentNode.querySelector('.jf-unit');
+      if (u) u.hidden = !showUnit;
+    }
+    if (tEl) tEl.textContent = tanker || '';
+  }
+  // old・D は単位をセルに書かず、0 のときは「停止中」と出す（#6）
+  const MAP = {
+    'old':  { bpd: 'jf-old-bpd',  tanker: 'jf-old-tanker', unit: ' 万BPD', zero: '停止中' },
+    'A':    { bpd: 'jf-A-bpd',    tanker: 'jf-A-tanker' },
+    'B':    { bpd: 'jf-B-bpd',    tanker: 'jf-B-tanker' },
+    'C_US': { bpd: 'jf-C_US-bpd', tanker: 'jf-C_US-tanker' },
+    'C_GL': { bpd: 'jf-C_GL-bpd', tanker: 'jf-C_GL-tanker' },
+    'D':    { bpd: 'jf-D-bpd',    tanker: 'jf-D-tanker',   unit: ' 万BPD', zero: '停止中' },
+  };
+
   fetch(OIL_FLOW_URL + '?t=' + Date.now())
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(data => {
       const routes = data.routes;
+      if (!routes) throw new Error('routes がありません');
       const basisEl = document.getElementById('jf-basis-date');
-      if (basisEl && data.updated) basisEl.textContent = data.updated;
-      // old・D は単位をセルに書かず、0 のときは「停止中」と出す（#6）
-      const MAP = {
-        'old':  { bpd: 'jf-old-bpd',  tanker: 'jf-old-tanker', unit: ' 万BPD', zero: '停止中' },
-        'A':    { bpd: 'jf-A-bpd',    tanker: 'jf-A-tanker' },
-        'B':    { bpd: 'jf-B-bpd',    tanker: 'jf-B-tanker' },
-        'C_US': { bpd: 'jf-C_US-bpd', tanker: 'jf-C_US-tanker' },
-        'C_GL': { bpd: 'jf-C_GL-bpd', tanker: 'jf-C_GL-tanker' },
-        'D':    { bpd: 'jf-D-bpd',    tanker: 'jf-D-tanker',   unit: ' 万BPD', zero: '停止中' },
-      };
+      if (basisEl) basisEl.textContent = data.updated || FAIL;
       Object.entries(MAP).forEach(([key, ids]) => {
         const r = routes[key];
-        if (!r) return;
-        const bEl = document.getElementById(ids.bpd);
-        const tEl = document.getElementById(ids.tanker);
-        if (bEl) bEl.textContent = r.bpd > 0 ? r.bpd + (ids.unit || '') : (ids.zero || '—');
-        if (tEl) tEl.textContent = r.tankers_week > 0
-          ? '🚢×' + r.tankers_week + ' 隻/週'
-          : '— 隻/週';
+        if (!r || typeof r.bpd !== 'number') { setCell(ids, FAIL_CELL, false, ''); return; }
+        // 0 のとき：old・D は「停止中」、ほかは 0 をそのまま出す。隻数が 0 の行は出さない
+        const stopped = r.bpd <= 0 && !!ids.zero;
+        setCell(ids,
+          stopped ? ids.zero : r.bpd + (ids.unit || ''),
+          !stopped,
+          r.tankers_week > 0 ? '🚢×' + r.tankers_week + ' 隻/週' : '');
       });
     })
-    .catch(e => console.warn('oil-flow fetch error:', e));
+    .catch(e => {
+      console.warn('oil-flow fetch error:', e);
+      Object.values(MAP).forEach(ids => setCell(ids, FAIL_CELL, false, ''));
+      const basisEl = document.getElementById('jf-basis-date');
+      if (basisEl) basisEl.textContent = FAIL;
+    });
 })();
 </script>
 <script>

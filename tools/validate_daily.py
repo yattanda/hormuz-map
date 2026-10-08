@@ -870,6 +870,64 @@ def check_scenario_dates(html: str, base: str) -> None:
         ok("シナリオのフッターのラベルに日付なし")
 
 
+def check_state_labels(html: str) -> None:
+    """読み込み中・取得失敗・未公表の表示の型（②' PR C「値と状態の表示」・2026-10-08 追加）。
+
+    JS が値を入れる場所の HTML の初期値は「読み込み中…」（シナリオ確率は見出しの中なので「…」）。
+    AI 推定の確率と日本向けフローの数値は HTML に書かない（K4）。日次更新が数値を書き込んだら NG。
+    「内訳確認中」「読み込み中...」（ピリオド3つ）は PR C で外した表記で、戻っていたら NG。
+    """
+    bad = []
+    for k in "ABCD":
+        m = re.search(rf'<span id="sc-pct-{k}">(.*?)</span>', html)
+        if not m:
+            bad.append(f"sc-pct-{k}（検出できず）")
+        elif m.group(1) != "…":
+            bad.append(f"sc-pct-{k}「{m.group(1)[:12]}」")
+    if bad:
+        ng(f"シナリオ確率の初期値が「…」ではありません: {'・'.join(bad)}。確率の数値は HTML に書かない（JS が同期元から入れる）")
+    else:
+        ok("シナリオ確率の初期値は「…」（数値の手書きなし）")
+    bad = []
+    for k in ("old", "A", "B", "C_US", "C_GL", "D"):
+        m = re.search(rf'<strong id="jf-{k}-bpd">(.*?)</strong>', html)
+        if not m:
+            bad.append(f"jf-{k}-bpd（検出できず）")
+        elif m.group(1) != "読み込み中…":
+            bad.append(f"jf-{k}-bpd「{m.group(1)[:12]}」")
+    if bad:
+        ng(f"日本向けフローの初期値が「読み込み中…」ではありません: {'・'.join(bad)}。数値は HTML に書かない（JS が oil-flow.json から入れる）")
+    else:
+        ok("日本向けフローの初期値は「読み込み中…」（数値の手書きなし）")
+    # 同じ PR で型にした、ほかの初期値（JS が入れる場所。日次は触らない）
+    bad = []
+    for label, pat in (("t-stuck", r'<span id="t-stuck">(.*?)</span>'),
+                       ("t-total", r'<span id="t-total">(.*?)</span>'),
+                       ("t-breakdown", r'<span class="stat-row-val" id="t-breakdown">(.*?)</span>'),
+                       ("jf-basis-date", r'<span id="jf-basis-date">(.*?)</span>')):
+        m = re.search(pat, html)
+        if not m:
+            bad.append(f"{label}（検出できず）")
+        elif m.group(1) != "読み込み中…":
+            bad.append(f"{label}「{m.group(1)[:12]}」")
+    units = re.findall(r'<span class="jf-unit"([^>]*)>', html)
+    if len(units) != 4 or any("hidden" not in u for u in units):
+        bad.append(f"jf-unit（4個とも hidden つきのはず。検出 {len(units)}個）")
+    if bad:
+        ng(f"日本関係船・フローの対象月・単位の初期値が型と違います: {'・'.join(bad)}")
+    else:
+        ok("日本関係船・フローの対象月の初期値は「読み込み中…」、単位は hidden")
+    # 外した表記は、表示に出る場所（タグの中身・JS の文字列）だけを見る。
+    # 更新履歴や本文がこの語に触れただけでは NG にしない
+    hits = [w for w in ("内訳確認中", "読み込み中...", "データ読み込みエラー")
+            if re.search(r"[>'\"`]\s*" + re.escape(w), html)]
+    if hits:
+        ng(f"外した表記が残っています：{'・'.join(hits)}。"
+           "「読み込み中…」「取得できませんでした」「内訳は未公表（時点）」の型で書く")
+    else:
+        ok("状態の表示に古い表記なし（内訳確認中・読み込み中...）")
+
+
 def check_crisis_day(html: str, base: str) -> None:
     """本体ヘッダーの「危機N日目」の静的な数字が、基準日から計算した日数と同じか。
 
@@ -1040,6 +1098,7 @@ def main() -> int:
     check_hub_updated(html, base)
     check_crisis_day(html, base)
     check_scenario_dates(html, base)
+    check_state_labels(html)
     check_upcoming(html)
     check_log_wording(html, base)
     check_route_freshness(html, base)

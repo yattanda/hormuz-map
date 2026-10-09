@@ -928,6 +928,27 @@ def check_state_labels(html: str) -> None:
         ok("状態の表示に古い表記なし（内訳確認中・読み込み中...）")
 
 
+def check_estimate_labels(html: str) -> None:
+    """推定のラベル（②' PR D・2026-10-09 追加）。日次更新で消えていないかを見る。
+
+    「AI推定」＝生成 AI が出した値（.label-ai）、「推定」＝統計などからの試算（.label-estimate）。
+    シナリオの見出しは日次が名称と矢印を書き換える場所なので、直後のラベルが落ちやすい。
+    """
+    bad = []
+    for k in "ABCD":
+        if not re.search(rf'<span class="sc-tag" id="sc-tag-{k}">.*?</span></span>'
+                         r'<span class="label-ai sc-pct-label">AI推定</span>', html):
+            bad.append(f"シナリオ{k} の確率の横の「AI推定」")
+    if not re.search(r'データ監視ダッシュボード<span class="label-ai sc-h2-label">AI推定を含む</span></h2>', html):
+        bad.append("ダッシュボードの見出しの「AI推定を含む」")
+    if html.count('<span class="label-estimate">推定</span>') != 2:
+        bad.append("日本向けフローの「推定」（列見出しと注記の2か所）")
+    if bad:
+        ng(f"推定のラベルが型と違います: {'・'.join(bad)}")
+    else:
+        ok("推定のラベルあり（確率4枚・ダッシュボードの見出し・日本向けフロー2か所）")
+
+
 def check_crisis_day(html: str, base: str) -> None:
     """本体ヘッダーの「危機N日目」の静的な数字が、基準日から計算した日数と同じか。
 
@@ -1099,6 +1120,7 @@ def main() -> int:
     check_crisis_day(html, base)
     check_scenario_dates(html, base)
     check_state_labels(html)
+    check_estimate_labels(html)
     check_upcoming(html)
     check_log_wording(html, base)
     check_route_freshness(html, base)

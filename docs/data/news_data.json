@@ -1,7 +1,17 @@
 {
-  "updated": "2026年10月09日 11:45 日本時間JST",
+  "updated": "2026年10月10日 07:06 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-gcaptain-uae-1009",
+      "title": "UAE沖（ペルシャ湾内）で船舶が正体不明の飛翔体を受け火災、鎮火——UKMTO警報160-26、乗組員・損害は不明で攻撃主体は公表されず",
+      "body": "gCaptain（10/9）によれば、10/9（金）10:00 UTC（日本時間19:00）ごろ、アラブ首長国連邦の「Al Jazeera」の西約13海里（記事の表記。ペルシャ湾内でホルムズ海峡の外）で船舶が正体不明の飛翔体を受け、火災が起きて鎮火した。乗組員の状況・損害の程度・環境への影響は不明で、UKMTOは船名を公表せず攻撃主体も特定していない。警報番号160-26を本文に書いたのはgCaptainのみで、UKMTO公式の本文は未確認。同記事は、UKMTOが7/6以降に把握した商船関連の59件のうち41件がホルムズ海峡の南側の航路で起きたと伝える（UKMTO週報の原文は未確認）。",
+      "sourceLabel": "gCaptain（10/9）",
+      "date": "2026年10月9日（現地）",
+      "label": "⚓ 10/9 UAE沖で船舶被弾・火災は鎮火（UKMTO警報160-26）",
+      "url": "https://gcaptain.com/second-ship-struck-inside-persian-gulf-in-three-days/",
+      "isLatest": true
+    },
     {
       "id": "latest-time-houthi-riyadh-1008",
       "title": "フーシ派がリヤド空港への再攻撃を主張、サウジ側は未確認——先の攻撃の死傷者はサウジ当局が発表",
@@ -10,7 +20,7 @@
       "date": "2026年10月8日（現地）",
       "label": "🇾🇪 10/8 フーシ派がリヤド空港再攻撃を主張・サウジ空港の死傷者",
       "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-rigzone-oil-surge-1008",
@@ -30,16 +40,6 @@
       "date": "2026年10月7日（現地）",
       "label": "⚓ 10/7 カタール北方でタンカー被弾・死傷者の報告",
       "url": "https://www.yahoo.com/news/world/articles/tanker-hit-several-projectiles-gulf-230329900.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-national-aden-1007",
-      "title": "イエメン政府の運輸省、アデン国際空港へのミサイル・ドローン攻撃を発表——フーシ派はサウジ軍の物資を標的にしたと主張、リヤド北方では連合軍がミサイル1発を迎撃",
-      "body": "The National（10/7）によれば、イエメン政府の運輸省は、10/7（水）の夜明け頃、アデン国際空港に弾道ミサイル2発と爆発物を積んだドローン数機が撃ち込まれたと発表した（運輸省によれば死傷者の報告はない）。Al Jazeera（10/7）は、同省が滑走路と旅客ターミナルを「少なくとも弾道ミサイル2発とドローン数機」で狙ったと述べ、ミサイル1発がカイロ発便の着陸の数分前に滑走路近くへ落ち、同便はジェッダへ迂回したと伝える。フーシ派は、アデン近郊のバドル基地に着いたサウジ軍の物資を標的にしたと主張した。サウジ側の確認は、The Nationalの記事には書かれていない。リヤドでは、サウジ主導連合の報道官がフーシ派の弾道ミサイル1発を北方で迎撃・破壊したと発表した（Al Jazeera）。The Nationalは、リヤドのキング・ハリド国際空港の発着が水曜朝に1時間以上止まったと伝える。リヤドの空港の被害と死傷者の数は、確認が取れていないため本欄では書かない。",
-      "sourceLabel": "The National（10/7）・Al Jazeera（10/7）",
-      "date": "2026年10月7日（現地）",
-      "label": "🇾🇪 10/7 アデン空港攻撃・リヤド北方でミサイル迎撃",
-      "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
       "isLatest": false
     }
   ],
@@ -1754,6 +1754,21 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月10日",
+      "items": [
+        {
+          "id": "latest-national-aden-1007",
+          "title": "イエメン政府の運輸省、アデン国際空港へのミサイル・ドローン攻撃を発表——フーシ派はサウジ軍の物資を標的にしたと主張、リヤド北方では連合軍がミサイル1発を迎撃",
+          "body": "The National（10/7）によれば、イエメン政府の運輸省は、10/7（水）の夜明け頃、アデン国際空港に弾道ミサイル2発と爆発物を積んだドローン数機が撃ち込まれたと発表した（運輸省によれば死傷者の報告はない）。Al Jazeera（10/7）は、同省が滑走路と旅客ターミナルを「少なくとも弾道ミサイル2発とドローン数機」で狙ったと述べ、ミサイル1発がカイロ発便の着陸の数分前に滑走路近くへ落ち、同便はジェッダへ迂回したと伝える。フーシ派は、アデン近郊のバドル基地に着いたサウジ軍の物資を標的にしたと主張した。サウジ側の確認は、The Nationalの記事には書かれていない。リヤドでは、サウジ主導連合の報道官がフーシ派の弾道ミサイル1発を北方で迎撃・破壊したと発表した（Al Jazeera）。The Nationalは、リヤドのキング・ハリド国際空港の発着が水曜朝に1時間以上止まったと伝える。リヤドの空港の被害と死傷者の数は、確認が取れていないため本欄では書かない。",
+          "sourceLabel": "The National（10/7）・Al Jazeera（10/7）",
+          "date": "2026年10月7日（現地）",
+          "label": "🇾🇪 10/7 アデン空港攻撃・リヤド北方でミサイル迎撃",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/10/07/houthis-claim-dawn-drone-and-missile-strikes-on-saudi-and-yemeni-airports/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月9日",
       "items": [

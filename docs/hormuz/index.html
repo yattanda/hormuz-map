@@ -1252,7 +1252,7 @@ footer {
 /* 推定＝統計などからの試算（AI ではない）。AI が出した値は .label-ai（②' PR D） */
 .label-estimate { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(244,114,182,0.15); border:1px solid rgba(244,114,182,0.4); color:#f9a8d4; }
 .label-ai.sc-pct-label { margin-left:6px; margin-right:0; }
-.jf-th-sub .label-estimate { margin-left:4px; margin-right:0; }
+.jf-th-sub .label-estimate { margin-right:0; }
 /* ===== ルートテーブル列幅最適化 ===== */
 .rtable { table-layout: fixed !important; }
 .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%; }
@@ -2320,7 +2320,7 @@ document.addEventListener('keydown', function(e) {
           <th>輸送能力</th>
           <th class="jf-col jf-th">
             🇯🇵 日本向け<br>
-            <span class="jf-th-sub">万BPD・隻/週<span class="label-estimate">推定</span></span>
+            <span class="jf-th-sub">万BPD・隻/週<br><span class="label-estimate">推定</span></span>
           </th>
           <th>現況詳細</th>
           <th>主なリスク</th>

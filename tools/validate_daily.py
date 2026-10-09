@@ -941,8 +941,11 @@ def check_estimate_labels(html: str) -> None:
             bad.append(f"シナリオ{k} の確率の横の「AI推定」")
     if not re.search(r'データ監視ダッシュボード<span class="label-ai sc-h2-label">AI推定を含む</span></h2>', html):
         bad.append("ダッシュボードの見出しの「AI推定を含む」")
-    if html.count('<span class="label-estimate">推定</span>') != 2:
-        bad.append("日本向けフローの「推定」（列見出しと注記の2か所）")
+    # 個数ではなく場所ごとに見る（ほかの場所に「推定」を足した日に NG にしない）
+    if not re.search(r'<span class="jf-th-sub">[^\n]*?<span class="label-estimate">推定</span></span>', html):
+        bad.append("日本向けフローの列見出しの「推定」")
+    if not re.search(r'<div class="jf-col jf-note">\s*<span class="label-estimate">推定</span>', html):
+        bad.append("日本向けフローの注記の「推定」")
     if bad:
         ng(f"推定のラベルが型と違います: {'・'.join(bad)}")
     else:

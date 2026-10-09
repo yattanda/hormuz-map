@@ -3179,6 +3179,19 @@
           "sourceLabel": "Bloomberg配信（Rigzone 10/8）"
         }
       ]
+    },
+    {
+      "date": "2026-10-10",
+      "dateLabel": "2026/10/10 07:06",
+      "blockadeDay": 225,
+      "summary": "【重大更新】gCaptain（10/9）：10/9 10:00 UTC（19:00 JST）、UAEの「Al Jazeera」の西約13海里（ペルシャ湾内・ホルムズ海峡の外）で船舶が正体不明の飛翔体を受け、火災が起きて鎮火した（UKMTO警報160-26。警報番号を本文に書いたのはgCaptainのみで、UKMTO公式の本文は未確認）。乗組員の状況・損害は不明で、UKMTOは攻撃主体を公表していない・gCaptainによれば、UKMTOは7/6以降の商船関連の59件のうち41件がホルムズ海峡の南側の航路で起きたとしている（UKMTO週報の原文は未確認）・原油価格は10/8終値を据え置き（10/9の終値は2出典での一致を確認できなかったため掲載せず）・日本関係船は日英の検索で新規の発表なし（残り4隻）・危機225日目・ニュース1件更新",
+      "relatedNews": [
+        {
+          "title": "UAE沖（ペルシャ湾内）で船舶が正体不明の飛翔体を受け火災、鎮火——UKMTO警報160-26、乗組員・損害は不明で攻撃主体は公表されず",
+          "url": "https://gcaptain.com/second-ship-struck-inside-persian-gulf-in-three-days/",
+          "sourceLabel": "gCaptain（10/9）"
+        }
+      ]
     }
   ]
 }

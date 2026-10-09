@@ -508,6 +508,9 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - 見出しの `sc-tag` は `<span class="sc-tag-em">シナリオ A</span> ― 名称　<span class="sc-tag-em">確率 <span id="sc-pct-A">…</span></span> <span class="sc-trend">→</span>`。
   変えるのは名称と矢印の文字だけ。`sc-pct-*` の中身は JS が入れる（HTML の初期値は「…」のまま。数値を書かない。
   同期元を読めないときは JS が「取得できず」と注記の差し替えを出す）
+- `sc-tag` を閉じた直後の `<span class="label-ai sc-pct-label">AI推定</span>` は消さない・動かさない（2026-10-09〜・②' PR D。
+  消えると `validate_daily.py` が NG にする）。ラベルの使い分けは、生成 AI が出した値が「AI推定」（`.label-ai`）、
+  統計などからの試算が「推定」（`.label-estimate`）。日次では新しく付けない
 - 本文は `<div class="sc-body"><p>…</p></div>` の `<p>` の中だけを書き換える
 
 ### シナリオフッター（[S08]・`div.sc-footer`）

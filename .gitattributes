@@ -1,1 +1,3 @@
 *.sh text eol=lf
+# 外部から取得した配布物は、改行コードを変換せずバイト列のまま入れる（SRI のハッシュと照合できる状態を保つ）
+docs/assets/vendor/** -text

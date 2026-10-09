@@ -74,6 +74,17 @@
 - 自サイトから配信するので `integrity`・`crossorigin` は外す
 - バージョンを上げるときは、ディレクトリ名ごと替える（キャッシュの取り違えを防ぐ）
 
+### 2-2-R. Leaflet の実施記録（2026-10-09 実装・ブランチ `infra/selfhost-leaflet`）
+
+- `unpkg.com/leaflet@1.9.4` から8ファイルを取得して `docs/assets/vendor/leaflet-1.9.4/` に置いた：`leaflet.js`（147,552バイト）・`leaflet.css`（14,806バイト）・`images/` の5点（計 6,503バイト）・`LICENSE`
+- **`leaflet.js`・`leaflet.css` の SHA-256 は、HTML に書いてあった SRI の値と一致した**（取得したファイルと、Git に入る中身の両方で照合）
+- `.gitattributes` に `docs/assets/vendor/** -text` を足した。`leaflet.css` の改行は CRLF で、このリポジトリの `core.autocrlf=true` のままだと Git が LF に直して入れ、
+  配信される中身のハッシュが配布元と変わる（1回目の `git add` で実際に変わった）。配布物は変換せずバイト列のまま入れる
+- `docs/hormuz/index.html` の `<head>` の2行を `/assets/vendor/leaflet-1.9.4/…` に替え、`integrity`・`crossorigin` を外した
+- `leaflet.js` の末尾は `leaflet.js.map` を指しているが、置いていない（開発者ツールを開いたときだけ 404 が出る。表示には影響しない）
+- 確認（ローカル・幅 1280px）：`L.version` 1.9.4・地図とタイルが出る・印 246個・印を押すとポップアップが開く・拡大縮小のボタンあり・`unpkg.com` へのリクエスト 0件・コンソールエラー 0。
+  `validate_daily.py` は OK 59 / WARN 0 / NG 0
+
 ### 2-3. 置き場所と書き方
 
 - `/assets/fonts/noto-sans-jp/`（woff2 と `noto-sans-jp.css`）、`/assets/vendor/leaflet-1.9.4/`

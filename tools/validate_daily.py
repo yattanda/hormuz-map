@@ -1006,6 +1006,35 @@ def check_selfhosted_assets(html: str) -> None:
     else:
         ok("Leaflet は自サイトから読み込み（unpkg.com への参照なし）")
 
+    # フォント（Noto Sans JP・2026-10-10 追加）。Google Fonts へ戻ると、/privacy/ 第5章に無い送信先へ接続することになる。
+    # /hormuz/ のほか、記事（docs/articles/*.html）と記事の雛形も見る（日次は触らないが、新しい記事が古い雛形から作られると戻る）。
+    fonts_dir = ROOT / "docs" / "assets" / "fonts" / "noto-sans-jp"
+    fonts_css = "/assets/fonts/noto-sans-jp/noto-sans-jp.css"
+    pat_gfonts = re.compile(r"fonts\.(?:googleapis|gstatic)\.com")  # 文字列の有無を見る（URL の検証ではない）
+    bad = []
+    pages = [("hormuz/index.html", html)]
+    for path in sorted((ROOT / "docs" / "articles").glob("*.html")) + [ROOT / "tools" / "article-template.html"]:
+        try:
+            pages.append((path.name, path.read_text(encoding="utf-8")))
+        except OSError:
+            bad.append(f"{path.name} を読めません")
+    for name, text in pages:
+        if pat_gfonts.search(text):
+            bad.append(f"{name} に Google Fonts への参照があります")
+        if f'href="{fonts_css}"' not in text:
+            bad.append(f"{name} の <head> に {fonts_css} がありません")
+    if not (fonts_dir / "noto-sans-jp.css").is_file():
+        bad.append(f"docs{fonts_css} がありません")
+    else:
+        css = (fonts_dir / "noto-sans-jp.css").read_text(encoding="utf-8")
+        missing = [f for f in set(re.findall(r"url\(([^)]+\.woff2)\)", css)) if not (fonts_dir / f).is_file()]
+        if missing:
+            bad.append(f"CSS が指す woff2 が {len(missing)} 個ありません（例：{sorted(missing)[0]}）")
+    if bad:
+        ng(f"フォントの読み込み元が型と違います: {'・'.join(bad[:6])}。自サイト（{fonts_css}）から読む")
+    else:
+        ok(f"フォントは自サイトから読み込み（{len(pages)} ファイル・Google Fonts への参照なし）")
+
 
 def check_upcoming(html: str) -> None:
     """今後の予定日（docs/data/upcoming.json）。/hormuz/ の30秒カラム「次の焦点」の直下に JS が出す。

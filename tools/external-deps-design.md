@@ -1,7 +1,7 @@
 # ①' 外部依存の自前化 設計書 v1（2026-10-07）
 
 対象：Google Fonts（Noto Sans JP）と Leaflet（unpkg.com）の読み込みを自サイトからの配信に替え、`/privacy/` 第5章を合わせて改訂する。
-状態：**Leaflet は公開済み（2026-10-10 マージ・§2-2-R）。`/privacy/` 第5章は unpkg.com の行だけ改訂済み（§2-4-R）。フォントと、Google Fonts の行の改訂はこれから。**判断事項 L1〜L5 は 2026-10-07 に決定（§4。すべて推奨どおり）。
+状態：**Leaflet は公開済み（2026-10-10 マージ・§2-2-R）。`/privacy/` 第5章は unpkg.com の行だけ改訂済み（§2-4-R）。フォントは実装済みで PR のレビュー待ち（§2-1-R）。Google Fonts の行の改訂はフォントを本番に出した日に行う。**判断事項 L1〜L5 は 2026-10-07 に決定（§4。すべて推奨どおり）。
 §1「現状」は 2026-10-07 の調査時点の記述で、Leaflet の読み込み元は §2-2-R のとおり変わっている。
 
 上流の決定（変えない）
@@ -67,6 +67,29 @@
   日本語の区画は1ウェイトあたり woff2 が120個で、400 が 2.77 MB・700 が 2.82 MB・800 が 2.82 MB。3ウェイトで360個・8.40 MB。
   これにラテン文字などの区画（1ウェイトあたり数個）が加わる。woff（古い形式）は置かない
 - 文字の区画を自分で作り直す方法（よく使う漢字だけを1ファイルにまとめる）は採らない。日次更新で新しい漢字が毎日出るため、欠けた文字だけ別のフォントで出るおそれがある
+
+### 2-1-R. フォントの実施記録（2026-10-10 実装・ブランチ `infra/selfhost-fonts`）
+
+- 取得元：npm の `@fontsource/noto-sans-jp` 5.3.0（SIL OFL 1.1）。配布物（tgz・79.0 MB）の SHA-512 は npm レジストリの `dist.integrity` と一致した
+- 置いたもの（`docs/assets/fonts/noto-sans-jp/`）：woff2 **372個・8,485,572バイト（約8.49 MB）**（1ウェイトあたり124区画＝日本語120＋cyrillic・latin・latin-ext・vietnamese、× 400・700・800）、
+  `noto-sans-jp.css`（`@font-face` 372・303 KB。配布物の `400.css`・`700.css`・`800.css` をつなぎ、woff（古い形式）の指定を外して woff2 だけにした）、`LICENSE`
+  - 配布物にある `noto-sans-jp-japanese-*.woff2`（区画に分けていない1個もの・1ウェイト約1 MB）は CSS から参照されないので置いていない
+- `.gitattributes` に `docs/assets/fonts/** -text` を足した（Leaflet と同じ理由。配布物は変換せずバイト列のまま入れる）
+- **文字の区画は Google Fonts と同じ**：本番が読んでいた Google Fonts の CSS（`@font-face` 372・フォントは v57）と `unicode-range` を突き合わせ、124区画のうち123が完全一致。
+  違うのは latin-ext の1区画だけで、Google 側が4文字多い（1,166 対 1,162。合計は 17,933 対 17,929）。その4文字はラテン拡張の文字で、出てきた場合は次のフォント（ヒラギノ・游ゴシックなど）で描かれる
+- **Google Fonts は可変フォント（1区画1ファイルを3ウェイトで共用）、配置したのはウェイトごとの固定フォント**。`/hormuz/` で読むファイルは 75個 → 164個に増えるが、
+  転送量は約2.2 MB で 9/20 の計測（80ファイル・2.26 MB）と変わらない。CSS は 342 KB → 303 KB
+- 差し替えた `<head>`：`/hormuz/`・`docs/articles/` の6ファイル・`tools/article-template.html`。`preconnect` の2行と Google Fonts の `<link>` を外し、
+  `<link rel="stylesheet" href="/assets/fonts/noto-sans-jp/noto-sans-jp.css">` の1行にした。`font-display: swap` は同じ
+- 確認（ローカル・幅 1024px。変更前の本番と同じ幅で比較）：
+  - `/hormuz/`：`fonts.googleapis.com`・`fonts.gstatic.com` へのリクエスト 0件・読み込まれたウェイトは 400・700・800・コンソールエラー 0。
+    見出し・30秒カラムの本文・ヘッダーの日時・主な動き・シナリオの補足の5か所の幅と高さが、本番と小数第1位まで一致
+  - 記事 `mine-clearance.html`：接続先は自サイトと GA4 だけ・見出しと本文の寸法・ページの高さが本番と一致
+  - 画面写真での見比べとスマホ幅は、このセッションでは行っていない（アプリ内ブラウザの画面写真が不安定だったため、寸法の一致で確かめた）
+- `validate_daily.py` の `check_selfhosted_assets()` にフォントの検査を足した（`/hormuz/`・記事・雛形の8ファイルに Google Fonts への参照が戻る・
+  `<head>` が自前の CSS を指していない・CSS が指す woff2 が無い、のどれかで NG。OK 62 / WARN 0 / NG 0）
+- キャッシュ：GitHub Pages は `Cache-Control: max-age=600`。Google Fonts（1年）より短い。再訪のたびに条件つきの問い合わせが出る（PSI を取り直すときに見る）
+- **本番に出した日に、`/privacy/` 第5章の「Google LLC（Google Fonts）」の行を外す**（§2-4-R）
 
 ### 2-2. Leaflet（判断 L2）
 

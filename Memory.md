@@ -66,6 +66,10 @@
   - 【2026-10-10】**①' 1本目：Leaflet 1.9.4 を自サイトから配信**（PR #65・merge commit `5a4f0c4`・本番確認済み）。置き場所は `docs/assets/vendor/leaflet-1.9.4/`、
     `/hormuz/` は `unpkg.com` に接続しなくなった。`validate_daily.py` の `check_selfhosted_assets()` が逆戻りを NG にする。
     `/privacy/` 第5章から unpkg.com の行を外した（`028effa`・最終更新 10/10）。Google Fonts の行はフォントの自前化（2本目）まで残る。記録は `tools/external-deps-design.md` §2-2-R・§2-4-R
+  - 【2026-10-10】**①' 2本目：Noto Sans JP を自サイトから配信し、①' 外部依存の自前化を終えた**（PR #67・merge commit `1cc7187`・本番確認済み）。
+    置き場所は `docs/assets/fonts/noto-sans-jp/`（woff2 372個・約8.49 MB・`@fontsource/noto-sans-jp` 5.3.0）。`/hormuz/`・記事6ファイル・記事の雛形は Google Fonts に接続しなくなった。
+    `/privacy/` 第5章から Google Fonts の行も外した。**新しい記事は `tools/article-template.html` から作る**（Google Fonts の `<link>` が戻ると `validate_daily.py` が NG）。
+    読むファイルは 75個 → 約165個に増え、キャッシュは10分（PSI は未取得）。記録は `tools/external-deps-design.md` §2-1-R
   - 【2026-10-10】**日次が運営者に確認を回さない形に改めた**（main `034da5c`）。UKMTO の警報の本文は `tools/fetch_ukmto.py`（公式の一覧ページが読む公開 API）で読む。
     前回の「未確認」「据え置き」は次の日次が最初に拾う（スキル 2.4）。原油終値の2出典目は1出典目の数値で検索する。報告の「確認してほしい点」は運営者にしか決められないことだけ。
     **クラウドからこの API に届くかは未確認**（10/11 朝の日次で分かる。届かなければスクリプトが終了コード 2 を返す）

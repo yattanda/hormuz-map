@@ -1,7 +1,7 @@
 # ①' 外部依存の自前化 設計書 v1（2026-10-07）
 
 対象：Google Fonts（Noto Sans JP）と Leaflet（unpkg.com）の読み込みを自サイトからの配信に替え、`/privacy/` 第5章を合わせて改訂する。
-状態：**Leaflet は公開済み（2026-10-10 マージ・§2-2-R）。`/privacy/` 第5章は unpkg.com の行だけ改訂済み（§2-4-R）。フォントは実装済みで PR のレビュー待ち（§2-1-R）。Google Fonts の行の改訂はフォントを本番に出した日に行う。**判断事項 L1〜L5 は 2026-10-07 に決定（§4。すべて推奨どおり）。
+状態：**完了（2026-10-10）。Leaflet（§2-2-R）とフォント（§2-1-R）を自サイトからの配信に替え、`/privacy/` 第5章から2行を外した（§2-4-R）。残りは PSI の取り直し（§3 の6）。**判断事項 L1〜L5 は 2026-10-07 に決定（§4。すべて推奨どおり）。
 §1「現状」は 2026-10-07 の調査時点の記述で、Leaflet の読み込み元は §2-2-R のとおり変わっている。
 
 上流の決定（変えない）
@@ -95,7 +95,10 @@
 - `validate_daily.py` の `check_selfhosted_assets()` にフォントの検査を足した（`/hormuz/`・記事・雛形の8ファイルに Google Fonts への参照が戻る・
   `<head>` が自前の CSS を指していない・CSS が指す woff2 が無い、のどれかで NG。OK 62 / WARN 0 / NG 0）
 - キャッシュ：GitHub Pages は `Cache-Control: max-age=600`。Google Fonts（1年）より短い。再訪のたびに条件つきの問い合わせが出る（PSI を取り直すときに見る）
-- **本番に出した日に、`/privacy/` 第5章の「Google LLC（Google Fonts）」の行を外す**（§2-4-R）
+- **マージと本番確認（2026-10-10）**：PR #67 を merge commit `1cc7187` でマージ（10:30 JST）。本番 `chokepointlab.com` の `/hormuz/`・`/articles/`・記事1本とも `<head>` は自前の CSS で、Google Fonts への参照 0。
+  `/hormuz/` の接続先に `fonts.googleapis.com`・`fonts.gstatic.com` なし・ウェイト 400/700/800・コンソールエラー 0・見出しなど3か所の寸法は変更前と同じ。
+  CSS は gzip で 93 KB で配信される（元は 303 KB）。ブランチ `infra/selfhost-fonts` は削除済み
+- 同じ日に `/privacy/` 第5章の「Google LLC（Google Fonts）」の行を外した（§2-4-R）
 
 ### 2-2. Leaflet（判断 L2）
 
@@ -143,7 +146,9 @@
 
 - Leaflet を本番に出した同じ日に、一覧から「unpkg.com（Leaflet の配信）」の1行を外し、最終更新を 2026年10月10日にした（main `028effa`・単独コミット。sitemap の `lastmod` は別コミット `91e0b48`）
 - `/corrections/` には記録しない（運営者の決定・2026-10-10）
-- 「Google LLC（Google Fonts）」の行は残っている。フォントの自前化を本番に出した日に外す（2回目の改訂）。§2-4 は「まとめて1回」としていたが、接続が無くなった行を残さないために分けた
+- 2回目（同日）：フォントを本番に出したあと、「Google LLC（Google Fonts）」の行を外した（main に単独コミット。最終更新は同じ 2026年10月10日）。
+  §2-4 は「まとめて1回」としていたが、接続が無くなった行を残さないために2回に分けた
+- 改訂後の第5章の一覧：Google アナリティクス・TradingView・CARTO および OpenStreetMap・GitHub・Google フォーム
 
 ### 2-5. PR の分け方（判断 L5）
 

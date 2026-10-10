@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月10日 09:07 日本時間JST",
+  "updated": "2026年10月11日 07:46 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto-162-1011",
+      "title": "ホルムズ海峡内で出港中のタンカーが正体不明の飛翔体を受け火災——UKMTO警報162-26、乗組員は無事で攻撃主体は公表されず",
+      "body": "UKMTO公式サイトの警報162（10/11 07:07 JST＝10/10 22:07 UTC発行）によれば、ホルムズ海峡内で出港中のタンカーの船長が、左舷に正体不明の飛翔体を受けて船上で火災が起きたと報告した。乗組員は無事とされ、損害の程度と環境への影響は報告時点で不明。公式の本文に発生時刻の記載はない。二次的な媒体（Cedar News）も同じ内容を伝えるが、主要媒体の記事は未確認で、船名・攻撃主体・鎮火の有無は不明。",
+      "sourceLabel": "UKMTO（警報162）",
+      "date": "2026年10月10日（UTC発行）",
+      "label": "⚓ 10/10 ホルムズ海峡内でタンカー被弾（UKMTO警報162-26）",
+      "url": "https://www.ukmto.org/recent-incidents",
+      "isLatest": true
+    },
+    {
+      "id": "latest-riyadh-airport-1010",
+      "title": "リヤド空港がミサイル攻撃を受け運航停止、死傷者が出た——死者数は報道により異なり未確定、犯行声明なし",
+      "body": "CBS News（10/10・ライブ更新）によれば、サウジ民間航空総局はXへの声明で、10/10（土）のリヤドのキング・ハーリド国際空港への攻撃で少なくとも12人が死亡、309人が負傷したと発表した。France 24（AFP引用・10/10公開）は、病院の医療関係者の話として少なくとも2人が死亡し負傷者は数十人と伝えており、数字は媒体と時点で異なる。外交筋はAFPに、現地時間15時ごろにフーシ派のミサイルが着弾したと述べたが、フーシ派は土曜の新たな攻撃を発表しておらず、攻撃主体は当事者による確認がない。空港は運航を停止した。",
+      "sourceLabel": "France 24（AFP 10/10）・CBS News",
+      "date": "2026年10月10日（現地）",
+      "label": "🇾🇪 10/10 リヤド空港へのミサイル攻撃（死傷者数は食い違い）",
+      "url": "https://www.france24.com/en/middle-east/20261010-riyadh-airport-suspends-operations-after-attack-leaves-multiple-people-wounded",
+      "isLatest": false
+    },
     {
       "id": "latest-gcaptain-uae-1009",
       "title": "UAE沖（ペルシャ湾内）で船舶が正体不明の飛翔体を受け火災、鎮火——UKMTO警報160-26、乗組員・損害は不明で攻撃主体は公表されず",
@@ -10,7 +30,7 @@
       "date": "2026年10月9日（現地）",
       "label": "⚓ 10/9 UAE沖で船舶被弾・火災は鎮火（UKMTO警報160-26）",
       "url": "https://gcaptain.com/second-ship-struck-inside-persian-gulf-in-three-days/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-time-houthi-riyadh-1008",
@@ -21,29 +41,27 @@
       "label": "🇾🇪 10/8 フーシ派がリヤド空港再攻撃を主張・サウジ空港の死傷者",
       "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
       "isLatest": false
-    },
-    {
-      "id": "latest-rigzone-oil-surge-1008",
-      "title": "原油が急伸、ブレント12月物は4.1%高の104.28ドルで取引終了——Bloomberg「1か月で最大の上げ幅」",
-      "body": "Rigzone配信のBloomberg記事（10/8 米東部時間16:11）によれば、10/8（木）のニューヨーク市場でWTI11月物は3.6%高の1バレル91.49ドル、ブレント12月物は4.1%高の104.28ドルで取引を終えた（原文は「settle」）。Bloombergは、イランによる新たなタンカー攻撃（Bloombergの表現）が中東からの最近の流量回復を妨げかねないことと、今年最初の大西洋のハリケーンに伴う減産が相場を押し上げたと伝える。investingLive（10/8）もブレントは約104ドル、WTIは約91.5ドルで引けたと伝え、数値は一致する（同記事は端数を丸めている）。",
-      "sourceLabel": "Bloomberg配信（Rigzone 10/8）・investingLive",
-      "date": "2026年10月8日（現地）",
-      "label": "🛢️ 10/8 ブレント104.28ドル・WTI91.49ドル（終値）",
-      "url": "https://www.rigzone.com/news/oil_surges_as_iran_tanker_attacks_escalate-08-oct-2026-184807-article",
-      "isLatest": false
-    },
-    {
-      "id": "latest-dpa-qatar-tanker-1007",
-      "title": "カタール北方のペルシャ湾でタンカーが複数の飛翔体を受け、死傷者の報告——UKMTO警報158-26、人数・船名・攻撃主体は未公表",
-      "body": "UKMTOは警報158-26（10/8付）で、10/7 19:00（時間帯の記載なし）にカタールのマディナト・アッシュ・シャマールの北51海里でタンカーが複数の飛翔体を受け、死傷者が報告されていると発表した（UKMTO公式サイトで警報の本文を確認）。DPA（10/7）は、現場をカタールの北約90キロのペルシャ湾とし、UKMTOは死者か負傷者かを明らかにしていないと伝える。船名・船籍・積み荷と攻撃主体は公表されていない。現場はホルムズ海峡の中ではなく、ペルシャ湾の内側にあたる。当局が調査中で、UKMTOは付近の船舶に注意して航行するよう求めている。",
-      "sourceLabel": "DPA（10/7）・UKMTO警報158-26",
-      "date": "2026年10月7日（現地）",
-      "label": "⚓ 10/7 カタール北方でタンカー被弾・死傷者の報告",
-      "url": "https://www.yahoo.com/news/world/articles/tanker-hit-several-projectiles-gulf-230329900.html",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-france24-riyadh-1010",
+      "titleJa": "【France 24】リヤド空港がミサイル攻撃で運航停止——医療関係者は少なくとも2人の死亡を証言、外交筋はフーシ派のミサイルと説明",
+      "titleEn": "Riyadh airport suspends operations after attack leaves multiple people wounded (France 24, Oct 10)",
+      "title": "【France 24】リヤド空港がミサイル攻撃で運航停止——医療関係者は少なくとも2人の死亡を証言、外交筋はフーシ派のミサイルと説明",
+      "country": "サウジアラビア／イエメン",
+      "media": "France 24",
+      "source": "France 24",
+      "date": "2026年10月10日（現地）",
+      "summary": "France 24（AFP引用・10/10）は、リヤドのキング・ハーリド国際空港が土曜にミサイル攻撃を受け、サウジ当局が空港の運航を停止したと伝えた。病院の医療関係者の話として少なくとも2人が死亡し、負傷者は数十人（うち5人が集中治療）。外交筋は現地時間15時ごろのフーシ派のミサイルとしたが、フーシ派は土曜の新たな攻撃を発表していない。サウジ民間航空当局は負傷者数を評価中としていた。",
+      "url": "https://www.france24.com/en/middle-east/20261010-riyadh-airport-suspends-operations-after-attack-leaves-multiple-people-wounded",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-time-saudi-airports-1008",
       "titleJa": "【TIME】フーシ派、リヤド空港への再攻撃を主張——サウジ当局は先の空港攻撃でリヤド1人・アブハ2人の死亡を発表",
@@ -55,7 +73,7 @@
       "date": "2026年10月8日（現地）",
       "summary": "TIME（10/8）は、フーシ派が10/8（木）にリヤドのキング・ハリド国際空港を標的にしたと主張し、サウジ側は確認していないと伝えた。先立つ攻撃では、サウジ当局がリヤド空港でスーダン人1人の死亡、民間航空当局がアブハ国際空港で2人の死亡と28人の負傷を発表した。同記事は、空港攻撃をフーシ派が繰り返し用いる戦術と位置づける。",
       "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1754,6 +1772,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月11日",
+      "items": [
+        {
+          "id": "latest-rigzone-oil-surge-1008",
+          "title": "原油が急伸、ブレント12月物は4.1%高の104.28ドルで取引終了——Bloomberg「1か月で最大の上げ幅」",
+          "body": "Rigzone配信のBloomberg記事（10/8 米東部時間16:11）によれば、10/8（木）のニューヨーク市場でWTI11月物は3.6%高の1バレル91.49ドル、ブレント12月物は4.1%高の104.28ドルで取引を終えた（原文は「settle」）。Bloombergは、イランによる新たなタンカー攻撃（Bloombergの表現）が中東からの最近の流量回復を妨げかねないことと、今年最初の大西洋のハリケーンに伴う減産が相場を押し上げたと伝える。investingLive（10/8）もブレントは約104ドル、WTIは約91.5ドルで引けたと伝え、数値は一致する（同記事は端数を丸めている）。",
+          "sourceLabel": "Bloomberg配信（Rigzone 10/8）・investingLive",
+          "date": "2026年10月8日（現地）",
+          "label": "🛢️ 10/8 ブレント104.28ドル・WTI91.49ドル（終値）",
+          "url": "https://www.rigzone.com/news/oil_surges_as_iran_tanker_attacks_escalate-08-oct-2026-184807-article",
+          "isLatest": false
+        },
+        {
+          "id": "latest-dpa-qatar-tanker-1007",
+          "title": "カタール北方のペルシャ湾でタンカーが複数の飛翔体を受け、死傷者の報告——UKMTO警報158-26、人数・船名・攻撃主体は未公表",
+          "body": "UKMTOは警報158-26（10/8付）で、10/7 19:00（時間帯の記載なし）にカタールのマディナト・アッシュ・シャマールの北51海里でタンカーが複数の飛翔体を受け、死傷者が報告されていると発表した（UKMTO公式サイトで警報の本文を確認）。DPA（10/7）は、現場をカタールの北約90キロのペルシャ湾とし、UKMTOは死者か負傷者かを明らかにしていないと伝える。船名・船籍・積み荷と攻撃主体は公表されていない。現場はホルムズ海峡の中ではなく、ペルシャ湾の内側にあたる。当局が調査中で、UKMTOは付近の船舶に注意して航行するよう求めている。",
+          "sourceLabel": "DPA（10/7）・UKMTO警報158-26",
+          "date": "2026年10月7日（現地）",
+          "label": "⚓ 10/7 カタール北方でタンカー被弾・死傷者の報告",
+          "url": "https://www.yahoo.com/news/world/articles/tanker-hit-several-projectiles-gulf-230329900.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月10日",
       "items": [

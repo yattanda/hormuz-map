@@ -1016,7 +1016,7 @@ def check_selfhosted_assets(html: str) -> None:
     for path in sorted((ROOT / "docs" / "articles").glob("*.html")) + [ROOT / "tools" / "article-template.html"]:
         try:
             pages.append((path.name, path.read_text(encoding="utf-8")))
-        except OSError:
+        except (OSError, UnicodeDecodeError):
             bad.append(f"{path.name} を読めません")
     for name, text in pages:
         if pat_gfonts.search(text):

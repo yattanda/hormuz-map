@@ -986,6 +986,27 @@ def check_crisis_day(html: str, base: str) -> None:
         ok(f"本体ヘッダーの「危機N日目」の静的な数字 {got}（基準日 {base}）")
 
 
+def check_selfhosted_assets(html: str) -> None:
+    """自サイトから配信している資産（①' 外部依存の自前化・2026-10-09 追加）。
+
+    Leaflet を unpkg.com から読む形に戻っていないか。戻ると、/privacy/ 第5章に無い
+    外部送信先へ接続することになる（方針ページと実態の食い違い）。
+    """
+    vendor = "/assets/vendor/leaflet-1.9.4/"
+    bad = []
+    if re.search(r"unpkg\.com", html):  # ページ内の文字列の有無を見る（URL の検証ではない）
+        bad.append("unpkg.com への参照があります")
+    for name in ("leaflet.css", "leaflet.js"):
+        if f'"{vendor}{name}"' not in html:
+            bad.append(f"<head> に {vendor}{name} がありません")
+        if not (ROOT / "docs" / "assets" / "vendor" / "leaflet-1.9.4" / name).is_file():
+            bad.append(f"docs{vendor}{name} がありません")
+    if bad:
+        ng(f"Leaflet の読み込み元が型と違います: {'・'.join(bad)}。自サイト（{vendor}）から読む")
+    else:
+        ok("Leaflet は自サイトから読み込み（unpkg.com への参照なし）")
+
+
 def check_upcoming(html: str) -> None:
     """今後の予定日（docs/data/upcoming.json）。/hormuz/ の30秒カラム「次の焦点」の直下に JS が出す。
 
@@ -1139,6 +1160,7 @@ def main() -> int:
     check_scenario_dates(html, base)
     check_state_labels(html)
     check_estimate_labels(html)
+    check_selfhosted_assets(html)
     check_upcoming(html)
     check_log_wording(html, base)
     check_route_freshness(html, base)

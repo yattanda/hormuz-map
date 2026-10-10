@@ -798,6 +798,7 @@ def check_log_wording(html: str, base: str) -> None:
 
 
 UNRESOLVED_WORDS = ("終値かは未確認", "終値未確認", "食い違", "未解消")
+OFFICIAL_UNREAD_WORDS = ("公式の本文は未確認", "公式の本文は読めていない")
 PAT_TICKER_TEXT = re.compile(r'<span class="ticker-text">(.*?)</span>', re.S)
 PAT_SC_UPDATE = re.compile(r'<div class="sc-update">.*?<div class="sc-sync-note">', re.S)
 PAT_SC_UPDATE_DATE = re.compile(r'sc-update-date">\s*📊\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
@@ -828,6 +829,20 @@ def check_unresolved(html: str) -> None:
                  "裏取り（daily-site-update「2.5 裏取り」）で解消して書き直すか、記述を外す")
         else:
             ok(f"{label}に未解消の表記なし")
+
+    # 速報インシデントの先頭3件に「公式の本文は未確認」が残っていないか（2026-10-10 追加）。
+    # UKMTO の警報の本文は tools/fetch_ukmto.py で読める。10/10 07:06 の更新は読めないまま運営者に確認を回した。
+    m = PAT_INCIDENT_LIST.search(html)
+    if not m:
+        warn("速報インシデントの一覧を検出できず、公式の本文の未確認を確認できません（構造が変わった可能性）")
+    else:
+        items = re.findall(r'<li class="incident-item.*?</li>', m.group(0), re.S)[:3]
+        hits = [w for w in OFFICIAL_UNREAD_WORDS if any(w in it for it in items)]
+        if hits:
+            warn(f"速報インシデントの先頭3件に公式の本文の未確認があります：{'・'.join(hits)}。"
+                 "python tools/fetch_ukmto.py で読んで直す（スクリプトが終了コード 2 のときだけ残してよい）")
+        else:
+            ok("速報インシデントの先頭3件に公式の本文の未確認なし")
 
 
 def check_scenario_dates(html: str, base: str) -> None:

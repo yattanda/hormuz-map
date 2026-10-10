@@ -1,7 +1,7 @@
 # ①' 外部依存の自前化 設計書 v1（2026-10-07）
 
 対象：Google Fonts（Noto Sans JP）と Leaflet（unpkg.com）の読み込みを自サイトからの配信に替え、`/privacy/` 第5章を合わせて改訂する。
-状態：**Leaflet は実装済み（2026-10-09・§2-2-R）。フォントと `/privacy/` 第5章はこれから。**判断事項 L1〜L5 は 2026-10-07 に決定（§4。すべて推奨どおり）。
+状態：**Leaflet は公開済み（2026-10-10 マージ・§2-2-R）。`/privacy/` 第5章は unpkg.com の行だけ改訂済み（§2-4-R）。フォントと、Google Fonts の行の改訂はこれから。**判断事項 L1〜L5 は 2026-10-07 に決定（§4。すべて推奨どおり）。
 §1「現状」は 2026-10-07 の調査時点の記述で、Leaflet の読み込み元は §2-2-R のとおり変わっている。
 
 上流の決定（変えない）
@@ -90,6 +90,12 @@
   - `validate_daily.py` に `check_selfhosted_assets()`（`unpkg.com` への参照が戻る・`<head>` が自前のパスでない・配置したファイルが無い、のどれかで NG。OK 60 / WARN 0 / NG 0）
   - キャッシュ：GitHub Pages の配信は `Cache-Control: max-age=600`。unpkg.com の長期キャッシュより短くなるが、変更はしていない（PSI を取り直すときに見る）
 
+- **マージと本番確認（2026-10-10）**：PR #65 を merge commit `5a4f0c4` でマージ（10:04 JST）。マージ前に main を取り込み（衝突なし）、ローカルで地図・印 246個・ポップアップ・拡大縮小・幅 375px を確かめた
+  - 本番 `chokepointlab.com/hormuz/`：`<head>` は自前のパス・`L.version` 1.9.4・タイルと印 246個・コンソールエラー 0・接続先に `unpkg.com` なし。配信される `leaflet.js` の SHA-256 は配布元の SRI と一致
+  - マージ前に CodeQL が high を1件出した（`py/incomplete-url-substring-sanitization`・`validate_daily.py` の `"unpkg.com" in html`）。ページ内の文字列の有無を見る検査で URL の検証ではないが、
+    同じ動作の `re.search(r"unpkg\.com", html)` に替えて消した（`722b4b8`）。検査にホスト名の文字列を `in` で書くと同じ警告が出る
+  - ブランチ `infra/selfhost-leaflet` は削除済み
+
 ### 2-3. 置き場所と書き方
 
 - `/assets/fonts/noto-sans-jp/`（woff2 と `noto-sans-jp.css`）、`/assets/vendor/leaflet-1.9.4/`
@@ -103,6 +109,12 @@
 - **順序：実装を本番に出してから、同じ日のうちに改訂する。**先に改訂すると、まだ接続しているのに「接続しない」と書くことになる
 - 法務ページなので単独コミット。文面は案を出し、運営者が確定する
 - `/corrections/` への記録は不要と考える（公開していた記述が誤っていたのではなく、実装を変えたため）。記録するかは L4 で確認する
+
+### 2-4-R. `/privacy/` 第5章の改訂の実施記録（1回目・2026-10-10）
+
+- Leaflet を本番に出した同じ日に、一覧から「unpkg.com（Leaflet の配信）」の1行を外し、最終更新を 2026年10月10日にした（main `028effa`・単独コミット。sitemap の `lastmod` は別コミット `91e0b48`）
+- `/corrections/` には記録しない（運営者の決定・2026-10-10）
+- 「Google LLC（Google Fonts）」の行は残っている。フォントの自前化を本番に出した日に外す（2回目の改訂）。§2-4 は「まとめて1回」としていたが、接続が無くなった行を残さないために分けた
 
 ### 2-5. PR の分け方（判断 L5）
 

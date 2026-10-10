@@ -994,7 +994,7 @@ def check_selfhosted_assets(html: str) -> None:
     """
     vendor = "/assets/vendor/leaflet-1.9.4/"
     bad = []
-    if "unpkg.com" in html:
+    if re.search(r"unpkg\.com", html):  # ページ内の文字列の有無を見る（URL の検証ではない）
         bad.append("unpkg.com への参照があります")
     for name in ("leaflet.css", "leaflet.js"):
         if f'"{vendor}{name}"' not in html:

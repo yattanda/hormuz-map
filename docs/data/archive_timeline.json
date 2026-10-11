@@ -3210,6 +3210,24 @@
           "sourceLabel": "France 24（AFP 10/10）・CBS News"
         }
       ]
+    },
+    {
+      "date": "2026-10-12",
+      "dateLabel": "2026/10/12 07:11",
+      "blockadeDay": 227,
+      "summary": "【重大更新】UKMTO公式サイトの警報164-26（10/11 22:04 JST発行）：ホルムズ海峡内で出港中のタンカーが左舷に正体不明の飛翔体を受けて損傷（乗組員は全員無事、環境への影響の報告なし）・警報165-26（10/12 04:21 JST発行）と続報（05:54 JST）：オマーンのソハール錨地付近のタンカーが無人機に攻撃されたと確認（現地当局が乗組員の避難を支援、損害は不明）。インド政府は、ソハール錨地で被弾したとみられる「MT Petro Dolphin」のインド人船員11人のうち9人が救助され2人が行方不明、ホルムズ海峡で飛翔体を受け火災が起きた「MT Valthera」の11人は無事と発表した（ANI配信・Tribune India。警報番号の記載はなく、同一事案とするのは推定）。攻撃主体の主張は確認できない・10/10のリヤド空港攻撃：サウジ民間航空総局が12人死亡・309人負傷と発表し、Arab NewsとAl Jazeeraが同じ数字を伝えた（前回載せたAFPの「少なくとも2人死亡」は発表と合わない）。10/11にも同空港に新たな攻撃があったとGulf Newsが伝える・UKMTOアドバイザリー（10/10 23:35 UTC、オマーン湾でタンカーと軍が関わる事案）を追加（主要媒体の記事は見つからず、内容は不明）・警報162-26は主要媒体の記事が引き続き見つからない・原油は週末のため新しい終値なし（10/9終値を据え置き）・日本関係船は日英の検索で新規の発表なし（残り4隻）・危機227日目・ニュース2件更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し",
+      "relatedNews": [
+        {
+          "title": "インド政府、ソハール沖で被弾したタンカーの船員2人が行方不明と発表——ホルムズ海峡の別のタンカーでは火災、船員は無事",
+          "url": "https://www.tribuneindia.com/news/drone-attack/india-condemns-attacks-on-two-vessels-in-hormuz-region-calls-for-de-escalation",
+          "sourceLabel": "インド外務省の声明（ANI配信・Tribune India 10/12）"
+        },
+        {
+          "title": "リヤド空港攻撃、サウジ民間航空総局が12人死亡・309人負傷と発表",
+          "url": "https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-killed-12-people-and-wounded-over-300-more-says-saudi-civil-aviation-agency-3005640",
+          "sourceLabel": "Arab News（10/10〜11）"
+        }
+      ]
     }
   ]
 }

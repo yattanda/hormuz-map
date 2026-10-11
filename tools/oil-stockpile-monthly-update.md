@@ -46,8 +46,9 @@
 
 ## 3. 周辺を追従させる
 
-- `docs/hormuz/index.html` の「石油備蓄の月次推移まとめコラムカード」のサブタイトルと要約
-- `docs/articles/index.html` の一覧カードの `idx-lead`
+- `docs/hormuz/index.html` の「石油備蓄の月次推移まとめコラムカード」のサブタイトルと要約、
+  日付（`col-card-date`）の「更新 YYYY/MM/DD」（書式は「公開 2026/08/21・更新 YYYY/MM/DD」。記事の `dateModified` と同じ日付）
+- `docs/articles/index.html` の一覧カードの `idx-lead` と、日付（`idx-date`）の「更新 YYYY/MM/DD」（同じ書式）
 - `docs/sitemap.xml` の該当 URL の `lastmod`
 - `docs/hormuz/index.html` の「30秒で全体像」内の特別解説ピル（`📉 石油備蓄推移`）の `data-updated` を、記事の `dateModified` と同じ日付にする。
   これで「◯月更新」の札が30日間表示される

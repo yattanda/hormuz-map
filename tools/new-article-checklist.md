@@ -72,7 +72,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
       <h3 class="col-card-title">記事タイトル</h3>
       <div class="col-card-sub">サブタイトル</div>
     </div>
-    <span class="col-card-date">2026/04/12</span>
+    <span class="col-card-date">公開 2026/04/12</span>
   </div>
 
   <!-- 要約 -->
@@ -99,7 +99,9 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 ```
 
 - 公開から30日間は「NEW」、それ以降は更新から30日間「◯月更新」の札が自動で付く（`applyColumnBadges()`）
-- **既存コラムに加筆したときも**、記事の `dateModified` と一緒にピルの `data-updated` を書き換える。
+- **日付の書き方**：カード（`col-card-date`）と記事一覧（`idx-date`）は「公開 YYYY/MM/DD」。
+  公開のあとに加筆した記事は「公開 YYYY/MM/DD・更新 YYYY/MM/DD」と書く（何の日付かを読者が取り違えないため・2026-10-11）
+- **既存コラムに加筆したときも**、記事の `dateModified` と一緒にピルの `data-updated`、カードと記事一覧の「更新 …」を書き換える。
   忘れると札が出ない（`tools/validate_daily.py` が食い違いを WARN で出す）
 - 属性の順番（`href` → `class` → `data-published` → `data-updated`）は変えない。検証スクリプトがこの書式で検出している
 

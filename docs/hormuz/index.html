@@ -789,7 +789,8 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .col-card-titles { flex:1; min-width:0; }
 .col-card-title { font-size:var(--fs-base); font-weight:800; color:var(--cc-accent); line-height:1.4; margin:0; }
 .col-card-sub { font-size:var(--fs-xs); color:#94a3b8; margin-top:2px; }
-.col-card-date { font-size:var(--fs-xs); color:#64748b; white-space:nowrap; }
+/* 日付は見出しの下の行に置く（「公開 …・更新 …」は長く、横に並べるとタイトルの幅を奪う） */
+.col-card-date { flex-basis:100%; font-size:var(--fs-xs); color:#64748b; }
 .col-card-lead { margin-top:12px; font-size:var(--fs-sm); color:#cbd5e1; line-height:1.75; }
 .col-card-link { display:block; margin-top:12px; width:100%; text-align:center; background:rgba(var(--cc),0.1); border:1px solid rgba(var(--cc),0.3);
   border-radius:6px; color:var(--cc-accent); font-size:var(--fs-sm); font-weight:700; padding:9px 0; text-decoration:none; letter-spacing:0.03em; }
@@ -4856,7 +4857,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3 class="col-card-title">ホルムズ海峡「機雷問題」の深層</h3>
         <div class="col-card-sub">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</div>
       </div>
-      <span class="col-card-date">2026/04/12</span>
+      <span class="col-card-date">公開 2026/04/12</span>
     </div>
 
     <!-- 要約 -->
@@ -4879,7 +4880,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="col-card-title">サウジ東西パイプライン攻撃の深層</h3>
       <div class="col-card-sub">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</div>
     </div>
-    <span class="col-card-date">2026/04/09</span>
+    <span class="col-card-date">公開 2026/04/09</span>
   </div>
 
   <!-- 要約 -->
@@ -4902,7 +4903,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="col-card-title">ルートC・アラスカ原油の現実</h3>
       <div class="col-card-sub">ホルムズ・紅海の二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</div>
     </div>
-    <span class="col-card-date">2026/04/12</span>
+    <span class="col-card-date">公開 2026/04/12</span>
   </div>
 
   <!-- 要約 -->
@@ -4925,7 +4926,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="col-card-title">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</h3>
       <div class="col-card-sub">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</div>
     </div>
-    <span class="col-card-date">2026/04/13</span>
+    <span class="col-card-date">公開 2026/04/13・更新 2026/05/06</span>
   </div>
 
   <!-- 要約 -->
@@ -4949,7 +4950,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="col-card-title">不完全な停戦、動かない海峡</h3>
       <div class="col-card-sub">ホルムズ海峡危機、1か月で見えた供給正常化の壁 ― 予測 vs 現実ダッシュボード</div>
     </div>
-    <span class="col-card-date">2026/05/08</span>
+    <span class="col-card-date">2026/05/08 時点の比較</span>
   </div>
 
   <!-- サムネイル＋外部リンクボタン -->
@@ -4972,7 +4973,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="col-card-title">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h3>
       <div class="col-card-sub">開戦前248日分→現在197日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</div>
     </div>
-    <span class="col-card-date">2026/08/21</span>
+    <span class="col-card-date">公開 2026/08/21・更新 2026/10/04</span>
   </div>
 
   <!-- 要約 -->
@@ -4997,7 +4998,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="col-card-title">トランプ声明（4/8 JST）：2週間停止に合意</h3>
       <div class="col-card-sub">「完全・即時・安全なホルムズ開放」を条件に ― Truth Social 投稿の原文・日本語訳・解釈分析</div>
     </div>
-    <span class="col-card-date">2026/04/08</span>
+    <span class="col-card-date">2026/04/08 の声明</span>
   </div>
 
   <!-- 要約 -->

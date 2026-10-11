@@ -546,7 +546,10 @@
   function renderStats(data, entries){
     const statEls = document.querySelectorAll('#stats .n');
     statEls[0].textContent = entries.length + '日';
-    const rs = data.meta && data.meta.rangeStart, re = data.meta && data.meta.rangeEnd;
+    // 対象期間は収録した記録の最初と最後の日から出す（meta.rangeEnd は 2026-09-14 で止まっていて、
+    // 10月の記録があるのに「〜2026/09」と出ていた）。記録が無いときだけ meta を使う
+    const rs = entries.length ? entries[0].date : (data.meta && data.meta.rangeStart);
+    const re = entries.length ? entries[entries.length - 1].date : (data.meta && data.meta.rangeEnd);
     statEls[1].textContent = rs && re ? `${rs.slice(0,7).replace('-','/')}〜${re.slice(0,7).replace('-','/')}` : '—';
     const days = entries.map(e => calcBlockadeDay(e.date));
     if(days.length){

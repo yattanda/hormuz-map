@@ -63,6 +63,9 @@ LOG = ROOT / "docs" / "data" / "update_log.json"
 TIMELINE = ROOT / "docs" / "data" / "archive_timeline.json"
 SITEMAP = ROOT / "docs" / "sitemap.xml"
 UPCOMING = ROOT / "docs" / "data" / "upcoming.json"   # 今後の予定日（/hormuz/ の30秒カラムに JS が出す）
+MILITARY = ROOT / "docs" / "data" / "military.json"   # 地図の艦隊・港・海域の説明（日次で毎回見直す）
+MILITARY_REL = "docs/data/military.json"
+MILITARY_DETAIL_MAX = 330                              # ポップアップに出す説明の長さの目安（字）
 
 # latest の必須フィールド（daily-site-update スキル準拠）
 LATEST_REQUIRED = ["title", "body", "sourceLabel", "date", "label", "url"]
@@ -456,6 +459,77 @@ def check_blockade_wording(label: str, text: str) -> None:
     if PAT_DUAL_BLOCKADE_BARE.search(text or ""):
         warn(f"{label} に主語のない「二重封鎖」があります。「イラン・米国による二重封鎖」"
              "「ホルムズ・紅海の二重封鎖」のどちらかで書く")
+
+
+def check_military(base: str) -> None:
+    """地図の軍事レイヤー（military.json）が日次で見直されているか、形が壊れていないか。
+
+    2026-04-18 から 10-11 まで半年のあいだ誰も見直さず、4月の発動直後の説明が地図に残っていた。
+    - checked（見直した日）が基準日か（WARN）。本文を変えた日は updated も基準日にする
+    - 必須項目・日付の形（NG）
+    - 座標・印の増減・id・type・色が直前のコミットから変わっていないか（WARN。日次では変えない決まり）
+    - 「封鎖」の書き方・説明の長さ・出典の有無（WARN）
+    """
+    try:
+        data = json.loads(MILITARY.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        ng(f"military.json を読めません（{type(e).__name__}）。地図の艦隊・港・海域が出なくなります")
+        return
+    upd, chk = str(data.get("updated", "")), str(data.get("checked", ""))
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", upd) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", chk):
+        ng(f"military.json の updated「{upd}」・checked「{chk}」が YYYY-MM-DD ではありません")
+        return
+    if upd > chk:
+        ng(f"military.json の updated {upd} が checked {chk} より後です（本文を変えた日は checked も同じ日にする）")
+    items = []
+    for key in ("fleets", "ports", "blockadeZones"):
+        for it in data.get(key) or []:
+            items.append((key, it))
+            need = ["id", "name", "detail", "source", "type"] + (["coords", "color"] if key == "blockadeZones" else ["lat", "lng", "status", "emoji"])
+            lack = [k for k in need if it.get(k) in (None, "", [])]
+            if lack:
+                ng(f"military.json {key} / {it.get('id', '?')} に必須項目がありません: {', '.join(lack)}")
+    if not items:
+        ng("military.json に艦隊・港・海域が1件もありません")
+        return
+    if chk != base:
+        warn(f"military.json の checked が {chk} です（基準 {base}）。地図の艦隊・港・海域の説明を今日の情報で見直し、"
+             "checked を基準日にする（本文を変えたら updated も）。daily-site-update「地図の軍事レイヤー」")
+    else:
+        ok(f"military.json 見直し済み（checked {chk}・本文の更新 {upd}・{len(items)}件）")
+    for key, it in items:
+        label = f"military.json {it.get('id')}"
+        text = " ".join(str(it.get(k, "")) for k in ("name", "status", "detail"))
+        check_blockade_wording(label, text)
+        if re.search(r"封鎖対象|封鎖中|封鎖任務|米封鎖|封鎖強度", text):
+            warn(f"{label} に主語のない「封鎖」があります。「米軍の対イラン海上封鎖」のように誰が・どこをを書く")
+        if len(str(it.get("detail", ""))) > MILITARY_DETAIL_MAX:
+            warn(f"{label} の説明が {len(str(it.get('detail', '')))}字です（目安 {MILITARY_DETAIL_MAX}字）。"
+                 "古い数字は新しい数字で置き換える（積み増さない）")
+        if not re.search(r"\d{1,2}/\d{1,2}", str(it.get("source", ""))):
+            warn(f"{label} の出典に日付（M/D）がありません: {it.get('source')}")
+
+    # 直前のコミットと比べる：日次では座標・印の増減・id・type・色を変えない
+    import subprocess
+    try:
+        head = subprocess.run(["git", "show", f"HEAD:{MILITARY_REL}"], cwd=ROOT, capture_output=True, timeout=20)
+        prev = json.loads(head.stdout.decode("utf-8")) if head.returncode == 0 else None
+    except Exception:  # git が無い・壊れた JSON など。比べられないだけで止めない
+        prev = None
+    if prev is None:
+        return
+    def shape(dat):
+        out = {}
+        for key in ("fleets", "ports", "blockadeZones"):
+            for it in dat.get(key) or []:
+                out[(key, it.get("id"))] = (it.get("type"), it.get("emoji"), it.get("lat"), it.get("lng"),
+                                            json.dumps(it.get("coords")), it.get("color"), it.get("opacity"))
+        return out
+    a, b = shape(prev), shape(data)
+    if a != b:
+        diff = sorted({f"{k[0]}/{k[1]}" for k in set(a) ^ set(b)} | {f"{k[0]}/{k[1]}" for k in set(a) & set(b) if a[k] != b[k]})
+        warn(f"military.json の印・座標・種別が直前のコミットから変わっています: {', '.join(diff)}。"
+             "日次では説明（name・status・detail・source）だけを書き換える。印の追加・削除や座標の変更が要るときは報告に書く")
 
 
 def check_timeline(tl, base: str) -> None:
@@ -1339,6 +1413,7 @@ def main() -> int:
         check_timeline(tl, base)
     check_sitemap(tl, base)
     check_data_timeline()
+    check_military(base)
     check_oil_flow()
     check_stockpile(html)
     check_column_pills(html)

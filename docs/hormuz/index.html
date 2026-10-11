@@ -3242,6 +3242,9 @@ function renderMilitaryLayer() {
   fetch('/data/military.json')
     .then(r => r.json())
     .then(data => {
+      // 本文を変えた日（updated）と、日次更新で見直した日（checked）。同じ日なら更新日だけを出す
+      const milDates = '更新：' + data.updated
+        + (data.checked && data.checked !== data.updated ? '（' + data.checked + ' 確認）' : '');
 
       // --- 封鎖ゾーン（ポリゴン）---
       if (data.blockadeZones) {
@@ -3257,7 +3260,7 @@ function renderMilitaryLayer() {
             <div style="min-width:200px;">
               <strong style="color:${zone.color};">${zone.name}</strong><br>
               <span style="font-size:0.8rem;">${zone.detail}</span><br>
-              <small style="color:#94a3b8;">出典：${zone.source}</small>
+              <small style="color:#94a3b8;">出典：${zone.source}　${milDates}</small>
             </div>
           `)
           .addTo(map);
@@ -3279,7 +3282,7 @@ function renderMilitaryLayer() {
                 <strong style="color:#f87171;">${f.emoji} ${f.name}</strong><br>
                 <span style="background:rgba(239,68,68,0.3);color:#fca5a5;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${f.status}</span><br><br>
                 <span style="font-size:0.8rem;color:#cbd5e1;">${f.detail}</span><br>
-                <small style="color:#64748b;">出典：${f.source}　更新：${data.updated}</small>
+                <small style="color:#64748b;">出典：${f.source}　${milDates}</small>
               </div>
             `)
             .addTo(map);
@@ -3309,7 +3312,7 @@ function renderMilitaryLayer() {
                 <strong style="color:${col};">${p.emoji} ${p.name}</strong><br>
                 <span style="background:rgba(255,255,255,0.12);color:#e2e8f0;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${p.status}</span><br><br>
                 <span style="font-size:0.8rem;color:#cbd5e1;">${p.detail}</span><br>
-                <small style="color:#64748b;">出典：${p.source}　更新：${data.updated}</small>
+                <small style="color:#64748b;">出典：${p.source}　${milDates}</small>
               </div>
             `)
             .addTo(map);

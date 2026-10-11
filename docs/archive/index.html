@@ -97,6 +97,9 @@
     font-variant-numeric:tabular-nums;
   }
   .stat .l{font-size:.68rem;color:var(--muted-dim);letter-spacing:.06em;margin-top:2px;}
+  /* データが届く前に置く、実値と同じ字数の見えない仮の文字。狭い画面で「対象期間」が折り返す行数を先に確保し、
+     値が入ったときに下の表示を押し下げない（CLS）。JS が textContent で実値に置き換える */
+  .stat .n .ph{visibility:hidden;}
 
   /* ===== NOTICE ===== */
   .notice{
@@ -167,6 +170,7 @@
   .month-tabs{
     display:flex;gap:6px;flex-wrap:wrap;padding:16px 0 4px;
     border-bottom:1px solid var(--line);
+    min-height:3.4rem; /* タブ1行ぶん。データが届く前から場所を取る（CLS） */
   }
   .month-tab{
     font-family:var(--mono);font-size:.76rem;letter-spacing:.03em;
@@ -310,7 +314,8 @@
   }
   footer a{color:var(--muted);}
 
-  #loading{padding:60px 0;text-align:center;color:var(--muted);font-size:.85rem;}
+  /* 読み込み中は1画面ぶんの高さを取る。フッターが先に見えて、一覧が出たときに押し下げられるのを防ぐ（CLS） */
+  #loading{padding:60px 0;min-height:100vh;text-align:center;color:var(--muted);font-size:.85rem;}
 
   @media (max-width:600px){
     .wrap{padding:0 14px;}
@@ -338,36 +343,34 @@
   </header>
 
   <div class="stats" id="stats">
-    <div class="stat"><div class="n">—</div><div class="l">記録日数</div></div>
-    <div class="stat"><div class="n">—</div><div class="l">対象期間</div></div>
-    <div class="stat"><div class="n">—</div><div class="l">開戦からの日数</div></div>
+    <div class="stat"><div class="n"><span class="ph">000日</span></div><div class="l">記録日数</div></div>
+    <div class="stat"><div class="n"><span class="ph">2026/02〜2026/12</span></div><div class="l">対象期間</div></div>
+    <div class="stat"><div class="n"><span class="ph">1〜000日目</span></div><div class="l">開戦からの日数</div></div>
   </div>
 
-  <div class="notice" id="range-notice">
-    <strong>収録範囲について：</strong>
-    読み込み中…
-  </div>
+  <!-- 注記の文は JS（renderRangeNotice）が同じ内容で書き直す。先に HTML に置くのは、データが届いたときに
+       注記が伸びて下の表示を押し下げないため（CLS）。文を変えるときは JS と両方を直す -->
+  <div class="notice" id="range-notice"><strong>収録範囲について：</strong><br>2026年2月28日〜2026年4月7日分は本サイト開設前のため、公開情報をもとに事後調査でまとめた記録です（<span style="border:1px dashed var(--line-strong);padding:1px 6px;border-radius:3px;">事後調査</span> バッジ表示）。 2026年4月8日以降は、本サイトが実際にその日に発信した速報本文をそのまま収録しています。 一部、本サイトが速報を発信し忘れていた日について後日調査で補完した記録には<span style="border:1px dotted rgba(127,184,201,0.5);padding:1px 6px;border-radius:3px;">🧩欠損補完</span>バッジを表示しています。 本サイトが速報を発信せず、かつ重要な動きも確認できなかった日は記録対象外としています。 本文中の「OSINT更新」（「osint更新」）は、ホルムズ海峡危機マップの「現地メディア視点」のコーナーを更新したという意味です。 <strong>フェーズ別で見る</strong>を選ぶと、危機の展開を6つの局面（Act1〜6）に分けて通しで追うことができます。 なお、各日の<strong>「危機◯日目」は、2026年2月28日（開戦日）を1日目として数えた日数</strong>です。2026年10月上旬までは「封鎖◯日目」と表示していましたが、数えているのは特定の封鎖の日数ではなく開戦からの日数であるため、呼び名を改めました（数字は同じです）。過去の速報本文に残る「封鎖◯日目」「二重封鎖◯日目」は当時の表記のままにしています。2026年6月24日以前の本文は、当時採用していた起算日（2月27日）に基づくため、スタンプの数字と1日ずれている場合があります。</div>
 
-  <div id="loading">記録を読み込み中…</div>
-
-  <form class="search" id="search" role="search" style="display:none;">
+  <form class="search" id="search" role="search">
     <label class="search-label" for="q">キーワード検索</label>
     <div class="search-box">
-      <input type="search" id="q" autocomplete="off" enterkeyhint="search" placeholder="例：機雷　CENTCOM　通航料">
+      <input type="search" id="q" disabled autocomplete="off" enterkeyhint="search" placeholder="例：機雷　CENTCOM　通航料">
       <button type="button" class="search-clear" id="q-clear" hidden aria-label="検索語を消す">×</button>
     </div>
     <p class="search-hint">全期間の記録から探します。空白で区切ると、すべての語を含む日だけに絞ります。</p>
   </form>
   <div class="search-status" id="search-status" aria-live="polite" style="display:none;"></div>
 
-  <div class="view-toggle" id="view-toggle" style="display:none;">
+  <div class="view-toggle" id="view-toggle">
     <button class="view-btn active" data-view="month">📅 月別で見る</button>
     <button class="view-btn" data-view="act">📖 フェーズ別で見る</button>
   </div>
 
-  <div class="month-tabs" id="month-tabs" style="display:none;"></div>
+  <div class="month-tabs" id="month-tabs"></div>
   <div class="act-tabs" id="act-tabs" style="display:none;"></div>
   <div class="act-banner" id="act-banner" style="display:none;"></div>
+  <div id="loading">記録を読み込み中…</div>
   <div class="timeline" id="timeline" style="display:none;"></div>
 
   <footer>
@@ -461,9 +464,7 @@
       renderMonth(CURRENT_MONTH);
 
       document.getElementById('loading').style.display = 'none';
-      document.getElementById('search').style.display = 'block';
-      document.getElementById('view-toggle').style.display = 'flex';
-      document.getElementById('month-tabs').style.display = 'flex';
+      document.getElementById('q').disabled = false;
       document.getElementById('timeline').style.display = 'block';
 
       setupViewToggle();
@@ -504,6 +505,7 @@
     })
     .catch(err => {
       document.getElementById('loading').textContent = '記録データの読み込みに失敗しました（' + err.message + '）。時間をおいて再度お試しください。';
+      ['search', 'view-toggle', 'month-tabs'].forEach(id => { document.getElementById(id).style.display = 'none'; });
     });
 
   function fmtJpDate(iso){

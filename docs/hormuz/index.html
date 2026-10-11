@@ -97,6 +97,7 @@
   --c-warn:          #fbbf24;  /* 警戒・注意（83箇所） */
   --c-warn-deep:     #f59e0b;
   --c-warn-pale:     #fde68a;
+  --c-warn-soft:     #efe2b6;  /* 文章に使う黄色（淡）。見出し・ラベル・短い印は --c-warn のまま（2026-10-11） */
   --c-accent:        #38bdf8;  /* アクセント・リンク（55箇所） */
   --c-accent-pale:   #7dd3fc;
   --c-info:          #93c5fd;
@@ -255,8 +256,9 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 }
 .ticker-label { background:#ef4444; color:#fff; font-size:0.68rem; font-weight:800; padding:3px 9px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
 .ticker-scroll { overflow:hidden; flex:1; }
-.ticker-text { font-size:0.8rem; color:#fecaca; white-space:nowrap; display:inline-block; animation:tickerScroll 50s linear infinite; }
-@keyframes tickerScroll{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+.ticker-text { font-size:0.8rem; color:#fecaca; white-space:nowrap; display:inline-block; animation:tickerScroll 50s linear infinite; will-change:transform; }
+/* 50s は JS が動かないときの予備。fitTickerSpeed() が文字の長さから一定の速さ（px/秒）になるよう上書きする */
+@keyframes tickerScroll{0%{transform:translate3d(100vw,0,0)}100%{transform:translate3d(-100%,0,0)}}
 
 /* MAIN CONTAINER */
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
@@ -626,7 +628,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .rtable tr.rtable-foot { background:rgba(56,189,248,0.04); }
 .rtable tr.rtable-foot td { font-size:var(--fs-xs); color:#475569; padding:8px 13px; text-align:right; }
 .rtable tr.rtable-foot .route-history { text-align:left; }
-.rtable .t-danger{color:#f87171} .rtable .t-warning{color:#fbbf24} .rtable .t-positive{color:#4ade80}
+.rtable .t-danger{color:#f87171} .rtable .t-warning{color:#fbbf24} .rtable .t-warning-soft{color:var(--c-warn-soft)} .rtable .t-positive{color:#4ade80}
 .rtable .t-info{color:#7dd3fc} .rtable .t-neutral{color:#94a3b8} .rtable .t-bright, .jf-note .t-bright{color:#e2e8f0}
 .rtable .t-mute{color:#64748b} .rtable .t-blue{color:#38bdf8} .rtable .t-violet{color:#a78bfa}
 .rtable .t-purple{color:#c084fc} .rtable .t-orange{color:#fb923c}
@@ -661,9 +663,10 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
 .sec-h2--sky { color:#7dd3fc; }
 .label-scenario.sc-h2-label, .label-ai.sc-h2-label { margin-left:8px; font-size:var(--fs-xs); }
 .sc-update { background:rgba(239,68,68,0.07); border:1px dashed rgba(239,68,68,0.35); border-radius:8px; padding:12px 16px;
-  margin-bottom:16px; font-size:var(--fs-sm); color:#fca5a5; line-height:1.8; }
+  margin-top:14px; margin-bottom:16px; font-size:var(--fs-sm); color:#d5dbe4; line-height:1.8; }
+.sc-update-head { margin:0 0 10px; font-size:var(--fs-sm); }
 .sc-update-date { font-weight:800; color:#f87171; }
-.sc-update-caveat { color:#fbbf24; }
+.sc-update-caveat { color:var(--c-warn-soft); font-weight:600; }
 .sc-trend { color:#94a3b8; }
 .sc-tag-em { font-size:1.15em; font-weight:900;
   text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8); }
@@ -677,13 +680,21 @@ header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
   font-size:var(--fs-xs); color:#cbd5e1; line-height:1.65; }
 /* 前提が古いときだけ syncScenarioFromDashboard() が style.display='block' で出す */
 .sc-ctx-note { display:none; margin-top:7px; padding:6px 9px; border-radius:5px; background:rgba(251,191,36,0.12); border:1px solid rgba(251,191,36,0.4);
-  font-size:var(--fs-xs); color:#fbbf24; line-height:1.65; }
+  font-size:var(--fs-xs); color:var(--c-warn-soft); line-height:1.65; }
 .sc-footer { margin-top:10px; padding:10px 14px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
   font-size:var(--fs-xs); color:#64748b; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
 .sc-focus-h { font-size:var(--fs-md); font-weight:700; color:#94a3b8; margin:0 0 10px; letter-spacing:0.05em; }
 .sc-focus-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
 .sc-focus-list > li { font-size:var(--fs-base); color:#cbd5e1; margin-bottom:5px; }
-.sc-focus-list strong { color:#fbbf24; }
+.sc-focus-list strong { color:var(--c-warn-soft); font-weight:600; }
+/* キーワードの自動の色付け（markKeywords()・2026-10-11）。日次更新では手で書かない。
+   対象は 30秒カラムの3行・シナリオの補足・次の焦点。色は控えめに、数値は明るく、日付は淡い青、
+   被害は淡い赤、回復は淡い緑、未確認などの但し書きは灰 */
+.kw-num   { color:#f8fafc; font-weight:700; }
+.kw-date  { color:#bcd3ea; font-weight:600; }
+.kw-alert { color:#f3b4b4; font-weight:600; }
+.kw-ease  { color:#a7dcbc; font-weight:600; }
+.kw-hedge { color:#9aa6b8; }
 /* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
 @media (max-width: 768px) {
   .sc-update, .sc-sync-note, .sc-ai-note, .sc-ai-variance, .sc-ctx-note, .sc-footer { font-size:0.8rem; }
@@ -1833,19 +1844,19 @@ footer {                                   /* フッター（中央揃え・上�
   <div class="glance-row">
     <span class="glance-label glance-label--now">いま何が</span>
     <span class="glance-text">
-⚓ UKMTOは10/11 07:07 JSTに警報162-26を発出した：ホルムズ海峡内で出港中のタンカーが左舷に正体不明の飛翔体を受け、火災が起きた（UKMTO公式サイトで本文を確認。乗組員は無事、損害は不明、発生時刻の記載なし。主要媒体の記事は未確認）。🇾🇪 10/10、リヤドのキング・ハーリド国際空港がミサイル攻撃を受け、死傷者が出て空港は運航を停止した（CBS News・France 24。死者数は報道により異なり未確定。フーシ派の犯行声明は確認できず、外交筋はフーシ派のミサイルと見る）。⚓ 10/9 10:00 UTC（19:00 JST）、UAEの「Al Jazeera」の西約13海里（ペルシャ湾内でホルムズ海峡の外）で船舶が正体不明の飛翔体を受け、火災が起きて鎮火した（UKMTO警報160-26・gCaptain。UKMTO公式サイトで本文を確認。乗組員の状況・損害は不明で、UKMTOは攻撃主体を公表していない）。⚓ 10/9、イランのFars通信は軍筋の話として、ホルムズ海峡南側の航路でタンカーが機雷に接触したと報じた（TASS経由。船数は不明、死傷者の報告なし、独立した裏付けなし）。海峡周辺では、10/7にカタール北方（ペルシャ湾内）でタンカーが複数の飛翔体を受けて死傷者が報告され（UKMTO警報158-26・DPA 10/7）、9/28〜10/5の週のタンカー攻撃は少なくとも12件と開戦以降で最多だった（gCaptain 10/7・Reuters。海事セキュリティ筋3者の集計で、IMOの記録では9件）。UKMTOは警報159-26（10/7付）で、10/6にホルムズ海峡を通航中の原油タンカーが正体不明の飛翔体を受けたと遅延報告した（死傷者の報告なし。UKMTO公式サイトで本文を確認）。
+⚓ UKMTOは10/11 07:07 JSTに警報162-26を発出した：ホルムズ海峡内で出港中のタンカーが左舷に正体不明の飛翔体を受け、火災が起きた（UKMTO公式サイトで本文を確認。乗組員は無事、損害は不明。主要媒体の記事は未確認）。🇾🇪 10/10、リヤドのキング・ハーリド国際空港がミサイル攻撃を受け、運航を停止した（CBS News・France 24。死者数は報道により異なり未確定。犯行声明は確認できず）。⚓ 10/9にはUAE沖（ペルシャ湾内）で船舶が飛翔体を受けて火災が起き、鎮火した（UKMTO警報160-26）。同日Farsは、海峡南側の航路でタンカーが機雷に接触したと主張した（独立した裏付けなし）。9/28〜10/5の週のタンカー攻撃は少なくとも12件と開戦以降で最多だった（gCaptain・Reuters）。
 </span>
   </div>
   <div class="glance-row">
     <span class="glance-label glance-label--strait">海峡の今</span>
     <span class="glance-text">
-⚓ 10/11 07:07 JST発出のUKMTO警報162-26は、海峡内を出る側のタンカーの被弾を伝える（上記）。🚢 Al Jazeera（10/6）は、被弾が相次ぐなかで増えた中東の原油輸出が持続できるのかを論じ、PVM Oil Associatesのアナリストは、方法とルートが安全である限り流れは維持できるが、攻撃が再開されればいつでも持続不可能になりうると述べた。Kplerの速報では、9月最終週の4日間の中東の原油輸出が日量1,950万〜2,250万バレルと戦前の平均（約1,800万）を上回った（Al Jazeera 10/5。9月の月間の値〔戦前の8割弱〕とは期間と基準が異なる）。gCaptain（10/9）は、UKMTOが7/6以降に把握した商船関連の59件のうち41件がホルムズ海峡の南側の航路で起きたと伝える（UKMTO週報の原文は未確認）。10/9の終値はブレント12月物104.72ドル（+0.42%）、WTI11月物91.85ドル（+0.39%）と小幅に続伸した（Reuters。Bloomberg配信のRigzoneも約104.72ドル・約91.85ドルと伝え、数値は一致）。前日10/8の終値は104.28ドル（+4.1%）・91.49ドル（+3.6%）と1か月で最大の上げ幅で（Bloomberg配信・Rigzone）、Bloombergは10/8の上昇について、新たなタンカー攻撃が中東からの最近の流量回復を妨げかねないことと、今年最初の大西洋のハリケーンに伴う減産が背景と伝えた。
+⚓ 海峡内では新たな被弾（UKMTO警報162-26）が報告され、攻撃が続くなかで通航は回復途上にある。gCaptain（10/9）は、UKMTOが7/6以降に把握した商船関連59件のうち41件が海峡南側の航路で起きたと伝える（UKMTO週報の原文は未確認）。Kplerの速報では、9月最終週の4日間の中東の原油輸出が戦前の平均を上回った（Al Jazeera 10/5）。原油は10/9終値でブレント12月物104.72ドル（+0.42%）、WTI11月物91.85ドル（+0.39%）と小幅に続伸した（Reuters・Bloomberg配信のRigzone）。
 </span>
   </div>
   <div class="glance-row">
     <span class="glance-label glance-label--next">次の焦点</span>
     <span class="glance-text">
-📊 ホルムズ海峡内の被弾（UKMTO警報162-26）の船名・損害・攻撃主体と主要媒体での裏付け・リヤド空港攻撃の死傷者数（報道により異なり未確定）と攻撃主体・UAE沖の被弾（UKMTO警報160-26）の乗組員の状況・損害と、UAE国家警備隊が救助したタンカーとの関係・Farsが主張する海峡南側の航路での機雷接触の裏付け・カタール北方の被弾の死傷者数と攻撃主体・10/6発生の被弾（UKMTOの遅延報告）の詳細・イエメンの戦況の独立検証とバブエルマンデブ海峡への影響・トランプ氏が言う「productive conversations」の中身と米財務省の制裁へのイランの反応・ブレントが100ドル台を保つか——危機226日目。
+📊 警報162-26の船名・攻撃主体と主要媒体での裏付け・リヤド空港攻撃の死者数（報道により異なり未確定）と攻撃主体・UAE国家警備隊が救助したタンカーと警報160-26の関係・Farsが主張する機雷接触の裏付け・イエメンの戦況・トランプ氏が言う「productive conversations」の中身・ブレントが100ドル台を保つか——危機226日目。
 </span>
   </div>
 
@@ -2423,7 +2434,7 @@ document.addEventListener('keydown', function(e) {
               <small class="route-src">出典：TIME（10/8）</small></p>
             <p class="route-summary"><strong class="t-danger">🔴 9/10（木）東西PL、リヤド州・マディーナ州でイラク発ドローンによる複数攻撃を受け操業停止。</strong>
             主要ポンプ施設2カ所が損傷、負傷者も発生。
-            <strong class="t-warning">⚠️ Bloomberg・Reutersは9/16、迂回路設置により数日内に能力の半分を再開目指す、全面復旧は約6週間との見通しを報道。</strong>
+            <strong class="t-warning-soft">⚠️ Bloomberg・Reutersは9/16、迂回路設置により数日内に能力の半分を再開目指す、全面復旧は約6週間との見通しを報道。</strong>
             従来の「3〜5週間」（中東当局者・AP通信・共同通信、9/14時点）、米エネルギー長官の「数日内に再開見込み」発言（9/15）とも食い違う新たな数字で、実態は未検証。ヤンブー港は9/15から積み出しが停止していたが、9/28付Rigzone配信記事によれば先週から再開。
               <small class="route-src">出典：Bloomberg・Reuters・AP通信・共同通信・Al Jazeera（9/11〜9/17）</small></p>
             <p class="route-summary"><strong class="t-bright">代替輸送路（バブエルマンデブ海峡）：</strong>フーシ派が9月11日までにイエメン紅海沿岸を完全制圧しペリム島にも進出——「第二のホルムズ化」の懸念が浮上しており、代替輸送路としての機能低下リスクに注視が必要。</p>
@@ -2477,7 +2488,7 @@ document.addEventListener('keydown', function(e) {
             <strong class="t-positive">🟢 6月時点でUAE原油輸出は戦前平均を上回る記録的水準まで回復。</strong>
             ハブシャン-フジャイラ・パイプライン経由の輸出が戦前比+74%で推移し、UAE全体の原油・コンデンセート輸出は6月平均で日量約370万バレル（一時390万バレル超）に達し2017年以来の高水準。
             フジャイラ近郊のマンドゥース貯蔵基地（約4,200万バレル）も回復を下支え。
-            <strong class="t-warning">⚠️ 7〜9月の新たな攻撃・操業障害は本調査時点（9/15）で確認できていない</strong>が、
+            <strong class="t-warning-soft">⚠️ 7〜9月の新たな攻撃・操業障害は本調査時点（9/15）で確認できていない</strong>が、
             7月上旬にはNCAGS推奨航路を外れたタンカー2隻（カタールLNG船・サウジ籍ULCC）が被弾したとの報道もあり、周辺海域の警戒は続く。
               <small class="route-src">出典：Bloomberg・The National・Energy Connects（6月分・7/1〜7/2報道）・HSToday（7月上旬）</small></p>
             <details class="route-history"><summary>経緯を見る</summary>
@@ -2692,25 +2703,8 @@ document.addEventListener('keydown', function(e) {
    <div id="scenario"></div>
 <div class="sc-section">
 <h2 class="sec-h2 sec-h2--sky">📊 4つのシナリオ（2/28 開戦後・今後の展開）<span class="label-scenario sc-h2-label">シナリオ分析</span></h2>
-  <!-- シナリオ確率更新補足 -->
-<div class="sc-update">
-  <span class="sc-update-date">📊 2026年10月11日 07:46 JST 更新</span><br>
-  📊 <strong>10/11にUKMTOがホルムズ海峡内のタンカー被弾（警報162-26）を発出し、10/10にはリヤド空港がミサイル攻撃を受けた（死者数は報道により異なり未確定）。10/9にはUAE沖で船舶が飛翔体を受けた（UKMTO警報160-26・gCaptain、攻撃主体は公表されず）。原油は10/8に4%急伸し、10/9終値もブレント104.72ドルと小幅に続伸した。フーシ派はリヤド空港への再攻撃を、Farsは海峡での機雷接触を主張した（いずれも独立した確認なし）：</strong><br>
-  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — ガリバフ議長は10/4、米国が7項目の計画を受け入れるまで海峡は閉鎖と述べた（Al Jazeera）。米側は核問題を先決とする姿勢を崩しておらず、合意に向けた具体的な進展は確認できていない<br>
-  🅑 膠着継続 <span class="sc-trend">→</span> — 外交の往復は続くが、双方が条件を譲らない構図は変わらない。10/9の終値はブレント12月物104.72ドル（+0.42%）、WTI11月物91.85ドル（+0.39%）だった（Reuters・Bloomberg配信のRigzone）。前日10/8は+4.1%・+3.6%と1か月で最大の上げ幅だった（Bloomberg配信・Rigzone）。Kplerの速報では9月最終週の4日間、中東の原油輸出が戦前の平均を上回り（Al Jazeera 10/5）、9月1〜28日の湾岸からの輸出も日量1,650万バレル以上とイランを除く戦前の平均に並んだ（Kpler 9/29）。原油の4割は海峡を通らずに輸出されている<br>
-  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 10/11発出のUKMTO警報162-26では、ホルムズ海峡内で出港中のタンカーが飛翔体を受けて火災が起きた（乗組員は無事、攻撃主体は公表されていない）。10/9にはUAE沖（ペルシャ湾内・海峡の外）でも船舶が正体不明の飛翔体を受け火災が起きた（UKMTO警報160-26・gCaptain。攻撃主体は公表されていない）。海峡では10/5にもタンカーが飛翔体を受けて機関室で火災が起き、IRGCは入域中の別のタンカーに「引き返さなければ攻撃する」と命じて引き返させた（gCaptain。攻撃主体は不明）。被弾した船はパナマ船籍のOn Peaceで、乗員12人が負傷した（gCaptain 10/6）。イラン系Fars通信は10/5夜、イランが過去7日間に13隻の船舶に措置を取ったと報じた（DPA。独立確認なし）。通航料の実態は公的な証拠が確認されておらず、公式な方針転換は確認されていない。gCaptain（10/7・Reuters）は、9/28〜10/5の週の攻撃を少なくとも12件（海事セキュリティ筋3者の集計、IMOの記録は9件）と伝えた。10/6発生のタンカー被弾をUKMTOが警報159-26で遅延報告し（10/7付。UKMTO公式サイトで本文を確認、死傷者の報告なし）、Farsは10/9に海峡南側の航路でタンカーが機雷に接触したと主張した（TASS経由。独立確認なし）<br>
-  🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↑</span> — トランプ氏は10/3に「決断を下す」「簡単な道か厳しい道か」と述べ、国防長官は「あらゆる選択肢」を維持。第3空母と約1万人の増派も進むが、決断の中身は未公表で、新たな大規模攻撃は確認されていない<br>
-  <strong class="sc-update-caveat">トランプ氏の発言は「決断を下す」「可能」にとどまり攻撃の決定ではない。Farsの主張とイエメン政府側の制圧の主張はいずれも一方当事者のもので、独立の出典で確認できていない。10/5の被弾は船名がOn Peaceと判明したが、攻撃主体は明らかになっていない。イエメンの戦況は当事者の主張で、フーシ派は政府軍の前進を否定している。Farsの機雷接触の主張とフーシ派のリヤド空港への再攻撃の主張も、一方当事者のもので独立した確認がない。UAE沖の被弾（10/9）は攻撃主体が公表されていない。断定的な方向転換とはせず、一次情報の確認を待つ。</strong><br>
-  <div class="sc-sync-note">
-    A〜Dの確率は、ダッシュボードのデータをページの読み込み時に同期しています<span id="sc-sync-at"></span>
-  </div>
-  <div class="sc-ai-note">
-    <span class="label-ai">AI推定</span><strong>A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
-    <span class="sc-ai-meta">生成手段：Google Gemini（gemini-2.5-flash）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行　／　<a href="../editorial/">編集方針</a></span>
-    <div class="sc-ai-variance"><strong>この確率は、同一のニュース入力に対しても実行のたびに変動します。</strong>2026年9月5日に同じ入力・同じ条件で3回実行したところ、Bは5〜50%、Cは30〜60%、Dは10〜35%の範囲で振れました。表示している1%刻みの数値が示すほどの精度はありません。幅を持ってお読みください。</div>
-    <div id="sc-ctx-note" class="sc-ctx-note"></div>
-  </div>
-</div>
+  <!-- シナリオの更新日時（2026-10-11〜：カード A〜D の直前。補足と但し書きはカードの後） -->
+<div class="sc-update-head"><span class="sc-update-date">📊 2026年10月11日 07:46 JST 更新</span></div>
   <div class="sc-grid">
 
     <!-- シナリオ A：外交解決 -->
@@ -2751,6 +2745,24 @@ document.addEventListener('keydown', function(e) {
 
   </div>
 
+  <!-- シナリオ確率更新補足 -->
+<div class="sc-update">
+  📊 <strong>10/11にUKMTOがホルムズ海峡内のタンカー被弾（警報162-26）を発出し、10/10にはリヤド空港がミサイル攻撃を受けた（死者数は未確定）。原油は10/8に4%急伸し、10/9終値もブレント104.72ドルと小幅に続伸した：</strong><br>
+  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — ガリバフ議長は10/4、米国が7項目の計画を受け入れるまで海峡は閉鎖と述べた（Al Jazeera）。米側は核問題を先決とする姿勢を崩しておらず、合意に向けた具体的な進展は確認できていない<br>
+  🅑 膠着継続 <span class="sc-trend">→</span> — 外交の往復は続くが、双方が条件を譲らない構図は変わらない。原油は10/8に1か月で最大の上げ幅となった（Bloomberg配信・Rigzone）。Kplerによれば、9月1〜28日の湾岸の原油輸出はイランを除く戦前の平均に並び、4割は海峡を通らずに輸出された<br>
+  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 10/5以降、海峡内（UKMTO警報157・159・162）とペルシャ湾内（カタール北方・UAE沖）で飛翔体による被弾が相次ぎ、攻撃主体はいずれも公表されていない。9/28〜10/5の週の攻撃は少なくとも12件（gCaptain・Reuters）。IRGCは10/5、入域中のタンカーを引き返させた<br>
+  🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↑</span> — トランプ氏は10/3に「決断を下す」「簡単な道か厳しい道か」と述べ、国防長官は「あらゆる選択肢」を維持。第3空母と約1万人の増派も進むが、決断の中身は未公表で、新たな大規模攻撃は確認されていない<br>
+  <strong class="sc-update-caveat">トランプ氏の発言は攻撃の決定ではない。Fars・フーシ派・イエメン政府側の主張はいずれも一方当事者のもので、独立した確認がない。被弾の攻撃主体はどれも公表されていない。断定的な方向転換とはせず、一次情報の確認を待つ。</strong><br>
+  <div class="sc-sync-note">
+    A〜Dの確率は、ダッシュボードのデータをページの読み込み時に同期しています<span id="sc-sync-at"></span>
+  </div>
+  <div class="sc-ai-note">
+    <span class="label-ai">AI推定</span><strong>A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
+    <span class="sc-ai-meta">生成手段：Google Gemini（gemini-2.5-flash）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行　／　<a href="../editorial/">編集方針</a></span>
+    <div class="sc-ai-variance"><strong>この確率は、同一のニュース入力に対しても実行のたびに変動します。</strong>2026年9月5日に同じ入力・同じ条件で3回実行したところ、Bは5〜50%、Cは30〜60%、Dは10〜35%の範囲で振れました。表示している1%刻みの数値が示すほどの精度はありません。幅を持ってお読みください。</div>
+    <div id="sc-ctx-note" class="sc-ctx-note"></div>
+  </div>
+</div>
   <!-- シナリオ フッター -->
   <div class="sc-footer">
     <h3 class="sc-focus-h">🔍 次の焦点 5つ<span class="label-scenario sc-h2-label">分析</span></h3>
@@ -5538,6 +5550,62 @@ function scrollToJapanFlow(e) {
     const ro = new ResizeObserver(sendHeight);
     ro.observe(document.body);
   }
+})();
+</script>
+<script>
+/* ティッカーの速さを文字の長さによらず一定にする（2026-10-11）。
+   以前は 50 秒固定で、文が長い日ほど速く（10/11 は約300px/秒）、文字が二重に見えた */
+(function(){
+  var PX_PER_SEC = 90;
+  function fitTickerSpeed(){
+    var t = document.querySelector('.ticker-text');
+    if(!t) return;
+    t.style.animationDuration = ((window.innerWidth + t.scrollWidth) / PX_PER_SEC).toFixed(1) + 's';
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fitTickerSpeed);
+  else fitTickerSpeed();
+  window.addEventListener('load', fitTickerSpeed);
+})();
+
+/* キーワードの自動の色付け（2026-10-11）。本文には手で印を書かない。
+   日付・数値（単位つき）・被害・回復・但し書きの5種を、正規表現で機械的に見つけて span で囲む */
+(function(){
+  var ZONES = '.glance-text, .sc-update, .sc-focus-list';
+  var SKIP = 'a,script,style,.sc-ai-note,.sc-sync-note,.sc-trend,.kw-date,.kw-num,.kw-alert,.kw-ease,.kw-hedge';
+  var CLS = ['kw-date', 'kw-num', 'kw-alert', 'kw-ease', 'kw-hedge'];
+  var RE = new RegExp([
+    '(\\d{1,2}/\\d{1,2}(?:〜\\d{1,2}/\\d{1,2})?(?:（[月火水木金土日]）)?(?: ?\\d{1,2}:\\d{2})?(?: ?(?:JST|UTC))?)',
+    '((?:約|少なくとも)?\\d[\\d,.]*(?:万|億)?(?:〜\\d[\\d,.]*(?:万|億)?)?(?:ドル|％|%|隻|人|バレル|海里|件|日分|日目))',
+    '(被弾|攻撃(?!主体)|火災|死亡|負傷|死傷|機雷|拿捕|ミサイル|飛翔体|爆発|封鎖|閉鎖)',
+    '(再開|合意|回復|鎮火|無事|緩和|停戦)',
+    '(未確認|未確定|不明|裏付けなし|独立した確認がない|公表されていない|公表されず|確認できず)'
+  ].join('|'), 'g');
+  function mark(zone){
+    var walker = document.createTreeWalker(zone, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+    while((n = walker.nextNode())){
+      if(n.parentElement && n.parentElement.closest(SKIP)) continue;
+      RE.lastIndex = 0;
+      if(RE.test(n.nodeValue)) nodes.push(n);
+    }
+    nodes.forEach(function(t){
+      var s = t.nodeValue, f = document.createDocumentFragment(), last = 0, m;
+      RE.lastIndex = 0;
+      while((m = RE.exec(s))){
+        if(m.index > last) f.appendChild(document.createTextNode(s.slice(last, m.index)));
+        var k = 1; while(!m[k]) k++;
+        var sp = document.createElement('span');
+        sp.className = CLS[k - 1];
+        sp.textContent = m[0];
+        f.appendChild(sp);
+        last = RE.lastIndex;
+      }
+      if(last < s.length) f.appendChild(document.createTextNode(s.slice(last)));
+      t.parentNode.replaceChild(f, t);
+    });
+  }
+  function run(){ Array.prototype.forEach.call(document.querySelectorAll(ZONES), mark); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
 })();
 </script>
 </body>

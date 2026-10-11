@@ -33,6 +33,15 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 ---
 
+## 読みやすさの仕組み（2026-10-11）
+
+- **ティッカーの速さ**：`fitTickerSpeed()`（`</body>` 直前の script）が、文字の長さから一定の速さ（`PX_PER_SEC = 90`）になるよう `animation-duration` を上書きする。
+  CSS の `50s` は JS が動かないときの予備。以前は 50 秒固定で、文が長い日ほど速くなり（10/11 は約300px/秒）文字が二重に見えた。速さを変えるときは `PX_PER_SEC` だけを変える
+- **キーワードの自動の色付け**：`markKeywords()`（同じ script）が、30秒カラムの3行・シナリオの補足・次の焦点の文から、日付・単位つきの数値・被害の語・回復の語・但し書きを正規表現で見つけ、`span.kw-*` で囲む。
+  色は控えめにする（クラスは `.kw-num` `.kw-date` `.kw-alert` `.kw-ease` `.kw-hedge`）。対象の区域や語を増やすときは `ZONES` と正規表現を直す。本文に手で印を書かない
+- **文章に使う黄色は淡くする**：1文を超える長さの文には `--c-warn-soft`（`#efe2b6`）を使う（例：`.sc-focus-list strong`・`.sc-update-caveat`・`.sc-ctx-note`・ルート表の `.t-warning-soft`）。
+  見出し・ラベル・短い印（ルート表の「⚓ 10/9 追記：」やシナリオBの見出し）は `--c-warn`（`#fbbf24`）のまま
+
 ## スマホ font-size（変更禁止）
 
 `@media (max-width: 768px) { html { font-size: 18px } }` が設定済み。この設定は削除・変更しない。

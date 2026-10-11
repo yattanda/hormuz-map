@@ -845,6 +845,53 @@ def check_unresolved(html: str) -> None:
             ok("速報インシデントの先頭3件に公式の本文の未確認なし")
 
 
+# 文字数の目安（2026-10-11 追加）。厳密な上限ではなく、超えたら WARN で知らせる。
+# 10/11 の 30秒カラム（いま何が 766字・海峡の今 661字）がスマホで読む気がしない長さだったため、
+# 運営者の指示で約4割減を目安にした。シナリオの補足も 🅒 が 610字あった
+TEXT_LIMITS_GLANCE = (("now", "いま何が", 450), ("strait", "海峡の今", 400), ("next", "次の焦点", 250))
+TEXT_LIMIT_SC_SUMMARY = 150   # シナリオの補足の冒頭（📊 今日の動きの要約）
+TEXT_LIMIT_SC_LINE = 170      # 🅐〜🅓 の各行
+TEXT_LIMIT_SC_CAVEAT = 150    # 但し書き（sc-update-caveat）
+
+
+def plain_len(fragment: str) -> int:
+    return len(re.sub(r"\s+", "", re.sub(r"<[^>]+>", "", fragment)))
+
+
+def check_text_lengths(html: str) -> None:
+    """30秒カラムの3行とシナリオの補足が、文字数の目安を超えていないか（WARN のみ）。"""
+    for key, label, limit in TEXT_LIMITS_GLANCE:
+        m = re.search(r'glance-label--' + key + r'">[^<]*</span>\s*<span class="glance-text">(.*?)</span>', html, re.S)
+        if not m:
+            warn(f"30秒カラム「{label}」を検出できず、文字数を確認できません（構造が変わった可能性）")
+            continue
+        n = plain_len(m.group(1))
+        if n > limit:
+            warn(f"30秒カラム「{label}」が {n}字（目安 {limit}字）。要点を絞り、細部は速報インシデントへ")
+        else:
+            ok(f"30秒カラム「{label}」{n}字（目安 {limit}字）")
+    m = PAT_SC_UPDATE.search(html)
+    if not m:
+        warn("シナリオの補足（div.sc-update）を検出できず、文字数を確認できません")
+        return
+    body = m.group(0)
+    for part in body.split("<br>"):
+        if "sc-update-caveat" in part:
+            label, limit = "但し書き", TEXT_LIMIT_SC_CAVEAT
+        elif "📊" in part and "<strong>" in part:
+            label, limit = "冒頭の要約", TEXT_LIMIT_SC_SUMMARY
+        else:
+            mm = re.search(r"[🅐🅑🅒🅓]", part)
+            if not mm:
+                continue
+            label, limit = mm.group(0) + " の行", TEXT_LIMIT_SC_LINE
+        n = plain_len(part.split('<div class="sc-sync-note">')[0])
+        if n > limit:
+            warn(f"シナリオの補足「{label}」が {n}字（目安 {limit}字）。根拠は1〜2点に絞る")
+        else:
+            ok(f"シナリオの補足「{label}」{n}字（目安 {limit}字）")
+
+
 def check_scenario_dates(html: str, base: str) -> None:
     """シナリオ区域と更新履歴の日時（②' PR B「日時の一元化」・2026-10-07 追加）。
 
@@ -1195,6 +1242,7 @@ def main() -> int:
     check_route_freshness(html, base)
     check_types(html, base)
     check_unresolved(html)
+    check_text_lengths(html)
 
     check_news(news, base)
     if log is not None:

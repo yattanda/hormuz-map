@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月11日 07:46 日本時間JST",
+  "updated": "2026年10月12日 07:11 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-sohar-india-1011",
+      "title": "インド政府、ソハール沖で被弾したタンカーの船員2人が行方不明と発表——ホルムズ海峡の別のタンカーでは火災、船員は無事",
+      "body": "インド外務省の声明を配信したANI（Tribune India・10/12 01:30 IST 更新）によれば、「MT PETRO DOLPHIN」はソハール錨地でドローンを受けたとみられ、インド人船員11人のうち9人が救助されて無事、2人が行方不明で、現地の沿岸警備隊が捜索救助している（原文は「MT PETRO DOLPHIN was reportedly struck by a drone, with two of the 11 Indian seafarers onboard reported missing.」）。別の「MT VALTHERA」（マーシャル諸島籍）はホルムズ海峡で正体不明の飛翔体を受けて船上で火災が起き、インド人船員11人は全員無事とされる。UKMTO公式サイトの警報165-26（ソハール錨地付近、無人機による攻撃と確認）と警報164-26（ホルムズ海峡内、乗組員は全員無事）に対応するとみられるが、インド政府の声明は警報番号に触れておらず、同一事案とするのは場所・日・手段の一致による推定。UKMTOの164-26の本文に火災の記載はない。攻撃主体の主張は確認できない。",
+      "sourceLabel": "インド外務省の声明（ANI配信・Tribune India 10/12）・UKMTO警報165-26・164-26",
+      "date": "2026年10月11日（現地）",
+      "label": "⚓ 10/11 ソハール沖・ホルムズでタンカー被弾（インド人船員2人行方不明）",
+      "url": "https://www.tribuneindia.com/news/drone-attack/india-condemns-attacks-on-two-vessels-in-hormuz-region-calls-for-de-escalation",
+      "isLatest": true
+    },
+    {
+      "id": "latest-riyadh-gaca-1011",
+      "title": "リヤド空港攻撃、サウジ民間航空総局が12人死亡・309人負傷と発表——犠牲者はサウジ人4人、バングラデシュ人2人ほか",
+      "body": "Arab News（10/10掲載・10/11更新）によれば、サウジ民間航空総局（GACA）は日曜早朝の声明で、土曜（10/10）のミサイル攻撃で12人が死亡し309人が負傷、負傷者には重体の人も含まれると発表した（原文は「Twelve people were killed and over 300 more were wounded in Saturday's missile attack」）。死者はサウジ人4人、バングラデシュ人2人のほか、パレスチナ・米国・エジプト・ヨルダン・シリア・スーダン各1人。空港は被害評価のため運航を一時停止した。同記事は攻撃主体を明示していない。Al Jazeera（10/10〜11）も同じ数字を伝える。Gulf News（10/11最終更新）は、負傷したインド人が亡くなり死者は13人になったと報じたが、GACAの公式発表としては確認できない。前回載せたFrance 24（AFP）の「少なくとも2人死亡」は、この発表と合わない。",
+      "sourceLabel": "Arab News（10/10〜11）・Al Jazeera（10/10〜11）",
+      "date": "2026年10月10日（現地）",
+      "label": "🇾🇪 10/10 リヤド空港攻撃・12人死亡309人負傷（サウジ当局）",
+      "url": "https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-killed-12-people-and-wounded-over-300-more-says-saudi-civil-aviation-agency-3005640",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto-162-1011",
       "title": "ホルムズ海峡内で出港中のタンカーが正体不明の飛翔体を受け火災——UKMTO警報162-26、乗組員は無事で攻撃主体は公表されず",
@@ -10,7 +30,7 @@
       "date": "2026年10月10日（UTC発行）",
       "label": "⚓ 10/10 ホルムズ海峡内でタンカー被弾（UKMTO警報162-26）",
       "url": "https://www.ukmto.org/recent-incidents",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-riyadh-airport-1010",
@@ -21,29 +41,27 @@
       "label": "🇾🇪 10/10 リヤド空港へのミサイル攻撃（死傷者数は食い違い）",
       "url": "https://www.france24.com/en/middle-east/20261010-riyadh-airport-suspends-operations-after-attack-leaves-multiple-people-wounded",
       "isLatest": false
-    },
-    {
-      "id": "latest-gcaptain-uae-1009",
-      "title": "UAE沖（ペルシャ湾内）で船舶が正体不明の飛翔体を受け火災、鎮火——UKMTO警報160-26、乗組員・損害は不明で攻撃主体は公表されず",
-      "body": "gCaptain（10/9）によれば、10/9（金）10:00 UTC（日本時間19:00）ごろ、アラブ首長国連邦の「Al Jazeera」の西約13海里（記事の表記。ペルシャ湾内でホルムズ海峡の外）で船舶が正体不明の飛翔体を受け、火災が起きて鎮火した。乗組員の状況・損害の程度・環境への影響は不明で、UKMTOは船名を公表せず攻撃主体も特定していない。警報番号160-26を本文に書いたのはgCaptainのみで、UKMTO公式の本文は未確認。同記事は、UKMTOが7/6以降に把握した商船関連の59件のうち41件がホルムズ海峡の南側の航路で起きたと伝える（UKMTO週報の原文は未確認）。",
-      "sourceLabel": "gCaptain（10/9）",
-      "date": "2026年10月9日（現地）",
-      "label": "⚓ 10/9 UAE沖で船舶被弾・火災は鎮火（UKMTO警報160-26）",
-      "url": "https://gcaptain.com/second-ship-struck-inside-persian-gulf-in-three-days/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-time-houthi-riyadh-1008",
-      "title": "フーシ派がリヤド空港への再攻撃を主張、サウジ側は未確認——先の攻撃の死傷者はサウジ当局が発表",
-      "body": "TIME（10/8）によれば、フーシ派は10/8（木）にリヤドのキング・ハリド国際空港を標的にしたと主張したが、サウジ側はこの木曜の攻撃を確認していない。同記事は、先立つ攻撃（火・水曜。当局は各攻撃の日付を明示していない）の被害として、サウジ当局がリヤド空港への攻撃でスーダン人1人が死亡しサウジ国民5人が負傷、民間航空当局が水曜にアブハ国際空港への攻撃で2人が死亡し28人が負傷したと発表したと伝える。同記事は、空港攻撃をフーシ派が繰り返し用いる戦術と位置づける。",
-      "sourceLabel": "TIME（10/8）",
-      "date": "2026年10月8日（現地）",
-      "label": "🇾🇪 10/8 フーシ派がリヤド空港再攻撃を主張・サウジ空港の死傷者",
-      "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-yemen-1011",
+      "titleJa": "【Al Jazeera】イエメンで戦闘拡大、フーシ派がリヤド空港を攻撃——リヤド空港の死者12人・負傷309人、政府軍はモカ奪還を主張しフーシ派は否定",
+      "titleEn": "Yemen fighting expands as Houthis attack Saudi airport: What to know (Al Jazeera, Oct 11)",
+      "title": "【Al Jazeera】イエメンで戦闘拡大、フーシ派がリヤド空港を攻撃——リヤド空港の死者12人・負傷309人、政府軍はモカ奪還を主張しフーシ派は否定",
+      "country": "イエメン／サウジアラビア",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月11日（現地）",
+      "summary": "Al Jazeera（10/11）は、10/10のリヤド空港攻撃でサウジ民間航空総局（GACA）の発表として12人が死亡、309人が負傷（一部は重体）と伝えた。イエメン政府軍は、10/4に始めた攻勢「Dawn of Yemen」でモカとDhubab地区を奪還したと主張し、フーシ派は否定している。フーシ派は紅海沿岸ラービグのアラムコ製油所を狙ったとも主張したが、サウジ当局は直ちに確認していない。いずれも当事者の主張で、独立した確認は取れていない。",
+      "url": "https://www.aljazeera.com/news/2026/10/11/yemen-fighting-expands-as-houthis-attack-saudi-airport-what-to-know",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-france24-riyadh-1010",
       "titleJa": "【France 24】リヤド空港がミサイル攻撃で運航停止——医療関係者は少なくとも2人の死亡を証言、外交筋はフーシ派のミサイルと説明",
@@ -55,7 +73,7 @@
       "date": "2026年10月10日（現地）",
       "summary": "France 24（AFP引用・10/10）は、リヤドのキング・ハーリド国際空港が土曜にミサイル攻撃を受け、サウジ当局が空港の運航を停止したと伝えた。病院の医療関係者の話として少なくとも2人が死亡し、負傷者は数十人（うち5人が集中治療）。外交筋は現地時間15時ごろのフーシ派のミサイルとしたが、フーシ派は土曜の新たな攻撃を発表していない。サウジ民間航空当局は負傷者数を評価中としていた。",
       "url": "https://www.france24.com/en/middle-east/20261010-riyadh-airport-suspends-operations-after-attack-leaves-multiple-people-wounded",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1772,6 +1790,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月12日",
+      "items": [
+        {
+          "id": "latest-gcaptain-uae-1009",
+          "title": "UAE沖（ペルシャ湾内）で船舶が正体不明の飛翔体を受け火災、鎮火——UKMTO警報160-26、乗組員・損害は不明で攻撃主体は公表されず",
+          "body": "gCaptain（10/9）によれば、10/9（金）10:00 UTC（日本時間19:00）ごろ、アラブ首長国連邦の「Al Jazeera」の西約13海里（記事の表記。ペルシャ湾内でホルムズ海峡の外）で船舶が正体不明の飛翔体を受け、火災が起きて鎮火した。乗組員の状況・損害の程度・環境への影響は不明で、UKMTOは船名を公表せず攻撃主体も特定していない。警報番号160-26を本文に書いたのはgCaptainのみで、UKMTO公式の本文は未確認。同記事は、UKMTOが7/6以降に把握した商船関連の59件のうち41件がホルムズ海峡の南側の航路で起きたと伝える（UKMTO週報の原文は未確認）。",
+          "sourceLabel": "gCaptain（10/9）",
+          "date": "2026年10月9日（現地）",
+          "label": "⚓ 10/9 UAE沖で船舶被弾・火災は鎮火（UKMTO警報160-26）",
+          "url": "https://gcaptain.com/second-ship-struck-inside-persian-gulf-in-three-days/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-time-houthi-riyadh-1008",
+          "title": "フーシ派がリヤド空港への再攻撃を主張、サウジ側は未確認——先の攻撃の死傷者はサウジ当局が発表",
+          "body": "TIME（10/8）によれば、フーシ派は10/8（木）にリヤドのキング・ハリド国際空港を標的にしたと主張したが、サウジ側はこの木曜の攻撃を確認していない。同記事は、先立つ攻撃（火・水曜。当局は各攻撃の日付を明示していない）の被害として、サウジ当局がリヤド空港への攻撃でスーダン人1人が死亡しサウジ国民5人が負傷、民間航空当局が水曜にアブハ国際空港への攻撃で2人が死亡し28人が負傷したと発表したと伝える。同記事は、空港攻撃をフーシ派が繰り返し用いる戦術と位置づける。",
+          "sourceLabel": "TIME（10/8）",
+          "date": "2026年10月8日（現地）",
+          "label": "🇾🇪 10/8 フーシ派がリヤド空港再攻撃を主張・サウジ空港の死傷者",
+          "url": "https://time.com/article/2026/10/08/saudi-arabia-yemen-houthi-rebels-airport-attacks-war/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月11日",
       "items": [

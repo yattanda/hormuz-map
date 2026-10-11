@@ -135,6 +135,11 @@ DATA_CONTEXT_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "context.json"
 DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
 # ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
 DATA_TIMELINE_WARN_DAYS = 5
+# 日本向け調達フロー（ルート表の「日本向け」列）の元データ。hormuz-data- が毎日確認して、新しい月が出た日だけ書き換える
+OIL_FLOW_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "oil-flow.json"
+OIL_FLOW_URL = "https://yattanda.github.io/hormuz-data-/data/oil-flow.json"
+# 国別の数量が e-Stat に入るのは対象月の翌月下旬〜翌々月上旬。この日を過ぎても2か月前の月が出ていなければ遅れとみなす
+OIL_FLOW_GRACE_DAY = 15
 
 # /hormuz/ の石油備蓄日数3か所（毎月4日の PC タスクがコラムとあわせて更新する）
 PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*?(\d{1,2})/(\d{1,2})時点）')
@@ -566,6 +571,52 @@ def check_data_timeline() -> None:
              f"（{DATA_TIMELINE_WARN_DAYS}日超で WARN／7日超でダッシュボードに ⚠）")
     else:
         ok(f"hormuz-data- の経緯の最新日 {latest.isoformat()}（{age}日前、{src}）")
+
+
+def check_oil_flow() -> None:
+    """日本向け調達フロー（oil-flow.json）の対象月が、公表済みのはずの月より古くないか。
+
+    WARN のみ。国別の数量は対象月の翌月下旬〜翌々月上旬に e-Stat に入る。
+    そのため実測の今日が15日以降なら2か月前の月、14日までなら3か月前の月が出ているはず。
+    hormuz-data- のワークフローが毎日確認しているので、WARN は取得が止まった印
+    （2026-10-11 まで：月1回の実行が公表の前に当たり、7月分のまま3週間残った）。
+    読むのは公開 URL → ローカルの順（ページが読むのは公開 URL。ローカルは pull 前だと古い）。
+    """
+    import urllib.request
+
+    data, src = None, ""
+    req = urllib.request.Request(OIL_FLOW_URL, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as res:
+            data, src = json.loads(res.read().decode("utf-8")), "公開 URL"
+    except Exception as e:  # ネットワーク到達不能・HTTP エラー・タイムアウト・JSON 破損等
+        src = f"公開 URL 取得失敗（{type(e).__name__}）"
+        if OIL_FLOW_LOCAL.is_file():
+            try:
+                data = json.loads(OIL_FLOW_LOCAL.read_text(encoding="utf-8"))
+                src = "ローカル ../hormuz-data-"
+            except (OSError, ValueError):
+                pass
+    period = ""
+    if isinstance(data, dict) and isinstance(data.get("source"), dict):
+        period = str(data["source"].get("period", ""))
+    m = re.fullmatch(r"(\d{4})-(\d{2})", period)
+    if not m:
+        warn(f"日本向け調達フロー（oil-flow.json）の対象月は未確認: {src or '対象月を読み取れません'}")
+        return
+
+    today = date.fromisoformat(today_jst())
+    lag = 2 if today.day >= OIL_FLOW_GRACE_DAY else 3
+    want = today.year * 12 + (today.month - 1) - lag          # 出ているはずの月（年×12＋月−1）
+    got = int(m.group(1)) * 12 + (int(m.group(2)) - 1)
+    label = f"{int(m.group(1))}年{int(m.group(2))}月分"
+    if got < want:
+        warn(f"日本向け調達フロー（oil-flow.json）の対象月が {label} のままです"
+             f"（実測の今日 {today.isoformat()} なら {want // 12}年{want % 12 + 1}月分が出ているはず、{src}）。"
+             "hormuz-data- の毎日の取得（update_oil_flow.yml）が止まっている印。"
+             "日次では直さず、報告の「確認してほしい点」に書く")
+    else:
+        ok(f"日本向け調達フローの対象月 {label}（{src}）")
 
 
 def check_stockpile(html: str) -> None:
@@ -1251,6 +1302,7 @@ def main() -> int:
         check_timeline(tl, base)
     check_sitemap(tl, base)
     check_data_timeline()
+    check_oil_flow()
     check_stockpile(html)
     check_column_pills(html)
     check_glossary()

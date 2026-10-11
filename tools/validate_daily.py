@@ -173,6 +173,12 @@ PAT_COLUMN_PILL = re.compile(
 PAT_COLUMN_PILL_ANY = re.compile(r'<a href="\.\./articles/([\w-]+\.html)"[^>]*class="jump-pill')
 PAT_ARTICLE_PUBLISHED = re.compile(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})"')
 PAT_ARTICLE_MODIFIED = re.compile(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"')
+# 記事ページの見える日付（「最終更新：」）と、コラムのカード・記事一覧の日付（どちらも公開日を書く）
+PAT_ARTICLE_VISIBLE = re.compile(r'最終更新：<strong>(\d{4})/(\d{2})/(\d{2})</strong>')
+PAT_COL_CARD_DATE = re.compile(r'<span class="col-card-date">(\d{4})/(\d{2})/(\d{2})</span>')
+PAT_IDX_CARD = re.compile(
+    r'<a class="article-index-card" href="([\w-]+\.html)">(?:(?!</a>).)*?'
+    r'<span class="idx-date">(\d{4})/(\d{2})/(\d{2})</span>', re.S)
 
 
 def ymd(y, m, d) -> str:
@@ -690,6 +696,10 @@ def check_column_pills(html: str) -> None:
         warn(f"特別解説コラムのピルのうち、日付を読み取れないものがあります: "
              f"{', '.join('articles/' + f for f in missing)}。"
              f"data-published / data-updated を href・class の後にこの順で付けること（札が出ません）")
+    try:
+        idx_text = (ROOT / "docs" / "articles" / "index.html").read_text(encoding="utf-8")
+    except OSError:
+        idx_text = ""
     for fname, pub, upd in pills:
         path = ROOT / "docs" / "articles" / fname
         try:
@@ -699,8 +709,26 @@ def check_column_pills(html: str) -> None:
             continue
         mp, mm = PAT_ARTICLE_PUBLISHED.search(text), PAT_ARTICLE_MODIFIED.search(text)
         a_pub, a_mod = (mp.group(1) if mp else None), (mm.group(1) if mm else None)
+        # 同じ記事の日付は、ほかに3か所ある：記事の見える「最終更新」（＝更新日）、
+        # 本体のコラムのカードと記事一覧（どちらも公開日）。ピルと同じ日付か（F7・2026-10-11）
+        others = []
+        mv = PAT_ARTICLE_VISIBLE.search(text)
+        others.append(("記事の「最終更新」", "-".join(mv.groups()) if mv else None, a_mod))
+        card = None
+        for seg in re.split(r'(?=<div class="col-card[ "])', html):
+            if f'href="../articles/{fname}" class="col-card-link"' in seg:
+                mc = PAT_COL_CARD_DATE.search(seg)
+                card = "-".join(mc.groups()) if mc else None
+                break
+        others.append(("本体のコラムのカード", card, a_pub))
+        idx = {m.group(1): "-".join(m.groups()[1:]) for m in PAT_IDX_CARD.finditer(idx_text)}
+        others.append(("記事一覧 articles/index.html", idx.get(fname), a_pub))
+        diff = [f"{name} {got or '検出できず'}（記事は {want}）" for name, got, want in others if got != want]
+        if diff:
+            warn(f"コラム articles/{fname} の日付が食い違っています: {'／'.join(diff)}。"
+                 f"カードと記事一覧は公開日（datePublished）、記事の「最終更新」は dateModified に揃えること")
         if (pub, upd) == (a_pub, a_mod):
-            ok(f"コラムのピル articles/{fname}（公開 {pub}・更新 {upd}）")
+            ok(f"コラムのピル articles/{fname}（公開 {pub}・更新 {upd}）" + ("" if diff else "・カード・一覧・記事の表示も一致"))
         else:
             warn(f"コラムのピル articles/{fname} の日付が記事と違います: "
                  f"ピル 公開 {pub}・更新 {upd}／記事 datePublished {a_pub}・dateModified {a_mod}。"

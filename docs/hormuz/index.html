@@ -1644,10 +1644,10 @@ footer {
 /* --- 2-a スマホ：本文系の文字の下限を 0.8rem（14.4px）へ ---
    スマホの 1rem は絶対ルールで 18px のまま。見出しやバッジは変えず、
    長い文章を含む要素だけ下限を引き上げる。
-   div[style*="font-size:0.7"] は 0.7〜0.78rem のインライン指定に当たる
+   以前は div[style*="font-size:0.7"] で 0.7〜0.78rem のインライン指定に当てていた
    （span・a・button のラベル類は対象外）。
-   ② PR4b（2026-10-01）で HTML のインライン style はクラスにしたので、いまこの指定が当たるのは
-   JS が組み立てる HTML（地図のポップアップ・関連最新ニュースの項目）だけ。JS のテンプレートをクラスにしたら外す。 */
+   ② PR4b（2026-10-01）で HTML のインライン style を、②' PR E（2026-10-12）で JS が組み立てる HTML の
+   インライン style をクラスにしたので、属性セレクタは外し、当たっていた3つのクラスを並べた。 */
 @media (max-width: 768px) {
   .sc-body,
   .sc-impact,
@@ -1659,7 +1659,9 @@ footer {
   .bw-analysis p,
   .bw-tl-body,
   .bw-trans-body,
-  div[style*="font-size:0.7"] {
+  .src-pop-body,
+  .news-stale-notice,
+  .osint-en {
     font-size: 0.8rem !important;
   }
 }
@@ -1727,6 +1729,106 @@ footer {                                   /* フッター（中央揃え・上�
   .stats-row { grid-template-columns: repeat(6, 1fr); }
   .commentary-grid { grid-template-columns: repeat(3, 1fr); }
 }
+/* ============================================================
+   JS が組み立てる HTML のクラス（②' PR E・2026-10-12）
+   地図のポップアップ・印・凡例・関連最新ニュース・現地メディア視点。
+   以前は JS のテンプレートにインライン style で書いていた。値は変えていない。
+   計算で決まる値（印の大きさ・色、データが持つ色）だけはテンプレートに style で残してある。
+   ============================================================ */
+/* 文字色（ポップアップの見出しなど） */
+.tc-red { color:#f87171; }
+.tc-amber { color:#fbbf24; }
+.tc-green { color:#34d399; }
+.tc-blue { color:#60a5fa; }
+.tc-sky { color:#38bdf8; }
+.tc-sky-light { color:#7dd3fc; }
+.tc-violet { color:#a78bfa; }
+.tc-purple { color:#c084fc; }
+.tc-slate { color:#94a3b8; }
+.tc-blue-light { color:#93c5fd; }
+.tc-orange { color:#fb923c; }
+.tc-teal { color:#0e7490; }
+.tc-ink { color:#1e293b; }
+.tc-dim { color:#64748b; }
+
+/* 軍事レイヤー（renderMilitaryLayer） */
+.mil-pop { min-width:200px; }
+.mil-pop--card { background:#1e293b; padding:8px; border-radius:8px; }
+.mil-pop-status { font-size:0.75rem; padding:2px 6px; border-radius:4px; }
+.mil-pop-status--fleet { background:rgba(239,68,68,0.3); color:#fca5a5; }
+.mil-pop-status--port { background:rgba(255,255,255,0.12); color:#e2e8f0; }
+.mil-pop-detail { font-size:0.8rem; }
+.mil-pop--card .mil-pop-detail { color:#cbd5e1; }
+.mil-pop-src { color:#94a3b8; }
+.mil-pop--card .mil-pop-src { color:#64748b; }
+.mil-icon { cursor:pointer; }
+.mil-icon--fleet { font-size:26px; filter:drop-shadow(0 0 4px rgba(239,68,68,0.8)); }
+.mil-icon--port { font-size:22px; }
+
+/* 調達先・日本の受入拠点・南鳥島のポップアップ */
+.src-pop { font-family:'Noto Sans JP',sans-serif; min-width:200px; padding:4px; }
+.src-pop--wide { min-width:220px; }
+.src-pop-title { font-size:0.85rem; font-weight:800; margin-bottom:6px; }
+.src-pop-body { font-size:0.75rem; color:#1e293b; line-height:1.9; }
+.src-pop-body--tight { line-height:1.8; }
+.src-pop-body--japan { line-height:1.8; margin-bottom:6px; }
+.src-pop-btn { width:100%; background:linear-gradient(135deg,#1e40af,#1e3a5f); border:1px solid #38bdf8; color:#7dd3fc; font-size:0.78rem; font-weight:700; padding:7px 0; border-radius:6px; cursor:pointer; letter-spacing:0.03em; }
+
+/* ポップアップのバッジ・注記・画像 */
+.p-badge--red { background:rgba(239,68,68,0.2); color:#f87171; border:1px solid rgba(239,68,68,0.4); }
+.p-badge--amber { background:rgba(251,191,36,0.2); color:#fbbf24; border:1px solid rgba(251,191,36,0.4); }
+.p-badge--amber-soft { background:rgba(251,191,36,0.18); color:#fbbf24; border:1px solid rgba(251,191,36,0.4); }
+.p-badge--green { background:rgba(52,211,153,0.2); color:#34d399; border:1px solid rgba(52,211,153,0.4); }
+.p-badge--blue { background:rgba(96,165,250,0.2); color:#60a5fa; border:1px solid rgba(96,165,250,0.4); }
+.p-badge--navy { background:rgba(29,78,216,0.3); color:#93c5fd; border:1px solid rgba(147,197,253,0.4); }
+.p-note { font-size:0.62rem; color:#64748b; margin-top:5px; line-height:1.5; }
+.p-img { width:100%; height:auto; margin-top:6px; border-radius:4px; cursor:zoom-in; }
+
+/* 印（丸いマーカー）。mk--dyn は mkIcon() が大きさと色を style で渡す */
+.mk { border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.mk--dyn { border:2px solid rgba(255,255,255,0.25); }
+.mk--hormuz { width:44px; height:44px; background:rgba(239,68,68,0.18); border:2.5px solid #ef4444; font-size:20px; }
+.mk--kharg { width:44px; height:44px; background:rgba(239,68,68,0.25); border:2.5px solid #ff0000; font-size:20px; }
+.mk--warn { width:40px; height:40px; background:rgba(251,191,36,0.18); border:2.5px solid #fbbf24; font-size:18px; }
+.mk--bab { width:40px; height:40px; background:rgba(220,38,38,0.2); border:2.5px solid #ef4444; font-size:18px; }
+.mk--oil { width:36px; height:36px; background:rgba(251,191,36,0.15); border:2px solid #fbbf24; font-size:16px; }
+.mk--japan { width:44px; height:44px; background:linear-gradient(135deg, #1e3a5f, #0f2027); border:2px solid #38bdf8; font-size:22px; box-shadow:0 0 12px rgba(56,189,248,0.5); cursor:pointer; }
+
+/* 地図上の国名・海域名 */
+.map-label { text-shadow:0 1px 4px rgba(0,0,0,0.95); white-space:nowrap; pointer-events:none; }
+.map-label--country { color:rgba(180,210,235,0.85); font-size:11px; font-weight:600; font-family:'Hiragino Sans','Yu Gothic','Segoe UI',sans-serif; }
+.map-label--sea { color:rgba(56,189,248,0.5); font-size:13px; font-weight:700; font-family:'Hiragino Sans','Yu Gothic',sans-serif; }
+
+/* 凡例 */
+.leg-dash--a { border-color:#38bdf8; }
+.leg-dash--b { border-color:#34d399; }
+.leg-dash--c { border-color:#a78bfa; }
+.leg-dash--c-sa { border-color:#c084fc; }
+.leg-dash--ng { border-color:#fbbf24; }
+.leg-dash--ao { border-color:#fb923c; }
+.leg-dash--d { border-color:#f59e0b; }
+.leg-dash--old { border-color:#6b7280; }
+.leg-dash--canal { border-color:#67e8f9; border-top-style:solid; }
+.leg-section--gap { margin-top:8px; }
+.leg-note--tight { margin-top:4px; }
+
+/* 関連最新ニュース */
+.news-stale-notice { background:rgba(100,116,139,0.12); border:1px solid rgba(100,116,139,0.3); border-radius:6px; padding:8px 14px; font-size:0.78rem; color:#94a3b8; margin-bottom:10px; }
+.news-archive-batch { margin-bottom:12px; }
+.news-archive-label { font-size:0.68rem; font-weight:800; color:#64748b; letter-spacing:0.08em; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:8px; }
+.news-more-btn--tight { margin-top:4px; }
+
+/* 現地メディア視点。カードの地色・枠の色と媒体名の色は news_data.json が持つので style で渡す。
+   #osint-extra の display:none は toggleOsint() が読むのでテンプレートに残す */
+.osint-list { display:flex; flex-direction:column; gap:8px; }
+.osint-card { display:block; border-radius:8px; padding:12px 14px; text-decoration:none; }
+.osint-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.osint-country { font-size:0.85rem; }
+.osint-media { font-size:0.68rem; font-weight:700; padding:2px 7px; border-radius:4px; }
+.osint-date { font-size:0.68rem; color:#64748b; }
+.osint-title { font-size:0.8rem; font-weight:700; color:#e2e8f0; line-height:1.5; }
+.osint-en { font-size:0.72rem; color:#94a3b8; margin-top:3px; line-height:1.5; font-style:italic; }
+#osint-extra { margin-top:8px; }
 </style>
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
@@ -3271,10 +3373,10 @@ function renderMilitaryLayer() {
             dashArray: zone.type === 'minefield' ? '6,4' : null
           })
           .bindPopup(`
-            <div style="min-width:200px;">
+            <div class="mil-pop">
               <strong style="color:${zone.color};">${zone.name}</strong><br>
-              <span style="font-size:0.8rem;">${zone.detail}</span><br>
-              <small style="color:#94a3b8;">出典：${zone.source}　${milDates}</small>
+              <span class="mil-pop-detail">${zone.detail}</span><br>
+              <small class="mil-pop-src">出典：${zone.source}　${milDates}</small>
             </div>
           `)
           .addTo(map);
@@ -3285,18 +3387,18 @@ function renderMilitaryLayer() {
       if (data.fleets) {
         data.fleets.forEach(f => {
           const icon = L.divIcon({
-            html: `<div style="font-size:26px;filter:drop-shadow(0 0 4px rgba(239,68,68,0.8));cursor:pointer;">${f.emoji}</div>`,
+            html: `<div class="mil-icon mil-icon--fleet">${f.emoji}</div>`,
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             className: ''
           });
           L.marker([f.lat, f.lng], { icon })
             .bindPopup(`
-              <div style="min-width:200px;background:#1e293b;padding:8px;border-radius:8px;">
-                <strong style="color:#f87171;">${f.emoji} ${f.name}</strong><br>
-                <span style="background:rgba(239,68,68,0.3);color:#fca5a5;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${f.status}</span><br><br>
-                <span style="font-size:0.8rem;color:#cbd5e1;">${f.detail}</span><br>
-                <small style="color:#64748b;">出典：${f.source}　${milDates}</small>
+              <div class="mil-pop mil-pop--card">
+                <strong class="tc-red">${f.emoji} ${f.name}</strong><br>
+                <span class="mil-pop-status mil-pop-status--fleet">${f.status}</span><br><br>
+                <span class="mil-pop-detail">${f.detail}</span><br>
+                <small class="mil-pop-src">出典：${f.source}　${milDates}</small>
               </div>
             `)
             .addTo(map);
@@ -3315,18 +3417,18 @@ function renderMilitaryLayer() {
           const col = colorMap[p.type] || '#94a3b8';
 
           const icon = L.divIcon({
-            html: `<div style="font-size:22px;filter:drop-shadow(0 0 3px ${col});cursor:pointer;">${p.emoji}</div>`,
+            html: `<div class="mil-icon mil-icon--port" style="filter:drop-shadow(0 0 3px ${col});">${p.emoji}</div>`,
             iconSize: [28, 28],
             iconAnchor: [14, 14],
             className: ''
           });
           L.marker([p.lat, p.lng], { icon })
             .bindPopup(`
-              <div style="min-width:200px;background:#1e293b;padding:8px;border-radius:8px;">
+              <div class="mil-pop mil-pop--card">
                 <strong style="color:${col};">${p.emoji} ${p.name}</strong><br>
-                <span style="background:rgba(255,255,255,0.12);color:#e2e8f0;font-size:0.75rem;padding:2px 6px;border-radius:4px;">${p.status}</span><br><br>
-                <span style="font-size:0.8rem;color:#cbd5e1;">${p.detail}</span><br>
-                <small style="color:#64748b;">出典：${p.source}　${milDates}</small>
+                <span class="mil-pop-status mil-pop-status--port">${p.status}</span><br><br>
+                <span class="mil-pop-detail">${p.detail}</span><br>
+                <small class="mil-pop-src">出典：${p.source}　${milDates}</small>
               </div>
             `)
             .addTo(map);
@@ -3582,9 +3684,9 @@ L.marker([4.5, 7.0], {
   'ナイジェリア（Bonny Light）<br>API36° 硫黄0.15%<br>喜望峰経由→日本 約35〜40日',
   {sticky:true}
 ).bindPopup(`
-  <div style="font-family:'Noto Sans JP',sans-serif;min-width:200px;padding:4px;">
-    <div style="font-size:0.85rem;font-weight:800;color:#fbbf24;margin-bottom:6px;">🇳🇬 ナイジェリア（Bonny Light）</div>
-    <div style="font-size:0.75rem;color:#1e293b;line-height:1.9;">
+  <div class="src-pop">
+    <div class="src-pop-title tc-amber">🇳🇬 ナイジェリア（Bonny Light）</div>
+    <div class="src-pop-body">
       <strong>品質：</strong>API比重36° / 硫黄0.15%（低硫黄スイート）<br>
       <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
       <strong>所要日数：</strong>約35〜40日<br>
@@ -3601,9 +3703,9 @@ L.marker([-8.8, 13.2], {
   'アンゴラ（Hungo）<br>API28.8° 硫黄0.65%<br>喜望峰経由→日本 約35〜40日',
   {sticky:true}
 ).bindPopup(`
-  <div style="font-family:'Noto Sans JP',sans-serif;min-width:200px;padding:4px;">
-    <div style="font-size:0.85rem;font-weight:800;color:#fb923c;margin-bottom:6px;">🇦🇴 アンゴラ（Hungo）</div>
-    <div style="font-size:0.75rem;color:#1e293b;line-height:1.9;">
+  <div class="src-pop">
+    <div class="src-pop-title tc-orange">🇦🇴 アンゴラ（Hungo）</div>
+    <div class="src-pop-body">
       <strong>品質：</strong>API比重28.8° / 硫黄0.65%（中質スイート）<br>
       <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
       <strong>所要日数：</strong>約35〜40日<br>
@@ -3620,9 +3722,9 @@ L.marker([-22.0, -40.0], {
   'ブラジル（Tupi・Buzios）<br>API31° 硫黄0.3%<br>喜望峰経由→日本 約40〜45日',
   {sticky:true}
 ).bindPopup(`
-  <div style="font-family:'Noto Sans JP',sans-serif;min-width:200px;padding:4px;">
-    <div style="font-size:0.85rem;font-weight:800;color:#c084fc;margin-bottom:6px;">🇧🇷 ブラジル（Tupi・Buzios）</div>
-    <div style="font-size:0.75rem;color:#1e293b;line-height:1.9;">
+  <div class="src-pop">
+    <div class="src-pop-title tc-purple">🇧🇷 ブラジル（Tupi・Buzios）</div>
+    <div class="src-pop-body">
       <strong>品質：</strong>API比重31° / 硫黄0.3%（中質スイート）<br>
       <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
       <strong>所要日数：</strong>約40〜45日<br>
@@ -3636,19 +3738,7 @@ L.marker([-22.0, -40.0], {
 const japanRefineryMarker = L.marker([34.5, 138.5], {
   icon: L.divIcon({
     className: '',
-    html: `<div style="
-      background: linear-gradient(135deg, #1e3a5f, #0f2027);
-      border: 2px solid #38bdf8;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      box-shadow: 0 0 12px rgba(56,189,248,0.5);
-      cursor: pointer;
-    ">🏭</div>`,
+    html: `<div class="mk mk--japan">🏭</div>`,
     iconSize: [44, 44],
     iconAnchor: [22, 22],
     popupAnchor: [0, -24]
@@ -3656,17 +3746,17 @@ const japanRefineryMarker = L.marker([34.5, 138.5], {
 }).addTo(map);
 
 japanRefineryMarker.bindPopup(`
-  <div style="font-family:'Noto Sans JP',sans-serif;min-width:220px;padding:4px;">
-    <div style="font-size:0.85rem;font-weight:800;color:#38bdf8;margin-bottom:6px;">🇯🇵 日本の受入拠点</div>
-    <div style="font-size:0.75rem;color:#1e293b;line-height:1.8;margin-bottom:6px;">
-      <strong style="color:#1e293b;">石油備蓄：</strong>197日分（国家102＋民間91＋産油国共同4、9/29時点）<br>
-      <strong style="color:#1e293b;">中東依存度：</strong>原油輸入の約95%<br>
-      <strong style="color:#1e293b;">ルートA着：</strong>ENEOS向け2船 到着済み ✅<br>
-      <strong style="color:#1e293b;">ルートB着：</strong>3/28 太陽石油（愛媛）✅<br>
-      <strong style="color:#1e293b;">ルートC着：</strong>4/25 予定 🔄
+  <div class="src-pop src-pop--wide">
+    <div class="src-pop-title tc-sky">🇯🇵 日本の受入拠点</div>
+    <div class="src-pop-body src-pop-body--japan">
+      <strong class="tc-ink">石油備蓄：</strong>197日分（国家102＋民間91＋産油国共同4、9/29時点）<br>
+      <strong class="tc-ink">中東依存度：</strong>原油輸入の約95%<br>
+      <strong class="tc-ink">ルートA着：</strong>ENEOS向け2船 到着済み ✅<br>
+      <strong class="tc-ink">ルートB着：</strong>3/28 太陽石油（愛媛）✅<br>
+      <strong class="tc-ink">ルートC着：</strong>4/25 予定 🔄
     </div>
     <button onclick="document.getElementById('refinery-modal').style.display='flex'"
-      style="width:100%;background:linear-gradient(135deg,#1e40af,#1e3a5f);border:1px solid #38bdf8;color:#7dd3fc;font-size:0.78rem;font-weight:700;padding:7px 0;border-radius:6px;cursor:pointer;letter-spacing:0.03em;">
+      class="src-pop-btn">
       📋 製油所・備蓄基地の詳細を見る →
     </button>
   </div>
@@ -3741,7 +3831,7 @@ fetch('/data/countries.geojson')  // Natural Earth 10m（datasets/geo-countries�
     COUNTRIES.forEach(c => {
       L.marker([c.lat,c.lng], {
         icon: L.divIcon({
-          html:`<div style="color:rgba(180,210,235,0.85);font-size:11px;font-weight:600;font-family:'Hiragino Sans','Yu Gothic','Segoe UI',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">${c.name}</div>`,
+          html:`<div class="map-label map-label--country">${c.name}</div>`,
           iconSize:[0,0], iconAnchor:[0,0], className:'country-label'
         }), interactive:false
       }).addTo(map);
@@ -3992,25 +4082,25 @@ L.polyline(routePanama,{pane:'canalPane',color:'#67e8f9',weight:4.5,opacity:1})
 // ============================================================
 function mkIcon(emoji,color,size=34){
   return L.divIcon({
-    html:`<div style="width:${size}px;height:${size}px;background:${color};border:2px solid rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${Math.round(size*0.48)}px;box-shadow:0 0 ${Math.round(size/2)}px ${color}99;">${emoji}</div>`,
+    html:`<div class="mk mk--dyn" style="width:${size}px;height:${size}px;background:${color};font-size:${Math.round(size*0.48)}px;box-shadow:0 0 ${Math.round(size/2)}px ${color}99;">${emoji}</div>`,
     iconSize:[size,size],iconAnchor:[size/2,size/2],className:''
   });
 }
 
 L.marker([26.5,56.5],{icon:L.divIcon({
-  html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.18);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">⛔</div>`,
+  html:`<div class="pulse-red mk mk--hormuz">⛔</div>`,
   iconSize:[44,44],iconAnchor:[22,22],className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">⛔ ホルムズ海峡 / Strait of Hormuz</div>
+  <div class="p-title tc-red">⛔ ホルムズ海峡 / Strait of Hormuz</div>
   <div class="p-body"><strong>状態：</strong>イランによる通航制限下（2026年2月末〜）。通航は一部回復（2026年10月2日時点）<br>
   <strong>通過量（開戦前）：</strong>日量約2,000万バレル（世界の石油消費の約20%）</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 厳格統制下</span>`);
+  <span class="p-badge p-badge--red">⚠️ 厳格統制下</span>`);
   // サウジ東西パイプライン被弾ポイント①：ポンプ施設（推定位置：リヤド西方）
 L.marker([24.2, 45.8],{icon:L.divIcon({
-  html:`<div style="width:40px;height:40px;background:rgba(251,191,36,0.18);border:2.5px solid #fbbf24;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">💥</div>`,
+  html:`<div class="mk mk--warn">💥</div>`,
   iconSize:[40,40],iconAnchor:[20,20],className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">💥 東西パイプライン ポンプ施設被弾</div>
+  <div class="p-title tc-amber">💥 東西パイプライン ポンプ施設被弾</div>
   <div class="p-body">
     <strong>日時：</strong>2026年4月8日（停戦合意から数時間後）<br>
     <strong>攻撃手段：</strong>ドローン<br>
@@ -4018,139 +4108,139 @@ L.marker([24.2, 45.8],{icon:L.divIcon({
     <strong>復旧：</strong>時期未発表<br>
     <strong>出典：</strong>サウジエネルギー省（4/9公式確認）・Reuters・CNBC
   </div>
-  <span class="p-badge" style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">⚠️ 輸送量減少中</span>`);
+  <span class="p-badge p-badge--amber">⚠️ 輸送量減少中</span>`);
 
 // サウジ東西パイプライン被弾ポイント②：ヤンブー港（終点・紅海側）
 L.marker([24.09, 38.05],{icon:L.divIcon({
-  html:`<div style="width:40px;height:40px;background:rgba(251,191,36,0.18);border:2.5px solid #fbbf24;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>`,
+  html:`<div class="mk mk--warn">⚠️</div>`,
   iconSize:[40,40],iconAnchor:[20,20],className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ ヤンブー港 / Yanbu Terminal</div>
+  <div class="p-title tc-amber">⚠️ ヤンブー港 / Yanbu Terminal</div>
   <div class="p-body">
     <strong>役割：</strong>東西パイプライン終点・紅海側輸出ターミナル<br>
     <strong>現状：</strong>Aramcoがアラブライト限定に積載を絞って運用中<br>
     <strong>製油所：</strong>SAMREF製油所も被弾、精製品輸出に影響<br>
     <strong>関連ルート：</strong>日本向けルートB（バベルマンデブ→マレーシア沖）の起点
   </div>
-  <span class="p-badge" style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">⚠️ 積載制限中</span>`);
+  <span class="p-badge p-badge--amber">⚠️ 積載制限中</span>`);
 
 // サウジ マニファ油田被弾
 L.marker([27.15, 49.8],{icon:L.divIcon({
-  html:`<div style="width:36px;height:36px;background:rgba(251,191,36,0.15);border:2px solid #fbbf24;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;">🛢️</div>`,
+  html:`<div class="mk mk--oil">🛢️</div>`,
   iconSize:[36,36],iconAnchor:[18,18],className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🛢️ マニファ油田（復旧済み✅）</div>
+  <div class="p-title tc-green">🛢️ マニファ油田（復旧済み✅）</div>
   <div class="p-body">
     <strong>被害：</strong>生産能力 ▲30万BPD（攻撃時）<br>
     <strong>4/12 復旧完了：</strong>30万BPD 全量回復✅<br>
     <strong>出典：</strong>サウジエネルギー省（4/12公式確認）
   </div>
-  <span class="p-badge" style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.4)">✅ 生産量 全面復旧</span>`);
+  <span class="p-badge p-badge--green">✅ 生産量 全面復旧</span>`);
 
 L.marker([12.6,43.4],{icon:L.divIcon({
-  html:`<div class="pulse-yellow" style="width:40px;height:40px;background:rgba(220,38,38,0.2);border:2.5px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>`,
+  html:`<div class="pulse-yellow mk mk--bab">⚠️</div>`,
   iconSize:[40,40],iconAnchor:[20,20],className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ バベルマンデブ海峡 / Bab-el-Mandeb</div>
+  <div class="p-title tc-amber">⚠️ バベルマンデブ海峡 / Bab-el-Mandeb</div>
   <div class="p-body"><strong>場所：</strong>紅海南端・イエメン沖<br>
   <strong>脅威：</strong>フーシ派が封鎖を示唆（ガリバフ発言）<br>
   <strong>影響：</strong>ルートBが通過必須の要衝<br>
   <strong>現況：</strong>船舶数が激減・極度に緊張</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⬆ リスク急上昇</span>`);
+  <span class="p-badge p-badge--red">⬆ リスク急上昇</span>`);
 
 L.marker([25.1,56.3],{icon:mkIcon('⚓','#1d4ed8',36)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#60a5fa">⚓ フジャイラ港（UAE）</div>
+  <div class="p-title tc-blue">⚓ フジャイラ港（UAE）</div>
   <div class="p-body"><strong>位置：</strong>UAE東部・オマーン湾沿岸<br>
   <strong>パイプライン：</strong>ADCOP（アブダビ直結）終端部<br>
   <strong>輸送能力：</strong>日量 約150〜180万バレル（通常時）<br>
   <strong>5/4 の攻撃：</strong>VTTIターミナルが直撃を受けて火災が発生し、積み出しが一時停止した。<br>
   <strong>攻撃詳細：</strong>弾道ミサイル3発迎撃済・ドローン1機が防空突破。インド人3名負傷。<br>
   <strong>その後：</strong>積み出しは再開し、6月時点でUAEの原油輸出は戦前平均を上回る水準まで回復した。現況は「全ルート現況サマリー」のルートAを参照。</div>
-  <span class="p-badge" style="background:rgba(96,165,250,0.2);color:#60a5fa;border:1px solid rgba(96,165,250,0.4)">ルートA 拠点</span>`);
+  <span class="p-badge p-badge--blue">ルートA 拠点</span>`);
 
 L.marker([24.1,38.1],{icon:mkIcon('⚓','#065f46',36)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">⚓ ヤンブー港（サウジアラビア）</div>
+  <div class="p-title tc-green">⚓ ヤンブー港（サウジアラビア）</div>
   <div class="p-body"><strong>パイプライン：</strong>東西パイプライン（全長1,200km）<br>
   <strong>輸送能力：</strong>通常 日量約500万バレル。管の転用で約700万バレルまで拡張（EIA）<br>
   <strong>実績：</strong>3/28 太陽石油（愛媛）到着 ✅<br>
   <strong>積荷：</strong>サウジ産原油 64万バレル</div>
-  <span class="p-badge" style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.4)">ルートB 拠点</span>`);
+  <span class="p-badge p-badge--green">ルートB 拠点</span>`);
 
 L.marker([24.5,54.4],{icon:mkIcon('🛢️','#1e3a5f',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#38bdf8">🛢️ アブダビ油田</div>
+  <div class="p-title tc-sky">🛢️ アブダビ油田</div>
   <div class="p-body">ADCOPパイプラインでフジャイラ港に直結。ホルムズ海峡を完全に回避した輸出が可能。</div>`);
 
 L.marker([26.3,49.8],{icon:mkIcon('🛢️','#064e3b',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🛢️ サウジ東部油田</div>
+  <div class="p-title tc-green">🛢️ サウジ東部油田</div>
   <div class="p-body">東西パイプライン（1,200km）でヤンブー港へ輸送。世界最大の産油設備群が集中するエリア。</div>`);
 
 L.marker([19.0,72.8],{icon:mkIcon('🔄','#78350f',32)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">🔄 ムンバイ沖（積み替え）</div>
+  <div class="p-title tc-amber">🔄 ムンバイ沖（積み替え）</div>
   <div class="p-body"><strong>ルートA</strong>：フジャイラからの原油をVLCCに積み替え。ENEOSホールディングスが関与。4月5日（日本）到着予定。</div>`);
 
 L.marker([2.5,104.0],{icon:mkIcon('🔄','#064e3b',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🔄 マレーシア沖（積み替え）</div>
+  <div class="p-title tc-green">🔄 マレーシア沖（積み替え）</div>
   <div class="p-body"><strong>ルートB</strong>：ヤンブーからの原油をVLCCに積み替え。3/28着の太陽石油向けもここで積み替え。</div>`);
 
 L.marker([1.5,103.5],{icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#7dd3fc">🚢 マラッカ海峡</div>
+  <div class="p-title tc-sky-light">🚢 マラッカ海峡</div>
   <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。</div>`);
 
 L.marker([61.2,210.0],{icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#a78bfa">🇺🇸 米国（アラスカ）</div>
+  <div class="p-title tc-violet">🇺🇸 米国（アラスカ）</div>
   <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>4/25に第1便が日本到着予定。</strong></div>`);
 
 // 南鳥島（レアアース泥）— ?focus=minamitori と「YouTube から来た方へ」枠から開く
 const minamitoriMarker = L.marker([24.28, 153.98], {
   icon: mkIcon('🏝️', '#0e7490', 30)
 }).addTo(map).bindTooltip('南鳥島（レアアース泥）', {sticky:true}).bindPopup(`
-  <div style="font-family:'Noto Sans JP',sans-serif;min-width:220px;padding:4px;">
-    <div style="font-size:0.85rem;font-weight:800;color:#0e7490;margin-bottom:6px;">🏝️ 南鳥島（東京都小笠原村）</div>
-    <div style="font-size:0.75rem;color:#1e293b;line-height:1.8;">
+  <div class="src-pop src-pop--wide">
+    <div class="src-pop-title tc-teal">🏝️ 南鳥島（東京都小笠原村）</div>
+    <div class="src-pop-body src-pop-body--tight">
       周辺の排他的経済水域（EEZ）、水深約5,600mの海底にレアアースを含む泥がある。<br>
       <strong>試験：</strong>2026年1〜2月、探査船「ちきゅう」が約50トンを引き揚げ。総量の約54%がイットリウム・ジスプロシウムなどの中重レアアース。埋蔵量は公表されていない<br>
       <strong>次：</strong>2027年2月から本格採鉱試験。採算性・精製コスト・環境影響が課題<br>
-      <span style="color:#64748b;">出典：<a href="https://www.jamstec.go.jp/j/about/press_release/20260724/" target="_blank" rel="noopener">JAMSTEC・内閣府SIP（2026/7/24）</a>・<a href="https://scienceportal.jst.go.jp/stories/20260818_s01/" target="_blank" rel="noopener">サイエンスポータル（2026/8/18）</a></span>
+      <span class="tc-dim">出典：<a href="https://www.jamstec.go.jp/j/about/press_release/20260724/" target="_blank" rel="noopener">JAMSTEC・内閣府SIP（2026/7/24）</a>・<a href="https://scienceportal.jst.go.jp/stories/20260818_s01/" target="_blank" rel="noopener">サイエンスポータル（2026/8/18）</a></span>
     </div>
   </div>
 `, { maxWidth: 260, maxHeight: window.innerWidth <= 600 ? 220 : null });
 
 L.marker([-10.0,-38.0],{icon:mkIcon('🇧🇷','#4c1d95',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#c084fc">🇧🇷 ブラジル</div>
+  <div class="p-title tc-purple">🇧🇷 ブラジル</div>
   <div class="p-body"><strong>ルートC（南米）</strong>の供給源。喜望峰→インド洋経由で日本へ。製油所の品質調整が必要。</div>`);
 
 L.marker([-34.3,18.4],{icon:mkIcon('🌍','#1a3a2a',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🌍 喜望峰</div>
+  <div class="p-title tc-green">🌍 喜望峰</div>
   <div class="p-body">バベルマンデブ封鎖時のルートBの迂回経路。紅海ルートより約2週間余分。ブラジル産（ルートC南米）もここを通過。</div>`);
 
 L.marker([26.0,50.5],{icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 バーレーン（攻撃報告 4/4）</div>
+  <div class="p-title tc-red">💥 バーレーン（攻撃報告 4/4）</div>
   <div class="p-body">イラン革命防衛隊が4日、バーレーン港でイスラエル関連船舶を攻撃。大規模火災が発生。UAE・クウェートにもミサイル・ドローン攻撃が発生（警戒は解除済み）。</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 最新攻撃報告</span>`);
+  <span class="p-badge p-badge--red">⚠️ 最新攻撃報告</span>`);
 
 L.marker([30.6,32.3],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#94a3b8">⚓ スエズ運河</div>
+  <div class="p-title tc-slate">⚓ スエズ運河</div>
   <div class="p-body">紅海とヨーロッパを結ぶ要衝。ルートBはバベルマンデブからアジア方面へ向かう。</div>`);
 
 L.marker([9.15,-80.19],{icon:mkIcon('🏞️','#78350f',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">🏞️ リオ・インディオ / Río Indio</div>
+  <div class="p-title tc-amber">🏞️ リオ・インディオ / Río Indio</div>
   <div class="p-body"><strong>位置：</strong>パナマ中部・コスタアバホ地方。ガトゥン湖の西側を並行して流れ、カリブ海へ注ぐ全長約98kmの河川<br>
   <strong>計画：</strong>運河の水不足対策として貯水池（ダム湖）を建設。<strong>8.7kmの導水トンネル</strong>で自然流下によりガトゥン湖へ送水する<br>
   <strong>規模：</strong>湛水面積4,600ha（流域の約8%）／事業費15億ドル<br>
   <strong>工期：</strong>2027年着工予定・約4年<br>
   <strong>課題：</strong>38の農村コミュニティ・約2,000人が移転対象となり、住民の反対運動が続いている</div>
-  <span class="p-badge" style="background:rgba(251,191,36,0.18);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">🚧 計画段階</span>
-  <div style="font-size:0.62rem;color:#64748b;margin-top:5px;line-height:1.5;">※地図の水色の線はOSM登録の河道。ダム本体・貯水池の位置は公表資料で座標が確認できないため未表示。</div>`);
+  <span class="p-badge p-badge--amber-soft">🚧 計画段階</span>
+  <div class="p-note">※地図の水色の線はOSM登録の河道。ダム本体・貯水池の位置は公表資料で座標が確認できないため未表示。</div>`);
 
 L.marker([9.24,-79.60],{icon:mkIcon('💧','#0c4a6e',24)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#7dd3fc">💧 アラフエラ湖 / Lago Alajuela</div>
+  <div class="p-title tc-sky-light">💧 アラフエラ湖 / Lago Alajuela</div>
   <div class="p-body"><strong>位置：</strong>ガトゥン湖の上流（東側）・チャグレス川<br>
   <strong>成立：</strong>1935年完成のマッデンダムによる人造湖<br>
   <strong>役割：</strong>閘門で消費される<strong>運河用水の約45%</strong>を供給。パナマ市・コロン市の上水源も兼ねる<br>
   <strong>治水：</strong>雨季の洪水を貯留し、ガトゥン湖の氾濫リスクを抑える</div>`);
 
 L.marker([9.08,-79.68],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#94a3b8">⚓ パナマ運河 / Panama Canal</div>
+  <div class="p-title tc-slate">⚓ パナマ運河 / Panama Canal</div>
   <div class="p-body"><strong>全長：</strong>約82km（大西洋側コロン〜太平洋側バルボア）<br>
   <strong>構造：</strong>閘門式（ガトゥン／ペドロミゲル／ミラフローレス）。ガトゥン湖を最大水位差約26mで越える<br>
   <strong>役割：</strong>大西洋と太平洋を結ぶ要衝。米国東岸・メキシコ湾岸からアジアへの航路を短縮<br>
@@ -4158,31 +4248,31 @@ L.marker([9.08,-79.68],{icon:mkIcon('⚓','#1e293b',24)}).addTo(map).bindPopup(`
 
 // 津軽海峡（長尺3本目 2026-09、動画の領海図 C03-S02 を再利用）— ?focus=tsugaru と「YouTube から来た方へ」枠から開く
 const tsugaruMarker = L.marker([41.55, 140.65],{icon:mkIcon('⚓','#0c4a6e',26)}).addTo(map).bindTooltip('津軽海峡', {sticky:true}).bindPopup(`
-  <div class="p-title" style="color:#7dd3fc">⚓ 津軽海峡 / Tsugaru Strait</div>
+  <div class="p-title tc-sky-light">⚓ 津軽海峡 / Tsugaru Strait</div>
   <div class="p-body"><strong>位置：</strong>本州と北海道のあいだ。西の日本海と東の太平洋を結ぶ<br>
   <strong>通る船：</strong>夏は1日50隻前後（2026年6〜8月平均 53.8隻）。この5年、全体の数はほとんど変わっていない<br>
   <strong>タンカーの荷（推定）：</strong>3月〜9月半ばの1日あたりの中央値で、2024年→2026年に<strong>およそ1.6倍</strong>。増えた分の半分近くは、ホルムズ海峡の通航がほぼ止まった2026年3月より前から。<strong>理由は未確認</strong><br>
   <strong>領海：</strong>法律で3海里にとどめる「特定海域」。海峡の中央に、日本の領海ではない水路が残る</div>
-  <img src="/images/tsugaru-territorial-sea.jpg" width="1280" height="720" loading="lazy" alt="津軽海峡の領海図（海峡の中だけ3海里、中央に日本の領海ではない水路が残る）" onclick="openLightbox('/images/tsugaru-territorial-sea.jpg')" style="width:100%;height:auto;margin-top:6px;border-radius:4px;cursor:zoom-in;">
-  <div style="font-size:0.62rem;color:#64748b;margin-top:5px;line-height:1.5;">出典：IMF PortWatch（2026-09-22確認、積載量は喫水などからの推定値・集計は本サイト）／領海及び接続水域に関する法律 附則2・同施行令 別表第一・第二（e-Gov）／海岸線 Natural Earth。図をタップで拡大</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : null });
+  <img src="/images/tsugaru-territorial-sea.jpg" width="1280" height="720" loading="lazy" alt="津軽海峡の領海図（海峡の中だけ3海里、中央に日本の領海ではない水路が残る）" onclick="openLightbox('/images/tsugaru-territorial-sea.jpg')" class="p-img">
+  <div class="p-note">出典：IMF PortWatch（2026-09-22確認、積載量は喫水などからの推定値・集計は本サイト）／領海及び接続水域に関する法律 附則2・同施行令 別表第一・第二（e-Gov）／海岸線 Natural Earth。図をタップで拡大</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : null });
 
 L.marker([32.08, 34.78], {icon:mkIcon('🇮🇱','#1e3a5f',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">🇮🇱 テルアビブ / Tel Aviv</div>
+  <div class="p-title tc-blue-light">🇮🇱 テルアビブ / Tel Aviv</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部・地中海沿岸<br>
   <strong>役割：</strong>イスラエルの経済・軍事中枢<br>
   <strong>状況：</strong>イランのミサイル攻撃対象として継続的に警戒中</div>`);
 
 L.marker([31.78, 35.22], {icon:mkIcon('🇮🇱','#1e3a5f',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">🇮🇱 エルサレム / Jerusalem</div>
+  <div class="p-title tc-blue-light">🇮🇱 エルサレム / Jerusalem</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部<br>
   <strong>役割：</strong>イスラエルの首都・政治中枢</div>`);
 
 L.marker([29.55, 34.95], {icon:mkIcon('⚓','#1e3a5f',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">⚓ エイラート / Eilat</div>
+  <div class="p-title tc-blue-light">⚓ エイラート / Eilat</div>
   <div class="p-body"><strong>位置：</strong>イスラエル南端・紅海アカバ湾<br>
   <strong>役割：</strong>イスラエル唯一の紅海港・石油輸入の玄関口<br>
   <strong>状況：</strong>フーシ派攻撃の標的となり港湾機能が大幅低下</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 機能低下中</span>`);
+  <span class="p-badge p-badge--red">⚠️ 機能低下中</span>`);
 
 L.marker([33.88,35.50],{icon:mkIcon('💥','#ef4444')}).addTo(map)
   .bindPopup('<strong>🇱🇧 ベイルート（レバノン首都）</strong><br>🚨 4/8-9 イスラエルが停戦合意数時間後に最大規模攻撃。ヒズボラ中央本部等100カ所以上を標的。<strong>死者254人・負傷者1,165人</strong>。国連が「恐ろしい」と非難。イスラエル「レバノンは停戦対象外」/ イラン「停戦違反」で対立激化。');
@@ -4194,121 +4284,121 @@ L.marker([34.00,36.22],{icon:mkIcon('💥','#ef4444')}).addTo(map)
   .bindPopup('<strong>💥 ベカー高原（東レバノン）</strong><br>ヒズボラ軍事拠点への大規模攻撃。葬儀参列者を含む多数の民間人が犠牲に。（4/8-9）');
 
 L.marker([33.51, 36.29], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ ダマスカス / Damascus（シリア）</div>
+  <div class="p-title tc-amber">⚠️ ダマスカス / Damascus（シリア）</div>
   <div class="p-body"><strong>位置：</strong>シリア首都<br>
   <strong>役割：</strong>イランの軍事物資輸送ルートの中継地<br>
   <strong>状況：</strong>イスラエルによる空爆が断続的に発生</div>`);
 
 L.marker([31.95, 35.93], {icon:mkIcon('🌍','#1e293b',24)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#94a3b8">🌍 アンマン / Amman（ヨルダン）</div>
+  <div class="p-title tc-slate">🌍 アンマン / Amman（ヨルダン）</div>
   <div class="p-body"><strong>位置：</strong>ヨルダン首都<br>
   <strong>役割：</strong>中東和平の仲介役・米軍基地あり<br>
   <strong>状況：</strong>イランのミサイルが領空を通過する事態が発生</div>`);
 
 L.marker([24.47, 39.61], {icon:mkIcon('🛢️','#064e3b',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🛢️ アラムコ本社 / Saudi Aramco HQ（ダーラン）</div>
+  <div class="p-title tc-green">🛢️ アラムコ本社 / Saudi Aramco HQ（ダーラン）</div>
   <div class="p-body"><strong>位置：</strong>サウジアラビア東部<br>
   <strong>役割：</strong>世界最大の石油会社・サウジ原油輸出の中枢<br>
   <strong>状況：</strong>過去にドローン攻撃を受けた実績あり・厳重警戒中</div>`);
 
 L.marker([26.43, 50.10], {icon:mkIcon('🛢️','#064e3b',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#34d399">🛢️ ラスタヌーラ製油所 / Ras Tanura</div>
+  <div class="p-title tc-green">🛢️ ラスタヌーラ製油所 / Ras Tanura</div>
   <div class="p-body"><strong>位置：</strong>サウジアラビア東部・ペルシャ湾岸<br>
   <strong>役割：</strong>世界最大級の石油輸出ターミナル<br>
   <strong>状況：</strong>攻撃対象として最高警戒レベル</div>
-  <span class="p-badge" style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.4)">⚠️ 最高警戒</span>`);
+  <span class="p-badge p-badge--amber">⚠️ 最高警戒</span>`);
 
 L.marker([26.21, 50.59], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">🇺🇸 米第5艦隊司令部 / US 5th Fleet HQ（バーレーン）</div>
+  <div class="p-title tc-blue-light">🇺🇸 米第5艦隊司令部 / US 5th Fleet HQ（バーレーン）</div>
   <div class="p-body"><strong>位置：</strong>バーレーン・マナーマ<br>
   <strong>役割：</strong>中東・インド洋・紅海を管轄する米海軍の中枢<br>
   <strong>状況：</strong>ホルムズ危機対応の最前線司令部</div>
-  <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">米軍中枢</span>`);
+  <span class="p-badge p-badge--navy">米軍中枢</span>`);
 
 L.marker([25.28, 51.53], {icon:mkIcon('🇺🇸','#1e3a5f',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#93c5fd">🇺🇸 アルウデイド空軍基地 / Al Udeid Air Base（カタール）</div>
+  <div class="p-title tc-blue-light">🇺🇸 アルウデイド空軍基地 / Al Udeid Air Base（カタール）</div>
   <div class="p-body"><strong>位置：</strong>カタール・ドーハ近郊<br>
   <strong>役割：</strong>中東最大の米空軍基地・CENTCOM前進司令部<br>
   <strong>状況：</strong>対イラン作戦の主要拠点・イランの攻撃対象</div>
-  <span class="p-badge" style="background:rgba(29,78,216,0.3);color:#93c5fd;border:1px solid rgba(147,197,253,0.4)">米軍主要拠点</span>`);
+  <span class="p-badge p-badge--navy">米軍主要拠点</span>`);
 
 L.marker([35.69, 51.39], {icon:mkIcon('🇮🇷','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">🇮🇷 テヘラン / Tehran</div>
+  <div class="p-title tc-red">🇮🇷 テヘラン / Tehran</div>
   <div class="p-body"><strong>位置：</strong>イラン首都<br>
   <strong>役割：</strong>イラン政治・軍事の中枢<br>
   <strong>状況：</strong>米・イスラエルによる攻撃対象として警戒中</div>`);
 
 L.marker([32.66, 51.67], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ イスファハン / Isfahan（核関連施設）</div>
+  <div class="p-title tc-amber">⚠️ イスファハン / Isfahan（核関連施設）</div>
   <div class="p-body"><strong>位置：</strong>イラン中部<br>
   <strong>役割：</strong>核関連施設・ウラン濃縮施設が集中<br>
   <strong>状況：</strong>イスラエルによる過去の攻撃実績あり・最高警戒</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">⚠️ 核関連施設</span>`);
+  <span class="p-badge p-badge--red">⚠️ 核関連施設</span>`);
 
 L.marker([29.25, 50.32], {icon: L.divIcon({
-  html:`<div class="pulse-red" style="width:44px;height:44px;background:rgba(239,68,68,0.25);border:2.5px solid #ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">💥</div>`,
+  html:`<div class="pulse-red mk mk--kharg">💥</div>`,
   iconSize:[44,44], iconAnchor:[22,22], className:''
 })}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 カーグ島 / Kharg Island</div>
+  <div class="p-title tc-red">💥 カーグ島 / Kharg Island</div>
   <div class="p-body"><strong>位置：</strong>イラン南西部・ペルシャ湾内<br>
   <strong>重要性：</strong>イラン原油輸出の約90%を担う最大ターミナル（出典：Al Jazeera・ABC News、2026年3月）<br>
   <strong>被害：</strong>空爆90回以上・民間人18人死亡<br>
   <strong>状況：</strong>軍事作戦進行中・輸出能力に深刻な打撃</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">🚨 空爆90回以上</span>`);
+  <span class="p-badge p-badge--red">🚨 空爆90回以上</span>`);
 
 L.marker([30.34, 48.30], {icon:mkIcon('🔥','#7f1d1d',30)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">🔥 アバダン製油所 / Abadan Refinery</div>
+  <div class="p-title tc-red">🔥 アバダン製油所 / Abadan Refinery</div>
   <div class="p-body"><strong>位置：</strong>イラン南西部・シャットルアラブ川沿岸<br>
   <strong>役割：</strong>中東最大級の製油所・イランの石油精製の中核<br>
   <strong>状況：</strong>攻撃対象として警戒中</div>`);
 
 L.marker([27.18, 56.27], {icon:mkIcon('⚠️','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ バンダルアッバース / Bandar Abbas</div>
+  <div class="p-title tc-amber">⚠️ バンダルアッバース / Bandar Abbas</div>
   <div class="p-body"><strong>位置：</strong>イラン南部・ホルムズ海峡北岸<br>
   <strong>役割：</strong>イラン海軍主要基地・海峡の通航制限の拠点<br>
   <strong>状況：</strong>革命防衛隊の海峡管理拠点</div>`);
 
 L.marker([25.87, 55.03], {icon:mkIcon('⚠️','#7f1d1d',26)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#fbbf24">⚠️ アブムーサ島 / Abu Musa Island</div>
+  <div class="p-title tc-amber">⚠️ アブムーサ島 / Abu Musa Island</div>
   <div class="p-body"><strong>位置：</strong>ホルムズ海峡・UAE沖<br>
   <strong>役割：</strong>イランが実効支配・海峡の通航制限の前線基地</div>`);
 
 L.marker([24.35, 54.47], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 ムサッファ港（UAE）/ Musaffah</div>
+  <div class="p-title tc-red">💥 ムサッファ港（UAE）/ Musaffah</div>
   <div class="p-body"><strong>被害：</strong>4/6 波状攻撃・負傷者複数<br>
   <strong>状況：</strong>警戒解除済みも被害継続</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
+  <span class="p-badge p-badge--red">攻撃報告済み</span>`);
 
 L.marker([25.37, 55.42], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 シャルジャ港（UAE）/ Sharjah</div>
+  <div class="p-title tc-red">💥 シャルジャ港（UAE）/ Sharjah</div>
   <div class="p-body"><strong>被害：</strong>4/6 ミサイル・ドローン攻撃<br>
   <strong>状況：</strong>警戒解除済み</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">攻撃報告済み</span>`);
+  <span class="p-badge p-badge--red">攻撃報告済み</span>`);
 
 L.marker([29.37, 47.98], {icon:mkIcon('💥','#7f1d1d',28)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#f87171">💥 KPC本部（クウェート）</div>
+  <div class="p-title tc-red">💥 KPC本部（クウェート）</div>
   <div class="p-body"><strong>被害：</strong>4/6 直撃「深刻な物質的損害」・海水淡水化施設も損傷<br>
   <strong>状況：</strong>警戒継続中</div>
-  <span class="p-badge" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4)">直撃確認</span>`);
+  <span class="p-badge p-badge--red">直撃確認</span>`);
 
 L.marker([28.55, 34.88], {icon:mkIcon('🚢','#1e3a5f',24)}).addTo(map).bindPopup(`
-  <div class="p-title" style="color:#7dd3fc">🚢 アカバ湾 / Gulf of Aqaba</div>
+  <div class="p-title tc-sky-light">🚢 アカバ湾 / Gulf of Aqaba</div>
   <div class="p-body"><strong>位置：</strong>紅海北部・イスラエル・ヨルダン・サウジ・エジプトに囲まれた湾<br>
   <strong>役割：</strong>イスラエルのエイラート港への唯一のアクセス<br>
   <strong>状況：</strong>フーシ派の攻撃により実質的に封鎖状態</div>`);
 
 L.marker([27.0, 52.0], {icon: L.divIcon({
-  html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">ペルシャ湾</div>`,
+  html:`<div class="map-label map-label--sea">ペルシャ湾</div>`,
   iconSize:[0,0], iconAnchor:[0,0], className:''
 }), interactive:false}).addTo(map);
 
 L.marker([20.0, 38.5], {icon: L.divIcon({
-  html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">紅海</div>`,
+  html:`<div class="map-label map-label--sea">紅海</div>`,
   iconSize:[0,0], iconAnchor:[0,0], className:''
 }), interactive:false}).addTo(map);
 
 L.marker([18.0, 63.0], {icon: L.divIcon({
-  html:`<div style="color:rgba(56,189,248,0.5);font-size:13px;font-weight:700;font-family:'Hiragino Sans','Yu Gothic',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.95);white-space:nowrap;pointer-events:none;">アラビア海</div>`,
+  html:`<div class="map-label map-label--sea">アラビア海</div>`,
   iconSize:[0,0], iconAnchor:[0,0], className:''
 }), interactive:false}).addTo(map);
 
@@ -4414,31 +4504,31 @@ const Legend = L.Control.extend({
 
         <div class="leg-section">輸送ルート</div>
 
-        <div class="leg-row"><div class="leg-dash" style="border-color:#38bdf8"></div><span>ルートA：ADCOP PL→フジャイラ港（UAE）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#34d399"></div><span>ルートB：サウジ東西PL→ヤンブー港 ✅全面回復</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#a78bfa"></div><span>ルートC：アラスカ発 太平洋ルート（4/25着予定）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#c084fc"></div><span>ルートC（南米）：ブラジル発 喜望峰経由（約40〜45日）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#fbbf24"></div><span>ナイジェリア発：喜望峰経由→日本（約35〜40日）🆕</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#fb923c"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）🆕</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#f59e0b"></div><span>ルートD：通航料払いホルムズ通過（友好国限定）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#6b7280"></div><span>旧ルート（ホルムズ経由・通航制限下）</span></div>
-        <div class="leg-row"><div class="leg-dash" style="border-color:#67e8f9;border-top-style:solid"></div><span>運河（スエズ／パナマ）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--a"></div><span>ルートA：ADCOP PL→フジャイラ港（UAE）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--b"></div><span>ルートB：サウジ東西PL→ヤンブー港 ✅全面回復</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--c"></div><span>ルートC：アラスカ発 太平洋ルート（4/25着予定）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--c-sa"></div><span>ルートC（南米）：ブラジル発 喜望峰経由（約40〜45日）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--ng"></div><span>ナイジェリア発：喜望峰経由→日本（約35〜40日）🆕</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--ao"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）🆕</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--d"></div><span>ルートD：通航料払いホルムズ通過（友好国限定）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--old"></div><span>旧ルート（ホルムズ経由・通航制限下）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--canal"></div><span>運河（スエズ／パナマ）</span></div>
 
-        <div class="leg-section" style="margin-top:8px;">チョークポイント</div>
+        <div class="leg-section leg-section--gap">チョークポイント</div>
 
         <div class="leg-row"><span class="leg-emoji">⛔</span><span>ホルムズ海峡（イランが通航制限）</span></div>
         <div class="leg-row"><span class="leg-emoji">⚓</span><span>スエズ運河（全長193km）</span></div>
         <div class="leg-row"><span class="leg-emoji">⚓</span><span>パナマ運河（全長約82km）</span></div>
         <div class="leg-row"><span class="leg-emoji">🚢</span><span>マラッカ海峡（ルートA・B・D共通の通過点）</span></div>
 
-        <div class="leg-section" style="margin-top:8px;">パナマ運河の水系</div>
+        <div class="leg-section leg-section--gap">パナマ運河の水系</div>
 
         <div class="leg-row"><span class="leg-emoji">🟦</span><span>ガトゥン湖（運河の約33kmが湖上）</span></div>
         <div class="leg-row"><span class="leg-emoji">💧</span><span>アラフエラ湖（運河用水の約45%を供給）</span></div>
         <div class="leg-row"><span class="leg-emoji">🏞️</span><span>リオ・インディオ（貯水池を計画中）🚧</span></div>
-        <div class="leg-note" style="margin-top:4px;">🧭 右上「地点へ移動」で各地点へジャンプ</div>
+        <div class="leg-note leg-note--tight">🧭 右上「地点へ移動」で各地点へジャンプ</div>
         <!-- 主要拠点マーカー（非表示）
-        <div class="leg-section" style="margin-top:8px;">主要拠点マーカー</div>
+        <div class="leg-section leg-section--gap">主要拠点マーカー</div>
 
         <div class="leg-row"><span class="leg-emoji">🏭</span><span>🇯🇵 日本受入拠点（製油所サマリー）</span></div>
         <div class="leg-row"><span class="leg-emoji">🚢</span><span>🇦🇪 フジャイラ港（UAE）</span></div>
@@ -4588,7 +4678,7 @@ function renderLatestNews(data) {
       <button class="news-more-btn" id="news-latest-more-btn" onclick="toggleNewsExtra()">▼ さらに見る（${rest.length}件）</button>`;
   }
   if (data.staleNotice) {
-    const notice = `<div style="background:rgba(100,116,139,0.12);border:1px solid rgba(100,116,139,0.3);border-radius:6px;padding:8px 14px;font-size:0.78rem;color:#94a3b8;margin-bottom:10px;">📋 ${data.staleNotice}</div>`;
+    const notice = `<div class="news-stale-notice">📋 ${data.staleNotice}</div>`;
     c.innerHTML = notice + html;
   } else {
     c.innerHTML = html;
@@ -4598,12 +4688,12 @@ function renderArchive(data) {
   const c = document.getElementById('news-archive-container');
   if (!c) return;
   const batchHtml = data.archive.map(batch =>
-    `<div class="news-archive-batch" style="margin-bottom:12px;">
-  <div style="font-size:0.68rem;font-weight:800;color:#64748b;letter-spacing:0.08em;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:8px;">📁 ${batch.batchLabel}</div>
+    `<div class="news-archive-batch">
+  <div class="news-archive-label">📁 ${batch.batchLabel}</div>
   ${batch.items.map(_buildNewsItem).join('')}
 </div>`
   ).join('');
-  const bottomBtn = `<button class="news-more-btn" onclick="toggleArchive()" style="margin-top:4px;">▲ 折りたたむ</button>`;
+  const bottomBtn = `<button class="news-more-btn news-more-btn--tight" onclick="toggleArchive()">▲ 折りたたむ</button>`;
   c.innerHTML = batchHtml + bottomBtn;
 }
 function renderOsint(data) {
@@ -4611,26 +4701,26 @@ function renderOsint(data) {
   const items = data.osint;
   const makeCard = item => `
     <a class="osint-card" href="${item.url}" target="_blank" rel="noopener"
-      style="display:block;background:${item.cardBg};border:1px solid ${item.cardBorder};border-radius:8px;padding:12px 14px;text-decoration:none;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <span style="font-size:0.85rem;">${item.country}</span>
-        <span style="background:${item.badgeColor};border:1px solid ${item.borderColor};color:${item.textColor};font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:4px;">${item.media}</span>
-        <span style="font-size:0.68rem;color:#64748b;">${item.date}</span>
+      style="background:${item.cardBg};border:1px solid ${item.cardBorder};">
+      <div class="osint-head">
+        <span class="osint-country">${item.country}</span>
+        <span class="osint-media" style="background:${item.badgeColor};border:1px solid ${item.borderColor};color:${item.textColor};">${item.media}</span>
+        <span class="osint-date">${item.date}</span>
       </div>
-      <div style="font-size:0.8rem;font-weight:700;color:#e2e8f0;line-height:1.5;">${item.titleJa}</div>
-      <div style="font-size:0.72rem;color:#94a3b8;margin-top:3px;line-height:1.5;font-style:italic;">EN: ${item.titleEn}</div>
+      <div class="osint-title">${item.titleJa}</div>
+      <div class="osint-en">EN: ${item.titleEn}</div>
     </a>
   `;
   const topItems = items.slice(0, LIMIT);
   const extraItems = items.slice(LIMIT);
   const hasExtra = extraItems.length > 0;
-  let html = `<div style="display:flex;flex-direction:column;gap:8px;">${topItems.map(makeCard).join('')}</div>`;
+  let html = `<div class="osint-list">${topItems.map(makeCard).join('')}</div>`;
   if (hasExtra) {
     html += `
-      <button class="news-more-btn" id="osint-more-btn" onclick="toggleOsint()" style="margin-top:8px;">▼ 過去の記事を見る</button>
-      <div id="osint-extra" style="display:none;margin-top:8px;">
-        <div style="display:flex;flex-direction:column;gap:8px;">${extraItems.map(makeCard).join('')}</div>
-        <button class="news-more-btn" onclick="toggleOsint()" style="margin-top:4px;">▲ 折りたたむ</button>
+      <button class="news-more-btn" id="osint-more-btn" onclick="toggleOsint()">▼ 過去の記事を見る</button>
+      <div id="osint-extra" style="display:none;">
+        <div class="osint-list">${extraItems.map(makeCard).join('')}</div>
+        <button class="news-more-btn news-more-btn--tight" onclick="toggleOsint()">▲ 折りたたむ</button>
       </div>
     `;
   }

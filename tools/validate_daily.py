@@ -941,6 +941,19 @@ def check_types(html: str, base: str) -> None:
     else:
         ok("ページ全体にインライン style なし（JS が読む開閉の状態・<col> を除く）")
 
+    # JS が組み立てる HTML（②' PR E・2026-10-12 でクラスにした）。
+    # 残してよいのは、計算やデータで決まる値（${…} を含む）と、JS が読む開閉の display:none だけ
+    scripts = "".join(re.findall(r'<script\b[^>]*>(.*?)</script\b[^>]*>', html[bi:], flags=re.S | re.I)) if bi >= 0 else ''
+    # 引用符は二重・単一の両方を見る。属性のほか、JS からまとめて書き込む形（cssText・setAttribute('style', …)）も拾う
+    fixed = [v.strip()[:40] for _, v in re.findall(r'''\sstyle=(["'])(.*?)\1''', scripts, flags=re.S)
+             if '${' not in v and v.strip() != 'display:none;']
+    fixed += [m.strip()[:40] for m in re.findall(r'''\.style\.cssText\s*\+?=[^;\n]*|setAttribute\(\s*["']style["'][^)\n]*\)''', scripts)
+              if '${' not in m]
+    if fixed:
+        warn(f"JS のテンプレートに固定値のインライン style が {len(fixed)}箇所あります（型はクラス。html-safe-edit「JS が組み立てる HTML」）: " + "／".join(fixed[:5]))
+    else:
+        ok("JS のテンプレートに固定値のインライン style なし（計算・データで決まる値と開閉の display:none を除く）")
+
 
 # ── main ────────────────────────────────────────────────────
 def check_log_wording(html: str, base: str) -> None:

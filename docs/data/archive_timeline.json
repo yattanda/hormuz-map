@@ -3228,6 +3228,29 @@
           "sourceLabel": "Arab News（10/10〜11）"
         }
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "dateLabel": "2026/10/13 06:40",
+      "blockadeDay": 228,
+      "summary": "【重大更新】UKMTO公式サイトの警報166-26（10/13 00:51 JST発行）・167・168・169（03:21〜03:56 JST発行）を追加：ホルムズ海峡内で出港中のタンカー（166。10/11発生・乗組員は無事）、入航中のコンテナ船（167）、出港中の製品タンカー（168）・原油タンカー（169）が正体不明の飛翔体を受けた（いずれも遅延報告。167〜169は本文に発生日時・船名・被害の記載なし。Gulf Newsは3隻を10/11の被弾と書き、Iran Internationalは製品タンカーを10/12（月）と書いて日付が食い違う）。IRGC・米軍の反応は確認できない・リヤド空港への再攻撃：Al Jazeera（10/12）が1人死亡・11人負傷と伝える・警報162-26の裏付けをgCaptain（10/11）で確認（10/10 19:20 UTC頃・火災・乗組員は無事）し、前回までの「主要媒体の記事は見つからない」を改めた・原油は10/12終値でブレント12月物106.65ドル（+1.8%）・WTI11月物93.74ドル（+2.1%）（Reuters・Bloomberg配信のRigzoneで一致）・日本関係船は日英の検索で新規の発表なし（残り4隻）・危機228日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡内で4隻が被弾——UKMTO警報166〜169、遅延報告で発生日・船名・攻撃主体は公表されず",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "sourceLabel": "UKMTO公式サイト（警報166-26〜169）・Gulf News（10/12）・Iran International（10/12）"
+        },
+        {
+          "title": "リヤド空港が再び攻撃され、1人死亡・11人負傷とAl Jazeeraが伝える——攻撃主体は同記事に記載なし",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/10/12/iran-war-live-riyadh-airport-hit-again-tehran-says-us-reply-inadequate",
+          "sourceLabel": "Al Jazeera（10/12・ライブ更新）"
+        },
+        {
+          "title": "原油は続伸、ブレント12月物は106.65ドルで取引を終える（10/12）",
+          "url": "https://www.rigzone.com/news/brent_tops_106_as_supply_risks_intensify-12-oct-2026-184830-article",
+          "sourceLabel": "Bloomberg配信（Rigzone 10/12）・Reuters配信（investing.com 10/12）"
+        }
+      ]
     }
   ]
 }

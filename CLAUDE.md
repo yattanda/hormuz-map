@@ -22,7 +22,7 @@
   - 載せるのは運営者が確認した定義文だけ。確認前の原稿は private リポジトリ `hormuz-ops` の `drafts/` に置く
   - 用語集ページ `docs/glossary/index.html` は `tools/build_glossary.py --write` が書き出す。目印 `<!-- glossary:start -->`〜`<!-- glossary:end -->`・`<!-- glossary-jsonld:start -->`〜`<!-- glossary-jsonld:end -->` の間を手で編集しない。JSON を直したら同じコミットでページも書き出す
   - ツールチップの共通部品は `docs/assets/glossary.js`。**本文に用語のタグを手で書かない**（表示時に JS が印を付ける。日次更新の作業は増えない）
-  - `/hormuz/` の中では、ページ間のリンクは文書相対（`../articles/…`）、画像・データはルート相対（`/images/…`・`/data/…`）で書く
+  - `/hormuz/` の中では、ページ間のリンクは文書相対（`articles/<slug>/`・`../archive/` など）、画像・データはルート相対（`/images/…`・`/data/…`）で書く
 - `docs/data/news_data.json` がニュース・OSINT表示の単一ソース
 - `docs/images/` ディレクトリにインフォグラフィック画像を管理
 - ※目標・URL・運用状況は `Memory.md` を参照
@@ -186,7 +186,7 @@
 
 ## 特別解説コラムの個別ページ化
 
-- 「特別解説コラム」の各コラムは `docs/articles/{slug}.html` として個別ページ化されている（一覧：`docs/articles/index.html`）
+- 「特別解説コラム」の各コラムは `docs/hormuz/articles/{slug}/index.html` として個別ページ化されている（URL は `/hormuz/articles/{slug}/`。一覧：`docs/hormuz/articles/index.html`）。旧 URL の `docs/articles/*.html` は転送用のスタブで、中身を書き換えない
 - `docs/hormuz/index.html` 側の各カードは要約＋「全文を読む」リンクのみを表示し、本文全文は個別ページ側が正とする
 - 新規コラムを追加する場合は `tools/new-article-checklist.md` の手順に従うこと
 

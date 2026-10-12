@@ -42,6 +42,15 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 - **文章に使う黄色は淡くする**：1文を超える長さの文には `--c-warn-soft`（`#efe2b6`）を使う（例：`.sc-focus-list strong`・`.sc-update-caveat`・`.sc-ctx-note`・ルート表の `.t-warning-soft`）。
   見出し・ラベル・短い印（ルート表の「⚓ 10/9 追記：」やシナリオBの見出し）は `--c-warn`（`#fbbf24`）のまま
 
+## JS が組み立てる HTML（2026-10-12・②' PR E）
+
+- 地図のポップアップ・印・凡例・関連最新ニュース・現地メディア視点は、JS のテンプレートが HTML を組み立てる。**テンプレートにも固定値のインライン style を書かない。**クラスは `<style>` の末尾「JS が組み立てる HTML のクラス」にまとめてある
+  （文字色 `.tc-*`／軍事レイヤー `.mil-*`／調達先などのポップアップ `.src-pop*`／バッジ `.p-badge--*`／印 `.mk*`／地図上の文字 `.map-label*`／凡例 `.leg-dash--*`／`.news-*`／`.osint-*`）
+- style で残してよいのは2種類だけ：計算やデータで決まる値（`${size}`・`${col}`・`news_data.json` が持つ色）と、JS が開閉の状態として読む `display:none;`
+- ポップアップを足すときは、見出しに `<div class="p-title tc-◯">`、バッジに `<span class="p-badge p-badge--◯">`、小さな注記に `<div class="p-note">` を使う。新しい色が要るときはクラスを足す
+- スマホの文字の下限（0.8rem）は、クラスの並び（`.src-pop-body`・`.news-stale-notice`・`.osint-en` ほか）で指定している。以前の属性セレクタ `div[style*="font-size:0.7"]` は外した
+- `tools/validate_daily.py` が、テンプレートの固定値のインライン style を WARN で確認する
+
 ## スマホ font-size（変更禁止）
 
 `@media (max-width: 768px) { html { font-size: 18px } }` が設定済み。この設定は削除・変更しない。

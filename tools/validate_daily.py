@@ -171,9 +171,9 @@ STYLE_ALLOWED = {
 
 # 特別解説コラムのピル（「NEW」「◯月更新」の札の元になる日付）と記事ページの構造化データ
 PAT_COLUMN_PILL = re.compile(
-    r'<a href="\.\./articles/([\w-]+\.html)" class="jump-pill[^"]*"'
+    r'<a href="articles/([\w-]+)/" class="jump-pill[^"]*"'
     r' data-published="(\d{4}-\d{2}-\d{2})" data-updated="(\d{4}-\d{2}-\d{2})"')
-PAT_COLUMN_PILL_ANY = re.compile(r'<a href="\.\./articles/([\w-]+\.html)"[^>]*class="jump-pill')
+PAT_COLUMN_PILL_ANY = re.compile(r'<a href="articles/([\w-]+)/"[^>]*class="jump-pill')
 PAT_ARTICLE_PUBLISHED = re.compile(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})"')
 PAT_ARTICLE_MODIFIED = re.compile(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"')
 # 記事ページの見える日付（「最終更新：」）と、コラムのカード・記事一覧の日付
@@ -181,7 +181,7 @@ PAT_ARTICLE_MODIFIED = re.compile(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"')
 PAT_ARTICLE_VISIBLE = re.compile(r'最終更新：<strong>(\d{4})/(\d{2})/(\d{2})</strong>')
 PAT_COL_CARD_DATE = re.compile(r'<span class="col-card-date">([^<]*)</span>')
 PAT_IDX_CARD = re.compile(
-    r'<a class="article-index-card" href="([\w-]+\.html)">(?:(?!</a>).)*?'
+    r'<a class="article-index-card" href="/hormuz/articles/([\w-]+)/">(?:(?!</a>).)*?'
     r'<span class="idx-date">([^<]*)</span>', re.S)
 
 
@@ -772,11 +772,11 @@ def check_column_pills(html: str) -> None:
              f"{', '.join('articles/' + f for f in missing)}。"
              f"data-published / data-updated を href・class の後にこの順で付けること（札が出ません）")
     try:
-        idx_text = (ROOT / "docs" / "articles" / "index.html").read_text(encoding="utf-8")
+        idx_text = (ROOT / "docs" / "hormuz" / "articles" / "index.html").read_text(encoding="utf-8")
     except OSError:
         idx_text = ""
     for fname, pub, upd in pills:
-        path = ROOT / "docs" / "articles" / fname
+        path = ROOT / "docs" / "hormuz" / "articles" / fname / "index.html"
         try:
             text = path.read_text(encoding="utf-8")
         except OSError:
@@ -798,13 +798,13 @@ def check_column_pills(html: str) -> None:
         others.append(("記事の「最終更新」", "-".join(mv.groups()) if mv else None, a_mod))
         card = None
         for seg in re.split(r'(?=<div class="col-card[ "])', html):
-            if f'href="../articles/{fname}" class="col-card-link"' in seg:
+            if f'href="articles/{fname}/" class="col-card-link"' in seg:
                 mc = PAT_COL_CARD_DATE.search(seg)
                 card = mc.group(1) if mc else None
                 break
         others.append(("本体のコラムのカード", card, want))
         idx = {m.group(1): m.group(2) for m in PAT_IDX_CARD.finditer(idx_text)}
-        others.append(("記事一覧 articles/index.html", idx.get(fname), want))
+        others.append(("記事一覧 hormuz/articles/index.html", idx.get(fname), want))
         diff = [f"{name}「{got or '検出できず'}」（正しくは「{exp}」）" for name, got, exp in others if got != exp]
         if diff:
             warn(f"コラム articles/{fname} の日付が食い違っています: {'／'.join(diff)}。"
@@ -1229,17 +1229,17 @@ def check_selfhosted_assets(html: str) -> None:
         ok("Leaflet は自サイトから読み込み（unpkg.com への参照なし）")
 
     # フォント（Noto Sans JP・2026-10-10 追加）。Google Fonts へ戻ると、/privacy/ 第5章に無い送信先へ接続することになる。
-    # /hormuz/ のほか、記事（docs/articles/*.html）と記事の雛形も見る（日次は触らないが、新しい記事が古い雛形から作られると戻る）。
+    # /hormuz/ のほか、記事（docs/hormuz/articles/ の下の index.html）と記事の雛形も見る（日次は触らないが、新しい記事が古い雛形から作られると戻る）。
     fonts_dir = ROOT / "docs" / "assets" / "fonts" / "noto-sans-jp"
     fonts_css = "/assets/fonts/noto-sans-jp/noto-sans-jp.css"
     pat_gfonts = re.compile(r"fonts\.(?:googleapis|gstatic)\.com")  # 文字列の有無を見る（URL の検証ではない）
     bad = []
     pages = [("hormuz/index.html", html)]
-    for path in sorted((ROOT / "docs" / "articles").glob("*.html")) + [ROOT / "tools" / "article-template.html"]:
+    for path in sorted((ROOT / "docs" / "hormuz" / "articles").glob("**/index.html")) + [ROOT / "tools" / "article-template.html"]:
         try:
-            pages.append((path.name, path.read_text(encoding="utf-8")))
+            pages.append((path.relative_to(ROOT).as_posix(), path.read_text(encoding="utf-8")))
         except (OSError, UnicodeDecodeError):
-            bad.append(f"{path.name} を読めません")
+            bad.append(f"{path.relative_to(ROOT).as_posix()} を読めません")
     for name, text in pages:
         if pat_gfonts.search(text):
             bad.append(f"{name} に Google Fonts への参照があります")

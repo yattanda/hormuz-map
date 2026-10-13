@@ -3251,6 +3251,29 @@
           "sourceLabel": "Bloomberg配信（Rigzone 10/12）・Reuters配信（investing.com 10/12）"
         }
       ]
+    },
+    {
+      "date": "2026-10-14",
+      "dateLabel": "2026/10/14 08:08",
+      "blockadeDay": 229,
+      "summary": "【重大更新】UKMTO公式サイトの警報170（10/14 04:01 JST発行）・171（04:05 JST発行）を追加：ホルムズ海峡内でコンテナ船（170）とタンカー（171）が正体不明の飛翔体を受けた（公式の本文に発生日時・船名・被害・攻撃主体の記載なし。Gulf NewsとIran Internationalのみが報じ、主要媒体の記事は未確認・二次的な媒体のみ）・フーシ派のミサイルでサウジ・ダーランのアラムコ本社の一部で火災（10/13夜。ブルームバーグ配信のWorld OilとAl Jazeera。鎮火、被害の程度は不明）を追加・リヤド空港の再攻撃は、Al Jazeera（10/13）が日曜（10/11）の攻撃と書くことを確認し、前回までの「攻撃日の記載なし」を改めた・警報167〜169の発生日の食い違い（Gulf News 10/11、Iran International 10/12）は主要媒体で解消せず・原油は10/13終値でブレント12月物105.69ドル（−0.9%）・WTI11月物94.14ドル（+0.4%）（Bloomberg配信のRigzoneとFNNewsで一致）・日本関係船は日英の検索で新規の発表なし（残り4隻）・危機229日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し",
+      "relatedNews": [
+        {
+          "title": "ホルムズ海峡内でコンテナ船とタンカーが被弾——UKMTO警報170・171",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "sourceLabel": "UKMTO公式サイト・Gulf News"
+        },
+        {
+          "title": "サウジアラムコのダーラン本社がフーシ派のミサイル攻撃を受け、施設の一部で火災",
+          "url": "https://www.worldoil.com/news/2026/10/13/aramco-s-dhahran-headquarters-hit-during-houthi-missile-attack-on-saudi-arabia/",
+          "sourceLabel": "ブルームバーグ配信（World Oil）"
+        },
+        {
+          "title": "原油は小幅まちまち、ブレント12月物は105.69ドルで取引を終える（10/13）",
+          "url": "https://www.rigzone.com/news/wire/brent_steady_amid_middle_east_tensions-13-oct-2026-184841-article/",
+          "sourceLabel": "Bloomberg配信（Rigzone）"
+        }
+      ]
     }
   ]
 }

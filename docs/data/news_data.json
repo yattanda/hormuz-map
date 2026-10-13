@@ -1,7 +1,37 @@
 {
-  "updated": "2026年10月13日 06:40 日本時間JST",
+  "updated": "2026年10月14日 08:08 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto-170-171-1014",
+      "title": "ホルムズ海峡内でコンテナ船とタンカーが被弾——UKMTO警報170・171、発生時刻・船名・被害・攻撃主体は公表されず",
+      "body": "UKMTO公式サイトの警報170（10/14 04:01 JST発行）はコンテナ船、171（04:05 JST発行）はタンカーが、ホルムズ海峡内で正体不明の飛翔体を受けたと伝える。いずれも検証済みの情報源の報告で、当局が調査中。公式の本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/13 23:34更新）は2隻を「火曜」の被弾とし、「正確な時刻は未確認」「被害や死傷者の詳細は示されていない」と伝える。主要媒体の記事は未確認で、二次的な媒体のみ。",
+      "sourceLabel": "UKMTO公式サイト（警報170・171）・Gulf News（10/13）",
+      "date": "2026年10月14日（UKMTO発行・JST）",
+      "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報170・171）",
+      "url": "https://www.ukmto.org/recent-incidents",
+      "isLatest": true
+    },
+    {
+      "id": "latest-aramco-dhahran-1013",
+      "title": "サウジアラムコのダーラン本社がフーシ派のミサイル攻撃を受け、施設の一部で火災——鎮火、被害の程度は不明",
+      "body": "ブルームバーグ配信のWorld Oil（10/13）は、サウジ東部ダーランのアラムコ本社が火曜（10/13）にイエメンのフーシ派のミサイル攻撃を受け、施設の一部で火災が起きたと伝える（原文は「was hit during a missile attack by Yemen’s Houthi militants on Tuesday」）。火災はその後鎮火し、被害の程度は不明。アラムコとサウジ・エネルギー省は記事の時点で取材に回答していない。Al Jazeera（10/13）は、ダーランのアラムコの管理棟が標的になり、死傷者は報告されていないと伝える。",
+      "sourceLabel": "ブルームバーグ配信（World Oil 10/13）・Al Jazeera（10/13）",
+      "date": "2026年10月13日（現地）",
+      "label": "🇸🇦 10/13 アラムコ本社に攻撃・火災（フーシ派のミサイル）",
+      "url": "https://www.worldoil.com/news/2026/10/13/aramco-s-dhahran-headquarters-hit-during-houthi-missile-attack-on-saudi-arabia/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-close-1013",
+      "title": "原油は小幅まちまち、ブレント12月物は105.69ドル、WTI11月物は94.14ドルで取引を終える（10/13）",
+      "body": "Bloomberg配信のRigzone（10/13 4:41 PM EST）によれば、ブレント12月物は0.9%安の1バレル105.69ドル、WTI11月物は0.4%高の94.14ドルで取引を終えた（原文は「settle」）。FNNews（10/14）も同じ数値を伝える。",
+      "sourceLabel": "Bloomberg配信（Rigzone 10/13）・FNNews（10/14）",
+      "date": "2026年10月13日（米国時間）",
+      "label": "🛢️ 10/13 ブレント105.69ドル・WTI94.14ドル（終値）",
+      "url": "https://www.rigzone.com/news/wire/brent_steady_amid_middle_east_tensions-13-oct-2026-184841-article/",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto-166-169-1013",
       "title": "ホルムズ海峡内で4隻が被弾——UKMTO警報166〜169、遅延報告で発生日・船名・攻撃主体は公表されず",
@@ -10,40 +40,28 @@
       "date": "2026年10月13日（UKMTO発行・JST）",
       "label": "⚓ 10/13 ホルムズ海峡内で4隻被弾（UKMTO警報166〜169）",
       "url": "https://www.ukmto.org/recent-incidents",
-      "isLatest": true
-    },
-    {
-      "id": "latest-riyadh-aljazeera-1012",
-      "title": "リヤド空港が再び攻撃され、1人死亡・11人負傷とAl Jazeeraが伝える——攻撃主体は同記事に記載なし",
-      "body": "Al Jazeeraのライブ更新（10/12）は、サウジのキング・ハーリド国際空港への「最新の攻撃」で1人が死亡、11人が負傷したと伝える（原文は「One person has been killed and 11 others wounded in the latest attack on Saudi Arabia's King Khalid International Airport.」）。同ページには攻撃の日付、数字の出所、攻撃主体の記載はない。Gulf Newsが10/11に伝えた同空港への新たな攻撃を指すとみられるが確認できていない。10/10の攻撃はサウジ民間航空総局（GACA）が12人死亡・309人負傷と発表しており、別の攻撃。",
-      "sourceLabel": "Al Jazeera（10/12・ライブ更新）",
-      "date": "2026年10月12日（現地）",
-      "label": "🇾🇪 10/12 リヤド空港に再攻撃・1人死亡11人負傷（Al Jazeera）",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/10/12/iran-war-live-riyadh-airport-hit-again-tehran-says-us-reply-inadequate",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-bloomberg-1012",
-      "title": "原油は続伸、ブレント12月物は106.65ドルで取引を終える（10/12）",
-      "body": "Rigzone配信のBloomberg記事（10/12）によれば、ニューヨーク市場でブレント12月物は1.8%高の1バレル106.65ドル、WTI11月物は2.1%高の93.74ドルで取引を終えた（原文は「Brent for December settlement climbed 1.8% to settle at $106.65 a barrel in New York.」「West Texas Intermediate for November delivery rose 2.1% to settle at $93.74 a barrel.」）。Reuters配信（investing.com）もブレント106.65ドル（+1.93ドル、+1.8%）、WTI93.74ドル（+1.89ドル、+2%）の清算値を伝え、2つの出典の終値が一致した。10/9終値はブレント104.72ドル、WTI91.85ドル。",
-      "sourceLabel": "Bloomberg配信（Rigzone 10/12）・Reuters配信（investing.com 10/12）",
-      "date": "2026年10月12日（米国時間）",
-      "label": "🛢️ 10/12 ブレント106.65ドル・WTI93.74ドル（終値）",
-      "url": "https://www.rigzone.com/news/brent_tops_106_as_supply_risks_intensify-12-oct-2026-184830-article",
-      "isLatest": false
-    },
-    {
-      "id": "latest-sohar-india-1011",
-      "title": "インド政府、ソハール沖で被弾したタンカーの船員2人が行方不明と発表——ホルムズ海峡の別のタンカーでは火災、船員は無事",
-      "body": "インド外務省の声明を配信したANI（Tribune India・10/12 01:30 IST 更新）によれば、「MT PETRO DOLPHIN」はソハール錨地でドローンを受けたとみられ、インド人船員11人のうち9人が救助されて無事、2人が行方不明で、現地の沿岸警備隊が捜索救助している（原文は「MT PETRO DOLPHIN was reportedly struck by a drone, with two of the 11 Indian seafarers onboard reported missing.」）。別の「MT VALTHERA」（マーシャル諸島籍）はホルムズ海峡で正体不明の飛翔体を受けて船上で火災が起き、インド人船員11人は全員無事とされる。UKMTO公式サイトの警報165-26（ソハール錨地付近、無人機による攻撃と確認）と警報164-26（ホルムズ海峡内、乗組員は全員無事）に対応するとみられるが、インド政府の声明は警報番号に触れておらず、同一事案とするのは場所・日・手段の一致による推定。UKMTOの164-26の本文に火災の記載はない。攻撃主体の主張は確認できない。",
-      "sourceLabel": "インド外務省の声明（ANI配信・Tribune India 10/12）・UKMTO警報165-26・164-26",
-      "date": "2026年10月11日（現地）",
-      "label": "⚓ 10/11 ソハール沖・ホルムズでタンカー被弾（インド人船員2人行方不明）",
-      "url": "https://www.tribuneindia.com/news/drone-attack/india-condemns-attacks-on-two-vessels-in-hormuz-region-calls-for-de-escalation",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "id": "osint-aljazeera-houthi-aramco-1013",
+      "titleJa": "【Al Jazeera】フーシ派、サウジのアラムコ施設を「正当な標的」と警告——ダーランのアラムコ管理棟を攻撃、死傷者の報告なし",
+      "titleEn": "Houthis threaten Saudi Arabia's Aramco facilities and airports (Al Jazeera, Oct 13)",
+      "title": "【Al Jazeera】フーシ派、サウジのアラムコ施設を「正当な標的」と警告——ダーランのアラムコ管理棟を攻撃、死傷者の報告なし",
+      "country": "サウジアラビア",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月13日（現地）",
+      "summary": "Al Jazeera（10/13）は、フーシ派がサウジ東部ダーランのアラムコの管理棟を標的にし、死傷者は報告されていないと伝える（原文は「No injuries or fatalities were reported.」）。フーシ派はアラムコの石油施設を「正当な標的」と呼び、サウジの石油施設の周辺にいる従業員と住民に退避を求めた（フーシ派の主張）。同記事は、リヤド空港への攻撃で「日曜（10/11）に」1人が死亡、11人が負傷したとも書く。フーシ派の警告の実行や、サウジ側の公式の被害発表は同記事では確認できない。",
+      "url": "https://www.aljazeera.com/news/2026/10/13/houthis-threaten-saudi-arabias-aramco-facilities-and-airports",
+      "isLatest": true
+    },
     {
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
@@ -60,7 +78,7 @@
       "date": "2026年10月12日（現地）",
       "summary": "Al Jazeera（10/12）は、ジャイアンツ旅団を中心とする親政府軍が、月曜（10/12）午後までに、紅海沿岸の港湾都市モカとバブエルマンデブ海峡を結ぶ幹線道路を遮断したと述べたと伝える（原文は「said they had managed to cut off the main road linking the Red Sea port city of Mocha with the Bab al-Mandeb」）。出所は親政府軍の発表で、記事は独立した検証を示していない。フーシ派側の反応は同記事から確認できなかった。",
       "url": "https://www.aljazeera.com/news/2026/10/12/giants-brigades-leads-southern-yemen-fightback-against-the-houthis",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-yemen-1011",
@@ -1808,6 +1826,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月14日",
+      "items": [
+        {
+          "id": "latest-riyadh-aljazeera-1012",
+          "title": "リヤド空港が再び攻撃され、1人死亡・11人負傷とAl Jazeeraが伝える——攻撃主体は同記事に記載なし",
+          "body": "Al Jazeeraのライブ更新（10/12）は、サウジのキング・ハーリド国際空港への「最新の攻撃」で1人が死亡、11人が負傷したと伝える（原文は「One person has been killed and 11 others wounded in the latest attack on Saudi Arabia's King Khalid International Airport.」）。同ページには攻撃の日付、数字の出所、攻撃主体の記載はない。Gulf Newsが10/11に伝えた同空港への新たな攻撃を指すとみられるが確認できていない。10/10の攻撃はサウジ民間航空総局（GACA）が12人死亡・309人負傷と発表しており、別の攻撃。",
+          "sourceLabel": "Al Jazeera（10/12・ライブ更新）",
+          "date": "2026年10月12日（現地）",
+          "label": "🇾🇪 10/12 リヤド空港に再攻撃・1人死亡11人負傷（Al Jazeera）",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/10/12/iran-war-live-riyadh-airport-hit-again-tehran-says-us-reply-inadequate",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-bloomberg-1012",
+          "title": "原油は続伸、ブレント12月物は106.65ドルで取引を終える（10/12）",
+          "body": "Rigzone配信のBloomberg記事（10/12）によれば、ニューヨーク市場でブレント12月物は1.8%高の1バレル106.65ドル、WTI11月物は2.1%高の93.74ドルで取引を終えた（原文は「Brent for December settlement climbed 1.8% to settle at $106.65 a barrel in New York.」「West Texas Intermediate for November delivery rose 2.1% to settle at $93.74 a barrel.」）。Reuters配信（investing.com）もブレント106.65ドル（+1.93ドル、+1.8%）、WTI93.74ドル（+1.89ドル、+2%）の清算値を伝え、2つの出典の終値が一致した。10/9終値はブレント104.72ドル、WTI91.85ドル。",
+          "sourceLabel": "Bloomberg配信（Rigzone 10/12）・Reuters配信（investing.com 10/12）",
+          "date": "2026年10月12日（米国時間）",
+          "label": "🛢️ 10/12 ブレント106.65ドル・WTI93.74ドル（終値）",
+          "url": "https://www.rigzone.com/news/brent_tops_106_as_supply_risks_intensify-12-oct-2026-184830-article",
+          "isLatest": false
+        },
+        {
+          "id": "latest-sohar-india-1011",
+          "title": "インド政府、ソハール沖で被弾したタンカーの船員2人が行方不明と発表——ホルムズ海峡の別のタンカーでは火災、船員は無事",
+          "body": "インド外務省の声明を配信したANI（Tribune India・10/12 01:30 IST 更新）によれば、「MT PETRO DOLPHIN」はソハール錨地でドローンを受けたとみられ、インド人船員11人のうち9人が救助されて無事、2人が行方不明で、現地の沿岸警備隊が捜索救助している（原文は「MT PETRO DOLPHIN was reportedly struck by a drone, with two of the 11 Indian seafarers onboard reported missing.」）。別の「MT VALTHERA」（マーシャル諸島籍）はホルムズ海峡で正体不明の飛翔体を受けて船上で火災が起き、インド人船員11人は全員無事とされる。UKMTO公式サイトの警報165-26（ソハール錨地付近、無人機による攻撃と確認）と警報164-26（ホルムズ海峡内、乗組員は全員無事）に対応するとみられるが、インド政府の声明は警報番号に触れておらず、同一事案とするのは場所・日・手段の一致による推定。UKMTOの164-26の本文に火災の記載はない。攻撃主体の主張は確認できない。",
+          "sourceLabel": "インド外務省の声明（ANI配信・Tribune India 10/12）・UKMTO警報165-26・164-26",
+          "date": "2026年10月11日（現地）",
+          "label": "⚓ 10/11 ソハール沖・ホルムズでタンカー被弾（インド人船員2人行方不明）",
+          "url": "https://www.tribuneindia.com/news/drone-attack/india-condemns-attacks-on-two-vessels-in-hormuz-region-calls-for-de-escalation",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月13日",
       "items": [

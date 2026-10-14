@@ -1,49 +1,67 @@
 {
-  "updated": "2026年10月14日 08:08 日本時間JST",
+  "updated": "2026年10月15日 07:28 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
+      "id": "latest-gfs-pride-1014",
+      "title": "コンテナ船GFS PRIDEがホルムズ海峡で沈没——乗組員21人は全員退避、イランは機雷接触を主張（gCaptainは根拠なしと書く）",
+      "body": "Arab News（10/14 16:59掲載・20:43更新。Reuters配信）は、シンガポール籍のコンテナ船GFS PRIDEが火曜（10/13）に海峡を航行中、損傷と船内火災を受けて沈没し（シンガポール海事港湾庁〈MPA〉の声明。原文は「sustained damage and a fire on board, and has since sunk」）、乗組員21人は全員退避して負傷者は報告されていないと伝える。gCaptain（10/14）は、10/13の攻撃の後に沈没したと書き、イランが「根拠なしに」機雷に接触したと主張していると伝える（原文は「Iran has claimed, without evidence, that the ship struck a naval mine.」）。攻撃主体は確認されていない。UKMTO警報170〜173のどれに当たるかは、gCaptainが「不明」としている。gCaptainは、別のシンガポール籍コンテナ船GFS GISELLEが10/14（シンガポール時間）に被弾して船体に損傷を受け、乗組員22人は無事で自力で錨地に着いたとも伝える（gCaptainのみ）。Arab Newsは、アンティグア・バーブーダ籍のばら積み船Cape Daoも、9/23に飛翔体を受けた数週間後に海峡の近くで沈没したと伝える（被弾時に乗組員1人が死亡。今回の新たな被弾ではなく、沈没の報告）。同記事は、攻撃がこの10日で急増し、イランが米国による自国港湾の封鎖と制裁強化への対応として攻撃を強めていると説明しているとも書く（記事の記述で、イラン政府の公式発表ではない）。",
+      "sourceLabel": "Arab News（Reuters配信 10/14）・gCaptain（10/14）",
+      "date": "2026年10月14日（現地）",
+      "label": "⚓ 10/14 コンテナ船GFS PRIDEが沈没",
+      "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
+      "isLatest": true
+    },
+    {
+      "id": "latest-ukmto-172-173-1014",
+      "title": "ホルムズ海峡内でコンテナ船2隻が被弾——UKMTO警報172・173、軽微な損傷・死傷者なし",
+      "body": "UKMTO公式サイトの警報172-26（10/14 22:13 JST発行）は、5万トン級のコンテナ船が入航中に、173-26（22:23 JST発行）は1万9,000トン級のコンテナ船が出港中に、いずれも正体不明の飛翔体を受けたと伝える（遅延報告。原文は「struck by an unknown projectile」）。両船とも軽微な損傷で死傷者はなく、航行を続けた。当局が調査中。公式の本文に発生日時・船名・攻撃主体の記載はない（公式の一覧の日時欄は10/14 14:10・14:21 UTCだが、発行より後の時刻で、発生時刻ではない）。gCaptain（10/14）は警報170-26〜173-26を一括して伝え、172を1640 UTC（5万トン級・入航中）、173を1700 UTC（1万9,000トン級・出港中）の被弾と書く（時刻はgCaptainの記載による。日付は記事で確認できていない）。gCaptainは、これらの警報とシンガポール籍の2隻（GFS PRIDE・GFS GISELLE）との対応は「不明」としている。攻撃主体の主張は確認できない。",
+      "sourceLabel": "UKMTO公式サイト（警報172・173）・gCaptain（10/14）",
+      "date": "2026年10月14日（UKMTO発行・JST）",
+      "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報172・173）",
+      "url": "https://www.ukmto.org/recent-incidents",
+      "isLatest": false
+    },
+    {
       "id": "latest-ukmto-170-171-1014",
       "title": "ホルムズ海峡内でコンテナ船とタンカーが被弾——UKMTO警報170・171、発生時刻・船名・被害・攻撃主体は公表されず",
-      "body": "UKMTO公式サイトの警報170（10/14 04:01 JST発行）はコンテナ船、171（04:05 JST発行）はタンカーが、ホルムズ海峡内で正体不明の飛翔体を受けたと伝える。いずれも検証済みの情報源の報告で、当局が調査中。公式の本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/13 23:34更新）は2隻を「火曜」の被弾とし、「正確な時刻は未確認」「被害や死傷者の詳細は示されていない」と伝える。主要媒体の記事は未確認で、二次的な媒体のみ。",
+      "body": "UKMTO公式サイトの警報170（10/14 04:01 JST発行）はコンテナ船、171（04:05 JST発行）はタンカーが、ホルムズ海峡内で正体不明の飛翔体を受けたと伝える。いずれも検証済みの情報源の報告で、当局が調査中。公式の本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/13 23:34更新）は2隻を「火曜」の被弾とし、「正確な時刻は未確認」「被害や死傷者の詳細は示されていない」と伝える。当初は二次的な媒体のみが伝えていた。 （10/15 07:28 JST 追記）gCaptain（10/14）が警報170-26〜173-26を一括して伝え、「3隻のコンテナ船と1隻のタンカーへの攻撃」と書く（原文は「describe attacks on three containerships and one tanker」）。170・171は船名・被害が不明の飛翔体による攻撃とされ、発生時刻は記事にない。これにより、前回までの主要媒体での未掲載を改める。",
       "sourceLabel": "UKMTO公式サイト（警報170・171）・Gulf News（10/13）",
       "date": "2026年10月14日（UKMTO発行・JST）",
       "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報170・171）",
       "url": "https://www.ukmto.org/recent-incidents",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-aramco-dhahran-1013",
       "title": "サウジアラムコのダーラン本社がフーシ派のミサイル攻撃を受け、施設の一部で火災——鎮火、被害の程度は不明",
-      "body": "ブルームバーグ配信のWorld Oil（10/13）は、サウジ東部ダーランのアラムコ本社が火曜（10/13）にイエメンのフーシ派のミサイル攻撃を受け、施設の一部で火災が起きたと伝える（原文は「was hit during a missile attack by Yemen’s Houthi militants on Tuesday」）。火災はその後鎮火し、被害の程度は不明。アラムコとサウジ・エネルギー省は記事の時点で取材に回答していない。Al Jazeera（10/13）は、ダーランのアラムコの管理棟が標的になり、死傷者は報告されていないと伝える。",
+      "body": "ブルームバーグ配信のWorld Oil（10/13）は、サウジ東部ダーランのアラムコ本社が火曜（10/13）にイエメンのフーシ派のミサイル攻撃を受け、施設の一部で火災が起きたと伝える（原文は「was hit during a missile attack by Yemen’s Houthi militants on Tuesday」）。火災はその後鎮火し、被害の程度は不明。アラムコとサウジ・エネルギー省は記事の時点で取材に回答していない。Al Jazeera（10/13）は、ダーランのアラムコの管理棟が標的になり、死傷者は報告されていないと伝える。 （10/15 07:28 JST 追記）The National（10/14 14:05更新）は、サウジ通信（SPA）が「限定的な火災」で死傷者はなかったと伝えたと書き、アラムコのCEOが「Our system is intact」と述べたと伝える。ロイターの10/14付け記事（USニュース掲載）は見出しが「Saudi Aramco headquarters suffered extensive damage」（匿名の関係者の話）で、サウジ通信の説明と被害の程度が合わないが、本文は開けず原文は未確認。被害の程度は引き続き確定していない。",
       "sourceLabel": "ブルームバーグ配信（World Oil 10/13）・Al Jazeera（10/13）",
       "date": "2026年10月13日（現地）",
       "label": "🇸🇦 10/13 アラムコ本社に攻撃・火災（フーシ派のミサイル）",
       "url": "https://www.worldoil.com/news/2026/10/13/aramco-s-dhahran-headquarters-hit-during-houthi-missile-attack-on-saudi-arabia/",
       "isLatest": false
-    },
-    {
-      "id": "latest-oil-close-1013",
-      "title": "原油は小幅まちまち、ブレント12月物は105.69ドル、WTI11月物は94.14ドルで取引を終える（10/13）",
-      "body": "Bloomberg配信のRigzone（10/13 4:41 PM EST）によれば、ブレント12月物は0.9%安の1バレル105.69ドル、WTI11月物は0.4%高の94.14ドルで取引を終えた（原文は「settle」）。FNNews（10/14）も同じ数値を伝える。",
-      "sourceLabel": "Bloomberg配信（Rigzone 10/13）・FNNews（10/14）",
-      "date": "2026年10月13日（米国時間）",
-      "label": "🛢️ 10/13 ブレント105.69ドル・WTI94.14ドル（終値）",
-      "url": "https://www.rigzone.com/news/wire/brent_steady_amid_middle_east_tensions-13-oct-2026-184841-article/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto-166-169-1013",
-      "title": "ホルムズ海峡内で4隻が被弾——UKMTO警報166〜169、遅延報告で発生日・船名・攻撃主体は公表されず",
-      "body": "UKMTO公式サイトの警報166-26（10/13 00:51 JST発行）は、10/11発生（時刻はTBC）の遅延報告として、出港中のタンカーが正体不明の飛翔体を受け、乗組員の無事が確認されたと伝える。警報167（03:21 JST発行）は入航中のコンテナ船、168（03:26 JST）は出港中の製品タンカー、169（03:56 JST）は出港中の原油タンカーが正体不明の飛翔体を受けたと伝える遅延報告で、本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/12）は3隻を「10月11日」の被弾とし、Iran International（10/12）は製品タンカーの被弾を「月曜」と書くため、167〜169の発生日は媒体で食い違う（どちらも警報番号の記載はなく、対応は船種と方向による推定）。IRGC・米軍の反応は確認できない。",
-      "sourceLabel": "UKMTO公式サイト（警報166-26〜169）・Gulf News（10/12）・Iran International（10/12）",
-      "date": "2026年10月13日（UKMTO発行・JST）",
-      "label": "⚓ 10/13 ホルムズ海峡内で4隻被弾（UKMTO警報166〜169）",
-      "url": "https://www.ukmto.org/recent-incidents",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "id": "osint-arabnews-gfs-pride-1014",
+      "titleJa": "【Arab News】コンテナ船GFS PRIDEがホルムズ海峡で沈没、乗組員21人は全員退避——Cape Daoも沈没と報道（Reuters配信）",
+      "titleEn": "Container ship sinks near Hormuz after being hit by projectile (Arab News, Reuters, Oct 14)",
+      "title": "【Arab News】コンテナ船GFS PRIDEがホルムズ海峡で沈没、乗組員21人は全員退避——Cape Daoも沈没と報道（Reuters配信）",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年10月14日（現地）",
+      "summary": "Arab News（10/14・Reuters配信）は、シンガポール籍のコンテナ船GFS PRIDEが海峡の航行中に損傷と火災を受けて沈没し、乗組員21人は全員退避して負傷者はいないと伝える（シンガポール海事港湾庁の声明）。アンティグア・バーブーダ籍のばら積み船Cape Daoも、9/23に飛翔体を受けた数週間後に海峡の近くで沈没したと伝える（被弾時に乗組員1人が死亡）。記事は両船の沈没原因を断定していない。同記事は、攻撃がこの10日で急増し、イランが米国による自国港湾の封鎖と制裁強化への対応として攻撃を強めていると説明している（記事の記述で、イラン政府の公式発表ではない）。",
+      "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
+      "isLatest": true
+    },
     {
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
@@ -60,7 +78,7 @@
       "date": "2026年10月13日（現地）",
       "summary": "Al Jazeera（10/13）は、フーシ派がサウジ東部ダーランのアラムコの管理棟を標的にし、死傷者は報告されていないと伝える（原文は「No injuries or fatalities were reported.」）。フーシ派はアラムコの石油施設を「正当な標的」と呼び、サウジの石油施設の周辺にいる従業員と住民に退避を求めた（フーシ派の主張）。同記事は、リヤド空港への攻撃で「日曜（10/11）に」1人が死亡、11人が負傷したとも書く。フーシ派の警告の実行や、サウジ側の公式の被害発表は同記事では確認できない。",
       "url": "https://www.aljazeera.com/news/2026/10/13/houthis-threaten-saudi-arabias-aramco-facilities-and-airports",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "cardBg": "rgba(239,68,68,0.05)",
@@ -1826,6 +1844,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月15日",
+      "items": [
+        {
+          "id": "latest-oil-close-1013",
+          "title": "原油は小幅まちまち、ブレント12月物は105.69ドル、WTI11月物は94.14ドルで取引を終える（10/13）",
+          "body": "Bloomberg配信のRigzone（10/13 4:41 PM EST）によれば、ブレント12月物は0.9%安の1バレル105.69ドル、WTI11月物は0.4%高の94.14ドルで取引を終えた（原文は「settle」）。FNNews（10/14）も同じ数値を伝える。",
+          "sourceLabel": "Bloomberg配信（Rigzone 10/13）・FNNews（10/14）",
+          "date": "2026年10月13日（米国時間）",
+          "label": "🛢️ 10/13 ブレント105.69ドル・WTI94.14ドル（終値）",
+          "url": "https://www.rigzone.com/news/wire/brent_steady_amid_middle_east_tensions-13-oct-2026-184841-article/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto-166-169-1013",
+          "title": "ホルムズ海峡内で4隻が被弾——UKMTO警報166〜169、遅延報告で発生日・船名・攻撃主体は公表されず",
+          "body": "UKMTO公式サイトの警報166-26（10/13 00:51 JST発行）は、10/11発生（時刻はTBC）の遅延報告として、出港中のタンカーが正体不明の飛翔体を受け、乗組員の無事が確認されたと伝える。警報167（03:21 JST発行）は入航中のコンテナ船、168（03:26 JST）は出港中の製品タンカー、169（03:56 JST）は出港中の原油タンカーが正体不明の飛翔体を受けたと伝える遅延報告で、本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/12）は3隻を「10月11日」の被弾とし、Iran International（10/12）は製品タンカーの被弾を「月曜」と書くため、167〜169の発生日は媒体で食い違う（どちらも警報番号の記載はなく、対応は船種と方向による推定）。IRGC・米軍の反応は確認できない。",
+          "sourceLabel": "UKMTO公式サイト（警報166-26〜169）・Gulf News（10/12）・Iran International（10/12）",
+          "date": "2026年10月13日（UKMTO発行・JST）",
+          "label": "⚓ 10/13 ホルムズ海峡内で4隻被弾（UKMTO警報166〜169）",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月14日",
       "items": [

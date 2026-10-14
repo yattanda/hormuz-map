@@ -3274,6 +3274,29 @@
           "sourceLabel": "Bloomberg配信（Rigzone）"
         }
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "dateLabel": "2026/10/15 07:28",
+      "blockadeDay": 230,
+      "summary": "【重大更新】コンテナ船GFS PRIDEの沈没とUKMTO警報172・173を追加：シンガポール籍のGFS PRIDEが10/13に被弾して火災・損傷を受け、10/14にホルムズ海峡で沈没した（乗組員21人は全員退避。Arab News〈Reuters配信〉・gCaptain。イランは機雷接触を主張するがgCaptainは根拠なしと書き、攻撃主体は確認されていない）・UKMTO公式サイトの警報172-26・173-26（10/14 22:13・22:23 JST発行）：コンテナ船2隻が軽微な損傷を受け死傷者はなし（公式の本文に発生日時・船名・攻撃主体の記載なし）・警報170・171は主要媒体のgCaptain（10/14）が伝えていると確認し、前回までの「主要媒体の記事は未確認」を改めた（警報167〜169の発生日の食い違いは主要媒体でも解消せず）・アラムコ本社の被害はThe National（10/14）がサウジ通信の「限定的な火災」を伝える一方、ロイターの見出しは「大規模な被害」とし、程度が食い違う（ロイター本文は原文未確認）・原油は10/14終値でブレント12月物106.06ドル（+0.35%）・WTI11月物95.09ドル（+1.01%）（NewsquawkとJKNで一致）・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機230日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し",
+      "relatedNews": [
+        {
+          "title": "コンテナ船GFS PRIDEがホルムズ海峡で沈没——乗組員21人は全員退避",
+          "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
+          "sourceLabel": "Arab News（Reuters配信）"
+        },
+        {
+          "title": "ホルムズ海峡内でコンテナ船2隻が被弾——UKMTO警報172・173",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "sourceLabel": "UKMTO公式サイト・gCaptain"
+        },
+        {
+          "title": "アラムコのダーラン本社へのフーシ派の攻撃——サウジ通信は「限定的な火災」",
+          "url": "https://www.thenationalnews.com/business/energy/2026/10/14/houthi-attack-hits-aramcos-historic-nerve-centre-in-saudi-arabia/",
+          "sourceLabel": "The National"
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月15日 07:28 日本時間JST",
+  "updated": "2026年10月16日 07:28 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-iran-army-tanker-1015",
+      "title": "イラン軍が「違反タンカーが海峡東部で炎上」と主張——船名・位置・原因は不明、独立した確認なし",
+      "body": "Times of Israelのライブ更新（Reuters署名。10/15 17:28表示・タイムゾーンの記載なし）は、イラン軍が国営メディアを通じた声明で、「違反」したタンカーがホルムズ海峡東部で燃えていると述べたと伝える（原文は「Iran's army says a \"violating\" oil tanker is on fire in the eastern part of the Strait of Hormuz, according to a statement carried by state media.」）。声明は、追跡装置を切ったこの「ならず者」タンカーが、オマーン湾の立入制限区域を通過しようとしたと主張する。船名・位置の座標・火災の原因・死傷者の記載はなく、イラン側の主張のみで独立した確認はない。UKMTO公式サイトには、10/14 22:23 JST発行の警報173より新しい警報はなく（10/16 07:24 JSTに取得）、対応する警報は確認できない。主要媒体の記事は未確認。",
+      "sourceLabel": "Times of Israel（Reuters署名 10/15）・UKMTO公式サイト",
+      "date": "2026年10月15日（現地）",
+      "label": "⚓ 10/15 イラン軍「違反タンカーが炎上」と主張",
+      "url": "https://www.timesofisrael.com/liveblog_entry/irans-army-says-oil-tanker-on-fire-in-the-strait-of-hormuz/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-gfs-pride-natl-1015",
+      "title": "GFS PRIDEの沈没——The National：攻撃主体は特定されず、イランの機雷接触の主張に独立した証拠はないと専門家",
+      "body": "The National（10/15 13:03更新）は、シンガポール籍のコンテナ船GFS PRIDEが「struck by an unidentified projectile」（正体不明の飛翔体を受けた）と書き、攻撃主体を特定していない。イラン革命防衛隊（IRGC）は、同船が「未承認」の航路で機雷に触れたと主張したが（原文は「struck a naval mine on an \"unauthorised\" route」）、Marisksは「there was no independent evidence that a mine sank the vessel」と述べ、イラン側の主張を心理戦と整合的と評した。沈没の確認は水曜（10/14）で、乗組員21人は全員無事に退避した。姉妹船GFS Giselleは「was damaged in the same wave of attacks but made its way to anchorage」と書く。",
+      "sourceLabel": "The National（10/15）",
+      "date": "2026年10月15日（現地）",
+      "label": "⚓ 10/15 GFS PRIDE沈没の続報（The National）",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/10/15/fire-sinking-and-reported-scramble-for-cargo-what-we-know-about-ship-lost-in-strait-of-hormuz/",
+      "isLatest": false
+    },
     {
       "id": "latest-gfs-pride-1014",
       "title": "コンテナ船GFS PRIDEがホルムズ海峡で沈没——乗組員21人は全員退避、イランは機雷接触を主張（gCaptainは根拠なしと書く）",
@@ -10,7 +30,7 @@
       "date": "2026年10月14日（現地）",
       "label": "⚓ 10/14 コンテナ船GFS PRIDEが沈没",
       "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-ukmto-172-173-1014",
@@ -21,29 +41,27 @@
       "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報172・173）",
       "url": "https://www.ukmto.org/recent-incidents",
       "isLatest": false
-    },
-    {
-      "id": "latest-ukmto-170-171-1014",
-      "title": "ホルムズ海峡内でコンテナ船とタンカーが被弾——UKMTO警報170・171、発生時刻・船名・被害・攻撃主体は公表されず",
-      "body": "UKMTO公式サイトの警報170（10/14 04:01 JST発行）はコンテナ船、171（04:05 JST発行）はタンカーが、ホルムズ海峡内で正体不明の飛翔体を受けたと伝える。いずれも検証済みの情報源の報告で、当局が調査中。公式の本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/13 23:34更新）は2隻を「火曜」の被弾とし、「正確な時刻は未確認」「被害や死傷者の詳細は示されていない」と伝える。当初は二次的な媒体のみが伝えていた。 （10/15 07:28 JST 追記）gCaptain（10/14）が警報170-26〜173-26を一括して伝え、「3隻のコンテナ船と1隻のタンカーへの攻撃」と書く（原文は「describe attacks on three containerships and one tanker」）。170・171は船名・被害が不明の飛翔体による攻撃とされ、発生時刻は記事にない。これにより、前回までの主要媒体での未掲載を改める。",
-      "sourceLabel": "UKMTO公式サイト（警報170・171）・Gulf News（10/13）",
-      "date": "2026年10月14日（UKMTO発行・JST）",
-      "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報170・171）",
-      "url": "https://www.ukmto.org/recent-incidents",
-      "isLatest": false
-    },
-    {
-      "id": "latest-aramco-dhahran-1013",
-      "title": "サウジアラムコのダーラン本社がフーシ派のミサイル攻撃を受け、施設の一部で火災——鎮火、被害の程度は不明",
-      "body": "ブルームバーグ配信のWorld Oil（10/13）は、サウジ東部ダーランのアラムコ本社が火曜（10/13）にイエメンのフーシ派のミサイル攻撃を受け、施設の一部で火災が起きたと伝える（原文は「was hit during a missile attack by Yemen’s Houthi militants on Tuesday」）。火災はその後鎮火し、被害の程度は不明。アラムコとサウジ・エネルギー省は記事の時点で取材に回答していない。Al Jazeera（10/13）は、ダーランのアラムコの管理棟が標的になり、死傷者は報告されていないと伝える。 （10/15 07:28 JST 追記）The National（10/14 14:05更新）は、サウジ通信（SPA）が「限定的な火災」で死傷者はなかったと伝えたと書き、アラムコのCEOが「Our system is intact」と述べたと伝える。ロイターの10/14付け記事（USニュース掲載）は見出しが「Saudi Aramco headquarters suffered extensive damage」（匿名の関係者の話）で、サウジ通信の説明と被害の程度が合わないが、本文は開けず原文は未確認。被害の程度は引き続き確定していない。",
-      "sourceLabel": "ブルームバーグ配信（World Oil 10/13）・Al Jazeera（10/13）",
-      "date": "2026年10月13日（現地）",
-      "label": "🇸🇦 10/13 アラムコ本社に攻撃・火災（フーシ派のミサイル）",
-      "url": "https://www.worldoil.com/news/2026/10/13/aramco-s-dhahran-headquarters-hit-during-houthi-missile-attack-on-saudi-arabia/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-thenational-gfs-pride-1015",
+      "titleJa": "【The National】GFS PRIDEの沈没——攻撃主体は特定されず、機雷接触を主張するIRGCに「独立した証拠なし」とMarisks",
+      "titleEn": "Fire, sinking and reported scramble for cargo: what we know about ship lost in Strait of Hormuz (The National, Oct 15)",
+      "title": "【The National】GFS PRIDEの沈没——攻撃主体は特定されず、機雷接触を主張するIRGCに「独立した証拠なし」とMarisks",
+      "country": "イエメン",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年10月15日（現地）",
+      "summary": "The National（10/15 13:03更新）は、GFS PRIDEが「正体不明の飛翔体」を受けたと書き、攻撃主体を特定していない。IRGCは同船が「未承認」の航路で機雷に触れたと主張したが、Marisksは機雷が沈没させたという独立した証拠はないと述べ、イラン側の主張を心理戦と整合的と評した。乗組員21人は全員無事に退避した。姉妹船GFS Giselleは同じ一連の攻撃で損傷したが錨地にたどり着いたと書く。",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/10/15/fire-sinking-and-reported-scramble-for-cargo-what-we-know-about-ship-lost-in-strait-of-hormuz/",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
@@ -60,7 +78,7 @@
       "date": "2026年10月14日（現地）",
       "summary": "Arab News（10/14・Reuters配信）は、シンガポール籍のコンテナ船GFS PRIDEが海峡の航行中に損傷と火災を受けて沈没し、乗組員21人は全員退避して負傷者はいないと伝える（シンガポール海事港湾庁の声明）。アンティグア・バーブーダ籍のばら積み船Cape Daoも、9/23に飛翔体を受けた数週間後に海峡の近くで沈没したと伝える（被弾時に乗組員1人が死亡）。記事は両船の沈没原因を断定していない。同記事は、攻撃がこの10日で急増し、イランが米国による自国港湾の封鎖と制裁強化への対応として攻撃を強めていると説明している（記事の記述で、イラン政府の公式発表ではない）。",
       "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "cardBg": "rgba(239,68,68,0.05)",
@@ -1844,6 +1862,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月16日",
+      "items": [
+        {
+          "id": "latest-ukmto-170-171-1014",
+          "title": "ホルムズ海峡内でコンテナ船とタンカーが被弾——UKMTO警報170・171、発生時刻・船名・被害・攻撃主体は公表されず",
+          "body": "UKMTO公式サイトの警報170（10/14 04:01 JST発行）はコンテナ船、171（04:05 JST発行）はタンカーが、ホルムズ海峡内で正体不明の飛翔体を受けたと伝える。いずれも検証済みの情報源の報告で、当局が調査中。公式の本文に発生日時・船名・被害・乗組員の状況・攻撃主体の記載はない。Gulf News（10/13 23:34更新）は2隻を「火曜」の被弾とし、「正確な時刻は未確認」「被害や死傷者の詳細は示されていない」と伝える。当初は二次的な媒体のみが伝えていた。 （10/15 07:28 JST 追記）gCaptain（10/14）が警報170-26〜173-26を一括して伝え、「3隻のコンテナ船と1隻のタンカーへの攻撃」と書く（原文は「describe attacks on three containerships and one tanker」）。170・171は船名・被害が不明の飛翔体による攻撃とされ、発生時刻は記事にない。これにより、前回までの主要媒体での未掲載を改める。",
+          "sourceLabel": "UKMTO公式サイト（警報170・171）・Gulf News（10/13）",
+          "date": "2026年10月14日（UKMTO発行・JST）",
+          "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報170・171）",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "isLatest": false
+        },
+        {
+          "id": "latest-aramco-dhahran-1013",
+          "title": "サウジアラムコのダーラン本社がフーシ派のミサイル攻撃を受け、施設の一部で火災——鎮火、被害の程度は不明",
+          "body": "ブルームバーグ配信のWorld Oil（10/13）は、サウジ東部ダーランのアラムコ本社が火曜（10/13）にイエメンのフーシ派のミサイル攻撃を受け、施設の一部で火災が起きたと伝える（原文は「was hit during a missile attack by Yemen’s Houthi militants on Tuesday」）。火災はその後鎮火し、被害の程度は不明。アラムコとサウジ・エネルギー省は記事の時点で取材に回答していない。Al Jazeera（10/13）は、ダーランのアラムコの管理棟が標的になり、死傷者は報告されていないと伝える。 （10/15 07:28 JST 追記）The National（10/14 14:05更新）は、サウジ通信（SPA）が「限定的な火災」で死傷者はなかったと伝えたと書き、アラムコのCEOが「Our system is intact」と述べたと伝える。ロイターの10/14付け記事（USニュース掲載）は見出しが「Saudi Aramco headquarters suffered extensive damage」（匿名の関係者の話）で、サウジ通信の説明と被害の程度が合わないが、本文は開けず原文は未確認。被害の程度は引き続き確定していない。（10/16 07:28 JST 追記）ロイターの10/13付け記事（Al-Monitor転載）は、会社筋の話としてオフィスタワーの上層3階が損傷したと伝え（原文は「its top three floors were damaged」）、サウジ・エネルギー省は声明で「限定的な火災」で死傷者はなかったと発表したと書く（原文は「a limited fire」「no injuries or deaths」）。被害の程度の食い違いは情報源の違い（会社筋とエネルギー省）による。ロイター本文に「extensive」の語は確認できなかったため、上の「ロイターの10/14付け記事の見出しは大規模な被害」の記述は取り下げる（USニュース掲載版の見出しは未確認）。",
+          "sourceLabel": "ブルームバーグ配信（World Oil 10/13）・Al Jazeera（10/13）・Reuters（Al-Monitor転載 10/13）",
+          "date": "2026年10月13日（現地）",
+          "label": "🇸🇦 10/13 アラムコ本社に攻撃・火災（フーシ派のミサイル）",
+          "url": "https://www.worldoil.com/news/2026/10/13/aramco-s-dhahran-headquarters-hit-during-houthi-missile-attack-on-saudi-arabia/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月15日",
       "items": [

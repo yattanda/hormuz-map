@@ -1,7 +1,37 @@
 {
-  "updated": "2026年10月16日 07:28 日本時間JST",
+  "updated": "2026年10月17日 07:52 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-india-st3-1016",
+      "title": "インド人15人乗りの原油タンカーMT ST 3がホルムズ海峡で被弾——乗組員は全員無事、攻撃主体は不明",
+      "body": "The National（10/16 19:27更新）は、インドのサルバナンダ・ソノワル港湾・海運・水路相が、インド人乗組員15人が乗る原油タンカー（MT ST 3）が金曜（10/16）にホルムズ海峡で飛翔体を受けたと述べたと伝える（原文は「A crude oil tanker carrying 15 Indian crew members was struck by a projectile in the Strait of Hormuz on Friday」。海運相のXへの投稿に基づく）。乗組員は全員無事で負傷者はいない。発生時刻・正確な位置・被害の程度・攻撃主体は記事に記載がない。UKMTO公式サイトには10/14 22:23 JST発行の警報173より新しい警報はなく（10/17 07:47 JST取得）、対応する警報は確認できない。報道は The National のみで、主要通信社の記事は未確認。",
+      "sourceLabel": "The National（10/16）・UKMTO公式サイト",
+      "date": "2026年10月16日（現地）",
+      "label": "⚓ 10/16 インド船員15人乗りのタンカーMT ST 3が被弾",
+      "url": "https://www.thenationalnews.com/news/mena/2026/10/16/india-hormuz-strait-tanker-attack/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-yanbu-intercept-1016",
+      "title": "連合軍がヤンブー向け弾道ミサイル1発を迎撃と発表——被害の記述なし、発射元は記事に記載なし",
+      "body": "Asharq Al-Awsat（10/16 17:10表示）は、イエメン正統性回復連合のターキ・アル＝マルキ報道官が、ヤンブーに向けて発射された弾道ミサイル1発を迎撃・破壊し、紅海上空で巡航ミサイル2発、南部地域とリヤド地域で無人機3機も迎撃・破壊したと発表したと伝える（原文は「a ballistic missile launched toward Yanbu was intercepted and destroyed」）。この迎撃に関する被害の記述はなく、発表は連合軍のみの主張で、記事は発射元に触れていない。",
+      "sourceLabel": "Asharq Al-Awsat（10/16）",
+      "date": "2026年10月16日（現地）",
+      "label": "🇸🇦 10/16 連合軍がヤンブー向けミサイルを迎撃",
+      "url": "https://english.aawsat.com/gulf/5330363-coalition-intercepts-ballistic-cruise-missiles-and-uavs",
+      "isLatest": false
+    },
+    {
+      "id": "latest-centcom-gfs-pride-1015",
+      "title": "CENTCOM「GFS PRIDEはIRGCの発射物を受けた」と発表——IRGCは機雷接触を主張、封鎖の累計は引き返し135隻・航行不能4隻（10/10〜11時点）",
+      "body": "gCaptain（10/15）は、米中央軍（CENTCOM）が「民間のコンテナ船GFS PRIDEはIRGCの発射物を受けた」と述べ、曳航中に沈没したと発表したと伝える（原文は「The civilian container ship M/V GFS Pride was hit by an IRGC projectile」）。IRGCは機雷接触を主張しており、攻撃主体はCENTCOMの帰属で、独立した検証は確認できない。同記事はJMICの勧告を引き、10/11と10/13にホルムズ海峡で飛翔体による攻撃が8件（タンカー4隻・コンテナ船4隻）あったとし、米軍は封鎖の実施で10/10〜11時点に商船135隻を引き返させ4隻を航行不能にしたと書く。",
+      "sourceLabel": "gCaptain（10/15）",
+      "date": "2026年10月15日（現地）",
+      "label": "⚓ 10/15 CENTCOMがGFS PRIDEの攻撃主体を「IRGCの発射物」と発表",
+      "url": "https://gcaptain.com/by-the-numbers-u-s-claims-control-of-hormuz-as-ship-attacks-hit-new-high/",
+      "isLatest": false
+    },
     {
       "id": "latest-iran-army-tanker-1015",
       "title": "イラン軍が「違反タンカーが海峡東部で炎上」と主張——船名・位置・原因は不明、独立した確認なし",
@@ -10,40 +40,28 @@
       "date": "2026年10月15日（現地）",
       "label": "⚓ 10/15 イラン軍「違反タンカーが炎上」と主張",
       "url": "https://www.timesofisrael.com/liveblog_entry/irans-army-says-oil-tanker-on-fire-in-the-strait-of-hormuz/",
-      "isLatest": true
-    },
-    {
-      "id": "latest-gfs-pride-natl-1015",
-      "title": "GFS PRIDEの沈没——The National：攻撃主体は特定されず、イランの機雷接触の主張に独立した証拠はないと専門家",
-      "body": "The National（10/15 13:03更新）は、シンガポール籍のコンテナ船GFS PRIDEが「struck by an unidentified projectile」（正体不明の飛翔体を受けた）と書き、攻撃主体を特定していない。イラン革命防衛隊（IRGC）は、同船が「未承認」の航路で機雷に触れたと主張したが（原文は「struck a naval mine on an \"unauthorised\" route」）、Marisksは「there was no independent evidence that a mine sank the vessel」と述べ、イラン側の主張を心理戦と整合的と評した。沈没の確認は水曜（10/14）で、乗組員21人は全員無事に退避した。姉妹船GFS Giselleは「was damaged in the same wave of attacks but made its way to anchorage」と書く。",
-      "sourceLabel": "The National（10/15）",
-      "date": "2026年10月15日（現地）",
-      "label": "⚓ 10/15 GFS PRIDE沈没の続報（The National）",
-      "url": "https://www.thenationalnews.com/news/gulf/2026/10/15/fire-sinking-and-reported-scramble-for-cargo-what-we-know-about-ship-lost-in-strait-of-hormuz/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-gfs-pride-1014",
-      "title": "コンテナ船GFS PRIDEがホルムズ海峡で沈没——乗組員21人は全員退避、イランは機雷接触を主張（gCaptainは根拠なしと書く）",
-      "body": "Arab News（10/14 16:59掲載・20:43更新。Reuters配信）は、シンガポール籍のコンテナ船GFS PRIDEが火曜（10/13）に海峡を航行中、損傷と船内火災を受けて沈没し（シンガポール海事港湾庁〈MPA〉の声明。原文は「sustained damage and a fire on board, and has since sunk」）、乗組員21人は全員退避して負傷者は報告されていないと伝える。gCaptain（10/14）は、10/13の攻撃の後に沈没したと書き、イランが「根拠なしに」機雷に接触したと主張していると伝える（原文は「Iran has claimed, without evidence, that the ship struck a naval mine.」）。攻撃主体は確認されていない。UKMTO警報170〜173のどれに当たるかは、gCaptainが「不明」としている。gCaptainは、別のシンガポール籍コンテナ船GFS GISELLEが10/14（シンガポール時間）に被弾して船体に損傷を受け、乗組員22人は無事で自力で錨地に着いたとも伝える（gCaptainのみ）。Arab Newsは、アンティグア・バーブーダ籍のばら積み船Cape Daoも、9/23に飛翔体を受けた数週間後に海峡の近くで沈没したと伝える（被弾時に乗組員1人が死亡。今回の新たな被弾ではなく、沈没の報告）。同記事は、攻撃がこの10日で急増し、イランが米国による自国港湾の封鎖と制裁強化への対応として攻撃を強めていると説明しているとも書く（記事の記述で、イラン政府の公式発表ではない）。",
-      "sourceLabel": "Arab News（Reuters配信 10/14）・gCaptain（10/14）",
-      "date": "2026年10月14日（現地）",
-      "label": "⚓ 10/14 コンテナ船GFS PRIDEが沈没",
-      "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto-172-173-1014",
-      "title": "ホルムズ海峡内でコンテナ船2隻が被弾——UKMTO警報172・173、軽微な損傷・死傷者なし",
-      "body": "UKMTO公式サイトの警報172-26（10/14 22:13 JST発行）は、5万トン級のコンテナ船が入航中に、173-26（22:23 JST発行）は1万9,000トン級のコンテナ船が出港中に、いずれも正体不明の飛翔体を受けたと伝える（遅延報告。原文は「struck by an unknown projectile」）。両船とも軽微な損傷で死傷者はなく、航行を続けた。当局が調査中。公式の本文に発生日時・船名・攻撃主体の記載はない（公式の一覧の日時欄は10/14 14:10・14:21 UTCだが、発行より後の時刻で、発生時刻ではない）。gCaptain（10/14）は警報170-26〜173-26を一括して伝え、172を1640 UTC（5万トン級・入航中）、173を1700 UTC（1万9,000トン級・出港中）の被弾と書く（時刻はgCaptainの記載による。日付は記事で確認できていない）。gCaptainは、これらの警報とシンガポール籍の2隻（GFS PRIDE・GFS GISELLE）との対応は「不明」としている。攻撃主体の主張は確認できない。",
-      "sourceLabel": "UKMTO公式サイト（警報172・173）・gCaptain（10/14）",
-      "date": "2026年10月14日（UKMTO発行・JST）",
-      "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報172・173）",
-      "url": "https://www.ukmto.org/recent-incidents",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-thenational-india-st3-1016",
+      "titleJa": "【The National】インド人15人乗りの原油タンカーMT ST 3がホルムズ海峡で被弾——インド海運相「全員無事」",
+      "titleEn": "Indian-crewed tanker struck by projectile in Strait of Hormuz (The National, Oct 16)",
+      "title": "【The National】インド人15人乗りの原油タンカーMT ST 3がホルムズ海峡で被弾——インド海運相「全員無事」",
+      "country": "UAE",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年10月16日（現地）",
+      "summary": "The National（10/16 19:27更新）は、インドのソノワル港湾・海運・水路相が、インド人乗組員15人が乗る原油タンカー（MT ST 3）が金曜（10/16）にホルムズ海峡で飛翔体を受けたと述べたと伝える。乗組員は全員無事で負傷者はいない。発生時刻・正確な位置・被害の程度・攻撃主体は記事に記載がなく、UKMTO公式に対応する警報は確認できない。",
+      "url": "https://www.thenationalnews.com/news/mena/2026/10/16/india-hormuz-strait-tanker-attack/",
+      "isLatest": true,
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5"
+    },
     {
       "id": "osint-thenational-gfs-pride-1015",
       "titleJa": "【The National】GFS PRIDEの沈没——攻撃主体は特定されず、機雷接触を主張するIRGCに「独立した証拠なし」とMarisks",
@@ -55,7 +73,7 @@
       "date": "2026年10月15日（現地）",
       "summary": "The National（10/15 13:03更新）は、GFS PRIDEが「正体不明の飛翔体」を受けたと書き、攻撃主体を特定していない。IRGCは同船が「未承認」の航路で機雷に触れたと主張したが、Marisksは機雷が沈没させたという独立した証拠はないと述べ、イラン側の主張を心理戦と整合的と評した。乗組員21人は全員無事に退避した。姉妹船GFS Giselleは同じ一連の攻撃で損傷したが錨地にたどり着いたと書く。",
       "url": "https://www.thenationalnews.com/news/gulf/2026/10/15/fire-sinking-and-reported-scramble-for-cargo-what-we-know-about-ship-lost-in-strait-of-hormuz/",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1862,6 +1880,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月17日",
+      "items": [
+        {
+          "id": "latest-gfs-pride-natl-1015",
+          "title": "GFS PRIDEの沈没——The National：攻撃主体は特定されず、イランの機雷接触の主張に独立した証拠はないと専門家",
+          "body": "The National（10/15 13:03更新）は、シンガポール籍のコンテナ船GFS PRIDEが「struck by an unidentified projectile」（正体不明の飛翔体を受けた）と書き、攻撃主体を特定していない。イラン革命防衛隊（IRGC）は、同船が「未承認」の航路で機雷に触れたと主張したが（原文は「struck a naval mine on an \"unauthorised\" route」）、Marisksは「there was no independent evidence that a mine sank the vessel」と述べ、イラン側の主張を心理戦と整合的と評した。沈没の確認は水曜（10/14）で、乗組員21人は全員無事に退避した。姉妹船GFS Giselleは「was damaged in the same wave of attacks but made its way to anchorage」と書く。",
+          "sourceLabel": "The National（10/15）",
+          "date": "2026年10月15日（現地）",
+          "label": "⚓ 10/15 GFS PRIDE沈没の続報（The National）",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/10/15/fire-sinking-and-reported-scramble-for-cargo-what-we-know-about-ship-lost-in-strait-of-hormuz/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-gfs-pride-1014",
+          "title": "コンテナ船GFS PRIDEがホルムズ海峡で沈没——乗組員21人は全員退避、イランは機雷接触を主張（gCaptainは根拠なしと書く）",
+          "body": "Arab News（10/14 16:59掲載・20:43更新。Reuters配信）は、シンガポール籍のコンテナ船GFS PRIDEが火曜（10/13）に海峡を航行中、損傷と船内火災を受けて沈没し（シンガポール海事港湾庁〈MPA〉の声明。原文は「sustained damage and a fire on board, and has since sunk」）、乗組員21人は全員退避して負傷者は報告されていないと伝える。gCaptain（10/14）は、10/13の攻撃の後に沈没したと書き、イランが「根拠なしに」機雷に接触したと主張していると伝える（原文は「Iran has claimed, without evidence, that the ship struck a naval mine.」）。攻撃主体は確認されていない。UKMTO警報170〜173のどれに当たるかは、gCaptainが「不明」としている。gCaptainは、別のシンガポール籍コンテナ船GFS GISELLEが10/14（シンガポール時間）に被弾して船体に損傷を受け、乗組員22人は無事で自力で錨地に着いたとも伝える（gCaptainのみ）。Arab Newsは、アンティグア・バーブーダ籍のばら積み船Cape Daoも、9/23に飛翔体を受けた数週間後に海峡の近くで沈没したと伝える（被弾時に乗組員1人が死亡。今回の新たな被弾ではなく、沈没の報告）。同記事は、攻撃がこの10日で急増し、イランが米国による自国港湾の封鎖と制裁強化への対応として攻撃を強めていると説明しているとも書く（記事の記述で、イラン政府の公式発表ではない）。",
+          "sourceLabel": "Arab News（Reuters配信 10/14）・gCaptain（10/14）",
+          "date": "2026年10月14日（現地）",
+          "label": "⚓ 10/14 コンテナ船GFS PRIDEが沈没",
+          "url": "https://www.arabnews.com/middle-east/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-3006316",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto-172-173-1014",
+          "title": "ホルムズ海峡内でコンテナ船2隻が被弾——UKMTO警報172・173、軽微な損傷・死傷者なし",
+          "body": "UKMTO公式サイトの警報172-26（10/14 22:13 JST発行）は、5万トン級のコンテナ船が入航中に、173-26（22:23 JST発行）は1万9,000トン級のコンテナ船が出港中に、いずれも正体不明の飛翔体を受けたと伝える（遅延報告。原文は「struck by an unknown projectile」）。両船とも軽微な損傷で死傷者はなく、航行を続けた。当局が調査中。公式の本文に発生日時・船名・攻撃主体の記載はない（公式の一覧の日時欄は10/14 14:10・14:21 UTCだが、発行より後の時刻で、発生時刻ではない）。gCaptain（10/14）は警報170-26〜173-26を一括して伝え、172を1640 UTC（5万トン級・入航中）、173を1700 UTC（1万9,000トン級・出港中）の被弾と書く（時刻はgCaptainの記載による。日付は記事で確認できていない）。gCaptainは、これらの警報とシンガポール籍の2隻（GFS PRIDE・GFS GISELLE）との対応は「不明」としている。攻撃主体の主張は確認できない。",
+          "sourceLabel": "UKMTO公式サイト（警報172・173）・gCaptain（10/14）",
+          "date": "2026年10月14日（UKMTO発行・JST）",
+          "label": "⚓ 10/14 ホルムズ海峡内で2隻被弾（UKMTO警報172・173）",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月16日",
       "items": [

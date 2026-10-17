@@ -3343,6 +3343,29 @@
           "sourceLabel": "gCaptain"
         }
       ]
+    },
+    {
+      "date": "2026-10-18",
+      "dateLabel": "2026/10/18 07:19",
+      "blockadeDay": 233,
+      "summary": "【重大更新】UKMTO公式サイトの警報174・175（10/17 15:20・16:25 JST発行）を追加：サウジ・ジュベイルの北東（ペルシャ湾）でタンカー2隻が被弾し、174は正体不明の飛翔体（乗組員は全員退避）、175は小型ボートからのRPGで船尾左舷に損傷（乗組員は全員無事）、公式の本文に発生時刻・船名・攻撃主体の記載なし（Fox Newsのライブ更新も同内容）、174が先に載せたMT ST 3と同じ船かは不明・警報176（10/17 22:19 JST発行）：アデン湾でLNGタンカーに小型船が2発発砲、警備員が警告射撃（被害の記載なし）・IRGCが10/17、超大型タンカーが機雷に接触して炎上したと主張（位置・船名なし、独立した確認なし。CENTCOMは機雷除去済みと反論〈Al Jazeera〉）・アデン国際空港にミサイル2発が着弾（Reuters配信、死傷者の報告なし。連合軍のヤンブー向けミサイル迎撃の発表と同じ内訳で、再報道かは未確認）・CENTCOMは10/17時点で商船138隻を引き返させたと発表（Fox News）・原油は10/16終値でブレント12月物109.86ドル・WTI11月物101.41ドル（Rigzone〈Bloomberg配信〉とOil Monitorで一致、週末の取引は確認できず）・MT ST 3は主要通信社の記事を引き続き確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機233日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（封鎖の累計・機雷）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報174・175：サウジ・ジュベイル沖でタンカー2隻が被弾",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
+          "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）"
+        },
+        {
+          "title": "UKMTO警報176：アデン湾でLNGタンカーに小型船が発砲",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
+          "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）"
+        },
+        {
+          "title": "IRGC「超大型タンカーが機雷に接触して炎上」と主張",
+          "url": "https://newarab.com/news/irgc-say-oil-tankers-fire-after-hitting-mines-strait",
+          "sourceLabel": "New Arab・Al Jazeera（10/17）"
+        }
+      ]
     }
   ]
 }

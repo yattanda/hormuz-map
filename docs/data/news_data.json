@@ -1,49 +1,67 @@
 {
-  "updated": "2026年10月17日 07:52 日本時間JST",
+  "updated": "2026年10月18日 07:19 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-india-st3-1016",
-      "title": "インド人15人乗りの原油タンカーMT ST 3がホルムズ海峡で被弾——乗組員は全員無事、攻撃主体は不明",
-      "body": "The National（10/16 19:27更新）は、インドのサルバナンダ・ソノワル港湾・海運・水路相が、インド人乗組員15人が乗る原油タンカー（MT ST 3）が金曜（10/16）にホルムズ海峡で飛翔体を受けたと述べたと伝える（原文は「A crude oil tanker carrying 15 Indian crew members was struck by a projectile in the Strait of Hormuz on Friday」。海運相のXへの投稿に基づく）。乗組員は全員無事で負傷者はいない。発生時刻・正確な位置・被害の程度・攻撃主体は記事に記載がない。UKMTO公式サイトには10/14 22:23 JST発行の警報173より新しい警報はなく（10/17 07:47 JST取得）、対応する警報は確認できない。報道は The National のみで、主要通信社の記事は未確認。",
-      "sourceLabel": "The National（10/16）・UKMTO公式サイト",
-      "date": "2026年10月16日（現地）",
-      "label": "⚓ 10/16 インド船員15人乗りのタンカーMT ST 3が被弾",
-      "url": "https://www.thenationalnews.com/news/mena/2026/10/16/india-hormuz-strait-tanker-attack/",
+      "id": "latest-ukmto-174-175-1017",
+      "title": "UKMTO警報174・175：サウジ・ジュベイル沖でタンカー2隻が被弾——飛翔体とRPG、乗組員は全員無事、攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報174-26（10/17 15:20 JST発行）は、遅延報告として、サウジのジュベイルの北東68海里でタンカー1隻が正体不明の飛翔体を受け、乗組員は全員無事で退避済みと伝える。175-26（16:25 JST発行）は、北東78海里でタンカーの船長が小型ボートからのRPGによる攻撃を受け、船尾左舷に損傷が出たと報告し、乗組員は全員無事、被害の全容と環境への影響は報告時点で不明とする（原文は「attacked by an RPG from a small boat, resulting in damage to the aft port quarter」）。公式の本文に発生時刻・船名・攻撃主体の記載はない。Fox Newsのライブ更新（10/17）も、UKMTOの報告として2件がジュベイル付近で金曜に起きたと伝える。ホルムズ海峡の外（ペルシャ湾の西側）の事案で、攻撃主体の主張は確認できない。",
+      "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）",
+      "date": "2026年10月17日（現地）",
+      "label": "⚓ 10/17 ジュベイル沖でタンカー2隻が被弾（UKMTO警報174・175）",
+      "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
       "isLatest": true
     },
     {
-      "id": "latest-yanbu-intercept-1016",
-      "title": "連合軍がヤンブー向け弾道ミサイル1発を迎撃と発表——被害の記述なし、発射元は記事に記載なし",
-      "body": "Asharq Al-Awsat（10/16 17:10表示）は、イエメン正統性回復連合のターキ・アル＝マルキ報道官が、ヤンブーに向けて発射された弾道ミサイル1発を迎撃・破壊し、紅海上空で巡航ミサイル2発、南部地域とリヤド地域で無人機3機も迎撃・破壊したと発表したと伝える（原文は「a ballistic missile launched toward Yanbu was intercepted and destroyed」）。この迎撃に関する被害の記述はなく、発表は連合軍のみの主張で、記事は発射元に触れていない。",
-      "sourceLabel": "Asharq Al-Awsat（10/16）",
-      "date": "2026年10月16日（現地）",
-      "label": "🇸🇦 10/16 連合軍がヤンブー向けミサイルを迎撃",
-      "url": "https://english.aawsat.com/gulf/5330363-coalition-intercepts-ballistic-cruise-missiles-and-uavs",
+      "id": "latest-ukmto-176-1017",
+      "title": "UKMTO警報176：アデン湾でLNGタンカーに小型船が発砲——警備員の警告射撃で針路変更、被害の記載なし",
+      "body": "UKMTO公式サイトの警報176-26（10/17 22:19 JST発行）は、イエメンのムカッラの南西140海里で、LNGタンカーの船長が、7人が乗る小型ボートに接近され、2発を撃たれたと報告し、武装警備チームが警告射撃を2発行ってボートが針路を変えたと伝える（原文は「The skiff fired two shots at the tanker」）。公式の本文に発生時刻・被害・船名・攻撃主体の記載はない。Fox Newsのライブ更新（10/17）も同内容を伝える。ホルムズ海峡から離れたアデン湾の事案で、海賊事案かどうかは確認できない。",
+      "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）",
+      "date": "2026年10月17日（現地）",
+      "label": "⚓ 10/17 アデン湾でLNGタンカーに小型船が発砲（UKMTO警報176）",
+      "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
       "isLatest": false
     },
     {
-      "id": "latest-centcom-gfs-pride-1015",
-      "title": "CENTCOM「GFS PRIDEはIRGCの発射物を受けた」と発表——IRGCは機雷接触を主張、封鎖の累計は引き返し135隻・航行不能4隻（10/10〜11時点）",
-      "body": "gCaptain（10/15）は、米中央軍（CENTCOM）が「民間のコンテナ船GFS PRIDEはIRGCの発射物を受けた」と述べ、曳航中に沈没したと発表したと伝える（原文は「The civilian container ship M/V GFS Pride was hit by an IRGC projectile」）。IRGCは機雷接触を主張しており、攻撃主体はCENTCOMの帰属で、独立した検証は確認できない。同記事はJMICの勧告を引き、10/11と10/13にホルムズ海峡で飛翔体による攻撃が8件（タンカー4隻・コンテナ船4隻）あったとし、米軍は封鎖の実施で10/10〜11時点に商船135隻を引き返させ4隻を航行不能にしたと書く。",
-      "sourceLabel": "gCaptain（10/15）",
-      "date": "2026年10月15日（現地）",
-      "label": "⚓ 10/15 CENTCOMがGFS PRIDEの攻撃主体を「IRGCの発射物」と発表",
-      "url": "https://gcaptain.com/by-the-numbers-u-s-claims-control-of-hormuz-as-ship-attacks-hit-new-high/",
+      "id": "latest-irgc-mine-claim-1017",
+      "title": "IRGC「超大型タンカーが機雷に接触して炎上」と主張——位置・船名なし、CENTCOMは「機雷は除去済み、船は発射物に攻撃されている」と反論",
+      "body": "New Arabのライブ更新（10/17）は、革命防衛隊（IRGC）が声明で、規則に違反した200万バレル超の原油を積む超大型タンカーが機雷に接触し、爆発と激しい火災が起きたと述べたと伝える（原文は「struck a mine, triggering an explosion and a fierce fire」）。声明は正確な位置を示さず、船名の記載もない。Al Jazeera（10/17）は、CENTCOMが「海峡の機雷は除去した、船は発射物に攻撃されている」と述べたと伝える（原文は「CENTCOM said it had cleared the strait of naval mines, and that vessels are being struck by projectiles.」）。IRGCの主張のみで、独立した確認はない。",
+      "sourceLabel": "New Arab・Al Jazeera（10/17）",
+      "date": "2026年10月17日（現地）",
+      "label": "⚓ 10/17 IRGC「超大型タンカーが機雷に接触」と主張",
+      "url": "https://newarab.com/news/irgc-say-oil-tankers-fire-after-hitting-mines-strait",
       "isLatest": false
     },
     {
-      "id": "latest-iran-army-tanker-1015",
-      "title": "イラン軍が「違反タンカーが海峡東部で炎上」と主張——船名・位置・原因は不明、独立した確認なし",
-      "body": "Times of Israelのライブ更新（Reuters署名。10/15 17:28表示・タイムゾーンの記載なし）は、イラン軍が国営メディアを通じた声明で、「違反」したタンカーがホルムズ海峡東部で燃えていると述べたと伝える（原文は「Iran's army says a \"violating\" oil tanker is on fire in the eastern part of the Strait of Hormuz, according to a statement carried by state media.」）。声明は、追跡装置を切ったこの「ならず者」タンカーが、オマーン湾の立入制限区域を通過しようとしたと主張する。船名・位置の座標・火災の原因・死傷者の記載はなく、イラン側の主張のみで独立した確認はない。UKMTO公式サイトには、10/14 22:23 JST発行の警報173より新しい警報はなく（10/16 07:24 JSTに取得）、対応する警報は確認できない。主要媒体の記事は未確認。",
-      "sourceLabel": "Times of Israel（Reuters署名 10/15）・UKMTO公式サイト",
-      "date": "2026年10月15日（現地）",
-      "label": "⚓ 10/15 イラン軍「違反タンカーが炎上」と主張",
-      "url": "https://www.timesofisrael.com/liveblog_entry/irans-army-says-oil-tanker-on-fire-in-the-strait-of-hormuz/",
+      "id": "latest-aden-airport-1017",
+      "title": "アデン国際空港にミサイル2発が着弾——死傷者の報告なし、連合軍はヤンブー向け弾道ミサイルの迎撃を発表（Reuters配信）",
+      "body": "Reuters配信（internazionale.it掲載、10/17付・時刻の記載なし）は、イエメンのアデン国際空港の敷地にミサイル2発が着弾したとアデン治安当局が述べ、フーシ派を非難したと伝える。死傷者は報告されていない。同記事は、サウジ主導の連合軍がヤンブー向けの弾道ミサイル1発を迎撃し、紅海上空で巡航ミサイル2発を破壊したとも伝える。この内訳は10/16の連合軍の発表と同じで、同じ発表の再報道か別の迎撃かは確認できない。",
+      "sourceLabel": "Reuters配信（internazionale.it 10/17）",
+      "date": "2026年10月17日（現地）",
+      "label": "🇾🇪 10/17 アデン国際空港にミサイル2発が着弾",
+      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/17/missiles-hit-aden-airport-as-saudi-led-coalition-intercepts-missile-headed-for-yanbu",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "id": "osint-aljazeera-both-claim-1017",
+      "titleJa": "【Al Jazeera】米・イランがともに海峡の支配を主張——IRGCは超大型タンカーが機雷に接触したと主張、CENTCOMは機雷除去済みと反論",
+      "titleEn": "US and Iran both claim control of Strait of Hormuz amid attacks on vessels (Al Jazeera, Oct 17)",
+      "title": "【Al Jazeera】米・イランがともに海峡の支配を主張——IRGCは超大型タンカーが機雷に接触したと主張、CENTCOMは機雷除去済みと反論",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月17日（現地）",
+      "summary": "Al Jazeera（10/17）は、IRGCが超大型タンカーが機雷に接触して炎上したと主張した一方、CENTCOMが海峡の機雷は除去済みで船は発射物に攻撃されていると述べたと伝える。UKMTOは10/16までの週に少なくとも12隻が攻撃されたと報告したが、実際の件数を正確に報告するのは難しいとも述べた。米軍は、海上封鎖によってイランの石油輸出収入が250億ドル減ったと主張している（米軍の主張）。",
+      "url": "https://aljazeera.com/news/2026/10/17/us-and-iran-both-claim-control-of-strait-of-hormuz-amid-attacks-on-vessels",
+      "isLatest": true
+    },
     {
       "id": "osint-thenational-india-st3-1016",
       "titleJa": "【The National】インド人15人乗りの原油タンカーMT ST 3がホルムズ海峡で被弾——インド海運相「全員無事」",
@@ -55,7 +73,7 @@
       "date": "2026年10月16日（現地）",
       "summary": "The National（10/16 19:27更新）は、インドのソノワル港湾・海運・水路相が、インド人乗組員15人が乗る原油タンカー（MT ST 3）が金曜（10/16）にホルムズ海峡で飛翔体を受けたと述べたと伝える。乗組員は全員無事で負傷者はいない。発生時刻・正確な位置・被害の程度・攻撃主体は記事に記載がなく、UKMTO公式に対応する警報は確認できない。",
       "url": "https://www.thenationalnews.com/news/mena/2026/10/16/india-hormuz-strait-tanker-attack/",
-      "isLatest": true,
+      "isLatest": false,
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
       "badgeColor": "#ef4444",
@@ -1880,6 +1898,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月18日",
+      "items": [
+        {
+          "id": "latest-india-st3-1016",
+          "title": "インド人15人乗りの原油タンカーMT ST 3がホルムズ海峡で被弾——乗組員は全員無事、攻撃主体は不明",
+          "body": "The National（10/16 19:27更新）は、インドのサルバナンダ・ソノワル港湾・海運・水路相が、インド人乗組員15人が乗る原油タンカー（MT ST 3）が金曜（10/16）にホルムズ海峡で飛翔体を受けたと述べたと伝える（原文は「A crude oil tanker carrying 15 Indian crew members was struck by a projectile in the Strait of Hormuz on Friday」。海運相のXへの投稿に基づく）。乗組員は全員無事で負傷者はいない。発生時刻・正確な位置・被害の程度・攻撃主体は記事に記載がない。UKMTO公式サイトには10/14 22:23 JST発行の警報173より新しい警報はなく（10/17 07:47 JST取得）、対応する警報は確認できない。報道は The National のみで、主要通信社の記事は未確認。",
+          "sourceLabel": "The National（10/16）・UKMTO公式サイト",
+          "date": "2026年10月16日（現地）",
+          "label": "⚓ 10/16 インド船員15人乗りのタンカーMT ST 3が被弾",
+          "url": "https://www.thenationalnews.com/news/mena/2026/10/16/india-hormuz-strait-tanker-attack/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-yanbu-intercept-1016",
+          "title": "連合軍がヤンブー向け弾道ミサイル1発を迎撃と発表——被害の記述なし、発射元は記事に記載なし",
+          "body": "Asharq Al-Awsat（10/16 17:10表示）は、イエメン正統性回復連合のターキ・アル＝マルキ報道官が、ヤンブーに向けて発射された弾道ミサイル1発を迎撃・破壊し、紅海上空で巡航ミサイル2発、南部地域とリヤド地域で無人機3機も迎撃・破壊したと発表したと伝える（原文は「a ballistic missile launched toward Yanbu was intercepted and destroyed」）。この迎撃に関する被害の記述はなく、発表は連合軍のみの主張で、記事は発射元に触れていない。",
+          "sourceLabel": "Asharq Al-Awsat（10/16）",
+          "date": "2026年10月16日（現地）",
+          "label": "🇸🇦 10/16 連合軍がヤンブー向けミサイルを迎撃",
+          "url": "https://english.aawsat.com/gulf/5330363-coalition-intercepts-ballistic-cruise-missiles-and-uavs",
+          "isLatest": false
+        },
+        {
+          "id": "latest-centcom-gfs-pride-1015",
+          "title": "CENTCOM「GFS PRIDEはIRGCの発射物を受けた」と発表——IRGCは機雷接触を主張、封鎖の累計は引き返し135隻・航行不能4隻（10/10〜11時点）",
+          "body": "gCaptain（10/15）は、米中央軍（CENTCOM）が「民間のコンテナ船GFS PRIDEはIRGCの発射物を受けた」と述べ、曳航中に沈没したと発表したと伝える（原文は「The civilian container ship M/V GFS Pride was hit by an IRGC projectile」）。IRGCは機雷接触を主張しており、攻撃主体はCENTCOMの帰属で、独立した検証は確認できない。同記事はJMICの勧告を引き、10/11と10/13にホルムズ海峡で飛翔体による攻撃が8件（タンカー4隻・コンテナ船4隻）あったとし、米軍は封鎖の実施で10/10〜11時点に商船135隻を引き返させ4隻を航行不能にしたと書く。",
+          "sourceLabel": "gCaptain（10/15）",
+          "date": "2026年10月15日（現地）",
+          "label": "⚓ 10/15 CENTCOMがGFS PRIDEの攻撃主体を「IRGCの発射物」と発表",
+          "url": "https://gcaptain.com/by-the-numbers-u-s-claims-control-of-hormuz-as-ship-attacks-hit-new-high/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-army-tanker-1015",
+          "title": "イラン軍が「違反タンカーが海峡東部で炎上」と主張——船名・位置・原因は不明、独立した確認なし",
+          "body": "Times of Israelのライブ更新（Reuters署名。10/15 17:28表示・タイムゾーンの記載なし）は、イラン軍が国営メディアを通じた声明で、「違反」したタンカーがホルムズ海峡東部で燃えていると述べたと伝える（原文は「Iran's army says a \"violating\" oil tanker is on fire in the eastern part of the Strait of Hormuz, according to a statement carried by state media.」）。声明は、追跡装置を切ったこの「ならず者」タンカーが、オマーン湾の立入制限区域を通過しようとしたと主張する。船名・位置の座標・火災の原因・死傷者の記載はなく、イラン側の主張のみで独立した確認はない。UKMTO公式サイトには、10/14 22:23 JST発行の警報173より新しい警報はなく（10/16 07:24 JSTに取得）、対応する警報は確認できない。主要媒体の記事は未確認。",
+          "sourceLabel": "Times of Israel（Reuters署名 10/15）・UKMTO公式サイト",
+          "date": "2026年10月15日（現地）",
+          "label": "⚓ 10/15 イラン軍「違反タンカーが炎上」と主張",
+          "url": "https://www.timesofisrael.com/liveblog_entry/irans-army-says-oil-tanker-on-fire-in-the-strait-of-hormuz/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月17日",
       "items": [

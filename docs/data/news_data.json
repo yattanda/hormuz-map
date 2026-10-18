@@ -1,49 +1,67 @@
 {
-  "updated": "2026年10月18日 07:19 日本時間JST",
+  "updated": "2026年10月19日 07:37 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto-174-175-1017",
-      "title": "UKMTO警報174・175：サウジ・ジュベイル沖でタンカー2隻が被弾——飛翔体とRPG、乗組員は全員無事、攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報174-26（10/17 15:20 JST発行）は、遅延報告として、サウジのジュベイルの北東68海里でタンカー1隻が正体不明の飛翔体を受け、乗組員は全員無事で退避済みと伝える。175-26（16:25 JST発行）は、北東78海里でタンカーの船長が小型ボートからのRPGによる攻撃を受け、船尾左舷に損傷が出たと報告し、乗組員は全員無事、被害の全容と環境への影響は報告時点で不明とする（原文は「attacked by an RPG from a small boat, resulting in damage to the aft port quarter」）。公式の本文に発生時刻・船名・攻撃主体の記載はない。Fox Newsのライブ更新（10/17）も、UKMTOの報告として2件がジュベイル付近で金曜に起きたと伝える。ホルムズ海峡の外（ペルシャ湾の西側）の事案で、攻撃主体の主張は確認できない。",
-      "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）",
-      "date": "2026年10月17日（現地）",
-      "label": "⚓ 10/17 ジュベイル沖でタンカー2隻が被弾（UKMTO警報174・175）",
-      "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
+      "id": "latest-ukmto-177-1018",
+      "title": "UKMTO警報177：UAEのコルファカン沖でタグボートが被弾——飛翔体2発、軽傷者1人、航行は継続・攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報177-26（10/18 13:29 JST発行）は、UAEのコルファカンの北東で、南へ航行中のタグボートが正体不明の飛翔体2発を受けたと報告し、タグボートは損傷したが航行を続け、軽傷者が1人出たと伝える（原文は「struck by 2 unknown projectiles」「One minor casualty has been reported」）。公式の本文の発生日は10/18で、発生時刻は「TBC」（未確定）。船名・攻撃主体の記載はない（公式の一覧の日時欄は10/18 01:00 UTC＝10:00 JSTだが、発生時刻とは限らない）。TASS（ロンドン発・10/18）も、UKMTOの発表として、船名と船籍港は公表されていないと伝える。攻撃主体の主張は確認できない。",
+      "sourceLabel": "UKMTO公式サイト（10/18）・TASS（10/18）",
+      "date": "2026年10月18日（現地）",
+      "label": "⚓ 10/18 コルファカン沖でタグボートが被弾（UKMTO警報177）",
+      "url": "https://tass.com/emergencies/2203693",
       "isLatest": true
     },
     {
-      "id": "latest-ukmto-176-1017",
-      "title": "UKMTO警報176：アデン湾でLNGタンカーに小型船が発砲——警備員の警告射撃で針路変更、被害の記載なし",
-      "body": "UKMTO公式サイトの警報176-26（10/17 22:19 JST発行）は、イエメンのムカッラの南西140海里で、LNGタンカーの船長が、7人が乗る小型ボートに接近され、2発を撃たれたと報告し、武装警備チームが警告射撃を2発行ってボートが針路を変えたと伝える（原文は「The skiff fired two shots at the tanker」）。公式の本文に発生時刻・被害・船名・攻撃主体の記載はない。Fox Newsのライブ更新（10/17）も同内容を伝える。ホルムズ海峡から離れたアデン湾の事案で、海賊事案かどうかは確認できない。",
-      "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）",
-      "date": "2026年10月17日（現地）",
-      "label": "⚓ 10/17 アデン湾でLNGタンカーに小型船が発砲（UKMTO警報176）",
-      "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
+      "id": "latest-irgc-second-mine-1018",
+      "title": "HNGN「IRGCが2隻目の超大型タンカーも機雷に接触したと主張」——CENTCOM・UKMTOは未確認",
+      "body": "HNGN（10/18 3:37 AM EDT）は、IRGCが土曜（10/17）に、24時間足らずで2隻目の満載の超大型タンカーが機雷に接触したと述べたと伝える（原文は「a second fully laden supertanker in less than 24 hours had struck a naval mine」）。IRGCは、200万バレル超を積み、位置情報とレーダーを切って「unauthorized」な航路を通ろうとした船の機関室で機雷が爆発し、推進力を失ったと主張した。船は特定されておらず（原文は「Neither vessel has been identified.」）、CENTCOMとUKMTOは土曜夜の時点でどちらの事案も確認していない（同記事）。金曜夕方の1隻目の主張は、先に載せた10/17の主張と同じものとみられるが、日付の対応は確認できない。CBS Newsのライブ更新（10/18）は10/17のIRGCの主張を載せるが、2隻目の主張は確認できなかった。HNGNのみの報道で、IRGCの主張のみ。",
+      "sourceLabel": "HNGN（10/18）",
+      "date": "2026年10月18日（現地）",
+      "label": "⚓ 10/18 IRGC「2隻目の超大型タンカーも機雷に接触」と主張",
+      "url": "https://www.hngn.com/articles/273540/20261018/iran-says-two-supertankers-hit-mines-hormuz.htm",
       "isLatest": false
     },
     {
-      "id": "latest-irgc-mine-claim-1017",
-      "title": "IRGC「超大型タンカーが機雷に接触して炎上」と主張——位置・船名なし、CENTCOMは「機雷は除去済み、船は発射物に攻撃されている」と反論",
-      "body": "New Arabのライブ更新（10/17）は、革命防衛隊（IRGC）が声明で、規則に違反した200万バレル超の原油を積む超大型タンカーが機雷に接触し、爆発と激しい火災が起きたと述べたと伝える（原文は「struck a mine, triggering an explosion and a fierce fire」）。声明は正確な位置を示さず、船名の記載もない。Al Jazeera（10/17）は、CENTCOMが「海峡の機雷は除去した、船は発射物に攻撃されている」と述べたと伝える（原文は「CENTCOM said it had cleared the strait of naval mines, and that vessels are being struck by projectiles.」）。IRGCの主張のみで、独立した確認はない。",
-      "sourceLabel": "New Arab・Al Jazeera（10/17）",
-      "date": "2026年10月17日（現地）",
-      "label": "⚓ 10/17 IRGC「超大型タンカーが機雷に接触」と主張",
-      "url": "https://newarab.com/news/irgc-say-oil-tankers-fire-after-hitting-mines-strait",
+      "id": "latest-yemen-saudi-1018",
+      "title": "サウジ・フーシ派が攻撃を応酬——イエメン北部の空爆で9人以上死亡と報道、ナジュランでは連合軍のヘリが墜落",
+      "body": "CBS Newsのライブ更新（10/18）は、サウジ主導の連合軍とフーシ派が攻撃を応酬したと伝え、イエメン北部で「サウジの空爆とされる」攻撃により少なくとも9人が死亡したと報じる。NewsBeep掲載のAFP系記事は、これをフーシ系Saba通信の報道とし、「killed at least nine people and wounded 16 others」と書く（独立した確認なし）。サウジ軍は、ナジュラン付近でヘリが墜落して操縦士2人が死亡したと述べ、原因を「技術的な不具合」としたが、フーシ派はApache型ヘリを撃墜したと主張する。サウジ民間防衛当局は、フーシ派の攻撃でナジュランの6人が負傷したと伝える（CBS News）。イエメン軍はX上の投稿で、フーシ派の戦闘員370人を無力化したと主張した（Fox Newsライブ更新・10/18。当事者の主張のみ）。ヤンブー港・東西パイプラインの被害や紅海での商船への新たな攻撃は、10/18以降の主要媒体で確認できない。",
+      "sourceLabel": "CBS News（10/18）・AFP系記事（NewsBeep 10/18）・Fox News（10/18）",
+      "date": "2026年10月18日（現地）",
+      "label": "🇾🇪 10/18 サウジ・フーシ派が応酬、空爆で9人以上死亡と報道",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/",
       "isLatest": false
     },
     {
-      "id": "latest-aden-airport-1017",
-      "title": "アデン国際空港にミサイル2発が着弾——死傷者の報告なし、連合軍はヤンブー向け弾道ミサイルの迎撃を発表（Reuters配信）",
-      "body": "Reuters配信（internazionale.it掲載、10/17付・時刻の記載なし）は、イエメンのアデン国際空港の敷地にミサイル2発が着弾したとアデン治安当局が述べ、フーシ派を非難したと伝える。死傷者は報告されていない。同記事は、サウジ主導の連合軍がヤンブー向けの弾道ミサイル1発を迎撃し、紅海上空で巡航ミサイル2発を破壊したとも伝える。この内訳は10/16の連合軍の発表と同じで、同じ発表の再報道か別の迎撃かは確認できない。",
-      "sourceLabel": "Reuters配信（internazionale.it 10/17）",
-      "date": "2026年10月17日（現地）",
-      "label": "🇾🇪 10/17 アデン国際空港にミサイル2発が着弾",
-      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/17/missiles-hit-aden-airport-as-saudi-led-coalition-intercepts-missile-headed-for-yanbu",
+      "id": "latest-araghchi-7day-1018",
+      "title": "アラグチ外相「イランの7日間案は有効、条件が満たされれば6日目に海峡が再開」——CENTCOMは「通過を試みた船の約97%が成功」と主張",
+      "body": "CBS Newsのライブ更新（10/18 7:06 AM）は、アラグチ外相が、条件が満たされれば「the Strait of Hormuz will reopen on the sixth day」と述べ、「Our conditions are fair」と語ったと伝える（交渉は7日目に始まるとされる）。Fox Newsのライブ更新（10/18）は、外相がイランの7日間案は「is still on the table」と述べたと書く。同ライブ更新は、CENTCOMのホーキンス報道官が「about 97% of the ships that have sought to transit the Strait of Hormuz have done so successfully」と述べたとも伝える（CENTCOM側の主張で、集計の期間・方法は記事に記載がない）。米側の回答の中身は、10/18の記事からは確認できない。CENTCOMの封鎖の累計は10/17時点の商船138隻（原文は「redirected」）から新しい発表を確認できない。",
+      "sourceLabel": "CBS News（10/18）・Fox News（10/18）",
+      "date": "2026年10月18日（現地）",
+      "label": "🕊️ 10/18 アラグチ外相「7日間案は有効」・CENTCOM「約97%が通過成功」",
+      "url": "https://foxnews.com/live-news/us-iran-war-peace-talks-oil-strait-hormuz-trump-october-18",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "id": "osint-tass-tug-1018",
+      "titleJa": "【TASS】UKMTOによると、UAEのコルファカン北東でタグボートが正体不明の飛翔体2発を受け1人が負傷——船名と船籍港は公表されず",
+      "titleEn": "Tugboat attacked by two unknown projectiles northeast of Khor Fakkan, UAE (TASS, Oct 18)",
+      "title": "【TASS】UKMTOによると、UAEのコルファカン北東でタグボートが正体不明の飛翔体2発を受け1人が負傷——船名と船籍港は公表されず",
+      "country": "ロシア",
+      "media": "TASS",
+      "source": "TASS",
+      "date": "2026年10月18日（現地）",
+      "summary": "TASS（ロンドン発・10/18）は、UKMTOの発表として、UAEのコルファカン市の北東で、南へ航行中のタグボートが正体不明の飛翔体2発の攻撃を受け、1人が負傷したと伝える。船名と船籍港は公表されていない。UKMTO公式サイトの警報177-26と同じ事案で、攻撃主体は記事にない。",
+      "url": "https://tass.com/emergencies/2203693",
+      "isLatest": true
+    },
     {
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
@@ -60,7 +78,7 @@
       "date": "2026年10月17日（現地）",
       "summary": "Al Jazeera（10/17）は、IRGCが超大型タンカーが機雷に接触して炎上したと主張した一方、CENTCOMが海峡の機雷は除去済みで船は発射物に攻撃されていると述べたと伝える。UKMTOは10/16までの週に少なくとも12隻が攻撃されたと報告したが、実際の件数を正確に報告するのは難しいとも述べた。米軍は、海上封鎖によってイランの石油輸出収入が250億ドル減ったと主張している（米軍の主張）。",
       "url": "https://aljazeera.com/news/2026/10/17/us-and-iran-both-claim-control-of-strait-of-hormuz-amid-attacks-on-vessels",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-thenational-india-st3-1016",
@@ -1898,6 +1916,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月19日",
+      "items": [
+        {
+          "id": "latest-ukmto-174-175-1017",
+          "title": "UKMTO警報174・175：サウジ・ジュベイル沖でタンカー2隻が被弾——飛翔体とRPG、乗組員は全員無事、攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報174-26（10/17 15:20 JST発行）は、遅延報告として、サウジのジュベイルの北東68海里でタンカー1隻が正体不明の飛翔体を受け、乗組員は全員無事で退避済みと伝える。175-26（16:25 JST発行）は、北東78海里でタンカーの船長が小型ボートからのRPGによる攻撃を受け、船尾左舷に損傷が出たと報告し、乗組員は全員無事、被害の全容と環境への影響は報告時点で不明とする（原文は「attacked by an RPG from a small boat, resulting in damage to the aft port quarter」）。公式の本文に発生時刻・船名・攻撃主体の記載はない。Fox Newsのライブ更新（10/17）も、UKMTOの報告として2件がジュベイル付近で金曜に起きたと伝える。ホルムズ海峡の外（ペルシャ湾の西側）の事案で、攻撃主体の主張は確認できない。",
+          "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）",
+          "date": "2026年10月17日（現地）",
+          "label": "⚓ 10/17 ジュベイル沖でタンカー2隻が被弾（UKMTO警報174・175）",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto-176-1017",
+          "title": "UKMTO警報176：アデン湾でLNGタンカーに小型船が発砲——警備員の警告射撃で針路変更、被害の記載なし",
+          "body": "UKMTO公式サイトの警報176-26（10/17 22:19 JST発行）は、イエメンのムカッラの南西140海里で、LNGタンカーの船長が、7人が乗る小型ボートに接近され、2発を撃たれたと報告し、武装警備チームが警告射撃を2発行ってボートが針路を変えたと伝える（原文は「The skiff fired two shots at the tanker」）。公式の本文に発生時刻・被害・船名・攻撃主体の記載はない。Fox Newsのライブ更新（10/17）も同内容を伝える。ホルムズ海峡から離れたアデン湾の事案で、海賊事案かどうかは確認できない。",
+          "sourceLabel": "UKMTO公式サイト（10/17）・Fox News（10/17）",
+          "date": "2026年10月17日（現地）",
+          "label": "⚓ 10/17 アデン湾でLNGタンカーに小型船が発砲（UKMTO警報176）",
+          "url": "https://www.foxnews.com/live-news/iran-war-trump-strait-hormuz-oil-prices-midterms-10-17-26",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-mine-claim-1017",
+          "title": "IRGC「超大型タンカーが機雷に接触して炎上」と主張——位置・船名なし、CENTCOMは「機雷は除去済み、船は発射物に攻撃されている」と反論",
+          "body": "New Arabのライブ更新（10/17）は、革命防衛隊（IRGC）が声明で、規則に違反した200万バレル超の原油を積む超大型タンカーが機雷に接触し、爆発と激しい火災が起きたと述べたと伝える（原文は「struck a mine, triggering an explosion and a fierce fire」）。声明は正確な位置を示さず、船名の記載もない。Al Jazeera（10/17）は、CENTCOMが「海峡の機雷は除去した、船は発射物に攻撃されている」と述べたと伝える（原文は「CENTCOM said it had cleared the strait of naval mines, and that vessels are being struck by projectiles.」）。IRGCの主張のみで、独立した確認はない。",
+          "sourceLabel": "New Arab・Al Jazeera（10/17）",
+          "date": "2026年10月17日（現地）",
+          "label": "⚓ 10/17 IRGC「超大型タンカーが機雷に接触」と主張",
+          "url": "https://newarab.com/news/irgc-say-oil-tankers-fire-after-hitting-mines-strait",
+          "isLatest": false
+        },
+        {
+          "id": "latest-aden-airport-1017",
+          "title": "アデン国際空港にミサイル2発が着弾——死傷者の報告なし、連合軍はヤンブー向け弾道ミサイルの迎撃を発表（Reuters配信）",
+          "body": "Reuters配信（internazionale.it掲載、10/17付・時刻の記載なし）は、イエメンのアデン国際空港の敷地にミサイル2発が着弾したとアデン治安当局が述べ、フーシ派を非難したと伝える。死傷者は報告されていない。同記事は、サウジ主導の連合軍がヤンブー向けの弾道ミサイル1発を迎撃し、紅海上空で巡航ミサイル2発を破壊したとも伝える。この内訳は10/16の連合軍の発表と同じで、同じ発表の再報道か別の迎撃かは確認できない。",
+          "sourceLabel": "Reuters配信（internazionale.it 10/17）",
+          "date": "2026年10月17日（現地）",
+          "label": "🇾🇪 10/17 アデン国際空港にミサイル2発が着弾",
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/17/missiles-hit-aden-airport-as-saudi-led-coalition-intercepts-missile-headed-for-yanbu",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月18日",
       "items": [

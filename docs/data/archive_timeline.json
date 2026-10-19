@@ -3394,6 +3394,34 @@
           "sourceLabel": "CBS News・Fox News（10/18）"
         }
       ]
+    },
+    {
+      "date": "2026-10-20",
+      "dateLabel": "2026/10/20 06:13",
+      "blockadeDay": 235,
+      "summary": "【重大更新】イエメンのシャブワ県でフーシ派のミサイルにより政府軍キャンプで53人以上が死亡（暫定）：Al Jazeera（10/19）は、シャブワ県のアル＝アラム軍事キャンプに10/19、フーシ派が弾道ミサイル3発を撃ち込み、地元当局が少なくとも53人の死亡と200人の負傷を発表したと伝える（当初は医療筋が18人と述べた。フーシ派は「サウジが支援する」基地を標的にしたと述べた）・IRGCは10/19、タンカー1隻が海峡南側で機雷に接触し機関室で火災が起きたと主張した（AFP配信のKorea Timesのみ。船名・位置なし、独立した確認なし。10/17〜18の主張と同じ船かは確認できない）・UKMTO公式に警報177（10/18 13:29 JST発行）より新しい警報なし（10/20 06:06 JST取得）・10/18のサアダ県空爆（9人以上死亡）の情報源について、AP配信のTimes of Israelはフーシ派が運営する保健省の発表と書く（前回掲載のSaba通信の報道とは別の記述。サウジ政府は同記事の時点でコメントなし）・gCaptain（10/19）は、UKMTOの警報の集計として、10月前半に海峡の内外で25隻が標的になり、9月全体は18件、8月は15件と伝える（警報の件数で、攻撃主体の特定ではない）・原油は10/19終値でブレント12月物109.55ドル（−0.31ドル）（NewsquawkとRallies〈USO News〉で一致）、WTI12月物は98.54ドル（前日比は出典で向きが食い違うため記載しない）、期近のWTI11月物は期限前日の薄商いで103.66ドル（Ralliesのみ）・MT ST 3は主要通信社の記事を引き続き確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機235日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（機雷）",
+      "relatedNews": [
+        {
+          "title": "シャブワ県の政府軍キャンプにフーシ派が弾道ミサイル3発——地元当局「53人以上死亡・200人負傷」（暫定）",
+          "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa",
+          "sourceLabel": "Al Jazeera（10/19）"
+        },
+        {
+          "title": "IRGC「タンカー1隻が海峡南側で機雷に接触、機関室で火災」と主張——AFP配信のみ、独立した確認なし",
+          "url": "https://www.koreatimes.co.kr/world/20261019/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards",
+          "sourceLabel": "Korea Times（AFP配信・10/19）"
+        },
+        {
+          "title": "gCaptain：10月前半に海峡の内外で25隻が標的に——UKMTO警報の集計、9月全体は18件・8月は15件",
+          "url": "https://gcaptain.com/irans-main-oil-terminals-remain-empty-as-us-blockade-bites/",
+          "sourceLabel": "gCaptain（10/19）"
+        },
+        {
+          "title": "原油10/19終値：ブレント12月物109.55ドル（−0.31ドル）——WTI12月物は98.54ドル、11月物は期限前日の薄商いで103.66ドル",
+          "url": "https://www.newsquawk.com/headlines/crude-wrap-wti-z6-settles-usd-048-higher-at-9854bbl-brent-z6-settles-usd-031-lower-at-usd-10955bbl",
+          "sourceLabel": "Newsquawk（10/19）・Rallies（10/19）"
+        }
+      ]
     }
   ]
 }

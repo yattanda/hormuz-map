@@ -1,49 +1,64 @@
 {
-  "updated": "2026年10月19日 07:37 日本時間JST",
+  "updated": "2026年10月20日 06:13 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto-177-1018",
-      "title": "UKMTO警報177：UAEのコルファカン沖でタグボートが被弾——飛翔体2発、軽傷者1人、航行は継続・攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報177-26（10/18 13:29 JST発行）は、UAEのコルファカンの北東で、南へ航行中のタグボートが正体不明の飛翔体2発を受けたと報告し、タグボートは損傷したが航行を続け、軽傷者が1人出たと伝える（原文は「struck by 2 unknown projectiles」「One minor casualty has been reported」）。公式の本文の発生日は10/18で、発生時刻は「TBC」（未確定）。船名・攻撃主体の記載はない（公式の一覧の日時欄は10/18 01:00 UTC＝10:00 JSTだが、発生時刻とは限らない）。TASS（ロンドン発・10/18）も、UKMTOの発表として、船名と船籍港は公表されていないと伝える。攻撃主体の主張は確認できない。",
-      "sourceLabel": "UKMTO公式サイト（10/18）・TASS（10/18）",
-      "date": "2026年10月18日（現地）",
-      "label": "⚓ 10/18 コルファカン沖でタグボートが被弾（UKMTO警報177）",
-      "url": "https://tass.com/emergencies/2203693",
+      "id": "latest-shabwa-1019",
+      "title": "シャブワ県の政府軍キャンプにフーシ派が弾道ミサイル3発——地元当局「53人以上死亡・200人負傷」（暫定）",
+      "body": "Al Jazeera（10/19）は、イエメン南部シャブワ県のアル＝アラム軍事キャンプに月曜（10/19）、フーシ派が訓練中の部隊へ弾道ミサイル3発を撃ち込み、シャブワ県当局が少なくとも53人の死亡と200人の負傷を発表したと伝える（原文は「has killed at least 53 people, according to local authorities」。当初は医療筋が少なくとも18人の死亡と述べていた）。フーシ派は「サウジが支援する」軍事基地を標的にしたと述べた（同記事のアルジャジーラ記者の報告）。死者数は暫定で、集計は変わる可能性がある。",
+      "sourceLabel": "Al Jazeera（10/19）",
+      "date": "2026年10月19日（現地）",
+      "label": "🇾🇪 10/19 シャブワ県の政府軍キャンプにフーシ派のミサイル（53人以上死亡）",
+      "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa",
       "isLatest": true
     },
     {
-      "id": "latest-irgc-second-mine-1018",
-      "title": "HNGN「IRGCが2隻目の超大型タンカーも機雷に接触したと主張」——CENTCOM・UKMTOは未確認",
-      "body": "HNGN（10/18 3:37 AM EDT）は、IRGCが土曜（10/17）に、24時間足らずで2隻目の満載の超大型タンカーが機雷に接触したと述べたと伝える（原文は「a second fully laden supertanker in less than 24 hours had struck a naval mine」）。IRGCは、200万バレル超を積み、位置情報とレーダーを切って「unauthorized」な航路を通ろうとした船の機関室で機雷が爆発し、推進力を失ったと主張した。船は特定されておらず（原文は「Neither vessel has been identified.」）、CENTCOMとUKMTOは土曜夜の時点でどちらの事案も確認していない（同記事）。金曜夕方の1隻目の主張は、先に載せた10/17の主張と同じものとみられるが、日付の対応は確認できない。CBS Newsのライブ更新（10/18）は10/17のIRGCの主張を載せるが、2隻目の主張は確認できなかった。HNGNのみの報道で、IRGCの主張のみ。",
-      "sourceLabel": "HNGN（10/18）",
-      "date": "2026年10月18日（現地）",
-      "label": "⚓ 10/18 IRGC「2隻目の超大型タンカーも機雷に接触」と主張",
-      "url": "https://www.hngn.com/articles/273540/20261018/iran-says-two-supertankers-hit-mines-hormuz.htm",
-      "isLatest": false
+      "id": "latest-irgc-mine-1019",
+      "title": "IRGC「タンカー1隻が海峡南側で機雷に接触、機関室で火災」と主張——AFP配信のみ、独立した確認なし",
+      "body": "AFP配信のKorea Times（10/19 9:41 KST）は、IRGCの声明として、「違反」したタンカーが海峡の南側で機雷に接触し、機関室で爆発と火災が起きたと伝える（原文は「An oil tanker, which was in violation, struck a naval mine south of the Strait of Hormuz」「a fire in its engine room」）。IRGCは、船が「unauthorized southern route」を航行し、位置・航法システムを切っていたと主張した。船名・位置の座標・死傷者の記載はなく、独立した確認の記述もない。10/17〜18にIRGCが主張した炎上タンカーと同じ船かは確認できない。",
+      "sourceLabel": "Korea Times（AFP配信・10/19）",
+      "date": "2026年10月19日（現地）",
+      "label": "⚓ 10/19 IRGC「タンカー1隻が機雷に接触」と主張（AFP配信のみ）",
+      "url": "https://www.koreatimes.co.kr/world/20261019/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards"
     },
     {
-      "id": "latest-yemen-saudi-1018",
-      "title": "サウジ・フーシ派が攻撃を応酬——イエメン北部の空爆で9人以上死亡と報道、ナジュランでは連合軍のヘリが墜落",
-      "body": "CBS Newsのライブ更新（10/18）は、サウジ主導の連合軍とフーシ派が攻撃を応酬したと伝え、イエメン北部で「サウジの空爆とされる」攻撃により少なくとも9人が死亡したと報じる。NewsBeep掲載のAFP系記事は、これをフーシ系Saba通信の報道とし、「killed at least nine people and wounded 16 others」と書く（独立した確認なし）。サウジ軍は、ナジュラン付近でヘリが墜落して操縦士2人が死亡したと述べ、原因を「技術的な不具合」としたが、フーシ派はApache型ヘリを撃墜したと主張する。サウジ民間防衛当局は、フーシ派の攻撃でナジュランの6人が負傷したと伝える（CBS News）。イエメン軍はX上の投稿で、フーシ派の戦闘員370人を無力化したと主張した（Fox Newsライブ更新・10/18。当事者の主張のみ）。ヤンブー港・東西パイプラインの被害や紅海での商船への新たな攻撃は、10/18以降の主要媒体で確認できない。",
-      "sourceLabel": "CBS News（10/18）・AFP系記事（NewsBeep 10/18）・Fox News（10/18）",
-      "date": "2026年10月18日（現地）",
-      "label": "🇾🇪 10/18 サウジ・フーシ派が応酬、空爆で9人以上死亡と報道",
-      "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/",
-      "isLatest": false
+      "id": "latest-gcaptain-25-1019",
+      "title": "gCaptain：10月前半に海峡の内外で25隻が標的に——UKMTO警報の集計、9月全体は18件・8月は15件",
+      "body": "gCaptain（10/19）は、イランが海峡を通る船への攻撃を強めているとして、10月の最初の2週間に海峡の内外で25隻が標的になり、9月全体は18件、8月は15件だったと伝える（原文は「In the first two weeks of October, 25 ships were targeted in and around the chokepoint」。英国海事貿易活動部〈UKMTO〉が出した警報の件数による）。同記事は、カーグ島の原油輸出ターミナルに8月下旬からタンカーが接岸していないとも伝える。警報の件数で、攻撃主体の特定ではない。",
+      "sourceLabel": "gCaptain（10/19）",
+      "date": "2026年10月19日（現地）",
+      "label": "⚓ 10/19 10月前半に25隻が標的（UKMTO警報の集計・gCaptain）",
+      "url": "https://gcaptain.com/irans-main-oil-terminals-remain-empty-as-us-blockade-bites/"
     },
     {
-      "id": "latest-araghchi-7day-1018",
-      "title": "アラグチ外相「イランの7日間案は有効、条件が満たされれば6日目に海峡が再開」——CENTCOMは「通過を試みた船の約97%が成功」と主張",
-      "body": "CBS Newsのライブ更新（10/18 7:06 AM）は、アラグチ外相が、条件が満たされれば「the Strait of Hormuz will reopen on the sixth day」と述べ、「Our conditions are fair」と語ったと伝える（交渉は7日目に始まるとされる）。Fox Newsのライブ更新（10/18）は、外相がイランの7日間案は「is still on the table」と述べたと書く。同ライブ更新は、CENTCOMのホーキンス報道官が「about 97% of the ships that have sought to transit the Strait of Hormuz have done so successfully」と述べたとも伝える（CENTCOM側の主張で、集計の期間・方法は記事に記載がない）。米側の回答の中身は、10/18の記事からは確認できない。CENTCOMの封鎖の累計は10/17時点の商船138隻（原文は「redirected」）から新しい発表を確認できない。",
-      "sourceLabel": "CBS News（10/18）・Fox News（10/18）",
-      "date": "2026年10月18日（現地）",
-      "label": "🕊️ 10/18 アラグチ外相「7日間案は有効」・CENTCOM「約97%が通過成功」",
-      "url": "https://foxnews.com/live-news/us-iran-war-peace-talks-oil-strait-hormuz-trump-october-18",
-      "isLatest": false
+      "id": "latest-oil-close-1019",
+      "title": "原油10/19終値：ブレント12月物109.55ドル（−0.31ドル）——WTI12月物は98.54ドル、11月物は期限前日の薄商いで103.66ドル",
+      "body": "Newsquawk（10/19 19:18 UTC）の見出しは、ブレント12月物が0.31ドル安の109.55ドルで清算したと伝える（原文は「BRENT (Z6) SETTLES USD 0.31 LOWER AT USD 109.55/BBL」。WTI12月物は98.54ドルと書く）。Rallies（USO News）も、ブレントが31セント安の109.55ドルで清算し、期近のWTI11月物は103.66ドル、より流動性の高い12月物は98.54ドルと伝える。WTI12月物の前日比は、Newsquawkが上昇、Ralliesが下落と書き食い違うため、ここでは書かない。",
+      "sourceLabel": "Newsquawk（10/19）・Rallies（10/19）",
+      "date": "2026年10月19日（現地）",
+      "label": "🛢️ 10/19 原油終値 ブレント109.55ドル（Newsquawk・Rallies）",
+      "url": "https://www.newsquawk.com/headlines/crude-wrap-wti-z6-settles-usd-048-higher-at-9854bbl-brent-z6-settles-usd-031-lower-at-usd-10955bbl"
     }
   ],
   "osint": [
+    {
+      "cardBg": "rgba(239,68,68,0.05)",
+      "cardBorder": "rgba(239,68,68,0.25)",
+      "badgeColor": "#ef4444",
+      "borderColor": "rgba(239,68,68,0.4)",
+      "textColor": "#fca5a5",
+      "id": "osint-aljazeera-shabwa-1019",
+      "titleJa": "【Al Jazeera】シャブワ県の政府軍キャンプへのフーシ派攻撃で53人以上死亡——地元当局の発表・暫定、フーシ派は「サウジ支援の基地」が標的と説明",
+      "titleEn": "Houthi attack on Yemen army camp in Shabwa kills at least 53: reports (Al Jazeera, Oct 19)",
+      "title": "【Al Jazeera】シャブワ県の政府軍キャンプへのフーシ派攻撃で53人以上死亡——地元当局の発表・暫定、フーシ派は「サウジ支援の基地」が標的と説明",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月19日（現地）",
+      "summary": "Al Jazeera（10/19）は、イエメン南部シャブワ県のアル＝アラム軍事キャンプへのフーシ派の弾道ミサイル3発による攻撃で、地元当局が少なくとも53人の死亡と200人の負傷を発表したと伝える。当初の死者数は18人で、フーシ派は「サウジが支援する」軍事基地を標的にしたと述べた。",
+      "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa",
+      "isLatest": true
+    },
     {
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
@@ -60,7 +75,7 @@
       "date": "2026年10月18日（現地）",
       "summary": "TASS（ロンドン発・10/18）は、UKMTOの発表として、UAEのコルファカン市の北東で、南へ航行中のタグボートが正体不明の飛翔体2発の攻撃を受け、1人が負傷したと伝える。船名と船籍港は公表されていない。UKMTO公式サイトの警報177-26と同じ事案で、攻撃主体は記事にない。",
       "url": "https://tass.com/emergencies/2203693",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "cardBg": "rgba(239,68,68,0.05)",
@@ -1916,6 +1931,47 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月20日",
+      "items": [
+        {
+          "id": "latest-ukmto-177-1018",
+          "title": "UKMTO警報177：UAEのコルファカン沖でタグボートが被弾——飛翔体2発、軽傷者1人、航行は継続・攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報177-26（10/18 13:29 JST発行）は、UAEのコルファカンの北東で、南へ航行中のタグボートが正体不明の飛翔体2発を受けたと報告し、タグボートは損傷したが航行を続け、軽傷者が1人出たと伝える（原文は「struck by 2 unknown projectiles」「One minor casualty has been reported」）。公式の本文の発生日は10/18で、発生時刻は「TBC」（未確定）。船名・攻撃主体の記載はない（公式の一覧の日時欄は10/18 01:00 UTC＝10:00 JSTだが、発生時刻とは限らない）。TASS（ロンドン発・10/18）も、UKMTOの発表として、船名と船籍港は公表されていないと伝える。攻撃主体の主張は確認できない。",
+          "sourceLabel": "UKMTO公式サイト（10/18）・TASS（10/18）",
+          "date": "2026年10月18日（現地）",
+          "label": "⚓ 10/18 コルファカン沖でタグボートが被弾（UKMTO警報177）",
+          "url": "https://tass.com/emergencies/2203693"
+        },
+        {
+          "id": "latest-irgc-second-mine-1018",
+          "title": "HNGN「IRGCが2隻目の超大型タンカーも機雷に接触したと主張」——CENTCOM・UKMTOは未確認",
+          "body": "HNGN（10/18 3:37 AM EDT）は、IRGCが土曜（10/17）に、24時間足らずで2隻目の満載の超大型タンカーが機雷に接触したと述べたと伝える（原文は「a second fully laden supertanker in less than 24 hours had struck a naval mine」）。IRGCは、200万バレル超を積み、位置情報とレーダーを切って「unauthorized」な航路を通ろうとした船の機関室で機雷が爆発し、推進力を失ったと主張した。船は特定されておらず（原文は「Neither vessel has been identified.」）、CENTCOMとUKMTOは土曜夜の時点でどちらの事案も確認していない（同記事）。金曜夕方の1隻目の主張は、先に載せた10/17の主張と同じものとみられるが、日付の対応は確認できない。CBS Newsのライブ更新（10/18）は10/17のIRGCの主張を載せるが、2隻目の主張は確認できなかった。HNGNのみの報道で、IRGCの主張のみ。",
+          "sourceLabel": "HNGN（10/18）",
+          "date": "2026年10月18日（現地）",
+          "label": "⚓ 10/18 IRGC「2隻目の超大型タンカーも機雷に接触」と主張",
+          "url": "https://www.hngn.com/articles/273540/20261018/iran-says-two-supertankers-hit-mines-hormuz.htm"
+        },
+        {
+          "id": "latest-yemen-saudi-1018",
+          "title": "サウジ・フーシ派が攻撃を応酬——イエメン北部の空爆で9人以上死亡と報道、ナジュランでは連合軍のヘリが墜落",
+          "body": "CBS Newsのライブ更新（10/18）は、サウジ主導の連合軍とフーシ派が攻撃を応酬したと伝え、イエメン北部で「サウジの空爆とされる」攻撃により少なくとも9人が死亡したと報じる。NewsBeep掲載のAFP系記事は、これをフーシ系Saba通信の報道とし、「killed at least nine people and wounded 16 others」と書く（独立した確認なし）。サウジ軍は、ナジュラン付近でヘリが墜落して操縦士2人が死亡したと述べ、原因を「技術的な不具合」としたが、フーシ派はApache型ヘリを撃墜したと主張する。サウジ民間防衛当局は、フーシ派の攻撃でナジュランの6人が負傷したと伝える（CBS News）。イエメン軍はX上の投稿で、フーシ派の戦闘員370人を無力化したと主張した（Fox Newsライブ更新・10/18。当事者の主張のみ）。ヤンブー港・東西パイプラインの被害や紅海での商船への新たな攻撃は、10/18以降の主要媒体で確認できない。",
+          "sourceLabel": "CBS News（10/18）・AFP系記事（NewsBeep 10/18）・Fox News（10/18）",
+          "date": "2026年10月18日（現地）",
+          "label": "🇾🇪 10/18 サウジ・フーシ派が応酬、空爆で9人以上死亡と報道",
+          "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/"
+        },
+        {
+          "id": "latest-araghchi-7day-1018",
+          "title": "アラグチ外相「イランの7日間案は有効、条件が満たされれば6日目に海峡が再開」——CENTCOMは「通過を試みた船の約97%が成功」と主張",
+          "body": "CBS Newsのライブ更新（10/18 7:06 AM）は、アラグチ外相が、条件が満たされれば「the Strait of Hormuz will reopen on the sixth day」と述べ、「Our conditions are fair」と語ったと伝える（交渉は7日目に始まるとされる）。Fox Newsのライブ更新（10/18）は、外相がイランの7日間案は「is still on the table」と述べたと書く。同ライブ更新は、CENTCOMのホーキンス報道官が「about 97% of the ships that have sought to transit the Strait of Hormuz have done so successfully」と述べたとも伝える（CENTCOM側の主張で、集計の期間・方法は記事に記載がない）。米側の回答の中身は、10/18の記事からは確認できない。CENTCOMの封鎖の累計は10/17時点の商船138隻（原文は「redirected」）から新しい発表を確認できない。",
+          "sourceLabel": "CBS News（10/18）・Fox News（10/18）",
+          "date": "2026年10月18日（現地）",
+          "label": "🕊️ 10/18 アラグチ外相「7日間案は有効」・CENTCOM「約97%が通過成功」",
+          "url": "https://foxnews.com/live-news/us-iran-war-peace-talks-oil-strait-hormuz-trump-october-18"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月19日",
       "items": [

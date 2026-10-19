@@ -1,6 +1,6 @@
 # 石油備蓄コラム 月次追記手順
 
-対象：`docs/articles/oil-stockpile-monthly-trend.html`（📉 石油備蓄はどう推移したか──月次まとめとグラフで見る現在地）
+対象：`docs/hormuz/articles/oil-stockpile-monthly-trend/index.html`（📉 石油備蓄はどう推移したか──月次まとめとグラフで見る現在地）
 と、`docs/hormuz/index.html` の石油備蓄日数3か所（地図ポップアップ・精製所表の注記・主要指標の備蓄カード。2026-10-01〜）、
 ハブ `docs/index.html` の「主要な数字」1か所（2026-10 の構造再編で追加）
 
@@ -48,7 +48,7 @@
 
 - `docs/hormuz/index.html` の「石油備蓄の月次推移まとめコラムカード」のサブタイトルと要約、
   日付（`col-card-date`）の「更新 YYYY/MM/DD」（書式は「公開 2026/08/21・更新 YYYY/MM/DD」。記事の `dateModified` と同じ日付）
-- `docs/articles/index.html` の一覧カードの `idx-lead` と、日付（`idx-date`）の「更新 YYYY/MM/DD」（同じ書式）
+- `docs/hormuz/articles/index.html` の一覧カードの `idx-lead` と、日付（`idx-date`）の「更新 YYYY/MM/DD」（同じ書式）
 - `docs/sitemap.xml` の該当 URL の `lastmod`
 - `docs/hormuz/index.html` の「30秒で全体像」内の特別解説ピル（`📉 石油備蓄推移`）の `data-updated` を、記事の `dateModified` と同じ日付にする。
   これで「◯月更新」の札が30日間表示される

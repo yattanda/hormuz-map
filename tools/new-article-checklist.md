@@ -1,6 +1,6 @@
 # 特別解説コラム 新規個別ページ追加手順
 
-「特別解説コラム」に新しいコラムを追加し、同時に個別ページ（`docs/articles/`）としても
+「特別解説コラム」に新しいコラムを追加し、同時に個別ページ（`docs/hormuz/articles/`。URL は `/hormuz/articles/{slug}/`）としても
 公開するときの手順。これに従えば毎回ゼロから構成を考える必要がない。
 
 対象は「機雷除去とは」「代替ルート比較」等、危機終了後も検索され続ける
@@ -15,7 +15,7 @@
 ## 1. テンプレートをコピーする
 
 ```
-tools/article-template.html を docs/articles/{slug}.html としてコピー
+tools/article-template.html を docs/hormuz/articles/{slug}/index.html としてコピー
 ```
 
 ## 2. プレースホルダーを埋める
@@ -44,7 +44,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 
 ## 3. 記事一覧ページに追加する
 
-`docs/articles/index.html` の一覧に新しいカードを追加する。
+`docs/hormuz/articles/index.html` の一覧に新しいカードを追加する（リンクは `/hormuz/articles/{slug}/`）。
 
 ## 4. index.html側にリンクを追加する
 
@@ -56,7 +56,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
   先頭の1枚が全幅、2枚目以降が格子（PC 3列・タブレット 2列・スマホ 1列）になる
 
 - カード本文は要約（3〜5行程度、新しい主張やデータを加えない）
-- カード末尾に「全文を読む」ボタンを設置し `../articles/{slug}.html` へリンク（`/hormuz/` からの文書相対）
+- カード末尾に「全文を読む」ボタンを設置し `articles/{slug}/` へリンク（`/hormuz/` からの文書相対）
 - **インライン style を書かない**（② PR4b-1・2026-10-01 からクラスで書く）。
   色は `col-card--{色}` で選ぶ：`red`・`amber`・`sky`・`green`・`orange`・`violet`。
   新しい色が要るときは `docs/hormuz/index.html` の CSS「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
@@ -81,7 +81,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
   </p>
 
   <!-- 全文リンク -->
-  <a href="../articles/{slug}.html" class="col-card-link">
+  <a href="articles/{slug}/" class="col-card-link">
     📄 全文を読む
   </a>
 </div><!-- /○○コラムカード -->
@@ -95,7 +95,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 構造化データ（`datePublished` / `dateModified`）と同じ値にする。
 
 ```html
-<a href="../articles/{slug}.html" class="jump-pill jump-pill--{色}" data-published="YYYY-MM-DD" data-updated="YYYY-MM-DD">📄 短い見出し</a>
+<a href="articles/{slug}/" class="jump-pill jump-pill--{色}" data-published="YYYY-MM-DD" data-updated="YYYY-MM-DD">📄 短い見出し</a>
 ```
 
 - 公開から30日間は「NEW」、それ以降は更新から30日間「◯月更新」の札が自動で付く（`applyColumnBadges()`）
@@ -111,7 +111,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 
 ```xml
 <url>
-  <loc>https://chokepointlab.com/articles/{slug}.html</loc>
+  <loc>https://chokepointlab.com/hormuz/articles/{slug}/</loc>
   <lastmod>{{YYYY-MM-DD}}</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
@@ -123,7 +123,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 - [ ] `{{ }}` プレースホルダーの置換漏れがないか
 - [ ] canonical URL・OGP URL・構造化データのURLが一致しているか
 - [ ] パンくずのリンク先が正しいか
-- [ ] `docs/articles/index.html` にカードを追加したか
+- [ ] `docs/hormuz/articles/index.html` にカードを追加したか
 - [ ] `docs/hormuz/index.html` の該当カードに「全文を読む」リンクを追加したか
 - [ ] `docs/sitemap.xml` に追加したか
 - [ ] `<head>` に用語集のツールチップの読み込み（`<script defer src="/assets/glossary.js" data-zones=".article-body"></script>`）があるか（テンプレートに入っている。本文に用語のタグを手で書く必要はない）

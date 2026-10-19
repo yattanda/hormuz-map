@@ -1937,8 +1937,9 @@ footer {                                   /* フッター（中央揃え・上�
 <!-- YouTube から来た方へ（動画で扱った地点へ地図を寄せる。項目は focusOn() のキーと対応） -->
 <div id="yt-visitors" class="yt-visitors">
   <span class="yt-visitors-label">▶ YouTube から来た方へ</span>
-  <button type="button" onclick="focusOn('minamitori')" class="yt-visitors-btn">🏝️ 南鳥島のレアアース泥 → 地図で見る</button>
+  <button type="button" onclick="focusOn('malacca')" class="yt-visitors-btn">🚢 マラッカ海峡とサウジの原油 → 地図で見る</button>
   <button type="button" onclick="focusOn('tsugaru')" class="yt-visitors-btn">⚓ 津軽海峡のタンカーの荷 → 地図で見る</button>
+  <button type="button" onclick="focusOn('minamitori')" class="yt-visitors-btn">🏝️ 南鳥島のレアアース泥 → 地図で見る</button>
 </div>
 <div class="glance">
   <div class="glance-panel">
@@ -4285,9 +4286,14 @@ L.marker([2.5,104.0],{icon:mkIcon('🔄','#064e3b',30)}).addTo(map).bindPopup(`
   <div class="p-title tc-green">🔄 マレーシア沖（積み替え）</div>
   <div class="p-body"><strong>ルートB</strong>：ヤンブーからの原油をVLCCに積み替え。3/28着の太陽石油向けもここで積み替え。</div>`);
 
-L.marker([1.5,103.5],{icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindPopup(`
+// マラッカ海峡（長尺4本目 2026-10「ホルムズ停止後、迂回路があってもサウジの原油が日本で前年の9割に戻るまで4か月」）— ?focus=malacca と「YouTube から来た方へ」枠から開く
+const malaccaMarker = L.marker([1.5,103.5],{icon:mkIcon('🚢','#1e3a5f',26)}).addTo(map).bindTooltip('マラッカ海峡', {sticky:true}).bindPopup(`
   <div class="p-title tc-sky-light">🚢 マラッカ海峡</div>
-  <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。</div>`);
+  <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。<br>
+  <strong>通る荷（推定）：</strong>タンカーの推定積載量は、2026年6〜8月に前の年の同じ時期より<strong>約4分の1減</strong><br>
+  <strong>日本に着いたサウジの原油：</strong>迂回路（紅海側のヤンブー）を持つサウジアラビアの原油は、4〜6月に前の年の<strong>半分ほど</strong>。前の年の9割に戻ったのは<strong>7月</strong>、ホルムズが止まって4か月後（日本に着いた月で数えた値）<br>
+  <strong>データの限り：</strong>船の位置のデータは船が自ら出す信号から数えるため、信号を出さずに動く船は数に入らない。映らない動きの量は分かっていない</div>
+  <div class="p-note">出典：IMF PortWatch（2026-10-16確認、積載量は推定値・集計は本サイト）／資源エネルギー庁「石油統計」速報・確報（前の年との比は本サイトの計算）</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : 320 });
 
 L.marker([61.2,210.0],{icon:mkIcon('🇺🇸','#4c1d95',32)}).addTo(map).bindPopup(`
   <div class="p-title tc-violet">🇺🇸 米国（アラスカ）</div>
@@ -4561,6 +4567,7 @@ new MapJump().addTo(map);
 const FOCUS_TARGETS = {
   minamitori: { marker: minamitoriMarker, zoom: 6 },
   tsugaru: { marker: tsugaruMarker, zoom: 7 },
+  malacca: { marker: malaccaMarker, zoom: 6 },
 };
 function focusOn(key, opts) {
   if (!key || !Object.prototype.hasOwnProperty.call(FOCUS_TARGETS, key)) return false;

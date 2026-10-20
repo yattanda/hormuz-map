@@ -1,46 +1,62 @@
 {
-  "updated": "2026年10月20日 06:13 日本時間JST",
+  "updated": "2026年10月21日 07:33 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-shabwa-1019",
-      "title": "シャブワ県の政府軍キャンプにフーシ派が弾道ミサイル3発——地元当局「53人以上死亡・200人負傷」（暫定）",
-      "body": "Al Jazeera（10/19）は、イエメン南部シャブワ県のアル＝アラム軍事キャンプに月曜（10/19）、フーシ派が訓練中の部隊へ弾道ミサイル3発を撃ち込み、シャブワ県当局が少なくとも53人の死亡と200人の負傷を発表したと伝える（原文は「has killed at least 53 people, according to local authorities」。当初は医療筋が少なくとも18人の死亡と述べていた）。フーシ派は「サウジが支援する」軍事基地を標的にしたと述べた（同記事のアルジャジーラ記者の報告）。死者数は暫定で、集計は変わる可能性がある。",
-      "sourceLabel": "Al Jazeera（10/19）",
-      "date": "2026年10月19日（現地）",
-      "label": "🇾🇪 10/19 シャブワ県の政府軍キャンプにフーシ派のミサイル（53人以上死亡）",
-      "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa",
+      "id": "latest-ukmto-178-1020",
+      "title": "UKMTO警報178：オマーン・ドゥクムの東の沖合（アラビア海）でタンカーが軍との「interaction」——発生時刻・船名・被害の記載なし",
+      "body": "UKMTO公式サイトの警報178（Advisory・10/20 20:11 JST発行）は、オマーン・ドゥクムの東約121海里で、タンカーと軍が関わる事案の報告を受けたと伝え、タンカーは「地域で続く軍事活動の一環としてinteractionの対象になった」とする（原文は「the tanker was subject to interaction as part of ongoing military activity in the region」）。当局は事態を把握し調査が続いている。公式の本文に発生時刻・船名・被害・軍の国籍の記載はない。Ship & Bunker（10/20）は発生を「10:00 UTC on Monday」と書くが、公式の一覧の日時欄は10/20 11:04 UTCで、時刻は確定できない。ホルムズ海峡の外の事案で、攻撃や被弾を示す記述はない。",
+      "sourceLabel": "UKMTO公式サイト・Ship & Bunker（10/20）",
+      "date": "2026年10月20日（現地）",
+      "label": "海上",
+      "url": "https://shipandbunker.com/news/emea/328836-tanker-involved-in-incident-with-military-forces-off-oman-ukmto",
       "isLatest": true
     },
     {
-      "id": "latest-irgc-mine-1019",
-      "title": "IRGC「タンカー1隻が海峡南側で機雷に接触、機関室で火災」と主張——AFP配信のみ、独立した確認なし",
-      "body": "AFP配信のKorea Times（10/19 9:41 KST）は、IRGCの声明として、「違反」したタンカーが海峡の南側で機雷に接触し、機関室で爆発と火災が起きたと伝える（原文は「An oil tanker, which was in violation, struck a naval mine south of the Strait of Hormuz」「a fire in its engine room」）。IRGCは、船が「unauthorized southern route」を航行し、位置・航法システムを切っていたと主張した。船名・位置の座標・死傷者の記載はなく、独立した確認の記述もない。10/17〜18にIRGCが主張した炎上タンカーと同じ船かは確認できない。",
-      "sourceLabel": "Korea Times（AFP配信・10/19）",
-      "date": "2026年10月19日（現地）",
-      "label": "⚓ 10/19 IRGC「タンカー1隻が機雷に接触」と主張（AFP配信のみ）",
-      "url": "https://www.koreatimes.co.kr/world/20261019/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards"
+      "id": "latest-irgc-mine-1020",
+      "title": "IRGC「超大型タンカーが機雷に接触して炎上」「2隻が炎上・航行不能」と主張——船名・時期の説明なし、独立した確認なし",
+      "body": "gCaptain（10/20）は、IRGC海軍が「a supertanker caught fire after striking a naval mine south of the Strait of Hormuz」と主張し、別の声明では「two tankers had been set ablaze and disabled by mines along a route south of the strait」と主張したと伝える。同記事は「Neither statement identified the vessels」とし、IRGCは2隻がいつ被弾したとされるのかも示さなかった。JMICの10/18付の勧告は、10/17の主張について「there is no substantiation to these claims」と述べる（gCaptainの引用）。IRGCの主張のみで、独立した確認はない。",
+      "sourceLabel": "gCaptain（10/20）",
+      "date": "2026年10月20日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/iran-claims-more-tankers-hit-mines-in-hormuz-but-evidence-remains-elusive/",
+      "isLatest": false
     },
     {
-      "id": "latest-gcaptain-25-1019",
-      "title": "gCaptain：10月前半に海峡の内外で25隻が標的に——UKMTO警報の集計、9月全体は18件・8月は15件",
-      "body": "gCaptain（10/19）は、イランが海峡を通る船への攻撃を強めているとして、10月の最初の2週間に海峡の内外で25隻が標的になり、9月全体は18件、8月は15件だったと伝える（原文は「In the first two weeks of October, 25 ships were targeted in and around the chokepoint」。英国海事貿易活動部〈UKMTO〉が出した警報の件数による）。同記事は、カーグ島の原油輸出ターミナルに8月下旬からタンカーが接岸していないとも伝える。警報の件数で、攻撃主体の特定ではない。",
-      "sourceLabel": "gCaptain（10/19）",
-      "date": "2026年10月19日（現地）",
-      "label": "⚓ 10/19 10月前半に25隻が標的（UKMTO警報の集計・gCaptain）",
-      "url": "https://gcaptain.com/irans-main-oil-terminals-remain-empty-as-us-blockade-bites/"
+      "id": "latest-shabwa-toll73-1020",
+      "title": "シャブワ県のフーシ派ミサイル攻撃、死者は73人に——県当局の暫定値、行方不明14人・負傷200人超",
+      "body": "Reuters配信（Tribune掲載・10/20）は、シャブワ県の政府治安部隊の訓練キャンプへのフーシ派の攻撃で73人が死亡したと、県のメディア事務所が発表したと伝える（原文は「killed 73 people, the provincial media office said」）。負傷は200人超（知事の発表）、行方不明は14人。The National（10/20 12:01 PM更新）も「At least 73 people were killed」と書く。前回掲載のAl Jazeera（10/19）の「53人」から増えた暫定値で、独立した検証はない。フーシ派は同日、サウジのエネルギー・空港・軍の目標を攻撃したと主張したが、サウジの確認はない（The National）。",
+      "sourceLabel": "Reuters配信（Tribune 10/20）・The National（10/20）",
+      "date": "2026年10月20日（現地）",
+      "label": "攻撃",
+      "url": "https://tribune.com.pk/story/2635932/death-toll-from-houthi-attack-on-yemen-training-camp-rises-to-73",
+      "isLatest": false
     },
     {
-      "id": "latest-oil-close-1019",
-      "title": "原油10/19終値：ブレント12月物109.55ドル（−0.31ドル）——WTI12月物は98.54ドル、11月物は期限前日の薄商いで103.66ドル",
-      "body": "Newsquawk（10/19 19:18 UTC）の見出しは、ブレント12月物が0.31ドル安の109.55ドルで清算したと伝える（原文は「BRENT (Z6) SETTLES USD 0.31 LOWER AT USD 109.55/BBL」。WTI12月物は98.54ドルと書く）。Rallies（USO News）も、ブレントが31セント安の109.55ドルで清算し、期近のWTI11月物は103.66ドル、より流動性の高い12月物は98.54ドルと伝える。WTI12月物の前日比は、Newsquawkが上昇、Ralliesが下落と書き食い違うため、ここでは書かない。",
-      "sourceLabel": "Newsquawk（10/19）・Rallies（10/19）",
-      "date": "2026年10月19日（現地）",
-      "label": "🛢️ 10/19 原油終値 ブレント109.55ドル（Newsquawk・Rallies）",
-      "url": "https://www.newsquawk.com/headlines/crude-wrap-wti-z6-settles-usd-048-higher-at-9854bbl-brent-z6-settles-usd-031-lower-at-usd-10955bbl"
+      "id": "latest-oil-close-1020",
+      "title": "原油10/20終値：ブレント12月物108.79ドル（−0.76ドル）、WTI12月物97.82ドル（−0.72ドル）——WTI11月物は期限を迎え101.79ドル",
+      "body": "Reuters（10/20・Yahoo Finance配信）は、ブレントが「settled down 76 cents, or 0.69%, at $108.79」、WTIの12月物が「settled down 72 cents at $97.82 a barrel」、期限を迎えた11月物が「settled down $1.87, or 1.8%, at $101.79」と書く。Investradeの市況コメントはブレント108.79ドルとWTI11月物101.79ドルで一致し、Newsquawkの見出しはWTI12月物97.82ドルで一致する（ブレントは108.78ドルで1セント差）。Reutersは値下がりの背景に、イラン大統領とパキスタン陸軍参謀長の会談への市場の注目を挙げる一方、フーシ派によるサウジのインフラへの攻撃やペルシャ湾での船舶攻撃の報道が続くと書く。",
+      "sourceLabel": "Reuters（10/20）・Investrade・Newsquawk",
+      "date": "2026年10月20日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://finance.yahoo.com/news/oil-eases-markets-assess-potential-005750414.html",
+      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-thenational-shabwa73-1020",
+      "titleJa": "【The National】シャブワ県のフーシ派攻撃で少なくとも73人死亡・行方不明14人——フーシ派はサウジの施設への攻撃も主張、サウジの確認はなし",
+      "titleEn": "At least 73 killed in Houthi missile attack on military camp in Yemen's Shabwa (The National, updated Oct 20)",
+      "title": "【The National】シャブワ県のフーシ派攻撃で少なくとも73人死亡・行方不明14人——フーシ派はサウジの施設への攻撃も主張、サウジの確認はなし",
+      "country": "UAE",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年10月20日（現地）",
+      "summary": "The National（10/19公開・10/20 12:01 PM更新）は、イエメン・シャブワ県の軍の訓練キャンプへのフーシ派のミサイル攻撃で少なくとも73人が死亡し、200人超が負傷、14人が行方不明だと伝える。フーシ派は同日、サウジのエネルギー・空港・軍の目標を攻撃したと主張したが、サウジの確認はなく、サウジ当局は取材に即座には応じなかった。",
+      "url": "https://www.thenationalnews.com/news/mena/2026/10/19/at-least-18-killed-in-houthi-attack-on-yemeni-government-military-camp-in-shabwa-sources-say/",
+      "isLatest": true
+    },
     {
       "cardBg": "rgba(239,68,68,0.05)",
       "cardBorder": "rgba(239,68,68,0.25)",
@@ -57,7 +73,7 @@
       "date": "2026年10月19日（現地）",
       "summary": "Al Jazeera（10/19）は、イエメン南部シャブワ県のアル＝アラム軍事キャンプへのフーシ派の弾道ミサイル3発による攻撃で、地元当局が少なくとも53人の死亡と200人の負傷を発表したと伝える。当初の死者数は18人で、フーシ派は「サウジが支援する」軍事基地を標的にしたと述べた。",
       "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "cardBg": "rgba(239,68,68,0.05)",
@@ -1931,6 +1947,47 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月21日",
+      "items": [
+        {
+          "id": "latest-shabwa-1019",
+          "title": "シャブワ県の政府軍キャンプにフーシ派が弾道ミサイル3発——地元当局「53人以上死亡・200人負傷」（暫定）",
+          "body": "Al Jazeera（10/19）は、イエメン南部シャブワ県のアル＝アラム軍事キャンプに月曜（10/19）、フーシ派が訓練中の部隊へ弾道ミサイル3発を撃ち込み、シャブワ県当局が少なくとも53人の死亡と200人の負傷を発表したと伝える（原文は「has killed at least 53 people, according to local authorities」。当初は医療筋が少なくとも18人の死亡と述べていた）。フーシ派は「サウジが支援する」軍事基地を標的にしたと述べた（同記事のアルジャジーラ記者の報告）。死者数は暫定で、集計は変わる可能性がある。",
+          "sourceLabel": "Al Jazeera（10/19）",
+          "date": "2026年10月19日（現地）",
+          "label": "🇾🇪 10/19 シャブワ県の政府軍キャンプにフーシ派のミサイル（53人以上死亡）",
+          "url": "https://www.aljazeera.com/news/2026/10/19/at-least-18-killed-in-houthi-attack-on-military-camp-in-yemens-shabwa"
+        },
+        {
+          "id": "latest-irgc-mine-1019",
+          "title": "IRGC「タンカー1隻が海峡南側で機雷に接触、機関室で火災」と主張——AFP配信のみ、独立した確認なし",
+          "body": "AFP配信のKorea Times（10/19 9:41 KST）は、IRGCの声明として、「違反」したタンカーが海峡の南側で機雷に接触し、機関室で爆発と火災が起きたと伝える（原文は「An oil tanker, which was in violation, struck a naval mine south of the Strait of Hormuz」「a fire in its engine room」）。IRGCは、船が「unauthorized southern route」を航行し、位置・航法システムを切っていたと主張した。船名・位置の座標・死傷者の記載はなく、独立した確認の記述もない。10/17〜18にIRGCが主張した炎上タンカーと同じ船かは確認できない。",
+          "sourceLabel": "Korea Times（AFP配信・10/19）",
+          "date": "2026年10月19日（現地）",
+          "label": "⚓ 10/19 IRGC「タンカー1隻が機雷に接触」と主張（AFP配信のみ）",
+          "url": "https://www.koreatimes.co.kr/world/20261019/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards"
+        },
+        {
+          "id": "latest-gcaptain-25-1019",
+          "title": "gCaptain：10月前半に海峡の内外で25隻が標的に——UKMTO警報の集計、9月全体は18件・8月は15件",
+          "body": "gCaptain（10/19）は、イランが海峡を通る船への攻撃を強めているとして、10月の最初の2週間に海峡の内外で25隻が標的になり、9月全体は18件、8月は15件だったと伝える（原文は「In the first two weeks of October, 25 ships were targeted in and around the chokepoint」。英国海事貿易活動部〈UKMTO〉が出した警報の件数による）。同記事は、カーグ島の原油輸出ターミナルに8月下旬からタンカーが接岸していないとも伝える。警報の件数で、攻撃主体の特定ではない。",
+          "sourceLabel": "gCaptain（10/19）",
+          "date": "2026年10月19日（現地）",
+          "label": "⚓ 10/19 10月前半に25隻が標的（UKMTO警報の集計・gCaptain）",
+          "url": "https://gcaptain.com/irans-main-oil-terminals-remain-empty-as-us-blockade-bites/"
+        },
+        {
+          "id": "latest-oil-close-1019",
+          "title": "原油10/19終値：ブレント12月物109.55ドル（−0.31ドル）——WTI12月物は98.54ドル、11月物は期限前日の薄商いで103.66ドル",
+          "body": "Newsquawk（10/19 19:18 UTC）の見出しは、ブレント12月物が0.31ドル安の109.55ドルで清算したと伝える（原文は「BRENT (Z6) SETTLES USD 0.31 LOWER AT USD 109.55/BBL」。WTI12月物は98.54ドルと書く）。Rallies（USO News）も、ブレントが31セント安の109.55ドルで清算し、期近のWTI11月物は103.66ドル、より流動性の高い12月物は98.54ドルと伝える。WTI12月物の前日比は、Newsquawkが上昇、Ralliesが下落と書き食い違うため、ここでは書かない。",
+          "sourceLabel": "Newsquawk（10/19）・Rallies（10/19）",
+          "date": "2026年10月19日（現地）",
+          "label": "🛢️ 10/19 原油終値 ブレント109.55ドル（Newsquawk・Rallies）",
+          "url": "https://www.newsquawk.com/headlines/crude-wrap-wti-z6-settles-usd-048-higher-at-9854bbl-brent-z6-settles-usd-031-lower-at-usd-10955bbl"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月20日",
       "items": [

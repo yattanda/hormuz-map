@@ -140,7 +140,8 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
 /* 最新の点だけ差し色で目立たせる（状態の色は使わない） */
 .article-chart .ch-pt--latest { fill: var(--c-accent); stroke: var(--c-bg); stroke-width: 1.5; }
 .article-chart .ch-val--latest { fill: var(--c-accent); }
-.article-fineprint { font-size: 0.72rem; color: var(--c-text-mute); margin-top: 6px; }
+/* .article-body p（0,1,1）より強くする。グラフの下の注記と出典の行（Codex の指摘・PR #96） */
+.article-body p.article-fineprint { font-size: 0.72rem; color: var(--c-text-mute); margin-top: 6px; }
 
 /* 関連コラム */
 .related-articles {

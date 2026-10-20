@@ -39,7 +39,7 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 | 4 | `イラン 米国 攻撃 最新` | TICKER・速報インシデント・30秒カラム「主な動き」 |
 | 5 | `ホルムズ海峡 封鎖 日本 影響` | シナリオ・日本フロー |
 | 6 | `Iran Israel US military latest`（英語） | 速報インシデント・シナリオ |
-| 7 | 現地メディア（Al Jazeera / Tehran Times 等）の当日記事 | 🌐 現地メディア視点 |
+| 7 | 現地メディア（Al Jazeera / Tehran Times 等）の当日記事 | 現地メディア視点 |
 | 8 | `CENTCOM blockade Iran vessels redirected`（英語） | 地図の軍事レイヤー（`military.json`）・ルート表 |
 | 9 | `US aircraft carrier Middle East Iran`（英語） | 地図の軍事レイヤー（`military.json`） |
 
@@ -143,8 +143,8 @@ Agent ツール（`subagent_type: general-purpose`）へ渡す。`{…}` だけ�
 
 | 担当 | 確かめること | 本文での使い道 |
 |---|---|---|
-| V1 船舶・軍事 | 前回の更新以降の被弾・拿捕・IRGC の通告（gCaptain・UKMTO・Arab News 等を名指しで検索） | 速報インシデント・主な動き・旧ルート行・シナリオ🅒🅓 |
-| V2 原油価格 | 直近の米国の取引日の終値を2出典で一致させる | 30秒カラム「海峡の今」・バッジ・TICKER・シナリオ🅑・フッター |
+| V1 船舶・軍事 | 前回の更新以降の被弾・拿捕・IRGC の通告（gCaptain・UKMTO・Arab News 等を名指しで検索） | 速報インシデント・主な動き・旧ルート行・シナリオ C・D |
+| V2 原油価格 | 直近の米国の取引日の終値を2出典で一致させる | 30秒カラム「海峡の今」・バッジ・TICKER・シナリオ B・フッター |
 | V3 数値・イエメン／紅海 | 本文に入れる予定の数値の原文（期間・対象・基準値）と、イエメン・紅海・迂回路の動き | 数値を含むすべての箇所・ルートA／B 行 |
 
 - **情勢が膠着していそうな日も3本とも動かす**（「変化がない」ことの確認も記載事項。日によって数を変えると確認の抜けが出る）
@@ -202,7 +202,7 @@ python tools/validate_daily.py
   （2026-09-15、ルートB＝サウジ東西PLで見出しだけ更新され本文が4/12時点のまま、という事故が
   実際に発生したための追加）。**WARN が出た行は、その日のうちにそのルートを検索して確かめ直す**（読み流さない）：
   - 変化があれば、その行の「最新」を書き換える（前の「最新」は経緯へ移す。「ルート表の型」）
-  - 変化がなくても `🔁 最新 <time datetime="YYYY-MM-DD">M/D JST</time> 再確認：` で、確かめた内容と出典
+  - 変化がなくても `最新 <time datetime="YYYY-MM-DD">M/D JST</time> 再確認：` で、確かめた内容と出典
     （記事が無いときは `確認方法：主要報道の検索（M/D）`）を書く。これで WARN が消える
   - **「予定」「未確認」と書いてある記述は、その予定の時期を過ぎたら必ず確かめ直す**
   - （2026-09-26：A・C🇺🇸・C🌍・D の4行が 9/15 の一括再確認のまま11日放置され、C🇺🇸 に「メキシコ産原油は7月初便予定・
@@ -404,14 +404,14 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 **インライン style を書かない。**既存の項目の見た目をまねて `style="..."` を足すと、CSS のクラス指定が効かなくなる。
 
-- 見出し部（毎日）：件名は `<strong class="incident-headline">`、日付バッジは `<span class="incident-badge">📅 M/D HH:MM 更新</span>`。
+- 見出し部（毎日）：件名は `<strong class="incident-headline">`、日付バッジは `<span class="incident-badge">M/D HH:MM 更新</span>`（頭に 📅 を書かない。2026-10-20 課題46 D3 PR 5b）。
   バッジの文字の形は `tools/validate_daily.py` が照合するので変えない
 - 以前あった「【M/D HH:MM 更新】…」の要約段落（`display:block` の `<strong>`）は**廃止した。書かない**
 - 一覧：新しい項目を `<ul id="incident-list" class="incident-list">` の**先頭**に足す
 
 ```html
 <li class="incident-item incident-item--danger">
-  <span class="incident-tag">⚓ 9/21 現地・攻撃主体不明</span>
+  <span class="incident-tag"><span class="cat cat-sea">海上</span>9/21 タンカーに飛翔体・攻撃主体不明</span>
   <span class="incident-body">本文（出典を文中に書く）</span>
 </li>
 ```
@@ -424,6 +424,24 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | `incident-item--positive` | 合意・再開・緩和 | 「好転」緑の札 |
 
 - 札の語と色は CSS が付ける（2026-10-20 課題46 D3 PR 5）。タグに「危険」などの語や色の絵文字（🔴🟡🟢）を書かない
+- **タグの頭は分類の札**（2026-10-20 課題46 D3 PR 5b）。下の「分類の札」の6つから1つを選び、`<span class="cat cat-…">語</span>` をタグの先頭に書く（空白を入れずに続けて日付）。**絵文字（⚓🛢️🕊️ など）・国旗を書かない**。国・地域は国名の文字でタグの文に書く。
+  どれにも当たらない・判断がつかないときは「その他」。分類の札は状態ではないので枠だけで表示される（色は付かない）
+
+### 分類の札（2026-10-20 課題46 D3 PR 5b・設計書 `tools/site-redesign-design.md` §2-2）
+
+| 札（クラスと語） | 使う場面 | アイコン（CSS が付ける） |
+|---|---|---|
+| `<span class="cat cat-sea">海上</span>` | **船・港・航路での出来事**（被弾・機雷の接触・拿捕・足止め・通航の数を含む） | タンカー |
+| `<span class="cat cat-attack">攻撃</span>` | **陸の施設・都市・基地・空港への攻撃**（ミサイル・無人機・空爆） | 被弾 |
+| `<span class="cat cat-mil">軍事</span>` | 部隊の展開・艦隊・軍の発表・演習・作戦（攻撃そのものでないもの） | 軍艦 |
+| `<span class="cat cat-oil">原油・市場</span>` | 原油価格・市場・パイプライン・生産と輸出・制裁の経済面 | 原油 |
+| `<span class="cat cat-dip">外交</span>` | 協議・声明・合意・会合・仲介・核の協議 | なし（文字だけ） |
+| `<span class="cat cat-other">その他</span>` | 上のどれにも当たらないもの（人道・国内政治・日本関係など） | 汎用 |
+
+- **海上と攻撃の分け方**：船が狙われたら海上、陸の目標なら攻撃（2026-10-20 決定・運営者）。両方あるときは主な出来事の方
+- クラスと語の組は上の6通りだけ（`validate_daily.py` が NG にする）。語を言い換えない（「海運」「軍事衝突」などにしない）
+- 日次が書く所（速報インシデントのタグ・主な動きの件名・ステータスバッジ・30秒カラムの3行・ルート表の `route-tag`・ティッカー）の**頭に絵文字を書かない**。`validate_daily.py` が NG にする
+- 増減は ↑↓ で書く（▲▼ は開閉の記号だけ。「▲30万BPD」のような減少の ▲ も ↓ にする）
 
 - 表示は先頭3件。4件目以降は `applyIncidentFold()` が自動で折りたたむ（手で折りたたみ用の箱を作らない）
 - **月1回の退避**：ページに残すのは直近30日分。30日より古い項目を `<li>` ごと切り取り、
@@ -449,18 +467,18 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ```html
 <li class="key-move key-move--danger"><a href="#incident">
   <time class="key-move-date" datetime="2026-09-21">9/21</time>
-  <span class="key-move-title">⚓ ホルムズ海峡入口でタンカーに飛翔体が着弾、乗組員2人軽傷——攻撃主体は特定されず</span>
+  <span class="key-move-title">ホルムズ海峡入口でタンカーに飛翔体が着弾、乗組員2人軽傷——攻撃主体は特定されず</span>
   <span class="key-move-src">UKMTO・AP通信</span>
 </a></li>
 ```
 
   - `datetime` は出来事の日付（現地）を `YYYY-MM-DD` で。表示は `M/D`
-  - 件名は1文（40〜60字）。出典は主なもの1〜2件を短く（「ほか」で省略してよい）
+  - 件名は1文（40〜60字）。出典は主なもの1〜2件を短く（「ほか」で省略してよい）。**頭に絵文字・国旗・分類の札を書かない**（状態の札は CSS が付ける）
   - モディファイアは速報インシデントと同じ4種（`key-move--danger` 危険／`--warning` 注意／`--info` 札なし／`--positive` 好転。札は CSS が件名の頭に付ける）
 - **ステータスバッジ**：`<div class="glance-badges">` の中に3〜6枚
 
 ```html
-<span class="status-badge status-badge--warning">🛢️パイプライン9/22低速再開・全面復旧未検証</span>
+<span class="status-badge status-badge--warning">パイプライン9/22低速再開・全面復旧未検証</span>
 ```
 
 | モディファイア | 使う場面 | 表示 |
@@ -471,13 +489,14 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | `status-badge--neutral` | 価格など中立の数値 | 枠だけ |
 | `status-badge--positive` | 再開・緩和・変化なしの安定 | 緑の色面 |
 
+- バッジの文と30秒カラムの3行の頭（文の頭を含む）に絵文字・国旗を書かない（2026-10-20 課題46 D3 PR 5b）
 - `tools/validate_daily.py` が「30秒カラムのインライン style」「主な動きの件数・並び・最新日」を WARN で確認する
 
 ---
 
 ## ルート表の型（2026-09-27〜・② PR3）
 
-**インライン style を書かない。**見出し `🚢 全ルート現況サマリー` の下にあった長文のリード文（`<p class="sec-lead">`、【外交】【中央航路】…の6分類）は**廃止した。書かない。**
+**インライン style を書かない。**見出し `全ルート現況サマリー` の下にあった長文のリード文（`<p class="sec-lead">`、【外交】【中央航路】…の6分類）は**廃止した。書かない。**
 見出しの `sec-h2-sub` の日付だけは従来どおり毎回当日にする（ルール1）。
 
 ### どの行に書くか（2026-09-27 決定 U2：ラベルではなく中身で振り分ける）
@@ -487,8 +506,8 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | ホルムズ海峡の中を通る航行（中央航路・南側航路〈オマーン沿岸 TSS〉とも）、通航量、封鎖、海峡をめぐる協議 | 旧ルート（`jf-td-old`） |
 | サウジ東西パイプライン・ヤンブー港・紅海・バブエルマンデブ海峡（フーシ派） | ルートB（`jf-td-B`） |
 | ADCOP パイプライン・フジャイラ港 | ルートA（`jf-td-A`） |
-| 米国（アラスカ・メキシコ湾岸）・メキシコからの対日原油 | ルートC🇺🇸（`jf-td-C_US`） |
-| ブラジル・西アフリカなど南半球からの対日原油 | ルートC🌍（`jf-td-C_GL`） |
+| 米国（アラスカ・メキシコ湾岸）・メキシコからの対日原油 | ルートC（米国）（`jf-td-C_US`） |
+| ブラジル・西アフリカなど南半球からの対日原油 | ルートC（南半球ほか）（`jf-td-C_GL`） |
 | イランへの通航料を払っての通過 | ルートD（`jf-td-D`） |
 | 外交全般・船舶インシデント・原油価格 | 表には書かない（30秒カラム・速報インシデント・シナリオが担う） |
 
@@ -498,12 +517,12 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ```html
 <td class="route-detail">
-  <p class="route-latest"><strong class="route-tag t-info">🕊️ 最新 <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>本文。
+  <p class="route-latest"><strong class="route-tag t-info">最新 <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>本文。
     <small class="route-src">出典：The National（9/23）</small></p>
   <p class="route-summary">そのルートの現況の要点（状態が変わったときだけ書き換える）。
     <small class="route-src">出典：…</small></p>
   <details class="route-history"><summary>経緯を見る</summary>
-    <p class="route-entry"><strong class="route-tag t-neutral">🔁 <time datetime="2026-09-22">9/22 07:25 JST</time> 再確認：</strong>本文。
+    <p class="route-entry"><strong class="route-tag t-neutral"><time datetime="2026-09-22">9/22 07:25 JST</time> 再確認：</strong>本文。
       <small class="route-src">出典：…</small></p>
   </details>
 </td>
@@ -512,13 +531,13 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - **新しい情報を足すとき**：いまの `p.route-latest` を `p.route-entry` に変え（`class` と「最新 」の3文字を消すだけ）、
   `details.route-history` の**先頭**へ移す。そのうえで新しい `p.route-latest` を書く。**`route-latest` は各行ちょうど1件**
   （`details` が無い行は、そのとき `<details class="route-history"><summary>経緯を見る</summary>…</details>` を作る）
-- **変化がないとき**（鮮度 WARN が出た行）：同じ手順で `🔁 最新 <time datetime="YYYY-MM-DD">M/D JST</time> 再確認：` を書く。
+- **変化がないとき**（鮮度 WARN が出た行）：同じ手順で `最新 <time datetime="YYYY-MM-DD">M/D JST</time> 再確認：` を書く。
   確かめた内容と出典（記事が無いときは `<small class="route-src">確認方法：主要報道の検索（M/D）</small>`）
 - `<time datetime>` は**確かめた日（JST）**を `YYYY-MM-DD` で。表示は `M/D HH:MM JST` か `M/D JST`
 - 経緯（`details` の中）は新しい順。過去に書いた本文は**書き換えない・消さない**（移すだけ）
 - 出典は `<br><small style=…>` ではなく `<small class="route-src">`（ブロック表示になる）。段落の間の `<br><br>` も書かない
 - 文中の強調は `<strong class="t-*">`。**2026-10-20（課題46 D3 PR 5）から `t-*` で色は付かない**（`t-neutral` だけ補助の色、ほかは本文の色の太字）。
-  クラスは中身の種類の印として、これまでどおり書く。行の状態は「状態」の列の札で示す。強調や `route-tag` の頭に色の絵文字（🔴🟠🟡🟢）を書かない
+  クラスは中身の種類の印として、これまでどおり書く。行の状態は「状態」の列の札で示す。強調や `route-tag` の頭に絵文字（色の絵文字 🔴🟠🟡🟢、⚓🔁🕊️・国旗などすべて）を書かない（2026-10-20 課題46 D3 PR 5b）。`route-tag` に分類の札は付けない（行がそのルート）
 
 | クラス | 使う場面 |
 |---|---|
@@ -559,15 +578,15 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ```html
 <!-- 2026-10-11〜：日付 → シナリオ4本（sc-grid）→ 補足（sc-update）の順 -->
-<div class="sc-update-head"><span class="sc-update-date">📊 2026年9月29日 09:12 JST 更新</span></div>
+<div class="sc-update-head"><span class="sc-update-date">2026年9月29日 09:12 JST 更新</span></div>
 <div class="sc-grid">…シナリオ4本…</div>
 <!-- シナリオ確率更新補足 -->
 <div class="sc-update">
-  📊 <strong>今日の動きの要約：</strong><br>
-  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 根拠<br>
-  🅑 膠着継続 <span class="sc-trend">↑</span> — 根拠<br>
-  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
-  🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↓</span> — 根拠<br>
+  <strong>今日の動きの要約：</strong><br>
+  <b class="sc-key">A</b> 段階的MOU履行成功 <span class="sc-trend">→</span> — 根拠<br>
+  <b class="sc-key">B</b> 膠着継続 <span class="sc-trend">↑</span> — 根拠<br>
+  <b class="sc-key">C</b> MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
+  <b class="sc-key">D</b> 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↓</span> — 根拠<br>
   <strong class="sc-update-caveat">断定を避ける注記。</strong><br>
   <div class="sc-sync-note">…（確率の同期の注記。日次では触らない）…</div>
   <div class="sc-ai-note">…（AI推定の注記。日次では触らない）…</div>
@@ -575,9 +594,10 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ```
 
 - 日付を書くのは `sc-update-date` の1か所だけ。ヘッダーと同じ日時にする
+- 各行の頭は `<b class="sc-key">A</b>`〜`D`（2026-10-20 課題46 D3 PR 5b。以前の 🅐〜🅓・📊 は書かない）
 - **並び（2026-10-11〜）**：見出しの直下に日付（`div.sc-update-head`）、その直下にシナリオ4本、補足と但し書き（`div.sc-update`）はその後。運営者の指示で、読者が先にシナリオ本体を見るようにした
-- **文字数の目安（2026-10-11〜）**：冒頭の要約 **150字**・🅐〜🅓 の各行 **170字**・但し書き **150字**。根拠は1〜2点に絞り、細部は速報インシデントへ。超えたら `validate_daily.py` が WARN を出す
-  （10/11 は 🅒 の行が 610字あった）
+- **文字数の目安（2026-10-11〜）**：冒頭の要約 **150字**・A〜D の各行 **170字**・但し書き **150字**。根拠は1〜2点に絞り、細部は速報インシデントへ。超えたら `validate_daily.py` が WARN を出す
+  （10/11 は C の行が 610字あった）
 - `sc-sync-note` は日次では触らない・**日付を書かない**（2026-10-07〜。確率がいつの値かは、JS が同期元の `updated_at` を `#sc-sync-at` に入れる）
 - 矢印（→・↑・↓）は `<span class="sc-trend">` の中の文字だけを変える
 - `sc-ai-note`・`sc-ai-variance`・`#sc-ctx-note` は日次では触らない（`#sc-ctx-note` は JS が出し入れする）
@@ -595,7 +615,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ### シナリオフッター（[S08]・`div.sc-footer`）
 
 ```html
-<h3 class="sc-focus-h">🔍 次の焦点 5つ<span class="label-scenario sc-h2-label">分析</span></h3>
+<h3 class="sc-focus-h">次の焦点 5つ<span class="label-scenario sc-h2-label">分析</span></h3>
 <ul class="sc-focus-list">
   <li>① <strong>焦点1</strong></li>
   …
@@ -604,7 +624,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 - ラベル「分析」は見出しの中（件数の直後）に置く。**一語のまま・日付を書かない**（2026-10-07〜。以前は一覧の下に単独で置いていて、押せるボタンのように見えた）。
   見出しの件数を書き換えるときに、`<span class="label-scenario sc-h2-label">分析</span>` を消さない
-- `<li>` と `<strong>` にクラスも style も付けない（色は `.sc-focus-list` が決める）。見出しは「🔍 次の焦点 N つ」を件数に合わせる
+- `<li>` と `<strong>` にクラスも style も付けない（色は `.sc-focus-list` が決める）。見出しは「次の焦点 N つ」を件数に合わせる（頭に絵文字を書かない）
 - `tools/validate_daily.py` が「シナリオ（`<!-- SCENARIOS -->`〜`<!-- STATS -->`）のインライン style」を WARN で確認する
 
 ---
@@ -614,7 +634,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 **インライン style を書かない。**1件は2行：
 
 ```html
-<div>📅 <strong>2026年9月29日 09:12 JST</strong> 更新</div>
+<div><strong>2026年9月29日 09:12 JST</strong> 更新</div>
 <div><span class="log-date">2026/09/29 09:12</span> — <strong class="log-tag">【超重大更新】</strong>本文</div>
 ```
 
@@ -717,7 +737,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   （`validate_daily.py` が7日以上残っていると WARN を出す）
 - ファイルは CRLF・BOM なし。JSON として壊さない（`validate_daily.py` が NG にする）
 - ヘッダーの日時の横に出る「（N時間前）」と、72時間を超えたときの注意書きは、ページの JS がヘッダーの日時から計算する。
-  **日次更新では何も書かない**（ヘッダーの日時を従来どおり `📅YYYY年M月D日 HH:MM JST` の形で書けばよい）
+  **日次更新では何も書かない**（ヘッダーの日時を従来どおり `YYYY年M月D日 HH:MM JST` の形で書けばよい）
 
 ### `<!-- COUNTDOWN -->` には何も書かない
 
@@ -748,7 +768,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 - 警戒レベル表示：`<span class="badge-item badge-alert">警戒レベル：最高</span>` ← 情勢に応じて「最高／高／中」を変える。
   **括弧書きの要約・絵文字を足さない**（2026-09-25〜。要約は30秒カラムに書く。以前は約440字の要約が入り、スマホで冒頭を占領していた）
-- 更新日時表示（例：📅 2026年4月17日 11:12 JST）← 当日の JST 時刻に更新
+- 更新日時表示（例：`<span class="badge-item badge-date">2026年4月17日 11:12 JST</span>`。頭に 📅 を書かない）← 当日の JST 時刻に更新
 - 危機の日数（`#blockade-days`・表示は「危機N日目（2/28〜）」）は、**HTML の静的な数字を毎回書き換える**（上の「本体ヘッダーの『危機N日目』の数字も毎回書き換える」のとおり）。
   画面の表示はページの JS が計算して上書きするが、HTML の数字は JS が動かないときの予備として残る。直後の JS は触らない
   - 2026-02-28（開戦日）を1日目とした日数。**特定の封鎖の日数ではない**（2026-10-02 に「封鎖N日目」から改名。`tools/blockade-term-policy.md`）
@@ -761,7 +781,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ### ルール1：全ルート現況サマリーの日付
 
-- `🚢 全ルート現況サマリー` の日付は毎回当日の日時（JST）に更新する
+- `全ルート現況サマリー` の日付は毎回当日の日時（JST）に更新する
 - **日付の場所は見出し内の `<span class="sec-h2-sub">`**。見出しの下のリード文（`<p class="sec-lead">`）は
   2026-09-27 に廃止した。ルートごとの内容は表の各行の「最新」に書く（「ルート表の型」）
 - ルート情報に変更がない週も日付を更新し末尾に「再確認済」を付ける
@@ -775,7 +795,11 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ### ルール3：膠着日の表記
 
 情勢に大きな変化がない日は、TICKER の末尾に以下を追記する：
-「｜📋 MM/DD HH:MM JST 確認済——新たな進展なし（膠着継続）」
+「｜MM/DD HH:MM JST 確認済——新たな進展なし（膠着継続）」
+
+### ルール4：TICKER の項目の頭
+
+- 項目（「｜」で区切った1件）の頭に絵文字・国旗を書かない。`【見出し】M/D。本文（出典。M/D HH:MM JST 追記）` の形で書く（2026-10-20 課題46 D3 PR 5b）
 進展があった日はこの行は不要（追加しない）。
 
 ---
@@ -796,6 +820,9 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 `latest` / `archive.items` の各アイテムは以下の6フィールドが必須：
 `title`・`body`・`sourceLabel`・`date`・`label`・`url`
+
+- **`label` は分類の語**（2026-10-20 課題46 D3 PR 5b）：`海上`・`攻撃`・`軍事`・`原油・市場`・`外交`・`その他` の6つから1つを、そのまま書く（絵文字・国旗・見出しの文・日付を書かない）。
+  選び方は「速報インシデントの型」の「分類の札」と同じ。ページの JS が札にして出す。**過去の項目の `label` は書き換えない**（表示のときに読み替える）
 
 旧フィールド名（`headline`・`summary`・`source`・`date_local`・`date_jst`・`tags`）は使用禁止。
 `archive` のバッチキーは `batchLabel`（旧 `label` は使用禁止）。

@@ -103,8 +103,9 @@ def load_json(path: Path):
 # ── 日付の抽出 ──────────────────────────────────────────────
 # index.html 側。いずれも日次更新の対象
 PAT_DATEMODIFIED = re.compile(r'"dateModified":\s*"(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})')
-PAT_HEADER = re.compile(r'badge-date">\s*📅\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
-PAT_TICKER = re.compile(r'📅\s*(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})\s*更新')
+# 日付の頭の 📅・📊 は D3 PR 5b（2026-10-20）で外した。古い書き方でも拾えるよう、絵文字は有っても無くてもよい
+PAT_HEADER = re.compile(r'badge-date">\s*(?:📅\s*)?(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
+PAT_TICKER = re.compile(r'incident-badge">\s*(?:📅\s*)?(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})\s*更新')
 # ハブ（docs/index.html）の「危機マップの最終更新」の静的な予備。年を持たないので月日だけ照合する
 PAT_HUB_UPDATED = re.compile(r'id="hub-updated">(\d{1,2})/(\d{1,2})\s+(\d{1,2}:\d{2})<')
 # 本体ヘッダーの「危機N日目」の静的な予備（表示は JS が計算して上書きする）
@@ -149,7 +150,7 @@ PAT_STOCKPILE_POPUP = re.compile(r'石油備蓄：</strong>(\d+)日分（[^）]*
 PAT_STOCKPILE_NOTE = re.compile(r'合計は約(\d+)日分（(\d{4})年(\d{1,2})月(\d{1,2})日時点）')
 # 主要指標の備蓄カード（時点の行 → 見出し → 合計の数字）。インライン style・クラスのどちらの書き方でも拾う
 PAT_STOCKPILE_CARD = re.compile(
-    r'>(\d{4})年(\d{1,2})月(\d{1,2})日時点（速報）</div>\s*<div[^>]*>📊 日本の石油備蓄</div>\s*'
+    r'>(\d{4})年(\d{1,2})月(\d{1,2})日時点（速報）</div>\s*<div[^>]*>(?:📊\s*)?日本の石油備蓄</div>\s*'
     r'<div class="stat-num[^"]*"[^>]*>(\d+)<span')
 # ハブ（docs/index.html）の「主要な数字」。4か所目（2026-10 の構造再編で追加・設計書 s11-10-design.md D6-補）
 PAT_STOCKPILE_HUB = re.compile(
@@ -245,7 +246,7 @@ def check_ticker(html: str, base: str) -> None:
     """速報バナーの「M/D HH:MM 更新」。年を持たないので月日だけ照合する。"""
     hits = PAT_TICKER.findall(html)
     if not hits:
-        warn("index.html の速報バナー「📅 M/D HH:MM 更新」を検出できませんでした（構造が変わった可能性）")
+        warn("index.html の速報インシデントの日付バッジ「M/D HH:MM 更新」を検出できませんでした（構造が変わった可能性）")
         return
     want = (int(base[5:7]), int(base[8:10]))
     bad = [f"{mm}/{dd}" for mm, dd, _ in hits if (int(mm), int(dd)) != want]
@@ -976,7 +977,7 @@ UNRESOLVED_WORDS = ("終値かは未確認", "終値未確認", "食い違", "�
 OFFICIAL_UNREAD_WORDS = ("公式の本文は未確認", "公式の本文は読めていない")
 PAT_TICKER_TEXT = re.compile(r'<span class="ticker-text">(.*?)</span>', re.S)
 PAT_SC_UPDATE = re.compile(r'<div class="sc-update">.*?<div class="sc-sync-note">', re.S)
-PAT_SC_UPDATE_DATE = re.compile(r'sc-update-date">\s*📊\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
+PAT_SC_UPDATE_DATE = re.compile(r'sc-update-date">\s*(?:📊\s*)?(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
 PAT_LOG_FIRST = re.compile(r'<span class="log-date">(\d{4})/(\d{2})/(\d{2})\s+(\d{1,2}:\d{2})</span>')
 PAT_SC_SYNC_NOTE = re.compile(r'<div class="sc-sync-note">(.*?)</div>', re.S)
 PAT_SC_FOOTER_LABEL = re.compile(r'<h3 class="sc-focus-h">[^<]*<span class="label-scenario[^"]*">(.*?)</span>\s*</h3>', re.S)
@@ -1050,16 +1051,19 @@ def check_text_lengths(html: str) -> None:
         warn("シナリオの補足（div.sc-update）を検出できず、文字数を確認できません")
         return
     body = m.group(0)
+    PAT_KEY = re.compile(r'sc-key">([A-D])<|([🅐🅑🅒🅓])')   # 各行の頭は <b class="sc-key">A</b>（D3 PR 5b。旧 🅐〜🅓）
+    seen_summary = False
     for part in body.split("<br>"):
+        mm = PAT_KEY.search(part)
         if "sc-update-caveat" in part:
             label, limit = "但し書き", TEXT_LIMIT_SC_CAVEAT
-        elif "📊" in part and "<strong>" in part:
+        elif mm:
+            label, limit = (mm.group(1) or "ABCD"["🅐🅑🅒🅓".index(mm.group(2))]) + " の行", TEXT_LIMIT_SC_LINE
+        elif "<strong>" in part and not seen_summary:   # 冒頭の要約（旧 📊 の行）
             label, limit = "冒頭の要約", TEXT_LIMIT_SC_SUMMARY
+            seen_summary = True
         else:
-            mm = re.search(r"[🅐🅑🅒🅓]", part)
-            if not mm:
-                continue
-            label, limit = mm.group(0) + " の行", TEXT_LIMIT_SC_LINE
+            continue
         n = plain_len(part.split('<div class="sc-sync-note">')[0])
         if n > limit:
             warn(f"シナリオの補足「{label}」が {n}字（目安 {limit}字）。根拠は1〜2点に絞る")
@@ -1163,6 +1167,51 @@ def check_state_labels(html: str) -> None:
            "「読み込み中…」「取得できませんでした」「内訳は未公表（時点）」の型で書く")
     else:
         ok("状態の表示に古い表記なし（内訳確認中・読み込み中...）")
+
+
+CATS = {"sea": "海上", "attack": "攻撃", "mil": "軍事", "oil": "原油・市場", "dip": "外交", "other": "その他"}
+PAT_EMOJI_HEAD = re.compile(r"\s*(?:[\U0001F1E6-\U0001F1FF]|[\U0001F300-\U0001FAFF☀-➿⬀-⯿⌀-⏿])")
+
+
+def check_categories(html: str, news: dict | None) -> None:
+    """分類の札と絵文字（課題46 D3 PR 5b・2026-10-20 追加。設計書 §2-2）。
+
+    日次が書く所の頭に絵文字を書かない（分類は札の語で書く）。札はクラスと語の組が6通りのどれか。
+    news_data.json の latest の label は6つの語のどれか（過去分は表示のときに読み替えるので見ない）。
+    """
+    bad = []
+    places = (("速報インシデント", r'<span class="incident-tag">(?:<span class="cat [^"]+">[^<]*</span>)?(.*?)</span>'),
+              ("主な動き", r'<span class="key-move-title">(.*?)</span>'),
+              ("ステータスバッジ", r'<span class="status-badge[^"]*">(.*?)</span>'),
+              ("ルート表の route-tag", r'<strong class="route-tag[^"]*">(.*?)</strong>'),
+              ("30秒カラム", r'<span class="glance-text">(.*?)</span>'))
+    for label, pat in places:
+        hits = [x[:20].strip() for x in re.findall(pat, html, re.S) if PAT_EMOJI_HEAD.match(x)]
+        if hits:
+            bad.append(f"{label} {len(hits)}件（{hits[0]}…）")
+    m = re.search(r'<span class="ticker-text">(.*?)</span>', html, re.S)
+    if m:
+        body = re.sub(r"<!--.*?-->", "", m.group(1), flags=re.S)
+        hits = [x for x in body.split("｜") if PAT_EMOJI_HEAD.match(x)]
+        if hits:
+            bad.append(f"ティッカー {len(hits)}件（{hits[0].strip()[:20]}…）")
+    if bad:
+        ng(f"頭に絵文字があります: {'・'.join(bad)}。分類は札（<span class=\"cat cat-sea\">海上</span> など）の語で書き、絵文字は書かない")
+    else:
+        ok("日次が書く所の頭に絵文字なし（速報・主な動き・バッジ・route-tag・30秒カラム・ティッカー）")
+    pairs = re.findall(r'<span class="cat cat-(\w+)">([^<]*)</span>', html)
+    wrong = [f"cat-{c}「{w}」" for c, w in pairs if CATS.get(c) != w]
+    if wrong:
+        ng(f"分類の札のクラスと語が合っていません: {'・'.join(wrong[:5])}。組は {'・'.join(f'cat-{k}＝{v}' for k, v in CATS.items())}")
+    else:
+        ok(f"分類の札 {len(pairs)}個のクラスと語が一致")
+    if news:
+        odd = [str(i.get("label"))[:20] for i in news.get("latest", []) if i.get("label") not in set(CATS.values())]
+        if odd:
+            warn(f"news_data.json の latest の label が分類の語ではありません: {' / '.join(odd)}。"
+                 f"{'・'.join(CATS.values())} のどれかを書く（過去分は表示のときに読み替える）")
+        else:
+            ok("news_data.json の latest の label はすべて分類の語")
 
 
 def check_estimate_labels(html: str) -> None:
@@ -1421,6 +1470,7 @@ def main() -> int:
     check_text_lengths(html)
 
     check_news(news, base)
+    check_categories(html, news)
     if log is not None:
         check_log(log, base)
     if tl is not None:

@@ -1200,6 +1200,16 @@ def check_categories(html: str, news: dict | None) -> None:
         ng(f"頭に絵文字があります: {'・'.join(bad)}。分類は札（<span class=\"cat cat-sea\">海上</span> など）の語で書き、絵文字は書かない")
     else:
         ok("日次が書く所の頭に絵文字なし（速報・主な動き・バッジ・route-tag・30秒カラム・ティッカー）")
+    # 速報インシデントのタグは、どれも頭に札が要る（無いもの・タグが1つも無いのも NG）
+    tags = re.findall(r'<span class="incident-tag">(.{0,40})', html)
+    missing = [re.sub(r"<[^>]+>", "", x)[:20] for x in tags if not x.startswith('<span class="cat cat-')]
+    if not tags:
+        ng("速報インシデントのタグを検出できません（構造が変わった可能性）")
+    elif missing:
+        ng(f"速報インシデントのタグの頭に分類の札がありません: {len(missing)}件（{missing[0]}…）。"
+           "<span class=\"cat cat-sea\">海上</span> などを先頭に書く")
+    else:
+        ok(f"速報インシデントのタグ {len(tags)}件すべての頭に分類の札")
     pairs = re.findall(r'<span class="cat cat-(\w+)">([^<]*)</span>', html)
     wrong = [f"cat-{c}「{w}」" for c, w in pairs if CATS.get(c) != w]
     if wrong:

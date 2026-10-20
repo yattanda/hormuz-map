@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-<!-- 課題46 D1 のアイコン（設計書 §2・§2-1）。a-* は A 識別シルエット（24 の地割り・1色 --a）、i-* はもとの形（64 の地割り・--a 主／--b 差し色／--c2 副／--k 地で抜く色）。
+<!-- 課題46 D1 のアイコン（設計書 §2・§2-1）。a-* は A 識別シルエット（24 の地割り・1色＝CSS 変数 a）、i-* はもとの形（64 の地割り・CSS 変数 a 主／b 差し色／c2 副／k 地で抜く色）。XML のコメントにはハイフン2つを書かない
      見本は hormuz-ops/drafts/design/icon-samples.html（10/19 版）から写した。分類の札の mask は tools/build_icons.py がここから書き出す -->
 <symbol id="a-tanker" viewBox="0 0 24 24">
   <path fill="var(--a)" fill-rule="evenodd" d="M2 12.5V6.5H7.6V12.5ZM3 8H6.6V9.2H3Z"/>

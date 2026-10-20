@@ -49,6 +49,12 @@ def build() -> str:
 
 
 def main() -> None:
+    # 外から <use href="icons.svg#…"> で読むので、ブラウザが XML として読めること（コメントの「--」など）を確かめる
+    import xml.dom.minidom
+    try:
+        xml.dom.minidom.parse(str(SPRITE))
+    except Exception as e:  # noqa: BLE001
+        sys.exit(f"{SPRITE.name} が XML として読めません（{e}）。<use> で参照すると絵が出ない")
     css = CSS.read_text(encoding="utf-8")
     pat = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END), re.S)
     if not pat.search(css):

@@ -116,7 +116,7 @@
 </header>
 
 <div class="ticker">
-  <span class="ticker-label">🔴 速報</span>
+  <span class="ticker-label">速報</span>
   <div class="ticker-scroll">
     <span class="ticker-text">
 <!-- 新ティッカー（2026年10月20日 06:13 JST） -->
@@ -711,7 +711,7 @@ document.addEventListener('keydown', function(e) {
     <div id="ship-grid"></div>
     <div id="tanker-stats">
       <div class="stat-row">
-        <span>🔴 足止め中</span>
+        <span>足止め中</span>
         <span id="t-stuck">読み込み中…</span>
       </div>
       <div class="stat-row stat-row--breakdown">
@@ -740,11 +740,11 @@ document.addEventListener('keydown', function(e) {
   <div class="rtable-wrap">
     <table class="rtable">
       <colgroup>
-        <col style="width:4%">   <!-- アイコン -->
+        <col style="width:12px"> <!-- 状態の色面（「状態」の列の札と同じ色。hormuz.css の :has()） -->
         <col style="width:14%">  <!-- ルート -->
         <col style="width:13%">  <!-- 輸送能力 -->
         <col style="width:11%">  <!-- 🇯🇵日本向け ← 新列 -->
-        <col style="width:25%">  <!-- 現況詳細 -->
+        <col style="width:29%">  <!-- 現況詳細（1列目を 12px にしたので 25% → 29%。合計 100%） -->
         <col style="width:18%">  <!-- 主なリスク -->
         <col style="width:15%">  <!-- 状態 -->
       </colgroup>
@@ -765,7 +765,7 @@ document.addEventListener('keydown', function(e) {
       <tbody>
 
         <tr class="rx">
-          <td>⛔</td>
+          <td></td>
           <td>
             <strong class="route-name t-danger">旧ルート</strong><br>
             <small class="t-mute">ホルムズ海峡本線</small>
@@ -781,7 +781,7 @@ document.addEventListener('keydown', function(e) {
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-warning">⚓ 最新 <time datetime="2026-10-20">10/20 06:13 JST</time> 追記：</strong>IRGCは10/19、「違反」したタンカー1隻が海峡南側の「unauthorized」な航路で機雷に接触し、機関室で火災が起きたと主張した（AFP配信のKorea Times。船名・位置なし、独立した確認なし。10/17〜18の主張と同じ船かは不明）。gCaptain（10/19）は、UKMTOの警報の集計として、10月前半に海峡の内外で25隻が標的になり（9月全体は18件、8月は15件）、カーグ島の原油輸出ターミナルには8月下旬からタンカーが接岸していないと伝える。UKMTO公式に警報177（10/18 13:29 JST発行）より新しい警報はない（10/20 06:06 JST取得）。
               <small class="route-src">出典：Korea Times（AFP配信・10/19）／gCaptain（10/19）／UKMTO公式（10/20 06:06 JST取得）</small></p>
-            <p class="route-summary"><strong class="t-warning">🟠 商業航行は回復途上。</strong>
+            <p class="route-summary"><strong class="t-warning">商業航行は回復途上。</strong>
             Kplerの集計を引くAl Jazeera（9/30）は、中東の原油輸出を戦前の8割弱、うち海峡経由を日量約970万バレル（戦前は約2,000万バレル）としつつ、当事者の数字は食い違い、船舶への攻撃報告も続く。米軍による対イラン海上封鎖・拿捕作戦も継続中。
               <small class="route-src">出典：Al Jazeera（9/30）</small></p>
             <p class="route-summary"><strong class="t-bright">中央航路（イラン・オマーン合意ベース）：</strong>イラン外相とGCC加盟6カ国外相のホルムズ通航協議は、9月14日にサラーラで予定されていたものが前日の9月13日に延期されたまま、9月25日朝時点でも新たな開催日は発表されていない。</p>
@@ -842,19 +842,19 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>米軍‑IRGC偶発衝突リスク。米海軍による拿捕・機雷除去作戦継続中。イラン「誤れば"死の渦"」と警告。</td>
-          <td><span class="pill pill-o">🟠 イランによる通航制限下・回復途上</span></td>
+          <td><span class="pill pill-o">イランによる通航制限下・回復途上</span></td>
         </tr>
 
         <tr class="rb">
-          <td>🟡</td>
+          <td></td>
           <td>
             <strong class="route-name t-danger">ルートB</strong><br>
             <small class="t-mute">ヤンブー港経由<br>（サウジ東西PL）</small>
           </td>
           <td class="t-warning">
             日量 700万bpd（輸送能力）<br>
-            <small class="t-danger">🔴 9/10 再攻撃・稼働停止</small><br>
-            <small class="t-danger">🔴 10/1 ヤンブー港に飛翔体・火災（主体不明）</small><br>
+            <small class="t-danger">9/10 再攻撃・稼働停止</small><br>
+            <small class="t-danger">10/1 ヤンブー港に飛翔体・火災（主体不明）</small><br>
             <small class="t-warning">⚠️ 9/22に低速で再開・全面復旧は数週間の見方（未検証）</small>
           </td>
           <td id="jf-td-B" class="jf-col jf-td t-danger">
@@ -864,7 +864,7 @@ document.addEventListener('keydown', function(e) {
           <td class="route-detail">
             <p class="route-latest"><strong class="route-tag t-warning">🇾🇪 最新 <time datetime="2026-10-20">10/20 06:13 JST</time> 追記：</strong>Al Jazeera（10/19）は、イエメン南部シャブワ県の政府軍キャンプにフーシ派が弾道ミサイル3発を撃ち、地元当局が少なくとも53人の死亡と200人の負傷を発表したと伝える（暫定。フーシ派は「サウジが支援する」基地を標的にしたと説明）。10/18のサアダ県空爆（9人以上死亡）は、AP配信のTimes of Israelが情報源をフーシ派が運営する保健省としている。ヤンブー港・東西パイプラインの新たな被害や紅海での商船への新たな攻撃は、10/19以降の主要媒体で確認できない。
               <small class="route-src">出典：Al Jazeera（10/19）／Times of Israel（AP配信・10/18）</small></p>
-            <p class="route-summary"><strong class="t-danger">🔴 9/10（木）東西PL、リヤド州・マディーナ州でイラク発ドローンによる複数攻撃を受け操業停止。</strong>
+            <p class="route-summary"><strong class="t-danger">9/10（木）東西PL、リヤド州・マディーナ州でイラク発ドローンによる複数攻撃を受け操業停止。</strong>
             主要ポンプ施設2カ所が損傷、負傷者も発生。
             <strong class="t-warning-soft">⚠️ Bloomberg・Reutersは9/16、迂回路設置により数日内に能力の半分を再開目指す、全面復旧は約6週間との見通しを報道。</strong>
             従来の「3〜5週間」（中東当局者・AP通信・共同通信、9/14時点）、米エネルギー長官の「数日内に再開見込み」発言（9/15）とも食い違う新たな数字で、実態は未検証。ヤンブー港は9/15から積み出しが停止していたが、9/28付Rigzone配信記事によれば先週から再開。
@@ -885,15 +885,15 @@ document.addEventListener('keydown', function(e) {
               <small class="route-src">出典：ABC（10/6）／Euronews（10/6）</small></p>
             <p class="route-entry"><strong class="route-tag t-warning">🇾🇪 <time datetime="2026-10-06">10/6 09:43 JST</time> 追記：</strong>The National（10/5）・Arab News（10/5）によれば、イエメン政府軍は10/5、サウジ主導連合軍の航空支援を受けてバブエルマンデブ海峡、ドゥバーブ地区、港湾都市モカを制圧したと主張した（国営サバ通信が引く軍筋）。連合軍は戦闘機100機を投入し、324の目標を破壊したとする。The Nationalは、独立した検証はできておらず、フーシ派は確認していないと伝える。海峡を通る輸送への影響は、10/6時点で報道から確認できない。
               <small class="route-src">出典：The National（10/5）／Arab News（10/5）</small></p>
-              <p class="route-entry"><strong class="route-tag t-warning">🟡 <time datetime="2026-10-05">10/5 07:00 JST</time> 追記：</strong>Al Jazeeraのライブ報道（10/4）によれば、イエメン政府側の指導者アリミ氏は10/4、国内でフーシ派が握る残りの地域を奪還する軍事作戦の開始を発表した。サウジが支援するイエメン軍は24時間でフーシ派700人を殺害したと主張した（当事者の主張で未検証）。フーシ派は紅海沿岸を押さえており、作戦の行方はバブエルマンデブ海峡経由の代替輸送路やヤンブー港の安全に影響しうる。10/1にヤンブー港へ着弾した後の積み出しの稼働状況は、10/5時点で報道から確認できない。
+              <p class="route-entry"><strong class="route-tag t-warning"><time datetime="2026-10-05">10/5 07:00 JST</time> 追記：</strong>Al Jazeeraのライブ報道（10/4）によれば、イエメン政府側の指導者アリミ氏は10/4、国内でフーシ派が握る残りの地域を奪還する軍事作戦の開始を発表した。サウジが支援するイエメン軍は24時間でフーシ派700人を殺害したと主張した（当事者の主張で未検証）。フーシ派は紅海沿岸を押さえており、作戦の行方はバブエルマンデブ海峡経由の代替輸送路やヤンブー港の安全に影響しうる。10/1にヤンブー港へ着弾した後の積み出しの稼働状況は、10/5時点で報道から確認できない。
               <small class="route-src">出典：Al Jazeera（10/4、ライブブログ）</small></p>
-              <p class="route-entry"><strong class="route-tag t-danger">🔴 <time datetime="2026-10-03">10/3 07:24 JST</time> 追記：</strong>Maritime Executive（10/1）によれば、10/1にヤンブー港の域内へ正体不明の飛翔体が着弾し、タンク群付近で火災が起きた。積み込みは一時止まったと伝えられるが、その後の稼働状況は確認できていない。9/10〜11の東西パイプライン攻撃で17日間止まっていた積み出しを再開した直後で、攻撃主体は未確認（過去の同種の攻撃はフーシ派と結び付けられてきた）。9/28時点のパイプライン稼働（日量350万バレル）が保たれているかは、10/3時点で報道から確認できない。
+              <p class="route-entry"><strong class="route-tag t-danger"><time datetime="2026-10-03">10/3 07:24 JST</time> 追記：</strong>Maritime Executive（10/1）によれば、10/1にヤンブー港の域内へ正体不明の飛翔体が着弾し、タンク群付近で火災が起きた。積み込みは一時止まったと伝えられるが、その後の稼働状況は確認できていない。9/10〜11の東西パイプライン攻撃で17日間止まっていた積み出しを再開した直後で、攻撃主体は未確認（過去の同種の攻撃はフーシ派と結び付けられてきた）。9/28時点のパイプライン稼働（日量350万バレル）が保たれているかは、10/3時点で報道から確認できない。
               <small class="route-src">出典：Maritime Executive（10/1）</small></p>
-              <p class="route-entry"><strong class="route-tag t-positive">🟢 <time datetime="2026-10-01">10/1 07:50 JST</time> 追記：</strong>The National（9/29）は、サウジの9月のホルムズ経由出荷が日量約258万バレル（8月は約100万バレル）に増え、バブエルマンデブ海峡経由は8月の日量545万バレルから9月は256万バレルに減ったと伝えた。9/10のドローン攻撃でヤンブーの積み出しは9/11から停止し、その後再開したが攻撃前の水準は下回る。Rigzone配信（9/30）も、東西パイプラインが能力の約半分まで増量と伝えた。数字は各紙の集計の引用で、独立検証は取れていない。
+              <p class="route-entry"><strong class="route-tag t-positive"><time datetime="2026-10-01">10/1 07:50 JST</time> 追記：</strong>The National（9/29）は、サウジの9月のホルムズ経由出荷が日量約258万バレル（8月は約100万バレル）に増え、バブエルマンデブ海峡経由は8月の日量545万バレルから9月は256万バレルに減ったと伝えた。9/10のドローン攻撃でヤンブーの積み出しは9/11から停止し、その後再開したが攻撃前の水準は下回る。Rigzone配信（9/30）も、東西パイプラインが能力の約半分まで増量と伝えた。数字は各紙の集計の引用で、独立検証は取れていない。
               <small class="route-src">出典：The National（9/29）／Rigzone（9/30）</small></p>
-              <p class="route-entry"><strong class="route-tag t-positive">🟢 <time datetime="2026-09-30">9/30 07:08 JST</time> 追記：</strong>Rigzone配信記事（9/28）によれば、パイプラインは日量350万バレルまで復旧し、全能力（日量700万バレル）の約半分。9/10のドローン攻撃で停止していたもので、ヤンブー港では先週から積み出しが再開し、週末にかけて複数の大型タンカーが入港した。全面復旧までは約6週間との見通し。
+              <p class="route-entry"><strong class="route-tag t-positive"><time datetime="2026-09-30">9/30 07:08 JST</time> 追記：</strong>Rigzone配信記事（9/28）によれば、パイプラインは日量350万バレルまで復旧し、全能力（日量700万バレル）の約半分。9/10のドローン攻撃で停止していたもので、ヤンブー港では先週から積み出しが再開し、週末にかけて複数の大型タンカーが入港した。全面復旧までは約6週間との見通し。
               <small class="route-src">出典：Rigzone（9/28）</small></p>
-              <p class="route-entry"><strong class="route-tag t-positive">🟢 <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>The Nationalは、パイプラインが9/22（火）に実際に低速で再開したと報道。サウジアラムコは日量400万bpd規模への復旧を目指すとされ、全面復旧の時期は別報道（globalsecurity.org経由）で「数週間」との見方——9/16時点の「約6週間」見通しと大きくは矛盾しないが独立確認はなお得られていない。再開報道を受けブレント原油は一時1週間ぶりに100ドルを割り込んだ。
+              <p class="route-entry"><strong class="route-tag t-positive"><time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>The Nationalは、パイプラインが9/22（火）に実際に低速で再開したと報道。サウジアラムコは日量400万bpd規模への復旧を目指すとされ、全面復旧の時期は別報道（globalsecurity.org経由）で「数週間」との見方——9/16時点の「約6週間」見通しと大きくは矛盾しないが独立確認はなお得られていない。再開報道を受けブレント原油は一時1週間ぶりに100ドルを割り込んだ。
               <small class="route-src">出典：The National（9/22）／globalsecurity.org経由（全面復旧時期、未検証）</small></p>
               <p class="route-entry"><span class="route-tag t-mute">4月時点の経緯：</span>
                 東西PL→ヤンブー→バベルマンデブ→日本。
@@ -905,11 +905,11 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>復旧遅延・再攻撃による供給逼迫リスク。フーシ派による紅海・バベルマンデブ攻撃リスク。ルートA機能不全時の負荷集中リスク。</td>
-          <td><span class="pill pill-y">🟡 日量350万バレルまで復旧（能力の約半分・9/28）・全面復旧は約6週間の見通し</span></td>
+          <td><span class="pill pill-y">日量350万バレルまで復旧（能力の約半分・9/28）・全面復旧は約6週間の見通し</span></td>
         </tr>
 
         <tr class="ra">
-          <td>🟡</td>
+          <td></td>
           <td>
             <strong class="route-name t-blue">ルートA</strong><br>
             <small class="t-mute">フジャイラ港経由</small>
@@ -925,7 +925,7 @@ document.addEventListener('keydown', function(e) {
             <p class="route-latest"><strong class="route-tag t-neutral">🔁 最新 <time datetime="2026-10-14">10/14 JST</time> 再確認：</strong>ADCOPパイプライン・フジャイラ港の10月の稼働や被害の新しい報道は、主要報道の検索では確認できない（直近の報道は5〜6月）。
               <small class="route-src">確認方法：主要報道の検索（10/14）</small></p>
             <p class="route-summary">ADCOPパイプライン→フジャイラ→ムンバイ沖積み替え→日本。<br>
-            <strong class="t-positive">🟢 6月時点でUAE原油輸出は戦前平均を上回る記録的水準まで回復。</strong>
+            <strong class="t-positive">6月時点でUAE原油輸出は戦前平均を上回る記録的水準まで回復。</strong>
             ハブシャン-フジャイラ・パイプライン経由の輸出が戦前比+74%で推移し、UAE全体の原油・コンデンセート輸出は6月平均で日量約370万バレル（一時390万バレル超）に達し2017年以来の高水準。
             フジャイラ近郊のマンドゥース貯蔵基地（約4,200万バレル）も回復を下支え。
             <strong class="t-warning-soft">⚠️ 7〜9月の新たな攻撃・操業障害は本調査時点（9/15）で確認できていない</strong>が、
@@ -943,11 +943,11 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>再攻撃リスクは残存。イランによるADCOP終端部への攻撃実績あり。周辺海域でのタンカー個別攻撃は継続的に発生。</td>
-          <td><span class="pill pill-y">🟡 記録的水準まで回復（直近の新規動向は未確認）</span></td>
+          <td><span class="pill pill-y">記録的水準まで回復（直近の新規動向は未確認）</span></td>
         </tr>
 
         <tr class="rc rc-us">
-          <td>🟣</td>
+          <td></td>
           <td>
             <strong class="route-name t-violet">ルートC 🇺🇸</strong><br>
             <small class="t-mute">米国直輸入<br>（アラスカ・メキシコ湾岸）</small>
@@ -977,11 +977,11 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>港湾含水制限・ANS品質適合コスト・価格プレミアム懸念。</td>
-          <td><span class="pill pill-p">📅 増加継続中</span></td>
+          <td><span class="pill pill-p">増加継続中</span></td>
         </tr>
 
         <tr class="rc rc-gl">
-          <td>🟤</td>
+          <td></td>
           <td>
             <strong class="route-name t-orange">ルートC 🌍</strong><br>
             <small class="t-mute">南半球経由<br>（ブラジル・西アフリカ）</small>
@@ -1010,11 +1010,11 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>輸送期間大幅増・中国との調達競合・精製品質適合コスト。</td>
-          <td><span class="pill pill-p">📅 実績なし・交渉段階</span></td>
+          <td><span class="pill pill-p">実績なし・交渉段階</span></td>
         </tr>
 
         <tr class="rd">
-          <td>🟠</td>
+          <td></td>
           <td>
             <strong class="route-name t-orange">ルートD</strong><br>
             <small class="t-mute">イラン通航料払い通過</small>
@@ -1031,7 +1031,7 @@ document.addEventListener('keydown', function(e) {
             <p class="route-latest"><strong class="route-tag t-neutral">🔁 最新 <time datetime="2026-10-14">10/14 JST</time> 再確認：</strong>イランの通航料について、10月の新しい報道は主要報道の検索では確認できない（直近の報道は3〜4月）。
               <small class="route-src">確認方法：主要報道の検索（10/14）</small></p>
             <p class="route-summary">6/17、トランプ大統領とイランのペゼシュキアン大統領が「イスラマバード覚書」（14項目の枠組み合意）に署名——ホルムズ海峡の商業通航を60日間無料開放する内容を含んでいた。
-            <strong class="t-danger">🔴 しかし合意から数週間で破綻。7月上旬にトランプ氏は「覚書は終わった」と表明して対イラン攻撃を再開し、イランも海峡の「閉鎖」を再宣言、通航料（トール）制度の扱いは再び不透明な状態に戻った。</strong>
+            <strong class="t-danger">しかし合意から数週間で破綻。7月上旬にトランプ氏は「覚書は終わった」と表明して対イラン攻撃を再開し、イランも海峡の「閉鎖」を再宣言、通航料（トール）制度の扱いは再び不透明な状態に戻った。</strong>
             本調査時点（9/15）でも公式な通航料スキームの運用は確認されておらず、友好国船舶であっても安全な通航は保証されない。
               <small class="route-src">出典：NPR（覚書全文）・PBS News・Political.org（7/8報道）</small></p>
             <details class="route-history"><summary>経緯を見る</summary>
@@ -1045,7 +1045,7 @@ document.addEventListener('keydown', function(e) {
             </details>
           </td>
           <td>米海軍による拿捕リスク大。覚書破綻により通航料払いの法的根拠・安全性は不透明。現時点での利用は極めて危険。</td>
-          <td><span class="pill pill-r">🔴 事実上停止（覚書破綻・再閉鎖）</span></td>
+          <td><span class="pill pill-r">事実上停止（覚書破綻・再閉鎖）</span></td>
         </tr>
 
         <tr class="rtable-foot">
@@ -1158,7 +1158,7 @@ document.addEventListener('keydown', function(e) {
     <!-- シナリオ A：外交解決 -->
     <div class="sc-card sc-best">
       <span class="sc-tag" id="sc-tag-A"><span class="sc-tag-em">シナリオ A</span> ― 段階的MOU履行成功　<span class="sc-tag-em">確率 <span id="sc-pct-A">…</span></span> <span class="sc-trend">→</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">🟢 シナリオA：IMO避難計画成功→核査察スケジュール合意→Hormuz主ルート再開</div>
+      <div class="sc-title">シナリオA：IMO避難計画成功→核査察スケジュール合意→Hormuz主ルート再開</div>
       <div class="sc-body">
         <p>イラン外相アラグチ氏の「7日間ロードマップ」をトランプ氏は9月26日に「受け入れられない」と述べた。9/30にはイラン政府が米国の回答を受け取ったと発表したが、内容は明かされていない。10/4にはガリバフ国会議長が、米国が7項目の計画を受け入れるまで海峡は閉鎖されたままだと述べ、米側は核問題を先決とする姿勢を崩していない。外交の窓口は閉じていないものの溝は埋まっていない。実現にはイラン側の対応と米側との歩み寄りが不可欠となる。</p>
       </div>
@@ -1167,7 +1167,7 @@ document.addEventListener('keydown', function(e) {
     <!-- シナリオ B：部分的封鎖継続（膠着） -->
     <div class="sc-card sc-mid">
       <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化（最多シナリオ）　<span class="sc-tag-em">確率 <span id="sc-pct-B">…</span></span> <span class="sc-trend">→</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">🟡 シナリオB：核査察問題長期化→期間延長交渉、機雷除去は先行</div>
+      <div class="sc-title">シナリオB：核査察問題長期化→期間延長交渉、機雷除去は先行</div>
       <div class="sc-body">
         <p>ロードマップの拒否（9月26日）、仲介者を通じた会談（9月29日）、米国の回答の受領（9月30日）と外交の往復は続くが、米側の「核問題が先」という姿勢は変わらず、協議は膠着したまま。トランプ氏は10/1公開のインタビュー（9/28収録）で7日間計画を「十分でなかった」とした。Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、WTI11月物は10/2に91.11ドル（−1.9%）、ブレント12月物は102.25ドルで引け（EnergyNow・検索要約）、備蓄放出計画が重しになった。Kplerの速報では9月最終週の4日間に中東の原油輸出が戦前の平均を上回っており（Al Jazeera 10/5）、上の月間の値とは期間と基準が異なる。10/5の終値はブレント12月物100.32ドル、WTI11月物89.43ドルだった（investingLive・Free Malaysia Today）。通航体制そのものを変える決定打はまだなく、イランの対応が次の分かれ目となる。</p>
       </div>
@@ -1176,7 +1176,7 @@ document.addEventListener('keydown', function(e) {
     <!-- シナリオ C：完全封鎖の制度化・経済疲弊 -->
     <div class="sc-card sc-worst">
       <span class="sc-tag" id="sc-tag-C"><span class="sc-tag-em">シナリオ C</span> ― イラン・米国による二重封鎖の制度化・経済疲弊深刻化　<span class="sc-tag-em">確率 <span id="sc-pct-C">…</span></span> <span class="sc-trend">→</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">🔴 シナリオC：南レバノン大規模衝突再発→Hormuz再閉鎖宣言</div>
+      <div class="sc-title">シナリオC：南レバノン大規模衝突再発→Hormuz再閉鎖宣言</div>
       <div class="sc-body">
         <p>イランは9/27に海峡を米国の「経済戦争」終結まで閉鎖すると警告し、IRGC報道官は9/30にも「継続的な軍事紛争」を主張した。イラン・米国による二重封鎖の常態化と経済負担の長期化を示す材料は残るが、Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、サウジ東西パイプラインも日量350万バレルまで復旧して迂回輸送は部分的に戻っている。一方、10/1にはその積出港ヤンブーに飛翔体が着弾して火災が起き（Maritime Executive。主体は不明）、海峡でも9/28以降少なくとも6隻が被弾した（gCaptain）。いずれも公式方針の確定とは言えず、フーシ派によるバブエルマンデブ海峡への脅威と併せ、監視を続ける。</p>
       </div>
@@ -1185,7 +1185,7 @@ document.addEventListener('keydown', function(e) {
     <!-- シナリオ D：軍事エスカレーション・停戦崩壊 -->
     <div class="sc-card sc-worst">
       <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・ホルムズ海峡の無期限閉鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">…</span></span> <span class="sc-trend">↑</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">⚫ シナリオD：核査察問題で交渉打ち切り→Hormuz武力制圧→全面戦争再開</div>
+      <div class="sc-title">シナリオD：核査察問題で交渉打ち切り→Hormuz武力制圧→全面戦争再開</div>
       <div class="sc-body">
         <p>トランプ氏は10/1公開のインタビュー（9/28収録）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、第3空母打撃群（セオドア・ルーズベルト）と海兵隊遠征部隊が中東へ向かい、追加で約9,000〜1万人が派遣される（Al Jazeera 10/2）。海峡では9/28以降少なくとも6隻が飛翔体を受けたが、攻撃主体は確認されていない（9/21・9/23の被弾も主体は未特定）。トランプ氏は10/3にも「イランについて決断を下す。簡単な道か厳しい道かだ」と述べ、ヘグセス国防長官は「あらゆる選択肢」を維持するとしたが（Iran International）、決断の中身と時期は示されておらず、新たな大規模攻撃は確認されていない。断定的な判断は避ける。</p>
       </div>
@@ -1311,7 +1311,7 @@ const SHIP_CONFIG = {
         const el       = document.createElement('span');
         el.className   = 'ship-icon';
         el.textContent = type.icon;
-        el.title       = `#${idx}　${type.label}　足止め中 🔴`;
+        el.title       = `#${idx}　${type.label}　足止め中`;
         el.style.filter = `drop-shadow(0 0 3px ${type.color})`;
         grid.appendChild(el);
       }
@@ -1634,14 +1634,14 @@ const SHIP_CONFIG = {
     </div>
 
     <div class="modal-section red">
-      <div class="modal-section-title">🔴 英語原文（Truth Social）</div>
+      <div class="modal-section-title">英語原文（Truth Social）</div>
       <div class="modal-quote">
         "Based on conversations with Prime Minister Shehbaz Sharif and Field Marshal Asim Munir, of Pakistan, and wherein they requested that I hold off the destructive force being sent tonight to Iran, and subject to the Islamic Republic of Iran agreeing to the COMPLETE, IMMEDIATE, and SAFE OPENING of the Strait of Hormuz, I agree to suspend the bombing and attack of Iran for a period of two weeks."
       </div>
     </div>
 
     <div class="modal-section yellow">
-      <div class="modal-section-title">🟡 日本語翻訳（原文に忠実）</div>
+      <div class="modal-section-title">日本語翻訳（原文に忠実）</div>
       <div class="modal-trans">
         「Pakistanの Shehbaz Sharif 首相及び Asim Munir 統合参謀総長との会話に基づき、そして彼らが本夜 Iran に送られるべき破壊力を一時停止するよう要請した際、及び Islamic Republic of Iran が Hormuz 海峡の<strong>完全な、直ちな、かつ安全な開放</strong>に同意することを条件として、私は Iran への爆撃及び攻撃を<strong>2週間の期間の間、一時停止（suspend）</strong>することに同意する。」
       </div>
@@ -1673,7 +1673,7 @@ const SHIP_CONFIG = {
       <div class="modal-ling">
         英語の <strong>"suspend"</strong> という動詞自体が曖昧です。<br>
         <strong>条件句：</strong>「subject to Iran agreeing to COMPLETE, IMMEDIATE, and SAFE OPENING」は<strong class="modal-em">継続的条件</strong>を示唆。一度きりではなく、2週間を通じてIranが正常化を維持することが前提の可能性があります。<br><br>
-        <strong class="modal-alert">🔴 重要：</strong>この曖昧性はおそらく<strong class="modal-em">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
+        <strong class="modal-alert">重要：</strong>この曖昧性はおそらく<strong class="modal-em">意図的</strong>です。Trumpが双方に異なる希望を与えることで交渉の余地を保ったと分析されています。
       </div>
     </div>
 
@@ -3044,14 +3044,14 @@ function renderArchive(data) {
   c.innerHTML = batchHtml + bottomBtn;
 }
 function renderOsint(data) {
+  // データの cardBg・cardBorder・badgeColor・borderColor・textColor は使わない（色は hormuz.css の .osint-*・D3 PR 5）
   const LIMIT = 3;
   const items = data.osint;
   const makeCard = item => `
-    <a class="osint-card" href="${item.url}" target="_blank" rel="noopener"
-      style="background:${item.cardBg};border:1px solid ${item.cardBorder};">
+    <a class="osint-card" href="${item.url}" target="_blank" rel="noopener">
       <div class="osint-head">
         <span class="osint-country">${item.country}</span>
-        <span class="osint-media" style="background:${item.badgeColor};border:1px solid ${item.borderColor};color:${item.textColor};">${item.media}</span>
+        <span class="osint-media">${item.media}</span>
         <span class="osint-date">${item.date}</span>
       </div>
       <div class="osint-title">${item.titleJa}</div>

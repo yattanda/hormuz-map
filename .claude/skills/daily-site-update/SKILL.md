@@ -416,12 +416,14 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 </li>
 ```
 
-| モディファイア | 使う場面 | 色 |
+| モディファイア | 使う場面 | 表示（行頭の札・CSS が付ける） |
 |---|---|---|
-| `incident-item--danger` | 攻撃・被弾・死傷・封鎖強化 | 赤 |
-| `incident-item--warning` | 供給障害・延期・未確認の続報 | 黄 |
-| `incident-item--info` | 声明・手続き・中立の情報 | 灰 |
-| `incident-item--positive` | 合意・再開・緩和 | 緑 |
+| `incident-item--danger` | 攻撃・被弾・死傷・封鎖強化 | 「危険」赤の札 |
+| `incident-item--warning` | 供給障害・延期・未確認の続報 | 「注意」黄の札 |
+| `incident-item--info` | 声明・手続き・中立の情報 | 札なし |
+| `incident-item--positive` | 合意・再開・緩和 | 「好転」緑の札 |
+
+- 札の語と色は CSS が付ける（2026-10-20 課題46 D3 PR 5）。タグに「危険」などの語や色の絵文字（🔴🟡🟢）を書かない
 
 - 表示は先頭3件。4件目以降は `applyIncidentFold()` が自動で折りたたむ（手で折りたたみ用の箱を作らない）
 - **月1回の退避**：ページに残すのは直近30日分。30日より古い項目を `<li>` ごと切り取り、
@@ -439,7 +441,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
   - **文字数の目安（2026-10-11〜）**：いま何が **450字**・海峡の今 **400字**・次の焦点 **250字**（タグを除く）。厳密な上限ではないが、超えたら `validate_daily.py` が WARN を出す。
     スマホで読める量にするため、各行は出来事2〜4件の要点だけにし、細部・経緯・出典の補足は速報インシデントへ回す
     （10/11 は いま何が 766字・海峡の今 661字で、運営者から「スマホで読む気がしない」と指摘があり約4割減らした）
-  - **キーワードの色はページの JS（`markKeywords()`）が自動で付ける。**日付・単位つきの数値・被害の語・回復の語・「未確認」などの但し書きに、控えめな色が付く。
+  - **キーワードの強調はページの JS（`markKeywords()`）が自動で付ける。**日付・単位つきの数値・被害の語・回復の語は本文の色の太字、「未確認」などの但し書きは補助の色になる（赤・緑の文字は 2026-10-20 にやめた）。
     本文に `<span class="kw-*">` や強調のタグを手で書かない。対象は 30秒カラムの3行・シナリオの補足・次の焦点
 - **主な動き**：`<ol class="key-moves-list">` の中を**ちょうど3件・新しい順**にする。原則として**速報インシデントの先頭3件と同じ出来事・同じモディファイア**
   （速報インシデントに無い出来事をここだけに書かない）。リンク先は `#incident` 固定（項目ごとの id は付けない。2026-09-25 決定 U3）
@@ -454,20 +456,20 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
   - `datetime` は出来事の日付（現地）を `YYYY-MM-DD` で。表示は `M/D`
   - 件名は1文（40〜60字）。出典は主なもの1〜2件を短く（「ほか」で省略してよい）
-  - モディファイアは速報インシデントと同じ4種（`key-move--danger` 赤／`--warning` 黄／`--info` 灰／`--positive` 緑）
+  - モディファイアは速報インシデントと同じ4種（`key-move--danger` 危険／`--warning` 注意／`--info` 札なし／`--positive` 好転。札は CSS が件名の頭に付ける）
 - **ステータスバッジ**：`<div class="glance-badges">` の中に3〜6枚
 
 ```html
 <span class="status-badge status-badge--warning">🛢️パイプライン9/22低速再開・全面復旧未検証</span>
 ```
 
-| モディファイア | 使う場面 | 色 |
+| モディファイア | 使う場面 | 表示 |
 |---|---|---|
-| `status-badge--danger` | 攻撃・封鎖強化・重大な悪化 | 赤 |
-| `status-badge--warning` | 供給障害・未確認・注意 | 黄 |
-| `status-badge--info` | 外交・声明などの動き | 水色 |
-| `status-badge--neutral` | 価格など中立の数値 | 灰 |
-| `status-badge--positive` | 再開・緩和・変化なしの安定 | 緑 |
+| `status-badge--danger` | 攻撃・封鎖強化・重大な悪化 | 赤の色面 |
+| `status-badge--warning` | 供給障害・未確認・注意 | 黄の色面 |
+| `status-badge--info` | 外交・声明などの動き | 枠だけ |
+| `status-badge--neutral` | 価格など中立の数値 | 枠だけ |
+| `status-badge--positive` | 再開・緩和・変化なしの安定 | 緑の色面 |
 
 - `tools/validate_daily.py` が「30秒カラムのインライン style」「主な動きの件数・並び・最新日」を WARN で確認する
 
@@ -515,19 +517,31 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - `<time datetime>` は**確かめた日（JST）**を `YYYY-MM-DD` で。表示は `M/D HH:MM JST` か `M/D JST`
 - 経緯（`details` の中）は新しい順。過去に書いた本文は**書き換えない・消さない**（移すだけ）
 - 出典は `<br><small style=…>` ではなく `<small class="route-src">`（ブロック表示になる）。段落の間の `<br><br>` も書かない
-- 文中の強調の色は `<strong class="t-*">`：
+- 文中の強調は `<strong class="t-*">`。**2026-10-20（課題46 D3 PR 5）から `t-*` で色は付かない**（`t-neutral` だけ補助の色、ほかは本文の色の太字）。
+  クラスは中身の種類の印として、これまでどおり書く。行の状態は「状態」の列の札で示す。強調や `route-tag` の頭に色の絵文字（🔴🟠🟡🟢）を書かない
 
-| クラス | 使う場面 | 色 |
-|---|---|---|
-| `t-danger` | 攻撃・停止・封鎖 | 赤 |
-| `t-warning` | 見通し・未検証・注意（短い印・見出し） | 黄 |
-| `t-warning-soft` | 黄で書きたい**文**（1文を超える長さ）（2026-10-11〜） | 淡い黄 |
-| `t-positive` | 再開・回復 | 緑 |
-| `t-info` | 外交・協議の動き | 水色 |
-| `t-neutral` | 再確認（変化なし） | 灰 |
-| `t-bright` | 中立の強調 | 白 |
+| クラス | 使う場面 |
+|---|---|
+| `t-danger` | 攻撃・停止・封鎖 |
+| `t-warning` | 見通し・未検証・注意（短い印・見出し） |
+| `t-warning-soft` | 注意を促す**文**（1文を超える長さ）（2026-10-11〜） |
+| `t-positive` | 再開・回復 |
+| `t-info` | 外交・協議の動き |
+| `t-neutral` | 再確認（変化なし） |
+| `t-bright` | 中立の強調 |
 
 - 「主なリスク」「状態」（`pill`）の列は、変化があったときに書き換える
+- 「状態」の札（2026-10-20 課題46 D3 PR 5）：`<span class="pill pill-r">事実上停止（…）</span>` の形。**札の文に色の絵文字（🔴🟠🟡🟢・📅）を書かない**
+
+| クラス | 状態 | 表示 |
+|---|---|---|
+| `pill-r` | 危険（停止・封鎖） | 赤の色面 |
+| `pill-o` | 警戒（制限下・回復途上） | 橙の色面 |
+| `pill-y` | 注記（部分復旧・未確認を含む回復） | 黄の色面 |
+| `pill-g` | 平常 | 緑の色面 |
+| `pill-p` | 判断なし（実績なし・交渉段階など） | 枠だけ |
+
+- 各行の**1列目は空のセル `<td></td>`**。色は CSS（`:has()`）が「状態」の札に合わせて塗る。1列目に絵文字や札を書かない
 - 「日本向け」列（`jf-*-bpd`・`jf-*-tanker`）は `loadRouteTableFlow()` が `oil-flow.json` から入れる。**手で書かない**
 - `tools/validate_daily.py` が「ルート表のインライン style（`<col>` を除く）」「各行の `route-latest` が1件か」
   「`route-latest` より新しい日付が行の中にないか」「リード文 `sec-lead` の復活」を WARN で確認する。
@@ -538,6 +552,8 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ## シナリオの型（2026-09-29〜・② PR4a）
 
 **インライン style を書かない。**色・文字サイズはクラスで決まる。書き換えるのは文字だけ。
+
+- 札の色は `sc-tag-A`〜`D` の id で決まる（A 緑・B 黄・C 橙・D 赤。2026-10-20 課題46 D3 PR 5）。カードのクラス（`sc-best`・`sc-mid`・`sc-worst`）を入れ替えても色は変わらない。**見出し（`sc-title`）の頭に色の絵文字（🟢🟡🔴⚫）を書かない**
 
 ### 確率補足バナー（[S06]・`div.sc-update`）
 
@@ -786,7 +802,9 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ### osint アイテムの必須フィールド
 
-`titleJa`・`titleEn`・`country`・`media`・`cardBg`・`cardBorder`・`badgeColor`・`borderColor`・`textColor`・`url`・`date`
+`titleJa`・`titleEn`・`country`・`media`・`url`・`date`
+
+- 色のフィールド（`cardBg`・`cardBorder`・`badgeColor`・`borderColor`・`textColor`）は**書かない**（2026-10-20 課題46 D3 PR 5 から表示に使わない。過去の項目にあるものは消さなくてよい）
 
 ### staleNotice フィールド
 

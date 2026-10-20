@@ -1,0 +1,76 @@
+/* 媒体トップ（ハブ・/）の CSS。課題46 D2 で各ページの <style> から移した（中身は不変）。トークンは /assets/css/tokens.css */
+/* 媒体トップ（ハブ）。色と文字サイズは /hormuz/ のデザイントークンと同じ値（tools/design-system.md） */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (max-width: 768px) { html { font-size: 18px; } }
+body {
+  margin: 0; background: var(--c-bg); color: var(--c-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  font-size: var(--fs-base); line-height: 1.7;
+}
+a { color: var(--c-accent); }
+a:focus-visible { outline: 2px solid var(--c-warn); outline-offset: 2px; }
+.hub-wrap { max-width: 960px; margin: 0 auto; padding: 0 var(--space-md); }
+.hub-header { padding: var(--space-xl) 0 var(--space-md); border-bottom: 1px solid var(--c-surface-deep); }
+.hub-brand { margin: 0; font-size: var(--fs-2xl); font-weight: 800; line-height: 1.4; letter-spacing: 0.02em; }
+.hub-tagline { margin: var(--space-xs) 0 0; color: var(--c-text-sub); font-size: var(--fs-md); max-width: 40em; }
+.hub-section { padding: var(--space-lg) 0 0; }
+.hub-h2 { margin: 0 0 var(--space-sm); font-size: var(--fs-lg); font-weight: 800; color: var(--c-text); }
+.hub-note { margin: var(--space-xs) 0 0; color: var(--c-text-mute); font-size: var(--fs-xs); }
+
+/* 主要数値 */
+.hub-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 769px) { .hub-stats { grid-template-columns: repeat(4, 1fr); } }
+.hub-stat { background: linear-gradient(135deg, #0d1b2a, #132540); border: 1px solid var(--c-surface-deep); border-radius: 12px; padding: var(--space-sm); text-align: center; }
+.hub-stat-head { color: var(--c-text-sub); font-size: var(--fs-sm); font-weight: 700; }
+.hub-stat-num { font-size: var(--fs-2xl); font-weight: 800; line-height: 1.4; color: var(--c-warn); }
+.hub-stat-num--text { font-size: var(--fs-lg); line-height: 2.05; }
+.hub-stat-unit { font-size: var(--fs-sm); font-weight: 700; margin-left: 2px; }
+.hub-stat-note { color: var(--c-text-mute); font-size: var(--fs-xs); line-height: 1.5; }
+
+/* 入口 */
+.hub-cta { display: block; margin: 0; padding: var(--space-lg); border-radius: 14px; text-decoration: none;
+  background: linear-gradient(135deg, #7f1d1d, #1e3a5f); border: 1px solid var(--c-danger-light); color: #fff; }
+.hub-cta:hover { filter: brightness(1.12); }
+.hub-cta-title { display: block; font-size: var(--fs-xl); font-weight: 800; line-height: 1.4; }
+.hub-cta-lead { display: block; margin-top: var(--space-xs); color: var(--c-text); font-size: var(--fs-base); }
+.hub-cta-go { display: inline-block; margin-top: var(--space-sm); padding: 6px 16px; border-radius: 999px; background: #fff; color: #7f1d1d; font-weight: 800; font-size: var(--fs-md); }
+
+/* 地図 */
+.hub-map { margin: 0; border: 1px solid var(--c-surface-deep); border-radius: 12px; overflow: hidden; background: #071828; }
+.hub-map-svg { display: block; width: 100%; height: auto; }
+.hub-map-sea { fill: #071828; }
+.hub-map-land { fill: #1e3a7a; stroke: #2a4a6a; stroke-width: 0.5; }
+.hub-map-dot { fill: var(--c-text-mute); stroke: #071828; stroke-width: 1.5; }
+.hub-map-label { fill: var(--c-text-sub); font-size: 22px; font-weight: 700; paint-order: stroke; stroke: #071828; stroke-width: 5px; stroke-linejoin: round; }
+.hub-map-point--live .hub-map-dot { fill: var(--c-danger-light); }
+.hub-map-point--live .hub-map-label { fill: #fff; font-size: 26px; text-decoration: underline; }
+.hub-map-ring { fill: none; stroke: var(--c-danger-light); stroke-width: 2; opacity: 0.7; }
+.hub-map-point--live:hover .hub-map-ring { opacity: 1; stroke-width: 3; }
+
+/* YouTube から来た方へ */
+.hub-yt { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0; padding: var(--space-sm) var(--space-md);
+  background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(248, 113, 113, 0.35); border-radius: 10px; }
+.hub-yt-label { color: var(--c-danger-pale); font-weight: 700; white-space: nowrap; }
+.hub-yt-link { display: inline-block; padding: 6px 12px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: var(--fs-sm);
+  background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.2); color: var(--c-text); }
+.hub-yt-link:hover { background: rgba(255, 255, 255, 0.14); }
+
+/* 最新の動き・回遊 */
+.hub-latest { margin: 0; padding: 0; list-style: none; }
+.hub-latest li { padding: var(--space-sm) 0; border-bottom: 1px solid var(--c-surface); }
+.hub-latest-title { display: block; font-weight: 700; color: var(--c-text); }
+.hub-latest-src { display: block; color: var(--c-text-mute); font-size: var(--fs-xs); }
+.hub-more { display: inline-block; margin-top: var(--space-sm); font-weight: 700; }
+.hub-links { display: grid; grid-template-columns: 1fr; gap: var(--space-sm); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 601px) { .hub-links { grid-template-columns: repeat(3, 1fr); } }
+.hub-links a { display: block; height: 100%; padding: var(--space-sm) var(--space-md); border-radius: 10px; text-decoration: none;
+  background: var(--c-surface); border: 1px solid var(--c-surface-deep); color: var(--c-text); }
+.hub-links a:hover { border-color: var(--c-accent); }
+.hub-links-title { display: block; font-weight: 800; color: var(--c-accent-pale); }
+.hub-links-lead { display: block; color: var(--c-text-mute); font-size: var(--fs-xs); }
+
+.hub-footer { margin-top: var(--space-xl); padding: var(--space-lg) 0 var(--space-xl); border-top: 1px solid var(--c-surface-deep);
+  color: var(--c-text-mute); font-size: var(--fs-xs); text-align: center; }
+.hub-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; margin-bottom: var(--space-sm); }
+.hub-footer a { color: var(--c-text-sub); }

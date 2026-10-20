@@ -133,23 +133,33 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 /* 警戒レベル（2026-09-25 見直し）：点滅と赤い面をやめ、赤は先頭の点だけにする。
    中身は「警戒レベル：最高」の一語だけ。情勢の要約は30秒カラムに書く（ここに括弧書きで足さない） */
 .badge-alert { display:inline-flex; align-items:center; gap:6px; background:var(--c-surface); color:var(--c-text); }
-.badge-alert::before { content:""; width:7px; height:7px; border-radius:50%; background:#ef4444; flex-shrink:0; }
+.badge-alert::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--c-danger); flex-shrink:0; }
 .badge-days  { border:1px solid var(--c-rule); color:var(--c-text); font-variant-numeric:tabular-nums; }
 .badge-date  { border:1px solid var(--c-rule); color:var(--c-text-mute); }
 @keyframes badgeBlink{0%,100%{opacity:1}50%{opacity:0.5}}
 
-/* TICKER（速報の帯。赤の色面は状態として PR 5 で見直す。ここではグラデーションだけ単色に） */
+/* TICKER（速報の帯）。速報は状態ではないので、赤の帯をやめて面の帯に。「速報」の札は本文の色の面（反転）で目立たせる（D3 PR 5） */
 .ticker {
-  background:#7f1d1d;
-  border-bottom:1px solid #ef4444;
+  background:var(--c-surface);
+  border-bottom:1px solid var(--c-rule);
   padding:9px 18px;
   display:flex; align-items:center; gap:12px; overflow:hidden;
 }
-.ticker-label { background:#ef4444; color:#fff; font-size:0.68rem; font-weight:800; padding:3px 9px; white-space:nowrap; flex-shrink:0; }
+.ticker-label { background:var(--c-text); color:var(--c-bg); font-size:0.68rem; font-weight:800; padding:3px 9px; white-space:nowrap; flex-shrink:0; }
 .ticker-scroll { overflow:hidden; flex:1; }
-.ticker-text { font-size:0.8rem; color:#fecaca; white-space:nowrap; display:inline-block; animation:tickerScroll 50s linear infinite; will-change:transform; }
+.ticker-text { font-size:0.8rem; color:var(--c-text); white-space:nowrap; display:inline-block; animation:tickerScroll 50s linear infinite; will-change:transform; }
 /* 50s は JS が動かないときの予備。fitTickerSpeed() が文字の長さから一定の速さ（px/秒）になるよう上書きする */
 @keyframes tickerScroll{0%{transform:translate3d(100vw,0,0)}100%{transform:translate3d(-100%,0,0)}}
+
+/* 状態の札（D3 PR 5・設計書 §1）：赤＝危険・橙＝警戒・黄＝注記・緑＝平常の色面、枠だけ＝判断なし。
+   色面の上の文字は --c-on-*。色だけに頼らないよう、一覧の行頭の札には語を書く（CSS の content）。
+   一覧の行（速報インシデント・主な動き）のモディファイアと語：--danger 危険／--warning 注意／--positive 好転／--info は札なし */
+.incident-item--danger .incident-tag::before, .incident-item--warning .incident-tag::before, .incident-item--positive .incident-tag::before,
+.key-move--danger .key-move-title::before, .key-move--warning .key-move-title::before, .key-move--positive .key-move-title::before {
+  display:inline-block; margin-right:6px; padding:0 5px; font-size:0.78em; font-weight:700; line-height:1.5; vertical-align:0.08em; letter-spacing:0.04em; }
+.incident-item--danger .incident-tag::before, .key-move--danger .key-move-title::before { content:"危険"; background:var(--c-danger); color:var(--c-on-danger); }
+.incident-item--warning .incident-tag::before, .key-move--warning .key-move-title::before { content:"注意"; background:var(--c-warn); color:var(--c-on-warn); }
+.incident-item--positive .incident-tag::before, .key-move--positive .key-move-title::before { content:"好転"; background:var(--c-ok); color:var(--c-on-ok); }
 
 /* MAIN CONTAINER */
 .container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
@@ -157,15 +167,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 /* INCIDENT（速報インシデント・② PR1 2026-09-24）
    日次更新で項目を足すときは、この型（li.incident-item＋色のモディファイア）で書く。 */
 .incident-headline-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-.incident-headline { font-size:var(--fs-base); font-weight:800; color:#f87171; }
+.incident-headline { font-size:var(--fs-base); font-weight:800; color:var(--c-text); }
 .incident-badge { font-size:var(--fs-2xs); color:var(--c-text-mute); padding:2px 8px; border:1px solid var(--c-rule); }
 .incident-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; }
 .incident-item { margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--c-rule); }
-.incident-tag { font-weight:700; }
-.incident-item--danger   .incident-tag { color:#f87171; }
-.incident-item--warning  .incident-tag { color:#fbbf24; }
-.incident-item--info     .incident-tag { color:var(--c-text-mute); }
-.incident-item--positive .incident-tag { color:#4ade80; }
+.incident-tag { font-weight:700; color:var(--c-text); }   /* 状態は行頭の札（上の「状態の札」）。文字は色分けしない */
 .incident-body { color:var(--c-text); }
 
 /* GLANCE（30秒カラム・② PR2 2026-09-25）
@@ -178,21 +184,20 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .sec-h2.glance-title { color:var(--c-text); border-top:0; padding-top:0; border-bottom:1px solid var(--c-rule); }
 .glance-summary { display:flex; flex-direction:column; gap:6px; margin-bottom:10px; padding:4px 0 8px; border-bottom:1px solid var(--c-rule); }
 .glance-row { display:flex; align-items:flex-start; gap:10px; }
+/* 「いま何が」「海峡の今」「次の焦点」は段の名前で状態ではないので、3つとも枠だけ（D3 PR 5） */
 .glance-label { border:1px solid var(--c-rule); color:var(--c-text-mute);
   font-size:var(--fs-sm); font-weight:700; padding:2px 8px; white-space:nowrap; }
-.glance-label--now    { --c:239,68,68;  background:rgba(var(--c),0.15); border-color:rgba(var(--c),0.4); color:#fca5a5; }
-.glance-label--strait { --c:251,191,36; background:rgba(var(--c),0.15); border-color:rgba(var(--c),0.4); color:#fbbf24; }
 .glance-text { color:var(--c-text); font-size:var(--fs-md); line-height:1.6; }
 /* 今後の予定日（JS が /data/upcoming.json から「次の焦点」の直下に足す行。予定が無ければ行ごと出ない）。札は枠だけ */
 .upcoming-item { display:inline-block; margin-right:14px; }
 .upcoming-item strong { color:var(--c-text); }
 /* 最終更新からの経過（JS がヘッダーの日時から計算。36時間を超えたら日時の横、72時間を超えたら注意書き） */
-.badge-elapsed { margin-left:2px; color:#fde68a; }
-.stale-notice { margin:0; padding:8px 16px; background:#3b2f0b; border-bottom:1px solid #a16207; color:#fde68a;
+.badge-elapsed { margin-left:4px; padding:0 5px; background:var(--c-warn); color:var(--c-on-warn); }
+.stale-notice { margin:0; padding:8px 16px; background:var(--c-warn); color:var(--c-on-warn); font-weight:700;
   font-size:var(--fs-sm); line-height:1.6; text-align:center; }
 
 /* 主な動き：新しい順に3件。見出し・日付・出典だけを置き、行ごと #incident へリンクする（U3）。
-   左の罫の色（危険・警戒・平常）は状態なので PR 5 で札にする。面と角丸はやめた */
+   状態は件名の頭の札（上の「状態の札」）。左の罫は細い罫で、色分けしない（D3 PR 5） */
 .key-moves { margin-top:4px; padding-top:8px; }
 .key-moves-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin-bottom:6px;
   font-size:var(--fs-sm); font-weight:700; color:var(--c-text); letter-spacing:0.04em; }   /* 面の上なので差し色（3.5:1）は使わない */
@@ -201,16 +206,13 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .key-moves-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; }
 .key-move { max-width:none; }
 .key-move > a { display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:1px; padding:5px 8px;
-  border-left:3px solid var(--km, var(--c-rule)); text-decoration:none; }
+  border-left:3px solid var(--c-rule); text-decoration:none; }
 .key-move > a:hover { background:var(--c-bg); }
 .key-move > a:hover .key-move-title { text-decoration:underline; text-underline-offset:.18em; }
-.key-move-date { grid-row:span 2; font-family:var(--f-figure); font-size:var(--fs-sm); font-weight:600; color:var(--km, var(--c-text-mute));
+.key-move-date { grid-row:span 2; font-family:var(--f-figure); font-size:var(--fs-sm); font-weight:600; color:var(--c-text-mute);
   font-variant-numeric:tabular-nums; line-height:1.6; min-width:2.6em; }
 .key-move-title { font-size:var(--fs-base); font-weight:700; color:var(--c-text); line-height:1.55; }
 .key-move-src { font-size:var(--fs-xs); color:var(--c-text-mute); }
-.key-move--danger   { --km:#f87171; }
-.key-move--warning  { --km:#fbbf24; }
-.key-move--positive { --km:#4ade80; }
 
 /* 30秒カラムの案内（ボタン・ピル）。行き先の案内で状態ではないので、色分けをやめて枠だけにした */
 .glance-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
@@ -218,13 +220,13 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
   color:var(--c-text); font-size:var(--fs-base); font-weight:700; padding:9px 20px; text-decoration:none; letter-spacing:0.03em; }
 .glance-btn:hover { background:var(--c-bg); text-decoration:underline; text-underline-offset:.18em; }
 
-/* 状況の札（危険・警戒・平常の色）は PR 5 で札の色面にする。ここでは角丸だけやめた */
+/* 状況の札：--danger・--warning・--positive は状態の色面（D3 PR 5）。--info・--neutral は枠だけ */
 .glance-badges { display:flex; flex-wrap:wrap; gap:8px; }
 .status-badge { display:inline-block; border:1px solid var(--c-rule);
   color:var(--c-text); font-size:var(--fs-xs); padding:3px 10px; margin:3px; }
-.status-badge--danger   { --c:239,68,68;  background:rgba(var(--c),0.15); border-color:rgba(var(--c),0.3); color:#fca5a5; }
-.status-badge--warning  { --c:251,191,36; background:rgba(var(--c),0.15); border-color:rgba(var(--c),0.3); color:#fbbf24; }
-.status-badge--positive { --c:34,197,94;  background:rgba(var(--c),0.15); border-color:rgba(var(--c),0.3); color:#86efac; }
+.status-badge--danger   { background:var(--c-danger); border-color:var(--c-danger); color:var(--c-on-danger); }
+.status-badge--warning  { background:var(--c-warn);   border-color:var(--c-warn);   color:var(--c-on-warn); }
+.status-badge--positive { background:var(--c-ok);     border-color:var(--c-ok);     color:var(--c-on-ok); }
 
 .glance-jump { display:flex; flex-wrap:wrap; gap:8px; padding-top:14px; border-top:1px solid var(--c-rule); }
 .glance-jump-label { width:100%; font-size:var(--fs-sm); color:var(--c-text-mute); font-weight:600; margin-bottom:2px; }
@@ -465,34 +467,35 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
   color: var(--c-accent);
 }
 .rtable { width:100%; border-collapse:separate; border-spacing:0 5px; font-size:0.76rem; }
-/* 行は面と角丸をやめ、下の細い罫で区切る。1列目の左の色の罫（ルートの色・状態）は PR 5 で状態の色面にそろえる（§1） */
+/* 行は面と角丸をやめ、下の細い罫で区切る。1列目は「状態」の列の札と同じ色面（D3 PR 5・§1）。
+   日次更新は「状態」の札（.pill-*）だけを書き、1列目は :has() でそれに合わせる（1列目は空のセル）。ルートの見分けは名前の文字と地図の線 */
 .rtable th { text-align:left; color:var(--c-text-mute); font-size:0.68rem; font-weight:600; letter-spacing:0.07em; padding:0 10px 7px; }
 .rtable td { padding:10px; color:var(--c-text); vertical-align:middle; border-bottom:1px solid var(--c-rule); }
-.rtable tr td:first-child { padding-left:13px; }
-.rtable tr.ra td { border-left:3px solid #38bdf8 !important; }
-.rtable tr.rb td { border-left:3px solid #34d399 !important; }
-.rtable tr.rc td { border-left:3px solid #a78bfa !important; }
-.rtable tr.rd td { border-left:3px solid #f59e0b !important; background:rgba(245,158,11,0.04); }
-.rtable tr.rx td { border-left:3px solid #ef4444 !important; background:rgba(239,68,68,0.04); }
-.pill { display:inline-block; padding:2px 8px; font-size:0.67rem; font-weight:600; }
-.pill-g{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3)}
-.pill-y{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)}
-.pill-r{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)}
-.pill-p{background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3)}
-.pill-o{background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.3)}
+.rtable tr.rtable-foot td:first-child { padding-left:13px; }
+.rtable tbody tr:not(.rtable-foot) > td:first-child { border-left:1px solid var(--c-rule); }
+.rtable tbody tr:has(.pill-r) > td:first-child { background:var(--c-danger); border-left-color:var(--c-danger); }
+.rtable tbody tr:has(.pill-o) > td:first-child { background:var(--c-alert);  border-left-color:var(--c-alert); }
+.rtable tbody tr:has(.pill-y) > td:first-child { background:var(--c-warn);   border-left-color:var(--c-warn); }
+.rtable tbody tr:has(.pill-g) > td:first-child { background:var(--c-ok);     border-left-color:var(--c-ok); }
+/* 状態の札：赤 危険・橙 警戒・黄 注記・緑 平常の色面。.pill-p（判断なし）は枠だけ */
+.pill { display:inline-block; padding:2px 8px; font-size:0.67rem; font-weight:700; border:1px solid transparent; }
+.pill-g{background:var(--c-ok);color:var(--c-on-ok)}
+.pill-y{background:var(--c-warn);color:var(--c-on-warn)}
+.pill-r{background:var(--c-danger);color:var(--c-on-danger)}
+.pill-o{background:var(--c-alert);color:var(--c-on-alert)}
+.pill-p{background:none;color:var(--c-text);border-color:var(--c-rule)}
 /* ルート表の型（② PR3 / 2026-09-27）。インライン style を使わず、色は .t-* で付ける。
    「現況詳細」は 最新（.route-latest・<time> 付き・1件）→ 要点（.route-summary）→ 経緯（details.route-history）の順 */
 .route-priority { background:var(--c-surface);
   padding:10px 16px; margin-bottom:12px; font-size:var(--fs-sm); color:var(--c-text); line-height:1.6; }
 .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
 .rtable thead th { padding:8px 10px; font-size:var(--fs-xs); border-bottom:1px solid var(--c-text); }
-.rtable th.rtable-th-icon { width:28px; }
+.rtable th.rtable-th-icon { width:12px; padding:0; }
+.rtable tbody tr:not(.rtable-foot) > td:first-child { width:12px; padding:0; }
 .rtable th.rtable-th-state { text-align:center; }
 .rtable th.jf-th { color:var(--c-accent); white-space:nowrap; min-width:90px; max-width:110px; }
 .jf-th-sub { font-size:var(--fs-2xs); color:var(--c-text-mute); font-weight:400; }
 .rtable td.jf-td { font-size:var(--fs-xs); white-space:nowrap; min-width:90px; }
-.rtable tr.rc-us { background:rgba(167,139,250,0.04); }
-.rtable tr.rc-gl { background:rgba(251,146,60,0.04); }
 .route-detail p { margin:0; }
 .route-detail p + p, .route-detail p + details, .route-history p + p { margin-top:0.9em; }
 .route-src { display:block; color:var(--c-text-mute); }
@@ -500,16 +503,17 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .route-history[open] > summary { margin-bottom:0.6em; }
 .rtable tr.rtable-foot td { font-size:var(--fs-xs); color:var(--c-text-mute); padding:8px 13px; text-align:right; }
 .rtable tr.rtable-foot .route-history { text-align:left; }
-.rtable .t-danger{color:#f87171} .rtable .t-warning{color:#fbbf24} .rtable .t-warning-soft{color:var(--c-text)} .rtable .t-positive{color:#4ade80}
+/* 文中の強調は色分けしない（赤・黄・緑の文字をやめた・D3 PR 5）。状態は「状態」の列の札で示す */
+.rtable .t-danger, .rtable .t-warning, .rtable .t-warning-soft, .rtable .t-positive{color:var(--c-text)}
 .rtable .t-info{color:var(--c-text)} .rtable .t-neutral{color:var(--c-text-mute)} .rtable .t-bright, .jf-note .t-bright{color:var(--c-text)}
-.rtable .t-mute{color:var(--c-text-mute)} .rtable .t-blue{color:var(--c-text)} .rtable .t-violet{color:#a78bfa}
+.rtable .t-mute{color:var(--c-text-mute)} .rtable .t-blue, .rtable .t-violet{color:var(--c-text)}
 /* ルート名とサブタイトル（2026-10-11 運営者の指示）：ルート名は 4pt（約5px）、サブタイトルは 2pt（約3px）大きく、サブタイトルは明るく。
    親の文字サイズからの差で指定するので、PC・スマホとも同じ差で大きくなる */
 .rtable .route-name { font-size:calc(1em + 5px); }
 /* スマホはルート列を細いまま保つ（現況詳細の幅を優先）。ルート名は1文字ずつ折り返してよい（運営者の判断・2026-10-11） */
 @media (max-width: 768px) { .rtable .route-name { word-break:break-all; } }
 .rtable .route-name ~ small.t-mute { font-size:calc(0.8333em + 3px); color:var(--c-text-mute); }
-.rtable .t-purple{color:#c084fc} .rtable .t-orange{color:#fb923c}
+.rtable .t-purple, .rtable .t-orange{color:var(--c-text)}
 /* 日本向けの列の注記：黄の囲みをやめて面の帯に（状態ではない） */
 .jf-note { font-size:var(--fs-xs); color:var(--c-text); margin-top:8px; padding:8px 12px;
   background:var(--c-surface); line-height:1.7; }
@@ -519,24 +523,20 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 
 /* SCENARIOS */
 .sc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-/* シナリオの色（A 緑・B 黄・C 橙・D 赤の札）は PR 5（§1）。ここでは角丸とグラデーションだけやめた */
-.sc-card { padding:15px; border:1px solid; }
+/* シナリオ：札だけを状態の色面にする（A 緑・B 黄・C 橙・D 赤・§1・D3 PR 5）。札は id（sc-tag-A〜D）で決めるので、
+   カードのクラス（sc-best・sc-mid・sc-worst）は色に関係しない。カードは上の細い罫で区切り、面は影響の帯だけ */
+.sc-card { padding:12px 0 0; border-top:1px solid var(--c-rule); }
 .sc-tag   { font-size:0.63rem; font-weight:800; letter-spacing:0.1em; padding:3px 9px; display:inline-block; margin-bottom:9px; }
 .sc-title { font-size:0.83rem; font-weight:700; margin-bottom:7px; }
 .sc-body  { font-size:0.73rem; color:var(--c-text-mute); line-height:1.65; }
 .sc-impact{ margin-top:9px; padding:8px 10px; font-size:0.71rem; line-height:1.5; }
-.sc-best  { background:#081c10; border-color:#16a34a; }
-.sc-best  .sc-tag { background:rgba(22,163,74,0.2);color:#4ade80;border:1px solid rgba(22,163,74,0.4); }
-.sc-best  .sc-title{ color:#4ade80; }
-.sc-best  .sc-impact{ background:rgba(22,163,74,0.08); color:#86efac; }
-.sc-mid   { background:#1c1408; border-color:#d97706; }
-.sc-mid   .sc-tag { background:rgba(217,119,6,0.2);color:#fbbf24;border:1px solid rgba(217,119,6,0.4); }
-.sc-mid   .sc-title{ color:#fbbf24; }
-.sc-mid   .sc-impact{ background:rgba(217,119,6,0.08); color:#fde68a; }
-.sc-worst { background:#1c0808; border-color:#dc2626; }
-.sc-worst .sc-tag { background:rgba(220,38,38,0.2);color:#f87171;border:1px solid rgba(220,38,38,0.4); }
-.sc-worst .sc-title{ color:#f87171; }
-.sc-worst .sc-impact{ background:rgba(220,38,38,0.08); color:#fca5a5; }
+#sc-tag-A { background:var(--c-ok);     color:var(--c-on-ok); }
+#sc-tag-B { background:var(--c-warn);   color:var(--c-on-warn); }
+#sc-tag-C { background:var(--c-alert);  color:var(--c-on-alert); }
+#sc-tag-D { background:var(--c-danger); color:var(--c-on-danger); }
+.sc-tag .sc-trend { color:inherit; }
+.sc-title { color:var(--c-text); }
+.sc-impact { background:var(--c-surface); color:var(--c-text); }
 
 /* シナリオの補足・注記・次の焦点（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「シナリオの型」） */
 .sec-h2--sky { color:var(--c-text); }
@@ -558,9 +558,9 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .sc-ai-variance { margin-top:7px; padding:6px 9px; border:1px solid var(--c-rule);
   font-size:var(--fs-xs); color:var(--c-text); line-height:1.65; }
 /* 前提が古いときだけ syncScenarioFromDashboard() が style.display='block' で出す */
-/* 前提が古いことの注意は状態（注記の黄）なので、色面は PR 5 で札にする。文字は本文の色に */
-.sc-ctx-note { display:none; margin-top:7px; padding:6px 9px; background:rgba(251,191,36,0.12); border:1px solid rgba(251,191,36,0.4);
-  font-size:var(--fs-xs); color:var(--c-text); line-height:1.65; }
+/* 前提が古いことの注意は状態（注記）なので黄の色面（D3 PR 5） */
+.sc-ctx-note { display:none; margin-top:7px; padding:6px 9px; background:var(--c-warn);
+  font-size:var(--fs-xs); color:var(--c-on-warn); line-height:1.65; }
 .sc-footer { margin-top:10px; padding:10px 0 0; border-top:1px solid var(--c-rule);
   font-size:var(--fs-xs); color:var(--c-text-mute); display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
 .sc-focus-h { font-size:var(--fs-md); font-weight:700; color:var(--c-accent); margin:0 0 10px; letter-spacing:0.05em; }
@@ -569,11 +569,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .sc-focus-list strong { color:var(--c-text); font-weight:700; }
 /* キーワードの自動の色付け（markKeywords()・2026-10-11）。日次更新では手で書かない。
    対象は 30秒カラムの3行・シナリオの補足・次の焦点。数値と日付は本文の色の太字、但し書きは補助の色。
-   被害の淡い赤・回復の淡い緑は、赤・緑の文字をどうするかと一緒に PR 5 で決める */
+   被害の語・回復の語も、赤・緑の文字をやめて本文の色の太字にした（D3 PR 5。色だけで状態を示さない・§1） */
 .kw-num   { color:var(--c-text); font-weight:700; }
 .kw-date  { color:var(--c-text); font-weight:700; }
-.kw-alert { color:#f3b4b4; font-weight:600; }
-.kw-ease  { color:#a7dcbc; font-weight:600; }
+.kw-alert { color:var(--c-text); font-weight:700; }
+.kw-ease  { color:var(--c-text); font-weight:700; }
 .kw-hedge { color:var(--c-text-mute); }
 /* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
 @media (max-width: 768px) {
@@ -611,7 +611,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .sec-block--left { text-align:left; }
 .sec-block--news { margin:24px 0; text-align:left; }
 .loading-note { color:var(--c-text-mute); font-size:var(--fs-sm); padding:16px; }
-.loading-note--error { color:#f87171; }
+.loading-note--error { color:var(--c-text); }
 
 /* その他の検討中ルート（折りたたみ）。開閉の状態は onclick が #other-routes-body の style.display で読む */
 .or-wrap { margin-top:16px; margin-bottom:8px; }
@@ -630,8 +630,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
   padding:2px 8px; margin-left:auto; }
 .or-text { font-size:var(--fs-sm); color:var(--c-text-mute); line-height:1.75; }
 .or-text strong { color:var(--c-text); }
-.or-text .or-ok { color:#4ade80; }
-.or-text .or-alert { color:#f87171; }
+.or-text .or-ok, .or-text .or-alert { color:var(--c-text); }
 .or-note { font-size:var(--fs-xs); color:var(--c-text-mute); margin-top:6px; }
 
 /* 主要指標 */
@@ -741,12 +740,11 @@ button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモ�
 .modal-trans strong { color:var(--c-text); }
 .modal-interp-lead { color:var(--c-text-mute); font-size:var(--fs-xs); margin-bottom:10px; }
 .i-text { font-size:var(--fs-xs); line-height:1.65; }
-.i-text--a { color:#fca5a5; }
-.i-text--b { color:#86efac; }
+.i-text--a, .i-text--b { color:var(--c-text); }
 .modal-ling { color:var(--c-text-mute); font-size:var(--fs-xs); line-height:1.75; }
 .modal-ling strong { color:var(--c-text); }
 .modal-ling .modal-em { color:var(--c-text); font-weight:700; }
-.modal-ling .modal-alert { color:#f87171; }
+.modal-ling .modal-alert { color:var(--c-text); }
 
 /* トランプ声明の比較ブロック。#bw-timeline-detail・#bw-detail-body の display:none は toggle*() が読むのでインラインに残す */
 .bw-flag.bw-flag--end { margin-left:auto; }
@@ -893,10 +891,6 @@ footer {
   }
 }
 
-@keyframes borderBlink {
-  0%,100% { border-left-color: #ff0000; }
-  50%      { border-left-color: #ff6666; }
-}
 /* TRUMP STATEMENT MODAL */
 
 /* モーダルオーバーレイ */
@@ -958,15 +952,12 @@ footer {
 .modal-interp { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
 /* 2つの読み方の箱（赤・緑）は PR 5 で見直す。角丸だけやめた */
 .modal-interp-box { padding:10px 12px; font-size:0.73rem; line-height:1.6; }
-.modal-interp-box.a { background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); }
-.modal-interp-box.b { background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); }
+.modal-interp-box.a, .modal-interp-box.b { border-top:1px solid var(--c-rule); }   /* 2つの読み方は状態ではないので色分けしない（D3 PR 5） */
 .modal-interp-box .i-title { font-weight:700; margin-bottom:5px; font-size:0.75rem; }
-.modal-interp-box.a .i-title { color:#f87171; }
-.modal-interp-box.b .i-title { color:#34d399; }
+.modal-interp-box .i-title { color:var(--c-text); }
 .modal-media { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
 .modal-media-pill { padding:5px 12px; font-size:0.72rem; font-weight:700; }
-.pill-optimist { background:rgba(52,211,153,0.15); color:#34d399; border:1px solid rgba(52,211,153,0.3); }
-.pill-cautious { background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.3); }
+.pill-optimist, .pill-cautious { border:1px solid var(--c-rule); color:var(--c-text); }   /* 媒体の論調の札。状態ではないので枠だけ */
 
 @media(max-width:1023px){
   .modal-box { padding:18px 16px; }
@@ -1049,7 +1040,7 @@ footer {
 #tanker-title span { font-size: 11px; color: var(--c-text); font-weight: bold; letter-spacing: 0.04em; min-width: 0; }
 /* 確認ログは既定2行までに省略し、タップで全文表示する */
 #tanker-date-confirmed {
-  font-size: 9px; color: #4ade80; margin-top: 2px; line-height: 1.45; cursor: pointer;
+  font-size: 9px; color: var(--c-text-mute); margin-top: 2px; line-height: 1.45; cursor: pointer;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
 }
 #tanker-date-confirmed.expanded { -webkit-line-clamp: unset; overflow: visible; }
@@ -1079,18 +1070,18 @@ footer {
 }
 .ship-icon {
   font-size: 17px; line-height: 1.1; cursor: default; transition: transform 0.15s;
-  filter: drop-shadow(0 0 3px rgba(248, 113, 113, 0.8)); user-select: none;
+  filter: drop-shadow(0 0 2px var(--c-danger)); user-select: none;
 }
-.ship-icon.passable { filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.8)); }
+.ship-icon.passable { filter: drop-shadow(0 0 2px var(--c-ok)); }
 .ship-icon:hover { transform: scale(1.35); z-index: 1; }
 #tanker-stats { margin-top: 7px; font-size: 10px; color: var(--c-text-mute); }
 .stat-row { display: flex; justify-content: space-between; margin-bottom: 2px; }
-.stat-row span:last-child { color: #f87171; font-weight: bold; }
-.stat-row.pass span:last-child { color: #34d399; font-weight: bold; }
+/* 数字は本文の色。足止め・通過の別は行の名前の文字で書いてあり、色では示さない（D3 PR 5） */
+.stat-row span:last-child { color: var(--c-text); font-weight: bold; }
 .stat-row:last-child span:last-child { color: var(--c-text); }
 /* 足止めの棒の色（赤）は状態なので PR 5。グラデーションだけ単色にした */
 #tanker-progress-wrap { background: var(--c-rule); height: 5px; margin-top: 6px; overflow: hidden; }
-#tanker-progress-bar { height: 100%; background: #f87171; transition: width 0.8s ease; }
+#tanker-progress-bar { height: 100%; background: var(--c-danger); transition: width 0.8s ease; }
 #tanker-overlay.zoom-close { width: 300px; }
 #tanker-overlay.zoom-close .ship-icon { font-size: 20px; }
 #tanker-overlay.zoom-close #ship-grid { max-height: 160px; }
@@ -1105,13 +1096,11 @@ footer {
 #tanker-overlay.zoom-far .ship-icon { font-size: 13px; }
 #tanker-overlay.zoom-far #ship-grid { max-height: 100px; }
 /* 信頼ラベル */
-.label-fact   { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; background:rgba(74,222,128,0.15); border:1px solid rgba(74,222,128,0.4); color:#4ade80; }
-.label-analysis { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.4); color:#fbbf24; }
-.label-scenario { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.4); color:#d8b4fe; }
-.label-unconfirmed { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; background:rgba(100,116,139,0.2); border:1px solid rgba(100,116,139,0.4); color:#94a3b8; }
-.label-ai { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; }
+/* 信頼ラベル：状態ではないので色面にせず枠だけ。違いは語と線の種類（事実・分析・シナリオは実線、AI推定・推定は破線、未確認は点線）（D3 PR 5） */
+.label-fact, .label-analysis, .label-scenario, .label-unconfirmed, .label-ai, .label-estimate { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; border:1px solid var(--c-text-mute); color:var(--c-text); }
+.label-ai, .label-estimate { border-style:dashed; }
+.label-unconfirmed { border-style:dotted; color:var(--c-text-mute); }
 /* 推定＝統計などからの試算（AI ではない）。AI が出した値は .label-ai（②' PR D） */
-.label-estimate { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle; background:rgba(244,114,182,0.15); border:1px solid rgba(244,114,182,0.4); color:#f9a8d4; }
 .label-ai.sc-pct-label { margin-left:6px; margin-right:0; }
 .jf-th-sub .label-estimate { margin-right:0; }
 /* ===== ルートテーブル列幅最適化 ===== */
@@ -1160,15 +1149,14 @@ footer {
 }
 .bw-dot {
   width: 7px; height: 7px; border-radius: 50%;
-  background: #ef4444; flex-shrink: 0;
+  background: var(--c-accent); flex-shrink: 0;
   animation: badgeBlink 1.3s ease-in-out infinite;
 }
 .bw-flag { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
-/* 速報の札（赤）は PR 5 で札にする。角丸だけやめた */
+/* 「原文英語＋日本語訳付」の札。状態ではないので枠だけ（D3 PR 5） */
 .bw-badge {
   font-size: .65rem; font-weight: 800; letter-spacing: .15em;
-  color: #f87171; border: 1px solid rgba(239,68,68,0.5);
-  background: rgba(239,68,68,0.12); padding: 3px 10px;
+  color: var(--c-text); border: 1px solid var(--c-rule); padding: 3px 10px;
 }
 .bw-sub {
   font-size: .68rem; color: var(--c-text-mute); letter-spacing: .05em;
@@ -1225,13 +1213,12 @@ footer {
   background: var(--c-bg); border: 1.5px solid var(--c-accent);
 }
 .bw-tl.tl-b::before { border-color: var(--c-text); }
-.bw-tl.tl-r::before { border-color: #ef4444; background: #1c0505; }
-.bw-tl.tl-g::before { border-color: #34d399; }
+/* 時系列の点・日時は色分けしない（実施・各国の反応は札の語で書いてある・D3 PR 5） */
 .bw-tl-time { font-family: var(--f-figure); font-size: .62rem; color: var(--c-accent); letter-spacing: .07em; margin-bottom: 2px; }
 .bw-tl.tl-b .bw-tl-time { color: var(--c-text); }
-.bw-tl.tl-r .bw-tl-time { color: #f87171; }
-.bw-tl.tl-g .bw-tl-time { color: #34d399; }
 .bw-tl-body { font-size: .74rem; color: var(--c-text-mute); line-height: 1.7; }
+/* 時系列の札（背景・声明①…）は分類で状態ではないので、ルート表の .pill-* の色面を打ち消して枠だけに（D3 PR 5） */
+.bw-tl-body .pill { background: none; color: var(--c-text); border-color: var(--c-rule); }
 /* 差分表：紫の箱と左の色帯をやめ、上下の細い罫だけに */
 .bw-diff {
   border-top: 1px solid var(--c-rule); border-bottom: 1px solid var(--c-rule);
@@ -1310,7 +1297,7 @@ footer {
 /* 引用の強調は左の罫（引用の作法）。赤の強調は PR 5 で見直す */
 .bw-hl-gold { border-left: 2px solid var(--c-accent); padding-left: 11px; color: var(--c-text); }
 .bw-hl-blue { border-left: 2px solid var(--c-text-mute); padding-left: 11px; color: var(--c-text); }
-.bw-hl-red  { border-left: 2px solid #ef4444; padding-left: 11px; color: #fca5a5; }
+.bw-hl-red  { border-left: 2px solid var(--c-text); padding-left: 11px; color: var(--c-text); font-weight: 700; }   /* 強い言葉の引用。赤の文字をやめた（D3 PR 5） */
 /* 出典 */
 .bw-src {
   margin-top: 12px; padding: 10px 0 0; border-top: 1px solid var(--c-rule);
@@ -1618,10 +1605,11 @@ footer {                                   /* フッター（中央揃え・上�
    #osint-extra の display:none は toggleOsint() が読むのでテンプレートに残す */
 .osint-list { display:flex; flex-direction:column; gap:8px; }
 /* カードの地色・枠と媒体名の色は news_data.json が持つ（style で渡る）。データの色は PR 5 で見直す。角丸だけやめた */
-.osint-card { display:block; padding:12px 14px; text-decoration:none; }
+/* データ（news_data.json の cardBg・badgeColor など）が持つ色は使わない（D3 PR 5）。カードは細い罫、媒体名は枠だけの札 */
+.osint-card { display:block; padding:12px 0; text-decoration:none; border-bottom:1px solid var(--c-rule); }
 .osint-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .osint-country { font-size:0.85rem; }
-.osint-media { font-size:0.68rem; font-weight:700; padding:2px 7px; }
+.osint-media { font-size:0.68rem; font-weight:700; padding:2px 7px; border:1px solid var(--c-rule); color:var(--c-text); }
 .osint-date { font-size:0.68rem; color:var(--c-text-mute); }
 .osint-title { font-size:0.8rem; font-weight:700; color:var(--c-text); line-height:1.5; }
 .osint-en { font-size:0.72rem; color:var(--c-text-mute); margin-top:3px; line-height:1.5; font-style:italic; }

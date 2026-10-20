@@ -3422,6 +3422,34 @@
           "sourceLabel": "Newsquawk（10/19）・Rallies（10/19）"
         }
       ]
+    },
+    {
+      "date": "2026-10-21",
+      "dateLabel": "2026/10/21 07:33",
+      "blockadeDay": 236,
+      "summary": "【重大更新】UKMTOの警報178（10/20 20:11 JST発行）を追加：オマーン・ドゥクムの東約121海里（アラビア海）でタンカーが軍との「interaction」に関わった（公式の本文に発生時刻・船名・被害・軍の国籍の記載なし。Ship & Bunkerは発生を月曜10:00 UTCと書くが、公式の日時欄は10/20 11:04 UTCで時刻は未確定）・gCaptain（10/20）は、IRGCが「超大型タンカーが海峡南側で機雷に接触して炎上」「2隻が炎上・航行不能」と主張したが、船名も時期も示されず独立した証拠はないと伝える（JMICは10/17の主張に「裏付けがない」と勧告。10/17〜19の主張と同じ船かは確認できない）・シャブワ県の攻撃の死者は73人に増加（Reuters配信・The National、10/20。県のメディア事務所の発表で行方不明14人、負傷200人超。暫定・独立した検証なし。前回の「53人以上」を改めた）・フーシ派はサウジのエネルギー・空港・軍の目標を攻撃したと主張したが、サウジの確認はない（The National）・原油は10/20終値でブレント12月物108.79ドル（−0.76ドル。ReutersとInvestradeが一致、Newsquawkの見出しは108.78ドル）、WTI12月物97.82ドル（−0.72ドル。ReutersとNewsquawkが一致）。期近のWTI11月物は10/20に期限を迎え101.79ドル（−1.87ドル。Reuters）・gCaptain（10/19）の「25隻」（10月前半）は隻数、9月の18件・8月の15件は件数と単位が異なるため注記・UKMTO公式の取得は10/21 07:26 JSTで警報178が最新・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・MT ST 3は主要通信社の記事を引き続き確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機236日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（機雷）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報178：オマーン・ドゥクムの東の沖合（アラビア海）でタンカーが軍との「interaction」——発生時刻・船名・被害の記載なし",
+          "url": "https://shipandbunker.com/news/emea/328836-tanker-involved-in-incident-with-military-forces-off-oman-ukmto",
+          "sourceLabel": "UKMTO公式サイト・Ship & Bunker（10/20）"
+        },
+        {
+          "title": "IRGC「超大型タンカーが機雷に接触して炎上」「2隻が炎上・航行不能」と主張——船名・時期の説明なし、独立した確認なし",
+          "url": "https://gcaptain.com/iran-claims-more-tankers-hit-mines-in-hormuz-but-evidence-remains-elusive/",
+          "sourceLabel": "gCaptain（10/20）"
+        },
+        {
+          "title": "シャブワ県のフーシ派ミサイル攻撃、死者は73人に——県当局の暫定値、行方不明14人・負傷200人超",
+          "url": "https://tribune.com.pk/story/2635932/death-toll-from-houthi-attack-on-yemen-training-camp-rises-to-73",
+          "sourceLabel": "Reuters配信（Tribune 10/20）・The National（10/20）"
+        },
+        {
+          "title": "原油10/20終値：ブレント12月物108.79ドル（−0.76ドル）、WTI12月物97.82ドル（−0.72ドル）——WTI11月物は期限を迎え101.79ドル",
+          "url": "https://finance.yahoo.com/news/oil-eases-markets-assess-potential-005750414.html",
+          "sourceLabel": "Reuters（10/20）・Investrade・Newsquawk"
+        }
+      ]
     }
   ]
 }

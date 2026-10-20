@@ -1228,10 +1228,11 @@ def check_selfhosted_assets(html: str) -> None:
     else:
         ok("Leaflet は自サイトから読み込み（unpkg.com への参照なし）")
 
-    # フォント（Noto Sans JP・2026-10-10 追加）。Google Fonts へ戻ると、/privacy/ 第5章に無い送信先へ接続することになる。
+    # フォント（2026-10-10 追加）。Google Fonts へ戻ると、/privacy/ 第5章に無い送信先へ接続することになる。
     # /hormuz/ のほか、記事（docs/hormuz/articles/ の下の index.html）と記事の雛形も見る（日次は触らないが、新しい記事が古い雛形から作られると戻る）。
-    fonts_dir = ROOT / "docs" / "assets" / "fonts" / "noto-sans-jp"
-    fonts_css = "/assets/fonts/noto-sans-jp/noto-sans-jp.css"
+    # 2026-10-20：課題46 D3 PR 3・PR 4 で Noto Sans JP から BIZ UDPゴシックに替えたので、見る CSS を替えた（tools/site-redesign-design.md §5-2）
+    fonts_dir = ROOT / "docs" / "assets" / "fonts" / "biz-udpgothic"
+    fonts_css = "/assets/fonts/biz-udpgothic/biz-udpgothic.css"
     pat_gfonts = re.compile(r"fonts\.(?:googleapis|gstatic)\.com")  # 文字列の有無を見る（URL の検証ではない）
     bad = []
     pages = [("hormuz/index.html", html)]
@@ -1245,10 +1246,10 @@ def check_selfhosted_assets(html: str) -> None:
             bad.append(f"{name} に Google Fonts への参照があります")
         if f'href="{fonts_css}"' not in text:
             bad.append(f"{name} の <head> に {fonts_css} がありません")
-    if not (fonts_dir / "noto-sans-jp.css").is_file():
+    if not (fonts_dir / "biz-udpgothic.css").is_file():
         bad.append(f"docs{fonts_css} がありません")
     else:
-        css = (fonts_dir / "noto-sans-jp.css").read_text(encoding="utf-8")
+        css = (fonts_dir / "biz-udpgothic.css").read_text(encoding="utf-8")
         missing = [f for f in set(re.findall(r"url\(([^)]+\.woff2)\)", css)) if not (fonts_dir / f).is_file()]
         if missing:
             bad.append(f"CSS が指す woff2 が {len(missing)} 個ありません（例：{sorted(missing)[0]}）")

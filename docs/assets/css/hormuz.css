@@ -492,6 +492,8 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .rtable thead th { padding:8px 10px; font-size:var(--fs-xs); border-bottom:1px solid var(--c-text); }
 .rtable th.rtable-th-icon { width:12px; padding:0; }
 .rtable tbody tr:not(.rtable-foot) > td:first-child { width:12px; padding:0; }
+/* 空のセルは table-layout:auto（スマホ幅）で 1px まで潰れるので、中に 12px の箱を置いて幅を支える */
+.rtable tbody tr:not(.rtable-foot) > td:first-child::before { content:""; display:block; width:12px; }
 .rtable th.rtable-th-state { text-align:center; }
 .rtable th.jf-th { color:var(--c-accent); white-space:nowrap; min-width:90px; max-width:110px; }
 .jf-th-sub { font-size:var(--fs-2xs); color:var(--c-text-mute); font-weight:400; }
@@ -1105,11 +1107,11 @@ footer {
 .jf-th-sub .label-estimate { margin-right:0; }
 /* ===== ルートテーブル列幅最適化 ===== */
 .rtable { table-layout: fixed !important; }
-.rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%; }
+.rtable th:nth-child(1), .rtable td:nth-child(1) { width: 12px; }   /* 状態の色面（D3 PR 5a。もとは 4%） */
 .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14%; }
 .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13%; }
 .rtable th:nth-child(4), .rtable td:nth-child(4) { width: 11%; }
-.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 25%; }
+.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 29%; }   /* 1列目を 12px にした分（D3 PR 5a。もとは 25%） */
 .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 18%; }
 .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 15%; }
 
@@ -1125,11 +1127,12 @@ footer {
   .rtable .pill { font-size: 10px !important; padding: 2px 5px !important; }
 
   /* 6列の幅配分（合計100%） */
-  /* 1:アイコン 2:ルート 3:輸送能力 5:現況詳細 6:主なリスク 7:状態 */
-  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%  !important; }
+  /* 1:状態の色面 2:ルート 3:輸送能力 5:現況詳細 6:主なリスク 7:状態。1列目は 12px・余白なし（D3 PR 5a。もとは 4%、その分を現況詳細へ） */
+  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 12px !important; }
+  .rtable thead th:first-child, .rtable tbody tr:not(.rtable-foot) > td:first-child { padding: 0 !important; }
   .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14% !important; }
   .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13% !important; }
-  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 30% !important; }
+  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 34% !important; }
   .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 25% !important; }
   .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 14% !important; }
 }

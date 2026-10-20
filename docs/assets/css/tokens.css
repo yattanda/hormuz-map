@@ -119,3 +119,29 @@
   --arc-sans: -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
   --arc-mono: "SF Mono","Menlo","Consolas",monospace;
 }
+
+/* ============================================================
+   課題46 D3「鉄と錆止め」（2026-10-20〜）
+   値は tools/site-redesign-tokens.css と同じ。名前は上のいまの --c-* と重なるので、
+   切り替えたページ（<html class="theme-iron">）の中でだけ効かせる。切り替えていないページの見た目は変わらない。
+   全ページを切り替えたら :root へ移し、上の古いトークンと theme-iron を外す（設計書 §5-2 の PR 7）
+   ============================================================ */
+:root.theme-iron{
+  --c-bg:        #111516;  /* 地 */
+  --c-surface:   #1b2021;  /* 面（帯・札の下地） */
+  --c-text:      #e8e5dc;  /* 本文            14.6（面の上 13.1） */
+  --c-text-mute: #9d9b90;  /* 補助の文字（日付・出典） 6.6（面の上 5.9） */
+  --c-rule:      #3a3d3b;  /* 細い罫。太い罫（段の上の3px）は --c-text を使う */
+  --c-accent:    #cf5c44;  /* 差し色（アイコン・小見出し） 4.6。面の上は 4.1 なので文字に使わない */
+  --c-danger:    #c4372d;  /* 危険。面として使う。文字色にしない（地の上 3.4） */
+  --c-alert:     #e07b24;  /* 警戒（橙） */
+  --c-warn:      #e8b92e;  /* 注記（黄） */
+  --c-ok:        #2f9e6e;  /* 平常 */
+  --c-on-danger: #ffffff;  /* 危険の札の文字 5.3 */
+  --c-on-alert:  #14110a;  /* 警戒の札の文字 6.3 */
+  --c-on-warn:   #14110a;  /* 注記の札の文字 10.2 */
+  --c-on-ok:     #14110a;  /* 平常の札の文字 5.6（白は 3.4 で不足） */
+  /* 書体（§4-1）。本文は BIZ UDPゴシック、大きな数字と段の見出しの英字は IBM Plex Sans Condensed */
+  --f-body:   'BIZ UDPGothic','Hiragino Sans','Yu Gothic UI',sans-serif;
+  --f-figure: 'IBM Plex Sans Condensed','BIZ UDPGothic',sans-serif;
+}

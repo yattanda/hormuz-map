@@ -3054,15 +3054,21 @@ const SHIP_CONFIG = {
       this.textContent     = collapsed ? '展開' : '折畳';
     });
 
+  function markerScaleFor(z) {
+    return z <= 4 ? 0.35 : z <= 5 ? 0.57 : z <= 6 ? 0.78 : 1.0;
+  }
+
+  function applyMarkerScale(el, scale) {
+    el.style.transformOrigin = 'center center';
+    el.style.transition = 'transform 0.25s ease';
+    el.style.transform = scale < 1.0 ? 'scale(' + scale + ')' : '';
+  }
+
   function updateMarkerScale(z) {
-    var scale = z <= 4 ? 0.35 : z <= 5 ? 0.57 : z <= 6 ? 0.78 : 1.0;
+    var scale = markerScaleFor(z);
     document.querySelectorAll(
       '#map .leaflet-marker-icon:not(.country-label) > div'
-    ).forEach(function(el) {
-      el.style.transformOrigin = 'center center';
-      el.style.transition = 'transform 0.25s ease';
-      el.style.transform = scale < 1.0 ? 'scale(' + scale + ')' : '';
-    });
+    ).forEach(function(el) { applyMarkerScale(el, scale); });
   }
 
   function attachLeafletZoom() {
@@ -3081,8 +3087,18 @@ const SHIP_CONFIG = {
       updateMarkerScale(z);
     });
 
-    // 軍事レイヤーfetch完了後に初期スケール適用
-    setTimeout(function() { updateMarkerScale(leafletMap.getZoom()); }, 2000);
+    // 印は軍事レイヤーなどの fetch 完了後に置かれ、届く時刻は決まっていない。
+    // 置かれた時点（layeradd）でその印に今のズームの縮小を掛ける。凡例で出し直した印も同じ
+    leafletMap.on('layeradd', function (e) {
+      const icon = e.layer instanceof L.Marker ? e.layer.getElement() : null;
+      if (!icon || icon.classList.contains('country-label')) return;
+      const scale = markerScaleFor(leafletMap.getZoom());
+      Array.prototype.forEach.call(icon.children, function (el) {
+        if (el.tagName === 'DIV') applyMarkerScale(el, scale);
+      });
+    });
+    // ここまでに置かれていた印
+    updateMarkerScale(leafletMap.getZoom());
   }
 
   if (document.readyState === 'loading') {

@@ -163,9 +163,9 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 
 /* 分類の札（D3 PR 5b・設計書 §2-2）：海上・攻撃・軍事・原油・市場・外交・その他の6つ。状態ではないので枠だけ。
    語は HTML（日次）が書き、A のアイコンは ::before の mask（外交は文字だけ）。アイコンの値は下の印の間を tools/build_icons.py が書き出す */
-.cat { display:inline-flex; align-items:center; gap:3px; margin-right:6px; padding:0 5px; border:1px solid var(--c-text-mute);
+.cat { display:inline-flex; align-items:center; gap:4px; margin-right:6px; padding:0 5px; border:1px solid var(--c-text-mute);
   color:var(--c-text); font-size:0.78em; font-weight:700; line-height:1.5; letter-spacing:0.04em; vertical-align:0.08em; white-space:nowrap; }
-.cat::before { content:""; flex:none; width:1.3em; height:1.3em; background:currentColor;
+.cat::before { content:""; flex:none; width:1.6em; height:1.6em; margin-block:-0.15em; background:currentColor;
   -webkit-mask:var(--cat-icon) center / contain no-repeat; mask:var(--cat-icon) center / contain no-repeat; }
 .cat-dip::before { display:none; }
 /* cat-icons:begin（tools/build_icons.py が書き出す。手で書き換えない） */

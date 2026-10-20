@@ -1177,7 +1177,8 @@ def check_categories(html: str, news: dict | None) -> None:
     """分類の札と絵文字（課題46 D3 PR 5b・2026-10-20 追加。設計書 §2-2）。
 
     日次が書く所の頭に絵文字を書かない（分類は札の語で書く）。札はクラスと語の組が6通りのどれか。
-    news_data.json の latest の label は6つの語のどれか（過去分は表示のときに読み替えるので見ない）。
+    news_data.json の latest の先頭（その日に足した1件）の label は6つの語のどれか。
+    2件目以降は前の日までに書いたもので、古い書き方が残っていても書き換えない（表示のときに読み替える）。
     """
     bad = []
     places = (("速報インシデント", r'<span class="incident-tag">(?:<span class="cat [^"]+">[^<]*</span>)?(.*?)</span>'),
@@ -1206,12 +1207,12 @@ def check_categories(html: str, news: dict | None) -> None:
     else:
         ok(f"分類の札 {len(pairs)}個のクラスと語が一致")
     if news:
-        odd = [str(i.get("label"))[:20] for i in news.get("latest", []) if i.get("label") not in set(CATS.values())]
-        if odd:
-            warn(f"news_data.json の latest の label が分類の語ではありません: {' / '.join(odd)}。"
-                 f"{'・'.join(CATS.values())} のどれかを書く（過去分は表示のときに読み替える）")
+        first = (news.get("latest") or [{}])[0]
+        if first.get("label") not in set(CATS.values()):
+            warn(f"news_data.json の latest の先頭の label が分類の語ではありません: {str(first.get('label'))[:20]}。"
+                 f"{'・'.join(CATS.values())} のどれかを書く（2件目以降と archive の古い label は書き換えない）")
         else:
-            ok("news_data.json の latest の label はすべて分類の語")
+            ok(f"news_data.json の latest の先頭の label は分類の語（{first.get('label')}）")
 
 
 def check_estimate_labels(html: str) -> None:

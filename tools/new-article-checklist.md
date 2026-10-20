@@ -59,7 +59,7 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
 - カード末尾に「全文を読む」ボタンを設置し `articles/{slug}/` へリンク（`/hormuz/` からの文書相対）
 - **インライン style を書かない**（② PR4b-1・2026-10-01 からクラスで書く）。
   色は `col-card--{色}` で選ぶ：`red`・`amber`・`sky`・`green`・`orange`・`violet`。
-  新しい色が要るときは `docs/hormuz/index.html` の CSS「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
+  新しい色が要るときは `docs/assets/css/hormuz.css` の「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
 
 ```html
 <!-- ○○コラムカード -->

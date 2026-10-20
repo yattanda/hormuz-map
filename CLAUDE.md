@@ -15,7 +15,7 @@
 
 - `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）1ファイルに HTML・JavaScript を集約。**日次更新の対象はこのファイル**
   - CSS は外のファイル：本体は `docs/assets/css/hormuz.css`、トークン（文字サイズ・余白・色）は `docs/assets/css/tokens.css`（課題46 D2・2026-10-20 に `<style>` から移した）。`<style>` やインライン style を `index.html` に足さない
-- `docs/index.html` は媒体トップ（ハブ）。日次更新で触るのは「危機マップの最終更新」（`id="hub-updated"`）の1か所だけ（2026-10 の構造再編で本体を `/hormuz/` へ移した。設計書 `tools/s11-10-design.md`）
+- `docs/index.html` は媒体トップ（ハブ。CSS は `docs/assets/css/hub.css`）。日次更新で触るのは「危機マップの最終更新」（`id="hub-updated"`）の1か所だけ（2026-10 の構造再編で本体を `/hormuz/` へ移した。設計書 `tools/s11-10-design.md`）
 - **「日次更新」は毎日行うのが基本だが、更新しない日もある**（情勢が膠着している時期は1日おきにした期間がある）。
   公開ページで「毎日更新」と言い切らず、「原則として毎日更新」と書く。最終更新は実際に更新した日時を示す
   - ハブの4海峡の地図は `tools/build_hub_map.py --write` が書き出す。目印 `<!-- hub-map:start -->`〜`<!-- hub-map:end -->` の間を手で編集しない

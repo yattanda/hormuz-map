@@ -98,6 +98,9 @@ def diff(a, b):
     from PIL import Image, ImageChops
     a, b = pathlib.Path(a), pathlib.Path(b)
     names = sorted({p.name for p in a.glob('*.png')} | {p.name for p in b.glob('*.png')})
+    if not names:
+        print(f'比べる写真がない：{a} と {b}')
+        return 1
     bad = 0
     for n in names:
         if not (a / n).exists() or not (b / n).exists():
@@ -105,7 +108,9 @@ def diff(a, b):
         ia, ib = Image.open(a / n).convert('RGB'), Image.open(b / n).convert('RGB')
         if ia.size != ib.size:
             print(f'{n}\t大きさが違う {ia.size} → {ib.size}'); bad += 1; continue
-        d = ImageChops.difference(ia, ib).convert('L').point(lambda v: 255 if v else 0)
+        # 灰色にしてから閾値を掛けると、わずかな色の差が 0 に丸められる。色ごとの差の最大を取る
+        r, g, bl = ImageChops.difference(ia, ib).split()
+        d = ImageChops.lighter(ImageChops.lighter(r, g), bl).point(lambda v: 255 if v else 0)
         cnt = d.histogram()[255]
         print(f'{n}\t{cnt}')
         bad += cnt > 0

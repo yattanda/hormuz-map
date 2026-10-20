@@ -1,10 +1,9 @@
 /* ===============================================
-   docs/articles/ 記事ページ共通CSS
-   index.html のダークテーマ・design-system.md の
-   spacing/typographyトークン方針に整合させたもの。
+   /hormuz/articles/ の記事ページと記事一覧の共通 CSS。
+   課題46 D3 PR 3（2026-10-20）で「鉄と錆止め」へ（--color-* をやめて --c-* に）。
+   色と書体は /assets/css/tokens.css の theme-iron（記事は article.css より先に tokens.css を読む）。
+   段は太い罫で切り、カードの面・角丸・影は使わない（tools/site-redesign-design.md §1・§3）
    =============================================== */
-
-/* トークン（余白・色）は /assets/css/tokens.css。記事は article.css より先に tokens.css を読む（課題46 D2） */
 
 * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -15,12 +14,17 @@ html { font-size: 100%; }
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-body);
-  font-family: 'Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--f-body);
   min-height: 100vh;
   line-height: 1.7;
 }
+
+/* リンクは本文の色＋下線（Q1） */
+a { color: var(--c-text); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
 
 .article-container {
   width: min(100% - 2rem, 760px);
@@ -31,125 +35,141 @@ body {
 /* パンくず */
 .breadcrumb {
   font-size: 0.78rem;
-  color: var(--color-muted);
+  color: var(--c-text-mute);
   margin-bottom: var(--space-lg);
   display: flex;
   flex-wrap: wrap;
   gap: 0.35em;
 }
-.breadcrumb a { color: var(--color-link); text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb a { color: var(--c-text-mute); }
+.breadcrumb a:hover { color: var(--c-text); }
 
 /* 見出し */
 .article-eyebrow {
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--c-accent);
   text-transform: uppercase;
   margin-bottom: var(--space-sm);
 }
 .article-title {
   font-size: clamp(1.35rem, 4.5vw, 1.9rem);
   line-height: 1.4;
-  font-weight: 800;
-  color: var(--color-text);
+  font-weight: 700;
+  color: var(--c-text);
   margin-bottom: var(--space-sm);
 }
 .article-lead {
   font-size: 0.95rem;
-  color: var(--color-muted);
+  color: var(--c-text-mute);
   line-height: 1.75;
   margin-bottom: var(--space-md);
 }
 .article-meta {
   font-size: 0.75rem;
-  color: var(--color-muted);
+  color: var(--c-text-mute);
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-md);
   padding-bottom: var(--space-lg);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--c-rule);
   margin-bottom: var(--space-lg);
 }
-.article-meta strong { color: var(--color-body); font-weight: 700; }
+.article-meta strong { color: var(--c-text); font-weight: 700; }
 
-/* 本文セクション */
+/* 本文セクション。段の見出しの上に太い罫（§1）。帯（要点・注記）の中の見出しには罫を付けない */
 .article-body { display: flex; flex-direction: column; gap: var(--space-lg); }
 .article-section-title {
   font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--color-accent-gold);
+  font-weight: 700;
+  color: var(--c-accent);
   margin-bottom: var(--space-xs);
+  padding-top: 8px;
+  border-top: 3px solid var(--c-text);
 }
+.article-note-box .article-section-title,
+.article-summary-box .article-section-title { padding-top: 0; border-top: 0; }
 .article-body p {
   font-size: 0.92rem;
-  color: var(--color-body);
+  color: var(--c-text);
   line-height: 1.85;
 }
-.article-body strong { color: var(--color-text); }
+.article-body strong { color: var(--c-text); }
+/* 注記の帯：面だけ（枠・角丸なし） */
 .article-note-box {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  background: var(--c-surface);
   padding: var(--space-sm) var(--space-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
 }
+/* 結論・要点の帯：面＋上に差し色の太い罫（ハブの入口と同じ作法）。状態ではないので赤の色面にしない */
 .article-summary-box {
-  background: rgba(248,113,113,0.08);
-  border: 1px solid rgba(248,113,113,0.2);
-  border-radius: 8px;
-  padding: var(--space-sm) var(--space-md);
+  background: var(--c-surface);
+  border-top: 4px solid var(--c-accent);
+  padding: var(--space-md);
 }
-.article-summary-box .article-section-title { color: var(--color-accent); }
+.article-summary-box .article-section-title { color: var(--c-text); }
 
 /* 時事注記 */
 .at-the-time {
   font-size: 0.78rem;
-  color: var(--color-muted);
+  color: var(--c-text-mute);
   font-style: normal;
 }
 
 /* テーブル */
 .article-table-wrap { overflow-x: auto; }
-.article-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-.article-table th, .article-table td { padding: 0.5em 0.7em; text-align: left; border-bottom: 1px solid var(--color-border); }
-.article-table th { color: var(--color-muted); background: var(--color-surface); }
-.article-table td { color: var(--color-body); }
+.article-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.article-table th, .article-table td { padding: 0.5em 0.7em; text-align: left; border-bottom: 1px solid var(--c-rule); }
+.article-table th { color: var(--c-text-mute); background: var(--c-surface); }
+.article-table td { color: var(--c-text); }
+
+/* グラフ（記事 oil-stockpile-monthly-trend の折れ線）。色はここで付け、SVG には書かない（月次タスクは既存の要素をまねて点を足す） */
+.article-chart { margin-top: 10px; padding: 12px 8px 6px; border-top: 1px solid var(--c-rule); border-bottom: 1px solid var(--c-rule); }
+.article-chart svg { display: block; width: 100%; height: auto; }
+.article-chart text { font-family: var(--f-body); }
+.article-chart .ch-grid { stroke: var(--c-rule); stroke-width: 1; }
+.article-chart .ch-base { stroke: var(--c-text-mute); stroke-width: 1; }
+.article-chart .ch-axis { fill: var(--c-text-mute); }
+.article-chart .ch-area { fill: var(--c-figure); fill-opacity: 0.12; }
+.article-chart .ch-line { fill: none; stroke: var(--c-figure); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.article-chart .ch-pt { fill: var(--c-figure); }
+.article-chart .ch-val { fill: var(--c-text); font-family: var(--f-figure); font-weight: 600; }
+/* 最新の点だけ差し色で目立たせる（状態の色は使わない） */
+.article-chart .ch-pt--latest { fill: var(--c-accent); stroke: var(--c-bg); stroke-width: 1.5; }
+.article-chart .ch-val--latest { fill: var(--c-accent); }
+.article-fineprint { font-size: 0.72rem; color: var(--c-text-mute); margin-top: 6px; }
 
 /* 関連コラム */
 .related-articles {
   margin-top: var(--space-2xl);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-sm);
+  border-top: 3px solid var(--c-text);
 }
 .related-articles h2 {
   font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--color-muted);
+  font-weight: 700;
+  color: var(--c-text-mute);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 .related-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
 }
 .related-list a {
   display: block;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: var(--space-sm) var(--space-md);
-  color: var(--color-body);
+  border-bottom: 1px solid var(--c-rule);
+  padding: var(--space-sm) 0;
+  color: var(--c-text);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
 }
-.related-list a:hover { border-color: var(--color-link); color: var(--color-link); }
+.related-list a:hover { text-decoration: underline; }
 
 /* 本編へ戻る */
 .back-to-main {
@@ -161,28 +181,24 @@ body {
   gap: 0.4em;
   min-height: 44px;
   padding: 0 var(--space-lg);
-  border-radius: 999px;
-  background: var(--color-surface-strong);
-  border: 1px solid var(--color-border);
-  color: var(--color-body);
+  border: 1px solid var(--c-rule);
+  color: var(--c-text);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
 }
-.back-to-main a:hover { border-color: var(--color-link); color: var(--color-link); }
+.back-to-main a:hover { border-color: var(--c-text); }
 
-/* 記事一覧（/hormuz/articles/）のカード。課題46 D2 で一覧の <style> から移した（中身は不変） */
-.article-index-list { display: flex; flex-direction: column; gap: var(--space-md); }
+/* 記事一覧（/hormuz/articles/）。カードの面をやめ、1本ずつ細い罫で区切る */
+.article-index-list { display: flex; flex-direction: column; border-top: 3px solid var(--c-text); }
 .article-index-card {
   display: block;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--c-rule);
+  padding: var(--space-md) 0;
   text-decoration: none;
   color: inherit;
 }
-.article-index-card:hover { border-color: var(--color-link); }
-.article-index-card .idx-title { font-size: 0.95rem; font-weight: 800; color: var(--color-text); margin-bottom: 4px; }
-.article-index-card .idx-lead { font-size: 0.8rem; color: var(--color-muted); line-height: 1.6; }
-.article-index-card .idx-date { font-size: 0.7rem; color: var(--color-muted); margin-top: 6px; display: block; }
+.article-index-card:hover .idx-title { text-decoration: underline; }
+.article-index-card .idx-title { font-size: 0.95rem; font-weight: 700; color: var(--c-text); margin-bottom: 4px; }
+.article-index-card .idx-lead { font-size: 0.8rem; color: var(--c-text-mute); line-height: 1.6; }
+.article-index-card .idx-date { font-size: 0.7rem; color: var(--c-text-mute); margin-top: 6px; display: block; }

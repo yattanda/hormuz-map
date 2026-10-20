@@ -28,25 +28,37 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
 @media (min-width: 769px) { .hub-stats { grid-template-columns: repeat(4, 1fr); } }
 .hub-stat { padding: var(--space-sm) 0; border-top: 1px solid var(--c-rule); }
 .hub-stat-head { color: var(--c-text); font-size: var(--fs-sm); font-weight: 700; }
-.hub-stat-num { font-family: var(--f-figure); font-size: var(--fs-2xl); font-weight: 600; line-height: 1.4; color: var(--c-text); }
+.hub-stat-num { font-family: var(--f-figure); font-size: var(--fs-2xl); font-weight: 600; line-height: 1.4; color: var(--c-figure); }
 .hub-stat-num--text { font-size: var(--fs-lg); line-height: 2.05; }
 .hub-stat-unit { font-family: var(--f-body); font-size: var(--fs-sm); font-weight: 700; margin-left: 2px; }
 .hub-stat-note { color: var(--c-text-mute); font-size: var(--fs-xs); line-height: 1.5; }
 
-/* 入口：面（帯）の上に差し色の罫 */
-.hub-cta { display: block; margin: 0; padding: var(--space-lg); text-decoration: none;
-  background: var(--c-surface); border-top: 3px solid var(--c-accent); color: var(--c-text); }
-.hub-cta-title { display: block; font-size: var(--fs-xl); font-weight: 700; line-height: 1.4; }
+/* 入口（10/20 決定・案 E4）：識別表の作法で、海峡の絵（i-strait・B の塗り分け）・英字の小見出し・名前を並べる。
+   面の帯の上下に差し色の罫。「開く」は差し色の面のボタン（状態の色面ではない） */
+.hub-cta { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 28px; align-items: center;
+  margin: 0; padding: 28px 32px; text-decoration: none; color: var(--c-text);
+  background: var(--c-surface); border-top: 4px solid var(--c-accent); border-bottom: 1px solid var(--c-accent); }
+.hub-cta > span { grid-column: 2; }
+.hub-cta-icon { grid-column: 1; grid-row: 1 / 5; width: 136px; height: 136px;
+  --a: var(--c-text); --b: var(--c-accent); --c2: var(--c-text-mute); }
+.hub-cta-eyebrow { display: block; font-family: var(--f-figure); font-weight: 600; font-size: var(--fs-sm); letter-spacing: .16em; color: var(--c-text-mute); }
+.hub-cta-title { display: block; font-size: var(--fs-2xl); font-weight: 700; line-height: 1.4; }
 .hub-cta-lead { display: block; margin-top: var(--space-xs); color: var(--c-text); font-size: var(--fs-base); }
-.hub-cta-go { display: inline-block; margin-top: var(--space-sm); font-weight: 700; font-size: var(--fs-md);
-  text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
-.hub-cta:hover .hub-cta-go { text-decoration-thickness: 2px; }
+.hub-cta-go { justify-self: start; display: inline-block; margin-top: var(--space-sm); padding: 8px 20px;
+  background: var(--c-accent); color: var(--c-on-accent); font-weight: 700; font-size: var(--fs-md); }
+.hub-cta:hover .hub-cta-go { text-decoration: underline; text-underline-offset: .18em; }
+@media (max-width: 600px) {
+  .hub-cta { grid-template-columns: minmax(0, 1fr); padding: 20px; }
+  .hub-cta > span { grid-column: 1; }
+  .hub-cta-icon { grid-column: 1; grid-row: auto; width: 72px; height: 72px; margin-bottom: 8px; }
+  .hub-cta-title { font-size: var(--fs-xl); }
+}
 
-/* 地図（海は地の色・陸は面・海岸は罫。いま追っている場所だけ危険の赤の印） */
+/* 地図（海は地の色。いま追っている場所だけ危険の赤の印）。陸と海岸の色は地図だけの値（地図の色は対応表の外・10/20 に陸を明るく） */
 .hub-map { margin: 0; overflow: hidden; background: var(--c-bg); }
 .hub-map-svg { display: block; width: 100%; height: auto; }
 .hub-map-sea { fill: var(--c-bg); }
-.hub-map-land { fill: var(--c-surface); stroke: var(--c-rule); stroke-width: 0.5; }
+.hub-map-land { fill: #343b3c; stroke: #4a5152; stroke-width: 0.5; }
 .hub-map-dot { fill: var(--c-text-mute); stroke: var(--c-bg); stroke-width: 1.5; }
 .hub-map-label { fill: var(--c-text); font-size: 22px; font-weight: 700; paint-order: stroke; stroke: var(--c-bg); stroke-width: 5px; stroke-linejoin: round; }
 .hub-map-point--live .hub-map-dot { fill: var(--c-danger); }

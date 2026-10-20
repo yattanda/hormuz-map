@@ -50,7 +50,7 @@
   .stat{padding:16px 4px;text-align:center;border-right:1px solid var(--c-rule);}
   .stat:last-child{border-right:none;}
   .stat .n{
-    font-family:var(--f-figure);font-weight:600;font-size:1.5rem;color:var(--c-text);
+    font-family:var(--f-figure);font-weight:600;font-size:1.5rem;color:var(--c-figure);
     font-variant-numeric:tabular-nums;
   }
   .stat .l{font-size:.68rem;color:var(--c-text-mute);letter-spacing:.06em;margin-top:2px;}

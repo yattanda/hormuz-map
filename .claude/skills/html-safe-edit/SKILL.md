@@ -44,7 +44,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 ## JS が組み立てる HTML（2026-10-12・②' PR E）
 
-- 地図のポップアップ・印・凡例・関連最新ニュース・現地メディア視点は、JS のテンプレートが HTML を組み立てる。**テンプレートにも固定値のインライン style を書かない。**クラスは `<style>` の末尾「JS が組み立てる HTML のクラス」にまとめてある
+- 地図のポップアップ・印・凡例・関連最新ニュース・現地メディア視点は、JS のテンプレートが HTML を組み立てる。**テンプレートにも固定値のインライン style を書かない。**クラスは `docs/assets/css/hormuz.css` の末尾「JS が組み立てる HTML のクラス」にまとめてある（課題46 D2 で `<style>` から移した）
   （文字色 `.tc-*`／軍事レイヤー `.mil-*`／調達先などのポップアップ `.src-pop*`／バッジ `.p-badge--*`／印 `.mk*`／地図上の文字 `.map-label*`／凡例 `.leg-dash--*`／`.news-*`／`.osint-*`）
 - style で残してよいのは2種類だけ：計算やデータで決まる値（`${size}`・`${col}`・`news_data.json` が持つ色）と、JS が開閉の状態として読む `display:none;`
 - ポップアップを足すときは、見出しに `<div class="p-title tc-◯">`、バッジに `<span class="p-badge p-badge--◯">`、小さな注記に `<div class="p-note">` を使う。新しい色が要るときはクラスを足す

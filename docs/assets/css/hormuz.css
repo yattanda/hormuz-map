@@ -1,0 +1,1713 @@
+/* /hormuz/ 本体の CSS。課題46 D2 で docs/hormuz/index.html の <style> から移した（中身は不変）。トークンは /assets/css/tokens.css */
+/* デザイントークン（文字サイズ・余白・色）は /assets/css/tokens.css（課題46 D2 で切り出し） */
+
+/* ===== フォント・基本設定 ===== */
+* {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== モバイル ルートフォントサイズ底上げ ===== */
+/* rem基準を16px→18pxに変更。全remベースのサイズが1.125倍にスケール */
+@media (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* ===== PC/タブレット ルートフォントサイズ底上げ（フェーズ0b / 2026-09-04 追加） =====
+   スマホには上記の底上げがあるが、PC側には無かったため、本文相当のテキストが
+   11〜12px相当で表示されていた（実測: ルートテーブル本文 12.16px）。
+   一般的な可読下限を下回るため、スマホと同じ 18px 基準に揃える。
+
+   これにより rem 指定の font-size 447箇所が一括で拡大する。
+   今後サイズを調整する場合は、447箇所ではなくこの数値1箇所を変更する。
+
+   検証: 1440px / 909px の双方で横スクロール0を確認（2026-09-04）。
+   フェーズ2 2-a（2026-09-18 試作）: 18px → 20px。
+   18px では文字量の約6割が 14px 未満（中央値 14px）だった。20px で 14px 未満は約1割、
+   本文の中央値は 15〜16px になる。768px 以下（スマホ）は上の絶対ルールのまま変えない。 */
+@media (min-width: 769px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* ===== 余白最適化（スマホ優先） ===== */
+body {
+  margin: 0;
+  padding: 0 10px;
+}
+
+/* ===== コンテナ幅をフル活用 ===== */
+.container, .source-wrap {
+  max-width: 100% !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+/* ===== スマホ最適化 ===== */
+@media (max-width: 600px) {
+
+  /* 全体余白を削減 */
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .container,
+  .source-wrap {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  /* ルートテーブルは端まで広げる。
+     親の #routes は body 直下で padding が 0 のため、以前あった
+     margin -4px / width calc(100% + 8px) の打ち消しは過剰で、
+     375px 幅で右に 4px はみ出していた（2026-09-05 実測）。 */
+  .rtable-wrap {
+    overflow-x: auto;
+  }
+  /* ティッカー余白削減 */
+  .ticker {
+    padding: 7px 10px !important;
+  }
+
+  /* カード系の余白削減 */
+  .news-item {
+    padding: 10px 12px !important;
+  }
+}
+/* ===== 全体文字サイズ底上げ（スマホ最適化 v2） ===== */
+/* html font-size: 18px により rem全体が底上げ済み。*/
+/* 以下は追加の個別調整のみ。 */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.8;
+  }
+  /* ニュースアイテム行間 */
+  .news-item,
+  .news-item a {
+    line-height: 1.7 !important;
+  }
+  /* シナリオ本文行間 */
+  .sc-body, .sc-impact {
+    line-height: 1.75 !important;
+  }
+}
+/* ===== ニュースリスト余白最適化 ===== */
+@media (max-width: 768px) {
+  .news-item {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:#071828;
+  color:#e0e8f0;
+  font-family:'Segoe UI','Hiragino Sans','Yu Gothic',sans-serif;
+  min-height:100vh;
+}
+
+/* HEADER */
+header {
+  background:linear-gradient(135deg,#1a0a0a,#2d0d0d);
+  border-bottom:2px solid #7f1d1d;
+  padding:10px 14px;
+  display:flex; align-items:center;
+  justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+header h1 { font-size:1.1rem; font-weight:700; color:#fca5a5; }
+.badges { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.badge-item { border-radius:20px; padding:4px 12px; font-size:0.72rem; font-weight:600; }
+/* 警戒レベル（2026-09-25 見直し）：点滅と赤い面をやめ、赤は先頭の点だけにする。
+   中身は「警戒レベル：最高」の一語だけ。情勢の要約は30秒カラムに書く（ここに括弧書きで足さない） */
+.badge-alert { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.04);
+  border:1px solid rgba(248,113,113,0.35); color:#e2e8f0; }
+.badge-alert::before { content:""; width:7px; height:7px; border-radius:50%; background:#ef4444; flex-shrink:0; }
+.badge-days  { background:rgba(255,255,255,0.04); border:1px solid rgba(148,163,184,0.3); color:#cbd5e1; font-variant-numeric:tabular-nums; }
+.badge-date  { background:#1e3a5f; border:1px solid #2d6ca8; color:#93c5fd; }
+@keyframes badgeBlink{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* TICKER */
+.ticker {
+  background:linear-gradient(90deg,#7f1d1d,#991b1b,#7f1d1d);
+  border-bottom:1px solid #ef4444;
+  padding:9px 18px;
+  display:flex; align-items:center; gap:12px; overflow:hidden;
+}
+.ticker-label { background:#ef4444; color:#fff; font-size:0.68rem; font-weight:800; padding:3px 9px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
+.ticker-scroll { overflow:hidden; flex:1; }
+.ticker-text { font-size:0.8rem; color:#fecaca; white-space:nowrap; display:inline-block; animation:tickerScroll 50s linear infinite; will-change:transform; }
+/* 50s は JS が動かないときの予備。fitTickerSpeed() が文字の長さから一定の速さ（px/秒）になるよう上書きする */
+@keyframes tickerScroll{0%{transform:translate3d(100vw,0,0)}100%{transform:translate3d(-100%,0,0)}}
+
+/* MAIN CONTAINER */
+.container { padding:16px; max-width:1400px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+
+/* INCIDENT（速報インシデント・② PR1 2026-09-24）
+   日次更新で項目を足すときは、この型（li.incident-item＋色のモディファイア）で書く。 */
+.incident-headline-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.incident-headline { font-size:var(--fs-base); font-weight:800; color:#f87171; }
+.incident-badge { font-size:var(--fs-2xs); color:#64748b; padding:2px 8px; border-radius:12px;
+  background:rgba(100,116,139,0.15); border:1px solid rgba(100,116,139,0.25); }
+.incident-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; }
+.incident-item { margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.07); }
+.incident-tag { font-weight:700; }
+.incident-item--danger   .incident-tag { color:#f87171; }
+.incident-item--warning  .incident-tag { color:#fbbf24; }
+.incident-item--info     .incident-tag { color:#94a3b8; }
+.incident-item--positive .incident-tag { color:#4ade80; }
+.incident-body { color:#e2e8f0; }
+
+/* GLANCE（30秒カラム・② PR2 2026-09-25）
+   旧・情勢カードは「主な動き」（.key-moves）に吸収した。日次更新は3行サマリーの本文・主な動き3件・
+   ステータスバッジを書き換える。いずれもインライン style を書かず、この型（クラス＋色のモディファイア）で書く。
+   色はモディファイアごとに --c（RGB）を決め、背景・枠・影はその透明度違いで出す。 */
+.glance { width:100%; margin:0 0 28px 0; padding:0; }
+.glance-panel { background:linear-gradient(135deg,#0f2027 0%,#1a2a3a 100%); border:2px solid rgba(56,189,248,0.45);
+  box-shadow:0 0 18px rgba(56,189,248,0.08), inset 0 0 0 1px rgba(56,189,248,0.06); border-radius:14px; padding:16px 12px; }
+.sec-h2.glance-title { color:#38bdf8; border-bottom-color:rgba(56,189,248,0.15); }
+.glance-summary { display:flex; flex-direction:column; gap:6px; margin-bottom:10px; border:1.5px solid rgba(56,189,248,0.3);
+  border-radius:14px; padding:8px 10px; background:rgba(15,23,42,0.6); }
+.glance-row { display:flex; align-items:flex-start; gap:10px; }
+.glance-label { --c:100,116,139; background:rgba(var(--c),0.15); border:1px solid rgba(var(--c),0.4); color:#94a3b8;
+  font-size:var(--fs-sm); font-weight:700; padding:2px 8px; border-radius:4px; white-space:nowrap; }
+.glance-label--now    { --c:239,68,68;  color:#fca5a5; }
+.glance-label--strait { --c:251,191,36; color:#fbbf24; }
+.glance-text { color:#e2e8f0; font-size:var(--fs-md); line-height:1.6; }
+/* 今後の予定日（JS が /data/upcoming.json から「次の焦点」の直下に足す行。予定が無ければ行ごと出ない） */
+.glance-label--upcoming { --c:56,189,248; color:#7dd3fc; }
+.upcoming-item { display:inline-block; margin-right:14px; }
+.upcoming-item strong { color:#fde68a; }
+.upcoming-item a { color:#93c5fd; }
+/* 最終更新からの経過（JS がヘッダーの日時から計算。36時間を超えたら日時の横、72時間を超えたら注意書き） */
+.badge-elapsed { margin-left:2px; color:#fde68a; }
+.stale-notice { margin:0; padding:8px 16px; background:#3b2f0b; border-bottom:1px solid #a16207; color:#fde68a;
+  font-size:var(--fs-sm); line-height:1.6; text-align:center; }
+
+/* 主な動き：新しい順に3件。見出し・日付・出典だけを置き、行ごと #incident へリンクする（U3） */
+.key-moves { border-top:1px solid rgba(56,189,248,0.15); margin-top:4px; padding-top:8px; }
+.key-moves-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin-bottom:6px;
+  font-size:var(--fs-sm); font-weight:800; color:#7dd3fc; letter-spacing:0.04em; }
+.key-moves-more { margin-left:auto; font-size:var(--fs-xs); font-weight:600; color:#64748b; text-decoration:none; letter-spacing:0; }
+.key-moves-more:hover { color:#94a3b8; }
+.key-moves-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; }
+.key-move { --c:148,163,184; max-width:none; }
+.key-move > a { display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:1px; padding:5px 8px;
+  border-left:3px solid rgb(var(--c)); border-radius:4px; background:rgba(var(--c),0.06); text-decoration:none; }
+.key-move > a:hover { background:rgba(var(--c),0.14); }
+.key-move-date { grid-row:span 2; font-size:var(--fs-sm); font-weight:800; color:rgb(var(--c));
+  font-variant-numeric:tabular-nums; line-height:1.6; min-width:2.6em; }
+.key-move-title { font-size:var(--fs-base); font-weight:700; color:#e2e8f0; line-height:1.55; }
+.key-move-src { font-size:var(--fs-xs); color:#64748b; }
+.key-move--danger   { --c:248,113,113; }
+.key-move--warning  { --c:251,191,36; }
+.key-move--positive { --c:74,222,128; }
+
+.glance-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+.glance-btn { --c:56,189,248; display:inline-flex; align-items:center; gap:7px;
+  background:linear-gradient(135deg,rgba(var(--c),0.22),rgba(var(--c),0.08)); border:1.5px solid rgba(var(--c),0.65);
+  color:#38bdf8; font-size:var(--fs-base); font-weight:700; padding:9px 20px; border-radius:8px; text-decoration:none;
+  letter-spacing:0.03em; box-shadow:0 2px 10px rgba(var(--c),0.25); transition:all 0.2s; }
+.glance-btn:hover { background:linear-gradient(135deg,rgba(var(--c),0.38),rgba(var(--c),0.18)); box-shadow:0 4px 16px rgba(var(--c),0.4); }
+.glance-btn--danger  { --c:239,68,68;  color:#fca5a5; }
+.glance-btn--warning { --c:251,191,36; color:#fbbf24; }
+
+.glance-badges { display:flex; flex-wrap:wrap; gap:8px; }
+.status-badge { --c:148,163,184; display:inline-block; background:rgba(var(--c),0.15); border:1px solid rgba(var(--c),0.3);
+  color:#cbd5e1; font-size:var(--fs-xs); padding:3px 10px; border-radius:12px; margin:3px; }
+.status-badge--danger   { --c:239,68,68;  color:#fca5a5; }
+.status-badge--warning  { --c:251,191,36; color:#fbbf24; }
+.status-badge--info     { --c:56,189,248; color:#7dd3fc; }
+.status-badge--positive { --c:34,197,94;  color:#86efac; }
+
+.glance-jump { display:flex; flex-wrap:wrap; gap:8px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.07); }
+.glance-jump-label { width:100%; font-size:var(--fs-sm); color:#64748b; font-weight:600; margin-bottom:2px; }
+.jump-pill { --c:56,189,248; display:inline-flex; align-items:center; gap:5px; background:rgba(var(--c),0.12);
+  border:1px solid rgba(var(--c),0.35); color:#38bdf8; font-size:var(--fs-sm); font-weight:700; padding:5px 14px;
+  border-radius:20px; text-decoration:none; white-space:nowrap; }
+.jump-pill--danger  { --c:239,68,68;   color:#f87171; }
+.jump-pill--warning { --c:251,191,36;  color:#fbbf24; }
+.jump-pill--violet  { --c:167,139,250; color:#a78bfa; }
+.jump-pill--emerald { --c:52,211,153;  color:#34d399; }
+.jump-pill--gold    { --c:201,168,105; color:#c9a869; border-color:rgba(201,168,105,0.4); }
+.jump-pill--neutral { --c:148,163,184; color:#cbd5e1; }
+.jump-pill-badge { font-size:0.62rem; font-weight:800; line-height:1; padding:3px 6px; border-radius:8px;
+  background:rgba(var(--c),0.3); color:#fff; letter-spacing:0.02em; }
+.jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg,rgba(56,189,248,0.2) 0%,rgba(99,102,241,0.2) 100%); border:1px solid rgba(56,189,248,0.5);
+  color:#7dd3fc; font-size:var(--fs-md); font-weight:800; padding:7px 18px; border-radius:24px; text-decoration:none;
+  letter-spacing:0.03em; transition:all 0.2s; white-space:nowrap; }
+
+.glance-special { margin-top:16px; border:1.5px solid rgba(248,113,113,0.45); border-radius:12px; padding:12px 16px; background:rgba(239,68,68,0.04); }
+.glance-special-head { font-size:var(--fs-md); font-weight:800; color:#ff6b6b; letter-spacing:0.06em; margin-bottom:10px;
+  display:flex; align-items:center; gap:7px; }
+.glance-special-icon { font-size:var(--fs-lg); }
+.glance-special-sub { font-size:var(--fs-xs); font-weight:600; color:#94a3b8; margin-left:4px; }
+.glance-special-links { display:flex; flex-wrap:wrap; gap:6px; }
+.report-banner { display:flex; align-items:center; gap:10px; width:100%; margin-top:8px; background:rgba(251,146,60,0.08);
+  border:1.5px solid rgba(251,146,60,0.4); border-radius:10px; overflow:hidden; text-decoration:none; transition:box-shadow 0.2s; }
+.report-banner:hover { box-shadow:0 0 14px rgba(251,146,60,0.35); }
+.report-banner-img { width:72px; height:56px; object-fit:cover; object-position:center 20%; border-radius:4px; flex-shrink:0; }
+.report-banner-body { padding:6px 10px 6px 0; flex:1; min-width:0; }
+.report-banner-kicker { font-size:var(--fs-2xs); font-weight:800; color:#fb923c; letter-spacing:0.06em; margin-bottom:2px; }
+.report-banner-title { font-size:var(--fs-xs); font-weight:700; color:#fed7aa; line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.report-banner-sub { font-size:var(--fs-2xs); color:#94a3b8; margin-top:1px; }
+
+/* 旧インライン style に当たっていた属性セレクタ（[style*="font-size:0.95rem"] 0.88rem・
+   div[style*="font-size:0.7"] 0.8rem）の効果をクラスで引き継ぐ */
+@media (max-width: 768px) {
+  .glance-jump-label,
+  .report-banner-title { font-size:0.8rem; }
+}
+@media (max-width: 600px) {
+  .glance-text,
+  .glance-special-head { font-size:0.88rem; }
+}
+
+
+/* MAP */
+.map-wrap { border-radius:14px; overflow:hidden; border:1px solid #1e3a5f; position:relative; }
+#map { height:580px; width:100%; background:#071828; }
+.leaflet-tile-pane { filter: brightness(0.55) saturate(0.5) hue-rotate(190deg); }
+
+/* マーカーズームスケーリング 2026-06-06 fix */
+#map .leaflet-marker-icon:not(.country-label) > div {
+  transform-origin: center center;
+  transition: transform 0.25s ease;
+}
+#map.mz-far  .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.35); }
+#map.mz-mid  .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.57); }
+#map.mz-near .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.78); }
+/* /マーカーズームスケーリング */
+
+/* MAP JUMP（地点ジャンプ） */
+.map-jump {
+  background:rgba(7,14,28,0.95) !important;
+  border:1px solid #1e3a5f !important;
+  border-radius:10px;
+  padding:8px 9px;
+  color:#e2e8f0;
+  line-height:1.4;
+}
+.map-jump .mj-title {
+  font-size:0.62rem;
+  font-weight:700;
+  color:#64748b;
+  letter-spacing:0.08em;
+  margin-bottom:6px;
+}
+.map-jump .mj-btns { display:flex; flex-direction:column; gap:4px; }
+.mj-btn {
+  background:rgba(103,232,249,0.10);
+  border:1px solid rgba(103,232,249,0.45);
+  color:#a5f3fc;
+  font-family:inherit;
+  font-size:0.68rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:12px;
+  cursor:pointer;
+  white-space:nowrap;
+  text-align:left;
+  transition:background 0.2s;
+}
+.mj-btn:hover { background:rgba(103,232,249,0.25); }
+.mj-btn.mj-reset {
+  background:rgba(148,163,184,0.10);
+  border-color:rgba(148,163,184,0.45);
+  color:#cbd5e1;
+}
+.mj-btn.mj-reset:hover { background:rgba(148,163,184,0.25); }
+@media (max-width: 600px) {
+  /* スマホでは地図面積を優先し、枠ごと一段小さくする（2026-09-03 調整） */
+  .map-jump { padding:5px 6px; border-radius:8px; }
+  .map-jump .mj-title { font-size:0.42rem; margin-bottom:3px; }
+  .map-jump .mj-btns { gap:3px; }
+  .mj-btn { font-size:0.47rem; padding:2px 6px; border-radius:10px; }
+}
+
+/* MAP LEGEND */
+.map-legend {
+  background:rgba(7,14,28,0.95) !important;
+  border:1px solid #1e3a5f !important;
+  border-radius:10px;
+  padding:12px 15px;
+  font-size:0.75rem;
+  color:#e2e8f0;
+  min-width:252px;
+  line-height:1.5;
+}
+.map-legend h3 { color:#7dd3fc; font-size:0.8rem; margin-top:1.33em; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
+.legend-toggle-btn {
+  display:inline-block;
+  background:rgba(239,68,68,0.15);
+  border:1px solid #ef4444;
+  color:#fca5a5;
+  font-size:0.7rem;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:12px;
+  cursor:pointer;
+}
+.leg-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.leg-dash { width:30px; height:0; flex-shrink:0; border-top:3px dashed; }
+.leg-row span { font-size:0.72rem; color:#cbd5e1; }
+@media (max-width: 600px) {
+  .map-legend {
+    font-size: 0.65rem;
+  }
+  .leg-row span {
+    font-size: 0.58rem;
+  }
+  .leg-section {
+    font-size: 0.50rem;
+  }
+}
+.leg-section {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 6px 0 4px;
+}
+.leg-emoji {
+  font-size: 0.9rem;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.leg-note { margin-top:8px; padding-top:7px; border-top:1px solid #1e3a5f; font-size:0.66rem; color:#64748b; }
+/* 閉じるボタンはパネル下端・右下に固定する。本文をスクロールさせても
+   位置が動かないよう .legend-body の外に置いている */
+.legend-close-wrap { display:none; }
+.map-legend.open .legend-close-wrap { display:flex; justify-content:flex-end; margin-top:8px; }
+.map-legend.open #legend-btn { display:none; }
+
+/* 凡例ボディ折りたたみ（PC・スマホ共通） */
+.legend-body {
+  display: none;
+}
+.map-legend.open .legend-body {
+  display: block;
+  /* 凡例が地図（PC:580px / スマホ:400px）を縦にはみ出さないよう上限を設ける。
+     閉じるボタンは .legend-body の外にあるため常に下端に残る（2026-09-03 調整） */
+  max-height: 420px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* STATS */
+.stats-row { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
+.stat-card { background:linear-gradient(135deg,#0d1b2a,#132540); border:1px solid #1e3a5f; border-radius:12px; padding:14px; text-align:center; transition:transform 0.2s; }
+.stat-card:hover { transform:translateY(-3px); }
+/* カードは5枚。備蓄のカードを2列ぶんにして、2列・3列・6列のどの並びでも端が空かないようにする */
+.stats-row > .stat-card:first-child { grid-column: span 2; }
+.stat-num   { font-size:1.6rem; font-weight:800; line-height:1; margin-bottom:4px; }
+.stat-label { font-size:0.67rem; color:#94a3b8; line-height:1.4; }
+.c-blue{color:#38bdf8} .c-red{color:#f87171} .c-yellow{color:#fbbf24} .c-orange{color:#fb923c} .c-green{color:#34d399}
+
+/* ROUTE TABLE */
+
+/* ===== セクション見出し（フェーズ1a-2 / 2026-09-05 追加） =====
+   主要セクションの h2 はすべて .sec-h2 を使う。
+   従来 0.75〜1.2rem の4サイズに散っていたものを1段階へ統一した。
+   今後サイズを変えるときは各所ではなくこの1箇所を変更する。
+   色はセクションごとのアクセントを保つため、必要な場合のみ style で上書きする。 */
+.sec-h2 {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--c-accent);
+  margin: 0 0 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--c-surface-deep);
+}
+/* セクション冒頭のリード文。見出しと同居していた長文をここへ分離する */
+.sec-lead {
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: #7dd3fc;
+  line-height: var(--lh-body);
+  margin: 0 0 12px;
+}
+/* 見出し内の補足（日付・サブタイトル）。見出し本体より小さく弱く出す */
+.sec-h2 .sec-h2-sub {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--c-text-dim);
+  margin-left: 8px;
+}
+/* 3層ピラミッドの層ラベル。見出し(h1/h2/h3)ではなく視覚的なグルーピングとして置く。
+   セクション見出しは .sec-h2 のまま据え置き、階層は文書構造に持ち込まない。 */
+.layer-band {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 34px 16px 14px;
+}
+.layer-band::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--layer-accent), transparent);
+  opacity: 0.45;
+}
+.layer-band-num {
+  font-size: var(--fs-2xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0f2027;
+  background: var(--layer-accent);
+  border-radius: 4px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.layer-band-text {
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--layer-accent);
+}
+.rtable { width:100%; border-collapse:separate; border-spacing:0 5px; font-size:0.76rem; }
+.rtable th { text-align:left; color:#64748b; font-size:0.68rem; font-weight:600; letter-spacing:0.07em; padding:0 10px 7px; }
+.rtable td { padding:10px; background:rgba(255,255,255,0.025); color:#cbd5e1; vertical-align:middle; border-top:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); }
+.rtable tr td:first-child { border-radius:8px 0 0 8px; border-left:1px solid rgba(255,255,255,0.04); padding-left:13px; }
+.rtable tr td:last-child  { border-radius:0 8px 8px 0; border-right:1px solid rgba(255,255,255,0.04); }
+.rtable tr.ra td { border-left:3px solid #38bdf8 !important; }
+.rtable tr.rb td { border-left:3px solid #34d399 !important; }
+.rtable tr.rc td { border-left:3px solid #a78bfa !important; }
+.rtable tr.rd td { border-left:3px solid #f59e0b !important; background:rgba(245,158,11,0.04); }
+.rtable tr.rx td { border-left:3px solid #ef4444 !important; background:rgba(239,68,68,0.04); }
+.pill { display:inline-block; padding:2px 8px; border-radius:20px; font-size:0.67rem; font-weight:600; }
+.pill-g{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3)}
+.pill-y{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)}
+.pill-r{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)}
+.pill-p{background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3)}
+.pill-o{background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.3)}
+/* ルート表の型（② PR3 / 2026-09-27）。インライン style を使わず、色は .t-* で付ける。
+   「現況詳細」は 最新（.route-latest・<time> 付き・1件）→ 要点（.route-summary）→ 経緯（details.route-history）の順 */
+.route-priority { background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.2); border-radius:8px;
+  padding:10px 16px; margin-bottom:12px; font-size:var(--fs-sm); color:#7dd3fc; line-height:1.6; }
+.rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.rtable thead tr { background:rgba(255,255,255,0.04); }
+.rtable thead th { padding:8px 10px; font-size:var(--fs-xs); }
+.rtable th.rtable-th-icon { width:28px; }
+.rtable th.rtable-th-state { text-align:center; }
+.rtable th.jf-th { color:#38bdf8; white-space:nowrap; min-width:90px; max-width:110px; }
+.jf-th-sub { font-size:var(--fs-2xs); color:#94a3b8; font-weight:400; }
+.rtable td.jf-td { font-size:var(--fs-xs); white-space:nowrap; min-width:90px; }
+.rtable tr.rc-us { background:rgba(167,139,250,0.04); }
+.rtable tr.rc-gl { background:rgba(251,146,60,0.04); }
+.route-detail p { margin:0; }
+.route-detail p + p, .route-detail p + details, .route-history p + p { margin-top:0.9em; }
+.route-src { display:block; color:#64748b; }
+.route-history > summary { cursor:pointer; color:#7dd3fc; font-size:var(--fs-xs); font-weight:600; margin-top:0.9em; }
+.route-history[open] > summary { margin-bottom:0.6em; }
+.rtable tr.rtable-foot { background:rgba(56,189,248,0.04); }
+.rtable tr.rtable-foot td { font-size:var(--fs-xs); color:#475569; padding:8px 13px; text-align:right; }
+.rtable tr.rtable-foot .route-history { text-align:left; }
+.rtable .t-danger{color:#f87171} .rtable .t-warning{color:#fbbf24} .rtable .t-warning-soft{color:var(--c-warn-soft)} .rtable .t-positive{color:#4ade80}
+.rtable .t-info{color:#7dd3fc} .rtable .t-neutral{color:#94a3b8} .rtable .t-bright, .jf-note .t-bright{color:#e2e8f0}
+.rtable .t-mute{color:#64748b} .rtable .t-blue{color:#38bdf8} .rtable .t-violet{color:#a78bfa}
+/* ルート名とサブタイトル（2026-10-11 運営者の指示）：ルート名は 4pt（約5px）、サブタイトルは 2pt（約3px）大きく、サブタイトルは明るく。
+   親の文字サイズからの差で指定するので、PC・スマホとも同じ差で大きくなる */
+.rtable .route-name { font-size:calc(1em + 5px); }
+/* スマホはルート列を細いまま保つ（現況詳細の幅を優先）。ルート名は1文字ずつ折り返してよい（運営者の判断・2026-10-11） */
+@media (max-width: 768px) { .rtable .route-name { word-break:break-all; } }
+.rtable .route-name ~ small.t-mute { font-size:calc(0.8333em + 3px); color:#94a3b8; }
+.rtable .t-purple{color:#c084fc} .rtable .t-orange{color:#fb923c}
+.jf-note { font-size:var(--fs-xs); color:#cbd5e1; margin-top:8px; padding:8px 12px; border-radius:6px;
+  background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.25); line-height:1.7; }
+.jf-note-meta { font-size:var(--fs-xs); color:#94a3b8; }
+.jf-note a { color:#7dd3fc; }
+#jf-basis-date { color:#fbbf24; font-weight:700; }
+.route-note { font-size:var(--fs-xs); color:#64748b; margin-top:8px; padding:6px 10px; border-top:1px solid rgba(255,255,255,0.06); }
+
+/* SCENARIOS */
+.sc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.sc-card { border-radius:12px; padding:15px; border:1px solid; }
+.sc-tag   { font-size:0.63rem; font-weight:800; letter-spacing:0.1em; padding:3px 9px; border-radius:20px; display:inline-block; margin-bottom:9px; }
+.sc-title { font-size:0.83rem; font-weight:700; margin-bottom:7px; }
+.sc-body  { font-size:0.73rem; color:#94a3b8; line-height:1.65; }
+.sc-impact{ margin-top:9px; padding:8px 10px; border-radius:8px; font-size:0.71rem; line-height:1.5; }
+.sc-best  { background:linear-gradient(135deg,#081c10,#0d2a18); border-color:#16a34a; }
+.sc-best  .sc-tag { background:rgba(22,163,74,0.2);color:#4ade80;border:1px solid rgba(22,163,74,0.4); }
+.sc-best  .sc-title{ color:#4ade80; }
+.sc-best  .sc-impact{ background:rgba(22,163,74,0.08); color:#86efac; }
+.sc-mid   { background:linear-gradient(135deg,#1c1408,#2d2010); border-color:#d97706; }
+.sc-mid   .sc-tag { background:rgba(217,119,6,0.2);color:#fbbf24;border:1px solid rgba(217,119,6,0.4); }
+.sc-mid   .sc-title{ color:#fbbf24; }
+.sc-mid   .sc-impact{ background:rgba(217,119,6,0.08); color:#fde68a; }
+.sc-worst { background:linear-gradient(135deg,#1c0808,#2d1010); border-color:#dc2626; }
+.sc-worst .sc-tag { background:rgba(220,38,38,0.2);color:#f87171;border:1px solid rgba(220,38,38,0.4); }
+.sc-worst .sc-title{ color:#f87171; }
+.sc-worst .sc-impact{ background:rgba(220,38,38,0.08); color:#fca5a5; }
+
+/* シナリオの補足・注記・次の焦点（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「シナリオの型」） */
+.sec-h2--sky { color:#7dd3fc; }
+.label-scenario.sc-h2-label, .label-ai.sc-h2-label { margin-left:8px; font-size:var(--fs-xs); }
+.sc-update { background:rgba(239,68,68,0.07); border:1px dashed rgba(239,68,68,0.35); border-radius:8px; padding:12px 16px;
+  margin-top:14px; margin-bottom:16px; font-size:var(--fs-sm); color:#d5dbe4; line-height:1.8; }
+.sc-update-head { margin:0 0 10px; font-size:var(--fs-sm); }
+.sc-update-date { font-weight:800; color:#f87171; }
+.sc-update-caveat { color:var(--c-warn-soft); font-weight:600; }
+.sc-trend { color:#94a3b8; }
+.sc-tag-em { font-size:1.15em; font-weight:900;
+  text-shadow:-1px -1px 0 rgba(0,0,0,0.8),1px -1px 0 rgba(0,0,0,0.8),-1px 1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8); }
+.sc-sync-note { font-size:var(--fs-sm); color:#94a3b8; text-align:center; margin-top:8px; }
+.sc-ai-note { margin-top:10px; padding:9px 13px; border-radius:6px; background:rgba(56,189,248,0.07); border:1px solid rgba(56,189,248,0.28);
+  font-size:var(--fs-sm); color:#cbd5e1; line-height:1.75; }
+.sc-ai-note strong { color:#e2e8f0; }
+.sc-ai-meta { font-size:var(--fs-xs); color:#94a3b8; }
+.sc-ai-meta a { color:#7dd3fc; }
+.sc-ai-variance { margin-top:7px; padding:6px 9px; border-radius:5px; background:rgba(148,163,184,0.10); border:1px solid rgba(148,163,184,0.30);
+  font-size:var(--fs-xs); color:#cbd5e1; line-height:1.65; }
+/* 前提が古いときだけ syncScenarioFromDashboard() が style.display='block' で出す */
+.sc-ctx-note { display:none; margin-top:7px; padding:6px 9px; border-radius:5px; background:rgba(251,191,36,0.12); border:1px solid rgba(251,191,36,0.4);
+  font-size:var(--fs-xs); color:var(--c-warn-soft); line-height:1.65; }
+.sc-footer { margin-top:10px; padding:10px 14px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
+  font-size:var(--fs-xs); color:#64748b; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+.sc-focus-h { font-size:var(--fs-md); font-weight:700; color:#94a3b8; margin:0 0 10px; letter-spacing:0.05em; }
+.sc-focus-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
+.sc-focus-list > li { font-size:var(--fs-base); color:#cbd5e1; margin-bottom:5px; }
+.sc-focus-list strong { color:var(--c-warn-soft); font-weight:600; }
+/* キーワードの自動の色付け（markKeywords()・2026-10-11）。日次更新では手で書かない。
+   対象は 30秒カラムの3行・シナリオの補足・次の焦点。色は控えめに、数値は明るく、日付は淡い青、
+   被害は淡い赤、回復は淡い緑、未確認などの但し書きは灰 */
+.kw-num   { color:#f8fafc; font-weight:700; }
+.kw-date  { color:#bcd3ea; font-weight:600; }
+.kw-alert { color:#f3b4b4; font-weight:600; }
+.kw-ease  { color:#a7dcbc; font-weight:600; }
+.kw-hedge { color:#9aa6b8; }
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .sc-update, .sc-sync-note, .sc-ai-note, .sc-ai-variance, .sc-ctx-note, .sc-footer { font-size:0.8rem; }
+}
+
+/* 更新履歴（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「更新履歴の型」）。
+   日時の色は位置で決まる：常時表示の先頭（本日分）＝赤、常時表示の残り＝明るい灰、折りたたみの中＝灰 */
+.update-log { margin:20px 0 10px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; }
+.update-log-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; gap:8px; flex-wrap:wrap; }
+.update-log-head .sec-h2 { color:#94a3b8; border-bottom-color:rgba(255,255,255,0.08); flex:1 1 100%; }
+.log-recent { font-size:var(--fs-xs); color:#cbd5e1; line-height:2; }
+.log-older  { font-size:var(--fs-xs); color:#94a3b8; line-height:2; }
+.log-recent .log-date { color:#cbd5e1; }
+.log-recent > div:nth-child(2) .log-date { color:#f87171; }
+.log-older .log-date { color:#94a3b8; }
+.log-tag { color:#fca5a5; }
+.log-sources-start { margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.06); }
+.log-older a { color:#38bdf8; text-decoration:none; }
+.log-toggle { text-align:center; margin:8px 0 4px; }
+.log-toggle-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#94a3b8; font-size:var(--fs-sm);
+  padding:6px 18px; border-radius:20px; cursor:pointer; transition:all 0.2s; }
+.log-toggle-btn:hover { background:rgba(255,255,255,0.10); }
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .log-recent, .log-older { font-size:0.8rem; }
+}
+
+/* 本文の残り（② PR4b-1・2026-10-01）：その他の検討中ルート・主要指標・特別解説コラム・第3層の外枠。
+   日次更新は触らない区域。文字サイズは phase2-sections-design.md「#14 の割り振り」の対応表どおりトークンに寄せた（0.68・0.7→xs、0.75・0.8→sm、0.9・1→md、1.2→lg、1.4→xl） */
+.sec-h2--red    { color:#f87171; border-bottom-color:rgba(248,113,113,0.25); }
+.sec-h2--violet { color:#a78bfa; border-bottom-color:rgba(167,139,250,0.25); }
+.sec-h2--spaced { margin-top:24px; }
+.sec-block { width:100%; margin:24px 0 0; padding:0 16px; }
+.sec-block--left { text-align:left; }
+.sec-block--news { margin:24px 0; text-align:left; }
+.loading-note { color:#64748b; font-size:var(--fs-sm); padding:16px; }
+.loading-note--error { color:#f87171; }
+
+/* その他の検討中ルート（折りたたみ）。開閉の状態は onclick が #other-routes-body の style.display で読む */
+.or-wrap { margin-top:16px; margin-bottom:8px; }
+.or-toggle { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:8px; color:#94a3b8;
+  font-size:var(--fs-sm); font-weight:700; padding:12px 18px; cursor:pointer; text-align:left; letter-spacing:0.03em; }
+.or-toggle-em { color:#fbbf24; }
+.or-panel { margin-top:14px; }
+.or-list { display:flex; flex-direction:column; gap:14px; }
+.or-card { background:var(--or-bg); border:1px solid var(--or-bd); border-radius:10px; padding:14px 18px; }
+.or-card--br { --or-bg:rgba(192,132,252,0.05); --or-bd:rgba(192,132,252,0.2);  --or-c:#c084fc; --or-badge-bg:rgba(192,132,252,0.15); --or-badge-bd:rgba(192,132,252,0.3); }
+.or-card--mx { --or-bg:rgba(52,211,153,0.04);  --or-bd:rgba(52,211,153,0.15);  --or-c:#34d399; --or-badge-bg:rgba(52,211,153,0.12);  --or-badge-bd:rgba(52,211,153,0.25); }
+.or-card--iq { --or-bg:rgba(251,191,36,0.04);  --or-bd:rgba(251,191,36,0.15);  --or-c:#fbbf24; --or-badge-bg:rgba(251,191,36,0.12);  --or-badge-bd:rgba(251,191,36,0.25); }
+.or-card--ca { --or-bg:rgba(56,189,248,0.04);  --or-bd:rgba(56,189,248,0.12);  --or-c:#7dd3fc; --or-badge-bg:rgba(56,189,248,0.1);   --or-badge-bd:rgba(56,189,248,0.2); }
+.or-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+.or-flag { font-size:var(--fs-md); }
+.or-title { color:var(--or-c); font-size:var(--fs-base); }
+.or-badge { font-size:var(--fs-xs); background:var(--or-badge-bg); border:1px solid var(--or-badge-bd); color:var(--or-c);
+  padding:2px 8px; border-radius:4px; margin-left:auto; }
+.or-text { font-size:var(--fs-sm); color:#94a3b8; line-height:1.75; }
+.or-text strong { color:#e2e8f0; }
+.or-text .or-ok { color:#4ade80; }
+.or-text .or-alert { color:#f87171; }
+.or-note { font-size:var(--fs-xs); color:#64748b; margin-top:6px; }
+
+/* 主要指標 */
+.stat-asof { font-size:var(--fs-2xs); color:#64748b; margin-bottom:6px; font-weight:600; }
+.stat-head { font-size:var(--fs-sm); color:#93c5fd; margin-bottom:8px; font-weight:700; }
+.stat-num.stat-num--stock { font-size:var(--fs-xl); color:#38bdf8; line-height:1.2; margin-bottom:6px; }
+.stat-num.stat-num--wti { font-size:var(--fs-xl); }
+.stat-unit { font-size:var(--fs-md); }
+.stat-unit.stat-unit--sm { font-size:var(--fs-sm); }
+.stat-label.stat-label--stock { font-size:var(--fs-xs); line-height:1.6; color:#cbd5e1; }
+.stat-label--stock strong { color:#93c5fd; }
+.stat-label--stock small { color:#64748b; }
+.stat-sub { font-size:var(--fs-2xs); color:#64748b; }
+.stat-card.stat-card--wti { background:linear-gradient(135deg,#0a1a10,#0f2820); border-color:#1e5f3a; cursor:pointer; }
+
+/* 特別解説コラムのカード。色は --cc（RGB）と --cc-accent で決める（新しいカードは col-card--{色} を付ける） */
+.col-card { background:rgba(var(--cc),0.05); border:1px solid rgba(var(--cc),0.2); border-radius:10px; padding:14px 18px; margin-bottom:20px; }
+.col-card--red    { --cc:239,68,68;   --cc-accent:#f87171; }
+.col-card--amber  { --cc:251,191,36;  --cc-accent:#fbbf24; }
+.col-card--sky    { --cc:56,189,248;  --cc-accent:#38bdf8; }
+.col-card--green  { --cc:52,211,153;  --cc-accent:#34d399; }
+.col-card--orange { --cc:251,146,60;  --cc-accent:#fb923c; }
+.col-card--violet { --cc:167,139,250; --cc-accent:#a78bfa; }
+.col-card--slate  { --cc:148,163,184; --cc-accent:#cbd5e1; border-color:rgba(148,163,184,0.25); }
+.col-card-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.col-card-icon { font-size:var(--fs-lg); }
+.col-card-titles { flex:1; min-width:0; }
+.col-card-title { font-size:var(--fs-base); font-weight:800; color:var(--cc-accent); line-height:1.4; margin:0; }
+.col-card-sub { font-size:var(--fs-xs); color:#94a3b8; margin-top:2px; }
+/* 日付は見出しの下の行に置く（「公開 …・更新 …」は長く、横に並べるとタイトルの幅を奪う） */
+.col-card-date { flex-basis:100%; font-size:var(--fs-xs); color:#64748b; }
+.col-card-lead { margin-top:12px; font-size:var(--fs-sm); color:#cbd5e1; line-height:1.75; }
+.col-card-link { display:block; margin-top:12px; width:100%; text-align:center; background:rgba(var(--cc),0.1); border:1px solid rgba(var(--cc),0.3);
+  border-radius:6px; color:var(--cc-accent); font-size:var(--fs-sm); font-weight:700; padding:9px 0; text-decoration:none; letter-spacing:0.03em; }
+button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモーダルで開くカード（トランプ声明） */
+.col-card-thumbrow { display:flex; align-items:center; gap:12px; margin-top:12px; }
+.col-card-thumb { width:10%; min-width:52px; max-width:72px; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:center 20%;
+  border-radius:6px; flex-shrink:0; border:1px solid rgba(var(--cc),0.25); }
+.col-card-link.col-card-link--inrow { flex:1; margin-top:0; width:auto; }
+
+/* 数値の注記・日次アーカイブへのリンク */
+.data-note { margin-top:12px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:12px 16px;
+  font-size:var(--fs-xs); color:#64748b; line-height:1.8; }
+.data-note strong { color:#94a3b8; }
+.archive-link-wrap { text-align:center; margin:0 16px 18px; }
+.archive-link { display:inline-flex; align-items:center; gap:6px; font-size:var(--fs-sm); color:#c9a869; text-decoration:none;
+  border:1px solid rgba(201,168,105,0.35); background:rgba(201,168,105,0.08); padding:8px 16px; border-radius:20px; }
+
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .or-text, .or-note, .stat-head, .col-card-sub, .data-note { font-size:0.8rem; }
+  .col-card-lead { font-size:0.8rem; }   /* 長文。2-a のスマホ本文の下限（0.8rem）を割らない */
+}
+
+/* 部品の残り（② PR4b-2・2026-10-01）：ヘッダー・層の帯・SNS と動画の導線・速報インシデントの枠・地図のタンカー欄・
+   データ監視・リアルタイム市場・トランプ声明（モーダルと比較ブロック）・出典の外枠・製油所モーダル。
+   既存のクラスより後ろで定義されている規則（.bw-sec・.stat-row など）に勝つよう、上書きは複合セレクタで書く */
+.h1-title { color:#7dd3fc; font-size:var(--fs-lg); font-weight:800; letter-spacing:0.5px; }
+.h1-sub { color:#94a3b8; font-size:var(--fs-xs); font-weight:400; margin-left:0; display:block; }
+.infographic-cta-row { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+.infographic-thumb-link { display:block; line-height:0; border-radius:6px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,0.55);
+  border:1.5px solid rgba(67,217,255,0.35); flex-shrink:0; transition:transform 0.15s,box-shadow 0.15s; }
+.infographic-thumb-link:hover { transform:scale(1.04); box-shadow:0 6px 24px rgba(67,217,255,0.3); }
+.infographic-thumb-img { height:72px; width:auto; display:block; }
+.reload-btn { background:rgba(56,189,248,0.15); border:1px solid #38bdf8; color:#38bdf8; font-size:var(--fs-xs); font-weight:700;
+  padding:4px 14px; border-radius:20px; cursor:pointer; font-family:inherit; transition:background 0.2s; }
+.reload-btn:hover { background:rgba(56,189,248,0.3); }
+.layer-band.layer-band--1 { --layer-accent:var(--c-danger-light); }
+.layer-band.layer-band--2 { --layer-accent:var(--c-accent-pale); }
+.layer-band.layer-band--3 { --layer-accent:var(--c-special); }
+
+.social-links { text-align:right; margin-bottom:6px; }
+.social-link { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15);
+  color:#94a3b8; font-size:var(--fs-sm); font-weight:600; padding:4px 12px; border-radius:20px; text-decoration:none; white-space:nowrap; letter-spacing:0.02em; }
+.social-link--yt { color:#f87171; }
+.yt-visitors { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin:0 0 10px; padding:8px 12px;
+  border:1px solid rgba(248,113,113,0.3); border-radius:12px; background:rgba(248,113,113,0.06); font-size:var(--fs-sm); }
+.yt-visitors-label { color:#fca5a5; font-weight:700; white-space:nowrap; }
+.yt-visitors-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#e2e8f0; font-size:var(--fs-sm); font-weight:600;
+  padding:4px 12px; border-radius:20px; cursor:pointer; font-family:inherit; }
+
+.infographic-block { margin-top:18px; padding-top:16px; border-top:1px solid rgba(56,189,248,0.15); }
+.infographic-block-h { font-size:var(--fs-xs); font-weight:700; color:#64748b; letter-spacing:0.06em; margin-bottom:10px; }
+.infographic-thumb.infographic-thumb--quarter { width:25%; min-width:120px; }
+.infographic-thumb-full { width:100%; height:auto; display:block; }
+.incident-box { border-radius:12px; overflow:hidden; border:1px solid rgba(239,68,68,0.35); }
+.incident-head { width:100%; background:linear-gradient(135deg,#1a0808,#2d1010); border-bottom:1px solid rgba(239,68,68,0.3); padding:13px 18px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:8px; font-family:inherit; }
+.sec-h2.sec-h2--incident { color:#f87171; border-bottom-color:rgba(239,68,68,0.3); width:100%; }
+
+/* 地図のタンカー欄（地図に重ねる小さな表示なので px のまま） */
+#tanker-stats .stat-row--breakdown { font-size:9px; color:#94a3b8; padding-left:8px; margin-top:4px; border-top:1px solid rgba(148,163,184,0.2);
+  padding-bottom:5px; margin-bottom:2px; }
+#tanker-stats .stat-row-val { color:#94a3b8; font-weight:bold; }
+#t-total { color:#93c5fd; }
+#tanker-note { font-size:7.5px; color:#475569; padding:2px 6px 0; line-height:1.4; }
+
+.dash-frame { margin:20px auto; width:100%; border-radius:12px; overflow:hidden; border:1px solid #1e3a5f; }
+#hormuz-dashboard { display:block; background:#0a0e1a; }
+.sec-h2.sec-h2--green { color:#4ade80; border-bottom-color:rgba(74,222,128,0.25); }
+.market-widget { margin-top:8px; background:#131722; padding:12px 20px 8px 20px; border-radius:8px; display:flex; flex-direction:column; gap:8px;
+  font-family:sans-serif; border:1px solid #1e3a5f; }
+.market-grid { display:grid; gap:16px; }
+.market-grid--main { grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); }
+.market-grid--sub  { grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); }
+.market-cell { overflow:hidden; border-radius:4px; }
+.market-note { text-align:right; font-size:var(--fs-sm); color:#868993; border-top:1px solid #2B3139; padding:6px 0 0; margin:2px 0 0; }
+
+/* トランプ声明モーダル（灰色の節の見出し色は .modal-section.gray .modal-section-title が持つ） */
+.modal-trans { color:#fde68a; font-size:var(--fs-sm); line-height:1.8; }
+.modal-trans strong { color:#fbbf24; }
+.modal-interp-lead { color:#7dd3fc; font-size:var(--fs-xs); margin-bottom:10px; }
+.i-text { font-size:var(--fs-xs); line-height:1.65; }
+.i-text--a { color:#fca5a5; }
+.i-text--b { color:#86efac; }
+.modal-ling { color:#94a3b8; font-size:var(--fs-xs); line-height:1.75; }
+.modal-ling strong { color:#cbd5e1; }
+.modal-ling .modal-em { color:#fbbf24; }
+.modal-ling .modal-alert { color:#f87171; }
+
+/* トランプ声明の比較ブロック。#bw-timeline-detail・#bw-detail-body の display:none は toggle*() が読むのでインラインに残す */
+.bw-flag.bw-flag--end { margin-left:auto; }
+.bw-toggle { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); border-radius:6px; color:#94a3b8;
+  font-size:var(--fs-sm); font-weight:700; padding:8px 0; cursor:pointer; margin-bottom:8px; letter-spacing:0.03em; }
+.bw-em { color:#e2e8f0; }
+.bw-sec.bw-sec--spaced { padding-top:14px; }
+
+/* 出典・更新履歴の外枠（旧 [style*="max-width:960px"] の上書きをそのまま引き継ぐ：幅は 100%・左右の余白は .container と同じ） */
+.source-wrap { margin:32px auto 0; padding-bottom:40px; }
+.source-inner { border-top:1px solid rgba(255,255,255,0.08); padding-top:20px; }
+
+/* 製油所モーダル。表示は開閉ボタンが style.display（none / flex）で切り替える */
+.ref-modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999;
+  align-items:flex-start; justify-content:center; overflow-y:auto; padding:20px 0; }
+.ref-modal-box { background:linear-gradient(135deg,#0f2027,#1a2a3a); border:1px solid rgba(56,189,248,0.3); border-radius:14px;
+  max-width:780px; width:95%; margin:auto; padding:28px 24px; position:relative; }
+.ref-modal-close { position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15);
+  color:#94a3b8; font-size:var(--fs-md); width:32px; height:32px; border-radius:50%; cursor:pointer; }
+.ref-modal-title { font-size:var(--fs-md); font-weight:800; color:#38bdf8; margin-bottom:6px; }
+.ref-modal-sub { font-size:var(--fs-sm); color:#64748b; margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.ref-modal-lead { background:rgba(56,189,248,0.06); border:1px solid rgba(56,189,248,0.15); border-radius:8px; padding:12px 16px; margin-bottom:20px;
+  font-size:var(--fs-sm); color:#94a3b8; line-height:1.7; }
+.ref-modal-lead strong { color:#e2e8f0; }
+.ref-modal-h { font-size:var(--fs-sm); font-weight:800; color:#7dd3fc; margin-bottom:10px; letter-spacing:0.05em; }
+.ref-area-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-bottom:20px; }
+.ref-area { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px; }
+.ref-area--main { background:rgba(56,189,248,0.05); border-color:rgba(56,189,248,0.2); }
+.ref-area--bases { margin-bottom:20px; }
+.ref-area-h { font-size:var(--fs-xs); font-weight:700; margin-bottom:8px; }
+.ref-area-h--amber  { color:#fbbf24; }
+.ref-area-h--sky    { color:#38bdf8; }
+.ref-area-h--violet { color:#a78bfa; }
+.ref-area-h--green  { color:#34d399; }
+.ref-area-h--orange { color:#fb923c; }
+.ref-area-list { font-size:var(--fs-xs); color:#cbd5e1; line-height:1.8; }
+.ref-base-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:4px; font-size:var(--fs-xs); color:#94a3b8; line-height:1.9; }
+.ref-modal-note { font-size:var(--fs-xs); color:#475569; line-height:1.6; padding-top:12px; border-top:1px solid rgba(255,255,255,0.06); }
+
+/* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
+@media (max-width: 768px) {
+  .infographic-block-h, .modal-trans, .modal-interp-lead, .i-text, .modal-ling,
+  .ref-modal-sub, .ref-modal-h, .ref-area-h, .ref-area-list, .ref-base-grid, .ref-modal-note { font-size:0.8rem; }
+  .ref-modal-lead { font-size:0.8rem; }   /* 長文。2-a のスマホ本文の下限（0.8rem）を割らない */
+}
+/* .market-note は旧インラインが「font-size: 0.75rem」（空白入り）で属性セレクタに当たっていなかったので引き継がない */
+
+/* FOOTER */
+footer {
+  text-align:center; padding:16px;
+  font-size:0.68rem; color:#334155;
+  border-top:1px solid #1e293b; margin-top:8px;
+}
+.footer-legal {
+  display:flex; flex-wrap:wrap; gap:6px 14px;
+  justify-content:center; margin-bottom:10px;
+}
+.footer-legal a { color:#64748b; text-decoration:none; font-size:0.72rem; }
+.footer-legal a:hover { color:#94a3b8; text-decoration:underline; }
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:1023px){
+  header h1 { font-size:0.92rem; }
+  #map { height:400px; }
+
+  .map-legend {
+    /* 閉じた状態の幅。見出し「🗺️ 凡 例」と「開く」ボタン（min-width:44px）が収まる幅にする
+       （80px ではボタンが欠けて見えなかった。2026-10-07 調整） */
+    min-width: 148px !important;
+    max-width: 148px !important;
+    padding: 8px 10px !important;
+    transition: max-width 0.3s ease, min-width 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(56,189,248,0.2);
+    touch-action: manipulation;
+  }
+  .map-legend.open {
+    min-width: 250px !important;
+    max-width: 290px !important;
+    padding: 12px 14px !important;
+  }
+  .map-legend h3 {
+    font-size: 13px !important;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .legend-toggle-btn {
+    display: inline-block;
+    pointer-events: auto;
+    flex-shrink: 0;
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+    min-width: 44px;
+    text-align: center;
+  }
+  .legend-body {
+    display: none;
+    margin-top: 8px;
+  }
+  .map-legend.open .legend-body {
+    display: block;
+    /* 凡例が地図（高さ400px）を縦にはみ出さないよう上限を設けて中身をスクロール。
+       閉じるボタンは .legend-body の外にあるため常に下端に残る（2026-09-03 調整） */
+    max-height: 236px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .leg-row { margin-bottom: 4px; gap: 6px; }
+  .leg-note { margin-top: 6px; padding-top: 5px; }
+
+  .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .rtable { min-width:600px; }
+}
+/* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
+   （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */
+@media(max-width:768px){
+  .jf-col { display: none !important; }
+}
+@media(max-width:600px){
+  header h1 { font-size:0.82rem; }
+}
+/* ===== スマホ ファーストビュー最適化 ===== */
+@media (max-width: 600px) {
+
+  /* ① ヘッダー padding 削減 */
+  header {
+    padding: 10px 14px !important;
+  }
+
+  /* ② ヘッダーh1 の題字・副題（② PR4b-2 でインライン style をクラスにしたので !important は不要） */
+  .h1-title { font-size: 1.0rem; }
+  .h1-sub { font-size: 0.8rem; margin-left: 4px; }
+
+  /* ③ infographic CTAボタン: 1行に収める */
+  .infographic-button {
+    font-size: 14px !important;
+    padding: 11px 14px !important;
+  }
+}
+
+@keyframes borderBlink {
+  0%,100% { border-left-color: #ff0000; }
+  50%      { border-left-color: #ff6666; }
+}
+/* TRUMP STATEMENT MODAL */
+
+/* モーダルオーバーレイ */
+.modal-overlay {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.85);
+  z-index:9999;
+  overflow-y:auto;
+  padding:20px;
+}
+.modal-overlay.open { display:flex; align-items:flex-start; justify-content:center; }
+.modal-box {
+  background:linear-gradient(135deg,#0d1b2a,#132540);
+  border:1px solid #1e3a5f;
+  border-radius:16px;
+  padding:24px 28px;
+  max-width:780px;
+  width:100%;
+  margin:auto;
+  position:relative;
+}
+.modal-close {
+  position:absolute;
+  top:14px; right:18px;
+  background:rgba(239,68,68,0.15);
+  border:1px solid #ef4444;
+  color:#f87171;
+  font-size:0.8rem;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  font-family:inherit;
+}
+.modal-close:hover { background:rgba(239,68,68,0.3); }
+.modal-title {
+  font-size:1rem;
+  font-weight:800;
+  color:#f87171;
+  margin-bottom:16px;
+  padding-right:80px;
+  line-height:1.4;
+}
+.modal-section {
+  margin-bottom:16px;
+  padding:14px 16px;
+  border-radius:10px;
+  font-size:0.78rem;
+  line-height:1.75;
+}
+.modal-section.red { background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); }
+.modal-section.yellow { background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); }
+.modal-section.blue { background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.25); }
+.modal-section.gray { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); }
+.modal-section-title { font-size:0.8rem; font-weight:700; margin-bottom:8px; }
+.modal-section.red   .modal-section-title { color:#f87171; }
+.modal-section.yellow .modal-section-title { color:#fbbf24; }
+.modal-section.blue  .modal-section-title { color:#38bdf8; }
+.modal-section.gray  .modal-section-title { color:#94a3b8; }
+.modal-quote {
+  font-family:'Courier New',monospace; font-size:0.76rem; color:#e2e8f0; line-height:1.8;
+  background:rgba(0,0,0,0.3); padding:12px 14px; border-radius:8px; border-left:3px solid #ef4444; margin-bottom:10px;
+}
+.modal-interp { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+.modal-interp-box { padding:10px 12px; border-radius:8px; font-size:0.73rem; line-height:1.6; }
+.modal-interp-box.a { background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); }
+.modal-interp-box.b { background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); }
+.modal-interp-box .i-title { font-weight:700; margin-bottom:5px; font-size:0.75rem; }
+.modal-interp-box.a .i-title { color:#f87171; }
+.modal-interp-box.b .i-title { color:#34d399; }
+.modal-media { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+.modal-media-pill { padding:5px 12px; border-radius:20px; font-size:0.72rem; font-weight:700; }
+.pill-optimist { background:rgba(52,211,153,0.15); color:#34d399; border:1px solid rgba(52,211,153,0.3); }
+.pill-cautious { background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.3); }
+
+@media(max-width:1023px){
+  .modal-box { padding:18px 16px; }
+  .modal-interp { grid-template-columns:1fr; }
+}
+
+/* NEWS COLUMN */
+.news-section-title{font-size:1rem;font-weight:800;color:#38bdf8;margin:24px 0 12px;padding-left:4px;border-left:3px solid #38bdf8;}
+.news-list{display:flex;flex-direction:column;gap:4px;}
+.news-item{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:8px 13px;display:flex;flex-direction:column;gap:4px;transition:background 0.2s;min-height:unset;}
+.news-item:hover{background:rgba(255,255,255,0.05);}
+.news-item a{color:#cbd5e1;text-decoration:none;font-size:0.78rem;line-height:1.5;flex:1;align-self:flex-start;}
+.news-item a:hover{color:#7dd3fc;}
+.news-date{font-size:0.7rem;color:#64748b;white-space:nowrap;}
+.news-meta{display:flex;flex-direction:row;align-items:center;gap:8px;flex-wrap:wrap;flex-shrink:0;}
+.news-date{font-size:0.65rem;color:#64748b;white-space:nowrap;}
+.news-badge{font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+.badge-txn{background:rgba(251,146,60,0.15);color:#fb923c;border:1px solid rgba(251,146,60,0.3);}
+.badge-sankei{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);}
+.badge-fnn{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);}
+.badge-yomi{background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);}
+.badge-toyo{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);}
+.badge-rim{background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);}
+.badge-reuters{background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);}
+.badge-afp{background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.3);}
+.badge-bb{background:rgba(56,189,248,0.15);color:#38bdf8;border:1px solid rgba(56,189,248,0.3);}
+.badge-arab{background:rgba(52,211,153,0.15);color:#34d399;border:1px solid rgba(52,211,153,0.3);}
+.news-hidden{display:none;}
+.news-more-btn{width:100%;margin-top:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px;color:#64748b;font-size:0.73rem;cursor:pointer;transition:all 0.2s;font-family:inherit;}
+.news-more-btn:hover{background:rgba(255,255,255,0.07);color:#94a3b8;}
+@media(max-width:1023px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
+
+/* ================================================
+   タンカー1隻の価値 サムネイルボタン
+================================================ */
+#tanker-value-thumb {
+  position: absolute;
+  bottom: 30px;
+  right: 278px;      /* tanker-overlay(260px) + gap(8px) + right(10px) */
+  z-index: 1000;
+  width: 80px;
+  cursor: pointer;
+  background: rgba(10, 20, 50, 0.85);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  border-radius: 8px;
+  padding: 5px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.55);
+  transition: border-color 0.2s, transform 0.15s;
+  text-align: center;
+  user-select: none;
+}
+#tanker-value-thumb:hover {
+  border-color: rgba(251, 191, 36, 0.9);
+  transform: scale(1.04);
+}
+#tanker-value-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  pointer-events: none;
+}
+#tanker-value-thumb .tv-label {
+  font-size: 8px;
+  color: #fbbf24;
+  margin-top: 4px;
+  line-height: 1.3;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 600px) {
+  #tanker-value-thumb {
+    width: 44px;    /* 地図面積を優先して縮小（2026-09-03 調整） */
+    right: 202px;   /* tanker-overlay(186px) + gap(6px) + right(10px) */
+    bottom: 24px;
+    padding: 3px;
+  }
+  #tanker-value-thumb .tv-label { font-size: 6px; margin-top: 2px; }
+}
+
+/* ================================================
+   タンカー足止めオーバーレイ
+================================================ */
+#map { position: relative; }
+#tanker-overlay {
+  position: absolute; bottom: 30px; right: 10px; z-index: 1000; width: 260px;
+  background: rgba(10, 20, 50, 0.85); border: 1px solid rgba(96, 165, 250, 0.45);
+  border-radius: 10px; padding: 10px 12px 8px; backdrop-filter: blur(4px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55); transition: width 0.3s ease; font-family: sans-serif;
+}
+/* 折畳ボタンは左寄せ。右上は「🧭 地点へ移動」コントロールと重なり、
+   スマホ縦向きでタップできなくなるため（2026-09-03 修正） */
+#tanker-title { display: flex; justify-content: flex-start; align-items: center; gap: 7px; margin-bottom: 5px; }
+#tanker-title span { font-size: 11px; color: #93c5fd; font-weight: bold; letter-spacing: 0.04em; min-width: 0; }
+/* 確認ログは既定2行までに省略し、タップで全文表示する */
+#tanker-date-confirmed {
+  font-size: 9px; color: #4ade80; margin-top: 2px; line-height: 1.45; cursor: pointer;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+#tanker-date-confirmed.expanded { -webkit-line-clamp: unset; overflow: visible; }
+#tanker-toggle {
+  background: none; border: 1px solid #4b6fa8; color: #93c5fd; border-radius: 4px;
+  font-size: 10px; padding: 1px 6px; cursor: pointer; transition: background 0.2s;
+}
+#tanker-toggle:hover { background: rgba(96, 165, 250, 0.2); }
+@media (max-width: 600px) {
+  /* 地図面積を確保するため枠ごと縮小する（2026-09-03 調整） */
+  #tanker-overlay { width: 186px; padding: 7px 8px 6px; bottom: 24px; }
+  #tanker-overlay.zoom-close { width: 186px; }
+  #tanker-title { gap: 5px; margin-bottom: 3px; }
+  #tanker-title span { font-size: 9px; letter-spacing: 0; }
+  #tanker-toggle { font-size: 8px; padding: 1px 5px; }
+  #tanker-date { font-size: 8px; margin-bottom: 3px; }
+  #tanker-date-confirmed { font-size: 8px; }
+  .ship-icon { font-size: 13px; }
+  #ship-grid { max-height: 44px; gap: 2px; }
+  #tanker-stats { font-size: 9px; margin-top: 5px; }
+  #tanker-note { display: none; }   /* 注記は情報密度を優先して非表示 */
+}
+#tanker-date { font-size: 10px; color: #7dd3fc; text-align: right; margin-bottom: 6px; }
+#ship-grid {
+  display: flex; flex-direction: row; flex-wrap: wrap; gap: 3px;
+  justify-content: flex-start; align-content: flex-start; max-height: 130px; overflow: hidden;
+}
+.ship-icon {
+  font-size: 17px; line-height: 1.1; cursor: default; transition: transform 0.15s;
+  filter: drop-shadow(0 0 3px rgba(248, 113, 113, 0.8)); user-select: none;
+}
+.ship-icon.passable { filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.8)); }
+.ship-icon:hover { transform: scale(1.35); z-index: 1; }
+#tanker-stats { margin-top: 7px; font-size: 10px; color: #94a3b8; }
+.stat-row { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.stat-row span:last-child { color: #f87171; font-weight: bold; }
+.stat-row.pass span:last-child { color: #34d399; font-weight: bold; }
+.stat-row:last-child span:last-child { color: #93c5fd; }
+#tanker-progress-wrap { background: rgba(255, 255, 255, 0.1); border-radius: 4px; height: 5px; margin-top: 6px; overflow: hidden; }
+#tanker-progress-bar { height: 100%; background: linear-gradient(90deg, #f87171, #fbbf24); border-radius: 4px; transition: width 0.8s ease; }
+#tanker-overlay.zoom-close { width: 300px; }
+#tanker-overlay.zoom-close .ship-icon { font-size: 20px; }
+#tanker-overlay.zoom-close #ship-grid { max-height: 160px; }
+/* スマホでは拡大時も枠を広げない。上の .zoom-close 定義より後に置かないと
+   ソース順で負けるため、ここで打ち消す（2026-09-03 調整） */
+@media (max-width: 600px) {
+  #tanker-overlay.zoom-close { width: 186px; }
+  #tanker-overlay.zoom-close .ship-icon { font-size: 13px; }
+  #tanker-overlay.zoom-close #ship-grid { max-height: 44px; }
+}
+#tanker-overlay.zoom-far { width: 200px; }
+#tanker-overlay.zoom-far .ship-icon { font-size: 13px; }
+#tanker-overlay.zoom-far #ship-grid { max-height: 100px; }
+/* 信頼ラベル */
+.label-fact   { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(74,222,128,0.15); border:1px solid rgba(74,222,128,0.4); color:#4ade80; }
+.label-analysis { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.4); color:#fbbf24; }
+.label-scenario { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.4); color:#d8b4fe; }
+.label-unconfirmed { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(100,116,139,0.2); border:1px solid rgba(100,116,139,0.4); color:#94a3b8; }
+.label-ai { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; }
+/* 推定＝統計などからの試算（AI ではない）。AI が出した値は .label-ai（②' PR D） */
+.label-estimate { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; border-radius:3px; margin-right:6px; vertical-align:middle; background:rgba(244,114,182,0.15); border:1px solid rgba(244,114,182,0.4); color:#f9a8d4; }
+.label-ai.sc-pct-label { margin-left:6px; margin-right:0; }
+.jf-th-sub .label-estimate { margin-right:0; }
+/* ===== ルートテーブル列幅最適化 ===== */
+.rtable { table-layout: fixed !important; }
+.rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%; }
+.rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14%; }
+.rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13%; }
+.rtable th:nth-child(4), .rtable td:nth-child(4) { width: 11%; }
+.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 25%; }
+.rtable th:nth-child(6), .rtable td:nth-child(6) { width: 18%; }
+.rtable th:nth-child(7), .rtable td:nth-child(7) { width: 15%; }
+
+@media (max-width: 768px) {
+  /* min-width:600px を解除して横スクロール強制を廃止 */
+  .rtable-wrap .rtable { min-width: 0 !important; width: 100% !important; table-layout: auto !important; }
+
+  /* フォント・セル余白を詰める */
+  .rtable { font-size: 11px !important; }
+  .rtable th, .rtable td { padding: 6px 4px !important; }
+
+  /* 状態列のpillを小さく */
+  .rtable .pill { font-size: 10px !important; padding: 2px 5px !important; }
+
+  /* 6列の幅配分（合計100%） */
+  /* 1:アイコン 2:ルート 3:輸送能力 5:現況詳細 6:主なリスク 7:状態 */
+  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 4%  !important; }
+  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14% !important; }
+  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13% !important; }
+  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 30% !important; }
+  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 25% !important; }
+  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 14% !important; }
+}
+/* ================================================
+   特別解説ウィジェット (briefing-widget)
+   既存サイトのデザインシステムに完全統合
+================================================ */
+.briefing-widget {
+  border: 1.5px solid #c9a84c;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0d1020, #0f1428);
+  box-shadow: 0 0 32px rgba(201,168,76,0.12), 0 4px 24px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.bw-banner {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: linear-gradient(90deg, #1e0000, #3a0000, #1e0000);
+  border-bottom: 1.5px solid #c9a84c;
+  padding: 9px 16px;
+}
+.bw-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #ef4444; flex-shrink: 0;
+  animation: badgeBlink 1.3s ease-in-out infinite;
+}
+.bw-flag { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
+.bw-badge {
+  font-size: .65rem; font-weight: 800; letter-spacing: .15em;
+  color: #f87171; border: 1px solid rgba(239,68,68,0.5);
+  background: rgba(239,68,68,0.12); padding: 3px 10px; border-radius: 3px;
+}
+.bw-sub {
+  font-size: .68rem; color: #c8b080; letter-spacing: .05em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.bw-header {
+  text-align: center;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  background: linear-gradient(180deg, #0f1030 0%, transparent 100%);
+}
+.bw-eyebrow {
+  display: inline-block; font-size: .62rem; font-weight: 700;
+  letter-spacing: .38em; color: #c9a84c;
+  border: 1px solid rgba(201,168,76,0.4); padding: 3px 14px; margin-bottom: 12px;
+}
+.bw-title {
+  font-size: 1.15rem; font-weight: 800; color: #f0e8d4;
+  letter-spacing: .06em; line-height: 1.65; margin-bottom: 8px;
+}
+.bw-meta { font-size: .66rem; color: #64748b; }
+.bw-meta em { color: #c9a84c; font-style: normal; margin: 0 4px; }
+.bw-inner { padding: 0 18px 24px; }
+.bw-sec {
+  font-size: .62rem; font-weight: 700; letter-spacing: .3em; color: #c9a84c;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+  padding: 16px 0 6px; margin-bottom: 12px;
+}
+/* 精査メモ */
+.bw-analysis {
+  background: #061206; border: 1px solid rgba(92,184,92,0.4);
+  border-left: 3px solid #5cb85c; border-radius: 0 8px 8px 0;
+  padding: 12px 14px; margin-bottom: 16px;
+}
+.bw-analysis-head {
+  font-size: .63rem; font-weight: 700; color: #5cb85c;
+  letter-spacing: .15em; margin-bottom: 7px;
+}
+.bw-analysis p {
+  font-size: .75rem; color: #9ecf9e; line-height: 1.8;
+}
+.bw-analysis p + p { margin-top: 5px; }
+.bw-analysis strong { color: #e8f4e8; }
+.bw-c-gold { color: #c9a84c; }
+.bw-c-blue { color: #38bdf8; }
+/* タイムライン */
+.bw-timeline { position: relative; padding-left: 22px; margin-bottom: 4px; }
+.bw-timeline::before {
+  content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1.5px;
+  background: linear-gradient(to bottom, rgba(201,168,76,.4), rgba(56,189,248,.4), rgba(201,168,76,.4));
+}
+.bw-tl { position: relative; margin-bottom: 13px; }
+.bw-tl:last-child { margin-bottom: 0; }
+.bw-tl::before {
+  content: ''; position: absolute; left: -18px; top: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #0d1020; border: 1.5px solid #c9a84c;
+}
+.bw-tl.tl-b::before { border-color: #38bdf8; }
+.bw-tl.tl-r::before { border-color: #ef4444; background: #1c0505; }
+.bw-tl.tl-g::before { border-color: #34d399; }
+.bw-tl-time { font-size: .62rem; color: #c9a84c; letter-spacing: .07em; margin-bottom: 2px; }
+.bw-tl.tl-b .bw-tl-time { color: #38bdf8; }
+.bw-tl.tl-r .bw-tl-time { color: #f87171; }
+.bw-tl.tl-g .bw-tl-time { color: #34d399; }
+.bw-tl-body { font-size: .74rem; color: #94a3b8; line-height: 1.7; }
+/* 差分表 */
+.bw-diff {
+  background: #090915; border: 1px solid rgba(155,89,182,0.4);
+  border-left: 3px solid #9b59b6; border-radius: 0 8px 8px 0;
+  padding: 12px 14px; margin-bottom: 4px;
+}
+.bw-diff-head {
+  font-size: .63rem; font-weight: 700; color: #bb8fce;
+  letter-spacing: .15em; margin-bottom: 10px;
+}
+.bw-table {
+  width: 100%; border-collapse: collapse;
+  font-size: .7rem;
+}
+.bw-table th {
+  text-align: left; color: #475569; font-weight: 600;
+  padding: 4px 8px; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.bw-table th:first-child { width: 26%; }
+.bw-table td {
+  padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.6; vertical-align: top;
+}
+.bw-table tr:last-child td { border-bottom: none; }
+.bw-table td:first-child { color: #bb8fce; font-weight: 600; }
+.bw-table td:nth-child(2) { color: #c9a84c; }
+.bw-table td:nth-child(3) { color: #7ab3e8; }
+/* 声明カード */
+.bw-card {
+  border-radius: 10px; padding: 20px 20px 16px;
+  margin-bottom: 20px; position: relative;
+}
+.bw-card:last-of-type { margin-bottom: 0; }
+.bw-card.bw-gold {
+  background: linear-gradient(135deg, #0d1020, #121830);
+  border: 1px solid rgba(201,168,76,0.4);
+}
+.bw-card.bw-blue {
+  background: linear-gradient(135deg, #08101e, #0d1828);
+  border: 1px solid rgba(56,189,248,0.35);
+}
+.bw-card-badge {
+  position: absolute; top: -9px; left: 18px;
+  font-size: .58rem; font-weight: 700; letter-spacing: .15em; padding: 0 8px;
+}
+.bw-card.bw-gold .bw-card-badge { background: #0d1020; color: #c9a84c; }
+.bw-card.bw-blue .bw-card-badge { background: #08101e; color: #38bdf8; }
+.bw-card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+.bw-card-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  font-size: .74rem; font-weight: 700; flex-shrink: 0;
+}
+.bw-card.bw-gold .bw-card-num { color: #c9a84c; border: 1.5px solid #c9a84c; background: rgba(201,168,76,0.1); }
+.bw-card.bw-blue .bw-card-num { color: #38bdf8; border: 1.5px solid #38bdf8; background: rgba(56,189,248,0.1); }
+.bw-card-title { font-size: .82rem; font-weight: 700; color: #e2e8f0; margin-bottom: 3px; }
+.bw-card-meta { font-size: .63rem; color: #475569; }
+.bw-card-meta em { font-style: normal; margin: 0 3px; color: #64748b; }
+/* 原文ボックス */
+.bw-orig {
+  background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px; padding: 11px 14px; margin-bottom: 12px;
+}
+.bw-orig-label {
+  font-size: .56rem; font-weight: 700; letter-spacing: .22em;
+  color: #475569; margin-bottom: 7px;
+}
+.bw-orig-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .73rem; color: #94a3b8; line-height: 1.85;
+}
+.bw-orig-text p + p { margin-top: 7px; }
+/* 翻訳ボックス */
+.bw-trans { border-radius: 6px; padding: 14px 16px; }
+.bw-card.bw-gold .bw-trans { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.15); }
+.bw-card.bw-blue .bw-trans { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.15); }
+.bw-trans-label {
+  font-size: .58rem; font-weight: 700; letter-spacing: .22em; margin-bottom: 10px;
+}
+.bw-card.bw-gold .bw-trans-label { color: #c9a84c; }
+.bw-card.bw-blue .bw-trans-label { color: #38bdf8; }
+.bw-trans-body { font-size: .8rem; line-height: 2.05; color: #cbd5e1; letter-spacing: .03em; }
+.bw-trans-body p { margin-bottom: 1.1em; }
+.bw-trans-body p:last-child { margin-bottom: 0; }
+.bw-hl-gold { border-left: 2px solid #c9a84c; padding-left: 11px; color: #e8dfc4; }
+.bw-hl-blue { border-left: 2px solid #38bdf8; padding-left: 11px; color: #bae0f8; }
+.bw-hl-red  { border-left: 2px solid #ef4444; padding-left: 11px; color: #fca5a5; }
+/* 出典 */
+.bw-src {
+  margin-top: 12px; background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 10px 13px;
+}
+.bw-src-head {
+  font-size: .57rem; font-weight: 700; letter-spacing: .22em;
+  color: #475569; margin-bottom: 8px;
+}
+.bw-src-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px; }
+.bw-src-row:last-child { margin-bottom: 0; }
+.bw-src-icon { font-size: .8rem; flex-shrink: 0; margin-top: 1px; }
+.bw-src-name { font-size: .65rem; color: #94a3b8; margin-bottom: 1px; }
+.bw-src-url { font-size: .63rem; }
+.bw-src-url a { color: #38bdf8; text-decoration: none; word-break: break-all; }
+.bw-src-url a:hover { text-decoration: underline; }
+.bw-src-note { font-size: .59rem; color: #475569; margin-top: 1px; }
+/* 区切り */
+.bw-divider {
+  display: flex; align-items: center; gap: 10px; padding: 2px 0 16px;
+}
+.bw-divider::before, .bw-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.25), transparent);
+}
+.bw-divider span { color: rgba(201,168,76,0.3); font-size: .66rem; }
+/* フッター */
+.bw-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 6px;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.2);
+}
+.bw-footer-l { font-size: .6rem; color: #334155; }
+.bw-footer-r { font-size: .6rem; color: rgba(201,168,76,0.4); letter-spacing: .1em; }
+/* レスポンシブ */
+@media (max-width: 1023px) {
+  .bw-title { font-size: .95rem; }
+  .bw-table th:first-child { width: 32%; }
+  .bw-card { padding: 16px 14px 14px; }
+  .bw-inner { padding: 0 12px 20px; }
+}
+@media (max-width: 600px) {
+  .bw-title { font-size: .88rem; }
+  .bw-trans-body { font-size: .76rem; }
+  .bw-orig-text { font-size: .68rem; }
+}
+
+/* INFOGRAPHIC LIGHTBOX */
+.infographic-thumb {
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(56,189,248,0.25);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.infographic-thumb:hover {
+  transform: scale(1.02);
+  border-color: rgba(56,189,248,0.6);
+}
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  cursor: zoom-out;
+}
+#lightbox-overlay.active { display: flex; }
+#lightbox-overlay img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+  cursor: default;
+}
+#lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  z-index: 10000;
+}
+
+  .infographic-cta {
+    margin: 24px auto 12px;
+    text-align: center;
+  }
+
+  .infographic-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 28px;
+    border-radius: 6px;
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0.18) 0%,
+      #d93030 8%,
+      #b82020 80%,
+      #8a1010 100%
+    );
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+    /* 上面ハイライト + 側面 + 底面の3層ボーダー */
+    border-top: 1.5px solid rgba(255,255,255,0.45);
+    border-left: 1.5px solid rgba(255,255,255,0.2);
+    border-right: 1.5px solid rgba(0,0,0,0.4);
+    border-bottom: 4px solid #5a0808;
+    /* 外側にキーの「台座」シャドウ */
+    box-shadow:
+      0 5px 0 #3a0505,
+      0 7px 10px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform 0.07s ease, box-shadow 0.07s ease, border-bottom-width 0.07s ease;
+    position: relative;
+  }
+
+  .infographic-button:hover {
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0.22) 0%,
+      #e83838 8%,
+      #c82828 80%,
+      #9a1818 100%
+    );
+    border-top-color: rgba(255,255,255,0.55);
+  }
+
+  .infographic-button:active {
+    transform: translateY(4px);
+    border-bottom-width: 1px;
+    box-shadow:
+      0 1px 0 #3a0505,
+      0 2px 4px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 600px) {
+    .infographic-button {
+      font-size: 12px;
+      padding: 5px 20px;
+    }
+  }
+
+/* ============================================================
+   フェーズ2：レイアウト・文字サイズ（2026-09-18 試作・未 push）
+   HTML は変えず、この CSS だけで適用する。フェーズ2を戻すときは
+   このブロックと上の html{font-size:20px} を戻せばよい。
+   ============================================================ */
+
+/* --- 2-a スマホ：本文系の文字の下限を 0.8rem（14.4px）へ ---
+   スマホの 1rem は絶対ルールで 18px のまま。見出しやバッジは変えず、
+   長い文章を含む要素だけ下限を引き上げる。
+   以前は div[style*="font-size:0.7"] で 0.7〜0.78rem のインライン指定に当てていた
+   （span・a・button のラベル類は対象外）。
+   ② PR4b（2026-10-01）で HTML のインライン style を、②' PR E（2026-10-12）で JS が組み立てる HTML の
+   インライン style をクラスにしたので、属性セレクタは外し、当たっていた3つのクラスを並べた。 */
+@media (max-width: 768px) {
+  .sc-body,
+  .sc-impact,
+  .news-item,
+  .news-item a,
+  .modal-section,
+  .modal-quote,
+  .modal-interp-box,
+  .bw-analysis p,
+  .bw-tl-body,
+  .bw-trans-body,
+  .src-pop-body,
+  .news-stale-notice,
+  .osint-en {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* --- 2-b 長文の1行の長さ ---
+   1行を 70ch（全角でおよそ35〜40字）までにする。左揃えのまま幅だけを制限する
+   （見出しが左揃えなので、本文だけ中央寄せにすると視線の起点がずれるため）。
+   インライン style だけの箱は、日次差分（tools/diffs-generation-rules.md）の old_str に
+   引用されない親要素にクラスを付けて指定する（2026-09-23）。
+   速報インシデントは ② PR1（2026-09-24）で li.incident-item に統一したため、p, li の指定で足りる。 */
+p, li,
+.sec-lead,
+.news-body,
+.jf-col,
+.badges .badge-item,                       /* ヘッダーの警戒レベル */
+.sc-section > div:not(.sc-grid),          /* シナリオの確率補足・次の焦点 */
+.osint-card > div,                         /* 現地メディア視点の英語要約 */
+.data-note,                                /* WTI の注記 */
+.update-log > div > div {                  /* 更新履歴の各行（行を入れる箱の開始タグは日次差分の old_str に引用されるため、クラスは section に付ける） */
+  max-width: var(--measure);
+}
+/* フッターは上罫線を全幅に保ったまま、文字の幅だけを余白で絞る。
+   ルート表の脚注（td[colspan]）は、表のセルでは余白の % の基準が安定せず
+   画面が広いほど狭くなったため、対象外とした（右揃えの小さな注記で読み物ではない） */
+footer {                                   /* フッター（中央揃え・上罫線は全幅のまま） */
+  padding-left: max(16px, calc((100% - var(--measure)) / 2));
+  padding-right: max(16px, calc((100% - var(--measure)) / 2));
+}
+
+/* --- 2-c カラム ---
+   〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列。
+   .sc-grid のインライン style（2列）は ② PR4a で外したので !important は不要。 */
+.sc-grid  { grid-template-columns: 1fr; }
+.stats-row { grid-template-columns: repeat(2, 1fr); }
+
+@media (min-width: 601px) {
+  .sc-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+
+  /* 関連最新ニュース：2列。「過去の記事を見る」で開く分も同じ並びにする */
+  #news-latest-container,
+  #news-latest-extra.is-open {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-items: start;
+  }
+  #news-latest-container > :not(.news-item) { grid-column: 1 / -1; }
+  #news-latest-container .news-item { margin: 0; }
+
+  /* 特別解説コラム：先頭の記事（機雷）を全幅、残りの記事カードを格子に並べる。
+     （2026-09-23 まで2本目以降が先頭記事の箱の中に入れ子になっていたのを、
+     .commentary-grid で包む構造に直した） */
+  .commentary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-items: start;
+  }
+  .commentary-grid > :first-child { grid-column: 1 / -1; }
+  .commentary-grid > div { margin: 0 !important; }
+}
+
+@media (min-width: 1024px) {
+  .stats-row { grid-template-columns: repeat(6, 1fr); }
+  .commentary-grid { grid-template-columns: repeat(3, 1fr); }
+}
+/* ============================================================
+   JS が組み立てる HTML のクラス（②' PR E・2026-10-12）
+   地図のポップアップ・印・凡例・関連最新ニュース・現地メディア視点。
+   以前は JS のテンプレートにインライン style で書いていた。値は変えていない。
+   計算で決まる値（印の大きさ・色、データが持つ色）だけはテンプレートに style で残してある。
+   ============================================================ */
+/* 文字色（ポップアップの見出しなど） */
+.tc-red { color:#f87171; }
+.tc-amber { color:#fbbf24; }
+.tc-green { color:#34d399; }
+.tc-blue { color:#60a5fa; }
+.tc-sky { color:#38bdf8; }
+.tc-sky-light { color:#7dd3fc; }
+.tc-violet { color:#a78bfa; }
+.tc-purple { color:#c084fc; }
+.tc-slate { color:#94a3b8; }
+.tc-blue-light { color:#93c5fd; }
+.tc-orange { color:#fb923c; }
+.tc-teal { color:#0e7490; }
+.tc-ink { color:#1e293b; }
+.tc-dim { color:#64748b; }
+
+/* 軍事レイヤー（renderMilitaryLayer） */
+.mil-pop { min-width:200px; }
+.mil-pop--card { background:#1e293b; padding:8px; border-radius:8px; }
+.mil-pop-status { font-size:0.75rem; padding:2px 6px; border-radius:4px; }
+.mil-pop-status--fleet { background:rgba(239,68,68,0.3); color:#fca5a5; }
+.mil-pop-status--port { background:rgba(255,255,255,0.12); color:#e2e8f0; }
+.mil-pop-detail { font-size:0.8rem; }
+.mil-pop--card .mil-pop-detail { color:#cbd5e1; }
+.mil-pop-src { color:#94a3b8; }
+.mil-pop--card .mil-pop-src { color:#64748b; }
+.mil-icon { cursor:pointer; }
+.mil-icon--fleet { font-size:26px; filter:drop-shadow(0 0 4px rgba(239,68,68,0.8)); }
+.mil-icon--port { font-size:22px; }
+
+/* 調達先・日本の受入拠点・南鳥島のポップアップ */
+.src-pop { font-family:'Noto Sans JP',sans-serif; min-width:200px; padding:4px; }
+.src-pop--wide { min-width:220px; }
+.src-pop-title { font-size:0.85rem; font-weight:800; margin-bottom:6px; }
+.src-pop-body { font-size:0.75rem; color:#1e293b; line-height:1.9; }
+.src-pop-body--tight { line-height:1.8; }
+.src-pop-body--japan { line-height:1.8; margin-bottom:6px; }
+.src-pop-btn { width:100%; background:linear-gradient(135deg,#1e40af,#1e3a5f); border:1px solid #38bdf8; color:#7dd3fc; font-size:0.78rem; font-weight:700; padding:7px 0; border-radius:6px; cursor:pointer; letter-spacing:0.03em; }
+
+/* ポップアップのバッジ・注記・画像 */
+.p-badge--red { background:rgba(239,68,68,0.2); color:#f87171; border:1px solid rgba(239,68,68,0.4); }
+.p-badge--amber { background:rgba(251,191,36,0.2); color:#fbbf24; border:1px solid rgba(251,191,36,0.4); }
+.p-badge--amber-soft { background:rgba(251,191,36,0.18); color:#fbbf24; border:1px solid rgba(251,191,36,0.4); }
+.p-badge--green { background:rgba(52,211,153,0.2); color:#34d399; border:1px solid rgba(52,211,153,0.4); }
+.p-badge--blue { background:rgba(96,165,250,0.2); color:#60a5fa; border:1px solid rgba(96,165,250,0.4); }
+.p-badge--navy { background:rgba(29,78,216,0.3); color:#93c5fd; border:1px solid rgba(147,197,253,0.4); }
+.p-note { font-size:0.62rem; color:#64748b; margin-top:5px; line-height:1.5; }
+.p-img { width:100%; height:auto; margin-top:6px; border-radius:4px; cursor:zoom-in; }
+
+/* 印（丸いマーカー）。mk--dyn は mkIcon() が大きさと色を style で渡す */
+.mk { border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.mk--dyn { border:2px solid rgba(255,255,255,0.25); }
+.mk--hormuz { width:44px; height:44px; background:rgba(239,68,68,0.18); border:2.5px solid #ef4444; font-size:20px; }
+.mk--kharg { width:44px; height:44px; background:rgba(239,68,68,0.25); border:2.5px solid #ff0000; font-size:20px; }
+.mk--warn { width:40px; height:40px; background:rgba(251,191,36,0.18); border:2.5px solid #fbbf24; font-size:18px; }
+.mk--bab { width:40px; height:40px; background:rgba(220,38,38,0.2); border:2.5px solid #ef4444; font-size:18px; }
+.mk--oil { width:36px; height:36px; background:rgba(251,191,36,0.15); border:2px solid #fbbf24; font-size:16px; }
+.mk--japan { width:44px; height:44px; background:linear-gradient(135deg, #1e3a5f, #0f2027); border:2px solid #38bdf8; font-size:22px; box-shadow:0 0 12px rgba(56,189,248,0.5); cursor:pointer; }
+
+/* 地図上の国名・海域名 */
+.map-label { text-shadow:0 1px 4px rgba(0,0,0,0.95); white-space:nowrap; pointer-events:none; }
+.map-label--country { color:rgba(180,210,235,0.85); font-size:11px; font-weight:600; font-family:'Hiragino Sans','Yu Gothic','Segoe UI',sans-serif; }
+.map-label--sea { color:rgba(56,189,248,0.5); font-size:13px; font-weight:700; font-family:'Hiragino Sans','Yu Gothic',sans-serif; }
+
+/* 凡例 */
+.leg-dash--a { border-color:#38bdf8; }
+.leg-dash--b { border-color:#34d399; }
+.leg-dash--c { border-color:#a78bfa; }
+.leg-dash--c-sa { border-color:#c084fc; }
+.leg-dash--ng { border-color:#fbbf24; }
+.leg-dash--ao { border-color:#fb923c; }
+.leg-dash--d { border-color:#f59e0b; }
+.leg-dash--old { border-color:#6b7280; }
+.leg-dash--canal { border-color:#67e8f9; border-top-style:solid; }
+.leg-section--gap { margin-top:8px; }
+.leg-note--tight { margin-top:4px; }
+
+/* 関連最新ニュース */
+.news-stale-notice { background:rgba(100,116,139,0.12); border:1px solid rgba(100,116,139,0.3); border-radius:6px; padding:8px 14px; font-size:0.78rem; color:#94a3b8; margin-bottom:10px; }
+.news-archive-batch { margin-bottom:12px; }
+.news-archive-label { font-size:0.68rem; font-weight:800; color:#64748b; letter-spacing:0.08em; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:8px; }
+.news-more-btn--tight { margin-top:4px; }
+
+/* 現地メディア視点。カードの地色・枠の色と媒体名の色は news_data.json が持つので style で渡す。
+   #osint-extra の display:none は toggleOsint() が読むのでテンプレートに残す */
+.osint-list { display:flex; flex-direction:column; gap:8px; }
+.osint-card { display:block; border-radius:8px; padding:12px 14px; text-decoration:none; }
+.osint-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.osint-country { font-size:0.85rem; }
+.osint-media { font-size:0.68rem; font-weight:700; padding:2px 7px; border-radius:4px; }
+.osint-date { font-size:0.68rem; color:#64748b; }
+.osint-title { font-size:0.8rem; font-weight:700; color:#e2e8f0; line-height:1.5; }
+.osint-en { font-size:0.72rem; color:#94a3b8; margin-top:3px; line-height:1.5; font-style:italic; }
+#osint-extra { margin-top:8px; }

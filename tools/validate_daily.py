@@ -1051,7 +1051,7 @@ def check_text_lengths(html: str) -> None:
         warn("シナリオの補足（div.sc-update）を検出できず、文字数を確認できません")
         return
     body = m.group(0)
-    PAT_KEY = re.compile(r'sc-key">([A-D])<|([🅐🅑🅒🅓])')   # 各行の頭は <b class="sc-key">A</b>（D3 PR 5b。旧 🅐〜🅓）
+    PAT_KEY = re.compile(r'sc-key">([A-D])<|([🅐🅑🅒🅓])')   # 各行の頭は 🅐〜🅓（見やすさを優先した例外・2026-10-20）
     seen_summary = False
     for part in body.split("<br>"):
         mm = PAT_KEY.search(part)

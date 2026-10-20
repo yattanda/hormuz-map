@@ -143,8 +143,8 @@ Agent ツール（`subagent_type: general-purpose`）へ渡す。`{…}` だけ�
 
 | 担当 | 確かめること | 本文での使い道 |
 |---|---|---|
-| V1 船舶・軍事 | 前回の更新以降の被弾・拿捕・IRGC の通告（gCaptain・UKMTO・Arab News 等を名指しで検索） | 速報インシデント・主な動き・旧ルート行・シナリオ C・D |
-| V2 原油価格 | 直近の米国の取引日の終値を2出典で一致させる | 30秒カラム「海峡の今」・バッジ・TICKER・シナリオ B・フッター |
+| V1 船舶・軍事 | 前回の更新以降の被弾・拿捕・IRGC の通告（gCaptain・UKMTO・Arab News 等を名指しで検索） | 速報インシデント・主な動き・旧ルート行・シナリオ🅒🅓 |
+| V2 原油価格 | 直近の米国の取引日の終値を2出典で一致させる | 30秒カラム「海峡の今」・バッジ・TICKER・シナリオ🅑・フッター |
 | V3 数値・イエメン／紅海 | 本文に入れる予定の数値の原文（期間・対象・基準値）と、イエメン・紅海・迂回路の動き | 数値を含むすべての箇所・ルートA／B 行 |
 
 - **情勢が膠着していそうな日も3本とも動かす**（「変化がない」ことの確認も記載事項。日によって数を変えると確認の抜けが出る）
@@ -583,10 +583,10 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 <!-- シナリオ確率更新補足 -->
 <div class="sc-update">
   <strong>今日の動きの要約：</strong><br>
-  <b class="sc-key">A</b> 段階的MOU履行成功 <span class="sc-trend">→</span> — 根拠<br>
-  <b class="sc-key">B</b> 膠着継続 <span class="sc-trend">↑</span> — 根拠<br>
-  <b class="sc-key">C</b> MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
-  <b class="sc-key">D</b> 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↓</span> — 根拠<br>
+  🅐 段階的MOU履行成功 <span class="sc-trend">→</span> — 根拠<br>
+  🅑 膠着継続 <span class="sc-trend">↑</span> — 根拠<br>
+  🅒 MOU形骸化・機能不全 <span class="sc-trend">→</span> — 根拠<br>
+  🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↓</span> — 根拠<br>
   <strong class="sc-update-caveat">断定を避ける注記。</strong><br>
   <div class="sc-sync-note">…（確率の同期の注記。日次では触らない）…</div>
   <div class="sc-ai-note">…（AI推定の注記。日次では触らない）…</div>
@@ -594,10 +594,10 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 ```
 
 - 日付を書くのは `sc-update-date` の1か所だけ。ヘッダーと同じ日時にする
-- 各行の頭は `<b class="sc-key">A</b>`〜`D`（2026-10-20 課題46 D3 PR 5b。以前の 🅐〜🅓・📊 は書かない）
+- 各行の頭は 🅐〜🅓 のまま（見やすさを優先した例外・2026-10-20 運営者）。冒頭の要約の頭の 📊 は書かない（2026-10-20 課題46 D3 PR 5b）
 - **並び（2026-10-11〜）**：見出しの直下に日付（`div.sc-update-head`）、その直下にシナリオ4本、補足と但し書き（`div.sc-update`）はその後。運営者の指示で、読者が先にシナリオ本体を見るようにした
-- **文字数の目安（2026-10-11〜）**：冒頭の要約 **150字**・A〜D の各行 **170字**・但し書き **150字**。根拠は1〜2点に絞り、細部は速報インシデントへ。超えたら `validate_daily.py` が WARN を出す
-  （10/11 は C の行が 610字あった）
+- **文字数の目安（2026-10-11〜）**：冒頭の要約 **150字**・🅐〜🅓 の各行 **170字**・但し書き **150字**。根拠は1〜2点に絞り、細部は速報インシデントへ。超えたら `validate_daily.py` が WARN を出す
+  （10/11 は 🅒 の行が 610字あった）
 - `sc-sync-note` は日次では触らない・**日付を書かない**（2026-10-07〜。確率がいつの値かは、JS が同期元の `updated_at` を `#sc-sync-at` に入れる）
 - 矢印（→・↑・↓）は `<span class="sc-trend">` の中の文字だけを変える
 - `sc-ai-note`・`sc-ai-variance`・`#sc-ctx-note` は日次では触らない（`#sc-ctx-note` は JS が出し入れする）

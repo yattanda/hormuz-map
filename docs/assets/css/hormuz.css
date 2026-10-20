@@ -565,7 +565,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .sc-update-date { font-weight:700; color:var(--c-text); }
 .sc-update-caveat { color:var(--c-text); font-weight:700; }
 .sc-trend { color:var(--c-text-mute); }
-.sc-key { font-family:var(--f-figure); font-weight:600; color:var(--c-text); }   /* 補足の各行の頭の A〜D（D3 PR 5b。旧 🅐〜🅓） */
 .sc-tag-em { font-size:1.15em; font-weight:700; }
 .sc-sync-note { font-size:var(--fs-sm); color:var(--c-text-mute); text-align:center; margin-top:8px; }
 .sc-ai-note { margin-top:10px; padding:9px 13px; background:var(--c-surface);

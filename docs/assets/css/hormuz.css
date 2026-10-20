@@ -195,7 +195,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    左の罫の色（危険・警戒・平常）は状態なので PR 5 で札にする。面と角丸はやめた */
 .key-moves { margin-top:4px; padding-top:8px; }
 .key-moves-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin-bottom:6px;
-  font-size:var(--fs-sm); font-weight:700; color:var(--c-accent); letter-spacing:0.04em; }
+  font-size:var(--fs-sm); font-weight:700; color:var(--c-text); letter-spacing:0.04em; }   /* 面の上なので差し色（3.5:1）は使わない */
 .key-moves-more { margin-left:auto; font-size:var(--fs-xs); font-weight:600; color:var(--c-text-mute); letter-spacing:0; }
 .key-moves-more:hover { color:var(--c-text); }
 .key-moves-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; }

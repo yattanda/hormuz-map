@@ -625,7 +625,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - ラベル「分析」は見出しの中（件数の直後）に置く。**一語のまま・日付を書かない**（2026-10-07〜。以前は一覧の下に単独で置いていて、押せるボタンのように見えた）。
   見出しの件数を書き換えるときに、`<span class="label-scenario sc-h2-label">分析</span>` を消さない
 - `<li>` と `<strong>` にクラスも style も付けない（色は `.sc-focus-list` が決める）。見出しは「次の焦点 N つ」を件数に合わせる（頭に絵文字を書かない）
-- `tools/validate_daily.py` が「シナリオ（`<!-- SCENARIOS -->`〜`<!-- STATS -->`）のインライン style」を WARN で確認する
+- `tools/validate_daily.py` が「シナリオ（`<!-- SCENARIOS -->`〜`<!-- /SCENARIOS -->`）のインライン style」を WARN で確認する
 
 ---
 

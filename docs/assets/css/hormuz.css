@@ -193,7 +193,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    旧・情勢カードは「主な動き」（.key-moves）に吸収した。日次更新は3行サマリーの本文・主な動き3件・
    ステータスバッジを書き換える。いずれもインライン style を書かず、この型（クラス＋色のモディファイア）で書く。
    色はモディファイアごとに --c（RGB）を決め、背景・枠・影はその透明度違いで出す。 */
-.glance { width:100%; margin:0 0 28px 0; padding:0; }
+.glance { width:100%; margin:0 0 14px 0; padding:0; }   /* 下は解説インフォグラフィック。上の空白を詰める（2026-10-21。もとは 28px） */
 /* 30秒カラムは入口なので、ハブの入口（案 E4）と同じく面の帯の上に差し色の太い罫。箱の枠・角丸・影はやめた */
 .glance-panel { background:var(--c-surface); border-top:4px solid var(--c-accent); padding:16px 12px; }
 .sec-h2.glance-title { color:var(--c-text); border-top:0; padding-top:0; border-bottom:1px solid var(--c-rule); }
@@ -313,7 +313,7 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
   line-height:1.4;
 }
 .map-jump .mj-title {
-  font-size:0.62rem;
+  font-size:0.5rem;   /* 凡例と一緒に一段小さく（2026-10-21・運営者。もとは 0.62rem） */
   font-weight:700;
   color:var(--c-text-mute);
   letter-spacing:0.08em;
@@ -325,7 +325,7 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
   border:1px solid var(--c-rule);
   color:var(--c-text);
   font-family:inherit;
-  font-size:0.68rem;
+  font-size:0.54rem;   /* もとは 0.68rem（2026-10-21） */
   font-weight:700;
   padding:3px 9px;
   cursor:pointer;
@@ -349,38 +349,27 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
   background:var(--c-bg) !important;
   border:1px solid var(--c-rule) !important;
   padding:12px 15px;
-  font-size:0.75rem;
+  font-size:0.6rem;   /* 凡例の文字を全体に約3px 小さく（2026-10-21・運営者。もとは 0.75rem・幅 252px） */
   color:var(--c-text);
-  min-width:252px;
+  min-width:220px;
   line-height:1.5;
 }
-.map-legend h3 { color:var(--c-text); font-size:0.8rem; margin-top:1.33em; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
+.map-legend h3 { color:var(--c-text); font-size:0.65rem; margin-top:1.33em; margin-bottom:9px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
 .legend-toggle-btn {
   display:inline-block;
   background:none;
   border:1px solid var(--c-text);
   color:var(--c-text);
-  font-size:0.7rem;
+  font-size:0.58rem;
   font-weight:700;
   padding:2px 8px;
   cursor:pointer;
 }
 .leg-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
 .leg-dash { width:30px; height:0; flex-shrink:0; border-top:3px dashed; }
-.leg-row span { font-size:0.72rem; color:var(--c-text); }
-@media (max-width: 600px) {
-  .map-legend {
-    font-size: 0.65rem;
-  }
-  .leg-row span {
-    font-size: 0.58rem;
-  }
-  .leg-section {
-    font-size: 0.50rem;
-  }
-}
+.leg-row span { font-size:0.57rem; color:var(--c-text); }
 .leg-section {
-  font-size: 0.62rem;
+  font-size: 0.5rem;
   font-weight: 700;
   color: var(--c-text-mute);
   letter-spacing: 0.08em;
@@ -388,12 +377,19 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
   margin: 6px 0 4px;
 }
 .leg-emoji {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   width: 20px;
   text-align: center;
   flex-shrink: 0;
 }
-.leg-note { margin-top:8px; padding-top:7px; border-top:1px solid var(--c-rule); font-size:0.66rem; color:var(--c-text-mute); }
+.leg-note { margin-top:8px; padding-top:7px; border-top:1px solid var(--c-rule); font-size:0.52rem; color:var(--c-text-mute); }
+/* スマホの凡例。基本の規則より後ろに置く（前にあったため .leg-section・.leg-note のスマホの指定が効いていなかった。2026-10-21） */
+@media (max-width: 600px) {
+  .map-legend { font-size: 0.55rem; }
+  .leg-row span { font-size: 0.5rem; }
+  .leg-section { font-size: 0.46rem; }
+  .leg-note { font-size: 0.5rem; }
+}
 /* 閉じるボタンはパネル下端・右下に固定する。本文をスクロールさせても
    位置が動かないよう .legend-body の外に置いている */
 .legend-close-wrap { display:none; }
@@ -480,6 +476,8 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
   padding: 3px 8px;
   white-space: nowrap;
 }
+/* 第1層の帯はティッカーと30秒カラムの間。上下の空白を詰める（2026-10-21・運営者。もとは上 34px・下 14px＋.container の 16px） */
+.layer-band--1 { margin:16px 16px 0; }
 .layer-band-text {
   font-size: var(--fs-sm);
   font-weight: 700;
@@ -729,7 +727,7 @@ button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモ�
   padding:4px 12px; cursor:pointer; font-family:inherit; }
 .yt-visitors-btn:hover { border-color:var(--c-text); }
 
-.infographic-block { margin-top:18px; padding-top:16px; border-top:1px solid var(--c-rule); }
+.infographic-block { margin-top:0; padding-top:14px; border-top:1px solid var(--c-rule); }
 .infographic-block-h { font-size:var(--fs-xs); font-weight:700; color:var(--c-text-mute); letter-spacing:0.06em; margin-bottom:10px; }
 .infographic-thumb.infographic-thumb--quarter { width:25%; min-width:120px; }
 .infographic-thumb-full { width:100%; height:auto; display:block; }
@@ -1133,16 +1131,18 @@ footer {
 /* ===== ルートテーブル列幅最適化 ===== */
 .rtable { table-layout: fixed !important; }
 .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 12px; }   /* 状態の色面（D3 PR 5a。もとは 4%） */
-.rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14%; }
-.rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13%; }
-.rtable th:nth-child(4), .rtable td:nth-child(4) { width: 11%; }
-.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 29%; }   /* 1列目を 12px にした分（D3 PR 5a。もとは 25%） */
-.rtable th:nth-child(6), .rtable td:nth-child(6) { width: 18%; }
-.rtable th:nth-child(7), .rtable td:nth-child(7) { width: 15%; }
+/* 現況詳細が長いので、ほかの列を削ってそこへ回す（2026-10-21・運営者。もとは 14・13・11・29・18・15%） */
+.rtable th:nth-child(2), .rtable td:nth-child(2) { width: 11%; }
+.rtable th:nth-child(3), .rtable td:nth-child(3) { width: 10%; }
+.rtable th:nth-child(4), .rtable td:nth-child(4) { width: 8%; }
+.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 49%; }
+.rtable th:nth-child(6), .rtable td:nth-child(6) { width: 12%; }
+.rtable th:nth-child(7), .rtable td:nth-child(7) { width: 10%; }
 
 @media (max-width: 768px) {
   /* min-width:600px を解除して横スクロール強制を廃止 */
-  .rtable-wrap .rtable { min-width: 0 !important; width: 100% !important; table-layout: auto !important; }
+  /* fixed：auto だと札や語の長さで列が広がり、下の幅の配分が効かなかった（2026-10-21） */
+  .rtable-wrap .rtable { min-width: 0 !important; width: 100% !important; table-layout: fixed !important; }
 
   /* フォント・セル余白を詰める */
   .rtable { font-size: 11px !important; }
@@ -1150,16 +1150,26 @@ footer {
 
   /* 状態列のpillを小さく */
   .rtable .pill { font-size: 10px !important; padding: 2px 5px !important; }
+  .rtable .pill { overflow-wrap: anywhere; }   /* 「9/28）」のような切れない語で、狭くした状態の列からはみ出さない（2026-10-21） */
 
   /* 6列の幅配分（合計100%） */
   /* 1:状態の色面 2:ルート 3:輸送能力 5:現況詳細 6:主なリスク 7:状態。1列目は 12px・余白なし（D3 PR 5a。もとは 4%、その分を現況詳細へ） */
   .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 12px !important; }
   .rtable thead th:first-child, .rtable tbody tr:not(.rtable-foot) > td:first-child { padding: 0 !important; }
+  /* 2026-10-21：現況詳細を広げる（もとは 14・13・34・25・14%） */
   .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14% !important; }
   .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13% !important; }
-  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 34% !important; }
-  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 25% !important; }
-  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 14% !important; }
+  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 44% !important; }
+  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 16% !important; }
+  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 13% !important; }
+  /* fixed では <colgroup> の <col> の幅が効くので、スマホの配分は col にも当てる（col のインライン style は html-safe-edit の決まりで残す）。
+     日本向けのセルが display:none だと列そのものが無くなり、4列目以降の col が1つずつ前にずれて当たる（4 → 現況詳細・5 → 主なリスク・6 → 状態。7 は余り） */
+  .rtable col:nth-child(2) { width: 14% !important; }
+  .rtable col:nth-child(3) { width: 13% !important; }
+  .rtable col:nth-child(4) { width: 44% !important; }
+  .rtable col:nth-child(5) { width: 16% !important; }
+  .rtable col:nth-child(6) { width: 13% !important; }
+  .rtable col:nth-child(7) { width: 0 !important; }
 }
 /* ================================================
    特別解説ウィジェット (briefing-widget)

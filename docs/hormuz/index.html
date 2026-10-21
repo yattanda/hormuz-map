@@ -125,6 +125,28 @@
   </div>
 </div>
 
+<script>
+/* ティッカーの速さを文字の長さによらず一定にする（2026-10-11）。
+   以前は 50 秒固定で、文が長い日ほど速く（10/11 は約300px/秒）、文字が二重に見えた。
+   2026-10-21：帯の直後で測る。以前はページの末尾で測っていて、読み込み中（スマホで十数秒）は
+   50 秒の予備の速さで超高速に流れていた（文が長いほど速い）。ここで測れば最初の描画の前に間に合う */
+(function(){
+  var PX_PER_SEC = 90;
+  var t = document.querySelector('.ticker-text');
+  if(!t) return;
+  var cur = 0;
+  function fit(){
+    var d = (window.innerWidth + t.scrollWidth) / PX_PER_SEC;
+    // 書体の読み込みで幅が少し変わっても、流れている途中で速さを変えると文字が跳ぶので、1割を超えるときだけ直す
+    if(cur && Math.abs(d - cur) / cur < 0.1) return;
+    cur = d;
+    t.style.animationDuration = d.toFixed(1) + 's';
+  }
+  fit();
+  window.addEventListener('load', fit);
+})();
+</script>
+
 <!-- ===== 第1層：いま何が起きているか ===== -->
 <div class="layer-band layer-band--1">
   <span class="layer-band-num">第1層</span>
@@ -269,6 +291,260 @@ UKMTO警報178の発生時刻・船名・軍の国籍、IRGCが主張したタ�
           class="infographic-thumb-full">
       </div>
     </div>
+
+<!-- 2026-10-21：主要指標・データ監視ダッシュボード・リアルタイム市場を第2層から速報インシデントの上へ移した（運営者） -->
+  <!-- STATS -->
+  <h2 class="sec-h2">主要指標</h2>
+  <div class="stats-row">
+    <div class="stat-card">
+  <div class="stat-asof">2026年9月29日時点（速報）</div>
+  <div class="stat-head">日本の石油備蓄</div>
+  <div class="stat-num stat-num--stock">197<span class="stat-unit stat-unit--sm">日分</span></div>
+  <div class="stat-label stat-label--stock">
+    <strong>国家：</strong>102日分<br>
+    <strong>民間：</strong>91日分<br>
+    <strong>産油国共同：</strong>4日分<br>
+    <small>※資源エネルギー庁 速報値（備蓄法基準）</small>
+  </div>
+</div>
+    <div class="stat-card"><div class="stat-num c-red">20<span class="stat-unit">%</span></div><div class="stat-label">世界の石油消費に占める<br>ホルムズ海峡の通過量（開戦前）</div></div>
+    <div class="stat-card"><div class="stat-num c-yellow">3<span class="stat-unit">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>VLCC 1隻・約200万ドル<br><span class="stat-sub">交渉の開始額<br>2026年4月報道・Bloomberg</span></div></div>
+    <!-- 既存のスクロールリンクは維持 -->
+    <div class="stat-card stat-card--wti" id="wtiStatCard"
+     onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
+    <div class="stat-num stat-num--wti c-green" id="wtiStatNum">Live表示中</div>
+    <div class="stat-label">市場ダッシュボード<br>
+    <span id="wtiStatChange" class="stat-sub">稼働中</span><br>
+    ▲クリックで詳細
+   </div>
+  </div>
+    <div class="stat-card"><div class="stat-num c-orange"><span class="stat-unit">約</span>40<span class="stat-unit">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相会合の参加国（日本含む）<br><span class="stat-sub">2026年4月2日・英国主催のオンライン会合<br>AFP（4/3）</span></div></div>
+  </div>
+
+<!-- ホルムズ データ監視ダッシュボード -->
+<h2 class="sec-h2">ホルムズ データ監視ダッシュボード<span class="label-ai sc-h2-label">AI推定を含む</span></h2>
+<div id="japan-flow"></div>
+<div class="dash-frame">
+  <iframe
+    id="hormuz-dashboard"
+    width="100%"
+    height="400"
+    frameborder="0"
+    scrolling="no"
+    title="ホルムズ データ監視ダッシュボード"
+    loading="lazy"
+  ></iframe>
+</div>
+<script>
+  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ドメイン/リポジトリ名移行時はここのみ変更）
+  window.SITE_CONFIG = window.SITE_CONFIG || {
+    DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
+  };
+  (function () {
+    const iframe = document.getElementById('hormuz-dashboard');
+    if (!iframe) return;
+    iframe.src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
+
+    // 実測できないとき（別オリジン移行後など）だけ使う暫定値
+    function fallbackHeight() {
+      if (window.innerWidth <= 480) return 2110;
+      if (window.innerWidth <= 768) return 2200;
+      return 1110;
+    }
+
+    let measured = false;
+    // 同一オリジンで実測できているか。できている間は postMessage を採用しない
+    let directMeasureOk = false;
+
+    function applyHeight(h) {
+      h = Math.ceil(h);
+      if (!(h > 200)) return;
+      if (Math.abs(parseFloat(iframe.style.height || '0') - h) < 2) return;
+      iframe.style.height = h + 'px';
+    }
+
+    // iframe 内の最終要素の下端から実コンテンツ高さを測る。
+    // documentElement.scrollHeight は iframe の高さまで引き伸ばされるため、
+    // 「縮める方向」の判定に使えない（これが余白の残る原因だった）。
+    function measureInner(doc) {
+      const body = doc.body;
+      if (!body) return 0;
+      const win = doc.defaultView;
+      let bottom = 0;
+      for (let i = 0; i < body.children.length; i++) {
+        const el = body.children[i];
+        if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) continue;
+        if (rect.bottom > bottom) bottom = rect.bottom;
+      }
+      if (!bottom) return 0;
+      bottom += win.scrollY || 0;
+      const cs = win.getComputedStyle(body);
+      bottom += parseFloat(cs.paddingBottom) || 0;
+      bottom += parseFloat(cs.marginBottom) || 0;
+      return bottom + 8;
+    }
+
+    function syncHeight() {
+      let doc = null;
+      try {
+        doc = iframe.contentDocument || iframe.contentWindow.document;
+      } catch (e) {
+        doc = null; // 別オリジン：postMessage 経由の通知を待つ
+      }
+      if (!doc) {
+        if (!measured) applyHeight(fallbackHeight());
+        return;
+      }
+      const h = measureInner(doc);
+      if (h > 200) {
+        measured = true;
+        directMeasureOk = true;
+        applyHeight(h);
+      } else if (!measured) {
+        applyHeight(fallbackHeight());
+      }
+    }
+
+    let timer = null;
+    function scheduleSync() {
+      clearTimeout(timer);
+      timer = setTimeout(syncHeight, 120);
+    }
+
+    applyHeight(fallbackHeight());
+
+    iframe.addEventListener('load', function () {
+      let doc = null;
+      try {
+        doc = iframe.contentDocument || iframe.contentWindow.document;
+      } catch (e) {
+        doc = null;
+      }
+      if (doc) {
+        try {
+          // 米国中東原油比率カードを非表示
+          const cards = doc.querySelectorAll('.card');
+          cards.forEach(function (card) {
+            if (card.textContent.includes('米国の中東原油')) {
+              card.style.display = 'none';
+            }
+          });
+        } catch (e) {
+          console.warn('card hide error:', e);
+        }
+        // 内部の非同期描画（fetch 後のカード更新など）に追従させる
+        if (doc.body && window.ResizeObserver) {
+          new ResizeObserver(scheduleSync).observe(doc.body);
+        }
+        if (doc.body && window.MutationObserver) {
+          new MutationObserver(scheduleSync).observe(doc.body, {
+            childList: true, subtree: true, characterData: true
+          });
+        }
+        if (iframe.contentWindow) {
+          iframe.contentWindow.addEventListener('resize', scheduleSync);
+        }
+      }
+      syncHeight();
+      [300, 1000, 2500, 5000].forEach(function (ms) { setTimeout(syncHeight, ms); });
+    });
+
+    window.addEventListener('resize', scheduleSync);
+
+    // 別オリジンに移行した場合の受け口（子側が iframeHeight を送ってくる場合）
+    window.addEventListener('message', function (ev) {
+      const data = ev.data;
+      if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
+      if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;
+      // 直接測定が効いている間は無視する（子側が誤った高さを送っても壊れないようにする保険）
+      if (directMeasureOk) return;
+      measured = true;
+      applyHeight(data.height);
+    });
+  })();
+</script>
+<!-- /ダッシュボード -->
+  <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
+ <h2 class="sec-h2 sec-h2--green">リアルタイム市場（原油・為替・貴金属）</h2>
+ <div id="wtiWidget" class="market-widget">
+    
+    <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
+    <div class="market-grid market-grid--main">
+      
+      <!-- 1. WTI原油 -->
+      <div class="market-cell">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:USOIL", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 2. ドル円 -->
+      <div class="market-cell">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "FX_IDC:USDJPY", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+    </div>
+  
+    <!-- ▼ サブセクション（小さく表示：高さ150） ▼ -->
+    <div class="market-grid market-grid--sub">
+      
+      <!-- 3. ゴールド -->
+      <div class="market-cell">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:GOLD", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 4. シルバー -->
+      <div class="market-cell">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:SILVER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 5. 銅 -->
+      <div class="market-cell">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "CAPITALCOM:COPPER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+      <!-- 6. プラチナ -->
+      <div class="market-cell">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          { "symbol": "TVC:PLATINUM", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
+          </script>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- ▼ 包括的な但し書き ▼ -->
+     <div class="market-note">
+      ※表示価格はCFD等のデータであり、実際の先物・現物価格とは微小な差異や遅延が生じる場合があります。
+    </div>
+  </div>
+  <!-- ==================== 💰 ダッシュボード終了 ==================== -->
 
 <div id="incident" class="incident-box">
 
@@ -750,12 +1026,12 @@ document.addEventListener('keydown', function(e) {
     <table class="rtable">
       <colgroup>
         <col style="width:12px"> <!-- 状態の色面（「状態」の列の札と同じ色。hormuz.css の :has()） -->
-        <col style="width:14%">  <!-- ルート -->
-        <col style="width:13%">  <!-- 輸送能力 -->
-        <col style="width:11%">  <!-- 🇯🇵日本向け ← 新列 -->
-        <col style="width:29%">  <!-- 現況詳細（1列目を 12px にしたので 25% → 29%。合計 100%） -->
-        <col style="width:18%">  <!-- 主なリスク -->
-        <col style="width:15%">  <!-- 状態 -->
+        <col style="width:11%">  <!-- ルート（2026-10-21：現況詳細を広げるため 14% → 11%。以下同じ。幅は hormuz.css の nth-child とそろえる） -->
+        <col style="width:10%">  <!-- 輸送能力（13% → 10%） -->
+        <col style="width:8%">  <!-- 日本向け（11% → 8%） -->
+        <col style="width:49%">  <!-- 現況詳細（29% → 49%。合計 100%） -->
+        <col style="width:12%">  <!-- 主なリスク（18% → 12%） -->
+        <col style="width:10%">  <!-- 状態（15% → 10%） -->
       </colgroup>
       <thead>
         <tr>
@@ -1233,34 +1509,7 @@ document.addEventListener('keydown', function(e) {
   </div>
 
 </div>
-
-  <!-- STATS -->
-  <h2 class="sec-h2">主要指標</h2>
-  <div class="stats-row">
-    <div class="stat-card">
-  <div class="stat-asof">2026年9月29日時点（速報）</div>
-  <div class="stat-head">日本の石油備蓄</div>
-  <div class="stat-num stat-num--stock">197<span class="stat-unit stat-unit--sm">日分</span></div>
-  <div class="stat-label stat-label--stock">
-    <strong>国家：</strong>102日分<br>
-    <strong>民間：</strong>91日分<br>
-    <strong>産油国共同：</strong>4日分<br>
-    <small>※資源エネルギー庁 速報値（備蓄法基準）</small>
-  </div>
-</div>
-    <div class="stat-card"><div class="stat-num c-red">20<span class="stat-unit">%</span></div><div class="stat-label">世界の石油消費に占める<br>ホルムズ海峡の通過量（開戦前）</div></div>
-    <div class="stat-card"><div class="stat-num c-yellow">3<span class="stat-unit">億円</span></div><div class="stat-label">ホルムズ「通航料」<br>VLCC 1隻・約200万ドル<br><span class="stat-sub">交渉の開始額<br>2026年4月報道・Bloomberg</span></div></div>
-    <!-- 既存のスクロールリンクは維持 -->
-    <div class="stat-card stat-card--wti" id="wtiStatCard"
-     onclick="document.getElementById('wtiWidget').scrollIntoView({behavior:'smooth'})">
-    <div class="stat-num stat-num--wti c-green" id="wtiStatNum">Live表示中</div>
-    <div class="stat-label">市場ダッシュボード<br>
-    <span id="wtiStatChange" class="stat-sub">稼働中</span><br>
-    ▲クリックで詳細
-   </div>
-  </div>
-    <div class="stat-card"><div class="stat-num c-orange"><span class="stat-unit">約</span>40<span class="stat-unit">カ国</span></div><div class="stat-label">海峡開放に向けた<br>外相会合の参加国（日本含む）<br><span class="stat-sub">2026年4月2日・英国主催のオンライン会合<br>AFP（4/3）</span></div></div>
-  </div>
+<!-- /SCENARIOS（2026-10-21：シナリオの終わりの印。もとは次に来ていた STATS の印で数えていたが、主要指標を速報インシデントの上へ移した） -->
 
   <script>
 // ============================================================
@@ -1411,230 +1660,6 @@ const SHIP_CONFIG = {
   }
 })();
   </script>
-<!-- ホルムズ データ監視ダッシュボード -->
-<h2 class="sec-h2">ホルムズ データ監視ダッシュボード<span class="label-ai sc-h2-label">AI推定を含む</span></h2>
-<div id="japan-flow"></div>
-<div class="dash-frame">
-  <iframe
-    id="hormuz-dashboard"
-    width="100%"
-    height="400"
-    frameborder="0"
-    scrolling="no"
-    title="ホルムズ データ監視ダッシュボード"
-    loading="lazy"
-  ></iframe>
-</div>
-<script>
-  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ドメイン/リポジトリ名移行時はここのみ変更）
-  window.SITE_CONFIG = window.SITE_CONFIG || {
-    DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
-  };
-  (function () {
-    const iframe = document.getElementById('hormuz-dashboard');
-    if (!iframe) return;
-    iframe.src = SITE_CONFIG.DASHBOARD_BASE + '/?embed=1';
-
-    // 実測できないとき（別オリジン移行後など）だけ使う暫定値
-    function fallbackHeight() {
-      if (window.innerWidth <= 480) return 2110;
-      if (window.innerWidth <= 768) return 2200;
-      return 1110;
-    }
-
-    let measured = false;
-    // 同一オリジンで実測できているか。できている間は postMessage を採用しない
-    let directMeasureOk = false;
-
-    function applyHeight(h) {
-      h = Math.ceil(h);
-      if (!(h > 200)) return;
-      if (Math.abs(parseFloat(iframe.style.height || '0') - h) < 2) return;
-      iframe.style.height = h + 'px';
-    }
-
-    // iframe 内の最終要素の下端から実コンテンツ高さを測る。
-    // documentElement.scrollHeight は iframe の高さまで引き伸ばされるため、
-    // 「縮める方向」の判定に使えない（これが余白の残る原因だった）。
-    function measureInner(doc) {
-      const body = doc.body;
-      if (!body) return 0;
-      const win = doc.defaultView;
-      let bottom = 0;
-      for (let i = 0; i < body.children.length; i++) {
-        const el = body.children[i];
-        if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') continue;
-        const rect = el.getBoundingClientRect();
-        if (rect.width === 0 && rect.height === 0) continue;
-        if (rect.bottom > bottom) bottom = rect.bottom;
-      }
-      if (!bottom) return 0;
-      bottom += win.scrollY || 0;
-      const cs = win.getComputedStyle(body);
-      bottom += parseFloat(cs.paddingBottom) || 0;
-      bottom += parseFloat(cs.marginBottom) || 0;
-      return bottom + 8;
-    }
-
-    function syncHeight() {
-      let doc = null;
-      try {
-        doc = iframe.contentDocument || iframe.contentWindow.document;
-      } catch (e) {
-        doc = null; // 別オリジン：postMessage 経由の通知を待つ
-      }
-      if (!doc) {
-        if (!measured) applyHeight(fallbackHeight());
-        return;
-      }
-      const h = measureInner(doc);
-      if (h > 200) {
-        measured = true;
-        directMeasureOk = true;
-        applyHeight(h);
-      } else if (!measured) {
-        applyHeight(fallbackHeight());
-      }
-    }
-
-    let timer = null;
-    function scheduleSync() {
-      clearTimeout(timer);
-      timer = setTimeout(syncHeight, 120);
-    }
-
-    applyHeight(fallbackHeight());
-
-    iframe.addEventListener('load', function () {
-      let doc = null;
-      try {
-        doc = iframe.contentDocument || iframe.contentWindow.document;
-      } catch (e) {
-        doc = null;
-      }
-      if (doc) {
-        try {
-          // 米国中東原油比率カードを非表示
-          const cards = doc.querySelectorAll('.card');
-          cards.forEach(function (card) {
-            if (card.textContent.includes('米国の中東原油')) {
-              card.style.display = 'none';
-            }
-          });
-        } catch (e) {
-          console.warn('card hide error:', e);
-        }
-        // 内部の非同期描画（fetch 後のカード更新など）に追従させる
-        if (doc.body && window.ResizeObserver) {
-          new ResizeObserver(scheduleSync).observe(doc.body);
-        }
-        if (doc.body && window.MutationObserver) {
-          new MutationObserver(scheduleSync).observe(doc.body, {
-            childList: true, subtree: true, characterData: true
-          });
-        }
-        if (iframe.contentWindow) {
-          iframe.contentWindow.addEventListener('resize', scheduleSync);
-        }
-      }
-      syncHeight();
-      [300, 1000, 2500, 5000].forEach(function (ms) { setTimeout(syncHeight, ms); });
-    });
-
-    window.addEventListener('resize', scheduleSync);
-
-    // 別オリジンに移行した場合の受け口（子側が iframeHeight を送ってくる場合）
-    window.addEventListener('message', function (ev) {
-      const data = ev.data;
-      if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
-      if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;
-      // 直接測定が効いている間は無視する（子側が誤った高さを送っても壊れないようにする保険）
-      if (directMeasureOk) return;
-      measured = true;
-      applyHeight(data.height);
-    });
-  })();
-</script>
-<!-- /ダッシュボード -->
-  <!-- 💰 リアルタイム市場ダッシュボード (TradingView)  -->
- <h2 class="sec-h2 sec-h2--green">リアルタイム市場（原油・為替・貴金属）</h2>
- <div id="wtiWidget" class="market-widget">
-    
-    <!-- ▼ メインセクション（大きく表示：高さ250） ▼ -->
-    <div class="market-grid market-grid--main">
-      
-      <!-- 1. WTI原油 -->
-      <div class="market-cell">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:USOIL", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 2. ドル円 -->
-      <div class="market-cell">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "FX_IDC:USDJPY", "width": "100%", "height": 250, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-    </div>
-  
-    <!-- ▼ サブセクション（小さく表示：高さ150） ▼ -->
-    <div class="market-grid market-grid--sub">
-      
-      <!-- 3. ゴールド -->
-      <div class="market-cell">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:GOLD", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 4. シルバー -->
-      <div class="market-cell">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:SILVER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 5. 銅 -->
-      <div class="market-cell">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "CAPITALCOM:COPPER", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-      <!-- 6. プラチナ -->
-      <div class="market-cell">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          { "symbol": "TVC:PLATINUM", "width": "100%", "height": 150, "locale": "ja", "dateRange": "1M", "colorTheme": "dark", "isTransparent": true, "autosize": false, "largeChartUrl": "" }
-          </script>
-        </div>
-      </div>
-  
-    </div>
-  
-    <!-- ▼ 包括的な但し書き ▼ -->
-     <div class="market-note">
-      ※表示価格はCFD等のデータであり、実際の先物・現物価格とは微小な差異や遅延が生じる場合があります。
-    </div>
-  </div>
-  <!-- ==================== 💰 ダッシュボード終了 ==================== -->
 <!-- TRUMP STATEMENT MODAL -->
 <div class="modal-overlay" id="trump-modal" onclick="closeTrumpModalOutside(event)">
   <div class="modal-box">
@@ -4113,20 +4138,6 @@ function scrollToJapanFlow(e) {
 })();
 </script>
 <script>
-/* ティッカーの速さを文字の長さによらず一定にする（2026-10-11）。
-   以前は 50 秒固定で、文が長い日ほど速く（10/11 は約300px/秒）、文字が二重に見えた */
-(function(){
-  var PX_PER_SEC = 90;
-  function fitTickerSpeed(){
-    var t = document.querySelector('.ticker-text');
-    if(!t) return;
-    t.style.animationDuration = ((window.innerWidth + t.scrollWidth) / PX_PER_SEC).toFixed(1) + 's';
-  }
-  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fitTickerSpeed);
-  else fitTickerSpeed();
-  window.addEventListener('load', fitTickerSpeed);
-})();
-
 /* キーワードの自動の色付け（2026-10-11）。本文には手で印を書かない。
    日付・数値（単位つき）・被害・回復・但し書きの5種を、正規表現で機械的に見つけて span で囲む */
 (function(){

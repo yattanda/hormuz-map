@@ -2933,6 +2933,11 @@ if (window.ResizeObserver) {
 }
 window.addEventListener('resize', liftBottomLeftOverAttribution);
 liftBottomLeftOverAttribution();
+// 凡例を開け閉めしたあとにも測り直す（ResizeObserver の無いブラウザ向け。幅は 0.3 秒かけて変わるので、終わった後にもう一度）
+function relayoutLegendLift() {
+  liftBottomLeftOverAttribution();
+  setTimeout(liftBottomLeftOverAttribution, 350);
+}
 
 // 開閉ボタンは2つある。ヘッダーの #legend-btn（開く）は閉じているときだけ表示し、
 // 展開時は本文末尾・右下の #legend-btn-close（閉じる）を使う。
@@ -2945,6 +2950,7 @@ function toggleLegend(e) {
   }
   const legend = document.getElementById('map-legend-ctrl');
   legend.classList.toggle('open', !legend.classList.contains('open'));
+  relayoutLegendLift();
 }
 
 // スマホ時はデフォルト閉じた状態にする
@@ -2953,6 +2959,7 @@ function initLegendState() {
   if (!legend) return;
   // ?focus= で印のポップアップを開いたときは、重ならないよう閉じたままにする
   legend.classList.toggle('open', window.innerWidth > 600 && !focusAppliedOnLoad);
+  relayoutLegendLift();
 }
 
 window.addEventListener('DOMContentLoaded', () => {

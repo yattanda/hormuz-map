@@ -900,6 +900,15 @@ footer {
   .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .rtable { min-width:600px; }
 }
+/* タブレットの幅（601〜1023px）は地図を高く（2026-10-21・運営者）。400px では縦向きのタブレットで凡例・タンカー欄・地点ジャンプが
+   地図の大半を覆っていた。画面が低いとき（スマホの横向きなど）は前と同じ 400px より低くしない。
+   凡例の中身の上限は、地図の高さから見出し・閉じるボタン・上下の余白の分（400px のときの 236px・180px と同じ差）を引く */
+@media (min-width:601px) and (max-width:1023px){
+  .map-wrap { --map-h: max(400px, min(560px, 70vh)); }
+  #map { height: var(--map-h); }
+  .map-legend.open .legend-body { max-height: calc(var(--map-h) - 164px); }
+  #map.attr-lifted .map-legend.open .legend-body { max-height: calc(var(--map-h) - 220px); }
+}
 /* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
    （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */
 @media(max-width:768px){

@@ -3091,9 +3091,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // 凡例の初期状態設定
   setTimeout(initLegendState, 1100);
-    // 日本関連船パネルのスマホ初期状態（閉じる）
+    // 日本関連船パネルのスマホ初期状態（閉じる）。横向きのスマホ（画面が低い）も閉じる（2026-10-21・運営者）
   setTimeout(() => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 600 || matchMedia('(max-height:500px) and (pointer:coarse)').matches) {
       const overlay = document.getElementById('tanker-overlay');
       const grid    = document.getElementById('ship-grid');
       const stats   = document.getElementById('tanker-stats');

@@ -918,6 +918,10 @@ footer {
   #map { height: var(--map-h); }
   .map-legend.open .legend-body { max-height: max(60px, calc(var(--map-h) - 164px)); }
   #map.attr-lifted .map-legend.open .legend-body { max-height: max(48px, calc(var(--map-h) - 220px)); }
+  /* 「タンカー1隻の価値」は題だけの小さなボタンにする（画像の縮小版が地図を大きく覆っていた・運営者）。押せば拡大画像が開く */
+  .map-wrap #tanker-value-thumb { width:auto; padding:5px 8px; }   /* 後ろの #tanker-value-thumb の規則より強く */
+  .map-wrap #tanker-value-thumb img, .map-wrap #tanker-value-thumb .tv-label br { display:none; }
+  .map-wrap #tanker-value-thumb .tv-label { font-size:10px; margin-top:0; white-space:nowrap; }
 }
 /* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
    （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */

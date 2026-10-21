@@ -4,11 +4,14 @@
    使い方：HormuzBasemap.init(map)。/hormuz/ の BASEMAP を 'carto' にすると、これは呼ばれず、前の CARTO の地図に戻る。
 
    層（下から）：
-     bmBase(200)  Natural Earth の陸地。細かい海岸線の範囲は、その上を海の色の四角で塗りつぶす
-     bmPatch(210) OpenStreetMap 由来の細かい陸地と、その上にだけ重ねる国の色（canvas の source-atop）
+     bmBase(200)  Natural Earth の陸地
+     bmSea(205)   細かい海岸線の範囲を、海の色の四角で塗りつぶす
+     bmPatch(210) OpenStreetMap 由来の細かい陸地と、その上にだけ重ねる国の色（canvas の source-atop。範囲ごとに別の canvas）
      bmWater(220) 湖・川・細かい海岸線・国境
      bmLabel(595) 地名（ルートの線 400・パナマの湖 580・運河 590 より上、印 600 より下）
-   どの層も自分で経度 ±360° の3つの世界に描く。地図の複製の仕組み（1-B. WORLD WRAP）には乗せない（options.bmOwn） */
+   左右の世界（±360°）の写しは自分で置く。地図の複製の仕組み（1-B. WORLD WRAP）には乗せない（options.bmOwn）。
+   重さ（2026-10-21 運営者「ズームアウトが重い」）：はじめは3つの世界に全部を描き、ズーム1段に約 2.5 秒かかった。
+   いまは、写しは画面に入りそうなときだけ、小さな川・湖と細かい海岸線は拡大したときだけ置き、小さな面と線は1つの部品にまとめる（下の part()・sync()） */
 (function () {
   var HI = ['IR', 'SA', 'AE', 'YE', 'IQ', 'OM', 'BH', 'QA', 'KW'];   // 湾岸の9か国（明るい陸）
   var REG = ['gulf', 'red', 'panama', 'malacca', 'tsugaru'];          // 細かい海岸線の範囲
@@ -58,11 +61,12 @@
   function init(map) {
     var css = getComputedStyle(document.documentElement);
     var C = {}; ['sea', 'land', 'land-hi', 'coast', 'coast-hi', 'river'].forEach(function (k) { C[k] = css.getPropertyValue('--map-' + k).trim(); });
-    [['bmBase', 200], ['bmPatch', 210], ['bmWater', 220], ['bmLabel', 595]].forEach(function (p) {
+    [['bmBase', 200], ['bmSea', 205], ['bmPatch', 210], ['bmWater', 220], ['bmLabel', 595]].forEach(function (p) {
       if (!map.getPane(p[0])) { map.createPane(p[0]).style.zIndex = p[1]; }
     });
     map.getPane('bmLabel').style.pointerEvents = 'none';
-    // 細かい陸地の層：先に塗った陸地の上にだけ、国の色を重ねる（source-atop）
+    // 細かい陸地の層：先に塗った陸地の上にだけ、国の色を重ねる（source-atop）。
+    // 範囲ごとに別の canvas にして、重ね塗りがほかの範囲（出し入れで描く順が変わる）に及ばないようにする
     var Comp = L.Canvas.extend({
       _fillStroke: function (ctx, layer) {
         ctx.globalCompositeOperation = layer.options.gco || 'source-over';
@@ -70,58 +74,100 @@
         ctx.globalCompositeOperation = 'source-over';
       }
     });
-    var rA = L.canvas({ pane: 'bmBase', padding: .3 }), rB = new Comp({ pane: 'bmPatch', padding: .3 }), rC = L.canvas({ pane: 'bmWater', padding: .3 });
-    var D = { osm: {} }, G = {}, loading = {}, hiLayers = [];
+    var rA = L.canvas({ pane: 'bmBase', padding: .3 }), rS = L.canvas({ pane: 'bmSea', padding: .3 }), rC = L.canvas({ pane: 'bmWater', padding: .3 }), rB = {};
+    var D = { osm: {} }, loading = {}, hiLayers = [];
     var OPT = { interactive: false, bmOwn: true };
     function o(x) { return L.extend({}, OPT, x); }
-    function each(fc, st, g) { WORLDS.forEach(function (dx) { L.geoJSON(fc, o({ style: st, coordsToLatLng: shift(dx) })).addTo(g); }); }
     function haloW() {   // 国の色を粗い国の形の外へ 2.5km 広げる線の太さ（画素）
       var c = map.getCenter(), mpp = 40075016 * Math.cos(c.lat * Math.PI / 180) / (256 * Math.pow(2, map.getZoom()));
       return Math.max(1, 2 * 2500 / mpp);
     }
     function get(name) { return fetch(BASE + name).then(function (r) { if (!r.ok) throw new Error(name + ' ' + r.status); return r.json(); }); }
-
-    function buildLand() {
-      var fc = { type: 'FeatureCollection', features: D.land.features.concat(D.isl.features.map(function (f) { return { type: 'Feature', properties: { i: '' }, geometry: f.geometry }; })) };
-      var g = L.layerGroup();
-      each(fc, function (f) {
-        var hi = HI.indexOf(f.properties.i) >= 0;
-        return { renderer: rA, color: hi ? C['coast-hi'] : C.coast, weight: hi ? 1.1 : .7, fillColor: hi ? C['land-hi'] : C.land, fillOpacity: 1, opacity: 1 };
-      }, g);
-      G.land = g.addTo(map);
+    // 小さな面や線をまとめて1つの部品にする（部品の数が多いと、ズームのたびの計算が重い）
+    function merge(feats, props) {
+      var poly = /Polygon/.test(feats.length ? feats[0].geometry.type : 'Polygon'), cs = [];
+      feats.forEach(function (f) { var g = f.geometry; if (!g) return; if (/^Multi/.test(g.type)) cs.push.apply(cs, g.coordinates); else cs.push(g.coordinates); });
+      return { type: 'Feature', properties: props || {}, geometry: { type: poly ? 'MultiPolygon' : 'MultiLineString', coordinates: cs } };
     }
-    // 細かい海岸線の範囲（読み終えたものだけ）。範囲を読むたびに全部を描き直す（source-atop の重ね順を崩さないため）
-    function buildOsm() {
-      ['sea', 'patch', 'lines'].forEach(function (k) { if (G[k]) { map.removeLayer(G[k]); G[k] = null; } });
-      hiLayers = [];
-      var sea = L.layerGroup(), patch = L.layerGroup(), lines = L.layerGroup(), boxes = [], w = haloW();
-      var regs = REG.filter(function (r) { return D.osm[r]; });
-      if (!regs.length) return;
-      regs.forEach(function (r) {
-        var d = D.osm[r], b = d.box; boxes.push(b);
-        WORLDS.forEach(function (dx) {
-          // 範囲の縁の細い線を消すため、海の四角は 0.002度 内側に置く
-          L.rectangle([[b[1] + .002, b[0] + dx + .002], [b[3] - .002, b[2] + dx - .002]], o({ renderer: rA, stroke: false, fillColor: C.sea, fillOpacity: 1 })).addTo(sea);
-          L.geoJSON(d.land, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rB, stroke: false, fillColor: C.land, fillOpacity: 1 }; } })).addTo(patch);
-          L.geoJSON(d.line, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rC, color: C['coast-hi'], weight: .9, opacity: 1 }; } })).addTo(lines);
-          L.geoJSON(d.borders, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rC, color: C['coast-hi'], weight: 1.1, opacity: 1 }; } })).addTo(lines);
+
+    // 部品の出し入れ。部品は [出す拡大の下限, 上限（含まない）, 範囲（null は世界全体）, 作る関数] を世界ごとに持つ。
+    // 作った部品は取っておき、出し入れだけする
+    var PARTS = [];
+    function part(z0, z1, box, make) { WORLDS.forEach(function (dx) { PARTS.push({ z0: z0, z1: z1, dx: dx, box: box, make: make, g: null, on: false }); }); }
+    function sync() {
+      var z = map.getZoom(), vb = map.getBounds(), w = vb.getEast() - vb.getWest();
+      // 画面の外側に、画面の幅と高さの半分ずつの余白を見る（ドラッグで先に置いておくため）
+      var hh = vb.getNorth() - vb.getSouth(), W = vb.getWest() - w * .5, E = vb.getEast() + w * .5, S = vb.getSouth() - hh * .5, N = vb.getNorth() + hh * .5;
+      PARTS.forEach(function (p) {
+        var bx = p.box || [-180, -90, 180, 90];
+        var want = z >= p.z0 && z < p.z1 && !(bx[2] + p.dx < W || bx[0] + p.dx > E || bx[3] < S || bx[1] > N);
+        if (want && !p.on) { if (!p.g) p.g = p.make(p.dx); p.g.addTo(map); p.on = true; }
+        else if (!want && p.on) { map.removeLayer(p.g); p.on = false; }
+      });
+    }
+
+    // 地物を 20度四方の区画に分ける（地物の範囲の真ん中で決める）。区画ごとに部品にして、画面の近くの区画だけを置く。
+    // Leaflet は、ズームのたびに置いてある部品の点をすべて計算し直すので、画面の外の陸や川を置かないことがいちばん効く
+    function cells(feats) {
+      var m = {};
+      feats.forEach(function (f) {
+        if (!f.geometry) return;
+        var bb = f._bb || (f._bb = bbox(f.geometry)), k = Math.floor((bb[0] + bb[2]) / 40) + ':' + Math.floor((bb[1] + bb[3]) / 40);
+        var c = m[k] || (m[k] = { f: [], bb: [999, 999, -999, -999] });
+        c.f.push(f); c.bb = [Math.min(c.bb[0], bb[0]), Math.min(c.bb[1], bb[1]), Math.max(c.bb[2], bb[2]), Math.max(c.bb[3], bb[3])];
+      });
+      return Object.keys(m).map(function (k) { return m[k]; });
+    }
+    function addBase() {
+      var isl = D.isl.features.map(function (f) { return { type: 'Feature', properties: { i: '' }, geometry: f.geometry }; });
+      cells(D.land.features.concat(isl)).forEach(function (c) {
+        part(0, 99, c.bb, function (dx) {
+          return L.geoJSON({ type: 'FeatureCollection', features: c.f }, o({ coordsToLatLng: shift(dx), style: function (f) {
+            var hi = HI.indexOf(f.properties.i) >= 0;
+            return { renderer: rA, color: hi ? C['coast-hi'] : C.coast, weight: hi ? 1.1 : .7, fillColor: hi ? C['land-hi'] : C.land, fillOpacity: 1, opacity: 1 };
+          } }));
         });
       });
-      // 湾岸の9か国は、粗い国の形の外へ 2.5km 分だけ色を広げてから、隣の国を塗り直す
-      var inBox = D.land.features.filter(function (f) { var bb = f._bb || (f._bb = bbox(f.geometry)); return boxes.some(function (b) { return hit(bb, b); }); });
+      // 湖：大きいものから（scalerank 2 以下は世界の全体から・4 以下は拡大 4 から・ほかは拡大 5 から）。区画ごとに1つの部品にまとめる
+      [[0, 2, 0], [3, 4, 4], [5, 99, 5]].forEach(function (k) {
+        cells(D.lakes.features.filter(function (x) { return x.properties.s >= k[0] && x.properties.s <= k[1]; })).forEach(function (c) {
+          var f = merge(c.f);
+          part(k[2], 99, c.bb, function (dx) { return L.geoJSON(f, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rC, color: C.river, weight: .6, fillColor: C.sea, fillOpacity: 1 }; } })); });
+        });
+      });
+      // 川：太い川（scalerank 3 以下）は世界の全体から、ほかは拡大 5・6 から
+      [[0, 3, 0, 1.8], [4, 6, 5, 1.2], [7, 99, 6, .8]].forEach(function (k) {
+        cells(D.rivers.features.filter(function (x) { return x.properties.s >= k[0] && x.properties.s <= k[1]; })).forEach(function (c) {
+          var f = merge(c.f);
+          part(k[2], 99, c.bb, function (dx) { return L.geoJSON(f, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rC, color: C.river, weight: k[3], opacity: 1 }; } })); });
+        });
+      });
+    }
+    // 細かい海岸線の範囲（読み終えたものから足す）。拡大 REG_ZOOM 以上・範囲が画面の近くにあるときだけ置く
+    function addRegion(r) {
+      var d = D.osm[r], b = d.box, rb = rB[r] || (rB[r] = new Comp({ pane: 'bmPatch', padding: .3 }));
+      var land = merge(d.land.features);
+      var isl = {}; d.land.features.forEach(function (f) { var i = f.properties.i; if (i != null) (isl[i] = isl[i] || []).push(f); });
+      var islF = Object.keys(isl).map(function (i) { return merge(isl[i], { i: i }); });
+      var inBox = D.land.features.filter(function (f) { var bb = f._bb || (f._bb = bbox(f.geometry)); return hit(bb, b); });
       var hi = { type: 'FeatureCollection', features: inBox.filter(function (f) { return HI.indexOf(f.properties.i) >= 0; }) };
       var lo = { type: 'FeatureCollection', features: inBox.filter(function (f) { return HI.indexOf(f.properties.i) < 0; }) };
-      WORLDS.forEach(function (dx) {
+      part(REG_ZOOM, 99, b, function (dx) {
+        var g = L.layerGroup();
+        // 範囲の縁の細い線を消すため、海の四角は 0.002度 内側に置く
+        L.rectangle([[b[1] + .002, b[0] + dx + .002], [b[3] - .002, b[2] + dx - .002]], o({ renderer: rS, stroke: false, fillColor: C.sea, fillOpacity: 1 })).addTo(g);
+        L.geoJSON(land, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rb, stroke: false, fillColor: C.land, fillOpacity: 1 }; } })).addTo(g);
+        // 湾岸の9か国は、粗い国の形の外へ 2.5km 分だけ色を広げてから、隣の国を塗り直す
         hiLayers.push(L.geoJSON(hi, o({ coordsToLatLng: shift(dx), style: function () {
-          return { renderer: rB, gco: 'source-atop', color: C['land-hi'], weight: w, opacity: 1, lineJoin: 'round', fillColor: C['land-hi'], fillOpacity: 1 }; } })).addTo(patch));
-        L.geoJSON(lo, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rB, gco: 'source-atop', stroke: false, fillColor: C.land, fillOpacity: 1 }; } })).addTo(patch);
+          return { renderer: rb, gco: 'source-atop', color: C['land-hi'], weight: haloW(), opacity: 1, lineJoin: 'round', fillColor: C['land-hi'], fillOpacity: 1 }; } })).addTo(g));
+        L.geoJSON(lo, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rb, gco: 'source-atop', stroke: false, fillColor: C.land, fillOpacity: 1 }; } })).addTo(g);
         // 島は組み立てのときに決めた国（properties.i）の色で塗り直す（粗い国の形から 2.5km より沖の島のため）
-        regs.forEach(function (r) {
-          L.geoJSON(D.osm[r].land, o({ filter: function (f) { return f.properties.i != null; }, coordsToLatLng: shift(dx), style: function (f) {
-            return { renderer: rB, stroke: false, fillColor: HI.indexOf(f.properties.i) >= 0 ? C['land-hi'] : C.land, fillOpacity: 1 }; } })).addTo(patch);
-        });
+        L.geoJSON({ type: 'FeatureCollection', features: islF }, o({ coordsToLatLng: shift(dx), style: function (f) {
+          return { renderer: rb, stroke: false, fillColor: HI.indexOf(f.properties.i) >= 0 ? C['land-hi'] : C.land, fillOpacity: 1 }; } })).addTo(g);
+        L.geoJSON(d.line, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rC, color: C['coast-hi'], weight: .9, opacity: 1 }; } })).addTo(g);
+        L.geoJSON(d.borders, o({ coordsToLatLng: shift(dx), style: function () { return { renderer: rC, color: C['coast-hi'], weight: 1.1, opacity: 1 }; } })).addTo(g);
+        return g;
       });
-      G.sea = sea.addTo(map); G.patch = patch.addTo(map); G.lines = lines.addTo(map);
     }
     // 範囲の縁を除いた海岸線（縁に沿う辺は線にしない）
     function addLine(d) {
@@ -139,12 +185,6 @@
       });
       d.line = { type: 'Feature', properties: {}, geometry: { type: 'MultiLineString', coordinates: lines } };
     }
-    function buildWater() {
-      var g = L.layerGroup();
-      each(D.lakes, function () { return { renderer: rC, color: C.river, weight: .6, fillColor: C.sea, fillOpacity: 1 }; }, g);
-      each(D.rivers, function (f) { return { renderer: rC, color: C.river, weight: f.properties.s <= 3 ? 1.8 : f.properties.s <= 6 ? 1.2 : .8, opacity: 1 }; }, g);
-      G.water = g.addTo(map);
-    }
     // 細かい海岸線：範囲が画面に入り、拡大が REG_ZOOM 以上になったときに読む（設計書 R2）
     function loadRegions() {
       if (map.getZoom() < REG_ZOOM) return;
@@ -153,10 +193,15 @@
       REG.forEach(function (r) {
         if (D.osm[r] || loading[r] || !D.boxes[r] || !hit(D.boxes[r], view)) return;
         loading[r] = true;
-        get('osm-' + r + '.json').then(function (d) { addLine(d); D.osm[r] = d; buildOsm(); })
+        get('osm-' + r + '.json').then(function (d) { addLine(d); D.osm[r] = d; addRegion(r); sync(); })
           .catch(function (e) { loading[r] = false; console.warn('細かい海岸線の読み込みに失敗:', e); });
       });
     }
+    // 出し入れは、canvas が描き直す前に済ませる（canvas より先にここで登録しておくと、先に呼ばれる）
+    map.on('zoomend', function () { sync(); var w = haloW(); hiLayers.forEach(function (h) { h.setStyle({ weight: w }); }); });
+    map.on('moveend', sync);
+    var syncT = 0;   // ドラッグで世界の端に近づいたとき、写しを先に置く
+    map.on('move', function () { var t = Date.now(); if (t - syncT > 150) { syncT = t; sync(); } });
 
     // 地名
     var lbl = L.layerGroup().addTo(map);
@@ -205,10 +250,9 @@
     return Promise.all([get('land.json'), get('islands.json'), get('places.json'), get('rivers.json'), get('lakes.json'), get('regions.json')]).then(function (a) {
       D.land = a[0]; D.isl = a[1]; D.places = a[2]; D.rivers = a[3]; D.lakes = a[4]; D.boxes = a[5];
       D.byIso = {}; D.land.features.forEach(function (f) { D.byIso[f.properties.i] = f; });
-      buildLand(); buildWater(); labels();
+      addBase(); sync(); labels();
       map.on('moveend', labels);
       map.on('moveend', loadRegions); loadRegions();
-      map.on('zoomend', function () { var w = haloW(); hiLayers.forEach(function (h) { h.setStyle({ weight: w }); }); });
     });
   }
 

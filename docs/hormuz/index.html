@@ -3044,6 +3044,8 @@ function liftBottomLeftOverAttribution() {
   const left = map.getContainer().querySelector('.leaflet-bottom.leaflet-left');
   if (!attr || !left) return;
   left.style.bottom = '';
+  // 出典の高さ。スマホ縦で右下の日本関連船の欄・タンカーのボタンを出典の上に出すのに使う（hormuz.css・2026-10-21）
+  map.getContainer().style.setProperty('--attr-h', attr.offsetHeight + 'px');
   const a = attr.getBoundingClientRect(), l = left.getBoundingClientRect();
   const lift = a.left < l.right && a.height > 0;
   left.style.bottom = lift ? attr.offsetHeight + 'px' : '';
@@ -3078,11 +3080,14 @@ function toggleLegend(e) {
 }
 
 // スマホ時はデフォルト閉じた状態にする
+// 横向きのスマホ（画面が低く、指で操作する）。CSS の @media (max-height:500px) and (pointer:coarse) と同じ条件
+function isLowPhone() { return matchMedia('(max-height:500px) and (pointer:coarse)').matches; }
 function initLegendState() {
   const legend = document.getElementById('map-legend-ctrl');
   if (!legend) return;
-  // ?focus= で印のポップアップを開いたときは、重ならないよう閉じたままにする
-  legend.classList.toggle('open', window.innerWidth > 600 && !focusAppliedOnLoad);
+  // ?focus= で印のポップアップを開いたときは、重ならないよう閉じたままにする。
+  // 横向きのスマホ（画面が低い）も閉じたまま（開くと地図の左半分を覆う・2026-10-21・運営者）
+  legend.classList.toggle('open', window.innerWidth > 600 && !isLowPhone() && !focusAppliedOnLoad);
   relayoutLegendLift();
 }
 
@@ -3091,9 +3096,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // 凡例の初期状態設定
   setTimeout(initLegendState, 1100);
-    // 日本関連船パネルのスマホ初期状態（閉じる）
+    // 日本関連船パネルのスマホ初期状態（閉じる）。横向きのスマホ（画面が低い）も閉じる（2026-10-21・運営者）
   setTimeout(() => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 600 || isLowPhone()) {
       const overlay = document.getElementById('tanker-overlay');
       const grid    = document.getElementById('ship-grid');
       const stats   = document.getElementById('tanker-stats');

@@ -909,6 +909,22 @@ footer {
   .map-legend.open .legend-body { max-height: calc(var(--map-h) - 164px); }
   #map.attr-lifted .map-legend.open .legend-body { max-height: calc(var(--map-h) - 220px); }
 }
+/* スマホの横向き（画面が低く、指で操作する）は、地図を画面の高さの 7 割に（2026-10-21・運営者の iPhone 17）。
+   400px では画面（横向きで約 330〜400px）より高く、全画面を閉じたあと画面が地図だけになり、本編をスクロールさせる場所がなかった。
+   上下に残る 3 割を指で送ればページが動く。svh はアドレスバーが出ているときの高さ（使えないブラウザは vh） */
+@media (max-height:500px) and (pointer:coarse){
+  .map-wrap { --map-h: 70vh; }
+  @supports (height: 1svh) { .map-wrap { --map-h: 70svh; } }
+  #map { height: var(--map-h); }
+  .map-legend.open .legend-body { max-height: max(60px, calc(var(--map-h) - 164px)); }
+  #map.attr-lifted .map-legend.open .legend-body { max-height: max(48px, calc(var(--map-h) - 220px)); }
+  /* 「タンカー1隻の価値」は題だけの小さなボタンにする（画像の縮小版が地図を大きく覆っていた・運営者）。押せば拡大画像が開く */
+  /* 日本関連船の欄は「地点へ移動」（右端から約 134px）の左へ。タンカーのボタンは欄を開いたとき（幅 260px）の左に置く */
+  .map-wrap #tanker-overlay { right: 142px; }
+  .map-wrap #tanker-value-thumb { right: 410px; width:auto; padding:5px 8px; }   /* 後ろの #tanker-value-thumb の規則より強く */
+  .map-wrap #tanker-value-thumb img, .map-wrap #tanker-value-thumb .tv-label br { display:none; }
+  .map-wrap #tanker-value-thumb .tv-label { font-size:10px; margin-top:0; white-space:nowrap; }
+}
 /* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
    （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */
 @media(max-width:768px){
@@ -1094,6 +1110,10 @@ footer {
   font-size: 10px; padding: 1px 6px; cursor: pointer;
 }
 #tanker-toggle:hover { border-color: var(--c-text); }
+/* 閉じているときは題の1行だけ（確認ログ・注記も隠す。2026-10-21・運営者「特にスマホ」）。幅も題に合わせて縮める */
+#tanker-overlay.collapsed { width: auto; }
+#tanker-overlay.collapsed > :not(#tanker-title) { display: none !important; }
+#tanker-overlay.collapsed #tanker-title { margin-bottom: 0; }
 @media (max-width: 600px) {
   /* 地図面積を確保するため枠ごと縮小する（2026-09-03 調整） */
   #tanker-overlay { width: 186px; padding: 7px 8px 6px; bottom: 24px; }
@@ -1107,6 +1127,10 @@ footer {
   #ship-grid { max-height: 44px; gap: 2px; }
   #tanker-stats { font-size: 9px; margin-top: 5px; }
   #tanker-note { display: none; }   /* 注記は情報密度を優先して非表示 */
+  /* 出典は2行に折り返し、欄とボタンの下半分を隠していた（2026-10-21）。出典の高さ（index.html が --attr-h に入れる）の上に出す */
+  #tanker-overlay, #tanker-value-thumb { bottom: calc(var(--attr-h, 18px) + 6px); }
+  /* 欄を閉じて幅が縮んだときは、ボタンを欄の左に寄せる（左下の凡例と重ならないように） */
+  #map:has(#tanker-overlay.collapsed) #tanker-value-thumb { right: 158px; }
 }
 #tanker-date { font-size: 10px; color: var(--c-text-mute); text-align: right; margin-bottom: 6px; }
 #ship-grid {

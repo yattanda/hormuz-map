@@ -2960,7 +2960,9 @@ new Legend().addTo(map);
 // 地図の枠（.map-wrap）を画面いっぱいに広げる（CSS の .is-full）。使えるブラウザでは、ページ全体も全画面にしてブラウザの枠を隠す。
 // 全画面にするのは地図の枠ではなくページ全体（document.documentElement）。地図の枠だけを全画面にすると、
 // 地図から開く拡大画像（タンカー1隻の価値）や製油所のモーダルが枠の外にあるため見えなくなる。
-// iPhone の Safari はページの全画面に対応していないので、CSS で広げるだけ（Esc・ボタンで戻る）
+// スマホ（指で操作し、画面の短い辺が 600px 未満）は、ブラウザの全画面を使わず CSS で広げるだけ（2026-10-21）。
+// iPhone 17 Pro の横向きで、1回目は中途半端に広がり、閉じても本編に戻らなかった（運営者）。ブラウザの全画面への切り替えの途中で
+// 画面の大きさが何度か変わり、地図の状態と見え方がずれたとみる（実機では確かめていない）。広げるだけなら縦・横とも同じ動きになる
 const MapFull = L.Control.extend({
   options: { position: 'topright' },   // 左上は PC で開いた凡例に隠れるので、右上の「地点へ移動」の上に置く
   onAdd() {
@@ -2988,9 +2990,15 @@ const mapFullCtrl = new MapFull().addTo(map);
 { const c = mapFullCtrl.getContainer(); c.parentNode.insertBefore(c, c.parentNode.firstChild); }   // 右上の欄の先頭へ（Leaflet は後から足したものを下に置く）
 const mapWrap = document.querySelector('.map-wrap');
 function isMapFull() { return mapWrap.classList.contains('is-full'); }
+const MAP_FULL_NATIVE = !(matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 600);
+let mapFullAt = 0;   // 短い間に2回届いた押下（タッチの二重のクリックなど）は受け付けない
 function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
 function applyMapFull(on) {
-  if (on === isMapFull()) return;
+  if (on === isMapFull()) {
+    // 閉じるときは、地図の状態がどうであっても本編のスクロールを必ず戻す
+    if (!on) document.documentElement.classList.remove('map-full-open');
+    return;
+  }
   const c = map.getCenter(), z = map.getZoom();
   mapWrap.classList.toggle('is-full', on);
   document.documentElement.classList.toggle('map-full-open', on);
@@ -3000,13 +3008,16 @@ function applyMapFull(on) {
   if (!on) mapWrap.scrollIntoView({ block: 'center' });
 }
 function toggleMapFull() {
+  const now = Date.now();
+  if (now - mapFullAt < 500) return;
+  mapFullAt = now;
   const on = !isMapFull();
   applyMapFull(on);
   const de = document.documentElement;
-  if (on) {
+  if (on && MAP_FULL_NATIVE) {
     const req = de.requestFullscreen || de.webkitRequestFullscreen;
     if (req) { try { const r = req.call(de); if (r && r.catch) r.catch(() => {}); } catch (e) { /* 広げるだけにする */ } }
-  } else if (fsElement()) {
+  } else if (!on && fsElement()) {
     const ex = document.exitFullscreen || document.webkitExitFullscreen;
     if (ex) { try { const r = ex.call(document); if (r && r.catch) r.catch(() => {}); } catch (e) { /* 何もしない */ } }
   }
@@ -3023,6 +3034,8 @@ document.addEventListener('keydown', e => {
 });
 // 向きを変えたとき・ブラウザの枠が出入りしたとき
 window.addEventListener('resize', () => { if (isMapFull()) map.invalidateSize({ pan: false }); });
+// iPhone などでアドレスバーが出入りしたとき（window の resize が来ないことがある）
+if (window.visualViewport) visualViewport.addEventListener('resize', () => { if (isMapFull()) map.invalidateSize({ pan: false }); });
 
 // 右下の出典表示が狭い画面で折り返して左下まで広がると、凡例の下の端（開く・閉じるボタン）に
 // 重なって押せなくなる（2026-10-21・スマホで確認）。重なるときだけ、左下の欄を出典の高さの分だけ上げる

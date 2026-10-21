@@ -899,9 +899,11 @@ def check_types(html: str, base: str) -> None:
         else:
             ok("速報インシデントの一覧にインライン style なし")
     # ② PR4a：シナリオ（S06〜S08）と更新履歴
-    i, j = html.find("<!-- SCENARIOS -->"), html.find("<!-- STATS -->")
+    # 終わりは <!-- /SCENARIOS（2026-10-21。主要指標を速報インシデントの上へ移し、<!-- STATS --> がシナリオの前に来たため）
+    i = html.find("<!-- SCENARIOS -->")
+    j = html.find("<!-- /SCENARIOS", i)
     if i < 0 or j < i:
-        warn("シナリオ（<!-- SCENARIOS -->〜<!-- STATS -->）を検出できませんでした（構造が変わった可能性）")
+        warn("シナリオ（<!-- SCENARIOS -->〜<!-- /SCENARIOS -->）を検出できませんでした（構造が変わった可能性）")
     else:
         n_style = html[i:j].count('style="')
         if n_style:

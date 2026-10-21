@@ -232,18 +232,19 @@ UKMTO警報178の発生時刻・船名・軍の国籍、IRGCが主張したタ�
 
       <!-- 特別解説グループ -->
       <div class="glance-special">
-        <div class="glance-special-head">
+        <!-- 見出しは本編の「特別解説コラム」の段へ（特別レポート・トランプ声明まで含めて見られる。10/21・運営者） -->
+        <a href="#special-commentary" class="glance-special-head">
           特別解説コラム
           <span class="glance-special-sub">― 深掘り分析記事</span>
-        </div>
+        </a>
         <div class="glance-special-links">
-          <a href="articles/mine-clearance/" class="jump-pill jump-pill--danger" data-published="2026-04-12" data-updated="2026-04-12">機雷問題</a>
-          <a href="articles/saudi-pipeline-attack/" class="jump-pill jump-pill--warning" data-published="2026-04-09" data-updated="2026-04-09">サウジ危機</a>
-          <a href="articles/route-c-alaska-oil/" class="jump-pill jump-pill--info" data-published="2026-04-12" data-updated="2026-04-12">ルートC・アラスカ</a>
-          <a href="articles/oil-diversification-africa-brazil/" class="jump-pill jump-pill--emerald" data-published="2026-04-13" data-updated="2026-05-06">西アフリカ・南米調達</a>
-          <a href="articles/oil-stockpile-monthly-trend/" class="jump-pill jump-pill--violet" data-published="2026-08-21" data-updated="2026-10-04">石油備蓄推移</a>
+          <a href="articles/mine-clearance/" class="jump-pill jump-pill--danger" data-published="2026-04-12" data-updated="2026-04-12"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-mine"/></svg>機雷問題</a>
+          <a href="articles/saudi-pipeline-attack/" class="jump-pill jump-pill--warning" data-published="2026-04-09" data-updated="2026-04-09"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-barrel"/></svg>サウジ危機</a>
+          <a href="articles/route-c-alaska-oil/" class="jump-pill jump-pill--info" data-published="2026-04-12" data-updated="2026-04-12"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-tanker"/></svg>ルートC・アラスカ</a>
+          <a href="articles/oil-diversification-africa-brazil/" class="jump-pill jump-pill--emerald" data-published="2026-04-13" data-updated="2026-05-06"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-tanker"/></svg>西アフリカ・南米調達</a>
+          <a href="articles/oil-stockpile-monthly-trend/" class="jump-pill jump-pill--violet" data-published="2026-08-21" data-updated="2026-10-04"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-tank"/></svg>石油備蓄推移</a>
           <!-- トランプ声明（4/8）は記事ページではなくモーダル。JS が動かないときは特別解説コラムのカードへ飛ぶ -->
-          <a href="#trump-statement" class="jump-pill jump-pill--neutral" onclick="event.preventDefault();openTrumpModal();">トランプ声明（4/8）</a>
+          <a href="#trump-statement" class="jump-pill jump-pill--neutral" onclick="event.preventDefault();openTrumpModal();"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-speaker"/></svg>トランプ声明（4/8）</a>
           <!-- 特別レポート サムネイル付きバナー -->
           <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="report-banner">
             <img src="/images/crisis-report-ogp.png" width="640" height="632" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="report-banner-img">
@@ -3012,6 +3013,10 @@ function closeTrumpModal() {
   document.getElementById('trump-modal').classList.remove('open');
   document.body.style.overflow = '';
 }
+// コラムの一覧（/hormuz/articles/）から #trump-statement で来たときは、声明の全文を開く（10/21）
+window.addEventListener('DOMContentLoaded', () => {
+  if (location.hash === '#trump-statement') openTrumpModal();
+});
 function closeTrumpModalOutside(e) {
   if (e.target.id === 'trump-modal') closeTrumpModal();
 }
@@ -3546,6 +3551,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!-- /トランプ声明カード -->
 
   </div><!-- /.commentary-grid -->
+  <a href="articles/" class="commentary-all">特別解説コラムの一覧へ →</a>
 </div>
 <!-- ================================================
      特別解説ウィジェット：トランプ大統領 ホルムズ封鎖宣言

@@ -261,6 +261,12 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
   display:flex; align-items:center; gap:7px; }
 .glance-special-sub { font-size:var(--fs-xs); font-weight:600; color:var(--c-text-mute); margin-left:4px; }
 .glance-special-links { display:flex; flex-wrap:wrap; gap:6px; }
+/* ピルの頭の A の絵（1色・--a）と、本編のカードの段の最後のコラムの一覧へのリンク（10/21・運営者） */
+.pill-icon { width:18px; height:18px; flex-shrink:0; --a:var(--c-text); }
+/* 見出しは本編の段へのリンク（<a>）。色は見出しのまま、触れたときだけ下線 */
+a.glance-special-head { text-decoration:none; }
+a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.18em; }
+.commentary-all { display:inline-block; margin-top:4px; font-size:var(--fs-sm); font-weight:700; color:var(--c-text); text-decoration:underline; text-underline-offset:.18em; }
 .report-banner { display:flex; align-items:center; gap:10px; width:100%; margin-top:8px;
   border:1px solid var(--c-rule); overflow:hidden; text-decoration:none; }
 .report-banner:hover { border-color:var(--c-text); }

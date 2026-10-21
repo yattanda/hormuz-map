@@ -146,4 +146,17 @@
   /* 書体（§4-1）。本文は BIZ UDPゴシック、大きな数字と段の見出しの英字は IBM Plex Sans Condensed */
   --f-body:   'BIZ UDPGothic','Hiragino Sans','Yu Gothic UI',sans-serif;
   --f-figure: 'IBM Plex Sans Condensed','BIZ UDPGothic',sans-serif;
+  /* 地図の背景（PR 6a・2026-10-21。案2「海図」・湾岸の9か国を少し暗く。運営者）。§4 の10色の外の、地図だけに使う色。
+     比は地名の文字に対する値。地名には暗い縁取り（--map-halo）がある */
+  --map-sea:           #1d3a50;  /* 海 */
+  --map-land:          #4a483e;  /* 陸（暖かい灰色） */
+  --map-land-hi:       #6e6750;  /* 湾岸の9か国（砂）。都市名 4.7・国名 5.2 */
+  --map-coast:         #6a675a;  /* 海岸線・国境 */
+  --map-coast-hi:      #bbb08e;  /* 湾岸の9か国と細かい海岸線の範囲の海岸線・国境 */
+  --map-river:         #2f5b75;  /* 川・湖の縁 */
+  --map-label:         #efebdf;  /* 都市名。陸の上 7.7 */
+  --map-label-sea:     #a8c6d8;  /* 海・川の名前。海の上 6.6 */
+  --map-label-country: #fff4d8;  /* 国名 */
+  --map-label-own:     #f6cfa6;  /* データに無く自前で足した港 */
+  --map-halo:          #1d2220;  /* 地名の縁取り */
 }

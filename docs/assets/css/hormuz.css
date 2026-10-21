@@ -291,17 +291,17 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
 
 /* MAP */
 .map-wrap { overflow:hidden; border:1px solid var(--c-rule); position:relative; }
-#map { height:580px; width:100%; background:var(--c-bg); }
+#map { height:580px; width:100%; background:var(--map-sea); }   /* 地の色は海（PR 6a。自前の地図は海を塗らない） */
 .leaflet-tile-pane { filter: brightness(0.55) saturate(0.5) hue-rotate(190deg); }
 
 /* マーカーズームスケーリング 2026-06-06 fix */
-#map .leaflet-marker-icon:not(.country-label) > div {
+#map .leaflet-marker-icon:not(.country-label):not(.bm-label) > div {
   transform-origin: center center;
   transition: transform 0.25s ease;
 }
-#map.mz-far  .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.35); }
-#map.mz-mid  .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.57); }
-#map.mz-near .leaflet-marker-icon:not(.country-label) > div { transform: scale(0.78); }
+#map.mz-far  .leaflet-marker-icon:not(.country-label):not(.bm-label) > div { transform: scale(0.35); }
+#map.mz-mid  .leaflet-marker-icon:not(.country-label):not(.bm-label) > div { transform: scale(0.57); }
+#map.mz-near .leaflet-marker-icon:not(.country-label):not(.bm-label) > div { transform: scale(0.78); }
 /* /マーカーズームスケーリング */
 
 /* MAP JUMP（地点ジャンプ） */
@@ -1618,6 +1618,21 @@ footer {                                   /* フッター（中央揃え・上�
 /* 国名・海域名の色は地図の色（PR 6）。書体だけ本文の書体に */
 .map-label--country { color:rgba(180,210,235,0.85); font-size:11px; font-weight:700; font-family:var(--f-body); }
 .map-label--sea { color:rgba(56,189,248,0.5); font-size:13px; font-weight:700; font-family:var(--f-body); }
+/* 自前の地図の地名（PR 6a・assets/js/basemap.js）。上の .map-label は CARTO に戻したときだけ使う */
+.bm-label { pointer-events:none; }
+.bm-lb { white-space:nowrap; color:var(--map-label); font-family:var(--f-body); font-size:12px; line-height:16px; display:flex; align-items:center; gap:5px;
+  text-shadow:0 0 3px var(--map-halo),0 0 3px var(--map-halo),0 0 2px var(--map-halo); }
+.bm-lb::before { content:""; width:5px; height:5px; background:var(--map-label); flex:none; }
+.bm-lb.cap { font-weight:700; font-size:13px; }
+.bm-lb.cap::before { width:7px; height:7px; box-shadow:inset 0 0 0 2px var(--map-label); background:var(--map-halo); }
+.bm-lb.own { color:var(--map-label-own); }
+.bm-lb.own::before { background:var(--map-label-own); }
+.bm-lb.sea, .bm-lb.riv { color:var(--map-label-sea); font-style:italic; letter-spacing:.25em; font-size:13px; justify-content:center; }
+.bm-lb.riv { letter-spacing:.1em; font-size:11px; }
+.bm-lb.sea::before, .bm-lb.riv::before, .bm-lb.cty::before { display:none; }
+/* 国名：都市名と分けるため、明るい砂色・大きめ・字間を広く */
+.bm-lb.cty { color:var(--map-label-country); font-weight:700; font-size:14px; letter-spacing:.3em; justify-content:center;
+  text-shadow:0 0 3px var(--map-halo),0 0 3px var(--map-halo),0 0 4px var(--map-halo),0 0 6px var(--map-halo); }
 
 /* 凡例 */
 .leg-dash--a { border-color:#38bdf8; }

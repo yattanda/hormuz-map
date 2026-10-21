@@ -2834,22 +2834,27 @@ const MapJump = L.Control.extend({
 new MapJump().addTo(map);
 
 // ポップアップは Leaflet の操作部品（右上の「地点へ移動」・右下の日本関連船の欄）より下に重なり、狭い画面では隠れていた（D3 PR 6b-2）。
-// 開くときの自動の移動（autoPan）の余白を、その時点の部品の大きさから決める：右は「地点へ移動」の幅、下は下の端に並ぶ部品の高さの分だけ空ける
+// 開くときの自動の移動（autoPan）の余白を、その時点の部品の大きさから決める（popupFreeBox）
 // 上は左上の拡大・縮小ボタンの下から。幅と高さも空いている所に収まるよう、ポップアップの最大幅・最大高をその分だけ狭める（スマホで効く。高さを超える分は中をスクロール）
 function popupFreeBox() {
   const m = map.getContainer().getBoundingClientRect();
   const jump = document.getElementById('map-jump-ctrl');
   const ov = document.getElementById('tanker-overlay');
+  const thumb = document.getElementById('tanker-value-thumb');
   const zoom = map.zoomControl && map.zoomControl.getContainer();
-  // 下の端に並ぶもの：日本関連船の欄。狭い地図（600px 以下）と横向きのスマホでは左下の凡例とタンカーのボタンも（PC では凡例を開くと地図の左半分の高さになるので入れない）
-  const lowItems = [ov].concat(m.width <= 600 || isLowPhone() ? [document.getElementById('map-legend-ctrl'), document.getElementById('tanker-value-thumb')] : [])
-    .filter(el => el && el.offsetParent);
+  const shown = el => el && el.offsetParent;
+  const fromRight = el => shown(el) ? Math.max(0, m.right - el.getBoundingClientRect().left) + 6 : 0;
+  const fromBottom = el => shown(el) ? Math.max(0, m.bottom - el.getBoundingClientRect().top) + 6 : 0;
+  // 狭い地図（600px 以下）と横向きのスマホ：右は「地点へ移動」の幅、下は下の端に並ぶもの（日本関連船の欄・左下の凡例・タンカーのボタン）の高さ。
+  // 幅の広い地図：右の列（「地点へ移動」・日本関連船の欄・タンカーのボタン）の左に開く。下は空けない（高さも縛らない）
+  const narrow = m.width <= 600 || isLowPhone();
   return {
+    narrow,
     left: 6,
     // 横向きのスマホは地図が低く（画面の 7 割）、拡大・縮小ボタンの下から始めると入らないので上の端から
     top: zoom && !isLowPhone() ? Math.max(0, zoom.getBoundingClientRect().bottom - m.top) + 6 : 6,
-    right: jump ? Math.max(0, m.right - jump.getBoundingClientRect().left) + 6 : 10,
-    bottom: Math.max(10, ...lowItems.map(el => m.bottom - el.getBoundingClientRect().top + 6)),
+    right: Math.max(10, fromRight(jump), narrow ? 0 : Math.max(fromRight(ov), fromRight(thumb))),
+    bottom: narrow ? Math.max(10, fromBottom(ov), fromBottom(document.getElementById('map-legend-ctrl')), fromBottom(thumb)) : 10,
     width: m.width,
     height: m.height
   };
@@ -2862,12 +2867,24 @@ L.Popup.prototype._updateLayout = function () {
     const free = f.width - f.left - f.right - parseFloat(cs.marginLeft) - parseFloat(cs.marginRight) - 2;
     this.options.maxWidth = Math.max(160, Math.min(this._maxWidth0, free));
     this.options.minWidth = Math.min(this._minWidth0, this.options.maxWidth);
-    // 高さも空いている所まで。超える分は中をスクロール（Leaflet の maxHeight）。上下の余白と吹き出しの先の分 40px を引く
+    // 狭い地図では高さも空いている所まで。超える分は中をスクロール（Leaflet の maxHeight）。上下の余白と吹き出しの先の分 40px を引く
     const freeH = Math.max(isLowPhone() ? 100 : 140, f.height - f.top - f.bottom - parseFloat(cs.marginTop) - parseFloat(cs.marginBottom) - 40);
-    this.options.maxHeight = this._maxHeight0 ? Math.min(this._maxHeight0, freeH) : freeH;
+    this.options.maxHeight = !f.narrow ? this._maxHeight0 : this._maxHeight0 ? Math.min(this._maxHeight0, freeH) : freeH;
   }
   return _popupUpdateLayout.apply(this, arguments);
 };
+// 開いた凡例（PC・タブレットでは最初から開いている）にポップアップが重なるときは、凡例を閉じる（?focus= の focusOn と同じ扱い）
+// 開いた直後は自動の移動（約 0.25 秒）の途中なので、終わってから重なりを見る
+map.on('popupopen', e => setTimeout(() => {
+  const lg = document.getElementById('map-legend-ctrl');
+  const box = e.popup.getElement();
+  if (!lg || !box || !map.hasLayer(e.popup) || !lg.classList.contains('open')) return;
+  const a = lg.getBoundingClientRect(), b = box.getBoundingClientRect();
+  if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) {
+    lg.classList.remove('open');
+    relayoutLegendLift();
+  }
+}, 350));
 const _popupAdjustPan = L.Popup.prototype._adjustPan;
 L.Popup.prototype._adjustPan = function () {
   if (this._map === map) {

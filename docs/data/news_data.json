@@ -1,49 +1,88 @@
 {
-  "updated": "2026年10月21日 07:33 日本時間JST",
+  "updated": "2026年10月22日 07:33 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto-178-1020",
-      "title": "UKMTO警報178：オマーン・ドゥクムの東の沖合（アラビア海）でタンカーが軍との「interaction」——発生時刻・船名・被害の記載なし",
-      "body": "UKMTO公式サイトの警報178（Advisory・10/20 20:11 JST発行）は、オマーン・ドゥクムの東約121海里で、タンカーと軍が関わる事案の報告を受けたと伝え、タンカーは「地域で続く軍事活動の一環としてinteractionの対象になった」とする（原文は「the tanker was subject to interaction as part of ongoing military activity in the region」）。当局は事態を把握し調査が続いている。公式の本文に発生時刻・船名・被害・軍の国籍の記載はない。Ship & Bunker（10/20）は発生を「10:00 UTC on Monday」と書くが、公式の一覧の日時欄は10/20 11:04 UTCで、時刻は確定できない。ホルムズ海峡の外の事案で、攻撃や被弾を示す記述はない。",
-      "sourceLabel": "UKMTO公式サイト・Ship & Bunker（10/20）",
-      "date": "2026年10月20日（現地）",
+      "id": "latest-ukmto-179-1021",
+      "title": "UKMTO警報179：オマーン・ブハの西11海里でタンカーが飛翔体で被弾・火災は鎮火——乗組員は全員無事、船名・攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報179-26（Attack・10/21 21:07 JST発行）は、オマーン・ブハの西11海里（ホルムズ海峡）で、当局の報告として、タンカーが正体不明の飛翔体を受けて火災が起き、火は消し止められ、タンカーは錨泊中、乗組員は全員無事と伝える（発生は公式の本文で10/21 01:45 UTC）。gCaptain（10/21）によると、記事は「a tanker was struck approximately 11 nautical miles west of Bukha, Oman, at 0145 UTC on October 21」と書き、船名は公表されておらず、UKMTOは責任の所在を示していない。報告元の「Local Authorities」がどの当局かは書かれていない。",
+      "sourceLabel": "UKMTO公式サイト・gCaptain（10/21）",
+      "date": "2026年10月21日（現地）",
       "label": "海上",
-      "url": "https://shipandbunker.com/news/emea/328836-tanker-involved-in-incident-with-military-forces-off-oman-ukmto",
+      "url": "https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/",
       "isLatest": true
     },
     {
-      "id": "latest-irgc-mine-1020",
-      "title": "IRGC「超大型タンカーが機雷に接触して炎上」「2隻が炎上・航行不能」と主張——船名・時期の説明なし、独立した確認なし",
-      "body": "gCaptain（10/20）は、IRGC海軍が「a supertanker caught fire after striking a naval mine south of the Strait of Hormuz」と主張し、別の声明では「two tankers had been set ablaze and disabled by mines along a route south of the strait」と主張したと伝える。同記事は「Neither statement identified the vessels」とし、IRGCは2隻がいつ被弾したとされるのかも示さなかった。JMICの10/18付の勧告は、10/17の主張について「there is no substantiation to these claims」と述べる（gCaptainの引用）。IRGCの主張のみで、独立した確認はない。",
-      "sourceLabel": "gCaptain（10/20）",
+      "id": "latest-ukmto-180-1020",
+      "title": "UKMTO警報180：イラク・アルファオの南東30海里でタンカーが被弾（遅延報告）——公式の本文は損傷なし、船名・攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報180-26（Attack・10/21 19:26 JST発行）は、遅延報告として、イラク・アルファオの南東30海里でタンカーの船長が正体不明の飛翔体を受けたと報告し、乗組員は無事で、損傷・環境への影響の報告はないと伝える。Arab Times（10/21）は、発生を「approximately 1830 GMT on Tuesday, Oct 20」と書き、勧告は発射体を特定せず、状況の詳細も示していないと伝える。船名も攻撃主体も公表されていない。ホルムズ海峡の外（ペルシャ湾の最北部）の事案。",
+      "sourceLabel": "UKMTO公式サイト・Arab Times（10/21）",
       "date": "2026年10月20日（現地）",
       "label": "海上",
-      "url": "https://gcaptain.com/iran-claims-more-tankers-hit-mines-in-hormuz-but-evidence-remains-elusive/",
+      "url": "https://www.arabtimesonline.com/news/tanker-struck-by-unknown-projectile-southeast-of-iraqs-al-faw-ukmto/",
       "isLatest": false
     },
     {
-      "id": "latest-shabwa-toll73-1020",
-      "title": "シャブワ県のフーシ派ミサイル攻撃、死者は73人に——県当局の暫定値、行方不明14人・負傷200人超",
-      "body": "Reuters配信（Tribune掲載・10/20）は、シャブワ県の政府治安部隊の訓練キャンプへのフーシ派の攻撃で73人が死亡したと、県のメディア事務所が発表したと伝える（原文は「killed 73 people, the provincial media office said」）。負傷は200人超（知事の発表）、行方不明は14人。The National（10/20 12:01 PM更新）も「At least 73 people were killed」と書く。前回掲載のAl Jazeera（10/19）の「53人」から増えた暫定値で、独立した検証はない。フーシ派は同日、サウジのエネルギー・空港・軍の目標を攻撃したと主張したが、サウジの確認はない（The National）。",
-      "sourceLabel": "Reuters配信（Tribune 10/20）・The National（10/20）",
-      "date": "2026年10月20日（現地）",
+      "id": "latest-houthi-aden-1021",
+      "title": "フーシ派「アデンのバドル基地のサウジ作戦室を弾道ミサイルで攻撃」と主張——政府側は空港が標的と説明、政府・連合軍の確認なし",
+      "body": "Al Jazeera（10/21）は、フーシ派の軍報道官が「Our armed forces were able to target the Saudi enemy’s operations room in the Badr camp in Aden with a ballistic missile」と述べたと伝える。イエメン政府側の説明では、弾道ミサイル1発がアデン国際空港を狙い、ムカッラの空港にミサイル3発が着弾した。同記事は「There was no immediate comment on the claim from the Yemeni government or the Saudi-led coalition」と書く。連合軍の報道官は、サウジに向けて発射されたドローン4機を迎撃・破壊したと述べた。",
+      "sourceLabel": "Al Jazeera（10/21）",
+      "date": "2026年10月21日（現地）",
       "label": "攻撃",
-      "url": "https://tribune.com.pk/story/2635932/death-toll-from-houthi-attack-on-yemen-training-camp-rises-to-73",
+      "url": "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp",
       "isLatest": false
     },
     {
-      "id": "latest-oil-close-1020",
-      "title": "原油10/20終値：ブレント12月物108.79ドル（−0.76ドル）、WTI12月物97.82ドル（−0.72ドル）——WTI11月物は期限を迎え101.79ドル",
-      "body": "Reuters（10/20・Yahoo Finance配信）は、ブレントが「settled down 76 cents, or 0.69%, at $108.79」、WTIの12月物が「settled down 72 cents at $97.82 a barrel」、期限を迎えた11月物が「settled down $1.87, or 1.8%, at $101.79」と書く。Investradeの市況コメントはブレント108.79ドルとWTI11月物101.79ドルで一致し、Newsquawkの見出しはWTI12月物97.82ドルで一致する（ブレントは108.78ドルで1セント差）。Reutersは値下がりの背景に、イラン大統領とパキスタン陸軍参謀長の会談への市場の注目を挙げる一方、フーシ派によるサウジのインフラへの攻撃やペルシャ湾での船舶攻撃の報道が続くと書く。",
-      "sourceLabel": "Reuters（10/20）・Investrade・Newsquawk",
-      "date": "2026年10月20日（米国時間）",
+      "id": "latest-oil-close-1021",
+      "title": "原油10/21終値：ブレント12月物108.82ドル（+0.03ドル）、WTI12月物97.15ドル（−0.67ドル）",
+      "body": "Financial News（韓国・10/22 04:49掲載）は、WTIが「settled down $0.67 (0.68%) at $97.15 a barrel」、ブレントが「ended the session up $0.03 (0.03%) at $108.82 a barrel」と伝える。Newsquawk（10/21 20:51 UTC）も、WTI（Z6）が0.67ドル安の97.15ドル、ブレント（Z6）が0.03ドル高の108.82ドルで引けたと書き、2つの出典で終値が一致した。Financial Newsは、ホルムズ海峡をめぐる緊張が高まり、中東の石油供給の混乱への懸念が続いたと書く。",
+      "sourceLabel": "Financial News・Newsquawk（10/21）",
+      "date": "2026年10月21日（米国時間）",
       "label": "原油・市場",
-      "url": "https://finance.yahoo.com/news/oil-eases-markets-assess-potential-005750414.html",
+      "url": "https://en.fnnews.com/news/202610220446553314",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-aden-1021",
+      "titleJa": "【Al Jazeera】フーシ派がアデンのサウジ作戦室を弾道ミサイルで攻撃したと主張——政府側は空港が標的と説明、政府・連合軍の確認はなし",
+      "titleEn": "Blast heard in Yemen’s Aden as Houthis claim attack on military camp (Al Jazeera, Oct 21)",
+      "title": "【Al Jazeera】フーシ派がアデンのサウジ作戦室を弾道ミサイルで攻撃したと主張——政府側は空港が標的と説明、政府・連合軍の確認はなし",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月21日（現地）",
+      "summary": "Al Jazeera（10/21）は、フーシ派がアデンのバドル基地にあるサウジの作戦室を弾道ミサイルで攻撃したと主張したが、政府・連合軍のコメントはなく、政府側はミサイル1発がアデン国際空港を狙い、ムカッラの空港に3発が着弾したと説明したと伝える。連合軍はサウジに向けたドローン4機を迎撃したと述べた。",
+      "url": "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp",
+      "isLatest": true
+    },
+    {
+      "id": "osint-gulfnews-araghchi-1021",
+      "titleJa": "【Gulf News】アラグチ外相「交渉の席は今もある」——7日間案では6日目に海峡が完全に再開と説明、米側の確認はなし",
+      "titleEn": "Hormuz stays shut until US accepts Iran’s 7-day deal: Araghchi (Gulf News, Oct 21)",
+      "title": "【Gulf News】アラグチ外相「交渉の席は今もある」——7日間案では6日目に海峡が完全に再開と説明、米側の確認はなし",
+      "country": "UAE",
+      "media": "Gulf News",
+      "source": "Gulf News",
+      "date": "2026年10月21日（現地）",
+      "summary": "Gulf News（10/21 04:11更新）は、アラグチ外相が火曜に「The negotiating table is still there」と述べ、7日間案では海峡が6日目に完全に再開すると説明したと伝える。同記事は、米国が条件に同意しつつ追加の条項を求めたとも書くが、これはイラン側の説明で、米側の確認はない。協議の日程は記事に記載がない。",
+      "url": "https://gulfnews.com/world/mena/hormuz-stays-shut-until-us-accepts-irans-7-day-deal-araghchi-1.500717768",
+      "isLatest": false
+    },
+    {
+      "id": "osint-arabtimes-alfaw-1021",
+      "titleJa": "【Arab Times】イラク・アルファオの南東でタンカーが正体不明の飛翔体を受ける——UKMTOは船名・発射体の詳細を示さず、乗組員は無事",
+      "titleEn": "Tanker struck by unknown projectile southeast of Iraq’s Al Faw: UKMTO (Arab Times, Oct 21)",
+      "title": "【Arab Times】イラク・アルファオの南東でタンカーが正体不明の飛翔体を受ける——UKMTOは船名・発射体の詳細を示さず、乗組員は無事",
+      "country": "クウェート",
+      "media": "Arab Times",
+      "source": "Arab Times",
+      "date": "2026年10月21日（現地）",
+      "summary": "Arab Times（10/21）は、UKMTOの勧告として、アルファオの南東約30海里のタンカーが10/20の約18:30 GMTに正体不明の飛翔体を受けたと伝える。乗組員は無事で、船体の損傷・環境への影響の報告はない。勧告は発射体を特定せず、状況の詳細も示していない。UKMTO公式サイトの警報180-26と同じ事案。",
+      "url": "https://www.arabtimesonline.com/news/tanker-struck-by-unknown-projectile-southeast-of-iraqs-al-faw-ukmto/",
+      "isLatest": false
+    },
     {
       "id": "osint-thenational-shabwa73-1020",
       "titleJa": "【The National】シャブワ県のフーシ派攻撃で少なくとも73人死亡・行方不明14人——フーシ派はサウジの施設への攻撃も主張、サウジの確認はなし",
@@ -55,7 +94,7 @@
       "date": "2026年10月20日（現地）",
       "summary": "The National（10/19公開・10/20 12:01 PM更新）は、イエメン・シャブワ県の軍の訓練キャンプへのフーシ派のミサイル攻撃で少なくとも73人が死亡し、200人超が負傷、14人が行方不明だと伝える。フーシ派は同日、サウジのエネルギー・空港・軍の目標を攻撃したと主張したが、サウジの確認はなく、サウジ当局は取材に即座には応じなかった。",
       "url": "https://www.thenationalnews.com/news/mena/2026/10/19/at-least-18-killed-in-houthi-attack-on-yemeni-government-military-camp-in-shabwa-sources-say/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "cardBg": "rgba(239,68,68,0.05)",
@@ -1947,6 +1986,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月22日",
+      "items": [
+        {
+          "id": "latest-ukmto-178-1020",
+          "title": "UKMTO警報178：オマーン・ドゥクムの東の沖合（アラビア海）でタンカーが軍との「interaction」——発生時刻・船名・被害の記載なし",
+          "body": "UKMTO公式サイトの警報178（Advisory・10/20 20:11 JST発行）は、オマーン・ドゥクムの東約121海里で、タンカーと軍が関わる事案の報告を受けたと伝え、タンカーは「地域で続く軍事活動の一環としてinteractionの対象になった」とする（原文は「the tanker was subject to interaction as part of ongoing military activity in the region」）。当局は事態を把握し調査が続いている。公式の本文に発生時刻・船名・被害・軍の国籍の記載はない。Ship & Bunker（10/20）は発生を「10:00 UTC on Monday」と書くが、公式の一覧の日時欄は10/20 11:04 UTCで、時刻は確定できない。ホルムズ海峡の外の事案で、攻撃や被弾を示す記述はない。",
+          "sourceLabel": "UKMTO公式サイト・Ship & Bunker（10/20）",
+          "date": "2026年10月20日（現地）",
+          "label": "海上",
+          "url": "https://shipandbunker.com/news/emea/328836-tanker-involved-in-incident-with-military-forces-off-oman-ukmto",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-mine-1020",
+          "title": "IRGC「超大型タンカーが機雷に接触して炎上」「2隻が炎上・航行不能」と主張——船名・時期の説明なし、独立した確認なし",
+          "body": "gCaptain（10/20）は、IRGC海軍が「a supertanker caught fire after striking a naval mine south of the Strait of Hormuz」と主張し、別の声明では「two tankers had been set ablaze and disabled by mines along a route south of the strait」と主張したと伝える。同記事は「Neither statement identified the vessels」とし、IRGCは2隻がいつ被弾したとされるのかも示さなかった。JMICの10/18付の勧告は、10/17の主張について「there is no substantiation to these claims」と述べる（gCaptainの引用）。IRGCの主張のみで、独立した確認はない。",
+          "sourceLabel": "gCaptain（10/20）",
+          "date": "2026年10月20日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/iran-claims-more-tankers-hit-mines-in-hormuz-but-evidence-remains-elusive/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-shabwa-toll73-1020",
+          "title": "シャブワ県のフーシ派ミサイル攻撃、死者は73人に——県当局の暫定値、行方不明14人・負傷200人超",
+          "body": "Reuters配信（Tribune掲載・10/20）は、シャブワ県の政府治安部隊の訓練キャンプへのフーシ派の攻撃で73人が死亡したと、県のメディア事務所が発表したと伝える（原文は「killed 73 people, the provincial media office said」）。負傷は200人超（知事の発表）、行方不明は14人。The National（10/20 12:01 PM更新）も「At least 73 people were killed」と書く。前回掲載のAl Jazeera（10/19）の「53人」から増えた暫定値で、独立した検証はない。フーシ派は同日、サウジのエネルギー・空港・軍の目標を攻撃したと主張したが、サウジの確認はない（The National）。",
+          "sourceLabel": "Reuters配信（Tribune 10/20）・The National（10/20）",
+          "date": "2026年10月20日（現地）",
+          "label": "攻撃",
+          "url": "https://tribune.com.pk/story/2635932/death-toll-from-houthi-attack-on-yemen-training-camp-rises-to-73",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-close-1020",
+          "title": "原油10/20終値：ブレント12月物108.79ドル（−0.76ドル）、WTI12月物97.82ドル（−0.72ドル）——WTI11月物は期限を迎え101.79ドル",
+          "body": "Reuters（10/20・Yahoo Finance配信）は、ブレントが「settled down 76 cents, or 0.69%, at $108.79」、WTIの12月物が「settled down 72 cents at $97.82 a barrel」、期限を迎えた11月物が「settled down $1.87, or 1.8%, at $101.79」と書く。Investradeの市況コメントはブレント108.79ドルとWTI11月物101.79ドルで一致し、Newsquawkの見出しはWTI12月物97.82ドルで一致する（ブレントは108.78ドルで1セント差）。Reutersは値下がりの背景に、イラン大統領とパキスタン陸軍参謀長の会談への市場の注目を挙げる一方、フーシ派によるサウジのインフラへの攻撃やペルシャ湾での船舶攻撃の報道が続くと書く。",
+          "sourceLabel": "Reuters（10/20）・Investrade・Newsquawk",
+          "date": "2026年10月20日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://finance.yahoo.com/news/oil-eases-markets-assess-potential-005750414.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月21日",
       "items": [

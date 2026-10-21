@@ -3450,6 +3450,34 @@
           "sourceLabel": "Reuters（10/20）・Investrade・Newsquawk"
         }
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "dateLabel": "2026/10/22 07:33",
+      "blockadeDay": 237,
+      "summary": "【重大更新】UKMTOの警報179・180を追加：警報179（10/21 21:07 JST発行）は、オマーン・ブハの西11海里（ホルムズ海峡）でタンカーが正体不明の飛翔体を受けて火災が起き、火は消し止められ、錨泊中・乗組員は全員無事と報告（発生は公式の本文で10/21 01:45 UTC。報告元の「Local Authorities」がどの当局かは本文・媒体に記載なし。gCaptainは船名・攻撃主体が公表されていないと伝える）・警報180（10/21 19:26 JST発行・遅延報告）は、イラク・アルファオの南東30海里（ペルシャ湾北部）でタンカーの船長が正体不明の飛翔体を受けたと報告（発生は公式の本文で10/20 18:30 UTC。公式の本文は損傷・環境への影響なし。Arab Times・gCaptainも船名・攻撃主体の記載なし）・フーシ派は10/21、アデンのバドル基地にあるサウジの作戦室を弾道ミサイルで攻撃したと主張したが、イエメン政府・連合軍の確認はなく、政府側は空港が標的になったと説明（Al Jazeera）・米国務省がサウジ駐在の非緊急の米政府職員と家族に退避を命令（Newsquawk・CBS News）・アラグチ外相は10/20、交渉の席は今もあると述べ、7日間案では海峡は6日目に完全に再開すると説明（Gulf News。米側の公式な回答の中身は確認できず）・警報178の発生時刻：The Peninsula（10/20）は勧告によると発生は10/19 10:00 UTCと書く（公式の本文に時刻の記載はなく、軍の国籍・船名は引き続き不明。前回の「Ship & Bunkerの月曜」も10/19にあたる）・原油は10/21終値でブレント12月物108.82ドル（+0.03ドル）、WTI12月物97.15ドル（−0.67ドル）（NewsquawkとFinancial Newsで一致）・シャブワ県の死者73人（行方不明14人）はAFPを引用するtob.news（10/21）も同じ数字を伝える・UKMTO公式の取得は07:33 JSTで警報180が最新・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・MT ST 3は主要通信社の記事を引き続き確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機237日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（動きなし）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報179：オマーン・ブハの西11海里でタンカーが飛翔体で被弾・火災は鎮火——乗組員は全員無事、船名・攻撃主体は不明",
+          "url": "https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/",
+          "sourceLabel": "UKMTO公式サイト・gCaptain（10/21）"
+        },
+        {
+          "title": "UKMTO警報180：イラク・アルファオの南東30海里でタンカーが被弾（遅延報告）——公式の本文は損傷なし、船名・攻撃主体は不明",
+          "url": "https://www.arabtimesonline.com/news/tanker-struck-by-unknown-projectile-southeast-of-iraqs-al-faw-ukmto/",
+          "sourceLabel": "UKMTO公式サイト・Arab Times（10/21）"
+        },
+        {
+          "title": "フーシ派「アデンのバドル基地のサウジ作戦室を弾道ミサイルで攻撃」と主張——政府側は空港が標的と説明、政府・連合軍の確認なし",
+          "url": "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp",
+          "sourceLabel": "Al Jazeera（10/21）"
+        },
+        {
+          "title": "原油10/21終値：ブレント12月物108.82ドル（+0.03ドル）、WTI12月物97.15ドル（−0.67ドル）",
+          "url": "https://en.fnnews.com/news/202610220446553314",
+          "sourceLabel": "Financial News・Newsquawk（10/21）"
+        }
+      ]
     }
   ]
 }

@@ -875,6 +875,8 @@ footer {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
+  /* 出典表示が折り返して凡例を上げたとき（index.html の liftBottomLeftOverAttribution）は、その分だけ低くする（2026-10-21） */
+  #map.attr-lifted .map-legend.open .legend-body { max-height: 180px; }
   .leg-row { margin-bottom: 4px; gap: 6px; }
   .leg-note { margin-top: 6px; padding-top: 5px; }
 

@@ -2913,6 +2913,27 @@ const Legend = L.Control.extend({
 });
 new Legend().addTo(map);
 
+// 右下の出典表示が狭い画面で折り返して左下まで広がると、凡例の下の端（開く・閉じるボタン）に
+// 重なって押せなくなる（2026-10-21・スマホで確認）。重なるときだけ、左下の欄を出典の高さの分だけ上げる
+function liftBottomLeftOverAttribution() {
+  const attr = map.attributionControl && map.attributionControl.getContainer();
+  const left = map.getContainer().querySelector('.leaflet-bottom.leaflet-left');
+  if (!attr || !left) return;
+  left.style.bottom = '';
+  const a = attr.getBoundingClientRect(), l = left.getBoundingClientRect();
+  const lift = a.left < l.right && a.height > 0;
+  left.style.bottom = lift ? attr.offsetHeight + 'px' : '';
+  // 上げた分だけ、開いた凡例の中身の高さを抑える（左上の拡大縮小ボタンに届かないように。hormuz.css）
+  map.getContainer().classList.toggle('attr-lifted', lift);
+}
+if (window.ResizeObserver) {
+  const ro = new ResizeObserver(liftBottomLeftOverAttribution);
+  ro.observe(map.attributionControl.getContainer());
+  ro.observe(document.getElementById('map-legend-ctrl'));
+}
+window.addEventListener('resize', liftBottomLeftOverAttribution);
+liftBottomLeftOverAttribution();
+
 // 開閉ボタンは2つある。ヘッダーの #legend-btn（開く）は閉じているときだけ表示し、
 // 展開時は本文末尾・右下の #legend-btn-close（閉じる）を使う。
 // 凡例は左下に置かれるため、閉じるボタンが上端にあるとスマホ縦向きで

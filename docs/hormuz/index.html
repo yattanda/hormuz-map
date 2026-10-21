@@ -3044,6 +3044,8 @@ function liftBottomLeftOverAttribution() {
   const left = map.getContainer().querySelector('.leaflet-bottom.leaflet-left');
   if (!attr || !left) return;
   left.style.bottom = '';
+  // 出典の高さ。スマホ縦で右下の日本関連船の欄・タンカーのボタンを出典の上に出すのに使う（hormuz.css・2026-10-21）
+  map.getContainer().style.setProperty('--attr-h', attr.offsetHeight + 'px');
   const a = attr.getBoundingClientRect(), l = left.getBoundingClientRect();
   const lift = a.left < l.right && a.height > 0;
   left.style.bottom = lift ? attr.offsetHeight + 'px' : '';

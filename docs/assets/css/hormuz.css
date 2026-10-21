@@ -1681,15 +1681,16 @@ footer {                                   /* フッター（中央揃え・上�
   text-shadow:0 0 3px var(--map-halo),0 0 3px var(--map-halo),0 0 4px var(--map-halo),0 0 6px var(--map-halo); }
 
 /* 凡例 */
-.leg-dash--a { border-color:#38bdf8; }
-.leg-dash--b { border-color:#34d399; }
-.leg-dash--c { border-color:#a78bfa; }
-.leg-dash--c-sa { border-color:#c084fc; }
-.leg-dash--ng { border-color:#fbbf24; }
-.leg-dash--ao { border-color:#fb923c; }
-.leg-dash--d { border-color:#f59e0b; }
-.leg-dash--old { border-color:#6b7280; }
-.leg-dash--canal { border-color:#67e8f9; border-top-style:solid; }
+/* 凡例の線は地図の線と同じ色（PR 6b。tokens.css の --map-route-*） */
+.leg-dash--a { border-color:var(--map-route-a); }
+.leg-dash--b { border-color:var(--map-route-b); }
+.leg-dash--c { border-color:var(--map-route-c); }
+.leg-dash--c-sa { border-color:var(--map-route-c-sa); }
+.leg-dash--ng { border-color:var(--map-route-ng); }
+.leg-dash--ao { border-color:var(--map-route-ao); }
+.leg-dash--d { border-color:var(--map-route-d); }
+.leg-dash--old { border-color:var(--map-route-old); }
+.leg-dash--canal { border-color:var(--map-route-canal); border-top-style:solid; }
 .leg-section--gap { margin-top:8px; }
 .leg-note--tight { margin-top:4px; }
 

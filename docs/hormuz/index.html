@@ -2385,36 +2385,32 @@ const routePanama = [
 // ============================================================
 // 4. DRAW ROUTES
 // ============================================================
-L.polyline(routeOld,{color:'#6b7280',weight:2,dashArray:'10 7',opacity:0.55})
-  .addTo(map).bindTooltip('旧ルート（ホルムズ経由・通航制限下）',{sticky:true});
-
-L.polyline(routeD,{color:'#f59e0b',weight:2.5,dashArray:'8 5',opacity:0.88})
-  .addTo(map).bindTooltip('ルートD：通航料払いホルムズ通過（友好国限定）',{sticky:true});
-
-L.polyline(routeB_pl,{color:'#34d399',weight:2,dashArray:'5 4',opacity:0.85})
-  .addTo(map).bindTooltip('ルートB：東西パイプライン（陸上・1,200km）',{sticky:true});
-L.polyline(routeB,{color:'#34d399',weight:2.5,dashArray:'12 5',opacity:0.92})
-  .addTo(map).bindTooltip('ルートB：ヤンブー港経由（海上）',{sticky:true});
-
-L.polyline(routeA_pl,{color:'#38bdf8',weight:2,dashArray:'5 4',opacity:0.85})
-  .addTo(map).bindTooltip('ルートA：ADCOPパイプライン（陸上）',{sticky:true});
-L.polyline(routeA,{color:'#38bdf8',weight:2.5,dashArray:'12 5',opacity:0.92})
-  .addTo(map).bindTooltip('ルートA：フジャイラ港経由（海上）',{sticky:true});
-
-L.polyline(routeC_pacific,{color:'#a78bfa',weight:2.5,dashArray:'10 7',opacity:0.88})
-  .addTo(map).bindTooltip('ルートC：米国アラスカ発 太平洋ルート（4/25到着予定）',{sticky:true});
-
-L.polyline(routeC_brazil,{color:'#c084fc',weight:2,dashArray:'8 6',opacity:0.75})
-  .addTo(map).bindTooltip('ルートC（南米）：ブラジル発 喜望峰経由ルート',{sticky:true});
-
-  L.polyline(routeNigeria,{color:'#fbbf24',weight:2,dashArray:'8 6',opacity:0.75})
-  .addTo(map).bindTooltip('ナイジェリア発：喜望峰経由→日本（約35〜40日）',{sticky:true});
-
-L.polyline(routeAngola,{color:'#fb923c',weight:2,dashArray:'8 6',opacity:0.75})
-  .addTo(map).bindTooltip('アンゴラ発：喜望峰経由→日本（約35〜40日）',{sticky:true});
-
-L.polyline(routeSuez,{color:'#67e8f9',weight:4,opacity:0.95})
-  .addTo(map).bindTooltip('スエズ運河（全長193km）',{sticky:true});
+// 色は tokens.css の --map-route-*（PR 6b・2026-10-21。状態の4色を使わない組み方）。不透明度は試作（palettes.js の R_NEW）どおり。
+// 線の下に細い暗い縁（線の太さ＋1px・片側 0.5px。運営者）を敷き、海と陸のどちらの上でも線を拾えるようにする。
+// 縁は全部の線より先に描く（線どうしが交わる所で、あとから描いた縁が先の線を切らないように）。パナマ運河は canalPane に別に描く
+const ROUTE_CASING = { color: MAPC('route-casing'), opacity: 0.85, extra: 1 };
+function routeCasing(lls, weight, pane) {
+  return L.polyline(lls, { pane: pane || 'overlayPane', color: ROUTE_CASING.color, weight: weight + ROUTE_CASING.extra,
+    opacity: ROUTE_CASING.opacity, lineCap: 'butt', interactive: false }).addTo(map);
+}
+const ROUTES = [   // [座標, 色の名前, 太さ, 破線, 不透明度, ツールチップ]
+  [routeOld,       'old',   2,   '10 7', 0.7,  '旧ルート（ホルムズ経由・通航制限下）'],
+  [routeD,         'd',     2.5, '8 5',  0.9,  'ルートD：通航料払いホルムズ通過（友好国限定）'],
+  [routeB_pl,      'b',     2,   '5 4',  0.95, 'ルートB：東西パイプライン（陸上・1,200km）'],
+  [routeB,         'b',     2.5, '12 5', 0.95, 'ルートB：ヤンブー港経由（海上）'],
+  [routeA_pl,      'a',     2,   '5 4',  0.95, 'ルートA：ADCOPパイプライン（陸上）'],
+  [routeA,         'a',     2.5, '12 5', 0.95, 'ルートA：フジャイラ港経由（海上）'],
+  [routeC_pacific, 'c',     2.5, '10 7', 0.9,  'ルートC：米国アラスカ発 太平洋ルート（4/25到着予定）'],
+  [routeC_brazil,  'c-sa',  2,   '8 6',  0.85, 'ルートC（南米）：ブラジル発 喜望峰経由ルート'],
+  [routeNigeria,   'ng',    2,   '8 6',  0.85, 'ナイジェリア発：喜望峰経由→日本（約35〜40日）'],
+  [routeAngola,    'ao',    2,   '8 6',  0.9,  'アンゴラ発：喜望峰経由→日本（約35〜40日）'],
+  [routeSuez,      'canal', 4,   null,   1,    'スエズ運河（全長193km）'],
+];
+ROUTES.forEach(([lls, , w]) => routeCasing(lls, w));
+ROUTES.forEach(([lls, k, w, dash, op, tip]) => {
+  L.polyline(lls, { color: MAPC('route-' + k), weight: w, dashArray: dash, opacity: op })
+    .addTo(map).bindTooltip(tip, { sticky: true });
+});
 
 // countries.geojson の国土ポリゴン（fill:#1e3a7a）は fetch 完了後に
 // 既定の overlayPane（z-index 400）へ追加されるため、先に描いた運河の線を
@@ -2462,9 +2458,9 @@ fetch('/data/rio-indio.geojson')
     }).addTo(map).bindTooltip('リオ・インディオ川（全長約98km・貯水池建設の計画地）',{sticky:true});
   })
   .catch(e => console.warn('rio-indio.geojson の読み込みに失敗:', e));
-// 水域上ではシアン単色が海面の青に埋没するため、暗色のケーシングを下に敷く。
-L.polyline(routePanama,{pane:'canalPane',color:'#04101f',weight:9,opacity:0.9,interactive:false}).addTo(map);
-L.polyline(routePanama,{pane:'canalPane',color:'#67e8f9',weight:4.5,opacity:1})
+// 縁はほかの線と同じ細いもの（PR 6b。前は CARTO の暗い海に埋もれないよう太さ 9 の暗い縁を敷いていた）
+routeCasing(routePanama, 4.5, 'canalPane');
+L.polyline(routePanama,{pane:'canalPane',color:MAPC('route-canal'),weight:4.5,opacity:1})
   .addTo(map).bindTooltip('パナマ運河（全長約82km）',{sticky:true});
 
 

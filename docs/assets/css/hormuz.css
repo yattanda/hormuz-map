@@ -919,9 +919,10 @@ footer {
   .map-legend.open .legend-body { max-height: max(60px, calc(var(--map-h) - 164px)); }
   #map.attr-lifted .map-legend.open .legend-body { max-height: max(48px, calc(var(--map-h) - 220px)); }
   /* 「タンカー1隻の価値」は題だけの小さなボタンにする（画像の縮小版が地図を大きく覆っていた・運営者）。押せば拡大画像が開く */
-  /* 日本関連船の欄は「地点へ移動」（右端から約 134px）の左へ。タンカーのボタンは欄を開いたとき（幅 260px）の左に置く */
+  /* 日本関連船の欄は「地点へ移動」（右端から約 134px）の左へ。タンカーのボタンはスマホ縦と同じく左上（拡大・縮小ボタンの右）に置く
+     （下の端に置くと、幅の狭い横向き〈568px など〉で凡例と重なった） */
   .map-wrap #tanker-overlay { right: 142px; }
-  .map-wrap #tanker-value-thumb { right: 410px; width:auto; padding:5px 8px; }   /* 後ろの #tanker-value-thumb の規則より強く */
+  .map-wrap #tanker-value-thumb { top: 10px; left: 52px; right: auto; bottom: auto; width:auto; padding:5px 8px; }   /* 後ろの #tanker-value-thumb の規則より強く */
   .map-wrap #tanker-value-thumb img, .map-wrap #tanker-value-thumb .tv-label br { display:none; }
   .map-wrap #tanker-value-thumb .tv-label { font-size:10px; margin-top:0; white-space:nowrap; }
 }
@@ -1077,13 +1078,11 @@ footer {
   letter-spacing: 0.03em;
 }
 @media (max-width: 600px) {
-  #tanker-value-thumb {
-    width: 44px;    /* 地図面積を優先して縮小（2026-09-03 調整） */
-    right: 202px;   /* tanker-overlay(186px) + gap(6px) + right(10px) */
-    bottom: 24px;
-    padding: 3px;
-  }
-  #tanker-value-thumb .tv-label { font-size: 6px; margin-top: 2px; }
+  /* スマホ縦は題だけの小さなボタンにし、左上（拡大・縮小ボタンの右）に置く（2026-10-21・運営者。画像の縮小版が地図を覆い、隠せなかった）。
+     下の端は凡例・日本関連船の欄・出典で埋まっている。押せば拡大画像が開く */
+  #tanker-value-thumb { top: 10px; left: 52px; right: auto; bottom: auto; width: auto; padding: 5px 8px; }
+  #tanker-value-thumb img, #tanker-value-thumb .tv-label br { display: none; }
+  #tanker-value-thumb .tv-label { font-size: 10px; margin-top: 0; white-space: nowrap; }
 }
 
 /* ================================================
@@ -1127,10 +1126,8 @@ footer {
   #ship-grid { max-height: 44px; gap: 2px; }
   #tanker-stats { font-size: 9px; margin-top: 5px; }
   #tanker-note { display: none; }   /* 注記は情報密度を優先して非表示 */
-  /* 出典は2行に折り返し、欄とボタンの下半分を隠していた（2026-10-21）。出典の高さ（index.html が --attr-h に入れる）の上に出す */
-  #tanker-overlay, #tanker-value-thumb { bottom: calc(var(--attr-h, 18px) + 6px); }
-  /* 欄を閉じて幅が縮んだときは、ボタンを欄の左に寄せる（左下の凡例と重ならないように） */
-  #map:has(#tanker-overlay.collapsed) #tanker-value-thumb { right: 158px; }
+  /* 出典は2行に折り返し、欄の下半分を隠していた（2026-10-21）。出典の高さ（index.html が --attr-h に入れる）の上に出す */
+  #tanker-overlay { bottom: calc(var(--attr-h, 18px) + 6px); }
 }
 #tanker-date { font-size: 10px; color: var(--c-text-mute); text-align: right; margin-bottom: 6px; }
 #ship-grid {

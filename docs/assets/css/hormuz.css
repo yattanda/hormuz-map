@@ -291,6 +291,19 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
 
 /* MAP */
 .map-wrap { overflow:hidden; border:1px solid var(--c-rule); position:relative; }
+/* 地図の全画面表示（2026-10-21）。枠を画面いっぱいに広げる。モーダルと拡大画像（z-index 9999）はこの上に出る。
+   上下左右は端末の切り欠き・ホームバーの分を空ける（地の色は海） */
+.map-wrap.is-full { position:fixed; inset:0; z-index:5000; border:0; background:var(--map-sea);
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px); }
+.map-wrap.is-full #map { height:100%; }
+html.map-full-open, html.map-full-open body { overflow:hidden; }
+/* 全画面では凡例の中身を高くしてよい（ふだんは地図の高さ 400px・580px に合わせて低く抑えている） */
+.map-wrap.is-full #map .map-legend.open .legend-body { max-height:min(60vh, 560px); max-height:min(60dvh, 560px); }
+/* ボタン：Leaflet の拡大・縮小と同じ形。開くときは外向きの角、閉じるときは内向きの角 */
+.map-full-btn { display:flex !important; align-items:center; justify-content:center; }
+.map-full-btn svg path { fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:square; }
+.map-full-btn .mf-close, .map-wrap.is-full .map-full-btn .mf-open { display:none; }
+.map-wrap.is-full .map-full-btn .mf-close { display:inline; }
 #map { height:580px; width:100%; background:var(--map-sea); }   /* 地の色は海（PR 6a。自前の地図は海を塗らない） */
 .leaflet-tile-pane { filter: brightness(0.55) saturate(0.5) hue-rotate(190deg); }
 

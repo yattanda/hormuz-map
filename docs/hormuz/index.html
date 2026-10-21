@@ -2954,6 +2954,76 @@ const Legend = L.Control.extend({
 });
 new Legend().addTo(map);
 
+// ============================================================
+// 6-A. FULLSCREEN（地図の全画面表示・2026-10-21）
+// ============================================================
+// 地図の枠（.map-wrap）を画面いっぱいに広げる（CSS の .is-full）。使えるブラウザでは、ページ全体も全画面にしてブラウザの枠を隠す。
+// 全画面にするのは地図の枠ではなくページ全体（document.documentElement）。地図の枠だけを全画面にすると、
+// 地図から開く拡大画像（タンカー1隻の価値）や製油所のモーダルが枠の外にあるため見えなくなる。
+// iPhone の Safari はページの全画面に対応していないので、CSS で広げるだけ（Esc・ボタンで戻る）
+const MapFull = L.Control.extend({
+  options: { position: 'topright' },   // 左上は PC で開いた凡例に隠れるので、右上の「地点へ移動」の上に置く
+  onAdd() {
+    const div = L.DomUtil.create('div', 'leaflet-bar map-full');
+    const a = L.DomUtil.create('a', 'map-full-btn', div);
+    a.href = '#';
+    a.setAttribute('role', 'button');
+    a.innerHTML = '<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">'
+      + '<path class="mf-open" d="M3 8V3h5M12 3h5v5M17 12v5h-5M8 17H3v-5"/>'
+      + '<path class="mf-close" d="M8 3v5H3M17 8h-5V3M12 17v-5h5M3 12h5v5"/></svg>';
+    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.on(a, 'click', e => { L.DomEvent.preventDefault(e); toggleMapFull(); });
+    this._a = a;
+    setMapFullLabel(a, false);
+    return div;
+  }
+});
+function setMapFullLabel(a, on) {
+  const t = on ? '全画面を閉じる（Esc）' : '地図を全画面で表示';
+  a.title = t;
+  a.setAttribute('aria-label', t);
+  a.setAttribute('aria-pressed', String(on));
+}
+const mapFullCtrl = new MapFull().addTo(map);
+{ const c = mapFullCtrl.getContainer(); c.parentNode.insertBefore(c, c.parentNode.firstChild); }   // 右上の欄の先頭へ（Leaflet は後から足したものを下に置く）
+const mapWrap = document.querySelector('.map-wrap');
+function isMapFull() { return mapWrap.classList.contains('is-full'); }
+function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
+function applyMapFull(on) {
+  if (on === isMapFull()) return;
+  const c = map.getCenter(), z = map.getZoom();
+  mapWrap.classList.toggle('is-full', on);
+  document.documentElement.classList.toggle('map-full-open', on);
+  setMapFullLabel(mapFullCtrl._a, on);
+  // 大きさが変わったことを地図に知らせ、見ていた所を真ん中のまま保つ
+  requestAnimationFrame(() => { map.invalidateSize({ pan: false }); map.setView(c, z, { animate: false }); });
+  if (!on) mapWrap.scrollIntoView({ block: 'center' });
+}
+function toggleMapFull() {
+  const on = !isMapFull();
+  applyMapFull(on);
+  const de = document.documentElement;
+  if (on) {
+    const req = de.requestFullscreen || de.webkitRequestFullscreen;
+    if (req) { try { const r = req.call(de); if (r && r.catch) r.catch(() => {}); } catch (e) { /* 広げるだけにする */ } }
+  } else if (fsElement()) {
+    const ex = document.exitFullscreen || document.webkitExitFullscreen;
+    if (ex) { try { const r = ex.call(document); if (r && r.catch) r.catch(() => {}); } catch (e) { /* 何もしない */ } }
+  }
+}
+// ブラウザの全画面を Esc などで抜けたら、地図も元の大きさに戻す
+['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => document.addEventListener(ev, () => {
+  if (!fsElement() && isMapFull()) applyMapFull(false);
+}));
+// 広げただけのとき（iPhone など）も Esc で戻る。モーダルや拡大画像が開いているときは、そちらを先に閉じる
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || !isMapFull() || fsElement()) return;
+  if (document.querySelector('#lightbox-overlay.active') || [...document.querySelectorAll('.modal-overlay, .ref-modal')].some(m => getComputedStyle(m).display !== 'none')) return;
+  applyMapFull(false);
+});
+// 向きを変えたとき・ブラウザの枠が出入りしたとき
+window.addEventListener('resize', () => { if (isMapFull()) map.invalidateSize({ pan: false }); });
+
 // 右下の出典表示が狭い画面で折り返して左下まで広がると、凡例の下の端（開く・閉じるボタン）に
 // 重なって押せなくなる（2026-10-21・スマホで確認）。重なるときだけ、左下の欄を出典の高さの分だけ上げる
 function liftBottomLeftOverAttribution() {

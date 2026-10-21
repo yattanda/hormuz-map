@@ -200,6 +200,8 @@ a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
   color: inherit;
 }
 .article-index-card:hover .idx-title { text-decoration: underline; }
-.article-index-card .idx-title { font-size: 0.95rem; font-weight: 700; color: var(--c-text); margin-bottom: 4px; }
+.article-index-card .idx-title { font-size: 0.95rem; font-weight: 700; color: var(--c-text); margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+/* 記事の入口の B の絵（課題46 D3 PR 5b-2・§2 の 28px 以上）。絵は /assets/icons/icons.svg の i-* */
+.article-index-card .idx-icon { width: 32px; height: 32px; flex-shrink: 0; --a: var(--c-text); --b: var(--c-accent); --c2: var(--c-text-mute); --k: var(--c-bg); }
 .article-index-card .idx-lead { font-size: 0.8rem; color: var(--c-text-mute); line-height: 1.6; }
 .article-index-card .idx-date { font-size: 0.7rem; color: var(--c-text-mute); margin-top: 6px; display: block; }

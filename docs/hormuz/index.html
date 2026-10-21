@@ -232,11 +232,11 @@ UKMTO警報178の発生時刻・船名・軍の国籍、IRGCが主張したタ�
 
       <!-- 特別解説グループ -->
       <div class="glance-special">
-        <div class="glance-special-head">
+        <!-- 見出しは本編の「特別解説コラム」の段へ（特別レポート・トランプ声明まで含めて見られる。10/21・運営者） -->
+        <a href="#special-commentary" class="glance-special-head">
           特別解説コラム
           <span class="glance-special-sub">― 深掘り分析記事</span>
-          <a href="articles/" class="glance-special-all">一覧を見る →</a>
-        </div>
+        </a>
         <div class="glance-special-links">
           <a href="articles/mine-clearance/" class="jump-pill jump-pill--danger" data-published="2026-04-12" data-updated="2026-04-12"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-mine"/></svg>機雷問題</a>
           <a href="articles/saudi-pipeline-attack/" class="jump-pill jump-pill--warning" data-published="2026-04-09" data-updated="2026-04-09"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-barrel"/></svg>サウジ危機</a>
@@ -3013,6 +3013,10 @@ function closeTrumpModal() {
   document.getElementById('trump-modal').classList.remove('open');
   document.body.style.overflow = '';
 }
+// コラムの一覧（/hormuz/articles/）から #trump-statement で来たときは、声明の全文を開く（10/21）
+window.addEventListener('DOMContentLoaded', () => {
+  if (location.hash === '#trump-statement') openTrumpModal();
+});
 function closeTrumpModalOutside(e) {
   if (e.target.id === 'trump-modal') closeTrumpModal();
 }

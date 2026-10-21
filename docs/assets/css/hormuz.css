@@ -1618,46 +1618,47 @@ footer {                                   /* フッター（中央揃え・上�
 
 /* 軍事レイヤー（renderMilitaryLayer） */
 .mil-pop { min-width:200px; }
-.mil-pop--card { background:#1e293b; padding:8px; border-radius:8px; }
-.mil-pop-status { font-size:0.75rem; padding:2px 6px; border-radius:4px; }
-.mil-pop-status--fleet { background:rgba(239,68,68,0.3); color:#fca5a5; }
-.mil-pop-status--port { background:rgba(255,255,255,0.12); color:#e2e8f0; }
+.mil-pop-name { display:inline-block; margin-bottom:4px; }
+.mil-pop .p-badge { margin:0 0 6px; }
 .mil-pop-detail { font-size:0.8rem; }
-.mil-pop--card .mil-pop-detail { color:#cbd5e1; }
-.mil-pop-src { color:#94a3b8; }
-.mil-pop--card .mil-pop-src { color:#64748b; }
-.mil-icon { cursor:pointer; }
-.mil-icon--fleet { font-size:26px; filter:drop-shadow(0 0 4px rgba(239,68,68,0.8)); }
-.mil-icon--port { font-size:22px; }
+.mil-pop-src { color:var(--c-text-mute); }
 
 /* 調達先・日本の受入拠点・南鳥島のポップアップ */
 .src-pop { font-family:var(--f-body); min-width:200px; padding:4px; }
 .src-pop--wide { min-width:220px; }
 .src-pop-title { font-size:0.85rem; font-weight:800; margin-bottom:6px; }
-.src-pop-body { font-size:0.75rem; color:#1e293b; line-height:1.9; }
+.src-pop-body { font-size:0.75rem; color:var(--c-text); line-height:1.9; }
 .src-pop-body--tight { line-height:1.8; }
 .src-pop-body--japan { line-height:1.8; margin-bottom:6px; }
-.src-pop-btn { width:100%; background:linear-gradient(135deg,#1e40af,#1e3a5f); border:1px solid #38bdf8; color:#7dd3fc; font-size:0.78rem; font-weight:700; padding:7px 0; border-radius:6px; cursor:pointer; letter-spacing:0.03em; }
+.src-pop-btn { width:100%; background:var(--c-bg); border:1px solid var(--c-text); color:var(--c-text); font-family:inherit; font-size:0.78rem; font-weight:700; padding:7px 0; cursor:pointer; letter-spacing:0.03em; }
+.src-pop-btn:hover { background:var(--c-text); color:var(--c-bg); }
 
-/* ポップアップのバッジ・注記・画像 */
-.p-badge--red { background:rgba(239,68,68,0.2); color:#f87171; border:1px solid rgba(239,68,68,0.4); }
-.p-badge--amber { background:rgba(251,191,36,0.2); color:#fbbf24; border:1px solid rgba(251,191,36,0.4); }
-.p-badge--amber-soft { background:rgba(251,191,36,0.18); color:#fbbf24; border:1px solid rgba(251,191,36,0.4); }
-.p-badge--green { background:rgba(52,211,153,0.2); color:#34d399; border:1px solid rgba(52,211,153,0.4); }
-.p-badge--blue { background:rgba(96,165,250,0.2); color:#60a5fa; border:1px solid rgba(96,165,250,0.4); }
-.p-badge--navy { background:rgba(29,78,216,0.3); color:#93c5fd; border:1px solid rgba(147,197,253,0.4); }
-.p-note { font-size:0.62rem; color:#64748b; margin-top:5px; line-height:1.5; }
+/* ポップアップのバッジ・注記・画像。札は状態の色面（D3 PR 6b-2。5a の札と同じ色）：赤＝危険・黄（amber）＝警戒・緑＝平常。
+   状態ではないもの（ルートの拠点・計画段階・米軍の拠点）は枠だけ。military.json の状況は index.html の milStatus() が --danger ほかを付ける */
+.p-badge { display:inline-block; margin-top:6px; padding:2px 7px; font-size:0.72rem; font-weight:700; line-height:1.5; border:1px solid var(--c-text-mute); color:var(--c-text); }
+.p-badge--red, .p-badge--danger { background:var(--c-danger); border-color:var(--c-danger); color:var(--c-on-danger); }
+.p-badge--amber, .p-badge--alert { background:var(--c-alert); border-color:var(--c-alert); color:var(--c-on-alert); }
+.p-badge--warn { background:var(--c-warn); border-color:var(--c-warn); color:var(--c-on-warn); }
+.p-badge--green, .p-badge--ok { background:var(--c-ok); border-color:var(--c-ok); color:var(--c-on-ok); }
+.p-badge--amber-soft, .p-badge--blue, .p-badge--navy, .p-badge--none { background:none; }
+.p-note { font-size:0.62rem; color:var(--c-text-mute); margin-top:5px; line-height:1.5; }
 .p-img { width:100%; height:auto; margin-top:6px; border-radius:4px; cursor:zoom-in; }
 
-/* 印（丸いマーカー）。mk--dyn は mkIcon() が大きさと色を style で渡す */
-.mk { border-radius:50%; display:flex; align-items:center; justify-content:center; }
-.mk--dyn { border:2px solid rgba(255,255,255,0.25); }
-.mk--hormuz { width:44px; height:44px; background:rgba(239,68,68,0.18); border:2.5px solid #ef4444; font-size:20px; }
-.mk--kharg { width:44px; height:44px; background:rgba(239,68,68,0.25); border:2.5px solid #ff0000; font-size:20px; }
-.mk--warn { width:40px; height:40px; background:rgba(251,191,36,0.18); border:2.5px solid #fbbf24; font-size:18px; }
-.mk--bab { width:40px; height:40px; background:rgba(220,38,38,0.2); border:2.5px solid #ef4444; font-size:18px; }
-.mk--oil { width:36px; height:36px; background:rgba(251,191,36,0.15); border:2px solid #fbbf24; font-size:16px; }
-.mk--japan { width:44px; height:44px; background:linear-gradient(135deg, #1e3a5f, #0f2027); border:2px solid #38bdf8; font-size:22px; box-shadow:0 0 12px rgba(56,189,248,0.5); cursor:pointer; }
+/* 地図の印（D3 PR 6b-2・設計書 §2）：C 徽章。台（i-disc）の --a が台の色、--k が目盛りの色。中の絵（.mkb-ic・a-*）は --k の色で白抜き。
+   状態の無い印は「枠だけ」：地の色の台に本文の色の縁（5a の札と同じ考え）。大きさは index.html の mkBadge()（危険 32px・ほか 26px） */
+.mkb-wrap { line-height:0; cursor:pointer; }
+.mkb { display:block; overflow:visible; }
+.mkb .mkb-ic { --a: var(--k); }
+.mkb--danger { --a: var(--c-danger); --k: var(--c-on-danger); }
+.mkb--alert  { --a: var(--c-alert);  --k: var(--c-on-alert); }
+.mkb--warn   { --a: var(--c-warn);   --k: var(--c-on-warn); }
+.mkb--ok     { --a: var(--c-ok);     --k: var(--c-on-ok); }
+.mkb--none   { --a: var(--c-bg);     --k: var(--c-text); }
+.mkb--none   { border-radius:50%; box-shadow:0 0 0 1.5px var(--c-text); }   /* 縁（影ではなく 1.5px の線） */
+/* 湖・貯水池は印をやめて地名だけ（§2-1）。地図の水の名前と同じ色・縁取り。押すと説明が開く */
+.mk-name-icon { cursor:pointer; }
+.mk-name { white-space:nowrap; color:var(--map-label-sea); font-family:var(--f-body); font-size:11px; font-style:italic; letter-spacing:.1em;
+  text-shadow:0 0 3px var(--map-halo),0 0 3px var(--map-halo),0 0 2px var(--map-halo); }
 
 /* 地図上の国名・海域名 */
 .map-label { text-shadow:0 1px 4px rgba(0,0,0,0.95); white-space:nowrap; pointer-events:none; }
@@ -1713,3 +1714,33 @@ footer {                                   /* フッター（中央揃え・上�
 .osint-title { font-size:0.8rem; font-weight:700; color:var(--c-text); line-height:1.5; }
 .osint-en { font-size:0.72rem; color:var(--c-text-mute); margin-top:3px; line-height:1.5; font-style:italic; }
 #osint-extra { margin-top:8px; }
+
+/* ============================================================
+   地図のポップアップ・出典（D3 PR 6b-2・2026-10-21。Leaflet の白い地をやめて暗い地に）
+   見出しの文字は色分けしない（状態は札で示す）。.tc-* はポップアップの中では本文の色
+   ============================================================ */
+#map .leaflet-popup-content-wrapper { background:var(--c-surface); color:var(--c-text); border:1px solid var(--c-rule); border-radius:0; box-shadow:none; }
+#map .leaflet-popup-tip { background:var(--c-surface); border:1px solid var(--c-rule); box-shadow:none; }
+#map .leaflet-popup-content { font-family:var(--f-body); line-height:1.6; }
+#map .leaflet-popup-content a { color:var(--c-text); text-decoration:underline; }
+#map a.leaflet-popup-close-button { color:var(--c-text-mute); }
+#map a.leaflet-popup-close-button:hover { color:var(--c-text); }
+#map .leaflet-popup-content [class*="tc-"] { color:var(--c-text); }
+#map .leaflet-popup-content .tc-dim { color:var(--c-text-mute); }
+#map .leaflet-popup-content .p-title, #map .leaflet-popup-content .src-pop-title { font-size:0.85rem; font-weight:700; margin-bottom:4px; }
+#map .leaflet-popup-content .p-body { font-size:0.78rem; }
+/* 出典：暗い地・補助の文字。リンクは本文の色＋下線（D3 Q1） */
+#map .leaflet-control-attribution { background:var(--c-bg); color:var(--c-text-mute); }
+#map .leaflet-control-attribution a { color:var(--c-text); text-decoration:underline; }
+/* 凡例の印（地図と同じ徽章を小さく）・湖の色の見本・川の線。地点ジャンプのボタンの絵（A） */
+.leg-mk { width:20px; flex-shrink:0; display:flex; justify-content:center; }
+.leg-mk .mkb--none { box-shadow:0 0 0 1px var(--c-text); }
+.leg-swatch { width:20px; flex-shrink:0; display:flex; justify-content:center; }
+.leg-swatch--lake::before { content:""; width:16px; height:10px; background:var(--map-sea); box-shadow:inset 0 0 0 1px var(--map-river); }
+.leg-dash--river { border-top-style:solid; border-color:var(--map-label-sea); border-top-width:2px; }
+.mj-ic { width:1.35em; height:1.35em; vertical-align:-0.35em; margin-right:4px; fill:currentColor; --a: currentColor; }
+@media (max-width: 600px) {
+  /* スマホではポップアップの余白を詰める（右上の「地点へ移動」を避けて収まる幅にする） */
+  #map .leaflet-popup-content { margin:10px 12px; }
+  .src-pop--wide { min-width:200px; }
+}

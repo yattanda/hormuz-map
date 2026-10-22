@@ -3,6 +3,8 @@
 このドキュメントは、スマホ表示を改善・レビューする際の判断基準を定義する。  
 スマホUI修正時は必ずこのルールを参照する。
 
+色・書体・アイコン・区切り方（罫・角丸や影を使わない）の正本は設計書 `tools/site-redesign-design.md` とスキル `.claude/skills/site-design/SKILL.md`。ここに書くのはレイアウトの判断基準だけ（2026-10-22・課題46 D3 PR 7b で見直し）。
+
 ---
 
 ## 1. 最重要方針
@@ -32,7 +34,7 @@
 | 768px | タブレット |
 | 1024px以上 | PC副作用確認 |
 
-Claudeがレビューする場合、特に **375px表示** を基準に判断する。
+Claudeがレビューする場合、特に **375px表示** を基準に判断する。タブレット（768px）も毎回確認する（PC とスマホのあいだで崩れやすい）。
 
 ---
 
@@ -107,11 +109,11 @@ padding-block: clamp(2rem, 6vw, 4rem);
 ### 本文
 
 ```css
-font-size: 1rem;
-line-height: 1.7;
+font-size: var(--fs-base);
+line-height: var(--lh-body);
 ```
 
-本文は16px前後を基本とする。
+スマホ（768px 以下）は `html { font-size:18px }` で rem 全体を底上げしている（変更禁止・`tokens.css` の先頭）。1rem はスマホで 18px になるので、16px 前提で大きさを決めない。大きさは `tokens.css` の `--fs-*` から選ぶ。
 
 ### 補足文
 
@@ -174,7 +176,7 @@ line-height: 1.3;
 ```css
 .card {
   padding: clamp(1rem, 3vw, 1.5rem);
-  border-radius: 1rem;
+  border-top: 1px solid var(--c-rule);  /* 区切りは罫。箱・角丸・影で区切らない（スキル site-design） */
 }
 
 .card-grid {
@@ -267,9 +269,8 @@ line-height: 1.3;
   .responsive-table tr {
     display: block;
     margin-bottom: 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
-    padding: 1rem;
+    border-top: 1px solid var(--c-rule);  /* 行の区切りは罫だけ（箱・角丸にしない） */
+    padding: 1rem 0;
   }
 
   .responsive-table td {
@@ -389,6 +390,7 @@ iframe {
 - 375px
 - 390px
 - 430px
+- 768px（タブレット）
 
 重点確認:
 - 余白
@@ -410,7 +412,7 @@ iframe {
 
 スマホ表示改善後、以下を満たすこと。
 
-- 375pxで横スクロールが発生しない（ただし、意図したテーブル横スクロールは可）
+- 375px と 768px で横スクロールが発生しない（ただし、意図したテーブル横スクロールは可）
 - 本文が読みやすい
 - H1/H2が画面を圧迫しすぎない
 - セクション間の余白が過剰でない
@@ -418,7 +420,8 @@ iframe {
 - CTAが分かりやすい
 - 表が読める
 - カードが縦に間延びしない
-- PC表示が大きく崩れていない
+- タブレット（768px）・PC表示が大きく崩れていない
+- 色・角丸・影・絵文字を持ち込んでいない（`python tools/validate_daily.py` の絵文字と直書きの色が WARN 0）
 
 ---
 

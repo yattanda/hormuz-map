@@ -723,7 +723,7 @@ button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモ�
 .infographic-cta-row { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
 .infographic-thumb-link { display:block; line-height:0; overflow:hidden; border:1px solid var(--c-rule); flex-shrink:0; }
 .infographic-thumb-link:hover { border-color:var(--c-text); }
-.infographic-thumb-img { height:72px; width:auto; display:block; }
+.infographic-thumb-img { height:72px; width:auto; aspect-ratio:1672/941; display:block; }   /* 縦横比を CSS でも書く（画像が届く前から幅が決まり、届いたときに横の文がずれない・2026-10-22）。値は <img> の width・height と同じ */
 .reload-btn { background:none; border:1px solid var(--c-rule); color:var(--c-text); font-size:var(--fs-xs); font-weight:700;
   padding:4px 14px; cursor:pointer; font-family:inherit; }
 .reload-btn:hover { border-color:var(--c-text); }

@@ -35,8 +35,9 @@
 <meta name="twitter:image" content="https://chokepointlab.com/ogp.jpg">
 
 <link rel="stylesheet" href="/assets/vendor/leaflet-1.9.4/leaflet.css"/>
-<script src="/assets/vendor/leaflet-1.9.4/leaflet.js"></script>
-<script src="/assets/js/basemap.js"></script>
+<!-- 地図のスクリプトは本文の地図のスクリプトの直前で実行する（ここでは取り寄せだけ始める。上の欄の表示を待たせない・2026-10-22） -->
+<link rel="preload" href="/assets/vendor/leaflet-1.9.4/leaflet.js" as="script">
+<link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
 <link rel="stylesheet" href="/assets/css/hormuz.css">
@@ -1754,6 +1755,9 @@ const SHIP_CONFIG = {
   </div>
 </div>
 
+<!-- 地図のスクリプト（2026-10-22 に <head> から移した。L と HormuzBasemap を使うのはこの下から） -->
+<script src="/assets/vendor/leaflet-1.9.4/leaflet.js"></script>
+<script src="/assets/js/basemap.js"></script>
 <script>
 // ============================================================
 // MILITARY LAYER（外部JSONから読み込み）

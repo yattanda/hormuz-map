@@ -1,5 +1,5 @@
 /* 法務ページ・用語集・404 の共通。課題46 D2 で各ページの <style> から切り出し、
-   D3（2026-10-20）で暗い地にそろえた（Q2）。色と書体は /assets/css/tokens.css の theme-iron（先に読む） */
+   D3（2026-10-20）で暗い地にそろえた（Q2）。色と書体は /assets/css/tokens.css（先に読む） */
 :root{ --maxw:720px; }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}

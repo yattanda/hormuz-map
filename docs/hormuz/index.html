@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="theme-iron">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
@@ -38,7 +38,7 @@
 <script src="/assets/vendor/leaflet-1.9.4/leaflet.js"></script>
 <script src="/assets/js/basemap.js"></script>
 
-<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
 <link rel="stylesheet" href="/assets/css/hormuz.css">
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
@@ -1585,7 +1585,7 @@ const SHIP_CONFIG = {
     // 1隻ずつ A のタンカー（課題46 D3 PR 5b-2。絵の正本は /assets/icons/icons.svg）
     const TANKER_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons/icons.svg#a-tanker"/></svg>';
     const SHIP_TYPES = [
-      { icon: TANKER_SVG, count: totalShips, label: '内訳は' + breakdown, color: 'rgba(148,163,184,0.9)' },
+      { icon: TANKER_SVG, count: totalShips, label: '内訳は' + breakdown },
     ];
 
     let idx = 0;
@@ -1596,7 +1596,6 @@ const SHIP_CONFIG = {
         el.className   = 'ship-icon';
         el.innerHTML   = type.icon;
         el.title       = `#${idx}　${type.label}　足止め中`;
-        el.style.filter = `drop-shadow(0 0 3px ${type.color})`;
         grid.appendChild(el);
       }
     });
@@ -2097,7 +2096,7 @@ L.marker([4.5, 7.0], {
   {sticky:true}
 ).bindPopup(`
   <div class="src-pop">
-    <div class="src-pop-title tc-amber"> ナイジェリア（Bonny Light）</div>
+    <div class="src-pop-title"> ナイジェリア（Bonny Light）</div>
     <div class="src-pop-body">
       <strong>品質：</strong>API比重36° / 硫黄0.15%（低硫黄スイート）<br>
       <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
@@ -2116,7 +2115,7 @@ L.marker([-8.8, 13.2], {
   {sticky:true}
 ).bindPopup(`
   <div class="src-pop">
-    <div class="src-pop-title tc-orange"> アンゴラ（Hungo）</div>
+    <div class="src-pop-title"> アンゴラ（Hungo）</div>
     <div class="src-pop-body">
       <strong>品質：</strong>API比重28.8° / 硫黄0.65%（中質スイート）<br>
       <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
@@ -2135,7 +2134,7 @@ L.marker([-22.0, -40.0], {
   {sticky:true}
 ).bindPopup(`
   <div class="src-pop">
-    <div class="src-pop-title tc-purple"> ブラジル（Tupi・Buzios）</div>
+    <div class="src-pop-title"> ブラジル（Tupi・Buzios）</div>
     <div class="src-pop-body">
       <strong>品質：</strong>API比重31° / 硫黄0.3%（中質スイート）<br>
       <strong>ルート：</strong>喜望峰 → インド洋 → 日本<br>
@@ -2153,13 +2152,13 @@ const japanRefineryMarker = L.marker([34.5, 138.5], {
 
 japanRefineryMarker.bindPopup(`
   <div class="src-pop src-pop--wide">
-    <div class="src-pop-title tc-sky"> 日本の受入拠点</div>
+    <div class="src-pop-title"> 日本の受入拠点</div>
     <div class="src-pop-body src-pop-body--japan">
-      <strong class="tc-ink">石油備蓄：</strong>197日分（国家102＋民間91＋産油国共同4、9/29時点）<br>
-      <strong class="tc-ink">中東依存度：</strong>原油輸入の約95%<br>
-      <strong class="tc-ink">ルートA着：</strong>ENEOS向け2船 到着済み <br>
-      <strong class="tc-ink">ルートB着：</strong>3/28 太陽石油（愛媛）<br>
-      <strong class="tc-ink">ルートC着：</strong>4/25 予定 
+      <strong>石油備蓄：</strong>197日分（国家102＋民間91＋産油国共同4、9/29時点）<br>
+      <strong>中東依存度：</strong>原油輸入の約95%<br>
+      <strong>ルートA着：</strong>ENEOS向け2船 到着済み <br>
+      <strong>ルートB着：</strong>3/28 太陽石油（愛媛）<br>
+      <strong>ルートC着：</strong>4/25 予定 
     </div>
     <button onclick="document.getElementById('refinery-modal').style.display='flex'"
       class="src-pop-btn">
@@ -2520,13 +2519,13 @@ function mkName(name) {
 }
 
 L.marker([26.5,56.5],{icon:mkBadge('danger','strait')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">ホルムズ海峡 / Strait of Hormuz</div>
+  <div class="p-title">ホルムズ海峡 / Strait of Hormuz</div>
   <div class="p-body"><strong>状態：</strong>イランによる通航制限下（2026年2月末〜）。通航は一部回復（2026年10月2日時点）<br>
   <strong>通過量（開戦前）：</strong>日量約2,000万バレル（世界の石油消費の約20%）</div>
   <span class="p-badge p-badge--red">厳格統制下</span>`);
   // サウジ東西パイプライン被弾ポイント①：ポンプ施設（推定位置：リヤド西方）
 L.marker([24.2, 45.8],{icon:mkBadge('alert','hit')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">東西パイプライン ポンプ施設被弾</div>
+  <div class="p-title">東西パイプライン ポンプ施設被弾</div>
   <div class="p-body">
     <strong>日時：</strong>2026年4月8日（停戦合意から数時間後）<br>
     <strong>攻撃手段：</strong>ドローン<br>
@@ -2538,7 +2537,7 @@ L.marker([24.2, 45.8],{icon:mkBadge('alert','hit')}).addTo(map).bindPopup(`
 
 // サウジ東西パイプライン被弾ポイント②：ヤンブー港（終点・紅海側）
 L.marker([24.09, 38.05],{icon:mkBadge('alert','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">ヤンブー港 / Yanbu Terminal</div>
+  <div class="p-title">ヤンブー港 / Yanbu Terminal</div>
   <div class="p-body">
     <strong>役割：</strong>東西パイプライン終点・紅海側輸出ターミナル<br>
     <strong>現状：</strong>Aramcoがアラブライト限定に積載を絞って運用中<br>
@@ -2549,7 +2548,7 @@ L.marker([24.09, 38.05],{icon:mkBadge('alert','anchor')}).addTo(map).bindPopup(`
 
 // サウジ マニファ油田被弾
 L.marker([27.15, 49.8],{icon:mkBadge('ok','barrel')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">マニファ油田（復旧済み）</div>
+  <div class="p-title">マニファ油田（復旧済み）</div>
   <div class="p-body">
     <strong>被害：</strong>生産能力 ▲30万BPD（攻撃時）<br>
     <strong>4/12 復旧完了：</strong>30万BPD 全量回復<br>
@@ -2558,7 +2557,7 @@ L.marker([27.15, 49.8],{icon:mkBadge('ok','barrel')}).addTo(map).bindPopup(`
   <span class="p-badge p-badge--green">生産量 全面復旧</span>`);
 
 L.marker([12.6,43.4],{icon:mkBadge('alert','strait')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">バベルマンデブ海峡 / Bab-el-Mandeb</div>
+  <div class="p-title">バベルマンデブ海峡 / Bab-el-Mandeb</div>
   <div class="p-body"><strong>場所：</strong>紅海南端・イエメン沖<br>
   <strong>脅威：</strong>フーシ派が封鎖を示唆（ガリバフ発言）<br>
   <strong>影響：</strong>ルートBが通過必須の要衝<br>
@@ -2566,7 +2565,7 @@ L.marker([12.6,43.4],{icon:mkBadge('alert','strait')}).addTo(map).bindPopup(`
   <span class="p-badge p-badge--red">リスク急上昇</span>`);
 
 L.marker([25.1,56.3],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-blue">フジャイラ港（UAE）</div>
+  <div class="p-title">フジャイラ港（UAE）</div>
   <div class="p-body"><strong>位置：</strong>UAE東部・オマーン湾沿岸<br>
   <strong>パイプライン：</strong>ADCOP（アブダビ直結）終端部<br>
   <strong>輸送能力：</strong>日量 約150〜180万バレル（通常時）<br>
@@ -2576,7 +2575,7 @@ L.marker([25.1,56.3],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
   <span class="p-badge p-badge--none">ルートA 拠点</span>`);
 
 L.marker([24.1,38.1],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">ヤンブー港（サウジアラビア）</div>
+  <div class="p-title">ヤンブー港（サウジアラビア）</div>
   <div class="p-body"><strong>パイプライン：</strong>東西パイプライン（全長1,200km）<br>
   <strong>輸送能力：</strong>通常 日量約500万バレル。管の転用で約700万バレルまで拡張（EIA）<br>
   <strong>実績：</strong>3/28 太陽石油（愛媛）到着 <br>
@@ -2584,24 +2583,24 @@ L.marker([24.1,38.1],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
   <span class="p-badge p-badge--none">ルートB 拠点</span>`);
 
 L.marker([24.5,54.4],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
-  <div class="p-title tc-sky">アブダビ油田</div>
+  <div class="p-title">アブダビ油田</div>
   <div class="p-body">ADCOPパイプラインでフジャイラ港に直結。ホルムズ海峡を完全に回避した輸出が可能。</div>`);
 
 L.marker([26.3,49.8],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">サウジ東部油田</div>
+  <div class="p-title">サウジ東部油田</div>
   <div class="p-body">東西パイプライン（1,200km）でヤンブー港へ輸送。世界最大の産油設備群が集中するエリア。</div>`);
 
 L.marker([19.0,72.8],{icon:mkBadge('none','tanker')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">ムンバイ沖（積み替え）</div>
+  <div class="p-title">ムンバイ沖（積み替え）</div>
   <div class="p-body"><strong>ルートA</strong>：フジャイラからの原油をVLCCに積み替え。ENEOSホールディングスが関与。4月5日（日本）到着予定。</div>`);
 
 L.marker([2.5,104.0],{icon:mkBadge('none','tanker')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">マレーシア沖（積み替え）</div>
+  <div class="p-title">マレーシア沖（積み替え）</div>
   <div class="p-body"><strong>ルートB</strong>：ヤンブーからの原油をVLCCに積み替え。3/28着の太陽石油向けもここで積み替え。</div>`);
 
 // マラッカ海峡（長尺4本目 2026-10「ホルムズ停止後、迂回路があってもサウジの原油が日本で前年の9割に戻るまで4か月」）— ?focus=malacca と「YouTube から来た方へ」枠から開く
 const malaccaMarker = L.marker([1.5,103.5],{icon:mkBadge('none','strait')}).addTo(map).bindTooltip('マラッカ海峡', {sticky:true}).bindPopup(`
-  <div class="p-title tc-sky-light">マラッカ海峡</div>
+  <div class="p-title">マラッカ海峡</div>
   <div class="p-body">ルートA・B・D共通の通過点。世界最重要のチョークポイントの一つ。<br>
   <strong>通る荷（推定）：</strong>タンカーの推定積載量は、2026年6〜8月に前の年の同じ時期より<strong>約4分の1減</strong><br>
   <strong>日本に着いたサウジの原油：</strong>迂回路（紅海側のヤンブー）を持つサウジアラビアの原油は、4〜6月に前の年の<strong>半分ほど</strong>。前の年の9割に戻ったのは<strong>7月</strong>、ホルムズが止まって4か月後（日本に着いた月で数えた値）<br>
@@ -2609,7 +2608,7 @@ const malaccaMarker = L.marker([1.5,103.5],{icon:mkBadge('none','strait')}).addT
   <div class="p-note">出典：IMF PortWatch（2026-10-16確認、積載量は推定値・集計は本サイト）／資源エネルギー庁「石油統計」速報・確報（前の年との比は本サイトの計算）</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : 320 });
 
 L.marker([61.2,210.0],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
-  <div class="p-title tc-violet"> 米国（アラスカ）</div>
+  <div class="p-title"> 米国（アラスカ）</div>
   <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>4/25に第1便が日本到着予定。</strong></div>`);
 
 // 南鳥島（レアアース泥）— ?focus=minamitori と「YouTube から来た方へ」枠から開く
@@ -2617,35 +2616,35 @@ const minamitoriMarker = L.marker([24.28, 153.98], {
   icon: mkBadge('none','general')
 }).addTo(map).bindTooltip('南鳥島（レアアース泥）', {sticky:true}).bindPopup(`
   <div class="src-pop src-pop--wide">
-    <div class="src-pop-title tc-teal">南鳥島（東京都小笠原村）</div>
+    <div class="src-pop-title">南鳥島（東京都小笠原村）</div>
     <div class="src-pop-body src-pop-body--tight">
       周辺の排他的経済水域（EEZ）、水深約5,600mの海底にレアアースを含む泥がある。<br>
       <strong>試験：</strong>2026年1〜2月、探査船「ちきゅう」が約50トンを引き揚げ。総量の約54%がイットリウム・ジスプロシウムなどの中重レアアース。埋蔵量は公表されていない<br>
       <strong>次：</strong>2027年2月から本格採鉱試験。採算性・精製コスト・環境影響が課題<br>
-      <span class="tc-dim">出典：<a href="https://www.jamstec.go.jp/j/about/press_release/20260724/" target="_blank" rel="noopener">JAMSTEC・内閣府SIP（2026/7/24）</a>・<a href="https://scienceportal.jst.go.jp/stories/20260818_s01/" target="_blank" rel="noopener">サイエンスポータル（2026/8/18）</a></span>
+      <span class="p-src">出典：<a href="https://www.jamstec.go.jp/j/about/press_release/20260724/" target="_blank" rel="noopener">JAMSTEC・内閣府SIP（2026/7/24）</a>・<a href="https://scienceportal.jst.go.jp/stories/20260818_s01/" target="_blank" rel="noopener">サイエンスポータル（2026/8/18）</a></span>
     </div>
   </div>
 `, { maxWidth: 260, maxHeight: window.innerWidth <= 600 ? 220 : null });
 
 L.marker([-10.0,-38.0],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
-  <div class="p-title tc-purple"> ブラジル</div>
+  <div class="p-title"> ブラジル</div>
   <div class="p-body"><strong>ルートC（南米）</strong>の供給源。喜望峰→インド洋経由で日本へ。製油所の品質調整が必要。</div>`);
 
 L.marker([-34.3,18.4],{icon:mkBadge('none','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">喜望峰</div>
+  <div class="p-title">喜望峰</div>
   <div class="p-body">バベルマンデブ封鎖時のルートBの迂回経路。紅海ルートより約2週間余分。ブラジル産（ルートC南米）もここを通過。</div>`);
 
 L.marker([26.0,50.5],{icon:mkBadge('danger','hit')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">バーレーン（攻撃報告 4/4）</div>
+  <div class="p-title">バーレーン（攻撃報告 4/4）</div>
   <div class="p-body">イラン革命防衛隊が4日、バーレーン港でイスラエル関連船舶を攻撃。大規模火災が発生。UAE・クウェートにもミサイル・ドローン攻撃が発生（警戒は解除済み）。</div>
   <span class="p-badge p-badge--red">最新攻撃報告</span>`);
 
 L.marker([30.6,32.3],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-slate">スエズ運河</div>
+  <div class="p-title">スエズ運河</div>
   <div class="p-body">紅海とヨーロッパを結ぶ要衝。ルートBはバベルマンデブからアジア方面へ向かう。</div>`);
 
 L.marker([9.15,-80.19],{icon:mkName('リオ・インディオ')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">リオ・インディオ / Río Indio</div>
+  <div class="p-title">リオ・インディオ / Río Indio</div>
   <div class="p-body"><strong>位置：</strong>パナマ中部・コスタアバホ地方。ガトゥン湖の西側を並行して流れ、カリブ海へ注ぐ全長約98kmの河川<br>
   <strong>計画：</strong>運河の水不足対策として貯水池（ダム湖）を建設。<strong>8.7kmの導水トンネル</strong>で自然流下によりガトゥン湖へ送水する<br>
   <strong>規模：</strong>湛水面積4,600ha（流域の約8%）／事業費15億ドル<br>
@@ -2655,14 +2654,14 @@ L.marker([9.15,-80.19],{icon:mkName('リオ・インディオ')}).addTo(map).bin
   <div class="p-note">※地図の水色の線はOSM登録の河道。ダム本体・貯水池の位置は公表資料で座標が確認できないため未表示。</div>`);
 
 L.marker([9.24,-79.60],{icon:mkName('アラフエラ湖')}).addTo(map).bindPopup(`
-  <div class="p-title tc-sky-light">アラフエラ湖 / Lago Alajuela</div>
+  <div class="p-title">アラフエラ湖 / Lago Alajuela</div>
   <div class="p-body"><strong>位置：</strong>ガトゥン湖の上流（東側）・チャグレス川<br>
   <strong>成立：</strong>1935年完成のマッデンダムによる人造湖<br>
   <strong>役割：</strong>閘門で消費される<strong>運河用水の約45%</strong>を供給。パナマ市・コロン市の上水源も兼ねる<br>
   <strong>治水：</strong>雨季の洪水を貯留し、ガトゥン湖の氾濫リスクを抑える</div>`);
 
 L.marker([9.08,-79.68],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-slate">パナマ運河 / Panama Canal</div>
+  <div class="p-title">パナマ運河 / Panama Canal</div>
   <div class="p-body"><strong>全長：</strong>約82km（大西洋側コロン〜太平洋側バルボア）<br>
   <strong>構造：</strong>閘門式（ガトゥン／ペドロミゲル／ミラフローレス）。ガトゥン湖を最大水位差約26mで越える<br>
   <strong>役割：</strong>大西洋と太平洋を結ぶ要衝。米国東岸・メキシコ湾岸からアジアへの航路を短縮<br>
@@ -2670,7 +2669,7 @@ L.marker([9.08,-79.68],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
 
 // 津軽海峡（長尺3本目 2026-09、動画の領海図 C03-S02 を再利用）— ?focus=tsugaru と「YouTube から来た方へ」枠から開く
 const tsugaruMarker = L.marker([41.55, 140.65],{icon:mkBadge('none','strait')}).addTo(map).bindTooltip('津軽海峡', {sticky:true}).bindPopup(`
-  <div class="p-title tc-sky-light">津軽海峡 / Tsugaru Strait</div>
+  <div class="p-title">津軽海峡 / Tsugaru Strait</div>
   <div class="p-body"><strong>位置：</strong>本州と北海道のあいだ。西の日本海と東の太平洋を結ぶ<br>
   <strong>通る船：</strong>夏は1日50隻前後（2026年6〜8月平均 53.8隻）。この5年、全体の数はほとんど変わっていない<br>
   <strong>タンカーの荷（推定）：</strong>3月〜9月半ばの1日あたりの中央値で、2024年→2026年に<strong>およそ1.6倍</strong>。増えた分の半分近くは、ホルムズ海峡の通航がほぼ止まった2026年3月より前から。<strong>理由は未確認</strong><br>
@@ -2679,18 +2678,18 @@ const tsugaruMarker = L.marker([41.55, 140.65],{icon:mkBadge('none','strait')}).
   <div class="p-note">出典：IMF PortWatch（2026-09-22確認、積載量は喫水などからの推定値・集計は本サイト）／領海及び接続水域に関する法律 附則2・同施行令 別表第一・第二（e-Gov）／海岸線 Natural Earth。図をタップで拡大</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : null });
 
 L.marker([32.08, 34.78], {icon:mkBadge('none','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-blue-light"> テルアビブ / Tel Aviv</div>
+  <div class="p-title"> テルアビブ / Tel Aviv</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部・地中海沿岸<br>
   <strong>役割：</strong>イスラエルの経済・軍事中枢<br>
   <strong>状況：</strong>イランのミサイル攻撃対象として継続的に警戒中</div>`);
 
 L.marker([31.78, 35.22], {icon:mkBadge('none','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-blue-light"> エルサレム / Jerusalem</div>
+  <div class="p-title"> エルサレム / Jerusalem</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部<br>
   <strong>役割：</strong>イスラエルの首都・政治中枢</div>`);
 
 L.marker([29.55, 34.95], {icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-blue-light">エイラート / Eilat</div>
+  <div class="p-title">エイラート / Eilat</div>
   <div class="p-body"><strong>位置：</strong>イスラエル南端・紅海アカバ湾<br>
   <strong>役割：</strong>イスラエル唯一の紅海港・石油輸入の玄関口<br>
   <strong>状況：</strong>フーシ派攻撃の標的となり港湾機能が大幅低下</div>
@@ -2706,59 +2705,59 @@ L.marker([34.00,36.22],{icon:mkBadge('danger','hit')}).addTo(map)
   .bindPopup('<strong>ベカー高原（東レバノン）</strong><br>ヒズボラ軍事拠点への大規模攻撃。葬儀参列者を含む多数の民間人が犠牲に。（4/8-9）');
 
 L.marker([33.51, 36.29], {icon:mkBadge('danger','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">ダマスカス / Damascus（シリア）</div>
+  <div class="p-title">ダマスカス / Damascus（シリア）</div>
   <div class="p-body"><strong>位置：</strong>シリア首都<br>
   <strong>役割：</strong>イランの軍事物資輸送ルートの中継地<br>
   <strong>状況：</strong>イスラエルによる空爆が断続的に発生</div>`);
 
 L.marker([31.95, 35.93], {icon:mkBadge('none','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-slate">アンマン / Amman（ヨルダン）</div>
+  <div class="p-title">アンマン / Amman（ヨルダン）</div>
   <div class="p-body"><strong>位置：</strong>ヨルダン首都<br>
   <strong>役割：</strong>中東和平の仲介役・米軍基地あり<br>
   <strong>状況：</strong>イランのミサイルが領空を通過する事態が発生</div>`);
 
 L.marker([24.47, 39.61], {icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">アラムコ本社 / Saudi Aramco HQ（ダーラン）</div>
+  <div class="p-title">アラムコ本社 / Saudi Aramco HQ（ダーラン）</div>
   <div class="p-body"><strong>位置：</strong>サウジアラビア東部<br>
   <strong>役割：</strong>世界最大の石油会社・サウジ原油輸出の中枢<br>
   <strong>状況：</strong>過去にドローン攻撃を受けた実績あり・厳重警戒中</div>`);
 
 L.marker([26.43, 50.10], {icon:mkBadge('none','refinery')}).addTo(map).bindPopup(`
-  <div class="p-title tc-green">ラスタヌーラ製油所 / Ras Tanura</div>
+  <div class="p-title">ラスタヌーラ製油所 / Ras Tanura</div>
   <div class="p-body"><strong>位置：</strong>サウジアラビア東部・ペルシャ湾岸<br>
   <strong>役割：</strong>世界最大級の石油輸出ターミナル<br>
   <strong>状況：</strong>攻撃対象として最高警戒レベル</div>
   <span class="p-badge p-badge--amber">最高警戒</span>`);
 
 L.marker([26.21, 50.59], {icon:mkBadge('none','warship')}).addTo(map).bindPopup(`
-  <div class="p-title tc-blue-light"> 米第5艦隊司令部 / US 5th Fleet HQ（バーレーン）</div>
+  <div class="p-title"> 米第5艦隊司令部 / US 5th Fleet HQ（バーレーン）</div>
   <div class="p-body"><strong>位置：</strong>バーレーン・マナーマ<br>
   <strong>役割：</strong>中東・インド洋・紅海を管轄する米海軍の中枢<br>
   <strong>状況：</strong>ホルムズ危機対応の最前線司令部</div>
   <span class="p-badge p-badge--navy">米軍中枢</span>`);
 
 L.marker([25.28, 51.53], {icon:mkBadge('none','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-blue-light"> アルウデイド空軍基地 / Al Udeid Air Base（カタール）</div>
+  <div class="p-title"> アルウデイド空軍基地 / Al Udeid Air Base（カタール）</div>
   <div class="p-body"><strong>位置：</strong>カタール・ドーハ近郊<br>
   <strong>役割：</strong>中東最大の米空軍基地・CENTCOM前進司令部<br>
   <strong>状況：</strong>対イラン作戦の主要拠点・イランの攻撃対象</div>
   <span class="p-badge p-badge--navy">米軍主要拠点</span>`);
 
 L.marker([35.69, 51.39], {icon:mkBadge('danger','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red"> テヘラン / Tehran</div>
+  <div class="p-title"> テヘラン / Tehran</div>
   <div class="p-body"><strong>位置：</strong>イラン首都<br>
   <strong>役割：</strong>イラン政治・軍事の中枢<br>
   <strong>状況：</strong>米・イスラエルによる攻撃対象として警戒中</div>`);
 
 L.marker([32.66, 51.67], {icon:mkBadge('danger','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">イスファハン / Isfahan（核関連施設）</div>
+  <div class="p-title">イスファハン / Isfahan（核関連施設）</div>
   <div class="p-body"><strong>位置：</strong>イラン中部<br>
   <strong>役割：</strong>核関連施設・ウラン濃縮施設が集中<br>
   <strong>状況：</strong>イスラエルによる過去の攻撃実績あり・最高警戒</div>
   <span class="p-badge p-badge--red">核関連施設</span>`);
 
 L.marker([29.25, 50.32], {icon: mkBadge('danger','hit')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">カーグ島 / Kharg Island</div>
+  <div class="p-title">カーグ島 / Kharg Island</div>
   <div class="p-body"><strong>位置：</strong>イラン南西部・ペルシャ湾内<br>
   <strong>重要性：</strong>イラン原油輸出の約90%を担う最大ターミナル（出典：Al Jazeera・ABC News、2026年3月）<br>
   <strong>被害：</strong>空爆90回以上・民間人18人死亡<br>
@@ -2766,42 +2765,42 @@ L.marker([29.25, 50.32], {icon: mkBadge('danger','hit')}).addTo(map).bindPopup(`
   <span class="p-badge p-badge--red">空爆90回以上</span>`);
 
 L.marker([30.34, 48.30], {icon:mkBadge('danger','refinery')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">アバダン製油所 / Abadan Refinery</div>
+  <div class="p-title">アバダン製油所 / Abadan Refinery</div>
   <div class="p-body"><strong>位置：</strong>イラン南西部・シャットルアラブ川沿岸<br>
   <strong>役割：</strong>中東最大級の製油所・イランの石油精製の中核<br>
   <strong>状況：</strong>攻撃対象として警戒中</div>`);
 
 L.marker([27.18, 56.27], {icon:mkBadge('danger','anchor')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">バンダルアッバース / Bandar Abbas</div>
+  <div class="p-title">バンダルアッバース / Bandar Abbas</div>
   <div class="p-body"><strong>位置：</strong>イラン南部・ホルムズ海峡北岸<br>
   <strong>役割：</strong>イラン海軍主要基地・海峡の通航制限の拠点<br>
   <strong>状況：</strong>革命防衛隊の海峡管理拠点</div>`);
 
 L.marker([25.87, 55.03], {icon:mkBadge('danger','general')}).addTo(map).bindPopup(`
-  <div class="p-title tc-amber">アブムーサ島 / Abu Musa Island</div>
+  <div class="p-title">アブムーサ島 / Abu Musa Island</div>
   <div class="p-body"><strong>位置：</strong>ホルムズ海峡・UAE沖<br>
   <strong>役割：</strong>イランが実効支配・海峡の通航制限の前線基地</div>`);
 
 L.marker([24.35, 54.47], {icon:mkBadge('danger','hit')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">ムサッファ港（UAE）/ Musaffah</div>
+  <div class="p-title">ムサッファ港（UAE）/ Musaffah</div>
   <div class="p-body"><strong>被害：</strong>4/6 波状攻撃・負傷者複数<br>
   <strong>状況：</strong>警戒解除済みも被害継続</div>
   <span class="p-badge p-badge--red">攻撃報告済み</span>`);
 
 L.marker([25.37, 55.42], {icon:mkBadge('danger','hit')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">シャルジャ港（UAE）/ Sharjah</div>
+  <div class="p-title">シャルジャ港（UAE）/ Sharjah</div>
   <div class="p-body"><strong>被害：</strong>4/6 ミサイル・ドローン攻撃<br>
   <strong>状況：</strong>警戒解除済み</div>
   <span class="p-badge p-badge--red">攻撃報告済み</span>`);
 
 L.marker([29.37, 47.98], {icon:mkBadge('danger','hit')}).addTo(map).bindPopup(`
-  <div class="p-title tc-red">KPC本部（クウェート）</div>
+  <div class="p-title">KPC本部（クウェート）</div>
   <div class="p-body"><strong>被害：</strong>4/6 直撃「深刻な物質的損害」・海水淡水化施設も損傷<br>
   <strong>状況：</strong>警戒継続中</div>
   <span class="p-badge p-badge--red">直撃確認</span>`);
 
 L.marker([28.55, 34.88], {icon:mkBadge('none','tanker')}).addTo(map).bindPopup(`
-  <div class="p-title tc-sky-light">アカバ湾 / Gulf of Aqaba</div>
+  <div class="p-title">アカバ湾 / Gulf of Aqaba</div>
   <div class="p-body"><strong>位置：</strong>紅海北部・イスラエル・ヨルダン・サウジ・エジプトに囲まれた湾<br>
   <strong>役割：</strong>イスラエルのエイラート港への唯一のアクセス<br>
   <strong>状況：</strong>フーシ派の攻撃により実質的に封鎖状態</div>`);

@@ -1,25 +1,12 @@
 /* ============================================================
-   デザイントークン（課題46 D2・2026-10-20）
-   /・/hormuz/・記事・/archive/ が読む。値は D2 の時点の見た目のまま。
-   D3 ではここの値を tools/site-redesign-tokens.css（鉄と錆止め）へ寄せる。
-   法務ページ・用語集・404（明るい地）は /assets/css/page.css が自分で持つ。
-   ============================================================ */
-
-/* ============================================================
-   デザイントークン（フェーズ0a / 2026-09-04 追加）
-   ------------------------------------------------------------
-   目的: font-size が 447箇所（うちインライン style 306箇所）に
-   散在し「文字サイズを一括で調整する」ことが不可能だった状態を解消する。
-
-   このブロックは「定義の追加のみ」で、既存CSSは書き換えていない。
-   したがって、この時点では表示は一切変化しない。
-
-   フェーズ0b で既存の値をこれらの変数へ置換し、
-   フェーズ2 では下記の数値（および clamp 化）だけを書き換えることで
-   サイト全体の文字サイズを一括調整できるようにする。
-
-   数値は 2026-09-04 時点の実測分布に基づき、現状の見た目を維持する値。
-   （0.65〜0.78rem に11段階が密集していたものを7段階へ集約する前提）
+   デザイントークン（課題46）
+   全ページが読む（法務ページ・用語集・404 は page.css より前に読む）。
+   色と書体は D3「鉄と錆止め」（設計書 tools/site-redesign-design.md §4・§4-1・§4-2。値の元は tools/site-redesign-tokens.css）。
+   D3 の間は新しい値を :root.theme-iron に置き、切り替えたページだけに効かせていた。全ページを切り替えたので
+   :root へまとめ、使われなくなった古いトークン（D2 の時点の --c-*・記事の --color-*・/archive/ の --arc-*）を外した（D3 PR 7a・2026-10-22）。
+   各ページは ?v=20261022 を付けて読む（theme-iron を外した HTML が、ブラウザに残った古い tokens.css〈:root.theme-iron の形〉と組むと
+   古い色に戻るため。GitHub Pages の max-age は 600 秒）。次に tokens.css の名前を変えるような直しをするときも、この印を進める
+   トークンにない色を CSS や HTML に直に書かない（tools/validate_daily.py の WARN は D3 PR 7b で足す）
    ============================================================ */
 :root {
   /* --- タイポグラフィ ---
@@ -53,82 +40,7 @@
   --space-2xl: 3rem;
   --space-3xl: 4rem;
 
-  /* --- カラー（2026-09-04 実測の頻出色から定義。Tailwind slate/red/amber/sky 系） --- */
-  --c-text:      #e2e8f0;  /* 主要テキスト（132箇所） */
-  --c-text-sub:  #cbd5e1;  /* 副次テキスト（37箇所） */
-  --c-text-mute: #94a3b8;  /* 補助・注記（94箇所） */
-  --c-text-dim:  #64748b;  /* 最も弱いテキスト（93箇所） */
-
-  --c-danger:        #ef4444;  /* 危険・封鎖 */
-  --c-danger-light:  #f87171;  /* 危険（明・116箇所で最頻） */
-  --c-danger-pale:   #fca5a5;  /* 危険（淡） */
-  --c-warn:          #fbbf24;  /* 警戒・注意（83箇所） */
-  --c-warn-deep:     #f59e0b;
-  --c-warn-pale:     #fde68a;
-  --c-warn-soft:     #efe2b6;  /* 文章に使う黄色（淡）。見出し・ラベル・短い印は --c-warn のまま（2026-10-11） */
-  --c-accent:        #38bdf8;  /* アクセント・リンク（55箇所） */
-  --c-figure:    #9ec3cf;  /* 大きな数字（鋼）。10/20 決定（D3 PR 2）。地の上 9.8・面の上 7.3。状態の色と取り違えない冷たい色 */
-  --c-on-accent: #14110a;  /* 差し色の面（ボタン）の上の文字 4.7 */
-  --c-accent-pale:   #7dd3fc;
-  --c-info:          #93c5fd;
-  --c-ok:            #4ade80;  /* 正常・稼働 */
-  --c-ok-alt:        #34d399;
-  --c-ok-pale:       #86efac;
-  --c-special:       #a78bfa;  /* 特別枠・ルートC */
-
-  --c-surface:       #1e293b;  /* カード背景 */
-  --c-surface-deep:  #1e3a5f;  /* 濃い面 */
-  --c-bg:            #0a1628;  /* ハブ（/）の地。/hormuz/ の地は #071828 の直書き */
-
-  /* --- ブレークポイント方針（CSSの @media では変数を使えないため覚書） ---
-     フェーズ2 2-c（2026-09-18）で 480 / 600 / 640 / 768 / 860px の5種を、
-     役割ごとに次の3つへ整理した。境界の値は「以下（max-width）」側に含める。
-       600px  : スマホ縦の詰め（余白・小物）       … max-width:600px  / min-width:601px
-       768px  : 文字サイズ（絶対ルールの html 18px） … max-width:768px  / min-width:769px
-       1023px : 表・地図凡例の狭幅対応、PC との境 … max-width:1023px / min-width:1024px
-     カラム数: 〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列（末尾のフェーズ2ブロック）
-     タブレット（iPad mini 縦 744px・iPad 縦 768〜834px）は 2列 になる。 */
-
-  /* --- 記事（/hormuz/articles/・article.css）の色。値は /hormuz/ と少し違う（D3 でそろえる） --- */
-  --color-bg: #071828;
-  --color-surface: rgba(255,255,255,0.03);
-  --color-surface-strong: rgba(255,255,255,0.05);
-  --color-text: #e0e8f0;
-  --color-body: #cbd5e1;
-  --color-muted: #94a3b8;
-  --color-border: rgba(255,255,255,0.1);
-  --color-accent: #f87171;
-  --color-accent-gold: #fbbf24;
-  --color-link: #38bdf8;
-
-  /* --- /archive/ の色と書体（元はページ内の --bg・--ink などの名前。D2 で --arc- を付けた） --- */
-  --arc-bg:#0b1220;
-  --arc-bg-raised:#0f1830;
-  --arc-ink:#dbe4f0;
-  --arc-muted:#8b9bb4;
-  --arc-muted-dim:#5c6b85;
-  --arc-line:rgba(219,228,240,0.09);
-  --arc-line-strong:rgba(219,228,240,0.16);
-  --arc-amber:#c9a869;
-  --arc-amber-dim:rgba(201,168,105,0.14);
-  --arc-amber-line:rgba(201,168,105,0.35);
-  --arc-alert:#e07856;
-  --arc-link:#7fb8e0;
-  --arc-phase:#7fb8c9;
-  --arc-phase-dim:rgba(127,184,201,0.12);
-  --arc-phase-line:rgba(127,184,201,0.4);
-  --arc-serif: "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
-  --arc-sans: -apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
-  --arc-mono: "SF Mono","Menlo","Consolas",monospace;
-}
-
-/* ============================================================
-   課題46 D3「鉄と錆止め」（2026-10-20〜）
-   値は tools/site-redesign-tokens.css と同じ。名前は上のいまの --c-* と重なるので、
-   切り替えたページ（<html class="theme-iron">）の中でだけ効かせる。切り替えていないページの見た目は変わらない。
-   全ページを切り替えたら :root へ移し、上の古いトークンと theme-iron を外す（設計書 §5-2 の PR 7）
-   ============================================================ */
-:root.theme-iron{
+  /* --- 色（§4）--- */
   --c-bg:        #111516;  /* 地 */
   --c-surface:   #272e30;  /* 面（帯・札の下地）。10/20 に #1b2021 から明るくした（D3 PR 2） */
   --c-text:      #e8e5dc;  /* 本文            14.6（面の上 11.0） */
@@ -143,6 +55,8 @@
   --c-on-alert:  #14110a;  /* 警戒の札の文字 6.3 */
   --c-on-warn:   #14110a;  /* 注記の札の文字 10.2 */
   --c-on-ok:     #14110a;  /* 平常の札の文字 5.6（白は 3.4 で不足） */
+  --c-figure:    #9ec3cf;  /* 大きな数字（鋼）。10/20 決定（D3 PR 2）。地の上 9.8・面の上 7.3。状態の色と取り違えない冷たい色 */
+  --c-on-accent: #14110a;  /* 差し色の面（ボタン）の上の文字 4.7 */
   /* 書体（§4-1）。本文は BIZ UDPゴシック、大きな数字と段の見出しの英字は IBM Plex Sans Condensed */
   --f-body:   'BIZ UDPGothic','Hiragino Sans','Yu Gothic UI',sans-serif;
   --f-figure: 'IBM Plex Sans Condensed','BIZ UDPGothic',sans-serif;
@@ -171,4 +85,13 @@
   --map-route-old:    #7f8582;  /* 旧ルート */
   --map-route-canal:  #7fe6f2;  /* スエズ・パナマ運河 */
   --map-route-casing: #0d171d;  /* 線の下の細い縁（線の太さ＋1px・不透明度 0.85） */
+
+  /* --- ブレークポイント方針（CSSの @media では変数を使えないため覚書） ---
+     フェーズ2 2-c（2026-09-18）で 480 / 600 / 640 / 768 / 860px の5種を、
+     役割ごとに次の3つへ整理した。境界の値は「以下（max-width）」側に含める。
+       600px  : スマホ縦の詰め（余白・小物）       … max-width:600px  / min-width:601px
+       768px  : 文字サイズ（絶対ルールの html 18px） … max-width:768px  / min-width:769px
+       1023px : 表・地図凡例の狭幅対応、PC との境 … max-width:1023px / min-width:1024px
+     カラム数: 〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列（末尾のフェーズ2ブロック）
+     タブレット（iPad mini 縦 744px・iPad 縦 768〜834px）は 2列 になる。 */
 }

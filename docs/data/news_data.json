@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月22日 07:33 日本時間JST",
+  "updated": "2026年10月23日 07:43 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-seven-ships-1022",
+      "title": "IRGC「船7隻が被弾」と主張——ペルシャ湾北部で積み替え中の4隻と海峡西側で機雷に接触した3隻、独立した確認なし・UKMTOに対応する警報なし",
+      "body": "gCaptain（10/22）は、IRGCが木曜（10/22）に、一夜のうちに商船7隻が被弾したと主張したと伝える（原文は「seven commercial vessels were struck overnight」）。内訳は、ペルシャ湾北部で船から船への原油の積み替え中の4隻が同時に攻撃され、ホルムズ海峡の西側で3隻が機雷に接触したというもの。同記事は、7件のいずれも独立した確認はなく、UKMTOは主張に対応する新しい警報を出していないと書く（原文は「has not issued new incident reports corresponding to the claims」）。Al Jazeera（10/22）によると、米中央軍の報道官は機雷の主張を誤りとし、海峡は開いていて船舶の95%が通過していると述べた。トランプ大統領はTruth Socialで、イランが原油価格を押し上げるために「fake hits, mines, and everything else」を作っていると投稿した（米側の主張）。船名・船主は公表されておらず、発生時刻は「overnight」とだけ書かれている。",
+      "sourceLabel": "gCaptain・Al Jazeera（10/22）",
+      "date": "2026年10月22日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/iran-claims-more-ships-struck-near-hormuz-as-trump-accuses-tehran-of-faking-hits/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oil-close-1022",
+      "title": "原油10/22終値：ブレント12月物113.17ドル（+4.35ドル）、WTI12月物99.47ドル（+2.32ドル）",
+      "body": "Newsquawk（10/22 20:37 UTC）は、WTI（Z6）が2.32ドル高の99.47ドル、ブレント（Z6）が4.35ドル高の113.17ドルで清算されたと伝える（原文は「WTI (Z6) SETTLED USD 2.32 HIGHER AT 99.47/BBL; BRENT (Z6) SETTLED USD 4.35 HIGHER AT 113.17/BBL」）。Rigzone配信のBloomberg記事（10/22）も「Brent for December settlement climbed 4% to settle at $113.17 a barrel」「WTI for December delivery advanced 2.4% to settle at $99.47 a barrel in New York」と書き、2つの出典で終値が一致した。Newsquawkは上昇の材料として「renewed Houthi attacks on Saudi Arabia」を挙げ、フーシ派がリヤドの国防省とヤンブーのアラムコ施設を攻撃したと述べたと書く（サウジ側の確認は確認できない）。",
+      "sourceLabel": "Newsquawk・Rigzone（Bloomberg）（10/22）",
+      "date": "2026年10月22日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.newsquawk.com/headlines/us-market-wrap-tech-hit-on-ai-concerns-while-middle-east-tensions-grow",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto-179-1021",
       "title": "UKMTO警報179：オマーン・ブハの西11海里でタンカーが飛翔体で被弾・火災は鎮火——乗組員は全員無事、船名・攻撃主体は不明",
@@ -10,7 +30,7 @@
       "date": "2026年10月21日（現地）",
       "label": "海上",
       "url": "https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-ukmto-180-1020",
@@ -21,29 +41,22 @@
       "label": "海上",
       "url": "https://www.arabtimesonline.com/news/tanker-struck-by-unknown-projectile-southeast-of-iraqs-al-faw-ukmto/",
       "isLatest": false
-    },
-    {
-      "id": "latest-houthi-aden-1021",
-      "title": "フーシ派「アデンのバドル基地のサウジ作戦室を弾道ミサイルで攻撃」と主張——政府側は空港が標的と説明、政府・連合軍の確認なし",
-      "body": "Al Jazeera（10/21）は、フーシ派の軍報道官が「Our armed forces were able to target the Saudi enemy’s operations room in the Badr camp in Aden with a ballistic missile」と述べたと伝える。イエメン政府側の説明では、弾道ミサイル1発がアデン国際空港を狙い、ムカッラの空港にミサイル3発が着弾した。同記事は「There was no immediate comment on the claim from the Yemeni government or the Saudi-led coalition」と書く。連合軍の報道官は、サウジに向けて発射されたドローン4機を迎撃・破壊したと述べた。",
-      "sourceLabel": "Al Jazeera（10/21）",
-      "date": "2026年10月21日（現地）",
-      "label": "攻撃",
-      "url": "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-close-1021",
-      "title": "原油10/21終値：ブレント12月物108.82ドル（+0.03ドル）、WTI12月物97.15ドル（−0.67ドル）",
-      "body": "Financial News（韓国・10/22 04:49掲載）は、WTIが「settled down $0.67 (0.68%) at $97.15 a barrel」、ブレントが「ended the session up $0.03 (0.03%) at $108.82 a barrel」と伝える。Newsquawk（10/21 20:51 UTC）も、WTI（Z6）が0.67ドル安の97.15ドル、ブレント（Z6）が0.03ドル高の108.82ドルで引けたと書き、2つの出典で終値が一致した。Financial Newsは、ホルムズ海峡をめぐる緊張が高まり、中東の石油供給の混乱への懸念が続いたと書く。",
-      "sourceLabel": "Financial News・Newsquawk（10/21）",
-      "date": "2026年10月21日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://en.fnnews.com/news/202610220446553314",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-irgc-seven-1022",
+      "titleJa": "【Al Jazeera】イラン「船7隻がホルムズ海峡で被弾」と主張——米中央軍は機雷の主張を誤りと説明、海峡は開いていて95%が通過と",
+      "titleEn": "Iran says seven ships hit in Hormuz Strait (Al Jazeera, Oct 22)",
+      "title": "【Al Jazeera】イラン「船7隻がホルムズ海峡で被弾」と主張——米中央軍は機雷の主張を誤りと説明、海峡は開いていて95%が通過と",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月22日（現地）",
+      "summary": "Al Jazeera（10/22）は、IRGCが石油タンカー7隻がホルムズ海峡で被弾して損傷したと主張したと伝える。4隻は原油を積み替え中に標的となって夜間に炎上し、残る3隻は機雷に接触して航行不能になったという。米中央軍の報道官は機雷の主張を誤りとし、海峡は開いていて船舶の95%が通過していると述べた。記事は主張を独立に検証できていないと書く。",
+      "url": "https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-aden-1021",
       "titleJa": "【Al Jazeera】フーシ派がアデンのサウジ作戦室を弾道ミサイルで攻撃したと主張——政府側は空港が標的と説明、政府・連合軍の確認はなし",
@@ -55,7 +68,7 @@
       "date": "2026年10月21日（現地）",
       "summary": "Al Jazeera（10/21）は、フーシ派がアデンのバドル基地にあるサウジの作戦室を弾道ミサイルで攻撃したと主張したが、政府・連合軍のコメントはなく、政府側はミサイル1発がアデン国際空港を狙い、ムカッラの空港に3発が着弾したと説明したと伝える。連合軍はサウジに向けたドローン4機を迎撃したと述べた。",
       "url": "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-gulfnews-araghchi-1021",
@@ -1986,6 +1999,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月23日",
+      "items": [
+        {
+          "id": "latest-houthi-aden-1021",
+          "title": "フーシ派「アデンのバドル基地のサウジ作戦室を弾道ミサイルで攻撃」と主張——政府側は空港が標的と説明、政府・連合軍の確認なし",
+          "body": "Al Jazeera（10/21）は、フーシ派の軍報道官が「Our armed forces were able to target the Saudi enemy’s operations room in the Badr camp in Aden with a ballistic missile」と述べたと伝える。イエメン政府側の説明では、弾道ミサイル1発がアデン国際空港を狙い、ムカッラの空港にミサイル3発が着弾した。同記事は「There was no immediate comment on the claim from the Yemeni government or the Saudi-led coalition」と書く。連合軍の報道官は、サウジに向けて発射されたドローン4機を迎撃・破壊したと述べた。",
+          "sourceLabel": "Al Jazeera（10/21）",
+          "date": "2026年10月21日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-close-1021",
+          "title": "原油10/21終値：ブレント12月物108.82ドル（+0.03ドル）、WTI12月物97.15ドル（−0.67ドル）",
+          "body": "Financial News（韓国・10/22 04:49掲載）は、WTIが「settled down $0.67 (0.68%) at $97.15 a barrel」、ブレントが「ended the session up $0.03 (0.03%) at $108.82 a barrel」と伝える。Newsquawk（10/21 20:51 UTC）も、WTI（Z6）が0.67ドル安の97.15ドル、ブレント（Z6）が0.03ドル高の108.82ドルで引けたと書き、2つの出典で終値が一致した。Financial Newsは、ホルムズ海峡をめぐる緊張が高まり、中東の石油供給の混乱への懸念が続いたと書く。",
+          "sourceLabel": "Financial News・Newsquawk（10/21）",
+          "date": "2026年10月21日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://en.fnnews.com/news/202610220446553314",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月22日",
       "items": [

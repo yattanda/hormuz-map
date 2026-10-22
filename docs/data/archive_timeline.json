@@ -3478,6 +3478,29 @@
           "sourceLabel": "Financial News・Newsquawk（10/21）"
         }
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "dateLabel": "2026/10/23 07:43",
+      "blockadeDay": 238,
+      "summary": "【重大更新】IRGCが10/22に商船7隻の被弾を主張（ペルシャ湾北部で積み替え中の4隻・海峡西側で機雷に接触した3隻。gCaptain・Al Jazeera）：独立した確認はなく、UKMTOは主張に対応する警報を出していない。米中央軍の報道官は機雷の主張を誤りと述べ、トランプ大統領はイランが偽の被害を作っていると投稿した（米側の主張）・UKMTO公式に10/21 21:07 JST発行の警報179より新しい警報なし（10/23 07:37 JST取得）・原油は10/22終値でブレント12月物113.17ドル（+4.35ドル）、WTI12月物99.47ドル（+2.32ドル）（Rigzone〈Bloomberg〉とNewsquawkで一致）・フーシ派はリヤドの国防省とヤンブーのアラムコ施設を攻撃したと述べたが、サウジの確認は確認できず（Newsquawk）・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・MT ST 3は主要通信社の記事を引き続き確認できず（Gulf Newsはインド海運相の発言として10/16の被弾を伝える。UKMTO公式の直近3日分に該当なし）・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機238日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（機雷）",
+      "relatedNews": [
+        {
+          "title": "IRGC「船7隻が被弾」と主張——ペルシャ湾北部で積み替え中の4隻と海峡西側で機雷に接触した3隻、独立した確認なし・UKMTOに対応する警報なし",
+          "url": "https://gcaptain.com/iran-claims-more-ships-struck-near-hormuz-as-trump-accuses-tehran-of-faking-hits/",
+          "sourceLabel": "gCaptain（10/22）"
+        },
+        {
+          "title": "イラン「船7隻がホルムズ海峡で被弾」と主張——米中央軍は機雷の主張を誤りと説明、海峡は開いていて95%が通過と",
+          "url": "https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response",
+          "sourceLabel": "Al Jazeera（10/22）"
+        },
+        {
+          "title": "原油10/22終値：ブレント12月物113.17ドル（+4.35ドル）、WTI12月物99.47ドル（+2.32ドル）",
+          "url": "https://www.newsquawk.com/headlines/us-market-wrap-tech-hit-on-ai-concerns-while-middle-east-tensions-grow",
+          "sourceLabel": "Newsquawk・Rigzone（Bloomberg）（10/22）"
+        }
+      ]
     }
   ]
 }

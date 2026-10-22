@@ -1238,7 +1238,13 @@ EMOJI_ALLOWED_PAGE = {"corrections/index.html": set("🇺🇸🌍🚢")}
 # 直書きの色（16進・rgb()・hsl()・色名）。トークン（tokens.css）を使う
 PAT_COLOR = re.compile(r"#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3,4}\b|\b(?:rgba?|hsla?)\([^)]*\)")
 PAT_COLOR_NAME = re.compile(r"\b(?:white|black|red|blue|green|yellow|orange|gray|grey|navy|silver|purple|pink)\b", re.I)
-PAT_JS_COLOR = re.compile(r"""["'`][^"'`\n]*?(#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b|(?:rgba?|hsla?)\([^)]*\))""")
+PAT_JS_COLOR = re.compile(r"""["'`][^"'`\n]*?(#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3,4}\b|(?:rgba?|hsla?)\([^)]*\))""")
+# JS の色名は、色を渡す所（style の値・setProperty・Leaflet の color / fillColor・テンプレートの中の CSS）だけを見る
+# （文の中の英単語 Red Sea などを拾わないため）
+PAT_JS_COLOR_NAME = re.compile(
+    r"""(?:\.style\.\w+\s*=\s*|setProperty\(\s*['"][\w-]+['"]\s*,\s*|"""
+    r"""\b(?:color|fillColor|background(?:-color|Color)?|fill|stroke|border(?:-\w+|Color)?|outline(?:-color|Color)?)\s*:\s*)"""
+    r"""['"`]?\s*((?:white|black|red|blue|green|yellow|orange|gray|grey|navy|silver|purple|pink)\b)""", re.I)
 # 地図の色（設計書 §4 の10色の外）：CSS の規則の選択子で名指しする
 # hub.css のハブの地図の陸と海岸（PR 2）・hormuz.css の CARTO に戻したときだけ出る海と国の名前（J1 で戻す道を残す）
 CSS_COLOR_ALLOWED = {("hub.css", ".hub-map-land"), ("hormuz.css", ".map-label"),
@@ -1370,8 +1376,10 @@ def check_colors() -> None:
         js = "".join(re.findall(r"<script\b[^>]*>(.*?)</script\b[^>]*>", text, flags=re.S | re.I))
         allowed = JS_MAP_CARTO_COLORS if rel == "hormuz/index.html" else set()
         bad += [f"{rel} JS {c}" for c in PAT_JS_COLOR.findall(js) if c.lower() not in allowed]
+        bad += [f"{rel} JS {c}" for c in PAT_JS_COLOR_NAME.findall(js)]
     for path in sorted((ROOT / "docs" / "assets" / "js").glob("*.js")):
-        bad += [f"assets/js/{path.name} {c}" for c in PAT_JS_COLOR.findall(path.read_text(encoding="utf-8"))]
+        js = path.read_text(encoding="utf-8")
+        bad += [f"assets/js/{path.name} {c}" for c in PAT_JS_COLOR.findall(js) + PAT_JS_COLOR_NAME.findall(js)]
     if bad:
         warn(f"トークン外の色の直書きが {len(bad)}か所あります: {'／'.join(bad[:5])}。"
              "色は tokens.css の変数（var(--c-*)・地図は var(--map-*)）で書く（スキル site-design「色」）")

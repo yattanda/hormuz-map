@@ -6,7 +6,7 @@
    :root へまとめ、使われなくなった古いトークン（D2 の時点の --c-*・記事の --color-*・/archive/ の --arc-*）を外した（D3 PR 7a・2026-10-22）。
    各ページは ?v=20261022 を付けて読む（theme-iron を外した HTML が、ブラウザに残った古い tokens.css〈:root.theme-iron の形〉と組むと
    古い色に戻るため。GitHub Pages の max-age は 600 秒）。次に tokens.css の名前を変えるような直しをするときも、この印を進める
-   トークンにない色を CSS や HTML に直に書かない（tools/validate_daily.py の WARN は D3 PR 7b で足す）
+   トークンにない色を CSS や HTML に直に書かない（tools/validate_daily.py の check_colors() が WARN を出す・D3 PR 7b）
    ============================================================ */
 :root {
   /* --- タイポグラフィ ---

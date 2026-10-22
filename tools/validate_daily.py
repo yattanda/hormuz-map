@@ -1227,6 +1227,158 @@ def check_categories(html: str, news: dict | None) -> None:
             ok(f"news_data.json の latest の先頭の label は分類の語（{first.get('label')}）")
 
 
+# ── 見た目の決まり（課題46 D3 PR 7b・2026-10-22 追加。設計書 §6・スキル site-design）──────────
+# 絵文字：頭だけでなく文の中も見る。矢印（←→↑↓ など）と ▶◀◈▲▼◆ のような図形の記号は絵文字に数えない
+PAT_EMOJI_ANY = re.compile(r"[\U0001F000-\U0001FAFF☀-➿⌚⌛⏩-⏺⭐⭕⬛⬜]")
+# 絵文字でも残してよい記号（どのページでも）。🅐〜🅓＝シナリオ（PR 5b-1）・✕＝閉じるボタン・
+# ★＝日本の受入拠点の説明・✦＝トランプ声明の枠（PR 7 の Q6。▶◀◈ と同じく記号として残す）
+EMOJI_ALLOWED = set("🅐🅑🅒🅓✕★✦")
+# ページごとの例外。/corrections/ は過去の表示をそのまま引用した訂正の記録（直すと訂正の中身が変わる）
+EMOJI_ALLOWED_PAGE = {"corrections/index.html": set("🇺🇸🌍🚢")}
+# 直書きの色（16進・rgb()・hsl()・色名）。トークン（tokens.css）を使う
+PAT_COLOR = re.compile(r"#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3,4}\b|\b(?:rgba?|hsla?)\([^)]*\)")
+PAT_COLOR_NAME = re.compile(r"\b(?:white|black|red|blue|green|yellow|orange|gray|grey|navy|silver|purple|pink)\b", re.I)
+PAT_JS_COLOR = re.compile(r"""["'`][^"'`\n]*?(#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b|(?:rgba?|hsla?)\([^)]*\))""")
+# 地図の色（設計書 §4 の10色の外）：CSS の規則の選択子で名指しする
+# hub.css のハブの地図の陸と海岸（PR 2）・hormuz.css の CARTO に戻したときだけ出る海と国の名前（J1 で戻す道を残す）
+CSS_COLOR_ALLOWED = {("hub.css", ".hub-map-land"), ("hormuz.css", ".map-label"),
+                     ("hormuz.css", ".map-label--country"), ("hormuz.css", ".map-label--sea")}
+# /hormuz/ の JS で、地図を CARTO に戻したとき（BASEMAP === 'carto'）だけ使う国の面・海岸・川の色
+JS_MAP_CARTO_COLORS = {"#2a4a6a", "#1e3a7a", "#1e3d28", "#2e5a3a", "#3b82f6", "#0a1b33", "#60a5fa"}
+
+
+def _emoji_hits(text: str, allowed: set[str]) -> list[str]:
+    return [c for c in PAT_EMOJI_ANY.findall(text) if c not in allowed]
+
+
+def check_emoji(news: dict | None, log) -> None:
+    """表示される文の中の絵文字（頭以外も）と、その日に足したデータの絵文字（WARN）。
+
+    頭の絵文字は check_categories() が NG で止める。ここは文の中・固定の部分・ほかのページまで広く見る。
+    - docs/ の全ページの、表示される文（<script>・<style>・コメントを除く）と title・alt・aria-label
+    - news_data.json（latest・osint）と update_log.json のうち、直前のコミットに無い項目
+      （git で比べられないときは latest・osint の先頭と update_log の先頭）
+    過去のデータの絵文字は書き換えず、表示のときに読み替える決まり（設計書 §6）なので、古い項目は見ない。
+    /hormuz/ の JS にある絵文字は、その読み替えの表なので見ない。
+    """
+    pages = []
+    for path in sorted((ROOT / "docs").rglob("*.html")):
+        rel = path.relative_to(ROOT / "docs").as_posix()
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            warn(f"docs/{rel} を読めません（絵文字の検査）")
+            continue
+        bi = text.find("<body")
+        head, body = (text[:bi], text[bi:]) if bi >= 0 else ("", text)
+        body = re.sub(r"<script\b[^>]*>.*?</script\b[^>]*>|<style\b[^>]*>.*?</style\b[^>]*>|<!--.*?-->", "", body, flags=re.S | re.I)
+        shown = re.sub(r"<[^>]+>", " ", body) + " ".join(re.findall(r'\s(?:title|alt|aria-label)="([^"]*)"', body))
+        shown += " ".join(re.findall(r"<title>(.*?)</title>", head, re.S))
+        hits = _emoji_hits(shown, EMOJI_ALLOWED | EMOJI_ALLOWED_PAGE.get(rel, set()))
+        if hits:
+            pages.append(f"{rel} {len(hits)}個（{''.join(sorted(set(hits))[:6])}）")
+    if pages:
+        warn(f"表示される文に絵文字があります: {'・'.join(pages[:5])}。語か、アイコン（docs/assets/icons/icons.svg）で書く。"
+             "残してよいのは 🅐〜🅓・✕・★・✦ と矢印・▶◀◈ だけ（スキル site-design「アイコン」）")
+    else:
+        ok("全ページの表示される文に絵文字なし（🅐〜🅓・✕・★・✦・矢印・/corrections/ の引用を除く）")
+
+    # その日に足したデータ。直前のコミットに無い項目を新しい項目とみなす
+    import subprocess
+    def at_head(rel: str):
+        try:
+            r = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, timeout=20)
+            return json.loads(r.stdout.decode("utf-8")) if r.returncode == 0 else None
+        except Exception:  # git が無い・壊れた JSON など
+            return None
+    new = []
+    if isinstance(news, dict):
+        prev = at_head("docs/data/news_data.json")
+        for key in ("latest", "osint"):
+            items = [x for x in news.get(key) or [] if isinstance(x, dict)]
+            if isinstance(prev, dict):
+                seen = {x.get("id") for x in prev.get(key) or [] if isinstance(x, dict)}
+                items = [x for x in items if x.get("id") not in seen]
+            else:
+                items = items[:1]
+            new += [(f"news_data.json {key} / {x.get('id', '?')}", x) for x in items]
+    if isinstance(log, list):
+        prev = at_head("docs/data/update_log.json")
+        items = [x for x in log if isinstance(x, dict)]
+        if isinstance(prev, list):
+            seen = {json.dumps(x, ensure_ascii=False, sort_keys=True) for x in prev}
+            items = [x for x in items if json.dumps(x, ensure_ascii=False, sort_keys=True) not in seen]
+        else:
+            items = items[:1]
+        new += [(f"update_log.json {x.get('date', '?')}", x) for x in items]
+    bad = []
+    for label, item in new:
+        text = " ".join(v for k, v in item.items() if k not in ("id", "url") and isinstance(v, str))
+        hits = _emoji_hits(text, EMOJI_ALLOWED)
+        if hits:
+            bad.append(f"{label}（{''.join(sorted(set(hits))[:6])}）")
+    if bad:
+        warn(f"その日に足したデータに絵文字があります: {'・'.join(bad[:5])}。分類は label の語で、国は国名で書く"
+             "（daily-site-update「分類の札」）")
+    else:
+        ok(f"その日に足したデータに絵文字なし（news_data.json・update_log.json の新しい項目 {len(new)}件）")
+
+
+def check_colors() -> None:
+    """トークン外の色の直書き（WARN）。色は docs/assets/css/tokens.css の変数だけを使う（スキル site-design「色」）。
+
+    - docs/assets/css/*.css（tokens.css を除く）。地図の色は CSS_COLOR_ALLOWED で規則ごとに名指し
+    - docs/ の全ページの <style>・style=""・fill・stroke などの属性（<meta name="theme-color"> は CSS 変数を使えないので見ない）
+    - docs/ の全ページの JS と docs/assets/js/*.js の文字列の中の色。/hormuz/ の CARTO 用の色（JS_MAP_CARTO_COLORS）は除く
+    Leaflet 本体（docs/assets/vendor/）は見ない。日次は CSS に触らないが、修正の PR で古い色が戻るのを止める。
+    """
+    def css_hits(css: str) -> list[tuple[str, str]]:
+        """(選択子, 色) の組を返す。値の側だけを見る（.t-blue のようなクラス名は色に数えない）"""
+        out = []
+        css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+        for sel, decls in re.findall(r"([^{}]*)\{([^{}]*)\}", css):  # @media の中も、内側の規則だけ拾える
+            for val in re.findall(r":([^;{}]*)", decls):
+                val = re.sub(r"var\([^)]*\)|url\([^)]*\)", "", val)
+                out += [(sel.strip(), c) for c in PAT_COLOR.findall(val) + PAT_COLOR_NAME.findall(val)]
+        return out
+
+    bad = []
+    n_css = 0
+    for path in sorted((ROOT / "docs" / "assets" / "css").glob("*.css")):
+        if path.name == "tokens.css":
+            continue
+        n_css += 1
+        for sel, c in css_hits(path.read_text(encoding="utf-8")):
+            if any((path.name, s.strip()) in CSS_COLOR_ALLOWED for s in sel.split(",")):
+                continue
+            bad.append(f"{path.name} {sel[-30:]} {c}")
+    n_pages = 0
+    for path in sorted((ROOT / "docs").rglob("*.html")):
+        rel = path.relative_to(ROOT / "docs").as_posix()
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue  # 読めないことは check_emoji() が知らせる
+        n_pages += 1
+        text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
+        for st in re.findall(r"<style\b[^>]*>(.*?)</style\b[^>]*>", text, flags=re.S | re.I):
+            bad += [f"{rel} <style> {sel[-30:]} {c}" for sel, c in css_hits(st)]
+        markup = re.sub(r"<script\b[^>]*>.*?</script\b[^>]*>", "", text, flags=re.S | re.I)
+        for name, val in re.findall(r'\s(style|fill|stroke|color|stop-color|bgcolor)="([^"]*)"', markup):
+            found = [c for _, c in css_hits("x{" + val + "}")] if name == "style" else PAT_COLOR.findall(val) + PAT_COLOR_NAME.findall(val)
+            bad += [f"{rel} {name}=\"{c}\"" for c in found]
+        js = "".join(re.findall(r"<script\b[^>]*>(.*?)</script\b[^>]*>", text, flags=re.S | re.I))
+        allowed = JS_MAP_CARTO_COLORS if rel == "hormuz/index.html" else set()
+        bad += [f"{rel} JS {c}" for c in PAT_JS_COLOR.findall(js) if c.lower() not in allowed]
+    for path in sorted((ROOT / "docs" / "assets" / "js").glob("*.js")):
+        bad += [f"assets/js/{path.name} {c}" for c in PAT_JS_COLOR.findall(path.read_text(encoding="utf-8"))]
+    if bad:
+        warn(f"トークン外の色の直書きが {len(bad)}か所あります: {'／'.join(bad[:5])}。"
+             "色は tokens.css の変数（var(--c-*)・地図は var(--map-*)）で書く（スキル site-design「色」）")
+    else:
+        ok(f"トークン外の色の直書きなし（CSS {n_css}ファイル・{n_pages}ページの <style>・属性・JS。地図の色の例外を除く）")
+
+
 def check_estimate_labels(html: str) -> None:
     """推定のラベル（②' PR D・2026-10-09 追加）。日次更新で消えていないかを見る。
 
@@ -1484,6 +1636,8 @@ def main() -> int:
 
     check_news(news, base)
     check_categories(html, news)
+    check_emoji(news, log)
+    check_colors()
     if log is not None:
         check_log(log, base)
     if tl is not None:

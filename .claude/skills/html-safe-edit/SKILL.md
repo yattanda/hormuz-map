@@ -39,15 +39,14 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
   CSS の `50s` は JS が動かないときの予備。以前は 50 秒固定で、文が長い日ほど速くなり（10/11 は約300px/秒）文字が二重に見えた。速さを変えるときは `PX_PER_SEC` だけを変える
 - **キーワードの自動の色付け**：`markKeywords()`（同じ script）が、30秒カラムの3行・シナリオの補足・次の焦点の文から、日付・単位つきの数値・被害の語・回復の語・但し書きを正規表現で見つけ、`span.kw-*` で囲む。
   色は控えめにする（クラスは `.kw-num` `.kw-date` `.kw-alert` `.kw-ease` `.kw-hedge`）。対象の区域や語を増やすときは `ZONES` と正規表現を直す。本文に手で印を書かない
-- **文章に使う黄色は淡くする**：1文を超える長さの文には `--c-warn-soft`（`#efe2b6`）を使う（例：`.sc-focus-list strong`・`.sc-update-caveat`・`.sc-ctx-note`・ルート表の `.t-warning-soft`）。
-  見出し・ラベル・短い印（ルート表の「⚓ 10/9 追記：」やシナリオBの見出し）は `--c-warn`（`#fbbf24`）のまま
+- **色・アイコン・区切り方は、スキル `site-design` の決まり**（2026-10-22・課題46 D3 PR 7b）。黄色を含む状態の色は札（色面）だけに使い、文の色にしない。以前ここにあった「文章に使う黄色は淡く（`--c-warn-soft`）」の決まりは、D3 で状態の色を札だけにしたので外した
 
 ## JS が組み立てる HTML（2026-10-12・②' PR E）
 
 - 地図のポップアップ・印・凡例・関連最新ニュース・現地メディア視点は、JS のテンプレートが HTML を組み立てる。**テンプレートにも固定値のインライン style を書かない。**クラスは `docs/assets/css/hormuz.css` の末尾「JS が組み立てる HTML のクラス」にまとめてある（課題46 D2 で `<style>` から移した）
-  （文字色 `.tc-*`／軍事レイヤー `.mil-*`／調達先などのポップアップ `.src-pop*`／バッジ `.p-badge--*`／印 `.mk*`／地図上の文字 `.map-label*`／凡例 `.leg-dash--*`／`.news-*`／`.osint-*`）
+  （軍事レイヤー `.mil-*`／調達先などのポップアップ `.src-pop*`／バッジ `.p-badge--*`／印 `.mk*`／地図上の文字 `.map-label*`／凡例 `.leg-dash--*`／`.news-*`／`.osint-*`）
 - style で残してよいのは2種類だけ：計算やデータで決まる値（`${size}`・`${col}`・`news_data.json` が持つ色）と、JS が開閉の状態として読む `display:none;`
-- ポップアップを足すときは、見出しに `<div class="p-title tc-◯">`、バッジに `<span class="p-badge p-badge--◯">`、小さな注記に `<div class="p-note">` を使う。新しい色が要るときはクラスを足す
+- ポップアップを足すときは、見出しに `<div class="p-title">`（色は付けない。文字色の `.tc-*` は D3 PR 7a で外した）、バッジに `<span class="p-badge p-badge--◯">`、小さな注記に `<div class="p-note">` を使う。色はトークンの変数だけで、新しい色は足さない（スキル `site-design`）
 - スマホの文字の下限（0.8rem）は、クラスの並び（`.src-pop-body`・`.news-stale-notice`・`.osint-en` ほか）で指定している。以前の属性セレクタ `div[style*="font-size:0.7"]` は外した
 - `tools/validate_daily.py` が、テンプレートの固定値のインライン style を WARN で確認する
 

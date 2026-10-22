@@ -2868,17 +2868,21 @@ function popupFreeBox() {
   const zoom = map.zoomControl && map.zoomControl.getContainer();
   const shown = el => el && el.offsetParent;
   const fromRight = el => shown(el) ? Math.max(0, m.right - el.getBoundingClientRect().left) + 6 : 0;
+  const topLeft = el => shown(el) && el.getBoundingClientRect().top < m.top + m.height / 2 ? el.getBoundingClientRect().bottom - m.top : 0;
   const fromBottom = el => shown(el) ? Math.max(0, m.bottom - el.getBoundingClientRect().top) + 6 : 0;
+  // タンカーのボタンは、スマホでは左上にある（上の余白に入れる）。PC・タブレットでは右下（下・右の余白に入れる）。
+  // 地図の真ん中で分けるのはこのボタンだけ（日本関連船の欄は開くと上端が真ん中を越えるが、下の端に付いたままなので避ける・Codex の指摘）
+  const thumbAtTop = topLeft(thumb) > 0;
   // 狭い地図（600px 以下）と横向きのスマホ：右は「地点へ移動」の幅、下は下の端に並ぶもの（日本関連船の欄・左下の凡例・タンカーのボタン）の高さ。
   // 幅の広い地図：右の列（「地点へ移動」・日本関連船の欄・タンカーのボタン）の左に開く。下は空けない（高さも縛らない）
   const narrow = m.width <= 600 || isLowPhone();
   return {
     narrow,
     left: 6,
-    // 横向きのスマホは地図が低く（画面の 7 割）、拡大・縮小ボタンの下から始めると入らないので上の端から
-    top: zoom && !isLowPhone() ? Math.max(0, zoom.getBoundingClientRect().bottom - m.top) + 6 : 6,
-    right: Math.max(10, fromRight(jump), narrow ? 0 : Math.max(fromRight(ov), fromRight(thumb))),
-    bottom: narrow ? Math.max(10, fromBottom(ov), fromBottom(document.getElementById('map-legend-ctrl')), fromBottom(thumb)) : 10,
+    // 上は左上の拡大・縮小ボタンの下から。横向きのスマホは地図が低く（画面の 7 割）それでは入らないので、左上のタンカーのボタンの下から
+    top: Math.max(0, zoom && !isLowPhone() ? zoom.getBoundingClientRect().bottom - m.top : 0, topLeft(thumb)) + 6,
+    right: Math.max(10, fromRight(jump), narrow ? 0 : Math.max(fromRight(ov), thumbAtTop ? 0 : fromRight(thumb))),
+    bottom: narrow ? Math.max(10, fromBottom(ov), fromBottom(document.getElementById('map-legend-ctrl')), thumbAtTop ? 0 : fromBottom(thumb)) : 10,
     width: m.width,
     height: m.height
   };

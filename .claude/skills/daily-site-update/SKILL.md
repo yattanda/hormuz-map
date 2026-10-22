@@ -197,6 +197,7 @@ python tools/validate_daily.py
 - 日付整合（`dateModified` / ヘッダー / 速報バナー / ルートサマリー /
   `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）
 - `latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複
+- **絵文字と直書きの色（WARN・2026-10-22〜）**：全ページの表示される文の絵文字、`news_data.json`・`update_log.json` のうち直前のコミットに無い項目の絵文字、CSS・`style`・JS の直書きの色。新しい項目は直前のコミットと比べて決めるので、**commit の前に**走らせる。WARN が出たら絵文字は語に、色は `tokens.css` の変数に直す（スキル `site-design`）
 - **全ルート現況サマリーの行ごとの鮮度（WARN）**：見出し（`sec-h2-sub`）の日付更新だけでは
   検出できない「本文が古いまま」を、各行の「最新」（`p.route-latest` の `<time datetime>`）から見る
   （2026-09-15、ルートB＝サウジ東西PLで見出しだけ更新され本文が4/12時点のまま、という事故が
@@ -442,6 +443,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - クラスと語の組は上の6通りだけ（`validate_daily.py` が NG にする）。語を言い換えない（「海運」「軍事衝突」などにしない）
 - 日次が書く所（速報インシデントのタグ・主な動きの件名・ステータスバッジ・30秒カラムの3行・ルート表の `route-tag`・ティッカー）の**頭に絵文字を書かない**。`validate_daily.py` が NG にする
 - 増減は ↑↓ で書く（▲▼ は開閉の記号だけ。「▲30万BPD」のような減少の ▲ も ↓ にする）
+- 頭以外（文の中）にも絵文字を書かない。`news_data.json`・`update_log.json` に足す項目も同じ。`validate_daily.py` が WARN を出す（2026-10-22・課題46 D3 PR 7b）。色・アイコン・残してよい記号の決まりはスキル `site-design`
 
 - 表示は先頭3件。4件目以降は `applyIncidentFold()` が自動で折りたたむ（手で折りたたみ用の箱を作らない）
 - **月1回の退避**：ページに残すのは直近30日分。30日より古い項目を `<li>` ごと切り取り、

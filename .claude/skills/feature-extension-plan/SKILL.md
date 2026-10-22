@@ -15,6 +15,7 @@ description: Planning guide for new features, mobile UI, responsive improvements
 
 - [@tools/design-system.md](tools/design-system.md)
 - [@tools/mobile-ui-rules.md](tools/mobile-ui-rules.md)
+- 色・書体・アイコン・区切り方はスキル `site-design`（`.claude/skills/site-design/SKILL.md`）
 
 ---
 

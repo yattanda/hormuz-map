@@ -1,7 +1,10 @@
 # Design System
 
-このドキュメントは、HTMLサイト全体のデザイン基準を定義する。  
+このドキュメントは、HTMLサイト全体のレイアウトの基準（レスポンシブ・余白・表・画像）を定義する。
 Claude CodeがHTML/CSSを修正する際は、この基準を優先する。
+
+**見た目の決まり（色・書体・アイコン・区切り方・ボタン・カード）の正本は設計書 `tools/site-redesign-design.md`（§1〜§4-2）と、スキル `.claude/skills/site-design/SKILL.md`。**
+このファイルには、それと重ならない今も有効な所だけを残した（2026-10-22・課題46 D3 PR 7b。以前は明るい地の `--color-*` の色・角丸のボタンとカードの例を載せていたが、いまのサイトと合わないので外した）。
 
 ---
 
@@ -16,6 +19,8 @@ Claude CodeがHTML/CSSを修正する際は、この基準を優先する。
 5. 装飾より内容を優先する
 6. PCとスマホで印象が大きく変わらない
 7. ページごとのデザイン差を小さくする
+
+画面の作法（段は太い罫・箱や角丸や影で区切らない・状態は色面の札）は設計書 §1 とスキル `site-design`。
 
 ---
 
@@ -32,227 +37,66 @@ Claude CodeがHTML/CSSを修正する際は、この基準を優先する。
 | タブレット | 768px |
 | PC | 1024px以上 |
 
-最重要基準は **375px** とする。
+最重要基準は **375px** とする。タブレット（768px 前後）も毎回確かめる。
+
+### breakpoint
+
+`docs/assets/css/tokens.css` の末尾の覚書が正本（2026-09-18 に3つへ整理）。境界の値は「以下（max-width）」側に含める。
+
+| 幅 | 役割 | 書き方 |
+|---|---|---|
+| 600px | スマホ縦の詰め（余白・小物） | `max-width:600px` / `min-width:601px` |
+| 768px | 文字サイズ（スマホは `html { font-size:18px }`・変更禁止） | `max-width:768px` / `min-width:769px` |
+| 1023px | 表・地図凡例の狭幅対応、PC との境 | `max-width:1023px` / `min-width:1024px` |
+
+カラム数は 〜600px 1列／601〜1023px 2列／1024px〜 3列。新しい境界の値を足さない。
 
 ---
 
 ## 3. CSS設計方針
 
-### 基本方針
-
-- モバイルファーストで書く
-- PC向けの調整は `@media (min-width: ...)` を使う
-- 固定幅を避ける
-- `clamp()`, `min()`, `max()` を活用する
-- 余白・文字サイズ・色はなるべく変数化する
-- ページ固有CSSを増やしすぎない
-- 共通コンポーネントを優先する
+- 固定幅を避ける。`clamp()`, `min()`, `max()` を活用する
+- 余白・文字サイズ・色は `tokens.css` の変数を使う（色は変数だけ。直書きは `tools/validate_daily.py` が WARN を出す）
+- ページ固有CSSを増やしすぎない。共通の部品を優先する（CSS の置き場所は `docs/assets/css/`。ページ内の `<style>` に足さない）
+- `!important` を安易に使わない
 
 ---
 
-## 4. デザイントークン
+## 4. 余白
 
-### spacing
-
-```css
-:root {
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-}
-```
-
-使用目安:
+`tokens.css` の `--space-*` を使う。
 
 | 用途 | 値 |
 |---|---|
 | 小さな要素間 | `--space-xs` |
 | 本文内の間隔 | `--space-sm` / `--space-md` |
-| カード内padding | `--space-md` / `--space-lg` |
-| セクション内gap | `--space-lg` / `--space-xl` |
-| セクション上下余白 | `--space-xl` / `--space-2xl` |
+| 段の中の区切りの前後 | `--space-md` / `--space-lg` |
+| 段の中の gap | `--space-lg` / `--space-xl` |
+| 段の上下 | `--space-xl` / `--space-2xl` |
 
-スマホで `--space-3xl` を多用しない。
-
----
-
-## 5. layout
-
-### container
-
-基本のコンテナ幅。
-
-```css
-.container {
-  width: min(100% - 2rem, 1120px);
-  margin-inline: auto;
-}
-```
-
-スマホでは左右16px程度の余白を基本とする。
-
-### section
-
-```css
-.section {
-  padding-block: clamp(2rem, 6vw, 4rem);
-}
-```
-
-スマホでセクション間が広すぎる場合、まず `padding-block` を確認する。
-
----
-
-## 6. typography
-
-### 基本文字サイズ
-
-```css
-html {
-  font-size: 100%;
-}
-
-body {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-```
-
-### 見出し
-
-```css
-h1,
-.h1 {
-  font-size: clamp(1.6rem, 6vw, 2.8rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-h2,
-.h2 {
-  font-size: clamp(1.35rem, 4.5vw, 2.2rem);
-  line-height: 1.3;
-}
-
-h3,
-.h3 {
-  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
-  line-height: 1.35;
-}
-```
-
-### 本文
-
-```css
-p {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-```
-
-### 補足文
-
-```css
-.small-text {
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-```
-
-補足文でもスマホでは極端に小さくしない。
-
----
-
-## 7. color
-
-現在のサイトカラーに合わせて調整すること。
-
-```css
-:root {
-  --color-bg: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #1f2937;
-  --color-muted: #6b7280;
-  --color-border: #e5e7eb;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-accent: #f97316;
-}
-```
-
-### 色の方針
-
-- 本文は十分なコントラストを確保する
-- 薄いグレー文字を多用しない
-- CTAは他のリンクより目立たせる
-- 背景色を増やしすぎない
-
----
-
-## 8. buttons
-
-### 基本ボタン
-
-```css
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.75rem 1rem;
-  border-radius: 999px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-decoration: none;
-}
-```
-
-### スマホでの注意
-
-- タップ領域は最低44px程度を確保する
-- 横幅いっぱいにする場合は `width: 100%` を検討する
-- ボタン同士の間隔を詰めすぎない
-- CTAがファーストビューから遠くなりすぎないようにする
-
----
-
-## 9. cards
-
-### 基本カード
-
-```css
-.card {
-  padding: clamp(1rem, 3vw, 1.5rem);
-  border: 1px solid var(--color-border);
-  border-radius: 1rem;
-  background: var(--color-bg);
-}
-```
-
-### カードグリッド
-
-```css
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: clamp(1rem, 3vw, 1.5rem);
-}
-```
-
-### スマホでの注意
-
-- カード内paddingが広すぎないようにする
-- カードが縦に長くなりすぎないようにする
+- スマホでは左右16px程度の余白を基本とする。左右 padding を広くしすぎない
+- スマホで `--space-3xl` を多用しない。段の間が広すぎるときは、まず段の上下の padding を確かめる
 - 1画面に何も情報が入らない状態を避ける
 
 ---
 
-## 10. tables
+## 5. 文字の大きさ
+
+- 大きさは `tokens.css` の `--fs-*`、行間は `--lh-body`（1.7）、行長は `--measure`（70ch）
+- 補足文でもスマホでは極端に小さくしない
+- 書体（BIZ UDPゴシック＋IBM Plex Sans Condensed）は設計書 §4-1 とスキル `site-design`
+
+---
+
+## 6. 押せる所
+
+- タップ領域は最低44px程度を確保する
+- 押せる所どうしの間隔を詰めすぎない
+- 形と色（差し色の面・`--c-on-accent` の文字）はスキル `site-design`
+
+---
+
+## 7. tables
 
 ### 基本方針
 
@@ -301,12 +145,13 @@ td {
 
 - `white-space: nowrap` を安易に使わない
 - すべての列をスマホ画面内に押し込まない
-- 列幅を固定しすぎない
+- 列幅を固定しすぎない（`/hormuz/` のルート表の `<colgroup>` は `html-safe-edit` の決まりどおり触らない）
 - 読みやすさを優先する
+- 罫は `--c-rule`（設計書 §1）
 
 ---
 
-## 11. images
+## 8. images
 
 ```css
 img {
@@ -320,37 +165,14 @@ img {
 - スマホで横はみ出ししない
 - 不要に大きな画像余白を作らない
 - ファーストビューの画像が大きすぎる場合は調整する
+- アイコンは画像ではなく `docs/assets/icons/icons.svg` の `<symbol>`（スキル `site-design`）
 
 ---
 
-## 12. breakpoint
-
-基本breakpoint:
-
-```css
-@media (min-width: 600px) {
-  /* 大きめスマホ・小型タブレット */
-}
-
-@media (min-width: 768px) {
-  /* タブレット */
-}
-
-@media (min-width: 1024px) {
-  /* PC */
-}
-```
-
-原則として `max-width` より `min-width` を優先し、モバイルファーストにする。
-
----
-
-## 13. 禁止・注意事項
+## 9. 禁止・注意事項
 
 - 固定幅pxを多用しない
-- スマホで左右paddingを広くしすぎない
-- セクション上下余白を広くしすぎない
 - PC用のデザインをそのままスマホへ縮小しない
-- `!important` を安易に使わない
 - ページごとに似たCSSを重複させない
 - テーブルを無理にスマホ画面内へ押し込まない
+- 色・絵文字・グラデーション・影・角丸のカードなど、見た目で使わないものは設計書 §3 とスキル `site-design`

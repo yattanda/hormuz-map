@@ -1,7 +1,7 @@
 /* ===============================================
    /hormuz/articles/ の記事ページと記事一覧の共通 CSS。
    課題46 D3 PR 3（2026-10-20）で「鉄と錆止め」へ（--color-* をやめて --c-* に）。
-   色と書体は /assets/css/tokens.css の theme-iron（記事は article.css より先に tokens.css を読む）。
+   色と書体は /assets/css/tokens.css（記事は article.css より先に tokens.css を読む）。
    段は太い罫で切り、カードの面・角丸・影は使わない（tools/site-redesign-design.md §1・§3）
    =============================================== */
 

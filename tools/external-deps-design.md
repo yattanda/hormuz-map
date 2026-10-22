@@ -70,6 +70,8 @@
 
 ### 2-1-R. フォントの実施記録（2026-10-10 実装・ブランチ `infra/selfhost-fonts`）
 
+> 2026-10-22 追記：課題46 D3 で書体を BIZ UDPゴシック＋IBM Plex Sans Condensed（どちらも自サイトから配る）に替え、どのページからも読まれなくなった `docs/assets/fonts/noto-sans-jp/` は D3 PR 7a で外した（`tools/site-redesign-design.md` §4-1・§5-2）。下は当時の記録
+
 - 取得元：npm の `@fontsource/noto-sans-jp` 5.3.0（SIL OFL 1.1）。配布物（tgz・79.0 MB）の SHA-512 は npm レジストリの `dist.integrity` と一致した
 - 置いたもの（`docs/assets/fonts/noto-sans-jp/`）：woff2 **372個・8,485,572バイト（約8.49 MB）**（1ウェイトあたり124区画＝日本語120＋cyrillic・latin・latin-ext・vietnamese、× 400・700・800）、
   `noto-sans-jp.css`（`@font-face` 372・303 KB。配布物の `400.css`・`700.css`・`800.css` をつなぎ、woff（古い形式）の指定を外して woff2 だけにした）、`LICENSE`

@@ -82,7 +82,7 @@ def shoot(docs, out, pages, now_ms):
                 pg.evaluate('async()=>{for(let y=0;y<document.body.scrollHeight;y+=600){scrollTo(0,y);await new Promise(r=>setTimeout(r,60));}scrollTo(0,0);}')
                 pg.evaluate('document.fonts.ready.then(()=>true)')
                 pg.wait_for_timeout(2500)
-                pg.evaluate("typeof map!=='undefined' && map.fire && map.fire('zoomend')")
+                pg.evaluate("void (typeof map!=='undefined' && map.fire && map.fire('zoomend'))")   # 戻り値（地図のオブジェクト）は返せないので捨てる
                 pg.wait_for_timeout(300)
                 pg.evaluate('document.fonts.ready.then(()=>true)')
                 fn = name_of(page, w)

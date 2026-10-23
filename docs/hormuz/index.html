@@ -1290,11 +1290,11 @@ document.addEventListener('keydown', function(e) {
             <p class="route-latest"><strong class="route-tag t-neutral">最新 <time datetime="2026-10-14">10/14 JST</time> 再確認：</strong>米国・メキシコ産原油の対日輸送について、10月の新しい報道は主要報道の検索では確認できない（直近はNippon.comの7月分の輸入の記事）。
               <small class="route-src">確認方法：主要報道の検索（10/14）</small></p>
             <p class="route-summary">アラスカ（ANS）・メキシコ湾岸からの太平洋直輸。
-            <strong>4/25 第1便到着</strong>に続き、6月上旬には出光興産が調達したアラスカ産原油タンカー（約73万バレル）が富士石油袖ケ浦製油所に到着するなど複数便が継続。
+            <strong>4/26 に米国産の第1便</strong>（コスモエネルギーHDが調達した約14万5千kL。テキサス州を3/22に出てパナマ運河経由・約35日）が東京湾に到着。<strong>6/7</strong> にはアラスカ産の最初の便として、出光興産が調達したタンカー（約73万バレル）が富士石油袖ケ浦製油所（千葉県）に到着するなど複数便が継続。
             1〜5月の対日米国産原油出荷は累計約1,890万バレルで前年同期比約3倍に拡大。日米首脳間では対日輸入の過半を米国産で賄う方針も表明されているが、達成状況は本調査時点（9/15）で確認できず。
             港湾インフラ・品質適合が課題。<br>
             <strong class="t-purple">メキシコ産原油（2026年7月17日に初便到着）：</strong>コスモ石油が調達した約100万バレルが、メキシコから喜望峰経由で約70日かけて四日市沖に到着し、四日市・千葉の製油所へ。中東情勢の緊迫後で初めて。日量換算では小規模。
-              <small class="route-src">出典：Reuters・Bloomberg・日本経済新聞（6月・7/15）・日米首脳会談資料（3月）・UPI（3/19）・CBC（7/17、News On Japan 経由）／2026-09-26 訂正</small></p>
+              <small class="route-src">出典：Reuters・Bloomberg・日本経済新聞（6月・7/15）・日米首脳会談資料（3月）・UPI（3/19）・CBC（7/17、News On Japan 経由）・共同通信（4/26・6/5）・UPI（4/27）・TBS（6/7、News On Japan 経由）／2026-09-26 訂正・2026-10-23 訂正</small></p>
                       <details class="route-history"><summary>経緯を見る</summary>
               <p class="route-entry"><strong class="route-tag t-neutral"><time datetime="2026-10-03">10/3 JST</time> 再確認：</strong>米国産・メキシコ産原油の対日輸入について、9/26の再確認以降の新しい統計や政府発表は報道で確認できていない（財務省の8月分は国別の数量が未公表のまま）。
                <small class="route-src">確認方法：主要報道の検索（10/3）</small></p>
@@ -2174,7 +2174,7 @@ japanRefineryMarker.bindPopup(`
       <strong>中東依存度：</strong>原油輸入の約95%<br>
       <strong>ルートA着：</strong>ENEOS向け2船 到着済み <br>
       <strong>ルートB着：</strong>3/28 太陽石油（愛媛）<br>
-      <strong>ルートC着：</strong>4/25 予定 
+      <strong>ルートC着：</strong>4/26 米国産（テキサス）・6/7 アラスカ産
     </div>
     <button onclick="document.getElementById('refinery-modal').style.display='flex'"
       class="src-pop-btn">
@@ -2448,7 +2448,7 @@ const ROUTES = [   // [座標, 色の名前, 太さ, 破線, 不透明度, ツ�
   [routeB,         'b',     2.5, '12 5', 0.95, 'ルートB：ヤンブー港経由（海上）'],
   [routeA_pl,      'a',     2,   '5 4',  0.95, 'ルートA：ADCOPパイプライン（陸上）'],
   [routeA,         'a',     2.5, '12 5', 0.95, 'ルートA：フジャイラ港経由（海上）'],
-  [routeC_pacific, 'c',     2.5, '10 7', 0.9,  'ルートC：米国アラスカ発 太平洋ルート（4/25到着予定）'],
+  [routeC_pacific, 'c',     2.5, '10 7', 0.9,  'ルートC：米国アラスカ発 太平洋ルート（6/7 初到着）'],
   [routeC_brazil,  'c-sa',  2,   '8 6',  0.85, 'ルートC（南米）：ブラジル発 喜望峰経由ルート'],
   [routeNigeria,   'ng',    2,   '8 6',  0.85, 'ナイジェリア発：喜望峰経由→日本（約35〜40日）'],
   [routeAngola,    'ao',    2,   '8 6',  0.9,  'アンゴラ発：喜望峰経由→日本（約35〜40日）'],
@@ -2625,7 +2625,7 @@ const malaccaMarker = L.marker([1.5,103.5],{icon:mkBadge('none','strait')}).addT
 
 L.marker([61.2,210.0],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
   <div class="p-title"> 米国（アラスカ）</div>
-  <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>4/25に第1便が日本到着予定。</strong></div>`);
+  <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>6/7 にアラスカ産の最初の便（約73万バレル）が千葉県袖ケ浦に到着。</strong></div>`);
 
 // 南鳥島（レアアース泥）— ?focus=minamitori と「YouTube から来た方へ」枠から開く
 const minamitoriMarker = L.marker([24.28, 153.98], {
@@ -3010,7 +3010,7 @@ const Legend = L.Control.extend({
 
         <div class="leg-row"><div class="leg-dash leg-dash--a"></div><span>ルートA：ADCOP PL→フジャイラ港（UAE）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--b"></div><span>ルートB：サウジ東西PL→ヤンブー港（全面回復）</span></div>
-        <div class="leg-row"><div class="leg-dash leg-dash--c"></div><span>ルートC：アラスカ発 太平洋ルート（4/25着予定）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--c"></div><span>ルートC：アラスカ発 太平洋ルート（6/7 初到着）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--c-sa"></div><span>ルートC（南米）：ブラジル発 喜望峰経由（約40〜45日）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--ng"></div><span>ナイジェリア発：喜望峰経由→日本（約35〜40日）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--ao"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）</span></div>

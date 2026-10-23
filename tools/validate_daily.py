@@ -1579,6 +1579,97 @@ def check_glossary() -> None:
             ng("用語集：" + l.replace("NG", "", 1).strip())
 
 
+ROUTE_PORT_MARGIN = 0.3   # 起点・終点からこの度数の内側は見ない（港・印は陸にある）
+ROUTE_STEP = 0.02         # 線の上を調べる間隔（度）
+
+
+def check_routes_on_land(html: str) -> None:
+    """/hormuz/ の航路の線が陸の上を通っていないか（WARN）。
+
+    航路の通過点は手で置いているため、四国・紀伊半島・伊豆・房総・インド南部・アラスカ半島・南アフリカの上を
+    線が横切っていた（2026-10-23 に運営者が見つけて直した）。修正の PR で陸に乗る線が戻るのを止める。
+    - 「3. ROUTE DEFINITIONS」の JS を node で評価して座標を取り出す（commonEast() などの式を含むため）。node が無ければ WARN
+    - 陸地は docs/data/map/land.json・islands.json（地図が描く陸と同じ）。経度 180° を越える点は 360° を引いて当てる
+    - 地図に描く ROUTES のうち、運河（色 'canal'）とパイプライン（*_pl）は陸を通るので見ない
+    """
+    import shutil
+    import subprocess
+
+    a, b = html.find("// 3. ROUTE DEFINITIONS"), html.find("// 4. DRAW ROUTES")
+    m = re.search(r"const ROUTES = \[(.*?)\n\];", html, flags=re.S)
+    if a < 0 or b < a or not m:
+        warn("航路の定義（3. ROUTE DEFINITIONS・const ROUTES）を見つけられず、陸の上の線を検査できません（構造が変わった可能性）")
+        return
+    names = [n for n, kind in re.findall(r"^\s*\[(\w+),\s*'([\w-]+)'", m.group(1), flags=re.M)
+             if kind != "canal" and not n.endswith("_pl")]
+    node = shutil.which("node")
+    if not node:
+        warn("node が無いため、航路が陸の上を通っていないかを検査できません")
+        return
+    js = (f"const R=(new Function({json.dumps(html[a:b] + ';return {' + ','.join(names) + '};')}))();"
+          "process.stdout.write(JSON.stringify(R));")
+    res = subprocess.run([node, "-e", js], capture_output=True, text=True, encoding="utf-8", timeout=60)
+    try:
+        routes = json.loads(res.stdout)
+    except json.JSONDecodeError:
+        warn(f"航路の座標を取り出せません（node: {(res.stderr or '').strip()[:120]}）")
+        return
+
+    grid: dict[tuple[int, int], list] = {}   # 1度四方のます → そこに掛かる陸の輪郭
+    for fn in ("land.json", "islands.json"):
+        gj = load_json(ROOT / "docs" / "data" / "map" / fn)
+        if gj is None:
+            warn(f"{fn} を読めず、航路の陸の検査を省きました")
+            return
+        for ft in gj["features"]:
+            g = ft["geometry"]
+            for poly in ([g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]):
+                xs, ys = [p[0] for p in poly[0]], [p[1] for p in poly[0]]
+                for gx in range(int(min(xs) // 1), int(max(xs) // 1) + 1):
+                    for gy in range(int(min(ys) // 1), int(max(ys) // 1) + 1):
+                        grid.setdefault((gx, gy), []).append(poly)
+
+    def inside(ring, x, y) -> bool:
+        c = False
+        j = len(ring) - 1
+        for i in range(len(ring)):
+            (xi, yi), (xj, yj) = ring[i][:2], ring[j][:2]
+            if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+                c = not c
+            j = i
+        return c
+
+    def on_land(lat: float, lon: float) -> bool:
+        lon = (lon + 180) % 360 - 180
+        return any(inside(p[0], lon, lat) and not any(inside(h, lon, lat) for h in p[1:])
+                   for p in grid.get((int(lon // 1), int(lat // 1)), []))
+
+    bad = []
+    for name in names:
+        lls = routes.get(name) or []
+        if len(lls) < 2:
+            continue
+        (la0, lo0), (la1, lo1) = lls[0], lls[-1]
+        for i in range(len(lls) - 1):
+            (y1, x1), (y2, x2) = lls[i], lls[i + 1]
+            n = max(2, int(max(abs(y2 - y1), abs(x2 - x1)) / ROUTE_STEP) + 1)
+            hits = []
+            for s in range(1, n):
+                y, x = y1 + (y2 - y1) * s / n, x1 + (x2 - x1) * s / n
+                if (abs(y - la0) < ROUTE_PORT_MARGIN and abs(x - lo0) < ROUTE_PORT_MARGIN) or \
+                   (abs(y - la1) < ROUTE_PORT_MARGIN and abs(x - lo1) < ROUTE_PORT_MARGIN):
+                    continue
+                if on_land(y, x):
+                    hits.append((y, x))
+            if hits:
+                bad.append(f"{name} の {lls[i]}→{lls[i + 1]}（{hits[0][0]:.2f}, {hits[0][1]:.2f} など {len(hits)}点）")
+    if bad:
+        warn(f"航路の線が陸の上を通っています（{len(bad)}区間）: {'／'.join(bad[:5])}。"
+             "通過点を海の上へ置き直す（docs/hormuz/index.html の 3. ROUTE DEFINITIONS）")
+    else:
+        ok(f"航路の線は陸の上を通っていない（{len(names)}本・起点と終点の {ROUTE_PORT_MARGIN}° 以内を除く）")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="日次更新の機械検証（読み取り専用）")
     ap.add_argument("--date", help="基準日 YYYY-MM-DD。省略時は news_data.json の updated")
@@ -1646,6 +1737,7 @@ def main() -> int:
     check_categories(html, news)
     check_emoji(news, log)
     check_colors()
+    check_routes_on_land(html)
     if log is not None:
         check_log(log, base)
     if tl is not None:

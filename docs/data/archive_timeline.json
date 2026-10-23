@@ -3501,6 +3501,24 @@
           "sourceLabel": "Newsquawk・Rigzone（Bloomberg）（10/22）"
         }
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "dateLabel": "2026/10/24 07:29",
+      "blockadeDay": 239,
+      "summary": "【重大更新】UKMTOの警報181を追加：10/22 17:15 UTC（10/23 02:15 JST）にオマーン・リマ（Limah）の北東7海里で、海峡を出るタンカーが正体不明の飛翔体を受けた遅延報告（10/24 00:11 JST発行）。タンカーは航行を続け、公式の本文に船名・被害・攻撃主体の記載なし（UKMTO公式・Arab Times）。IRGCが10/22に主張した船7隻との関係は不明・原油は10/23終値でブレント12月物116.72ドル（+3.55ドル、4/29以来の高値）、WTI12月物103.27ドル（+3.80ドル）（ReutersとXinhuaで一致）・IRGCの船7隻の主張は独立した確認なし・フーシ派のリヤド国防省・ヤンブーのアラムコ施設への攻撃の主張に、サウジ側の確認は確認できず・UKMTO公式の取得は07:29 JSTで警報181が最新・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・MT ST 3は主要通信社の記事を引き続き確認できず・警報178の軍の国籍・船名は不明のまま・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機239日目・ニュース更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（動きなし）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報181：オマーン・リマ（Limah）の北東でタンカーが飛翔体で被弾（遅延報告）——航行は継続、船名・被害・攻撃主体は不明",
+          "url": "https://www.arabtimesonline.com/news/tanker-hit-by-unknown-projectile-in-strait-of-hormuz-near-oman/",
+          "sourceLabel": "Arab Times（10/23）"
+        },
+        {
+          "title": "原油10/23終値：ブレント12月物116.72ドル（+3.55ドル）、WTI12月物103.27ドル（+3.80ドル）",
+          "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html",
+          "sourceLabel": "Reuters（10/23）"
+        }
+      ]
     }
   ]
 }

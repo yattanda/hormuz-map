@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月23日 07:43 日本時間JST",
+  "updated": "2026年10月24日 07:29 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-oil-close-1023",
+      "title": "原油10/23終値：ブレント12月物116.72ドル（+3.55ドル）、WTI12月物103.27ドル（+3.80ドル）——ブレントは4/29以来の高値",
+      "body": "10/23（米国時間）の終値は、ブレント12月物が116.72ドル（+3.55ドル、+3.14%）、WTI12月物が103.27ドル（+3.80ドル、+3.82%）。Reuters（10/23配信）は「Brent crude futures settled at $116.72 a barrel, up $3.55 or 3.14%, their highest since April 29」と書き、Xinhua（10/23）も同じ値をブレント12月物・WTI12月物として伝える。Reutersは上昇の材料として、サウジアラビアへのフーシ派の攻撃がエネルギー供給の混乱への懸念を強めたことを挙げる。",
+      "sourceLabel": "Reuters・Xinhua（10/23）",
+      "date": "2026年10月23日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html",
+      "isLatest": true
+    },
+    {
+      "id": "latest-ukmto-181-1022",
+      "title": "UKMTO警報181：オマーン・リマ（Limah）の北東でタンカーが飛翔体で被弾（遅延報告）——航行は継続、船名・被害・攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報181-26（Attack・10/24 00:11 JST発行）は、遅延報告として、オマーン・リマ（Limah）の北東7海里で、タンカーがホルムズ海峡を出る途中で正体不明の飛翔体を受けたと報告し、タンカーは次の寄港地へ航行を続けられたと伝える。発生は公式の本文で10/22 17:15 UTC（10/23 02:15 JST）。公式の本文に船名・被害の程度・負傷者・攻撃主体の記載はなく、Arab Times（10/23）も被害の程度や負傷者の有無は特定していないと書く。IRGCが10/22に主張した船7隻との関係は不明。",
+      "sourceLabel": "UKMTO公式・Arab Times（10/23）",
+      "date": "2026年10月22日（現地）",
+      "label": "海上",
+      "url": "https://www.arabtimesonline.com/news/tanker-hit-by-unknown-projectile-in-strait-of-hormuz-near-oman/",
+      "isLatest": false
+    },
     {
       "id": "latest-irgc-seven-ships-1022",
       "title": "IRGC「船7隻が被弾」と主張——ペルシャ湾北部で積み替え中の4隻と海峡西側で機雷に接触した3隻、独立した確認なし・UKMTOに対応する警報なし",
@@ -10,7 +30,7 @@
       "date": "2026年10月22日（現地）",
       "label": "海上",
       "url": "https://gcaptain.com/iran-claims-more-ships-struck-near-hormuz-as-trump-accuses-tehran-of-faking-hits/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-oil-close-1022",
@@ -20,26 +40,6 @@
       "date": "2026年10月22日（米国時間）",
       "label": "原油・市場",
       "url": "https://www.newsquawk.com/headlines/us-market-wrap-tech-hit-on-ai-concerns-while-middle-east-tensions-grow",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto-179-1021",
-      "title": "UKMTO警報179：オマーン・ブハの西11海里でタンカーが飛翔体で被弾・火災は鎮火——乗組員は全員無事、船名・攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報179-26（Attack・10/21 21:07 JST発行）は、オマーン・ブハの西11海里（ホルムズ海峡）で、当局の報告として、タンカーが正体不明の飛翔体を受けて火災が起き、火は消し止められ、タンカーは錨泊中、乗組員は全員無事と伝える（発生は公式の本文で10/21 01:45 UTC）。gCaptain（10/21）によると、記事は「a tanker was struck approximately 11 nautical miles west of Bukha, Oman, at 0145 UTC on October 21」と書き、船名は公表されておらず、UKMTOは責任の所在を示していない。報告元の「Local Authorities」がどの当局かは書かれていない。",
-      "sourceLabel": "UKMTO公式サイト・gCaptain（10/21）",
-      "date": "2026年10月21日（現地）",
-      "label": "海上",
-      "url": "https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto-180-1020",
-      "title": "UKMTO警報180：イラク・アルファオの南東30海里でタンカーが被弾（遅延報告）——公式の本文は損傷なし、船名・攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報180-26（Attack・10/21 19:26 JST発行）は、遅延報告として、イラク・アルファオの南東30海里でタンカーの船長が正体不明の飛翔体を受けたと報告し、乗組員は無事で、損傷・環境への影響の報告はないと伝える。Arab Times（10/21）は、発生を「approximately 1830 GMT on Tuesday, Oct 20」と書き、勧告は発射体を特定せず、状況の詳細も示していないと伝える。船名も攻撃主体も公表されていない。ホルムズ海峡の外（ペルシャ湾の最北部）の事案。",
-      "sourceLabel": "UKMTO公式サイト・Arab Times（10/21）",
-      "date": "2026年10月20日（現地）",
-      "label": "海上",
-      "url": "https://www.arabtimesonline.com/news/tanker-struck-by-unknown-projectile-southeast-of-iraqs-al-faw-ukmto/",
       "isLatest": false
     }
   ],
@@ -1999,6 +1999,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月24日",
+      "items": [
+        {
+          "id": "latest-ukmto-179-1021",
+          "title": "UKMTO警報179：オマーン・ブハの西11海里でタンカーが飛翔体で被弾・火災は鎮火——乗組員は全員無事、船名・攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報179-26（Attack・10/21 21:07 JST発行）は、オマーン・ブハの西11海里（ホルムズ海峡）で、当局の報告として、タンカーが正体不明の飛翔体を受けて火災が起き、火は消し止められ、タンカーは錨泊中、乗組員は全員無事と伝える（発生は公式の本文で10/21 01:45 UTC）。gCaptain（10/21）によると、記事は「a tanker was struck approximately 11 nautical miles west of Bukha, Oman, at 0145 UTC on October 21」と書き、船名は公表されておらず、UKMTOは責任の所在を示していない。報告元の「Local Authorities」がどの当局かは書かれていない。",
+          "sourceLabel": "UKMTO公式サイト・gCaptain（10/21）",
+          "date": "2026年10月21日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto-180-1020",
+          "title": "UKMTO警報180：イラク・アルファオの南東30海里でタンカーが被弾（遅延報告）——公式の本文は損傷なし、船名・攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報180-26（Attack・10/21 19:26 JST発行）は、遅延報告として、イラク・アルファオの南東30海里でタンカーの船長が正体不明の飛翔体を受けたと報告し、乗組員は無事で、損傷・環境への影響の報告はないと伝える。Arab Times（10/21）は、発生を「approximately 1830 GMT on Tuesday, Oct 20」と書き、勧告は発射体を特定せず、状況の詳細も示していないと伝える。船名も攻撃主体も公表されていない。ホルムズ海峡の外（ペルシャ湾の最北部）の事案。",
+          "sourceLabel": "UKMTO公式サイト・Arab Times（10/21）",
+          "date": "2026年10月20日（現地）",
+          "label": "海上",
+          "url": "https://www.arabtimesonline.com/news/tanker-struck-by-unknown-projectile-southeast-of-iraqs-al-faw-ukmto/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月23日",
       "items": [

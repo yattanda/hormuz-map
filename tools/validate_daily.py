@@ -133,6 +133,9 @@ STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に�
 PAT_SITEMAP_HUB = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 PAT_SITEMAP_TOP = re.compile(r'<loc>https?://[^/<]+/hormuz/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
 PAT_SITEMAP_ARCHIVE = re.compile(r'<loc>https?://[^/<]+/archive/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
+PAT_SITEMAP_CORRECTIONS = re.compile(r'<loc>https?://[^/<]+/corrections/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
+PAT_CORRECTIONS_UPDATED = re.compile(r'<p class="updated">最終更新：(\d{4})年(\d{1,2})月(\d{1,2})日</p>')
+CORRECTIONS = ROOT / "docs" / "corrections" / "index.html"
 
 # hormuz-data- の経緯（Gemini に渡す確定した事実）。ローカルはリポジトリの親ディレクトリ基準
 DATA_CONTEXT_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "context.json"
@@ -560,6 +563,8 @@ def check_sitemap(tl, base: str) -> None:
     lastmod が 2026-05-20 のまま放置されていた（2026-09-19 に発覚）ための追加。
     - `/hormuz/` と `/`（ハブ。「危機マップの最終更新」を書き換える）は日次更新のたびに変わるので基準日と一致すること（NG）
     - `/archive/` は archive_timeline に追記した日だけ変わるので、末尾の日付より古くないこと（NG）
+    - `/corrections/` は訂正を足した日だけ変わるので、ページの「最終更新」より古くないこと（WARN）。
+      10/16 の訂正で lastmod が 10/09 のまま残っていた（2026-10-23 に発見）ための追加
     """
     try:
         xml = SITEMAP.read_text(encoding="utf-8")
@@ -595,6 +600,18 @@ def check_sitemap(tl, base: str) -> None:
            f"{m.group(1)}（末尾 {last}）")
     else:
         ok(f"sitemap.xml /archive/ の lastmod {m.group(1)}（archive_timeline 末尾 {last}）")
+
+    m = PAT_SITEMAP_CORRECTIONS.search(xml)
+    try:
+        u = PAT_CORRECTIONS_UPDATED.search(CORRECTIONS.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        u = None
+    if not m or not u:
+        warn("sitemap.xml の /corrections/ の lastmod か、訂正履歴の「最終更新」を検出できませんでした（構造が変わった可能性）")
+    elif m.group(1) < (updated := ymd(*u.groups())):
+        warn(f"sitemap.xml /corrections/ の lastmod が訂正履歴の「最終更新」より古いです: {m.group(1)}（最終更新 {updated}）")
+    else:
+        ok(f"sitemap.xml /corrections/ の lastmod {m.group(1)}（訂正履歴の最終更新 {updated}）")
 
 
 def load_data_context() -> tuple[dict | None, str]:

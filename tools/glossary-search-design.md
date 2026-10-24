@@ -899,4 +899,10 @@ function search(terms){                         // AND・新しい順
   - 区域の class が日次の型とずれても検査で拾えない → `validate_daily.py` に `check_glossary_zones()`（WARN）。`data-zones` のセレクタの各部分（タグ.クラス）が、静的な HTML か JS の HTML の文字列に class として出てくるかを見る。子孫の関係は見ない。`html-safe-edit` の「読みやすさの仕組み」に1行。確認：いまのページで OK、class 名の変更・タグの変更・`route-detail-x`（部分一致させない）・`data-zones` なしの5通りで WARN。`validate_daily.py` OK 84 / WARN 0 / NG 0
   - `load` を待つので読んでいる最中に印が現れる → **直さない**（運営者・10/24。Q4 の決定どおり）
   - ツールチップで使わない本文ごと `glossary.json` を読む → **直さない**（運営者・10/24。§11-15 の「転送量を見てから」のまま）
-- **残り**：§12-5 の 7 は手元では判断できなかった。マージ後に本番の PSI の画面で3回取り、10/22 の値（mobile 中央値 Perf 55・LCP 23.0 s・TBT 20 ms）と比べる（§12-5 の 10）
+- マージ `f3cd92c`（merge commit・運営者・その日の日次のあと）。ブランチ `feature/glossary-hormuz` は削除
+- 本番確認（`https://chokepointlab.com/hormuz/`・Playwright・手元の Chrome・16:08 JST ごろ）：§12-5 の 3〜6・8 は手元と同じ結果（読み込み直後 8・スクロール後 83・折りたたみを開いて 753、付けない所は0、乗せる・Tab・Esc・タップ・外のタップ、1280・768・375px で横はみ出し0、`glossary.json` が 404 でも印0）
+- §12-5 の 7・10：**本番の PSI（API・mobile・3回・16:13〜16:20 JST）**は中央値 Perf 49・FCP 13.1 s・LCP 17.3 s・TBT 295 ms・CLS 0（3回の TBT は 220〜597 ms）
+  - 用語集の処理は、3回とも長い処理（long-tasks）にもスクリプトの実行時間（bootup-time）にも出てこない。`glossary.js`・`glossary.json` の取得開始は 6.7〜10.6 s（`load` の後）。その後の長い処理は TradingView の枠だけ（確度：高・この3回）
+  - 10/22（PSI の画面）の Perf 55・TBT 20 ms より悪いが、用語集が原因ではないとみる（確度：中）。方法が画面から API に変わったこと、mobile の TBT の揺れ、間の変更（PR #123・日次2回）による。LCP は 23.0 → 17.3 s で悪くなっていない。LCP の要素は30秒カラムの文のまま
+  - 記録は private の `chokepointlab-notes/2026_10_24_用語集S4の計測/SUMMARY.md`
+- 残り：スマホ実機でのタップ（特に Android）の確認（運営者）

@@ -1279,8 +1279,9 @@ def check_emoji(news: dict | None, log) -> None:
 
     頭の絵文字は check_categories() が NG で止める。ここは文の中・固定の部分・ほかのページまで広く見る。
     - docs/ の全ページの、表示される文（<script>・<style>・コメントを除く）と title・alt・aria-label
-    - news_data.json（latest・osint）と update_log.json のうち、直前のコミットに無い項目
-      （git で比べられないときは latest・osint の先頭と update_log の先頭）
+    - news_data.json（latest・osint）と update_log.json のうち、origin/main との分かれ目（merge-base）に無い項目
+      （commit の後に流しても拾える。origin/main が無いときは直前のコミットと、git で比べられないときは
+      latest・osint の先頭と update_log の先頭）
     過去のデータの絵文字は書き換えず、表示のときに読み替える決まり（設計書 §6）なので、古い項目は見ない。
     /hormuz/ の JS にある絵文字は、その読み替えの表なので見ない。
     """
@@ -1306,11 +1307,18 @@ def check_emoji(news: dict | None, log) -> None:
     else:
         ok("全ページの表示される文に絵文字なし（🅐〜🅓・✕・★・✦・矢印・/corrections/ の引用を除く）")
 
-    # その日に足したデータ。直前のコミットに無い項目を新しい項目とみなす
+    # その日に足したデータ。origin/main との分かれ目に無い項目を新しい項目とみなす
+    # （直前のコミットと比べると、commit の後に流したとき新しい項目が 0件になる）
     import subprocess
+    try:
+        r = subprocess.run(["git", "merge-base", "HEAD", "origin/main"], cwd=ROOT, capture_output=True, timeout=20)
+        base = r.stdout.decode("utf-8").strip() if r.returncode == 0 else ""
+    except Exception:  # git が無いなど
+        base = ""
+    base = base or "HEAD"
     def at_head(rel: str):
         try:
-            r = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, timeout=20)
+            r = subprocess.run(["git", "show", f"{base}:{rel}"], cwd=ROOT, capture_output=True, timeout=20)
             return json.loads(r.stdout.decode("utf-8")) if r.returncode == 0 else None
         except Exception:  # git が無い・壊れた JSON など
             return None
@@ -1344,7 +1352,7 @@ def check_emoji(news: dict | None, log) -> None:
         warn(f"その日に足したデータに絵文字があります: {'・'.join(bad[:5])}。分類は label の語で、国は国名で書く"
              "（daily-site-update「分類の札」）")
     else:
-        ok(f"その日に足したデータに絵文字なし（news_data.json・update_log.json の新しい項目 {len(new)}件）")
+        ok(f"その日に足したデータに絵文字なし（news_data.json・update_log.json の新しい項目 {len(new)}件・比べた相手 {base[:7]}）")
 
 
 def check_colors() -> None:

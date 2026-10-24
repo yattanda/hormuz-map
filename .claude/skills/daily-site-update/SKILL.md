@@ -197,7 +197,7 @@ python tools/validate_daily.py
 - 日付整合（`dateModified` / ヘッダー / 速報バナー / ルートサマリー /
   `news_data.updated` / `update_log` 先頭 / `archive_timeline` 末尾）
 - `latest` 4件と必須フィールド、`isLatest` の単一性、`archive_timeline` の日付重複
-- **絵文字と直書きの色（WARN・2026-10-22〜）**：全ページの表示される文の絵文字、`news_data.json`・`update_log.json` のうち直前のコミットに無い項目の絵文字、CSS・`style`・JS の直書きの色。新しい項目は直前のコミットと比べて決めるので、**commit の前に**走らせる。WARN が出たら絵文字は語に、色は `tokens.css` の変数に直す（スキル `site-design`）
+- **絵文字と直書きの色（WARN・2026-10-22〜）**：全ページの表示される文の絵文字、`news_data.json`・`update_log.json` のうち `origin/main` との分かれ目（merge-base）に無い項目の絵文字、CSS・`style`・JS の直書きの色。新しい項目は `origin/main` との分かれ目と比べて決めるので、commit の後に走らせても拾える（OK の行に件数と比べた相手が出る。0件なら比べる相手を確かめる）。WARN が出たら絵文字は語に、色は `tokens.css` の変数に直す（スキル `site-design`）
 - **全ルート現況サマリーの行ごとの鮮度（WARN）**：見出し（`sec-h2-sub`）の日付更新だけでは
   検出できない「本文が古いまま」を、各行の「最新」（`p.route-latest` の `<time datetime>`）から見る
   （2026-09-15、ルートB＝サウジ東西PLで見出しだけ更新され本文が4/12時点のまま、という事故が

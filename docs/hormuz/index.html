@@ -1948,6 +1948,8 @@ function renderMilitaryLayer() {
       });
       row.append(lab, text);
       nextRow.insertAdjacentElement('afterend', row);
+      // 用語集のツールチップ：30秒カラムは「今後の予定」も含めて1区域（下の「用語集」の script）
+      if (window.Glossary) Glossary.annotate(row.closest('.glance-summary'));
     })
     .catch(() => { /* 読めないときは行を出さない */ });
 })();
@@ -3530,6 +3532,8 @@ function loadNewsData() {
       [renderLatestNews, renderArchive, renderOsint].forEach(fn => {
         try { fn(data); } catch (e) { console.warn('news render error:', fn.name, e); }
       });
+      // 用語集のツールチップ（下の「用語集」の script）。描き直した本文を区域として渡す
+      if (window.Glossary) Glossary.annotate(document.querySelectorAll('.news-body'));
     })
     .catch(e => console.warn('news_data fetch error:', e))
     .finally(() => {
@@ -4377,6 +4381,22 @@ function scrollToJapanFlow(e) {
     const ro = new ResizeObserver(sendHeight);
     ro.observe(document.body);
   }
+})();
+</script>
+<script>
+/* 用語集のツールチップ（2026-10-24・用語集 S4。設計 tools/glossary-search-design.md §12）。本文には手で印を書かない。
+   LCP までの通信に入れないよう load の後に読み込み、区域が画面に近づいたときに印を付ける（data-lazy）。
+   区域は日次スキルの型にある class だけを使う。型の class を変えるときはここも直す */
+(function(){
+  function load(){
+    var s = document.createElement('script');
+    s.src = '/assets/glossary.js';
+    s.setAttribute('data-zones', '.glance-summary, .incident-item .incident-body, td.route-detail, .sc-body, .sc-update, .news-body');
+    s.setAttribute('data-lazy', '');
+    document.body.appendChild(s);
+  }
+  if (document.readyState === 'complete') load();
+  else window.addEventListener('load', load);
 })();
 </script>
 <script>

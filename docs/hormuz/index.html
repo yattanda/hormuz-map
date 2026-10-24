@@ -1292,7 +1292,7 @@ document.addEventListener('keydown', function(e) {
           </td>
           <td class="t-violet">
             増量中<br>
-            <small>アラスカから太平洋直行 約15日<br>メキシコ湾岸からパナマ運河経由 約35日</small>
+            <small>アラスカから太平洋直行 約10〜15日（距離からの目安）<br>メキシコ湾岸からパナマ運河経由 約35日</small>
           </td>
           <td id="jf-td-C_US" class="jf-col jf-td t-violet">
             <strong id="jf-C_US-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
@@ -2455,6 +2455,23 @@ const routePanama = [
   [ 8.880, -79.520],  // 太平洋入口（航路端）
 ];
 
+// 米国のメキシコ湾岸（テキサス州）発 パナマ運河経由：4/26 に東京湾に着いた米国産の第1便の道（3/22 テキサス発・35日・コスモエネルギー。共同通信 4/26）。
+// 積んだ港は公表されていないので、起点はテキサス州の沖（ガルベストン沖）に置く。太平洋はメキシコ沖から日本へ大圏で結ぶ。
+// アラスカの線と同じく経度は東へ続けて書く（180° を越えた先は +360。WORLD WRAP が ±360° に複製する）。
+// 線は運河の両側の2本に分け、運河の中は canalPane のパナマ運河の線がつなぐ（運河は陸の上を通るので、航路の陸の検査から外すため）
+const routeC_gulf = [
+  [34.75,140.0],[35.3,141.0],                              // 房総半島の南
+  [40.3,154.5],[43.5,169.6],[44.5,185.9],[43.2,202.1],
+  [39.8,217.1],[34.7,230.3],[28.3,241.9],[21.0,252.0],    // 大圏 → メキシコ沖
+  [17.0,257.5],[15.0,264.0],[12.0,270.0],[8.5,274.0],     // 中米の太平洋岸の沖
+  [6.8,278.5],[7.0,279.5],[7.3,280.4],[8.880,280.480],    // アスエロ半島の南 → パナマ湾 → 運河の太平洋入口
+];
+const routeC_gulf_atl = [
+  [9.383,280.082],                                        // 運河のカリブ海入口
+  [9.6,280.05],[11.0,279.8],[15.0,278.5],[19.0,275.5],    // カリブ海
+  [21.8,274.0],[24.0,272.0],[27.0,268.0],[29.25,265.35],  // ユカタン海峡 → メキシコ湾 → ガルベストン沖
+];
+
 
 // ============================================================
 // 4. DRAW ROUTES
@@ -2475,6 +2492,8 @@ const ROUTES = [   // [座標, 色の名前, 太さ, 破線, 不透明度, ツ�
   [routeA_pl,      'a',     2,   '5 4',  0.95, 'ルートA：ADCOPパイプライン（陸上）'],
   [routeA,         'a',     2.5, '12 5', 0.95, 'ルートA：フジャイラ港経由（海上）'],
   [routeC_pacific, 'c',     2.5, '10 7', 0.9,  'ルートC：米国アラスカ発 太平洋ルート（6/7 初到着）'],
+  [routeC_gulf,    'c',     2.5, '1 6',  0.9,  'ルートC：米国メキシコ湾岸発 パナマ運河経由（4/26 初到着・約35日）'],
+  [routeC_gulf_atl,'c',     2.5, '1 6',  0.9,  'ルートC：米国メキシコ湾岸発 パナマ運河経由（4/26 初到着・約35日）'],
   [routeC_brazil,  'c-sa',  2,   '8 6',  0.85, 'ルートC（南米）：ブラジル発 喜望峰経由ルート'],
   [routeNigeria,   'ng',    2,   '8 6',  0.85, 'ナイジェリア発：喜望峰経由→日本（約35〜40日）'],
   [routeAngola,    'ao',    2,   '8 6',  0.9,  'アンゴラ発：喜望峰経由→日本（約35〜40日）'],
@@ -2652,6 +2671,11 @@ const malaccaMarker = L.marker([1.5,103.5],{icon:mkBadge('none','strait')}).addT
 L.marker([61.01,213.12],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
   <div class="p-title"> 米国（アラスカ）</div>
   <div class="p-body"><strong>ルートC</strong>の供給源。日米首脳会談で輸入拡大を協議。<strong>6/7 にアラスカ産の最初の便（約73万バレル）が千葉県袖ケ浦に到着。</strong></div>`);
+
+L.marker([29.25,265.35],{icon:mkBadge('none','barrel')}).addTo(map).bindPopup(`
+  <div class="p-title"> 米国（メキシコ湾岸）</div>
+  <div class="p-body"><strong>ルートC</strong>の供給源。<strong>4/26 に米国産の第1便（約14万5千キロリットル）が東京湾に到着。</strong>3/22 にテキサス州を出て、パナマ運河を通り35日で着いた（喜望峰回りは55日）</div>
+  <div class="p-note">出典：共同通信（2026-04-26・コスモエネルギーホールディングスの説明）</div>`);
 
 // 南鳥島（レアアース泥）— ?focus=minamitori と「YouTube から来た方へ」枠から開く
 const minamitoriMarker = L.marker([24.28, 153.98], {
@@ -3037,6 +3061,7 @@ const Legend = L.Control.extend({
         <div class="leg-row"><div class="leg-dash leg-dash--a"></div><span>ルートA：ADCOP PL→フジャイラ港（UAE）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--b"></div><span>ルートB：サウジ東西PL→ヤンブー港（全面回復）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--c"></div><span>ルートC：アラスカ発 太平洋ルート（6/7 初到着）</span></div>
+        <div class="leg-row"><div class="leg-dash leg-dash--c-gulf"></div><span>ルートC：メキシコ湾岸発 パナマ運河経由（4/26 初到着）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--c-sa"></div><span>ルートC（南米）：ブラジル発 喜望峰経由（約40〜45日）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--ng"></div><span>ナイジェリア発：喜望峰経由→日本（約35〜40日）</span></div>
         <div class="leg-row"><div class="leg-dash leg-dash--ao"></div><span>アンゴラ発：喜望峰経由→日本（約35〜40日）</span></div>

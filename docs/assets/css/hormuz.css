@@ -1651,6 +1651,7 @@ footer {                                   /* フッター（中央揃え・上�
 .leg-dash--a { border-color:var(--map-route-a); }
 .leg-dash--b { border-color:var(--map-route-b); }
 .leg-dash--c { border-color:var(--map-route-c); }
+.leg-dash--c-gulf { border-color:var(--map-route-c); border-top-style:dotted; }
 .leg-dash--c-sa { border-color:var(--map-route-c-sa); }
 .leg-dash--ng { border-color:var(--map-route-ng); }
 .leg-dash--ao { border-color:var(--map-route-ao); }

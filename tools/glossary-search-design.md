@@ -895,4 +895,8 @@ function search(terms){                         // AND・新しい順
 | 9 | `validate_daily.py`：OK 83 / WARN 0 / NG 0 |
 
 - コンソールのエラーは、手元のサーバーに無い `/favicon.ico` の 404 と、手元の環境で GA4 の送信（`collect`）が通らないことによる接続エラーだけ（変更前と同じ）
+- PR [#125](https://github.com/yattanda/hormuz-map/pull/125)。`/code-review 125 --comment` の指摘3件（いずれも低）：
+  - 区域の class が日次の型とずれても検査で拾えない → `validate_daily.py` に `check_glossary_zones()`（WARN）。`data-zones` のセレクタの各部分（タグ.クラス）が、静的な HTML か JS の HTML の文字列に class として出てくるかを見る。子孫の関係は見ない。`html-safe-edit` の「読みやすさの仕組み」に1行。確認：いまのページで OK、class 名の変更・タグの変更・`route-detail-x`（部分一致させない）・`data-zones` なしの5通りで WARN。`validate_daily.py` OK 84 / WARN 0 / NG 0
+  - `load` を待つので読んでいる最中に印が現れる → **直さない**（運営者・10/24。Q4 の決定どおり）
+  - ツールチップで使わない本文ごと `glossary.json` を読む → **直さない**（運営者・10/24。§11-15 の「転送量を見てから」のまま）
 - **残り**：§12-5 の 7 は手元では判断できなかった。マージ後に本番の PSI の画面で3回取り、10/22 の値（mobile 中央値 Perf 55・LCP 23.0 s・TBT 20 ms）と比べる（§12-5 の 10）

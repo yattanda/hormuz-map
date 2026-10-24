@@ -1,7 +1,17 @@
 {
-  "updated": "2026年10月24日 07:29 日本時間JST",
+  "updated": "2026年10月25日 07:02 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-coalition-intercept-1024",
+      "title": "サウジ主導の連合軍「フーシ派の弾道ミサイル2発をタイフ・ヤンブー方面で迎撃」と発表——記事は被害に触れず",
+      "body": "Reuters配信のTimes of Israel（10/24 12:23 pm）は、サウジ主導の連合軍が、イランに近いフーシ派がタイフとヤンブーに向けて発射した弾道ミサイル2発を破壊したと発表したと伝える（原文は「The Saudi Arabia-led coalition fighting Yemen's Houthis says it destroyed two ballistic missiles」「fired by the Iran-aligned group towards Taif and Yanbu」）。サウジの警報サービスは一時、タイフ・ヤンブーに加えてメッカ・ジェッダにも危険を知らせる警報を出し、約10分後に危険が去ったと通知した。記事は被害に触れていない。連合軍の発表で、フーシ派側の説明は確認できない。",
+      "sourceLabel": "Reuters配信・Times of Israel（10/24）",
+      "date": "2026年10月24日（現地）",
+      "label": "攻撃",
+      "url": "https://www.timesofisrael.com/liveblog_entry/saudi-led-coalition-says-it-destroyed-two-houthi-ballistic-missiles-fired-at-kingdom/",
+      "isLatest": true
+    },
     {
       "id": "latest-oil-close-1023",
       "title": "原油10/23終値：ブレント12月物116.72ドル（+3.55ドル）、WTI12月物103.27ドル（+3.80ドル）——ブレントは4/29以来の高値",
@@ -10,7 +20,7 @@
       "date": "2026年10月23日（米国時間）",
       "label": "原油・市場",
       "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-ukmto-181-1022",
@@ -30,16 +40,6 @@
       "date": "2026年10月22日（現地）",
       "label": "海上",
       "url": "https://gcaptain.com/iran-claims-more-ships-struck-near-hormuz-as-trump-accuses-tehran-of-faking-hits/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-close-1022",
-      "title": "原油10/22終値：ブレント12月物113.17ドル（+4.35ドル）、WTI12月物99.47ドル（+2.32ドル）",
-      "body": "Newsquawk（10/22 20:37 UTC）は、WTI（Z6）が2.32ドル高の99.47ドル、ブレント（Z6）が4.35ドル高の113.17ドルで清算されたと伝える（原文は「WTI (Z6) SETTLED USD 2.32 HIGHER AT 99.47/BBL; BRENT (Z6) SETTLED USD 4.35 HIGHER AT 113.17/BBL」）。Rigzone配信のBloomberg記事（10/22）も「Brent for December settlement climbed 4% to settle at $113.17 a barrel」「WTI for December delivery advanced 2.4% to settle at $99.47 a barrel in New York」と書き、2つの出典で終値が一致した。Newsquawkは上昇の材料として「renewed Houthi attacks on Saudi Arabia」を挙げ、フーシ派がリヤドの国防省とヤンブーのアラムコ施設を攻撃したと述べたと書く（サウジ側の確認は確認できない）。",
-      "sourceLabel": "Newsquawk・Rigzone（Bloomberg）（10/22）",
-      "date": "2026年10月22日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.newsquawk.com/headlines/us-market-wrap-tech-hit-on-ai-concerns-while-middle-east-tensions-grow",
       "isLatest": false
     }
   ],
@@ -2002,6 +2002,16 @@
     {
       "batchLabel": "2026年10月24日",
       "items": [
+        {
+          "id": "latest-oil-close-1022",
+          "title": "原油10/22終値：ブレント12月物113.17ドル（+4.35ドル）、WTI12月物99.47ドル（+2.32ドル）",
+          "body": "Newsquawk（10/22 20:37 UTC）は、WTI（Z6）が2.32ドル高の99.47ドル、ブレント（Z6）が4.35ドル高の113.17ドルで清算されたと伝える（原文は「WTI (Z6) SETTLED USD 2.32 HIGHER AT 99.47/BBL; BRENT (Z6) SETTLED USD 4.35 HIGHER AT 113.17/BBL」）。Rigzone配信のBloomberg記事（10/22）も「Brent for December settlement climbed 4% to settle at $113.17 a barrel」「WTI for December delivery advanced 2.4% to settle at $99.47 a barrel in New York」と書き、2つの出典で終値が一致した。Newsquawkは上昇の材料として「renewed Houthi attacks on Saudi Arabia」を挙げ、フーシ派がリヤドの国防省とヤンブーのアラムコ施設を攻撃したと述べたと書く（サウジ側の確認は確認できない）。",
+          "sourceLabel": "Newsquawk・Rigzone（Bloomberg）（10/22）",
+          "date": "2026年10月22日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.newsquawk.com/headlines/us-market-wrap-tech-hit-on-ai-concerns-while-middle-east-tensions-grow",
+          "isLatest": false
+        },
         {
           "id": "latest-ukmto-179-1021",
           "title": "UKMTO警報179：オマーン・ブハの西11海里でタンカーが飛翔体で被弾・火災は鎮火——乗組員は全員無事、船名・攻撃主体は不明",

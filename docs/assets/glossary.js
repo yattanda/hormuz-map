@@ -119,28 +119,40 @@
 
   // 区域が画面の上下 LAZY_MARGIN 以内に入ったら1回だけ処理し、見張りから外す。
   // 隠れている区域（display:none の中）は、見えるようになって近づいたときに処理される
+  var watched = [];       // 見張っている区域（処理する前に DOM から外れたものを手放すため）
+  function unwatch(zone){
+    observer.unobserve(zone);
+    var i = watched.indexOf(zone);
+    if(i >= 0) watched.splice(i, 1);
+  }
   function watch(zone){
     if(!observer){
       observer = new IntersectionObserver(function(entries){
         entries.forEach(function(en){
           if(!en.isIntersecting) return;
-          observer.unobserve(en.target);
+          unwatch(en.target);
           annotateZone(en.target);
         });
       }, {rootMargin: LAZY_MARGIN});
     }
+    if(watched.indexOf(zone) < 0) watched.push(zone);
     observer.observe(zone);
+  }
+  // 描いた側が innerHTML で作り直すと、前の区域は DOM から外れたまま残る。annotate() のたびに1回だけ手放す
+  function pruneWatched(){
+    if(!observer) return;
+    watched.slice().forEach(function(z){ if(!document.contains(z)) unwatch(z); });
   }
 
   function annotateOne(zone){
-    if(!matcher || !zone || zone.nodeType !== 1) return;
-    if(LAZY) watch(zone);
-    else annotateZone(zone);
+    if(!LAZY){ annotateZone(zone); return; }
+    if(zone && zone.nodeType === 1) watch(zone);
   }
 
   function annotate(target){
     if(failed || !target) return;
     if(!ready){ queue.push(target); return; }
+    if(LAZY) pruneWatched();
     if(target.nodeType === 1){ annotateOne(target); return; }
     for(var i = 0; i < target.length; i++) annotateOne(target[i]);
   }

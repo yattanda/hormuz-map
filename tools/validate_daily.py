@@ -1604,6 +1604,32 @@ def check_glossary() -> None:
             ng("用語集：" + l.replace("NG", "", 1).strip())
 
 
+def check_glossary_zones(html: str) -> None:
+    """/hormuz/ のツールチップの区域（「用語集」の script の data-zones）が、ページの class と合っているか。
+
+    区域は日次スキルの型の class（.glance-summary・.incident-body・.route-detail ほか）で指定している。
+    型を直して class 名が変わると、その区域の印が黙って消える。セレクタの各部分（タグ.クラス）が
+    ページのどこか（静的な HTML か、JS が組み立てる HTML の文字列）に class として出てくるかを見る。
+    子孫の関係までは見ない（設計：tools/glossary-search-design.md §12-3）
+    """
+    m = re.search(r"setAttribute\('data-zones',\s*'([^']+)'\)", html)
+    if not m:
+        warn("/hormuz/ の用語集の区域（data-zones）が見つかりません。ツールチップの読み込みを外したなら、この検査も外してください")
+        return
+    missing = []
+    for sel in [s.strip() for s in m.group(1).split(",") if s.strip()]:
+        for part in sel.split():
+            tag, _, classes = part.partition(".")
+            for cls in [c for c in classes.split(".") if c]:
+                pat = (rf"<{re.escape(tag)}\b[^>]*" if tag else "") + rf'class="[^"]*(?<![\w-]){re.escape(cls)}(?![\w-])'
+                if not re.search(pat, html):
+                    missing.append(f"{sel}（{part}）")
+    if missing:
+        warn("/hormuz/ の用語集の区域が、ページの class に見つかりません（型の class を変えたなら data-zones も直す）：" + "、".join(missing))
+    else:
+        ok("/hormuz/ の用語集の区域（data-zones）はページの class と一致")
+
+
 ROUTE_PORT_MARGIN = 0.3   # 起点・終点からこの度数の内側は見ない（港・印は陸にある）
 ROUTE_STEP = 0.02         # 線の上を調べる間隔（度）
 
@@ -1774,6 +1800,7 @@ def main() -> int:
     check_stockpile(html)
     check_column_pills(html)
     check_glossary()
+    check_glossary_zones(html)
     if args.check_urls:
         print("URL を確認しています…\n")
         check_urls(news)

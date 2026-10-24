@@ -166,11 +166,8 @@ if (window.innerWidth <= 480) {
 
 ### 🟢 機能追加（余裕があれば）
 
-#### 4. キーワードツールチップ
-- **概要**: 重要キーワード上にカーソルオン（スマホはタップ）で簡潔な解説ポップアップ
-- **対象語例**: ホルムズ海峡、OPEC、Kpler、CENTCOM、OFAC、BPD 等
-- **実装方針**: CSS `position:relative` + `::after` または `<span data-tooltip="...">` + JSで制御
-- **スマホ対応**: タップで表示・もう一度タップで非表示
+#### 4. ~~キーワードツールチップ~~ ✅ 完了（2026-10-05 用語集・`/archive/`・記事、2026-10-24 `/hormuz/` 本体）
+- 用語集 S3（PR #51）と S4（PR #124・PR 2）で実装。正本は `docs/data/glossary.json`、共通部品は `docs/assets/glossary.js`。設計と実施記録は `tools/glossary-search-design.md`（§11・§12）
 
 ---
 
@@ -385,6 +382,10 @@ if (window.innerWidth <= 480) {
 - **地図のスクリプトの位置（2026-10-22）**：`leaflet.js`・`basemap.js` は `<head>` では `<link rel="preload">` で取り寄せだけ始め、実行は本文の地図のスクリプト（MILITARY LAYER）の直前の `<script src>`。
   `<head>` で実行すると、上の欄（30秒カラム＝mobile の LCP）の表示がこの2つを待つ。**`L`・`HormuzBasemap` を使うコードは、この位置より下か `DOMContentLoaded` の後に書く**。
   `defer` にしなかったのは、地図のスクリプト（約1,800行）のトップレベルの関数を HTML の `onclick` が呼んでいて、包み直すと壊れるため
+- **用語集のツールチップ（`/hormuz/`・2026-10-24）**：`</body>` の手前の「用語集」の `<script>` が、`load` の後に `/assets/glossary.js` を `data-lazy` 付きで読み込む
+  （区域が画面の上下 300px 以内に入ったときに1回だけ印を付ける。まとめて付けると、ページ全体の配置の計算がやり直しになり mobile の TBT が増えるため）。
+  区域は `data-zones` の6つ（`.glance-summary`・`.incident-item .incident-body`・`td.route-detail`・`.sc-body`・`.sc-update`・`.news-body`）で、日次スキルの型にある class だけを使う。
+  **型の class を変えるときは `data-zones` も直す**。JS が後から描く区域（ニュース・30秒カラムの「今後の予定」）は、描いた直後に `Glossary.annotate()` を呼ぶ。日次スキル・`validate_daily.py` は変えていない
 - **直リンク化**：リンク先となるアンカー（`id`）の棚卸しが必要
 
 ---

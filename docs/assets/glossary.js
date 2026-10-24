@@ -7,6 +7,8 @@
  * 使い方：
  *   <script defer src="/assets/glossary.js" data-zones=".article-body"></script>
  *   data-zones … 印を付ける区域のセレクタ。当たった要素1つが1区域で、各用語は区域ごとに最初の1回だけ印を付ける
+ *   data-lazy  … 付けると、区域が画面に近づいたときに1回だけ印を付ける（§12-2。/hormuz/ のような長いページ用）。
+ *                付けないページは、読み込み後にまとめて印を付ける
  *   JS が後から描く区域は、描いた側が Glossary.annotate(要素または要素の並び) を呼ぶ
  *   Glossary.data は glossary.json の中身で解決する Promise（読めなければ null）
  *
@@ -22,6 +24,10 @@
 
   var script = document.currentScript;
   var ZONES = (script && script.getAttribute('data-zones')) || '';
+  // 印を差し込むと、ページ全体の配置の計算がやり直しになる。長いページでは、見えていない区域の分を後回しにする
+  var LAZY = !!(script && script.hasAttribute('data-lazy')) && typeof window.IntersectionObserver === 'function';
+  var LAZY_MARGIN = '300px 0px';
+  var observer = null;
 
   var ready = false;      // glossary.json を読み終えたか
   var failed = false;
@@ -111,11 +117,44 @@
     });
   }
 
+  // 区域が画面の上下 LAZY_MARGIN 以内に入ったら1回だけ処理し、見張りから外す。
+  // 隠れている区域（display:none の中）は、見えるようになって近づいたときに処理される
+  var watched = [];       // 見張っている区域（処理する前に DOM から外れたものを手放すため）
+  function unwatch(zone){
+    observer.unobserve(zone);
+    var i = watched.indexOf(zone);
+    if(i >= 0) watched.splice(i, 1);
+  }
+  function watch(zone){
+    if(!observer){
+      observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting) return;
+          unwatch(en.target);
+          annotateZone(en.target);
+        });
+      }, {rootMargin: LAZY_MARGIN});
+    }
+    if(watched.indexOf(zone) < 0) watched.push(zone);
+    observer.observe(zone);
+  }
+  // 描いた側が innerHTML で作り直すと、前の区域は DOM から外れたまま残る。annotate() のたびに1回だけ手放す
+  function pruneWatched(){
+    if(!observer) return;
+    watched.slice().forEach(function(z){ if(!document.contains(z)) unwatch(z); });
+  }
+
+  function annotateOne(zone){
+    if(!LAZY){ annotateZone(zone); return; }
+    if(zone && zone.nodeType === 1) watch(zone);
+  }
+
   function annotate(target){
     if(failed || !target) return;
     if(!ready){ queue.push(target); return; }
-    if(target.nodeType === 1){ annotateZone(target); return; }
-    for(var i = 0; i < target.length; i++) annotateZone(target[i]);
+    if(LAZY) pruneWatched();
+    if(target.nodeType === 1){ annotateOne(target); return; }
+    for(var i = 0; i < target.length; i++) annotateOne(target[i]);
   }
 
   // ------------------------------------------------------------

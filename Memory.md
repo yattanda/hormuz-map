@@ -370,7 +370,8 @@ if (window.innerWidth <= 480) {
   （すべて小文字。サイト内リンクには付けない。台帳は上流の非公開ノート側）
 - **`?focus=<キー>`（2026-09-22 実装、`ca84606`）**：トップの地図を指定の印へ寄せてポップアップを開く。UTM ではなく表示を決めるパラメータ。
   書く順は `?focus=<キー>&utm_…`。キーは小文字英字で、`docs/hormuz/index.html` の `FOCUS_TARGETS`（5-C）に定義する。ルートに `?focus=` 付きで来たアクセスはハブの JS が `/hormuz/` へ送る。
-  現在のキー：`minamitori`（南鳥島）。キーを足したら、`/hormuz/` とハブの「YouTube から来た方へ」枠（`#yt-visitors`）と台帳にも足す。
+  現在のキー：`minamitori`（南鳥島）・`tsugaru`（津軽海峡）・`malacca`（マラッカ海峡）。キーを足したら、ハブの「YouTube から来た方へ」枠（`docs/index.html` の `#yt-visitors`）と台帳にも足す。
+  `/hormuz/` 側の枠は 2026-10-24 に外した（K9・`tools/display-unify-design.md` §4。10/6〜10/23 の GA4 で、YouTube から `focus` なしで `/hormuz/` に着いたのは1件だけ）
   `#アンカー` を使わないのは、§11-10 実施条件1に反し、GA4 の page_location にも残らないため
 - **地図の横方向エンドレス化（2026-10-06 公開・PR #55・merge commit `a815220`）**：地図に足した印（`L.marker`）・線（`L.polyline`）・面（`L.polygon`・GeoJSON）は、`map.on('layeradd')` のフックが経度 ±360° に自動で複製する（`docs/hormuz/index.html` の「1-B. WORLD WRAP」）。**印を足すときに手で複製を書かない。**
   中心経度は常に −180〜180° に戻る（ドラッグ中は Leaflet の `worldCopyJump`、それ以外は `moveend` の補正）。点の経度は −180〜180° で書き、180° 線をまたぐ線は連続した値（…170, 180, 190…）で書く。

@@ -167,13 +167,6 @@
     ▶ YouTube動画を発信中、チャンネルはこちら
   </a>
 </div>
-<!-- YouTube から来た方へ（動画で扱った地点へ地図を寄せる。項目は focusOn() のキーと対応） -->
-<div id="yt-visitors" class="yt-visitors">
-  <span class="yt-visitors-label">▶ YouTube から来た方へ</span>
-  <button type="button" onclick="focusOn('malacca')" class="yt-visitors-btn">マラッカ海峡とサウジの原油 → 地図で見る</button>
-  <button type="button" onclick="focusOn('tsugaru')" class="yt-visitors-btn">津軽海峡のタンカーの荷 → 地図で見る</button>
-  <button type="button" onclick="focusOn('minamitori')" class="yt-visitors-btn">南鳥島のレアアース泥 → 地図で見る</button>
-</div>
 <div class="glance">
   <div class="glance-panel">
 
@@ -3008,7 +3001,8 @@ L.Popup.prototype._adjustPan = function () {
 // 5-C. FOCUS（?focus=<キー> で指定の印へ寄せる）
 // ============================================================
 // YouTube 等からの流入を、動画で扱った地点の印へ直接案内する。
-// キーは小文字英字。追加したら「YouTube から来た方へ」枠とリンク台帳にも足す。
+// キーは小文字英字。追加したらハブ（docs/index.html）の「YouTube から来た方へ」枠とリンク台帳にも足す。
+// /hormuz/ 側の枠は 2026-10-24 に外した（K9。流入は ?focus= 付きで着くため）。
 // #アンカーにしないのは、GA4 の page_location にクエリとして残すため。
 const FOCUS_TARGETS = {
   minamitori: { marker: minamitoriMarker, zoom: 6 },

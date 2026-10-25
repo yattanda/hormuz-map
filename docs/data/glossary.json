@@ -1,7 +1,7 @@
 {
   "meta": {
     "updated": "2026-10-26",
-    "count": 55
+    "count": 92
   },
   "terms": [
     {
@@ -1727,6 +1727,959 @@
       "related": [
         "sanaa"
       ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "bandar-abbas",
+      "term": "バンダルアッバース（イラン）",
+      "reading": "ばんだるあっばーす",
+      "category": "place",
+      "match": [
+        "バンダルアッバース",
+        "バンダレアッバース",
+        "バンダル・アッバース",
+        "バンダルアッバス"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン南部、ホルムズ海峡に面した港湾都市。ホルモズガーン州の州都。",
+      "body": [
+        "イラン南部、ペルシャ湾の出口にあたるホルムズ海峡に面した港湾都市で、ホルモズガーン州の州都（Wikipedia）。ゲシュム島やララク島に近い。ホルムズ海峡の危機では、イランの港や軍の施設が集まる場所として、攻撃や船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Bandar Abbas」",
+          "url": "https://en.wikipedia.org/wiki/Bandar_Abbas"
+        }
+      ],
+      "related": [
+        "hormozgan",
+        "qeshm",
+        "larak",
+        "strait-of-hormuz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "jask",
+      "term": "ジャスク（イラン）",
+      "reading": "じゃすく",
+      "category": "place",
+      "match": [
+        "ジャスク"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン南部、ホルムズ海峡の外側のオマーン湾に面した町。ホルモズガーン州にある。",
+      "body": [
+        "イラン南部のホルモズガーン州にある町で、同名の郡の中心（Wikipedia）。ホルムズ海峡の外側、オマーン湾に面している。海峡を通らずに原油を積み出すためのパイプラインの終点があり、海軍の基地もある。ホルムズ海峡の危機では、米軍の攻撃の対象や船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Jask」",
+          "url": "https://en.wikipedia.org/wiki/Jask"
+        },
+        {
+          "label": "米EIA「World Oil Transit Chokepoints」（2026-03-03 更新）",
+          "url": "https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints"
+        }
+      ],
+      "related": [
+        "hormozgan",
+        "kharg",
+        "strait-of-hormuz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "bushehr",
+      "term": "ブシェール（イラン）",
+      "reading": "ぶしぇーる",
+      "category": "place",
+      "match": [
+        "ブシェール"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン南西部、ペルシャ湾に面した港湾都市。ブシェール州の州都。",
+      "body": [
+        "イラン南西部、ペルシャ湾に面した港湾都市で、ブシェール州の州都（Wikipedia）。近くにイランの原子力発電所がある。ホルムズ海峡の危機では、イラン沿岸で爆発や攻撃が伝えられた場所の一つとして登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Bushehr」",
+          "url": "https://en.wikipedia.org/wiki/Bushehr"
+        }
+      ],
+      "related": [
+        "kharg"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "chabahar",
+      "term": "チャバハール（イラン）",
+      "reading": "ちゃばはーる",
+      "category": "place",
+      "match": [
+        "チャバハール",
+        "チャーバハール"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン南東部、オマーン湾に面した港湾都市。ホルムズ海峡の外側にある自由港。",
+      "body": [
+        "イラン南東部のシスタン・バルチスタン州にある港湾都市で、オマーン湾に面した自由港（Wikipedia）。ホルムズ海峡の外側にあり、東へ約170キロにはパキスタンのグワダル港がある。アフガニスタンや中央アジアとの貿易の窓口とされる。ホルムズ海峡の危機では、イラン沿岸の攻撃の対象の一つとして登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Chabahar」",
+          "url": "https://en.wikipedia.org/wiki/Chabahar"
+        }
+      ],
+      "related": [
+        "jask"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "larak",
+      "term": "ララク島（イラン）",
+      "reading": "ららくとう",
+      "category": "place",
+      "match": [
+        "ララク島",
+        "ララク"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "ホルムズ海峡の最も狭い所にあるイランの小島。バンダルアッバースの沖、ゲシュム島の東。",
+      "body": [
+        "バンダルアッバースの沖、ゲシュム島の東、ホルムズ島の南にあるイランの小島で、ホルモズガーン州に属する（Wikipedia）。ホルムズ海峡で最も狭い所（約39キロ）は、この島とオマーン側の島の間にある。ホルムズ海峡の危機では、イラン軍の施設への攻撃の現場として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Larak Island」",
+          "url": "https://en.wikipedia.org/wiki/Larak_Island"
+        }
+      ],
+      "related": [
+        "qeshm",
+        "bandar-abbas",
+        "strait-of-hormuz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "hengam",
+      "term": "ヘンガム島（イラン）",
+      "reading": "へんがむとう",
+      "category": "place",
+      "match": [
+        "ヘンガム島"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "ペルシャ湾にあるイランの島。ゲシュム島の南にある。",
+      "body": [
+        "ペルシャ湾にあるイランの島で、ゲシュム島の南に位置する（Wikipedia）。ホルムズ海峡の内側にあたる。ホルムズ海峡の危機では、商船が攻撃を受けた場所の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Hengam Island」",
+          "url": "https://en.wikipedia.org/wiki/Hengam_Island"
+        }
+      ],
+      "related": [
+        "qeshm"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "hormozgan",
+      "term": "ホルモズガーン州（イラン）",
+      "reading": "ほるもずがーんしゅう",
+      "category": "place",
+      "match": [
+        "ホルモズガーン州",
+        "ホルモズガン州",
+        "ホルモズガーン",
+        "ホルモズガン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン南部の州。ホルムズ海峡の北岸にあたり、州都はバンダルアッバース。",
+      "body": [
+        "イランに31ある州の一つで、州都はバンダルアッバース（Wikipedia）。ホルムズ海峡の北岸にあたり、ゲシュム島・ララク島・ヘンガム島や、オマーン湾側のジャスクもこの州に属する。ホルムズ海峡の危機では、攻撃や爆発が伝えられた場所の州名として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Hormozgan province」",
+          "url": "https://en.wikipedia.org/wiki/Hormozgan_province"
+        }
+      ],
+      "related": [
+        "bandar-abbas",
+        "jask",
+        "qeshm",
+        "larak"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "mashhad",
+      "term": "マシュハド（イラン）",
+      "reading": "ましゅはど",
+      "category": "place",
+      "match": [
+        "マシュハド"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン北東部の都市。テヘランに次ぐ同国第2の都市で、イスラム教シーア派の聖地。",
+      "body": [
+        "イラン北東部、テヘランの東約740キロにある同国第2の都市で、ラザヴィー・ホラーサーン州の州都（Wikipedia）。シーア派の聖廟があり、巡礼地として知られる。ホルムズ海峡の危機では、ハメネイ師の埋葬地として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Mashhad」",
+          "url": "https://en.wikipedia.org/wiki/Mashhad"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "isfahan",
+      "term": "イスファハン（イラン）",
+      "reading": "いすふぁはん",
+      "category": "place",
+      "match": [
+        "イスファハン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン中部の都市で、同国第3の都市。核関連施設がある。",
+      "body": [
+        "イラン中部、テヘランの南約440キロにある都市で、イスファハン州の州都。人口は同国で3番目に多い（Wikipedia）。周辺に核関連施設がある。ホルムズ海峡の危機では、核関連施設のある場所や、軍の活動の場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Isfahan」",
+          "url": "https://en.wikipedia.org/wiki/Isfahan"
+        }
+      ],
+      "related": [
+        "natanz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "natanz",
+      "term": "ナタンズ（イラン）",
+      "reading": "なたんず",
+      "category": "place",
+      "match": [
+        "ナタンズ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラン中部、イスファハン州の町。ウラン濃縮施設がある。",
+      "body": [
+        "イラン中部のイスファハン州にある町で、カーシャーンの南東約70キロにある（Wikipedia）。イランのウラン濃縮施設がある。ホルムズ海峡の危機では、核関連施設への攻撃が伝えられた場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Natanz」",
+          "url": "https://en.wikipedia.org/wiki/Natanz"
+        }
+      ],
+      "related": [
+        "isfahan"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "muscat",
+      "term": "マスカット（オマーンの首都）",
+      "reading": "ますかっと",
+      "category": "place",
+      "match": [
+        "マスカット"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "オマーンの首都で最大の都市。オマーン湾に面し、ホルムズ海峡に近い。",
+      "body": [
+        "オマーンの首都で、同国で最も人口の多い都市（Wikipedia）。オマーン湾に面し、ホルムズ海峡に近い。ホルムズ海峡の危機では、仲介役のオマーンが開く協議や会談の場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Muscat」",
+          "url": "https://en.wikipedia.org/wiki/Muscat"
+        }
+      ],
+      "related": [
+        "strait-of-hormuz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "sohar",
+      "term": "ソハール（オマーン）",
+      "reading": "そはーる",
+      "category": "place",
+      "match": [
+        "ソハール"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "オマーン北部、オマーン湾に面した港湾都市。北バーティナ行政区の中心。",
+      "body": [
+        "オマーン北部の北バーティナ行政区の中心で、同行政区で最大の都市（Wikipedia）。オマーン湾に面した古くからの港町で、かつてはオマーンの都だった。ホルムズ海峡の危機では、沖の錨地での船舶への攻撃の現場として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Sohar」",
+          "url": "https://en.wikipedia.org/wiki/Sohar"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "salalah",
+      "term": "サラーラ（オマーン）",
+      "reading": "さらーら",
+      "category": "place",
+      "match": [
+        "サラーラ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "オマーン南部、アラビア海に面した港湾都市。ドファール行政区の中心。",
+      "body": [
+        "オマーン南部のドファール行政区の中心で、同行政区で最大の都市（Wikipedia）。アラビア海に面し、港がある。ホルムズ海峡の危機では、港への攻撃や、会合の予定地として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Salalah」",
+          "url": "https://en.wikipedia.org/wiki/Salalah"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "duqm",
+      "term": "ドゥクム（オマーン）",
+      "reading": "どぅくむ",
+      "category": "place",
+      "match": [
+        "ドゥクム"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "オマーン中部、アラビア海に面した港町。首都マスカットから約550キロ。",
+      "body": [
+        "オマーン中部のウスタ行政区にある港町で、インド洋につながるアラビア海に面する。首都マスカットから約550キロ離れている（Wikipedia）。ホルムズ海峡の危機では、イランによる攻撃や、沖での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Duqm」",
+          "url": "https://en.wikipedia.org/wiki/Duqm"
+        }
+      ],
+      "related": [
+        "muscat"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "musandam",
+      "term": "ムサンダム県（オマーン）",
+      "reading": "むさんだむけん",
+      "category": "place",
+      "match": [
+        "ムサンダム県",
+        "ムサンダム"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "ホルムズ海峡に突き出たムサンダム半島にあるオマーンの飛び地。対岸はイラン。",
+      "body": [
+        "オマーンの行政区の一つで、ホルムズ海峡に突き出たムサンダム半島にある。アラブ首長国連邦をはさんでオマーン本土から離れた飛び地で、この位置によりオマーンはイランとともに海峡に面している（Wikipedia）。中心の町はハサブ。ホルムズ海峡の危機では、沖での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Musandam Governorate」",
+          "url": "https://en.wikipedia.org/wiki/Musandam_Governorate"
+        }
+      ],
+      "related": [
+        "khasab",
+        "bukha",
+        "strait-of-hormuz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "khasab",
+      "term": "ハサブ（オマーン）",
+      "reading": "はさぶ",
+      "category": "place",
+      "match": [
+        "ハサブ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "ホルムズ海峡に面したオマーンの飛び地、ムサンダム県の中心の町。",
+      "body": [
+        "オマーンの飛び地ムサンダム県の中心の町で、ホルムズ海峡に面したムサンダム半島の先端部にある（Wikipedia）。入り組んだ入り江で知られる。ホルムズ海峡の危機では、船舶の事案の位置の目安や、負傷した船員が運ばれた先として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Khasab」",
+          "url": "https://en.wikipedia.org/wiki/Khasab"
+        }
+      ],
+      "related": [
+        "musandam",
+        "strait-of-hormuz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "bukha",
+      "term": "ブハ（オマーン）",
+      "reading": "ぶは",
+      "category": "place",
+      "match": [
+        "ブハ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "オマーンの飛び地ムサンダム県の町。ペルシャ湾側にあり、西はアラブ首長国連邦。",
+      "body": [
+        "オマーンの飛び地ムサンダム県の南西部にある町・地区で、ペルシャ湾に面する。東はハサブ、西はアラブ首長国連邦と接する（Wikipedia）。ホルムズ海峡の危機では、沖での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Bukha」",
+          "url": "https://en.wikipedia.org/wiki/Bukha"
+        }
+      ],
+      "related": [
+        "musandam",
+        "khasab"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "abu-dhabi",
+      "term": "アブダビ（UAEの首都）",
+      "reading": "あぶだび",
+      "category": "place",
+      "match": [
+        "アブダビ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "アラブ首長国連邦（UAE）の首都。ペルシャ湾に面した島にある。",
+      "body": [
+        "アラブ首長国連邦（UAE）の首都で、アブダビ首長国の首都。人口はドバイに次いで同国2番目（Wikipedia）。ペルシャ湾に突き出たT字形の島にある。ホルムズ海峡の危機では、UAE 政府の発表元として、また海峡を通らないパイプライン（ADCOP）の起点側の地名として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Abu Dhabi」",
+          "url": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+        }
+      ],
+      "related": [
+        "adcop",
+        "fujairah"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "khor-fakkan",
+      "term": "コルファカン（UAE）",
+      "reading": "こるふぁかん",
+      "category": "place",
+      "match": [
+        "コルファカン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "アラブ首長国連邦の東岸、オマーン湾に面した港湾都市。シャルジャ首長国の飛び地。",
+      "body": [
+        "アラブ首長国連邦（UAE）の東岸にある、シャルジャ首長国の飛び地の都市で、オマーン湾に面する。周りはフジャイラ首長国に囲まれている（Wikipedia）。コンテナ港があり、ホルムズ海峡の外側にある。ホルムズ海峡の危機では、沖での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Khor Fakkan」",
+          "url": "https://en.wikipedia.org/wiki/Khor_Fakkan"
+        }
+      ],
+      "related": [
+        "fujairah"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "doha",
+      "term": "ドーハ（カタールの首都）",
+      "reading": "どーは",
+      "category": "place",
+      "match": [
+        "ドーハ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "カタールの首都で最大の都市。ペルシャ湾に面している。",
+      "body": [
+        "カタールの首都で最大の都市、金融の中心でもある。ペルシャ湾岸の同国東部にあり、国民の8割以上がドーハとその周辺に住む（Wikipedia）。ホルムズ海峡の危機では、協議の開催地として、また近郊の米軍基地（アルウデイド）の所在地として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Doha」",
+          "url": "https://en.wikipedia.org/wiki/Doha"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "dhahran",
+      "term": "ダーラン（サウジアラビア）",
+      "reading": "だーらん",
+      "category": "place",
+      "match": [
+        "ダーラン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア東部州の都市。国営石油会社サウジアラムコの本社がある。",
+      "body": [
+        "サウジアラビア東部州の都市で、同国の石油産業の管理の中心（Wikipedia）。サウジアラムコの本社がある。ダンマーム・ホバルとともに大ダンマーム都市圏をなす。ホルムズ海峡の危機では、アラムコの施設への攻撃の現場として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Dhahran」",
+          "url": "https://en.wikipedia.org/wiki/Dhahran"
+        }
+      ],
+      "related": [
+        "abqaiq",
+        "ras-tanura"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "jubail",
+      "term": "ジュベイル（サウジアラビア）",
+      "reading": "じゅべいる",
+      "category": "place",
+      "match": [
+        "ジュベイル"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア東部州、ペルシャ湾に面した工業都市。石油化学の拠点。",
+      "body": [
+        "サウジアラビア東部州の、ペルシャ湾に面した工業都市（Wikipedia）。中東最大の石油化学会社 SABIC の拠点がある。ホルムズ海峡の危機では、沖での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Jubail」",
+          "url": "https://en.wikipedia.org/wiki/Jubail"
+        }
+      ],
+      "related": [
+        "dhahran"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "ras-tanura",
+      "term": "ラスタヌラ（サウジアラビア）",
+      "reading": "らすたぬら",
+      "category": "place",
+      "match": [
+        "ラスタヌラ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア東部州、ペルシャ湾に突き出た半島の地区。原油の積み出し港がある。",
+      "body": [
+        "サウジアラビア東部州の、ペルシャ湾に突き出たラスタヌラ半島にある地区（Wikipedia）。サウジアラムコの製油所と原油の積み出し港がある。ホルムズ海峡の危機では、ペルシャ湾側の積み出し港として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Ras Tanura」",
+          "url": "https://en.wikipedia.org/wiki/Ras_Tanura"
+        }
+      ],
+      "related": [
+        "abqaiq",
+        "east-west-pipeline"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "abqaiq",
+      "term": "アブカイク（サウジアラビア）",
+      "reading": "あぶかいく",
+      "category": "place",
+      "match": [
+        "アブカイク"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア東部州の内陸の町。巨大な原油処理施設がある。",
+      "body": [
+        "サウジアラビア東部州の町で、ダーラン・ダンマーム・ホバル都市圏の南西約60キロの砂漠にある（Wikipedia）。サウジアラムコの巨大な原油処理施設があり、東西パイプラインの起点でもある。ホルムズ海峡の危機では、海峡を通らずに原油を紅海側へ送る経路の起点として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Abqaiq」",
+          "url": "https://en.wikipedia.org/wiki/Abqaiq"
+        }
+      ],
+      "related": [
+        "east-west-pipeline",
+        "yanbu",
+        "dhahran"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "taif",
+      "term": "タイフ（サウジアラビア）",
+      "reading": "たいふ",
+      "category": "place",
+      "match": [
+        "タイフ",
+        "ターイフ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア西部、メッカ州の高地の都市。",
+      "body": [
+        "サウジアラビア西部、メッカ州にある都市で、標高約1,880メートルのヒジャーズ山地の斜面にある（Wikipedia）。ホルムズ海峡の危機では、フーシ派のミサイルが向けられた先として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Taif」",
+          "url": "https://en.wikipedia.org/wiki/Taif"
+        }
+      ],
+      "related": [
+        "yanbu"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "abha",
+      "term": "アブハ（サウジアラビア）",
+      "reading": "あぶは",
+      "category": "place",
+      "match": [
+        "アブハ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア南西部、アシール州の州都。イエメン国境に近い高地の都市。",
+      "body": [
+        "サウジアラビア南西部、アシール州の州都で、標高約2,270メートルの高地にある（Wikipedia）。イエメン国境に近い。ホルムズ海峡の危機では、フーシ派の攻撃を受けた空港の所在地として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Abha」",
+          "url": "https://en.wikipedia.org/wiki/Abha"
+        }
+      ],
+      "related": [
+        "najran"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "mokha",
+      "term": "モカ（イエメン）",
+      "reading": "もか",
+      "category": "place",
+      "match": [
+        "モカ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン西部、紅海に面した港町。バブ・エル・マンデブ海峡に近い。コーヒーのモカの語源。",
+      "body": [
+        "イエメンの紅海沿岸にある港町。19世紀にアデンとホデイダに取って代わられるまで、首都サナアの主要な港だった（Wikipedia）。コーヒー交易で栄え、「モカ・コーヒー」の名の由来となった。バブ・エル・マンデブ海峡に近く、ホルムズ海峡の危機では、フーシ派と政府側が奪い合う場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Mokha」",
+          "url": "https://en.wikipedia.org/wiki/Mokha"
+        }
+      ],
+      "related": [
+        "bab-el-mandeb",
+        "dhubab",
+        "perim"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "perim",
+      "term": "ペリム島（イエメン）",
+      "reading": "ぺりむとう",
+      "category": "place",
+      "match": [
+        "ペリム島"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "バブ・エル・マンデブ海峡にあるイエメンの火山島。海峡を2つの水路に分ける。",
+      "body": [
+        "紅海の南の入口、バブ・エル・マンデブ海峡にあるイエメンの火山島で、アラビア語ではマイユーン島とも呼ぶ。海峡を2つの水路に分けている。行政上はタイズ県のドゥバーブ地区に属する（Wikipedia）。ホルムズ海峡の危機では、フーシ派の進出が伝えられた場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Perim」",
+          "url": "https://en.wikipedia.org/wiki/Perim"
+        }
+      ],
+      "related": [
+        "bab-el-mandeb",
+        "dhubab",
+        "mokha"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "dhubab",
+      "term": "ドゥバーブ（イエメン）",
+      "reading": "どぅばーぶ",
+      "category": "place",
+      "match": [
+        "ドゥバーブ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン南西部、バブ・エル・マンデブ海峡に面した地区とその中心の町。タイズ県にある。",
+      "body": [
+        "イエメン南西部のタイズ県にある地区（バブ・エル・マンデブ地区とも呼ぶ）と、その中心の沿岸の小さな町。海峡にあるペリム島もこの地区に属する（Wikipedia）。ホルムズ海峡の危機では、フーシ派と政府側が奪い合う場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Dhubab district」",
+          "url": "https://en.wikipedia.org/wiki/Dhubab_district"
+        },
+        {
+          "label": "Wikipedia（英語版）「Dhubab」",
+          "url": "https://en.wikipedia.org/wiki/Dhubab"
+        }
+      ],
+      "related": [
+        "bab-el-mandeb",
+        "perim",
+        "mokha",
+        "taiz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "saada",
+      "term": "サアダ県（イエメン）",
+      "reading": "さあだけん",
+      "category": "place",
+      "match": [
+        "サアダ県",
+        "サアダ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン北部、サウジアラビアとの国境に接する県。フーシ派の発祥の地。",
+      "body": [
+        "イエメンの県の一つで、県都で最大の都市はサアダ（Wikipedia）。イスラム教ザイド派の中心地で、フーシ派の発祥の地。北はサウジアラビアと接する。ホルムズ海峡の危機では、空爆の対象として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Saada Governorate」",
+          "url": "https://en.wikipedia.org/wiki/Saada_Governorate"
+        }
+      ],
+      "related": [
+        "sanaa",
+        "najran"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "lahij",
+      "term": "ラハジ県（イエメン）",
+      "reading": "らはじけん",
+      "category": "place",
+      "match": [
+        "ラハジ県",
+        "ラハジ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン南西部、アデンのすぐ北にある県。",
+      "body": [
+        "イエメン南西部の県で、アデンのすぐ北にある。北西はタイズ県と接する（Wikipedia）。ホルムズ海峡の危機では、空爆の対象となった県の一つとして登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Lahij Governorate」",
+          "url": "https://en.wikipedia.org/wiki/Lahij_Governorate"
+        }
+      ],
+      "related": [
+        "aden",
+        "taiz"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "al-faw",
+      "term": "アルファオ（イラク）",
+      "reading": "あるふぁお",
+      "category": "place",
+      "match": [
+        "アルファオ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イラク南端、ペルシャ湾の奥にある港町。バスラ県に属する。",
+      "body": [
+        "イラク南端のファオ半島にある港町で、シャットゥルアラブ川の河口とペルシャ湾に近い。バスラ県に属し、県都バスラから約100キロ（Wikipedia）。ホルムズ海峡の危機では、沖での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Al-Faw」",
+          "url": "https://en.wikipedia.org/wiki/Al-Faw"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "azraq-air-base",
+      "term": "アルアズラク空軍基地（ヨルダン）",
+      "reading": "あるあずらくくうぐんきち",
+      "category": "place",
+      "match": [
+        "アルアズラク"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "ヨルダンのアズラクにある空軍基地（ムワッファク・サルティ空軍基地）。米軍も使う。",
+      "body": [
+        "ヨルダン空軍の基地で、ザルカ県のアズラクにある。正式名はムワッファク・サルティ空軍基地（Wikipedia）。ホルムズ海峡の危機では、ヨルダンに駐留する米軍が使う基地として、イランの攻撃の対象に挙がる。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Muwaffaq Salti Air Base」",
+          "url": "https://en.wikipedia.org/wiki/Muwaffaq_Salti_Air_Base"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "islamabad",
+      "term": "イスラマバード（パキスタンの首都）",
+      "reading": "いすらまばーど",
+      "category": "place",
+      "match": [
+        "イスラマバード"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "パキスタンの首都。北部パンジャブ地方にある計画都市。",
+      "body": [
+        "パキスタンの首都で、1960年代に計画都市として建設され、1967年にカラチに代わって首都となった（Wikipedia）。北部のパンジャブ地方にあり、隣のラーワルピンディーと一つの都市圏をなす。ホルムズ海峡の危機では、米国とイランの協議や覚書の場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Islamabad」",
+          "url": "https://en.wikipedia.org/wiki/Islamabad"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "burgenstock",
+      "term": "ビュルゲンシュトック（スイス）",
+      "reading": "びゅるげんしゅとっく",
+      "category": "place",
+      "match": [
+        "ビュルゲンシュトック"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "スイス中部、ルツェルン湖畔の山。大きなホテルと会議場がある。",
+      "body": [
+        "スイス中部、ルツェルン湖のほとりにある標高1,128メートルの山。19世紀末から大きなホテルと会議場（現在のビュルゲンシュトック・リゾート）がある（Wikipedia）。ホルムズ海峡の危機では、協議の開催地として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Bürgenstock」",
+          "url": "https://en.wikipedia.org/wiki/Bürgenstock"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "evian",
+      "term": "エヴィアン（フランス）",
+      "reading": "えゔぃあん",
+      "category": "place",
+      "match": [
+        "エヴィアン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "フランス東部、スイスとの国境に近いレマン湖畔の町。",
+      "body": [
+        "フランス東部、オート＝サヴォワ県の町で、正式名はエヴィアン＝レ＝バン。スイスとの国境に近い（Wikipedia）。ホルムズ海峡の危機では、G7 首脳会議の開催地として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Évian-les-Bains」",
+          "url": "https://en.wikipedia.org/wiki/Évian-les-Bains"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "novorossiysk",
+      "term": "ノヴォロシースク（ロシア）",
+      "reading": "のゔぉろしーすく",
+      "category": "place",
+      "match": [
+        "ノヴォロシースク"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "ロシア南部、黒海に面した港湾都市。黒海で最大級の港がある。",
+      "body": [
+        "ロシア南部のクラスノダール地方にある都市で、その港は黒海で最大級（Wikipedia）。カザフスタン産の原油を積み出すCPC（カスピ海パイプライン・コンソーシアム）のターミナルがある。ホルムズ海峡の危機では、中東の外からの原油の出口として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia（英語版）「Novorossiysk」",
+          "url": "https://en.wikipedia.org/wiki/Novorossiysk"
+        }
+      ],
+      "related": [],
       "updated": "2026-10-26"
     }
   ]

@@ -375,7 +375,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - **インフォグラフィック画像**：`docs/images/` に配置。追加時は `openLightbox('/images/xxx.png')` を参照（引数はルート相対パス。`<img src>` も `/images/…` と書く。ページ間のリンク `<a href>` は `../articles/…` のように文書相対）
 - **MAPタンカー可視化**：毎日、作業前に「日本関係船舶 ホルムズ海峡 通過 足止め」等を web 検索し、足止め数・通過数の変化を調査すること（省略禁止）。変化あり時は SHIP_CONFIG（totalShips・passableShips・date・dateConfirmed）を全て更新。変化なし時も dateConfirmed に調査日時（JST）と「変更なし」を記録すること。
 - **シナリオ確率**：ページ読み込み時に `syncScenarioFromDashboard()` が hormuz-data- から自動上書きするため手動更新不要。ただし矢印（↑↓）や補足テキストは手動で情勢に合わせて更新する
-  - 手動更新が不要なのは**確率の数値の転記**だけ。その数値は hormuz-data- の Gemini が
+  - 手動更新が不要なのは**確率の数値の転記**だけ。その数値は hormuz-data- の推計（Claude・2026-10-25 までは Gemini）が
     `data/context.json` の `timeline`（確定した経緯）を前提に算出しており、**`timeline` への事実の追記は手動**。
     追記が止まると、確率は古い現況認識のまま自動更新され続ける（作業順序 14）
 - **sc-tag の確率表示**：`syncScenarioFromDashboard()` が `<span id="sc-pct-A">` などの**中の数値だけ**を入れる。`sc-tag` の見出し・矢印は HTML 側（日次更新）が正。`sc-pct-*` の span は消さない
@@ -894,7 +894,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ## hormuz-data- の経緯（timeline）追記
 
-hormuz-data- の `data/context.json` の `timeline` は、ダッシュボードの Gemini（`scripts/fetch_manual.py`）に
+hormuz-data- の `data/context.json` の `timeline` は、ダッシュボードの推計（Claude・`scripts/fetch_manual.py`）に
 「確定した経緯」として渡される。自動では増えない。最新日から7日を超えるとダッシュボードに ⚠ が出る
 （`timeline_stale_after_days: 7`）。
 
@@ -923,7 +923,7 @@ hormuz-data- の `data/context.json` の `timeline` は、ダッシュボード�
 - `date` は**事実が起きた日**（または発表された日）。作業日ではない
 - **確定した事実のみ。**推測・見通し・論評は入れない
 - **AI 生成値は入れない。**ダッシュボードの推計値（シナリオ確率・推計通航隻数等）や、
-  サイトの AI 推計に基づく記述を入れると、Gemini の出力が Gemini の入力に戻る**循環参照**になる
+  サイトの AI 推計に基づく記述を入れると、推計の出力が推計の入力に戻る**循環参照**になる
 - 出典は一次情報（政府・軍・国際機関の発表）か主要報道で、**実際に開いて内容を確認した記事のみ**。
   検索結果の見出しだけで書かない（ニュース URL と同じく推測・生成は禁止）
 - **`fact` に書く要素（場所・日数・金額・発言）は、すべて `source` に挙げた記事に書かれていること。**
@@ -935,10 +935,10 @@ hormuz-data- の `data/context.json` の `timeline` は、ダッシュボード�
 - 通航隻数は、**Kpler・Lloyd's List Intelligence 等の実測系集計**が出ていればそれを優先する
 - `context_updated` は前提値（流量・隻数・係数）を変えたときの日付なので、`timeline` の追記だけなら動かさない
 - `data/context.json` は **LF** のファイル。改行コードを変えない
-- Gemini の推計（`update_manual.yml`）は**1日2回**動く。**09:30 JST** に外部の cron サービスが
-  起動し（時刻は正確）、**13〜14時台**に GitHub Actions の schedule が予備として起動する（cron の宣言は 09:30 だが
-  GitHub 側で4〜5時間遅れる）。09:30 より前に追記した分はその日の 09:30 の推計に、予備の実行より前なら
-  その日の午後の推計に、それ以降は翌日の推計に反映される。経緯は `chokepointlab-notes/2026_9_20_自動実行の所見.md`
+- 推計（`update_manual.yml`）は **09:30 JST** に外部の cron サービスが起動する（時刻は正確）。
+  **13〜14時台**の GitHub Actions の schedule は予備で、その日すでに更新済みなら何もしない（2026-10-25〜。
+  cron の宣言は 09:30 だが GitHub 側で4〜5時間遅れる）。09:30 より前に追記した分はその日の推計に、
+  それ以降は翌日の推計に反映される。推計は同じ入力で5回答えさせた中央値で、3回に満たない日は更新しない。経緯は `chokepointlab-notes/2026_9_20_自動実行の所見.md`
 
 ### コミットと push
 

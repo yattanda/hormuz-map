@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updated": "2026-10-05",
-    "count": 47
+    "updated": "2026-10-26",
+    "count": 55
   },
   "terms": [
     {
@@ -1484,6 +1484,250 @@
       "sources": [],
       "related": [],
       "updated": "2026-10-05"
+    },
+    {
+      "id": "aden",
+      "term": "アデン（イエメン）",
+      "reading": "あでん",
+      "category": "place",
+      "match": [
+        "アデン空港",
+        "アデン"
+      ],
+      "except": [
+        "アデン湾"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン南部、アデン湾に面した港湾都市。首都サナアをフーシ派が押さえてからは、国際的に承認された政府の拠点。",
+      "body": [
+        "イエメン南部の港湾都市で、アデン湾に面した天然の良港を持つ。1990年の南北統一までは南イエメン（イエメン民主人民共和国）の首都だった（ブリタニカ）。2014年にフーシ派が首都サナアを掌握したあと、国際的に承認されたイエメン政府はアデンに拠点を移し、事実上の首都としている（ブリタニカ）。ホルムズ海峡の危機では、フーシ派のミサイルやドローンの標的（アデン空港など）として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Aden」",
+          "url": "https://www.britannica.com/place/Aden"
+        },
+        {
+          "label": "Britannica「Sanaa」",
+          "url": "https://www.britannica.com/place/Sanaa"
+        }
+      ],
+      "related": [
+        "sanaa",
+        "bab-el-mandeb"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "sanaa",
+      "term": "サナア（イエメンの首都）",
+      "reading": "さなあ",
+      "category": "place",
+      "match": [
+        "サナア"
+      ],
+      "aliases": [
+        "サヌア"
+      ],
+      "tooltip": true,
+      "short": "イエメンの首都。西部の高地にある。2014年からフーシ派が支配している。",
+      "body": [
+        "イエメン西部の高地、標高約2,200メートルにある同国の首都（ブリタニカ）。2014年9月にフーシ派が制圧し、以後フーシ派の支配下にある。国際的に承認された政府は南部のアデンを拠点としている（ブリタニカ）。ホルムズ海峡の危機では、フーシ派の拠点として登場する。外務省などは「サヌア」と表記する。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Sanaa」",
+          "url": "https://www.britannica.com/place/Sanaa"
+        },
+        {
+          "label": "Britannica「Houthi movement」",
+          "url": "https://www.britannica.com/topic/Houthi-movement"
+        }
+      ],
+      "related": [
+        "aden"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "riyadh",
+      "term": "リヤド（サウジアラビアの首都）",
+      "reading": "りやど",
+      "category": "place",
+      "match": [
+        "リヤド"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビアの首都で最大の都市。アラビア半島の中央部、内陸の高原にある。",
+      "body": [
+        "サウジアラビアの首都で、同国最大の都市。アラビア半島の中央部、ナジュド地方の東部にあり、標高約600メートルの高原に位置する。1932年のサウジアラビア王国の成立とともに首都となった（ブリタニカ）。ホルムズ海峡の危機では、フーシ派がミサイルやドローンで狙う先として、またサウジ主導の連合軍の迎撃の発表とともに登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Riyadh」",
+          "url": "https://www.britannica.com/place/Riyadh"
+        }
+      ],
+      "related": [],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "shabwa",
+      "term": "シャブワ県（イエメン）",
+      "reading": "しゃぶわけん",
+      "category": "place",
+      "match": [
+        "シャブワ県",
+        "シャブワ"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "イエメン南部の県。アラビア海に面し、同国の主要な産油地域。LNG の輸出基地バルハフがある。",
+      "body": [
+        "イエメン南部の県で、面積は同国で3番目に大きい。南はアラビア海に面し、沿岸のバルハフには液化天然ガス（LNG）の輸出基地がある（ACLED）。同国の主要な産油地域で、2018年に原油の生産を再開したが、2022年末にフーシ派のドローンが南部沿岸の積み出し施設を攻撃し、輸出は再び止まった（ACLED・Sanaa Center）。ホルムズ海峡の危機では、フーシ派のミサイル攻撃の現場として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "ACLED「Yemen Conflict Observatory: Shabwa」",
+          "url": "https://acleddata.com/yemen-conflict-observatory/region-profiles/shabwa"
+        },
+        {
+          "label": "Sanaa Center「Shabwa: Progress Despite Turmoil」",
+          "url": "https://sanaacenter.org/files/Shabwa_Progress_Despite_Turmoil_en.pdf"
+        }
+      ],
+      "related": [
+        "aden"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "mukalla",
+      "term": "ムカッラ（イエメン）",
+      "reading": "むかっら",
+      "category": "place",
+      "match": [
+        "ムカッラ"
+      ],
+      "aliases": [
+        "ムカラ",
+        "アル・ムカッラ"
+      ],
+      "tooltip": true,
+      "short": "イエメン南東部、アデン湾に面したハドラマウト地方の港町。同国東部で最大の町で主要な港。",
+      "body": [
+        "イエメン南東部、アデン湾に面したハドラマウト地方の沿岸にある港町。同国東部で最大の町で、主要な港でもある。漁業と水産加工、造船が盛んで、町の東北東に空港がある（ブリタニカ）。ホルムズ海峡の危機では、フーシ派のミサイルやドローンの標的（空港など）として、また沖合での船舶の事案の位置の目安として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Al-Mukallā」",
+          "url": "https://www.britannica.com/place/Al-Mukalla"
+        },
+        {
+          "label": "Britannica「Hadhramaut」",
+          "url": "https://www.britannica.com/place/Hadhramaut"
+        }
+      ],
+      "related": [
+        "aden"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "taiz",
+      "term": "タイズ（イエメン）",
+      "reading": "たいず",
+      "category": "place",
+      "match": [
+        "タイズ県",
+        "タイズ"
+      ],
+      "aliases": [
+        "タイズ市"
+      ],
+      "tooltip": true,
+      "short": "イエメン南西部の高地にある同国第3の都市。2014年からの内戦で長く戦場になってきた。",
+      "body": [
+        "イエメン南西部の高地にある都市で、同国第3の都市、文化の中心とされる。1948年から1962年までは首都だった（ブリタニカ）。2014年からの内戦では、長く戦闘の続く場所となってきた（ブリタニカ）。紅海とアデン湾を結ぶバブ・エル・マンデブ海峡に近く、ホルムズ海峡の危機では、フーシ派と政府側の戦闘の現場として登場する。同名の県（タイズ県）の県都。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Taiz (Taʿizz)」",
+          "url": "https://www.britannica.com/place/Taiz"
+        },
+        {
+          "label": "Britannica「Yemeni Civil War」",
+          "url": "https://www.britannica.com/event/Yemeni-Civil-War"
+        }
+      ],
+      "related": [
+        "bab-el-mandeb",
+        "aden"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "najran",
+      "term": "ナジュラン（サウジアラビア）",
+      "reading": "なじゅらん",
+      "category": "place",
+      "match": [
+        "ナジュラン"
+      ],
+      "aliases": [],
+      "tooltip": true,
+      "short": "サウジアラビア南西部、イエメンとの国境に接する町・州。",
+      "body": [
+        "サウジアラビア南西部の町・オアシスで、同名の州の中心。イエメンとの国境沿いの砂漠にある。1934年のターイフ条約でサウジアラビア領とされたが、イエメン側は長く国境に異を唱えてきた（ブリタニカ）。ホルムズ海峡の危機では、国境を越えたフーシ派の攻撃や、連合軍の活動の場所として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Najran」",
+          "url": "https://www.britannica.com/place/Najran-Saudi-Arabia"
+        },
+        {
+          "label": "Britannica「Najrān（province）」",
+          "url": "https://www.britannica.com/place/Najran-province-Saudi-Arabia"
+        }
+      ],
+      "related": [
+        "riyadh"
+      ],
+      "updated": "2026-10-26"
+    },
+    {
+      "id": "hodeidah",
+      "term": "ホデイダ（イエメン）",
+      "reading": "ほでいだ",
+      "category": "place",
+      "match": [
+        "ホデイダ港",
+        "ホデイダ"
+      ],
+      "aliases": [
+        "フダイダ"
+      ],
+      "tooltip": true,
+      "short": "イエメン西部、紅海に面した港湾都市。同国の輸入の多くを担う港があり、フーシ派が支配している。",
+      "body": [
+        "イエメン西部、紅海に面した港湾都市。同国の主要な港の一つで、食料をはじめ輸出入の多くを担う（ブリタニカ）。フーシ派が支配し、輸入品と収入の多くをこの港から得てきたとされる。2018年には国連の仲介で市内の停戦が結ばれ、人道支援の窓口として港が開けられてきた（ブリタニカ）。ホルムズ海峡の危機では、フーシ派の拠点として、また空爆の対象として登場する。"
+      ],
+      "sources": [
+        {
+          "label": "Britannica「Hodeidah」",
+          "url": "https://www.britannica.com/place/Al-Hudaydah"
+        },
+        {
+          "label": "Britannica「Houthi movement」",
+          "url": "https://www.britannica.com/topic/Houthi-movement"
+        }
+      ],
+      "related": [
+        "sanaa"
+      ],
+      "updated": "2026-10-26"
     }
   ]
 }

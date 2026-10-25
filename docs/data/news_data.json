@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月25日 07:02 日本時間JST",
+  "updated": "2026年10月26日 07:00 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-houthi-aden-riyadh-1024",
+      "title": "フーシ派がアデン国際空港に弾道ミサイル2発、連合軍はリヤド向け1発の迎撃を発表——イエメン政府は「今月4回目」、いずれも当事者の発表・主張",
+      "body": "Al Jazeera（10/24）は、イエメン政府の運輸省が、フーシ派がアデン国際空港を弾道ミサイル2発で狙ったと発表し、今月4回目の同様の攻撃だと述べたと伝える（原文は「the Houthis’ targeting of Aden international airport with two ballistic missiles」「fourth such attack this month」）。イエメン当局は沿岸警備隊の本部ももう1棟も被弾したと説明した。サウジ主導の連合軍の報道官は、リヤドに向けて発射された弾道ミサイル1発を防空網が迎撃し破壊したと投稿した（原文は「Air defences intercepted and destroyed a ballistic missile launched by the terrorist Houthi militia toward Riyadh」）。同記事は、2週間閉鎖されていたリヤド空港の運航が日曜（10/25）に再開すると書く一方、フーシ派のサリー報道官は空港は「unsafe」で「military target」のままだと警告したと伝える。イエメン軍は、フーシ派のミサイルが誤作動してサナアの民家に落ち、3人が死亡したと述べた。いずれも当事者の発表・主張で、独立した確認は記事にない。",
+      "sourceLabel": "Al Jazeera（10/24）",
+      "date": "2026年10月24日（現地）",
+      "label": "攻撃",
+      "url": "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden",
+      "isLatest": true
+    },
+    {
+      "id": "latest-iran-chief-trump-1024",
+      "title": "イラン軍トップ「米軍の再進入は夢でしかない」——トランプ氏は新たな攻撃か圧力の継続かを検討中と説明",
+      "body": "Al Jazeera（10/24）は、イラン軍のトップが「The US president can only dream of their soldiers and military again entering the Persian Gulf」と述べたと伝える。同記事は「Trump said Washington was still deliberating new attacks or continued pressure on Iran」と書き、「may do another Epic Fury」の語も引く。ブレントは約117ドルと4月以来の高値をつけたと同記事は書く（終値は10/23の116.72ドル。Reuters・Xinhua）。イラン側の発言と、トランプ氏が検討中だという説明で、攻撃の決定や日程は記事に書かれていない。",
+      "sourceLabel": "Al Jazeera（10/24）",
+      "date": "2026年10月24日（現地）",
+      "label": "軍事",
+      "url": "https://www.aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
+      "isLatest": false
+    },
     {
       "id": "latest-coalition-intercept-1024",
       "title": "サウジ主導の連合軍「フーシ派の弾道ミサイル2発をタイフ・ヤンブー方面で迎撃」と発表——記事は被害に触れず",
@@ -10,7 +30,7 @@
       "date": "2026年10月24日（現地）",
       "label": "攻撃",
       "url": "https://www.timesofisrael.com/liveblog_entry/saudi-led-coalition-says-it-destroyed-two-houthi-ballistic-missiles-fired-at-kingdom/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-oil-close-1023",
@@ -21,29 +41,35 @@
       "label": "原油・市場",
       "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html",
       "isLatest": false
-    },
-    {
-      "id": "latest-ukmto-181-1022",
-      "title": "UKMTO警報181：オマーン・リマ（Limah）の北東でタンカーが飛翔体で被弾（遅延報告）——航行は継続、船名・被害・攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報181-26（Attack・10/24 00:11 JST発行）は、遅延報告として、オマーン・リマ（Limah）の北東7海里で、タンカーがホルムズ海峡を出る途中で正体不明の飛翔体を受けたと報告し、タンカーは次の寄港地へ航行を続けられたと伝える。発生は公式の本文で10/22 17:15 UTC（10/23 02:15 JST）。公式の本文に船名・被害の程度・負傷者・攻撃主体の記載はなく、Arab Times（10/23）も被害の程度や負傷者の有無は特定していないと書く。IRGCが10/22に主張した船7隻との関係は不明。",
-      "sourceLabel": "UKMTO公式・Arab Times（10/23）",
-      "date": "2026年10月22日（現地）",
-      "label": "海上",
-      "url": "https://www.arabtimesonline.com/news/tanker-hit-by-unknown-projectile-in-strait-of-hormuz-near-oman/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc-seven-ships-1022",
-      "title": "IRGC「船7隻が被弾」と主張——ペルシャ湾北部で積み替え中の4隻と海峡西側で機雷に接触した3隻、独立した確認なし・UKMTOに対応する警報なし",
-      "body": "gCaptain（10/22）は、IRGCが木曜（10/22）に、一夜のうちに商船7隻が被弾したと主張したと伝える（原文は「seven commercial vessels were struck overnight」）。内訳は、ペルシャ湾北部で船から船への原油の積み替え中の4隻が同時に攻撃され、ホルムズ海峡の西側で3隻が機雷に接触したというもの。同記事は、7件のいずれも独立した確認はなく、UKMTOは主張に対応する新しい警報を出していないと書く（原文は「has not issued new incident reports corresponding to the claims」）。Al Jazeera（10/22）によると、米中央軍の報道官は機雷の主張を誤りとし、海峡は開いていて船舶の95%が通過していると述べた。トランプ大統領はTruth Socialで、イランが原油価格を押し上げるために「fake hits, mines, and everything else」を作っていると投稿した（米側の主張）。船名・船主は公表されておらず、発生時刻は「overnight」とだけ書かれている。",
-      "sourceLabel": "gCaptain・Al Jazeera（10/22）",
-      "date": "2026年10月22日（現地）",
-      "label": "海上",
-      "url": "https://gcaptain.com/iran-claims-more-ships-struck-near-hormuz-as-trump-accuses-tehran-of-faking-hits/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-houthi-aden-1024",
+      "titleJa": "【Al Jazeera】フーシ派がアデン空港に弾道ミサイル2発、連合軍はリヤド向け1発の迎撃を発表——イエメン政府は今月4回目と説明",
+      "titleEn": "Houthis launch attacks on Saudi Arabia and Yemen’s Aden (Al Jazeera, Oct 24)",
+      "title": "【Al Jazeera】フーシ派がアデン空港に弾道ミサイル2発、連合軍はリヤド向け1発の迎撃を発表——イエメン政府は今月4回目と説明",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月24日（現地）",
+      "summary": "Al Jazeera（10/24）は、イエメン政府の運輸省が、フーシ派がアデン国際空港を弾道ミサイル2発で狙ったと発表し、今月4回目の同様の攻撃だと述べたと伝える（原文は「the Houthis’ targeting of Aden international airport with two ballistic missiles」「fourth such attack this month」）。イエメン当局は沿岸警備隊の本部ももう1棟も被弾したと説明した。サウジ主導の連合軍の報道官は、リヤドに向けて発射された弾道ミサイル1発を防空網が迎撃し破壊したと投稿した（原文は「Air defences intercepted and destroyed a ballistic missile launched by the terrorist Houthi militia toward Riyadh」）。同記事は、2週間閉鎖されていたリヤド空港の運航が日曜（10/25）に再開すると書く一方、フーシ派のサリー報道官は空港は「unsafe」で「military target」のままだと警告したと伝える。イエメン軍は、フーシ派のミサイルが誤作動してサナアの民家に落ち、3人が死亡したと述べた。いずれも当事者の発表・主張で、独立した確認は記事にない。",
+      "url": "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden",
+      "isLatest": true
+    },
+    {
+      "id": "osint-aljazeera-iran-chief-1024",
+      "titleJa": "【Al Jazeera】イラン軍トップ「米軍の再進入は夢でしかない」——トランプ氏は新たな攻撃か圧力の継続かを検討中",
+      "titleEn": "Iran says won’t allow US warships to get close as Trump ponders new attacks (Al Jazeera, Oct 24)",
+      "title": "【Al Jazeera】イラン軍トップ「米軍の再進入は夢でしかない」——トランプ氏は新たな攻撃か圧力の継続かを検討中",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年10月24日（現地）",
+      "summary": "Al Jazeera（10/24）は、イラン軍のトップが「The US president can only dream of their soldiers and military again entering the Persian Gulf」と述べたと伝える。同記事は「Trump said Washington was still deliberating new attacks or continued pressure on Iran」と書き、「may do another Epic Fury」の語も引く。ブレントは約117ドルと4月以来の高値をつけたと同記事は書く（終値は10/23の116.72ドル。Reuters・Xinhua）。イラン側の発言と、トランプ氏が検討中だという説明で、攻撃の決定や日程は記事に書かれていない。",
+      "url": "https://www.aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
+      "isLatest": false
+    },
     {
       "id": "osint-aljazeera-irgc-seven-1022",
       "titleJa": "【Al Jazeera】イラン「船7隻がホルムズ海峡で被弾」と主張——米中央軍は機雷の主張を誤りと説明、海峡は開いていて95%が通過と",
@@ -55,7 +81,7 @@
       "date": "2026年10月22日（現地）",
       "summary": "Al Jazeera（10/22）は、IRGCが石油タンカー7隻がホルムズ海峡で被弾して損傷したと主張したと伝える。4隻は原油を積み替え中に標的となって夜間に炎上し、残る3隻は機雷に接触して航行不能になったという。米中央軍の報道官は機雷の主張を誤りとし、海峡は開いていて船舶の95%が通過していると述べた。記事は主張を独立に検証できていないと書く。",
       "url": "https://www.aljazeera.com/news/2026/10/22/iran-says-seven-ships-hit-in-hormuz-strait-warns-us-of-wider-response",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-aden-1021",
@@ -1999,6 +2025,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月26日",
+      "items": [
+        {
+          "id": "latest-ukmto-181-1022",
+          "title": "UKMTO警報181：オマーン・リマ（Limah）の北東でタンカーが飛翔体で被弾（遅延報告）——航行は継続、船名・被害・攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報181-26（Attack・10/24 00:11 JST発行）は、遅延報告として、オマーン・リマ（Limah）の北東7海里で、タンカーがホルムズ海峡を出る途中で正体不明の飛翔体を受けたと報告し、タンカーは次の寄港地へ航行を続けられたと伝える。発生は公式の本文で10/22 17:15 UTC（10/23 02:15 JST）。公式の本文に船名・被害の程度・負傷者・攻撃主体の記載はなく、Arab Times（10/23）も被害の程度や負傷者の有無は特定していないと書く。IRGCが10/22に主張した船7隻との関係は不明。",
+          "sourceLabel": "UKMTO公式・Arab Times（10/23）",
+          "date": "2026年10月22日（現地）",
+          "label": "海上",
+          "url": "https://www.arabtimesonline.com/news/tanker-hit-by-unknown-projectile-in-strait-of-hormuz-near-oman/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-seven-ships-1022",
+          "title": "IRGC「船7隻が被弾」と主張——ペルシャ湾北部で積み替え中の4隻と海峡西側で機雷に接触した3隻、独立した確認なし・UKMTOに対応する警報なし",
+          "body": "gCaptain（10/22）は、IRGCが木曜（10/22）に、一夜のうちに商船7隻が被弾したと主張したと伝える（原文は「seven commercial vessels were struck overnight」）。内訳は、ペルシャ湾北部で船から船への原油の積み替え中の4隻が同時に攻撃され、ホルムズ海峡の西側で3隻が機雷に接触したというもの。同記事は、7件のいずれも独立した確認はなく、UKMTOは主張に対応する新しい警報を出していないと書く（原文は「has not issued new incident reports corresponding to the claims」）。Al Jazeera（10/22）によると、米中央軍の報道官は機雷の主張を誤りとし、海峡は開いていて船舶の95%が通過していると述べた。トランプ大統領はTruth Socialで、イランが原油価格を押し上げるために「fake hits, mines, and everything else」を作っていると投稿した（米側の主張）。船名・船主は公表されておらず、発生時刻は「overnight」とだけ書かれている。",
+          "sourceLabel": "gCaptain・Al Jazeera（10/22）",
+          "date": "2026年10月22日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/iran-claims-more-ships-struck-near-hormuz-as-trump-accuses-tehran-of-faking-hits/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月24日",
       "items": [

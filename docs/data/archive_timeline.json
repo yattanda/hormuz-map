@@ -3532,6 +3532,24 @@
           "sourceLabel": "Reuters配信・Times of Israel（10/24）"
         }
       ]
+    },
+    {
+      "date": "2026-10-26",
+      "dateLabel": "2026/10/26 07:00",
+      "blockadeDay": 241,
+      "summary": "【重大更新】フーシ派が10/24にアデン国際空港を弾道ミサイル2発で狙い（イエメン政府の運輸省の発表、今月4回目）、サウジ主導の連合軍はリヤド向け弾道ミサイル1発の迎撃を発表（Al Jazeera）：いずれも当事者の発表・主張・イラン軍トップは米軍の再進入を「夢」と述べ、トランプ氏は新たな攻撃か圧力の継続かを検討中と説明（Al Jazeera）・UKMTO公式に警報181より新しい警報なし（10/26 06:55 JST取得）・原油は月曜朝のため新しい終値なし、直近の10/23終値はブレント12月物116.72ドル・WTI12月物103.27ドル（Reuters・Xinhua）・Gulf Newsのライブブログにあるイラン革命防衛隊の「超大型タンカー2隻が機雷に接触」と米国の大規模爆撃準備（WSJ引用）は二次的な媒体のみで原文未確認のため本文に載せず・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・MT ST 3は主要通信社の記事を引き続き確認できず・警報178の軍の国籍・船名は不明のまま・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機241日目・ニュース更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（動きなし）",
+      "relatedNews": [
+        {
+          "title": "フーシ派がアデン国際空港に弾道ミサイル2発・連合軍はリヤド向け1発の迎撃を発表——いずれも当事者の発表・主張",
+          "url": "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden",
+          "sourceLabel": "Al Jazeera（10/24）"
+        },
+        {
+          "title": "イラン軍トップ「米軍の再進入は夢でしかない」——トランプ氏は新たな攻撃か圧力の継続かを検討中と説明",
+          "url": "https://www.aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
+          "sourceLabel": "Al Jazeera（10/24）"
+        }
+      ]
     }
   ]
 }

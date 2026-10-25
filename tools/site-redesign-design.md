@@ -40,6 +40,7 @@
 | 10/20 | D3 PR 2 の前後を見て：面（箱）を明るく `#1b2021` → `#272e30`（すべての面に効く）。大きな数字は本文と別の色にし、鋼 `#9ec3cf`（`--c-figure`）を足す。ハブの入口は案 E4（海峡の絵・英字の小見出し・差し色のボタン）。ハブの地図の陸を明るく（§4・§5-2） |
 | 10/20 | D3 PR 5b の読み替え（運営者・推奨どおり）：船・港・航路での出来事は「海上」（被弾を含む）、陸の施設・都市・基地への攻撃は「攻撃」。過去分の速報インシデントは先頭の絵文字で機械的に読み替える／国名のない国旗だけのタグは国名の文字に（国旗だけの項目は札なし、としたが、前後比較を見て中身から札を付けることに変えた・案 A）／ニュースの `label` は語で先に決め、決まらないときは絵文字で（見出しの型は札だけ）／ルート表の `route-tag` は絵文字を外して札なし／日付の頭の 📅 は外す。シナリオの 🅐〜🅓 は見やすさを優先して残す（例外。最初は文字の A〜D にしたが、前後比較を見た運営者の判断で戻した）／ルートC の2行は「ルートC（米国）」「ルートC（南半球ほか）」／PR 5b は日次が書く部分（5b-1）と固定の部分（5b-2）に分ける（§5-2） |
 | 10/24 | 課題9 `og:image`：`/archive/`・`/glossary/` も法務ページ7枚と同じ共通の1枚にする（運営者・推奨どおり）。専用の1枚は、共有が多いと分かったときに替える。置くのは課題7 の観測明けの画像の PR（§2-3） |
+| 10/25 | D1 の画像の PR（運営者・推奨どおり）：今日はローカルのブランチまで、push と PR は課題7 の観測明け（11月上旬）。`/hormuz/`・記事5本・記事一覧の `og:image` は今回は替えず旧 `ogp.jpg` のまま（新しいデザインの専用の1枚は別に作って替える）。印 CL2 の商標の専門家の確認は待たずに準備し、マージは確認のあと（§2-3） |
 
 見本（アイコン・方向3案・色の試行台）はリポジトリ外。
 
@@ -124,6 +125,10 @@ D1 で `docs/` 全体の絵文字を数え直した（121種類・1,394か所。
 - 横組み：印＋「チョークポイント・ラボ」（BIZ UDPゴシック 700）＋「CHOKEPOINT LAB」（IBM Plex Sans Condensed 600・字間を広く）。左寄せ
 - favicon：16・32・48px を1つの `favicon.ico` に、180px の `apple-touch-icon.png`。置くのは課題7 の観測明けの PR
 - `og:image`：1200×630・PNG・質感なし（約 50 KB）。上に太い罫・左寄せ。文字と印は左右 72px・上下 60px より内側。ハブは右に印を大きく、法務ページ7枚・`/archive/`・`/glossary/` は共通の1枚（10/24）
+- 置き方（10/25・ブランチ `feature/d1-brand-assets`）：`docs/favicon.ico`・`docs/apple-touch-icon.png`・`docs/assets/og/og-hub.png`（ハブ）・`docs/assets/og/og-common.png`（共通）。元は `hormuz-ops/drafts/design/brand/cl2/` と `og-hub-cl2b-mark-flat.png`・`og-common-cl2b-flat.png`
+  - `<title>` の直後に `<link rel="icon" href="/favicon.ico">` と `<link rel="apple-touch-icon" href="/apple-touch-icon.png">`。移転のスタブ（`docs/articles/*.html`）以外の19ページと `tools/article-template.html`
+  - 共通の1枚の9ページは `og:image`・`twitter:image` を足し、`twitter:card` を `summary` から `summary_large_image` に（`summary` のままだと 1200×630 が正方形に切られる）
+  - `/hormuz/`・記事5本・記事一覧は旧 `ogp.jpg` のまま。`/infographic/` は専用の1枚のまま
 
 ## 3. なくすもの（禁止リスト）
 

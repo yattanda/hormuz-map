@@ -1,49 +1,62 @@
 {
-  "updated": "2026年10月26日 07:00 日本時間JST",
+  "updated": "2026年10月27日 07:25 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-houthi-aden-riyadh-1024",
-      "title": "フーシ派がアデン国際空港に弾道ミサイル2発、連合軍はリヤド向け1発の迎撃を発表——イエメン政府は「今月4回目」、いずれも当事者の発表・主張",
-      "body": "Al Jazeera（10/24）は、イエメン政府の運輸省が、フーシ派がアデン国際空港を弾道ミサイル2発で狙ったと発表し、今月4回目の同様の攻撃だと述べたと伝える（原文は「the Houthis’ targeting of Aden international airport with two ballistic missiles」「fourth such attack this month」）。イエメン当局は沿岸警備隊の本部ももう1棟も被弾したと説明した。サウジ主導の連合軍の報道官は、リヤドに向けて発射された弾道ミサイル1発を防空網が迎撃し破壊したと投稿した（原文は「Air defences intercepted and destroyed a ballistic missile launched by the terrorist Houthi militia toward Riyadh」）。同記事は、2週間閉鎖されていたリヤド空港の運航が日曜（10/25）に再開すると書く一方、フーシ派のサリー報道官は空港は「unsafe」で「military target」のままだと警告したと伝える。イエメン軍は、フーシ派のミサイルが誤作動してサナアの民家に落ち、3人が死亡したと述べた。いずれも当事者の発表・主張で、独立した確認は記事にない。",
-      "sourceLabel": "Al Jazeera（10/24）",
-      "date": "2026年10月24日（現地）",
-      "label": "攻撃",
-      "url": "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden",
+      "id": "latest-ukmto-183-1026",
+      "title": "UKMTO警報183：イラク・アルファオの南東63海里で船舶が炎上——「不審な活動」に分類、船名・原因・死傷者は不明",
+      "body": "UKMTO公式サイトの警報183（Suspicious Activity・10/27 02:28 JST発行）は、複数の第三者の報告として、アルファオの南東63海里で船舶が炎上していると伝え、乗組員の状況・被害・環境への影響は不明とする（原文は「multiple third-party reports of a vessel on fire, 63NM southeast of Al-Faw, Iraq」）。公式の本文に発生時刻・船名の記載はない。gCaptain（10/26）は、UKMTOが確認された攻撃ではなく不審な活動に分類し、原因は不明で当局が調べていると伝える（原文は「suspicious activity rather than a confirmed attack」「The cause of the fire remains unclear, and authorities are investigating」）。Arab News（AFP配信）も原因を特定していない報告として同じ内容を伝える。",
+      "sourceLabel": "UKMTO公式・gCaptain（10/26）",
+      "date": "2026年10月26日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/tanker-disabled-in-strait-of-hormuz-attack-another-vessel-reported-on-fire-in-persian-gulf/",
       "isLatest": true
     },
     {
-      "id": "latest-iran-chief-trump-1024",
-      "title": "イラン軍トップ「米軍の再進入は夢でしかない」——トランプ氏は新たな攻撃か圧力の継続かを検討中と説明",
-      "body": "Al Jazeera（10/24）は、イラン軍のトップが「The US president can only dream of their soldiers and military again entering the Persian Gulf」と述べたと伝える。同記事は「Trump said Washington was still deliberating new attacks or continued pressure on Iran」と書き、「may do another Epic Fury」の語も引く。ブレントは約117ドルと4月以来の高値をつけたと同記事は書く（終値は10/23の116.72ドル。Reuters・Xinhua）。イラン側の発言と、トランプ氏が検討中だという説明で、攻撃の決定や日程は記事に書かれていない。",
-      "sourceLabel": "Al Jazeera（10/24）",
-      "date": "2026年10月24日（現地）",
-      "label": "軍事",
-      "url": "https://www.aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
+      "id": "latest-ukmto-182-1023",
+      "title": "UKMTO警報182：10/23に海峡を出るタンカーが飛翔体を受け航行不能（遅延報告）——乗組員は無事、船名は未公表",
+      "body": "UKMTO公式サイトの警報182（Attack・10/26 18:20 JST発行）は、海峡内の事案の確認された遅延報告として、出航中のタンカーが正体不明の飛翔体を受けて航行不能になり、乗組員は無事と伝える（原文は「A tanker transiting outbound was struck by an unknown projectile, disabling the vessel. The crew have been reported safe」）。公式の本文に発生時刻・船名の記載はなく、日時欄は10/23 08:30 UTC。gCaptain（10/26）は発生を「October 23 at 0839 UTC」と書く。警報181（10/22・リマ沖）とは日時・位置・被害が異なり別の事案とみられるが、船名がなく同一性は断定できない。",
+      "sourceLabel": "UKMTO公式・gCaptain（10/26）",
+      "date": "2026年10月26日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/tanker-disabled-in-strait-of-hormuz-attack-another-vessel-reported-on-fire-in-persian-gulf/",
       "isLatest": false
     },
     {
-      "id": "latest-coalition-intercept-1024",
-      "title": "サウジ主導の連合軍「フーシ派の弾道ミサイル2発をタイフ・ヤンブー方面で迎撃」と発表——記事は被害に触れず",
-      "body": "Reuters配信のTimes of Israel（10/24 12:23 pm）は、サウジ主導の連合軍が、イランに近いフーシ派がタイフとヤンブーに向けて発射した弾道ミサイル2発を破壊したと発表したと伝える（原文は「The Saudi Arabia-led coalition fighting Yemen's Houthis says it destroyed two ballistic missiles」「fired by the Iran-aligned group towards Taif and Yanbu」）。サウジの警報サービスは一時、タイフ・ヤンブーに加えてメッカ・ジェッダにも危険を知らせる警報を出し、約10分後に危険が去ったと通知した。記事は被害に触れていない。連合軍の発表で、フーシ派側の説明は確認できない。",
-      "sourceLabel": "Reuters配信・Times of Israel（10/24）",
-      "date": "2026年10月24日（現地）",
+      "id": "latest-houthi-riyadh-1026",
+      "title": "フーシ派がリヤド空港を弾道ミサイルで攻撃したと主張、連合軍は発射機4基などの破壊を発表——被害の記載なし、いずれも当事者の発表・主張",
+      "body": "AFP配信のYahoo掲載記事（10/26）は、フーシ派の軍報道官サリー氏が月曜、リヤド空港を弾道ミサイルで攻撃し、石油のポンプ施設もドローンで攻撃したと述べたと伝える（原文は「with a ballistic missile, striking the target with precision」「He said the Houthis had also struck oil pumping stations with drones」）。サウジ主導の連合軍の報道官はXで、弾道ミサイル発射機4基・ミサイル貯蔵庫・トンネルを破壊したと発表した（原文は「destroyed four ballistic missile launchers, as well as a missile depot and tunnels used by the Houthis」）。記事に10/26の空港攻撃の被害の記載はなく、独立した確認もない。",
+      "sourceLabel": "AFP配信・Yahoo（10/26）",
+      "date": "2026年10月26日（現地）",
       "label": "攻撃",
-      "url": "https://www.timesofisrael.com/liveblog_entry/saudi-led-coalition-says-it-destroyed-two-houthi-ballistic-missiles-fired-at-kingdom/",
+      "url": "https://www.yahoo.com/news/world/articles/flights-resume-riyadh-airport-houthis-150638868.html",
       "isLatest": false
     },
     {
-      "id": "latest-oil-close-1023",
-      "title": "原油10/23終値：ブレント12月物116.72ドル（+3.55ドル）、WTI12月物103.27ドル（+3.80ドル）——ブレントは4/29以来の高値",
-      "body": "10/23（米国時間）の終値は、ブレント12月物が116.72ドル（+3.55ドル、+3.14%）、WTI12月物が103.27ドル（+3.80ドル、+3.82%）。Reuters（10/23配信）は「Brent crude futures settled at $116.72 a barrel, up $3.55 or 3.14%, their highest since April 29」と書き、Xinhua（10/23）も同じ値をブレント12月物・WTI12月物として伝える。Reutersは上昇の材料として、サウジアラビアへのフーシ派の攻撃がエネルギー供給の混乱への懸念を強めたことを挙げる。",
-      "sourceLabel": "Reuters・Xinhua（10/23）",
-      "date": "2026年10月23日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html",
+      "id": "latest-yemen-1276-1026",
+      "title": "イエメン政府軍「フーシ派の拠点に24時間で1,276回の攻撃」と発表——約382人を無力化したと主張、当事者の発表",
+      "body": "Arab News（10/26）は、イエメン政府軍の報道官アル＝ヌザイリ大佐が月曜深夜、フーシ派の拠点に対し24時間で1,276回の攻撃を行ったと述べたと伝える（原文は「Yemeni government forces carried out 1,276 strikes on Houthi targets in 24 hours」）。同記事は、フーシ派の指揮官と戦闘員約382人を「neutralized」（無力化）したとも書く。イエメン政府側の発表で、独立した確認はない。",
+      "sourceLabel": "Arab News（10/26）",
+      "date": "2026年10月26日（現地）",
+      "label": "軍事",
+      "url": "https://www.arabnews.com/middle-east/yemen-government-says-forces-launched-1276-strikes-on-houthi-targets-in-24-hours-3008379",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-yemen-1276-1026",
+      "titleJa": "【Arab News】イエメン政府軍「24時間で1,276回の攻撃」と発表——約382人を無力化したと主張",
+      "titleEn": "Yemeni government says forces launched 1,276 strikes on Houthi targets in 24 hours (Arab News, Oct 26)",
+      "title": "【Arab News】イエメン政府軍「24時間で1,276回の攻撃」と発表——約382人を無力化したと主張",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年10月26日（現地）",
+      "summary": "Arab News（10/26）は、イエメン政府軍の報道官アル＝ヌザイリ大佐が月曜深夜、フーシ派の拠点に対し24時間で1,276回の攻撃を行ったと述べたと伝える（原文は「Yemeni government forces carried out 1,276 strikes on Houthi targets in 24 hours」）。フーシ派の指揮官と戦闘員約382人を「neutralized」（無力化）したとも書く。イエメン政府側の発表で、独立した確認はない。",
+      "url": "https://www.arabnews.com/middle-east/yemen-government-says-forces-launched-1276-strikes-on-houthi-targets-in-24-hours-3008379",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-houthi-aden-1024",
       "titleJa": "【Al Jazeera】フーシ派がアデン空港に弾道ミサイル2発、連合軍はリヤド向け1発の迎撃を発表——イエメン政府は今月4回目と説明",
@@ -55,7 +68,7 @@
       "date": "2026年10月24日（現地）",
       "summary": "Al Jazeera（10/24）は、イエメン政府の運輸省が、フーシ派がアデン国際空港を弾道ミサイル2発で狙ったと発表し、今月4回目の同様の攻撃だと述べたと伝える（原文は「the Houthis’ targeting of Aden international airport with two ballistic missiles」「fourth such attack this month」）。イエメン当局は沿岸警備隊の本部ももう1棟も被弾したと説明した。サウジ主導の連合軍の報道官は、リヤドに向けて発射された弾道ミサイル1発を防空網が迎撃し破壊したと投稿した（原文は「Air defences intercepted and destroyed a ballistic missile launched by the terrorist Houthi militia toward Riyadh」）。同記事は、2週間閉鎖されていたリヤド空港の運航が日曜（10/25）に再開すると書く一方、フーシ派のサリー報道官は空港は「unsafe」で「military target」のままだと警告したと伝える。イエメン軍は、フーシ派のミサイルが誤作動してサナアの民家に落ち、3人が死亡したと述べた。いずれも当事者の発表・主張で、独立した確認は記事にない。",
       "url": "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-iran-chief-1024",
@@ -2025,6 +2038,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月27日",
+      "items": [
+        {
+          "id": "latest-houthi-aden-riyadh-1024",
+          "title": "フーシ派がアデン国際空港に弾道ミサイル2発、連合軍はリヤド向け1発の迎撃を発表——イエメン政府は「今月4回目」、いずれも当事者の発表・主張",
+          "body": "Al Jazeera（10/24）は、イエメン政府の運輸省が、フーシ派がアデン国際空港を弾道ミサイル2発で狙ったと発表し、今月4回目の同様の攻撃だと述べたと伝える（原文は「the Houthis’ targeting of Aden international airport with two ballistic missiles」「fourth such attack this month」）。イエメン当局は沿岸警備隊の本部ももう1棟も被弾したと説明した。サウジ主導の連合軍の報道官は、リヤドに向けて発射された弾道ミサイル1発を防空網が迎撃し破壊したと投稿した（原文は「Air defences intercepted and destroyed a ballistic missile launched by the terrorist Houthi militia toward Riyadh」）。同記事は、2週間閉鎖されていたリヤド空港の運航が日曜（10/25）に再開すると書く一方、フーシ派のサリー報道官は空港は「unsafe」で「military target」のままだと警告したと伝える。イエメン軍は、フーシ派のミサイルが誤作動してサナアの民家に落ち、3人が死亡したと述べた。いずれも当事者の発表・主張で、独立した確認は記事にない。",
+          "sourceLabel": "Al Jazeera（10/24）",
+          "date": "2026年10月24日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-chief-trump-1024",
+          "title": "イラン軍トップ「米軍の再進入は夢でしかない」——トランプ氏は新たな攻撃か圧力の継続かを検討中と説明",
+          "body": "Al Jazeera（10/24）は、イラン軍のトップが「The US president can only dream of their soldiers and military again entering the Persian Gulf」と述べたと伝える。同記事は「Trump said Washington was still deliberating new attacks or continued pressure on Iran」と書き、「may do another Epic Fury」の語も引く。ブレントは約117ドルと4月以来の高値をつけたと同記事は書く（終値は10/23の116.72ドル。Reuters・Xinhua）。イラン側の発言と、トランプ氏が検討中だという説明で、攻撃の決定や日程は記事に書かれていない。",
+          "sourceLabel": "Al Jazeera（10/24）",
+          "date": "2026年10月24日（現地）",
+          "label": "軍事",
+          "url": "https://www.aljazeera.com/news/2026/10/24/iran-says-wont-allow-us-warships-to-get-close-as-trump-ponders-new-attacks",
+          "isLatest": false
+        },
+        {
+          "id": "latest-coalition-intercept-1024",
+          "title": "サウジ主導の連合軍「フーシ派の弾道ミサイル2発をタイフ・ヤンブー方面で迎撃」と発表——記事は被害に触れず",
+          "body": "Reuters配信のTimes of Israel（10/24 12:23 pm）は、サウジ主導の連合軍が、イランに近いフーシ派がタイフとヤンブーに向けて発射した弾道ミサイル2発を破壊したと発表したと伝える（原文は「The Saudi Arabia-led coalition fighting Yemen's Houthis says it destroyed two ballistic missiles」「fired by the Iran-aligned group towards Taif and Yanbu」）。サウジの警報サービスは一時、タイフ・ヤンブーに加えてメッカ・ジェッダにも危険を知らせる警報を出し、約10分後に危険が去ったと通知した。記事は被害に触れていない。連合軍の発表で、フーシ派側の説明は確認できない。",
+          "sourceLabel": "Reuters配信・Times of Israel（10/24）",
+          "date": "2026年10月24日（現地）",
+          "label": "攻撃",
+          "url": "https://www.timesofisrael.com/liveblog_entry/saudi-led-coalition-says-it-destroyed-two-houthi-ballistic-missiles-fired-at-kingdom/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-close-1023",
+          "title": "原油10/23終値：ブレント12月物116.72ドル（+3.55ドル）、WTI12月物103.27ドル（+3.80ドル）——ブレントは4/29以来の高値",
+          "body": "10/23（米国時間）の終値は、ブレント12月物が116.72ドル（+3.55ドル、+3.14%）、WTI12月物が103.27ドル（+3.80ドル、+3.82%）。Reuters（10/23配信）は「Brent crude futures settled at $116.72 a barrel, up $3.55 or 3.14%, their highest since April 29」と書き、Xinhua（10/23）も同じ値をブレント12月物・WTI12月物として伝える。Reutersは上昇の材料として、サウジアラビアへのフーシ派の攻撃がエネルギー供給の混乱への懸念を強めたことを挙げる。",
+          "sourceLabel": "Reuters・Xinhua（10/23）",
+          "date": "2026年10月23日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月26日",
       "items": [

@@ -800,6 +800,7 @@ function search(terms){                         // AND・新しい順
 | ルート表の現況詳細（セル1つを1区域） | `td.route-detail` | — |
 | シナリオ | `.sc-body` | — |
 | 確率の補足 | `.sc-update` | — |
+| 次の焦点（2026-10-26 追加。運営者の指示） | `.sc-focus-list` | — |
 | ニュースの本文（見出しはリンクなので付かない） | `.news-body` | `renderLatestNews()`・`renderArchive()` の後に `annotate()` |
 
 - 付けない：ステータスバッジ・速報インシデントの見出し・更新履歴・特別解説コラムの要約・ティッカー・ヘッダー・地図・TradingView・モーダル（許可リストに入れない）

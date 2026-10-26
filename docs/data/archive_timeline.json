@@ -3550,6 +3550,29 @@
           "sourceLabel": "Al Jazeera（10/24）"
         }
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "dateLabel": "2026/10/27 07:25",
+      "blockadeDay": 242,
+      "summary": "【重大更新】UKMTO公式が警報183（10/26 17:28 UTC発行・イラク・アルファオの南東63海里で船舶が炎上、「不審な活動」に分類・船名・原因・死傷者は不明、gCaptain・Arab News〈AFP配信〉も同内容）と、警報182（10/26 18:20 JST発行・10/23発生の遅延報告：海峡を出るタンカーが飛翔体を受け航行不能・乗組員は無事、公式の本文に発生時刻・船名の記載なし、gCaptainは10/23 0839 UTCと書く）を公表・警報182は警報181（10/22）と日時・位置・被害が異なり別の事案とみられるが船名がなく同一性は断定できない・IRGCが10/23に超大型タンカー2隻の機雷接触を主張（Iran Internationalで確認。独立した確認なし）・前回「二次的な媒体のみ」としたGulf Newsの同主張はこれで裏取り・フーシ派が10/26にリヤド空港を弾道ミサイルで攻撃したと主張し連合軍は発射機4基などの破壊を発表（AFP配信・Yahoo掲載。被害の記載なし）・イエメン政府軍が24時間で1,276回の攻撃を発表（Arab News。当事者の発表）・原油は10/26終値をRigzone（Bloomberg配信）のみで確認でき2出典での一致を確認できなかったため終値を据え置き、直近の確定値は10/23終値でブレント12月物116.72ドル・WTI12月物103.27ドル（Reuters・Xinhua）・米国の大規模爆撃準備（WSJ引用）は10月分の主要媒体の記事が見つからず本文に載せず・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・MT ST 3は主要通信社の記事を引き続き確認できず・警報178の軍の国籍・船名は不明のまま・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機242日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（動きなし）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報183：アルファオ南東63海里で船舶が炎上——「不審な活動」に分類、船名・原因・死傷者は不明",
+          "url": "https://gcaptain.com/tanker-disabled-in-strait-of-hormuz-attack-another-vessel-reported-on-fire-in-persian-gulf/",
+          "sourceLabel": "gCaptain（10/26）"
+        },
+        {
+          "title": "フーシ派がリヤド空港を弾道ミサイルで攻撃したと主張、連合軍は発射機4基などの破壊を発表",
+          "url": "https://www.yahoo.com/news/world/articles/flights-resume-riyadh-airport-houthis-150638868.html",
+          "sourceLabel": "AFP配信・Yahoo（10/26）"
+        },
+        {
+          "title": "イエメン政府軍「24時間で1,276回の攻撃」と発表——当事者の発表",
+          "url": "https://www.arabnews.com/middle-east/yemen-government-says-forces-launched-1276-strikes-on-houthi-targets-in-24-hours-3008379",
+          "sourceLabel": "Arab News（10/26）"
+        }
+      ]
     }
   ]
 }

@@ -1016,7 +1016,11 @@ def check_unresolved(html: str) -> None:
         if not m:
             warn(f"{label}を検出できず、未解消の表記を確認できません（構造が変わった可能性）")
             continue
-        blocks.append((label, m.group(grp)))
+        text = m.group(grp)
+        if label == "30秒カラム":
+            # 「前回の裏取り」の行は前回分の結果を書く行で、「継続」の項目を含むのが正常なので除く
+            text = PAT_GLANCE_VERIFY_ROW.sub("", text)
+        blocks.append((label, text))
     for label, text in blocks:
         hits = [w for w in UNRESOLVED_WORDS if w in text]
         if hits:
@@ -1040,10 +1044,44 @@ def check_unresolved(html: str) -> None:
             ok("速報インシデントの先頭3件に公式の本文の未確認なし")
 
 
+PAT_GLANCE_VERIFY_ROW = re.compile(r'<span class="glance-label glance-label--verify">.*?</span>\s*<span class="glance-text">.*?</span>', re.S)
+PAT_GLANCE_VERIFY = re.compile(r'glance-label--verify">[^<]*</span>\s*<span class="glance-text">(.*?)</span>', re.S)
+PAT_VERIFY_PREV = re.compile(r'前回（(\d{1,2})/(\d{1,2})\s+(\d{1,2}):(\d{2})）')
+PAT_LOG_RECENT_DATES = re.compile(r'<div class="log-recent">(.*?)<div id="log-toggle-top"', re.S)
+
+
+def check_verify_row(html: str) -> None:
+    """30秒カラムの「前回の裏取り」の行が、前回の更新（更新履歴の2件目）を指しているか（2026-10-27 追加）。
+
+    前回の更新が残した未確認・据え置きの項目を、翌日の更新が「解消」「継続」に分けて読者に示す行。
+    日次スキル「2.4」の 5。前回の日時のまま書き換え忘れると、古い結果が今日の結果に見える。
+    """
+    m = PAT_GLANCE_VERIFY.search(html)
+    if not m:
+        warn("30秒カラムに「前回の裏取り」の行（glance-label--verify）がありません（daily-site-update「30秒カラムの型」）")
+        return
+    text = re.sub(r"<[^>]+>", "", m.group(1))
+    mm = PAT_LOG_RECENT_DATES.search(html)
+    dates = re.findall(r'log-date">\d{4}/(\d{2})/(\d{2})\s+(\d{1,2}):(\d{2})<', mm.group(1)) if mm else []
+    if len(dates) < 2:
+        warn("更新履歴の常時表示から前回の更新の日時を読めず、「前回の裏取り」の行を照合できません")
+        return
+    prev = tuple(int(x) for x in dates[1])
+    pm = PAT_VERIFY_PREV.search(text)
+    if not pm:
+        warn("「前回の裏取り」の行に「前回（M/D HH:MM）」がありません")
+    elif tuple(int(x) for x in pm.groups()) != prev:
+        warn("「前回の裏取り」の行が 前回（{}/{} {}:{:02d}）を指しています。更新履歴の2件目は {}/{} {}:{:02d}。"
+             "今回の裏取りの結果に書き直す".format(*(int(x) for x in pm.groups()), *prev))
+    else:
+        ok("「前回の裏取り」の行は前回の更新（{}/{} {}:{:02d}）を指している".format(*prev))
+
+
 # 文字数の目安（2026-10-11 追加）。厳密な上限ではなく、超えたら WARN で知らせる。
 # 10/11 の 30秒カラム（いま何が 766字・海峡の今 661字）がスマホで読む気がしない長さだったため、
 # 運営者の指示で約4割減を目安にした。シナリオの補足も 🅒 が 610字あった
-TEXT_LIMITS_GLANCE = (("now", "いま何が", 450), ("strait", "海峡の今", 400), ("next", "次の焦点", 250))
+TEXT_LIMITS_GLANCE = (("now", "いま何が", 450), ("strait", "海峡の今", 400), ("next", "次の焦点", 250),
+                      ("verify", "前回の裏取り", 250))
 TEXT_LIMIT_SC_SUMMARY = 150   # シナリオの補足の冒頭（📊 今日の動きの要約）
 TEXT_LIMIT_SC_LINE = 170      # 🅐〜🅓 の各行
 TEXT_LIMIT_SC_CAVEAT = 150    # 但し書き（sc-update-caveat）
@@ -1782,6 +1820,7 @@ def main() -> int:
     check_route_freshness(html, base)
     check_types(html, base)
     check_unresolved(html)
+    check_verify_row(html)
     check_text_lengths(html)
 
     check_news(news, base)

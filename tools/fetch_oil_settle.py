@@ -19,6 +19,7 @@ tools/daily-verify-prompts.md の V2）で、報道とは独立した2つ目の�
     それより前の日の終値（前回の更新で据え置いた終値の裏取り）に使う
   - 期近をつなげた銘柄（CL=F・BZ=F）は限月が途中で切り替わる（10/26 に BZ=F は既に1月物だった）。
     サイトの限月と合わせるため、必ず限月を指定した銘柄（BZZ26.NYM など）で読む
+  - 満期を過ぎた限月は Yahoo から消える（404）。その限月の過去の終値は取れないので、終了コード 2 になる
   - CME の公式サイトは自動取得を利用規約で禁じ、403 を返す。ICE は Cloudflare で拒否される。どちらも使わない
 
 使い方：
@@ -36,7 +37,7 @@ import sys
 import urllib.error
 import urllib.request
 
-API_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range={range}&interval=1d"
+API_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?{span}&interval=1d"
 PAGE_URL = "https://finance.yahoo.com/quote/{symbol}/history/"
 USER_AGENT = "Mozilla/5.0 (compatible; chokepointlab-daily/1.0; +https://chokepointlab.com/contact/)"
 MONTH_CODES = "FGHJKMNQUVXZ"
@@ -86,9 +87,15 @@ def symbol_of(product, year, month):
     return "{}{}{:02d}.NYM".format(product, MONTH_CODES[month - 1], year % 100)
 
 
-def fetch(symbol, days):
-    rng = "1mo" if days <= 15 else "3mo"
-    req = urllib.request.Request(API_URL.format(symbol=symbol, range=rng),
+def fetch(symbol, days, on_date=None):
+    if on_date:
+        # 指定日の前後だけを取る（前日比のため、前に休日をまたいでも足りる幅を取る）
+        start = datetime.datetime.combine(on_date - datetime.timedelta(days=10), datetime.time(), datetime.timezone.utc)
+        end = datetime.datetime.combine(on_date + datetime.timedelta(days=2), datetime.time(), datetime.timezone.utc)
+        span = "period1={}&period2={}".format(int(start.timestamp()), int(end.timestamp()))
+    else:
+        span = "range=" + ("1mo" if days <= 15 else "3mo")
+    req = urllib.request.Request(API_URL.format(symbol=symbol, span=span),
                                  headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=30) as res:
         data = json.loads(res.read().decode("utf-8"))
@@ -99,9 +106,10 @@ def fetch(symbol, days):
     meta = r["meta"]
     offset = datetime.timedelta(seconds=meta.get("gmtoffset", 0))
     period = (meta.get("currentTradingPeriod") or {}).get("regular") or {}
-    current = None
-    if period.get("start"):
-        current = (datetime.datetime.fromtimestamp(period["start"], datetime.timezone.utc) + offset).date()
+    if not period.get("start"):
+        # 取引中の日が分からないと、動いている値を「終値」と出してしまう。取得失敗として扱う
+        raise ValueError("取引中の日（currentTradingPeriod）が返らず、終値と未確定を区別できない")
+    current = (datetime.datetime.fromtimestamp(period["start"], datetime.timezone.utc) + offset).date()
     closes = (r.get("indicators", {}).get("quote") or [{}])[0].get("close") or []
     rows, prev = [], None
     for ts, close in zip(r.get("timestamp") or [], closes):
@@ -109,15 +117,19 @@ def fetch(symbol, days):
             continue
         day = (datetime.datetime.fromtimestamp(ts, datetime.timezone.utc) + offset).date()
         value = round(close, 2)
+        if rows and rows[-1]["date"] == day.isoformat():
+            # 取引中の日の足が2本返ることがある（2026-10-27 実測）。同じ日は後の1本だけ残す
+            rows.pop()
+            prev = rows[-1]["close"] if rows else None
         rows.append({
             "date": day.isoformat(),
             "close": value,
             "change": None if prev is None else round(value - prev, 2),
-            "final": current is None or day < current,
+            "final": day < current,
         })
         prev = value
     return {"name": meta.get("longName") or meta.get("shortName"), "rows": rows,
-            "current_session": current.isoformat() if current else None}
+            "current_session": current.isoformat()}
 
 
 def main():
@@ -146,7 +158,7 @@ def main():
                     "last_trade_day": last_trade_day(product, y, m).isoformat(),
                     "url": PAGE_URL.format(symbol=symbol)}
             try:
-                got = fetch(symbol, args.days)
+                got = fetch(symbol, args.days, on_date if args.date else None)
             except (urllib.error.URLError, ValueError, KeyError, json.JSONDecodeError, OSError) as e:
                 failed.append("{}（{}）：{}".format(symbol, label, e))
                 continue

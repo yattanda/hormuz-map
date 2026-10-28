@@ -1,49 +1,62 @@
 {
-  "updated": "2026年10月28日 07:15 日本時間JST",
+  "updated": "2026年10月29日 07:22 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-iran-army-mine-1027",
-      "title": "イラン軍「タンカーが機雷に接触して炎上」と主張——船名・位置・時刻は不明、UKMTOに対応する警報なし、独立した確認なし",
-      "body": "AFP配信のThe Standard（10/27）は、イラン軍がIRNA通信を通じた声明で、追跡システムを切り、海峡東側の立入禁止の危険海域を渡ろうとした石油タンカー1隻が機雷に触れ、損傷して火災が起きたと主張したと伝える（原文は「struck naval mines, causing damage and a fire」）。Anadolu（10/27）はイラン海軍の発表として同内容を伝え、身元・旗国・乗組員・死傷者の詳細は示されていないと書く。UKMTO公式（10/28 07:09 JST取得）に対応する警報はない。イラン側の主張で、独立した確認はない。",
-      "sourceLabel": "AFP配信・The Standard／Anadolu（10/27）",
-      "date": "2026年10月27日（現地）",
-      "label": "海上",
-      "url": "https://www.aa.com.tr/en/middle-east/iran-says-oil-tanker-catches-fire-after-hitting-naval-mine-east-of-strait-of-hormuz/4102560",
+      "id": "latest-wsj-gulf-warning-1028",
+      "title": "米国が湾岸諸国に中間選挙後の対イラン攻撃への備えを警告とWSJ——二次的な媒体の伝聞・原文未確認",
+      "body": "Middle East Eye（10/28 16:41 GMT公開）は、WSJの報道として、米国が複数の湾岸アラブ諸国に、イランへの短期間で激しい軍事攻撃に備えるよう警告したと伝える（原文は「warned several Gulf Arab countries to be prepared for a short, intense military offensive against Iran」）。時期は11/3の米中間選挙の後で、爆撃機と戦闘機が攻撃の準備をしているという。WSJ本文は開けず、主要通信社の記事は見つからなかった。二次的な媒体の伝聞で、米政府の発表はない。",
+      "sourceLabel": "Middle East Eye（10/28）",
+      "date": "2026年10月28日（現地）",
+      "label": "軍事",
+      "url": "https://middleeasteye.net/news/us-warns-gulf-intense-strikes-iran-after-midterms-report",
       "isLatest": true
     },
     {
-      "id": "latest-houthi-rastanura-1027",
-      "title": "フーシ派が「サウジ東部のラスタヌラ製油所を弾道ミサイルで攻撃」と主張——被害の記載なし、フーシ派の主張で独立した確認なし",
-      "body": "Fox News（10/27のライブ更新）の見出しは、フーシ派がサウジアラビアのラスタヌラ製油所への攻撃を主張したと伝える（原文は「Houthis claim attack on Saudi Arabia's Ras Tanura oil refinery」）。CBS Newsのライブ更新も、東部州のラスタヌラ製油所を弾道ミサイルで狙ったと伝える。被害の有無とサウジ側の説明は、確認した記事に書かれていない。",
-      "sourceLabel": "Fox News／CBS News（10/27）",
+      "id": "latest-araghchi-7day-1028",
+      "title": "イラン外相「7日間計画」の実施へ仲介者と連絡継続——米側が受け入れたとは確認できず",
+      "body": "Middle East Monitor（10/28 19:35公開・Anadolu通信を引く）は、アラグチ外相がXに、外交が成功する機会を与え続け、仲介者と緊密に連絡を取っていると投稿したと伝える（原文は「Iran continues to give diplomacy a chance to succeed」）。7日間計画は、最初の5日間に米国が合意された措置をとり、6日目にイランが海峡を通常の商業航行に開放する内容で、措置は合意が前提と同記事は書く。米側が受け入れたとは確認できない。",
+      "sourceLabel": "Middle East Monitor（10/28）",
+      "date": "2026年10月28日（現地）",
+      "label": "外交",
+      "url": "https://www.middleeastmonitor.com/20261028-iranian-foreign-minister-says-tehran-in-talks-with-mediators-to-implement-7-day-plan-with-us/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-ukmto-184-1028",
+      "title": "UKMTO警報184：アデン湾で不審な小型船、海賊行為の可能性——被害の報告なし",
+      "body": "UKMTO公式サイトの警報184（Advisory・10/28 21:04 JST発行）は、アデン湾で不審な活動の報告があり、海賊行為集団の活動を示す可能性があると伝える（原文は「Potentially indicative of Pirate Action Group Activity」）。不審な小型船が商船の近くで複数目撃され、うち1件は9人が乗った緑と青のボートと書く。被害の報告はなく、当局が調べている。ホルムズ海峡の事案ではない。",
+      "sourceLabel": "UKMTO公式（10/28）",
+      "date": "2026年10月28日（現地）",
+      "label": "海上",
+      "url": "https://www.ukmto.org/recent-incidents",
+      "isLatest": false
+    },
+    {
+      "id": "latest-houthi-rastanura-followup-1027",
+      "title": "フーシ派のラスタヌラ製油所攻撃の主張——報道官は大規模火災を主張、サウジ当局のコメントなし",
+      "body": "Anadolu（10/27）は、フーシ派がラスタヌラ製油所を狙ったと主張し、報道官サリーはミサイルが標的に命中して施設で大規模な火災が起きたと述べたと伝える（原文は「caused large fires at the site」）。サウジ当局の即時のコメントはなく（原文は「There was no immediate comment from Saudi authorities on the claim」）、サウジ主導の連合軍はドローン4機と弾道ミサイル3発の迎撃を発表したと同記事は書く。被害の確認はなく、フーシ派の主張のみ。",
+      "sourceLabel": "Anadolu（10/27）",
       "date": "2026年10月27日（現地）",
       "label": "攻撃",
-      "url": "https://noticias.foxnews.com/live-news/us-iran-war-peace-talks-donald-trump-strait-hormuz-october-27",
-      "isLatest": false
-    },
-    {
-      "id": "latest-yemen-bab-1027",
-      "title": "バブエルマンデブ周辺・タイズで激しい戦闘——政府軍筋は高地を奪ったと主張、タイズで狙撃により民間人5人が死亡",
-      "body": "Asharq Al-Awsat（10/27）は、バブエルマンデブ海峡の近くでフーシ派と政府軍の間に激しい戦闘が起きたと伝える（原文は「Fierce clashes erupted near Bab al-Mandeb」）。政府軍の軍事筋は戦略的な高地を奪ったと述べ、国家の盾軍の筋はフーシ派がカフブーブ山地を奪ったとの報道を否定した。タイズの当局は、フーシ派の狙撃で民間人5人が死亡したと述べた。政府軍側の主張で、独立した確認はない。",
-      "sourceLabel": "Asharq Al-Awsat（10/27）",
-      "date": "2026年10月27日（現地）",
-      "label": "軍事",
-      "url": "https://english.aawsat.com/arab-world/5334405-yemeni-govt-forces-press-advance-houthis-near-bab-al-mandeb-taiz",
-      "isLatest": false
-    },
-    {
-      "id": "latest-qatar-talks-1027",
-      "title": "カタール「イランは善意を示し海峡を開けるべき」——イラン・サウジ・トルコ・パキスタンの高官は協議継続で合意と共同通信",
-      "body": "Fox News（10/27）は、カタールの報道官が、イランは善意を示し、アラブ湾岸諸国への威嚇をやめ、ホルムズ海峡を開ける必要があると述べたと伝える（原文は「Iran needs to show good intentions, stop threats against Arab Gulf states and open the Strait of Hormuz」）。共同通信（10/28）は、イラン、サウジアラビア、トルコ、パキスタンの高官らが前日の会談で協議の継続で合意したと伝える。協議の中身と米側の回答は、確認した記事に書かれていない。",
-      "sourceLabel": "Fox News（10/27）・共同通信（10/28）",
-      "date": "2026年10月27日（現地）",
-      "label": "外交",
-      "url": "https://noticias.foxnews.com/live-news/us-iran-war-peace-talks-donald-trump-strait-hormuz-october-27",
+      "url": "https://www.aa.com.tr/en/middle-east/yemen-s-houthis-claim-missile-attack-on-saudi-arabia-s-ras-tanura-oil-refinery/4102578",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-mem-araghchi-1028",
+      "titleJa": "【Middle East Monitor】イラン外相「仲介者と緊密に連絡」——7日間計画の実施へ取り組むと述べる",
+      "titleEn": "Iranian foreign minister says Tehran in talks with mediators to implement 7-day plan with US (Middle East Monitor, Oct 28)",
+      "title": "【Middle East Monitor】イラン外相「仲介者と緊密に連絡」——7日間計画の実施へ取り組むと述べる",
+      "country": "英国",
+      "media": "Middle East Monitor",
+      "source": "Middle East Monitor",
+      "date": "2026年10月28日（現地）",
+      "summary": "Middle East Monitor（10/28）は、アラグチ外相がXに、イランは外交が成功する機会を与え続け、仲介者と緊密かつ継続的に連絡を取っていると投稿したと伝える（原文は「We remain in close and ongoing contact with intermediaries」）。記事はAnadolu通信を引き、7日間計画は6日目にイランが海峡を通常の商業航行に開放する内容で、措置は合意が前提だと書く。米側が受け入れたとは確認できない。",
+      "url": "https://www.middleeastmonitor.com/20261028-iranian-foreign-minister-says-tehran-in-talks-with-mediators-to-implement-7-day-plan-with-us/",
+      "isLatest": true
+    },
     {
       "id": "osint-anadolu-iran-mine-1027",
       "titleJa": "【Anadolu】イラン海軍「タンカーが機雷に接触して火災」と発表——身元・旗国・死傷者は未公表",
@@ -55,7 +68,7 @@
       "date": "2026年10月27日（現地）",
       "summary": "Anadolu（10/27）は、イラン海軍が火曜日、海峡東側で石油タンカーが機雷に触れて火災になったと発表したと伝える（原文は「An oil tanker caught fire after striking naval mines east of the Strait of Hormuz」）。海軍は身元・旗国・乗組員・死傷者の詳細を示しておらず、海峡は調整なしで通る船にとって「unsafe and closed」のままだと述べたという。イラン側の主張で、独立した確認はない。",
       "url": "https://www.aa.com.tr/en/middle-east/iran-says-oil-tanker-catches-fire-after-hitting-naval-mine-east-of-strait-of-hormuz/4102560",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aawsat-bab-1027",
@@ -2064,6 +2077,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月29日",
+      "items": [
+        {
+          "id": "latest-iran-army-mine-1027",
+          "title": "イラン軍「タンカーが機雷に接触して炎上」と主張——船名・位置・時刻は不明、UKMTOに対応する警報なし、独立した確認なし",
+          "body": "AFP配信のThe Standard（10/27）は、イラン軍がIRNA通信を通じた声明で、追跡システムを切り、海峡東側の立入禁止の危険海域を渡ろうとした石油タンカー1隻が機雷に触れ、損傷して火災が起きたと主張したと伝える（原文は「struck naval mines, causing damage and a fire」）。Anadolu（10/27）はイラン海軍の発表として同内容を伝え、身元・旗国・乗組員・死傷者の詳細は示されていないと書く。UKMTO公式（10/28 07:09 JST取得）に対応する警報はない。イラン側の主張で、独立した確認はない。",
+          "sourceLabel": "AFP配信・The Standard／Anadolu（10/27）",
+          "date": "2026年10月27日（現地）",
+          "label": "海上",
+          "url": "https://www.aa.com.tr/en/middle-east/iran-says-oil-tanker-catches-fire-after-hitting-naval-mine-east-of-strait-of-hormuz/4102560",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-rastanura-1027",
+          "title": "フーシ派が「サウジ東部のラスタヌラ製油所を弾道ミサイルで攻撃」と主張——被害の記載なし、フーシ派の主張で独立した確認なし",
+          "body": "Fox News（10/27のライブ更新）の見出しは、フーシ派がサウジアラビアのラスタヌラ製油所への攻撃を主張したと伝える（原文は「Houthis claim attack on Saudi Arabia's Ras Tanura oil refinery」）。CBS Newsのライブ更新も、東部州のラスタヌラ製油所を弾道ミサイルで狙ったと伝える。被害の有無とサウジ側の説明は、確認した記事に書かれていない。",
+          "sourceLabel": "Fox News／CBS News（10/27）",
+          "date": "2026年10月27日（現地）",
+          "label": "攻撃",
+          "url": "https://noticias.foxnews.com/live-news/us-iran-war-peace-talks-donald-trump-strait-hormuz-october-27",
+          "isLatest": false
+        },
+        {
+          "id": "latest-yemen-bab-1027",
+          "title": "バブエルマンデブ周辺・タイズで激しい戦闘——政府軍筋は高地を奪ったと主張、タイズで狙撃により民間人5人が死亡",
+          "body": "Asharq Al-Awsat（10/27）は、バブエルマンデブ海峡の近くでフーシ派と政府軍の間に激しい戦闘が起きたと伝える（原文は「Fierce clashes erupted near Bab al-Mandeb」）。政府軍の軍事筋は戦略的な高地を奪ったと述べ、国家の盾軍の筋はフーシ派がカフブーブ山地を奪ったとの報道を否定した。タイズの当局は、フーシ派の狙撃で民間人5人が死亡したと述べた。政府軍側の主張で、独立した確認はない。",
+          "sourceLabel": "Asharq Al-Awsat（10/27）",
+          "date": "2026年10月27日（現地）",
+          "label": "軍事",
+          "url": "https://english.aawsat.com/arab-world/5334405-yemeni-govt-forces-press-advance-houthis-near-bab-al-mandeb-taiz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-qatar-talks-1027",
+          "title": "カタール「イランは善意を示し海峡を開けるべき」——イラン・サウジ・トルコ・パキスタンの高官は協議継続で合意と共同通信",
+          "body": "Fox News（10/27）は、カタールの報道官が、イランは善意を示し、アラブ湾岸諸国への威嚇をやめ、ホルムズ海峡を開ける必要があると述べたと伝える（原文は「Iran needs to show good intentions, stop threats against Arab Gulf states and open the Strait of Hormuz」）。共同通信（10/28）は、イラン、サウジアラビア、トルコ、パキスタンの高官らが前日の会談で協議の継続で合意したと伝える。協議の中身と米側の回答は、確認した記事に書かれていない。",
+          "sourceLabel": "Fox News（10/27）・共同通信（10/28）",
+          "date": "2026年10月27日（現地）",
+          "label": "外交",
+          "url": "https://noticias.foxnews.com/live-news/us-iran-war-peace-talks-donald-trump-strait-hormuz-october-27",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月28日",
       "items": [

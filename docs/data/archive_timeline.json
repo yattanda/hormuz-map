@@ -3596,6 +3596,34 @@
           "sourceLabel": "Asharq Al-Awsat（10/27）"
         }
       ]
+    },
+    {
+      "date": "2026-10-29",
+      "dateLabel": "2026/10/29 07:22",
+      "blockadeDay": 244,
+      "summary": "【重大更新】前回分の裏取り：解消1件（10/27のブレント終値＝Yahoo Finance・NYMEXのデータとArbiterzが一致し12月物113.88ドルに確定）・継続4件（米国の大規模爆撃準備の報道＝Middle East EyeがWSJを引いて10/28に伝えたが二次的な媒体のみで主要通信社の記事なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因）・米国が湾岸アラブ諸国に、11/3の中間選挙後の短期間で激しい対イラン攻撃への備えを警告したとWSJが報じたと、Middle East Eyeが10/28に伝える（二次的な媒体・WSJ原文未確認・米政府の発表なし）・イランのアラグチ外相が10/28、仲介者と緊密に連絡を取り7日間計画の実施に向けて取り組むと述べた（Middle East Monitor〈Anadolu引用〉。米側が受け入れたとは確認できず）・UKMTO公式が警報184（10/28 21:04 JST発行・アデン湾で不審な小型船、海賊行為の可能性・被害の報告なし）を公表・フーシ派のラスタヌラ製油所攻撃の主張にAnadoluの記述を追記（フーシ派報道官は大規模火災を主張、サウジ当局の即時のコメントなし、連合軍はドローン4機と弾道ミサイル3発の迎撃を発表。被害の確認なし）・原油は10/27終値がブレント12月物113.88ドル（−1.93ドル）・WTI12月物99.90ドル（−1.86ドル）で確定、10/28の終値は2出典での一致を確認できなかったため終値を据え置き・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機244日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートA・ルートB）更新・地図の軍事レイヤーを見直し（動きなし）",
+      "relatedNews": [
+        {
+          "title": "米国が湾岸諸国に中間選挙後の対イラン攻撃への備えを警告とWSJ——二次的な媒体の伝聞・原文未確認",
+          "url": "https://middleeasteye.net/news/us-warns-gulf-intense-strikes-iran-after-midterms-report",
+          "sourceLabel": "Middle East Eye（10/28）"
+        },
+        {
+          "title": "イラン外相「7日間計画」の実施へ仲介者と連絡継続——米側が受け入れたとは確認できず",
+          "url": "https://www.middleeastmonitor.com/20261028-iranian-foreign-minister-says-tehran-in-talks-with-mediators-to-implement-7-day-plan-with-us/",
+          "sourceLabel": "Middle East Monitor（10/28）"
+        },
+        {
+          "title": "UKMTO警報184：アデン湾で不審な小型船、海賊行為の可能性——被害の報告なし",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "sourceLabel": "UKMTO公式（10/28）"
+        },
+        {
+          "title": "フーシ派のラスタヌラ製油所攻撃の主張——報道官は大規模火災を主張、サウジ当局のコメントなし",
+          "url": "https://www.aa.com.tr/en/middle-east/yemen-s-houthis-claim-missile-attack-on-saudi-arabia-s-ras-tanura-oil-refinery/4102578",
+          "sourceLabel": "Anadolu（10/27）"
+        }
+      ]
     }
   ]
 }

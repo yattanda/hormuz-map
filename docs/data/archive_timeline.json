@@ -3624,6 +3624,29 @@
           "sourceLabel": "Anadolu（10/27）"
         }
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "dateLabel": "2026/10/30 07:26",
+      "blockadeDay": 245,
+      "summary": "【重大更新】前回分の裏取り：解消1件（10/28の原油終値＝Yahoo Finance・NYMEXのデータとThe Nationalが一致しブレント12月物115.32ドル・WTI12月物102.78ドルに確定）・継続5件（米国の大規模爆撃準備の報道＝Fox Newsも10/29にWSJの報道として伝えたがWSJ本文は未確認・ラスタヌラ製油所の被害・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因）・UKMTO公式が警報186（10/30 02:51 JST発行・海峡を出るタンカーが正体不明の飛翔体を受ける・負傷の報告なし・船名と攻撃主体は不明。Anewsは発生を1600GMTと書き、公式の日時欄17:50 UTCと食い違う）と警報185（10/29 15:29 JST発行・カサブ北9海里で炎上した船が地域当局にダウ船と特定され沈没・乗組員は退避・原因は不明。RivieraはAmbreyがタンカーと記したと伝え、船種が食い違う）を公表・IRGCが直近24時間に3隻、イラン軍が別の1隻のタンカーが機雷に触れて炎上したと主張しArab News・Shafaq Newsが伝える、米中央軍は主要航路の機雷は除去済みと反論（独立した確認なし）・中間選挙後の米国の攻撃準備の報道にFox Newsの記述を追記（トランプ氏は「anything's possible」と述べ、決定はまだないとの軍関係者の見方）・原油は10/29終値がブレント12月物114.88ドル（−0.44ドル）・WTI12月物102.00ドル（−0.78ドル）で確定（ReutersとXinhuaが一致）・イエメン・紅海・サウジ迂回路は前回以降の新しい報道を確認できず・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機245日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（機雷警戒海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報186：海峡を出るタンカーが正体不明の飛翔体を受ける——負傷の報告なし",
+          "url": "https://www.anews.com.tr/middle-east/2026/10/29/oil-tanker-struck-by-unknown-projectile-in-strait-of-hormuz-uk-maritime-agency",
+          "sourceLabel": "Anews（10/29）"
+        },
+        {
+          "title": "UKMTO警報185：カサブ沖で炎上した船はダウ船と特定され沈没——乗組員は退避、原因は不明",
+          "url": "https://www.arabnews.pk/world/iran-claims-four-tankers-hit-mines-in-hormuz-as-dhow-crew-rescued-3005544",
+          "sourceLabel": "Arab News（10/29）"
+        },
+        {
+          "title": "イラン側「タンカー計3〜4隻が機雷に接触して炎上」と主張——米中央軍は反論",
+          "url": "https://shafaq.com/en/Middle-East/Hormuz-tensions-mount-following-dhow-sinking",
+          "sourceLabel": "Shafaq News（10/29）"
+        }
+      ]
     }
   ]
 }

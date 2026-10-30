@@ -3647,6 +3647,29 @@
           "sourceLabel": "Shafaq News（10/29）"
         }
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "dateLabel": "2026/10/31 08:05",
+      "blockadeDay": 246,
+      "summary": "【重大更新】前回分の裏取り：解消1件（ブレントの期近の限月＝12月物は10/30に満期、期近は1月物。10/30終値はWTI12月物104.12ドル・ブレント1月物113.43ドルでReutersとNewsquawkが一致、ブレント12月物の満期清算値117.64ドルはReutersのみ）・継続7件（WSJの攻撃準備の報道＝主要通信社の記事なし・ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種＝公式はダウ船・警報186の発生時刻＝公式の本文に記載なし）・UKMTO公式が警報189（10/31 05:13 JST発行・遅延報告・海峡を出る原油タンカーが正体不明の飛翔体を受ける・発生時刻・船名・攻撃主体は不明）と警報188（10/31 04:03 JST発行・ラヴァン島の南40海里で船が飛翔体を受け火災・乗組員は無事・船名と攻撃主体は不明）を公表し、警報187は更新で10/29 22:12 UTCにカサブ北東の海峡でタンカーに小型ボートが爆発物2個を取り付け機関室で火災・船は航行を継続・乗組員は無事と伝えた・イエメン政府軍は10/30、フーシ派がアデン空港と大統領府を弾道ミサイルで攻撃したと発表（Arab News・被害の詳細は示されず）・IRGCの機雷接触タンカーの主張は10/30も続き、AP通信は確認できなかったとGulf Newsが伝える・原油は10/30終値がWTI12月物104.12ドル（+2.12ドル）・ブレント1月物113.43ドル（+2.63ドル）で確定（ブレント12月物は10/30に満期）・イエメン・紅海・サウジ迂回路は紅海の船舶攻撃やヤンブー・フジャイラの被害の新しい報道を確認できず・CENTCOMの封鎖の累計は10/17時点の商船138隻から新しい発表なし・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機246日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（機雷警戒海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報188・189：ラヴァン島の南の船と海峡を出るタンカーが飛翔体を受ける",
+          "url": "https://www.newsquawk.com/headlines/ukmto-says-it-received-a-report-of-an-incident-40nm-south-of-lavan-island-iran-where-a-vessel-was-hit-on-its-port-side-by-an-unknown-projectile-sparking-a-fire-onboard",
+          "sourceLabel": "Newsquawk（10/30）"
+        },
+        {
+          "title": "フーシ派がアデン空港と大統領府を弾道ミサイルで攻撃とイエメン政府軍",
+          "url": "https://www.arabnews.com/middle-east/houthis-target-aden-airport-and-maashiq-presidential-palace-with-ballistic-missiles-3009041",
+          "sourceLabel": "Arab News（10/30）"
+        },
+        {
+          "title": "原油10/30終値：WTI12月物104.12ドル・ブレント1月物113.43ドル",
+          "url": "https://www.koreatimes.co.kr/world/20261031/oil-jumps-2-settles-at-6-month-highs-on-fears-of-escalation-in-iran",
+          "sourceLabel": "Reuters（Korea Times掲載・10/31）"
+        }
+      ]
     }
   ]
 }

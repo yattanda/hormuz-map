@@ -1,49 +1,59 @@
 {
-  "updated": "2026年10月30日 07:26 日本時間JST",
+  "updated": "2026年10月31日 08:05 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto186-1029",
-      "title": "UKMTO警報186：海峡を出るタンカーが正体不明の飛翔体を受ける——負傷の報告なし、船名と攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報186（10/30 02:51 JST発行）は、タンカーが海峡を出る通過を終える際に正体不明の飛翔体を受け、乗組員の負傷と環境への影響は報告されていないと伝える（原文は「struck by an unknown projectile whilst completing an outbound transit of the Strait of Hormuz」）。公式の本文に発生時刻・船名の記載はない。Anewsは発生を「1600GMT」と書くが、公式の日時欄17:50 UTCと合わず、発生時刻は不明。攻撃主体は公表されていない。",
-      "sourceLabel": "UKMTO公式・Anews（10/29）",
-      "date": "2026年10月29日（現地）",
+      "id": "latest-ukmto188-189-1030",
+      "title": "UKMTO警報188・189：ラヴァン島の南の船と海峡を出るタンカーが飛翔体を受ける——船名・攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報189（Attack・10/31 05:13 JST〈10/30 20:13 UTC〉発行）は、遅延報告（time-late report）として、信頼できる情報源から、原油タンカーが海峡を出る通過を終える際に正体不明の飛翔体を受けたと伝える（原文は「a crude oil tanker was struck by an unknown projectile whilst completing an outbound transit of the Strait of Hormuz」）。位置は公式の位置欄で北緯26度29分・東経56度27分（ホルムズ海峡）。公式の本文に発生時刻・被害・死傷・船名の記載はなく、日時欄（10/30 20:11 UTC）は報告を受けた時刻の可能性がある。攻撃主体は公表されていない。警報188（10/31 04:03 JST発行）は、イランのラヴァン島の南40海里で船が左舷に飛翔体を受けて火災が起き、乗組員は無事と伝える（公式の本文に発生時刻・船名の記載なし。Newsquawkは公式の文面を転載）。",
+      "sourceLabel": "UKMTO公式・Newsquawk（10/30）",
+      "date": "2026年10月30日（現地）",
       "label": "海上",
-      "url": "https://www.anews.com.tr/middle-east/2026/10/29/oil-tanker-struck-by-unknown-projectile-in-strait-of-hormuz-uk-maritime-agency",
+      "url": "https://www.newsquawk.com/headlines/ukmto-says-it-received-a-report-of-an-incident-40nm-south-of-lavan-island-iran-where-a-vessel-was-hit-on-its-port-side-by-an-unknown-projectile-sparking-a-fire-onboard",
       "isLatest": true
     },
     {
-      "id": "latest-ukmto185-1029",
-      "title": "UKMTO警報185：カサブ沖で炎上した船はダウ船と特定され沈没——乗組員は退避、原因は不明",
-      "body": "UKMTO公式サイトの警報185（10/29 15:29 JST発行）は、オマーン・カサブの北9海里で炎上した船を、地域当局がダウ船と特定し、沈没して乗組員は安全に退避したと伝える（原文は「identified the vessel as a dhow」「the crew have been safely evacuated」）。Arab News（パキスタン版）が同内容を伝える。Rivieraは、Ambreyがタンカーの炎上と記したと伝え、船種が食い違う。原因・攻撃主体は不明。",
-      "sourceLabel": "UKMTO公式・Arab News（10/29）",
-      "date": "2026年10月29日（現地）",
-      "label": "海上",
-      "url": "https://www.arabnews.pk/world/iran-claims-four-tankers-hit-mines-in-hormuz-as-dhow-crew-rescued-3005544",
-      "isLatest": false
+      "id": "latest-houthi-aden-1030",
+      "title": "フーシ派がアデン空港と大統領府を弾道ミサイルで攻撃とイエメン政府軍——被害の詳細は示されず",
+      "body": "Arab News（10/30 19:12公開・21:55更新）は、イエメン政府軍が金曜（10/30）、フーシ派がアデン空港とマアシク宮殿（大統領府）を弾道ミサイルで標的にしたと発表したと伝える（原文は「the Houthi militia had targeted Aden airport and Maashiq Palace with ballistic missiles」）。同記事は、発表は死傷者や被害の詳細を示していないと書く（原文は「The statements did not provide further details about casualties or damage in the Aden attacks」）。同記事は政府軍が同日、フーシ派の拠点に1,087回の攻撃を行い約336人を無力化したと主張したとも伝えるが、いずれも当事者の発表で、独立した確認はない。",
+      "sourceLabel": "Arab News（10/30）",
+      "date": "2026年10月30日（現地）",
+      "label": "攻撃",
+      "url": "https://www.arabnews.com/middle-east/houthis-target-aden-airport-and-maashiq-presidential-palace-with-ballistic-missiles-3009041"
     },
     {
-      "id": "latest-iran-mines-claim-1029",
-      "title": "イラン側「タンカー計3〜4隻が機雷に接触して炎上」と主張——米中央軍は「機雷は除去済み」と反論",
-      "body": "Arab News（パキスタン版）は、イラン側の主張として少なくとも4隻のタンカーが機雷に触れて炎上したと伝える（IRGCが直近24時間に3隻、イラン軍が別の1隻）。いつ起きたか・旗国は不明。Shafaq NewsはIRGC海軍の主張を3隻として伝え、米中央軍が国際的に認められた航路の機雷を除去したと述べてイラン側の報道を否定したと書く。船名・位置は不明で、UKMTO公式に対応する警報はない。イラン側の主張で、独立した確認はない。",
-      "sourceLabel": "Arab News・Shafaq News（10/29）",
-      "date": "2026年10月29日（現地）",
-      "label": "海上",
-      "url": "https://shafaq.com/en/Middle-East/Hormuz-tensions-mount-following-dhow-sinking",
-      "isLatest": false
+      "id": "latest-oil-1030",
+      "title": "原油が続伸・WTI12月物は終値104.12ドル——ブレントは12月物が満期で1月物113.43ドル",
+      "body": "10/30（米国時間）の終値は、WTI12月物が104.12ドル（+2.12ドル、+2.08%）、ブレント1月物が113.43ドル（+2.63ドル）。Reuters（Korea Times掲載・10/31 4:37 KST）は「The more active January contract gained $2.63 to $113.43」「U.S. West Texas Intermediate (WTI) crude futures settled $2.12, or 2.08 percent, higher at $104.12」と伝え、Newsquawk（10/30 19:04 UTC）も「WTI (Z6) SETTLES USD 2.12 HIGHER AT 104.12/BBL; BRENT (F7) SETTLES USD 2.63 HIGHER AT 113.43/BBL」と書く（2出典が一致）。ブレント12月物は10/30に満期となり、Reutersは満期清算値を117.64ドルと伝える（他の出典は確認できず）。10月の月間ではブレントが13.6%、WTIが15.2%上昇した。Reutersは、トレーダーが米中間選挙後のイラン戦争の激化に備えたことと、海峡でのタンカー攻撃が供給リスクを示したことを理由に挙げる。",
+      "sourceLabel": "Reuters（Korea Times掲載）・Newsquawk（10/30）",
+      "date": "2026年10月30日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.koreatimes.co.kr/world/20261031/oil-jumps-2-settles-at-6-month-highs-on-fears-of-escalation-in-iran"
     },
     {
-      "id": "latest-wsj-gulf-warning-1028",
-      "title": "米国が湾岸諸国に中間選挙後の対イラン攻撃への備えを警告とWSJ——二次的な媒体の伝聞・原文未確認",
-      "body": "Middle East Eye（10/28 16:41 GMT公開）は、WSJの報道として、米国が複数の湾岸アラブ諸国に、イランへの短期間で激しい軍事攻撃に備えるよう警告したと伝える（原文は「warned several Gulf Arab countries to be prepared for a short, intense military offensive against Iran」）。時期は11/3の米中間選挙の後で、爆撃機と戦闘機が攻撃の準備をしているという。WSJ本文は開けず、主要通信社の記事は見つからなかった。二次的な媒体の伝聞で、米政府の発表はない。",
-      "sourceLabel": "Middle East Eye（10/28）",
-      "date": "2026年10月28日（現地）",
-      "label": "軍事",
-      "url": "https://middleeasteye.net/news/us-warns-gulf-intense-strikes-iran-after-midterms-report",
-      "isLatest": false
+      "id": "latest-ukmto187-update-1029",
+      "title": "UKMTO警報187：カサブ北東でタンカーに小型ボートが爆発物2個を取り付け機関室で火災——船は航行継続、船名と攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報187（Attack・10/30 08:51 JST〈10/29 23:51 UTC〉発行）は、本文の発生日時を10/29 22:12 UTC（10/30 07:12 JST）、場所をオマーン・カサブの北東25海里（ホルムズ海峡）とし、当初は第三者の報告として、海峡を出る船が炎上しており原因は不明と伝えた。更新001（10/30 01:50 UTC）は、確認された報告として、乗組員は無事で環境への影響はなく、タンカーに小型ボートが左舷側から近づき、喫水線の上の船体に爆発物2個を取り付け、爆発で機関室に火災が起きて船が一時航行不能になったと伝え（原文は「attached two explosive devices to the hull above the waterline」「a fire in the engine room which temporarily disabled the vessel」）、火災は消えて船は次の寄港地へ航行を続けており、事案は「ATTACK」に分類されたとする。船名と攻撃主体は公式の本文に記載がなく、他の媒体での確認は見つからなかった。",
+      "sourceLabel": "UKMTO公式（10/29）",
+      "date": "2026年10月29日（現地）",
+      "label": "海上",
+      "url": "https://www.ukmto.org/recent-incidents"
     }
   ],
   "osint": [
+    {
+      "id": "osint-gulfnews-mines-1030",
+      "titleJa": "【Gulf News】IRGCは「3隻のタンカーが機雷に接触」と主張、AP通信は確認できず——米側は機雷の除去を主張",
+      "titleEn": "Iran claims tankers hit mines in Strait of Hormuz; UKMTO confirms strike off Oman (Gulf News, Oct 30)",
+      "title": "【Gulf News】IRGCは「3隻のタンカーが機雷に接触」と主張、AP通信は確認できず——米側は機雷の除去を主張",
+      "country": "UAE",
+      "media": "Gulf News",
+      "source": "Gulf News",
+      "date": "2026年10月30日（現地）",
+      "summary": "Gulf Newsのライブ更新（10/30 23:54更新）は、IRGC海軍が3隻の石油タンカーが「無許可」の南側航路で機雷に触れて爆発・炎上したと主張したと伝える。UKMTOは船が被弾したことは確認したが兵器は特定していないとし、同記事は3隻の主張に独立した確認はなく、AP通信もイラン側の説明を確認できなかったと書く。同記事によると、米中央軍のクーパー司令官は主要航路の機雷を除去済みと述べた。",
+      "url": "https://gulfnews.com/world/mena/middle-east-war-iran-claims-tankers-hit-mines-in-strait-of-hormuz-ukmto-confirms-strike-off-oman-fired-us-general-reportedly-admitted-iran-leaks-1.500729137",
+      "isLatest": true
+    },
     {
       "id": "osint-shafaq-dhow-mines-1029",
       "titleJa": "【Shafaq News】カサブ沖でダウ船が沈没——IRGCは「3隻のタンカーが機雷に接触」と主張、米中央軍は機雷除去済みと反論",
@@ -55,7 +65,7 @@
       "date": "2026年10月29日（現地）",
       "summary": "Shafaq News（10/29 17:06 UTC公開）は、IRGC海軍が直近24時間に3隻の石油タンカーが機雷に触れて炎上したと主張したと伝える（原文は「three oil tankers had struck naval mines and caught fire over the previous 24 hours」）。米中央軍は国際的に認められた航路の機雷を除去したと述べて否定した。同記事は、UKMTOがカサブ沖で炎上して沈没した船をダウ船と特定したが、この事案がタンカーに関わるかは確認されていないと書く（原文は「The accounts have not established whether the incident near Khasab involved any of the tankers」）。",
       "url": "https://shafaq.com/en/Middle-East/Hormuz-tensions-mount-following-dhow-sinking",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-mem-araghchi-1028",
@@ -2090,6 +2100,47 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年10月31日",
+      "items": [
+        {
+          "id": "latest-ukmto186-1029",
+          "title": "UKMTO警報186：海峡を出るタンカーが正体不明の飛翔体を受ける——負傷の報告なし、船名と攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報186（10/30 02:51 JST発行）は、タンカーが海峡を出る通過を終える際に正体不明の飛翔体を受け、乗組員の負傷と環境への影響は報告されていないと伝える（原文は「struck by an unknown projectile whilst completing an outbound transit of the Strait of Hormuz」）。公式の本文に発生時刻・船名の記載はない。Anewsは発生を「1600GMT」と書くが、公式の日時欄17:50 UTCと合わず、発生時刻は不明。攻撃主体は公表されていない。",
+          "sourceLabel": "UKMTO公式・Anews（10/29）",
+          "date": "2026年10月29日（現地）",
+          "label": "海上",
+          "url": "https://www.anews.com.tr/middle-east/2026/10/29/oil-tanker-struck-by-unknown-projectile-in-strait-of-hormuz-uk-maritime-agency"
+        },
+        {
+          "id": "latest-ukmto185-1029",
+          "title": "UKMTO警報185：カサブ沖で炎上した船はダウ船と特定され沈没——乗組員は退避、原因は不明",
+          "body": "UKMTO公式サイトの警報185（10/29 15:29 JST発行）は、オマーン・カサブの北9海里で炎上した船を、地域当局がダウ船と特定し、沈没して乗組員は安全に退避したと伝える（原文は「identified the vessel as a dhow」「the crew have been safely evacuated」）。Arab News（パキスタン版）が同内容を伝える。Rivieraは、Ambreyがタンカーの炎上と記したと伝え、船種が食い違う。原因・攻撃主体は不明。",
+          "sourceLabel": "UKMTO公式・Arab News（10/29）",
+          "date": "2026年10月29日（現地）",
+          "label": "海上",
+          "url": "https://www.arabnews.pk/world/iran-claims-four-tankers-hit-mines-in-hormuz-as-dhow-crew-rescued-3005544"
+        },
+        {
+          "id": "latest-iran-mines-claim-1029",
+          "title": "イラン側「タンカー計3〜4隻が機雷に接触して炎上」と主張——米中央軍は「機雷は除去済み」と反論",
+          "body": "Arab News（パキスタン版）は、イラン側の主張として少なくとも4隻のタンカーが機雷に触れて炎上したと伝える（IRGCが直近24時間に3隻、イラン軍が別の1隻）。いつ起きたか・旗国は不明。Shafaq NewsはIRGC海軍の主張を3隻として伝え、米中央軍が国際的に認められた航路の機雷を除去したと述べてイラン側の報道を否定したと書く。船名・位置は不明で、UKMTO公式に対応する警報はない。イラン側の主張で、独立した確認はない。",
+          "sourceLabel": "Arab News・Shafaq News（10/29）",
+          "date": "2026年10月29日（現地）",
+          "label": "海上",
+          "url": "https://shafaq.com/en/Middle-East/Hormuz-tensions-mount-following-dhow-sinking"
+        },
+        {
+          "id": "latest-wsj-gulf-warning-1028",
+          "title": "米国が湾岸諸国に中間選挙後の対イラン攻撃への備えを警告とWSJ——二次的な媒体の伝聞・原文未確認",
+          "body": "Middle East Eye（10/28 16:41 GMT公開）は、WSJの報道として、米国が複数の湾岸アラブ諸国に、イランへの短期間で激しい軍事攻撃に備えるよう警告したと伝える（原文は「warned several Gulf Arab countries to be prepared for a short, intense military offensive against Iran」）。時期は11/3の米中間選挙の後で、爆撃機と戦闘機が攻撃の準備をしているという。WSJ本文は開けず、主要通信社の記事は見つからなかった。二次的な媒体の伝聞で、米政府の発表はない。",
+          "sourceLabel": "Middle East Eye（10/28）",
+          "date": "2026年10月28日（現地）",
+          "label": "軍事",
+          "url": "https://middleeasteye.net/news/us-warns-gulf-intense-strikes-iran-after-midterms-report"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月30日",
       "items": [

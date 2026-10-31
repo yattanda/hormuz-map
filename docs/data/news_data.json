@@ -1,7 +1,27 @@
 {
-  "updated": "2026年10月31日 08:05 日本時間JST",
+  "updated": "2026年11月01日 06:53 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-centcom144-1031",
+      "title": "米中央軍の対イラン海上封鎖で進路変更の商船は144隻に——10/17発表の138隻から",
+      "body": "CBS News（10/31 午後3時〈米国東部時間〉のライブ更新）は、米中央軍（CENTCOM）によると米軍の封鎖で商船144隻が進路を変更させられたと伝える（原文は「The U.S. blockade on the Strait of Hormuz has now redirected 144 vessels, according to U.S. Central Command」）。同記事は、米軍が約2週間前に138隻と発表していたとも書く。CENTCOMのX投稿（ミラーサイトで確認）も「As of Oct. 31, U.S. forces have redirected 144 commercial vessels to ensure compliance」と書く。集計の起点は、どちらの記述からも読み取れない。",
+      "sourceLabel": "CBS News（10/31）・CENTCOM",
+      "date": "2026年10月31日（米国時間）",
+      "label": "軍事",
+      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks",
+      "isLatest": true
+    },
+    {
+      "id": "latest-mineclaim-1031",
+      "title": "イラン側「別のタンカーが海峡の南側ルートで機雷に触れて炎上」と主張——CBSは検証できず",
+      "body": "CBS Newsのライブ更新（10/31）は、準政府系のFars通信の報道として、イランが「ホルムズ海峡の南側ルートを通っていた別の船が機雷に触れて炎上している」と主張したと伝える（原文は「Iran has claimed another ship transiting the southern route of the Strait of Hormuz hit a mine and is on fire」）。同記事は「The news could not immediately be verified」と付記する。船名・位置の記載はなく、UKMTO公式に対応する警報はない。独立した確認はない。",
+      "sourceLabel": "CBS News（10/31）",
+      "date": "2026年10月31日（現地）",
+      "label": "海上",
+      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto188-189-1030",
       "title": "UKMTO警報188・189：ラヴァン島の南の船と海峡を出るタンカーが飛翔体を受ける——船名・攻撃主体は不明",
@@ -10,7 +30,7 @@
       "date": "2026年10月30日（現地）",
       "label": "海上",
       "url": "https://www.newsquawk.com/headlines/ukmto-says-it-received-a-report-of-an-incident-40nm-south-of-lavan-island-iran-where-a-vessel-was-hit-on-its-port-side-by-an-unknown-projectile-sparking-a-fire-onboard",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-houthi-aden-1030",
@@ -19,25 +39,8 @@
       "sourceLabel": "Arab News（10/30）",
       "date": "2026年10月30日（現地）",
       "label": "攻撃",
-      "url": "https://www.arabnews.com/middle-east/houthis-target-aden-airport-and-maashiq-presidential-palace-with-ballistic-missiles-3009041"
-    },
-    {
-      "id": "latest-oil-1030",
-      "title": "原油が続伸・WTI12月物は終値104.12ドル——ブレントは12月物が満期で1月物113.43ドル",
-      "body": "10/30（米国時間）の終値は、WTI12月物が104.12ドル（+2.12ドル、+2.08%）、ブレント1月物が113.43ドル（+2.63ドル）。Reuters（Korea Times掲載・10/31 4:37 KST）は「The more active January contract gained $2.63 to $113.43」「U.S. West Texas Intermediate (WTI) crude futures settled $2.12, or 2.08 percent, higher at $104.12」と伝え、Newsquawk（10/30 19:04 UTC）も「WTI (Z6) SETTLES USD 2.12 HIGHER AT 104.12/BBL; BRENT (F7) SETTLES USD 2.63 HIGHER AT 113.43/BBL」と書く（2出典が一致）。ブレント12月物は10/30に満期となり、Reutersは満期清算値を117.64ドルと伝える（他の出典は確認できず）。10月の月間ではブレントが13.6%、WTIが15.2%上昇した。Reutersは、トレーダーが米中間選挙後のイラン戦争の激化に備えたことと、海峡でのタンカー攻撃が供給リスクを示したことを理由に挙げる。",
-      "sourceLabel": "Reuters（Korea Times掲載）・Newsquawk（10/30）",
-      "date": "2026年10月30日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.koreatimes.co.kr/world/20261031/oil-jumps-2-settles-at-6-month-highs-on-fears-of-escalation-in-iran"
-    },
-    {
-      "id": "latest-ukmto187-update-1029",
-      "title": "UKMTO警報187：カサブ北東でタンカーに小型ボートが爆発物2個を取り付け機関室で火災——船は航行継続、船名と攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報187（Attack・10/30 08:51 JST〈10/29 23:51 UTC〉発行）は、本文の発生日時を10/29 22:12 UTC（10/30 07:12 JST）、場所をオマーン・カサブの北東25海里（ホルムズ海峡）とし、当初は第三者の報告として、海峡を出る船が炎上しており原因は不明と伝えた。更新001（10/30 01:50 UTC）は、確認された報告として、乗組員は無事で環境への影響はなく、タンカーに小型ボートが左舷側から近づき、喫水線の上の船体に爆発物2個を取り付け、爆発で機関室に火災が起きて船が一時航行不能になったと伝え（原文は「attached two explosive devices to the hull above the waterline」「a fire in the engine room which temporarily disabled the vessel」）、火災は消えて船は次の寄港地へ航行を続けており、事案は「ATTACK」に分類されたとする。船名と攻撃主体は公式の本文に記載がなく、他の媒体での確認は見つからなかった。",
-      "sourceLabel": "UKMTO公式（10/29）",
-      "date": "2026年10月29日（現地）",
-      "label": "海上",
-      "url": "https://www.ukmto.org/recent-incidents"
+      "url": "https://www.arabnews.com/middle-east/houthis-target-aden-airport-and-maashiq-presidential-palace-with-ballistic-missiles-3009041",
+      "isLatest": false
     }
   ],
   "osint": [
@@ -2100,6 +2103,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月1日",
+      "items": [
+        {
+          "id": "latest-oil-1030",
+          "title": "原油が続伸・WTI12月物は終値104.12ドル——ブレントは12月物が満期で1月物113.43ドル",
+          "body": "10/30（米国時間）の終値は、WTI12月物が104.12ドル（+2.12ドル、+2.08%）、ブレント1月物が113.43ドル（+2.63ドル）。Reuters（Korea Times掲載・10/31 4:37 KST）は「The more active January contract gained $2.63 to $113.43」「U.S. West Texas Intermediate (WTI) crude futures settled $2.12, or 2.08 percent, higher at $104.12」と伝え、Newsquawk（10/30 19:04 UTC）も「WTI (Z6) SETTLES USD 2.12 HIGHER AT 104.12/BBL; BRENT (F7) SETTLES USD 2.63 HIGHER AT 113.43/BBL」と書く（2出典が一致）。ブレント12月物は10/30に満期となり、Reutersは満期清算値を117.64ドルと伝える（他の出典は確認できず）。10月の月間ではブレントが13.6%、WTIが15.2%上昇した。Reutersは、トレーダーが米中間選挙後のイラン戦争の激化に備えたことと、海峡でのタンカー攻撃が供給リスクを示したことを理由に挙げる。",
+          "sourceLabel": "Reuters（Korea Times掲載）・Newsquawk（10/30）",
+          "date": "2026年10月30日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.koreatimes.co.kr/world/20261031/oil-jumps-2-settles-at-6-month-highs-on-fears-of-escalation-in-iran",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto187-update-1029",
+          "title": "UKMTO警報187：カサブ北東でタンカーに小型ボートが爆発物2個を取り付け機関室で火災——船は航行継続、船名と攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報187（Attack・10/30 08:51 JST〈10/29 23:51 UTC〉発行）は、本文の発生日時を10/29 22:12 UTC（10/30 07:12 JST）、場所をオマーン・カサブの北東25海里（ホルムズ海峡）とし、当初は第三者の報告として、海峡を出る船が炎上しており原因は不明と伝えた。更新001（10/30 01:50 UTC）は、確認された報告として、乗組員は無事で環境への影響はなく、タンカーに小型ボートが左舷側から近づき、喫水線の上の船体に爆発物2個を取り付け、爆発で機関室に火災が起きて船が一時航行不能になったと伝え（原文は「attached two explosive devices to the hull above the waterline」「a fire in the engine room which temporarily disabled the vessel」）、火災は消えて船は次の寄港地へ航行を続けており、事案は「ATTACK」に分類されたとする。船名と攻撃主体は公式の本文に記載がなく、他の媒体での確認は見つからなかった。",
+          "sourceLabel": "UKMTO公式（10/29）",
+          "date": "2026年10月29日（現地）",
+          "label": "海上",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年10月31日",
       "items": [

@@ -42,6 +42,8 @@ GOOD_SPEED = 200_000   # B/秒。大きいファイル（10KB 以上）がこれ
 BAD_SPEED = 50_000     # B/秒。これ未満か、打ち切りなら不良
 CERT_MIN_DAYS = 14     # 直接の経路の証明書の残り日数がこれ未満なら、戻すと危ない
 JST = timezone(timedelta(hours=9))
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36 chokepointlab-delivery-check/1"
+CF_NOT_CACHED = ("DYNAMIC", "BYPASS")   # Cloudflare がキャッシュの対象にしていない印（キャッシュルールが効いていない）
 
 
 def fetch(host: str, path: str, ip: str | None = None, timeout: float = TIMEOUT) -> dict:
@@ -60,8 +62,10 @@ def fetch(host: str, path: str, ip: str | None = None, timeout: float = TIMEOUT)
         res["peer_ip"] = sock.getpeername()[0]
         conn = http.client.HTTPSConnection(host, timeout=10)
         conn.sock = sock
-        conn.request("GET", path, headers={"User-Agent": "chokepointlab-delivery-check/1",
-                                           "Accept-Encoding": "identity", "Cache-Control": "no-cache"})
+        # 読者のブラウザと同じ条件で取る：キャッシュを飛ばす指示（Cache-Control: no-cache）は付けない
+        # （付けると Cloudflare がキャッシュを使わず、読者より遅く出ることがある）。
+        # 名乗りはブラウザに近い形＋道具の名前（Cloudflare の Browser Integrity Check に止められにくく）
+        conn.request("GET", path, headers={"User-Agent": UA, "Accept-Encoding": "identity", "Accept": "*/*"})
         r = conn.getresponse()
         res["status"] = r.status
         res["headers"] = {k.lower(): v for k, v in r.getheaders()
@@ -143,8 +147,26 @@ def main() -> int:
     print("1. 今の経路（読者が実際に通る道）")
     for p in files:
         r = fetch(HOST, p)
+        # プロキシ有りで Cloudflare の手元に無かった（MISS・EXPIRED）ときは、GitHub へ取りに行った分だけ遅い。
+        # 10分に1回の読者だけがこれに当たるので、もう1回取って、ふつうの読者の速さ（2回目）を記録する
+        if (r["headers"].get("cf-cache-status") or "").upper() in ("MISS", "EXPIRED") and not r["error"]:
+            first = {k: r[k] for k in ("secs", "speed", "bytes", "complete")}
+            first["cache"] = r["headers"].get("cf-cache-status")
+            print(line(p + "（1回目）", r))
+            r = fetch(HOST, p)
+            r["first"] = first
+            p = p + "（2回目）"
         out["current"].append(r)
         print(line(p, r))
+    if mode.startswith("プロキシ有り"):
+        cg = [grade(r) for r in out["current"]]
+        not_cached = [r["path"] for r in out["current"]
+                      if (r["headers"].get("cf-cache-status") or "").upper() in CF_NOT_CACHED]
+        note = f"読者の経路（Cloudflare）：良好 {cg.count('良好')}／{len(cg)}"
+        if not_cached:
+            note += f"。キャッシュされていないもの：{'・'.join(not_cached)}（キャッシュルールを確かめる）"
+        out["current_note"] = note
+        print(f"  → {note}")
 
     print("\n2. 直接 GitHub Pages（プロキシ無しにしたときの姿）")
     direct_ips = PAGES_IPS[:1] if args.quick else PAGES_IPS
@@ -191,6 +213,8 @@ def main() -> int:
         print(f"    ・{x}")
     if mode.startswith("プロキシ無し"):
         print("    ・（今はプロキシ無し。「戻さない」が続くときは、プロキシを入れるかの判断材料にする）")
+    elif out.get("current_note"):
+        print(f"    ・（今はプロキシ有り。{out['current_note']}）")
     out["verdict"], out["reasons"] = verdict, reasons
     if args.json:
         with open(args.json, "w", encoding="utf-8") as f:

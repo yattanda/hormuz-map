@@ -79,7 +79,11 @@ python tools/cf_proxy.py off --yes
 
 ## 3. 切り替えたあとに見ること
 
-- **オレンジにしたあと**：`delivery_check.py` の「今の経路」の server が `cloudflare`、2回目から `cf-cache-status: HIT`。良好になったか。`http://`・`www.`・旧 URL の転送、主要ページの 200（`python tools/validate_daily.py --check-urls`）
+- **オレンジにしたあと**：`delivery_check.py --history …` の「今の経路」の server が `cloudflare`、`cf-cache-status: HIT`。良好になったか。`http://`・`www.`・旧 URL の転送、主要ページの 200（`python tools/validate_daily.py --check-urls`）
+  - 今の経路で Cloudflare の手元に無かった（`MISS`・`EXPIRED`）ファイルは、道具がもう1回取り、**2回目（ふつうの読者の速さ）を記録**する。1回目は表と横棒に「1回目・MISS」として残る（10分に1回の読者だけが当たる遅さ）
+  - `DYNAMIC`・`BYPASS` が出たら、Cloudflare がキャッシュしていない＝キャッシュルール（§2-3 の4）が効いていない。道具が「キャッシュされていないもの」として名前を出す
+  - 判定（戻してよいか）は、プロキシ有りのあいだも**直接 GitHub Pages**で決まる。読者の経路の良し悪しは判定とは別に「読者の経路（Cloudflare）：良好 N／M」と出る
+  - 証拠の1ページは、結論の1行の先頭に読者の経路（Cloudflare 経由）の速さが出る。推移の図には、向き先が変わった回に点線と「プロキシ有りに →」が引かれる
 - **灰色に戻したあと**：「今の経路」が GitHub.com になり、良好のままか
 - **プロキシ有りのあいだ**：週に1回と12月上旬に `delivery_check.py` で直接の経路の証明書の残り日数を見る（GitHub の証明書は 2026-12-17 まで。プロキシの下では更新が失敗することがある。残りが減り続けるなら、灰色に戻して更新させるかを運営者に相談する）
 - 結果は STATUS の該当の行と、計測の控えに書く

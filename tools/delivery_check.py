@@ -15,6 +15,7 @@ Cloudflare のプロキシを前に挟んだあとも、「プロキシ無し（
   python tools/delivery_check.py            # 全部測って「戻してよいか」を出す（1〜2分）
   python tools/delivery_check.py --quick    # /hormuz/ だけ・IP 1つ（約30秒）
   python tools/delivery_check.py --json out.json
+  python tools/delivery_check.py --history <フォルダ>   # 結果をフォルダに貯め、証拠の1ページ（report.html）を作り直す
 
 終了コード：0＝直接の経路は良好（戻してよい）／1＝不良（戻さない）／2＝保留（こちらの回線も遅い・測れない）
 読み取りだけで、サイトにも DNS にも何も書き込まない。設計 hormuz-ops/drafts/design/cloudflare-proxy-plan.md
@@ -128,13 +129,16 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="配信の速さと、プロキシ無しに戻してよいかの確認（読み取りだけ）")
     ap.add_argument("--quick", action="store_true", help="/hormuz/ だけ・直接の IP は1つ")
     ap.add_argument("--json", help="結果を JSON で保存するパス")
+    ap.add_argument("--history", help="結果を貯めるフォルダ。delivery-YYYYMMDD-HHMM.json を足し、同じフォルダの report.html を作り直す")
     args = ap.parse_args()
 
-    now = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
+    started = datetime.now(JST)
+    now = started.strftime("%Y-%m-%d %H:%M JST")
     mode, ips = current_mode()
     print(f"配信の確認 {now}\n今の向き先：{mode}（{', '.join(ips)}）\n")
     files = FILES[:1] if args.quick else FILES
-    out = {"at": now, "mode": mode, "ips": ips, "current": [], "direct": [], "control": []}
+    out = {"at": now, "at_iso": started.isoformat(timespec="seconds"), "tool": "delivery_check.py",
+           "quick": args.quick, "mode": mode, "ips": ips, "current": [], "direct": [], "control": []}
 
     print("1. 今の経路（読者が実際に通る道）")
     for p in files:
@@ -192,6 +196,23 @@ def main() -> int:
         with open(args.json, "w", encoding="utf-8") as f:
             json.dump(out, f, ensure_ascii=False, indent=1)
         print(f"\n保存：{args.json}")
+    if args.history:
+        from pathlib import Path
+        d = Path(args.history)
+        d.mkdir(parents=True, exist_ok=True)
+        # 秒まで入れ、それでも同じ名前があれば -2・-3 … を付ける（同じ分に2回測っても前の回を上書きしない）
+        stem = f"delivery-{started.strftime('%Y%m%d-%H%M%S')}"
+        for n in range(1, 100):
+            path = d / (f"{stem}.json" if n == 1 else f"{stem}-{n}.json")
+            try:
+                with open(path, "x", encoding="utf-8") as f:
+                    json.dump(out, f, ensure_ascii=False, indent=1)
+                break
+            except FileExistsError:
+                continue
+        print(f"\n貯めた：{path}")
+        import delivery_report   # 同じ tools/ にある
+        print(f"証拠の1ページ：{delivery_report.build(d)}")
     return code
 
 

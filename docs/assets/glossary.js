@@ -19,8 +19,8 @@
 
   var DATA_URL = '/data/glossary.json';
   var PAGE_URL = '/glossary/';
-  // 印を付けない場所
-  var SKIP = 'a,button,h1,h2,h3,h4,code,pre,script,style,textarea,input,select,.article-section-title,[data-glossary-skip]';
+  // 印を付けない場所。summary は開閉の押す場所（/hormuz/ の二段表示の要点・件名。2026-11-01）で、中にもう一つ押す場所を作らない
+  var SKIP = 'a,button,summary,h1,h2,h3,h4,code,pre,script,style,textarea,input,select,.article-section-title,[data-glossary-skip]';
 
   var script = document.currentScript;
   var ZONES = (script && script.getAttribute('data-zones')) || '';

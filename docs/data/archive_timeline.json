@@ -3688,6 +3688,29 @@
           "sourceLabel": "CBS News（10/31）"
         }
       ]
+    },
+    {
+      "date": "2026-11-02",
+      "dateLabel": "2026/11/02 07:20",
+      "blockadeDay": 248,
+      "summary": "【重大更新】前回分の裏取り：解消0件・継続9件（WSJの攻撃準備の報道＝主要通信社の記事なし・ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種＝公式はダウ船・警報186の発生時刻＝公式の本文に記載なし・警報187の船名＝gCaptainのみで公式の本文になし・警報188と189の船名と攻撃主体＝不明のまま。いずれも今回の検索で新しい資料なし）・UKMTO公式が警報191（11/2 03:15 JST発行・海峡内で商船の船長がMaydayを中継し別の船が正体不明の飛翔体を受ける・発生時刻・船名・被害・攻撃主体は公式の本文に記載なし）を公表し、Arab Newsも同内容を伝える・IRGC海軍は11/1、タンカー2隻が機雷に触れて爆発したと主張（Reuters。国営メディアの報道として。独立した確認なし）・カタール通信はLNG運搬船Al-Mayedaが10/30に攻撃を受け、乗組員にけがはなく運航可能と発表（Arab News）・原油は10/30終値のままで、WTI12月物104.12ドル・ブレント1月物113.43ドル、11/2（月）の米国の取引は日本時間の朝の時点で未終了・The Nationalの10月の攻撃30件超・開戦後145件の集計を記事の原文で確認（UKMTOの集計。集計元により件数は異なる）・イエメン・紅海・サウジ迂回路は前回以降、主要媒体で新たな動きを確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機248日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（機雷警戒海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報191：海峡内で別の船が正体不明の飛翔体を受ける——発生時刻・船名・被害・攻撃主体は不明",
+          "url": "https://www.arabnews.com/middle-east/uk-agency-reports-vessel-strike-in-hormuz-irans-guards-say-tankers-hit-mines-3009316",
+          "sourceLabel": "UKMTO公式・Arab News（11/1）"
+        },
+        {
+          "title": "IRGC海軍「石油タンカー2隻が機雷に触れて爆発」と主張——独立した確認なし",
+          "url": "https://www.yahoo.com/news/articles/irans-irgc-navy-says-two-201158826.html",
+          "sourceLabel": "Reuters（11/1・Yahoo掲載）"
+        },
+        {
+          "title": "カタール通信「LNG運搬船Al-Mayedaが攻撃を受けた」——乗組員にけがなし・運航可能",
+          "url": "https://www.arabnews.com/middle-east/uk-agency-reports-vessel-strike-in-hormuz-irans-guards-say-tankers-hit-mines-3009316",
+          "sourceLabel": "Arab News（11/1）"
+        }
+      ]
     }
   ]
 }

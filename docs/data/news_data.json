@@ -1,7 +1,37 @@
 {
-  "updated": "2026年11月01日 06:53 日本時間JST",
+  "updated": "2026年11月02日 07:20 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto191-1101",
+      "title": "UKMTO警報191：海峡内で別の船が正体不明の飛翔体を受ける——発生時刻・船名・被害・攻撃主体は不明",
+      "body": "UKMTO公式サイトの警報191（Attack・11/2 03:15 JST〈11/1 18:15 UTC〉発行）は、海峡内で商船の船長がVHF 16チャンネルのMaydayを中継し、別の船が正体不明の飛翔体を受けたと伝える。公式の本文に発生時刻・船名・被害・攻撃主体の記載はない。Arab News（11/1 22:24公開・23:23更新）も「the master of a merchant vessel has relayed a Mayday call」と同じ内容を伝え、時期は「on Sunday」とだけ書く。",
+      "sourceLabel": "UKMTO公式・Arab News（11/1）",
+      "date": "2026年11月1日（現地）",
+      "label": "海上",
+      "url": "https://www.arabnews.com/middle-east/uk-agency-reports-vessel-strike-in-hormuz-irans-guards-say-tankers-hit-mines-3009316",
+      "isLatest": true
+    },
+    {
+      "id": "latest-irgc2tankers-1101",
+      "title": "IRGC海軍「石油タンカー2隻が機雷に触れて爆発」と主張——独立した確認なし",
+      "body": "Reuters（Yahoo掲載・11/1 20:11 UTC）は、イラン国営メディアの報道として、IRGC海軍が、石油タンカー2隻が「無許可のルート」を通っている際に機雷に触れて「爆発した」と述べたと伝える（原文は「two oil tankers \"exploded\" after striking mines」）。同記事は独立した確認を示さず、船名・位置の記載もない。10/31の別のタンカーの機雷接触の主張と同じ船かは記事から分からない。",
+      "sourceLabel": "Reuters（11/1・Yahoo掲載）",
+      "date": "2026年11月1日（現地）",
+      "label": "海上",
+      "url": "https://www.yahoo.com/news/articles/irans-irgc-navy-says-two-201158826.html",
+      "isLatest": false
+    },
+    {
+      "id": "latest-almayeda-1030",
+      "title": "カタール通信「LNG運搬船Al-Mayedaが攻撃を受けた」——乗組員にけがなし・運航可能",
+      "body": "Arab News（11/1 22:24公開・23:23更新）は、カタール通信（QNA）の発表として、カタールガス輸送会社所有のLNG運搬船Al-Mayedaが攻撃を受けたと伝える（原文は「The attack struck a liquefied natural gas carrier, Al-Mayeda, which belongs to the Qatar Gas Transport Company」）。攻撃は金曜（10/30）で、乗組員にけがはなく環境への影響もなく、船は安全で運航可能と書く。場所・攻撃主体・手段は今回開いた記事から読み取れない。",
+      "sourceLabel": "Arab News（11/1）",
+      "date": "2026年10月30日（現地）",
+      "label": "海上",
+      "url": "https://www.arabnews.com/middle-east/uk-agency-reports-vessel-strike-in-hormuz-irans-guards-say-tankers-hit-mines-3009316",
+      "isLatest": false
+    },
     {
       "id": "latest-centcom144-1031",
       "title": "米中央軍の対イラン海上封鎖で進路変更の商船は144隻に——10/17発表の138隻から",
@@ -10,40 +40,23 @@
       "date": "2026年10月31日（米国時間）",
       "label": "軍事",
       "url": "https://cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks",
-      "isLatest": true
-    },
-    {
-      "id": "latest-mineclaim-1031",
-      "title": "イラン側「別のタンカーが海峡の南側ルートで機雷に触れて炎上」と主張——CBSは検証できず",
-      "body": "CBS Newsのライブ更新（10/31）は、準政府系のFars通信の報道として、イランが「ホルムズ海峡の南側ルートを通っていた別の船が機雷に触れて炎上している」と主張したと伝える（原文は「Iran has claimed another ship transiting the southern route of the Strait of Hormuz hit a mine and is on fire」）。同記事は「The news could not immediately be verified」と付記する。船名・位置の記載はなく、UKMTO公式に対応する警報はない。独立した確認はない。",
-      "sourceLabel": "CBS News（10/31）",
-      "date": "2026年10月31日（現地）",
-      "label": "海上",
-      "url": "https://cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto188-189-1030",
-      "title": "UKMTO警報188・189：ラヴァン島の南の船と海峡を出るタンカーが飛翔体を受ける——船名・攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報189（Attack・10/31 05:13 JST〈10/30 20:13 UTC〉発行）は、遅延報告（time-late report）として、信頼できる情報源から、原油タンカーが海峡を出る通過を終える際に正体不明の飛翔体を受けたと伝える（原文は「a crude oil tanker was struck by an unknown projectile whilst completing an outbound transit of the Strait of Hormuz」）。位置は公式の位置欄で北緯26度29分・東経56度27分（ホルムズ海峡）。公式の本文に発生時刻・被害・死傷・船名の記載はなく、日時欄（10/30 20:11 UTC）は報告を受けた時刻の可能性がある。攻撃主体は公表されていない。警報188（10/31 04:03 JST発行）は、イランのラヴァン島の南40海里で船が左舷に飛翔体を受けて火災が起き、乗組員は無事と伝える（公式の本文に発生時刻・船名の記載なし。Newsquawkは公式の文面を転載）。",
-      "sourceLabel": "UKMTO公式・Newsquawk（10/30）",
-      "date": "2026年10月30日（現地）",
-      "label": "海上",
-      "url": "https://www.newsquawk.com/headlines/ukmto-says-it-received-a-report-of-an-incident-40nm-south-of-lavan-island-iran-where-a-vessel-was-hit-on-its-port-side-by-an-unknown-projectile-sparking-a-fire-onboard",
-      "isLatest": false
-    },
-    {
-      "id": "latest-houthi-aden-1030",
-      "title": "フーシ派がアデン空港と大統領府を弾道ミサイルで攻撃とイエメン政府軍——被害の詳細は示されず",
-      "body": "Arab News（10/30 19:12公開・21:55更新）は、イエメン政府軍が金曜（10/30）、フーシ派がアデン空港とマアシク宮殿（大統領府）を弾道ミサイルで標的にしたと発表したと伝える（原文は「the Houthi militia had targeted Aden airport and Maashiq Palace with ballistic missiles」）。同記事は、発表は死傷者や被害の詳細を示していないと書く（原文は「The statements did not provide further details about casualties or damage in the Aden attacks」）。同記事は政府軍が同日、フーシ派の拠点に1,087回の攻撃を行い約336人を無力化したと主張したとも伝えるが、いずれも当事者の発表で、独立した確認はない。",
-      "sourceLabel": "Arab News（10/30）",
-      "date": "2026年10月30日（現地）",
-      "label": "攻撃",
-      "url": "https://www.arabnews.com/middle-east/houthis-target-aden-airport-and-maashiq-presidential-palace-with-ballistic-missiles-3009041",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-1101",
+      "titleJa": "【Arab News】UKMTOが海峡内の被弾を発表、IRGCは「タンカー2隻が機雷で爆発」と主張——カタールのLNG運搬船への攻撃も報じる",
+      "titleEn": "UK agency reports vessel strike in Hormuz; Iran's Guards say tankers hit mines (Arab News, Nov 1)",
+      "title": "【Arab News】UKMTOが海峡内の被弾を発表、IRGCは「タンカー2隻が機雷で爆発」と主張——カタールのLNG運搬船への攻撃も報じる",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月1日（現地）",
+      "summary": "Arab Newsの記事（11/1 22:24公開・23:23更新）は、UKMTOが海峡内の被弾（商船の船長がMaydayを中継し、別の船が正体不明の飛翔体を受けた）を発表したと伝える。IRGC海軍が、石油タンカー2隻が「無許可のルート」で機雷に触れて爆発したと主張した（イラン国営メディアの報道）。カタール通信によると、カタールのLNG運搬船Al-Mayedaが攻撃を受け、乗組員にけがはない。同記事は、仲介役のカタールがここ数日、米イラン交渉の再開に向けて外交努力を強めているとも書く。",
+      "url": "https://www.arabnews.com/middle-east/uk-agency-reports-vessel-strike-in-hormuz-irans-guards-say-tankers-hit-mines-3009316",
+      "isLatest": true
+    },
     {
       "id": "osint-gulfnews-mines-1030",
       "titleJa": "【Gulf News】IRGCは「3隻のタンカーが機雷に接触」と主張、AP通信は確認できず——米側は機雷の除去を主張",
@@ -55,7 +68,7 @@
       "date": "2026年10月30日（現地）",
       "summary": "Gulf Newsのライブ更新（10/30 23:54更新）は、IRGC海軍が3隻の石油タンカーが「無許可」の南側航路で機雷に触れて爆発・炎上したと主張したと伝える。UKMTOは船が被弾したことは確認したが兵器は特定していないとし、同記事は3隻の主張に独立した確認はなく、AP通信もイラン側の説明を確認できなかったと書く。同記事によると、米中央軍のクーパー司令官は主要航路の機雷を除去済みと述べた。",
       "url": "https://gulfnews.com/world/mena/middle-east-war-iran-claims-tankers-hit-mines-in-strait-of-hormuz-ukmto-confirms-strike-off-oman-fired-us-general-reportedly-admitted-iran-leaks-1.500729137",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-shafaq-dhow-mines-1029",
@@ -2103,6 +2116,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月2日",
+      "items": [
+        {
+          "id": "latest-mineclaim-1031",
+          "title": "イラン側「別のタンカーが海峡の南側ルートで機雷に触れて炎上」と主張——CBSは検証できず",
+          "body": "CBS Newsのライブ更新（10/31）は、準政府系のFars通信の報道として、イランが「ホルムズ海峡の南側ルートを通っていた別の船が機雷に触れて炎上している」と主張したと伝える（原文は「Iran has claimed another ship transiting the southern route of the Strait of Hormuz hit a mine and is on fire」）。同記事は「The news could not immediately be verified」と付記する。船名・位置の記載はなく、UKMTO公式に対応する警報はない。独立した確認はない。",
+          "sourceLabel": "CBS News（10/31）",
+          "date": "2026年10月31日（現地）",
+          "label": "海上",
+          "url": "https://cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto188-189-1030",
+          "title": "UKMTO警報188・189：ラヴァン島の南の船と海峡を出るタンカーが飛翔体を受ける——船名・攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報189（Attack・10/31 05:13 JST〈10/30 20:13 UTC〉発行）は、遅延報告（time-late report）として、信頼できる情報源から、原油タンカーが海峡を出る通過を終える際に正体不明の飛翔体を受けたと伝える（原文は「a crude oil tanker was struck by an unknown projectile whilst completing an outbound transit of the Strait of Hormuz」）。位置は公式の位置欄で北緯26度29分・東経56度27分（ホルムズ海峡）。公式の本文に発生時刻・被害・死傷・船名の記載はなく、日時欄（10/30 20:11 UTC）は報告を受けた時刻の可能性がある。攻撃主体は公表されていない。警報188（10/31 04:03 JST発行）は、イランのラヴァン島の南40海里で船が左舷に飛翔体を受けて火災が起き、乗組員は無事と伝える（公式の本文に発生時刻・船名の記載なし。Newsquawkは公式の文面を転載）。",
+          "sourceLabel": "UKMTO公式・Newsquawk（10/30）",
+          "date": "2026年10月30日（現地）",
+          "label": "海上",
+          "url": "https://www.newsquawk.com/headlines/ukmto-says-it-received-a-report-of-an-incident-40nm-south-of-lavan-island-iran-where-a-vessel-was-hit-on-its-port-side-by-an-unknown-projectile-sparking-a-fire-onboard",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-aden-1030",
+          "title": "フーシ派がアデン空港と大統領府を弾道ミサイルで攻撃とイエメン政府軍——被害の詳細は示されず",
+          "body": "Arab News（10/30 19:12公開・21:55更新）は、イエメン政府軍が金曜（10/30）、フーシ派がアデン空港とマアシク宮殿（大統領府）を弾道ミサイルで標的にしたと発表したと伝える（原文は「the Houthi militia had targeted Aden airport and Maashiq Palace with ballistic missiles」）。同記事は、発表は死傷者や被害の詳細を示していないと書く（原文は「The statements did not provide further details about casualties or damage in the Aden attacks」）。同記事は政府軍が同日、フーシ派の拠点に1,087回の攻撃を行い約336人を無力化したと主張したとも伝えるが、いずれも当事者の発表で、独立した確認はない。",
+          "sourceLabel": "Arab News（10/30）",
+          "date": "2026年10月30日（現地）",
+          "label": "攻撃",
+          "url": "https://www.arabnews.com/middle-east/houthis-target-aden-airport-and-maashiq-presidential-palace-with-ballistic-missiles-3009041",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月1日",
       "items": [

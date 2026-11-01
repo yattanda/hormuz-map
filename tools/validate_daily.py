@@ -1044,6 +1044,44 @@ def check_unresolved(html: str) -> None:
             ok("速報インシデントの先頭3件に公式の本文の未確認なし")
 
 
+
+INCIDENT_KEEP_DAYS = 30
+PAT_INCIDENT_TAG_DATE = re.compile(
+    r'<span class="incident-tag">(?:<span class="cat [^"]+">[^<]*</span>)?[^<]*?(\d{1,2})/(\d{1,2})')
+
+
+def check_incident_archive(html: str, base: str) -> None:
+    """速報インシデントの月1回の退避が抜けていないか（2026-11-01 追加）。
+
+    ページに残すのは直近30日分で、毎月1日（またはその月最初の日次）に古い項目を
+    docs/data/incident_archive.json へ移す（daily-site-update「月1回の退避」）。
+    11/1 の日次で退避が抜けたが、検査は OK のままだった（hormuz-map PR #142 で手で退避）。
+    退避の日から次の月の1日までは31〜60日前の項目が残るのが正常なので、
+    「その月の1日から30日より前」の日付だけを抜けとみなす。項目の日付はタグの最初の M/D。
+    """
+    m = PAT_INCIDENT_LIST.search(html)
+    if not m:
+        warn("速報インシデントの一覧を検出できず、月1回の退避を確認できません（構造が変わった可能性）")
+        return
+    b = date.fromisoformat(base)
+    cutoff = date(b.year, b.month, 1) - timedelta(days=INCIDENT_KEEP_DAYS)
+    stale = []
+    for mo, d in PAT_INCIDENT_TAG_DATE.findall(m.group(0)):
+        try:
+            when = date(b.year, int(mo), int(d))
+        except ValueError:
+            continue
+        if when > b:  # 年をまたいだ直後（1月に 12/28 の項目など）
+            when = date(b.year - 1, int(mo), int(d))
+        if when < cutoff:
+            stale.append(when)
+    if stale:
+        warn(f"速報インシデントに {cutoff.isoformat()} より前の項目が {len(stale)}件残っています"
+             f"（最も古いのは {min(stale).isoformat()}）。月1回の退避が抜けている。"
+             "daily-site-update「月1回の退避」の手順で docs/data/incident_archive.json へ移す")
+    else:
+        ok(f"速報インシデントに退避すべき項目なし（{cutoff.isoformat()} より前の項目 0件）")
+
 PAT_GLANCE_VERIFY_ROW = re.compile(r'<span class="glance-label glance-label--verify">.*?</span>\s*<span class="glance-text">.*?</span>', re.S)
 PAT_GLANCE_VERIFY = re.compile(r'glance-label--verify">[^<]*</span>\s*<span class="glance-text">(.*?)</span>', re.S)
 PAT_VERIFY_PREV = re.compile(r'前回（(\d{1,2})/(\d{1,2})\s+(\d{1,2}):(\d{2})）')
@@ -1820,6 +1858,7 @@ def main() -> int:
     check_route_freshness(html, base)
     check_types(html, base)
     check_unresolved(html)
+    check_incident_archive(html, base)
     check_verify_row(html)
     check_text_lengths(html)
 

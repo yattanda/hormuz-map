@@ -865,7 +865,8 @@ def check_urls(news: dict) -> None:
 
 PAT_GLANCE = re.compile(r'<div class="glance">.*?<!-- /30秒カラム ラッパー -->', re.S)
 PAT_KEY_MOVE = re.compile(r'<li class="key-move key-move--(\w+)">.*?<time class="key-move-date" datetime="(\d{4}-\d{2}-\d{2})">', re.S)
-PAT_INCIDENT_LIST = re.compile(r'<ul id="incident-list"[^>]*>.*?</ul>', re.S)
+# 終わりは </ul> の直後の </div>（項目の本文に箇条書きの <ul> が入っても、一覧の後ろを読み落とさない。2026-11-01）
+PAT_INCIDENT_LIST = re.compile(r'<ul id="incident-list"[^>]*>.*?</ul>\s*</div>', re.S)
 
 
 def check_types(html: str, base: str) -> None:
@@ -1058,6 +1059,7 @@ def check_incident_archive(html: str, base: str) -> None:
     11/1 の日次で退避が抜けたが、検査は OK のままだった（hormuz-map PR #142 で手で退避）。
     退避の日から次の月の1日までは31〜60日前の項目が残るのが正常なので、
     「その月の1日から30日より前」の日付だけを抜けとみなす。項目の日付はタグの最初の M/D。
+    基準日より60日を超えて先になる日付だけを前の年とみなす（先の予定を書いたタグを1年前と取り違えない）。
     """
     m = PAT_INCIDENT_LIST.search(html)
     if not m:
@@ -1066,15 +1068,21 @@ def check_incident_archive(html: str, base: str) -> None:
     b = date.fromisoformat(base)
     cutoff = date(b.year, b.month, 1) - timedelta(days=INCIDENT_KEEP_DAYS)
     stale = []
+    n_items = len(re.findall(r'<li class="incident-item', m.group(0)))
+    n_dated = 0
     for mo, d in PAT_INCIDENT_TAG_DATE.findall(m.group(0)):
         try:
             when = date(b.year, int(mo), int(d))
         except ValueError:
             continue
-        if when > b:  # 年をまたいだ直後（1月に 12/28 の項目など）
+        if (when - b).days > 60:  # 年をまたいだ直後（1月に 12/28 の項目など）
             when = date(b.year - 1, int(mo), int(d))
+        n_dated += 1
         if when < cutoff:
             stale.append(when)
+    if n_dated != n_items:
+        warn(f"速報インシデント {n_items}件のうち、タグの日付（M/D）を読めたのは {n_dated}件です。"
+             "読めない項目は月1回の退避の検査から外れる（タグの書き方が変わった可能性）")
     if stale:
         warn(f"速報インシデントに {cutoff.isoformat()} より前の項目が {len(stale)}件残っています"
              f"（最も古いのは {min(stale).isoformat()}）。月1回の退避が抜けている。"

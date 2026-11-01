@@ -2888,6 +2888,16 @@ const tsugaruMarker = L.marker([41.55, 140.65],{icon:mkBadge('none','strait')}).
   <img src="/images/tsugaru-territorial-sea.jpg" width="1280" height="720" loading="lazy" alt="津軽海峡の領海図（海峡の中だけ3海里、中央に日本の領海ではない水路が残る）" onclick="openLightbox('/images/tsugaru-territorial-sea.jpg')" class="p-img">
   <div class="p-note">出典：IMF PortWatch（2026-09-22確認、積載量は喫水などからの推定値・集計は本サイト）／領海及び接続水域に関する法律 附則2・同施行令 別表第一・第二（e-Gov）／海岸線 Natural Earth。図をタップで拡大</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : null });
 
+// 対馬海峡（長尺6本目 2026-11「対馬海峡、ロシア軍艦と通った貨物船は何者？」）— ?focus=tsushima と「YouTube から来た方へ」枠から開く
+const tsushimaMarker = L.marker([34.1, 129.3],{icon:mkBadge('none','strait')}).addTo(map).bindTooltip('対馬海峡', {sticky:true}).bindPopup(`
+  <div class="p-title">対馬海峡 / Tsushima Strait</div>
+  <div class="p-body"><strong>位置：</strong>九州と朝鮮半島のあいだ。日本海と東シナ海を結ぶ<br>
+  <strong>通る船：</strong>1日200隻あまり（2026年6〜9月平均 218.1隻。荷物を運ぶ5種類の船の数で、軍艦は入らない）。津軽海峡のおよそ4倍<br>
+  <strong>2026年5月9日：</strong>対馬の北東およそ140kmで、ロシア海軍の艦艇4隻と貨物船6隻の計10隻が南西へ進むのを、海上自衛隊が確認。翌日にかけて対馬海峡を抜け、東シナ海へ<br>
+  <strong>10月2日の日本の措置：</strong>外務省が番号（IMO番号）で示した35隻のうち2隻は、報道がこの船団の中で名前を挙げた貨物船（LADY R・MAIA-1）と番号が一致する（照合は本サイト）。対象は船の通航ではなく、日本の会社などが船に提供する保険・修繕・水先などのサービス（許可制）<br>
+  <strong>領海：</strong>東水道・西水道とも、津軽海峡と同じく法律で3海里にとどめる「特定海域」</div>
+  <div class="p-note">出典：防衛省 統合幕僚監部（2026-05-11発表）／外務省（2026-10-02発表・別添3）／Q&A（外務省ほか4省庁）／USNI News（2026-05-11、船名の特定）／米国財務省 OFAC（IMO番号）／IMF PortWatch（2026-10-29確認、平均は本サイトの計算）／領海及び接続水域に関する法律 附則2（e-Gov）</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : 320 });
+
 L.marker([32.08, 34.78], {icon:mkBadge('none','general')}).addTo(map).bindPopup(`
   <div class="p-title"> テルアビブ / Tel Aviv</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部・地中海沿岸<br>
@@ -3049,6 +3059,7 @@ const MAP_JUMP_POINTS = [
   { icon: 'anchor', label: 'パナマ運河',   center: [9.15, -79.88], zoom: 9 },
   { icon: 'strait', label: 'マラッカ海峡', center: [1.5, 103.5], zoom: 7 },
   { icon: 'strait', label: '津軽海峡',   center: [41.55, 140.65], zoom: 7 },
+  { icon: 'strait', label: '対馬海峡',   center: [34.1, 129.3], zoom: 7 },
 ];
 
 function jumpMapTo(idx) {
@@ -3157,6 +3168,7 @@ L.Popup.prototype._adjustPan = function () {
 const FOCUS_TARGETS = {
   minamitori: { marker: minamitoriMarker, zoom: 6 },
   tsugaru: { marker: tsugaruMarker, zoom: 7 },
+  tsushima: { marker: tsushimaMarker, zoom: 7 },
   malacca: { marker: malaccaMarker, zoom: 6 },
 };
 function focusOn(key, opts) {

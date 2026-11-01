@@ -102,7 +102,7 @@ svg { display: block; width: 100%; height: auto; overflow: visible; }
 .chart { overflow-x: auto; }
 .chart svg { min-width: 620px; }   /* スマホでは図だけ横に動かして見る（縮めると文字が読めない） */
 svg text { fill: var(--text-secondary); font-size: 12px; font-family: inherit; }
-svg .val { fill: var(--text-primary); font-weight: 700; }
+svg .val { fill: var(--text-primary); font-weight: 700; paint-order: stroke; stroke: var(--surface-1); stroke-width: 4px; stroke-linejoin: round; }
 svg .grid { stroke: var(--rule); stroke-width: 1; }
 svg .hit { fill: transparent; cursor: default; }
 .note { color: var(--text-muted); font-size: .8rem; margin: 6px 0 0; }
@@ -110,9 +110,10 @@ svg .hit { fill: transparent; cursor: default; }
   border: 1px solid var(--rule); border-radius: 6px; padding: 6px 9px; font-size: .8rem; line-height: 1.5;
   box-shadow: 0 2px 8px rgba(0,0,0,.18); max-width: 300px; display: none; }
 table { border-collapse: collapse; width: 100%; font-size: .8rem; font-variant-numeric: tabular-nums; }
-th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; white-space: nowrap; }
 th { color: var(--text-secondary); font-weight: 700; }
 td.r, th.r { text-align: right; white-space: nowrap; }
+td.f { white-space: normal; word-break: break-all; min-width: 12em; }
 .lead strong { white-space: nowrap; }
 .scroll { overflow-x: auto; }
 details summary { cursor: pointer; font-weight: 700; }
@@ -196,13 +197,16 @@ code { font-size: .85em; }
   const cls = v.startsWith('戻してよい') ? 'good' : v.startsWith('保留') ? 'hold' : 'bad';
   const ratio = last.control && last.direct != null ? Math.round(last.control / Math.max(last.direct, 1)) : null;
   const modeShort = m => String(m || '').startsWith('プロキシ無し') ? 'プロキシ無し' : String(m || '').startsWith('プロキシ有り') ? 'プロキシ有り' : (m || '');
-  $('lead').innerHTML = '最新（' + esc(latest.at) + '・' + esc(modeShort(latest.mode)) + '）：GitHub Pages から直接取ると <strong>' + rate(last.direct) +
+  const proxied = modeShort(latest.mode) === 'プロキシ有り';
+  $('lead').innerHTML = '最新（' + esc(latest.at) + '・' + esc(modeShort(latest.mode)) + '）：' +
+    (proxied ? '読者が通る今の経路（Cloudflare 経由）は <strong>' + rate(last.current) + '</strong>。' : '') +
+    'GitHub Pages から直接取ると <strong>' + rate(last.direct) +
     '</strong>、比べる相手は <strong>' + rate(last.control) + '</strong>' + (ratio && ratio > 1 ? '（このドメインは<strong>約' + ratio + '分の1</strong>の速さ）' : '') +
     '。判定 <span class="verdict verdict--' + cls + '">' + (cls === 'good' ? '✓ ' : cls === 'hold' ? '… ' : '✕ ') + esc(v || '—') + '</span>';
-  $('reasons').textContent = (latest.reasons || []).join('／');
+  $('reasons').textContent = (latest.current_note ? latest.current_note + '／' : '') + '判定の理由：' + (latest.reasons || []).join('／');
 
   const tiles = [
-    ['このドメイン・今の経路', last.current, '読者が実際に通る道'],
+    ['このドメイン・今の経路', last.current, proxied ? '読者が実際に通る道（Cloudflare 経由）' : '読者が実際に通る道'],
     ['このドメイン・直接 GitHub Pages', last.direct, 'プロキシ無しのときの姿'],
     ['比べる相手（別の Pages・raw）', last.control, 'こちらの回線の速さの目安']];
   $('tiles').innerHTML = tiles.map(t => '<div class="card tile"><div class="k">' + t[0] + '</div><div class="v">' +
@@ -216,7 +220,10 @@ code { font-size: .85em; }
 
   // 1. 横棒：/hormuz/ と比べる相手の時間
   const rows = [];
-  (latest.current || []).filter(r => r.path === '/hormuz/').forEach(r => rows.push(['current', '今の経路 /hormuz/', r]));
+  const viaCf = r => r.headers && /cloudflare/i.test(r.headers.server || '');
+  (latest.current || []).filter(r => r.path === '/hormuz/').forEach(r => {
+    if (r.first) rows.push(['current', '今の経路（1回目・' + (r.first.cache || '') + '）', Object.assign({ headers: r.headers, status: r.status }, r.first)]);
+    rows.push(['current', viaCf(r) ? '今の経路（Cloudflare）' + (r.first ? '・2回目' : '') : '今の経路 /hormuz/', r]); });
   (latest.direct || []).filter(r => r.path === '/hormuz/').forEach(r => rows.push(['direct', '直接 ' + (r.ip || ''), r]));
   (latest.control || []).forEach(r => rows.push(['control', r.host === 'raw.githubusercontent.com' ? 'raw（同じ HTML）' : '別の Pages のサイト', r]));
   const W = 760, LBL = 190, ROW = 30, TOP = 8, AX = 22, H = TOP + rows.length * ROW + AX;
@@ -258,6 +265,11 @@ code { font-size: .85em; }
     if (i === tms.length - 1 && x - lastX < 90) g = g.replace(/<text data-tick="last"[^>]*>[^<]*<\/text>$/, '');
     g += '<text data-tick="last" x="' + x + '" y="' + (LH - 10) + '" text-anchor="' + (i === 0 ? 'start' : i === tms.length - 1 ? 'end' : 'middle') + '">' + fmtT(t) + '</text>';
     lastX = x; });
+  // 向き先が変わった回に縦の線（手で測った回は向き先の記録がプロキシ無し）
+  sums.forEach((x, i) => { if (!i || modeShort(x.mode) === modeShort(sums[i - 1].mode)) return;
+    const xx = (lx(tms[i - 1]) + lx(tms[i])) / 2;
+    g += '<line x1="' + xx + '" x2="' + xx + '" y1="' + PT + '" y2="' + (LH - PB) + '" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="4 4"/>' +
+      '<text x="' + (xx + 6) + '" y="' + (PT + 12) + '">' + esc(modeShort(x.mode)) + 'に →</text>'; });
   // 線の名前は右端の点の上に。重なるときは縦にずらす
   const ends = [];
   KINDS.forEach(k => {
@@ -268,7 +280,7 @@ code { font-size: .85em; }
     if (lp) ends.push([lp[0], ly(lp[1]) - 8, k[1]]);
   });
   ends.sort((a, b) => a[1] - b[1]);
-  ends.forEach((e, i) => { if (i && e[1] - ends[i - 1][1] < 16) e[1] = ends[i - 1][1] + 16; });
+  ends.forEach((e, i) => { if (i && e[1] - ends[i - 1][1] < 18) e[1] = ends[i - 1][1] + 18; });
   ends.forEach(e => g += '<text class="val" x="' + Math.min(e[0] - 8, LW - PR - 4) + '" y="' + e[1] + '" text-anchor="end">' + e[2] + '</text>');
   sums.forEach((x, i) => { const xx = lx(tms[i]);
     g += '<rect class="hit" data-i="' + i + '" x="' + (xx - 14) + '" y="' + PT + '" width="28" height="' + (LH - PT - PB) + '"/>'; });
@@ -278,19 +290,19 @@ code { font-size: .85em; }
     bindTip(el, '<b>' + esc(x.label) + '</b>' + (x.source !== 'delivery_check.py' ? '（' + esc(x.source) + '）' : '') +
       '<br>今の経路 ' + rate(x.current) + '<br>直接 ' + rate(x.direct) + '<br>比べる相手 ' + rate(x.control) + (x.verdict ? '<br>判定 ' + esc(x.verdict) : '')); });
   const manual = sums.filter(x => x.source !== 'delivery_check.py').length;
-  $('line-note').textContent = manual ? '手で測った値（curl・delivery_check.py より前）を ' + manual + '回含む。プロキシ無しのあいだは「今の経路」と「直接」はほぼ同じ道。' :
-    'プロキシ無しのあいだは「今の経路」と「直接」はほぼ同じ道。';
+  $('line-note').textContent = (manual ? '手で測った値（curl・delivery_check.py より前）を ' + manual + '回含む。' : '') +
+    'プロキシ無しのあいだは「今の経路」と「直接」はほぼ同じ道。プロキシ有りのあいだは「今の経路」が Cloudflare 経由（読者の体感）、「直接」がプロキシ無しに戻したときの姿。点線は向き先が変わった所。';
 
   // 表
   const head = '<tr><th>経路</th><th>ファイル</th><th class="r">取れた量</th><th class="r">時間</th><th class="r">速さ</th><th>評価</th><th>応答</th></tr>';
   const grade = r => r.error || r.status !== 200 || !r.complete ? '不良' : r.bytes < 10000 ? (r.secs < 2 ? '良好' : r.secs < 5 ? '注意' : '不良') : r.speed >= 200000 ? '良好' : r.speed >= 50000 ? '注意' : '不良';
-  const tr = (k, r) => '<tr><td>' + k + (r.ip ? ' ' + esc(r.ip) : '') + '</td><td>' + esc((r.host !== 'chokepointlab.com' ? r.host : '') + r.path) + '</td><td class="r">' + kb(r.bytes) +
-    (r.complete ? '' : '（打ち切り）') + '</td><td class="r">' + (r.secs == null ? '—' : r.secs + '秒') + '</td><td class="r">' + rate(r.speed) + '</td><td>' + grade(r) + '</td><td>' +
+  const tr = (k, r) => '<tr><td>' + k + (r.ip ? ' ' + esc(r.ip) : '') + '</td><td class="f">' + esc((r.host !== 'chokepointlab.com' ? r.host : '') + r.path) + '</td><td class="r">' + kb(r.bytes) +
+    (r.complete ? '' : '（打ち切り）') + '</td><td class="r">' + (r.first ? '1回目 ' + esc(r.first.cache || '') + ' ' + r.first.secs + '秒 → ' : '') + (r.secs == null ? '—' : r.secs + '秒') + '</td><td class="r">' + rate(r.speed) + '</td><td>' + grade(r) + '</td><td>' +
     esc(r.error || ((r.headers && r.headers.server || '') + ' ' + (r.headers && (r.headers['cf-cache-status'] || r.headers['x-cache']) || ''))) + '</td></tr>';
   $('latest').innerHTML = head + (latest.current || []).map(r => tr('今の経路', r)).join('') + (latest.direct || []).map(r => tr('直接', r)).join('') +
     (latest.control || []).map(r => tr('比べる相手', r)).join('');
   $('history').innerHTML = '<tr><th>日時</th><th>測り方</th><th>向き先</th><th class="r">今の経路</th><th class="r">直接</th><th class="r">比べる相手</th><th>判定</th></tr>' +
-    sums.slice().reverse().map(x => '<tr><td>' + esc(x.label) + '</td><td>' + esc(x.source) + '</td><td>' + esc(x.mode) + '</td><td class="r">' + rate(x.current) +
+    sums.slice().reverse().map(x => '<tr><td>' + esc(x.label) + '</td><td>' + esc(x.source) + '</td><td>' + esc(modeShort(x.mode)) + '</td><td class="r">' + rate(x.current) +
       '</td><td class="r">' + rate(x.direct) + '</td><td class="r">' + rate(x.control) + '</td><td>' + esc(x.verdict || '—') + '</td></tr>').join('');
 })();
 </script>

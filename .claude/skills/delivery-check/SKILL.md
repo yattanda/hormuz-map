@@ -27,6 +27,18 @@ python tools/delivery_check.py
   - **保留（2）**：比べる相手も遅い（こちらの回線の問題の疑い）。時間をおいて測り直す
 - 「戻してよい」は**時間をおいて2回以上**続いてから戻す（1回だけでは一時的なことがある）
 
+### 1-1. 結果を貯めて、証拠の1ページを作る
+
+```bash
+python tools/delivery_check.py --history "C:/Users/yutay/Documents/chokepointlab-notes/配信の確認"
+```
+
+- 測った結果を `delivery-YYYYMMDD-HHMM.json` としてフォルダに足し、同じフォルダの **`report.html`**（1ファイル・外部の読み込みなし）を作り直す。ふつうはこちらで測る
+- ページの中身：最新の回の結論（直接 GitHub Pages と比べる相手の速さ・「約N分の1」・判定）／3つの数字（今の経路・直接・比べる相手の中央値）／同じ大きさのページを取るのにかかった時間の横棒（30秒で打ち切り）／**測った回ごとの速さの推移**（対数の目盛り）／最新の回の内訳と回の一覧の表／測り方
+- ページだけ作り直すとき：`python tools/delivery_report.py <フォルダ>`
+- 貯める先は private の `chokepointlab-notes/配信の確認/`（測った回の JSON と `report.html` をそのままコミット・push する）。GitHub Support への問い合わせには `report.html` を添えるか、画面写真を貼る
+- curl などで手で測った値も、同じ形の JSON に `"source"` を書いて置けば並ぶ（11/1 15:21〜16:11 の3回はこの形で入れてある）
+
 ## 2. プロキシの切り替え
 
 ### 2-1. 道具で（API トークンがあるとき）

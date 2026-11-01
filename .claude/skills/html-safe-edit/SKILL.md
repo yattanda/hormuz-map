@@ -23,7 +23,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 ## 折り畳み表示ルール（3件表示統一）
 
-- **速報インシデント**：最新3件常時表示、4件目以降は「過去のインシデントを見る」で折り畳み（`applyIncidentFold()`）。項目は `li.incident-item` の型で書く（daily-site-update スキル「速報インシデントの型」）。ページには直近30日分だけを置き、古い項目は `docs/data/incident_archive.json`
+- **速報インシデント**：最新3件常時表示、4件目以降は「過去のインシデントを見る」で折り畳み（`applyIncidentFold()`）。各件は件名だけを見せ、押すと本文（読み込み時に `wrapIncidentDetails()` が `<details class="incident-more">` に包む。日次は `<details>` を書かない。2026-11-01）。項目は `li.incident-item` の型で書く（daily-site-update スキル「速報インシデントの型」）。ページには直近30日分だけを置き、古い項目は `docs/data/incident_archive.json`
   - 上ボタン（3件目直後）：その場で折りたたむ（scrollBy 補正でジャンプ抑制）
   - 下ボタン（展開末尾）：押すと上ボタン位置にスムーズスクロール
 - **更新履歴**：最新3件（`div.log-recent`）常時表示、4〜10件目は「📂 過去の履歴を見る」で折り畳み（`#log-collapse`）。項目は daily-site-update「更新履歴の型」で書く。`#log-collapse`・`#log-toggle-bottom` の `style="display:none;"` は開閉ボタンの JS が読むので消さない（② PR4a）
@@ -37,7 +37,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 - **ティッカーの速さ**：`fitTickerSpeed()`（`</body>` 直前の script）が、文字の長さから一定の速さ（`PX_PER_SEC = 90`）になるよう `animation-duration` を上書きする。
   CSS の `50s` は JS が動かないときの予備。以前は 50 秒固定で、文が長い日ほど速くなり（10/11 は約300px/秒）文字が二重に見えた。速さを変えるときは `PX_PER_SEC` だけを変える
-- **キーワードの自動の色付け**：`markKeywords()`（同じ script）が、30秒カラムの3行・シナリオの補足・次の焦点の文から、日付・単位つきの数値・被害の語・回復の語・但し書きを正規表現で見つけ、`span.kw-*` で囲む。
+- **キーワードの自動の色付け**：`markKeywords()`（同じ script）が、30秒カラムの4行の全文（`.glance-text`。要点の `.glance-lead` には掛けない）・シナリオの補足・次の焦点の文から、日付・単位つきの数値・被害の語・回復の語・但し書きを正規表現で見つけ、`span.kw-*` で囲む。
   色は控えめにする（クラスは `.kw-num` `.kw-date` `.kw-alert` `.kw-ease` `.kw-hedge`）。対象の区域や語を増やすときは `ZONES` と正規表現を直す。本文に手で印を書かない
 - **用語集のツールチップ**（2026-10-24）：`</body>` の手前の「用語集」の script が `glossary.js` を読み込み、`data-zones` の区域（日次スキルの型の class）に印を付ける。型の class を変えるときは `data-zones` も直す（`validate_daily.py` の `check_glossary_zones()` が WARN）。本文に手で印を書かない
 - **色・アイコン・区切り方は、スキル `site-design` の決まり**（2026-10-22・課題46 D3 PR 7b）。黄色を含む状態の色は札（色面）だけに使い、文の色にしない。以前ここにあった「文章に使う黄色は淡く（`--c-warn-soft`）」の決まりは、D3 で状態の色を札だけにしたので外した

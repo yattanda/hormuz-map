@@ -242,10 +242,12 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 /* 「いま何が」「海峡の今」「次の焦点」は段の名前で状態ではないので、3つとも枠だけ（D3 PR 5） */
 .glance-label { border:1px solid var(--c-rule); color:var(--c-text-mute);
   font-size:var(--fs-sm); font-weight:700; padding:2px 8px; white-space:nowrap; }
-/* 4行の箱の左端をそろえる（ラベルの幅を固定。二段表示 PR-A）。スマホは4字で折り返す（「前回の裏取り」は2行） */
+/* 4行の箱の左端をそろえる（ラベルの幅を固定。二段表示 PR-A）。
+   スマホはラベルを箱の上に置き、箱を全幅にする（横に置くと要点が4行になったため。2026-11-01・運営者） */
 .glance-summary .glance-label { flex:0 0 7.2em; text-align:center; }
 @media (max-width: 600px) {
-  .glance-summary .glance-label { flex-basis:5.6em; white-space:normal; padding:2px 6px; }
+  .glance-summary .glance-row { flex-direction:column; align-items:stretch; gap:4px; }
+  .glance-summary .glance-label { flex:none; align-self:flex-start; }
 }
 .glance-text { color:var(--c-text); font-size:var(--fs-md); line-height:1.6; }
 /* 今後の予定日（JS が /data/upcoming.json から「次の焦点」の直下に足す行。予定が無ければ行ごと出ない）。札は枠だけ */

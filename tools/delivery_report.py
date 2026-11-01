@@ -32,9 +32,11 @@ def load(d: Path) -> list[dict]:
 
 
 def median_speed(rows: list[dict]) -> int | None:
-    """大きいファイル（10KB 以上か打ち切り）の速さの中央値。取れなかった行は 0 として数える"""
-    v = [r.get("speed", 0) if not r.get("error") else 0 for r in rows
-         if r.get("bytes", 0) >= 10_000 or r.get("error") or not r.get("complete")]
+    """大きいファイル（10KB 以上か打ち切り）の速さの中央値。
+    取れなかった行（接続のエラー・200 以外の応答）は大きさに関わらず 0 として数える（503 の本文を速さに数えない）"""
+    failed = lambda r: bool(r.get("error")) or r.get("status") != 200
+    v = [0 if failed(r) else r.get("speed", 0) for r in rows
+         if failed(r) or r.get("bytes", 0) >= 10_000 or not r.get("complete")]
     return int(statistics.median(v)) if v else None
 
 

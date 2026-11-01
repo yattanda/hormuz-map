@@ -200,8 +200,16 @@ def main() -> int:
         from pathlib import Path
         d = Path(args.history)
         d.mkdir(parents=True, exist_ok=True)
-        path = d / f"delivery-{started.strftime('%Y%m%d-%H%M')}.json"
-        path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+        # 秒まで入れ、それでも同じ名前があれば -2・-3 … を付ける（同じ分に2回測っても前の回を上書きしない）
+        stem = f"delivery-{started.strftime('%Y%m%d-%H%M%S')}"
+        for n in range(1, 100):
+            path = d / (f"{stem}.json" if n == 1 else f"{stem}-{n}.json")
+            try:
+                with open(path, "x", encoding="utf-8") as f:
+                    json.dump(out, f, ensure_ascii=False, indent=1)
+                break
+            except FileExistsError:
+                continue
         print(f"\n貯めた：{path}")
         import delivery_report   # 同じ tools/ にある
         print(f"証拠の1ページ：{delivery_report.build(d)}")

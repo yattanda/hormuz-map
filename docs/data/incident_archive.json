@@ -1,5 +1,5 @@
 {
-  "description": "速報インシデント（docs/hormuz/index.html #incident-list）からページ外へ退避した項目。ページからはリンクしない。html は退避時の元の HTML（インライン style 付き）をそのまま保存している。",
+  "description": "速報インシデント（docs/hormuz/index.html #incident-list）からページ外へ退避した項目。ページからはリンクしない。html は退避時の元の HTML をそのまま保存している（古い項目はインライン style 付き、2026-09-24 以降の項目は class の型）。",
   "movedAt": "2026-11-01",
   "rule": "ページには直近30日分だけを残し、それより古い項目を月1回まとめてここへ追記する（tools/phase2-sections-design.md E1）",
   "items": [

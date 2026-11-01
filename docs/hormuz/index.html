@@ -40,7 +40,7 @@
 <link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
-<link rel="stylesheet" href="/assets/css/hormuz.css">
+<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261101"><!-- 二段表示 PR-A で HTML と CSS を組で変えたので、古い CSS と組まないよう版を付ける -->
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
 {
@@ -181,79 +181,63 @@
       30秒で全体像を把握
     </h2>
 
-<!-- 3行サマリー（型は daily-site-update スキル「30秒カラムの型」。インライン style を書かない） -->
+<!-- 4行サマリー（型は daily-site-update スキル「30秒カラムの型」。インライン style を書かない。
+     各行は要点（summary の glance-lead・40〜50字・1文）＋開くと全文（glance-text）。<details> に open を書かない。2026-11-01 二段表示 PR-A） -->
 <div class="glance-summary">
   <div class="glance-row">
     <span class="glance-label glance-label--now">いま何が</span>
-    <span class="glance-text">
+    <details class="glance-more" data-item="now">
+      <summary><span class="glance-lead">米軍の封鎖で進路を変えた商船は144隻に増え、イランは別のタンカーが機雷に触れたと主張した。</span><span class="more-chip" aria-hidden="true"></span></summary>
+      <span class="glance-text">
 CENTCOMによると、対イラン海上封鎖で進路を変更させられた商船は10/31時点で144隻（10/17発表の138隻から。CBS NewsとCENTCOMのX投稿）。イランはFars通信を通じ、海峡の南側ルートを通っていた別のタンカーが10/31に機雷に触れて炎上したと主張した（CBSは検証できなかったと付記。UKMTOに対応する警報はなく、独立した確認なし）。UKMTO公式の最新は警報190（10/31 18:50 UTC発行）で、インド洋のダウ船への乗り込みと海賊行為の疑いを伝え、海峡とは無関係。警報187の船名はgCaptainがEOS Risk Groupの発言として「LOUISE 1」と伝える（公式の本文に船名なし）。警報188・189は船名・攻撃主体が不明のまま。
 </span>
+    </details>
   </div>
   <div class="glance-row">
     <span class="glance-label glance-label--strait">海峡の今</span>
-    <span class="glance-text">
+    <div class="glance-body">
+      <!-- 数字の札は4枚固定（ブレント・WTI・通航・封鎖の累計）。数字は数字だけ。補足に増減・M/D の日付・出典。新しい値が無い日は前の値と日付のまま -->
+      <dl class="glance-figs" data-glossary-skip>
+        <div class="glance-fig"><dt class="glance-fig-label">ブレント</dt><dd class="glance-fig-val"><span class="glance-fig-num">113.43</span><span class="glance-fig-unit">ドル</span></dd><dd class="glance-fig-sub">1月物・10/30 +2.63</dd></div>
+        <div class="glance-fig"><dt class="glance-fig-label">WTI</dt><dd class="glance-fig-val"><span class="glance-fig-num">104.12</span><span class="glance-fig-unit">ドル</span></dd><dd class="glance-fig-sub">12月物・10/30 +2.12</dd></div>
+        <div class="glance-fig"><dt class="glance-fig-label">通航（商船）</dt><dd class="glance-fig-val"><span class="glance-fig-num">7</span><span class="glance-fig-unit">隻</span></dd><dd class="glance-fig-sub">10/6・Kpler</dd></div>
+        <div class="glance-fig"><dt class="glance-fig-label">封鎖の累計</dt><dd class="glance-fig-val"><span class="glance-fig-num">144</span><span class="glance-fig-unit">隻</span></dd><dd class="glance-fig-sub">進路変更・10/31・CENTCOM</dd></div>
+      </dl>
+      <details class="glance-more" data-item="strait">
+        <summary><span class="glance-lead">週末で新しい終値はなく、ブレントは113ドル台のまま。通航量の新しい集計は10/6から出ていない。</span><span class="more-chip" aria-hidden="true"></span></summary>
+        <span class="glance-text">
 原油の最新の終値は10/30（金）で、WTI12月物104.12ドル（+2.12ドル）・ブレント1月物113.43ドル（+2.63ドル）。WTIはReutersとDTN、ブレント1月物はReutersとNewsquawkが一致し、ブレント12月物の満期清算値117.64ドルもReutersとDTNが一致する（WTIの前日比は、DTNが+1.98ドルと別の値を伝える）。週末（10/31・11/1）は取引がなく、新しい終値はない。The Nationalは、10月のホルムズ周辺の商船への攻撃がUKMTOの集計で30件を超えたと伝える。通航量はKplerの10/6（火）の商船7隻が確認できる最新。
 </span>
+      </details>
+    </div>
   </div>
   <div class="glance-row">
     <span class="glance-label glance-label--next">次の焦点</span>
-    <span class="glance-text">
+    <details class="glance-more" data-item="next">
+      <summary><span class="glance-lead">警報188・189の船名と攻撃主体、機雷を主張されたタンカーの特定、中間選挙後の米側の動きが焦点。</span><span class="more-chip" aria-hidden="true"></span></summary>
+      <span class="glance-text">
 警報188・189の船名・攻撃主体と警報186の発生時刻、機雷接触を主張されたタンカーの特定、WSJが伝えた中間選挙（11/3）後の攻撃準備の主要通信社での確認、CENTCOMの144隻の集計の起点、7日間計画への米側の回答、ラスタヌラ製油所の被害——危機247日目。
 </span>
+    </details>
   </div>
-  <!-- 前回の裏取り（前回の更新が残した未確認の項目が、今回の裏取りでどうなったか。型は daily-site-update スキル「30秒カラムの型」。2026-10-27〜） -->
+  <!-- 前回の裏取り（前回の更新が残した未確認の項目が、今回の裏取りでどうなったか。型は daily-site-update スキル「30秒カラムの型」。2026-10-27〜）。
+       要点は件数だけの決まった形「前回（M/D HH:MM）の未確認N件→解消a件・継続b件」（2026-10-31 決定） -->
   <div class="glance-row">
     <span class="glance-label glance-label--verify">前回の裏取り</span>
-    <span class="glance-text">
+    <details class="glance-more" data-item="verify">
+      <summary><span class="glance-lead">前回（10/31 08:05）の未確認8件→解消1件・継続7件</span><span class="more-chip" aria-hidden="true"></span></summary>
+      <span class="glance-text">
 前回（10/31 08:05）の未確認8件→解消1件・継続7件。解消：CENTCOMの封鎖の累計（10/31時点で商船144隻。CBS NewsとCENTCOMのX投稿が一致）。継続：WSJの攻撃準備の報道（主要通信社の記事なし）、ラスタヌラ製油所の被害、MT ST 3の被弾、警報178の軍の国籍と船名、警報182・183の船名と原因、警報185の船種、警報186の発生時刻（いずれも新しい資料なし）。警報187の船名は媒体（gCaptain）のみで、公式の本文には無い。
 </span>
+    </details>
   </div>
+</div>
 
-  <!-- 主な動き（旧・情勢カード。新しい順に3件、見出し・日付・出典だけ。本文は速報インシデントに書く） -->
-  <div class="key-moves">
-    <div class="key-moves-head">主な動き<a href="#incident" class="key-moves-more">速報インシデントで全文を読む ↓</a></div>
-    <ol class="key-moves-list">
-      <li class="key-move key-move--info"><a href="#incident">
-        <time class="key-move-date" datetime="2026-10-31">10/31</time>
-        <span class="key-move-title">米中央軍の対イラン海上封鎖で進路変更の商船は144隻に——10/17発表の138隻から</span>
-        <span class="key-move-src">CBS News・CENTCOM</span>
-      </a></li>
-      <li class="key-move key-move--warning"><a href="#incident">
-        <time class="key-move-date" datetime="2026-10-31">10/31</time>
-        <span class="key-move-title">イラン側「別のタンカーが海峡の南側ルートで機雷に触れて炎上」と主張——CBSは検証できず、対応するUKMTO警報なし</span>
-        <span class="key-move-src">CBS News・Fars</span>
-      </a></li>
-      <li class="key-move key-move--warning"><a href="#incident">
-        <time class="key-move-date" datetime="2026-10-31">10/31</time>
-        <span class="key-move-title">10月のホルムズ周辺の商船への攻撃はUKMTOの集計で30件超とThe Nationalが伝える</span>
-        <span class="key-move-src">The National</span>
-      </a></li>
-    </ol>
-  </div>
-
-      <!-- テキストリンク行 -->
-      <div class="glance-links">
-        <a href="#incident" class="glance-btn glance-btn--danger">速報インシデント</a>
-        <a href="#routes" class="glance-btn glance-btn--warning">ルート表</a>
-        <a href="#scenario" class="glance-btn glance-btn--info">シナリオ</a>
-      </div>
-
-      <!-- ステータスバッジ（クリック不可） -->
-      <div class="glance-badges">
-<span class="status-badge status-badge--warning">10/31 イラン側「別のタンカーが機雷に接触」と主張・CBSは検証できず</span>
-<span class="status-badge status-badge--info">10/31 米軍の封鎖で進路変更の商船は144隻（10/17は138隻）</span>
-<span class="status-badge status-badge--danger">10/30 UKMTO警報189：海峡を出るタンカーが飛翔体を受ける・発生時刻の記載なし</span>
-<span class="status-badge status-badge--danger">10/30 UKMTO警報188：ラヴァン島の南で船が被弾・火災・乗組員は無事</span>
-<span class="status-badge status-badge--neutral">最新の終値（10/30）：WTI12月物104.12ドル・ブレント1月物113.43ドル</span>
-<span class="status-badge status-badge--positive">日本関係船残り4隻(変化なし・11/1確認)</span>
-
-
-        </div>
-      </div>
-
-      <!-- ジャンプ＋クリッカブルバッジ -->
+      <!-- 行き先のボタン1列（「主な動き」とステータスバッジは速報インシデントと重なるため外した。2026-11-01 二段表示 PR-A） -->
       <div class="glance-jump">
-        <div class="glance-jump-label">気になるセクションへジャンプ</div>
+        <a href="#incident" class="glance-btn">速報インシデント</a>
+        <a href="#routes" class="glance-btn">ルート表</a>
+        <a href="#scenario" class="glance-btn">シナリオ</a>
         <a href="#news-column" class="jump-pill jump-pill--info">最新ニュース</a>
         <a href="#osint-panel" class="jump-pill jump-pill--violet">現地メディア視点</a>
         <a href="#" onclick="scrollToJapanFlow(event)" class="jump-pill jump-pill--info">日本向け調達フロー</a>
@@ -3427,6 +3411,57 @@ function toggleNewsExtra() {
   }
 }
 
+// 速報インシデントの二段表示（2026-11-01・二段表示 PR-A。設計 text-two-stage.md §3-1）
+// 日次が書く li.incident-item はそのままにして、読み込み時に件名（.incident-tag）を <summary>、本文（.incident-body）を
+// 中身にした <details class="incident-more"> に包む。JS が無いときは今までどおり全文。
+// applyIncidentFold() より先に呼ぶ（折りたたみは li ごと動かすので、包んだ形のまま移る）
+function wrapIncidentDetails() {
+  const list = document.getElementById('incident-list');
+  if (!list) return;
+  Array.from(list.children).forEach(function(li, i) {
+    if (!li.classList.contains('incident-item') || li.querySelector(':scope > details')) return;
+    const tag = li.querySelector(':scope > .incident-tag');
+    const body = li.querySelector(':scope > .incident-body');
+    if (!tag || !body) return;
+    const det = document.createElement('details');
+    det.className = 'incident-more';
+    det.dataset.item = String(i + 1);   // GA4 の item（上からの番号）
+    const sum = document.createElement('summary');
+    const chip = document.createElement('span');
+    chip.className = 'more-chip';
+    chip.setAttribute('aria-hidden', 'true');
+    sum.append(tag, chip);
+    det.append(sum, body);
+    li.appendChild(det);
+  });
+}
+
+// 二段表示の計測（GA4・2026-11-01。設計 text-two-stage.md §3-6）
+// text_expand：開いたときだけ送る。section は glance／incident、item は now・strait・next・verify／速報は上からの番号。件名の文や日付は送らない
+// section_view：区域が初めて見えたときに1回（incident・map・routes・scenario）。地図まで読まれた割合を見る
+function initTwoStageMetrics() {
+  if (typeof gtag !== 'function') return;
+  // toggle は親へ伝わらない（bubble しない）ので、捕捉の段で拾う
+  document.addEventListener('toggle', function(e) {
+    const d = e.target;
+    if (!(d instanceof HTMLDetailsElement) || !d.open) return;
+    const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident' : '';
+    if (section) gtag('event', 'text_expand', { section: section, item: d.dataset.item || '' });
+  }, true);
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(en) {
+      if (!en.isIntersecting) return;
+      io.unobserve(en.target);
+      gtag('event', 'section_view', { section: en.target.id });
+    });
+  });
+  ['incident', 'map', 'routes', 'scenario'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+}
+
 // 速報インシデント: 3件常時表示 + 4件目以降折り畳み
 // 上ボタン：3件目直後（▼開く / ▲閉じる が切り替わる）
 // 下ボタン：展開コンテンツの末尾（▲折りたたむ、展開時のみ表示）
@@ -3620,7 +3655,9 @@ function applyColumnBadges() {
 document.addEventListener('DOMContentLoaded', () => {
   loadNewsData();
   syncScenarioFromDashboard();
+  wrapIncidentDetails();
   applyIncidentFold();
+  initTwoStageMetrics();
   applyColumnBadges();
 });
 </script>

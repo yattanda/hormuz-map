@@ -113,7 +113,23 @@ PAT_CRISIS_DAY = re.compile(r'id="blockade-days">危機(\d+)日目')
 CRISIS_START = date(2026, 2, 28)   # 開戦日＝1日目
 # 今後の予定日の必須項目と、30秒カラム「次の焦点」の本文
 UPCOMING_REQUIRED = ["kind", "title", "date", "source", "url", "added"]
-PAT_GLANCE_NEXT = re.compile(r'glance-label--next">次の焦点</span>\s*<span class="glance-text">(.*?)</span>', re.S)
+# 30秒カラムの各行：ラベルの後に要点（<details class="glance-more"> の <summary>）と全文（span.glance-text）が来る。
+# 二段表示 PR-A（2026-11-01）で、ラベルの直後に glance-text が来る前提をやめた。次の行のラベルまでの間だけを探す
+def pat_glance_row(key: str) -> re.Pattern:
+    return re.compile(r'glance-label--' + key + r'">[^<]*</span>((?:(?!glance-label--).)*?)</details>', re.S)
+
+
+def glance_part(html: str, key: str, part: str) -> str | None:
+    """30秒カラムの行（key＝now・strait・next・verify）の要点（part="lead"）か全文（part="text"）の HTML。無ければ None"""
+    m = pat_glance_row(key).search(html)
+    if not m:
+        return None
+    cls = "glance-lead" if part == "lead" else "glance-text"
+    mm = re.search(r'<span class="' + cls + r'">(.*?)</span>', m.group(1), re.S)
+    return mm.group(1) if mm else None
+
+
+GLANCE_ROWS = (("now", "いま何が"), ("strait", "海峡の今"), ("next", "次の焦点"), ("verify", "前回の裏取り"))
 PAT_TICKER_COMMENT = re.compile(r'<!--\s*新ティッカー（(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST）\s*-->')
 PAT_ROUTES = re.compile(
     r'sec-h2-sub">\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST\s*(?:更新|再確認済)'
@@ -864,14 +880,13 @@ def check_urls(news: dict) -> None:
 
 
 PAT_GLANCE = re.compile(r'<div class="glance">.*?<!-- /30秒カラム ラッパー -->', re.S)
-PAT_KEY_MOVE = re.compile(r'<li class="key-move key-move--(\w+)">.*?<time class="key-move-date" datetime="(\d{4}-\d{2}-\d{2})">', re.S)
 # 終わりは </ul> の直後の </div>（項目の本文に箇条書きの <ul> が入っても、一覧の後ろを読み落とさない。2026-11-01）
 PAT_INCIDENT_LIST = re.compile(r'<ul id="incident-list"[^>]*>.*?</ul>\s*</div>', re.S)
 
 
 def check_types(html: str, base: str) -> None:
     """② で決めた型（クラス＋モディファイア・インライン style なし）で書かれているか。
-    30秒カラム（主な動き3件を含む）・速報インシデントの一覧・ルート表・シナリオ・更新履歴が対象。見た目は壊れないので WARN にとどめる。"""
+    30秒カラム・速報インシデントの一覧・ルート表・シナリオ・更新履歴が対象。見た目は壊れないので WARN にとどめる。"""
     g = PAT_GLANCE.search(html)
     if not g:
         warn("30秒カラム（<div class=\"glance\">）を検出できませんでした（構造が変わった可能性）")
@@ -882,18 +897,10 @@ def check_types(html: str, base: str) -> None:
             warn(f"30秒カラムにインライン style が {n_style}箇所あります（型はクラス。daily-site-update「30秒カラムの型」）")
         else:
             ok("30秒カラムにインライン style なし")
-        moves = PAT_KEY_MOVE.findall(body)
-        if len(moves) != 3:
-            warn(f"30秒カラム / 主な動きが {len(moves)}件です（ルールは3件）")
-        else:
-            dates = [d for _, d in moves]
-            age = (date.fromisoformat(base) - date.fromisoformat(dates[0])).days
-            if dates != sorted(dates, reverse=True):
-                warn(f"30秒カラム / 主な動きが新しい順になっていません: {', '.join(dates)}")
-            elif age > 7:
-                warn(f"30秒カラム / 主な動きの最新が {dates[0]}（{age}日前）です。速報インシデントの先頭と揃っているか確認")
-            else:
-                ok(f"30秒カラム / 主な動き 3件（最新 {dates[0]}）")
+        # 「主な動き」とステータスバッジは二段表示 PR-A（2026-11-01）で外した。古い型が戻っていたら知らせる
+        if 'class="key-moves"' in body or 'class="glance-badges"' in body:
+            warn("30秒カラムに「主な動き」（key-moves）かステータスバッジ（glance-badges）があります。"
+                 "2026-11-01 に外した（daily-site-update「30秒カラムの型」）")
     a = re.search(r'<span class="badge-item badge-alert">(.*?)</span>', html, re.S)
     if a and (len(a.group(1)) > 12 or "（" in a.group(1)):
         warn(f"ヘッダーの警戒レベルに要約が書かれています（{len(a.group(1))}字）。「警戒レベル：最高」の一語だけにする")
@@ -1007,7 +1014,7 @@ def check_unresolved(html: str) -> None:
     """読者が最初に見る要約部に、裏取りで解消すべき表記が残っていないか（2026-10-06 追加）。
 
     10/6 07:33 の更新で「食い違い（未解消）」「終値かは未確認」のまま公開し、のちに訂正した。
-    対象は 30秒カラム（主な動き・バッジを含む）・TICKER・シナリオの確率補足バナー。
+    対象は 30秒カラム（要点と全文）・TICKER・シナリオの確率補足バナー。
     速報インシデントとルート表の経緯は過去の記録を含むので見ない。
     """
     blocks = []
@@ -1090,8 +1097,7 @@ def check_incident_archive(html: str, base: str) -> None:
     else:
         ok(f"速報インシデントに退避すべき項目なし（{cutoff.isoformat()} より前の項目 0件）")
 
-PAT_GLANCE_VERIFY_ROW = re.compile(r'<span class="glance-label glance-label--verify">.*?</span>\s*<span class="glance-text">.*?</span>', re.S)
-PAT_GLANCE_VERIFY = re.compile(r'glance-label--verify">[^<]*</span>\s*<span class="glance-text">(.*?)</span>', re.S)
+PAT_GLANCE_VERIFY_ROW = re.compile(r'<span class="glance-label glance-label--verify">.*?</details>', re.S)
 PAT_VERIFY_PREV = re.compile(r'前回（(\d{1,2})/(\d{1,2})\s+(\d{1,2}):(\d{2})）')
 PAT_LOG_RECENT_DATES = re.compile(r'<div class="log-recent">(.*?)<div id="log-toggle-top"', re.S)
 
@@ -1102,11 +1108,11 @@ def check_verify_row(html: str) -> None:
     前回の更新が残した未確認・据え置きの項目を、翌日の更新が「解消」「継続」に分けて読者に示す行。
     日次スキル「2.4」の 5。前回の日時のまま書き換え忘れると、古い結果が今日の結果に見える。
     """
-    m = PAT_GLANCE_VERIFY.search(html)
-    if not m:
-        warn("30秒カラムに「前回の裏取り」の行（glance-label--verify）がありません（daily-site-update「30秒カラムの型」）")
+    full = glance_part(html, "verify", "text")
+    if full is None:
+        warn("30秒カラムに「前回の裏取り」の行（glance-label--verify）の全文がありません（daily-site-update「30秒カラムの型」）")
         return
-    text = re.sub(r"<[^>]+>", "", m.group(1))
+    text = re.sub(r"<[^>]+>", "", full)
     mm = PAT_LOG_RECENT_DATES.search(html)
     dates = re.findall(r'log-date">\d{4}/(\d{2})/(\d{2})\s+(\d{1,2}):(\d{2})<', mm.group(1)) if mm else []
     if len(dates) < 2:
@@ -1138,13 +1144,13 @@ def plain_len(fragment: str) -> int:
 
 
 def check_text_lengths(html: str) -> None:
-    """30秒カラムの3行とシナリオの補足が、文字数の目安を超えていないか（WARN のみ）。"""
+    """30秒カラムの4行の全文とシナリオの補足が、文字数の目安を超えていないか（WARN のみ）。"""
     for key, label, limit in TEXT_LIMITS_GLANCE:
-        m = re.search(r'glance-label--' + key + r'">[^<]*</span>\s*<span class="glance-text">(.*?)</span>', html, re.S)
-        if not m:
-            warn(f"30秒カラム「{label}」を検出できず、文字数を確認できません（構造が変わった可能性）")
+        full = glance_part(html, key, "text")
+        if full is None:
+            warn(f"30秒カラム「{label}」の全文を検出できず、文字数を確認できません（構造が変わった可能性）")
             continue
-        n = plain_len(m.group(1))
+        n = plain_len(full)
         if n > limit:
             warn(f"30秒カラム「{label}」が {n}字（目安 {limit}字）。要点を絞り、細部は速報インシデントへ")
         else:
@@ -1172,6 +1178,126 @@ def check_text_lengths(html: str) -> None:
             warn(f"シナリオの補足「{label}」が {n}字（目安 {limit}字）。根拠は1〜2点に絞る")
         else:
             ok(f"シナリオの補足「{label}」{n}字（目安 {limit}字）")
+
+
+# 二段表示の要点（2026-11-01・二段表示 PR-A。設計 hormuz-ops/drafts/design/text-two-stage.md §3-2・§3-4）。
+# しきい値は運用で見直す
+LEAD_MIN, LEAD_MAX = 20, 60          # 目安は 40〜50字・1文。外れたら WARN
+LEAD_CLIP_RATIO = 0.8                # 全文との最長の共通部分が要点のこの割合以上なら切り抜きの疑い
+PAT_VERIFY_LEAD = re.compile(r'^前回（\d{1,2}/\d{1,2} \d{1,2}:\d{2}）の未確認(?:なし|(\d+)件→((?:解消|継続|取り下げ)\d+件(?:・(?:解消|継続|取り下げ)\d+件)*))$')
+FIG_LABELS = ("ブレント", "WTI", "通航", "封鎖")   # 数字の札の順（項目名の頭）
+FIG_MAX_AGE = {"ブレント": 3, "WTI": 3, "通航": 14, "封鎖": 14}   # 札の日付の古さ（日）
+
+
+def plain(fragment: str) -> str:
+    return re.sub(r"\s+", "", re.sub(r"<[^>]+>", "", fragment))
+
+
+def longest_common(a: str, b: str) -> int:
+    """a と b の最長の共通部分文字列の長さ"""
+    best, prev = 0, [0] * (len(b) + 1)
+    for ca in a:
+        cur = [0] * (len(b) + 1)
+        for j, cb in enumerate(b, 1):
+            if ca == cb:
+                cur[j] = prev[j - 1] + 1
+                best = max(best, cur[j])
+        prev = cur
+    return best
+
+
+def md_to_date(mo: int, dd: int, base: date) -> date | None:
+    """年を持たない M/D を、基準日より後にならない年の日付として読む（12月に書いた 1/2 は無い前提）"""
+    try:
+        d = date(base.year, mo, dd)
+    except ValueError:
+        return None
+    return d if d <= base else date(base.year - 1, mo, dd)
+
+
+def check_glance_leads(html: str, base: str) -> None:
+    """30秒カラムの4行の要点と、海峡の今の数字の札。
+
+    要点（<summary> の span.glance-lead）が無い・空なら NG（閉じた箱に押す場所の名前が無くなる）。
+    字数・切り抜き・「…」・<details open>・札の形と古さは WARN。前回の裏取りの要点は決まった形だけを見る。
+    """
+    g = PAT_GLANCE.search(html)
+    body = g.group(0) if g else html
+    if re.search(r'<details class="glance-more"[^>]*\sopen\b', body):
+        warn("30秒カラムに <details open> があります。要点だけを見せる形なので open を書かない")
+    else:
+        ok("30秒カラムに <details open> なし")
+    missing = []
+    for key, label in GLANCE_ROWS:
+        lead = glance_part(html, key, "lead")
+        full = glance_part(html, key, "text")
+        if lead is None or not plain(lead):
+            missing.append(label)
+            continue
+        lp, fp = plain(lead), plain(full or "")
+        if key == "verify":
+            m = PAT_VERIFY_LEAD.match(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", lead)).strip())
+            if not m:
+                warn(f"30秒カラム「{label}」の要点が決まった形ではありません：{lp[:40]}。"
+                     "「前回（M/D HH:MM）の未確認N件→解消a件・継続b件」（0件の区分は書かない）か「前回（M/D HH:MM）の未確認なし」")
+            elif m.group(1):
+                total = sum(int(x) for x in re.findall(r"(\d+)件", m.group(2)))
+                if total != int(m.group(1)):
+                    warn(f"30秒カラム「{label}」の要点の件数が合いません：未確認{m.group(1)}件・内訳の和 {total}件")
+                else:
+                    ok(f"30秒カラム「{label}」の要点は決まった形（未確認{m.group(1)}件）")
+            else:
+                ok(f"30秒カラム「{label}」の要点は決まった形（未確認なし）")
+            continue
+        n = len(lp)
+        notes = []
+        if n < LEAD_MIN or n > LEAD_MAX:
+            notes.append(f"{n}字（目安 40〜50字）")
+        if lp.endswith(("…", "...", "‥")):
+            notes.append("「…」で終わる（文を切らずに1文で書き下ろす）")
+        if fp and (fp.startswith(lp.rstrip("。")) or lp.rstrip("。") in fp
+                   or longest_common(lp, fp) >= LEAD_CLIP_RATIO * n):
+            notes.append("全文の切り抜きの疑い（要点は全文を写さずに書き下ろす）")
+        if notes:
+            warn(f"30秒カラム「{label}」の要点：" + "・".join(notes))
+        else:
+            ok(f"30秒カラム「{label}」の要点 {n}字")
+    if missing:
+        ng(f"30秒カラムの要点（summary の span.glance-lead）がありません・空です：{'・'.join(missing)}。"
+           "daily-site-update「30秒カラムの型」で要点を書く")
+    else:
+        ok("30秒カラムの4行すべてに要点あり")
+
+    # 海峡の今の数字の札
+    m = pat_glance_row("strait").search(html)
+    figs = re.findall(r'<div class="glance-fig">(.*?)</div>', m.group(1), re.S) if m else []
+    if len(figs) != 4:
+        warn(f"「海峡の今」の数字の札が {len(figs)}枚です（ブレント・WTI・通航・封鎖の累計の4枚）")
+        return
+    full = plain(glance_part(html, "strait", "text") or "")
+    bd = date.fromisoformat(base)
+    bad = []
+    for want, fig in zip(FIG_LABELS, figs):
+        lab = plain((re.search(r'class="glance-fig-label">(.*?)</', fig, re.S) or [None, ""])[1])
+        num = plain((re.search(r'class="glance-fig-num">(.*?)</', fig, re.S) or [None, ""])[1])
+        sub = plain((re.search(r'class="glance-fig-sub">(.*?)</', fig, re.S) or [None, ""])[1])
+        if not lab.startswith(want):
+            bad.append(f"{want} の札の項目名が「{lab}」")
+            continue
+        if not re.fullmatch(r"\d[\d,]*(?:\.\d+)?", num):
+            bad.append(f"{want} の数字が数字だけではない（「{num}」）")
+        dm = re.search(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])", sub)
+        d = md_to_date(int(dm.group(1)), int(dm.group(2)), bd) if dm else None
+        if d is None:
+            bad.append(f"{want} の補足に M/D の日付がない")
+        elif (bd - d).days > FIG_MAX_AGE[want]:
+            bad.append(f"{want} の札の日付が {dm.group(0)}（{(bd - d).days}日前・目安 {FIG_MAX_AGE[want]}日）")
+        if want in ("ブレント", "WTI") and num and num not in full:
+            bad.append(f"{want} の札の数字 {num} が「海峡の今」の全文に無い")
+    if bad:
+        warn("「海峡の今」の数字の札：" + "／".join(bad))
+    else:
+        ok("「海峡の今」の数字の札 4枚（形・日付・全文との一致）")
 
 
 def check_scenario_dates(html: str, base: str) -> None:
@@ -1285,9 +1411,8 @@ def check_categories(html: str, news: dict | None) -> None:
     """
     bad = []
     places = (("速報インシデント", r'<span class="incident-tag">(?:<span class="cat [^"]+">[^<]*</span>)?(.*?)</span>'),
-              ("主な動き", r'<span class="key-move-title">(.*?)</span>'),
-              ("ステータスバッジ", r'<span class="status-badge[^"]*">(.*?)</span>'),
               ("ルート表の route-tag", r'<strong class="route-tag[^"]*">(.*?)</strong>'),
+              ("30秒カラムの要点", r'<span class="glance-lead">(.*?)</span>'),
               ("30秒カラム", r'<span class="glance-text">(.*?)</span>'))
     for label, pat in places:
         hits = [x[:20].strip() for x in re.findall(pat, html, re.S) if PAT_EMOJI_HEAD.match(x)]
@@ -1302,7 +1427,7 @@ def check_categories(html: str, news: dict | None) -> None:
     if bad:
         ng(f"頭に絵文字があります: {'・'.join(bad)}。分類は札（<span class=\"cat cat-sea\">海上</span> など）の語で書き、絵文字は書かない")
     else:
-        ok("日次が書く所の頭に絵文字なし（速報・主な動き・バッジ・route-tag・30秒カラム・ティッカー）")
+        ok("日次が書く所の頭に絵文字なし（速報・route-tag・30秒カラムの要点と全文・ティッカー）")
     # 速報インシデントのタグは、どれも頭に札が要る（無いもの・タグが1つも無いのも NG）
     tags = re.findall(r'<span class="incident-tag">(.{0,40})', html)
     missing = [re.sub(r"<[^>]+>", "", x)[:20] for x in tags if not x.startswith('<span class="cat cat-')]
@@ -1638,12 +1763,12 @@ def check_upcoming(html: str) -> None:
         ok(f"今後の予定日 {len(items)}件（うち今日以降 {active}件）")
 
     # 「次の焦点」に未来の日付（M/D）が書いてあるのに予定日が0件なら、載せ忘れかもしれない
-    m = PAT_GLANCE_NEXT.search(html)
-    if not m:
+    nxt = glance_part(html, "next", "text")
+    if nxt is None:
         warn("30秒カラムの「次の焦点」を検出できませんでした（予定日の載せ忘れの確認を省きました）")
         return
     future = []
-    for mo, dd in re.findall(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])", m.group(1)):
+    for mo, dd in re.findall(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])", nxt):
         try:
             d = date(today.year, int(mo), int(dd))
         except ValueError:
@@ -1869,6 +1994,7 @@ def main() -> int:
     check_incident_archive(html, base)
     check_verify_row(html)
     check_text_lengths(html)
+    check_glance_leads(html, base)
 
     check_news(news, base)
     check_categories(html, news)

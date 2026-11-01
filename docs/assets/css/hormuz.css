@@ -153,13 +153,13 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 
 /* 状態の札（D3 PR 5・設計書 §1）：赤＝危険・橙＝警戒・黄＝注記・緑＝平常の色面、枠だけ＝判断なし。
    色面の上の文字は --c-on-*。色だけに頼らないよう、一覧の行頭の札には語を書く（CSS の content）。
-   一覧の行（速報インシデント・主な動き）のモディファイアと語：--danger 危険／--warning 注意／--positive 好転／--info は札なし */
-.incident-item--danger .incident-tag::before, .incident-item--warning .incident-tag::before, .incident-item--positive .incident-tag::before,
-.key-move--danger .key-move-title::before, .key-move--warning .key-move-title::before, .key-move--positive .key-move-title::before {
+   一覧の行（速報インシデント）のモディファイアと語：--danger 危険／--warning 注意／--positive 好転／--info は札なし。
+   「主な動き」（.key-move）は二段表示 PR-A（2026-11-01）で外した */
+.incident-item--danger .incident-tag::before, .incident-item--warning .incident-tag::before, .incident-item--positive .incident-tag::before {
   display:inline-block; margin-right:6px; padding:0 5px; font-size:0.78em; font-weight:700; line-height:1.5; vertical-align:0.08em; letter-spacing:0.04em; }
-.incident-item--danger .incident-tag::before, .key-move--danger .key-move-title::before { content:"危険"; background:var(--c-danger); color:var(--c-on-danger); }
-.incident-item--warning .incident-tag::before, .key-move--warning .key-move-title::before { content:"注意"; background:var(--c-warn); color:var(--c-on-warn); }
-.incident-item--positive .incident-tag::before, .key-move--positive .key-move-title::before { content:"好転"; background:var(--c-ok); color:var(--c-on-ok); }
+.incident-item--danger .incident-tag::before { content:"危険"; background:var(--c-danger); color:var(--c-on-danger); }
+.incident-item--warning .incident-tag::before { content:"注意"; background:var(--c-warn); color:var(--c-on-warn); }
+.incident-item--positive .incident-tag::before { content:"好転"; background:var(--c-ok); color:var(--c-on-ok); }
 
 /* 分類の札（D3 PR 5b・設計書 §2-2）：海上・攻撃・軍事・原油・市場・外交・その他の6つ。状態ではないので枠だけ。
    語は HTML（日次）が書き、A のアイコンは ::before の mask（外交は文字だけ）。アイコンの値は下の印の間を tools/build_icons.py が書き出す */
@@ -189,10 +189,50 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .incident-tag { font-weight:700; color:var(--c-text); }   /* 状態は行頭の札（上の「状態の札」）。文字は色分けしない */
 .incident-body { color:var(--c-text); }
 
+/* 二段表示の開閉（2026-11-01・二段表示 PR-A。設計 hormuz-ops/drafts/design/text-two-stage.md §2・§3-1）
+   押す場所は要点・件名の箱（summary）全体。全文は箱の下に開くので、押す場所は動かない（開くのも閉じるのも同じ所）。
+   30秒カラムは日次の HTML に <details class="glance-more"> を書く。速報インシデントは wrapIncidentDetails() が
+   li.incident-item の中身を <details class="incident-more"> に包む（JS が無ければ今までどおり全文）。
+   札の語は CSS が出す（HTML の札は aria-hidden の空の span）。札の文字は本文の 0.7倍・高さ 26px・左右 9px */
+.glance-more, .incident-more { display:block; }
+.glance-more > summary, .incident-more > summary { list-style:none; cursor:pointer; display:flex; flex-direction:column; gap:6px;
+  min-height:44px; }
+.glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker { display:none; }
+.glance-more > summary:focus-visible, .incident-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
+.more-chip { align-self:flex-end; display:inline-flex; align-items:center; min-height:26px; padding:0 9px;
+  border:1px solid var(--c-text); color:var(--c-text); font-size:0.665rem; font-weight:700; line-height:1; white-space:nowrap; }   /* 本文（--fs-md）の 0.7倍 */
+.glance-more .more-chip::before { content:"続きを読む ▼"; }
+.incident-more .more-chip::before { content:"本文を読む ▼"; }
+.glance-more[open] > summary .more-chip::before, .incident-more[open] > summary .more-chip::before { content:"閉じる ▲"; }
+.glance-more > summary:hover .more-chip, .incident-more > summary:hover .more-chip { background:var(--c-bg); }
+/* 30秒カラムの箱：面の上に地の色の箱。要点は本文の色の太字（キーワードの太字 markKeywords() は掛けない） */
+.glance-more { flex:1 1 auto; min-width:0; background:var(--c-bg); border:1px solid var(--c-rule); }
+.glance-more > summary { padding:8px 10px; }
+.glance-lead { color:var(--c-text); font-size:var(--fs-md); font-weight:700; line-height:1.6; }
+.glance-more > .glance-text { display:block; padding:8px 10px 12px; border-top:1px solid var(--c-rule); }
+/* 「海峡の今」：数字の札4枚（ブレント・WTI・通航・封鎖の累計）＋要点の箱。札は既定2列・601px 以上4列 */
+.glance-body { flex:1 1 auto; min-width:0; display:flex; flex-direction:column; gap:8px; }
+.glance-figs { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; margin:0; }
+.glance-fig { background:var(--c-bg); padding:8px 10px; display:flex; flex-direction:column; gap:2px; min-width:0; }
+.glance-fig-label { font-size:var(--fs-xs); color:var(--c-text-mute); line-height:1.4; }
+.glance-fig-val { line-height:1.1; white-space:nowrap; }
+.glance-fig-num { font-family:var(--f-figure); font-size:1.5rem; font-weight:600; color:var(--c-figure); font-variant-numeric:tabular-nums; }   /* .stat-num と同じ作法 */
+.glance-fig-unit { margin-left:2px; font-size:var(--fs-xs); color:var(--c-text); }
+.glance-fig-sub { font-size:var(--fs-2xs); color:var(--c-text-mute); line-height:1.4; }
+@media (min-width: 601px) {
+  .glance-figs { grid-template-columns:repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .more-chip { font-size:0.616rem; }   /* スマホの本文 0.88rem の 0.7倍（約11px） */
+}
+/* 速報インシデント：件名だけを並べ、押すと本文。札（危険・注意・好転と分類）は件名の頭に残る */
+.incident-more > summary .incident-tag { display:block; line-height:1.6; }
+.incident-more > .incident-body { display:block; margin-top:6px; padding-top:8px; border-top:1px solid var(--c-rule); }
+
 /* GLANCE（30秒カラム・② PR2 2026-09-25）
-   旧・情勢カードは「主な動き」（.key-moves）に吸収した。日次更新は3行サマリーの本文・主な動き3件・
-   ステータスバッジを書き換える。いずれもインライン style を書かず、この型（クラス＋色のモディファイア）で書く。
-   色はモディファイアごとに --c（RGB）を決め、背景・枠・影はその透明度違いで出す。 */
+   日次更新は4行（いま何が・海峡の今・次の焦点・前回の裏取り）の要点と全文、海峡の今の数字の札を書き換える。
+   「主な動き」（.key-moves）とステータスバッジ（.glance-badges）は二段表示 PR-A（2026-11-01）で外した（速報インシデントと重なるため）。
+   いずれもインライン style を書かず、この型（クラス＋色のモディファイア）で書く。 */
 .glance { width:100%; margin:0 0 14px 0; padding:0; }   /* 下は解説インフォグラフィック。上の空白を詰める（2026-10-21。もとは 28px） */
 /* 30秒カラムは入口なので、ハブの入口（案 E4）と同じく面の帯の上に差し色の太い罫。箱の枠・角丸・影はやめた */
 .glance-panel { background:var(--c-surface); border-top:4px solid var(--c-accent); padding:16px 12px; }
@@ -202,6 +242,13 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 /* 「いま何が」「海峡の今」「次の焦点」は段の名前で状態ではないので、3つとも枠だけ（D3 PR 5） */
 .glance-label { border:1px solid var(--c-rule); color:var(--c-text-mute);
   font-size:var(--fs-sm); font-weight:700; padding:2px 8px; white-space:nowrap; }
+/* 4行の箱の左端をそろえる（ラベルの幅を固定。二段表示 PR-A）。
+   スマホはラベルを箱の上に置き、箱を全幅にする（横に置くと要点が4行になったため。2026-11-01・運営者） */
+.glance-summary .glance-label { flex:0 0 7.2em; text-align:center; }
+@media (max-width: 600px) {
+  .glance-summary .glance-row { flex-direction:column; align-items:stretch; gap:4px; }
+  .glance-summary .glance-label { flex:none; align-self:flex-start; }
+}
 .glance-text { color:var(--c-text); font-size:var(--fs-md); line-height:1.6; }
 /* 今後の予定日（JS が /data/upcoming.json から「次の焦点」の直下に足す行。予定が無ければ行ごと出ない）。札は枠だけ */
 .upcoming-item { display:inline-block; margin-right:14px; }
@@ -211,40 +258,12 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .stale-notice { margin:0; padding:8px 16px; background:var(--c-warn); color:var(--c-on-warn); font-weight:700;
   font-size:var(--fs-sm); line-height:1.6; text-align:center; }
 
-/* 主な動き：新しい順に3件。見出し・日付・出典だけを置き、行ごと #incident へリンクする（U3）。
-   状態は件名の頭の札（上の「状態の札」）。左の罫は細い罫で、色分けしない（D3 PR 5） */
-.key-moves { margin-top:4px; padding-top:8px; }
-.key-moves-head { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin-bottom:6px;
-  font-size:var(--fs-sm); font-weight:700; color:var(--c-text); letter-spacing:0.04em; }   /* 面の上なので差し色（3.5:1）は使わない */
-.key-moves-more { margin-left:auto; font-size:var(--fs-xs); font-weight:600; color:var(--c-text-mute); letter-spacing:0; }
-.key-moves-more:hover { color:var(--c-text); }
-.key-moves-list { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; }
-.key-move { max-width:none; }
-.key-move > a { display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:1px; padding:5px 8px;
-  border-left:3px solid var(--c-rule); text-decoration:none; }
-.key-move > a:hover { background:var(--c-bg); }
-.key-move > a:hover .key-move-title { text-decoration:underline; text-underline-offset:.18em; }
-.key-move-date { grid-row:span 2; font-family:var(--f-figure); font-size:var(--fs-sm); font-weight:600; color:var(--c-text-mute);
-  font-variant-numeric:tabular-nums; line-height:1.6; min-width:2.6em; }
-.key-move-title { font-size:var(--fs-base); font-weight:700; color:var(--c-text); line-height:1.55; }
-.key-move-src { font-size:var(--fs-xs); color:var(--c-text-mute); }
-
-/* 30秒カラムの案内（ボタン・ピル）。行き先の案内で状態ではないので、色分けをやめて枠だけにした */
-.glance-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
-.glance-btn { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--c-text);
-  color:var(--c-text); font-size:var(--fs-base); font-weight:700; padding:9px 20px; text-decoration:none; letter-spacing:0.03em; }
+/* 30秒カラムの行き先（ボタン・ピルの1列。二段表示 PR-A で「主な動き」とバッジを外し、glance-links と glance-jump を1列にまとめた）。
+   行き先の案内で状態ではないので、色分けをやめて枠だけにした */
+.glance-jump { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding-top:10px; }
+.glance-btn { display:inline-flex; align-items:center; gap:7px; min-height:32px; border:1px solid var(--c-text);
+  color:var(--c-text); font-size:var(--fs-sm); font-weight:700; padding:5px 14px; text-decoration:none; letter-spacing:0.03em; white-space:nowrap; }
 .glance-btn:hover { background:var(--c-bg); text-decoration:underline; text-underline-offset:.18em; }
-
-/* 状況の札：--danger・--warning・--positive は状態の色面（D3 PR 5）。--info・--neutral は枠だけ */
-.glance-badges { display:flex; flex-wrap:wrap; gap:8px; }
-.status-badge { display:inline-block; border:1px solid var(--c-rule);
-  color:var(--c-text); font-size:var(--fs-xs); padding:3px 10px; margin:3px; }
-.status-badge--danger   { background:var(--c-danger); border-color:var(--c-danger); color:var(--c-on-danger); }
-.status-badge--warning  { background:var(--c-warn);   border-color:var(--c-warn);   color:var(--c-on-warn); }
-.status-badge--positive { background:var(--c-ok);     border-color:var(--c-ok);     color:var(--c-on-ok); }
-
-.glance-jump { display:flex; flex-wrap:wrap; gap:8px; padding-top:14px; border-top:1px solid var(--c-rule); }
-.glance-jump-label { width:100%; font-size:var(--fs-sm); color:var(--c-text-mute); font-weight:600; margin-bottom:2px; }
 .jump-pill { display:inline-flex; align-items:center; gap:5px; border:1px solid var(--c-rule); color:var(--c-text);
   font-size:var(--fs-sm); font-weight:700; padding:5px 14px; text-decoration:none; white-space:nowrap; }
 .jump-pill:hover { border-color:var(--c-text); text-decoration:underline; text-underline-offset:.18em; }
@@ -280,11 +299,11 @@ a.glance-special-head:hover { text-decoration:underline; text-underline-offset:.
 /* 旧インライン style に当たっていた属性セレクタ（[style*="font-size:0.95rem"] 0.88rem・
    div[style*="font-size:0.7"] 0.8rem）の効果をクラスで引き継ぐ */
 @media (max-width: 768px) {
-  .glance-jump-label,
   .report-banner-title { font-size:0.8rem; }
 }
 @media (max-width: 600px) {
   .glance-text,
+  .glance-lead,
   .glance-special-head { font-size:0.88rem; }
 }
 

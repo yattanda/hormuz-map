@@ -1860,7 +1860,8 @@ function renderMilitaryLayer() {
   const label = document.querySelector('.glance-label--next');
   const nextRow = label && label.closest('.glance-row');
   if (!nextRow) return;
-  fetch('/data/upcoming.json?t=' + Date.now())
+  // 10分刻みの値（同じ10分の間は同じ URL。Cloudflare のキャッシュに当たる。GitHub の max-age=600 と同じ遅れ。2026-11-01）
+  fetch('/data/upcoming.json?t=' + Math.floor(Date.now() / 600000))
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(data => {
       const today = Math.floor((Date.now() + 9 * 3600e3) / 864e5);
@@ -3543,7 +3544,8 @@ function applyIncidentFold() {
   list.after(topBtn);
 }
 function loadNewsData() {
-  fetch('/data/news_data.json?t=' + Date.now())
+  // 10分刻みの値（同じ10分の間は同じ URL。Cloudflare のキャッシュに当たる。GitHub の max-age=600 と同じ遅れ。2026-11-01）
+  fetch('/data/news_data.json?t=' + Math.floor(Date.now() / 600000))
     .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(data => {
       // 1つの描画が例外を出しても、ほかの枠は描く（取得はできているので、枠ごとに扱う）

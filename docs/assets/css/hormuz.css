@@ -130,6 +130,17 @@ header {
 header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .badges { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 .badge-item { padding:4px 12px; font-size:0.72rem; font-weight:600; }
+/* PC（1200px 以上）はバッジの列を次の行へ送らず、列の中で折り返す（2026-11-02）。
+   書体（swap）が届く途中でバッジの幅が 634〜703px と変わり、約 1250〜1350px で列が次の行へ出入りして
+   ヘッダーが 40px 伸び縮みし、下のページ全体がずれていた（desktop の CLS 0.1〜0.44）。
+   バッジは2段でも約 70px で図解のボタン（74px）より低いので、ヘッダーの高さは変わらない。
+   1199px 以下はバッジの列に使える幅が狭く、読み込み中に3段 → 2段と組み替わるので、従来どおり次の行に送る
+   （その幅ではいつも次の行で、高さは変わらない） */
+@media (min-width:1200px){
+  header { flex-wrap:nowrap; }
+  header h1, header .infographic-cta { flex-shrink:0; }
+  .badges { flex:0 1 auto; min-width:0; justify-content:flex-end; }
+}
 /* 警戒レベル（2026-09-25 見直し）：点滅と赤い面をやめ、赤は先頭の点だけにする。
    中身は「警戒レベル：最高」の一語だけ。情勢の要約は30秒カラムに書く（ここに括弧書きで足さない） */
 .badge-alert { display:inline-flex; align-items:center; gap:6px; background:var(--c-surface); color:var(--c-text); }

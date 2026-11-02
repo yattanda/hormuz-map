@@ -138,12 +138,27 @@ PAT_ROUTES = re.compile(
 PAT_UPDATED = re.compile(r'(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*日本時間JST')
 
 # 全ルート現況サマリーの表と、行ごとの本文中の日付表記（鮮度チェック用）
-PAT_ROUTE_TABLE = re.compile(r'<table class="rtable">.*?</table>', re.S)
-PAT_ROUTE_ROW = re.compile(r'<tr\b[^>]*>.*?</tr>', re.S)
+# 二段表示 PR-B1（2026-11-02）で <table> をやめ、各ルートを <details class="route-row"> にした。
+# 行の中に経緯の <details> が入れ子になるので、表は「ROUTE TABLE」の印から「その他の検討中ルート」の印の手前まで、行は開始タグで区切る。
+# 終わりはコメントの印にする（日本向けの注記のタグの書き方に左右されないように）
+PAT_ROUTE_TABLE = re.compile(r'<!-- ROUTE TABLE -->.*?(?=<!-- ▼ その他の検討中ルート)', re.S)
 PAT_ROUTE_ROW_ID = re.compile(r'id="jf-td-(\w+)"')
 PAT_ROUTE_ROW_MD = re.compile(r'(\d{1,2})/(\d{1,2})')
 PAT_ROUTE_LATEST = re.compile(r'<p class="route-latest">.*?<time datetime="(\d{4}-\d{2}-\d{2})', re.S)
 STALE_ROUTE_DAYS = 10  # この日数より新しい日付表記が本文中に無ければ WARN
+ROUTE_ITEMS = ("old", "b", "a", "c_us", "c_gl", "d")   # 行の data-item（GA4 の item。jf-td-* の id の小文字）
+PILL_MAX = 20          # 状態の札の字数（目安は15字まで。超えたら WARN）
+
+
+def route_rows(html: str) -> list[str]:
+    """ルート表の各行（<details class="route-row"> の開始タグから次の行・脚注・日本向けの注記の手前まで）の HTML。
+    コメントの中の型の例は行に数えない"""
+    t = PAT_ROUTE_TABLE.search(html)
+    if not t:
+        return []
+    body = re.sub(r"<!--.*?-->", "", t.group(0), flags=re.S)
+    return re.findall(r'<details class="route-row".*?(?=<details class="route-row"|<div class="rtable-foot"|<details class="[^"]*jf-note|\Z)',
+                      body, re.S)
 
 # sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
 PAT_SITEMAP_HUB = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
@@ -339,8 +354,7 @@ def check_route_freshness(html: str, base: str) -> None:
     そこで各行の本文中に出てくる M/D 形式の日付表記を拾い、最新のものが基準日から
     どれだけ離れているかを見る。あくまで見出し語による推定なので、NG ではなく WARN に留める。
     """
-    table_m = PAT_ROUTE_TABLE.search(html)
-    if not table_m:
+    if not PAT_ROUTE_TABLE.search(html):
         warn("全ルート現況サマリーの表を検出できませんでした（構造が変わった可能性）")
         return
 
@@ -349,7 +363,7 @@ def check_route_freshness(html: str, base: str) -> None:
     except ValueError:
         return  # 基準日自体の異常は check_base_date 側で NG 済み
 
-    rows = PAT_ROUTE_ROW.findall(table_m.group(0))
+    rows = route_rows(html)
     seen_any_row = False
     for row_html in rows:
         id_m = PAT_ROUTE_ROW_ID.search(row_html)
@@ -908,12 +922,15 @@ def check_types(html: str, base: str) -> None:
         ok(f"ヘッダーの警戒レベル「{a.group(1)}」")
     t = PAT_ROUTE_TABLE.search(html)
     if t:
-        # <col> の幅だけは style のまま残す（html-safe-edit「colgroup を触らない」）
-        n_style = len(re.findall(r'<(?!col\b)\w+[^>]*\sstyle="', t.group(0)))
+        # 二段表示 PR-B1（2026-11-02）で <colgroup> の幅の例外も無くなった
+        n_style = len(re.findall(r'<\w+[^>]*\sstyle="', t.group(0)))
         if n_style:
             warn(f"ルート表にインライン style が {n_style}箇所あります（型はクラス。daily-site-update「ルート表の型」）")
         else:
-            ok("ルート表にインライン style なし（<col> を除く）")
+            ok("ルート表にインライン style なし")
+    if '<table class="rtable">' in html:
+        warn("ルート表に <table class=\"rtable\"> があります。2026-11-02 に各ルート <details class=\"route-row\"> の型にした"
+             "（daily-site-update「ルート表の型」）")
     if 'class="sec-lead"' in html[html.find('全ルート現況サマリー'):html.find('<!-- ROUTE TABLE -->')]:
         warn("全ルート現況サマリーの見出しの下にリード文（p.sec-lead）があります。② PR3 で廃止した。各行の「最新」に書く")
     m = PAT_INCIDENT_LIST.search(html)
@@ -1215,6 +1232,69 @@ def md_to_date(mo: int, dd: int, base: date) -> date | None:
     return d if d <= base else date(base.year - 1, mo, dd)
 
 
+def lead_notes(lp: str, fp: str) -> list[str]:
+    """要点（タグと空白を除いた文 lp）と全文（fp）から、WARN に出す点。30秒カラムとルート表で同じ判定"""
+    n = len(lp)
+    notes = []
+    if n < LEAD_MIN or n > LEAD_MAX:
+        notes.append(f"{n}字（目安 40〜50字）")
+    if lp.endswith(("…", "...", "‥")):
+        notes.append("「…」で終わる（文を切らずに1文で書き下ろす）")
+    if fp and (fp.startswith(lp.rstrip("。")) or lp.rstrip("。") in fp
+               or longest_common(lp, fp) >= LEAD_CLIP_RATIO * n):
+        notes.append("全文の切り抜きの疑い（要点は全文を写さずに書き下ろす）")
+    return notes
+
+
+def check_route_leads(html: str) -> None:
+    """ルート表の各行の要点と状態の札（2026-11-02・二段表示 PR-B1。設計 text-two-stage.md §4-1 問い2・問い4）。
+
+    要点（<summary> の span.route-lead）が無い・空なら NG（閉じた行に押す場所の名前が無くなる）。
+    字数・切り抜き（「最新」と「要点」の本文と比べる）・「…」終わり・<details open>・札の字数は WARN。
+    """
+    rows = route_rows(html)
+    if not rows:
+        # 行が見つからないと要点の有無を確かめられない。黙って通さず NG にする（30秒カラムの要点と同じ）
+        ng("全ルート現況サマリーの行（details.route-row）を検出できず、要点を確認できません（構造が変わった可能性。"
+           "daily-site-update「ルート表の型」）")
+        return
+    items = [(re.search(r'data-item="([^"]*)"', r[:200]) or [None, ""])[1] for r in rows]
+    if tuple(items) != ROUTE_ITEMS:
+        warn(f"ルート表の行の data-item が型と違います：{'・'.join(items)}（型は {'・'.join(ROUTE_ITEMS)} の順）")
+    if any(re.match(r'<details class="route-row"[^>]*\sopen\b', r) for r in rows):
+        warn("ルート表に <details class=\"route-row\" open> があります。閉じた形を見せるので open を書かない")
+    missing, pills = [], []
+    for item, row in zip(items, rows):
+        label = f"ルート表「{item}」"
+        s = re.search(r'<summary>(.*?)</summary>', row, re.S)
+        summary = s.group(1) if s else ""
+        lm = re.search(r'<span class="route-lead">(.*?)</span>', summary, re.S)
+        lp = plain(lm.group(1)) if lm else ""
+        if not lp:
+            missing.append(item)
+            continue
+        full = "".join(re.findall(r'<p class="route-(?:latest|summary)">(.*?)</p>', row, re.S))
+        notes = lead_notes(lp, plain(re.sub(r'<small class="route-src">.*?</small>', "", full, flags=re.S)))
+        if notes:
+            warn(f"{label}の要点：" + "・".join(notes))
+        else:
+            ok(f"{label}の要点 {len(lp)}字")
+        pm = re.search(r'<span class="pill pill-\w">(.*?)</span>', summary, re.S)
+        if not pm:
+            pills.append(f"{item}（札を検出できず）")
+        elif len(plain(pm.group(1))) > PILL_MAX:
+            pills.append(f"{item}「{plain(pm.group(1))[:12]}…」{len(plain(pm.group(1)))}字")
+    if missing:
+        ng(f"ルート表の要点（summary の span.route-lead）がありません・空です：{'・'.join(missing)}。"
+           "daily-site-update「ルート表の型」で要点を書く")
+    else:
+        ok(f"ルート表の {len(rows)}行すべてに要点あり")
+    if pills:
+        warn(f"ルート表の状態の札（目安15字まで・{PILL_MAX}字超で WARN）：{'・'.join(pills)}。細部は要点と開いた中へ")
+    else:
+        ok(f"ルート表の状態の札はどれも {PILL_MAX}字以内")
+
+
 def check_glance_leads(html: str, base: str) -> None:
     """30秒カラムの4行の要点と、海峡の今の数字の札。
 
@@ -1249,19 +1329,11 @@ def check_glance_leads(html: str, base: str) -> None:
             else:
                 ok(f"30秒カラム「{label}」の要点は決まった形（未確認なし）")
             continue
-        n = len(lp)
-        notes = []
-        if n < LEAD_MIN or n > LEAD_MAX:
-            notes.append(f"{n}字（目安 40〜50字）")
-        if lp.endswith(("…", "...", "‥")):
-            notes.append("「…」で終わる（文を切らずに1文で書き下ろす）")
-        if fp and (fp.startswith(lp.rstrip("。")) or lp.rstrip("。") in fp
-                   or longest_common(lp, fp) >= LEAD_CLIP_RATIO * n):
-            notes.append("全文の切り抜きの疑い（要点は全文を写さずに書き下ろす）")
+        notes = lead_notes(lp, fp)
         if notes:
             warn(f"30秒カラム「{label}」の要点：" + "・".join(notes))
         else:
-            ok(f"30秒カラム「{label}」の要点 {n}字")
+            ok(f"30秒カラム「{label}」の要点 {len(lp)}字")
     if missing:
         ng(f"30秒カラムの要点（summary の span.glance-lead）がありません・空です：{'・'.join(missing)}。"
            "daily-site-update「30秒カラムの型」で要点を書く")
@@ -1413,6 +1485,7 @@ def check_categories(html: str, news: dict | None) -> None:
     places = (("速報インシデント", r'<span class="incident-tag">(?:<span class="cat [^"]+">[^<]*</span>)?(.*?)</span>'),
               ("ルート表の route-tag", r'<strong class="route-tag[^"]*">(.*?)</strong>'),
               ("30秒カラムの要点", r'<span class="glance-lead">(.*?)</span>'),
+              ("ルート表の要点", r'<span class="route-lead">(.*?)</span>'),
               ("30秒カラム", r'<span class="glance-text">(.*?)</span>'))
     for label, pat in places:
         hits = [x[:20].strip() for x in re.findall(pat, html, re.S) if PAT_EMOJI_HEAD.match(x)]
@@ -1427,7 +1500,7 @@ def check_categories(html: str, news: dict | None) -> None:
     if bad:
         ng(f"頭に絵文字があります: {'・'.join(bad)}。分類は札（<span class=\"cat cat-sea\">海上</span> など）の語で書き、絵文字は書かない")
     else:
-        ok("日次が書く所の頭に絵文字なし（速報・route-tag・30秒カラムの要点と全文・ティッカー）")
+        ok("日次が書く所の頭に絵文字なし（速報・route-tag・ルート表の要点・30秒カラムの要点と全文・ティッカー）")
     # 速報インシデントのタグは、どれも頭に札が要る（無いもの・タグが1つも無いのも NG）
     tags = re.findall(r'<span class="incident-tag">(.{0,40})', html)
     missing = [re.sub(r"<[^>]+>", "", x)[:20] for x in tags if not x.startswith('<span class="cat cat-')]
@@ -1637,7 +1710,7 @@ def check_estimate_labels(html: str) -> None:
     # 個数ではなく場所ごとに見る（ほかの場所に「推定」を足した日に NG にしない）
     if not re.search(r'<span class="jf-th-sub">[^\n]*?<span class="label-estimate">推定</span></span>', html):
         bad.append("日本向けフローの列見出しの「推定」")
-    if not re.search(r'<div class="jf-col jf-note">\s*<span class="label-estimate">推定</span>', html):
+    if not re.search(r'<details class="jf-col jf-note"[^>]*>\s*<summary><span class="jf-note-lead"><span class="label-estimate">推定</span>', html):
         bad.append("日本向けフローの注記の「推定」")
     if bad:
         ng(f"推定のラベルが型と違います: {'・'.join(bad)}")
@@ -1995,6 +2068,7 @@ def main() -> int:
     check_verify_row(html)
     check_text_lengths(html)
     check_glance_leads(html, base)
+    check_route_leads(html)
 
     check_news(news, base)
     check_categories(html, news)

@@ -40,7 +40,7 @@
 <link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
-<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261102"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード -->
+<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261102b"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表） -->
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
 {
@@ -984,48 +984,25 @@ document.addEventListener('keydown', function(e) {
     <span class="label-analysis">分析</span><strong>日本向けの現実的な優先順位：</strong>短中期はルートA・B、中長期はルートC。ルートDは例外的・政治依存であり恒常化は困難。
   </div>
   <!-- ROUTE TABLE -->
-  <div class="rtable-wrap">
-    <table class="rtable">
-      <colgroup>
-        <col style="width:12px"> <!-- 状態の色面（「状態」の列の札と同じ色。hormuz.css の :has()） -->
-        <col style="width:11%">  <!-- ルート（2026-10-21：現況詳細を広げるため 14% → 11%。以下同じ。幅は hormuz.css の nth-child とそろえる） -->
-        <col style="width:10%">  <!-- 輸送能力（13% → 10%） -->
-        <col style="width:8%">  <!-- 日本向け（11% → 8%） -->
-        <col style="width:49%">  <!-- 現況詳細（29% → 49%。合計 100%） -->
-        <col style="width:12%">  <!-- 主なリスク（18% → 12%） -->
-        <col style="width:10%">  <!-- 状態（15% → 10%） -->
-      </colgroup>
-      <thead>
-        <tr>
-          <th class="rtable-th-icon"></th>
-          <th>ルート</th>
-          <th>輸送能力</th>
-          <th class="jf-col jf-th">
-            日本向け<br>
-            <span class="jf-th-sub">万BPD・隻/週<br><span class="label-estimate">推定</span></span>
-          </th>
-          <th>現況詳細</th>
-          <th>主なリスク</th>
-          <th class="rtable-th-state">状態</th>
-        </tr>
-      </thead>
-      <tbody>
+  <!-- 二段表示 PR-B1（2026-11-02）：各ルートは details.route-row。閉じた形（summary）に 色の帯・ルート・日本向け・輸送能力1行・要点・状態の札、
+       開くと 最新・要点・経緯（左）と 主なリスク・輸送能力の補足（右）。601px 以上は CSS の grid で表の見た目、600px 以下はカード -->
+  <div class="rtable">
+    <div class="rtable-head" aria-hidden="true">
+      <span></span><span>ルート</span><span class="jf-th">日本向け<span class="jf-th-sub">万BPD・隻/週 <span class="label-estimate">推定</span></span></span><span>輸送能力</span><span>いま（押すと詳細）</span><span class="rtable-th-state">状態</span>
+    </div>
 
-        <tr class="rx">
-          <td></td>
-          <td>
-            <strong class="route-name t-danger">旧ルート</strong><br>
-            <small class="t-mute">ホルムズ海峡本線</small>
-          </td>
-          <td class="t-danger">
-            日量 約2,000万bbl<br>
-            <small>世界消費の約20%</small>
-          </td>
-          <td id="jf-td-old" class="jf-col jf-td t-danger">
-            <strong id="jf-old-bpd">読み込み中…</strong><br>
-            <small id="jf-old-tanker" class="t-mute"></small>
-          </td>
-          <td class="route-detail">
+    <details class="route-row" data-item="old">
+      <summary>
+        <span class="route-strip" aria-hidden="true"></span>
+        <span class="route-cell route-cell--name"><strong class="route-name t-danger">旧ルート</strong><small class="route-sub">ホルムズ海峡本線</small></span>
+        <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-old" class="jf-td"><strong id="jf-old-bpd">読み込み中…</strong><br><small id="jf-old-tanker" class="t-mute"></small></span></span>
+        <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">日量 約2,000万bbl</span></span>
+        <span class="route-cell route-cell--lead"><span class="route-lead">海峡の中で船が飛翔体を受けたとの警報が続き、イランはタンカー2隻が機雷で爆発したと主張した。</span><span class="more-chip" aria-hidden="true"></span></span>
+        <span class="route-cell route-cell--state"><span class="pill pill-o">通航制限下・回復途上</span></span>
+      </summary>
+      <div class="route-detail">
+        <div class="route-detail-main">
+
             <p class="route-latest"><strong class="route-tag t-danger">最新 <time datetime="2026-11-02">11/2 07:20JST</time> 追記：</strong>UKMTO公式の警報191（11/2 03:15 JST発行）は、海峡内で商船の船長がMaydayを中継し、別の船が正体不明の飛翔体を受けたと伝える（公式の本文に発生時刻・船名・被害・攻撃主体の記載なし。Arab Newsも同内容）。IRGC海軍は11/1、タンカー2隻が「無許可のルート」で機雷に触れて爆発したと主張した（Reuters。独立した確認なし。警報191との関係は不明）。カタール通信はLNG運搬船Al-Mayedaが10/30に攻撃を受けたと発表した（Arab News。乗組員にけがなし）。
           <small class="route-src">出典：UKMTO公式（11/2 07:20JST取得）・Arab News（11/1）・Reuters（11/1）</small></p>
             <p class="route-summary"><strong class="t-warning">商業航行は回復途上。</strong>
@@ -1113,28 +1090,27 @@ document.addEventListener('keydown', function(e) {
                 原油↓10%・Dow +1,020pt急反応。タンカー足止め41隻は解放待ち（4/28夜 出光丸通過・1隻減）。
                 <small class="route-src">出典：Reuters・AP通信・9 News Australia（4/18）</small></p>
             </details>
-          </td>
-          <td>米軍‑IRGC偶発衝突リスク。米海軍による拿捕・機雷除去作戦継続中。イラン「誤れば"死の渦"」と警告。</td>
-          <td><span class="pill pill-o">イランによる通航制限下・回復途上</span></td>
-        </tr>
+        </div>
+        <div class="route-detail-side">
+          <p class="route-risk"><span class="route-item-h">主なリスク</span>米軍‑IRGC偶発衝突リスク。米海軍による拿捕・機雷除去作戦継続中。イラン「誤れば"死の渦"」と警告。</p>
+          <p class="route-cap-more"><span class="route-item-h">輸送能力</span>日量 約2,000万bbl（世界消費の約20%）。</p>
+          <p class="route-state-more"><span class="route-item-h">状態</span>イランによる通航制限下・回復途上。</p>
+        </div>
+      </div>
+    </details>
 
-        <tr class="rb">
-          <td></td>
-          <td>
-            <strong class="route-name t-danger">ルートB</strong><br>
-            <small class="t-mute">ヤンブー港経由<br>（サウジ東西PL）</small>
-          </td>
-          <td class="t-warning">
-            日量 700万bpd（輸送能力）<br>
-            <small class="t-danger">9/10 再攻撃・稼働停止</small><br>
-            <small class="t-danger">10/1 ヤンブー港に飛翔体・火災（主体不明）</small><br>
-            <small class="t-warning">9/22に低速で再開・全面復旧は数週間の見方（未検証）</small>
-          </td>
-          <td id="jf-td-B" class="jf-col jf-td t-danger">
-            <strong id="jf-B-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
-            <small id="jf-B-tanker" class="t-mute"></small>
-          </td>
-          <td class="route-detail">
+    <details class="route-row" data-item="b">
+      <summary>
+        <span class="route-strip" aria-hidden="true"></span>
+        <span class="route-cell route-cell--name"><strong class="route-name t-danger">ルートB</strong><small class="route-sub">ヤンブー港経由（サウジ東西PL）</small></span>
+        <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-B" class="jf-td"><strong id="jf-B-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br><small id="jf-B-tanker" class="t-mute"></small></span></span>
+        <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">日量 700万bpd</span></span>
+        <span class="route-cell route-cell--lead"><span class="route-lead">東西パイプラインは9月の攻撃のあと能力の約半分で動いており、10/29時点で新しい被害の報道はない。</span><span class="more-chip" aria-hidden="true"></span></span>
+        <span class="route-cell route-cell--state"><span class="pill pill-y">能力の約半分まで復旧</span></span>
+      </summary>
+      <div class="route-detail">
+        <div class="route-detail-main">
+
             <p class="route-latest"><strong class="route-tag t-neutral">最新 <time datetime="2026-10-29">10/29 JST</time> 再確認：</strong>ヤンブー港・東西パイプラインの稼働や被害についての新しい報道は、10/29時点で主要媒体で確認できない。バブエルマンデブ周辺・タイズの戦闘の続報も確認できない（フーシ派のラスタヌラ製油所攻撃の主張はサウジ東部州の施設の話で、ルートBの施設ではない）。
           <small class="route-src">確認方法：主要報道の検索（10/29）</small></p>
             <p class="route-summary"><strong class="t-danger">9/10（木）東西PL、リヤド州・マディーナ州でイラク発ドローンによる複数攻撃を受け操業停止。</strong>
@@ -1194,25 +1170,26 @@ document.addEventListener('keydown', function(e) {
                 二重チョークポイント問題（ヤンブー発アジア向けはバベルマンデブ海峡通過必須、日量200〜250万BPD分はSUMEDパイプラインで迂回可能）は継続課題。
                 <small class="route-src">出典：Reuters・Bloomberg・Windward・OilPrice・サウジエネルギー省（4/12〜5/8）</small></p>
             </details>
-          </td>
-          <td>復旧遅延・再攻撃による供給逼迫リスク。フーシ派による紅海・バベルマンデブ攻撃リスク。ルートA機能不全時の負荷集中リスク。</td>
-          <td><span class="pill pill-y">日量350万バレルまで復旧（能力の約半分・9/28）・全面復旧は約6週間の見通し</span></td>
-        </tr>
+        </div>
+        <div class="route-detail-side">
+          <p class="route-risk"><span class="route-item-h">主なリスク</span>復旧遅延・再攻撃による供給逼迫リスク。フーシ派による紅海・バベルマンデブ攻撃リスク。ルートA機能不全時の負荷集中リスク。</p>
+          <p class="route-cap-more"><span class="route-item-h">輸送能力</span>日量 700万bpd（輸送能力）。9/10 再攻撃・稼働停止。10/1 ヤンブー港に飛翔体・火災（主体不明）。9/22に低速で再開・全面復旧は数週間の見方（未検証）。日量350万バレルまで復旧（能力の約半分・9/28）・全面復旧は約6週間の見通し。</p>
+        </div>
+      </div>
+    </details>
 
-        <tr class="ra">
-          <td></td>
-          <td>
-            <strong class="route-name t-blue">ルートA</strong><br>
-            <small class="t-mute">フジャイラ港経由</small>
-          </td>
-          <td class="t-blue">
-            日量 約150〜180万bbl
-          </td>
-          <td id="jf-td-A" class="jf-col jf-td t-blue">
-            <strong id="jf-A-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
-            <small id="jf-A-tanker" class="t-mute"></small>
-          </td>
-          <td class="route-detail">
+    <details class="route-row" data-item="a">
+      <summary>
+        <span class="route-strip" aria-hidden="true"></span>
+        <span class="route-cell route-cell--name"><strong class="route-name t-blue">ルートA</strong><small class="route-sub">フジャイラ港経由</small></span>
+        <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-A" class="jf-td"><strong id="jf-A-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br><small id="jf-A-tanker" class="t-mute"></small></span></span>
+        <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">日量 約150〜180万bbl</span></span>
+        <span class="route-cell route-cell--lead"><span class="route-lead">フジャイラ経由のUAEの輸出は6月に戦前を上回り、10/29時点で新しい攻撃や停止の報道はない。</span><span class="more-chip" aria-hidden="true"></span></span>
+        <span class="route-cell route-cell--state"><span class="pill pill-y">記録的水準まで回復</span></span>
+      </summary>
+      <div class="route-detail">
+        <div class="route-detail-main">
+
             <p class="route-latest"><strong class="route-tag t-neutral">最新 <time datetime="2026-10-29">10/29 JST</time> 再確認：</strong>ADCOPパイプライン・フジャイラ港の10/29時点の新しい稼働・被害の報道は、主要媒体で確認できない。
               <small class="route-src">確認方法：主要報道の検索（10/29）</small></p>
             <p class="route-summary">ADCOPパイプライン→フジャイラ→ムンバイ沖積み替え→日本。<br>
@@ -1236,26 +1213,26 @@ document.addEventListener('keydown', function(e) {
                 UAE産原油輸出量は一時58%減（日量135万BPD）に急落、100隻超が錨泊滞留。革命防衛隊海軍がフジャイラを「イラン管理域」に宣言。
                 <small class="route-src">出典：Bloomberg・Reuters・Windward・Kanoo Shipping・衛星画像分析（5/4〜5/8）</small></p>
             </details>
-          </td>
-          <td>再攻撃リスクは残存。イランによるADCOP終端部への攻撃実績あり。周辺海域でのタンカー個別攻撃は継続的に発生。</td>
-          <td><span class="pill pill-y">記録的水準まで回復（直近の新規動向は未確認）</span></td>
-        </tr>
+        </div>
+        <div class="route-detail-side">
+          <p class="route-risk"><span class="route-item-h">主なリスク</span>再攻撃リスクは残存。イランによるADCOP終端部への攻撃実績あり。周辺海域でのタンカー個別攻撃は継続的に発生。</p>
+          <p class="route-state-more"><span class="route-item-h">状態</span>記録的水準まで回復（直近の新規動向は未確認）。</p>
+        </div>
+      </div>
+    </details>
 
-        <tr class="rc rc-us">
-          <td></td>
-          <td>
-            <strong class="route-name t-violet">ルートC（米国）</strong><br>
-            <small class="t-mute">米国直輸入<br>（アラスカ・メキシコ湾岸）</small>
-          </td>
-          <td class="t-violet">
-            増量中<br>
-            <small>アラスカから太平洋直行 約10〜15日（距離からの目安）<br>メキシコ湾岸からパナマ運河経由 約35日</small>
-          </td>
-          <td id="jf-td-C_US" class="jf-col jf-td t-violet">
-            <strong id="jf-C_US-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
-            <small id="jf-C_US-tanker" class="t-mute"></small>
-          </td>
-          <td class="route-detail">
+    <details class="route-row" data-item="c_us">
+      <summary>
+        <span class="route-strip" aria-hidden="true"></span>
+        <span class="route-cell route-cell--name"><strong class="route-name t-violet">ルートC（米国）</strong><small class="route-sub">米国直輸入（アラスカ・メキシコ湾岸）</small></span>
+        <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-C_US" class="jf-td"><strong id="jf-C_US-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br><small id="jf-C_US-tanker" class="t-mute"></small></span></span>
+        <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">増量中</span></span>
+        <span class="route-cell route-cell--lead"><span class="route-lead">アラスカとメキシコ湾岸からの対日輸入は増えているが、10/25時点で新しい報道は確認できない。</span><span class="more-chip" aria-hidden="true"></span></span>
+        <span class="route-cell route-cell--state"><span class="pill pill-p">増加継続中</span></span>
+      </summary>
+      <div class="route-detail">
+        <div class="route-detail-main">
+
             <p class="route-latest"><strong class="route-tag t-neutral">最新 <time datetime="2026-10-25">10/25 JST</time> 再確認：</strong>米国・メキシコ産原油の対日輸送について、10/25時点で新しい報道は主要媒体で確認できない。
               <small class="route-src">確認方法：主要報道の検索（10/25）</small></p>
             <p class="route-summary">アラスカ（ANS）からの太平洋直輸と、メキシコ湾岸からのパナマ運河経由。
@@ -1272,26 +1249,26 @@ document.addEventListener('keydown', function(e) {
               <p class="route-entry"><strong class="route-tag t-neutral"><time datetime="2026-09-26">9/26 JST</time> 再確認：</strong>8月の米国からの原油輸入額は4,005億円で、前年同月の11倍超（財務省の貿易統計速報）。数量ベースで対日輸入の過半を米国産で賄えているかは、国別の数量が未公表のため確認できていない。
               <small class="route-src">出典：ジェトロ ビジネス短信（9/18・財務省 2026年8月分速報）</small></p>
             </details>
-          </td>
-          <td>港湾含水制限・ANS品質適合コスト・価格プレミアム懸念。</td>
-          <td><span class="pill pill-p">増加継続中</span></td>
-        </tr>
+        </div>
+        <div class="route-detail-side">
+          <p class="route-risk"><span class="route-item-h">主なリスク</span>港湾含水制限・ANS品質適合コスト・価格プレミアム懸念。</p>
+          <p class="route-cap-more"><span class="route-item-h">輸送能力</span>アラスカから太平洋直行 約10〜15日（距離からの目安）。メキシコ湾岸からパナマ運河経由 約35日。</p>
+        </div>
+      </div>
+    </details>
 
-        <tr class="rc rc-gl">
-          <td></td>
-          <td>
-            <strong class="route-name t-orange">ルートC（南半球ほか）</strong><br>
-            <small class="t-mute">南半球経由<br>（ブラジル・西アフリカ）</small>
-          </td>
-          <td class="t-orange">
-            交渉段階<br>
-            <small>+40〜45日所要</small>
-          </td>
-          <td id="jf-td-C_GL" class="jf-col jf-td t-orange">
-            <strong id="jf-C_GL-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br>
-            <small id="jf-C_GL-tanker" class="t-mute"></small>
-          </td>
-          <td class="route-detail">
+    <details class="route-row" data-item="c_gl">
+      <summary>
+        <span class="route-strip" aria-hidden="true"></span>
+        <span class="route-cell route-cell--name"><strong class="route-name t-orange">ルートC（南半球ほか）</strong><small class="route-sub">南半球経由（ブラジル・西アフリカ）</small></span>
+        <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-C_GL" class="jf-td"><strong id="jf-C_GL-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br><small id="jf-C_GL-tanker" class="t-mute"></small></span></span>
+        <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">交渉段階</span></span>
+        <span class="route-cell route-cell--lead"><span class="route-lead">ブラジル・西アフリカ産は日本向けの調達の実績がまだ無く、10/25時点でも具体的な進展はない。</span><span class="more-chip" aria-hidden="true"></span></span>
+        <span class="route-cell route-cell--state"><span class="pill pill-p">実績なし・交渉段階</span></span>
+      </summary>
+      <div class="route-detail">
+        <div class="route-detail-main">
+
             <p class="route-latest"><strong class="route-tag t-neutral">最新 <time datetime="2026-10-25">10/25 JST</time> 再確認：</strong>ブラジル・西アフリカ産原油の対日輸送について、10/25時点で新しい報道は主要媒体で確認できない。
               <small class="route-src">確認方法：主要報道の検索（10/25）</small></p>
             <p class="route-summary">ブラジル（Tupi・Buzios）・ナイジェリア・アンゴラ産。
@@ -1307,26 +1284,26 @@ document.addEventListener('keydown', function(e) {
               <p class="route-entry"><strong class="route-tag t-neutral"><time datetime="2026-09-26">9/26 JST</time> 再確認：</strong>国別の輸入統計は9/26時点でも7月分（8/28公開の速報）が最新で、8月分の国別内訳は未公表。ブラジル・西アフリカからの調達について、5/18の外相・経産相会談以降の新たな政府間の動きは報道で確認できていない。
               <small class="route-src">出典：e-Stat 税関別概況品別国別表（2026年7月・輸入9桁速報）</small></p>
             </details>
-          </td>
-          <td>輸送期間大幅増・中国との調達競合・精製品質適合コスト。</td>
-          <td><span class="pill pill-p">実績なし・交渉段階</span></td>
-        </tr>
+        </div>
+        <div class="route-detail-side">
+          <p class="route-risk"><span class="route-item-h">主なリスク</span>輸送期間大幅増・中国との調達競合・精製品質適合コスト。</p>
+          <p class="route-cap-more"><span class="route-item-h">輸送能力</span>所要 +40〜45日。</p>
+        </div>
+      </div>
+    </details>
 
-        <tr class="rd">
-          <td></td>
-          <td>
-            <strong class="route-name t-orange">ルートD</strong><br>
-            <small class="t-mute">イラン通航料払い通過</small>
-          </td>
-          <td class="t-orange">
-            実質停止<br>
-            <small>拿捕リスク大</small>
-          </td>
-          <td id="jf-td-D" class="jf-col jf-td t-orange">
-            <strong id="jf-D-bpd">読み込み中…</strong><br>
-            <small id="jf-D-tanker" class="t-mute"></small>
-          </td>
-          <td class="route-detail">
+    <details class="route-row" data-item="d">
+      <summary>
+        <span class="route-strip" aria-hidden="true"></span>
+        <span class="route-cell route-cell--name"><strong class="route-name t-orange">ルートD</strong><small class="route-sub">イラン通航料払い通過</small></span>
+        <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-D" class="jf-td"><strong id="jf-D-bpd">読み込み中…</strong><br><small id="jf-D-tanker" class="t-mute"></small></span></span>
+        <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">実質停止</span></span>
+        <span class="route-cell route-cell--lead"><span class="route-lead">覚書の破綻で通航料を払っての通過は事実上止まっており、10/25時点で新しい報道は確認できない。</span><span class="more-chip" aria-hidden="true"></span></span>
+        <span class="route-cell route-cell--state"><span class="pill pill-r">事実上停止（覚書破綻）</span></span>
+      </summary>
+      <div class="route-detail">
+        <div class="route-detail-main">
+
             <p class="route-latest"><strong class="route-tag t-neutral">最新 <time datetime="2026-10-25">10/25 JST</time> 再確認：</strong>イランの通航料について、10/25時点で新しい報道は主要媒体で確認できない（検索で出る最新は5〜6月の報道）。
               <small class="route-src">確認方法：主要報道の検索（10/25）</small></p>
             <p class="route-summary">6/17、トランプ大統領とイランのペゼシュキアン大統領が「イスラマバード覚書」（14項目の枠組み合意）に署名——ホルムズ海峡の商業通航を60日間無料開放する内容を含んでいた。
@@ -1344,31 +1321,30 @@ document.addEventListener('keydown', function(e) {
                 CENTCOM封鎖発動により実質機能停止。トランプがイランへの通航料支払い済み船舶も拿捕対象と明言。インド・パキスタン等との独立通航協定も事実上無効化リスク。
                 <small class="route-src">出典：National Review・JNS.org（4/12）</small></p>
             </details>
-          </td>
-          <td>米海軍による拿捕リスク大。覚書破綻により通航料払いの法的根拠・安全性は不透明。現時点での利用は極めて危険。</td>
-          <td><span class="pill pill-r">事実上停止（覚書破綻・再閉鎖）</span></td>
-        </tr>
+        </div>
+        <div class="route-detail-side">
+          <p class="route-risk"><span class="route-item-h">主なリスク</span>米海軍による拿捕リスク大。覚書破綻により通航料払いの法的根拠・安全性は不透明。現時点での利用は極めて危険。</p>
+          <p class="route-cap-more"><span class="route-item-h">輸送能力</span>拿捕リスク大。</p>
+        </div>
+      </div>
+    </details>
 
-        <tr class="rtable-foot">
-          <td colspan="7">
-            「現況詳細」は各行の「最新」に確かめた日付を書いています（見出しの日付は表全体を見直した日時）。「主なリスク」「状態」の列は変化があったときに書き換えます。「日本向け（万BPD・隻/週）」列は別の基準日です（下の注記を参照）。
+    <div class="rtable-foot">
+      <p>各ルートの開いた中の「最新」に、確かめた日付を書いています（見出しの日付は表全体を見直した日時）。「主なリスク」「状態」は変化があったときに書き換えます。「日本向け（万BPD・隻/週）」は別の基準日です（下の注記を参照）。</p>
             <details class="route-history"><summary>2026年5月22日 07:43 JST 時点の概況</summary>
               IRGC・PGSA管制下で選択的通航継続。5/20に24時間で26隻が管制通過（IRGC発表）。WTI $96.82（5/21終値）戦前比+58%。UAE・サウジ迂回積出・サハリン2・米国産による日本代替調達継続。代替ルート合計（A+B+C）の日本向け充足率：約65〜70%（IEA試算ベース）。
-              この充足率は5月時点の IEA の試算で、表の「日本向け」列（貿易統計からの推計）とは算出方法・時点が異なります。
+              この充足率は5月時点の IEA の試算で、表の「日本向け」（貿易統計からの推計）とは算出方法・時点が異なります。
             </details>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
+    </div>
   </div>
-  <div class="jf-col jf-note">
-    <span class="label-estimate">推定</span>表中の「日本向け（万BPD・隻/週）」の列は<strong class="t-bright">財務省貿易統計の相手国別 原油輸入数量から算出した推計値</strong>です。統計には輸送経路が含まれないため、封鎖下の状況をもとに相手国から経路を推定しています。実際の航路を観測した値ではありません。「VLCC換算 N隻/週」は、輸入量をVLCC（1隻あたり200万バレル）に換算した必要隻数で、実際に寄港した隻数ではありません。<br>
-    <span class="jf-note-meta">対象月：<span id="jf-basis-date">読み込み中…</span>　<span id="jf-next-update">（国別の数量は対象月の翌月下旬〜翌々月上旬に公表されます）</span>　／　同じ表の他の列（現況詳細・主なリスク・状態）は別に更新しており、時点が異なります。<br>出典：政府統計の総合窓口(e-Stat)（財務省 普通貿易統計）を加工して作成　／　<a href="https://github.com/yattanda/hormuz-data-/blob/main/docs/oil-flow-method.md" target="_blank" rel="noopener">算出方法（計算式・前提・限界）</a></span>
-  </div>
-  <div class="route-note">
-    ※ EIA（5/12）はホルムズが5月末まで閉鎖継続・6月から通航回復を基本シナリオとして策定。UAE が5/1よりOPEC離脱（スペア生産能力見通しに影響）。
-  </div>
+  <details class="jf-col jf-note">
+    <summary><span class="jf-note-lead"><span class="label-estimate">推定</span>日本向けの数字は、財務省貿易統計の国別の原油輸入から出した推計（対象月：<span id="jf-basis-date">読み込み中…</span>）</span><span class="more-chip" aria-hidden="true"></span></summary>
+    <div class="jf-note-body">
+      <p>表中の「日本向け」の数字（万BPD・隻/週）は<strong class="t-bright">財務省貿易統計の相手国別 原油輸入数量から算出した推計値</strong>です。統計には輸送経路が含まれないため、封鎖下の状況をもとに相手国から経路を推定しています。実際の航路を観測した値ではありません。「VLCC換算 N隻/週」は、輸入量をVLCC（1隻あたり200万バレル）に換算した必要隻数で、実際に寄港した隻数ではありません。</p>
+      <p class="jf-note-meta"><span id="jf-next-update">（国別の数量は対象月の翌月下旬〜翌々月上旬に公表されます）</span>　／　同じ表の他の欄（最新・主なリスク・状態）は別に更新しており、時点が異なります。<br>出典：政府統計の総合窓口(e-Stat)（財務省 普通貿易統計）を加工して作成　／　<a href="https://github.com/yattanda/hormuz-data-/blob/main/docs/oil-flow-method.md" target="_blank" rel="noopener">算出方法（計算式・前提・限界）</a></p>
+      <p class="route-note">※ EIA（5/12）はホルムズが5月末まで閉鎖継続・6月から通航回復を基本シナリオとして策定。UAE が5/1よりOPEC離脱（スペア生産能力見通しに影響）。</p>
+    </div>
+  </details>
 
 <!-- ▼ その他の検討中ルート（折り畳み） -->
 <div class="or-wrap">
@@ -3461,7 +3437,7 @@ function wrapIncidentDetails() {
 }
 
 // 二段表示の計測（GA4・2026-11-01。設計 text-two-stage.md §3-6）
-// text_expand：開いたときだけ送る。section は glance／incident、item は now・strait・next・verify／速報は上からの番号。件名の文や日付は送らない
+// text_expand：開いたときだけ送る。section は glance／incident／routes、item は now・strait・next・verify／速報は上からの番号／ルートは old・b・a・c_us・c_gl・d（PR-B1・2026-11-02）。件名の文や日付は送らない
 // section_view：区域が初めて見えたときに1回（incident・map・routes・scenario）。地図まで読まれた割合を見る
 function initTwoStageMetrics() {
   if (typeof gtag !== 'function') return;
@@ -3469,7 +3445,8 @@ function initTwoStageMetrics() {
   document.addEventListener('toggle', function(e) {
     const d = e.target;
     if (!(d instanceof HTMLDetailsElement) || !d.open) return;
-    const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident' : '';
+    const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident'
+      : d.classList.contains('route-row') ? 'routes' : '';
     if (section) gtag('event', 'text_expand', { section: section, item: d.dataset.item || '' });
   }, true);
   // jump_click：30秒カラムの地図のカードが押されたとき（2026-11-02）。section は行き先（map）。地図を上へ移すかを決め直す材料
@@ -4438,7 +4415,7 @@ function scrollToJapanFlow(e) {
   function load(){
     var s = document.createElement('script');
     s.src = '/assets/glossary.js';
-    s.setAttribute('data-zones', '.glance-summary, .incident-item .incident-body, td.route-detail, .sc-body, .sc-update, .sc-focus-list, .news-body');
+    s.setAttribute('data-zones', '.glance-summary, .incident-item .incident-body, .route-detail, .sc-body, .sc-update, .sc-focus-list, .news-body');
     s.setAttribute('data-lazy', '');
     document.body.appendChild(s);
   }

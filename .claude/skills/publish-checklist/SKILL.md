@@ -31,8 +31,8 @@ python tools/validate_daily.py
 - ハブ `docs/index.html` の「危機マップの最終更新」（`id="hub-updated"`）の月日が基準日と一致
 - `sitemap.xml` の `/`・`/hormuz/` の `lastmod` が基準日と一致／`/archive/` の `lastmod` が `archive_timeline` 末尾より古くない
 - hormuz-data- の経緯（`data/context.json` の `timeline`）の最新日が実測の今日から5日超なら WARN（NG にはしない。読めなければ WARN「未確認」）
-- ルート表の型（WARN）：インライン style（`<col>` を除く）・各行の「最新」（`p.route-latest`）が1件か・「最新」より新しい日付が行の中にないか・リード文 `sec-lead` の復活。
-  各行の鮮度は「最新」の `<time datetime>` で判定
+- ルート表の型：要点（`summary` の `span.route-lead`）が無い・空なら **NG**。要点の字数・切り抜き・「…」終わり・`<details open>`・状態の札の字数（20字超）・インライン style・各行の「最新」（`p.route-latest`）が1件か・「最新」より新しい日付が行の中にないか・リード文 `sec-lead` の復活は WARN。
+  各行の鮮度は「最新」の `<time datetime>` で判定（二段表示 PR-B1・2026-11-02）
 - シナリオ・更新履歴の型（WARN）：シナリオ（`<!-- SCENARIOS -->`〜`<!-- /SCENARIOS -->`）のインライン style・更新履歴のインライン style（開閉の `display:none` を除く）・更新履歴の件数（常時表示3件・合計10件まで）（② PR4a）
 
 ---

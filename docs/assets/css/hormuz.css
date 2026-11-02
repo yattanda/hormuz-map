@@ -63,13 +63,6 @@ body {
     padding-right: 4px !important;
   }
 
-  /* ルートテーブルは端まで広げる。
-     親の #routes は body 直下で padding が 0 のため、以前あった
-     margin -4px / width calc(100% + 8px) の打ち消しは過剰で、
-     375px 幅で右に 4px はみ出していた（2026-09-05 実測）。 */
-  .rtable-wrap {
-    overflow-x: auto;
-  }
   /* ティッカー余白削減 */
   .ticker {
     padding: 7px 10px !important;
@@ -206,10 +199,11 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    li.incident-item の中身を <details class="incident-more"> に包む（JS が無ければ今までどおり全文）。
    札の語は CSS が出す（HTML の札は aria-hidden の空の span）。札の文字は本文の 0.7倍・高さ 26px・左右 9px */
 .glance-more, .incident-more { display:block; }
-.glance-more > summary, .incident-more > summary { list-style:none; cursor:pointer; display:flex; flex-direction:column; gap:6px;
+.glance-more > summary, .incident-more > summary, .route-row > summary, .jf-note > summary { list-style:none; } /* ルート表・日本向けの注記も同じ部品（PR-B1） */
+.glance-more > summary, .incident-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px;
   min-height:44px; }
-.glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker { display:none; }
-.glance-more > summary:focus-visible, .incident-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
+.glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker, .route-row > summary::-webkit-details-marker, .jf-note > summary::-webkit-details-marker { display:none; }
+.glance-more > summary:focus-visible, .incident-more > summary:focus-visible, .route-row > summary:focus-visible, .jf-note > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
 .more-chip { align-self:flex-end; display:inline-flex; align-items:center; min-height:26px; padding:0 9px;
   border:1px solid var(--c-text); color:var(--c-text); font-size:0.665rem; font-weight:700; line-height:1; white-space:nowrap; }   /* 本文（--fs-md）の 0.7倍 */
 .glance-more .more-chip::before { content:"続きを読む ▼"; }
@@ -294,12 +288,6 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .map-card-sub { display:block; font-size:var(--fs-2xs); color:var(--c-text-mute); margin-top:1px; }
 .map-card-go { margin-right:12px; background:var(--c-accent); color:var(--c-on-accent); font-size:var(--fs-sm); font-weight:700;
   padding:7px 14px; letter-spacing:0.03em; white-space:nowrap; }
-/* 旧ボタン「地図はここ →」：古い HTML（キャッシュ最長600秒）と新しい CSS が組んだときに崩れないよう、1日だけ残す。
-   Pages は ?v= を見ずに同じファイルを返すため。HTML からはもう使っていないので、次に CSS を変えるときに消す */
-.jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
-  background:var(--c-accent); color:var(--c-on-accent); font-size:var(--fs-md); font-weight:700; padding:7px 18px; text-decoration:none;
-  letter-spacing:0.03em; white-space:nowrap; }
-.jump-map:hover { text-decoration:underline; text-underline-offset:.18em; }
 @media (min-width:601px) {
   .map-card { grid-template-columns:240px 1fr auto; column-gap:14px; }
   .map-card-img { grid-column:auto; width:240px; height:112px; }
@@ -548,17 +536,6 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
   letter-spacing: 0.04em;
   color: var(--c-accent);
 }
-.rtable { width:100%; border-collapse:separate; border-spacing:0 5px; font-size:0.76rem; }
-/* 行は面と角丸をやめ、下の細い罫で区切る。1列目は「状態」の列の札と同じ色面（D3 PR 5・§1）。
-   日次更新は「状態」の札（.pill-*）だけを書き、1列目は :has() でそれに合わせる（1列目は空のセル）。ルートの見分けは名前の文字と地図の線 */
-.rtable th { text-align:left; color:var(--c-text-mute); font-size:0.68rem; font-weight:600; letter-spacing:0.07em; padding:0 10px 7px; }
-.rtable td { padding:10px; color:var(--c-text); vertical-align:middle; border-bottom:1px solid var(--c-rule); }
-.rtable tr.rtable-foot td:first-child { padding-left:13px; }
-.rtable tbody tr:not(.rtable-foot) > td:first-child { border-left:1px solid var(--c-rule); }
-.rtable tbody tr:has(.pill-r) > td:first-child { background:var(--c-danger); border-left-color:var(--c-danger); }
-.rtable tbody tr:has(.pill-o) > td:first-child { background:var(--c-alert);  border-left-color:var(--c-alert); }
-.rtable tbody tr:has(.pill-y) > td:first-child { background:var(--c-warn);   border-left-color:var(--c-warn); }
-.rtable tbody tr:has(.pill-g) > td:first-child { background:var(--c-ok);     border-left-color:var(--c-ok); }
 /* 状態の札：赤 危険・橙 警戒・黄 注記・緑 平常の色面。.pill-p（判断なし）は枠だけ */
 .pill { display:inline-block; padding:2px 8px; font-size:0.67rem; font-weight:700; border:1px solid transparent; }
 .pill-g{background:var(--c-ok);color:var(--c-on-ok)}
@@ -566,44 +543,107 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
 .pill-r{background:var(--c-danger);color:var(--c-on-danger)}
 .pill-o{background:var(--c-alert);color:var(--c-on-alert)}
 .pill-p{background:none;color:var(--c-text);border-color:var(--c-rule)}
-/* ルート表の型（② PR3 / 2026-09-27）。インライン style を使わず、色は .t-* で付ける。
-   「現況詳細」は 最新（.route-latest・<time> 付き・1件）→ 要点（.route-summary）→ 経緯（details.route-history）の順 */
+/* ルート表（二段表示 PR-B1・2026-11-02。設計 hormuz-ops/drafts/design/text-two-stage.md §4・§4-1。もとは ② PR3 の <table class="rtable">）
+   各ルートは <details class="route-row">。閉じた形（summary）に 色の帯・ルート・日本向け・輸送能力1行・要点＋札・状態の札、開くと .route-detail。
+   601px 以上は summary を grid で表の1行に見せ（見出しの行 .rtable-head と同じ列）、600px 以下は同じ HTML をカードにする（JS は要らない）。
+   色の帯は「状態」の札（.pill-*）に :has() で合わせる（日次は札だけを書く）。ルートの見分けは名前の文字と地図の線。
+   インライン style を使わず、文中の強調は .t-*（色は付けない） */
 .route-priority { background:var(--c-surface);
   padding:10px 16px; margin-bottom:12px; font-size:var(--fs-sm); color:var(--c-text); line-height:1.6; }
-.rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-.rtable thead th { padding:8px 10px; font-size:var(--fs-xs); border-bottom:1px solid var(--c-text); }
-.rtable th.rtable-th-icon { width:12px; padding:0; }
-.rtable tbody tr:not(.rtable-foot) > td:first-child { width:12px; padding:0; }
-/* 空のセルは table-layout:auto（スマホ幅）で 1px まで潰れるので、中に 12px の箱を置いて幅を支える */
-.rtable tbody tr:not(.rtable-foot) > td:first-child::before { content:""; display:block; width:12px; }
-.rtable th.rtable-th-state { text-align:center; }
-.rtable th.jf-th { color:var(--c-accent); white-space:nowrap; min-width:90px; max-width:110px; }
-.jf-th-sub { font-size:var(--fs-2xs); color:var(--c-text-mute); font-weight:400; }
-.rtable td.jf-td { font-size:var(--fs-xs); white-space:nowrap; min-width:90px; }
+.rtable { font-size:var(--fs-sm); color:var(--c-text); }
+.rtable-head { display:none; }
+.route-row { display:block; }
+.route-row > summary { cursor:pointer; min-height:44px; }
+.route-row > summary:hover .more-chip { background:var(--c-surface); }
+.route-cell { display:flex; flex-direction:column; gap:2px; min-width:0; }
+/* ルート名は 4pt（約5px）、サブタイトルは 2pt（約3px）大きく（2026-10-11 運営者の指示）。親の文字サイズからの差で指定する */
+.route-name { font-size:calc(1em + 5px); line-height:1.35; }
+.route-sub { font-size:calc(0.8333em + 3px); color:var(--c-text-mute); line-height:1.5; }
+.route-cell-h { font-size:var(--fs-2xs); color:var(--c-text-mute); line-height:1.4; }
+/* 日本向けの数字は 30秒カラムの数字の札（.glance-fig-num）と同じ作法 */
+.jf-td { line-height:1.3; }
+.jf-td strong { font-family:var(--f-figure); font-size:1.25rem; font-weight:600; color:var(--c-figure); font-variant-numeric:tabular-nums; }
+.jf-unit { font-size:var(--fs-xs); white-space:nowrap; }   /* 頭の空白ごと折り返さない（数字と単位を離さない） */
+.jf-td small { font-size:var(--fs-2xs); color:var(--c-text-mute); }
+.route-cap { font-weight:700; line-height:1.4; }
+.route-cell--lead { gap:6px; }
+.route-lead { font-size:var(--fs-base); font-weight:700; line-height:1.6; }
+.route-row .more-chip::before { content:"続きを読む ▼"; }
+.route-row[open] > summary .more-chip::before { content:"閉じる ▲"; }
+.route-cell--state .pill { line-height:1.5; }
+/* 開いた中：最新・要点・経緯（.route-detail-main）と 主なリスク・輸送能力の補足（.route-detail-side）。601px 以上は左右に並べる */
+.route-detail { display:flex; flex-direction:column; gap:0.9em; padding:8px 12px 12px; border-top:1px solid var(--c-rule); line-height:1.75; }
+.route-detail-main, .route-detail-side { min-width:0; }
 .route-detail p { margin:0; }
 .route-detail p + p, .route-detail p + details, .route-history p + p { margin-top:0.9em; }
+.route-item-h { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle;
+  border:1px solid var(--c-text-mute); color:var(--c-text); }   /* .label-analysis と同じ形の見出し */
 .route-src { display:block; color:var(--c-text-mute); }
 .route-history > summary { cursor:pointer; color:var(--c-text); font-size:var(--fs-xs); font-weight:600; margin-top:0.9em; }
 .route-history[open] > summary { margin-bottom:0.6em; }
-.rtable tr.rtable-foot td { font-size:var(--fs-xs); color:var(--c-text-mute); padding:8px 13px; text-align:right; }
-.rtable tr.rtable-foot .route-history { text-align:left; }
-/* 文中の強調は色分けしない（赤・黄・緑の文字をやめた・D3 PR 5）。状態は「状態」の列の札で示す */
+.rtable-foot { margin-top:12px; font-size:var(--fs-xs); color:var(--c-text-mute); }
+.rtable-foot p { margin:0; }
+/* 文中の強調は色分けしない（赤・黄・緑の文字をやめた・D3 PR 5）。状態は札で示す */
 .rtable .t-danger, .rtable .t-warning, .rtable .t-warning-soft, .rtable .t-positive{color:var(--c-text)}
 .rtable .t-info{color:var(--c-text)} .rtable .t-neutral{color:var(--c-text-mute)} .rtable .t-bright, .jf-note .t-bright{color:var(--c-text)}
 .rtable .t-mute{color:var(--c-text-mute)} .rtable .t-blue, .rtable .t-violet{color:var(--c-text)}
-/* ルート名とサブタイトル（2026-10-11 運営者の指示）：ルート名は 4pt（約5px）、サブタイトルは 2pt（約3px）大きく、サブタイトルは明るく。
-   親の文字サイズからの差で指定するので、PC・スマホとも同じ差で大きくなる */
-.rtable .route-name { font-size:calc(1em + 5px); }
-/* スマホはルート列を細いまま保つ（現況詳細の幅を優先）。ルート名は1文字ずつ折り返してよい（運営者の判断・2026-10-11） */
-@media (max-width: 768px) { .rtable .route-name { word-break:break-all; } }
-.rtable .route-name ~ small.t-mute { font-size:calc(0.8333em + 3px); color:var(--c-text-mute); }
 .rtable .t-purple, .rtable .t-orange{color:var(--c-text)}
-/* 日本向けの列の注記：黄の囲みをやめて面の帯に（状態ではない） */
-.jf-note { font-size:var(--fs-xs); color:var(--c-text); margin-top:8px; padding:8px 12px;
-  background:var(--c-surface); line-height:1.7; }
+/* 日本向けの注記：1行（対象月つき）を見せ、札「注記を読む ▼」で推計の方法・出典・EIA の古い注記を開く。状態ではないので面の帯 */
+.jf-note { margin-top:8px; background:var(--c-surface); font-size:var(--fs-xs); color:var(--c-text); line-height:1.7; }
+.jf-note > summary { cursor:pointer; min-height:44px; display:flex; flex-direction:column; gap:6px; padding:8px 12px; }
+.jf-note .more-chip::before { content:"注記を読む ▼"; }
+.jf-note[open] > summary .more-chip::before { content:"閉じる ▲"; }
+.jf-note-body { display:flex; flex-direction:column; gap:6px; padding:0 12px 10px; }
+.jf-note-body p { margin:0; }
 .jf-note-meta { font-size:var(--fs-xs); color:var(--c-text-mute); }
 #jf-basis-date { color:var(--c-text); font-weight:700; }
-.route-note { font-size:var(--fs-xs); color:var(--c-text-mute); margin-top:8px; padding:6px 10px; border-top:1px solid var(--c-rule); }
+.route-note { font-size:var(--fs-xs); color:var(--c-text-mute); padding-top:6px; border-top:1px solid var(--c-rule); }
+/* スマホ（600px 以下）：カード。30秒カラムの箱（.glance-more）と同じ細い罫の囲み（角丸・左端の色帯なし）。
+   上から ルート名＋副題・状態の札・数字の欄2つ（日本向け・輸送能力）・要点＋札 */
+@media (max-width: 600px) {
+  .route-row { border:1px solid var(--c-rule); }
+  .route-row + .route-row { margin-top:10px; }
+  .route-row > summary { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); grid-template-areas:"name name" "state state" "jf cap" "lead lead";
+    gap:8px; padding:10px 12px; }
+  .route-strip { display:none; }
+  .route-cell--name { grid-area:name; flex-direction:row; flex-wrap:wrap; align-items:baseline; gap:2px 8px; }
+  .route-cell--state { grid-area:state; align-items:flex-start; }
+  .route-cell--jf { grid-area:jf; }
+  .route-cell--cap { grid-area:cap; }
+  .route-cell--jf, .route-cell--cap { background:var(--c-surface); padding:6px 10px; }
+  .route-cell--lead { grid-area:lead; }
+  .route-lead { font-size:0.88rem; }   /* .glance-lead と同じ */
+}
+/* 601px 以上：表の見た目。列は 色の帯・ルート・日本向け・輸送能力・いま（要点＋札）・状態 */
+@media (min-width: 601px) {
+  .rtable-head, .route-row > summary { display:grid;
+    grid-template-columns:12px minmax(0, 14fr) minmax(0, 12fr) minmax(0, 14fr) minmax(0, 46fr) minmax(0, 14fr); }
+  .rtable-head { font-size:var(--fs-xs); font-weight:600; letter-spacing:0.07em; color:var(--c-text-mute); border-bottom:1px solid var(--c-text); }
+  .rtable-head > span { padding:8px 10px; }
+  .rtable-head > span:first-child { padding:0; }
+  .rtable-head .jf-th { color:var(--c-accent); }
+  .jf-th-sub { display:block; font-size:var(--fs-2xs); color:var(--c-text-mute); font-weight:400; letter-spacing:0; }
+  .rtable-head .rtable-th-state { text-align:center; }
+  .route-row { margin-top:5px; border-bottom:1px solid var(--c-rule); }
+  .route-row > summary { position:relative; }
+  .route-strip { border-left:1px solid var(--c-rule); }
+  .route-row:has(.route-cell--state .pill-r) .route-strip { background:var(--c-danger); border-left-color:var(--c-danger); }
+  .route-row:has(.route-cell--state .pill-o) .route-strip { background:var(--c-alert);  border-left-color:var(--c-alert); }
+  .route-row:has(.route-cell--state .pill-y) .route-strip { background:var(--c-warn);   border-left-color:var(--c-warn); }
+  .route-row:has(.route-cell--state .pill-g) .route-strip { background:var(--c-ok);     border-left-color:var(--c-ok); }
+  .route-cell { padding:10px; }
+  .route-cell--lead { padding:6px 10px; }
+  .route-cell--state { align-items:center; }
+  .route-cell--state .pill { text-align:center; overflow-wrap:anywhere; }
+  /* 欄の見出しは見出しの行が見せるので、見た目だけ隠す（読み上げは各欄の見出しで値と組になる） */
+  .route-cell-h { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
+  .route-detail { display:grid; grid-template-columns:minmax(0, 3fr) minmax(0, 2fr); gap:0 20px; padding:10px 10px 14px 22px; }
+}
+@media (min-width: 601px) and (max-width: 1023px) {
+  .rtable-head, .route-row > summary {
+    grid-template-columns:12px minmax(0, 16fr) minmax(0, 16fr) minmax(0, 14fr) minmax(0, 39fr) minmax(0, 15fr); }   /* 日本向けは「105 万BPD」が1行に入る幅 */
+  .route-cell, .rtable-head > span:not(:first-child) { padding-left:8px; padding-right:8px; }
+}
 
 /* SCENARIOS */
 .sc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
@@ -943,8 +983,6 @@ footer {
   .leg-row { margin-bottom: 4px; gap: 6px; }
   .leg-note { margin-top: 6px; padding-top: 5px; }
 
-  .rtable-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-  .rtable { min-width:600px; }
 }
 /* タブレットの幅（601〜1023px）は地図を高く（2026-10-21・運営者）。400px では縦向きのタブレットで凡例・タンカー欄・地点ジャンプが
    地図の大半を覆っていた。画面が低いとき（スマホの横向きなど）は前と同じ 400px より低くしない。
@@ -966,11 +1004,6 @@ footer {
   #map.attr-lifted .map-legend.open .legend-body { max-height: max(48px, calc(var(--map-h) - 220px)); }
   /* 日本関連船の欄は「地点へ移動」（右端から約 134px）の左へ。タンカーのボタンは左上のまま（下の端に置くと、幅の狭い横向き〈568px など〉で凡例と重なった） */
   .map-wrap #tanker-overlay { right: 142px; }
-}
-/* スマホでは日本向けの列を非表示にしてテーブル崩れを防ぐ
-   （2-c: 以前は 860px 以下。タブレットでは表を横スクロールにして列を残す） */
-@media(max-width:768px){
-  .jf-col { display: none !important; }
 }
 @media(max-width:600px){
   header h1 { font-size:0.82rem; }
@@ -1199,49 +1232,6 @@ footer {
 /* 推定＝統計などからの試算（AI ではない）。AI が出した値は .label-ai（②' PR D） */
 .label-ai.sc-pct-label { margin-left:6px; margin-right:0; }
 .jf-th-sub .label-estimate { margin-right:0; }
-/* ===== ルートテーブル列幅最適化 ===== */
-.rtable { table-layout: fixed !important; }
-.rtable th:nth-child(1), .rtable td:nth-child(1) { width: 12px; }   /* 状態の色面（D3 PR 5a。もとは 4%） */
-/* 現況詳細が長いので、ほかの列を削ってそこへ回す（2026-10-21・運営者。もとは 14・13・11・29・18・15%） */
-.rtable th:nth-child(2), .rtable td:nth-child(2) { width: 11%; }
-.rtable th:nth-child(3), .rtable td:nth-child(3) { width: 10%; }
-.rtable th:nth-child(4), .rtable td:nth-child(4) { width: 8%; }
-.rtable th:nth-child(5), .rtable td:nth-child(5) { width: 49%; }
-.rtable th:nth-child(6), .rtable td:nth-child(6) { width: 12%; }
-.rtable th:nth-child(7), .rtable td:nth-child(7) { width: 10%; }
-
-@media (max-width: 768px) {
-  /* min-width:600px を解除して横スクロール強制を廃止 */
-  /* fixed：auto だと札や語の長さで列が広がり、下の幅の配分が効かなかった（2026-10-21） */
-  .rtable-wrap .rtable { min-width: 0 !important; width: 100% !important; table-layout: fixed !important; }
-
-  /* フォント・セル余白を詰める */
-  .rtable { font-size: 11px !important; }
-  .rtable th, .rtable td { padding: 6px 4px !important; }
-
-  /* 状態列のpillを小さく */
-  .rtable .pill { font-size: 10px !important; padding: 2px 5px !important; }
-  .rtable .pill { overflow-wrap: anywhere; }   /* 「9/28）」のような切れない語で、狭くした状態の列からはみ出さない（2026-10-21） */
-
-  /* 6列の幅配分（合計100%） */
-  /* 1:状態の色面 2:ルート 3:輸送能力 5:現況詳細 6:主なリスク 7:状態。1列目は 12px・余白なし（D3 PR 5a。もとは 4%、その分を現況詳細へ） */
-  .rtable th:nth-child(1), .rtable td:nth-child(1) { width: 12px !important; }
-  .rtable thead th:first-child, .rtable tbody tr:not(.rtable-foot) > td:first-child { padding: 0 !important; }
-  /* 2026-10-21：現況詳細を広げる（もとは 14・13・34・25・14%） */
-  .rtable th:nth-child(2), .rtable td:nth-child(2) { width: 14% !important; }
-  .rtable th:nth-child(3), .rtable td:nth-child(3) { width: 13% !important; }
-  .rtable th:nth-child(5), .rtable td:nth-child(5) { width: 44% !important; }
-  .rtable th:nth-child(6), .rtable td:nth-child(6) { width: 16% !important; }
-  .rtable th:nth-child(7), .rtable td:nth-child(7) { width: 13% !important; }
-  /* fixed では <colgroup> の <col> の幅が効くので、スマホの配分は col にも当てる（col のインライン style は html-safe-edit の決まりで残す）。
-     日本向けのセルが display:none だと列そのものが無くなり、4列目以降の col が1つずつ前にずれて当たる（4 → 現況詳細・5 → 主なリスク・6 → 状態。7 は余り） */
-  .rtable col:nth-child(2) { width: 14% !important; }
-  .rtable col:nth-child(3) { width: 13% !important; }
-  .rtable col:nth-child(4) { width: 44% !important; }
-  .rtable col:nth-child(5) { width: 16% !important; }
-  .rtable col:nth-child(6) { width: 13% !important; }
-  .rtable col:nth-child(7) { width: 0 !important; }
-}
 /* ================================================
    特別解説ウィジェット (briefing-widget)
    D3 PR 4：金の枠・グラデーション・影の箱をやめ、上の太い罫で切る。金の飾りは差し色に、青の飾りは本文の色に。

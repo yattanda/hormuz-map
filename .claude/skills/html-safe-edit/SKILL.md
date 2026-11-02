@@ -9,13 +9,14 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
 
 ---
 
-## ルートテーブル構造（STATS セクション内）
+## ルートテーブル構造（全ルート現況サマリー）
 
-- **7列構成**：アイコン / ルート / 輸送能力 / 🇯🇵日本向け（`.jf-col`）/ 現況詳細 / 主なリスク / 状態（2026-09-27 実測で記述を直した）
-- `<colgroup>` は必ず7列（`<col>` 7個）に保つこと。列追加時は colgroup・nth-child CSS・JS の3箇所を同時更新する。脚注行の `colspan` も7
-- **インライン style を書かない**（`<col>` の幅を除く）。「現況詳細」セルは 最新（`p.route-latest`）→ 要点（`p.route-summary`）→ 経緯（`details.route-history`）の型、色は `.t-*`（daily-site-update「ルート表の型」・② PR3）
-- `.jf-col` クラスの列はスマホ（768px以下）で `display:none` により自動非表示（2026-09-18 フェーズ2で 860px 以下 → 768px 以下に変更。タブレットは横スクロールで表示）
-- `loadRouteTableFlow()` が `oil-flow.json` から `#jf-*-bpd` / `#jf-*-tanker` 要素に値を注入（手動編集不要）。対象は旧ルート（`old`）・A・B・C_US・C_GL・D の6行。`old`・`D` は 0 のとき「停止中」と出す（2026-09-27・#6）
+- **2026-11-02（二段表示 PR-B1）から `<table>` ではない。**各ルートは `<details class="route-row" data-item="…">`（6本）。`<summary>` に 色の帯（`route-strip`）・ルート・日本向け・輸送能力1行・要点（`span.route-lead`）＋札・状態の札、開いた中（`div.route-detail`）に 最新・要点・経緯（`route-detail-main`）と 主なリスク・輸送能力の補足（`route-detail-side`）
+- 列の見た目は `hormuz.css` の grid（601px 以上。見出しの行 `div.rtable-head` と同じ `grid-template-columns`）。600px 以下はカード。列を足すときは `.rtable-head` の span・各行の `route-cell`・`grid-template-columns`（601〜1023px と 1024px 以上の2か所）を同時に直す。`<colgroup>`・`nth-child` の幅は無くなった
+- `<summary>` の中は phrasing content だけ（`span`・`strong`・`small`・`br`）。`div`・`p` を入れない
+- **インライン style を書かない**（例外は無くなった）。「最新」の書き方は 最新（`p.route-latest`）→ 要点（`p.route-summary`）→ 経緯（`details.route-history`）の型、色は `.t-*`（daily-site-update「ルート表の型」）
+- 「日本向け」はどの幅でも出す（2026-11-02 に 768px 以下で隠す `.jf-col{display:none}` を外した）。欄の見出し `span.route-cell-h` は 601px 以上で見た目だけ隠す（読み上げ用に残す）
+- `loadRouteTableFlow()` が `oil-flow.json` から `#jf-*-bpd` / `#jf-*-tanker` 要素に値を注入（手動編集不要。単位 `.jf-unit` は `#jf-*-bpd` と同じ親〈`span.jf-td`〉の中に置く）。対象は旧ルート（`old`）・A・B・C_US・C_GL・D の6行。`old`・`D` は 0 のとき「停止中」と出す（2026-09-27・#6）
 - Route C は `C_US`（米国）と `C_GL`（南半球）の2行に分割済み
 - 日本原油調達フロー説明カードへのアンカー `<div id="japan-flow">` が iframe wrapper 直前に設置済み
 

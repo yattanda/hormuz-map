@@ -538,7 +538,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ---
 
-## ルート表の型（2026-09-27〜・② PR3）
+## ルート表の型（2026-09-27〜・② PR3。二段表示は 2026-11-02〜・二段表示 PR-B1）
 
 **インライン style を書かない。**見出し `全ルート現況サマリー` の下にあった長文のリード文（`<p class="sec-lead">`、【外交】【中央航路】…の6分類）は**廃止した。書かない。**
 見出しの `sec-h2-sub` の日付だけは従来どおり毎回当日にする（ルール1）。
@@ -555,22 +555,53 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | イランへの通航料を払っての通過 | ルートD（`jf-td-D`） |
 | 外交全般・船舶インシデント・原油価格 | 表には書かない（30秒カラム・速報インシデント・シナリオが担う） |
 
-### 「現況詳細」セルの型
+### 各ルートの型（2026-11-02〜・二段表示 PR-B1）
 
-上から **最新（1件）→ 要点 → 経緯（折りたたみ）** の順。
+**各ルートは `<details class="route-row" data-item="…">` 1つ。**閉じた形（`<summary>`）に 色の帯・ルート・日本向け・輸送能力1行・要点＋札・状態の札が並び、押すと下に「開いた中」（`div.route-detail`）が開く。
+601px 以上は CSS が表の見た目にし、600px 以下はカードにする（同じ HTML。JS は要らない）。`<table>`・`<tr>`・`<td>`・`<colgroup>` はもう無い。**書かない。**
+`data-item`（`old`・`b`・`a`・`c_us`・`c_gl`・`d`）・`jf-*` の id・札の空の span・`route-strip`・`route-cell-h` は**そのまま**。`<details>` に `open` を書かない（`validate_daily.py` が WARN）。設計は `hormuz-ops/drafts/design/text-two-stage.md` §4-1（private）。
 
 ```html
-<td class="route-detail">
-  <p class="route-latest"><strong class="route-tag t-info">最新 <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>本文。
-    <small class="route-src">出典：The National（9/23）</small></p>
-  <p class="route-summary">そのルートの現況の要点（状態が変わったときだけ書き換える）。
-    <small class="route-src">出典：…</small></p>
-  <details class="route-history"><summary>経緯を見る</summary>
-    <p class="route-entry"><strong class="route-tag t-neutral"><time datetime="2026-09-22">9/22 07:25 JST</time> 再確認：</strong>本文。
-      <small class="route-src">出典：…</small></p>
-  </details>
-</td>
+<details class="route-row" data-item="b">
+  <summary>
+    <span class="route-strip" aria-hidden="true"></span>
+    <span class="route-cell route-cell--name"><strong class="route-name t-danger">ルートB</strong><small class="route-sub">ヤンブー港経由（サウジ東西PL）</small></span>
+    <span class="route-cell route-cell--jf"><span class="route-cell-h">日本向け（推定）</span><span id="jf-td-B" class="jf-td"><strong id="jf-B-bpd">読み込み中…</strong><span class="jf-unit" hidden> 万BPD</span><br><small id="jf-B-tanker" class="t-mute"></small></span></span>
+    <span class="route-cell route-cell--cap"><span class="route-cell-h">輸送能力</span><span class="route-cap">日量 700万bpd</span></span>
+    <span class="route-cell route-cell--lead"><span class="route-lead">要点1文（40〜50字）</span><span class="more-chip" aria-hidden="true"></span></span>
+    <span class="route-cell route-cell--state"><span class="pill pill-y">状態の札（15字まで）</span></span>
+  </summary>
+  <div class="route-detail">
+    <div class="route-detail-main">
+      <p class="route-latest"><strong class="route-tag t-info">最新 <time datetime="2026-09-25">9/25 07:16 JST</time> 追記：</strong>本文。
+        <small class="route-src">出典：The National（9/23）</small></p>
+      <p class="route-summary">そのルートの現況の要点（状態が変わったときだけ書き換える）。
+        <small class="route-src">出典：…</small></p>
+      <details class="route-history"><summary>経緯を見る</summary>
+        <p class="route-entry"><strong class="route-tag t-neutral"><time datetime="2026-09-22">9/22 07:25 JST</time> 再確認：</strong>本文。
+          <small class="route-src">出典：…</small></p>
+      </details>
+    </div>
+    <div class="route-detail-side">
+      <p class="route-risk"><span class="route-item-h">主なリスク</span>…</p>
+      <p class="route-cap-more"><span class="route-item-h">輸送能力</span>能力の数字と、能力にかかわる出来事（停止・再開の日付）</p>
+    </div>
+  </div>
+</details>
 ```
+
+- **要点**（`<summary>` の `<span class="route-lead">`）：**40〜50字・1文**（30秒カラムの要点と同じ決まり）
+  - **「最新」を「追記」で書き換えた日に、一緒に書き直す。**「再確認」（変化なし）の日はそのままでよい
+  - 書く順は「最新」が先、要点は最後に書き下ろす（「最新」や「要点」〈`route-summary`〉の文を写さない・途中で切らない・「…」で終えない）。同じ事実を書くのはよい
+  - 要点が無い・空なら `validate_daily.py` が **NG**（閉じた行の押す場所に名前が無くなる）。20字未満・60字超・切り抜きの疑い・「…」終わりは WARN
+  - タグ（強調・リンク）を書かない。頭に絵文字・国旗を書かない
+- **輸送能力**：閉じた形（`span.route-cap`）は**能力の1行だけ**（例 `日量 700万bpd`）。停止・再開などの出来事は開いた中の `p.route-cap-more` に書く（日次ではほぼ触らない）
+- **状態の札**（`span.pill`）：**15字まで**（例 `能力の約半分まで復旧`）。細部は要点と開いた中へ。20字を超えたら `validate_daily.py` が WARN
+- 開いた中の「状態」（`p.route-state-more`・`<span class="route-item-h">状態</span>`）は、札を短くしたときに外した細部の置き場。ほかの欄に書いてあれば作らない
+
+### 「最新」と経緯の書き方（開いた中の `div.route-detail-main`）
+
+上から **最新（1件）→ 要点（`route-summary`）→ 経緯（折りたたみ）** の順。
 
 - **新しい情報を足すとき**：いまの `p.route-latest` を `p.route-entry` に変え（`class` と「最新 」の3文字を消すだけ）、
   `details.route-history` の**先頭**へ移す。そのうえで新しい `p.route-latest` を書く。**`route-latest` は各行ちょうど1件**
@@ -581,7 +612,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 - 経緯（`details` の中）は新しい順。過去に書いた本文は**書き換えない・消さない**（移すだけ）
 - 出典は `<br><small style=…>` ではなく `<small class="route-src">`（ブロック表示になる）。段落の間の `<br><br>` も書かない
 - 文中の強調は `<strong class="t-*">`。**2026-10-20（課題46 D3 PR 5）から `t-*` で色は付かない**（`t-neutral` だけ補助の色、ほかは本文の色の太字）。
-  クラスは中身の種類の印として、これまでどおり書く。行の状態は「状態」の列の札で示す。強調や `route-tag` の頭に絵文字（色の絵文字 🔴🟠🟡🟢、⚓🔁🕊️・国旗などすべて）を書かない（2026-10-20 課題46 D3 PR 5b）。`route-tag` に分類の札は付けない（行がそのルート）
+  クラスは中身の種類の印として、これまでどおり書く。行の状態は「状態」の札で示す。強調や `route-tag` の頭に絵文字（色の絵文字 🔴🟠🟡🟢、⚓🔁🕊️・国旗などすべて）を書かない（2026-10-20 課題46 D3 PR 5b）。`route-tag` に分類の札は付けない（行がそのルート）
 
 | クラス | 使う場面 |
 |---|---|
@@ -593,8 +624,8 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | `t-neutral` | 再確認（変化なし） |
 | `t-bright` | 中立の強調 |
 
-- 「主なリスク」「状態」（`pill`）の列は、変化があったときに書き換える
-- 「状態」の札（2026-10-20 課題46 D3 PR 5）：`<span class="pill pill-r">事実上停止（…）</span>` の形。**札の文に色の絵文字（🔴🟠🟡🟢・📅）を書かない**
+- 「主なリスク」（`p.route-risk`）・「状態」の札（`pill`）は、変化があったときに書き換える
+- 「状態」の札（2026-10-20 課題46 D3 PR 5）：`<span class="pill pill-r">事実上停止（覚書破綻）</span>` の形・15字まで。**札の文に色の絵文字（🔴🟠🟡🟢・📅）を書かない**
 
 | クラス | 状態 | 表示 |
 |---|---|---|
@@ -604,10 +635,10 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 | `pill-g` | 平常 | 緑の色面 |
 | `pill-p` | 判断なし（実績なし・交渉段階など） | 枠だけ |
 
-- 各行の**1列目は空のセル `<td></td>`**。色は CSS（`:has()`）が「状態」の札に合わせて塗る。1列目に絵文字や札を書かない
-- 「日本向け」列（`jf-*-bpd`・`jf-*-tanker`）は `loadRouteTableFlow()` が `oil-flow.json` から入れる。**手で書かない**
-- `tools/validate_daily.py` が「ルート表のインライン style（`<col>` を除く）」「各行の `route-latest` が1件か」
-  「`route-latest` より新しい日付が行の中にないか」「リード文 `sec-lead` の復活」を WARN で確認する。
+- 色の帯（`<span class="route-strip" aria-hidden="true"></span>`）は**空のまま**。色は CSS（`:has()`）が「状態」の札に合わせて塗る（601px 以上だけ。スマホのカードは札の色だけ）。帯に絵文字や札を書かない
+- 「日本向け」（`jf-*-bpd`・`jf-*-tanker`）は `loadRouteTableFlow()` が `oil-flow.json` から入れる。**手で書かない**。表の下の注記（`details.jf-note`。対象月・推計の方法・EIA の古い注記）も日次では触らない
+- `tools/validate_daily.py` が「要点（`span.route-lead`）の有無（NG）・字数・切り抜き・「…」終わり・`open`」「状態の札の字数」
+  「ルート表のインライン style」「各行の `route-latest` が1件か」「`route-latest` より新しい日付が行の中にないか」「リード文 `sec-lead` の復活」を確認する（要点の有無だけ NG、ほかは WARN）。
   鮮度は `route-latest` の `<time datetime>` で判定する
 
 ---

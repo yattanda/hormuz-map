@@ -40,7 +40,7 @@
 <link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
-<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261101"><!-- 二段表示 PR-A で HTML と CSS を組で変えたので、古い CSS と組まないよう版を付ける -->
+<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261102"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード -->
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
 {
@@ -243,7 +243,16 @@ UKMTO公式の警報191（11/2 03:15 JST発行）は、海峡内で商船の船�
         <a href="#osint-panel" class="jump-pill jump-pill--violet">現地メディア視点</a>
         <a href="#" onclick="scrollToJapanFlow(event)" class="jump-pill jump-pill--info">日本向け調達フロー</a>
         <a href="../archive/index.html" class="jump-pill jump-pill--gold">ホルムズ危機 全記録（日次アーカイブ）を見る</a>
-        <a href="#map" class="jump-map">地図はここ &nbsp;→</a>
+        <!-- 地図への行き先は絵のカード（2026-11-02・運営者。地図の位置は変えない）。絵は固定の1枚で、日次では書き換えない -->
+        <a href="#map" class="map-card" data-jump="map">
+          <img src="/images/map-thumb-hormuz.webp" width="960" height="450" alt="" class="map-card-img" loading="lazy" decoding="async">
+          <span class="map-card-body">
+            <span class="map-card-kicker">海峡周辺マップ</span>
+            <span class="map-card-title">海峡と航路を地図で見る</span>
+            <span class="map-card-sub">軍事・日本関連船・危険区域</span>
+          </span>
+          <span class="map-card-go">地図へ ↓</span>
+        </a>
       </div>
 
       <!-- 特別解説グループ -->
@@ -3463,6 +3472,11 @@ function initTwoStageMetrics() {
     const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident' : '';
     if (section) gtag('event', 'text_expand', { section: section, item: d.dataset.item || '' });
   }, true);
+  // jump_click：30秒カラムの地図のカードが押されたとき（2026-11-02）。section は行き先（map）。地図を上へ移すかを決め直す材料
+  document.addEventListener('click', function(e) {
+    const a = e.target.closest && e.target.closest('a[data-jump]');
+    if (a) gtag('event', 'jump_click', { section: a.dataset.jump });
+  });
   if (!('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver(function(entries) {
     entries.forEach(function(en) {

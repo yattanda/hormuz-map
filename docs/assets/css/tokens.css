@@ -92,6 +92,9 @@
        600px  : スマホ縦の詰め（余白・小物）       … max-width:600px  / min-width:601px
        768px  : 文字サイズ（絶対ルールの html 18px） … max-width:768px  / min-width:769px
        1023px : 表・地図凡例の狭幅対応、PC との境 … max-width:1023px / min-width:1024px
+     2026-11-02 に4つ目を足した（運営者の決定）。使うのは /hormuz/ のヘッダーだけ。ほかの所では使わない。
+       1199px : ヘッダーのバッジの列を次の行へ送るか、列の中で折り返すか … max-width:1199px / min-width:1200px
+                （書体の差し替えで列が次の行へ出入りして CLS が出たため。hormuz.css の header の所）
      カラム数: 〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列（末尾のフェーズ2ブロック）
      タブレット（iPad mini 縦 744px・iPad 縦 768〜834px）は 2列 になる。 */
 }

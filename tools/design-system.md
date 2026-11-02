@@ -41,7 +41,7 @@ Claude CodeがHTML/CSSを修正する際は、この基準を優先する。
 
 ### breakpoint
 
-`docs/assets/css/tokens.css` の末尾の覚書が正本（2026-09-18 に3つへ整理）。境界の値は「以下（max-width）」側に含める。
+`docs/assets/css/tokens.css` の末尾の覚書が正本（2026-09-18 に3つへ整理。2026-11-02 にヘッダー専用の 1199px を足した）。境界の値は「以下（max-width）」側に含める。
 
 | 幅 | 役割 | 書き方 |
 |---|---|---|

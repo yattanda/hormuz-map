@@ -199,11 +199,14 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    li.incident-item の中身を <details class="incident-more"> に包む（JS が無ければ今までどおり全文）。
    札の語は CSS が出す（HTML の札は aria-hidden の空の span）。札の文字は本文の 0.7倍・高さ 26px・左右 9px */
 .glance-more, .incident-more { display:block; }
-.glance-more > summary, .incident-more > summary, .route-row > summary, .jf-note > summary { list-style:none; } /* ルート表・日本向けの注記も同じ部品（PR-B1） */
+.glance-more > summary, .incident-more > summary, .route-row > summary, .jf-note > summary,
+.sc-more > summary, .sc-focus-more > summary { list-style:none; } /* ルート表・日本向けの注記（PR-B1）、シナリオ（PR-B2）も同じ部品 */
 .glance-more > summary, .incident-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px;
   min-height:44px; }
-.glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker, .route-row > summary::-webkit-details-marker, .jf-note > summary::-webkit-details-marker { display:none; }
-.glance-more > summary:focus-visible, .incident-more > summary:focus-visible, .route-row > summary:focus-visible, .jf-note > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
+.glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker, .route-row > summary::-webkit-details-marker, .jf-note > summary::-webkit-details-marker,
+.sc-more > summary::-webkit-details-marker, .sc-focus-more > summary::-webkit-details-marker { display:none; }
+.glance-more > summary:focus-visible, .incident-more > summary:focus-visible, .route-row > summary:focus-visible, .jf-note > summary:focus-visible,
+.sc-more > summary:focus-visible, .sc-focus-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
 .more-chip { align-self:flex-end; display:inline-flex; align-items:center; min-height:26px; padding:0 9px;
   border:1px solid var(--c-text); color:var(--c-text); font-size:0.665rem; font-weight:700; line-height:1; white-space:nowrap; }   /* 本文（--fs-md）の 0.7倍 */
 .glance-more .more-chip::before { content:"続きを読む ▼"; }
@@ -645,54 +648,90 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
   .route-cell, .rtable-head > span:not(:first-child) { padding-left:8px; padding-right:8px; }
 }
 
-/* SCENARIOS */
-.sc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+/* SCENARIOS（二段表示 PR-B2・2026-11-02。設計 hormuz-ops/drafts/design/text-two-stage.md §4-1 問い6〜10。もとは ② PR4a の div.sc-card）
+   各シナリオは <details class="sc-card sc-more">。閉じた形（summary）に 札・確率の数字と矢印・バー・推定の幅・要点・札、
+   開くと .sc-detail（判定の定義・今日の見立て・これまでの根拠）。確率の補足（.sc-update）・確率について（.sc-about）・次の焦点（.sc-focus-more）も同じ部品。
+   箱は 30秒カラムの箱・ルート表のカードと同じ細い罫の囲み（角丸・左端の色帯なし）。並びは 600px 以下 1列・601〜1023px 2列・1024px 以上 4列（下の 2-c）。
+   バーの高さと「推定の幅」の行は HTML で先に場所を取り、JS（syncScenarioFromDashboard()）は幅と文字だけを替える（CLS を出さない） */
+.sc-grid { display:grid; gap:10px; align-items:start; }
+.sc-card { min-width:0; border:1px solid var(--c-rule); }
+.sc-more > summary, .sc-focus-more > summary { cursor:pointer; min-height:44px; display:flex; flex-direction:column; gap:8px; padding:10px 12px; }
+.sc-more > summary:hover .more-chip, .sc-focus-more > summary:hover .more-chip { background:var(--c-surface); }
+.sc-more .more-chip::before { content:"続きを読む ▼"; }
+.sc-update .more-chip::before { content:"注記を読む ▼"; }
+.sc-about .more-chip::before { content:"詳しく読む ▼"; }
+.sc-focus-more .more-chip::before { content:"本文を読む ▼"; }
+.sc-more[open] > summary .more-chip::before, .sc-focus-more[open] > summary .more-chip::before { content:"閉じる ▲"; }
 /* シナリオ：札だけを状態の色面にする（A 緑・B 黄・C 橙・D 赤・§1・D3 PR 5）。札は id（sc-tag-A〜D）で決めるので、
-   カードのクラス（sc-best・sc-mid・sc-worst）は色に関係しない。カードは上の細い罫で区切り、面は影響の帯だけ */
-.sc-card { padding:12px 0 0; border-top:1px solid var(--c-rule); }
-.sc-tag   { font-size:0.63rem; font-weight:800; letter-spacing:0.1em; padding:3px 9px; display:inline-block; margin-bottom:9px; }
-.sc-title { font-size:0.83rem; font-weight:700; margin-bottom:7px; }
-.sc-body  { font-size:0.73rem; color:var(--c-text-mute); line-height:1.65; }
-.sc-impact{ margin-top:9px; padding:8px 10px; font-size:0.71rem; line-height:1.5; }
+   カードのクラス（sc-best・sc-mid・sc-worst）は色に関係しない */
+.sc-tag   { align-self:flex-start; font-size:0.63rem; font-weight:800; letter-spacing:0.06em; padding:3px 9px; line-height:1.5; }
 #sc-tag-A { background:var(--c-ok);     color:var(--c-on-ok); }
 #sc-tag-B { background:var(--c-warn);   color:var(--c-on-warn); }
 #sc-tag-C { background:var(--c-alert);  color:var(--c-on-alert); }
 #sc-tag-D { background:var(--c-danger); color:var(--c-on-danger); }
-.sc-tag .sc-trend { color:inherit; }
-.sc-title { color:var(--c-text); }
-.sc-impact { background:var(--c-surface); color:var(--c-text); }
+.sc-tag-em { font-size:1.15em; font-weight:700; }
+/* 確率の数字は 30秒カラムの数字の札（.glance-fig-num）と同じ作法。「約」と「%」は JS が小さい span で入れる */
+.sc-fig { display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 8px; line-height:1.1; }
+.sc-pct { font-family:var(--f-figure); font-size:1.6rem; font-weight:600; color:var(--c-figure); font-variant-numeric:tabular-nums; }
+.sc-pct-unit { font-size:var(--fs-sm); font-weight:500; margin:0 1px; }
+.sc-trend { color:var(--c-text-mute); }
+.sc-fig .sc-trend { font-size:var(--fs-md); font-weight:700; color:var(--c-text); }
+.sc-bar { position:relative; display:block; height:8px; background:var(--c-surface); }
+.sc-bar-fill { position:absolute; left:0; top:0; bottom:0; width:0; background:var(--c-figure); }
+.sc-range-one { font-size:var(--fs-xs); color:var(--c-text-mute); line-height:1.4; }
+.sc-lead, .sc-focus-lead { font-size:var(--fs-base); font-weight:700; line-height:1.6; color:var(--c-text); }   /* .route-lead と同じ */
+/* 開いた中：判定の定義・今日の見立て・これまでの根拠。項の見出しは .route-item-h と同じ形 */
+.sc-detail { display:flex; flex-direction:column; gap:0.8em; padding:8px 12px 12px; border-top:1px solid var(--c-rule);
+  font-size:var(--fs-sm); line-height:1.75; color:var(--c-text); }
+.sc-detail p { margin:0; }
+.sc-item-h { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.08em; padding:1px 7px; margin-right:6px; vertical-align:middle;
+  border:1px solid var(--c-text-mute); color:var(--c-text); line-height:1.5; }
+.sc-title { font-weight:700; color:var(--c-text); }
+.sc-body  { color:var(--c-text-mute); }
+.sc-body .sc-item-h { font-weight:800; }
 
-/* シナリオの補足・注記・次の焦点（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「シナリオの型」） */
+/* シナリオの見出しの下：判定日（JS が日付だけ入れる）と更新日時。日付を書くのは sc-update-date の1か所だけ（日次） */
 .sec-h2--sky { color:var(--c-text); }
 .label-scenario.sc-h2-label, .label-ai.sc-h2-label { margin-left:8px; font-size:var(--fs-xs); }
-/* シナリオの補足：赤い破線の囲みをやめて面の帯に（状態ではない）。但し書きの黄の文字も本文の色の太字に（色だけで注意を示さない・§1） */
-.sc-update { background:var(--c-surface); padding:12px 16px;
-  margin-top:14px; margin-bottom:16px; font-size:var(--fs-sm); color:var(--c-text); line-height:1.8; }
-.sc-update-head { margin:0 0 10px; font-size:var(--fs-sm); }
+.sc-update-head { display:flex; flex-direction:column; gap:2px; margin:0 0 10px; font-size:var(--fs-sm); color:var(--c-text-mute); line-height:1.6; }
+.sc-horizon-line strong { color:var(--c-text); }
 .sc-update-date { font-weight:700; color:var(--c-text); }
+/* 前提が古いときだけ syncScenarioFromDashboard() が style.display='block' で出す。閉じた箱に隠さないよう、見出しの下に置く。
+   前提が古いことの注意は状態（注記）なので黄の色面（D3 PR 5） */
+.sc-ctx-note { display:none; margin:0 0 10px; padding:6px 9px; background:var(--c-warn);
+  font-size:var(--fs-xs); color:var(--c-on-warn); line-height:1.65; }
+/* 確率の補足：要点（冒頭の要約）と、開くと但し書き。状態ではないので面の帯（赤い破線の囲みはやめた） */
+.sc-update { margin-top:12px; background:var(--c-surface); border:1px solid var(--c-rule); color:var(--c-text); }
+.sc-update > summary .sc-item-h { align-self:flex-start; }
+.sc-update > summary:hover .more-chip { background:var(--c-bg); }
+.sc-update-body { padding:8px 12px 12px; border-top:1px solid var(--c-rule); font-size:var(--fs-sm); line-height:1.8; }
+.sc-update-body p { margin:0; }
 .sc-update-caveat { color:var(--c-text); font-weight:700; }
-.sc-trend { color:var(--c-text-mute); }
-.sc-tag-em { font-size:1.15em; font-weight:700; }
-.sc-sync-note { font-size:var(--fs-sm); color:var(--c-text-mute); text-align:center; margin-top:8px; }
-/* 判定日と複数回の推定の幅（JS が入れる。空のときは場所を取らない） */
-.sc-horizon:not(:empty), .sc-range:not(:empty) { display:block; margin-top:2px; }
-.sc-ai-note { margin-top:10px; padding:9px 13px; background:var(--c-surface);
-  font-size:var(--fs-sm); color:var(--c-text); line-height:1.75; }
+/* 確率について：同期の注記と AI の注記（中身と id は日次では触らない） */
+.sc-about { margin-top:10px; border:1px solid var(--c-rule); }
+.sc-about-lead { font-size:var(--fs-sm); line-height:1.6; color:var(--c-text); }
+.sc-about-lead .label-ai { margin-right:6px; }
+.sc-about-body { display:flex; flex-direction:column; gap:8px; padding:8px 12px 12px; border-top:1px solid var(--c-rule); }
+.sc-sync-note { font-size:var(--fs-sm); color:var(--c-text-mute); }
+/* 複数回の推定の幅（JS が入れる。空のときは場所を取らない） */
+.sc-range:not(:empty) { display:block; margin-top:2px; }
+.sc-ai-note { font-size:var(--fs-sm); color:var(--c-text); line-height:1.75; }
 .sc-ai-note strong { color:var(--c-text); }
 .sc-ai-meta { font-size:var(--fs-xs); color:var(--c-text-mute); }
 .sc-ai-meta a { color:var(--c-text-mute); }
 .sc-ai-variance { margin-top:7px; padding:6px 9px; border:1px solid var(--c-rule);
   font-size:var(--fs-xs); color:var(--c-text); line-height:1.65; }
-/* 前提が古いときだけ syncScenarioFromDashboard() が style.display='block' で出す */
-/* 前提が古いことの注意は状態（注記）なので黄の色面（D3 PR 5） */
-.sc-ctx-note { display:none; margin-top:7px; padding:6px 9px; background:var(--c-warn);
-  font-size:var(--fs-xs); color:var(--c-on-warn); line-height:1.65; }
-.sc-footer { margin-top:10px; padding:10px 0 0; border-top:1px solid var(--c-rule);
-  font-size:var(--fs-xs); color:var(--c-text-mute); display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+/* 次の焦点：各項は件名（閉じた形）と本文（開いた中） */
+.sc-footer { margin-top:14px; padding:10px 0 0; border-top:1px solid var(--c-rule); }
 .sc-focus-h { font-size:var(--fs-md); font-weight:700; color:var(--c-accent); margin:0 0 10px; letter-spacing:0.05em; }
 .sc-focus-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
-.sc-focus-list > li { font-size:var(--fs-base); color:var(--c-text); margin-bottom:5px; }
-.sc-focus-list strong { color:var(--c-text); font-weight:700; }
+.sc-focus-list > li { margin:0; }
+.sc-focus-more { border:1px solid var(--c-rule); }
+.sc-focus-more > summary { gap:6px; padding:8px 12px; }
+.sc-focus-text { padding:8px 12px 12px; border-top:1px solid var(--c-rule); font-size:var(--fs-sm); line-height:1.75; color:var(--c-text); }
+@media (max-width: 600px) {
+  .sc-lead, .sc-focus-lead { font-size:0.88rem; }   /* .route-lead・.glance-lead と同じ */
+}
 /* キーワードの自動の色付け（markKeywords()・2026-10-11）。日次更新では手で書かない。
    対象は 30秒カラムの3行・シナリオの補足・次の焦点。数値と日付は本文の色の太字、但し書きは補助の色。
    被害の語・回復の語も、赤・緑の文字をやめて本文の色の太字にした（D3 PR 5。色だけで状態を示さない・§1） */
@@ -703,7 +742,7 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
 .kw-hedge { color:var(--c-text-mute); }
 /* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
 @media (max-width: 768px) {
-  .sc-update, .sc-sync-note, .sc-ai-note, .sc-ai-variance, .sc-ctx-note, .sc-footer { font-size:0.8rem; }
+  .sc-update-body, .sc-sync-note, .sc-ai-note, .sc-ai-variance, .sc-ctx-note, .sc-focus-text { font-size:0.8rem; }   /* PR-B2 で開いた中の箱に替えた */
 }
 
 /* 更新履歴（② PR4a・2026-09-29）。日次更新はクラスだけで書く（型は daily-site-update「更新履歴の型」）。
@@ -1557,7 +1596,8 @@ p, li,
 .news-body,
 .jf-col,
 .badges .badge-item,                       /* ヘッダーの警戒レベル */
-.sc-section > div:not(.sc-grid),          /* シナリオの確率補足・次の焦点 */
+.sc-section > div:not(.sc-grid),          /* シナリオの見出しの下の行・次の焦点 */
+.sc-section > details,                     /* シナリオの確率の補足・確率について（PR-B2） */
 .osint-card > div,                         /* 現地メディア視点の英語要約 */
 .data-note,                                /* WTI の注記 */
 .update-log > div > div {                  /* 更新履歴の各行（行を入れる箱の開始タグは日次差分の old_str に引用されるため、クラスは section に付ける） */
@@ -1572,13 +1612,13 @@ footer {                                   /* フッター（中央揃え・上�
 }
 
 /* --- 2-c カラム ---
-   〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列。
+   〜600px 1列 ／ 601〜1023px 2列 ／ 1024px〜 3列（シナリオ4本は 1024px〜 4列・二段表示 PR-B2）。
    .sc-grid のインライン style（2列）は ② PR4a で外したので !important は不要。 */
-.sc-grid  { grid-template-columns: 1fr; }
+.sc-grid  { grid-template-columns: minmax(0, 1fr); }
 .stats-row { grid-template-columns: repeat(2, 1fr); }
 
 @media (min-width: 601px) {
-  .sc-grid { grid-template-columns: repeat(2, 1fr); }
+  .sc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats-row { grid-template-columns: repeat(3, 1fr); }
 
   /* 関連最新ニュース：2列。「過去の記事を見る」で開く分も同じ並びにする */
@@ -1608,6 +1648,7 @@ footer {                                   /* フッター（中央揃え・上�
 @media (min-width: 1024px) {
   .stats-row { grid-template-columns: repeat(6, 1fr); }
   .commentary-grid { grid-template-columns: repeat(3, 1fr); }
+  .sc-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }   /* 閉じた形の4本を1段に（前後の見本・PR-B2） */
 }
 /* ============================================================
    JS が組み立てる HTML のクラス（②' PR E・2026-10-12）

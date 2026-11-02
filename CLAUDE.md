@@ -329,7 +329,7 @@ handovers/INDEX.md を読んで現状を把握して。変更・コミットは�
 
 - `hormuz-data-` リポジトリはダッシュボード・自動データの別リポジトリ
 - `data/manual-update.json` の `scenario` フィールド（A/B/C/D確率）がシナリオ確率の正として自動同期される
-- `syncScenarioFromDashboard()` がページ読み込み時にfetchして `sc-tag-A/B/C/D` を上書き（手動更新不要）
+- `syncScenarioFromDashboard()` がページ読み込み時にfetchして確率（`sc-pct-A`〜`D`）・バー・推定の幅・判定日を入れる（手動更新不要）
 - fetch URL：`https://yattanda.github.io/hormuz-data-/data/manual-update.json`
 - **`hormuz-data-` の `data/oil-flow.json`** が日本原油調達フローの単一ソース（`loadRouteTableFlow()` が `SITE_CONFIG.DASHBOARD_BASE + '/data/oil-flow.json'` をfetchして値を注入）
   - `hormuz-map` 側に `docs/data/oil-flow.json` は**存在しない**。従来の記述は誤りで、実測により訂正した

@@ -294,6 +294,12 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .map-card-sub { display:block; font-size:var(--fs-2xs); color:var(--c-text-mute); margin-top:1px; }
 .map-card-go { margin-right:12px; background:var(--c-accent); color:var(--c-on-accent); font-size:var(--fs-sm); font-weight:700;
   padding:7px 14px; letter-spacing:0.03em; white-space:nowrap; }
+/* 旧ボタン「地図はここ →」：古い HTML（キャッシュ最長600秒）と新しい CSS が組んだときに崩れないよう、1日だけ残す。
+   Pages は ?v= を見ずに同じファイルを返すため。HTML からはもう使っていないので、次に CSS を変えるときに消す */
+.jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
+  background:var(--c-accent); color:var(--c-on-accent); font-size:var(--fs-md); font-weight:700; padding:7px 18px; text-decoration:none;
+  letter-spacing:0.03em; white-space:nowrap; }
+.jump-map:hover { text-decoration:underline; text-underline-offset:.18em; }
 @media (min-width:601px) {
   .map-card { grid-template-columns:240px 1fr auto; column-gap:14px; }
   .map-card-img { grid-column:auto; width:240px; height:112px; }

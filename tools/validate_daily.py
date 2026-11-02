@@ -139,8 +139,9 @@ PAT_UPDATED = re.compile(r'(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\
 
 # 全ルート現況サマリーの表と、行ごとの本文中の日付表記（鮮度チェック用）
 # 二段表示 PR-B1（2026-11-02）で <table> をやめ、各ルートを <details class="route-row"> にした。
-# 行の中に経緯の <details> が入れ子になるので、表は「ROUTE TABLE」の印から日本向けの注記の手前まで、行は開始タグで区切る
-PAT_ROUTE_TABLE = re.compile(r'<!-- ROUTE TABLE -->.*?(?=<details class="jf-col jf-note")', re.S)
+# 行の中に経緯の <details> が入れ子になるので、表は「ROUTE TABLE」の印から「その他の検討中ルート」の印の手前まで、行は開始タグで区切る。
+# 終わりはコメントの印にする（日本向けの注記のタグの書き方に左右されないように）
+PAT_ROUTE_TABLE = re.compile(r'<!-- ROUTE TABLE -->.*?(?=<!-- ▼ その他の検討中ルート)', re.S)
 PAT_ROUTE_ROW_ID = re.compile(r'id="jf-td-(\w+)"')
 PAT_ROUTE_ROW_MD = re.compile(r'(\d{1,2})/(\d{1,2})')
 PAT_ROUTE_LATEST = re.compile(r'<p class="route-latest">.*?<time datetime="(\d{4}-\d{2}-\d{2})', re.S)
@@ -150,11 +151,14 @@ PILL_MAX = 20          # 状態の札の字数（目安は15字まで。超え�
 
 
 def route_rows(html: str) -> list[str]:
-    """ルート表の各行（<details class="route-row"> の開始タグから次の行の手前まで）の HTML"""
+    """ルート表の各行（<details class="route-row"> の開始タグから次の行・脚注・日本向けの注記の手前まで）の HTML。
+    コメントの中の型の例は行に数えない"""
     t = PAT_ROUTE_TABLE.search(html)
     if not t:
         return []
-    return re.findall(r'<details class="route-row".*?(?=<details class="route-row"|\Z)', t.group(0), re.S)
+    body = re.sub(r"<!--.*?-->", "", t.group(0), flags=re.S)
+    return re.findall(r'<details class="route-row".*?(?=<details class="route-row"|<div class="rtable-foot"|<details class="[^"]*jf-note|\Z)',
+                      body, re.S)
 
 # sitemap.xml の lastmod（ホスト名は問わない。パスで特定する）
 PAT_SITEMAP_HUB = re.compile(r'<loc>https?://[^/<]+/</loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})</lastmod>')
@@ -1250,7 +1254,9 @@ def check_route_leads(html: str) -> None:
     """
     rows = route_rows(html)
     if not rows:
-        warn("全ルート現況サマリーの行（details.route-row）を検出できませんでした（構造が変わった可能性）")
+        # 行が見つからないと要点の有無を確かめられない。黙って通さず NG にする（30秒カラムの要点と同じ）
+        ng("全ルート現況サマリーの行（details.route-row）を検出できず、要点を確認できません（構造が変わった可能性。"
+           "daily-site-update「ルート表の型」）")
         return
     items = [(re.search(r'data-item="([^"]*)"', r[:200]) or [None, ""])[1] for r in rows]
     if tuple(items) != ROUTE_ITEMS:

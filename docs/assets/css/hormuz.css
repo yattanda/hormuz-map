@@ -200,7 +200,7 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    札の語は CSS が出す（HTML の札は aria-hidden の空の span）。札の文字は本文の 0.7倍・高さ 26px・左右 9px */
 .glance-more, .incident-more { display:block; }
 .glance-more > summary, .incident-more > summary, .route-row > summary, .jf-note > summary { list-style:none; } /* ルート表・日本向けの注記も同じ部品（PR-B1） */
-.glance-more > summary, .incident-more > summary { list-style:none; cursor:pointer; display:flex; flex-direction:column; gap:6px;
+.glance-more > summary, .incident-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px;
   min-height:44px; }
 .glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker, .route-row > summary::-webkit-details-marker, .jf-note > summary::-webkit-details-marker { display:none; }
 .glance-more > summary:focus-visible, .incident-more > summary:focus-visible, .route-row > summary:focus-visible, .jf-note > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }

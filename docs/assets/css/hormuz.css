@@ -280,10 +280,25 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
 .jump-pill:hover { border-color:var(--c-text); text-decoration:underline; text-underline-offset:.18em; }
 .jump-pill-badge { font-size:0.62rem; font-weight:700; line-height:1; padding:3px 6px;
   background:var(--c-accent); color:var(--c-on-accent); letter-spacing:0.02em; }
-.jump-map { margin-left:auto; display:inline-flex; align-items:center; gap:8px;
-  background:var(--c-accent); color:var(--c-on-accent); font-size:var(--fs-md); font-weight:700; padding:7px 18px; text-decoration:none;
-  letter-spacing:0.03em; white-space:nowrap; }
-.jump-map:hover { text-decoration:underline; text-underline-offset:.18em; }
+/* 地図への行き先：地図の絵のカード（2026-11-02・運営者。地図は動かさず、30秒カラムの下で目立たせる）。
+   絵は固定の1枚（/images/map-thumb-hormuz.webp・航路と地名だけで、日付のある印・危険区域・凡例は無い）。
+   スマホは絵を上に全幅、601px 以上は絵を左に。区切りは細い罫だけ（特別レポートのバナーと同じ作法） */
+.map-card { flex-basis:100%; display:grid; grid-template-columns:1fr auto; align-items:center; column-gap:10px;
+  border:1px solid var(--c-rule); text-decoration:none; overflow:hidden; }
+.map-card:hover { border-color:var(--c-text); }
+.map-card:hover .map-card-title { text-decoration:underline; text-underline-offset:.18em; }
+.map-card-img { grid-column:1 / -1; width:100%; height:120px; object-fit:cover; object-position:50% 45%; display:block; }
+.map-card-body { padding:8px 0 10px 12px; min-width:0; }
+.map-card-kicker { display:block; font-size:var(--fs-2xs); font-weight:700; color:var(--c-text-mute); letter-spacing:0.06em; }
+.map-card-title { display:block; font-size:var(--fs-md); font-weight:700; color:var(--c-text); line-height:1.4; }
+.map-card-sub { display:block; font-size:var(--fs-2xs); color:var(--c-text-mute); margin-top:1px; }
+.map-card-go { margin-right:12px; background:var(--c-accent); color:var(--c-on-accent); font-size:var(--fs-sm); font-weight:700;
+  padding:7px 14px; letter-spacing:0.03em; white-space:nowrap; }
+@media (min-width:601px) {
+  .map-card { grid-template-columns:240px 1fr auto; column-gap:14px; }
+  .map-card-img { grid-column:auto; width:240px; height:112px; }
+  .map-card-body { padding:8px 0; }
+}
 
 /* 深掘り分析記事：赤い枠の箱をやめ、細い罫で区切る。記事の色分けもやめた（状態ではない） */
 .glance-special { margin-top:16px; padding-top:12px; border-top:1px solid var(--c-rule); }

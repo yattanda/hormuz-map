@@ -14,13 +14,16 @@ tools/daily-verify-prompts.md の V2）で、報道とは独立した2つ目の�
 
 注意（実測で分かったこと）：
   - 取引中の日（米国時間）の足は、清算後も夜間の取引で値が動く。確定するのは Yahoo の取引日が
-    切り替わる米国東部 0時（日本時間 13時・夏時間）以降。**朝の日次では、前日（米国時間）の終値は
+    切り替わる米国東部 0時（日本時間 13時・夏時間／14時・冬時間）以降。**朝の日次では、前日（米国時間）の終値は
     多くの場合「未確定」と出る。**その日の終値は報道2出典で確かめ、このスクリプトは
     それより前の日の終値（前回の更新で据え置いた終値の裏取り）に使う
   - 期近をつなげた銘柄（CL=F・BZ=F）は限月が途中で切り替わる（10/26 に BZ=F は既に1月物だった）。
     サイトの限月と合わせるため、必ず限月を指定した銘柄（BZZ26.NYM など）で読む
   - 満期を過ぎた限月は Yahoo から消える（404）。その限月の過去の終値は取れないので、終了コード 2 になる
   - CME の公式サイトは自動取得を利用規約で禁じ、403 を返す。ICE は Cloudflare で拒否される。どちらも使わない
+  - 日足の時刻は米国東部の 0時（夏時間は UTC 04:00、冬時間は UTC 05:00）。Yahoo の gmtoffset は**いまの**時差
+    だけなので、全部の足に当てると夏時間の終わり（11月第1日曜）の後に、それより前の足が1日前の日付になる
+    （2026-11-03 実測：10/30 の 113.43 が「10/29」と出た）。足ごとに米国東部の時差を決める（us_eastern_offset）
 
 使い方：
     python tools/fetch_oil_settle.py                     # 期近とその次の限月、直近7取引日
@@ -42,6 +45,26 @@ PAGE_URL = "https://finance.yahoo.com/quote/{symbol}/history/"
 USER_AGENT = "Mozilla/5.0 (compatible; chokepointlab-daily/1.0; +https://chokepointlab.com/contact/)"
 MONTH_CODES = "FGHJKMNQUVXZ"
 PRODUCTS = (("ブレント", "BZ"), ("WTI", "CL"))
+
+
+def us_eastern_offset(utc_dt):
+    """その時刻（UTC）の米国東部の時差。夏時間は3月第2日曜 2時〜11月第1日曜 2時（2007年からの規則）。
+    Windows の Python は tzdata が無いと zoneinfo で America/New_York を読めないので、規則を直に書く。"""
+    def sunday(year, month, nth):
+        day = datetime.date(year, month, 1)
+        day += datetime.timedelta(days=(6 - day.weekday()) % 7)
+        return day + datetime.timedelta(weeks=nth - 1)
+    y = utc_dt.year
+    # 切り替わりの時刻（UTC）：3月は 2時 EST＝7時 UTC、11月は 2時 EDT＝6時 UTC
+    start = datetime.datetime.combine(sunday(y, 3, 2), datetime.time(7), datetime.timezone.utc)
+    end = datetime.datetime.combine(sunday(y, 11, 1), datetime.time(6), datetime.timezone.utc)
+    return datetime.timedelta(hours=-4 if start <= utc_dt < end else -5)
+
+
+def to_eastern_date(ts):
+    """Yahoo のタイムスタンプ（秒）を、米国東部の日付にする。"""
+    utc_dt = datetime.datetime.fromtimestamp(ts, datetime.timezone.utc)
+    return (utc_dt + us_eastern_offset(utc_dt)).date()
 
 
 def business_days_back(day, n):
@@ -104,18 +127,17 @@ def fetch(symbol, days, on_date=None):
         raise ValueError("データなし：{}".format((data.get("chart") or {}).get("error")))
     r = result[0]
     meta = r["meta"]
-    offset = datetime.timedelta(seconds=meta.get("gmtoffset", 0))
     period = (meta.get("currentTradingPeriod") or {}).get("regular") or {}
     if not period.get("start"):
         # 取引中の日が分からないと、動いている値を「終値」と出してしまう。取得失敗として扱う
         raise ValueError("取引中の日（currentTradingPeriod）が返らず、終値と未確定を区別できない")
-    current = (datetime.datetime.fromtimestamp(period["start"], datetime.timezone.utc) + offset).date()
+    current = to_eastern_date(period["start"])
     closes = (r.get("indicators", {}).get("quote") or [{}])[0].get("close") or []
     rows, prev = [], None
     for ts, close in zip(r.get("timestamp") or [], closes):
         if close is None:
             continue
-        day = (datetime.datetime.fromtimestamp(ts, datetime.timezone.utc) + offset).date()
+        day = to_eastern_date(ts)
         value = round(close, 2)
         if rows and rows[-1]["date"] == day.isoformat():
             # 取引中の日の足が2本返ることがある（2026-10-27 実測）。同じ日は後の1本だけ残す

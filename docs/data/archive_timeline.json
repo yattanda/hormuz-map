@@ -3724,6 +3724,29 @@
           "sourceLabel": "Gulf News"
         }
       ]
+    },
+    {
+      "date": "2026-11-04",
+      "dateLabel": "2026/11/04 08:34",
+      "blockadeDay": 250,
+      "summary": "【重大更新】前回分の裏取り：解消2件・継続9件（解消：WSJの攻撃準備の報道＝APが10/28に報道・11/2の原油終値＝Yahoo Finance〈NYMEXのデータ〉とLapaas Voiceが一致しブレント1月物104.77ドル・WTI12月物96.46ドル／継続：ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体。いずれも今回の検索で新しい資料なし）・米軍が11/2にイランのQeshm島を限定攻撃したと米当局者が説明（NBC。自衛と説明・CENTCOMの公式発表は確認できず）・UKMTO公式が警報194（11/3 22:16 JST発行・インド人乗組員のダウ船が攻撃を受ける）と警報195（11/4 06:08 JST発行・リマ沖でタンカーが飛翔体2発を機関室に受ける）を公表。インド外務省はMSV AL JUSUFIで14人中1人死亡・13人救助と発表（Khaleej Times。警報194と同一の事案かは確認できず）・原油は11/2のブレント1月物104.77ドル・WTI12月物96.46ドルを確定、11/3のWTI12月物は96.09ドルだがブレントは2出典での一致を確認できず据え置き・通航は10/26〜11/1の1週間に141回（Riviera）・CENTCOMの封鎖の累計は10/31時点で商船144隻のまま・バンス副大統領の「進展」発言とイランの2日以内の再開計画（Al Jazeera）・イエメン・紅海・ヤンブー・フジャイラは主要媒体で新たな動きを確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機250日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）",
+      "relatedNews": [
+        {
+          "title": "米軍がイランのQeshm島を限定攻撃——米当局者は自衛と説明",
+          "url": "https://www.nbcnews.com/world/iran/us-conducted-defensive-strikes-iranian-targets-strait-hormuz-us-offici-rcna607161",
+          "sourceLabel": "NBC News"
+        },
+        {
+          "title": "UKMTO警報194・195：インド人乗組員のダウ船が攻撃を受け1人死亡、リマ沖でタンカーが飛翔体2発",
+          "url": "https://www.khaleejtimes.com/world/asia/indian-sailor-killed-rescued-vessel-attacked-off-oman-coast",
+          "sourceLabel": "Khaleej Times"
+        },
+        {
+          "title": "バンス副大統領「進展はあった」——イランは2日以内の海峡再開計画を説明",
+          "url": "https://www.aljazeera.com/news/2026/11/2/iran-pushing-accelerated-plan-for-ceasefire-talks-with-us",
+          "sourceLabel": "Al Jazeera"
+        }
+      ]
     }
   ]
 }

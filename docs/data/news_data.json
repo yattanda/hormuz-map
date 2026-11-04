@@ -1,7 +1,27 @@
 {
-  "updated": "2026年11月04日 08:34 日本時間JST",
+  "updated": "2026年11月05日 07:23 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-irgc-1104",
+      "title": "IRGCが「機雷でタンカー4隻が破壊、別の2隻を拘束」と主張——独立した確認なし・トランプ氏はQeshm島攻撃を認める",
+      "body": "Al Jazeera（11/4）は、IRGCの声明として、海峡南方の禁止された航路で石油タンカー4隻が機雷に触れて破壊され、別の2隻が航行規制違反で拘束されたと伝える（原文は「four oil tankers were destroyed after striking naval mines」）。同記事は、UKMTOが報告した事案とIRGCが主張する事案が関連するかは独立に確認できないと書く。船名・位置・発生時刻は今回開いた記事から読み取れない。同記事によると、トランプ氏は米軍が火曜（11/3）早朝にQeshm島を攻撃したと認め、「小規模な攻撃」と述べた。イランのレザイ氏は米側の回答を納得できるものではないと評価し、カタールは仲介の交渉が続いていると説明した。",
+      "sourceLabel": "Al Jazeera（11/4）",
+      "date": "2026年11月4日（現地）",
+      "label": "海上",
+      "url": "https://aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oil-1104",
+      "title": "原油が戦争終結観測で8％超急落——ブレント1月物94.62ドル・WTI12月物88.12ドル（11/4終値）",
+      "body": "CNBC（11/4 11:43 EST公開）は、WTIが8.3％下げて1バレル88.12ドルで取引を終え、ブレントは8.7％安の94.62ドルで決済されたと伝える。バンス副大統領が「The reason we lost is the war」と投稿し、民主党が火曜の選挙で上下両院を制したことを受け、トランプ氏に戦争終結を促す圧力が強まるとの見方が売りを誘ったという。WTI12月物は日経・みんかぶも88.12ドル、ブレントはDow Jones Market Dataも94.62ドルと伝える。ブレントの限月は記事に明記がなく、Yahoo Finance（NYMEXのデータ）の1月物の取引中の値と整合する。",
+      "sourceLabel": "CNBC（11/4）",
+      "date": "2026年11月4日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html",
+      "isLatest": false
+    },
     {
       "id": "latest-qeshm-1102",
       "title": "米軍がイランのQeshm島を限定攻撃——米当局者は自衛と説明・大規模戦闘の再開ではないと強調",
@@ -10,7 +30,7 @@
       "date": "2026年11月2日（米国時間）",
       "label": "攻撃",
       "url": "https://www.nbcnews.com/world/iran/us-conducted-defensive-strikes-iranian-targets-strait-hormuz-us-offici-rcna607161",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-ukmto194-195-1103",
@@ -20,26 +40,6 @@
       "date": "2026年11月3日（現地）",
       "label": "海上",
       "url": "https://www.khaleejtimes.com/world/asia/indian-sailor-killed-rescued-vessel-attacked-off-oman-coast",
-      "isLatest": false
-    },
-    {
-      "id": "latest-vance-progress-1102",
-      "title": "バンス副大統領「進展はあった」——イランは2日以内の海峡再開計画を説明、合意の内容は示されず",
-      "body": "Al Jazeera（11/2）によると、バンス米副大統領は「We’ve certainly made some progress. We’ll see if we can make some more」と述べ、期限は設けていないと話した。イラン外務省のバアエイ報道官は、海峡の再開計画は「condensed and can be implemented within two days」（以前は1週間とされていた）と説明し、イランの要求が満たされれば海峡の安全が回復しうると述べた。トランプ氏は「It looks like that’s coming together very nicely」と述べた。合意の内容や日程は記事に示されていない。",
-      "sourceLabel": "Al Jazeera（11/2）",
-      "date": "2026年11月2日（現地）",
-      "label": "外交",
-      "url": "https://www.aljazeera.com/news/2026/11/2/iran-pushing-accelerated-plan-for-ceasefire-talks-with-us",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto192-193-1102",
-      "title": "UKMTO警報192・193：北部ペルシャ湾とオマーン・リマ沖でタンカーが飛翔体を受ける——船名・攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報192（11/2 10:40 JST発行）は、サウジ沖の北部ペルシャ湾でタンカーが正体不明の飛翔体2発を左舷に受けたと伝え、警報193（11/3 03:49 JST発行）は、オマーンのリマの北東9海里で船が飛翔体を受け右舷に穴が開いたと伝える。どちらも乗組員は無事で、公式の本文に発生時刻・船名・攻撃主体の記載はない。Gulf News（11/2 23:31更新）は警報193の本文の文言（原文は「The Master reports the vessel has been struck by an unknown projectile which has caused a hole on the starboard side」）を伝える。",
-      "sourceLabel": "UKMTO公式・Gulf News（11/2）",
-      "date": "2026年11月2日（現地）",
-      "label": "海上",
-      "url": "https://gulfnews.com/world/mena/vessel-struck-near-strait-of-hormuz-maritime-agency-1.500733362",
       "isLatest": false
     }
   ],
@@ -55,20 +55,20 @@
       "date": "2026年11月3日（現地）",
       "summary": "Khaleej Timesは、インド外務省が、オマーンのリマ付近で昨夜、商船MSV AL JUSUFIが攻撃を受け、乗船していたインド人14人のうち13人が救助され、1人が死亡したと発表したと伝える。ソノワル海運相は、救助したのはオマーン沿岸警備隊だと述べた。攻撃主体は記事に示されていない。",
       "url": "https://www.khaleejtimes.com/world/asia/indian-sailor-killed-rescued-vessel-attacked-off-oman-coast",
-      "isLatest": true
+      "isLatest": false
     },
     {
-      "id": "osint-aljazeera-jawf-1102",
-      "titleJa": "【Al Jazeera】イエメン北部アル・ジャウフ県が新たな激戦地に——政府側とフーシ派が双方に優勢を主張",
-      "titleEn": "Al-Jawf becomes new hotspot in Yemen war between government forces, Houthis (Al Jazeera, Nov 2)",
-      "title": "【Al Jazeera】イエメン北部アル・ジャウフ県が新たな激戦地に——政府側とフーシ派が双方に優勢を主張",
+      "id": "osint-aljazeera-irgc-1104",
+      "titleJa": "【Al Jazeera】IRGCが機雷でタンカー4隻の破壊を主張、トランプ氏はQeshm島攻撃を認める——イランは米側回答を「納得できない」と評価",
+      "titleEn": "Iran says US reply to Hormuz plan unconvincing, Trump confirms strikes (Al Jazeera, Nov 4)",
+      "title": "【Al Jazeera】IRGCが機雷でタンカー4隻の破壊を主張、トランプ氏はQeshm島攻撃を認める——イランは米側回答を「納得できない」と評価",
       "country": "カタール",
       "media": "Al Jazeera",
       "source": "Al Jazeera",
-      "date": "2026年11月2日（現地）",
-      "summary": "Al Jazeeraは、政府側の現地指揮官がアル・ジャウフ県で防衛線を破り一部を掌握したと述べた一方、フーシ派はジャウフ県とマアリブ県で政府軍の前進を阻止したと主張していると伝える。フーシ派系メディアは、ホデイダ県バジール地区の石油会社施設が空爆を受けたと報じた（記事は独自に検証していない）。",
-      "url": "https://www.aljazeera.com/news/2026/11/2/al-jawf-becomes-new-hotspot-in-yemen-war-between-government-forces-houthis",
-      "isLatest": false
+      "date": "2026年11月4日（現地）",
+      "summary": "Al Jazeeraは、IRGCがタンカー4隻が機雷に触れて破壊され別の2隻を拘束したと主張したが、UKMTOが報告した事案との関連は独立に確認できないと伝える。トランプ氏はQeshm島への攻撃を認めて「小規模な攻撃」と述べ、イランのレザイ氏は米側の回答を納得できるものではないと評価した。カタールは交渉が続いていると説明した。",
+      "url": "https://aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
+      "isLatest": true
     },
     {
       "id": "osint-arabnews-1101",
@@ -2142,6 +2142,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月5日",
+      "items": [
+        {
+          "id": "latest-vance-progress-1102",
+          "title": "バンス副大統領「進展はあった」——イランは2日以内の海峡再開計画を説明、合意の内容は示されず",
+          "body": "Al Jazeera（11/2）によると、バンス米副大統領は「We’ve certainly made some progress. We’ll see if we can make some more」と述べ、期限は設けていないと話した。イラン外務省のバアエイ報道官は、海峡の再開計画は「condensed and can be implemented within two days」（以前は1週間とされていた）と説明し、イランの要求が満たされれば海峡の安全が回復しうると述べた。トランプ氏は「It looks like that’s coming together very nicely」と述べた。合意の内容や日程は記事に示されていない。",
+          "sourceLabel": "Al Jazeera（11/2）",
+          "date": "2026年11月2日（現地）",
+          "label": "外交",
+          "url": "https://www.aljazeera.com/news/2026/11/2/iran-pushing-accelerated-plan-for-ceasefire-talks-with-us",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto192-193-1102",
+          "title": "UKMTO警報192・193：北部ペルシャ湾とオマーン・リマ沖でタンカーが飛翔体を受ける——船名・攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報192（11/2 10:40 JST発行）は、サウジ沖の北部ペルシャ湾でタンカーが正体不明の飛翔体2発を左舷に受けたと伝え、警報193（11/3 03:49 JST発行）は、オマーンのリマの北東9海里で船が飛翔体を受け右舷に穴が開いたと伝える。どちらも乗組員は無事で、公式の本文に発生時刻・船名・攻撃主体の記載はない。Gulf News（11/2 23:31更新）は警報193の本文の文言（原文は「The Master reports the vessel has been struck by an unknown projectile which has caused a hole on the starboard side」）を伝える。",
+          "sourceLabel": "UKMTO公式・Gulf News（11/2）",
+          "date": "2026年11月2日（現地）",
+          "label": "海上",
+          "url": "https://gulfnews.com/world/mena/vessel-struck-near-strait-of-hormuz-maritime-agency-1.500733362",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月4日",
       "items": [

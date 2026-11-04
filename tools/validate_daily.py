@@ -952,6 +952,12 @@ def check_types(html: str, base: str) -> None:
             warn(f"シナリオにインライン style が {n_style}箇所あります（型はクラス。daily-site-update「シナリオの型」）")
         else:
             ok("シナリオにインライン style なし")
+        # 二段表示 PR-B2（2026-11-02）で4本と補足を <details> にした。古い型が戻っていたら知らせる
+        old = [w for w, pat in (("div.sc-card", r'<div class="sc-card[ "]'), ("div.sc-update", r'<div class="sc-update">'),
+                                ("🅐〜🅓 の行", r'[🅐🅑🅒🅓]')) if re.search(pat, sc_region(html))]
+        if old:
+            warn(f"シナリオに古い型があります：{'・'.join(old)}。2026-11-02 に各シナリオ <details class=\"sc-card sc-more\"> の型にし、"
+                 "🅐〜🅓 の各行は各シナリオの「今日の見立て」へ移した（daily-site-update「シナリオの型」）")
     m = re.search(r'<section class="update-log".*?</section>', html, re.S)
     if not m:
         warn("更新履歴（section.update-log）を検出できませんでした（構造が変わった可能性）")
@@ -1020,23 +1026,59 @@ def check_log_wording(html: str, base: str) -> None:
 UNRESOLVED_WORDS = ("終値かは未確認", "終値未確認", "食い違", "未解消")
 OFFICIAL_UNREAD_WORDS = ("公式の本文は未確認", "公式の本文は読めていない")
 PAT_TICKER_TEXT = re.compile(r'<span class="ticker-text">(.*?)</span>', re.S)
-PAT_SC_UPDATE = re.compile(r'<div class="sc-update">.*?<div class="sc-sync-note">', re.S)
+# シナリオ（二段表示 PR-B2・2026-11-02。設計 hormuz-ops/drafts/design/text-two-stage.md §4-1 問い6〜10）。
+# 4本は sc-grid の中の <details class="sc-card sc-more" data-item="A〜D">、確率の補足は <details class="sc-update sc-more" data-item="update">、
+# 次の焦点は各 <li> の <details class="sc-focus-more" data-item="focus-N">。どれも中に <details> を入れないので、閉じタグまでを1つとみなす
+PAT_SC_REGION = re.compile(r'<!-- SCENARIOS -->.*?(?=<!-- /SCENARIOS)', re.S)
+PAT_SC_CARD = re.compile(r'<details class="sc-card[ "].*?</details>', re.S)
+PAT_SC_UPDATE = re.compile(r'<details class="sc-update[ "].*?</details>', re.S)
+PAT_SC_FOCUS = re.compile(r'<li>\s*<details class="sc-focus-more".*?</details>\s*</li>', re.S)
 PAT_SC_UPDATE_DATE = re.compile(r'sc-update-date">\s*(?:📊\s*)?(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}:\d{2})\s*JST')
 PAT_LOG_FIRST = re.compile(r'<span class="log-date">(\d{4})/(\d{2})/(\d{2})\s+(\d{1,2}:\d{2})</span>')
 PAT_SC_SYNC_NOTE = re.compile(r'<div class="sc-sync-note">(.*?)</div>', re.S)
 PAT_SC_FOOTER_LABEL = re.compile(r'<h3 class="sc-focus-h">[^<]*<span class="label-scenario[^"]*">(.*?)</span>\s*</h3>', re.S)
+PAT_SC_ITEM_H = re.compile(r'<span class="sc-item-h">.*?</span>', re.S)   # 開いた中の項の見出し（「今日の見立て」など）
+
+
+def sc_region(html: str) -> str:
+    """シナリオ区域の HTML（コメントの中の型の例を除く）。見つからなければ空"""
+    m = PAT_SC_REGION.search(html)
+    return re.sub(r"<!--.*?-->", "", m.group(0), flags=re.S) if m else ""
+
+
+def sc_item(fragment: str) -> str:
+    """開始タグの data-item（GA4 の item）。無ければ空"""
+    m = re.search(r'data-item="([^"]*)"', fragment[:200])
+    return m.group(1) if m else ""
+
+
+def sc_part(fragment: str, tag: str, cls: str) -> str:
+    """fragment の中の <tag class="cls"> の中身（項の見出しを除く）。無ければ空"""
+    m = re.search(rf'<{tag} class="{cls}">(.*?)</{tag}>', fragment, re.S)
+    return PAT_SC_ITEM_H.sub("", m.group(1)) if m else ""
+
+
+def sc_summary_text(html: str) -> str | None:
+    """シナリオの要約部（4本の閉じた形と今日の見立て・確率の補足）の HTML。見つからなければ None"""
+    region = sc_region(html)
+    cards = PAT_SC_CARD.findall(region)
+    u = PAT_SC_UPDATE.search(region)
+    if not cards or not u:
+        return None
+    parts = [re.search(r'<summary>(.*?)</summary>', c, re.S).group(1) if '<summary>' in c else "" for c in cards]
+    parts += [sc_part(c, "p", "sc-today") for c in cards]
+    return "".join(parts) + u.group(0)
 
 
 def check_unresolved(html: str) -> None:
     """読者が最初に見る要約部に、裏取りで解消すべき表記が残っていないか（2026-10-06 追加）。
 
     10/6 07:33 の更新で「食い違い（未解消）」「終値かは未確認」のまま公開し、のちに訂正した。
-    対象は 30秒カラム（要点と全文）・TICKER・シナリオの確率補足バナー。
-    速報インシデントとルート表の経緯は過去の記録を含むので見ない。
+    対象は 30秒カラム（要点と全文）・TICKER・シナリオの要約部（4本の閉じた形と今日の見立て・確率の補足）。
+    速報インシデントとルート表の経緯、シナリオの「これまでの根拠」は過去の記録を含むので見ない。
     """
     blocks = []
-    for label, pat, grp in (("30秒カラム", PAT_GLANCE, 0), ("TICKER", PAT_TICKER_TEXT, 1),
-                            ("シナリオの確率補足", PAT_SC_UPDATE, 0)):
+    for label, pat, grp in (("30秒カラム", PAT_GLANCE, 0), ("TICKER", PAT_TICKER_TEXT, 1)):
         m = pat.search(html)
         if not m:
             warn(f"{label}を検出できず、未解消の表記を確認できません（構造が変わった可能性）")
@@ -1046,6 +1088,11 @@ def check_unresolved(html: str) -> None:
             # 「前回の裏取り」の行は前回分の結果を書く行で、「継続」の項目を含むのが正常なので除く
             text = PAT_GLANCE_VERIFY_ROW.sub("", text)
         blocks.append((label, text))
+    sc = sc_summary_text(html)
+    if sc is None:
+        warn("シナリオの要約部（details.sc-card・details.sc-update）を検出できず、未解消の表記を確認できません（構造が変わった可能性）")
+    else:
+        blocks.append(("シナリオの要約部", sc))
     for label, text in blocks:
         hits = [w for w in UNRESOLVED_WORDS if w in text]
         if hits:
@@ -1151,9 +1198,10 @@ def check_verify_row(html: str) -> None:
 # 運営者の指示で約4割減を目安にした。シナリオの補足も 🅒 が 610字あった
 TEXT_LIMITS_GLANCE = (("now", "いま何が", 450), ("strait", "海峡の今", 400), ("next", "次の焦点", 250),
                       ("verify", "前回の裏取り", 250))
-TEXT_LIMIT_SC_SUMMARY = 150   # シナリオの補足の冒頭（📊 今日の動きの要約）
-TEXT_LIMIT_SC_LINE = 170      # 🅐〜🅓 の各行
-TEXT_LIMIT_SC_CAVEAT = 150    # 但し書き（sc-update-caveat）
+# 二段表示 PR-B2（2026-11-02）で、もとの補足の 🅐〜🅓 の各行は各シナリオの「今日の見立て」（p.sc-today）に、
+# 冒頭の要約は確率の補足の要点（span.sc-lead・40〜50字）になった
+TEXT_LIMIT_SC_LINE = 170      # 各シナリオの今日の見立て
+TEXT_LIMIT_SC_CAVEAT = 150    # 但し書き（p.sc-update-caveat）
 
 
 def plain_len(fragment: str) -> int:
@@ -1161,7 +1209,7 @@ def plain_len(fragment: str) -> int:
 
 
 def check_text_lengths(html: str) -> None:
-    """30秒カラムの4行の全文とシナリオの補足が、文字数の目安を超えていないか（WARN のみ）。"""
+    """30秒カラムの4行の全文と、シナリオの今日の見立て・但し書きが、文字数の目安を超えていないか（WARN のみ）。"""
     for key, label, limit in TEXT_LIMITS_GLANCE:
         full = glance_part(html, key, "text")
         if full is None:
@@ -1172,29 +1220,21 @@ def check_text_lengths(html: str) -> None:
             warn(f"30秒カラム「{label}」が {n}字（目安 {limit}字）。要点を絞り、細部は速報インシデントへ")
         else:
             ok(f"30秒カラム「{label}」{n}字（目安 {limit}字）")
-    m = PAT_SC_UPDATE.search(html)
-    if not m:
-        warn("シナリオの補足（div.sc-update）を検出できず、文字数を確認できません")
+    region = sc_region(html)
+    cards = PAT_SC_CARD.findall(region)
+    u = PAT_SC_UPDATE.search(region)
+    if not cards or not u:
+        warn("シナリオ（details.sc-card・details.sc-update）を検出できず、文字数を確認できません（構造が変わった可能性）")
         return
-    body = m.group(0)
-    PAT_KEY = re.compile(r'sc-key">([A-D])<|([🅐🅑🅒🅓])')   # 各行の頭は 🅐〜🅓（見やすさを優先した例外・2026-10-20）
-    seen_summary = False
-    for part in body.split("<br>"):
-        mm = PAT_KEY.search(part)
-        if "sc-update-caveat" in part:
-            label, limit = "但し書き", TEXT_LIMIT_SC_CAVEAT
-        elif mm:
-            label, limit = (mm.group(1) or "ABCD"["🅐🅑🅒🅓".index(mm.group(2))]) + " の行", TEXT_LIMIT_SC_LINE
-        elif "<strong>" in part and not seen_summary:   # 冒頭の要約（旧 📊 の行）
-            label, limit = "冒頭の要約", TEXT_LIMIT_SC_SUMMARY
-            seen_summary = True
-        else:
-            continue
-        n = plain_len(part.split('<div class="sc-sync-note">')[0])
+    parts = [(f"シナリオ{sc_item(c)}の今日の見立て", sc_part(c, "p", "sc-today"), TEXT_LIMIT_SC_LINE) for c in cards]
+    parts.append(("シナリオの但し書き", sc_part(u.group(0), "p", "sc-update-caveat"), TEXT_LIMIT_SC_CAVEAT))
+    for label, text, limit in parts:
+        n = plain_len(text)
         if n > limit:
-            warn(f"シナリオの補足「{label}」が {n}字（目安 {limit}字）。根拠は1〜2点に絞る")
-        else:
-            ok(f"シナリオの補足「{label}」{n}字（目安 {limit}字）")
+            warn(f"{label}が {n}字（目安 {limit}字）。根拠は1〜2点に絞り、細部は速報インシデントへ")
+        elif n:
+            ok(f"{label} {n}字（目安 {limit}字）")
+        # 空のときは check_scenario_leads() が知らせる
 
 
 # 二段表示の要点（2026-11-01・二段表示 PR-A。設計 hormuz-ops/drafts/design/text-two-stage.md §3-2・§3-4）。
@@ -1293,6 +1333,113 @@ def check_route_leads(html: str) -> None:
         warn(f"ルート表の状態の札（目安15字まで・{PILL_MAX}字超で WARN）：{'・'.join(pills)}。細部は要点と開いた中へ")
     else:
         ok(f"ルート表の状態の札はどれも {PILL_MAX}字以内")
+
+
+SC_ITEMS = ("A", "B", "C", "D")   # 4本の data-item（GA4 の item）
+SC_BODY_STALE_DAYS = 14           # 「これまでの根拠」の一番新しい日付がこれより古ければ WARN（問い7）
+FOCUS_TITLE_MIN, FOCUS_TITLE_MAX = 20, 35   # 次の焦点の件名（丸数字を除く・1文）
+FOCUS_TEXT_MAX = 200              # 次の焦点の本文
+PAT_SC_MD = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])|(?<!\d)(\d{1,2})月(\d{1,2})日")
+
+
+def check_scenario_leads(html: str, base: str) -> None:
+    """シナリオの閉じた形（2026-11-02・二段表示 PR-B2。設計 text-two-stage.md §4-1 問い6〜10）。
+
+    4本と確率の補足の要点（<summary> の span.sc-lead）、次の焦点の件名（span.sc-focus-lead）が無い・空なら NG
+    （閉じた箱に押す場所の名前が無くなる）。字数・切り抜き（4本は今日の見立て、補足は但し書きと比べる）・「…」終わり・
+    <details open>・data-item・今日の見立ての有無・「これまでの根拠」の古さ・次の焦点の本文の字数と件数は WARN。
+    """
+    region = sc_region(html)
+    cards = PAT_SC_CARD.findall(region)
+    u = PAT_SC_UPDATE.search(region)
+    if not cards or not u:
+        # 見つからないと要点の有無を確かめられない。黙って通さず NG にする（30秒カラム・ルート表と同じ）
+        ng("シナリオ（details.sc-card・details.sc-update）を検出できず、要点を確認できません（構造が変わった可能性。"
+           "daily-site-update「シナリオの型」）")
+        return
+    if re.search(r'<details class="sc-[\w-]+[^"]*"[^>]*\sopen\b', region):
+        warn("シナリオに <details open> があります。閉じた形を見せるので open を書かない")
+    items = [sc_item(c) for c in cards]
+    if tuple(items) != SC_ITEMS:
+        warn(f"シナリオ4本の data-item が型と違います：{'・'.join(items)}（型は A・B・C・D の順）")
+    missing = []
+    bd = date.fromisoformat(base)
+    stale = []
+    for item, card in zip(items, cards):
+        s = re.search(r'<summary>(.*?)</summary>', card, re.S)
+        lp = plain(sc_part(s.group(1), "span", "sc-lead")) if s else ""
+        today = plain(sc_part(card, "p", "sc-today"))
+        if not today:
+            warn(f"シナリオ{item}の「今日の見立て」（p.sc-today）がありません・空です")
+        if not lp:
+            missing.append(item)
+        else:
+            notes = lead_notes(lp, today)
+            if notes:
+                warn(f"シナリオ{item}の要点：" + "・".join(notes))
+            else:
+                ok(f"シナリオ{item}の要点 {len(lp)}字")
+        body = plain(sc_part(card, "div", "sc-body"))
+        days = [md_to_date(int(m[0] or m[2]), int(m[1] or m[3]), bd) for m in PAT_SC_MD.findall(body)]
+        days = [d for d in days if d]
+        if not days:
+            stale.append(f"{item}（日付なし）")
+        elif (bd - max(days)).days > SC_BODY_STALE_DAYS:
+            stale.append(f"{item} {max(days).month}/{max(days).day}（{(bd - max(days)).days}日前）")
+    lp = plain(sc_part(re.search(r'<summary>(.*?)</summary>', u.group(0), re.S).group(1), "span", "sc-lead")) \
+        if "<summary>" in u.group(0) else ""
+    if not lp:
+        missing.append("確率の補足")
+    else:
+        notes = lead_notes(lp, plain(sc_part(u.group(0), "p", "sc-update-caveat")))
+        if notes:
+            warn("シナリオの確率の補足の要点：" + "・".join(notes))
+        else:
+            ok(f"シナリオの確率の補足の要点 {len(lp)}字")
+    if stale:
+        warn(f"シナリオの「これまでの根拠」（div.sc-body）の一番新しい日付が {SC_BODY_STALE_DAYS}日より古い：{'・'.join(stale)}。"
+             "判定の材料が変わったら書き換える（daily-site-update「シナリオの型」）")
+    else:
+        ok(f"シナリオの「これまでの根拠」はどれも {SC_BODY_STALE_DAYS}日以内の日付を含む")
+
+    # 次の焦点
+    lis = re.findall(r'<li>.*?</li>', region[region.find('<ul class="sc-focus-list">'):], re.S) \
+        if '<ul class="sc-focus-list">' in region else []
+    focus = PAT_SC_FOCUS.findall(region)
+    if not lis:
+        ng("次の焦点（ul.sc-focus-list の li）を検出できませんでした（構造が変わった可能性）")
+    else:
+        if len(focus) != len(lis):
+            warn(f"次の焦点の {len(lis) - len(focus)}件が型（<li><details class=\"sc-focus-more\">）と違います")
+        h = re.search(r'<h3 class="sc-focus-h">次の焦点 (\d+)つ', region)
+        if not h or int(h.group(1)) != len(lis):
+            warn(f"次の焦点の見出しの件数（{h.group(1) if h else '検出できず'}）が項目の数 {len(lis)} と違います")
+        want = [f"focus-{i}" for i in range(1, len(focus) + 1)]
+        if [sc_item(f[f.find('<details'):]) for f in focus] != want:
+            warn(f"次の焦点の data-item が型と違います（型は {'・'.join(want)} の順）")
+        bad = []
+        for i, f in enumerate(focus, 1):
+            t = re.sub(r"^[①-⑳]\s*", "", plain(sc_part(f, "span", "sc-focus-lead")))
+            if not t:
+                missing.append(f"次の焦点{i}")
+                continue
+            if not FOCUS_TITLE_MIN <= len(t) <= FOCUS_TITLE_MAX:
+                bad.append(f"{i} 件名 {len(t)}字")
+            if t.endswith(("…", "...", "‥")):
+                bad.append(f"{i} 件名が「…」で終わる")
+            n = len(plain(sc_part(f, "div", "sc-focus-text")))
+            if n > FOCUS_TEXT_MAX:
+                bad.append(f"{i} 本文 {n}字")
+        if bad:
+            warn(f"次の焦点（件名 {FOCUS_TITLE_MIN}〜{FOCUS_TITLE_MAX}字・本文 {FOCUS_TEXT_MAX}字まで）：{'・'.join(bad)}。"
+                 "項目の細部は速報インシデントへ")
+        elif focus:
+            ok(f"次の焦点 {len(focus)}件（件名・本文の字数）")
+    if missing:
+        ng(f"シナリオの要点（summary の span.sc-lead・span.sc-focus-lead）がありません・空です：{'・'.join(missing)}。"
+           "daily-site-update「シナリオの型」で要点を書く")
+    else:
+        ok("シナリオ4本・確率の補足・次の焦点のすべてに要点あり")
 
 
 def check_glance_leads(html: str, base: str) -> None:
@@ -1421,7 +1568,7 @@ def check_state_labels(html: str) -> None:
     """
     bad = []
     for k in "ABCD":
-        m = re.search(rf'<span id="sc-pct-{k}">(.*?)</span>', html)
+        m = re.search(rf'<span class="sc-pct" id="sc-pct-{k}">(.*?)</span>', html)
         if not m:
             bad.append(f"sc-pct-{k}（検出できず）")
         elif m.group(1) != "…":
@@ -1446,7 +1593,10 @@ def check_state_labels(html: str) -> None:
     for label, pat in (("t-stuck", r'<span id="t-stuck">(.*?)</span>'),
                        ("t-total", r'<span id="t-total">(.*?)</span>'),
                        ("t-breakdown", r'<span class="stat-row-val" id="t-breakdown">(.*?)</span>'),
-                       ("jf-basis-date", r'<span id="jf-basis-date">(.*?)</span>')):
+                       ("jf-basis-date", r'<span id="jf-basis-date">(.*?)</span>'),
+                       # シナリオの判定日と各カードの推定の幅（二段表示 PR-B2・2026-11-02。場所を先に取り、値だけ JS が替える）
+                       ("sc-horizon", r'<span id="sc-horizon">(.*?)</span>'),
+                       *((f"sc-range-{k}", rf'<span id="sc-range-{k}">(.*?)</span>') for k in "ABCD")):
         m = re.search(pat, html)
         if not m:
             bad.append(f"{label}（検出できず）")
@@ -1456,9 +1606,9 @@ def check_state_labels(html: str) -> None:
     if len(units) != 4 or any("hidden" not in u for u in units):
         bad.append(f"jf-unit（4個とも hidden つきのはず。検出 {len(units)}個）")
     if bad:
-        ng(f"日本関係船・フローの対象月・単位の初期値が型と違います: {'・'.join(bad)}")
+        ng(f"日本関係船・フローの対象月・単位、シナリオの判定日・推定の幅の初期値が型と違います: {'・'.join(bad)}")
     else:
-        ok("日本関係船・フローの対象月の初期値は「読み込み中…」、単位は hidden")
+        ok("日本関係船・フローの対象月・シナリオの判定日と推定の幅の初期値は「読み込み中…」、単位は hidden")
     # 外した表記は、表示に出る場所（タグの中身・JS の文字列）だけを見る。
     # 更新履歴や本文がこの語に触れただけでは NG にしない
     hits = [w for w in ("内訳確認中", "読み込み中...", "データ読み込みエラー")
@@ -1486,6 +1636,8 @@ def check_categories(html: str, news: dict | None) -> None:
               ("ルート表の route-tag", r'<strong class="route-tag[^"]*">(.*?)</strong>'),
               ("30秒カラムの要点", r'<span class="glance-lead">(.*?)</span>'),
               ("ルート表の要点", r'<span class="route-lead">(.*?)</span>'),
+              ("シナリオの要点", r'<span class="sc-lead">(.*?)</span>'),
+              ("シナリオの今日の見立て", r'<p class="sc-today"><span class="sc-item-h">[^<]*</span>(.*?)</p>'),
               ("30秒カラム", r'<span class="glance-text">(.*?)</span>'))
     for label, pat in places:
         hits = [x[:20].strip() for x in re.findall(pat, html, re.S) if PAT_EMOJI_HEAD.match(x)]
@@ -1500,7 +1652,7 @@ def check_categories(html: str, news: dict | None) -> None:
     if bad:
         ng(f"頭に絵文字があります: {'・'.join(bad)}。分類は札（<span class=\"cat cat-sea\">海上</span> など）の語で書き、絵文字は書かない")
     else:
-        ok("日次が書く所の頭に絵文字なし（速報・route-tag・ルート表の要点・30秒カラムの要点と全文・ティッカー）")
+        ok("日次が書く所の頭に絵文字なし（速報・route-tag・ルート表とシナリオの要点・今日の見立て・30秒カラムの要点と全文・ティッカー）")
     # 速報インシデントのタグは、どれも頭に札が要る（無いもの・タグが1つも無いのも NG）
     tags = re.findall(r'<span class="incident-tag">(.{0,40})', html)
     missing = [re.sub(r"<[^>]+>", "", x)[:20] for x in tags if not x.startswith('<span class="cat cat-')]
@@ -1529,9 +1681,10 @@ def check_categories(html: str, news: dict | None) -> None:
 # ── 見た目の決まり（課題46 D3 PR 7b・2026-10-22 追加。設計書 §6・スキル site-design）──────────
 # 絵文字：頭だけでなく文の中も見る。矢印（←→↑↓ など）と ▶◀◈▲▼◆ のような図形の記号は絵文字に数えない
 PAT_EMOJI_ANY = re.compile(r"[\U0001F000-\U0001FAFF☀-➿⌚⌛⏩-⏺⭐⭕⬛⬜]")
-# 絵文字でも残してよい記号（どのページでも）。🅐〜🅓＝シナリオ（PR 5b-1）・✕＝閉じるボタン・
-# ★＝日本の受入拠点の説明・✦＝トランプ声明の枠（PR 7 の Q6。▶◀◈ と同じく記号として残す）
-EMOJI_ALLOWED = set("🅐🅑🅒🅓✕★✦")
+# 絵文字でも残してよい記号（どのページでも）。✕＝閉じるボタン・
+# ★＝日本の受入拠点の説明・✦＝トランプ声明の枠（PR 7 の Q6。▶◀◈ と同じく記号として残す）。
+# 🅐〜🅓（シナリオの補足の行頭・PR 5b-1 の例外）は、二段表示 PR-B2（2026-11-02）で各行を各シナリオの中へ移したので外した
+EMOJI_ALLOWED = set("✕★✦")
 # ページごとの例外。/corrections/ は過去の表示をそのまま引用した訂正の記録（直すと訂正の中身が変わる）
 EMOJI_ALLOWED_PAGE = {"corrections/index.html": set("🇺🇸🌍🚢")}
 # 直書きの色（16進・rgb()・hsl()・色名）。トークン（tokens.css）を使う
@@ -1585,9 +1738,9 @@ def check_emoji(news: dict | None, log) -> None:
             pages.append(f"{rel} {len(hits)}個（{''.join(sorted(set(hits))[:6])}）")
     if pages:
         warn(f"表示される文に絵文字があります: {'・'.join(pages[:5])}。語か、アイコン（docs/assets/icons/icons.svg）で書く。"
-             "残してよいのは 🅐〜🅓・✕・★・✦ と矢印・▶◀◈ だけ（スキル site-design「アイコン」）")
+             "残してよいのは ✕・★・✦ と矢印・▶◀◈ だけ（スキル site-design「アイコン」）")
     else:
-        ok("全ページの表示される文に絵文字なし（🅐〜🅓・✕・★・✦・矢印・/corrections/ の引用を除く）")
+        ok("全ページの表示される文に絵文字なし（✕・★・✦・矢印・/corrections/ の引用を除く）")
 
     # その日に足したデータ。origin/main との分かれ目に無い項目を新しい項目とみなす
     # （直前のコミットと比べると、commit の後に流したとき新しい項目が 0件になる）
@@ -1698,12 +1851,13 @@ def check_estimate_labels(html: str) -> None:
     """推定のラベル（②' PR D・2026-10-09 追加）。日次更新で消えていないかを見る。
 
     「AI推定」＝生成 AI が出した値（.label-ai）、「推定」＝統計などからの試算（.label-estimate）。
-    シナリオの見出しは日次が名称と矢印を書き換える場所なので、直後のラベルが落ちやすい。
+    シナリオの確率の行は日次が矢印を書き換える場所なので、直後のラベルが落ちやすい。
+    二段表示 PR-B2（2026-11-02）で確率は札の外の行（span.sc-fig）に出た。ラベルは同じ行の矢印の後
     """
     bad = []
     for k in "ABCD":
-        if not re.search(rf'<span class="sc-tag" id="sc-tag-{k}">.*?</span></span>'
-                         r'<span class="label-ai sc-pct-label">AI推定</span>', html):
+        if not re.search(rf'<span class="sc-fig"><span class="sc-pct" id="sc-pct-{k}">[^<]*</span>'
+                         r'<span class="sc-trend">[^<]*</span><span class="label-ai sc-pct-label">AI推定</span></span>', html):
             bad.append(f"シナリオ{k} の確率の横の「AI推定」")
     if not re.search(r'データ監視ダッシュボード<span class="label-ai sc-h2-label">AI推定を含む</span></h2>', html):
         bad.append("ダッシュボードの見出しの「AI推定を含む」")
@@ -2069,6 +2223,7 @@ def main() -> int:
     check_text_lengths(html)
     check_glance_leads(html, base)
     check_route_leads(html)
+    check_scenario_leads(html, base)
 
     check_news(news, base)
     check_categories(html, news)

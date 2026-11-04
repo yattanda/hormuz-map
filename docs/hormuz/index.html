@@ -40,7 +40,7 @@
 <link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
-<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261102b"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表） -->
+<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261102c"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表）、20261102c は二段表示 PR-B2（シナリオ） -->
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
 {
@@ -1457,75 +1457,121 @@ document.addEventListener('keydown', function(e) {
    <div id="scenario"></div>
 <div class="sc-section">
 <h2 class="sec-h2 sec-h2--sky">4つのシナリオ（今後90日の見通し）<span class="label-scenario sc-h2-label">シナリオ分析</span></h2>
-  <!-- シナリオの更新日時（2026-10-11〜：カード A〜D の直前。補足と但し書きはカードの後） -->
-<div class="sc-update-head"><span class="sc-update-date">2026年11月4日 08:34 JST 更新</span></div>
+  <!-- 二段表示 PR-B2（2026-11-02）：見出しの下に 判定日と更新日時 → シナリオ4本（各 details.sc-card。閉じた形に 札・確率・バー・推定の幅・要点、
+       開くと 判定の定義・今日の見立て・これまでの根拠）→ 確率の補足（details.sc-update。要点＋但し書き）→ 確率について（details.sc-about。同期と AI の注記）→ 次の焦点（各 details.sc-focus-more）。
+       確率・バー・推定の幅・判定日は syncScenarioFromDashboard() が入れる -->
+<div class="sc-update-head"><span class="sc-horizon-line"><strong>判定日 <span id="sc-horizon">読み込み中…</span></strong>（推定した日から90日後）にどれに当たるかの確率</span><span class="sc-update-date">2026年11月4日 08:34 JST 更新</span></div>
+<div id="sc-ctx-note" class="sc-ctx-note"></div>
   <div class="sc-grid">
 
     <!-- シナリオ A：外交解決 -->
-    <div class="sc-card sc-best">
-      <span class="sc-tag" id="sc-tag-A"><span class="sc-tag-em">シナリオ A</span> ― 段階的MOU履行成功　<span class="sc-tag-em">確率 <span id="sc-pct-A">…</span></span> <span class="sc-trend">↑</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">判定日に、米国とイランの合意に基づいてホルムズ海峡の主ルートの商船の通航が再開している（段階的な再開を含む）</div>
-      <div class="sc-body">
-        <p>イラン外相アラグチ氏の「7日間ロードマップ」をトランプ氏は9月26日に「受け入れられない」と述べた。9/30にはイラン政府が米国の回答を受け取ったと発表したが、内容は明かされていない。10/4にはガリバフ国会議長が、米国が7項目の計画を受け入れるまで海峡は閉鎖されたままだと述べ、米側は核問題を先決とする姿勢を崩していない。外交の窓口は閉じていないものの溝は埋まっていない。実現にはイラン側の対応と米側との歩み寄りが不可欠となる。</p>
+    <details class="sc-card sc-more sc-best" data-item="A">
+      <summary>
+        <span class="sc-tag" id="sc-tag-A"><span class="sc-tag-em">シナリオ A</span> ― 段階的MOU履行成功</span>
+        <span class="sc-fig"><span class="sc-pct" id="sc-pct-A">…</span><span class="sc-trend">↑</span><span class="label-ai sc-pct-label">AI推定</span></span>
+        <span class="sc-bar" aria-hidden="true"><span class="sc-bar-fill" id="sc-bar-A"></span></span>
+        <span class="sc-range-one">推定の幅 <span id="sc-range-A">読み込み中…</span></span>
+        <span class="sc-lead">バンス副大統領が協議の進展を認め、イランは2日以内に海峡を再開できる計画を示した。</span>
+        <span class="more-chip" aria-hidden="true"></span>
+      </summary>
+      <div class="sc-detail">
+        <p class="sc-title"><span class="sc-item-h">判定の定義</span>判定日に、米国とイランの合意に基づいてホルムズ海峡の主ルートの商船の通航が再開している（段階的な再開を含む）</p>
+        <p class="sc-today"><span class="sc-item-h">今日の見立て</span>バンス副大統領が「進展はあった」と述べ、イランも海峡再開の計画を2日以内に実施できると説明した（Al Jazeera 11/2）。米側が受け入れたとは確認できず、合意の内容は示されていない</p>
+        <div class="sc-body">
+          <p><span class="sc-item-h">これまでの根拠</span>イラン外相アラグチ氏の「7日間ロードマップ」をトランプ氏は9月26日に「受け入れられない」と述べた。9/30にはイラン政府が米国の回答を受け取ったと発表したが、内容は明かされていない。10/4にはガリバフ国会議長が、米国が7項目の計画を受け入れるまで海峡は閉鎖されたままだと述べ、米側は核問題を先決とする姿勢を崩していない。外交の窓口は閉じていないものの溝は埋まっていない。実現にはイラン側の対応と米側との歩み寄りが不可欠となる。</p>
+        </div>
       </div>
-    </div>
+    </details>
 
     <!-- シナリオ B：部分的封鎖継続（膠着） -->
-    <div class="sc-card sc-mid">
-      <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化　<span class="sc-tag-em">確率 <span id="sc-pct-B">…</span></span> <span class="sc-trend">→</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">判定日に、通航の制限は続くが、協議や仲介を通じたやり取りは続いている（A・C・D のどれにも当たらない）</div>
-      <div class="sc-body">
-        <p>ロードマップの拒否（9月26日）、仲介者を通じた会談（9月29日）、米国の回答の受領（9月30日）と外交の往復は続くが、米側の「核問題が先」という姿勢は変わらず、協議は膠着したまま。トランプ氏は10/1公開のインタビュー（9/28収録）で7日間計画を「十分でなかった」とした。Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、WTI11月物は10/2に91.11ドル（−1.9%）、ブレント12月物は102.25ドルで引け（EnergyNow・検索要約）、備蓄放出計画が重しになった。Kplerの速報では9月最終週の4日間に中東の原油輸出が戦前の平均を上回っており（Al Jazeera 10/5）、上の月間の値とは期間と基準が異なる。10/5の終値はブレント12月物100.32ドル、WTI11月物89.43ドルだった（investingLive・Free Malaysia Today）。通航体制そのものを変える決定打はまだなく、イランの対応が次の分かれ目となる。</p>
+    <details class="sc-card sc-more sc-mid" data-item="B">
+      <summary>
+        <span class="sc-tag" id="sc-tag-B"><span class="sc-tag-em">シナリオ B</span> ― 膠着継続・外交不透明化</span>
+        <span class="sc-fig"><span class="sc-pct" id="sc-pct-B">…</span><span class="sc-trend">→</span><span class="label-ai sc-pct-label">AI推定</span></span>
+        <span class="sc-bar" aria-hidden="true"><span class="sc-bar-fill" id="sc-bar-B"></span></span>
+        <span class="sc-range-one">推定の幅 <span id="sc-range-B">読み込み中…</span></span>
+        <span class="sc-lead">条件の溝は埋まらないまま、原油は外交への期待から11/2に7％超下げ、通航は前週より増えた。</span>
+        <span class="more-chip" aria-hidden="true"></span>
+      </summary>
+      <div class="sc-detail">
+        <p class="sc-title"><span class="sc-item-h">判定の定義</span>判定日に、通航の制限は続くが、協議や仲介を通じたやり取りは続いている（A・C・D のどれにも当たらない）</p>
+        <p class="sc-today"><span class="sc-item-h">今日の見立て</span>外交の往復は続くが、条件の溝は埋まっていない。原油は11/2に7％超下げ、ブレント1月物104.77ドル・WTI12月物96.46ドル。通航は10/26〜11/1の1週間に141回で前週比+8.5％（Riviera）</p>
+        <div class="sc-body">
+          <p><span class="sc-item-h">これまでの根拠</span>ロードマップの拒否（9月26日）、仲介者を通じた会談（9月29日）、米国の回答の受領（9月30日）と外交の往復は続くが、米側の「核問題が先」という姿勢は変わらず、協議は膠着したまま。トランプ氏は10/1公開のインタビュー（9/28収録）で7日間計画を「十分でなかった」とした。Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、WTI11月物は10/2に91.11ドル（−1.9%）、ブレント12月物は102.25ドルで引け（EnergyNow・検索要約）、備蓄放出計画が重しになった。Kplerの速報では9月最終週の4日間に中東の原油輸出が戦前の平均を上回っており（Al Jazeera 10/5）、上の月間の値とは期間と基準が異なる。10/5の終値はブレント12月物100.32ドル、WTI11月物89.43ドルだった（investingLive・Free Malaysia Today）。通航体制そのものを変える決定打はまだなく、イランの対応が次の分かれ目となる。</p>
+        </div>
       </div>
-    </div>
+    </details>
 
     <!-- シナリオ C：完全封鎖の制度化・経済疲弊 -->
-    <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-C"><span class="sc-tag-em">シナリオ C</span> ― イラン・米国による二重封鎖の制度化・経済疲弊深刻化　<span class="sc-tag-em">確率 <span id="sc-pct-C">…</span></span> <span class="sc-trend">↓</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">判定日に、イランの通航制限と米軍の対イラン海上封鎖がどちらも続き、協議や仲介のやり取りが30日以上ない</div>
-      <div class="sc-body">
-        <p>イランは9/27に海峡を米国の「経済戦争」終結まで閉鎖すると警告し、IRGC報道官は9/30にも「継続的な軍事紛争」を主張した。イラン・米国による二重封鎖の常態化と経済負担の長期化を示す材料は残るが、Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、サウジ東西パイプラインも日量350万バレルまで復旧して迂回輸送は部分的に戻っている。一方、10/1にはその積出港ヤンブーに飛翔体が着弾して火災が起き（Maritime Executive。主体は不明）、海峡でも9/28以降少なくとも6隻が被弾した（gCaptain）。いずれも公式方針の確定とは言えず、フーシ派によるバブエルマンデブ海峡への脅威と併せ、監視を続ける。</p>
+    <details class="sc-card sc-more sc-worst" data-item="C">
+      <summary>
+        <span class="sc-tag" id="sc-tag-C"><span class="sc-tag-em">シナリオ C</span> ― イラン・米国による二重封鎖の制度化・経済疲弊深刻化</span>
+        <span class="sc-fig"><span class="sc-pct" id="sc-pct-C">…</span><span class="sc-trend">↓</span><span class="label-ai sc-pct-label">AI推定</span></span>
+        <span class="sc-bar" aria-hidden="true"><span class="sc-bar-fill" id="sc-bar-C"></span></span>
+        <span class="sc-range-one">推定の幅 <span id="sc-range-C">読み込み中…</span></span>
+        <span class="sc-lead">協議と仲介のやり取りが続き判定の基準から遠ざかるが、海峡周辺の被弾の警報は続いている。</span>
+        <span class="more-chip" aria-hidden="true"></span>
+      </summary>
+      <div class="sc-detail">
+        <p class="sc-title"><span class="sc-item-h">判定の定義</span>判定日に、イランの通航制限と米軍の対イラン海上封鎖がどちらも続き、協議や仲介のやり取りが30日以上ない</p>
+        <p class="sc-today"><span class="sc-item-h">今日の見立て</span>協議や仲介のやり取りが続いており、「30日以上ない」という判定の基準から遠ざかる材料。一方、海峡周辺では被弾が続き（UKMTO警報192〜195）、攻撃主体は公表されていない</p>
+        <div class="sc-body">
+          <p><span class="sc-item-h">これまでの根拠</span>イランは9/27に海峡を米国の「経済戦争」終結まで閉鎖すると警告し、IRGC報道官は9/30にも「継続的な軍事紛争」を主張した。イラン・米国による二重封鎖の常態化と経済負担の長期化を示す材料は残るが、Kplerの集計では中東の原油輸出は戦前の8割弱まで回復し（うち海峡経由は日量約970万バレル）、サウジ東西パイプラインも日量350万バレルまで復旧して迂回輸送は部分的に戻っている。一方、10/1にはその積出港ヤンブーに飛翔体が着弾して火災が起き（Maritime Executive。主体は不明）、海峡でも9/28以降少なくとも6隻が被弾した（gCaptain）。いずれも公式方針の確定とは言えず、フーシ派によるバブエルマンデブ海峡への脅威と併せ、監視を続ける。</p>
+        </div>
       </div>
-    </div>
+    </details>
 
     <!-- シナリオ D：軍事エスカレーション・停戦崩壊 -->
-    <div class="sc-card sc-worst">
-      <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・ホルムズ海峡の無期限閉鎖　<span class="sc-tag-em">確率 <span id="sc-pct-D">…</span></span> <span class="sc-trend">↑</span></span><span class="label-ai sc-pct-label">AI推定</span>
-      <div class="sc-title">判定日までに、米国とイランの間で大規模な直接の戦闘（全面戦争の再開・武力による海峡の制圧）が起きる</div>
-      <div class="sc-body">
-        <p>トランプ氏は10/1公開のインタビュー（9/28収録）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、第3空母打撃群（セオドア・ルーズベルト）と海兵隊遠征部隊が中東へ向かい、追加で約9,000〜1万人が派遣される（Al Jazeera 10/2）。海峡では9/28以降少なくとも6隻が飛翔体を受けたが、攻撃主体は確認されていない（9/21・9/23の被弾も主体は未特定）。トランプ氏は10/3にも「イランについて決断を下す。簡単な道か厳しい道かだ」と述べ、ヘグセス国防長官は「あらゆる選択肢」を維持するとしたが（Iran International）、決断の中身と時期は示されておらず、新たな大規模攻撃は確認されていない。断定的な判断は避ける。</p>
+    <details class="sc-card sc-more sc-worst" data-item="D">
+      <summary>
+        <span class="sc-tag" id="sc-tag-D"><span class="sc-tag-em">シナリオ D</span> ― 全面対決・ホルムズ海峡の無期限閉鎖</span>
+        <span class="sc-fig"><span class="sc-pct" id="sc-pct-D">…</span><span class="sc-trend">↑</span><span class="label-ai sc-pct-label">AI推定</span></span>
+        <span class="sc-bar" aria-hidden="true"><span class="sc-bar-fill" id="sc-bar-D"></span></span>
+        <span class="sc-range-one">推定の幅 <span id="sc-range-D">読み込み中…</span></span>
+        <span class="sc-lead">米軍がQeshm島を限定攻撃したが、米当局者は大規模な戦闘の再開ではないと説明した。</span>
+        <span class="more-chip" aria-hidden="true"></span>
+      </summary>
+      <div class="sc-detail">
+        <p class="sc-title"><span class="sc-item-h">判定の定義</span>判定日までに、米国とイランの間で大規模な直接の戦闘（全面戦争の再開・武力による海峡の制圧）が起きる</p>
+        <p class="sc-today"><span class="sc-item-h">今日の見立て</span>米軍が11/2にQeshm島を限定攻撃したが、米当局者は大規模戦闘の再開ではないと説明した（NBC）。APは10/28、米側が同盟国に中間選挙後の軍事行動の再開への備えを伝えたと報じた。新たな大規模攻撃は確認されていない</p>
+        <div class="sc-body">
+          <p><span class="sc-item-h">これまでの根拠</span>トランプ氏は10/1公開のインタビュー（9/28収録）で、11/3の中間選挙後にイランへの攻撃を強めることは「可能」と述べ、第3空母打撃群（セオドア・ルーズベルト）と海兵隊遠征部隊が中東へ向かい、追加で約9,000〜1万人が派遣される（Al Jazeera 10/2）。海峡では9/28以降少なくとも6隻が飛翔体を受けたが、攻撃主体は確認されていない（9/21・9/23の被弾も主体は未特定）。トランプ氏は10/3にも「イランについて決断を下す。簡単な道か厳しい道かだ」と述べ、ヘグセス国防長官は「あらゆる選択肢」を維持するとしたが（Iran International）、決断の中身と時期は示されておらず、新たな大規模攻撃は確認されていない。断定的な判断は避ける。</p>
+        </div>
       </div>
-    </div>
+    </details>
 
   </div>
 
   <!-- シナリオ確率更新補足 -->
-<div class="sc-update">
-  <strong>米軍がQeshm島を限定攻撃し、UKMTOは警報194・195を発表。外交の往復は続き、原油は11/2にブレント1月物104.77ドル・WTI12月物96.46ドルで引けた：</strong><br>
-  🅐 段階的MOU履行成功 <span class="sc-trend">↑</span> — バンス副大統領が「進展はあった」と述べ、イランも海峡再開の計画を2日以内に実施できると説明した（Al Jazeera 11/2）。米側が受け入れたとは確認できず、合意の内容は示されていない<br>
-  🅑 膠着継続 <span class="sc-trend">→</span> — 外交の往復は続くが、条件の溝は埋まっていない。原油は11/2に7％超下げ、ブレント1月物104.77ドル・WTI12月物96.46ドル。通航は10/26〜11/1の1週間に141回で前週比+8.5％（Riviera）<br>
-  🅒 二重封鎖の制度化 <span class="sc-trend">↓</span> — 協議や仲介のやり取りが続いており、「30日以上ない」という判定の基準から遠ざかる材料。一方、海峡周辺では被弾が続き（UKMTO警報192〜195）、攻撃主体は公表されていない<br>
-  🅓 全面対決・ホルムズ海峡の無期限閉鎖 <span class="sc-trend">↑</span> — 米軍が11/2にQeshm島を限定攻撃したが、米当局者は大規模戦闘の再開ではないと説明した（NBC）。APは10/28、米側が同盟国に中間選挙後の軍事行動の再開への備えを伝えたと報じた。新たな大規模攻撃は確認されていない<br>
-  <strong class="sc-update-caveat">米軍の攻撃はCENTCOM・国防総省の公式発表を確認できず、米当局者の説明による。イラン側・インド側の発表は当事者のもので、警報192〜195の船名・攻撃主体は公表されていない。一次情報の確認を待つ。</strong><br>
+<details class="sc-update sc-more" data-item="update">
+  <summary><span class="sc-item-h">今日の見立ての変化</span><span class="sc-lead">米軍のQeshm島攻撃と警報194・195が出た。見立てはAとDが上向き、Cは下向き、Bは横ばい。</span><span class="more-chip" aria-hidden="true"></span></summary>
+  <div class="sc-update-body">
+    <p class="sc-update-caveat">米軍の攻撃はCENTCOM・国防総省の公式発表を確認できず、米当局者の説明による。イラン側・インド側の発表は当事者のもので、警報192〜195の船名・攻撃主体は公表されていない。一次情報の確認を待つ。</p>
+  </div>
+</details>
+  <!-- 確率について（同期と AI の注記。日次では触らない） -->
+<details class="sc-about sc-more" data-item="about">
+  <summary><span class="sc-about-lead"><span class="label-ai">AI推定</span><strong>確率は生成AIの推定値です。</strong>同じ入力で5回推定した中央値で、1%刻みの精度はありません。</span><span class="more-chip" aria-hidden="true"></span></summary>
+  <div class="sc-about-body">
   <div class="sc-sync-note">
-    A〜Dの確率は、ダッシュボードのデータをページの読み込み時に同期しています<span id="sc-sync-at"></span><span id="sc-horizon" class="sc-horizon"></span><span id="sc-range" class="sc-range"></span>
+    A〜Dの確率は、ダッシュボードのデータをページの読み込み時に同期しています<span id="sc-sync-at"></span><span id="sc-range" class="sc-range"></span>
   </div>
   <div class="sc-ai-note">
     <span class="label-ai">AI推定</span><strong>A〜Dの確率数値は、生成AIが自動生成した推定値です。</strong>実測・観測に基づく値ではありません。公開されているニュース記事の内容から生成しており、算出根拠を完全に再現することはできません。実際の発生確率を示すものでもないため、参考値としてお読みください。<br>
     <span class="sc-ai-meta">生成手段：Anthropic の Claude（opus）　／　入力：公開ニュース記事のRSS（Google ニュース検索・BBC・Al Jazeera・New York Times）　／　更新：毎日 09:30 JST 自動実行（同じ入力で5回推定した中央値）　／　<a href="../editorial/">編集方針</a></span>
     <div class="sc-ai-variance"><strong>この確率は、同じニュース入力でも推定のたびに少しずつ変わります。</strong>2026年10月25日に同じ条件で1回ずつ5回推定させたところ、幅は最大7ポイントでした。表示している5回の中央値どうしでは、差は最大2ポイントでした（それまで使っていた Gemini 2.5 Flash では、1回ずつで最大60ポイント振れていました）。振れが小さいことは、当たることを意味しません。1%刻みの数値が示すほどの精度はないものとして、幅を持ってお読みください。</div>
-    <div id="sc-ctx-note" class="sc-ctx-note"></div>
   </div>
-</div>
+  </div>
+</details>
   <!-- シナリオ フッター -->
   <div class="sc-footer">
     <h3 class="sc-focus-h">次の焦点 5つ<span class="label-scenario sc-h2-label">分析</span></h3>
     <ul class="sc-focus-list">
-      <li>① <strong>イランが7項目の計画を巡り米国とどう折り合うか（アラグチ外相は10/18、7日間案は有効と述べ、10/28も仲介者と連絡を続け実施に向けて取り組むと述べた〈Middle East Monitor〉。米国の回答の中身は未公表。イラン・サウジ・トルコ・パキスタンの高官は協議継続で合意と共同通信。仲介役のカタールは米イラン交渉の再開に向け外交努力を強めているとArab News〈11/1〉。バンス副大統領は11/2に「進展はあった」と述べ、イランは2日以内の海峡再開計画を説明した〈Al Jazeera〉）</strong></li>
-      <li>② <strong>11/4発行のUKMTO警報195（リマ北東14海里でタンカーが機関室に飛翔体2発。船名・攻撃主体は不明）と11/3発行の警報194（インド人乗組員のダウ船。インド外務省はMSV AL JUSUFIで1人死亡と発表したが、公式の本文に船名がなく同一の事案かは確認できず、救助した主体もUKMTOとインド側で異なる）と、11/2発行のUKMTO警報191（海峡内で別の船が被弾・Mayday。発生時刻・船名・被害・攻撃主体は不明）と、10/31発行のUKMTO警報188・189と10/30発行の警報187の更新（船名はgCaptainがEOS Risk Groupの発言として「LOUISE 1」と伝えるが公式の本文になく、攻撃主体・死傷は不明。警報189は発生時刻の記載なし）、10/30発行のUKMTO警報186（海峡を出るタンカーの被弾。船名・発生時刻・攻撃主体は不明）と10/29の警報185（カサブ沖のダウ船の沈没。船種と原因の食い違い）、IRGCとイラン軍が10/29に主張した機雷接触タンカー3〜4隻の特定、イラン軍が10/27に主張した機雷接触・炎上タンカーの特定（船名・位置・時刻は不明。UKMTOに対応する警報なし）と、10/26のUKMTO警報183（アルファオ南東の船舶火災。船名・原因・死傷者は不明）と警報182（10/23に海峡で航行不能になったタンカーの船名・発生時刻・攻撃主体。警報181との同一性は不明）、IRGCが10/23に主張した超大型タンカー2隻の機雷接触の特定、10/22のUKMTO警報181（リマ沖。船名・被害・攻撃主体は公式の本文に記載なし）と、10/22にIRGCが主張した船7隻（4隻が積み替え中に被弾、3隻が機雷に接触）の船名・位置と被害の有無、10/21のUKMTO警報179（ブハ沖）・10/20の警報180（アルファオ沖）の船名・攻撃主体、10/20のUKMTO警報178（アラビア海のタンカーと軍の接触。媒体は発生を10/19と書く）・10/18の警報177（コルファカン沖のタグボート）と、10/17の警報174・175（ジュベイル沖）・176（アデン湾）の発生時刻・船名・攻撃主体、IRGCが10/17〜20に主張した炎上・機雷接触のタンカー（HNGNは10/18の時点で2隻と伝え、10/19・10/20にもgCaptainなどが主張を伝える）の特定、10/16に被弾したMT ST 3の被害（警報174との同一性は不明）、CENTCOMが示したGFS PRIDEの攻撃主体の独立した検証、イラン軍が10/15に主張した炎上タンカーの特定、UKMTO警報166〜173（海峡内の被弾）の発生日・船名・被害・攻撃主体と、GFS PRIDE（沈没）・GFS GISELLE（被弾）との対応、警報164-26・165-26（ソハール沖、ドローン攻撃）の船名と被害、ソハール沖で行方不明のインド人船員2人の消息、オマーン湾のアドバイザリー（警報163）の内容、UAE国家警備隊が救助したタンカーと警報160-26・162-26の関係、Farsが10/9に主張した機雷接触の裏付け、IRGCの引き返し命令、ヤンブー港への着弾の攻撃主体、UKMTO警報157-26・159-26の被弾船の船名と被害</strong></li>
-      <li>③ <strong>サウジ駐在の米政府職員の退避命令（10/21）の背景と、トランプ氏の「決断」の中身（10/24は新たな攻撃か圧力の継続かを検討中と説明）と、米空母の増派（3隻体制の時期）・11/2のQeshm島への米軍の限定攻撃（米当局者の説明で自衛。CENTCOMの公式発表は確認できず）・中間選挙（11/3）後の軍事行動の再開への備えを同盟国に伝えたとのAPの報道（10/28）が外交にどう響くか</strong></li>
-      <li>④ <strong>10/30のフーシ派によるアデン空港・大統領府への攻撃のイエメン政府軍の発表（被害の詳細は示されず）の独立した確認、10/27のラスタヌラ製油所へのフーシ派の攻撃の主張（被害の記載なし）とバブエルマンデブ周辺・タイズの戦況（政府軍筋の主張）の独立した確認、10/26のリヤド空港へのフーシ派の攻撃の主張（被害の記載なし）とイエメン政府軍の「24時間で1,276回の攻撃」発表の独立した確認、流量の回復の実態（Kplerは9月の月間を戦前の8割弱とする一方、10/6の通航は商船7隻と7/23以来の最低）と、イエメン政府側の前進の主張（フーシ派は否定）・10/10と10/11のリヤド空港攻撃・10/13のアラムコ本社攻撃の被害の程度（ロイターは会社筋の話として上層3階の損傷、サウジ・エネルギー省は限定的な火災と説明）と攻撃主体（GACAは10/10の死者12人と発表、Al Jazeeraは10/11の攻撃で1人死亡・11人負傷と伝える）・10/24のアデン空港への攻撃（イエメン政府は今月4回目と説明）とリヤド向け弾道ミサイルの迎撃（連合軍の発表）・ヤンブー向けミサイルの迎撃（10/16、発射元は未特定）・10/18のサウジとフーシ派の応酬（北部の空爆で9人以上死亡との報道、ナジュランのヘリ墜落）と10/19のシャブワ県の政府軍キャンプへの攻撃（地元当局は10/20時点で73人死亡・行方不明14人と発表、暫定）を含むヤンブーの積み出しがルートBにどう響くか</strong></li>
-      <li>⑤ <strong>原油価格の動向（11/2終値：ブレント1月物104.77ドル・WTI12月物96.46ドル。Yahoo Finance・NYMEXのデータ・Lapaas Voice。11/3のWTI12月物は96.09ドルで、ブレント1月物は2出典での一致を確認できず）と、トランプ氏が言及した「productive conversations」の中身</strong></li>
+      <li><details class="sc-focus-more" data-item="focus-1"><summary><span class="sc-focus-lead">① イランと米国が7項目の計画で折り合えるか</span><span class="more-chip" aria-hidden="true"></span></summary><div class="sc-focus-text">バンス副大統領は11/2に「進展はあった」と述べ、イランは2日以内の海峡再開計画を説明した（Al Jazeera）。アラグチ外相は10/28も仲介者と連絡を続けると述べた（Middle East Monitor）。米国の回答の中身は未公表。仲介役のカタールは米イラン交渉の再開に向け外交努力を強めている（Arab News・11/1）。</div></details></li>
+      <li><details class="sc-focus-more" data-item="focus-2"><summary><span class="sc-focus-lead">② 海峡周辺で被弾が続く警報の、船名・被害・攻撃主体の特定</span><span class="more-chip" aria-hidden="true"></span></summary><div class="sc-focus-text">最新は11/4発行のUKMTO警報195（リマ北東14海里でタンカーが機関室に飛翔体2発）と11/3発行の警報194（インド人乗組員のダウ船。インド外務省はMSV AL JUSUFIで1人死亡と発表したが、同じ事案かは確認できず）。警報191〜193と、IRGC・イラン軍が主張する機雷接触のタンカーも、船名・攻撃主体は確かめられていない。</div></details></li>
+      <li><details class="sc-focus-more" data-item="focus-3"><summary><span class="sc-focus-lead">③ Qeshm島攻撃の後の米側の動きと、中間選挙後の軍事行動</span><span class="more-chip" aria-hidden="true"></span></summary><div class="sc-focus-text">米軍は11/2にQeshm島を限定攻撃した（米当局者の説明で自衛。CENTCOMの公式発表は確認できず〈NBC〉）。APは10/28、米側が同盟国に中間選挙（11/3）後の軍事行動の再開への備えを伝えたと報じた。トランプ氏の「決断」の中身と米空母の増派（3隻体制の時期）が外交にどう響くか。</div></details></li>
+      <li><details class="sc-focus-more" data-item="focus-4"><summary><span class="sc-focus-lead">④ フーシ派の攻撃の主張の確認と、ルートBのヤンブーへの影響</span><span class="more-chip" aria-hidden="true"></span></summary><div class="sc-focus-text">フーシ派によるアデン空港・大統領府への攻撃（10/30・イエメン政府軍の発表）、ラスタヌラ製油所（10/27）とリヤド空港（10/26）への攻撃の主張は、どれも独立した確認がない。リヤド空港・アラムコ本社への攻撃（10/10〜13）の被害の程度や、ヤンブー向けミサイルの迎撃（10/16・発射元は未特定）を含め、ヤンブーの積み出しがルートBにどう響くか。</div></details></li>
+      <li><details class="sc-focus-more" data-item="focus-5"><summary><span class="sc-focus-lead">⑤ 原油価格の動きと、トランプ氏が言う「対話」の中身</span><span class="more-chip" aria-hidden="true"></span></summary><div class="sc-focus-text">11/2終値：ブレント1月物104.77ドル・WTI12月物96.46ドル（Yahoo Finance〈NYMEXのデータ〉・Lapaas Voice）。11/3のWTI12月物は96.09ドルで、ブレント1月物は2出典での一致を確認できず。トランプ氏が言及した「productive conversations」が何を指すか。</div></details></li>
     </ul>
   </div>
 
@@ -3470,7 +3516,8 @@ function wrapIncidentDetails() {
 }
 
 // 二段表示の計測（GA4・2026-11-01。設計 text-two-stage.md §3-6）
-// text_expand：開いたときだけ送る。section は glance／incident／routes、item は now・strait・next・verify／速報は上からの番号／ルートは old・b・a・c_us・c_gl・d（PR-B1・2026-11-02）。件名の文や日付は送らない
+// text_expand：開いたときだけ送る。section は glance／incident／routes／scenario、item は now・strait・next・verify／速報は上からの番号／ルートは old・b・a・c_us・c_gl・d（PR-B1・2026-11-02）／
+// シナリオは A〜D・update・about・focus-1〜（PR-B2・2026-11-02）。件名の文や日付は送らない
 // section_view：区域が初めて見えたときに1回（incident・map・routes・scenario）。地図まで読まれた割合を見る
 function initTwoStageMetrics() {
   if (typeof gtag !== 'function') return;
@@ -3479,7 +3526,8 @@ function initTwoStageMetrics() {
     const d = e.target;
     if (!(d instanceof HTMLDetailsElement) || !d.open) return;
     const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident'
-      : d.classList.contains('route-row') ? 'routes' : '';
+      : d.classList.contains('route-row') ? 'routes'
+      : d.classList.contains('sc-more') || d.classList.contains('sc-focus-more') ? 'scenario' : '';
     if (section) gtag('event', 'text_expand', { section: section, item: d.dataset.item || '' });
   }, true);
   // jump_click：30秒カラムの地図のカードが押されたとき（2026-11-02）。section は行き先（map）。地図を上へ移すかを決め直す材料
@@ -3599,21 +3647,34 @@ function syncScenarioFromDashboard() {
       // 以前は innerHTML ごと差し替えていたため、カード見出しと増減矢印が毎回上書きされ、
       // Gemini 側の定義（外交解決／部分封鎖…）と表示上の定義がずれていた。
       let missing = 0;
-      const pctMap = {
-        'sc-pct-A': d.scenario.A_diplomacy_pct,
-        'sc-pct-B': d.scenario.B_partial_blockade_pct,
-        'sc-pct-C': d.scenario.C_full_blockade_pct,
-        'sc-pct-D': d.scenario.D_escalation_pct,
-      };
-      Object.keys(pctMap).forEach(id => {
-        const el = document.getElementById(id);
-        const pct = pctMap[id];
-        // 見出しの中は狭いので短い形にする（詳しい文は注記に出す）
-        const has = pct !== undefined && pct !== null;
+      const keys = { A: 'A_diplomacy_pct', B: 'B_partial_blockade_pct', C: 'C_full_blockade_pct', D: 'D_escalation_pct' };
+      // 二段表示 PR-B2（2026-11-02）：確率の数字に加えてバーの幅と各カードの推定の幅を入れる。
+      // バーの高さと幅の欄の行は HTML で先に場所を取っているので、値が入ってもずれない（CLS）
+      const r = d.scenario_range;
+      const n = d.scenario_samples;
+      Object.entries(keys).forEach(([k, key]) => {
+        const el = document.getElementById('sc-pct-' + k);
+        const pct = d.scenario[key];
+        const has = typeof pct === 'number' && isFinite(pct);
         if (!has) missing++;
-        if (el) el.textContent = has ? `約${pct}%` : '取得できず';
+        if (el) {
+          el.textContent = '';
+          if (has) {
+            // 「約」と「%」は小さく、数字は大きく（30秒カラムの数字の札と同じ作法）
+            const pre = document.createElement('span'); pre.className = 'sc-pct-unit'; pre.textContent = '約';
+            const suf = document.createElement('span'); suf.className = 'sc-pct-unit'; suf.textContent = '%';
+            el.append(pre, String(pct), suf);
+          } else {
+            el.textContent = '取得できず';
+          }
+        }
+        const bar = document.getElementById('sc-bar-' + k);
+        if (bar && has) bar.style.width = Math.max(0, Math.min(100, pct)) + '%';
+        const rg = document.getElementById('sc-range-' + k);
+        const one = r && Array.isArray(r[key]) && r[key].length === 2 ? r[key] : null;
+        if (rg) rg.textContent = one && n > 1 ? `${one[0]}〜${one[1]}%（${n}回）` : '取得できず';
       });
-      if (missing === Object.keys(pctMap).length) throw new Error('確率が1つもありません');
+      if (missing === Object.keys(keys).length) throw new Error('確率が1つもありません');
       synced = true;
 
       // 確率がいつの値かを、同期元の updated_at から出す（HTML に日付を書かない。日次更新では触らない）
@@ -3626,19 +3687,15 @@ function syncScenarioFromDashboard() {
       }
       if (at && missing > 0) at.textContent += '。一部の確率は取得できませんでした';
 
-      // 確率が「いつの時点の話か」（判定日）と、同じ入力で複数回推定させたときの幅
+      // 確率が「いつの時点の話か」（判定日。見出しの下の行に日付だけ入れる）と、同じ入力で複数回推定させたときの幅（確率についての注記）
       const hz = document.getElementById('sc-horizon');
       const h = d.scenario_horizon;
       const jd = h && /^\d{4}-\d{2}-\d{2}$/.test(h.judgment_date || '') ? h.judgment_date.split('-').map(Number) : null;
-      if (hz) hz.textContent = jd
-        ? `判定日（${jd[0]}年${jd[1]}月${jd[2]}日・推定した日から${h.days}日後）にどのシナリオに当たるかの確率です。`
-        : '';
+      if (hz) hz.textContent = jd ? `${jd[0]}年${jd[1]}月${jd[2]}日` : '取得できず';
       const rg = document.getElementById('sc-range');
-      const r = d.scenario_range;
-      const keys = { A: 'A_diplomacy_pct', B: 'B_partial_blockade_pct', C: 'C_full_blockade_pct', D: 'D_escalation_pct' };
       const ok = r && Object.values(keys).every(k => Array.isArray(r[k]) && r[k].length === 2);
-      if (rg) rg.textContent = ok && d.scenario_samples > 1
-        ? `表示は${d.scenario_samples}回の推定の中央値で、${d.scenario_samples}回の幅は ` +
+      if (rg) rg.textContent = ok && n > 1
+        ? `表示は${n}回の推定の中央値で、${n}回の幅は ` +
           Object.entries(keys).map(([s, k]) => `${s} ${r[k][0]}〜${r[k][1]}%`).join('・') + ' でした。'
         : '';
 
@@ -3658,9 +3715,14 @@ function syncScenarioFromDashboard() {
       console.warn('scenario sync failed:', e);
       if (synced) return;  // 確率を入れたあとの失敗では、入れた値を消さない
       ['A', 'B', 'C', 'D'].forEach(k => {
-        const el = document.getElementById('sc-pct-' + k);
-        if (el) el.textContent = '取得できず';
+        // バーは空のまま。数字・推定の幅・判定日は「取得できず」
+        ['sc-pct-', 'sc-range-'].forEach(p => {
+          const el = document.getElementById(p + k);
+          if (el) el.textContent = '取得できず';
+        });
       });
+      const hz = document.getElementById('sc-horizon');
+      if (hz) hz.textContent = '取得できず';
       const noteEl = document.querySelector('.sc-sync-note');
       if (noteEl) noteEl.textContent = 'A〜Dの確率は、ダッシュボードのデータを取得できませんでした。時間をおいて再読み込みしてください。';
     });
@@ -4448,7 +4510,7 @@ function scrollToJapanFlow(e) {
   function load(){
     var s = document.createElement('script');
     s.src = '/assets/glossary.js';
-    s.setAttribute('data-zones', '.glance-summary, .incident-item .incident-body, .route-detail, .sc-body, .sc-update, .sc-focus-list, .news-body');
+    s.setAttribute('data-zones', '.glance-summary, .incident-item .incident-body, .route-detail, .sc-detail, .sc-update-body, .sc-focus-text, .news-body');
     s.setAttribute('data-lazy', '');
     document.body.appendChild(s);
   }
@@ -4460,8 +4522,9 @@ function scrollToJapanFlow(e) {
 /* キーワードの自動の色付け（2026-10-11）。本文には手で印を書かない。
    日付・数値（単位つき）・被害・回復・但し書きの5種を、正規表現で機械的に見つけて span で囲む */
 (function(){
-  var ZONES = '.glance-text, .sc-update, .sc-focus-list';
-  var SKIP = 'a,script,style,.sc-ai-note,.sc-sync-note,.sc-trend,.kw-date,.kw-num,.kw-alert,.kw-ease,.kw-hedge';
+  // シナリオは二段表示 PR-B2（2026-11-02）から 今日の見立て・但し書き・次の焦点の本文（要点・件名には掛けない）
+  var ZONES = '.glance-text, .sc-today, .sc-update-body, .sc-focus-text';
+  var SKIP = 'a,script,style,.sc-item-h,.sc-ai-note,.sc-sync-note,.sc-trend,.kw-date,.kw-num,.kw-alert,.kw-ease,.kw-hedge';
   var CLS = ['kw-date', 'kw-num', 'kw-alert', 'kw-ease', 'kw-hedge'];
   var RE = new RegExp([
     '(\\d{1,2}/\\d{1,2}(?:〜\\d{1,2}/\\d{1,2})?(?:（[月火水木金土日]）)?(?: ?\\d{1,2}:\\d{2})?(?: ?(?:JST|UTC))?)',

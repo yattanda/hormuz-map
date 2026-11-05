@@ -845,8 +845,9 @@ def check_column_pills(html: str) -> None:
         mv = PAT_ARTICLE_VISIBLE.search(text)
         others.append(("記事の「最終更新」", "-".join(mv.groups()) if mv else None, a_mod))
         card = None
-        for seg in re.split(r'(?=<div class="col-card[ "])', html):
-            if f'href="articles/{fname}/" class="col-card-link"' in seg:
+        # カードは全体が記事へのリンク <a href="articles/<slug>/" class="col-card …">（二段表示 PR-C1・2026-11-05）
+        for seg in re.split(r'(?=<a href="[^"]*" class="col-card[ "])', html):
+            if seg.startswith(f'<a href="articles/{fname}/" class="col-card'):
                 mc = PAT_COL_CARD_DATE.search(seg)
                 card = mc.group(1) if mc else None
                 break

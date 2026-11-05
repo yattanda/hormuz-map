@@ -55,36 +55,24 @@ Claude Codeが作業する場合も、内容の追加・脚色は行わず「移
   （`</div><!-- /.commentary-grid -->` の前。別のカードの `</div>` の内側に入れない）。
   先頭の1枚が全幅、2枚目以降が格子（PC 3列・タブレット 2列・スマホ 1列）になる
 
-- カード本文は要約（3〜5行程度、新しい主張やデータを加えない）
-- カード末尾に「全文を読む」ボタンを設置し `articles/{slug}/` へリンク（`/hormuz/` からの文書相対）
+- カードは全体を `articles/{slug}/` へのリンクにし（`/hormuz/` からの文書相対）、中は 絵・題・副題・日付だけ。
+  要約の文と「全文を読む」のボタンは置かない（二段表示 PR-C1・2026-11-05。説明は記事の冒頭に書く）
+- `<a href="articles/{slug}/" class="col-card` の書き出しは `validate_daily.py` の `check_column_pills()` がカードを探す目印なので、
+  `href` と `class` をこの順で書く
 - **インライン style を書かない**（② PR4b-1・2026-10-01 からクラスで書く）。
   色は `col-card--{色}` で選ぶ：`red`・`amber`・`sky`・`green`・`orange`・`violet`。
   新しい色が要るときは `docs/assets/css/hormuz.css` の「特別解説コラムのカード」に `--cc`（RGB）と `--cc-accent` の組を足す
 
 ```html
 <!-- ○○コラムカード -->
-<div class="col-card col-card--red">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
-    <span class="col-card-icon">💣</span>
-    <div class="col-card-titles">
-      <h3 class="col-card-title">記事タイトル</h3>
-      <div class="col-card-sub">サブタイトル</div>
-    </div>
-    <span class="col-card-date">公開 2026/04/12</span>
-  </div>
-
-  <!-- 要約 -->
-  <p class="col-card-lead">
-    要約（3〜5行）
-  </p>
-
-  <!-- 全文リンク -->
-  <a href="articles/{slug}/" class="col-card-link">
-    📄 全文を読む
-  </a>
-</div><!-- /○○コラムカード -->
+<a href="articles/{slug}/" class="col-card col-card--red">
+  <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-mine"/></svg>
+  <span class="col-card-titles">
+    <h3 class="col-card-title">記事タイトル</h3>
+    <span class="col-card-sub">サブタイトル</span>
+    <span class="col-card-meta"><span class="col-card-date">公開 2026/04/12</span><span class="col-card-go" aria-hidden="true">→</span></span>
+  </span>
+</a>
 ```
 
 （色は既存カードの配色に合わせる）

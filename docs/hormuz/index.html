@@ -40,7 +40,7 @@
 <link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
-<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261102c"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表）、20261102c は二段表示 PR-B2（シナリオ） -->
+<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261105"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表）、20261102c は二段表示 PR-B2（シナリオ）、20261105 は二段表示 PR-C1（コラム・声明・ニュース・現地メディア） -->
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
 {
@@ -3403,24 +3403,39 @@ function _newsLabel(label) {
   }
   return word ? `<span class="cat cat-${NEWS_CATS[word]}">${word}</span>` : '';
 }
-function _buildNewsItem(item) {
-  const bodyHtml = item.body ? `<div class="news-body">${item.body}</div>` : '';
-  return `<div class="news-item">
+// 二段表示 PR-C1（2026-11-05・設計 text-two-stage.md §4-2 問い4）：1件を <details class="news-more"> にし、
+// summary に日付・分類の札・見出し（リンクにしない）、中に本文・出典・「記事を開く ↗」。
+// item は GA4 の item（今の並びの上からの番号。「さらに見る」の中も通し番号、過去の履歴は archive）。
+// 本文の無い古い項目は前の形のまま（見出しがリンク）
+function _buildNewsItem(item, n) {
+  if (!item.body) {
+    return `<div class="news-item">
   <div class="news-meta"><span class="news-date">${item.date}</span>${_newsLabel(item.label)}</div>
   <div class="news-title"><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></div>
-  ${bodyHtml}
   <div class="news-source">出典：${item.sourceLabel}</div>
 </div>`;
+  }
+  return `<details class="news-item news-more" data-item="${n}">
+  <summary>
+    <span class="news-meta"><span class="news-date">${item.date}</span>${_newsLabel(item.label)}</span>
+    <span class="news-title">${item.title}</span>
+    <span class="more-chip" aria-hidden="true"></span>
+  </summary>
+  <div class="news-detail">
+    <div class="news-body">${item.body}</div>
+    <div class="news-source">出典：${item.sourceLabel}<a class="news-open" href="${item.url}" target="_blank" rel="noopener">記事を開く ↗</a></div>
+  </div>
+</details>`;
 }
 function renderLatestNews(data) {
   const c = document.getElementById('news-latest-container');
   if (!c) return;
   const top3 = data.latest.slice(0, 3);
   const rest  = data.latest.slice(3);
-  let html = top3.map(_buildNewsItem).join('');
+  let html = top3.map((it, i) => _buildNewsItem(it, i + 1)).join('');
   if (rest.length > 0) {
     html += `
-      <div id="news-latest-extra" style="display:none;">${rest.map(_buildNewsItem).join('')}</div>
+      <div id="news-latest-extra" style="display:none;">${rest.map((it, i) => _buildNewsItem(it, i + 4)).join('')}</div>
       <button class="news-more-btn" id="news-latest-more-btn" onclick="toggleNewsExtra()">▼ さらに見る（${rest.length}件）</button>`;
   }
   if (data.staleNotice) {
@@ -3436,7 +3451,7 @@ function renderArchive(data) {
   const batchHtml = data.archive.map(batch =>
     `<div class="news-archive-batch">
   <div class="news-archive-label">${batch.batchLabel}</div>
-  ${batch.items.map(_buildNewsItem).join('')}
+  ${batch.items.map(it => _buildNewsItem(it, 'archive')).join('')}
 </div>`
   ).join('');
   const bottomBtn = `<button class="news-more-btn news-more-btn--tight" onclick="toggleArchive()">▲ 折りたたむ</button>`;
@@ -3444,6 +3459,7 @@ function renderArchive(data) {
 }
 function renderOsint(data) {
   // データの cardBg・cardBorder・badgeColor・borderColor・textColor は使わない（色は hormuz.css の .osint-*・D3 PR 5）
+  // 英語の原題 titleEn は出さない（二段表示 PR-C1・2026-11-05）。データには必須のまま残す（裏取りの控え）
   const LIMIT = 3;
   const items = data.osint;
   const makeCard = item => `
@@ -3454,7 +3470,6 @@ function renderOsint(data) {
         <span class="osint-date">${item.date}</span>
       </div>
       <div class="osint-title">${item.titleJa}</div>
-      <div class="osint-en">EN: ${item.titleEn}</div>
     </a>
   `;
   const topItems = items.slice(0, LIMIT);
@@ -3531,8 +3546,10 @@ function wrapIncidentDetails() {
 
 // 二段表示の計測（GA4・2026-11-01。設計 text-two-stage.md §3-6）
 // text_expand：開いたときだけ送る。section は glance／incident／routes／scenario、item は now・strait・next・verify／速報は上からの番号／ルートは old・b・a・c_us・c_gl・d（PR-B1・2026-11-02）／
-// シナリオは A〜D・update・about・focus-1〜（PR-B2・2026-11-02）。件名の文や日付は送らない
-// section_view：区域が初めて見えたときに1回（incident・map・routes・scenario）。地図まで読まれた割合を見る
+// シナリオは A〜D・update・about・focus-1〜（PR-B2・2026-11-02）／声明（trump）は briefing、ニュース（news）は上からの番号・過去の履歴は archive（PR-C1・2026-11-05）。
+// 件名の文や日付は送らない
+// section_view：区域が初めて見えたときに1回（incident・map・routes・scenario、PR-C1 で special-commentary・news-column・osint-panel・update-log）。
+// 地図まで・ページの下まで読まれた割合を見る
 function initTwoStageMetrics() {
   if (typeof gtag !== 'function') return;
   // toggle は親へ伝わらない（bubble しない）ので、捕捉の段で拾う
@@ -3541,7 +3558,8 @@ function initTwoStageMetrics() {
     if (!(d instanceof HTMLDetailsElement) || !d.open) return;
     const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident'
       : d.classList.contains('route-row') ? 'routes'
-      : d.classList.contains('sc-more') || d.classList.contains('sc-focus-more') ? 'scenario' : '';
+      : d.classList.contains('sc-more') || d.classList.contains('sc-focus-more') ? 'scenario'
+      : d.classList.contains('bw-more') ? 'trump' : d.classList.contains('news-more') ? 'news' : '';
     if (section) gtag('event', 'text_expand', { section: section, item: d.dataset.item || '' });
   }, true);
   // jump_click：30秒カラムの地図のカードが押されたとき（2026-11-02）。section は行き先（map）。地図を上へ移すかを決め直す材料
@@ -3557,7 +3575,7 @@ function initTwoStageMetrics() {
       gtag('event', 'section_view', { section: en.target.id });
     });
   });
-  ['incident', 'map', 'routes', 'scenario'].forEach(function(id) {
+  ['incident', 'map', 'routes', 'scenario', 'special-commentary', 'news-column', 'osint-panel', 'update-log'].forEach(function(id) {
     const el = document.getElementById(id);
     if (el) io.observe(el);
   });
@@ -3793,170 +3811,70 @@ document.addEventListener('DOMContentLoaded', () => {
   </h2>
 
   <div class="commentary-grid">
+  <!-- 二段表示 PR-C1（2026-11-05）：カード全体を記事へのリンクに。中は 絵・題・副題・日付だけ（要約と「全文を読む」の枠は外した） -->
   <!-- 機雷コラムカード -->
-  <div class="col-card col-card--red">
-
-    <!-- タイトル行 -->
-    <div class="col-card-head">
-      <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-mine"/></svg>
-      <div class="col-card-titles">
-        <h3 class="col-card-title">ホルムズ海峡「機雷問題」の深層</h3>
-        <div class="col-card-sub">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</div>
-      </div>
-      <span class="col-card-date">公開 2026/04/12</span>
-    </div>
-
-    <!-- 要約 -->
-    <p class="col-card-lead">
-      イランは自国が敷設した機雷の位置を正確に把握できておらず、これが安全航行再開の最大の障害となっている。米中央軍は掃海作戦を開始したが完全除去には数ヶ月を要する見通し。日本は自衛隊派遣を否定しつつ、外交的な非難にとどめている。
-    </p>
-
-    <!-- 全文リンク -->
-    <a href="articles/mine-clearance/" class="col-card-link">
-      全文を読む
-    </a>
-  </div><!-- /機雷コラムカード -->
-    <!-- サウジパイプラインコラムカード -->
-<div class="col-card col-card--amber">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
+  <a href="articles/mine-clearance/" class="col-card col-card--red">
+    <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-mine"/></svg>
+    <span class="col-card-titles">
+      <h3 class="col-card-title">ホルムズ海峡「機雷問題」の深層</h3>
+      <span class="col-card-sub">イランが自ら撒いた機雷の位置がわからない ― 掃海作戦・日本の立場まで解説</span>
+      <span class="col-card-meta"><span class="col-card-date">公開 2026/04/12</span><span class="col-card-go" aria-hidden="true">→</span></span>
+    </span>
+  </a>
+  <!-- サウジパイプラインコラムカード -->
+  <a href="articles/saudi-pipeline-attack/" class="col-card col-card--amber">
     <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-barrel"/></svg>
-    <div class="col-card-titles">
+    <span class="col-card-titles">
       <h3 class="col-card-title">サウジ東西パイプライン攻撃の深層</h3>
-      <div class="col-card-sub">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</div>
-    </div>
-    <span class="col-card-date">公開 2026/04/09</span>
-  </div>
-
-  <!-- 要約 -->
-  <p class="col-card-lead">
-    イランによるホルムズ海峡の封鎖下で唯一の代替輸出ルートだったサウジ東西パイプラインが停戦合意直後に攻撃を受け、流量・生産能力・精製施設に影響が広がった。日本の原油輸入の約4割を占めるサウジ産の代替ルート自体が標的となり、備蓄放出とルートCへの切り替え検討が進んだ。</p>
-
-  <!-- 全文リンク -->
-  <a href="articles/saudi-pipeline-attack/" class="col-card-link">
-    全文を読む
+      <span class="col-card-sub">ホルムズ回避の「最後の生命線」が標的に ― 日本への影響を徹底解説</span>
+      <span class="col-card-meta"><span class="col-card-date">公開 2026/04/09</span><span class="col-card-go" aria-hidden="true">→</span></span>
+    </span>
   </a>
-
-</div><!-- /サウジコラムカード -->
-<!-- ルートC・アラスカ原油コラムカード -->
-<div class="col-card col-card--sky">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
+  <!-- ルートC・アラスカ原油コラムカード -->
+  <a href="articles/route-c-alaska-oil/" class="col-card col-card--sky">
     <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-tanker"/></svg>
-    <div class="col-card-titles">
+    <span class="col-card-titles">
       <h3 class="col-card-title">ルートC・アラスカ原油の現実</h3>
-      <div class="col-card-sub">ホルムズ・紅海の二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</div>
-    </div>
-    <span class="col-card-date">公開 2026/04/12</span>
-  </div>
-
-  <!-- 要約 -->
-  <p class="col-card-lead">
-    中東ルートが同時多発的に遮断されるリスクの高まりを受け、地政学リスクゼロのアラスカ産原油と喜望峰迂回ルートへの期待が高まった。ただし港湾インフラ不足・原油の質・供給量の限界・価格プレミアムなど課題は多く、いずれも短期の「答え」ではなく中長期の出口戦略という位置づけ。</p>
-
-  <!-- 全文リンク -->
-  <a href="articles/route-c-alaska-oil/" class="col-card-link">
-    全文を読む
+      <span class="col-card-sub">ホルムズ・紅海の二重封鎖リスクの中で高まる期待 ― しかし現実の課題は山積</span>
+      <span class="col-card-meta"><span class="col-card-date">公開 2026/04/12</span><span class="col-card-go" aria-hidden="true">→</span></span>
+    </span>
   </a>
-
-</div><!-- /ルートCコラムカード -->
-<!-- ナイジェリア・アンゴラ・ブラジル調達コラムカード -->
-<div class="col-card col-card--green">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
+  <!-- ナイジェリア・アンゴラ・ブラジル調達コラムカード -->
+  <a href="articles/oil-diversification-africa-brazil/" class="col-card col-card--green">
     <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-tanker"/></svg>
-    <div class="col-card-titles">
+    <span class="col-card-titles">
       <h3 class="col-card-title">原油輸入多様化の現実：ナイジェリア・アンゴラ・ブラジル調達の全貌</h3>
-      <div class="col-card-sub">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</div>
-    </div>
-    <span class="col-card-date">公開 2026/04/13・更新 2026/05/06</span>
-  </div>
-
-  <!-- 要約 -->
-  <p class="col-card-lead">
-    政府は非中東ルートで輸入の半分以上を確保する目標を掲げ、ナイジェリア・アンゴラ・ブラジルへの緊急接触を開始した。いずれも喜望峰経由で到着まで35〜45日を要し、中国との調達競合や精製上の課題もあるが、中東以外で安定供給を見込める数少ない選択肢として調整が進んだ。</p>
-
-  <!-- 全文リンク -->
-  <a href="articles/oil-diversification-africa-brazil/" class="col-card-link">
-    全文を読む
+      <span class="col-card-sub">日本はホルムズ依存95%からの脱却を急ぐ ― 各国の最新状況・ボリューム・ダンゴテ急拡大の全貌</span>
+      <span class="col-card-meta"><span class="col-card-date">公開 2026/04/13・更新 2026/05/06</span><span class="col-card-go" aria-hidden="true">→</span></span>
+    </span>
   </a>
-
-</div><!-- /ナイジェリア・アンゴラ・ブラジルコラムカード -->
-
-<!-- 特別レポートカード：停戦1か月レポート -->
-<div class="col-card col-card--orange">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
+  <!-- 特別レポートカード：停戦1か月レポート（別タブ） -->
+  <a href="https://yattanda.github.io/hormuz-crisis-report/" class="col-card col-card--orange" target="_blank" rel="noopener">
     <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-report"/></svg>
-    <div class="col-card-titles">
+    <span class="col-card-titles">
       <h3 class="col-card-title">不完全な停戦、動かない海峡</h3>
-      <div class="col-card-sub">ホルムズ海峡危機、1か月で見えた供給正常化の壁 ― 予測 vs 現実ダッシュボード</div>
-    </div>
-    <span class="col-card-date">2026/05/08 時点の比較</span>
-  </div>
-
-  <!-- サムネイル＋外部リンクボタン -->
-  <div class="col-card-thumbrow">
-    <img src="/images/crisis-report-ogp.png" width="640" height="632" loading="lazy" alt="不完全な停戦、動かない海峡：ホルムズ海峡危機1か月比較分析レポート" class="col-card-thumb">
-    <a href="https://yattanda.github.io/hormuz-crisis-report/" target="_blank" rel="noopener" class="col-card-link col-card-link--inrow">
-      特別レポートを読む ↗（別タブ）
-    </a>
-  </div>
-
-</div><!-- /特別レポートカード -->
-
-<!-- 石油備蓄の月次推移まとめコラムカード -->
-<div class="col-card col-card--violet">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
-    <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-tank"/></svg>
-    <div class="col-card-titles">
-      <h3 class="col-card-title">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h3>
-      <div class="col-card-sub">開戦前248日分→現在199日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</div>
-    </div>
-    <span class="col-card-date">公開 2026/08/21・更新 2026/11/04</span>
-  </div>
-
-  <!-- 要約 -->
-  <p class="col-card-lead">
-    日本の石油備蓄は危機発生前の248日分から、10月末（10月31日時点速報）で199日分まで減少した。ただし取り崩しの大半は3〜5月に集中しており、6月以降はおおむね横ばい。国家備蓄の放出は7月中旬で事実上停止し、101〜103日分で高止まりしている。8月下旬からは民間備蓄の減少で合計200日分前後に。折れ線グラフと月次表で推移をひと目で確認できる（毎月更新）。</p>
-
-  <!-- 全文リンク -->
-  <a href="articles/oil-stockpile-monthly-trend/" class="col-card-link">
-    全文を読む
+      <span class="col-card-sub">ホルムズ海峡危機、1か月で見えた供給正常化の壁 ― 予測 vs 現実ダッシュボード</span>
+      <span class="col-card-meta"><span class="col-card-date">2026/05/08 時点の比較</span><span class="col-card-go">特別レポート ↗（別タブ）</span></span>
+    </span>
   </a>
-
-</div><!-- /石油備蓄月次推移コラムカード -->
-
-<!-- トランプ声明バナー（移動） -->
-<!-- 2026-10-01 第1層の末尾（速報インシデントの下）から、特別解説コラムのカードへ移した。全文はモーダル #trump-modal -->
-<div id="trump-statement" class="col-card col-card--slate">
-
-  <!-- タイトル行 -->
-  <div class="col-card-head">
+  <!-- 石油備蓄の月次推移まとめコラムカード -->
+  <a href="articles/oil-stockpile-monthly-trend/" class="col-card col-card--violet">
+    <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-tank"/></svg>
+    <span class="col-card-titles">
+      <h3 class="col-card-title">石油備蓄はどう推移したか──月次まとめとグラフで見る現在地</h3>
+      <span class="col-card-sub">開戦前248日分→現在199日分 ― 取り崩しの山場と下げ止まりの理由を月ごとに整理</span>
+      <span class="col-card-meta"><span class="col-card-date">公開 2026/08/21・更新 2026/11/04</span><span class="col-card-go" aria-hidden="true">→</span></span>
+    </span>
+  </a>
+  <!-- トランプ声明カード（2026-10-01 第1層の末尾から移した。全文はモーダル #trump-modal。button の中には h3 を置けないので a で開く） -->
+  <a href="#trump-statement" class="col-card col-card--slate" id="trump-statement" onclick="event.preventDefault();openTrumpModal();">
     <svg class="col-card-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/icons/icons.svg#i-speaker"/></svg>
-    <div class="col-card-titles">
+    <span class="col-card-titles">
       <h3 class="col-card-title">トランプ声明（4/8 JST）：2週間停止に合意</h3>
-      <div class="col-card-sub">「完全・即時・安全なホルムズ開放」を条件に ― Truth Social 投稿の原文・日本語訳・解釈分析</div>
-    </div>
-    <span class="col-card-date">2026/04/08 の声明</span>
-  </div>
-
-  <!-- 要約 -->
-  <p class="col-card-lead">
-    トランプ大統領は、パキスタンのシャリフ首相・ムニール氏との協議を受け、イランがホルムズ海峡の「完全・即時・安全な開放」に同意することを条件に、イランへの爆撃と攻撃を2週間停止すると Truth Social に投稿した。「2週間」が期限つきの猶予なのか、恒久停戦へ向けた協議期間なのか、2通りに読める点を原文と日本語訳で整理している。</p>
-
-  <!-- 全文（モーダル） -->
-  <button type="button" onclick="openTrumpModal()" class="col-card-link">
-    全文を読む
-  </button>
-
-</div><!-- /トランプ声明カード -->
+      <span class="col-card-sub">「完全・即時・安全なホルムズ開放」を条件に ― Truth Social 投稿の原文・日本語訳・解釈分析</span>
+      <span class="col-card-meta"><span class="col-card-date">2026/04/08 の声明</span><span class="col-card-go">全文を開く</span></span>
+    </span>
+  </a>
 
   </div><!-- /.commentary-grid -->
   <a href="articles/" class="commentary-all">特別解説コラムの一覧へ →</a>
@@ -3965,28 +3883,16 @@ document.addEventListener('DOMContentLoaded', () => {
      特別解説ウィジェット：トランプ大統領 ホルムズ封鎖宣言
      追加日：2026-04-13
 ================================================ -->
+<!-- 二段表示 PR-C1（2026-11-05）：<details class="bw-more"> で包み、閉じた形は 札・日付と出典・題・1行の要約。
+     前の帯（bw-banner）と見出し（bw-header）は summary に移したので消した。bw-inner・bw-footer の中身は変えていない -->
+<details class="bw-more" data-item="briefing">
+  <summary>
+    <span class="bw-more-meta"><span class="bw-more-tag">特別解説</span><span class="bw-more-date">2026年4月12〜13日・Truth Social と @WhiteHouse（X）</span></span>
+    <span class="bw-more-title">ホルムズ海峡封鎖宣言：トランプ大統領の2つの声明（全文の日本語訳付）</span>
+    <span class="bw-more-lead">イスラマバードの交渉決裂の直後に海峡全体の封鎖を宣言し（声明①）、同日深夜にイランの港に出入りする船の封鎖を4/13から始めると通告した（声明②）。</span>
+    <span class="more-chip" aria-hidden="true"></span>
+  </summary>
 <div class="briefing-widget">
-
-  <!-- バナー -->
-  <div class="bw-banner">
-    <div class="bw-dot"></div>
-    <span class="bw-flag">米国</span>
-    <span class="bw-badge">原文英語＋日本語訳付</span>
-    <span class="bw-sub">２声明 精査比較付き &nbsp;／&nbsp; 2026年4月12〜13日 &nbsp;｜&nbsp; Truth Social &amp; @WhiteHouse (X)</span>
-    <span class="bw-flag bw-flag--end">イラン</span>
-    <div class="bw-dot"></div>
-  </div>
-
-  <!-- ヘッダー -->
-  <div class="bw-header">
-    <div class="bw-eyebrow">特　別　解　説</div>
-    <h2 class="bw-title">ホルムズ海峡封鎖宣言<br>トランプ大統領 ２つの声明 全文日本語訳付</h2>
-    <div class="bw-meta">
-      2026年4月12〜13日
-      <em>|</em> イスラマバード和平交渉決裂後
-      <em>|</em> Truth Social &amp; @WhiteHouse (X)
-    </div>
-  </div>
 
   <div class="bw-inner">
 
@@ -4177,6 +4083,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
 </div>
+</details><!-- /bw-more -->
 
 </div><!-- /special-commentary -->
 
@@ -4217,7 +4124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="source-inner">
 
     <!--出典・更新ログ-->
-    <section class="update-log">
+    <section class="update-log" id="update-log">
 
       <div class="update-log-head">
         <h2 class="sec-h2">

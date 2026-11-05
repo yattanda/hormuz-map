@@ -200,13 +200,15 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    札の語は CSS が出す（HTML の札は aria-hidden の空の span）。札の文字は本文の 0.7倍・高さ 26px・左右 9px */
 .glance-more, .incident-more { display:block; }
 .glance-more > summary, .incident-more > summary, .route-row > summary, .jf-note > summary,
-.sc-more > summary, .sc-focus-more > summary { list-style:none; } /* ルート表・日本向けの注記（PR-B1）、シナリオ（PR-B2）も同じ部品 */
+.sc-more > summary, .sc-focus-more > summary, .bw-more > summary, .news-more > summary { list-style:none; } /* ルート表・日本向けの注記（PR-B1）、シナリオ（PR-B2）、声明・ニュース（PR-C1）も同じ部品 */
 .glance-more > summary, .incident-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px;
   min-height:44px; }
 .glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker, .route-row > summary::-webkit-details-marker, .jf-note > summary::-webkit-details-marker,
-.sc-more > summary::-webkit-details-marker, .sc-focus-more > summary::-webkit-details-marker { display:none; }
+.sc-more > summary::-webkit-details-marker, .sc-focus-more > summary::-webkit-details-marker,
+.bw-more > summary::-webkit-details-marker, .news-more > summary::-webkit-details-marker { display:none; }
 .glance-more > summary:focus-visible, .incident-more > summary:focus-visible, .route-row > summary:focus-visible, .jf-note > summary:focus-visible,
-.sc-more > summary:focus-visible, .sc-focus-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
+.sc-more > summary:focus-visible, .sc-focus-more > summary:focus-visible,
+.bw-more > summary:focus-visible, .news-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
 .more-chip { align-self:flex-end; display:inline-flex; align-items:center; min-height:26px; padding:0 9px;
   border:1px solid var(--c-text); color:var(--c-text); font-size:0.665rem; font-weight:700; line-height:1; white-space:nowrap; }   /* 本文（--fs-md）の 0.7倍 */
 .glance-more .more-chip::before { content:"続きを読む ▼"; }
@@ -812,25 +814,21 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
 .stat-card.stat-card--wti { cursor:pointer; }
 
 /* 特別解説コラムのカード。面・角丸と記事ごとの色分けをやめ、上の細い罫で区切る（記事一覧のカードと同じ作法）。
-   HTML の col-card--{色} はそのまま残っているが、色は付けない */
-.col-card { border-top:1px solid var(--c-rule); padding:14px 0 0; margin-bottom:20px; }
-.col-card-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+   HTML の col-card--{色} はそのまま残っているが、色は付けない。
+   二段表示 PR-C1（2026-11-05・設計 text-two-stage.md §4-2 問い1・2）：カード全体を記事へのリンク <a class="col-card"> にし、
+   中は 絵・題・副題・日付だけ（要約 .col-card-lead・「全文を読む」の枠 .col-card-link・特別レポートの画像は外した） */
+.col-card { display:flex; align-items:flex-start; gap:10px; min-height:44px; padding:12px 0 14px; border-top:1px solid var(--c-rule);
+  color:var(--c-text); text-decoration:none; }
+.col-card:hover .col-card-title { text-decoration:underline; text-underline-offset:.18em; }
+.col-card:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
 /* コラムの入口の B の絵（課題46 D3 PR 5b-2・§2 の 28px 以上）。絵は /assets/icons/icons.svg の i-* */
 .col-card-icon { width:40px; height:40px; flex-shrink:0; --a:var(--c-text); --b:var(--c-accent); --c2:var(--c-text-mute); --k:var(--c-bg); }
-.col-card-titles { flex:1; min-width:0; }
+.col-card-titles { flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }
 .col-card-title { font-size:var(--fs-base); font-weight:700; color:var(--c-text); line-height:1.4; margin:0; }
-.col-card-sub { font-size:var(--fs-xs); color:var(--c-text-mute); margin-top:2px; }
-/* 日付は見出しの下の行に置く（「公開 …・更新 …」は長く、横に並べるとタイトルの幅を奪う） */
-.col-card-date { flex-basis:100%; font-size:var(--fs-xs); color:var(--c-text-mute); }
-.col-card-lead { margin-top:12px; font-size:var(--fs-sm); color:var(--c-text); line-height:1.75; }
-.col-card-link { display:block; margin-top:12px; width:100%; text-align:center; background:none; border:1px solid var(--c-text);
-  color:var(--c-text); font-size:var(--fs-sm); font-weight:700; padding:9px 0; text-decoration:none; letter-spacing:0.03em; }
-.col-card-link:hover { text-decoration:underline; text-underline-offset:.18em; }
-button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモーダルで開くカード（トランプ声明） */
-.col-card-thumbrow { display:flex; align-items:center; gap:12px; margin-top:12px; }
-.col-card-thumb { width:10%; min-width:52px; max-width:72px; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:center 20%;
-  flex-shrink:0; border:1px solid var(--c-rule); }
-.col-card-link.col-card-link--inrow { flex:1; margin-top:0; width:auto; }
+.col-card-sub { font-size:var(--fs-xs); color:var(--c-text-mute); line-height:1.5; }
+/* 日付は副題の下の行に置き、行き先の印（→・別タブ・全文を開く）を続ける */
+.col-card-meta { font-size:var(--fs-xs); color:var(--c-text-mute); line-height:1.5; }
+.col-card-go { margin-left:1em; color:var(--c-text); white-space:nowrap; }
 
 /* 数値の注記・日次アーカイブへのリンク */
 .data-note { margin-top:12px; background:var(--c-surface); padding:12px 16px;
@@ -844,7 +842,6 @@ button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモ�
 /* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
 @media (max-width: 768px) {
   .or-text, .or-note, .stat-head, .col-card-sub, .data-note { font-size:0.8rem; }
-  .col-card-lead { font-size:0.8rem; }   /* 長文。2-a のスマホ本文の下限（0.8rem）を割らない */
 }
 
 /* 部品の残り（② PR4b-2・2026-10-01）：ヘッダー・層の帯・SNS と動画の導線・速報インシデントの枠・地図のタンカー欄・
@@ -906,7 +903,6 @@ button.col-card-link { cursor:pointer; font-family:inherit; }   /* 全文をモ�
 .modal-ling .modal-alert { color:var(--c-text); }
 
 /* トランプ声明の比較ブロック。#bw-timeline-detail・#bw-detail-body の display:none は toggle*() が読むのでインラインに残す */
-.bw-flag.bw-flag--end { margin-left:auto; }
 .bw-toggle { width:100%; background:none; border:1px solid var(--c-rule); color:var(--c-text);
   font-size:var(--fs-sm); font-weight:700; padding:8px 0; cursor:pointer; margin-bottom:8px; letter-spacing:0.03em; }
 .bw-toggle:hover { border-color:var(--c-text); }
@@ -1154,6 +1150,18 @@ footer {
 .news-hidden{display:none;}
 .news-more-btn{width:100%;margin-top:8px;background:none;border:1px solid var(--c-rule);padding:8px;color:var(--c-text-mute);font-size:0.73rem;cursor:pointer;font-family:inherit;}
 .news-more-btn:hover{border-color:var(--c-text);color:var(--c-text);}
+/* 二段表示 PR-C1（2026-11-05・設計 text-two-stage.md §4-2 問い4）：本文のある項目は <details class="news-item news-more">。
+   閉じた形は 日付・分類の札・見出し（リンクにしない）・札、開くと 本文・出典・「記事を開く ↗」。本文の無い古い項目は前の形 */
+details.news-more { display:block; padding:0 !important; border:1px solid var(--c-rule); margin-bottom:8px; }
+.news-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px; min-height:44px; padding:8px 10px; }
+.news-more > summary:hover .more-chip { background:var(--c-surface); }
+.news-more .more-chip::before { content:"本文を読む ▼"; }
+.news-more[open] > summary .more-chip::before { content:"閉じる ▲"; }
+.news-more .news-title { display:block; font-size:var(--fs-md); font-weight:700; color:var(--c-text); line-height:1.55; }
+.news-detail { padding:8px 10px 12px; border-top:1px solid var(--c-rule); }
+@media (min-width: 769px) { .news-detail .news-body { font-size:var(--fs-sm); line-height:1.75; } }   /* 見出し（--fs-md）より小さく。768px 以下は上の 0.8rem の規則 */
+.news-detail .news-source { margin-top:6px; font-size:var(--fs-xs); color:var(--c-text-mute); }
+.news-item a.news-open { display:inline; margin-left:1em; font-size:inherit; color:var(--c-text); text-decoration:underline; text-underline-offset:.18em; }
 @media(max-width:1023px){.news-meta{min-width:75px;}.news-item a{font-size:0.74rem;}}
 
 /* ================================================
@@ -1280,41 +1288,20 @@ footer {
   border-top: 3px solid var(--c-text);
   overflow: hidden;
 }
-.bw-banner {
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-  background: var(--c-surface);
-  padding: 9px 16px;
-}
-.bw-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--c-accent); flex-shrink: 0;
-  animation: badgeBlink 1.3s ease-in-out infinite;
-}
-.bw-flag { font-size: var(--fs-sm); font-weight: 700; line-height: 1; flex-shrink: 0; }   /* 国旗の絵文字をやめて国名の文字に（課題46 D3 PR 5b-2） */
-/* 「原文英語＋日本語訳付」の札。状態ではないので枠だけ（D3 PR 5） */
-.bw-badge {
-  font-size: .65rem; font-weight: 800; letter-spacing: .15em;
-  color: var(--c-text); border: 1px solid var(--c-rule); padding: 3px 10px;
-}
-.bw-sub {
-  font-size: .68rem; color: var(--c-text-mute); letter-spacing: .05em;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-/* 見出しは左寄せ（§3 中央寄せの見出しをなくす） */
-.bw-header {
-  padding: 22px 18px 16px;
-  border-bottom: 1px solid var(--c-rule);
-}
-.bw-eyebrow {
-  display: inline-block; font-family: var(--f-figure); font-size: .62rem; font-weight: 600;
-  letter-spacing: .38em; color: var(--c-accent); margin-bottom: 12px;
-}
-.bw-title {
-  font-size: 1.15rem; font-weight: 700; color: var(--c-text);
-  letter-spacing: .06em; line-height: 1.65; margin-bottom: 8px;
-}
-.bw-meta { font-size: .66rem; color: var(--c-text-mute); }
-.bw-meta em { color: var(--c-text); font-style: normal; margin: 0 4px; }
+/* 二段表示 PR-C1（2026-11-05・設計 text-two-stage.md §4-2 問い3）：<details class="bw-more"> で包み、閉じた形は
+   札「特別解説」・日付と出典・題・1行の要約・札。前の帯（.bw-banner）と見出し（.bw-header）は summary に移したので規則も消した */
+.bw-more { display:block; margin-top:20px; border:1px solid var(--c-rule); }
+.bw-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px; min-height:44px; padding:10px 12px; }
+.bw-more > summary:hover .more-chip { background:var(--c-surface); }
+.bw-more .more-chip::before { content:"本文を読む ▼"; }
+.bw-more[open] > summary .more-chip::before { content:"閉じる ▲"; }
+.bw-more-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.bw-more-tag { font-size:var(--fs-2xs); font-weight:700; letter-spacing:0.08em; padding:1px 7px; border:1px solid var(--c-text-mute);
+  color:var(--c-text); line-height:1.6; }
+.bw-more-date { font-size:var(--fs-xs); color:var(--c-text-mute); }
+.bw-more-title { font-size:var(--fs-md); font-weight:700; color:var(--c-text); line-height:1.5; }
+.bw-more-lead { font-size:var(--fs-base); color:var(--c-text); line-height:1.6; }
+.bw-more > .briefing-widget { border-top:1px solid var(--c-rule); }
 .bw-inner { padding: 0 18px 24px; }
 .bw-sec {
   font-size: .62rem; font-weight: 700; letter-spacing: .3em; color: var(--c-accent);
@@ -1470,13 +1457,13 @@ footer {
 .bw-footer-r { font-size: .6rem; color: var(--c-text-mute); letter-spacing: .1em; }
 /* レスポンシブ */
 @media (max-width: 1023px) {
-  .bw-title { font-size: .95rem; }
   .bw-table th:first-child { width: 32%; }
   .bw-card { padding: 16px 14px 14px; }
   .bw-inner { padding: 0 12px 20px; }
 }
 @media (max-width: 600px) {
-  .bw-title { font-size: .88rem; }
+  .bw-more-title { font-size: 0.88rem; }   /* .sc-lead・.glance-lead のスマホと同じ */
+  .bw-more-lead { font-size: 0.8rem; }
   .bw-trans-body { font-size: .76rem; }
   .bw-orig-text { font-size: .68rem; }
 }
@@ -1579,8 +1566,7 @@ footer {
   .bw-tl-body,
   .bw-trans-body,
   .src-pop-body,
-  .news-stale-notice,
-  .osint-en {
+  .news-stale-notice {
     font-size: 0.8rem !important;
   }
 }
@@ -1598,7 +1584,7 @@ p, li,
 .badges .badge-item,                       /* ヘッダーの警戒レベル */
 .sc-section > div:not(.sc-grid),          /* シナリオの見出しの下の行・次の焦点 */
 .sc-section > details,                     /* シナリオの確率の補足・確率について（PR-B2） */
-.osint-card > div,                         /* 現地メディア視点の英語要約 */
+.osint-card > div,                         /* 現地メディア視点の見出し */
 .data-note,                                /* WTI の注記 */
 .update-log > div > div {                  /* 更新履歴の各行（行を入れる箱の開始タグは日次差分の old_str に引用されるため、クラスは section に付ける） */
   max-width: var(--measure);
@@ -1637,17 +1623,17 @@ footer {                                   /* フッター（中央揃え・上�
      .commentary-grid で包む構造に直した） */
   .commentary-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    align-items: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 12px;
+    row-gap: 0;
+    align-items: stretch;
   }
   .commentary-grid > :first-child { grid-column: 1 / -1; }
-  .commentary-grid > div { margin: 0 !important; }
 }
 
 @media (min-width: 1024px) {
   .stats-row { grid-template-columns: repeat(6, 1fr); }
-  .commentary-grid { grid-template-columns: repeat(3, 1fr); }
+  .commentary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sc-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }   /* 閉じた形の4本を1段に（前後の見本・PR-B2） */
 }
 /* ============================================================
@@ -1755,7 +1741,6 @@ footer {                                   /* フッター（中央揃え・上�
 .osint-media { font-size:0.68rem; font-weight:700; padding:2px 7px; border:1px solid var(--c-rule); color:var(--c-text); }
 .osint-date { font-size:0.68rem; color:var(--c-text-mute); }
 .osint-title { font-size:0.8rem; font-weight:700; color:var(--c-text); line-height:1.5; }
-.osint-en { font-size:0.72rem; color:var(--c-text-mute); margin-top:3px; line-height:1.5; font-style:italic; }
 #osint-extra { margin-top:8px; }
 
 /* ============================================================

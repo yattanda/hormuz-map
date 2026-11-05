@@ -49,7 +49,7 @@ description: Safe HTML/CSS/JS editing constraints for hormuz-map / HTML・CSS・
   （軍事レイヤー `.mil-*`／調達先などのポップアップ `.src-pop*`／バッジ `.p-badge--*`／印 `.mk*`／地図上の文字 `.map-label*`／凡例 `.leg-dash--*`／`.news-*`／`.osint-*`）
 - style で残してよいのは2種類だけ：計算やデータで決まる値（`${size}`・`${col}`・`news_data.json` が持つ色）と、JS が開閉の状態として読む `display:none;`
 - ポップアップを足すときは、見出しに `<div class="p-title">`（色は付けない。文字色の `.tc-*` は D3 PR 7a で外した）、バッジに `<span class="p-badge p-badge--◯">`、小さな注記に `<div class="p-note">` を使う。色はトークンの変数だけで、新しい色は足さない（スキル `site-design`）
-- スマホの文字の下限（0.8rem）は、クラスの並び（`.src-pop-body`・`.news-stale-notice`・`.osint-en` ほか）で指定している。以前の属性セレクタ `div[style*="font-size:0.7"]` は外した
+- スマホの文字の下限（0.8rem）は、クラスの並び（`.src-pop-body`・`.news-stale-notice` ほか。`.osint-en` は二段表示 PR-C1 で外した）で指定している。以前の属性セレクタ `div[style*="font-size:0.7"]` は外した
 - `tools/validate_daily.py` が、テンプレートの固定値のインライン style を WARN で確認する
 
 ## スマホ font-size（変更禁止）

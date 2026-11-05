@@ -680,6 +680,8 @@ osint：配列先頭に新記事を追加、既存記事は isLatest: false に�
 
 > **② PR4a（2026-09-29）以降、更新ログはクラスで書く。**日時は `<span class="log-date">`（色は位置で決まるので書かない）、
 > 札は `<strong class="log-tag">`。型の正本は daily-site-update「更新履歴の型」。
+> **二段表示 PR-C2（2026-11-05）以降、1件は1行の `<details class="log-more">`**（日時・札・要点 `span.log-lead`、中に本文 `div.log-text`）。
+> 下の例の「エントリー」は、この1行を指す。11/5 より前の折りたたみの7件は前の2行の形のまま残り、7日で入れ替わる
 
 ### 構造要件（常時維持すること）
 
@@ -719,24 +721,18 @@ APPLY ブロック1
 > 旧エントリー3 はブロック2で log-collapse に追加する。
 > ブロック1の new_str に4件以上含めることは禁止。
 
-**フォーマット例（ブロック1）:**
+**フォーマット例（ブロック1）:**（1件1行。`…` は省略で、実際は要点と本文を書く）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
-        <div>📅 <strong>2026年XX月YY日 HH:MM JST</strong> 更新</div>
-        <div><span class="log-date">2026/XX/YY HH:MM</span> — [旧1件目内容]</div>
-        <div>📅 <strong>2026年XX月ZZ日 HH:MM JST</strong> 更新</div>
-        <div><span class="log-date">2026/XX/ZZ HH:MM</span> — [旧2件目内容]</div>
-        <div>📅 <strong>2026年XX月WW日 HH:MM JST</strong> 更新</div>
-        <div><span class="log-date">2026/XX/WW HH:MM</span> — [旧3件目内容]</div>
+        <details class="log-more"><summary><span class="log-date">2026/XX/YY HH:MM</span> <strong class="log-tag">【札】</strong><span class="log-lead">[旧1件目の要点]</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">[旧1件目の本文]</div></details>
+        <details class="log-more"><summary><span class="log-date">2026/XX/ZZ HH:MM</span> …[旧2件目]…</details>
+        <details class="log-more"><summary><span class="log-date">2026/XX/WW HH:MM</span> …[旧3件目]…</details>
 <!-- OLD:END -->
 <!-- NEW:START -->
-        <div>📅 <strong>2026年MM月DD日 HH:MM JST</strong> 更新</div>
-        <div><span class="log-date">2026/MM/DD HH:MM</span> — [本日分内容]</div>
-        <div>📅 <strong>2026年XX月YY日 HH:MM JST</strong> 更新</div>
-        <div><span class="log-date">2026/XX/YY HH:MM</span> — [旧1件目内容]</div>
-        <div>📅 <strong>2026年XX月ZZ日 HH:MM JST</strong> 更新</div>
-        <div><span class="log-date">2026/XX/ZZ HH:MM</span> — [旧2件目内容]</div>
+        <details class="log-more"><summary><span class="log-date">2026/MM/DD HH:MM</span> <strong class="log-tag">【札】</strong><span class="log-lead">[本日分の要点 40〜50字]</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">[本日分の本文]</div></details>
+        <details class="log-more"><summary><span class="log-date">2026/XX/YY HH:MM</span> <strong class="log-tag">【札】</strong><span class="log-lead">[旧1件目の要点]</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">[旧1件目の本文]</div></details>
+        <details class="log-more"><summary><span class="log-date">2026/XX/ZZ HH:MM</span> …[旧2件目]…</details>
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -751,22 +747,21 @@ APPLY ブロック2
 > ⚠️ ブロック2の old_str は「現在の log-collapse 先頭エントリー」を含む必要がある。
 > 毎回変化するため、project_knowledge_search で現在の log-collapse 先頭行を確認してから書くこと。
 
-**フォーマット例（ブロック2）:**
+**フォーマット例（ブロック2）:**（旧3件目はその1行のまま移す。要点は書き換えない）
 
 <!-- APPLY:START -->
 <!-- OLD:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div class="log-older">
-          <div>📅 <strong>[現在のlog-collapse先頭エントリーの日付]</strong> 更新</div>
+        [現在の log-collapse 先頭エントリーの1行目]
 <!-- OLD:END -->
 <!-- NEW:START -->
       <!-- 折り畳み領域: 4件目以降（初期非表示） -->
       <div id="log-collapse" style="display:none;">
         <div class="log-older">
-          <div>📅 <strong>2026年XX月WW日 HH:MM JST</strong> 更新</div>
-          <div><span class="log-date">2026/XX/WW HH:MM</span> — [旧3件目内容]</div>
-          <div>📅 <strong>[現在のlog-collapse先頭エントリーの日付]</strong> 更新</div>
+        <details class="log-more"><summary><span class="log-date">2026/XX/WW HH:MM</span> …[旧3件目]…</details>
+        [現在の log-collapse 先頭エントリーの1行目]
 <!-- NEW:END -->
 <!-- APPLY:END -->
 
@@ -782,7 +777,7 @@ APPLY ブロック2
    - new_str: 本日分 + 旧1 + 旧2（3件のみ）
 5. **ブロック2** を生成:
    - old_str: log-collapse 固定アンカー + 現在の先頭エントリー1行目
-   - new_str: 同 + 旧3（2行）を先頭に挿入
+   - new_str: 同 + 旧3（1行。11/5 より前の前の形の件は2行）を先頭に挿入
 6. 合計エントリー数（常時3 + collapse内）が10を超えるなら
    collapse の最古エントリー（出典リンク `<div>①` の直前）を削除するブロックを追加
 

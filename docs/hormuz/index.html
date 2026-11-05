@@ -40,7 +40,7 @@
 <link rel="preload" href="/assets/js/basemap.js" as="script">
 
 <link rel="stylesheet" href="/assets/css/tokens.css?v=20261022">
-<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261105"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表）、20261102c は二段表示 PR-B2（シナリオ）、20261105 は二段表示 PR-C1（コラム・声明・ニュース・現地メディア） -->
+<link rel="stylesheet" href="/assets/css/hormuz.css?v=20261105b"><!-- HTML と CSS を組で変えたときに進める（古い CSS と組まないよう）。20261101 は二段表示 PR-A、20261102 は地図のカード、20261102b は二段表示 PR-B1（ルート表）、20261102c は二段表示 PR-B2（シナリオ）、20261105 は二段表示 PR-C1（コラム・声明・ニュース・現地メディア）、20261105b は二段表示 PR-C2（更新履歴） -->
 <!-- 構造化データ（JSON-LD）-->
 <script type="application/ld+json">
 {
@@ -3546,7 +3546,7 @@ function wrapIncidentDetails() {
 
 // 二段表示の計測（GA4・2026-11-01。設計 text-two-stage.md §3-6）
 // text_expand：開いたときだけ送る。section は glance／incident／routes／scenario、item は now・strait・next・verify／速報は上からの番号／ルートは old・b・a・c_us・c_gl・d（PR-B1・2026-11-02）／
-// シナリオは A〜D・update・about・focus-1〜（PR-B2・2026-11-02）／声明（trump）は briefing、ニュース（news）は上からの番号・過去の履歴は archive（PR-C1・2026-11-05）。
+// シナリオは A〜D・update・about・focus-1〜（PR-B2・2026-11-02）／声明（trump）は briefing、ニュース（news）は上からの番号・過去の履歴は archive（PR-C1・2026-11-05）／更新履歴（log）は上からの番号（PR-C2・2026-11-05）。
 // 件名の文や日付は送らない
 // section_view：区域が初めて見えたときに1回（incident・map・routes・scenario、PR-C1 で special-commentary・news-column・osint-panel・update-log）。
 // 地図まで・ページの下まで読まれた割合を見る
@@ -3559,8 +3559,11 @@ function initTwoStageMetrics() {
     const section = d.classList.contains('glance-more') ? 'glance' : d.classList.contains('incident-more') ? 'incident'
       : d.classList.contains('route-row') ? 'routes'
       : d.classList.contains('sc-more') || d.classList.contains('sc-focus-more') ? 'scenario'
-      : d.classList.contains('bw-more') ? 'trump' : d.classList.contains('news-more') ? 'news' : '';
-    if (section) gtag('event', 'text_expand', { section: section, item: d.dataset.item || '' });
+      : d.classList.contains('bw-more') ? 'trump' : d.classList.contains('news-more') ? 'news'
+      : d.classList.contains('log-more') ? 'log' : '';
+    // 更新履歴の item は上からの番号（日次が書く HTML に番号を持たせず、開いたときに数える・PR-C2）
+    const item = section === 'log' ? String(Array.from(document.querySelectorAll('#update-log details.log-more')).indexOf(d) + 1) : (d.dataset.item || '');
+    if (section) gtag('event', 'text_expand', { section: section, item: item });
   }, true);
   // jump_click：30秒カラムの地図のカードが押されたとき（2026-11-02）。section は行き先（map）。地図を上へ移すかを決め直す材料
   document.addEventListener('click', function(e) {
@@ -4132,14 +4135,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </h2>
       </div>
 
-      <!-- 常時表示: 最新3件 -->
+      <!-- 常時表示: 最新3件。1件は1行の details.log-more（日時・札・要点、開くと本文。二段表示 PR-C2・2026-11-05） -->
       <div class="log-recent">
-        <div><strong>2026年11月5日 07:23 JST</strong> 更新</div>
-        <div><span class="log-date">2026/11/05 07:23</span> — <strong class="log-tag">【重大更新】</strong>前回分の裏取り：解消2件・継続11件（解消：11/3のブレント1月物終値＝CNBCとYahoo Finance〈NYMEXのデータ〉が103.60ドルで一致・Qeshm島攻撃＝トランプ氏が11/3早朝の攻撃を認めた〈Al Jazeera。CENTCOMの個別の公式発表は見つからず〉／継続：警報194とMSV AL JUSUFIが同じ事案か・警報195の船名と攻撃主体・ラスタヌラ製油所の被害・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体。いずれも今回の検索で新しい資料なし）・IRGCが11/4、機雷でタンカー4隻が破壊され別の2隻を拘束したと主張（Al Jazeera。独立した確認なし）・トランプ氏がQeshm島攻撃を「小規模な攻撃」と説明しイランは米側の回答を納得できないと評価・UKMTO公式の新しい警報なし（最新は警報195）・原油は11/4のブレント1月物94.62ドル（−8.98ドル）・WTI12月物88.12ドル（−7.97ドル）に8％超下落しCNBCは中間選挙後の戦争終結観測を材料に挙げる・11/3のブレント1月物は103.60ドルで確定・通航は10/26〜11/1の1週間に141回のまま新しい値なし・CENTCOMの封鎖の累計は10/31時点で144隻のまま・イエメン・紅海・ヤンブー・フジャイラは主要媒体で新たな動きを確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機251日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）</div>
-        <div><strong>2026年11月4日 08:34 JST</strong> 更新</div>
-        <div><span class="log-date">2026/11/04 08:34</span> — <strong class="log-tag">【重大更新】</strong>前回分の裏取り：解消2件・継続9件（解消：WSJの攻撃準備の報道＝APが10/28に報道・11/2の原油終値＝Yahoo Finance〈NYMEXのデータ〉とLapaas Voiceが一致しブレント1月物104.77ドル・WTI12月物96.46ドル／継続：ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体。いずれも今回の検索で新しい資料なし）・米軍が11/2にイランのQeshm島を限定攻撃したと米当局者が説明（NBC。自衛と説明・CENTCOMの公式発表は確認できず）・UKMTO公式が警報194（11/3 22:16 JST発行・インド人乗組員のダウ船が攻撃を受ける）と警報195（11/4 06:08 JST発行・リマ沖でタンカーが飛翔体2発を機関室に受ける）を公表。インド外務省はMSV AL JUSUFIで14人中1人死亡・13人救助と発表（Khaleej Times。警報194と同一の事案かは確認できず）・原油は11/2のブレント1月物104.77ドル・WTI12月物96.46ドルを確定、11/3のWTI12月物は96.09ドルだがブレントは2出典での一致を確認できず据え置き・通航は10/26〜11/1の1週間に141回（Riviera）・CENTCOMの封鎖の累計は10/31時点で商船144隻のまま・バンス副大統領の「進展」発言とイランの2日以内の再開計画（Al Jazeera）・イエメン・紅海・ヤンブー・フジャイラは主要媒体で新たな動きを確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機250日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）</div>
-        <div><strong>2026年11月3日 07:19 JST</strong> 更新</div>
-        <div><span class="log-date">2026/11/03 07:19</span> — <strong class="log-tag">【重大更新】</strong>前回分の裏取り：解消0件・継続11件（WSJの攻撃準備の報道＝主要通信社の記事なし・ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体＝二次的な媒体のみで公式の本文になし・11/2の原油終値＝2出典での一致を確認できず。いずれも今回の検索で新しい資料なし）・UKMTO公式が警報192（11/2 10:40 JST発行・北部ペルシャ湾でタンカーが飛翔体2発を受ける・乗組員は無事）と警報193（11/3 03:49 JST発行・オマーンのリマ沖でタンカーが飛翔体を受け右舷に穴・船と乗組員は無事）を公表し、Middle East EyeとGulf Newsも同内容を伝える（発生時刻・船名・攻撃主体は公式の本文になく不明。Gulf Newsは発生を日曜日と書き、公式の日時欄と合わない）・原油は11/2（月）が米イラン外交への期待で日中に急落したが、終値はWTI12月物をNewsquawkが伝えるのみで2出典での一致を確認できず、確定した最新は10/30のWTI12月物104.12ドル・ブレント1月物113.43ドル・CENTCOMの封鎖の累計は10/31時点で商船144隻のまま（CBS News・Middle East Eyeで再確認。新しい発表なし）・UKMTO集計の10月の攻撃30件超・開戦後145件をThe Nationalの原文で再確認・イエメンはAl Jazeeraが11/2、北部アル・ジャウフ県の戦況（政府側とフーシ派が双方に優勢を主張）とフーシ派系メディアによるホデイダの石油会社施設への空爆報道を伝える（攻撃主体は不明）。紅海・バブエルマンデブの船舶攻撃、ヤンブー・フジャイラの新たな被害は主要媒体で確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機249日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）</div>
+        <details class="log-more"><summary><span class="log-date">2026/11/05 07:23</span> <strong class="log-tag">【重大更新】</strong><span class="log-lead">IRGCが機雷でタンカー4隻を破壊したと主張し、原油は戦争終結の観測で8％超下げた。</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">前回分の裏取り：解消2件・継続11件（解消：11/3のブレント1月物終値＝CNBCとYahoo Finance〈NYMEXのデータ〉が103.60ドルで一致・Qeshm島攻撃＝トランプ氏が11/3早朝の攻撃を認めた〈Al Jazeera。CENTCOMの個別の公式発表は見つからず〉／継続：警報194とMSV AL JUSUFIが同じ事案か・警報195の船名と攻撃主体・ラスタヌラ製油所の被害・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体。いずれも今回の検索で新しい資料なし）・IRGCが11/4、機雷でタンカー4隻が破壊され別の2隻を拘束したと主張（Al Jazeera。独立した確認なし）・トランプ氏がQeshm島攻撃を「小規模な攻撃」と説明しイランは米側の回答を納得できないと評価・UKMTO公式の新しい警報なし（最新は警報195）・原油は11/4のブレント1月物94.62ドル（−8.98ドル）・WTI12月物88.12ドル（−7.97ドル）に8％超下落しCNBCは中間選挙後の戦争終結観測を材料に挙げる・11/3のブレント1月物は103.60ドルで確定・通航は10/26〜11/1の1週間に141回のまま新しい値なし・CENTCOMの封鎖の累計は10/31時点で144隻のまま・イエメン・紅海・ヤンブー・フジャイラは主要媒体で新たな動きを確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機251日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）</div></details>
+        <details class="log-more"><summary><span class="log-date">2026/11/04 08:34</span> <strong class="log-tag">【重大更新】</strong><span class="log-lead">米軍がQeshm島を限定攻撃したと米当局者が説明し、オマーン沖の商船でインド人船員1人が死亡した。</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">前回分の裏取り：解消2件・継続9件（解消：WSJの攻撃準備の報道＝APが10/28に報道・11/2の原油終値＝Yahoo Finance〈NYMEXのデータ〉とLapaas Voiceが一致しブレント1月物104.77ドル・WTI12月物96.46ドル／継続：ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体。いずれも今回の検索で新しい資料なし）・米軍が11/2にイランのQeshm島を限定攻撃したと米当局者が説明（NBC。自衛と説明・CENTCOMの公式発表は確認できず）・UKMTO公式が警報194（11/3 22:16 JST発行・インド人乗組員のダウ船が攻撃を受ける）と警報195（11/4 06:08 JST発行・リマ沖でタンカーが飛翔体2発を機関室に受ける）を公表。インド外務省はMSV AL JUSUFIで14人中1人死亡・13人救助と発表（Khaleej Times。警報194と同一の事案かは確認できず）・原油は11/2のブレント1月物104.77ドル・WTI12月物96.46ドルを確定、11/3のWTI12月物は96.09ドルだがブレントは2出典での一致を確認できず据え置き・通航は10/26〜11/1の1週間に141回（Riviera）・CENTCOMの封鎖の累計は10/31時点で商船144隻のまま・バンス副大統領の「進展」発言とイランの2日以内の再開計画（Al Jazeera）・イエメン・紅海・ヤンブー・フジャイラは主要媒体で新たな動きを確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機250日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）</div></details>
+        <details class="log-more"><summary><span class="log-date">2026/11/03 07:19</span> <strong class="log-tag">【重大更新】</strong><span class="log-lead">UKMTOが警報192・193を出し、北部ペルシャ湾とオマーンのリマ沖でタンカーが飛翔体を受けた。</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">前回分の裏取り：解消0件・継続11件（WSJの攻撃準備の報道＝主要通信社の記事なし・ラスタヌラ製油所の被害＝公式の確認なし・MT ST 3の被弾・警報178の軍の国籍と船名・警報182と183の船名と原因・警報185の船種・警報186の発生時刻・警報187の船名・警報188と189の船名と攻撃主体・警報191の船名と攻撃主体＝二次的な媒体のみで公式の本文になし・11/2の原油終値＝2出典での一致を確認できず。いずれも今回の検索で新しい資料なし）・UKMTO公式が警報192（11/2 10:40 JST発行・北部ペルシャ湾でタンカーが飛翔体2発を受ける・乗組員は無事）と警報193（11/3 03:49 JST発行・オマーンのリマ沖でタンカーが飛翔体を受け右舷に穴・船と乗組員は無事）を公表し、Middle East EyeとGulf Newsも同内容を伝える（発生時刻・船名・攻撃主体は公式の本文になく不明。Gulf Newsは発生を日曜日と書き、公式の日時欄と合わない）・原油は11/2（月）が米イラン外交への期待で日中に急落したが、終値はWTI12月物をNewsquawkが伝えるのみで2出典での一致を確認できず、確定した最新は10/30のWTI12月物104.12ドル・ブレント1月物113.43ドル・CENTCOMの封鎖の累計は10/31時点で商船144隻のまま（CBS News・Middle East Eyeで再確認。新しい発表なし）・UKMTO集計の10月の攻撃30件超・開戦後145件をThe Nationalの原文で再確認・イエメンはAl Jazeeraが11/2、北部アル・ジャウフ県の戦況（政府側とフーシ派が双方に優勢を主張）とフーシ派系メディアによるホデイダの石油会社施設への空爆報道を伝える（攻撃主体は不明）。紅海・バブエルマンデブの船舶攻撃、ヤンブー・フジャイラの新たな被害は主要媒体で確認できず・日本関係船は日本語の検索で新規の発表なし（残り4隻）・危機249日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（動きなく説明は据え置き）</div></details>
 
       <!-- 折り畳みボタン（上） -->
       <div id="log-toggle-top" class="log-toggle">

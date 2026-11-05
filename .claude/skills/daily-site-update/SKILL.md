@@ -368,7 +368,7 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 9. **30秒カラム（4行の全文 → 海峡の今の数字の札 → 4行の要点）― 必ず最後に書く**（型は下の「30秒カラムの型」）
    └ 全セクションの総括のため、他が確定してから書くこと。要点は全文を書き終えてから最後に書き下ろす
 10. ヘッダー（日時・警戒レベル）更新
-11. 更新ログ 追記（型は下の「更新履歴の型」）
+11. 更新ログ 追記（型は下の「更新履歴の型」。本文を書いてから、要点 40〜50字を最後に書き下ろす）
 12. `archive_timeline.json` への当日分追記（速報を出した日のみ）
 13. `docs/sitemap.xml` の `<lastmod>` 更新（`/` と `/hormuz/` は毎回、`/archive/` は 12 を行った日のみ）。あわせてハブ `docs/index.html` の「危機マップの最終更新」を書き換える
 14. hormuz-data- の経緯（`data/context.json` の `timeline`）追記（確定した新しい事案を載せた日。最新日が何日前かは問わない。最低でも7日に1回）
@@ -751,26 +751,35 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 
 ---
 
-## 更新履歴の型（2026-09-29〜・② PR4a）
+## 更新履歴の型（2026-11-05〜・二段表示 PR-C2。もとは 2026-09-29〜・② PR4a）
 
-**インライン style を書かない。**1件は2行：
+**インライン style を書かない。1件は1行**（改行を入れない。`check_log_wording()` が行ごとに見るため）：
 
 ```html
-<div><strong>2026年9月29日 09:12 JST</strong> 更新</div>
-<div><span class="log-date">2026/09/29 09:12</span> — <strong class="log-tag">【超重大更新】</strong>本文</div>
+<details class="log-more"><summary><span class="log-date">2026/11/05 07:23</span> <strong class="log-tag">【重大更新】</strong><span class="log-lead">要点</span><span class="more-chip" aria-hidden="true"></span></summary><div class="log-text">本文</div></details>
 ```
 
+- 閉じた形は 日時・札・要点。押すと本文が開く。前の1行目（`<div><strong>2026年11月5日 07:23 JST</strong> 更新</div>`）は日時の2度書きだったので書かない
+- **要点（`span.log-lead`）は 40〜50字・1文。その回の更新でいちばん大きな出来事を書く**（2026-11-05 決定・設計 `hormuz-ops/drafts/design/text-two-stage.md` §4-2 問い8）
+  - 裏取りの件数は30秒カラムの「前回の裏取り」の行にあるので、要点には書かない
+  - 本文を先に書き、要点は最後に書き下ろす（本文の切り抜きにしない）
+  - `validate_daily.py` の `check_log_leads()` が常時表示の3件を見る：要点が無い・空は **NG**、字数・「…」終わり・切り抜きは WARN
+- `log-date` の書き方（`YYYY/MM/DD HH:MM`）は変えない（件数の検査・「前回の裏取り」の照合・先頭の日時の検査がこれを読む）
+- `data-item` は書かない（GA4 の番号は開いたときに JS が数える）
+- 折りたたみの中（`log-older`）は、2026-11-05 より前の7件が前の2行の形のまま残る。**書き換えない**（過去の行は書き換えない決まり）。7日で新しい型に入れ替わる
 - **本文の先頭は「前回分の裏取り：」の1区切り**（2026-10-27〜）：`前回分の裏取り：解消◯件（項目…）・継続◯件（項目…）・` のように、
   30秒カラムの「前回の裏取り」の行を短くしたもの。前回に該当が無ければ `前回分の裏取り：該当なし・` と書く
 - 置き場所は2つ：常時表示（`div.log-recent`）に最新3件、折りたたみ（`#log-collapse` の中の `div.log-older`）に4〜10件目。
-  新しい1件を `log-recent` の先頭に足したら、`log-recent` の4件目を `log-older` の先頭へ移し、11件目は `update_log.json` へ（「update_log.json 運用ルール」）
-- **日時の色は位置で決まる**（常時表示の先頭＝赤、常時表示の2・3件目＝明るい灰、折りたたみの中＝灰）。移すときに色を書き換える必要はない
+  新しい1件を `log-recent` の先頭に足したら、`log-recent` の4件目を**その1行のまま** `log-older` の先頭へ移し、11件目は `update_log.json` へ（「update_log.json 運用ルール」）。
+  `update_log.json` の `text` は今までどおり「【札】本文」で、要点は入れない
+- **日時の色は位置で決まる**（常時表示の先頭＝差し色、常時表示の2・3件目＝本文の色、折りたたみの中＝灰）。移すときに色を書き換える必要はない
 - `#log-collapse`・`#log-toggle-bottom` の `style="display:none;"` は開閉の状態なので**残す**（ボタンの JS が読む）。ほかの style は書かない
 - 出典リンク①〜⑧（`div.log-sources-start` から）は折りたたみの末尾に固定。触らない
 - **本文に「OSINT」「osint」と書かない。**読者に見える名前は「現地メディア視点」。更新した項目を並べるときは「osint更新」ではなく「現地メディア視点を更新」と書く
   （2026-10-05 決定。「OSINT」は開発の経緯で残った内部の呼び名で、読者に説明する言葉ではない。`osint-panel`・`news_data.json` の `osint` など内部の名前は変えない。
   過去の更新履歴・日次アーカイブの本文は書き換えない。`/archive/` の「収録範囲について」に意味を1文書いてある）
-- `tools/validate_daily.py` が「更新履歴のインライン style（上の display:none を除く）」「常時表示3件・合計10件まで」を WARN で確認する
+- `tools/validate_daily.py` が「更新履歴のインライン style（上の display:none を除く）」「常時表示3件・合計10件まで」を WARN で、
+  「常時表示の要点（`check_log_leads()`）」を NG／WARN で確認する
 
 ### ページ全体（2026-10-01〜・② PR4b）
 

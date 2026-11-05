@@ -1336,6 +1336,51 @@ def check_route_leads(html: str) -> None:
         ok(f"ルート表の状態の札はどれも {PILL_MAX}字以内")
 
 
+PAT_LOG_MORE = re.compile(r'<details class="log-more">(.*?)</details>', re.S)
+
+
+def check_log_leads(html: str) -> None:
+    """更新履歴の常時表示3件の型と要点（2026-11-05・二段表示 PR-C2。設計 text-two-stage.md §4-2 問い7〜9）。
+
+    1件は1行の <details class="log-more">（summary に日時・札・要点 span.log-lead、中に本文 div.log-text）。
+    要点が無い・空なら NG。字数・「…」終わり・切り抜きは WARN（lead_notes() を使い回す）。
+    1件が1行でない・前の2行の形（<div><strong>…JST</strong> 更新</div>）が常時表示に残るのは WARN。
+    折りたたみの中（log-older）は見ない（マージの日より前の行は前の形のまま、7日で入れ替わる）。
+    """
+    mm = PAT_LOG_RECENT_DATES.search(html)
+    if not mm:
+        return  # 区域の有無は check_types が見る
+    recent = mm.group(1)
+    if re.search(r'<div><strong>[^<]*JST</strong> 更新</div>', recent) or re.search(r'<div><span class="log-date">', recent):
+        warn("更新履歴の常時表示に前の2行の形（<div><strong>…JST</strong> 更新</div>・<div><span class=\"log-date\">）があります。"
+             "2026-11-05 から1件1行の <details class=\"log-more\">（daily-site-update「更新履歴の型」）")
+    items = PAT_LOG_MORE.findall(recent)
+    if len(items) != 3:
+        ng(f"更新履歴の常時表示の details.log-more が {len(items)}件です（3件。daily-site-update「更新履歴の型」）")
+        if not items:
+            return
+    if any("\n" in it for it in items):
+        warn("更新履歴の details.log-more が複数行に分かれています。1件を1行に書く（check_log_wording() が行ごとに見るため）")
+    missing = []
+    for it in items:
+        dm = re.search(r'<span class="log-date">([^<]*)</span>', it)
+        label = f"更新履歴「{dm.group(1) if dm else '日時なし'}」"
+        lm = re.search(r'<span class="log-lead">(.*?)</span>', it, re.S)
+        lp = plain(lm.group(1)) if lm else ""
+        if not lp:
+            missing.append(label)
+            continue
+        tm = re.search(r'<div class="log-text">(.*?)</div>', it, re.S)
+        notes = lead_notes(lp, plain(tm.group(1)) if tm else "")
+        if notes:
+            warn(f"{label}の要点：" + "・".join(notes))
+        else:
+            ok(f"{label}の要点 {len(lp)}字")
+    if missing:
+        ng(f"更新履歴の要点（summary の span.log-lead）がありません・空です：{'・'.join(missing)}。"
+           "daily-site-update「更新履歴の型」で要点を書く")
+
+
 SC_ITEMS = ("A", "B", "C", "D")   # 4本の data-item（GA4 の item）
 SC_BODY_STALE_DAYS = 14           # 「これまでの根拠」の一番新しい日付がこれより古ければ WARN（問い7）
 FOCUS_TITLE_MIN, FOCUS_TITLE_MAX = 20, 35   # 次の焦点の件名（丸数字を除く・1文）
@@ -2224,6 +2269,7 @@ def main() -> int:
     check_text_lengths(html)
     check_glance_leads(html, base)
     check_route_leads(html)
+    check_log_leads(html)
     check_scenario_leads(html, base)
 
     check_news(news, base)

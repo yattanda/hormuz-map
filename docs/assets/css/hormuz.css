@@ -200,15 +200,15 @@ header h1 { font-size:1.1rem; font-weight:700; color:var(--c-text); }
    札の語は CSS が出す（HTML の札は aria-hidden の空の span）。札の文字は本文の 0.7倍・高さ 26px・左右 9px */
 .glance-more, .incident-more { display:block; }
 .glance-more > summary, .incident-more > summary, .route-row > summary, .jf-note > summary,
-.sc-more > summary, .sc-focus-more > summary, .bw-more > summary, .news-more > summary { list-style:none; } /* ルート表・日本向けの注記（PR-B1）、シナリオ（PR-B2）、声明・ニュース（PR-C1）も同じ部品 */
+.sc-more > summary, .sc-focus-more > summary, .bw-more > summary, .news-more > summary, .log-more > summary { list-style:none; } /* ルート表・日本向けの注記（PR-B1）、シナリオ（PR-B2）、声明・ニュース（PR-C1）、更新履歴（PR-C2）も同じ部品 */
 .glance-more > summary, .incident-more > summary { cursor:pointer; display:flex; flex-direction:column; gap:6px;
   min-height:44px; }
 .glance-more > summary::-webkit-details-marker, .incident-more > summary::-webkit-details-marker, .route-row > summary::-webkit-details-marker, .jf-note > summary::-webkit-details-marker,
 .sc-more > summary::-webkit-details-marker, .sc-focus-more > summary::-webkit-details-marker,
-.bw-more > summary::-webkit-details-marker, .news-more > summary::-webkit-details-marker { display:none; }
+.bw-more > summary::-webkit-details-marker, .news-more > summary::-webkit-details-marker, .log-more > summary::-webkit-details-marker { display:none; }
 .glance-more > summary:focus-visible, .incident-more > summary:focus-visible, .route-row > summary:focus-visible, .jf-note > summary:focus-visible,
 .sc-more > summary:focus-visible, .sc-focus-more > summary:focus-visible,
-.bw-more > summary:focus-visible, .news-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
+.bw-more > summary:focus-visible, .news-more > summary:focus-visible, .log-more > summary:focus-visible { outline:2px solid var(--c-accent); outline-offset:2px; }
 .more-chip { align-self:flex-end; display:inline-flex; align-items:center; min-height:26px; padding:0 9px;
   border:1px solid var(--c-text); color:var(--c-text); font-size:0.665rem; font-weight:700; line-height:1; white-space:nowrap; }   /* 本文（--fs-md）の 0.7倍 */
 .glance-more .more-chip::before { content:"続きを読む ▼"; }
@@ -756,9 +756,20 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
 .log-recent { font-size:var(--fs-xs); color:var(--c-text); line-height:2; }
 .log-older  { font-size:var(--fs-xs); color:var(--c-text-mute); line-height:2; }
 .log-recent .log-date { color:var(--c-text); }
-.log-recent > div:nth-child(2) .log-date { color:var(--c-accent); font-weight:700; }
+.log-recent > .log-more:first-child .log-date { color:var(--c-accent); font-weight:700; }   /* 先頭の日時（位置で決まる・二段表示 PR-C2） */
 .log-older .log-date { color:var(--c-text-mute); }
 .log-tag { color:var(--c-accent); }
+/* 二段表示 PR-C2（2026-11-05・設計 text-two-stage.md §4-2 問い7〜11）：1件は1行の <details class="log-more">。
+   閉じた形は 日時・札・要点（span.log-lead）・札、開くと本文（div.log-text）。マージの日より前の折りたたみの7件は前の2行の形のまま */
+.log-more { display:block; border-bottom:1px solid var(--c-rule); }
+.log-more > summary { cursor:pointer; display:flex; flex-wrap:wrap; align-items:baseline; column-gap:8px; row-gap:2px; min-height:44px; padding:8px 0; line-height:1.6; }
+.log-more > summary:hover .more-chip { background:var(--c-surface); }
+.log-more .log-lead { flex:1 1 100%; font-size:var(--fs-base); font-weight:700; color:var(--c-text); }
+.log-older .log-more .log-lead { color:var(--c-text-mute); }
+.log-more .more-chip { margin-left:auto; }
+.log-more .more-chip::before { content:"本文を読む ▼"; }
+.log-more[open] > summary .more-chip::before { content:"閉じる ▲"; }
+.log-more > .log-text { padding:4px 0 10px; line-height:1.9; }
 .log-sources-start { margin-top:10px; padding-top:8px; border-top:1px solid var(--c-rule); }
 .log-older a { color:var(--c-text-mute); }
 .log-toggle { text-align:center; margin:8px 0 4px; }
@@ -768,6 +779,7 @@ html.map-full-open, html.map-full-open body { overflow:hidden; }
 /* 旧 div[style*="font-size:0.7"]（スマホで 0.8rem）の効果を引き継ぐ */
 @media (max-width: 768px) {
   .log-recent, .log-older { font-size:0.8rem; }
+  .log-more .log-lead { font-size:0.88rem; }   /* .route-lead・.sc-lead のスマホと同じ */
 }
 
 /* 本文の残り（② PR4b-1・2026-10-01）：その他の検討中ルート・主要指標・特別解説コラム・第3層の外枠。
@@ -1586,7 +1598,8 @@ p, li,
 .sc-section > details,                     /* シナリオの確率の補足・確率について（PR-B2） */
 .osint-card > div,                         /* 現地メディア視点の見出し */
 .data-note,                                /* WTI の注記 */
-.update-log > div > div {                  /* 更新履歴の各行（行を入れる箱の開始タグは日次差分の old_str に引用されるため、クラスは section に付ける） */
+.update-log > div > div,
+.update-log > div > details {                  /* 更新履歴の各行（行を入れる箱の開始タグは日次差分の old_str に引用されるため、クラスは section に付ける） */
   max-width: var(--measure);
 }
 /* フッターは上罫線を全幅に保ったまま、文字の幅だけを余白で絞る。

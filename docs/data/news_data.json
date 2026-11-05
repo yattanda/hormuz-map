@@ -1,7 +1,27 @@
 {
-  "updated": "2026年11月05日 07:23 日本時間JST",
+  "updated": "2026年11月06日 07:24 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto196-1105",
+      "title": "UKMTO警報196：カタール北方でタンカーが飛翔体2発を受ける——乗組員・被害は未確認、船名・攻撃主体は不明",
+      "body": "Dawn（ロイター引用・11/5）は、UKMTOの報告として、カタールのMadinat ash Shamalの北約50海里でタンカーが正体不明の飛翔体2発を受けたと伝える（原文は「two unidentified projectiles」）。見出しは乗組員の状況が未確認と書く。UKMTO公式の警報196は11/5 17:19 JST（08:19 UTC）発行で、公式の本文に発生時刻・船名の記載はない。同記事は発生を11/4 23:20 UTCと伝え（原文は「dating the incident to November 4 at 23:20 UTC」）、公式の日時欄の08:00 UTCと約8時間半の差があるため、発生時刻は不明。攻撃主体は示されていない。",
+      "sourceLabel": "Dawn（ロイター引用・11/5）・UKMTO公式",
+      "date": "2026年11月5日（現地）",
+      "label": "海上",
+      "url": "https://www.dawn.com/news/2042327",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oil-1105",
+      "title": "原油が反発——WTI12月物90.52ドル（11/5終値）・ブレントの終値は2出典目待ち",
+      "body": "Rigzone（Bloomberg配信・11/5 4:08 PM EST）は、WTI12月物が2.7％上げて90.52ドルで清算し（原文は「advanced 2.7% to settle at $90.52 a barrel」）、ブレント1月物は3.9％上げて98.29ドルで清算した（原文は「rose 3.9% to settle at $98.29 a barrel」）と伝える。前日の急落のあと、米国のイラン戦争の見通しを見極める動きだったという。WTIの90.52ドルは日経・みんかぶも伝え、終値が確定した。ブレントの98.29ドルは独立した2出典目が見つからず、終値を据え置く（確定した最新は11/4の94.62ドル）。",
+      "sourceLabel": "Rigzone（Bloomberg配信・11/5）",
+      "date": "2026年11月5日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.rigzone.com/news/oil_rebounds_after_sharp_iran_war_selloff-05-nov-2026-185023-article",
+      "isLatest": false
+    },
     {
       "id": "latest-irgc-1104",
       "title": "IRGCが「機雷でタンカー4隻が破壊、別の2隻を拘束」と主張——独立した確認なし・トランプ氏はQeshm島攻撃を認める",
@@ -10,7 +30,7 @@
       "date": "2026年11月4日（現地）",
       "label": "海上",
       "url": "https://aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-oil-1104",
@@ -21,29 +41,22 @@
       "label": "原油・市場",
       "url": "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html",
       "isLatest": false
-    },
-    {
-      "id": "latest-qeshm-1102",
-      "title": "米軍がイランのQeshm島を限定攻撃——米当局者は自衛と説明・大規模戦闘の再開ではないと強調",
-      "body": "NBC（11/2 21:06 EST公開・11/3 03:18 EST更新）は、米当局者2人の話として、米軍が月曜（11/2）にイランのQeshm島を限定的に攻撃したと伝える（原文は「The U.S. military carried out limited strikes Monday on Iran’s Qeshm Island」）。当局者は、IRGCが過去数週間、ホルムズ海峡の上空で米軍の有人機・無人機を繰り返し標的にして撃ってきたことへの自衛で、「イランでの大規模な戦闘の再開ではない」と説明した。トランプ氏は「小規模な攻撃」と述べたと同記事は伝える。CENTCOM・国防総省の公式発表は確認できず、死傷者・被害は不明。",
-      "sourceLabel": "NBC News（11/2・11/3更新）",
-      "date": "2026年11月2日（米国時間）",
-      "label": "攻撃",
-      "url": "https://www.nbcnews.com/world/iran/us-conducted-defensive-strikes-iranian-targets-strait-hormuz-us-offici-rcna607161",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto194-195-1103",
-      "title": "UKMTO警報194・195：インド人乗組員のダウ船が攻撃を受け1人死亡、リマ沖でタンカーが飛翔体2発——攻撃主体は不明",
-      "body": "UKMTO公式サイトの警報194（11/3 22:16 JST発行）は、インド政府の報告として、インド人乗組員のダウ船が海峡を出る途中で攻撃を受けたと伝える。Khaleej Times（11/3）が引くインド外務省の声明は、オマーンのリマ付近で昨夜（11/2夕方）に商船MSV AL JUSUFIが攻撃を受け、乗船していたインド人14人のうち13人が救助され、1人が死亡したと伝える（原文は「Of the 14 Indian nationals on board, 13 have been rescued」）。警報195（11/4 06:08 JST発行）は、リマの北東14海里でタンカーが飛翔体2発を機関室に受けたと伝え、死傷者の報告はない。船名・攻撃主体は公式の本文になく不明。警報194とMSV AL JUSUFIが同じ事案かは、公式の本文に船名がなく確認できていない。",
-      "sourceLabel": "UKMTO公式・Khaleej Times（11/3）",
-      "date": "2026年11月3日（現地）",
-      "label": "海上",
-      "url": "https://www.khaleejtimes.com/world/asia/indian-sailor-killed-rescued-vessel-attacked-off-oman-coast",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-irgc-1104",
+      "titleJa": "【Arab News】IRGCとイラン軍、ホルムズ周辺でタンカー計5隻とタグボートが火災・機雷接触と主張——海事当局の確認なし",
+      "titleEn": "Arab News (Nov 5): Iran says five tankers and tugboat caught fire in Hormuz",
+      "title": "【Arab News】IRGCとイラン軍、ホルムズ周辺でタンカー計5隻とタグボートが火災・機雷接触と主張——海事当局の確認なし",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月5日（現地）",
+      "summary": "Arab Newsは、IRGCが前夜、海峡南側の通路を通ろうとした大型タンカーが火災を起こし、海峡東部を出る別のスーパータンカーが大規模な火災で停止し、消火に近づいたタグボートも燃えたと述べたと伝える。イラン軍は別にタンカー3隻が機雷に触れたと発表した。記事は海事当局による確認はないと書き、UKMTOの警報196（カタール北方）との関係は示していない。",
+      "url": "https://www.arabnews.com/middle-east/irans-irgc-says-two-tankers-and-tugboat-caught-fire-in-strait-of-hormuz-3009888",
+      "isLatest": true
+    },
     {
       "id": "osint-khaleejtimes-1103",
       "titleJa": "【Khaleej Times】オマーン沖でインド船籍の商船が攻撃を受け、インド人船員1人が死亡——インド外務省が発表",
@@ -68,7 +81,7 @@
       "date": "2026年11月4日（現地）",
       "summary": "Al Jazeeraは、IRGCがタンカー4隻が機雷に触れて破壊され別の2隻を拘束したと主張したが、UKMTOが報告した事案との関連は独立に確認できないと伝える。トランプ氏はQeshm島への攻撃を認めて「小規模な攻撃」と述べ、イランのレザイ氏は米側の回答を納得できるものではないと評価した。カタールは交渉が続いていると説明した。",
       "url": "https://aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-1101",
@@ -2142,6 +2155,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月6日",
+      "items": [
+        {
+          "id": "latest-qeshm-1102",
+          "title": "米軍がイランのQeshm島を限定攻撃——米当局者は自衛と説明・大規模戦闘の再開ではないと強調",
+          "body": "NBC（11/2 21:06 EST公開・11/3 03:18 EST更新）は、米当局者2人の話として、米軍が月曜（11/2）にイランのQeshm島を限定的に攻撃したと伝える（原文は「The U.S. military carried out limited strikes Monday on Iran’s Qeshm Island」）。当局者は、IRGCが過去数週間、ホルムズ海峡の上空で米軍の有人機・無人機を繰り返し標的にして撃ってきたことへの自衛で、「イランでの大規模な戦闘の再開ではない」と説明した。トランプ氏は「小規模な攻撃」と述べたと同記事は伝える。CENTCOM・国防総省の公式発表は確認できず、死傷者・被害は不明。",
+          "sourceLabel": "NBC News（11/2・11/3更新）",
+          "date": "2026年11月2日（米国時間）",
+          "label": "攻撃",
+          "url": "https://www.nbcnews.com/world/iran/us-conducted-defensive-strikes-iranian-targets-strait-hormuz-us-offici-rcna607161",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto194-195-1103",
+          "title": "UKMTO警報194・195：インド人乗組員のダウ船が攻撃を受け1人死亡、リマ沖でタンカーが飛翔体2発——攻撃主体は不明",
+          "body": "UKMTO公式サイトの警報194（11/3 22:16 JST発行）は、インド政府の報告として、インド人乗組員のダウ船が海峡を出る途中で攻撃を受けたと伝える。Khaleej Times（11/3）が引くインド外務省の声明は、オマーンのリマ付近で昨夜（11/2夕方）に商船MSV AL JUSUFIが攻撃を受け、乗船していたインド人14人のうち13人が救助され、1人が死亡したと伝える（原文は「Of the 14 Indian nationals on board, 13 have been rescued」）。警報195（11/4 06:08 JST発行）は、リマの北東14海里でタンカーが飛翔体2発を機関室に受けたと伝え、死傷者の報告はない。船名・攻撃主体は公式の本文になく不明。警報194とMSV AL JUSUFIが同じ事案かは、公式の本文に船名がなく確認できていない。",
+          "sourceLabel": "UKMTO公式・Khaleej Times（11/3）",
+          "date": "2026年11月3日（現地）",
+          "label": "海上",
+          "url": "https://www.khaleejtimes.com/world/asia/indian-sailor-killed-rescued-vessel-attacked-off-oman-coast",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月5日",
       "items": [

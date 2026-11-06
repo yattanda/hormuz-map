@@ -3783,6 +3783,24 @@
           "sourceLabel": "Rigzone（Bloomberg配信・11/5）"
         }
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "dateLabel": "2026/11/07 07:58",
+      "blockadeDay": 253,
+      "summary": "【重大更新】前回分の裏取り：解消1件（11/5のブレント1月物終値98.29ドル＝Rigzone〈Bloomberg配信〉・Yahoo Finance〈NYMEXのデータ〉・BiGGo Financeが一致し限月は1月物／継続：警報196の船名と攻撃主体と発生時刻・IRGCの11/4と11/5の主張の裏付け・警報194と195の船名と攻撃主体・ラスタヌラ製油所の被害・MT ST 3の被弾・警報178〜191の船名と原因。いずれも今回の検索で新しい資料なし）・UKMTO公式が警報197（11/6 21:06 JST発行）を公表。オマーン・ハサブの東16海里で、海峡を出るタンカーの船長が左舷の喫水線での爆発を報告し、乗組員は無事で自力航行を続けている。遅れての報告で、公式の本文に発生時刻・船名・攻撃主体の記載はなく、Arab Newsも同内容・Arab Newsは、マーシャル諸島籍のタンカーMT Velos Sapphireが11/5に湾内でミサイル攻撃とみられる爆発を受け、船員1人が死亡したと伝える（警報196との関連は記事になく、攻撃主体も不明）・IRGCは11/6、タンカー2隻が機雷に触れて炎上したと主張（Reuters配信・Times of Israel。船名の記載なし・独立した確認なし）・原油は11/6のWTI12月物が90.83ドル（+0.31ドル）に続伸（CNBC・共同通信）。ブレント1月物の11/5終値98.29ドルは確定し、11/6はCNBCの98.32ドルのみで2出典目がなく据え置き・通航は10/26〜11/1の1週間に141回、CENTCOMの封鎖の累計は11/1付で144隻のまま新しい値なし・ルートB・Aは再確認（新しい報道なし）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報197：ハサブ東でタンカーが水線付近で爆発——乗組員は無事、船名・攻撃主体は不明",
+          "url": "https://www.arabnews.com/middle-east/tanker-reports-explosion-near-omans-khasab-while-transiting-strait-of-hormuz-ukmto-says-3010151",
+          "sourceLabel": "Arab News（11/6）・UKMTO公式"
+        },
+        {
+          "title": "WTIが続伸——12月物90.83ドル（11/6終値）・ブレント11/5の終値98.29ドルが確定",
+          "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
+          "sourceLabel": "共同通信（11/7）・CNBC（11/6）"
+        }
+      ]
     }
   ]
 }

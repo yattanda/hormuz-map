@@ -1,7 +1,27 @@
 {
-  "updated": "2026年11月06日 07:24 日本時間JST",
+  "updated": "2026年11月07日 07:58 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto197-1107",
+      "title": "UKMTO警報197：ハサブ東でタンカーが水線付近で爆発——乗組員は無事、船名・攻撃主体は不明",
+      "body": "Arab News（11/6 15:24更新）は、UKMTOの報告として、オマーン・ハサブの東16海里で、海峡を出るタンカーの船長が左舷の喫水線での爆発を報告したと伝える（原文は「an explosion at the vessel’s port-side waterline」）。乗組員は全員無事で、船は自力で航行を続けている。UKMTO公式の警報197は11/6 21:06 JST（12:06 UTC）発行の遅れての報告で、公式の本文に発生時刻・船名・攻撃主体の記載はない。IRGCが同日主張したタンカー2隻の機雷炎上との関連は確認できない。",
+      "sourceLabel": "Arab News（11/6）・UKMTO公式",
+      "date": "2026年11月6日（現地）",
+      "label": "海上",
+      "url": "https://www.arabnews.com/middle-east/tanker-reports-explosion-near-omans-khasab-while-transiting-strait-of-hormuz-ukmto-says-3010151",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oil-1107",
+      "title": "WTIが続伸——12月物90.83ドル（11/6終値）・ブレント11/5の終値98.29ドルが確定",
+      "body": "共同通信（11/7 6:27）は、6日のニューヨーク原油先物でWTI12月渡しが前日比0.31ドル高の1バレル90.83ドルで取引を終えたと伝える。ホルムズ海峡でのタンカー攻撃が供給不安を高めた一方、米中間選挙での共和党の大敗で対イラン戦闘が終結に向かうとの期待から売りも出て、上げ幅は限られたという。CNBCも同じ90.83ドルを伝える（原文は「gained 31 cents to settle at $90.83 per barrel」）。ブレントの11/6の終値はCNBCの98.32ドルのみで2出典目がなく据え置く。",
+      "sourceLabel": "共同通信（11/7）・CNBC（11/6）",
+      "date": "2026年11月6日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto196-1105",
       "title": "UKMTO警報196：カタール北方でタンカーが飛翔体2発を受ける——乗組員・被害は未確認、船名・攻撃主体は不明",
@@ -10,7 +30,7 @@
       "date": "2026年11月5日（現地）",
       "label": "海上",
       "url": "https://www.dawn.com/news/2042327",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-oil-1105",
@@ -21,29 +41,22 @@
       "label": "原油・市場",
       "url": "https://www.rigzone.com/news/oil_rebounds_after_sharp_iran_war_selloff-05-nov-2026-185023-article",
       "isLatest": false
-    },
-    {
-      "id": "latest-irgc-1104",
-      "title": "IRGCが「機雷でタンカー4隻が破壊、別の2隻を拘束」と主張——独立した確認なし・トランプ氏はQeshm島攻撃を認める",
-      "body": "Al Jazeera（11/4）は、IRGCの声明として、海峡南方の禁止された航路で石油タンカー4隻が機雷に触れて破壊され、別の2隻が航行規制違反で拘束されたと伝える（原文は「four oil tankers were destroyed after striking naval mines」）。同記事は、UKMTOが報告した事案とIRGCが主張する事案が関連するかは独立に確認できないと書く。船名・位置・発生時刻は今回開いた記事から読み取れない。同記事によると、トランプ氏は米軍が火曜（11/3）早朝にQeshm島を攻撃したと認め、「小規模な攻撃」と述べた。イランのレザイ氏は米側の回答を納得できるものではないと評価し、カタールは仲介の交渉が続いていると説明した。",
-      "sourceLabel": "Al Jazeera（11/4）",
-      "date": "2026年11月4日（現地）",
-      "label": "海上",
-      "url": "https://aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-1104",
-      "title": "原油が戦争終結観測で8％超急落——ブレント1月物94.62ドル・WTI12月物88.12ドル（11/4終値）",
-      "body": "CNBC（11/4 11:43 EST公開）は、WTIが8.3％下げて1バレル88.12ドルで取引を終え、ブレントは8.7％安の94.62ドルで決済されたと伝える。バンス副大統領が「The reason we lost is the war」と投稿し、民主党が火曜の選挙で上下両院を制したことを受け、トランプ氏に戦争終結を促す圧力が強まるとの見方が売りを誘ったという。WTI12月物は日経・みんかぶも88.12ドル、ブレントはDow Jones Market Dataも94.62ドルと伝える。ブレントの限月は記事に明記がなく、Yahoo Finance（NYMEXのデータ）の1月物の取引中の値と整合する。",
-      "sourceLabel": "CNBC（11/4）",
-      "date": "2026年11月4日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-197-1107",
+      "titleJa": "【Arab News】ハサブ東でタンカーが水線付近で爆発——乗組員は無事・船名と攻撃主体の記載なし",
+      "titleEn": "Arab News (Nov 6): Tanker reports explosion near Oman's Khasab while transiting Strait of Hormuz, UKMTO says",
+      "title": "【Arab News】ハサブ東でタンカーが水線付近で爆発——乗組員は無事・船名と攻撃主体の記載なし",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月6日（現地）",
+      "summary": "Arab Newsは、UKMTOの報告として、オマーン・ハサブの東16海里で、海峡を出るタンカーの船長が左舷の喫水線での爆発を報告したと伝える。乗組員は全員無事で、船は自力で航行を続けている。船名と攻撃主体の記載はない。",
+      "url": "https://www.arabnews.com/middle-east/tanker-reports-explosion-near-omans-khasab-while-transiting-strait-of-hormuz-ukmto-says-3010151",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-irgc-1104",
       "titleJa": "【Arab News】IRGCとイラン軍、ホルムズ周辺でタンカー計5隻とタグボートが火災・機雷接触と主張——海事当局の確認なし",
@@ -55,7 +68,7 @@
       "date": "2026年11月5日（現地）",
       "summary": "Arab Newsは、IRGCが前夜、海峡南側の通路を通ろうとした大型タンカーが火災を起こし、海峡東部を出る別のスーパータンカーが大規模な火災で停止し、消火に近づいたタグボートも燃えたと述べたと伝える。イラン軍は別にタンカー3隻が機雷に触れたと発表した。記事は海事当局による確認はないと書き、UKMTOの警報196（カタール北方）との関係は示していない。",
       "url": "https://www.arabnews.com/middle-east/irans-irgc-says-two-tankers-and-tugboat-caught-fire-in-strait-of-hormuz-3009888",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-khaleejtimes-1103",
@@ -2155,6 +2168,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月7日",
+      "items": [
+        {
+          "id": "latest-irgc-1104",
+          "title": "IRGCが「機雷でタンカー4隻が破壊、別の2隻を拘束」と主張——独立した確認なし・トランプ氏はQeshm島攻撃を認める",
+          "body": "Al Jazeera（11/4）は、IRGCの声明として、海峡南方の禁止された航路で石油タンカー4隻が機雷に触れて破壊され、別の2隻が航行規制違反で拘束されたと伝える（原文は「four oil tankers were destroyed after striking naval mines」）。同記事は、UKMTOが報告した事案とIRGCが主張する事案が関連するかは独立に確認できないと書く。船名・位置・発生時刻は今回開いた記事から読み取れない。同記事によると、トランプ氏は米軍が火曜（11/3）早朝にQeshm島を攻撃したと認め、「小規模な攻撃」と述べた。イランのレザイ氏は米側の回答を納得できるものではないと評価し、カタールは仲介の交渉が続いていると説明した。",
+          "sourceLabel": "Al Jazeera（11/4）",
+          "date": "2026年11月4日（現地）",
+          "label": "海上",
+          "url": "https://aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-1104",
+          "title": "原油が戦争終結観測で8％超急落——ブレント1月物94.62ドル・WTI12月物88.12ドル（11/4終値）",
+          "body": "CNBC（11/4 11:43 EST公開）は、WTIが8.3％下げて1バレル88.12ドルで取引を終え、ブレントは8.7％安の94.62ドルで決済されたと伝える。バンス副大統領が「The reason we lost is the war」と投稿し、民主党が火曜の選挙で上下両院を制したことを受け、トランプ氏に戦争終結を促す圧力が強まるとの見方が売りを誘ったという。WTI12月物は日経・みんかぶも88.12ドル、ブレントはDow Jones Market Dataも94.62ドルと伝える。ブレントの限月は記事に明記がなく、Yahoo Finance（NYMEXのデータ）の1月物の取引中の値と整合する。",
+          "sourceLabel": "CNBC（11/4）",
+          "date": "2026年11月4日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月6日",
       "items": [

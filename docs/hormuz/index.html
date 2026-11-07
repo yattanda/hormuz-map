@@ -2798,12 +2798,17 @@ L.marker([9.24,-79.60],{icon:mkName('アラフエラ湖')}).addTo(map).bindPopup
   <strong>役割：</strong>閘門で消費される<strong>運河用水の約45%</strong>を供給。パナマ市・コロン市の上水源も兼ねる<br>
   <strong>治水：</strong>雨季の洪水を貯留し、ガトゥン湖の氾濫リスクを抑える</div>`);
 
-L.marker([9.08,-79.68],{icon:mkBadge('none','anchor')}).addTo(map).bindPopup(`
+// パナマ運河（長尺7本目 2026-11「パナマ運河が詰まると、日本の食卓に何が起きる？」）— ?focus=panama と「YouTube から来た方へ」枠から開く
+const panamaMarker = L.marker([9.08,-79.68],{icon:mkBadge('none','anchor')}).addTo(map).bindTooltip('パナマ運河', {sticky:true}).bindPopup(`
   <div class="p-title">パナマ運河 / Panama Canal</div>
   <div class="p-body"><strong>全長：</strong>約82km（大西洋側コロン〜太平洋側バルボア）<br>
   <strong>構造：</strong>閘門式（ガトゥン／ペドロミゲル／ミラフローレス）。ガトゥン湖を最大水位差約26mで越える<br>
   <strong>役割：</strong>大西洋と太平洋を結ぶ要衝。米国東岸・メキシコ湾岸からアジアへの航路を短縮<br>
-  <strong>向き：</strong>北西（カリブ海）→南東（太平洋）。太平洋側の出口のほうが東に位置する</div>`);
+  <strong>向き：</strong>北西（カリブ海）→南東（太平洋）。太平洋側の出口のほうが東に位置する<br>
+  <strong>2026年春の混雑：</strong>ホルムズ海峡を商船が事実上通れなくなったあと、パナマ運河の混雑が増えた（アメリカ農務省）。通る順番の競りの平均は、紛争前の13万5000〜14万ドルから、3〜4月は約38万5000ドルに（1日3〜5枠だけの値で、多くの船は予約して通る。パナマ運河庁）<br>
+  <strong>日本向けの船：</strong>アメリカ産LNGの船は、2025年上半期の28便のうち22便が喜望峰まわり（2026年の経路は未確認）。穀物（大豆やトウモロコシなど）の船は、2026年9月4〜24日の3週間にアメリカの湾岸から日本へ向かった7隻のうち、6隻がパナマ運河を通る予定だった（アメリカ農務省）<br>
+  <strong>食卓へ：</strong>日本の大豆の使い道は、2025年でおよそ7割が油を搾るため（大豆かすは家畜のエサの原料にも）、およそ3割が豆腐・納豆・みそなどの食品。配合飼料の原料のおよそ半分はトウモロコシ（2025年度）。運河の混雑が豆腐や卵の値段をどれだけ動かしたかは、公表された統計からは分からない</div>
+  <div class="p-note">出典：アメリカ農務省 Grain Transportation Report（2026-04-30号・10-01号）／パナマ運河庁（2026-04-23発表）／日本エネルギー経済研究所（LNG 定期報告 #115）／農林水産省「大豆をめぐる事情」（令和8年9月）・「濃厚飼料をめぐる情勢」（令和8年10月）（いずれも2026-11-04確認）</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : 320 });
 
 // 津軽海峡（長尺3本目 2026-09、動画の領海図 C03-S02 を再利用）— ?focus=tsugaru と「YouTube から来た方へ」枠から開く
 const tsugaruMarker = L.marker([41.55, 140.65],{icon:mkBadge('none','strait')}).addTo(map).bindTooltip('津軽海峡', {sticky:true}).bindPopup(`
@@ -3096,6 +3101,7 @@ const FOCUS_TARGETS = {
   minamitori: { marker: minamitoriMarker, zoom: 6 },
   tsugaru: { marker: tsugaruMarker, zoom: 7 },
   tsushima: { marker: tsushimaMarker, zoom: 7 },
+  panama: { marker: panamaMarker, zoom: 9 },
   malacca: { marker: malaccaMarker, zoom: 6 },
 };
 function focusOn(key, opts) {

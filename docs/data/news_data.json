@@ -1,7 +1,37 @@
 {
-  "updated": "2026年11月07日 07:58 日本時間JST",
+  "updated": "2026年11月8日 07:26 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-huda-1108",
+      "title": "米軍が封鎖破りの貨物船M/V Hudaを無力化——オマーン湾、乗組員の被害の記載なし",
+      "body": "Arab News（11/8 00:31公開）は、CENTCOMの発表として、米軍機がセントクリストファー・ネビス船籍のM/V Hudaの船尾に精密弾薬を撃ち、航行不能にしたと伝える（原文は「A U.S. military aircraft fired precision munitions at the stern of St. Kitts-flagged M/V Huda」）。CENTCOMが乗組員に危険区域から退避するよう指示したあとで、乗組員は繰り返しの警告を無視して封鎖を破ろうとしたという。貨物船はイランの港に寄ったあと域外へ出ようとしていた。乗組員の被害や座標の記載はない。",
+      "sourceLabel": "Arab News（11/8）",
+      "date": "2026年11月7日（米国時間）",
+      "label": "海上",
+      "url": "https://arabnews.com/middle-east/us-military-says-it-disabled-cargo-vessel-in-gulf-of-oman-3010407",
+      "isLatest": true
+    },
+    {
+      "id": "latest-ukmtoweekly-1108",
+      "title": "UKMTO週報：11/6までの週に海峡周辺で少なくとも11隻が攻撃され3隻が沈没",
+      "body": "Al Jazeera（11/7）は、11月6日で終わる週に、ホルムズ海峡とその周辺で少なくとも11隻が攻撃されたと伝える（原文は「At least 11 ships were attacked in and around the Strait of Hormuz over the week ending on November 6」）。UKMTOによると、うち3隻が沈没した。UKMTOの週次報告は、海峡の通航を出港170・入港155と識別したとも書く。攻撃主体は記事に示されていない。同記事は、Qeshm島に飛翔体2発が着弾したこと、アラグチ外相が過去48時間で12か国の外相と協議し調停の成果は限られることも伝える。",
+      "sourceLabel": "Al Jazeera（11/7）",
+      "date": "2026年11月7日（現地）",
+      "label": "海上",
+      "url": "https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-1108",
+      "title": "原油の終値が確定——ブレント1月物98.32ドル・WTI12月物90.83ドル（11/6）・1週間で約13％下落",
+      "body": "Rigzone（Bloomberg配信・11/6 4:05 PM EST）は、ブレント1月物が0.03％上げて98.32ドルで清算し（原文は「Brent for January settlement climbed 0.03% to settle at $98.32 a barrel in New York」）、WTI12月物が0.3％上げて90.83ドルで清算した（原文は「WTI for December delivery advanced 0.3% to settle at $90.83 a barrel」）と伝える。期近先物はこの1週間で約13.2％下落し、2022年以来で最大の週間下落率だった。値動きは、イラン戦争の緊張緩和の進展を見極める動きで、ペルシャ湾からの原油輸出の回復も弱気材料になったという。",
+      "sourceLabel": "Rigzone（Bloomberg配信・11/6）",
+      "date": "2026年11月6日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://rigzone.com/news/wire/oil_posts_biggest_weekly_drop_since_2022-06-nov-2026-185035-article",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto197-1107",
       "title": "UKMTO警報197：ハサブ東でタンカーが水線付近で爆発——乗組員は無事、船名・攻撃主体は不明",
@@ -10,36 +40,6 @@
       "date": "2026年11月6日（現地）",
       "label": "海上",
       "url": "https://www.arabnews.com/middle-east/tanker-reports-explosion-near-omans-khasab-while-transiting-strait-of-hormuz-ukmto-says-3010151",
-      "isLatest": true
-    },
-    {
-      "id": "latest-oil-1107",
-      "title": "WTIが続伸——12月物90.83ドル（11/6終値）・ブレント11/5の終値98.29ドルが確定",
-      "body": "共同通信（11/7 6:27）は、6日のニューヨーク原油先物でWTI12月渡しが前日比0.31ドル高の1バレル90.83ドルで取引を終えたと伝える。ホルムズ海峡でのタンカー攻撃が供給不安を高めた一方、米中間選挙での共和党の大敗で対イラン戦闘が終結に向かうとの期待から売りも出て、上げ幅は限られたという。CNBCも同じ90.83ドルを伝える（原文は「gained 31 cents to settle at $90.83 per barrel」）。ブレントの11/6の終値はCNBCの98.32ドルのみで2出典目がなく据え置く。",
-      "sourceLabel": "共同通信（11/7）・CNBC（11/6）",
-      "date": "2026年11月6日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto196-1105",
-      "title": "UKMTO警報196：カタール北方でタンカーが飛翔体2発を受ける——乗組員・被害は未確認、船名・攻撃主体は不明",
-      "body": "Dawn（ロイター引用・11/5）は、UKMTOの報告として、カタールのMadinat ash Shamalの北約50海里でタンカーが正体不明の飛翔体2発を受けたと伝える（原文は「two unidentified projectiles」）。見出しは乗組員の状況が未確認と書く。UKMTO公式の警報196は11/5 17:19 JST（08:19 UTC）発行で、公式の本文に発生時刻・船名の記載はない。同記事は発生を11/4 23:20 UTCと伝え（原文は「dating the incident to November 4 at 23:20 UTC」）、公式の日時欄の08:00 UTCと約8時間半の差があるため、発生時刻は不明。攻撃主体は示されていない。",
-      "sourceLabel": "Dawn（ロイター引用・11/5）・UKMTO公式",
-      "date": "2026年11月5日（現地）",
-      "label": "海上",
-      "url": "https://www.dawn.com/news/2042327",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-1105",
-      "title": "原油が反発——WTI12月物90.52ドル（11/5終値）・ブレントの終値は2出典目待ち",
-      "body": "Rigzone（Bloomberg配信・11/5 4:08 PM EST）は、WTI12月物が2.7％上げて90.52ドルで清算し（原文は「advanced 2.7% to settle at $90.52 a barrel」）、ブレント1月物は3.9％上げて98.29ドルで清算した（原文は「rose 3.9% to settle at $98.29 a barrel」）と伝える。前日の急落のあと、米国のイラン戦争の見通しを見極める動きだったという。WTIの90.52ドルは日経・みんかぶも伝え、終値が確定した。ブレントの98.29ドルは独立した2出典目が見つからず、終値を据え置く（確定した最新は11/4の94.62ドル）。",
-      "sourceLabel": "Rigzone（Bloomberg配信・11/5）",
-      "date": "2026年11月5日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.rigzone.com/news/oil_rebounds_after_sharp_iran_war_selloff-05-nov-2026-185023-article",
       "isLatest": false
     }
   ],
@@ -2168,6 +2168,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月8日",
+      "items": [
+        {
+          "id": "latest-oil-1107",
+          "title": "WTIが続伸——12月物90.83ドル（11/6終値）・ブレント11/5の終値98.29ドルが確定",
+          "body": "共同通信（11/7 6:27）は、6日のニューヨーク原油先物でWTI12月渡しが前日比0.31ドル高の1バレル90.83ドルで取引を終えたと伝える。ホルムズ海峡でのタンカー攻撃が供給不安を高めた一方、米中間選挙での共和党の大敗で対イラン戦闘が終結に向かうとの期待から売りも出て、上げ幅は限られたという。CNBCも同じ90.83ドルを伝える（原文は「gained 31 cents to settle at $90.83 per barrel」）。ブレントの11/6の終値はCNBCの98.32ドルのみで2出典目がなく据え置く。",
+          "sourceLabel": "共同通信（11/7）・CNBC（11/6）",
+          "date": "2026年11月6日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto196-1105",
+          "title": "UKMTO警報196：カタール北方でタンカーが飛翔体2発を受ける——乗組員・被害は未確認、船名・攻撃主体は不明",
+          "body": "Dawn（ロイター引用・11/5）は、UKMTOの報告として、カタールのMadinat ash Shamalの北約50海里でタンカーが正体不明の飛翔体2発を受けたと伝える（原文は「two unidentified projectiles」）。見出しは乗組員の状況が未確認と書く。UKMTO公式の警報196は11/5 17:19 JST（08:19 UTC）発行で、公式の本文に発生時刻・船名の記載はない。同記事は発生を11/4 23:20 UTCと伝え（原文は「dating the incident to November 4 at 23:20 UTC」）、公式の日時欄の08:00 UTCと約8時間半の差があるため、発生時刻は不明。攻撃主体は示されていない。",
+          "sourceLabel": "Dawn（ロイター引用・11/5）・UKMTO公式",
+          "date": "2026年11月5日（現地）",
+          "label": "海上",
+          "url": "https://www.dawn.com/news/2042327",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-1105",
+          "title": "原油が反発——WTI12月物90.52ドル（11/5終値）・ブレントの終値は2出典目待ち",
+          "body": "Rigzone（Bloomberg配信・11/5 4:08 PM EST）は、WTI12月物が2.7％上げて90.52ドルで清算し（原文は「advanced 2.7% to settle at $90.52 a barrel」）、ブレント1月物は3.9％上げて98.29ドルで清算した（原文は「rose 3.9% to settle at $98.29 a barrel」）と伝える。前日の急落のあと、米国のイラン戦争の見通しを見極める動きだったという。WTIの90.52ドルは日経・みんかぶも伝え、終値が確定した。ブレントの98.29ドルは独立した2出典目が見つからず、終値を据え置く（確定した最新は11/4の94.62ドル）。",
+          "sourceLabel": "Rigzone（Bloomberg配信・11/5）",
+          "date": "2026年11月5日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.rigzone.com/news/oil_rebounds_after_sharp_iran_war_selloff-05-nov-2026-185023-article",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月7日",
       "items": [

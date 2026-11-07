@@ -3801,6 +3801,29 @@
           "sourceLabel": "共同通信（11/7）・CNBC（11/6）"
         }
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "dateLabel": "2026/11/08 07:26",
+      "blockadeDay": 254,
+      "summary": "【重大更新】前回分の裏取り：解消1件（11/6のブレント1月物終値98.32ドル＝Rigzone〈Bloomberg配信〉とCNBCが一致し限月は1月物）／継続9件：警報197・196の船名と攻撃主体と発生時刻・MT Velos Sapphireと警報196の関係・IRGCの11/4〜11/6の主張の裏付け・警報194と195・ラスタヌラ製油所・MT ST 3・警報178〜191。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし・CENTCOMは11/7、封鎖を破ろうとしたセントクリストファー・ネビス船籍の貨物船M/V Hudaを米軍機が船尾への精密弾薬で航行不能にしたと発表（Arab News）。乗組員の被害の記載はない・UKMTO公式が11/8 06:38 JST発行の新しい警報を公表。UAEのホール・ファッカンの東約18海里のオマーン湾で貨物船と軍が関わる事案で、乗組員の状況・被害・船名・軍の国籍は不明。Hudaとの関係は確認できず・Al Jazeera（11/7）はUKMTOの週次報告として、11/6までの週に海峡と周辺で少なくとも11隻が攻撃され3隻が沈没したと伝える・原油は11/6の終値がブレント1月物98.32ドル・WTI12月物90.83ドル。期近先物は1週間で約13.2％下落（Rigzone〈Bloomberg配信〉）・CENTCOMの封鎖の累計は10/31の144隻のまま（147隻とする声明をIsrael National Newsが伝えるが、二次的な媒体のみ）・ルートB・Aに新しい報道なし",
+      "relatedNews": [
+        {
+          "title": "米軍が封鎖破りの貨物船M/V Hudaを無力化——オマーン湾、乗組員の被害の記載なし",
+          "url": "https://arabnews.com/middle-east/us-military-says-it-disabled-cargo-vessel-in-gulf-of-oman-3010407",
+          "sourceLabel": "Arab News（11/8）"
+        },
+        {
+          "title": "UKMTO週報：11/6までの週に海峡周辺で少なくとも11隻が攻撃され3隻が沈没",
+          "url": "https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation",
+          "sourceLabel": "Al Jazeera（11/7）"
+        },
+        {
+          "title": "原油の終値が確定——ブレント1月物98.32ドル・WTI12月物90.83ドル（11/6）・1週間で約13％下落",
+          "url": "https://rigzone.com/news/wire/oil_posts_biggest_weekly_drop_since_2022-06-nov-2026-185035-article",
+          "sourceLabel": "Rigzone（Bloomberg配信・11/6）"
+        }
+      ]
     }
   ]
 }

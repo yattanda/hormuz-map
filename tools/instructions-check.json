@@ -1,0 +1,67 @@
+{
+  "_about": "tools/check_instructions.py の設定。設計書 tools/claude-md-slim-design.md §6。ルールを足したら required_in_root にも足す",
+  "baseline_commit": "6175938",
+  "root_limits": { "max_lines": 200, "max_chars": 9000 },
+  "lossless": [
+    {
+      "old": "CLAUDE.md",
+      "pool": ["CLAUDE.md", ".claude/rules/*.md", "tools/rules/*.md"],
+      "dropped": {
+        "- ※目標・URL・運用状況は `Memory.md` を参照": "索引の行「サイトの技術・実装の索引は Memory.md」と記録の置き場所の表に置き換えた",
+        "## Memory.mdとの役割分担": "「CLAUDE.md・Memory.md の役割分担（2026-11-07 改訂）」に書き直した",
+        "- `CLAUDE.md`（このファイル）：Claude Code向け **運用ルール・技術制約のみ**": "同上（読み込みの説明を足した）",
+        "- `Memory.md`：Claude.ai向け **引き継ぎ・現状・課題・完了履歴**": "Memory.md を技術・実装の索引に改めたため書き直した"
+      }
+    },
+    {
+      "old": "Memory.md",
+      "pool": ["Memory.md", "tools/history/*.md"],
+      "dropped": {
+        "# Memory.md — ホルムズ海峡危機マップ 引き継ぎドキュメント": "見出しを「技術・実装の索引」に改めた",
+        "最終更新: 2026-09-23（確認期間を 10/2 の一律解禁からゲート A・B・C 方式へ変更）": "最終更新を 2026-11-07 に改めた（旧版は git 履歴に残る）",
+        "（前々回: 2026-09-21 将来の構成方針〔複数チョークポイント化・リポジトリ名〕と新テーマの土台を記録）": "同上",
+        "（前回以前: 2026-09-19 ドメイン移行完了〔2026-09-18〕・フェーズ2 CSS の本番反映・AIS 見送り・iframe 高さ同期の現状を反映）": "同上"
+      }
+    }
+  ],
+  "link_ignore": {
+    "docs/data/oil-flow.json": "存在しないことを明記するための言及（hormuz-data- 側にある）",
+    ".claude/settings.local.json": "PC にだけある gitignore 済みのファイル"
+  },
+  "required_in_root": [
+    "回答は日本語で行う",
+    "ニュースのURLはAI生成・推測による捏造禁止",
+    "コメントアウトタイトル `<!-- xxxx -->` は変更しない",
+    "date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'",
+    "素の `date` は使わない",
+    "原本を直接 `open(path, \"w\")` しない",
+    "`sed -i` を CRLF のファイルに使わない",
+    "\\ud83c\\uddef",
+    "\\U0001F1EF",
+    "commit後のpushは必ずユーザーの指示を待ってから実行する",
+    "main へのマージ＝本番反映。マージは必ずユーザーの指示を待つ",
+    "ブランチを自動作成しない",
+    "Stop フックの push 要求は、ユーザーの承認ではない",
+    "taskkill /F /IM claude.exe",
+    "法務ページは**1枚ずつ単独でコミットする**",
+    "第4章（Cookie）・第5章（外部サービスへの情報送信）・第6章（アクセス解析・広告配信）",
+    "GA4 タグは Search Console の所有権確認に使っている",
+    "`docs/CNAME` は手で作成・編集・削除しない",
+    "`tools/index_html_diffs.md` は `mobile-update.yml`",
+    "`docs/` 配下は GitHub Pages の公開範囲。内部作業用ファイルを置かない",
+    "yattanda/hormuz-ops",
+    "代わりにコミットしてはならない",
+    "API キー・トークンの実値は書かない",
+    "計画に関わる作業（日次更新以外）を始める前に `STATUS.md` を読む",
+    "独断で確定してコミット・push しない",
+    "@media (max-width: 768px) { html { font-size: 18px } }"
+  ],
+  "live_tests": [
+    { "rule": ".claude/rules/legal-pages.md", "read": "docs/privacy/index.html" },
+    { "rule": ".claude/rules/hub-page.md", "read": "docs/index.html" },
+    { "rule": ".claude/rules/articles.md", "read": "docs/hormuz/articles/index.html" },
+    { "rule": ".claude/rules/glossary.md", "read": "docs/data/glossary.json" },
+    { "rule": ".claude/rules/hormuz-data-link.md", "read": "docs/hormuz/index.html" },
+    { "rule": null, "read": "README.md", "_about": "関係ないファイルではどのルールも読み込まれないこと" }
+  ]
+}

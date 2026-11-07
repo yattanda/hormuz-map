@@ -54,7 +54,9 @@
     "API キー・トークンの実値は書かない",
     "計画に関わる作業（日次更新以外）を始める前に `STATUS.md` を読む",
     "独断で確定してコミット・push しない",
-    "@media (max-width: 768px) { html { font-size: 18px } }"
+    "@media (max-width: 768px) { html { font-size: 18px } }",
+    "**本文に用語のタグを手で書かない**",
+    "`/hormuz/` の中では、ページ間のリンクは文書相対"
   ],
   "live_tests": [
     { "rule": ".claude/rules/legal-pages.md", "read": "docs/privacy/index.html" },

@@ -174,13 +174,16 @@ def check_live(cfg, model):
                                cwd=ROOT, capture_output=True, text=True, encoding='utf-8', timeout=300)
             text = open(log, encoding='utf-8').read() if os.path.exists(log) else ''
         events = [json.loads(l) for l in text.split('\n') if l.strip().startswith('{')]
+        if r.returncode != 0 or not events:
+            # 起動に失敗した・フックが動かなかった場合は、何も確かめられていない。結果と区別して NG にする
+            print(f'[live] {t["read"]}: 検証できず（exit={r.returncode}・記録 {len(events)}件）{r.stderr.strip()[:120]}')
+            ng.append(f'live: {t["read"]} の検証を実行できなかった（claude の終了コード {r.returncode}・InstructionsLoaded の記録 {len(events)}件）')
+            continue
         if t['rule'] is None:
             stray = sorted({m for e in events for m in re.findall(r'\.claude/rules/[\w.-]+\.md', json.dumps(e, ensure_ascii=False))})
             print(f'[live] {t["read"]} → ルールなしの想定: 読み込まれたルール {stray or "なし"}（exit={r.returncode}）')
             if stray:
                 ng.append(f'live: {t["read"]} を読んだだけで {stray} が読み込まれた（paths: が広すぎる）')
-            if not events:
-                warn.append('live: InstructionsLoaded の記録が1件も無い（フックが動いていない可能性）')
             continue
         hit = [e for e in events if t['rule'] in json.dumps(e, ensure_ascii=False)]
         early = [e for e in hit if 'session_start' in json.dumps(e)]
@@ -191,8 +194,6 @@ def check_live(cfg, model):
             ng.append(f'live: {t["read"]} を読んでも {t["rule"]} が読み込まれなかった')
         if early:
             ng.append(f'live: {t["rule"]} が起動時に読み込まれている（paths: が効いていない）')
-        if not events:
-            warn.append('live: InstructionsLoaded の記録が1件も無い（フックが動いていない可能性）')
 
 
 def main():

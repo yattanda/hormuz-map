@@ -1,5 +1,13 @@
 # hormuz-map 運用ルール
 
+<!--
+保守メモ（このコメントは Claude には読み込まれない）：
+2026-11-07 に索引型へ軽量化した。設計と検証手順は tools/claude-md-slim-design.md。
+ここには「どの作業でも必要なルール」と「詳細の在りか」だけを書く。
+詳細は .claude/rules/（該当ファイルを読んだときだけ自動で読み込まれる）と tools/rules/（きっかけで読む）にある。
+書き換えたら python3 tools/check_instructions.py を実行する（終了コード 0 で合格）。
+-->
+
 ## 応答の基本
 
 ※ローカルPCでは `~/.claude/CLAUDE.md`（グローバル設定）に同等の記載があるが、
@@ -11,6 +19,25 @@
 - 不明な点はごまかさず「不明」と返す
 - 推測を事実として書かない。「〜の可能性がある」は未検証の仮説であることを明示する
 
+## 詳細ルールの在りか（索引）
+
+**次のきっかけに当たったら、作業の前に該当ファイルを Read する。**ここに書いた要点より詳細ファイルが正。
+
+| きっかけ | 読むファイル | 読み込み |
+|---|---|---|
+| ブランチを作る・PR を作る・レビューする・`@claude` を使う・マージ後の処理 | `tools/rules/branch-and-pr.md` | 手で読む |
+| 引き継ぎノートを書く・読む（`/handover` を含む） | `tools/rules/handover.md` | 手で読む |
+| スクリプトや一括置換でファイルを書き換える | `tools/rules/script-editing.md` | 手で読む |
+| PC（Windows）で設定ファイル・permission・hook・プロセスを触る | `tools/rules/windows-pc.md` | 手で読む |
+| 法務ページ（`/about/` `/contact/` `/privacy/` `/disclaimer/` `/editorial/` `/corrections/`）・ドメイン移行 | `.claude/rules/legal-pages.md` | 自動 |
+| ハブ `docs/index.html`・`docs/CNAME` | `.claude/rules/hub-page.md` | 自動 |
+| 特別解説コラム（`docs/hormuz/articles/`） | `.claude/rules/articles.md` | 自動 |
+| 用語集（`docs/data/glossary.json`・`docs/glossary/`） | `.claude/rules/glossary.md` | 自動 |
+| 本体 `docs/hormuz/index.html`・`docs/data/` と `hormuz-data-` の連携 | `.claude/rules/hormuz-data-link.md` | 自動 |
+
+- 「自動」は、そのファイルを Read したときに Claude Code が読み込む（`paths:` 指定）。編集の前に対象ファイルを読めば必ず入る
+- サイトの技術・実装の索引は `Memory.md`、いまの位置と次の作業は `chokepointlab-notes` の `STATUS.md`
+
 ## プロジェクト概要
 
 - `docs/hormuz/index.html`（ホルムズ海峡危機マップ本体）1ファイルに HTML・JavaScript を集約。**日次更新の対象はこのファイル**
@@ -18,15 +45,12 @@
 - `docs/index.html` は媒体トップ（ハブ。CSS は `docs/assets/css/hub.css`）。日次更新で触るのは「危機マップの最終更新」（`id="hub-updated"`）の1か所だけ（2026-10 の構造再編で本体を `/hormuz/` へ移した。設計書 `tools/s11-10-design.md`）
 - **「日次更新」は毎日行うのが基本だが、更新しない日もある**（情勢が膠着している時期は1日おきにした期間がある）。
   公開ページで「毎日更新」と言い切らず、「原則として毎日更新」と書く。最終更新は実際に更新した日時を示す
-  - ハブの4海峡の地図は `tools/build_hub_map.py --write` が書き出す。目印 `<!-- hub-map:start -->`〜`<!-- hub-map:end -->` の間を手で編集しない
 - `docs/data/glossary.json` が用語集の正本（ツールチップ・`/glossary/`・アーカイブ検索の同義語が同じデータを使う。設計書 `tools/glossary-search-design.md`）
-  - 載せるのは運営者が確認した定義文だけ。確認前の原稿は private リポジトリ `hormuz-ops` の `drafts/` に置く
-  - 用語集ページ `docs/glossary/index.html` は `tools/build_glossary.py --write` が書き出す。目印 `<!-- glossary:start -->`〜`<!-- glossary:end -->`・`<!-- glossary-jsonld:start -->`〜`<!-- glossary-jsonld:end -->` の間を手で編集しない。JSON を直したら同じコミットでページも書き出す
   - ツールチップの共通部品は `docs/assets/glossary.js`。**本文に用語のタグを手で書かない**（表示時に JS が印を付ける。日次更新の作業は増えない）
   - `/hormuz/` の中では、ページ間のリンクは文書相対（`articles/<slug>/`・`../archive/` など）、画像・データはルート相対（`/images/…`・`/data/…`）で書く
 - `docs/data/news_data.json` がニュース・OSINT表示の単一ソース
 - `docs/images/` ディレクトリにインフォグラフィック画像を管理
-- ※目標・URL・運用状況は `Memory.md` を参照
+- 生成物の目印（`<!-- hub-map:start -->`・`<!-- glossary:start -->` など）の間は手で編集しない。書き出すスクリプトを使う
 
 ## 絶対ルール
 
@@ -48,136 +72,43 @@
 - 「最終更新」は作業日ではなく**内容を変更した日**を書く。
   レイアウトのみの変更や、表示に影響しない修正では更新しない
 
-## スクリプトでファイルを書き換えるときのルール
+## スクリプトでファイルを書き換えるとき（要点。詳細と経緯は `tools/rules/script-editing.md`）
 
 - **原本を直接 `open(path, "w")` しない。**一時ファイルに書いてから `os.replace()` で差し替える
-  - 理由：`"w"` は開いた時点でファイルを空にするため、書き込み中に例外が出ると**原本が失われる**。
-    2026-09-01 に `docs/index.html`（5,015行）を実際に全消ししている
-    （直前のコミットが push 済みだったため `git checkout` で復旧）
 - 書き込み前に `s.encode("utf-8")` を単体で実行し、エンコードできることを確かめてからファイルに触る
-- **`sed -i` を CRLF のファイルに使わない。**行末の CR が全行から取り除かれ、作業ツリー上でファイル全体が LF になる
-  - このリポジトリは `core.autocrlf=true` のため Git 側は LF に正規化され、**コミットの差分には現れない**。だが手元のファイルは CRLF・BOMなしで統一する方針（法務ページの節）に反した状態になる
-  - 2026-09-01 と 09-03 の2回、`CLAUDE.md` で実際に発生している
-  - 代替：Python でバイト列として読み、`bytes.replace()` してから一時ファイル + `os.replace()` で差し替える。置換の前後で CRLF の出現回数を比較し、変化していないことを確かめる
-  - 対象ファイルの改行コードは `grep -qU $'\r' <file>` で事前に判定できる
-- **絵文字をサロゲートペアのエスケープ（`\ud83c\uddef` 形式）で書かない。**
-  Python では単独サロゲート扱いになり UTF-8 に変換できず例外になる。
-  `\U0001F1EF` 形式を使うか、置換文字列に絵文字を含めない
+- **`sed -i` を CRLF のファイルに使わない。**Python でバイト列として置換し、CRLF の出現回数が変わらないことを確かめる（判定：`grep -qU $'\r' <file>`）
+- **絵文字をサロゲートペアのエスケープ（`\ud83c\uddef` 形式）で書かない。**`\U0001F1EF` 形式を使う
 - 大きな書き換えの前には、直前の状態をコミットして復旧点を作っておく
 
 ## Git操作ルール
 
 - **PC では**、commit後のpushは必ずユーザーの指示を待ってから実行する
-- **クラウド（Claude Code on the Web）では**、仮想ブランチへの push は指示なしで進めてよい。main へのマージ・main への push は指示を待つ（「ブランチルール」の「スマホ」節）
+- **クラウド（Claude Code on the Web）では**、仮想ブランチへの push は指示なしで進めてよい。main へのマージ・main への push は指示を待つ
 - 上の範囲を超える自動pushは行わない
-- **コミットメッセージに GitHub API ドキュメントのサンプル文言を使わない。**
-  `Change 'Hello World' to 'Goodbye World'` / `Update print statement from 'Hello' to 'Goodbye'` は
-  Contents API のドキュメント例であり、実際に 2026-08-29・08-31・09-02 の3回、
-  スマホから `tools/index_html_diffs.md` を更新した際にそのまま記録されている
-- スマホ（Claude Code on the Web）から GitHub API 経由でファイルを上書きする場合、
-  コミットメッセージは次の形式にする
-  ```
-  mobile: update <ファイル名> (M/D HH:MM JST)
-  ```
-  例：`mobile: update index_html_diffs.md (9/2 10:45 JST)`
+- **コミットメッセージに GitHub API ドキュメントのサンプル文言（`Change 'Hello World' to 'Goodbye World'` など）を使わない**
+- スマホから GitHub API 経由でファイルを上書きするときのコミットメッセージは `mobile: update <ファイル名> (M/D HH:MM JST)`（経緯は `tools/rules/branch-and-pr.md` 付録）
 - 日次更新の commit は、何を更新したかが後から履歴だけで分かる文言にする
 
-## ブランチルール
+## ブランチルール（要点。詳細は `tools/rules/branch-and-pr.md`）
 
-### PC（ローカル・Claude Code デスクトップ／VS Code拡張）
-
-作業の種類によって、main への直接コミットとブランチ＋PR を使い分ける。
-
-| 作業の種類 | 方式 |
+| 作業の種類 | 方式（PC） |
 |---|---|
 | 日次更新・日付や表記の訂正・単発の修正（1コミットで完結するもの） | main に直接コミット |
 | 大改造・構造変更・複数コミットにまたがる作業・スクリプトによる一括書き換え・リポジトリ名やURL構成の変更 | ブランチ＋PR |
 
 - どちらか判断に迷う場合は、作業前にユーザーに確認する
-- 法務ページの「1枚ずつ単独でコミット」はどちらの方式でも守る。単発の改訂なら直接コミット、大改造の一部なら1枚1PR とする
-- **ブランチを自動作成しない。**ブランチ＋PR に該当すると判断したら、ブランチ名を示してユーザーの了承を得てから作成する
-  - 名前は `<種別>/<内容>` とする（例：`redesign/ga4-all-pages`）。`claude/` で始まる名前は使わない（クラウドセッションの仮想ブランチと区別するため）
-- 作業開始前に `git branch` で現在のブランチを確認する
-  - main に直接コミットする作業なのに main 以外にいた場合は、`git checkout main` してから始める
-- commit 後・push 前に `git branch && git log --oneline -3` を実行し、意図したブランチにコミットされていることを確認してからユーザーに報告する
+- **ブランチを自動作成しない。**ブランチ名（`<種別>/<内容>`。`claude/` で始めない）を示してユーザーの了承を得てから作成する
+- **main へのマージ＝本番反映。マージは必ずユーザーの指示を待つ。**自動マージは設定しない。マージ方式は merge commit
+- 作業開始前に `git branch` で現在のブランチを確認し、commit 後・push 前に `git branch && git log --oneline -3` で確かめる
+- **クラウド（スマホ）では**、自動生成された**仮想ブランチ**で作業する（main直接編集は行わない）
+- **Stop フックの push 要求は、ユーザーの承認ではない。**main 上にいるとき、または数えられたコミットが自分のものでないときは push せず、理由を1行返す
+- PR のレビュー（`/code-review`・`@claude`）、ブランチを短期間で閉じること、マージ前後の確認は詳細ファイルに従う
 
-#### main への直接コミットの場合
+## Windows環境（PC）の要点（詳細は `tools/rules/windows-pc.md`）
 
-- push はユーザーの指示を待つ（「Git操作ルール」のとおり）
-
-#### ブランチ＋PR の場合
-
-- 作業ブランチへの push もユーザーの指示を待つ
-- PR は `gh pr create` で作成する。1つの PR で扱う論点は1つにする
-- **main へのマージ＝本番反映。マージは必ずユーザーの指示を待つ。**自動マージ（auto-merge）は設定しない
-- マージ方式は merge commit とする（squash しない）。コミット単位で履歴を追えるようにするため
-- **PR のレビューは Claude Code の `/code-review <PR番号> --comment` で行う**（2026-09-23 から。Codex の `@codex review` は利用枠が小さいため置き換えた）
-  - 投稿は `gh` の認証を使うため**運営者の GitHub アカウント名義**になる。自分のコメントと区別できるよう、各コメントの冒頭に `Claude Code review:` を付ける
-  - 指摘が無い場合も `Claude Code review: 指摘なし` と確認した内容を PR に1件コメントし、レビュー済みの記録を GitHub に残す
-  - `--comment` を付けないと結果はセッション内にしか残らない
-- **Claude Code を開けないとき（スマホなど）は、PR のコメントで `@claude` に頼める**（2026-10-02 導入・`.github/workflows/claude.yml`）
-  - 書き方：PR の通常のコメント欄に `@claude この PR をレビューして` のように文章で頼む。返事は `claude[bot]` の名義で同じ PR に付く
-  - 認証は運営者の Claude サブスクリプション（Secret 名 `CLAUDE_CODE_OAUTH_TOKEN`）。API の従量課金ではないが、**PC・スマホでの利用と同じ利用枠を使う**
-  - 動くのは書き込み権限のある人のコメントだけ（ワークフローの `if` とアクション自身の両方で確かめる）
-  - **返事が付いてから次を頼む。**同じ PR では同時に1本しか動かず、順番待ちは1件までしか保持されない。
-    実行中（最長20分）に続けて2件頼むと、後の依頼が先の順番待ちを取り消す
-  - `@claude` に修正を頼むと、PR のブランチへコミットを push する。**main へのマージは従来どおり運営者だけ**。頼むのは原則レビューと質問にとどめる
-  - **第三者が fork から出した PR では `@claude` を使わない。**コメント起点の実行はこのリポジトリの Secret を持ったまま動き、
-    Claude が読む PR の中身は他人が書いたものになる（中身に仕込まれた指示に従わされるおそれ）。その PR は PC で内容を見てから判断する
-  - **PR を開くたびに自動でレビューするワークフロー（`claude-code-review.yml`）は入れない。**毎朝の日次更新の PR でも利用枠を消費するため
-  - Anthropic が運用する別機能の Code Review（Team／Enterprise 向け・1回 15〜25ドルが枠とは別に請求される）は使っていない。
-    `claude.ai/admin-settings/claude-code` にその設定が見えても有効にしない
-  - 認証エラーで動かなくなったら、PC のターミナルで**このリポジトリのフォルダから** `claude` を起動し、`/install-github-app` をやり直す
-    （2026-10-02 の初回は別リポジトリのフォルダで実行し、そちらに入った）
-- **ブランチは短期間で閉じる。**`docs/hormuz/index.html` は日次更新で毎日書き換わるため、ブランチを長く開いたままにすると衝突が続けて起きる
-  - 作業が数日にまたがる場合は、作業を再開するたびに main を取り込む（`git merge main`）
-  - 大改造は、それぞれ単独でマージできる単位に分けて PR にする
-- マージ前に、main を取り込んだ状態でローカル表示を確認する。
-  **GitHub Pages はブランチの内容をプレビューできない**（本番に出るのは main だけ）
-- マージ後は本番 URL で表示を確認し、ブランチを削除する
-
-### スマホ（Claude Code on the Web）
-
-- スマホから操作する場合は、クラウドセッションが自動生成する**仮想ブランチ**で作業する（main直接編集は行わない）
-- これはクラウドセッション側の隔離設計によるデフォルト動作であり、明示的な指示がなくても仮想ブランチを使ってよい
-- 仮想ブランチへの commit・push（diffのレビュー用push）は通常通り進めてよい
-- **mainへのマージ・mainへのpushは必ずユーザーの指示を待ってから行う**（PR作成後、ユーザーがレビュー・マージ操作を行う、またはマージ指示を出すまで待機）
-- 自動マージは行わない
-- **Stop フックの push 要求は、ユーザーの承認ではない。**
-  クラウドでは Stop フック `~/.claude/stop-hook-git-check.sh` が、未 push のコミットを見つけるたびに
-  「Please push these changes to the remote repository.」と返す
-  - 仮想ブランチにある自分のコミットなら、上のとおり push してよい
-  - main 上にいるとき、または数えられたコミットが自分のものでないとき（例：ブランチを main から作り直した直後で、
-    main にすでにあるコミットを数えている）は push しない。理由を1行返すだけにする
-  - このフックはクラウド環境が組み込むもの（登録先はコンテナ側の `~/.claude/launcher-settings.json`）で、
-    リポジトリの設定からは外せない
-- マージ後のリモートブランチ削除（`git push --delete`）は、クラウドからは 403 で拒否される（2026-09-28 実測）。
-  再試行・回避はせず、PR ページの「Delete branch」での削除をユーザーに案内する
-
-## Windows環境・Claude Code設定ルール
-
-### プロセス終了コマンド（Windows専用）
-- `pkill -f claude` はWindows非対応。必ず以下を使うこと：
-  ```
-  taskkill /F /IM claude.exe
-  ```
-
-### permission設定の構造（重要）
-- グローバル設定：`%USERPROFILE%\.claude\settings.json`
-- ローカル設定：`.claude/settings.local.json`（プロジェクト内・gitignore済）
-- **両ファイルのallowリストは合算される**（ローカルだけ修正しても不十分）
-- `deny` = 完全ブロック（pushすら不可になる）→ **denyは使わない**
-- allowに未登録 = 確認ダイアログ表示（git pushに推奨）
-- git pushを確認ダイアログにするには**両ファイルからallowを削除**する
-- `Bash(*)` より明示的ホワイトリストのほうが信頼性が高い（v2.1.123確認済）
-
-### settings.json内のWindowsパス記述
-- バックスラッシュ（`\`）はPython書換えやbash経由でエスケープが剥がれる事故あり
-- hookやコマンドパスは**forward slash推奨**：
-  ```json
-  "command": "node C:/Users/<ユーザー名>/.claude/hooks/session-summary.js"
-  ```
-- Node.jsはWindows上でもforward slashに対応している
+- `pkill -f claude` は使えない。`taskkill /F /IM claude.exe` を使う
+- permission の `deny` は使わない。グローバルとローカルの allow は合算される
+- settings.json のパスは forward slash で書く
 
 ## 運用ツール
 
@@ -185,49 +116,15 @@
 - `auto_push.py` / `run.bat`：`news_data.json` と `index_html_diffs.md` を Downloads フォルダから GitHub API で直接 push
 - GenSpark：参照用アーカイブのみ（更新しない）
 
-## 特別解説コラムの個別ページ化
+## 法務ページの要点（詳細は `.claude/rules/legal-pages.md`）
 
-- 「特別解説コラム」の各コラムは `docs/hormuz/articles/{slug}/index.html` として個別ページ化されている（URL は `/hormuz/articles/{slug}/`。一覧：`docs/hormuz/articles/index.html`）。旧 URL の `docs/articles/*.html` は転送用のスタブで、中身を書き換えない
-- `docs/hormuz/index.html` 側の各カードは要約＋「全文を読む」リンクのみを表示し、本文全文は個別ページ側が正とする
-- 新規コラムを追加する場合は `tools/new-article-checklist.md` の手順に従うこと
-
-## 法務ページ・ドメイン移行フェーズのルール
-
-- 法務ページ（`/about/` `/contact/` `/privacy/` `/disclaimer/` `/editorial/` `/corrections/`）は、正規ディレクトリ形式 `docs/<name>/index.html` で作成する
-- 法務ページは**1枚ずつ単独でコミットする**。他の法務ページ・日次更新（`index.html` / `news_data.json` 等）・archive 整理と同一コミットに混ぜない
-- 作業ツリーに未コミットの変更（`.gitignore` 変更・未追跡の archive 系ファイル等）が残っている場合は、単独コミットを守るため stash で退避してから作業し、push 後に戻す
-- 改行コードは既存 `docs/index.html` に合わせ **CRLF・BOMなし**で統一する
-- **URL の書き方は2通りだけ。`{{base_url}}` などのプレースホルダは使わない**
-  - ページ間のリンク（`<a href>`）は**文書相対パス**（`../about/`、トップは `../`）。ホスト名を含まないため移行時の書き換えが不要
-  - `canonical` / `og:url` は仕様上絶対URLが必須なので**絶対URLを直接書く**。`tools/migrate-domain.sh` がリテラル文字列 `yattanda.github.io/hormuz-map` を検出して置換するため、移行時に自動追従する
-  - （経緯）従来は「`{{base_url}}` のまま残し、一括展開は移行スクリプトが担う」としていたが、**展開機構は実装されていなかった**（`migrate-domain.sh` はリテラルのホスト名しか置換しない）。その結果法務ページ6枚のリンクが本番で全滅していた。commit 47ef650 で解消済み
-- 未完成ページへのリンクは **`TODO(§11-6):` という文字列マーカー**で残す。これは戦略側の完了判定に対応する予約語であり、別の書式に変えない
-- **パス変更とホスト名（ドメイン）置換を同一コミットに混ぜない**（残存検証の判定が濁るため）
-- 破壊的操作を含むスクリプトは dry-run を既定とし、成否は警告ではなく**終了コードで判定できる**形にする
-
-### 実装を変えたら法務ページを見直す（2026-09-06 追加）
-
+- 法務ページは**1枚ずつ単独でコミットする**。他の法務ページ・日次更新と同一コミットに混ぜない
 - **外部スクリプトの追加、Cookie・ローカルストレージの使用開始、新しい外部送信先の追加、
   解析・広告タグの設置**を行う変更は、**同一の作業のなかで `/privacy/` の
   第4章（Cookie）・第5章（外部サービスへの情報送信）・第6章（アクセス解析・広告配信）を
-  見直す。**該当があれば `/privacy/` を改訂し、最終更新日を更新する
-  （法務ページは1枚ずつ単独コミットのため、コミットは分ける）
-- 公開済みの記述が実態と食い違っていた場合は、`/corrections/` にも1件記録する。
-  方針ページ自身の誤りも対象（誤りの内容・公開していた期間・現在の状態を書く）
-- 【経緯】2026-09-03 に GA4 を導入（`5bb526f`）した際にこの見直しを行わなかったため、
-  `/privacy/` が「アクセス解析ツールを導入しておらず」と書いたまま3日間公開された。
-  同種の食い違い（訂正指摘フォームの必須設定）は 2026-08-31 にも起きている
-
-### 所有権確認のために消してはいけないもの（2026-09-13 追加）
-
-- **`docs/index.html`（ハブ＝ルートのページ）の GA4 タグ（`gtag.js?id=G-T0KCXP29E5` の読み込みと `gtag('config', ...)`）は、
-  Search Console の旧 URL プロパティの所有権確認に使っている。**削除しない・`<head>` の外へ動かさない。
-  外すと確認が外れる（2026-09-13 に GA4 方式で確認したため）。`<head>` 冒頭の `?focus=` 転送 JS は GA4 タグより前に置いたままにする
-- `docs/index.html`（ハブ）の `google-site-verification` メタは 2026-05-02 に**専用アカウント以外**で
-  発行されたもので、現在の確認には使っていない。ただし発行元アカウントが不明なので当面は残す
-- `docs/CNAME` はドメイン移行時に GitHub が自動でコミットする。**手で作成・編集・削除しない**
-- ドメイン移行の当日手順は `tools/migration-runbook.md`、突き合わせる基準値は
-  `tools/migration-baseline-2026-09-13.md`
+  見直す。**（どのファイルを触っていても適用する。食い違いがあれば `/corrections/` にも記録）
+- **`docs/index.html` の GA4 タグは Search Console の所有権確認に使っている。**削除しない・`<head>` の外へ動かさない
+- `docs/CNAME` は手で作成・編集・削除しない
 
 ## 触ってはいけないファイル
 
@@ -238,63 +135,11 @@
   作業用スクリプト・テンプレート・手順書はリポジトリルートの `tools/` に置く（配信範囲外）
 - `.env`（`GITHUB_TOKEN` を格納）は追跡対象外を維持する
 
-## セッション引き継ぎの保存先
+## セッション引き継ぎの要点（詳細は `tools/rules/handover.md`）
 
-- **引き継ぎノートは private リポジトリ `yattanda/hormuz-ops` の `handovers/` に置く。**
-  ローカルでは `~/Documents/GitHub/hormuz-ops/handovers/` に相当する
-- `/handover` を実行する場合も保存先はここ。**この指定はグローバルの
-  `~/.claude/commands/handover.md` の既定（`.claude/handovers/`）より優先する**
-- `hormuz-map/.claude/handovers/` は **2026-09-04 に削除済み**。
-  過去14ファイルは `hormuz-ops/handovers/` へ移設した。ここに再び作らない
-- ファイル名は `YYYY-MM-DD_HHmm.md`。追加したら `handovers/INDEX.md` に1行足す
-
-### なぜ別リポジトリなのか
-
-`hormuz-map` と `hormuz-data-` はどちらも **public** で、引き継ぎには
-上流の戦略・法務判断・第三者とのやり取り・運用上の弱点が入り込む。
-一方、ローカルにしか無いとクラウドセッション（Claude Code on the Web）から
-読めず、PC が手元に無いときに作業を継続できない。
-「どこからでも読める」と「公開しない」を両立させるための構成。
-
-### クラウドセッションからの参照
-
-セッションの対象リポジトリが `hormuz-map` でも読める。
-**2026-09-04 にクラウドセッションから実測で確認済み。**
-
-手順は次のとおり。**`gh` CLI はクラウド環境に入っていない**ので使えない。
-
-1. 既定ではセッションのリポジトリスコープが対象リポジトリのみのため、
-   `hormuz-ops` へのアクセスは拒否される
-2. `add_repo` で `yattanda/hormuz-ops` を **read 権限で**セッションに追加する
-3. GitHub MCP のファイル取得ツール（`get_file_contents`）で
-   `handovers/INDEX.md` を読む
-
-クラウドセッションにはこう頼めばよい。
-
-```
-private リポジトリ yattanda/hormuz-ops を read で追加して、
-handovers/INDEX.md を読んで現状を把握して。変更・コミットはしないこと。
-```
-
-`add_repo` はそのセッションのスコープに `hormuz-ops` を追加する。
-読み取り専用で追加すること。
-
-### クラウドセッションから書き込むとき
-
-- **`hormuz-ops` を write 権限で `add_repo` してから書く。**read で追加した場合は書けない
-- 書き込みは GitHub MCP の `create_or_update_file` で `hormuz-ops` の main へ直接行う
-  （このリポジトリは運用メモ専用で公開物が無いため、PR を経由しなくてよい）
-- **書き込めなかった場合、`hormuz-map` や `hormuz-data-` に代わりにコミットしてはならない。**
-  この2つは public であり、引き継ぎを置くと分離した意味が消える。
-  書けないときは**引き継ぎの全文をチャットに出力し**、ユーザーが手元で保存できるようにする
-- 長い作業では、最後にまとめて書こうとせず**途中で一度書き込んで経路を確かめる**
-
-### 書くときのルール
-
-- **API キー・トークンの実値は書かない。**private であっても書かない。
-  Secret 名（`GEMINI_API_KEY` 等）までは可
-- 複数リポジトリにまたがる作業では、どのリポジトリの話かを冒頭に明記する
-- それ単体で読めるように書く。他のノートを読まないと意味が通らない書き方をしない
+- **引き継ぎノートは private リポジトリ `yattanda/hormuz-ops` の `handovers/` に置く。**`/handover` の既定（`.claude/handovers/`）より優先する
+- **書き込めなかった場合、`hormuz-map` や `hormuz-data-` に代わりにコミットしてはならない。**引き継ぎの全文をチャットに出力する
+- **API キー・トークンの実値は書かない。**private であっても書かない
 
 ## 記録の置き場所と「現在地」（2026-10-06 追加）
 
@@ -325,17 +170,6 @@ handovers/INDEX.md を読んで現状を把握して。変更・コミットは�
 - 法務・ドメイン・媒体方針に関わる論点では、**文面案・比較案・選択肢の提示は積極的に行ってよい**（長所短所や前例・リスクを添えると良い）
 - ただし、複数の妥当な選択肢がある繊細な判断（準拠法・免責範囲・収益化手法・実名や住所の公開可否など）を**独断で確定してコミット・push しない**。案を出したうえで確定はユーザーに委ねる
 
-## hormuz-data- 連携ルール
-
-- `hormuz-data-` リポジトリはダッシュボード・自動データの別リポジトリ
-- `data/manual-update.json` の `scenario` フィールド（A/B/C/D確率）がシナリオ確率の正として自動同期される
-- `syncScenarioFromDashboard()` がページ読み込み時にfetchして確率（`sc-pct-A`〜`D`）・バー・推定の幅・判定日を入れる（手動更新不要）
-- fetch URL：`https://yattanda.github.io/hormuz-data-/data/manual-update.json`
-- **`hormuz-data-` の `data/oil-flow.json`** が日本原油調達フローの単一ソース（`loadRouteTableFlow()` が `SITE_CONFIG.DASHBOARD_BASE + '/data/oil-flow.json'` をfetchして値を注入）
-  - `hormuz-map` 側に `docs/data/oil-flow.json` は**存在しない**。従来の記述は誤りで、実測により訂正した
-  - 同ファイルの `updated` はルートテーブルの**基準日表示に直結**する（`jf-basis-date` に注入）。値を更新するときは `updated` も必ず更新する
-- **LiveServer では iframe 内容は更新が反映されない**（GitHub Pages URL から読み込むため）。hormuz-data- の変更は push して GitHub Pages 経由で確認すること
-
 ## 専門エージェント
 
 - `mobile-ui-reviewer`：スマホ表示の問題発見・レビュー（コード編集なし）
@@ -345,10 +179,12 @@ handovers/INDEX.md を読んで現状を把握して。変更・コミットは�
 
 `@media (max-width: 768px) { html { font-size: 18px } }` は削除・変更しない。
 
-## Memory.mdとの役割分担
+## CLAUDE.md・Memory.md の役割分担（2026-11-07 改訂）
 
-- `CLAUDE.md`（このファイル）：Claude Code向け **運用ルール・技術制約のみ**
-- `Memory.md`：Claude.ai向け **引き継ぎ・現状・課題・完了履歴**
+- `CLAUDE.md`（このファイル）：Claude Code向け **運用ルール・技術制約のみ**。毎回読み込まれるので、どの作業でも要るものだけを置く
+- `.claude/rules/`・`tools/rules/`：特定の作業でだけ要るルール（上の索引）
+- `Memory.md`：**サイトの技術・実装の索引**（仕組み・触るときの注意・経緯の在りか）。進み具合は書かない（`STATUS.md` が正本）
+- `tools/history/`：`Memory.md` から移した経緯の記録（原文のまま）
 - CLAUDE.md には「何をすべきか（ルール）」のみ記載し、「現状・経緯」は書かない
 
 ## Project Skills の使い分け

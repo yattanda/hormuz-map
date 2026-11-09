@@ -1,7 +1,27 @@
 {
-  "updated": "2026年11月9日 07:33 日本時間JST",
+  "updated": "2026年11月10日 08:15 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-centcom147-1110",
+      "title": "CENTCOM、封鎖で商船147隻の進路を変更・5隻を航行不能に——警報199・200は別々のタンカーの事案とRivieraが伝える",
+      "body": "Riviera（11/9）は、CENTCOMが7月からの封鎖の取り締まりで147隻の商船の進路を変えさせ、従わなかった5隻の商船を航行不能にしたと発表したと伝える（原文は「redirected 147 compliant commercial vessels」「disabled five merchant ships that refused to comply」）。10/31の144隻から増えたが、数えた時点は記事から分からない。同記事は、UKMTOが11/7に報告した2件のタンカー事案（ハサブ北約15海里での被弾と、ハサブ北西約8海里での火災）を別々の船として書き、M/V Hudaの攻撃位置（ホール・ファッカン東約18海里）は警報198と同じ位置だが、警報198には触れていない。",
+      "sourceLabel": "Riviera Maritime Media（11/9）",
+      "date": "2026年11月9日（現地）",
+      "label": "軍事",
+      "url": "https://www.rivieramm.com/news-content-hub/tankers-hit-in-hormuz-us-strikes-bulker-qeshm-island-launches-task-force-90512",
+      "isLatest": true
+    },
+    {
+      "id": "latest-trump-oil-1110",
+      "title": "トランプ氏、交渉が進む限り対イラン攻撃再開は極めて低いと発言——共同通信、WTIは前週末比3.98ドル安と伝える",
+      "body": "共同通信（OANDA配信・11/10 06:51）は、トランプ米大統領が、イランとの戦闘終結に向けた交渉に進展がある限り、対イラン攻撃を再開する可能性は極めて低いと述べ、供給不安が和らいだと伝える。同記事は、11/9のWTI12月物が前週末比3.98ドル安で取引を終えたと書く。ブレントの記載はなく、2つ目の出典も確認できていないため、サイトの原油の終値は11/6（ブレント1月物98.32ドル・WTI12月物90.83ドル）のまま据え置く。",
+      "sourceLabel": "共同通信（OANDA配信・11/10）",
+      "date": "2026年11月9日（米国時間）",
+      "label": "外交",
+      "url": "https://www.oanda.jp/lab-education/market_news/kn_2026111001000886/",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto199-200-1109",
       "title": "UKMTO警報199・200：ハサブ北西でタンカーが火災、海峡を出るタンカーが飛翔体に被弾——船名・攻撃主体は不明",
@@ -10,7 +30,7 @@
       "date": "2026年11月8日（現地）",
       "label": "海上",
       "url": "https://gulfnews.com/world/mena/uae-rescues-22-crew-in-gulf-of-oman-as-us-tightens-iran-blockade-and-tehran-lifts-missile-limits-1.500739993",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-irgc3-1109",
@@ -20,26 +40,6 @@
       "date": "2026年11月8日（現地）",
       "label": "海上",
       "url": "https://kashmirreader.com/2026/11/09/iran-says-3-tankers-caught-fire-in-hormuz/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irannavy-mine-1109",
-      "title": "イラン海軍「タンカーが海峡の東で機雷に触れて炎上」と発表——Reutersは確認できず",
-      "body": "Reuters配信（Jerusalem Post・11/8）は、イラン海軍が日曜（11/8）、国営メディアを通じて、石油タンカー1隻がホルムズ海峡の東で機雷に触れて炎上したと発表したと伝える（原文は「An oil tanker caught fire after striking a naval mine east of the Strait of Hormuz」）。Reutersは報道をすぐには確認できなかったとする（原文は「was unable to immediately confirm the report」）。船名は記事にない。",
-      "sourceLabel": "Reuters配信（Jerusalem Post・11/8）",
-      "date": "2026年11月8日（現地）",
-      "label": "海上",
-      "url": "https://jpost.com/middle-east/iran-news/article-914251",
-      "isLatest": false
-    },
-    {
-      "id": "latest-huda-1108",
-      "title": "米軍が封鎖破りの貨物船M/V Hudaを無力化——オマーン湾、乗組員の被害の記載なし",
-      "body": "Arab News（11/8 00:31公開）は、CENTCOMの発表として、米軍機がセントクリストファー・ネビス船籍のM/V Hudaの船尾に精密弾薬を撃ち、航行不能にしたと伝える（原文は「A U.S. military aircraft fired precision munitions at the stern of St. Kitts-flagged M/V Huda」）。CENTCOMが乗組員に危険区域から退避するよう指示したあとで、乗組員は繰り返しの警告を無視して封鎖を破ろうとしたという。貨物船はイランの港に寄ったあと域外へ出ようとしていた。乗組員の被害や座標の記載はない。",
-      "sourceLabel": "Arab News（11/8）",
-      "date": "2026年11月7日（米国時間）",
-      "label": "海上",
-      "url": "https://arabnews.com/middle-east/us-military-says-it-disabled-cargo-vessel-in-gulf-of-oman-3010407",
       "isLatest": false
     }
   ],
@@ -2181,6 +2181,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月10日",
+      "items": [
+        {
+          "id": "latest-irannavy-mine-1109",
+          "title": "イラン海軍「タンカーが海峡の東で機雷に触れて炎上」と発表——Reutersは確認できず",
+          "body": "Reuters配信（Jerusalem Post・11/8）は、イラン海軍が日曜（11/8）、国営メディアを通じて、石油タンカー1隻がホルムズ海峡の東で機雷に触れて炎上したと発表したと伝える（原文は「An oil tanker caught fire after striking a naval mine east of the Strait of Hormuz」）。Reutersは報道をすぐには確認できなかったとする（原文は「was unable to immediately confirm the report」）。船名は記事にない。",
+          "sourceLabel": "Reuters配信（Jerusalem Post・11/8）",
+          "date": "2026年11月8日（現地）",
+          "label": "海上",
+          "url": "https://jpost.com/middle-east/iran-news/article-914251",
+          "isLatest": false
+        },
+        {
+          "id": "latest-huda-1108",
+          "title": "米軍が封鎖破りの貨物船M/V Hudaを無力化——オマーン湾、乗組員の被害の記載なし",
+          "body": "Arab News（11/8 00:31公開）は、CENTCOMの発表として、米軍機がセントクリストファー・ネビス船籍のM/V Hudaの船尾に精密弾薬を撃ち、航行不能にしたと伝える（原文は「A U.S. military aircraft fired precision munitions at the stern of St. Kitts-flagged M/V Huda」）。CENTCOMが乗組員に危険区域から退避するよう指示したあとで、乗組員は繰り返しの警告を無視して封鎖を破ろうとしたという。貨物船はイランの港に寄ったあと域外へ出ようとしていた。乗組員の被害や座標の記載はない。",
+          "sourceLabel": "Arab News（11/8）",
+          "date": "2026年11月7日（米国時間）",
+          "label": "海上",
+          "url": "https://arabnews.com/middle-east/us-military-says-it-disabled-cargo-vessel-in-gulf-of-oman-3010407",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月9日",
       "items": [

@@ -5,15 +5,5 @@
     "kind は schedule（予定）か deadline（期限）。date は YYYY-MM-DD（時刻は持たない）。date_note は任意（例：現地時間）",
     "url は実際に開いて確かめたものだけ（推測で書かない）。過ぎた項目は表示されないが、気づいたときに消す"
   ],
-  "items": [
-    {
-      "kind": "schedule",
-      "title": "米中間選挙",
-      "date": "2026-11-03",
-      "date_note": "現地時間",
-      "source": "米連邦選挙委員会（FEC）",
-      "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
-      "added": "2026-10-06"
-    }
-  ]
+  "items": []
 }

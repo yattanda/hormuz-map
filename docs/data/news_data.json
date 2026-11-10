@@ -1,7 +1,37 @@
 {
-  "updated": "2026年11月10日 08:15 日本時間JST",
+  "updated": "2026年11月11日 07:06 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto201-1111",
+      "title": "UKMTO警報201：リマ北東19海里でタンカーが飛翔体に被弾——ADNOC Logistics & Servicesの船舶も攻撃で損傷、両者の関係は不明",
+      "body": "gCaptain（11/10）は、UKMTOの警報201として、オマーン・リマの北東約19海里でタンカーが未特定の飛翔体に被弾し、乗組員は全員無事と伝える（原文は「approximately 19 nautical miles northeast of Lima, Oman」）。同記事は発生を11/10 13:38 UTCと書くが、UKMTO公式の本文に発生時刻はなく、一覧の日時欄は15:50 UTC。同じ記事は、ADNOC Logistics & Servicesが同社の船舶が11/10午後の攻撃で損傷したと確認したとも伝え（原文は「sustained damage in an attack in the Persian Gulf on the afternoon of November 10」）、両者が関連するかは「not immediately clear」と書く。船名・被害の程度・攻撃主体は公表されていない。",
+      "sourceLabel": "gCaptain（11/10）",
+      "date": "2026年11月10日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/adnoc-vessel-damaged-in-gulf-attack-as-ukmto-reports-fresh-tanker-strike-near-hormuz/",
+      "isLatest": true
+    },
+    {
+      "id": "latest-irgc3-1111",
+      "title": "IRGC「タンカー3隻が炎上・機雷接触」と主張——船名なし、独立した確認なし",
+      "body": "Arab News（11/10）は、IRGCが、許可されていない航路にいたタンカー2隻が大きな爆発のあと停止して燃え続けていると述べ（原文は「brought to a halt following massive explosions and are left burning」）、3隻目が午後に機雷に触れて爆発したと主張した（原文は「exploded this afternoon after striking a naval mine」）と伝える。船名・国籍は示されず、Arab Newsは、報じられた個別の事案がイランの挙げた船かは不明と書く。同じ記事は、UKMTOがタンカーの被弾を報告し、ADNOCが同社の船舶の損傷を確認したことも伝える。",
+      "sourceLabel": "Arab News（11/10）",
+      "date": "2026年11月10日（現地）",
+      "label": "海上",
+      "url": "https://www.arabnews.com/middle-east/tanker-struck-by-unknown-projectile-off-oman-ukmto-says-3010988",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-close-1111",
+      "title": "原油の11/9終値が確定——ブレント1月物92.57ドル・WTI12月物86.85ドル、WTIは前週末比3.98ドル安",
+      "body": "共同通信（OANDA配信・11/10 06:51）は、11/9のニューヨーク市場で、WTI12月物が前週末比3.98ドル安の1バレル＝86.85ドルで取引を終えたと伝える。Yahoo Finance（NYMEXのデータ）の終値は、WTI12月物86.85ドル（−3.98ドル）、ブレント1月物92.57ドル（−5.75ドル）で、ブレントは24/7 Wall St.（11/10公開）も同じ値を伝える。11/10（火）の終値は未確定で、2出典を確認できていない。",
+      "sourceLabel": "共同通信（OANDA配信・11/10）",
+      "date": "2026年11月9日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.oanda.jp/lab-education/market_news/kn_2026111001000886/",
+      "isLatest": false
+    },
     {
       "id": "latest-centcom147-1110",
       "title": "CENTCOM、封鎖で商船147隻の進路を変更・5隻を航行不能に——警報199・200は別々のタンカーの事案とRivieraが伝える",
@@ -10,40 +40,23 @@
       "date": "2026年11月9日（現地）",
       "label": "軍事",
       "url": "https://www.rivieramm.com/news-content-hub/tankers-hit-in-hormuz-us-strikes-bulker-qeshm-island-launches-task-force-90512",
-      "isLatest": true
-    },
-    {
-      "id": "latest-trump-oil-1110",
-      "title": "トランプ氏、交渉が進む限り対イラン攻撃再開は極めて低いと発言——共同通信、WTIは前週末比3.98ドル安と伝える",
-      "body": "共同通信（OANDA配信・11/10 06:51）は、トランプ米大統領が、イランとの戦闘終結に向けた交渉に進展がある限り、対イラン攻撃を再開する可能性は極めて低いと述べ、供給不安が和らいだと伝える。同記事は、11/9のWTI12月物が前週末比3.98ドル安で取引を終えたと書く。ブレントの記載はなく、2つ目の出典も確認できていないため、サイトの原油の終値は11/6（ブレント1月物98.32ドル・WTI12月物90.83ドル）のまま据え置く。",
-      "sourceLabel": "共同通信（OANDA配信・11/10）",
-      "date": "2026年11月9日（米国時間）",
-      "label": "外交",
-      "url": "https://www.oanda.jp/lab-education/market_news/kn_2026111001000886/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto199-200-1109",
-      "title": "UKMTO警報199・200：ハサブ北西でタンカーが火災、海峡を出るタンカーが飛翔体に被弾——船名・攻撃主体は不明",
-      "body": "Gulf News（11/9 00:35更新）は、UKMTOが11/8、オマーン・ハサブの北西8海里でタンカーが火災を起こし乗組員が退避したと報告したと伝える（原文は「A tanker caught fire about 8 nautical miles north-west of Khasab, Oman, prompting the evacuation of its crew」）。UKMTO公式サイトの警報200（11/8 19:39 JST発行）は、海峡を出るタンカーが未特定の飛翔体に被弾し、乗組員は全員無事と伝える。どちらも公式の本文に発生時刻・船名・攻撃主体の記載はなく、2件の関係も確認できない。",
-      "sourceLabel": "Gulf News（11/9）・UKMTO公式",
-      "date": "2026年11月8日（現地）",
-      "label": "海上",
-      "url": "https://gulfnews.com/world/mena/uae-rescues-22-crew-in-gulf-of-oman-as-us-tightens-iran-blockade-and-tehran-lifts-missile-limits-1.500739993",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc3-1109",
-      "title": "IRGC「タンカー3隻が爆発・炎上」と主張——船名・国籍は示さず、AFPは同じ事案か確認できず",
-      "body": "AFP配信（Kashmir Reader・11/9）は、IRGCが日曜（11/8）、「従わないタンカー3隻が違法な航路を航行中に爆発して炎上した」と発表したと伝える（原文は「three non-compliant tankers have exploded and caught fire while they were sailing in the illegal channel」）。IRGCは船名も国籍も示さず、AFPは各報道が同じ事案を指すか確認できなかった（原文は「AFP was unable to confirm if the various reports referenced the same incidents」）。UKMTOは別に、ハサブ沖のタンカー火災と、飛翔体に被弾したタンカーを報告している。",
-      "sourceLabel": "AFP配信（Kashmir Reader・11/9）",
-      "date": "2026年11月8日（現地）",
-      "label": "海上",
-      "url": "https://kashmirreader.com/2026/11/09/iran-says-3-tankers-caught-fire-in-hormuz/",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-irgc3-1111",
+      "titleJa": "【Arab News】IRGC「タンカー3隻が炎上・機雷接触」と主張——UKMTOはリマ沖のタンカー被弾を報告、ADNOCは船舶の損傷を確認",
+      "titleEn": "Arab News (Nov 10): Tanker struck by unknown projectile off Oman, UKMTO says",
+      "title": "【Arab News】IRGC「タンカー3隻が炎上・機雷接触」と主張——UKMTOはリマ沖のタンカー被弾を報告、ADNOCは船舶の損傷を確認",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月10日（現地）",
+      "summary": "Arab Newsは、UKMTOが、オマーン沖でタンカーが未特定の飛翔体に被弾したと報告したと伝える。ADNOCは、同社の船舶がUAEの領海での攻撃で損傷したと発表した。IRGCは、タンカー2隻が爆発のあと燃え続け、3隻目が機雷に触れて爆発したと主張したが、船名・国籍は示されず、記事は主張した船との同一性は不明と書く。",
+      "url": "https://www.arabnews.com/middle-east/tanker-struck-by-unknown-projectile-off-oman-ukmto-says-3010988",
+      "isLatest": true
+    },
     {
       "id": "osint-gulfnews-0-1109",
       "titleJa": "【Gulf News】ハサブ北西でタンカーが火災・乗組員が退避——UAEはオマーン湾の貨物船火災で22人を救助",
@@ -55,7 +68,7 @@
       "date": "2026年11月9日（現地）",
       "summary": "Gulf Newsのライブ記事は、UKMTOの報告として、オマーン・ハサブの北西8海里でタンカーが火災を起こし乗組員が退避したと伝える。IRGCが別の声明で、2隻が機雷に触れたと主張したことも書く。UAE国家警備隊は、オマーン湾の貨物船の火災のあとに22人を救助した。",
       "url": "https://gulfnews.com/world/mena/uae-rescues-22-crew-in-gulf-of-oman-as-us-tightens-iran-blockade-and-tehran-lifts-missile-limits-1.500739993",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-197-1107",
@@ -2181,6 +2194,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月11日",
+      "items": [
+        {
+          "id": "latest-trump-oil-1110",
+          "title": "トランプ氏、交渉が進む限り対イラン攻撃再開は極めて低いと発言——共同通信、WTIは前週末比3.98ドル安と伝える",
+          "body": "共同通信（OANDA配信・11/10 06:51）は、トランプ米大統領が、イランとの戦闘終結に向けた交渉に進展がある限り、対イラン攻撃を再開する可能性は極めて低いと述べ、供給不安が和らいだと伝える。同記事は、11/9のWTI12月物が前週末比3.98ドル安で取引を終えたと書く。ブレントの記載はなく、2つ目の出典も確認できていないため、サイトの原油の終値は11/6（ブレント1月物98.32ドル・WTI12月物90.83ドル）のまま据え置く。",
+          "sourceLabel": "共同通信（OANDA配信・11/10）",
+          "date": "2026年11月9日（米国時間）",
+          "label": "外交",
+          "url": "https://www.oanda.jp/lab-education/market_news/kn_2026111001000886/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto199-200-1109",
+          "title": "UKMTO警報199・200：ハサブ北西でタンカーが火災、海峡を出るタンカーが飛翔体に被弾——船名・攻撃主体は不明",
+          "body": "Gulf News（11/9 00:35更新）は、UKMTOが11/8、オマーン・ハサブの北西8海里でタンカーが火災を起こし乗組員が退避したと報告したと伝える（原文は「A tanker caught fire about 8 nautical miles north-west of Khasab, Oman, prompting the evacuation of its crew」）。UKMTO公式サイトの警報200（11/8 19:39 JST発行）は、海峡を出るタンカーが未特定の飛翔体に被弾し、乗組員は全員無事と伝える。どちらも公式の本文に発生時刻・船名・攻撃主体の記載はなく、2件の関係も確認できない。",
+          "sourceLabel": "Gulf News（11/9）・UKMTO公式",
+          "date": "2026年11月8日（現地）",
+          "label": "海上",
+          "url": "https://gulfnews.com/world/mena/uae-rescues-22-crew-in-gulf-of-oman-as-us-tightens-iran-blockade-and-tehran-lifts-missile-limits-1.500739993",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc3-1109",
+          "title": "IRGC「タンカー3隻が爆発・炎上」と主張——船名・国籍は示さず、AFPは同じ事案か確認できず",
+          "body": "AFP配信（Kashmir Reader・11/9）は、IRGCが日曜（11/8）、「従わないタンカー3隻が違法な航路を航行中に爆発して炎上した」と発表したと伝える（原文は「three non-compliant tankers have exploded and caught fire while they were sailing in the illegal channel」）。IRGCは船名も国籍も示さず、AFPは各報道が同じ事案を指すか確認できなかった（原文は「AFP was unable to confirm if the various reports referenced the same incidents」）。UKMTOは別に、ハサブ沖のタンカー火災と、飛翔体に被弾したタンカーを報告している。",
+          "sourceLabel": "AFP配信（Kashmir Reader・11/9）",
+          "date": "2026年11月8日（現地）",
+          "label": "海上",
+          "url": "https://kashmirreader.com/2026/11/09/iran-says-3-tankers-caught-fire-in-hormuz/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月10日",
       "items": [

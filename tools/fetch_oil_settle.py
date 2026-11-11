@@ -201,7 +201,7 @@ def page_text(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=20) as res:
         raw = res.read().decode("utf-8", "replace")
-    raw = re.sub(r"<script\b.*?</script\s*>|<style\b.*?</style\s*>", " ", raw, flags=re.S | re.I)
+    raw = re.sub(r"<script\b.*?</script\b[^>]*>|<style\b.*?</style\b[^>]*>", " ", raw, flags=re.S | re.I)
     text = html.unescape(re.sub(r"<[^>]+>", " ", raw))
     return re.sub(r"\s+", " ", text)
 

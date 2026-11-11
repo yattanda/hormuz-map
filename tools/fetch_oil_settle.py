@@ -193,28 +193,33 @@ def page_text(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=20) as res:
         raw = res.read().decode("utf-8", "replace")
-    raw = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
+    raw = re.sub(r"<script\b.*?</script\s*>|<style\b.*?</style\s*>", " ", raw, flags=re.S | re.I)
     text = html.unescape(re.sub(r"<[^>]+>", " ", raw))
     return re.sub(r"\s+", " ", text)
 
 
+def on_domain(host, *domains):
+    """host がそのドメインか、そのサブドメインか（文字列の部分一致にしない）。"""
+    return any(host == d or host.endswith("." + d) for d in domains)
+
+
 def family_of(source, url, text):
     """通信社の系統（同じ系統どうしは1出典と数える。スキル「二次情報の裏取り」）。"""
-    host = urllib.parse.urlparse(url).netloc.lower()
+    host = (urllib.parse.urlparse(url).hostname or "").lower()
     head = text[:6000]
-    if "reuters.com" in host or "(Reuters)" in head or "Reuters" in (source or ""):
+    if on_domain(host, "reuters.com") or "(Reuters)" in head or "Reuters" in (source or ""):
         return "Reuters 系"
-    if "bloomberg" in host or "Bloomberg" in head:
+    if on_domain(host, "bloomberg.com") or "Bloomberg" in head:
         return "Bloomberg 系"
-    if "Associated Press" in head or "(AP)" in head or "apnews.com" in host:
+    if "Associated Press" in head or "(AP)" in head or on_domain(host, "apnews.com"):
         return "AP 系"
-    if "Dow Jones" in head or "marketwatch" in host or "wsj.com" in host:
+    if "Dow Jones" in head or on_domain(host, "marketwatch.com", "wsj.com"):
         return "Dow Jones 系"
-    if "investinglive" in host:
+    if on_domain(host, "investinglive.com"):
         return "investingLive"
-    if "newsquawk" in host:
+    if on_domain(host, "newsquawk.com"):
         return "Newsquawk"
-    if "cnbc.com" in host:
+    if on_domain(host, "cnbc.com"):
         return "CNBC"
     return "{}（系統は本文で確かめる）".format(source or host)
 

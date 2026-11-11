@@ -175,12 +175,20 @@ PAYWALL = re.compile(r"\bwsj\b|wall street journal|barron|marketwatch|financial 
 PRICE_WORDS = re.compile(r"settle|oil (?:price|rise|rose|fall|fell|gain|climb|slip|drop|jump|edge|rebound)|crude (?:price|rise|fall)", re.I)
 OIL_WORDS = re.compile(r"\boil\b|crude|brent|wti", re.I)
 DJ_TITLE = re.compile(r"(\w+) WTI Crude Oil Contract Closes (Up|Down) \$([\d.]+).{0,40}?Settles at \$(\d{2,3}\.\d{2})", re.I)
-NOT_WTI = r"(?:(?!WTI|West Texas|U\.?S\.? crude).)"
-NOT_BRENT = r"(?:(?!Brent).)"
-BRENT_RE = [re.compile(r"Brent\b" + NOT_WTI + r"{0,160}?settl\w*" + NOT_WTI + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})"),
-            re.compile(r"Brent\b" + NOT_WTI + r"{0,60}?\bsettled (?:at )?\$(\d{2,3}\.\d{2})")]
-WTI_RE = [re.compile(r"(?:WTI|West Texas Intermediate|U\.?S\.? crude)\b" + NOT_BRENT + r"{0,160}?settl\w*" + NOT_BRENT + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})"),
-          re.compile(r"(?:WTI|West Texas Intermediate)\b" + NOT_BRENT + r"{0,120}?\b(?:at|to) \$(\d{2,3}\.\d{2})")]
+# 取引中・時間外の値の語。この語をはさむ価格は終値として拾わない（Codex の指摘・PR #172）
+LIVE = r"trad|after-hours|post-settlement|post settlement|last seen|intraday|was at|were at"
+NOT_WTI = r"(?:(?!WTI|West Texas|U\.?S\.? crude|" + LIVE + r").)"
+NOT_BRENT = r"(?:(?!Brent|" + LIVE + r").)"
+BRENT_RE = [re.compile(r"Brent\b" + NOT_WTI + r"{0,160}?settl\w*" + NOT_WTI + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})", re.I),
+            re.compile(r"Brent\b" + NOT_WTI + r"{0,60}?\bsettled (?:at )?\$(\d{2,3}\.\d{2})", re.I)]
+# WTI は「settle」の語を WTI の価格に結びつけて探す
+WTI_RE = [re.compile(r"(?:WTI|West Texas Intermediate|U\.?S\.? crude)\b" + NOT_BRENT + r"{0,160}?settl\w*" + NOT_BRENT + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})", re.I)]
+# Reuters は「Brent futures settled … at $X, while US WTI crude gained 49 cents … to $Y」と書く（WTI の側に settle が無い）。
+# この形だけは、ブレントの清算の文の直後（250字まで）に、値動きの動詞＋「to $」で続く WTI を拾う
+WTI_AFTER_BRENT = re.compile(
+    r"^" + NOT_BRENT + r"{0,60}?(?:WTI|West Texas Intermediate)\b" + NOT_BRENT + r"{0,100}?"
+    r"\b(?:rose|gained|added|climbed|rallied|advanced|jumped|fell|lost|dropped|declined|slipped|eased|shed|slid)\b"
+    + NOT_BRENT + r"{0,60}?\bto \$(\d{2,3}\.\d{2})", re.I)
 
 
 def eastern(day, hour, minute=0):
@@ -225,12 +233,30 @@ def family_of(source, url, text):
 
 
 def first_match(patterns, text, lo, hi):
+    """(値, 原文の前後, 一致の終わりの位置)。"""
     for pat in patterns:
         for m in pat.finditer(text):
             v = float(m.group(1))
             if lo <= v <= hi:
-                return v, text[max(0, m.start() - 20):m.end() + 20]
-    return None, None
+                return v, text[max(0, m.start() - 20):m.end() + 20], m.end()
+    return None, None, None
+
+
+def extract_closes(text, prev):
+    """本文から {"ブレント": 値, "WTI": 値} と原文の前後を読む。"""
+    vals, snips = {}, {}
+    bounds = {}
+    for label in ("ブレント", "WTI"):
+        base = prev.get(label)
+        bounds[label] = (base * 0.85, base * 1.15) if base else (20, 300)
+    vals["ブレント"], snips["ブレント"], b_end = first_match(BRENT_RE, text, *bounds["ブレント"])
+    vals["WTI"], snips["WTI"], _ = first_match(WTI_RE, text, *bounds["WTI"])
+    if vals["WTI"] is None and b_end is not None:
+        m = WTI_AFTER_BRENT.search(text[b_end:b_end + 250])
+        if m and bounds["WTI"][0] <= float(m.group(1)) <= bounds["WTI"][1]:
+            vals["WTI"] = float(m.group(1))
+            snips["WTI"] = text[max(0, b_end - 60):b_end + m.end() + 20]
+    return vals, snips
 
 
 def wire_closes(day, prev, max_fetch=14):
@@ -281,10 +307,9 @@ def wire_closes(day, prev, max_fetch=14):
             continue
         row = {"family": family_of(it["source"], url, text), "source": it["source"], "title": it["title"],
                "link": url, "published": it["published"], "snippet": {}}
-        for label, pats in (("ブレント", BRENT_RE), ("WTI", WTI_RE)):
-            base = prev.get(label)
-            lo, hi = (base * 0.85, base * 1.15) if base else (20, 300)
-            row[label], row["snippet"][label] = first_match(pats, text, lo, hi)
+        vals, snips = extract_closes(text, prev)
+        row.update(vals)
+        row["snippet"] = snips
         if row["ブレント"] or row["WTI"]:
             found.append(row)
     for row in found:

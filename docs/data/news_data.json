@@ -1,7 +1,37 @@
 {
-  "updated": "2026年11月11日 07:06 日本時間JST",
+  "updated": "2026年11月12日 07:10 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-ukmto202-1112",
+      "title": "UKMTO警報202：ホルムズ海峡でタンカーの事案——被害・船名・攻撃主体は公式の本文になし",
+      "body": "Anadolu（11/11）は、UKMTOが、ホルムズ海峡でタンカーが関わる事案の報告を受けたと伝え、警報はタンカーを特定せず、事案の性質や発生時期も示さなかったと書く（原文は「The warning did not identify the tanker or specify the nature of the incident or when it occurred.」）。UKMTO公式の警報202（11/11 12:07 JST発行）の本文も、乗組員の状況・被害・環境への影響は報告時点で不明とする（原文は「unknown at the time of this report」）。警報201との関係は不明。",
+      "sourceLabel": "Anadolu（11/11）",
+      "date": "2026年11月11日（現地）",
+      "label": "海上",
+      "url": "https://aa.com.tr/en/middle-east/tanker-involved-in-incident-in-strait-of-hormuz-uk-maritime-agency/4119614",
+      "isLatest": true
+    },
+    {
+      "id": "latest-didamar-1112",
+      "title": "イラン、オマーンのDidamar島の航行システムを攻撃と報道——情報筋の話、損害は不明",
+      "body": "Arab News（11/11）は、UKMTOがホルムズ海峡のタンカーに関する事案の報告を受けたと伝え、同じ記事で、情報筋3人の話として、イランがオマーンのDidamar島の船舶の航行システムを攻撃したと書く（原文は「Iran has attacked ship navigation systems on the Omani island of Didamar」）。イラン国営メディアは火曜（11/10）、IRGCが攻撃を行ったと伝えた。ロイターは、航行システムが破壊されたかを独立して確認できなかった（原文は「Reuters could not determine independently if any navigation systems were destroyed」）。",
+      "sourceLabel": "Arab News（11/11）",
+      "date": "2026年11月11日（現地）",
+      "label": "攻撃",
+      "url": "https://www.arabnews.com/middle-east/ukmto-reports-tanker-incident-in-strait-of-hormuz-3011095",
+      "isLatest": false
+    },
+    {
+      "id": "latest-oil-close-1112",
+      "title": "原油の11/10終値が確定——ブレント1月物91.49ドル・WTI12月物86.04ドル",
+      "body": "Xinhua（The Star掲載・11/11公開）は、11/10のニューヨーク市場で、WTI12月物が86.04ドル（原文は「to settle at 86.04 U.S. dollars a barrel on the New York Mercantile Exchange」）、ブレント1月物が91.49ドル（原文は「to settle at 91.49 dollars a barrel on the London ICE Futures Exchange」）で引けたと伝える。Yahoo Finance（NYMEXのデータ）の終値（WTI12月物86.04ドル〈−0.81ドル〉・ブレント1月物91.49ドル〈−1.08ドル〉）と一致した。11/11（水）は取引中の値しかなく、終値は未確定。",
+      "sourceLabel": "Xinhua（The Star掲載・11/11）",
+      "date": "2026年11月10日（米国時間）",
+      "label": "原油・市場",
+      "url": "https://www.thestar.com.my/news/world/2026/11/11/crude-futures-settle-lower",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto201-1111",
       "title": "UKMTO警報201：リマ北東19海里でタンカーが飛翔体に被弾——ADNOC Logistics & Servicesの船舶も攻撃で損傷、両者の関係は不明",
@@ -10,40 +40,23 @@
       "date": "2026年11月10日（現地）",
       "label": "海上",
       "url": "https://gcaptain.com/adnoc-vessel-damaged-in-gulf-attack-as-ukmto-reports-fresh-tanker-strike-near-hormuz/",
-      "isLatest": true
-    },
-    {
-      "id": "latest-irgc3-1111",
-      "title": "IRGC「タンカー3隻が炎上・機雷接触」と主張——船名なし、独立した確認なし",
-      "body": "Arab News（11/10）は、IRGCが、許可されていない航路にいたタンカー2隻が大きな爆発のあと停止して燃え続けていると述べ（原文は「brought to a halt following massive explosions and are left burning」）、3隻目が午後に機雷に触れて爆発したと主張した（原文は「exploded this afternoon after striking a naval mine」）と伝える。船名・国籍は示されず、Arab Newsは、報じられた個別の事案がイランの挙げた船かは不明と書く。同じ記事は、UKMTOがタンカーの被弾を報告し、ADNOCが同社の船舶の損傷を確認したことも伝える。",
-      "sourceLabel": "Arab News（11/10）",
-      "date": "2026年11月10日（現地）",
-      "label": "海上",
-      "url": "https://www.arabnews.com/middle-east/tanker-struck-by-unknown-projectile-off-oman-ukmto-says-3010988",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-close-1111",
-      "title": "原油の11/9終値が確定——ブレント1月物92.57ドル・WTI12月物86.85ドル、WTIは前週末比3.98ドル安",
-      "body": "共同通信（OANDA配信・11/10 06:51）は、11/9のニューヨーク市場で、WTI12月物が前週末比3.98ドル安の1バレル＝86.85ドルで取引を終えたと伝える。Yahoo Finance（NYMEXのデータ）の終値は、WTI12月物86.85ドル（−3.98ドル）、ブレント1月物92.57ドル（−5.75ドル）で、ブレントは24/7 Wall St.（11/10公開）も同じ値を伝える。11/10（火）の終値は未確定で、2出典を確認できていない。",
-      "sourceLabel": "共同通信（OANDA配信・11/10）",
-      "date": "2026年11月9日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.oanda.jp/lab-education/market_news/kn_2026111001000886/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-centcom147-1110",
-      "title": "CENTCOM、封鎖で商船147隻の進路を変更・5隻を航行不能に——警報199・200は別々のタンカーの事案とRivieraが伝える",
-      "body": "Riviera（11/9）は、CENTCOMが7月からの封鎖の取り締まりで147隻の商船の進路を変えさせ、従わなかった5隻の商船を航行不能にしたと発表したと伝える（原文は「redirected 147 compliant commercial vessels」「disabled five merchant ships that refused to comply」）。10/31の144隻から増えたが、数えた時点は記事から分からない。同記事は、UKMTOが11/7に報告した2件のタンカー事案（ハサブ北約15海里での被弾と、ハサブ北西約8海里での火災）を別々の船として書き、M/V Hudaの攻撃位置（ホール・ファッカン東約18海里）は警報198と同じ位置だが、警報198には触れていない。",
-      "sourceLabel": "Riviera Maritime Media（11/9）",
-      "date": "2026年11月9日（現地）",
-      "label": "軍事",
-      "url": "https://www.rivieramm.com/news-content-hub/tankers-hit-in-hormuz-us-strikes-bulker-qeshm-island-launches-task-force-90512",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-didamar-1112",
+      "titleJa": "【Arab News】UKMTOがホルムズ海峡のタンカー事案を報告——イランがオマーンのDidamar島の航行システムを攻撃と情報筋が話す",
+      "titleEn": "Arab News (Nov 11): UKMTO reports tanker incident in Strait of Hormuz",
+      "title": "【Arab News】UKMTOがホルムズ海峡のタンカー事案を報告——イランがオマーンのDidamar島の航行システムを攻撃と情報筋が話す",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月11日（現地）",
+      "summary": "Arab Newsは、UKMTOがホルムズ海峡のタンカーに関する事案の報告を受けたと伝える。同じ記事は、情報筋3人の話として、イランがオマーンのDidamar島の船舶の航行システムを攻撃したと書き、イラン国営メディアはIRGCが攻撃を行ったと伝えた。情報筋は損害の評価を示さず、ロイターは破壊の有無を独立して確認できなかった。",
+      "url": "https://www.arabnews.com/middle-east/ukmto-reports-tanker-incident-in-strait-of-hormuz-3011095",
+      "isLatest": true
+    },
     {
       "id": "osint-arabnews-irgc3-1111",
       "titleJa": "【Arab News】IRGC「タンカー3隻が炎上・機雷接触」と主張——UKMTOはリマ沖のタンカー被弾を報告、ADNOCは船舶の損傷を確認",
@@ -55,7 +68,7 @@
       "date": "2026年11月10日（現地）",
       "summary": "Arab Newsは、UKMTOが、オマーン沖でタンカーが未特定の飛翔体に被弾したと報告したと伝える。ADNOCは、同社の船舶がUAEの領海での攻撃で損傷したと発表した。IRGCは、タンカー2隻が爆発のあと燃え続け、3隻目が機雷に触れて爆発したと主張したが、船名・国籍は示されず、記事は主張した船との同一性は不明と書く。",
       "url": "https://www.arabnews.com/middle-east/tanker-struck-by-unknown-projectile-off-oman-ukmto-says-3010988",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-gulfnews-0-1109",
@@ -2194,6 +2207,41 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月12日",
+      "items": [
+        {
+          "id": "latest-irgc3-1111",
+          "title": "IRGC「タンカー3隻が炎上・機雷接触」と主張——船名なし、独立した確認なし",
+          "body": "Arab News（11/10）は、IRGCが、許可されていない航路にいたタンカー2隻が大きな爆発のあと停止して燃え続けていると述べ（原文は「brought to a halt following massive explosions and are left burning」）、3隻目が午後に機雷に触れて爆発したと主張した（原文は「exploded this afternoon after striking a naval mine」）と伝える。船名・国籍は示されず、Arab Newsは、報じられた個別の事案がイランの挙げた船かは不明と書く。同じ記事は、UKMTOがタンカーの被弾を報告し、ADNOCが同社の船舶の損傷を確認したことも伝える。",
+          "sourceLabel": "Arab News（11/10）",
+          "date": "2026年11月10日（現地）",
+          "label": "海上",
+          "url": "https://www.arabnews.com/middle-east/tanker-struck-by-unknown-projectile-off-oman-ukmto-says-3010988",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-close-1111",
+          "title": "原油の11/9終値が確定——ブレント1月物92.57ドル・WTI12月物86.85ドル、WTIは前週末比3.98ドル安",
+          "body": "共同通信（OANDA配信・11/10 06:51）は、11/9のニューヨーク市場で、WTI12月物が前週末比3.98ドル安の1バレル＝86.85ドルで取引を終えたと伝える。Yahoo Finance（NYMEXのデータ）の終値は、WTI12月物86.85ドル（−3.98ドル）、ブレント1月物92.57ドル（−5.75ドル）で、ブレントは24/7 Wall St.（11/10公開）も同じ値を伝える。11/10（火）の終値は未確定で、2出典を確認できていない。",
+          "sourceLabel": "共同通信（OANDA配信・11/10）",
+          "date": "2026年11月9日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.oanda.jp/lab-education/market_news/kn_2026111001000886/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-centcom147-1110",
+          "title": "CENTCOM、封鎖で商船147隻の進路を変更・5隻を航行不能に——警報199・200は別々のタンカーの事案とRivieraが伝える",
+          "body": "Riviera（11/9）は、CENTCOMが7月からの封鎖の取り締まりで147隻の商船の進路を変えさせ、従わなかった5隻の商船を航行不能にしたと発表したと伝える（原文は「redirected 147 compliant commercial vessels」「disabled five merchant ships that refused to comply」）。10/31の144隻から増えたが、数えた時点は記事から分からない。同記事は、UKMTOが11/7に報告した2件のタンカー事案（ハサブ北約15海里での被弾と、ハサブ北西約8海里での火災）を別々の船として書き、M/V Hudaの攻撃位置（ホール・ファッカン東約18海里）は警報198と同じ位置だが、警報198には触れていない。",
+          "sourceLabel": "Riviera Maritime Media（11/9）",
+          "date": "2026年11月9日（現地）",
+          "label": "軍事",
+          "url": "https://www.rivieramm.com/news-content-hub/tankers-hit-in-hormuz-us-strikes-bulker-qeshm-island-launches-task-force-90512",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月11日",
       "items": [

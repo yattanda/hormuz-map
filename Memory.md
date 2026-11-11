@@ -41,6 +41,8 @@
 | AIS 通航船舶数 | 実測は見送り（2026-09-05）。AI 推計のみ、出自を明示。`update_ais.yml` は `if: false` のまま | `hormuz-data-/tools/README.md`・`tools/history/memory-ais-2026-09.md` |
 | 日次更新の検証 | `tools/validate_daily.py`（読み取り専用・終了コードで判定。`--check-urls` で URL を叩く） | `tools/history/memory-daily-ops-migration-2026-09.md` |
 | UKMTO の警報 | `tools/fetch_ukmto.py`（公式の一覧ページが読む公開 API） | `/daily-site-update` |
+| 直近の記事（索引の遅れ対策） | `tools/fetch_news_feeds.py`（Google ニュース・Bing ニュース・媒体の RSS。Google の転送用 URL を元記事に戻す） | `/daily-site-update` |
+| 原油の終値 | `tools/fetch_oil_settle.py`（Yahoo の NYMEX データ。当日分が未確定なら、清算後の報道を RSS で探して系統ごとに判定） | `/daily-site-update`・`tools/daily-verify-prompts.md` の V2 |
 | 指示ファイルの検証 | `tools/check_instructions.py`（`CLAUDE.md`・`.claude/rules/`・`Memory.md` の分割を点検） | `tools/claude-md-slim-design.md` |
 
 ---

@@ -29,6 +29,25 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 以下の観測点を**毎回すべて**確認する。
 「変化がなさそうだから省略する」をしない。変化がないこと自体が記載事項になるため。
 
+### 最初に RSS で直近の記事を集める（省略禁止。2026-11-12〜）
+
+**WebSearch より先に、次を Bash で実行する**（読み取り専用。1分半ほど。V1〜V3 の起動と同じメッセージで走らせてよい）。
+
+```bash
+python tools/fetch_news_feeds.py --hours 30
+```
+
+- `--hours` は「前回の更新から今まで＋6時間」。ふつうは 30。1日空いたら 54、月曜の朝（金曜の更新から）は 78
+- 出力は新しい順に「配信時刻（JST）｜媒体｜見出し」と元記事の URL（Google ニュース・Bing ニュース・Al Jazeera・gCaptain・BBC・Arab News・The National などの RSS）。
+  **前回の更新以降の行に、下の検索で出なかった出来事が無いかを必ず見る**
+- 見出しは媒体の言い方で、事実の確認ではない。**本文に使う記事は URL を WebFetch で開いて原文を読む**（下の「URL の扱い」「二次情報の裏取り」は変わらない）
+- 足りないときは `--query "語"`（英語）・`--query-ja "語"`（日本語）で足す。ひとつの話題だけなら `--only-query "語"`
+- 「（Google の転送用 URL）」と出た行は、`python tools/fetch_news_feeds.py --resolve-url "その URL"` で元記事の URL に戻してから使う。転送用 URL を本文に書かない
+- 終了コード 2（どこからも取れなかった）のときは、そのことを報告に書き、WebSearch だけで進める
+- **WebSearch に前回以降の記事が出ないことを「報道なし」と判断しない**。RSS で確かめてから「変化なし」と書く
+- 【経緯】2026-11-12 の日次で、WebSearch に 11/11〜12 の記事がほとんど出なかった（索引が数時間〜1日遅れる）。
+  同じ朝に RSS では直近24時間の記事が400件以上取れた（Google ニュースの RSS は配信から数分で載る）
+
 ### 毎日必ず叩く検索クエリ
 
 | # | クエリ | 反映先 |
@@ -72,6 +91,12 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
   - 同じ通信社の配信先どうし（Yahoo の Reuters 記事と別サイトの Reuters 記事）は1出典と数える。
     Reuters 系・Bloomberg 系（Rigzone の「by Bloomberg」）・Newsquawk の「CRUDE WRAP」・investingLive は互いに独立
   - 2出典で確定できるまで、V2 に `SendMessage` で検索を続けさせる。据え置くのは、数値の検索まで試しても出ないときだけ
+  - **朝の日次の当日分は `python tools/fetch_oil_settle.py` の【判定】を使う（2026-11-12〜）**：Yahoo の日足は日本時間 13〜14時まで確定せず、
+    朝の値は清算値ではない（11/11 の WTI は清算 86.53 に対し、朝の Yahoo は 86.42）。スクリプトは「未確定」の日があると、清算後に配信された報道を
+    Google ニュースの RSS で探し、本文の英語の文から終値を読んで、通信社の系統ごとに並べる。
+    【判定】が「2系統以上で一致 → 終値として使える」なら、そのうち2系統の URL を WebFetch で開いて同じ文と限月を確かめ、その日の終値として書く。
+    「確定できず」のときだけ、下の数値の検索などで2出典目を探す
+    - 2026-11-12 07:2x JST の実測：11/11 のブレント1月物 92.76（Reuters 系＝Yahoo Finance、Bloomberg 系＝Rigzone）、WTI 12月物 86.53（同2系統＋Dow Jones 系の見出し）を判定できた
   - **出典の候補を広げた（2026-10-27〜）**：報道は上の4系統に、共同通信（地方紙の配信）・Xinhua（The Star・Bernama の配信）・AP・Dow Jones・CNBC・
     みんかぶ・日経・時事を加える。市場データとして **`python tools/fetch_oil_settle.py`**（Yahoo Finance 経由の NYMEX のデータ・読み取り専用）を使い、
     「終値」と出た値は報道とは独立した1出典と数える（出典名は「Yahoo Finance（NYMEX のデータ）」）
@@ -124,7 +149,7 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 ### 2. 情報収集
 
-上記「情報収集（省略禁止）」の検索クエリ7点をすべて実行する。
+上記「情報収集（省略禁止）」の RSS の収集（`python tools/fetch_news_feeds.py --hours 30`）を実行してから、検索クエリ9点をすべて実行する。
 
 ### 2.4 前回の未解消を先に片づける（省略禁止。2026-10-10〜）
 
@@ -153,7 +178,8 @@ date -u -d '+9 hours' '+%Y-%m-%d %H:%M JST'
 
 ### 2.5 裏取り（サブエージェント3体・省略禁止。2026-10-06〜）
 
-**3本を起動する同じメッセージで、親セッションが `python tools/fetch_ukmto.py --days 3` を実行する**（V1 の報告と突き合わせる公式の原文）。
+**3本を起動する同じメッセージで、親セッションが `python tools/fetch_ukmto.py --days 3` と `python tools/fetch_news_feeds.py --hours 30` を実行する**（V1 の報告と突き合わせる公式の原文と、索引の遅れを補う直近の記事）。
+V1〜V3 の指示文の `{HOURS}` には、RSS の `--hours` と同じ数を入れる。
 
 ファイルを編集する前に、`tools/daily-verify-prompts.md` の指示文 **V1・V2・V3 の3本を、1つのメッセージで同時に**
 Agent ツール（`subagent_type: general-purpose`）へ渡す。`{…}` だけをその日の値に置き換え、文面は変えない。

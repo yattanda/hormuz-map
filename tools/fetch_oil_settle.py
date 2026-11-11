@@ -35,10 +35,16 @@ tools/daily-verify-prompts.md の V2）で、報道とは独立した2つ目の�
 """
 import argparse
 import datetime
+import html
 import json
+import os
+import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 API_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?{span}&interval=1d"
 PAGE_URL = "https://finance.yahoo.com/quote/{symbol}/history/"
@@ -154,12 +160,160 @@ def fetch(symbol, days, on_date=None):
             "current_session": current.isoformat()}
 
 
+# ---- 報道から当日の終値を拾う（2026-11-12 追加） ----------------------------------------------
+# Yahoo の日足は米国東部 0時（日本時間 13〜14時）まで確定しない。朝の日次の時点（米国東部 17〜18時）の値は
+# 清算値ではなく、休場直前の最終取引値（2026-11-12 実測：WTI 12月物は清算 86.53 に対し Yahoo 86.42、
+# ブレント1月物は清算 92.76 に対し Yahoo 92.63）。そこで、清算の後に配信された報道を Google ニュースの RSS で探し
+# （WebSearch の索引は数時間遅れるので使わない）、本文から清算値を読んで系統ごとに並べる。
+
+WIRE_QUERIES = ["oil settle", "Brent settled", "\"Settles at\" WTI", "oil prices Brent WTI", "crude oil futures",
+                "Rigzone oil", "Reuters oil prices"]
+# 本文が読めて、系統が分かる媒体を先に開く（WSJ・Barron's・MarketWatch は 401 で開けない。2026-11-12 実測）
+PREFERRED = re.compile(r"rigzone|yahoo|reuters|bloomberg|associated press|\bap\b|cnbc|investinglive|nasdaq|"
+                       r"morningstar|kyodo|xinhua|the star|bernama|newsquawk", re.I)
+PAYWALL = re.compile(r"\bwsj\b|wall street journal|barron|marketwatch|financial times|\bft\b", re.I)
+PRICE_WORDS = re.compile(r"settle|oil (?:price|rise|rose|fall|fell|gain|climb|slip|drop|jump|edge|rebound)|crude (?:price|rise|fall)", re.I)
+OIL_WORDS = re.compile(r"\boil\b|crude|brent|wti", re.I)
+DJ_TITLE = re.compile(r"(\w+) WTI Crude Oil Contract Closes (Up|Down) \$([\d.]+).{0,40}?Settles at \$(\d{2,3}\.\d{2})", re.I)
+NOT_WTI = r"(?:(?!WTI|West Texas|U\.?S\.? crude).)"
+NOT_BRENT = r"(?:(?!Brent).)"
+BRENT_RE = [re.compile(r"Brent\b" + NOT_WTI + r"{0,160}?settl\w*" + NOT_WTI + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})"),
+            re.compile(r"Brent\b" + NOT_WTI + r"{0,60}?\bsettled (?:at )?\$(\d{2,3}\.\d{2})")]
+WTI_RE = [re.compile(r"(?:WTI|West Texas Intermediate|U\.?S\.? crude)\b" + NOT_BRENT + r"{0,160}?settl\w*" + NOT_BRENT + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})"),
+          re.compile(r"(?:WTI|West Texas Intermediate)\b" + NOT_BRENT + r"{0,120}?\b(?:at|to) \$(\d{2,3}\.\d{2})")]
+
+
+def eastern(day, hour, minute=0):
+    """米国東部のその日時を UTC にする。"""
+    naive = datetime.datetime.combine(day, datetime.time(hour, minute), datetime.timezone.utc)
+    return naive - us_eastern_offset(naive + datetime.timedelta(hours=5))
+
+
+def page_text(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=20) as res:
+        raw = res.read().decode("utf-8", "replace")
+    raw = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
+    text = html.unescape(re.sub(r"<[^>]+>", " ", raw))
+    return re.sub(r"\s+", " ", text)
+
+
+def family_of(source, url, text):
+    """通信社の系統（同じ系統どうしは1出典と数える。スキル「二次情報の裏取り」）。"""
+    host = urllib.parse.urlparse(url).netloc.lower()
+    head = text[:6000]
+    if "reuters.com" in host or "(Reuters)" in head or "Reuters" in (source or ""):
+        return "Reuters 系"
+    if "bloomberg" in host or "Bloomberg" in head:
+        return "Bloomberg 系"
+    if "Associated Press" in head or "(AP)" in head or "apnews.com" in host:
+        return "AP 系"
+    if "Dow Jones" in head or "marketwatch" in host or "wsj.com" in host:
+        return "Dow Jones 系"
+    if "investinglive" in host:
+        return "investingLive"
+    if "newsquawk" in host:
+        return "Newsquawk"
+    if "cnbc.com" in host:
+        return "CNBC"
+    return "{}（系統は本文で確かめる）".format(source or host)
+
+
+def first_match(patterns, text, lo, hi):
+    for pat in patterns:
+        for m in pat.finditer(text):
+            v = float(m.group(1))
+            if lo <= v <= hi:
+                return v, text[max(0, m.start() - 20):m.end() + 20]
+    return None, None
+
+
+def wire_closes(day, prev, max_fetch=14):
+    """day（米国時間の取引日）の清算後に配信された報道から、ブレント・WTI の終値の候補を集める。
+    prev：{"ブレント": 前の取引日の終値, "WTI": …}（値の範囲の目安に使う）。"""
+    import fetch_news_feeds as nf  # 同じ tools/ にある
+
+    start, end = eastern(day, 14, 30), eastern(day + datetime.timedelta(days=1), 14, 0)
+    seen, cands, errors = set(), [], []
+    for q in WIRE_QUERIES:
+        try:
+            for it in nf.google_news(q, "en", "2d"):
+                if not (start <= it["published"] < end) or not OIL_WORDS.search(it["title"]):
+                    continue
+                key = nf.norm_title(it["title"])
+                if key not in seen:
+                    seen.add(key)
+                    cands.append(it)
+        except (urllib.error.URLError, OSError, ValueError) as e:
+            errors.append("Google ニュース「{}」：{}".format(q, e))
+
+    found = []
+    # Dow Jones の清算速報の見出し（MarketScreener などに配信）は、見出しだけで WTI の清算値が分かる
+    for it in cands:
+        m = DJ_TITLE.search(it["title"])
+        if m:
+            found.append({"family": "Dow Jones 系", "source": it["source"], "title": it["title"], "link": it["link"],
+                          "published": it["published"], "WTI": float(m.group(4)), "ブレント": None,
+                          "snippet": {"WTI": it["title"]}, "from_title": True})
+    fetched = 0
+    def priority(it):
+        src = it.get("source") or ""
+        return (0 if PREFERRED.search(src) else 1, 0 if PRICE_WORDS.search(it["title"]) else 1, it["published"])
+
+    for it in sorted(cands, key=priority):
+        if PAYWALL.search(it.get("source") or ""):
+            continue
+        if fetched >= max_fetch or DJ_TITLE.search(it["title"]):
+            continue
+        fetched += 1
+        try:
+            url = nf.resolve_google(it["link"])
+            text = page_text(url)
+        except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError, json.JSONDecodeError) as e:
+            errors.append("{}：{}".format(it["title"][:60], e))
+            continue
+        if not re.search(r"settl", text, re.I):
+            continue
+        row = {"family": family_of(it["source"], url, text), "source": it["source"], "title": it["title"],
+               "link": url, "published": it["published"], "snippet": {}}
+        for label, pats in (("ブレント", BRENT_RE), ("WTI", WTI_RE)):
+            base = prev.get(label)
+            lo, hi = (base * 0.85, base * 1.15) if base else (20, 300)
+            row[label], row["snippet"][label] = first_match(pats, text, lo, hi)
+        if row["ブレント"] or row["WTI"]:
+            found.append(row)
+    for row in found:
+        if row.get("from_title"):
+            try:
+                row["link"] = nf.resolve_google(row["link"])
+            except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError, json.JSONDecodeError):
+                pass
+    return found, errors
+
+
+def judge(found, label):
+    """値ごとに系統を数え、2系統以上で一致した値を返す（無ければ None）。"""
+    by_value = {}
+    for row in found:
+        v = row.get(label)
+        if v is not None:
+            fam = row["family"]
+            if "系統は本文で確かめる" in fam:
+                fam = "その他：" + fam
+            by_value.setdefault(v, set()).add(fam)
+    named = {v: {f for f in fams if not f.startswith("その他：")} for v, fams in by_value.items()}
+    agreed = [v for v, fams in named.items() if len(fams) >= 2]
+    return (agreed[0] if len(agreed) == 1 else None), by_value
+
+
 def main():
     ap = argparse.ArgumentParser(description="ブレント・WTI の限月ごとの終値を市場データから読む（読み取り専用）")
     ap.add_argument("--days", type=int, default=7, help="直近◯取引日を出す（既定 7）")
     ap.add_argument("--date", help="取引日（米国時間）を YYYY-MM-DD で指定。その日の終値だけ出す")
     ap.add_argument("--month", help="限月を YYYY-MM で指定（既定：その日の期近と次の限月）")
     ap.add_argument("--json", action="store_true", help="JSON で出す")
+    ap.add_argument("--no-wire", action="store_true",
+                    help="「未確定」の取引日があっても、報道から終値を探さない")
     args = ap.parse_args()
 
     if hasattr(sys.stdout, "reconfigure"):
@@ -205,6 +359,50 @@ def main():
                 print("  {}  {:.2f}{}  {}".format(r["date"], r["close"], chg, state))
         for f in failed:
             print("\n取得できなかった：" + f, file=sys.stderr)
+
+    # 最新の取引日が「未確定」なら、報道から清算値を探す（朝の日次はほぼ毎回これになる）
+    if not args.no_wire and not args.month and not args.json:
+        fronts = [it for it in out if it["front"] and it["rows"]]
+        pending = sorted({r["date"] for it in fronts for r in it["rows"] if not r["final"]})
+        now = datetime.datetime.now(datetime.timezone.utc)
+        for d in pending:
+            day = datetime.date.fromisoformat(d)
+            if now < eastern(day, 15, 0):
+                print("\n{} はまだ清算前（米国東部 14:30）。報道を探さない".format(d))
+                continue
+            prev = {}
+            for it in fronts:
+                finals = [r for r in it["rows"] if r["final"] and r["date"] < d]
+                if finals:
+                    prev[it["product"]] = finals[-1]["close"]
+            found, errs = wire_closes(day, prev)
+            print("\n■■ {}（米国時間）の終値を報道から探した結果（Google ニュースの RSS・清算後の配信だけ）".format(d))
+            print("   Yahoo の同じ日の値は「未確定」なので使わない。下の値は本文の文で確かめてから使う")
+            for row in found:
+                t = row["published"].astimezone(datetime.timezone(datetime.timedelta(hours=9))).strftime("%m/%d %H:%M JST")
+                vals = "　".join("{} {}".format(k, "{:.2f}".format(row[k]) if row[k] else "—") for k in ("ブレント", "WTI"))
+                print("  ・{}｜{}｜{}｜{}".format(t, row["family"], row["source"], vals))
+                print("    {}".format(row["link"]))
+                for k, sn in row["snippet"].items():
+                    if sn:
+                        print("    原文（{}）：…{}…".format(k, sn))
+            if not found:
+                print("  候補なし（清算後の配信が RSS にまだ無い）")
+            for label in ("ブレント", "WTI"):
+                fronts_l = [it for it in fronts if it["product"] == label]
+                contract = fronts_l[0]["contract"] if fronts_l else "限月不明"
+                value, by_value = judge(found, label)
+                detail = "、".join("{:.2f}＝{}".format(v, "・".join(sorted(f))) for v, f in sorted(by_value.items()))
+                base = prev.get(label)
+                chg = "" if (value is None or base is None) else "（前日比 {:+.2f}。前の終値 {:.2f} は Yahoo で確定済み）".format(value - base, base)
+                if value is not None:
+                    print("  【判定】{} {}：{:.2f}{}　2系統以上で一致 → 終値として使える（{}）".format(label, contract, value, chg, detail))
+                else:
+                    print("  【判定】{} {}：確定できず（{}）→ 据え置き。WebSearch で数値を引用符で囲んで2出典目を探す".format(
+                        label, contract, detail or "候補なし"))
+                print("          限月は報道の本文（「January」「December」など）と照らし合わせる")
+            for e in errs:
+                print("  取得できなかった：" + e, file=sys.stderr)
 
     return 2 if failed else 0
 

@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月12日 07:32 日本時間JST",
+  "updated": "2026年11月13日 07:19 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto202-1112",
-      "title": "UKMTO警報202：ホルムズ海峡でタンカーの事案——被害・船名・攻撃主体は公式の本文になし",
-      "body": "Anadolu（11/11）は、UKMTOが、ホルムズ海峡でタンカーが関わる事案の報告を受けたと伝え、警報はタンカーを特定せず、事案の性質や発生時期も示さなかったと書く（原文は「The warning did not identify the tanker or specify the nature of the incident or when it occurred.」）。UKMTO公式の警報202（11/11 12:07 JST発行）の本文も、乗組員の状況・被害・環境への影響は報告時点で不明とする（原文は「unknown at the time of this report」）。警報201との関係は不明。",
-      "sourceLabel": "Anadolu（11/11）",
+      "id": "latest-ukmto204-1113",
+      "title": "UKMTO警報204：ラアス・アル・ハイマ北西でタンカーが機関室に被弾——乗組員は全員退避、gCaptainは船名をMT Dominica Prosperityと伝える",
+      "body": "UKMTO公式の警報204（11/12 22:45 JST発行）は、UAEのラアス・アル・ハイマの北西14海里で、タンカーが機関室に未特定の飛翔体を受け、死傷者はなく乗組員は全員退避し、消火活動が続いていると伝える。公式の発生時刻は11/11 18:00 UTC。gCaptain（11/12）は、運航会社が韓国のSinokor Maritimeとされる MT Dominica Prosperity で、乗組員22人（うちインド国籍19人）が避難し全員無事と書く（損傷の程度と環境への影響は不明）。同紙は、直近4件の攻撃の主体はUKMTOの警報で個別に特定されていないと伝える。",
+      "sourceLabel": "gCaptain（11/12）・UKMTO公式",
       "date": "2026年11月11日（現地）",
       "label": "海上",
-      "url": "https://aa.com.tr/en/middle-east/tanker-involved-in-incident-in-strait-of-hormuz-uk-maritime-agency/4119614",
+      "url": "https://gcaptain.com/tanker-ablaze-off-uae-as-more-attacks-rattle-gulf-shipping/",
       "isLatest": true
     },
     {
-      "id": "latest-didamar-1112",
-      "title": "イラン、オマーンのDidamar島の航行システムを攻撃と報道——情報筋の話、損害は不明",
-      "body": "Arab News（11/11）は、UKMTOがホルムズ海峡のタンカーに関する事案の報告を受けたと伝え、同じ記事で、情報筋3人の話として、イランがオマーンのDidamar島の船舶の航行システムを攻撃したと書く（原文は「Iran has attacked ship navigation systems on the Omani island of Didamar」）。イラン国営メディアは火曜（11/10）、IRGCが攻撃を行ったと伝えた。ロイターは、航行システムが破壊されたかを独立して確認できなかった（原文は「Reuters could not determine independently if any navigation systems were destroyed」）。",
-      "sourceLabel": "Arab News（11/11）",
-      "date": "2026年11月11日（現地）",
+      "id": "latest-houthi-saudi-1113",
+      "title": "フーシ派「サウジの東西パイプラインのポンプ場・ヤンブー・リヤドを攻撃」と主張——連合軍は無人機2機の迎撃を発表、被害の報告なし",
+      "body": "Jerusalem Post（11/12）は、フーシ派が、サウジの東西パイプラインのポンプ場、紅海沿岸ヤンブーの石油施設、首都リヤドのアラムコの建物を攻撃したと主張したと伝える。フーシ派は攻撃の日を明らかにしていない。サウジ主導の連合軍は、同勢力が発射した無人機2機をリヤド地域と東部州で各1機、迎撃して破壊したと発表した。記事は被害を報じておらず、サウジ側は直ちにコメントしなかった。独立した確認はない。",
+      "sourceLabel": "Jerusalem Post（11/12）",
+      "date": "2026年11月12日（現地）",
       "label": "攻撃",
-      "url": "https://www.arabnews.com/middle-east/ukmto-reports-tanker-incident-in-strait-of-hormuz-3011095",
+      "url": "https://www.jpost.com/middle-east/article-914779",
       "isLatest": false
     },
     {
-      "id": "latest-oil-close-1112",
-      "title": "原油の11/10終値が確定——ブレント1月物91.49ドル・WTI12月物86.04ドル",
-      "body": "Xinhua（The Star掲載・11/11公開）は、11/10のニューヨーク市場で、WTI12月物が86.04ドル（原文は「to settle at 86.04 U.S. dollars a barrel on the New York Mercantile Exchange」）、ブレント1月物が91.49ドル（原文は「to settle at 91.49 dollars a barrel on the London ICE Futures Exchange」）で引けたと伝える。Yahoo Finance（NYMEXのデータ）の終値（WTI12月物86.04ドル〈−0.81ドル〉・ブレント1月物91.49ドル〈−1.08ドル〉）と一致した。11/11（水）は取引中の値しかなく、終値は未確定。",
-      "sourceLabel": "Xinhua（The Star掲載・11/11）",
-      "date": "2026年11月10日（米国時間）",
-      "label": "原油・市場",
-      "url": "https://www.thestar.com.my/news/world/2026/11/11/crude-futures-settle-lower",
-      "isLatest": false
-    },
-    {
-      "id": "latest-ukmto201-1111",
-      "title": "UKMTO警報201：リマ北東19海里でタンカーが飛翔体に被弾——ADNOC Logistics & Servicesの船舶も攻撃で損傷、両者の関係は不明",
-      "body": "gCaptain（11/10）は、UKMTOの警報201として、オマーン・リマの北東約19海里でタンカーが未特定の飛翔体に被弾し、乗組員は全員無事と伝える（原文は「approximately 19 nautical miles northeast of Lima, Oman」）。同記事は発生を11/10 13:38 UTCと書くが、UKMTO公式の本文に発生時刻はなく、一覧の日時欄は15:50 UTC。同じ記事は、ADNOC Logistics & Servicesが同社の船舶が11/10午後の攻撃で損傷したと確認したとも伝え（原文は「sustained damage in an attack in the Persian Gulf on the afternoon of November 10」）、両者が関連するかは「not immediately clear」と書く。船名・被害の程度・攻撃主体は公表されていない。",
-      "sourceLabel": "gCaptain（11/10）",
-      "date": "2026年11月10日（現地）",
+      "id": "latest-irgc4-1113",
+      "title": "イラン軍とIRGC「タンカー4隻が炎上・機雷接触」と主張——船名・国籍なし、独立した確認なし",
+      "body": "Arab News（11/12）は、イラン軍が木曜（11/12）、ホルムズ海峡でタンカー4隻が炎上したと発表したと伝える。IRGCは1組目の2隻が前夜に禁止された南側の航路で「事故」に遭い激しい爆発が起きたと説明し、積荷は合計400万バレル超とする。2組目の2隻は海峡の東で機雷に触れて炎上したとする。声明は船名も国籍も示していない（原文は「The statements did not specify the names or the nationalities of the tankers in question」）。同じ記事は、米軍が最近、海峡の機雷はすべて除去したと主張したとも書く。",
+      "sourceLabel": "Arab News（11/12）",
+      "date": "2026年11月12日（現地）",
       "label": "海上",
-      "url": "https://gcaptain.com/adnoc-vessel-damaged-in-gulf-attack-as-ukmto-reports-fresh-tanker-strike-near-hormuz/",
+      "url": "https://www.arabnews.com/middle-east/iran-says-four-tankers-on-fire-in-hormuz-3011491",
+      "isLatest": false
+    },
+    {
+      "id": "latest-trump-nodeal-1113",
+      "title": "トランプ氏「イランとの合意は必要ない」とSNSに投稿——バンス副大統領には国内の不正対策に集中するよう指示",
+      "body": "AP配信のABC News（11/12）は、トランプ氏が木曜（11/12）のSNS投稿で「We don't need a deal with Iran」「Those days have long since passed」と書き、バンス副大統領に不正対策の取り組みへ「complete and total attention」を向けるよう指示したと伝える。同記事は、トランプ氏が今週初めに戦争は「militarily is effectively over」だと述べたとも書く。イラン側の反応と、仲介の協議の扱いは、この記事からは分からない。",
+      "sourceLabel": "ABC News（AP配信・11/12）",
+      "date": "2026年11月12日（現地）",
+      "label": "外交",
+      "url": "https://abcnews.com/US/wireStory/trump-bluntly-tells-jd-vance-shift-focus-iran-138089310",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-irgc4-1113",
+      "titleJa": "【Arab News】イラン軍「ホルムズ海峡でタンカー4隻が炎上」と発表——船名・国籍は示されず",
+      "titleEn": "Arab News (Nov 12): Iran says four tankers on fire in Hormuz",
+      "title": "【Arab News】イラン軍「ホルムズ海峡でタンカー4隻が炎上」と発表——船名・国籍は示されず",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月12日（現地）",
+      "summary": "Arab Newsは、イラン軍が木曜、ホルムズ海峡でタンカー4隻が炎上したと発表したと伝える。IRGCは、禁止された南側の航路の2隻が「事故」で爆発し、積荷は合計400万バレル超だと説明し、別の2隻は海峡の東で機雷に触れたとした。声明は船名も国籍も示していない。同じ記事は、米軍が最近、機雷はすべて除去したと主張したとも書く。",
+      "url": "https://www.arabnews.com/middle-east/iran-says-four-tankers-on-fire-in-hormuz-3011491",
+      "isLatest": true
+    },
+    {
+      "id": "osint-jpost-houthi-1113",
+      "titleJa": "【Jerusalem Post】フーシ派がサウジの東西パイプラインのポンプ場・ヤンブー・リヤドを攻撃したと主張——連合軍は無人機2機を迎撃",
+      "titleEn": "Jerusalem Post (Nov 12): Houthis claim attacks on Saudi oil sites",
+      "title": "【Jerusalem Post】フーシ派がサウジの東西パイプラインのポンプ場・ヤンブー・リヤドを攻撃したと主張——連合軍は無人機2機を迎撃",
+      "country": "イスラエル",
+      "media": "Jerusalem Post",
+      "source": "Jerusalem Post",
+      "date": "2026年11月12日（現地）",
+      "summary": "Jerusalem Postは、フーシ派が、サウジの東西パイプラインのポンプ場、ヤンブーの石油施設、リヤドのアラムコの建物を攻撃したと主張したと伝える。攻撃の日は示されていない。サウジ主導の連合軍は無人機2機の迎撃を発表したが、記事は被害を報じておらず、サウジ側は直ちにコメントしなかった。",
+      "url": "https://www.jpost.com/middle-east/article-914779",
+      "isLatest": false
+    },
     {
       "id": "osint-arabnews-didamar-1112",
       "titleJa": "【Arab News】UKMTOがホルムズ海峡のタンカー事案を報告——イランがオマーンのDidamar島の航行システムを攻撃と情報筋が話す",
@@ -55,7 +81,7 @@
       "date": "2026年11月11日（現地）",
       "summary": "Arab Newsは、UKMTOがホルムズ海峡のタンカーに関する事案の報告を受けたと伝える。同じ記事は、情報筋3人の話として、イランがオマーンのDidamar島の船舶の航行システムを攻撃したと書き、イラン国営メディアはIRGCが攻撃を行ったと伝えた。情報筋は損害の評価を示さず、ロイターは破壊の有無を独立して確認できなかった。",
       "url": "https://www.arabnews.com/middle-east/ukmto-reports-tanker-incident-in-strait-of-hormuz-3011095",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-irgc3-1111",
@@ -2207,6 +2233,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月13日",
+      "items": [
+        {
+          "id": "latest-ukmto202-1112",
+          "title": "UKMTO警報202：ホルムズ海峡でタンカーの事案——被害・船名・攻撃主体は公式の本文になし",
+          "body": "Anadolu（11/11）は、UKMTOが、ホルムズ海峡でタンカーが関わる事案の報告を受けたと伝え、警報はタンカーを特定せず、事案の性質や発生時期も示さなかったと書く（原文は「The warning did not identify the tanker or specify the nature of the incident or when it occurred.」）。UKMTO公式の警報202（11/11 12:07 JST発行）の本文も、乗組員の状況・被害・環境への影響は報告時点で不明とする（原文は「unknown at the time of this report」）。警報201との関係は不明。",
+          "sourceLabel": "Anadolu（11/11）",
+          "date": "2026年11月11日（現地）",
+          "label": "海上",
+          "url": "https://aa.com.tr/en/middle-east/tanker-involved-in-incident-in-strait-of-hormuz-uk-maritime-agency/4119614",
+          "isLatest": false
+        },
+        {
+          "id": "latest-didamar-1112",
+          "title": "イラン、オマーンのDidamar島の航行システムを攻撃と報道——情報筋の話、損害は不明",
+          "body": "Arab News（11/11）は、UKMTOがホルムズ海峡のタンカーに関する事案の報告を受けたと伝え、同じ記事で、情報筋3人の話として、イランがオマーンのDidamar島の船舶の航行システムを攻撃したと書く（原文は「Iran has attacked ship navigation systems on the Omani island of Didamar」）。イラン国営メディアは火曜（11/10）、IRGCが攻撃を行ったと伝えた。ロイターは、航行システムが破壊されたかを独立して確認できなかった（原文は「Reuters could not determine independently if any navigation systems were destroyed」）。",
+          "sourceLabel": "Arab News（11/11）",
+          "date": "2026年11月11日（現地）",
+          "label": "攻撃",
+          "url": "https://www.arabnews.com/middle-east/ukmto-reports-tanker-incident-in-strait-of-hormuz-3011095",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-close-1112",
+          "title": "原油の11/10終値が確定——ブレント1月物91.49ドル・WTI12月物86.04ドル",
+          "body": "Xinhua（The Star掲載・11/11公開）は、11/10のニューヨーク市場で、WTI12月物が86.04ドル（原文は「to settle at 86.04 U.S. dollars a barrel on the New York Mercantile Exchange」）、ブレント1月物が91.49ドル（原文は「to settle at 91.49 dollars a barrel on the London ICE Futures Exchange」）で引けたと伝える。Yahoo Finance（NYMEXのデータ）の終値（WTI12月物86.04ドル〈−0.81ドル〉・ブレント1月物91.49ドル〈−1.08ドル〉）と一致した。11/11（水）は取引中の値しかなく、終値は未確定。",
+          "sourceLabel": "Xinhua（The Star掲載・11/11）",
+          "date": "2026年11月10日（米国時間）",
+          "label": "原油・市場",
+          "url": "https://www.thestar.com.my/news/world/2026/11/11/crude-futures-settle-lower",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto201-1111",
+          "title": "UKMTO警報201：リマ北東19海里でタンカーが飛翔体に被弾——ADNOC Logistics & Servicesの船舶も攻撃で損傷、両者の関係は不明",
+          "body": "gCaptain（11/10）は、UKMTOの警報201として、オマーン・リマの北東約19海里でタンカーが未特定の飛翔体に被弾し、乗組員は全員無事と伝える（原文は「approximately 19 nautical miles northeast of Lima, Oman」）。同記事は発生を11/10 13:38 UTCと書くが、UKMTO公式の本文に発生時刻はなく、一覧の日時欄は15:50 UTC。同じ記事は、ADNOC Logistics & Servicesが同社の船舶が11/10午後の攻撃で損傷したと確認したとも伝え（原文は「sustained damage in an attack in the Persian Gulf on the afternoon of November 10」）、両者が関連するかは「not immediately clear」と書く。船名・被害の程度・攻撃主体は公表されていない。",
+          "sourceLabel": "gCaptain（11/10）",
+          "date": "2026年11月10日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/adnoc-vessel-damaged-in-gulf-attack-as-ukmto-reports-fresh-tanker-strike-near-hormuz/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月12日",
       "items": [

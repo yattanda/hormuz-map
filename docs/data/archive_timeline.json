@@ -3911,6 +3911,34 @@
           "sourceLabel": "Xinhua（The Star掲載・11/11）"
         }
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "dateLabel": "2026/11/13 07:19",
+      "blockadeDay": 259,
+      "summary": "前回分の裏取り：解消1件（警報202の被害＝UKMTO公式の更新で「未特定の飛翔体に被弾・乗組員は全員無事」と確認し、攻撃に再分類。船名・攻撃主体は不明のまま）・継続13件（警報201の船名・攻撃主体・発生時刻、ADNOC船の船名と被害、Didamar島の被害、IRGCの11/4〜11/10の主張、警報196・197・194・195・178〜191、MT Velos Sapphire、ラスタヌラ製油所、MT ST 3、UAEが救助した22人の貨物船、トランプ氏の発言の原文、UKMTO週報の出港170・入港155の対象期間。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・UKMTO公式が警報203（11/12 21:15 JST発行・南部ペルシャ湾でタンカーが被弾し複数の負傷者、公式の発生時刻はTBC・船名なし）と警報204（22:45 JST発行・ラアス・アル・ハイマ北西14海里でタンカーが機関室に被弾、乗組員は全員退避、発生は11/11 18:00 UTC）を公表。gCaptainは警報204の船をMT Dominica Prosperity（運航はSinokor Maritime）と伝える・イラン軍とIRGCはタンカー4隻が炎上したと主張（船名・国籍なし、独立した確認なし。Arab News）・フーシ派がサウジの東西パイプラインのポンプ場・ヤンブーの石油施設・リヤドのアラムコ施設を攻撃したと主張（連合軍は無人機2機の迎撃を発表、被害の報告なし。Jerusalem Post）・トランプ氏が「イランとの合意は必要ない」とSNSに投稿（AP配信のABC News）・原油は11/12の終値のうちWTI12月物が88.74ドル（+2.21ドル）で確定、ブレント1月物は95.82ドルがRigzoneの1出典のみで確定した最新は11/11の92.76ドル（次回の日次で再確認）・通航の新しい週次の値は見つからず・日本関係船は新規の発表なし（残り4隻）・危機259日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（動きなし）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報204：ラアス・アル・ハイマ北西でタンカーが機関室に被弾——乗組員は全員退避、gCaptainは船名をMT Dominica Prosperityと伝える",
+          "url": "https://gcaptain.com/tanker-ablaze-off-uae-as-more-attacks-rattle-gulf-shipping/",
+          "sourceLabel": "gCaptain（11/12）・UKMTO公式"
+        },
+        {
+          "title": "フーシ派「サウジの東西パイプラインのポンプ場・ヤンブー・リヤドを攻撃」と主張——連合軍は無人機2機の迎撃を発表、被害の報告なし",
+          "url": "https://www.jpost.com/middle-east/article-914779",
+          "sourceLabel": "Jerusalem Post（11/12）"
+        },
+        {
+          "title": "イラン軍とIRGC「タンカー4隻が炎上・機雷接触」と主張——船名・国籍なし、独立した確認なし",
+          "url": "https://www.arabnews.com/middle-east/iran-says-four-tankers-on-fire-in-hormuz-3011491",
+          "sourceLabel": "Arab News（11/12）"
+        },
+        {
+          "title": "トランプ氏「イランとの合意は必要ない」とSNSに投稿——バンス副大統領には国内の不正対策に集中するよう指示",
+          "url": "https://abcnews.com/US/wireStory/trump-bluntly-tells-jd-vance-shift-focus-iran-138089310",
+          "sourceLabel": "ABC News（AP配信・11/12）"
+        }
+      ]
     }
   ]
 }

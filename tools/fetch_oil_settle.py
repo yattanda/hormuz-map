@@ -174,7 +174,9 @@ PREFERRED = re.compile(r"rigzone|yahoo|reuters|bloomberg|associated press|\bap\b
 PAYWALL = re.compile(r"\bwsj\b|wall street journal|barron|marketwatch|financial times|\bft\b", re.I)
 PRICE_WORDS = re.compile(r"settle|oil (?:price|rise|rose|fall|fell|gain|climb|slip|drop|jump|edge|rebound)|crude (?:price|rise|fall)", re.I)
 OIL_WORDS = re.compile(r"\boil\b|crude|brent|wti", re.I)
-DJ_TITLE = re.compile(r"(\w+) WTI Crude Oil Contract Closes (Up|Down) \$([\d.]+).{0,40}?Settles at \$(\d{2,3}\.\d{2})", re.I)
+# MT Newswires の清算速報の見出し（MarketScreener に配信。2026-11-13 に記事の署名で MT Newswires と確認。
+# 11/12 までは Dow Jones と誤って名付けていた。Dow Jones・Bloomberg・Reuters とは別の系統）
+MTN_TITLE = re.compile(r"(\w+) WTI Crude Oil Contract Closes (Up|Down) \$([\d.]+).{0,40}?Settles at \$(\d{2,3}\.\d{2})", re.I)
 # 取引中・時間外の値の語。この語をはさむ価格は終値として拾わない（Codex の指摘・PR #172）
 LIVE = r"trad|after-hours|post-settlement|post settlement|last seen|intraday|was at|were at"
 NOT_WTI = r"(?:(?!WTI|West Texas|U\.?S\.? crude|" + LIVE + r").)"
@@ -221,6 +223,8 @@ def family_of(source, url, text):
         return "Bloomberg 系"
     if "Associated Press" in head or "(AP)" in head or on_domain(host, "apnews.com"):
         return "AP 系"
+    if "MT Newswires" in head:
+        return "MT Newswires 系"
     if "Dow Jones" in head or on_domain(host, "marketwatch.com", "wsj.com"):
         return "Dow Jones 系"
     if on_domain(host, "investinglive.com"):
@@ -279,11 +283,11 @@ def wire_closes(day, prev, max_fetch=14):
             errors.append("Google ニュース「{}」：{}".format(q, e))
 
     found = []
-    # Dow Jones の清算速報の見出し（MarketScreener などに配信）は、見出しだけで WTI の清算値が分かる
+    # MT Newswires の清算速報の見出し（MarketScreener に配信）は、見出しだけで WTI の清算値が分かる
     for it in cands:
-        m = DJ_TITLE.search(it["title"])
+        m = MTN_TITLE.search(it["title"])
         if m:
-            found.append({"family": "Dow Jones 系", "source": it["source"], "title": it["title"], "link": it["link"],
+            found.append({"family": "MT Newswires 系", "source": it["source"], "title": it["title"], "link": it["link"],
                           "published": it["published"], "WTI": float(m.group(4)), "ブレント": None,
                           "snippet": {"WTI": it["title"]}, "from_title": True})
     fetched = 0
@@ -294,7 +298,7 @@ def wire_closes(day, prev, max_fetch=14):
     for it in sorted(cands, key=priority):
         if PAYWALL.search(it.get("source") or ""):
             continue
-        if fetched >= max_fetch or DJ_TITLE.search(it["title"]):
+        if fetched >= max_fetch or MTN_TITLE.search(it["title"]):
             continue
         fetched += 1
         try:

@@ -96,7 +96,9 @@ python tools/fetch_news_feeds.py --hours 30
     Google ニュースの RSS で探し、本文の英語の文から終値を読んで、通信社の系統ごとに並べる。
     【判定】が「2系統以上で一致 → 終値として使える」なら、そのうち2系統の URL を WebFetch で開いて同じ文と限月を確かめ、その日の終値として書く。
     「確定できず」のときだけ、下の数値の検索などで2出典目を探す
-    - 2026-11-12 07:2x JST の実測：11/11 のブレント1月物 92.76（Reuters 系＝Yahoo Finance、Bloomberg 系＝Rigzone）、WTI 12月物 86.53（同2系統＋Dow Jones 系の見出し）を判定できた
+    - 2026-11-12 07:2x JST の実測：11/11 のブレント1月物 92.76（Reuters 系＝Yahoo Finance、Bloomberg 系＝Rigzone）、WTI 12月物 86.53（同2系統＋MT Newswires 系の見出し）を判定できた
+    - MarketScreener の清算速報の見出し（「December WTI Crude Oil Contract Closes Up …; Settles at …」）は **MT Newswires** の配信（記事の署名で確認・2026-11-13）。
+      Dow Jones ではない。本文に書くときは「MT Newswires（MarketScreener掲載）」とし、「Dow Jones系」と書かない（11/12・11/13 の日次で誤って書いた）
   - **出典の候補を広げた（2026-10-27〜）**：報道は上の4系統に、共同通信（地方紙の配信）・Xinhua（The Star・Bernama の配信）・AP・Dow Jones・CNBC・
     みんかぶ・日経・時事を加える。市場データとして **`python tools/fetch_oil_settle.py`**（Yahoo Finance 経由の NYMEX のデータ・読み取り専用）を使い、
     「終値」と出た値は報道とは独立した1出典と数える（出典名は「Yahoo Finance（NYMEX のデータ）」）

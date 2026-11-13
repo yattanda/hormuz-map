@@ -167,30 +167,41 @@ def fetch(symbol, days, on_date=None):
 # （WebSearch の索引は数時間遅れるので使わない）、本文から清算値を読んで系統ごとに並べる。
 
 WIRE_QUERIES = ["oil settle", "Brent settled", "\"Settles at\" WTI", "oil prices Brent WTI", "crude oil futures",
-                "Rigzone oil", "Reuters oil prices"]
+                "Rigzone oil", "Reuters oil prices", "CRUDE WRAP settle"]
 # 本文が読めて、系統が分かる媒体を先に開く（WSJ・Barron's・MarketWatch は 401 で開けない。2026-11-12 実測）
 PREFERRED = re.compile(r"rigzone|yahoo|reuters|bloomberg|associated press|\bap\b|cnbc|investinglive|nasdaq|"
-                       r"morningstar|kyodo|xinhua|the star|bernama|newsquawk", re.I)
-PAYWALL = re.compile(r"\bwsj\b|wall street journal|barron|marketwatch|financial times|\bft\b", re.I)
+                       r"morningstar|kyodo|xinhua|the star|bernama|newsquawk|klse screener|business times|tradingview", re.I)
+PAYWALL = re.compile(r"\bwsj\b|wall street journal|barron|marketwatch|financial times|\bft\b|seeking alpha", re.I)
+# 元記事の URL がこのドメインなら開かない（スクリプトからは 401・403 が返る。2026-11-13 実測：reuters.com は UA を変えても 401）。
+# 同じ記事は The Star・KLSE Screener・Business Times・Yahoo Finance などの転載で読める
+BLOCKED_HOSTS = ("reuters.com", "wsj.com", "barrons.com", "marketwatch.com", "bloomberg.com", "seekingalpha.com", "ft.com")
 PRICE_WORDS = re.compile(r"settle|oil (?:price|rise|rose|fall|fell|gain|climb|slip|drop|jump|edge|rebound)|crude (?:price|rise|fall)", re.I)
 OIL_WORDS = re.compile(r"\boil\b|crude|brent|wti", re.I)
 # MT Newswires の清算速報の見出し（MarketScreener に配信。2026-11-13 に記事の署名で MT Newswires と確認。
 # 11/12 までは Dow Jones と誤って名付けていた。Dow Jones・Bloomberg・Reuters とは別の系統）
 MTN_TITLE = re.compile(r"(\w+) WTI Crude Oil Contract Closes (Up|Down) \$([\d.]+).{0,40}?Settles at \$(\d{2,3}\.\d{2})", re.I)
+# Newsquawk の「CRUDE WRAP」の見出しは WTI とブレントの清算値を両方持つ（独立した系統。スキル「二次情報の裏取り」）。
+# 2026-11-13：清算の約1時間後（05:10 JST）に出ていたのに読まず、07:19 の日次はブレントを据え置いた。
+# 例「CRUDE WRAP: WTI (Z6) FUTURES SETTLE USD 2.21 HIGHER AT 88.74/BBL; BRENT (F7) SETTLES USD 3.06 HIGHER AT 95.82/BBL」
+NQ_WTI = re.compile(r"WTI\s*\(\w+\)\s*(?:FUTURES )?SETTLES?\b.{0,40}?\bAT (\d{2,3}\.\d{2})", re.I)
+NQ_BRENT = re.compile(r"BRENT\s*\(\w+\)\s*(?:FUTURES )?SETTLES?\b.{0,40}?\bAT (\d{2,3}\.\d{2})", re.I)
 # 取引中・時間外の値の語。この語をはさむ価格は終値として拾わない（Codex の指摘・PR #172）
 LIVE = r"trad|after-hours|post-settlement|post settlement|last seen|intraday|was at|were at"
 NOT_WTI = r"(?:(?!WTI|West Texas|U\.?S\.? crude|" + LIVE + r").)"
 NOT_BRENT = r"(?:(?!Brent|" + LIVE + r").)"
-BRENT_RE = [re.compile(r"Brent\b" + NOT_WTI + r"{0,160}?settl\w*" + NOT_WTI + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})", re.I),
-            re.compile(r"Brent\b" + NOT_WTI + r"{0,60}?\bsettled (?:at )?\$(\d{2,3}\.\d{2})", re.I)]
+# 価格の「$」。The Star などの転載は「US$95.82」と書く（2026-11-13：これを読めず Reuters の系統を落としていた）
+USD = r"(?:US)?\$"
+BRENT_RE = [re.compile(r"Brent\b" + NOT_WTI + r"{0,160}?settl\w*" + NOT_WTI + r"{0,90}?\b(?:at|to) " + USD + r"(\d{2,3}\.\d{2})", re.I),
+            re.compile(r"Brent\b" + NOT_WTI + r"{0,60}?\bsettled (?:at )?" + USD + r"(\d{2,3}\.\d{2})", re.I)]
 # WTI は「settle」の語を WTI の価格に結びつけて探す
-WTI_RE = [re.compile(r"(?:WTI|West Texas Intermediate|U\.?S\.? crude)\b" + NOT_BRENT + r"{0,160}?settl\w*" + NOT_BRENT + r"{0,90}?\b(?:at|to) \$(\d{2,3}\.\d{2})", re.I)]
-# Reuters は「Brent futures settled … at $X, while US WTI crude gained 49 cents … to $Y」と書く（WTI の側に settle が無い）。
-# この形だけは、ブレントの清算の文の直後（250字まで）に、値動きの動詞＋「to $」で続く WTI を拾う
+WTI_RE = [re.compile(r"(?:WTI|West Texas Intermediate|U\.?S\.? crude)\b" + NOT_BRENT + r"{0,160}?settl\w*" + NOT_BRENT + r"{0,90}?\b(?:at|to) " + USD + r"(\d{2,3}\.\d{2})", re.I)]
+# Reuters は「Brent futures settled … at $X, while US WTI crude gained 49 cents … to $Y」や
+# 「Brent futures settled at US$X … US West Texas Intermediate crude closed at US$Y」と書く（WTI の側に settle が無い）。
+# この形だけは、ブレントの清算の文の直後（250字まで）に、値動きの動詞＋「to／at $」で続く WTI を拾う
 WTI_AFTER_BRENT = re.compile(
     r"^" + NOT_BRENT + r"{0,60}?(?:WTI|West Texas Intermediate)\b" + NOT_BRENT + r"{0,100}?"
-    r"\b(?:rose|gained|added|climbed|rallied|advanced|jumped|fell|lost|dropped|declined|slipped|eased|shed|slid)\b"
-    + NOT_BRENT + r"{0,60}?\bto \$(\d{2,3}\.\d{2})", re.I)
+    r"\b(?:rose|gained|added|climbed|rallied|advanced|jumped|fell|lost|dropped|declined|slipped|eased|shed|slid|closed|settled)\b"
+    + NOT_BRENT + r"{0,60}?\b(?:to|at) " + USD + r"(\d{2,3}\.\d{2})", re.I)
 
 
 def eastern(day, hour, minute=0):
@@ -217,6 +228,11 @@ def family_of(source, url, text):
     """通信社の系統（同じ系統どうしは1出典と数える。スキル「二次情報の裏取り」）。"""
     host = (urllib.parse.urlparse(url).hostname or "").lower()
     head = text[:6000]
+    # 転載の記事は本文の末尾に「— Reuters」「- Bloomberg」と署名する（The Star など。2026-11-13）。清算の文の後ろだけを見る
+    m = re.search(r"settl", text, re.I)
+    sign = re.search(r"[—–-]\s*(Reuters|Bloomberg|AFP|Xinhua|Bernama)\b", text[m.start():m.start() + 6000]) if m else None
+    if sign:
+        return {"Reuters": "Reuters 系", "Bloomberg": "Bloomberg 系"}.get(sign.group(1), sign.group(1) + " 系")
     if on_domain(host, "reuters.com") or "(Reuters)" in head or "Reuters" in (source or ""):
         return "Reuters 系"
     if on_domain(host, "bloomberg.com") or "Bloomberg" in head:
@@ -290,6 +306,16 @@ def wire_closes(day, prev, max_fetch=14):
             found.append({"family": "MT Newswires 系", "source": it["source"], "title": it["title"], "link": it["link"],
                           "published": it["published"], "WTI": float(m.group(4)), "ブレント": None,
                           "snippet": {"WTI": it["title"]}, "from_title": True})
+    for it in cands:
+        if "CRUDE WRAP" not in it["title"].upper():
+            continue
+        w, b = NQ_WTI.search(it["title"]), NQ_BRENT.search(it["title"])
+        if w or b:
+            found.append({"family": "Newsquawk", "source": it["source"], "title": it["title"], "link": it["link"],
+                          "published": it["published"], "WTI": float(w.group(1)) if w else None,
+                          "ブレント": float(b.group(1)) if b else None,
+                          "snippet": {k: it["title"] for k, mm in (("WTI", w), ("ブレント", b)) if mm},
+                          "from_title": True})
     fetched = 0
     def priority(it):
         src = it.get("source") or ""
@@ -298,11 +324,17 @@ def wire_closes(day, prev, max_fetch=14):
     for it in sorted(cands, key=priority):
         if PAYWALL.search(it.get("source") or ""):
             continue
-        if fetched >= max_fetch or MTN_TITLE.search(it["title"]):
+        if fetched >= max_fetch or MTN_TITLE.search(it["title"]) or "CRUDE WRAP" in it["title"].upper():
             continue
-        fetched += 1
         try:
             url = nf.resolve_google(it["link"])
+        except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError, json.JSONDecodeError) as e:
+            errors.append("{}：{}".format(it["title"][:60], e))
+            continue
+        if on_domain((urllib.parse.urlparse(url).hostname or "").lower(), *BLOCKED_HOSTS):
+            continue  # 開けないので、開く数に入れない
+        fetched += 1
+        try:
             text = page_text(url)
         except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError, json.JSONDecodeError) as e:
             errors.append("{}：{}".format(it["title"][:60], e))

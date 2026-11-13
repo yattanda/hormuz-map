@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月13日 07:19 日本時間JST",
+  "updated": "2026年11月14日 07:20 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto204-1113",
-      "title": "UKMTO警報204：ラアス・アル・ハイマ北西でタンカーが機関室に被弾——乗組員は全員退避、gCaptainは船名をMT Dominica Prosperityと伝える",
-      "body": "UKMTO公式の警報204（11/12 22:45 JST発行）は、UAEのラアス・アル・ハイマの北西14海里で、タンカーが機関室に未特定の飛翔体を受け、死傷者はなく乗組員は全員退避し、消火活動が続いていると伝える。公式の発生時刻は11/11 18:00 UTC。gCaptain（11/12）は、運航会社が韓国のSinokor Maritimeとされる MT Dominica Prosperity で、乗組員22人（うちインド国籍19人）が避難し全員無事と書く（損傷の程度と環境への影響は不明）。同紙は、直近4件の攻撃の主体はUKMTOの警報で個別に特定されていないと伝える。",
-      "sourceLabel": "gCaptain（11/12）・UKMTO公式",
-      "date": "2026年11月11日（現地）",
-      "label": "海上",
-      "url": "https://gcaptain.com/tanker-ablaze-off-uae-as-more-attacks-rattle-gulf-shipping/",
+      "id": "latest-bahrain-radar-1114",
+      "title": "IRGC「バーレーンの米軍レーダーを破壊」と主張——CENTCOMは無人機2機の撃墜と被害なしを発表",
+      "body": "RFE/RL（11/13）は、IRGCがバーレーンの米軍の早期警戒レーダーを破壊したと主張し、ホルムズ海峡近くのSirikの通信塔への空爆への対応としたと伝える（米国を名指しせず）。CENTCOMは、IRGCがバーレーンへ一方向攻撃の無人機2機を発射し、いずれも米軍が撃墜し、負傷者も被害もなかったと発表した（Sirikへの攻撃には触れていない）。Al Jazeera（11/13）の記者は、米国とイランのどちらの主張も確認できなかったと述べた。",
+      "sourceLabel": "RFE/RL（11/13）・Al Jazeera（11/13）",
+      "date": "2026年11月13日（現地）",
+      "label": "攻撃",
+      "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html",
       "isLatest": true
     },
     {
-      "id": "latest-houthi-saudi-1113",
-      "title": "フーシ派「サウジの東西パイプラインのポンプ場・ヤンブー・リヤドを攻撃」と主張——連合軍は無人機2機の迎撃を発表、被害の報告なし",
-      "body": "Jerusalem Post（11/12）は、フーシ派が、サウジの東西パイプラインのポンプ場、紅海沿岸ヤンブーの石油施設、首都リヤドのアラムコの建物を攻撃したと主張したと伝える。フーシ派は攻撃の日を明らかにしていない。サウジ主導の連合軍は、同勢力が発射した無人機2機をリヤド地域と東部州で各1機、迎撃して破壊したと発表した。記事は被害を報じておらず、サウジ側は直ちにコメントしなかった。独立した確認はない。",
-      "sourceLabel": "Jerusalem Post（11/12）",
-      "date": "2026年11月12日（現地）",
-      "label": "攻撃",
-      "url": "https://www.jpost.com/middle-east/article-914779",
-      "isLatest": false
-    },
-    {
-      "id": "latest-irgc4-1113",
-      "title": "イラン軍とIRGC「タンカー4隻が炎上・機雷接触」と主張——船名・国籍なし、独立した確認なし",
-      "body": "Arab News（11/12）は、イラン軍が木曜（11/12）、ホルムズ海峡でタンカー4隻が炎上したと発表したと伝える。IRGCは1組目の2隻が前夜に禁止された南側の航路で「事故」に遭い激しい爆発が起きたと説明し、積荷は合計400万バレル超とする。2組目の2隻は海峡の東で機雷に触れて炎上したとする。声明は船名も国籍も示していない（原文は「The statements did not specify the names or the nationalities of the tankers in question」）。同じ記事は、米軍が最近、海峡の機雷はすべて除去したと主張したとも書く。",
-      "sourceLabel": "Arab News（11/12）",
-      "date": "2026年11月12日（現地）",
+      "id": "latest-irgc-lng-mine-1114",
+      "title": "IRGC「LNGを積んだタンカーが機雷に触れて爆発」と主張——船名なし、UKMTO公式に対応する警報なし",
+      "body": "gCaptain（Reuters配信・11/13）は、IRGCが金曜（11/13）、LNGを積んだタンカー1隻がホルムズ海峡の「許可されていない危険な航路」で機雷に触れて爆発したと発表したと伝える。船の詳細は未公表で、同記事はUKMTOに触れていない。UKMTO公式に警報205以降はなく（11/14 07:14 JST取得）、独立した確認はない。",
+      "sourceLabel": "gCaptain（Reuters配信・11/13）",
+      "date": "2026年11月13日（現地）",
       "label": "海上",
-      "url": "https://www.arabnews.com/middle-east/iran-says-four-tankers-on-fire-in-hormuz-3011491",
+      "url": "https://gcaptain.com/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz/",
       "isLatest": false
     },
     {
-      "id": "latest-trump-nodeal-1113",
-      "title": "トランプ氏「イランとの合意は必要ない」とSNSに投稿——バンス副大統領には国内の不正対策に集中するよう指示",
-      "body": "AP配信のABC News（11/12）は、トランプ氏が木曜（11/12）のSNS投稿で「We don't need a deal with Iran」「Those days have long since passed」と書き、バンス副大統領に不正対策の取り組みへ「complete and total attention」を向けるよう指示したと伝える。同記事は、トランプ氏が今週初めに戦争は「militarily is effectively over」だと述べたとも書く。イラン側の反応と、仲介の協議の扱いは、この記事からは分からない。",
-      "sourceLabel": "ABC News（AP配信・11/12）",
-      "date": "2026年11月12日（現地）",
-      "label": "外交",
-      "url": "https://abcnews.com/US/wireStory/trump-bluntly-tells-jd-vance-shift-focus-iran-138089310",
+      "id": "latest-iea-surplus-1114",
+      "title": "IEA月報：世界の原油供給は第4四半期に需要見通しを日量170万バレル上回る見通し——戦争開始後初めて供給過剰",
+      "body": "Reuters配信のArab News（11/13）は、IEAが、第4四半期の世界の原油供給を日量1億500万バレル、需要見通しを日量170万バレル上回ると伝える。前回の月報は第4四半期の供給不足を予測していた。2026年の世界の需要は日量270万バレル減の1億230万バレルと見込む。IEA公式の月報のページは開けず、数字はReuters配信の原文で確かめた。",
+      "sourceLabel": "Arab News（Reuters配信・11/13）",
+      "date": "2026年11月13日（現地）",
+      "label": "原油・市場",
+      "url": "https://www.arabnews.com/middle-east/iea-oil-market-returning-to-surplus-as-gulf-exports-recover-3011670",
+      "isLatest": false
+    },
+    {
+      "id": "latest-aden-missile-1114",
+      "title": "イエメン軍「フーシ派がアデンに弾道ミサイル」と発表——死傷者・被害の詳細は示されず",
+      "body": "Arab News（11/13）は、イエメン軍の報道官Majed Al-Nuzailiが、フーシ派が金曜（11/13）、暫定首都アデンの民間人と民間施設を狙って弾道ミサイルを発射したと発表したと伝える。報道官は「serious escalation」と述べたが、記事に死傷者数や被害の詳細はない。政府側の発表で、記事の中で独立には検証されていない。",
+      "sourceLabel": "Arab News（11/13）",
+      "date": "2026年11月13日（現地）",
+      "label": "攻撃",
+      "url": "https://www.arabnews.com/middle-east/houthis-target-civilians-in-aden-with-ballistic-missiles-yemeni-army-says-3011688",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-bahrain-1114",
+      "titleJa": "【Al Jazeera】IRGC「バーレーンの米軍レーダーを標的にした」と主張——米軍は無人機2機の撃墜と被害なしを発表、記者はどちらの主張も確認できず",
+      "titleEn": "Al Jazeera (Nov 13): Iran says it struck US radar site in Bahrain",
+      "title": "【Al Jazeera】IRGC「バーレーンの米軍レーダーを標的にした」と主張——米軍は無人機2機の撃墜と被害なしを発表、記者はどちらの主張も確認できず",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月13日（現地）",
+      "summary": "Al Jazeeraは、IRGCがバーレーンの米軍の早期警戒レーダーを標的にしたと主張し、Farsが「targeted and destroyed」と報じたと伝える。IRGCは理由としてイラン南部の通信塔への攻撃を挙げ、IRNAはSirikが木曜（11/12）に「enemy fire」を受けたと伝えた。CENTCOMは、IRGCが金曜に発射した攻撃用ドローン2機を撃墜し、負傷者も被害もなかったと発表した。ホワイトハウスから報じた同局の記者は、米国とイランのどちらの主張も確認できなかったと述べた。",
+      "url": "https://www.aljazeera.com/news/2026/11/13/iran-says-it-struck-us-radar-site-in-bahrain",
+      "isLatest": true
+    },
+    {
+      "id": "osint-arabnews-aden-1114",
+      "titleJa": "【Arab News】イエメン軍「フーシ派が暫定首都アデンに弾道ミサイル」と発表——死傷者・被害の詳細は示されず",
+      "titleEn": "Arab News (Nov 13): Houthis target civilians in Aden with ballistic missiles, Yemeni army says",
+      "title": "【Arab News】イエメン軍「フーシ派が暫定首都アデンに弾道ミサイル」と発表——死傷者・被害の詳細は示されず",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月13日（現地）",
+      "summary": "Arab Newsは、イエメン軍の報道官が、フーシ派が金曜（11/13）にアデンの民間人と民間施設を狙って弾道ミサイルを発射したと発表したと伝える。報道官は「serious escalation」と述べたが、死傷者数や被害の詳細は記事にない。政府側の発表で、記事の中で独立には検証されていない。",
+      "url": "https://www.arabnews.com/middle-east/houthis-target-civilians-in-aden-with-ballistic-missiles-yemeni-army-says-3011688",
+      "isLatest": false
+    },
     {
       "id": "osint-arabnews-irgc4-1113",
       "titleJa": "【Arab News】イラン軍「ホルムズ海峡でタンカー4隻が炎上」と発表——船名・国籍は示されず",
@@ -55,7 +81,7 @@
       "date": "2026年11月12日（現地）",
       "summary": "Arab Newsは、イラン軍が木曜、ホルムズ海峡でタンカー4隻が炎上したと発表したと伝える。IRGCは、禁止された南側の航路の2隻が「事故」で爆発し、積荷は合計400万バレル超だと説明し、別の2隻は海峡の東で機雷に触れたとした。声明は船名も国籍も示していない。同じ記事は、米軍が最近、機雷はすべて除去したと主張したとも書く。",
       "url": "https://www.arabnews.com/middle-east/iran-says-four-tankers-on-fire-in-hormuz-3011491",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-jpost-houthi-1113",
@@ -2233,6 +2259,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月14日",
+      "items": [
+        {
+          "id": "latest-ukmto204-1113",
+          "title": "UKMTO警報204：ラアス・アル・ハイマ北西でタンカーが機関室に被弾——乗組員は全員退避、gCaptainは船名をMT Dominica Prosperityと伝える",
+          "body": "UKMTO公式の警報204（11/12 22:45 JST発行）は、UAEのラアス・アル・ハイマの北西14海里で、タンカーが機関室に未特定の飛翔体を受け、死傷者はなく乗組員は全員退避し、消火活動が続いていると伝える。公式の発生時刻は11/11 18:00 UTC。gCaptain（11/12）は、運航会社が韓国のSinokor Maritimeとされる MT Dominica Prosperity で、乗組員22人（うちインド国籍19人）が避難し全員無事と書く（損傷の程度と環境への影響は不明）。同紙は、直近4件の攻撃の主体はUKMTOの警報で個別に特定されていないと伝える。",
+          "sourceLabel": "gCaptain（11/12）・UKMTO公式",
+          "date": "2026年11月11日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/tanker-ablaze-off-uae-as-more-attacks-rattle-gulf-shipping/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-saudi-1113",
+          "title": "フーシ派「サウジの東西パイプラインのポンプ場・ヤンブー・リヤドを攻撃」と主張——連合軍は無人機2機の迎撃を発表、被害の報告なし",
+          "body": "Jerusalem Post（11/12）は、フーシ派が、サウジの東西パイプラインのポンプ場、紅海沿岸ヤンブーの石油施設、首都リヤドのアラムコの建物を攻撃したと主張したと伝える。フーシ派は攻撃の日を明らかにしていない。サウジ主導の連合軍は、同勢力が発射した無人機2機をリヤド地域と東部州で各1機、迎撃して破壊したと発表した。記事は被害を報じておらず、サウジ側は直ちにコメントしなかった。独立した確認はない。",
+          "sourceLabel": "Jerusalem Post（11/12）",
+          "date": "2026年11月12日（現地）",
+          "label": "攻撃",
+          "url": "https://www.jpost.com/middle-east/article-914779",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc4-1113",
+          "title": "イラン軍とIRGC「タンカー4隻が炎上・機雷接触」と主張——船名・国籍なし、独立した確認なし",
+          "body": "Arab News（11/12）は、イラン軍が木曜（11/12）、ホルムズ海峡でタンカー4隻が炎上したと発表したと伝える。IRGCは1組目の2隻が前夜に禁止された南側の航路で「事故」に遭い激しい爆発が起きたと説明し、積荷は合計400万バレル超とする。2組目の2隻は海峡の東で機雷に触れて炎上したとする。声明は船名も国籍も示していない（原文は「The statements did not specify the names or the nationalities of the tankers in question」）。同じ記事は、米軍が最近、海峡の機雷はすべて除去したと主張したとも書く。",
+          "sourceLabel": "Arab News（11/12）",
+          "date": "2026年11月12日（現地）",
+          "label": "海上",
+          "url": "https://www.arabnews.com/middle-east/iran-says-four-tankers-on-fire-in-hormuz-3011491",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-nodeal-1113",
+          "title": "トランプ氏「イランとの合意は必要ない」とSNSに投稿——バンス副大統領には国内の不正対策に集中するよう指示",
+          "body": "AP配信のABC News（11/12）は、トランプ氏が木曜（11/12）のSNS投稿で「We don't need a deal with Iran」「Those days have long since passed」と書き、バンス副大統領に不正対策の取り組みへ「complete and total attention」を向けるよう指示したと伝える。同記事は、トランプ氏が今週初めに戦争は「militarily is effectively over」だと述べたとも書く。イラン側の反応と、仲介の協議の扱いは、この記事からは分からない。",
+          "sourceLabel": "ABC News（AP配信・11/12）",
+          "date": "2026年11月12日（現地）",
+          "label": "外交",
+          "url": "https://abcnews.com/US/wireStory/trump-bluntly-tells-jd-vance-shift-focus-iran-138089310",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月13日",
       "items": [

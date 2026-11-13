@@ -3939,6 +3939,34 @@
           "sourceLabel": "ABC News（AP配信・11/12）"
         }
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "dateLabel": "2026/11/14 07:20",
+      "blockadeDay": 260,
+      "summary": "前回分の裏取り：解消1件（ブレント1月物11/12の終値＝95.82ドル〈前日比+3.06ドル〉。Yahoo Finance〈NYMEXのデータ〉の日足の終値とRigzoneの報道で確定）・継続13件（警報201・203・204の船名・攻撃主体・被害、イラン軍とIRGCの炎上の主張の裏付け、フーシ派のサウジ施設攻撃の主張の被害、ADNOC船の船名と被害、Didamar島の被害、警報191〜197、MT Velos Sapphire、UAEが救助した22人の貨物船、トランプ氏の発言の原文、UKMTO週報の対象期間、封鎖147隻の数えた時点。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・打ち切り3件（警報178〜190、ラスタヌラ製油所、MT ST 3。発生から14日を過ぎ、新しい資料なし）・IRGCがバーレーンの米軍早期警戒レーダーを破壊したと主張し、CENTCOMは無人機2機の撃墜と被害なしを発表（RFE/RL・Al Jazeera。Al Jazeeraの記者はどちらの主張も確認できないと述べた）・IRGCがLNGを積んだタンカー1隻の機雷接触・爆発を主張（船名なし、UKMTOに対応する警報なし。gCaptain〈Reuters配信〉）・IEAは第4四半期の世界の原油供給が需要を日量170万バレル上回ると見込み、戦争開始後初めて供給過剰に（Reuters配信のArab News）・原油は11/13の終値のうちWTI12月物が88.56ドル（-0.18ドル）で確定、ブレント1月物は95.84ドルがRigzoneの1出典のみ（次回の日次で再確認）・イエメン軍がフーシ派のアデンへの弾道ミサイル攻撃を発表（死傷者の詳細なし。Arab News）・UKMTO公式に警報205以降なし・通航の新しい週次の値は見つからず・日本関係船は新規の発表なし（残り4隻）・危機260日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートA）更新・地図の軍事レイヤーを見直し（機雷警戒海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "IRGC「バーレーンの米軍レーダーを破壊」と主張——CENTCOMは無人機2機の撃墜と被害なしを発表",
+          "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html",
+          "sourceLabel": "RFE/RL（11/13）・Al Jazeera（11/13）"
+        },
+        {
+          "title": "IRGC「LNGを積んだタンカーが機雷に触れて爆発」と主張——船名なし、UKMTO公式に対応する警報なし",
+          "url": "https://gcaptain.com/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz/",
+          "sourceLabel": "gCaptain（Reuters配信・11/13）"
+        },
+        {
+          "title": "IEA月報：世界の原油供給は第4四半期に需要見通しを日量170万バレル上回る見通し——戦争開始後初めて供給過剰",
+          "url": "https://www.arabnews.com/middle-east/iea-oil-market-returning-to-surplus-as-gulf-exports-recover-3011670",
+          "sourceLabel": "Arab News（Reuters配信・11/13）"
+        },
+        {
+          "title": "イエメン軍「フーシ派がアデンに弾道ミサイル」と発表——死傷者・被害の詳細は示されず",
+          "url": "https://www.arabnews.com/middle-east/houthis-target-civilians-in-aden-with-ballistic-missiles-yemeni-army-says-3011688",
+          "sourceLabel": "Arab News（11/13）"
+        }
+      ]
     }
   ]
 }

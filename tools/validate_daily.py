@@ -1736,7 +1736,9 @@ EMOJI_ALLOWED_PAGE = {"corrections/index.html": set("🇺🇸🌍🚢")}
 # 直書きの色（16進・rgb()・hsl()・色名）。トークン（tokens.css）を使う
 PAT_COLOR = re.compile(r"#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3,4}\b|\b(?:rgba?|hsla?)\([^)]*\)")
 PAT_COLOR_NAME = re.compile(r"\b(?:white|black|red|blue|green|yellow|orange|gray|grey|navy|silver|purple|pink)\b", re.I)
-PAT_JS_COLOR = re.compile(r"""["'`][^"'`\n]*?(#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3,4}\b|(?:rgba?|hsla?)\([^)]*\))""")
+# JS の文字列の中の色。文の中の番号（例「LNG 動向 #115）」）を色と取り違えないよう、直後に全角の文字が続く
+# 「#英数字」は色とみなさない（2026-11-13：11/7 から地図のポップアップの出典の「#115」で毎日 WARN が出ていた）
+PAT_JS_COLOR = re.compile(r"""["'`][^"'`\n]*?((?:#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3,4}\b)(?![^\x00-\x7f])|(?:rgba?|hsla?)\([^)]*\))""")
 # JS の色名は、色を渡す所（style の値・setProperty・Leaflet の color / fillColor・テンプレートの中の CSS）だけを見る
 # （文の中の英単語 Red Sea などを拾わないため）
 PAT_JS_COLOR_NAME = re.compile(

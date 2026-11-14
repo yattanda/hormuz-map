@@ -287,7 +287,7 @@ python tools/validate_daily.py
 - **30秒カラムの要点（NG・WARN）**（2026-11-01〜・二段表示 PR-A）：4行それぞれの `<summary>` に要点（`span.glance-lead`）が有って空でないか（**NG**）。
   要点が 20字未満・60字超／全文の切り抜きの疑い／「…」で終わる／`<details open>`（WARN）。
   「前回の裏取り」の要点が決まった形で件数の和が合うか（WARN。この行は字数・切り抜きの対象外）。
-  数字の札がちょうど4枚・数字が数字だけ・補足に M/D・ブレントと WTI の数字が「海峡の今」の全文に出てくるか・札の日付が古すぎないか（原油3日・通航と封鎖の累計14日。WARN）
+  数字の札がちょうど4枚・数字が数字だけ・補足に M/D・ブレントと WTI の数字が「海峡の今」の全文に出てくるか・札の日付が古すぎないか（原油3日・通航と封鎖の累計14日。WARN）・通航の札が PortWatch の最新の7日平均と同じか（WARN。違えば `python tools/glance_transit.py --write`）
 - **シナリオの要点（NG・WARN）**（2026-11-02〜・二段表示 PR-B2）：4本と確率の補足の `<summary>` に要点（`span.sc-lead`）、次の焦点の各項に件名（`span.sc-focus-lead`）が有って空でないか（**NG**）。
   要点の字数・今日の見立て（補足は但し書き）の切り抜きの疑い・「…」終わり・`<details open>`・`data-item`・今日の見立ての有無（WARN）。
   「これまでの根拠」の一番新しい日付が14日より古くないか、次の焦点の件名 20〜35字・本文 200字まで・見出しの件数（WARN）
@@ -554,14 +554,15 @@ Claude.ai で `tools/index_html_diffs.md` を生成し、`run.bat` またはス�
 <dl class="glance-figs">
   <div class="glance-fig"><dt class="glance-fig-label">ブレント</dt><dd class="glance-fig-val"><span class="glance-fig-num">113.43</span><span class="glance-fig-unit">ドル</span></dd><dd class="glance-fig-sub">1月物・10/30 +2.63</dd></div>
   <div class="glance-fig"><dt class="glance-fig-label">WTI</dt><dd class="glance-fig-val"><span class="glance-fig-num">104.12</span><span class="glance-fig-unit">ドル</span></dd><dd class="glance-fig-sub">12月物・10/30 +2.12</dd></div>
-  <div class="glance-fig"><dt class="glance-fig-label">通航（商船）</dt><dd class="glance-fig-val"><span class="glance-fig-num">7</span><span class="glance-fig-unit">隻</span></dd><dd class="glance-fig-sub">10/6・Kpler</dd></div>
+  <div class="glance-fig"><dt class="glance-fig-label">通航（AIS）</dt><dd class="glance-fig-val"><span class="glance-fig-num">3.9</span><span class="glance-fig-unit">隻/日</span></dd><dd class="glance-fig-sub">11/2〜11/8・PortWatch</dd></div>
   <div class="glance-fig"><dt class="glance-fig-label">封鎖の累計</dt><dd class="glance-fig-val"><span class="glance-fig-num">144</span><span class="glance-fig-unit">隻</span></dd><dd class="glance-fig-sub">進路変更・10/31・CENTCOM</dd></div>
 </dl>
 ```
 
   - 欄は 項目名（`glance-fig-label`）・数字（`glance-fig-num`。**数字だけ**。単位・符号・「約」を入れない）・単位（`glance-fig-unit`）・補足（`glance-fig-sub`。限月・**M/D の日付**・増減・出典）
+  - **通航の札は IMF PortWatch の7日平均**（2026-11-14〜・運営者。ダッシュボードのカード1と同じ値）。**手で書かず `python tools/glance_transit.py --write` で書く**（hormuz-data- の `portwatch-hormuz.json` を読み、3枚目を置き換える。終了コード 2 なら前の値のまま）。報道の通航数（Kpler・MarineTraffic・UKMTO の週報など）は札に書かない。数え方が違い、PortWatch（AIS で捕捉した分＝下限）より大きく出る。全文で触れるなら出典と期間を付け、札の数字と同じものとして並べない
   - 原油の札は V2 で2出典が一致した終値。限月は「海峡の今」の全文と同じ。**ブレント・WTI の数字は「海峡の今」の全文にも同じ形で書く**（`validate_daily.py` が照合）
-  - **新しい値が無い日は前の値と日付のまま**にする（数字を消さない・推定で埋めない）。札の日付が古いと WARN（原油3日・通航と封鎖の累計14日）。WARN が出ても、新しい公表値が無ければそのままでよい（報告に書く）
+  - **新しい値が無い日は前の値と日付のまま**にする（数字を消さない・推定で埋めない）。札の日付が古いと WARN（原油3日・通航と封鎖の累計14日。通航は期間の終わりの日で数える）。WARN が出ても、新しい公表値が無ければそのままでよい（報告に書く）
 - **前回の裏取り**（4行目・`glance-label--verify`。2026-10-27〜）：前回の更新が残した未確認・据え置きの項目が、今回の裏取りでどうなったか（「2.4」の 5）
   - **要点は件数だけの決まった形**（2026-10-31 決定）：`前回（M/D HH:MM）の未確認N件→解消a件・継続b件`。取り下げ・打ち切りがあれば `・取り下げc件`・`・打ち切りd件` を足す。**0件の区分は書かない**。
     前回に該当が無い日は `前回（M/D HH:MM）の未確認なし` とし、全文も同じ1文でよい。この行だけは 40〜50字・1文の目安と「書き下ろす」の決まりから外す（`validate_daily.py` は形と件数の和を WARN で見る）

@@ -3967,6 +3967,34 @@
           "sourceLabel": "Arab News（11/13）"
         }
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "dateLabel": "2026/11/15 07:22",
+      "blockadeDay": 261,
+      "summary": "前回分の裏取り：解消1件（ブレント1月物11/13の終値＝95.84ドル〈前日比+0.02ドル〉。Rigzone〈Bloomberg配信〉とCNBCの報道が一致）・継続15件（警報201・203・204の船名・攻撃主体・被害、イラン軍とIRGCの炎上の主張〈11/11〜12〉の裏付け、フーシ派のサウジ施設攻撃の主張の被害、ADNOC船の船名と被害、Didamar島の被害、警報191〜197、MT Velos Sapphire、UAEが救助した22人の貨物船、トランプ氏の「合意は必要ない」発言の原文、UKMTO週報の対象期間、封鎖147隻の数えた時点、IRGCのLNG船の主張、IRGCのレーダー破壊の主張。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・IRGCが11/13夜に海峡南部で2隻、イラン海軍が11/14朝に東部で1隻のタンカーが機雷に触れて炎上したと主張（船名・船籍なし。Reutersは確認できていない。UKMTO公式に警報205以降なし。Arab News〈AFP配信〉・gCaptain〈Reuters配信〉）・IRGCがケシュム島上空で米軍のMQ-1無人機を撃墜したと主張（米側の反応は確認できない。Middle East Monitor）・トランプ氏が新たな挑発がなければ攻撃を見送る可能性を顧問に伝えたが、まだ決めていない（Reuters配信のJerusalem Post）・CENTCOMが夏以降に米国の保護下で約17億バレルの原油が海峡を通過したと発表（Euronews。期間の始点・集計方法は不明）・原油は11/13の終値が確定（ブレント1月物95.84ドル、WTI12月物88.56ドル〈-0.18ドル〉）・通航の新しい週次の値は見つからず・日本関係船は新規の発表なし（残り4隻）・危機261日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート）更新・地図の軍事レイヤーを見直し（機雷警戒海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "IRGC「タンカー2隻が機雷に触れて炎上」・イラン海軍「1隻が炎上」と主張——船名なし、UKMTOに対応する警報なし",
+          "url": "https://www.arabnews.com/middle-east/iran-reports-three-incidents-of-oil-tankers-hit-by-mines-in-hormuz-3011782",
+          "sourceLabel": "Arab News（AFP配信・11/14）"
+        },
+        {
+          "title": "トランプ氏、新たな挑発がなければイラン攻撃を見送る可能性を顧問に伝える——まだ決めていない",
+          "url": "https://www.jpost.com/middle-east/iran-news/article-914862",
+          "sourceLabel": "Jerusalem Post（Reuters配信・11/14）"
+        },
+        {
+          "title": "IRGC「ケシュム島上空で米軍のMQ-1無人機を撃墜」と主張——米側の反応は確認できず",
+          "url": "https://www.middleeastmonitor.com/20261114-irans-revolutionary-guard-says-it-shot-down-us-drone-over-qeshm-island/",
+          "sourceLabel": "Middle East Monitor（11/14）"
+        },
+        {
+          "title": "CENTCOM「夏以降、米国の保護下で約17億バレルの原油が海峡を通過」と発表",
+          "url": "https://www.euronews.com/2026/11/13/irgc-says-it-destroyed-us-radar-in-bahrain-after-attack-on-southern-iran",
+          "sourceLabel": "Euronews（11/13）"
+        }
+      ]
     }
   ]
 }

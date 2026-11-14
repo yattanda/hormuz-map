@@ -1,49 +1,62 @@
 {
-  "updated": "2026年11月14日 07:20 日本時間JST",
+  "updated": "2026年11月15日 07:22 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-bahrain-radar-1114",
-      "title": "IRGC「バーレーンの米軍レーダーを破壊」と主張——CENTCOMは無人機2機の撃墜と被害なしを発表",
-      "body": "RFE/RL（11/13）は、IRGCがバーレーンの米軍の早期警戒レーダーを破壊したと主張し、ホルムズ海峡近くのSirikの通信塔への空爆への対応としたと伝える（米国を名指しせず）。CENTCOMは、IRGCがバーレーンへ一方向攻撃の無人機2機を発射し、いずれも米軍が撃墜し、負傷者も被害もなかったと発表した（Sirikへの攻撃には触れていない）。Al Jazeera（11/13）の記者は、米国とイランのどちらの主張も確認できなかったと述べた。",
-      "sourceLabel": "RFE/RL（11/13）・Al Jazeera（11/13）",
-      "date": "2026年11月13日（現地）",
-      "label": "攻撃",
-      "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html",
+      "id": "latest-hormuz-mines-1115",
+      "title": "IRGC「タンカー2隻が機雷に触れて炎上」・イラン海軍「1隻が炎上」と主張——船名なし、UKMTO公式に対応する警報なし",
+      "body": "Arab News（AFP配信・11/14）は、イラン海軍とIRGCが、計3隻の石油タンカーに火災が起きたと発表したと伝える。IRGCの2隻は海峡南部、海軍の1隻は海峡の東とされ、声明は船名も船籍も示していない。gCaptain（Reuters配信・11/14）は、海軍の発表として土曜（11/14）朝に1隻が海峡東部で機雷に触れて炎上したと伝え、Reutersは確認できていないとした。Arab Newsは、米軍が主要航路の機雷を除去したと述べているとも書く。UKMTO公式に警報205以降はない（11/15 07:19 JST取得）。",
+      "sourceLabel": "Arab News（AFP配信・11/14）・gCaptain（Reuters配信・11/14）",
+      "date": "2026年11月14日（現地）",
+      "label": "海上",
+      "url": "https://www.arabnews.com/middle-east/iran-reports-three-incidents-of-oil-tankers-hit-by-mines-in-hormuz-3011782",
       "isLatest": true
     },
     {
-      "id": "latest-irgc-lng-mine-1114",
-      "title": "IRGC「LNGを積んだタンカーが機雷に触れて爆発」と主張——船名なし、UKMTO公式に対応する警報なし",
-      "body": "gCaptain（Reuters配信・11/13）は、IRGCが金曜（11/13）、LNGを積んだタンカー1隻がホルムズ海峡の「許可されていない危険な航路」で機雷に触れて爆発したと発表したと伝える。船の詳細は未公表で、同記事はUKMTOに触れていない。UKMTO公式に警報205以降はなく（11/14 07:14 JST取得）、独立した確認はない。",
-      "sourceLabel": "gCaptain（Reuters配信・11/13）",
-      "date": "2026年11月13日（現地）",
-      "label": "海上",
-      "url": "https://gcaptain.com/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz/",
+      "id": "latest-trump-holdoff-1115",
+      "title": "トランプ氏、新たな挑発がなければイラン攻撃を見送る可能性を顧問に伝える——まだ決めていない",
+      "body": "Reuters配信のJerusalem Post（11/14）は、複数の事情に詳しい情報源の話として、トランプ氏が上級顧問に、米国が新たな挑発を受けなければイランへの攻撃を見送る可能性があると伝えたと報じる。当局者の話として、まだ決断していないようだとも伝える。同記事は、サウジのムハンマド皇太子とトルコのエルドアン大統領が攻撃の再開を控えるよう求め、イスラエルは軍事作戦の再開を働きかけていると伝える。",
+      "sourceLabel": "Jerusalem Post（Reuters配信・11/14）",
+      "date": "2026年11月14日（現地）",
+      "label": "外交",
+      "url": "https://www.jpost.com/middle-east/iran-news/article-914862",
       "isLatest": false
     },
     {
-      "id": "latest-iea-surplus-1114",
-      "title": "IEA月報：世界の原油供給は第4四半期に需要見通しを日量170万バレル上回る見通し——戦争開始後初めて供給過剰",
-      "body": "Reuters配信のArab News（11/13）は、IEAが、第4四半期の世界の原油供給を日量1億500万バレル、需要見通しを日量170万バレル上回ると伝える。前回の月報は第4四半期の供給不足を予測していた。2026年の世界の需要は日量270万バレル減の1億230万バレルと見込む。IEA公式の月報のページは開けず、数字はReuters配信の原文で確かめた。",
-      "sourceLabel": "Arab News（Reuters配信・11/13）",
-      "date": "2026年11月13日（現地）",
-      "label": "原油・市場",
-      "url": "https://www.arabnews.com/middle-east/iea-oil-market-returning-to-surplus-as-gulf-exports-recover-3011670",
+      "id": "latest-mq1-1115",
+      "title": "IRGC「ケシュム島上空で米軍のMQ-1無人機を撃墜」と主張——米側の反応は確認できず",
+      "body": "Middle East Monitor（11/14）は、IRGCが土曜（11/14）、ホルムズ海峡のケシュム島上空で米軍のMQ-1無人機を撃墜したと発表したと伝える。IRGCは、防空部隊が島の上空で無人機を探知し、新たに開発したシステムで撃墜したと説明した。記事に米側の反応はなく、独立した確認はない。",
+      "sourceLabel": "Middle East Monitor（11/14）",
+      "date": "2026年11月14日（現地）",
+      "label": "軍事",
+      "url": "https://www.middleeastmonitor.com/20261114-irans-revolutionary-guard-says-it-shot-down-us-drone-over-qeshm-island/",
       "isLatest": false
     },
     {
-      "id": "latest-aden-missile-1114",
-      "title": "イエメン軍「フーシ派がアデンに弾道ミサイル」と発表——死傷者・被害の詳細は示されず",
-      "body": "Arab News（11/13）は、イエメン軍の報道官Majed Al-Nuzailiが、フーシ派が金曜（11/13）、暫定首都アデンの民間人と民間施設を狙って弾道ミサイルを発射したと発表したと伝える。報道官は「serious escalation」と述べたが、記事に死傷者数や被害の詳細はない。政府側の発表で、記事の中で独立には検証されていない。",
-      "sourceLabel": "Arab News（11/13）",
-      "date": "2026年11月13日（現地）",
-      "label": "攻撃",
-      "url": "https://www.arabnews.com/middle-east/houthis-target-civilians-in-aden-with-ballistic-missiles-yemeni-army-says-3011688",
+      "id": "latest-centcom-17b-1115",
+      "title": "CENTCOM「夏以降、米国の保護下で約17億バレルの原油が海峡を通過」と発表——期間の始点と集計方法は示されず",
+      "body": "Euronews（11/13）は、CENTCOMが水曜（11/11）、夏以降に米国の保護下で約17億バレルの原油が海峡を通過したと発表したと伝える。対象は原油で、期間の始点・集計方法・国別の内訳は記事にない。CENTCOM自身の投稿は開けておらず、独立した検証はない。",
+      "sourceLabel": "Euronews（11/13）",
+      "date": "2026年11月11日（現地）",
+      "label": "軍事",
+      "url": "https://www.euronews.com/2026/11/13/irgc-says-it-destroyed-us-radar-in-bahrain-after-attack-on-southern-iran",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-mines-1115",
+      "titleJa": "【Arab News】イラン海軍とIRGC「海峡でタンカー計3隻に火災」と発表——船名・船籍なし、独立した確認なし",
+      "titleEn": "Arab News (Nov 14): Iran reports three incidents of oil tankers hit by mines in Hormuz",
+      "title": "【Arab News】イラン海軍とIRGC「海峡でタンカー計3隻に火災」と発表——船名・船籍なし、独立した確認なし",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月14日（現地）",
+      "summary": "Arab News（AFP配信）は、イラン海軍とIRGCが、海峡の南部と東の海域で計3隻の石油タンカーに火災が起きたと発表したと伝える。声明は船名も船籍も示さず、記事に独立した確認はない。米軍は主要航路の機雷を除去したと述べているという。",
+      "url": "https://www.arabnews.com/middle-east/iran-reports-three-incidents-of-oil-tankers-hit-by-mines-in-hormuz-3011782",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-bahrain-1114",
       "titleJa": "【Al Jazeera】IRGC「バーレーンの米軍レーダーを標的にした」と主張——米軍は無人機2機の撃墜と被害なしを発表、記者はどちらの主張も確認できず",
@@ -55,7 +68,7 @@
       "date": "2026年11月13日（現地）",
       "summary": "Al Jazeeraは、IRGCがバーレーンの米軍の早期警戒レーダーを標的にしたと主張し、Farsが「targeted and destroyed」と報じたと伝える。IRGCは理由としてイラン南部の通信塔への攻撃を挙げ、IRNAはSirikが木曜（11/12）に「enemy fire」を受けたと伝えた。CENTCOMは、IRGCが金曜に発射した攻撃用ドローン2機を撃墜し、負傷者も被害もなかったと発表した。ホワイトハウスから報じた同局の記者は、米国とイランのどちらの主張も確認できなかったと述べた。",
       "url": "https://www.aljazeera.com/news/2026/11/13/iran-says-it-struck-us-radar-site-in-bahrain",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-aden-1114",
@@ -2259,6 +2272,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月15日",
+      "items": [
+        {
+          "id": "latest-bahrain-radar-1114",
+          "title": "IRGC「バーレーンの米軍レーダーを破壊」と主張——CENTCOMは無人機2機の撃墜と被害なしを発表",
+          "body": "RFE/RL（11/13）は、IRGCがバーレーンの米軍の早期警戒レーダーを破壊したと主張し、ホルムズ海峡近くのSirikの通信塔への空爆への対応としたと伝える（米国を名指しせず）。CENTCOMは、IRGCがバーレーンへ一方向攻撃の無人機2機を発射し、いずれも米軍が撃墜し、負傷者も被害もなかったと発表した（Sirikへの攻撃には触れていない）。Al Jazeera（11/13）の記者は、米国とイランのどちらの主張も確認できなかったと述べた。",
+          "sourceLabel": "RFE/RL（11/13）・Al Jazeera（11/13）",
+          "date": "2026年11月13日（現地）",
+          "label": "攻撃",
+          "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-lng-mine-1114",
+          "title": "IRGC「LNGを積んだタンカーが機雷に触れて爆発」と主張——船名なし、UKMTO公式に対応する警報なし",
+          "body": "gCaptain（Reuters配信・11/13）は、IRGCが金曜（11/13）、LNGを積んだタンカー1隻がホルムズ海峡の「許可されていない危険な航路」で機雷に触れて爆発したと発表したと伝える。船の詳細は未公表で、同記事はUKMTOに触れていない。UKMTO公式に警報205以降はなく（11/14 07:14 JST取得）、独立した確認はない。",
+          "sourceLabel": "gCaptain（Reuters配信・11/13）",
+          "date": "2026年11月13日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/iran-says-tanker-carrying-lng-hit-mine-suffered-explosion-in-hormuz/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iea-surplus-1114",
+          "title": "IEA月報：世界の原油供給は第4四半期に需要見通しを日量170万バレル上回る見通し——戦争開始後初めて供給過剰",
+          "body": "Reuters配信のArab News（11/13）は、IEAが、第4四半期の世界の原油供給を日量1億500万バレル、需要見通しを日量170万バレル上回ると伝える。前回の月報は第4四半期の供給不足を予測していた。2026年の世界の需要は日量270万バレル減の1億230万バレルと見込む。IEA公式の月報のページは開けず、数字はReuters配信の原文で確かめた。",
+          "sourceLabel": "Arab News（Reuters配信・11/13）",
+          "date": "2026年11月13日（現地）",
+          "label": "原油・市場",
+          "url": "https://www.arabnews.com/middle-east/iea-oil-market-returning-to-surplus-as-gulf-exports-recover-3011670",
+          "isLatest": false
+        },
+        {
+          "id": "latest-aden-missile-1114",
+          "title": "イエメン軍「フーシ派がアデンに弾道ミサイル」と発表——死傷者・被害の詳細は示されず",
+          "body": "Arab News（11/13）は、イエメン軍の報道官Majed Al-Nuzailiが、フーシ派が金曜（11/13）、暫定首都アデンの民間人と民間施設を狙って弾道ミサイルを発射したと発表したと伝える。報道官は「serious escalation」と述べたが、記事に死傷者数や被害の詳細はない。政府側の発表で、記事の中で独立には検証されていない。",
+          "sourceLabel": "Arab News（11/13）",
+          "date": "2026年11月13日（現地）",
+          "label": "攻撃",
+          "url": "https://www.arabnews.com/middle-east/houthis-target-civilians-in-aden-with-ballistic-missiles-yemeni-army-says-3011688",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月14日",
       "items": [

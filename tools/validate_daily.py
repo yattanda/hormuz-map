@@ -1542,6 +1542,7 @@ def check_glance_leads(html: str, base: str) -> None:
     full = plain(glance_part(html, "strait", "text") or "")
     bd = date.fromisoformat(base)
     bad = []
+    pw_note = None
     for want, fig in zip(FIG_LABELS, figs):
         lab = plain((re.search(r'class="glance-fig-label">(.*?)</', fig, re.S) or [None, ""])[1])
         num = plain((re.search(r'class="glance-fig-num">(.*?)</', fig, re.S) or [None, ""])[1])
@@ -1551,7 +1552,9 @@ def check_glance_leads(html: str, base: str) -> None:
             continue
         if not re.fullmatch(r"\d[\d,]*(?:\.\d+)?", num):
             bad.append(f"{want} の数字が数字だけではない（「{num}」）")
-        dm = re.search(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])", sub)
+        dms = list(re.finditer(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?![\d/])", sub))
+        # 通航は期間（M/D〜M/D）なので終わりの日で古さを見る。ほかは最初の M/D
+        dm = (dms[-1] if want == "通航" else dms[0]) if dms else None
         d = md_to_date(int(dm.group(1)), int(dm.group(2)), bd) if dm else None
         if d is None:
             bad.append(f"{want} の補足に M/D の日付がない")
@@ -1559,10 +1562,24 @@ def check_glance_leads(html: str, base: str) -> None:
             bad.append(f"{want} の札の日付が {dm.group(0)}（{(bd - d).days}日前・目安 {FIG_MAX_AGE[want]}日）")
         if want in ("ブレント", "WTI") and num and num not in full:
             bad.append(f"{want} の札の数字 {num} が「海峡の今」の全文に無い")
+        if want == "通航":
+            # 札は IMF PortWatch の7日平均（2026-11-14〜・ダッシュボードのカード1と同じ値）
+            import glance_transit
+            pw, src = glance_transit.load_portwatch()
+            if pw is None:
+                pw_note = f"通航の札と PortWatch の照合は未確認: {src}"
+            else:
+                e_num, e_sub, _ = glance_transit.expected(pw)
+                if (lab, num, sub) != (plain(glance_transit.LABEL), e_num, plain(e_sub)):
+                    bad.append(f"通航の札が PortWatch の最新（{e_num}{glance_transit.UNIT}・{e_sub}）と違う"
+                               f"（「{lab} {num}・{sub}」）。python tools/glance_transit.py --write で書き直す")
+    if pw_note:
+        warn(pw_note)
     if bad:
         warn("「海峡の今」の数字の札：" + "／".join(bad))
     else:
-        ok("「海峡の今」の数字の札 4枚（形・日付・全文との一致）")
+        ok("「海峡の今」の数字の札 4枚（形・日付・全文との一致・通航は PortWatch と一致）"
+           if not pw_note else "「海峡の今」の数字の札 4枚（形・日付・全文との一致）")
 
 
 def check_scenario_dates(html: str, base: str) -> None:

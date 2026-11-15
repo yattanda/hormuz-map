@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月15日 07:22 日本時間JST",
+  "updated": "2026年11月16日 07:21 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-hormuz-mines-1115",
-      "title": "IRGC「タンカー2隻が機雷に触れて炎上」・イラン海軍「1隻が炎上」と主張——船名なし、UKMTO公式に対応する警報なし",
-      "body": "Arab News（AFP配信・11/14）は、イラン海軍とIRGCが、計3隻の石油タンカーに火災が起きたと発表したと伝える。IRGCの2隻は海峡南部、海軍の1隻は海峡の東とされ、声明は船名も船籍も示していない。gCaptain（Reuters配信・11/14）は、海軍の発表として土曜（11/14）朝に1隻が海峡東部で機雷に触れて炎上したと伝え、Reutersは確認できていないとした。Arab Newsは、米軍が主要航路の機雷を除去したと述べているとも書く。UKMTO公式に警報205以降はない（11/15 07:19 JST取得）。",
-      "sourceLabel": "Arab News（AFP配信・11/14）・gCaptain（Reuters配信・11/14）",
-      "date": "2026年11月14日（現地）",
-      "label": "海上",
-      "url": "https://www.arabnews.com/middle-east/iran-reports-three-incidents-of-oil-tankers-hit-by-mines-in-hormuz-3011782",
+      "id": "latest-bahrain-drones-1116",
+      "title": "IRGC「バーレーンの米軍基地のレーダーをドローン6機で攻撃」と主張——バーレーン軍は迎撃と発表、米側の確認は見つからず",
+      "body": "AOL（11/15）は、IRGCがバーレーンの米軍基地のレーダーをIRGC航空宇宙軍のドローン6機で標的にしたと主張し、バーレーン軍が複数の攻撃を迎撃して目標に届かなかったと発表したと伝える。CENTCOMの「ドローン2機を撃墜・被害なし」の報告が11/15の攻撃についてかは記事から判断できず、11/15の攻撃へのCENTCOMの声明は11/16 07:15 JSTの検索で見つからない。記事は独立した確認がないと書く。",
+      "sourceLabel": "AOL（11/15）",
+      "date": "2026年11月15日（現地）",
+      "label": "攻撃",
+      "url": "https://www.aol.co.uk/articles/iran-attacks-us-military-bahrain-144206000.html",
       "isLatest": true
     },
     {
-      "id": "latest-trump-holdoff-1115",
-      "title": "トランプ氏、新たな挑発がなければイラン攻撃を見送る可能性を顧問に伝える——まだ決めていない",
-      "body": "Reuters配信のJerusalem Post（11/14）は、複数の事情に詳しい情報源の話として、トランプ氏が上級顧問に、米国が新たな挑発を受けなければイランへの攻撃を見送る可能性があると伝えたと報じる。当局者の話として、まだ決断していないようだとも伝える。同記事は、サウジのムハンマド皇太子とトルコのエルドアン大統領が攻撃の再開を控えるよう求め、イスラエルは軍事作戦の再開を働きかけていると伝える。",
-      "sourceLabel": "Jerusalem Post（Reuters配信・11/14）",
-      "date": "2026年11月14日（現地）",
-      "label": "外交",
-      "url": "https://www.jpost.com/middle-east/iran-news/article-914862",
+      "id": "latest-sinking-claim-1116",
+      "title": "IRGC「機雷に触れた2隻のうちスーパータンカー1隻が沈没」・イラン海軍「東でタンカー1隻が炎上」と主張——船名なし、独立した確認なし",
+      "body": "Gulf News（11/15）は、IRGCが、積荷200万バレル超のスーパータンカー1隻が機雷に触れて沈没したと発表したと伝える。海峡南部の「許可されていない航路」で2隻が機雷に触れたとし、船名・船籍は示されず、独立した確認はない。Arab News（Reuters配信・11/15）は、イラン海軍が海峡の東でタンカー1隻が機雷に触れて炎上したと国営メディアが伝えたとし、Reutersは独立に確認できていないと書く。",
+      "sourceLabel": "Gulf News（11/15）・Arab News（Reuters配信・11/15）",
+      "date": "2026年11月15日（現地）",
+      "label": "海上",
+      "url": "https://gulfnews.com/world/mena/iran-says-supertanker-with-2-million-barrels-of-oil-sank-in-gulf-1.500748289",
       "isLatest": false
     },
     {
-      "id": "latest-mq1-1115",
-      "title": "IRGC「ケシュム島上空で米軍のMQ-1無人機を撃墜」と主張——米側の反応は確認できず",
-      "body": "Middle East Monitor（11/14）は、IRGCが土曜（11/14）、ホルムズ海峡のケシュム島上空で米軍のMQ-1無人機を撃墜したと発表したと伝える。IRGCは、防空部隊が島の上空で無人機を探知し、新たに開発したシステムで撃墜したと説明した。記事に米側の反応はなく、独立した確認はない。",
-      "sourceLabel": "Middle East Monitor（11/14）",
-      "date": "2026年11月14日（現地）",
-      "label": "軍事",
-      "url": "https://www.middleeastmonitor.com/20261114-irans-revolutionary-guard-says-it-shot-down-us-drone-over-qeshm-island/",
+      "id": "latest-ukmto205-1116",
+      "title": "UKMTO警報205——インド海運当局の報告で、海峡に入る前の湾内でタンカーが攻撃を受ける、乗組員は無事",
+      "body": "UKMTO公式サイトの警報205（11/15 20:52 JST発行）は、インド海運当局の報告として、ペルシャ湾を東へ向かい海峡に入る前のタンカーが攻撃を受けたと伝える。乗組員は全員無事で、被害の評価と環境への影響は不明。公式の本文に発生時刻・船名・攻撃主体の記載はない。Gulf Newsは、IRGCの発表と同じ事案かは不明と伝える。",
+      "sourceLabel": "UKMTO公式（11/15発行）・Gulf News（11/15）",
+      "date": "2026年11月15日（現地）",
+      "label": "海上",
+      "url": "https://www.ukmto.org/recent-incidents",
       "isLatest": false
     },
     {
-      "id": "latest-centcom-17b-1115",
-      "title": "CENTCOM「夏以降、米国の保護下で約17億バレルの原油が海峡を通過」と発表——期間の始点と集計方法は示されず",
-      "body": "Euronews（11/13）は、CENTCOMが水曜（11/11）、夏以降に米国の保護下で約17億バレルの原油が海峡を通過したと発表したと伝える。対象は原油で、期間の始点・集計方法・国別の内訳は記事にない。CENTCOM自身の投稿は開けておらず、独立した検証はない。",
-      "sourceLabel": "Euronews（11/13）",
-      "date": "2026年11月11日（現地）",
+      "id": "latest-bab-mandeb-1116",
+      "title": "イエメン南部勢力、ドゥバーブ空港とバブエルマンデブ周辺から再配置と発表——フーシ派はアデン北方の高地を掌握と伝えられる",
+      "body": "Al Jazeera（11/15）は、南部武装勢力の報道官が、ドゥバーブ空港とバブエルマンデブ周辺から再配置すると発表したと伝える。理由は首都アデンと隣接県の安全確保の優先と説明した。同記事は、フーシ派がアデン北方の高地を掌握し、市への前進を準備していると述べていると伝える。紅海の船舶への新たな攻撃は前回以降の検索で確認できない。",
+      "sourceLabel": "Al Jazeera（11/15）",
+      "date": "2026年11月15日（現地）",
       "label": "軍事",
-      "url": "https://www.euronews.com/2026/11/13/irgc-says-it-destroyed-us-radar-in-bahrain-after-attack-on-southern-iran",
+      "url": "https://www.aljazeera.com/news/2026/11/15/yemeni-government-forces-redeploy-from-bab-al-mandeb-to-defend-aden",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-gulfnews-sinking-1116",
+      "titleJa": "【Gulf News】IRGC「スーパータンカー1隻が機雷に触れて沈没」と発表——船名・船籍なし、独立した確認なし、UKMTO警報205と同じ件かは不明",
+      "titleEn": "Gulf News (Nov 15): Iran says supertanker with 2 million barrels of oil sank in Gulf",
+      "title": "【Gulf News】IRGC「スーパータンカー1隻が機雷に触れて沈没」と発表——船名・船籍なし、独立した確認なし、UKMTO警報205と同じ件かは不明",
+      "country": "UAE",
+      "media": "Gulf News",
+      "source": "Gulf News",
+      "date": "2026年11月15日（現地）",
+      "summary": "Gulf Newsは、IRGCが日曜（11/15）、積荷200万バレル超のスーパータンカーが機雷に触れて沈没したと発表したと伝える。海峡南部の許可されていない航路で石油タンカー2隻が機雷に触れたとし、船名・船籍は示されず、独立した確認はない。同記事は、インド海運当局が報告したUKMTOの湾内のタンカー攻撃がIRGCの発表と同じ事案かは不明と伝える。",
+      "url": "https://gulfnews.com/world/mena/iran-says-supertanker-with-2-million-barrels-of-oil-sank-in-gulf-1.500748289",
+      "isLatest": true
+    },
+    {
+      "id": "osint-aljazeera-babmandeb-1116",
+      "titleJa": "【Al Jazeera】イエメン南部勢力、ドゥバーブ空港とバブエルマンデブ周辺から再配置と発表——フーシ派はアデン北方の高地を掌握と伝えられる",
+      "titleEn": "Al Jazeera (Nov 15): Yemeni government forces redeploy from Bab al-Mandeb to defend Aden",
+      "title": "【Al Jazeera】イエメン南部勢力、ドゥバーブ空港とバブエルマンデブ周辺から再配置と発表——フーシ派はアデン北方の高地を掌握と伝えられる",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月15日（現地）",
+      "summary": "Al Jazeeraは、南部武装勢力の報道官が、首都アデンと隣接県の安全確保を優先するとして、ドゥバーブ空港とバブエルマンデブ周辺から再配置すると発表したと伝える。同記事は、フーシ派がアデン北方の高地を掌握し、市への前進を準備していると述べていると伝える。",
+      "url": "https://www.aljazeera.com/news/2026/11/15/yemeni-government-forces-redeploy-from-bab-al-mandeb-to-defend-aden",
+      "isLatest": false
+    },
     {
       "id": "osint-arabnews-mines-1115",
       "titleJa": "【Arab News】イラン海軍とIRGC「海峡でタンカー計3隻に火災」と発表——船名・船籍なし、独立した確認なし",
@@ -55,7 +81,7 @@
       "date": "2026年11月14日（現地）",
       "summary": "Arab News（AFP配信）は、イラン海軍とIRGCが、海峡の南部と東の海域で計3隻の石油タンカーに火災が起きたと発表したと伝える。声明は船名も船籍も示さず、記事に独立した確認はない。米軍は主要航路の機雷を除去したと述べているという。",
       "url": "https://www.arabnews.com/middle-east/iran-reports-three-incidents-of-oil-tankers-hit-by-mines-in-hormuz-3011782",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-bahrain-1114",
@@ -2272,6 +2298,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月16日",
+      "items": [
+        {
+          "id": "latest-hormuz-mines-1115",
+          "title": "IRGC「タンカー2隻が機雷に触れて炎上」・イラン海軍「1隻が炎上」と主張——船名なし、UKMTO公式に対応する警報なし",
+          "body": "Arab News（AFP配信・11/14）は、イラン海軍とIRGCが、計3隻の石油タンカーに火災が起きたと発表したと伝える。IRGCの2隻は海峡南部、海軍の1隻は海峡の東とされ、声明は船名も船籍も示していない。gCaptain（Reuters配信・11/14）は、海軍の発表として土曜（11/14）朝に1隻が海峡東部で機雷に触れて炎上したと伝え、Reutersは確認できていないとした。Arab Newsは、米軍が主要航路の機雷を除去したと述べているとも書く。UKMTO公式に警報205以降はない（11/15 07:19 JST取得）。",
+          "sourceLabel": "Arab News（AFP配信・11/14）・gCaptain（Reuters配信・11/14）",
+          "date": "2026年11月14日（現地）",
+          "label": "海上",
+          "url": "https://www.arabnews.com/middle-east/iran-reports-three-incidents-of-oil-tankers-hit-by-mines-in-hormuz-3011782",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-holdoff-1115",
+          "title": "トランプ氏、新たな挑発がなければイラン攻撃を見送る可能性を顧問に伝える——まだ決めていない",
+          "body": "Reuters配信のJerusalem Post（11/14）は、複数の事情に詳しい情報源の話として、トランプ氏が上級顧問に、米国が新たな挑発を受けなければイランへの攻撃を見送る可能性があると伝えたと報じる。当局者の話として、まだ決断していないようだとも伝える。同記事は、サウジのムハンマド皇太子とトルコのエルドアン大統領が攻撃の再開を控えるよう求め、イスラエルは軍事作戦の再開を働きかけていると伝える。",
+          "sourceLabel": "Jerusalem Post（Reuters配信・11/14）",
+          "date": "2026年11月14日（現地）",
+          "label": "外交",
+          "url": "https://www.jpost.com/middle-east/iran-news/article-914862",
+          "isLatest": false
+        },
+        {
+          "id": "latest-mq1-1115",
+          "title": "IRGC「ケシュム島上空で米軍のMQ-1無人機を撃墜」と主張——米側の反応は確認できず",
+          "body": "Middle East Monitor（11/14）は、IRGCが土曜（11/14）、ホルムズ海峡のケシュム島上空で米軍のMQ-1無人機を撃墜したと発表したと伝える。IRGCは、防空部隊が島の上空で無人機を探知し、新たに開発したシステムで撃墜したと説明した。記事に米側の反応はなく、独立した確認はない。",
+          "sourceLabel": "Middle East Monitor（11/14）",
+          "date": "2026年11月14日（現地）",
+          "label": "軍事",
+          "url": "https://www.middleeastmonitor.com/20261114-irans-revolutionary-guard-says-it-shot-down-us-drone-over-qeshm-island/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-centcom-17b-1115",
+          "title": "CENTCOM「夏以降、米国の保護下で約17億バレルの原油が海峡を通過」と発表——期間の始点と集計方法は示されず",
+          "body": "Euronews（11/13）は、CENTCOMが水曜（11/11）、夏以降に米国の保護下で約17億バレルの原油が海峡を通過したと発表したと伝える。対象は原油で、期間の始点・集計方法・国別の内訳は記事にない。CENTCOM自身の投稿は開けておらず、独立した検証はない。",
+          "sourceLabel": "Euronews（11/13）",
+          "date": "2026年11月11日（現地）",
+          "label": "軍事",
+          "url": "https://www.euronews.com/2026/11/13/irgc-says-it-destroyed-us-radar-in-bahrain-after-attack-on-southern-iran",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月15日",
       "items": [

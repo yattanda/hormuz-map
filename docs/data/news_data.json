@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月16日 07:21 日本時間JST",
+  "updated": "2026年11月17日 07:46 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-bahrain-drones-1116",
-      "title": "IRGC「バーレーンの米軍基地のレーダーをドローン6機で攻撃」と主張——バーレーン軍は迎撃と発表、米側の確認は見つからず",
-      "body": "AOL（11/15）は、IRGCがバーレーンの米軍基地のレーダーをIRGC航空宇宙軍のドローン6機で標的にしたと主張し、バーレーン軍が複数の攻撃を迎撃して目標に届かなかったと発表したと伝える。CENTCOMの「ドローン2機を撃墜・被害なし」の報告が11/15の攻撃についてかは記事から判断できず、11/15の攻撃へのCENTCOMの声明は11/16 07:15 JSTの検索で見つからない。記事は独立した確認がないと書く。",
-      "sourceLabel": "AOL（11/15）",
-      "date": "2026年11月15日（現地）",
-      "label": "攻撃",
-      "url": "https://www.aol.co.uk/articles/iran-attacks-us-military-bahrain-144206000.html",
+      "id": "latest-ukmto-207-208-1117",
+      "title": "UKMTO警報207・208——海峡内でタンカーが攻撃を受け機関室火災、乗組員は無事・船名と攻撃主体は不明（同じ船かは不明）",
+      "body": "UKMTO公式の警報207（11/16 16:09 JST発行）は、海峡を出る途中のタンカーが正体不明の飛翔体に被弾し機関室で火災が起きたと伝える（乗組員は全員無事）。警報208（11/17 06:47 JST発行）は、オマーンのKhasabの北7海里でタンカーが攻撃を受けて航行不能になり機関室で火災が起きたと伝える（第三者の報告・乗組員は無事）。どちらも公式の本文に発生時刻・船名・攻撃主体の記載はなく、同じ船かも不明。gCaptain（11/16）によれば、UKMTOは船と攻撃主体を特定していない。",
+      "sourceLabel": "UKMTO公式（11/16〜17）・Arab News（Reuters配信）・gCaptain",
+      "date": "2026年11月16日（現地）",
+      "label": "海上",
+      "url": "https://www.ukmto.org/recent-incidents",
       "isLatest": true
     },
     {
-      "id": "latest-sinking-claim-1116",
-      "title": "IRGC「機雷に触れた2隻のうちスーパータンカー1隻が沈没」・イラン海軍「東でタンカー1隻が炎上」と主張——船名なし、独立した確認なし",
-      "body": "Gulf News（11/15）は、IRGCが、積荷200万バレル超のスーパータンカー1隻が機雷に触れて沈没したと発表したと伝える。海峡南部の「許可されていない航路」で2隻が機雷に触れたとし、船名・船籍は示されず、独立した確認はない。Arab News（Reuters配信・11/15）は、イラン海軍が海峡の東でタンカー1隻が機雷に触れて炎上したと国営メディアが伝えたとし、Reutersは独立に確認できていないと書く。",
-      "sourceLabel": "Gulf News（11/15）・Arab News（Reuters配信・11/15）",
-      "date": "2026年11月15日（現地）",
+      "id": "latest-iran-navy-4th-1117",
+      "title": "イラン海軍「東で4隻目のタンカーが機雷に触れて炎上」と主張——船名なし、独立した確認なし",
+      "body": "Arab News（11/16 23:45）は、イラン海軍が月曜（11/16）、海峡の東の「制限区域」で4隻目の石油タンカーが機雷に触れて炎上したと発表したと伝える。声明は船名・船籍・積荷・乗組員の状況を示さず、記事に他の情報源の裏付けはない。UKMTO警報207・208との関係は確認できない。「4隻目」はイラン側の数え方で、主要媒体が独自に数えたものではない。",
+      "sourceLabel": "Arab News（11/16）",
+      "date": "2026年11月16日（現地）",
       "label": "海上",
-      "url": "https://gulfnews.com/world/mena/iran-says-supertanker-with-2-million-barrels-of-oil-sank-in-gulf-1.500748289",
+      "url": "https://www.arabnews.com/middle-east/irans-army-navy-says-fourth-tanker-hit-by-mine-east-of-hormuz-3012325",
       "isLatest": false
     },
     {
-      "id": "latest-ukmto205-1116",
-      "title": "UKMTO警報205——インド海運当局の報告で、海峡に入る前の湾内でタンカーが攻撃を受ける、乗組員は無事",
-      "body": "UKMTO公式サイトの警報205（11/15 20:52 JST発行）は、インド海運当局の報告として、ペルシャ湾を東へ向かい海峡に入る前のタンカーが攻撃を受けたと伝える。乗組員は全員無事で、被害の評価と環境への影響は不明。公式の本文に発生時刻・船名・攻撃主体の記載はない。Gulf Newsは、IRGCの発表と同じ事案かは不明と伝える。",
-      "sourceLabel": "UKMTO公式（11/15発行）・Gulf News（11/15）",
-      "date": "2026年11月15日（現地）",
-      "label": "海上",
-      "url": "https://www.ukmto.org/recent-incidents",
-      "isLatest": false
-    },
-    {
-      "id": "latest-bab-mandeb-1116",
-      "title": "イエメン南部勢力、ドゥバーブ空港とバブエルマンデブ周辺から再配置と発表——フーシ派はアデン北方の高地を掌握と伝えられる",
-      "body": "Al Jazeera（11/15）は、南部武装勢力の報道官が、ドゥバーブ空港とバブエルマンデブ周辺から再配置すると発表したと伝える。理由は首都アデンと隣接県の安全確保の優先と説明した。同記事は、フーシ派がアデン北方の高地を掌握し、市への前進を準備していると述べていると伝える。紅海の船舶への新たな攻撃は前回以降の検索で確認できない。",
-      "sourceLabel": "Al Jazeera（11/15）",
-      "date": "2026年11月15日（現地）",
+      "id": "latest-carrier-roosevelt-1117",
+      "title": "米空母セオドア・ルーズベルトが中東に到着、空母は3隻に——CENTCOMがXで投稿、到着日は報道で11/15と11/16に分かれる",
+      "body": "Fox News（11/16）は、CENTCOMがXに、空母セオドア・ルーズベルト（CVN 71）が担当海域で予定された展開の一環として活動していると投稿したと伝える（写真は11/15にインド洋で撮影）。同記事は日曜（11/15）に担当海域に入ったと伝えられたと書く。Al Jazeera（11/16）は国防総省とCENTCOMが到着を正式には確認していないと書き、報道の間で食い違う。イランのIAEA査察の拒否も同記事は伝える。",
+      "sourceLabel": "Fox News（11/16）",
+      "date": "2026年11月16日（現地）",
       "label": "軍事",
-      "url": "https://www.aljazeera.com/news/2026/11/15/yemeni-government-forces-redeploy-from-bab-al-mandeb-to-defend-aden",
+      "url": "https://www.foxnews.com/politics/third-us-aircraft-carrier-arrives-middle-east-iran-rules-out-un-nuclear-inspections",
+      "isLatest": false
+    },
+    {
+      "id": "latest-saudi-commander-1117",
+      "title": "サウジ、連合軍（統合軍）の司令官を交代——フーシ派はアデンの約60km手前まで迫ると報じられる",
+      "body": "The National（11/16）は、サウジアラビアが国王令で、統合軍の司令官ファハド・ビン・ハマド・アル・サルマン中将に代えて参謀総長のファイヤード・アル・ルワイリ中将を任命したと伝える。交代の理由は公式には示されていない。ABCはAFPを引き、フーシ派がアデンの西約60kmまで迫ると伝えるが、Reutersは約100kmと伝えており、報道で距離が異なる。紅海・バブエルマンデブでの新たな船舶攻撃は、主要媒体で確認できない。",
+      "sourceLabel": "The National（11/16）",
+      "date": "2026年11月16日（現地）",
+      "label": "軍事",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/11/16/saudi-arabia-replaces-joint-forces-commander-overseeing-fight-with-houthis/",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-4th-1117",
+      "titleJa": "【Arab News】イラン海軍「海峡の東で4隻目のタンカーが機雷に触れて炎上」と発表——船名・船籍・積荷の記載なし、他の情報源の裏付けなし",
+      "titleEn": "Arab News (Nov 16): Iran's army Navy says fourth tanker hit by mine east of Hormuz",
+      "title": "【Arab News】イラン海軍「海峡の東で4隻目のタンカーが機雷に触れて炎上」と発表——船名・船籍・積荷の記載なし、他の情報源の裏付けなし",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月16日（現地）",
+      "summary": "Arab Newsは、イラン海軍が月曜（11/16）、海峡の東の制限区域で4隻目の石油タンカーが機雷に触れて炎上したと発表したと伝える。声明は船名・船籍・積荷・乗組員の状況を示さず、記事に他の情報源の裏付けはない。UKMTO警報207・208との関係は確認できない。",
+      "url": "https://www.arabnews.com/middle-east/irans-army-navy-says-fourth-tanker-hit-by-mine-east-of-hormuz-3012325",
+      "isLatest": true
+    },
+    {
+      "id": "osint-thenational-saudi-1117",
+      "titleJa": "【The National】サウジ、フーシ派と戦う統合軍の司令官を交代——国王令で参謀総長を後任に、理由は公式に示されず",
+      "titleEn": "The National (Nov 16): Saudi Arabia replaces Joint Forces commander overseeing fight with Houthis",
+      "title": "【The National】サウジ、フーシ派と戦う統合軍の司令官を交代——国王令で参謀総長を後任に、理由は公式に示されず",
+      "country": "UAE",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年11月16日（現地）",
+      "summary": "The Nationalは、サウジアラビアが国王令で、統合軍の司令官アル・サルマン中将に代えて参謀総長のアル・ルワイリ中将を任命したと伝える。交代の理由は公式には示されていない。",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/11/16/saudi-arabia-replaces-joint-forces-commander-overseeing-fight-with-houthis/",
+      "isLatest": false
+    },
     {
       "id": "osint-gulfnews-sinking-1116",
       "titleJa": "【Gulf News】IRGC「スーパータンカー1隻が機雷に触れて沈没」と発表——船名・船籍なし、独立した確認なし、UKMTO警報205と同じ件かは不明",
@@ -55,7 +81,7 @@
       "date": "2026年11月15日（現地）",
       "summary": "Gulf Newsは、IRGCが日曜（11/15）、積荷200万バレル超のスーパータンカーが機雷に触れて沈没したと発表したと伝える。海峡南部の許可されていない航路で石油タンカー2隻が機雷に触れたとし、船名・船籍は示されず、独立した確認はない。同記事は、インド海運当局が報告したUKMTOの湾内のタンカー攻撃がIRGCの発表と同じ事案かは不明と伝える。",
       "url": "https://gulfnews.com/world/mena/iran-says-supertanker-with-2-million-barrels-of-oil-sank-in-gulf-1.500748289",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-babmandeb-1116",
@@ -2298,6 +2324,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月17日",
+      "items": [
+        {
+          "id": "latest-bahrain-drones-1116",
+          "title": "IRGC「バーレーンの米軍基地のレーダーをドローン6機で攻撃」と主張——バーレーン軍は迎撃と発表、米側の確認は見つからず",
+          "body": "AOL（11/15）は、IRGCがバーレーンの米軍基地のレーダーをIRGC航空宇宙軍のドローン6機で標的にしたと主張し、バーレーン軍が複数の攻撃を迎撃して目標に届かなかったと発表したと伝える。CENTCOMの「ドローン2機を撃墜・被害なし」の報告が11/15の攻撃についてかは記事から判断できず、11/15の攻撃へのCENTCOMの声明は11/16 07:15 JSTの検索で見つからない。記事は独立した確認がないと書く。",
+          "sourceLabel": "AOL（11/15）",
+          "date": "2026年11月15日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aol.co.uk/articles/iran-attacks-us-military-bahrain-144206000.html",
+          "isLatest": false
+        },
+        {
+          "id": "latest-sinking-claim-1116",
+          "title": "IRGC「機雷に触れた2隻のうちスーパータンカー1隻が沈没」・イラン海軍「東でタンカー1隻が炎上」と主張——船名なし、独立した確認なし",
+          "body": "Gulf News（11/15）は、IRGCが、積荷200万バレル超のスーパータンカー1隻が機雷に触れて沈没したと発表したと伝える。海峡南部の「許可されていない航路」で2隻が機雷に触れたとし、船名・船籍は示されず、独立した確認はない。Arab News（Reuters配信・11/15）は、イラン海軍が海峡の東でタンカー1隻が機雷に触れて炎上したと国営メディアが伝えたとし、Reutersは独立に確認できていないと書く。",
+          "sourceLabel": "Gulf News（11/15）・Arab News（Reuters配信・11/15）",
+          "date": "2026年11月15日（現地）",
+          "label": "海上",
+          "url": "https://gulfnews.com/world/mena/iran-says-supertanker-with-2-million-barrels-of-oil-sank-in-gulf-1.500748289",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto205-1116",
+          "title": "UKMTO警報205——インド海運当局の報告で、海峡に入る前の湾内でタンカーが攻撃を受ける、乗組員は無事",
+          "body": "UKMTO公式サイトの警報205（11/15 20:52 JST発行）は、インド海運当局の報告として、ペルシャ湾を東へ向かい海峡に入る前のタンカーが攻撃を受けたと伝える。乗組員は全員無事で、被害の評価と環境への影響は不明。公式の本文に発生時刻・船名・攻撃主体の記載はない。Gulf Newsは、IRGCの発表と同じ事案かは不明と伝える。",
+          "sourceLabel": "UKMTO公式（11/15発行）・Gulf News（11/15）",
+          "date": "2026年11月15日（現地）",
+          "label": "海上",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "isLatest": false
+        },
+        {
+          "id": "latest-bab-mandeb-1116",
+          "title": "イエメン南部勢力、ドゥバーブ空港とバブエルマンデブ周辺から再配置と発表——フーシ派はアデン北方の高地を掌握と伝えられる",
+          "body": "Al Jazeera（11/15）は、南部武装勢力の報道官が、ドゥバーブ空港とバブエルマンデブ周辺から再配置すると発表したと伝える。理由は首都アデンと隣接県の安全確保の優先と説明した。同記事は、フーシ派がアデン北方の高地を掌握し、市への前進を準備していると述べていると伝える。紅海の船舶への新たな攻撃は前回以降の検索で確認できない。",
+          "sourceLabel": "Al Jazeera（11/15）",
+          "date": "2026年11月15日（現地）",
+          "label": "軍事",
+          "url": "https://www.aljazeera.com/news/2026/11/15/yemeni-government-forces-redeploy-from-bab-al-mandeb-to-defend-aden",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月16日",
       "items": [

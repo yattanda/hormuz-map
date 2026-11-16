@@ -170,12 +170,12 @@ CORRECTIONS = ROOT / "docs" / "corrections" / "index.html"
 
 # hormuz-data- の経緯（Gemini に渡す確定した事実）。ローカルはリポジトリの親ディレクトリ基準
 DATA_CONTEXT_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "context.json"
-DATA_CONTEXT_URL = "https://yattanda.github.io/hormuz-data-/data/context.json"
+DATA_CONTEXT_URL = "https://data.chokepointlab.com/data/context.json"
 # ダッシュボードの ⚠（context.json の timeline_stale_after_days = 7）より手前で気づくための閾値
 DATA_TIMELINE_WARN_DAYS = 5
 # 日本向け調達フロー（ルート表の「日本向け」列）の元データ。hormuz-data- が毎日確認して、新しい月が出た日だけ書き換える
 OIL_FLOW_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "oil-flow.json"
-OIL_FLOW_URL = "https://yattanda.github.io/hormuz-data-/data/oil-flow.json"
+OIL_FLOW_URL = "https://data.chokepointlab.com/data/oil-flow.json"
 # 国別の数量が e-Stat に入るのは対象月の翌月下旬〜翌々月上旬。この日を過ぎても2か月前の月が出ていなければ遅れとみなす
 OIL_FLOW_GRACE_DAY = 15
 

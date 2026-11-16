@@ -24,7 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / "docs" / "hormuz" / "index.html"
-PORTWATCH_URL = "https://yattanda.github.io/hormuz-data-/data/portwatch-hormuz.json"
+PORTWATCH_URL = "https://data.chokepointlab.com/data/portwatch-hormuz.json"
 PORTWATCH_LOCAL = ROOT.parent / "hormuz-data-" / "data" / "portwatch-hormuz.json"
 
 LABEL = "通航（AIS）"

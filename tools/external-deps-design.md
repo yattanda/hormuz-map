@@ -25,7 +25,7 @@
 | `googletagmanager.com` | GA4 | 全ページ | 対象外（解析そのもの。ハブのタグは Search Console の所有権確認に使用中） |
 | `s3.tradingview.com` | 市場のウィジェット | `/hormuz/` | 対象外（外部サービスの埋め込み） |
 | `basemaps.cartocdn.com` | 地図の背景タイル | `/hormuz/` | 対象外（J1 で別に判断） |
-| `yattanda.github.io/hormuz-data-` | ダッシュボードの iframe と JSON | `/hormuz/` | 対象外（④ `data.` で扱う） |
+| `data.chokepointlab.com`（2026-11 の ④ までは `yattanda.github.io/hormuz-data-`） | ダッシュボードの iframe と JSON | `/hormuz/`・ハブ（WTI） | 対象外（④ `data.` で自ドメインのサブドメインへ移した） |
 
 - ハブ・法務ページ・用語集・アーカイブは Google Fonts を読み込んでいない（システムのフォントで表示）
 - `countries.geojson`・`rio-indio.geojson` は自サイト（`/data/`）から読んでいる（自前化済み）

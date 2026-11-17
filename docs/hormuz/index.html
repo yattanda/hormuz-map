@@ -359,9 +359,9 @@ UKMTO警報207・208の船名・攻撃主体と2件の関係、イラン海軍�
   ></iframe>
 </div>
 <script>
-  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ドメイン/リポジトリ名移行時はここのみ変更）
+  // SITE_CONFIG: hormuz-data- 連携ダッシュボードのベースURL（ハブ docs/index.html にも同じ値がある。移行時は両方を変更）
   window.SITE_CONFIG = window.SITE_CONFIG || {
-    DASHBOARD_BASE: 'https://yattanda.github.io/hormuz-data-'
+    DASHBOARD_BASE: 'https://data.chokepointlab.com'
   };
   (function () {
     const iframe = document.getElementById('hormuz-dashboard');
@@ -476,8 +476,10 @@ UKMTO警報207・208の船名・攻撃主体と2件の関係、イラン海軍�
 
     window.addEventListener('resize', scheduleSync);
 
-    // 別オリジンに移行した場合の受け口（子側が iframeHeight を送ってくる場合）
+    // 別オリジン（data.chokepointlab.com）のダッシュボードが送ってくる iframeHeight の受け口
+    const dashOrigin = new URL(SITE_CONFIG.DASHBOARD_BASE).origin;
     window.addEventListener('message', function (ev) {
+      if (ev.origin !== dashOrigin) return;  // ダッシュボード以外のページからの高さは受けない
       const data = ev.data;
       if (!data || data.type !== 'iframeHeight' || typeof data.height !== 'number') return;
       if (iframe.contentWindow && ev.source !== iframe.contentWindow) return;

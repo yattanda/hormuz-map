@@ -7,6 +7,9 @@
    各ページは ?v=20261022 を付けて読む（theme-iron を外した HTML が、ブラウザに残った古い tokens.css〈:root.theme-iron の形〉と組むと
    古い色に戻るため。GitHub Pages の max-age は 600 秒）。次に tokens.css の名前を変えるような直しをするときも、この印を進める
    トークンにない色を CSS や HTML に直に書かない（tools/validate_daily.py の check_colors() が WARN を出す・D3 PR 7b）
+   このファイルと /assets/fonts/ は、別リポジトリのダッシュボード（hormuz-data- の index.html・data.chokepointlab.com）も
+   絶対 URL で読む（課題46 D4・2026-11-17）。値を替えるとダッシュボードの色と書体も変わる。トークンの名前を変える・外すときは、
+   ダッシュボードの index.html が使っている名前（--c-*・--f-*）と、そこに付けた ?v= も合わせて直す
    ============================================================ */
 :root {
   /* --- タイポグラフィ ---

@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月17日 07:46 日本時間JST",
+  "updated": "2026年11月18日 07:50 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto-207-208-1117",
-      "title": "UKMTO警報207・208——海峡内でタンカーが攻撃を受け機関室火災、乗組員は無事・船名と攻撃主体は不明（同じ船かは不明）",
-      "body": "UKMTO公式の警報207（11/16 16:09 JST発行）は、海峡を出る途中のタンカーが正体不明の飛翔体に被弾し機関室で火災が起きたと伝える（乗組員は全員無事）。警報208（11/17 06:47 JST発行）は、オマーンのKhasabの北7海里でタンカーが攻撃を受けて航行不能になり機関室で火災が起きたと伝える（第三者の報告・乗組員は無事）。どちらも公式の本文に発生時刻・船名・攻撃主体の記載はなく、同じ船かも不明。gCaptain（11/16）によれば、UKMTOは船と攻撃主体を特定していない。",
-      "sourceLabel": "UKMTO公式（11/16〜17）・Arab News（Reuters配信）・gCaptain",
-      "date": "2026年11月16日（現地）",
-      "label": "海上",
-      "url": "https://www.ukmto.org/recent-incidents",
+      "id": "latest-qeshm-strike-1117",
+      "title": "米軍、ケシム島のIRGCミサイル発射施設を「自衛」として攻撃——匿名の米軍当局者が確認、イランのバーレーン攻撃の数時間後",
+      "body": "Fox News（11/17）は、匿名の米軍当局者が、米軍の戦闘機がイランのケシム島にあるIRGCのミサイル発射施設を精密誘導弾で攻撃したと確認したと伝える（声明の原文は「in self-defense」）。攻撃は、イランがバーレーンのシェイク・イーサ空軍基地の米軍レーダーを標的にしたと主張した数時間後。声明はCENTCOMの公式名ではなく匿名の当局者のもので、記事にイラン側の被害や死傷者の記載はない。",
+      "sourceLabel": "Fox News（11/17）",
+      "date": "2026年11月17日（現地）",
+      "label": "攻撃",
+      "url": "https://www.foxnews.com/world/us-carries-out-self-defense-strike-irgc-missile-launch-site-qeshm-island",
       "isLatest": true
     },
     {
-      "id": "latest-iran-navy-4th-1117",
-      "title": "イラン海軍「東で4隻目のタンカーが機雷に触れて炎上」と主張——船名なし、独立した確認なし",
-      "body": "Arab News（11/16 23:45）は、イラン海軍が月曜（11/16）、海峡の東の「制限区域」で4隻目の石油タンカーが機雷に触れて炎上したと発表したと伝える。声明は船名・船籍・積荷・乗組員の状況を示さず、記事に他の情報源の裏付けはない。UKMTO警報207・208との関係は確認できない。「4隻目」はイラン側の数え方で、主要媒体が独自に数えたものではない。",
-      "sourceLabel": "Arab News（11/16）",
+      "id": "latest-tara-gas-208-1117",
+      "title": "警報208のタンカーはパナマ籍のLPG船TARA GAS——インド人乗組員1人が行方不明、責任主体は特定されず",
+      "body": "gCaptain（11/17）は、UKMTO警報208の事案を、Khasabの北約7海里で11/16の約1900 UTCに攻撃を受けたパナマ籍のLPG船TARA GASと伝える。インド人乗組員1人が行方不明、2人が負傷して入院、24人のうち21人がKhasabに避難したと書き、責任主体は「has not been independently established」とする。警報207は別のタンカー。",
+      "sourceLabel": "gCaptain（11/17）",
       "date": "2026年11月16日（現地）",
       "label": "海上",
-      "url": "https://www.arabnews.com/middle-east/irans-army-navy-says-fourth-tanker-hit-by-mine-east-of-hormuz-3012325",
+      "url": "https://gcaptain.com/second-strike-on-lpg-tanker-in-strait-of-hormuz-leaves-one-missing-two-injured/",
       "isLatest": false
     },
     {
-      "id": "latest-carrier-roosevelt-1117",
-      "title": "米空母セオドア・ルーズベルトが中東に到着、空母は3隻に——CENTCOMがXで投稿、到着日は報道で11/15と11/16に分かれる",
-      "body": "Fox News（11/16）は、CENTCOMがXに、空母セオドア・ルーズベルト（CVN 71）が担当海域で予定された展開の一環として活動していると投稿したと伝える（写真は11/15にインド洋で撮影）。同記事は日曜（11/15）に担当海域に入ったと伝えられたと書く。Al Jazeera（11/16）は国防総省とCENTCOMが到着を正式には確認していないと書き、報道の間で食い違う。イランのIAEA査察の拒否も同記事は伝える。",
-      "sourceLabel": "Fox News（11/16）",
-      "date": "2026年11月16日（現地）",
-      "label": "軍事",
-      "url": "https://www.foxnews.com/politics/third-us-aircraft-carrier-arrives-middle-east-iran-rules-out-un-nuclear-inspections",
+      "id": "latest-bahrain-centcom-1117",
+      "title": "CENTCOM「バーレーン向けのイランのドローンは全機迎撃・米側の被害なし」——IRGCは米軍レーダーを標的にしたと主張",
+      "body": "Anadolu（11/17）は、CENTCOMの声明として、IRGCがバーレーンに向けて放った複数の片道攻撃ドローンは迎撃され、米軍の装備や人員に被害はなかったと伝える。IRGCはシェイク・イーサ空軍基地の米軍レーダーを標的にしたと発表し、米国による領空侵犯への対応だと説明した。命中の主張は記事で確認できない。",
+      "sourceLabel": "Anadolu（11/17）",
+      "date": "2026年11月17日（現地）",
+      "label": "攻撃",
+      "url": "https://www.aa.com.tr/en/americas/us-rejects-iranian-claim-about-drone-strike-hitting-radar-in-bahrain/4127913",
       "isLatest": false
     },
     {
-      "id": "latest-saudi-commander-1117",
-      "title": "サウジ、連合軍（統合軍）の司令官を交代——フーシ派はアデンの約60km手前まで迫ると報じられる",
-      "body": "The National（11/16）は、サウジアラビアが国王令で、統合軍の司令官ファハド・ビン・ハマド・アル・サルマン中将に代えて参謀総長のファイヤード・アル・ルワイリ中将を任命したと伝える。交代の理由は公式には示されていない。ABCはAFPを引き、フーシ派がアデンの西約60kmまで迫ると伝えるが、Reutersは約100kmと伝えており、報道で距離が異なる。紅海・バブエルマンデブでの新たな船舶攻撃は、主要媒体で確認できない。",
-      "sourceLabel": "The National（11/16）",
-      "date": "2026年11月16日（現地）",
+      "id": "latest-yemen-withdraw-1117",
+      "title": "イエメン政府軍、バブエルマンデブ周辺とドゥバブ空港から撤退を発表——フーシ派はアデンの約70km手前",
+      "body": "Middle East Eye（11/17）は、イエメン政府軍が11/15にバブエルマンデブ地域とドゥバブ軍用空港からの部隊の撤退を発表したと伝える。フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの北の入口の約70km手前に進んだと書く。",
+      "sourceLabel": "Middle East Eye（11/17）",
+      "date": "2026年11月15日（現地）",
       "label": "軍事",
-      "url": "https://www.thenationalnews.com/news/gulf/2026/11/16/saudi-arabia-replaces-joint-forces-commander-overseeing-fight-with-houthis/",
+      "url": "https://www.middleeasteye.net/news/yemen-government-forces-withdraw-bab-mandab-west-coast-defend-aden",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-mee-aden-1117",
+      "titleJa": "【Middle East Eye】イエメン政府軍がバブエルマンデブ周辺から撤退——フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの約70km手前",
+      "titleEn": "Middle East Eye (Nov 17): Yemen government forces withdraw from Bab al-Mandab and west coast to defend Aden",
+      "title": "【Middle East Eye】イエメン政府軍がバブエルマンデブ周辺から撤退——フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの約70km手前",
+      "country": "イギリス",
+      "media": "Middle East Eye",
+      "source": "Middle East Eye",
+      "date": "2026年11月17日（現地）",
+      "summary": "Middle East Eyeは、イエメン政府軍が11/15にバブエルマンデブ地域とドゥバブ軍用空港からの撤退を発表したと伝える。フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの北の入口の約70km手前に進んだと書く。",
+      "url": "https://www.middleeasteye.net/news/yemen-government-forces-withdraw-bab-mandab-west-coast-defend-aden",
+      "isLatest": true
+    },
+    {
+      "id": "osint-aa-bahrain-1117",
+      "titleJa": "【Anadolu】CENTCOM「バーレーン向けのイランのドローンは全機迎撃」——IRGCは米軍レーダーを標的にしたと発表、命中の主張は確認できず",
+      "titleEn": "Anadolu (Nov 17): US rejects Iranian claim about drone strike hitting radar in Bahrain",
+      "title": "【Anadolu】CENTCOM「バーレーン向けのイランのドローンは全機迎撃」——IRGCは米軍レーダーを標的にしたと発表、命中の主張は確認できず",
+      "country": "トルコ",
+      "media": "Anadolu",
+      "source": "Anadolu",
+      "date": "2026年11月17日（現地）",
+      "summary": "Anadoluは、CENTCOMの声明として、IRGCがバーレーンに向けて放った片道攻撃ドローンは迎撃され、米側の装備・人員に被害はなかったと伝える。IRGCはシェイク・イーサ空軍基地の米軍レーダーを標的にしたと発表した。",
+      "url": "https://www.aa.com.tr/en/americas/us-rejects-iranian-claim-about-drone-strike-hitting-radar-in-bahrain/4127913",
+      "isLatest": false
+    },
     {
       "id": "osint-arabnews-4th-1117",
       "titleJa": "【Arab News】イラン海軍「海峡の東で4隻目のタンカーが機雷に触れて炎上」と発表——船名・船籍・積荷の記載なし、他の情報源の裏付けなし",
@@ -55,7 +81,7 @@
       "date": "2026年11月16日（現地）",
       "summary": "Arab Newsは、イラン海軍が月曜（11/16）、海峡の東の制限区域で4隻目の石油タンカーが機雷に触れて炎上したと発表したと伝える。声明は船名・船籍・積荷・乗組員の状況を示さず、記事に他の情報源の裏付けはない。UKMTO警報207・208との関係は確認できない。",
       "url": "https://www.arabnews.com/middle-east/irans-army-navy-says-fourth-tanker-hit-by-mine-east-of-hormuz-3012325",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-thenational-saudi-1117",
@@ -2324,6 +2350,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月18日",
+      "items": [
+        {
+          "id": "latest-ukmto-207-208-1117",
+          "title": "UKMTO警報207・208——海峡内でタンカーが攻撃を受け機関室火災、乗組員は無事・船名と攻撃主体は不明（同じ船かは不明）",
+          "body": "UKMTO公式の警報207（11/16 16:09 JST発行）は、海峡を出る途中のタンカーが正体不明の飛翔体に被弾し機関室で火災が起きたと伝える（乗組員は全員無事）。警報208（11/17 06:47 JST発行）は、オマーンのKhasabの北7海里でタンカーが攻撃を受けて航行不能になり機関室で火災が起きたと伝える（第三者の報告・乗組員は無事）。どちらも公式の本文に発生時刻・船名・攻撃主体の記載はなく、同じ船かも不明。gCaptain（11/16）によれば、UKMTOは船と攻撃主体を特定していない。",
+          "sourceLabel": "UKMTO公式（11/16〜17）・Arab News（Reuters配信）・gCaptain",
+          "date": "2026年11月16日（現地）",
+          "label": "海上",
+          "url": "https://www.ukmto.org/recent-incidents",
+          "isLatest": false
+        },
+        {
+          "id": "latest-iran-navy-4th-1117",
+          "title": "イラン海軍「東で4隻目のタンカーが機雷に触れて炎上」と主張——船名なし、独立した確認なし",
+          "body": "Arab News（11/16 23:45）は、イラン海軍が月曜（11/16）、海峡の東の「制限区域」で4隻目の石油タンカーが機雷に触れて炎上したと発表したと伝える。声明は船名・船籍・積荷・乗組員の状況を示さず、記事に他の情報源の裏付けはない。UKMTO警報207・208との関係は確認できない。「4隻目」はイラン側の数え方で、主要媒体が独自に数えたものではない。",
+          "sourceLabel": "Arab News（11/16）",
+          "date": "2026年11月16日（現地）",
+          "label": "海上",
+          "url": "https://www.arabnews.com/middle-east/irans-army-navy-says-fourth-tanker-hit-by-mine-east-of-hormuz-3012325",
+          "isLatest": false
+        },
+        {
+          "id": "latest-carrier-roosevelt-1117",
+          "title": "米空母セオドア・ルーズベルトが中東に到着、空母は3隻に——CENTCOMがXで投稿、到着日は報道で11/15と11/16に分かれる",
+          "body": "Fox News（11/16）は、CENTCOMがXに、空母セオドア・ルーズベルト（CVN 71）が担当海域で予定された展開の一環として活動していると投稿したと伝える（写真は11/15にインド洋で撮影）。同記事は日曜（11/15）に担当海域に入ったと伝えられたと書く。Al Jazeera（11/16）は国防総省とCENTCOMが到着を正式には確認していないと書き、報道の間で食い違う。イランのIAEA査察の拒否も同記事は伝える。",
+          "sourceLabel": "Fox News（11/16）",
+          "date": "2026年11月16日（現地）",
+          "label": "軍事",
+          "url": "https://www.foxnews.com/politics/third-us-aircraft-carrier-arrives-middle-east-iran-rules-out-un-nuclear-inspections",
+          "isLatest": false
+        },
+        {
+          "id": "latest-saudi-commander-1117",
+          "title": "サウジ、連合軍（統合軍）の司令官を交代——フーシ派はアデンの約60km手前まで迫ると報じられる",
+          "body": "The National（11/16）は、サウジアラビアが国王令で、統合軍の司令官ファハド・ビン・ハマド・アル・サルマン中将に代えて参謀総長のファイヤード・アル・ルワイリ中将を任命したと伝える。交代の理由は公式には示されていない。ABCはAFPを引き、フーシ派がアデンの西約60kmまで迫ると伝えるが、Reutersは約100kmと伝えており、報道で距離が異なる。紅海・バブエルマンデブでの新たな船舶攻撃は、主要媒体で確認できない。",
+          "sourceLabel": "The National（11/16）",
+          "date": "2026年11月16日（現地）",
+          "label": "軍事",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/11/16/saudi-arabia-replaces-joint-forces-commander-overseeing-fight-with-houthis/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月17日",
       "items": [

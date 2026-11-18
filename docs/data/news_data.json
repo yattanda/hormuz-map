@@ -1,49 +1,88 @@
 {
-  "updated": "2026年11月18日 07:50 日本時間JST",
+  "updated": "2026年11月19日 08:37 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-qeshm-strike-1117",
-      "title": "米軍、ケシム島のIRGCミサイル発射施設を「自衛」として攻撃——匿名の米軍当局者が確認、イランのバーレーン攻撃の数時間後",
-      "body": "Fox News（11/17）は、匿名の米軍当局者が、米軍の戦闘機がイランのケシム島にあるIRGCのミサイル発射施設を精密誘導弾で攻撃したと確認したと伝える（声明の原文は「in self-defense」）。攻撃は、イランがバーレーンのシェイク・イーサ空軍基地の米軍レーダーを標的にしたと主張した数時間後。声明はCENTCOMの公式名ではなく匿名の当局者のもので、記事にイラン側の被害や死傷者の記載はない。",
-      "sourceLabel": "Fox News（11/17）",
-      "date": "2026年11月17日（現地）",
-      "label": "攻撃",
-      "url": "https://www.foxnews.com/world/us-carries-out-self-defense-strike-irgc-missile-launch-site-qeshm-island",
+      "id": "latest-adnoc-211-1118",
+      "title": "ADNOC Logistics & Servicesの船が11/17夕に攻撃を受け11人負傷・1人行方不明——UKMTO警報211が対応とみられる、船名はADNOC未公表・攻撃主体は不明",
+      "body": "gCaptain（11/18）は、ADNOC Logistics & Servicesが、同社の船が11/17夕方にホルムズ海峡で攻撃を受けたと確認し、乗組員11人が負傷、1人が所在不明、残りは避難したと伝える。UKMTOの報告（Khasabの北約13海里）が対応するとみられ、公式の警報211は火災が消火され乗組員1人が行方不明と伝える。ADNOCは船名を公表しておらず、警備会社Vanguard Techは船をNAVIG8 MESSIと特定したとgCaptainは書く（ADNOC・UKMTOは未確認）。攻撃主体の記載はない。",
+      "sourceLabel": "gCaptain（11/18）・UKMTO公式",
+      "date": "2026年11月18日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/tara-gas-burning-off-oman-as-another-tanker-attack-leaves-11-injured/",
       "isLatest": true
     },
     {
-      "id": "latest-tara-gas-208-1117",
-      "title": "警報208のタンカーはパナマ籍のLPG船TARA GAS——インド人乗組員1人が行方不明、責任主体は特定されず",
-      "body": "gCaptain（11/17）は、UKMTO警報208の事案を、Khasabの北約7海里で11/16の約1900 UTCに攻撃を受けたパナマ籍のLPG船TARA GASと伝える。インド人乗組員1人が行方不明、2人が負傷して入院、24人のうち21人がKhasabに避難したと書き、責任主体は「has not been independently established」とする。警報207は別のタンカー。",
-      "sourceLabel": "gCaptain（11/17）",
-      "date": "2026年11月16日（現地）",
-      "label": "海上",
-      "url": "https://gcaptain.com/second-strike-on-lpg-tanker-in-strait-of-hormuz-leaves-one-missing-two-injured/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-bahrain-centcom-1117",
-      "title": "CENTCOM「バーレーン向けのイランのドローンは全機迎撃・米側の被害なし」——IRGCは米軍レーダーを標的にしたと主張",
-      "body": "Anadolu（11/17）は、CENTCOMの声明として、IRGCがバーレーンに向けて放った複数の片道攻撃ドローンは迎撃され、米軍の装備や人員に被害はなかったと伝える。IRGCはシェイク・イーサ空軍基地の米軍レーダーを標的にしたと発表し、米国による領空侵犯への対応だと説明した。命中の主張は記事で確認できない。",
-      "sourceLabel": "Anadolu（11/17）",
-      "date": "2026年11月17日（現地）",
+      "id": "latest-kuwait-attack-1118",
+      "title": "イランがクウェートの米軍基地を標的に攻撃・バーレーンも攻撃を受ける——クウェートは防空で対応、被害の記載なし",
+      "body": "Al Jazeera（11/18）は、イランがクウェートの米軍が使う空軍基地を標的に新たな攻撃を行ったと伝える。クウェートは無人機に対抗して防空システムを作動させたと発表し（9月初め以来初めてとされる）、バーレーンは11/18早朝にイランの攻撃を撃退したと発表した。イランは米国の無人機による監視活動への対応と説明した。記事に被害の記載はなく、米側の被害は未確認。",
+      "sourceLabel": "Al Jazeera（11/18）",
+      "date": "2026年11月18日（現地）",
       "label": "攻撃",
-      "url": "https://www.aa.com.tr/en/americas/us-rejects-iranian-claim-about-drone-strike-hitting-radar-in-bahrain/4127913",
+      "url": "https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island",
       "isLatest": false
     },
     {
-      "id": "latest-yemen-withdraw-1117",
-      "title": "イエメン政府軍、バブエルマンデブ周辺とドゥバブ空港から撤退を発表——フーシ派はアデンの約70km手前",
-      "body": "Middle East Eye（11/17）は、イエメン政府軍が11/15にバブエルマンデブ地域とドゥバブ軍用空港からの部隊の撤退を発表したと伝える。フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの北の入口の約70km手前に進んだと書く。",
-      "sourceLabel": "Middle East Eye（11/17）",
-      "date": "2026年11月15日（現地）",
+      "id": "latest-centcom-sts-1118",
+      "title": "CENTCOM、対イラン海上封鎖を強化——洋上の積み替えで貨物を受けた船も封鎖回避とみなし得ると通知",
+      "body": "gCaptain（11/18）は、CENTCOMが11/18に通知を出し、封鎖の対象船から洋上の積み替えで貨物を受けた船は、イランの港に入っていなくても封鎖を回避しているとみなされ得ると伝える。そうした船は停止・乗船・進路変更・拿捕される可能性があり、積み荷が出た港へ向かうよう指示されることもあるという。通知の本文はCENTCOMの原文では未確認で、記事の引用による。",
+      "sourceLabel": "gCaptain（11/18）",
+      "date": "2026年11月18日（現地）",
       "label": "軍事",
-      "url": "https://www.middleeasteye.net/news/yemen-government-forces-withdraw-bab-mandab-west-coast-defend-aden",
+      "url": "https://gcaptain.com/u-s-targets-ship-to-ship-transfers-in-expanded-iran-maritime-blockade/",
+      "isLatest": false
+    },
+    {
+      "id": "latest-houthi-aden-1118",
+      "title": "フーシ派はアデンの西約100km（イエメンの治安当局者）——連合軍は11/17にフーシ派の軍事目標60か所を空爆と発表",
+      "body": "The National（11/18）は、イエメンの治安当局者の話として、フーシ派がアデンの西約100kmにいると伝える。サヌアの匿名の情報筋は、作戦はバブエルマンデブの「確保」が目的で封鎖はしないと述べた（フーシ派筋の主張）。Al Jazeera（11/18）は、サウジ主導の連合軍が11/17にフーシ派の軍事目標60か所を攻撃したと発表したと伝える。",
+      "sourceLabel": "The National（11/18）・Al Jazeera（11/18）",
+      "date": "2026年11月18日（現地）",
+      "label": "軍事",
+      "url": "https://www.thenationalnews.com/news/mena/2026/11/18/houthis-100km-from-aden-but-imminent-attack-said-to-be-unlikely/",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-natl-aden-1118",
+      "titleJa": "【The National】フーシ派はアデンの西約100km——イエメンの治安当局者の話、差し迫った攻撃は起きにくいとの見方も",
+      "titleEn": "The National (Nov 18): Houthis 100km from Aden but imminent attack said to be unlikely",
+      "title": "【The National】フーシ派はアデンの西約100km——イエメンの治安当局者の話、差し迫った攻撃は起きにくいとの見方も",
+      "country": "アラブ首長国連邦",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年11月18日（現地）",
+      "summary": "The Nationalは、イエメンの治安当局者の話として、フーシ派がアデンの西約100kmにいると伝える。サヌアの匿名の情報筋は、作戦はバブエルマンデブの「確保」が目的で封鎖はしないと述べた。",
+      "url": "https://www.thenationalnews.com/news/mena/2026/11/18/houthis-100km-from-aden-but-imminent-attack-said-to-be-unlikely/",
+      "isLatest": true
+    },
+    {
+      "id": "osint-arabnews-mossad-1118",
+      "titleJa": "【Arab News】モサド長官が先週訪米しイランへの米イスラエル共同攻撃を働きかけたと報道——関係者2人の話（Reuters配信）",
+      "titleEn": "Arab News (Nov 19, Reuters): Israeli spy chief lobbied for joint Iran strikes on US visit, sources say",
+      "title": "【Arab News】モサド長官が先週訪米しイランへの米イスラエル共同攻撃を働きかけたと報道——関係者2人の話（Reuters配信）",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月19日（現地）",
+      "summary": "Arab News（Reuters配信）は、モサドのゴフマン長官が先週の米当局者との会合で共同攻撃を支持したと、訪問について説明を受けた2人の話として伝える。ホワイトハウス当局者は大規模な戦闘は必要ないとの認識を示した。",
+      "url": "https://www.arabnews.com/middle-east/israeli-spy-chief-lobbied-for-joint-iran-strikes-on-us-visit-sources-say-3012807",
+      "isLatest": false
+    },
+    {
+      "id": "osint-aljz-insurance-1118",
+      "titleJa": "【Al Jazeera】米海軍長官代行「ホルムズ1回の通航の保険料は6,400万ドル」——独立した検証なし、ほかの試算は大きく異なる",
+      "titleEn": "Al Jazeera (Nov 18): US official says Hormuz insurance hits $64m: Is the strait really open?",
+      "title": "【Al Jazeera】米海軍長官代行「ホルムズ1回の通航の保険料は6,400万ドル」——独立した検証なし、ほかの試算は大きく異なる",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月18日（現地）",
+      "summary": "Al Jazeeraは、カオ氏が11/17の上院公聴会で1回の通航の保険料が6,400万ドルと述べたと伝える。記事は独立した検証がないと書き、S&P Globalは戦争リスク保険料を船体価値の7.5〜10％と試算している。",
+      "url": "https://www.aljazeera.com/news/2026/11/18/us-official-says-hormuz-insurance-hits-64m-is-the-strait-really-open",
+      "isLatest": false
+    },
     {
       "id": "osint-mee-aden-1117",
       "titleJa": "【Middle East Eye】イエメン政府軍がバブエルマンデブ周辺から撤退——フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの約70km手前",
@@ -55,7 +94,7 @@
       "date": "2026年11月17日（現地）",
       "summary": "Middle East Eyeは、イエメン政府軍が11/15にバブエルマンデブ地域とドゥバブ軍用空港からの撤退を発表したと伝える。フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの北の入口の約70km手前に進んだと書く。",
       "url": "https://www.middleeasteye.net/news/yemen-government-forces-withdraw-bab-mandab-west-coast-defend-aden",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aa-bahrain-1117",
@@ -2350,6 +2389,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月19日",
+      "items": [
+        {
+          "id": "latest-qeshm-strike-1117",
+          "title": "米軍、ケシム島のIRGCミサイル発射施設を「自衛」として攻撃——匿名の米軍当局者が確認、イランのバーレーン攻撃の数時間後",
+          "body": "Fox News（11/17）は、匿名の米軍当局者が、米軍の戦闘機がイランのケシム島にあるIRGCのミサイル発射施設を精密誘導弾で攻撃したと確認したと伝える（声明の原文は「in self-defense」）。攻撃は、イランがバーレーンのシェイク・イーサ空軍基地の米軍レーダーを標的にしたと主張した数時間後。声明はCENTCOMの公式名ではなく匿名の当局者のもので、記事にイラン側の被害や死傷者の記載はない。",
+          "sourceLabel": "Fox News（11/17）",
+          "date": "2026年11月17日（現地）",
+          "label": "攻撃",
+          "url": "https://www.foxnews.com/world/us-carries-out-self-defense-strike-irgc-missile-launch-site-qeshm-island",
+          "isLatest": false
+        },
+        {
+          "id": "latest-tara-gas-208-1117",
+          "title": "警報208のタンカーはパナマ籍のLPG船TARA GAS——インド人乗組員1人が行方不明、責任主体は特定されず",
+          "body": "gCaptain（11/17）は、UKMTO警報208の事案を、Khasabの北約7海里で11/16の約1900 UTCに攻撃を受けたパナマ籍のLPG船TARA GASと伝える。インド人乗組員1人が行方不明、2人が負傷して入院、24人のうち21人がKhasabに避難したと書き、責任主体は「has not been independently established」とする。警報207は別のタンカー。",
+          "sourceLabel": "gCaptain（11/17）",
+          "date": "2026年11月16日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/second-strike-on-lpg-tanker-in-strait-of-hormuz-leaves-one-missing-two-injured/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-bahrain-centcom-1117",
+          "title": "CENTCOM「バーレーン向けのイランのドローンは全機迎撃・米側の被害なし」——IRGCは米軍レーダーを標的にしたと主張",
+          "body": "Anadolu（11/17）は、CENTCOMの声明として、IRGCがバーレーンに向けて放った複数の片道攻撃ドローンは迎撃され、米軍の装備や人員に被害はなかったと伝える。IRGCはシェイク・イーサ空軍基地の米軍レーダーを標的にしたと発表し、米国による領空侵犯への対応だと説明した。命中の主張は記事で確認できない。",
+          "sourceLabel": "Anadolu（11/17）",
+          "date": "2026年11月17日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aa.com.tr/en/americas/us-rejects-iranian-claim-about-drone-strike-hitting-radar-in-bahrain/4127913",
+          "isLatest": false
+        },
+        {
+          "id": "latest-yemen-withdraw-1117",
+          "title": "イエメン政府軍、バブエルマンデブ周辺とドゥバブ空港から撤退を発表——フーシ派はアデンの約70km手前",
+          "body": "Middle East Eye（11/17）は、イエメン政府軍が11/15にバブエルマンデブ地域とドゥバブ軍用空港からの部隊の撤退を発表したと伝える。フーシ派はアデン湾沿いの海岸約60kmを押さえ、アデンの北の入口の約70km手前に進んだと書く。",
+          "sourceLabel": "Middle East Eye（11/17）",
+          "date": "2026年11月15日（現地）",
+          "label": "軍事",
+          "url": "https://www.middleeasteye.net/news/yemen-government-forces-withdraw-bab-mandab-west-coast-defend-aden",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月18日",
       "items": [

@@ -4079,6 +4079,34 @@
           "sourceLabel": "Middle East Eye（11/17）"
         }
       ]
+    },
+    {
+      "date": "2026-11-19",
+      "dateLabel": "2026/11/19 08:37",
+      "blockadeDay": 265,
+      "summary": "前回分の裏取り：継続16件（警報196・197・201・203〜205の攻撃主体、警報207・208の攻撃主体、MQ-1撃墜への米側の反応、機雷・沈没・炎上・LNG船・レーダー破壊の主張の裏付け〈11/18の3隻の主張を含む〉、フーシ派のサウジ施設攻撃の被害、11/10のADNOC船、Didamar島、MT Velos Sapphire、UAE救助の貨物船、トランプ氏の発言の原文、UKMTO週報の期間、封鎖累計の最新値、17億バレルの始点、空母の到着日、アデンまでの距離〈The Nationalは約100km〉、警報209の発生時刻と主要媒体の記事。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・打ち切り1件（警報194・195。発生から14日・新しい資料なし）・UKMTO警報212（Khasab北6海里でタンカーが機関室に被弾・time-late・乗組員は無事・船名と攻撃主体は不明・公式）・ADNOC Logistics & Servicesの船が11/17夕に攻撃を受け11人が負傷・1人が行方不明（gCaptain。UKMTO警報211は公式の本文に発生時刻なし）・イランがクウェートの米軍基地を標的に攻撃しクウェートは防空で対応（Al Jazeera）・CENTCOMが対イラン海上封鎖を洋上の積み替えを受けた船にも拡大と通知（gCaptain）・イラン軍が海峡の東で3隻が機雷に触れて炎上と主張（dpa・独立した確認なし）・空母ジョージ・ワシントンが中東から戻り中東の米空母は2隻に（AP）・フーシ派がアデンの西約100km・連合軍が60目標を空爆と発表（The National・Al Jazeera）・フーシ派がリヤドの空港と金融センターを巡航ミサイルで標的にしたと主張（Middle East Eye）・モサド長官が共同攻撃を働きかけたと報道（Reuters配信のArab News）・米海軍長官代行が1回の通航の保険料6,400万ドルと発言（集計元不明・独立した検証なし。Al Jazeera）・原油は11/18終値を確定（ブレント1月物91.95ドル・WTI12月物83.26ドル。ReutersとBloomberg配信のRigzone）・通航はPortWatchで11/9〜11/15に1日平均2.3隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機265日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（空母2隻体制・封鎖と機雷の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "ADNOC Logistics & Servicesの船が11/17夕に攻撃を受け11人負傷・1人行方不明——UKMTO警報211が対応とみられる、船名はADNOC未公表・攻撃主体は不明",
+          "url": "https://gcaptain.com/tara-gas-burning-off-oman-as-another-tanker-attack-leaves-11-injured/",
+          "sourceLabel": "gCaptain（11/18）・UKMTO公式"
+        },
+        {
+          "title": "イランがクウェートの米軍基地を標的に攻撃・バーレーンも攻撃を受ける——クウェートは防空で対応、被害の記載なし",
+          "url": "https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island",
+          "sourceLabel": "Al Jazeera（11/18）"
+        },
+        {
+          "title": "CENTCOM、対イラン海上封鎖を強化——洋上の積み替えで貨物を受けた船も封鎖回避とみなし得ると通知",
+          "url": "https://gcaptain.com/u-s-targets-ship-to-ship-transfers-in-expanded-iran-maritime-blockade/",
+          "sourceLabel": "gCaptain（11/18）"
+        },
+        {
+          "title": "フーシ派はアデンの西約100km（イエメンの治安当局者）——連合軍は11/17にフーシ派の軍事目標60か所を空爆と発表",
+          "url": "https://www.thenationalnews.com/news/mena/2026/11/18/houthis-100km-from-aden-but-imminent-attack-said-to-be-unlikely/",
+          "sourceLabel": "The National（11/18）・Al Jazeera（11/18）"
+        }
+      ]
     }
   ]
 }

@@ -4107,6 +4107,34 @@
           "sourceLabel": "The National（11/18）・Al Jazeera（11/18）"
         }
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "dateLabel": "2026/11/20 07:17",
+      "blockadeDay": 266,
+      "summary": "前回分の裏取り：解消1件（フーシ派のサウジ施設攻撃の被害＝リヤドの金融地区の塔の被害をサウジ民間防衛隊が発表〈Arab News・Al Jazeera〉。空港の被害は確認できず）・継続18件（警報196・197・201・203〜205の攻撃主体、警報207・208の攻撃主体、MQ-1撃墜への米側の反応、機雷・沈没・炎上・LNG船・レーダー破壊の主張の裏付け〈11/19の新たな主張2件を含む〉、11/10のADNOC船、Didamar島、MT Velos Sapphire、UAE救助の貨物船、トランプ氏の発言の原文〈NY Postは取得できず〉、UKMTO週報の期間、封鎖累計の最新値〈CENTCOMの最新は10/31の144隻〉、17億バレルの始点、空母の到着日、アデンまでの距離、警報209の発生時刻、警報211の発生時刻、警報212の船名と攻撃主体、保険料6,400万ドルの集計元〈発言者は海軍長官代行のHung Cao氏・11/17の上院公聴会、記事は独立した検証なしと書く〉。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・イラン海軍とIRGCが海峡の東で機雷に触れてタンカーが炎上したと主張（海軍は1〜2隻、IRGCは原油400万バレル超の超大型2隻・船名なし・独立した確認なし。Anadolu・Middle East Eye・Al-Monitor）・リヤドの金融地区の塔がフーシ派の攻撃を受け数階に被害・負傷者なし（サウジ民間防衛隊・Arab News）・サウジ主導連合が南部に向けたフーシ派の弾道ミサイル4発を迎撃と発表し、フーシ派の保健省はサナアへの空爆で2日間に10人が死亡したと主張（Al Jazeera・Middle East Eye）・米上院がトランプ氏の対イラン戦争権限を制限する決議を51対48で否決（Al Jazeera）・国防総省の予算担当者が対イラン戦費は11/13時点で約483億ドルと上院で証言（基地の修復費は含まず。Anadolu・Arab News〈AP〉）・ADNOC船の行方不明の乗組員の捜索が続く（The National・Gulf News）・UKMTO公式に警報212より新しい警報なし・原油は11/19の終値を2出典で確定できず終値を据え置き（確定済みの最新は11/18：ブレント1月物91.95ドル・WTI12月物83.26ドル）・通航はPortWatchで11/9〜11/15に1日平均2.3隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機266日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（変更なし）",
+      "relatedNews": [
+        {
+          "title": "イラン海軍・IRGC「海峡の東でタンカーが機雷に触れて炎上」と主張——海軍は1〜2隻、IRGCは超大型2隻、船名なし・独立した確認なし",
+          "url": "https://aa.com.tr/en/middle-east/2-oil-tankers-catch-fire-after-hitting-mines-in-waters-east-of-strait-of-hormuz-iranian-army/4131604",
+          "sourceLabel": "Anadolu（11/20）・Middle East Eye（11/19）・Al-Monitor（11/19）"
+        },
+        {
+          "title": "リヤドの金融地区の塔がフーシ派の攻撃を受け数階に被害——サウジ民間防衛隊「負傷者なし」",
+          "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-tower-at-king-abdullah-financial-district-causes-damage-saudi-civil-defense-says-3012970",
+          "sourceLabel": "Arab News（11/19）・Al Jazeera（11/19）"
+        },
+        {
+          "title": "米上院、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決——法的拘束力はなく象徴的",
+          "url": "https://www.aljazeera.com/news/2026/11/19/senate-republicans-in-us-reject-measure-to-limit-trumps-war-powers-in-iran",
+          "sourceLabel": "Al Jazeera（11/19）"
+        },
+        {
+          "title": "国防総省の予算担当者、対イラン戦費は11/13時点で約483億ドルと上院で証言——米軍基地の修復費は含まず",
+          "url": "https://aa.com.tr/en/americas/us-war-against-iran-has-cost-483b-pentagon-official-tells-senate/4131569",
+          "sourceLabel": "Anadolu（11/19）・Arab News（AP・11/20）"
+        }
+      ]
     }
   ]
 }

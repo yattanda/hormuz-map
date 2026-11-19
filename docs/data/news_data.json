@@ -1,49 +1,88 @@
 {
-  "updated": "2026年11月19日 08:37 日本時間JST",
+  "updated": "2026年11月20日 07:17 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-adnoc-211-1118",
-      "title": "ADNOC Logistics & Servicesの船が11/17夕に攻撃を受け11人負傷・1人行方不明——UKMTO警報211が対応とみられる、船名はADNOC未公表・攻撃主体は不明",
-      "body": "gCaptain（11/18）は、ADNOC Logistics & Servicesが、同社の船が11/17夕方にホルムズ海峡で攻撃を受けたと確認し、乗組員11人が負傷、1人が所在不明、残りは避難したと伝える。UKMTOの報告（Khasabの北約13海里）が対応するとみられ、公式の警報211は火災が消火され乗組員1人が行方不明と伝える。ADNOCは船名を公表しておらず、警備会社Vanguard Techは船をNAVIG8 MESSIと特定したとgCaptainは書く（ADNOC・UKMTOは未確認）。攻撃主体の記載はない。",
-      "sourceLabel": "gCaptain（11/18）・UKMTO公式",
-      "date": "2026年11月18日（現地）",
+      "id": "latest-mines-claim-1119",
+      "title": "イラン海軍・IRGC「海峡の東でタンカーが機雷に触れて炎上」と主張——海軍は1〜2隻、IRGCは超大型2隻、船名なし・独立した確認なし",
+      "body": "Middle East Eye（11/19 19:41 GMT）は、イラン海軍が木曜（11/19）、海峡の東の制限区域でタンカー1隻が機雷に触れて炎上したと、国営IRIBを引いて伝える（海軍は、船が航行システムを切っていたと述べた）。Anadolu（11/20）は、機雷に触れて炎上したタンカーを2隻と書き、独立した確認の記載はない。Al-Monitor（11/19）は、IRGCが原油400万バレル超を積んだ超大型タンカー2隻が機雷に触れたと主張したと伝え、「could not immediately be independently verified」と書く。IRGCは船名・船籍・所有者を示していない。隻数と発表主体は媒体ごとに異なり、11/18の海軍の「3隻」と同じ件かは不明。UKMTO公式に、これに対応する警報はない。",
+      "sourceLabel": "Anadolu（11/20）・Middle East Eye（11/19）・Al-Monitor（11/19）",
+      "date": "2026年11月19日（現地）",
       "label": "海上",
-      "url": "https://gcaptain.com/tara-gas-burning-off-oman-as-another-tanker-attack-leaves-11-injured/",
+      "url": "https://aa.com.tr/en/middle-east/2-oil-tankers-catch-fire-after-hitting-mines-in-waters-east-of-strait-of-hormuz-iranian-army/4131604",
       "isLatest": true
     },
     {
-      "id": "latest-kuwait-attack-1118",
-      "title": "イランがクウェートの米軍基地を標的に攻撃・バーレーンも攻撃を受ける——クウェートは防空で対応、被害の記載なし",
-      "body": "Al Jazeera（11/18）は、イランがクウェートの米軍が使う空軍基地を標的に新たな攻撃を行ったと伝える。クウェートは無人機に対抗して防空システムを作動させたと発表し（9月初め以来初めてとされる）、バーレーンは11/18早朝にイランの攻撃を撃退したと発表した。イランは米国の無人機による監視活動への対応と説明した。記事に被害の記載はなく、米側の被害は未確認。",
-      "sourceLabel": "Al Jazeera（11/18）",
-      "date": "2026年11月18日（現地）",
+      "id": "latest-riyadh-tower-1119",
+      "title": "リヤドの金融地区の塔がフーシ派の攻撃を受け数階に被害——サウジ民間防衛隊「負傷者なし」",
+      "body": "Arab News（11/19）は、サウジ民間防衛隊の発表として、リヤドのキング・アブドゥッラー金融地区の塔がフーシ派の攻撃を受け、塔の数階と隣接する建物に物的損害が出たが、負傷者は報告されていないと伝える（原文は「material damage to several floors of the tower and neighboring buildings, with no injuries reported」）。民間防衛隊は、フーシ派による民間物への攻撃を国際人道法の明白な違反と非難した。記事にフーシ派の声明の記載はない。フーシ派は前日、リヤドの空港と金融センターを標的にしたと主張していた（Al Jazeera）が、空港の被害は確認できない。",
+      "sourceLabel": "Arab News（11/19）・Al Jazeera（11/19）",
+      "date": "2026年11月19日（現地）",
       "label": "攻撃",
-      "url": "https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island",
+      "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-tower-at-king-abdullah-financial-district-causes-damage-saudi-civil-defense-says-3012970",
       "isLatest": false
     },
     {
-      "id": "latest-centcom-sts-1118",
-      "title": "CENTCOM、対イラン海上封鎖を強化——洋上の積み替えで貨物を受けた船も封鎖回避とみなし得ると通知",
-      "body": "gCaptain（11/18）は、CENTCOMが11/18に通知を出し、封鎖の対象船から洋上の積み替えで貨物を受けた船は、イランの港に入っていなくても封鎖を回避しているとみなされ得ると伝える。そうした船は停止・乗船・進路変更・拿捕される可能性があり、積み荷が出た港へ向かうよう指示されることもあるという。通知の本文はCENTCOMの原文では未確認で、記事の引用による。",
-      "sourceLabel": "gCaptain（11/18）",
-      "date": "2026年11月18日（現地）",
-      "label": "軍事",
-      "url": "https://gcaptain.com/u-s-targets-ship-to-ship-transfers-in-expanded-iran-maritime-blockade/",
+      "id": "latest-senate-warpowers-1119",
+      "title": "米上院、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決——法的拘束力はなく象徴的",
+      "body": "Al Jazeera（11/19）は、上院が木曜（11/19）、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決したと伝える（原文は「The resolution was defeated on Thursday 51 to 48」）。共和党のCollins、Murkowski、Paulの3人が賛成し、民主党ではFettermanだけが反対した。決議に法的拘束力はなく、大部分は象徴的だったと記事は書く。下院は9月に220対204で可決していた。",
+      "sourceLabel": "Al Jazeera（11/19）",
+      "date": "2026年11月19日（現地）",
+      "label": "外交",
+      "url": "https://www.aljazeera.com/news/2026/11/19/senate-republicans-in-us-reject-measure-to-limit-trumps-war-powers-in-iran",
       "isLatest": false
     },
     {
-      "id": "latest-houthi-aden-1118",
-      "title": "フーシ派はアデンの西約100km（イエメンの治安当局者）——連合軍は11/17にフーシ派の軍事目標60か所を空爆と発表",
-      "body": "The National（11/18）は、イエメンの治安当局者の話として、フーシ派がアデンの西約100kmにいると伝える。サヌアの匿名の情報筋は、作戦はバブエルマンデブの「確保」が目的で封鎖はしないと述べた（フーシ派筋の主張）。Al Jazeera（11/18）は、サウジ主導の連合軍が11/17にフーシ派の軍事目標60か所を攻撃したと発表したと伝える。",
-      "sourceLabel": "The National（11/18）・Al Jazeera（11/18）",
-      "date": "2026年11月18日（現地）",
+      "id": "latest-war-cost-1119",
+      "title": "国防総省の予算担当者、対イラン戦費は11/13時点で約483億ドルと上院で証言——米軍基地の修復費は含まず",
+      "body": "Anadolu（11/19）とArab News（AP・11/20）は、国防総省の予算担当者で海軍主計官に指名されたArthur Millerが11/19、上院軍事委員会で、対イラン戦争の費用が11/13時点で約483億ドル（原文は「$48.3 billion」）と述べたと伝える。軍事作戦の費用と、装備・弾薬の補填費用を含み、中東の米軍施設の修復費は含まない。Blumenthal上院議員が施設被害の見積もりを求めたが、Millerは持っていないと答えた。",
+      "sourceLabel": "Anadolu（11/19）・Arab News（AP・11/20）",
+      "date": "2026年11月19日（現地）",
       "label": "軍事",
-      "url": "https://www.thenationalnews.com/news/mena/2026/11/18/houthis-100km-from-aden-but-imminent-attack-said-to-be-unlikely/",
+      "url": "https://aa.com.tr/en/americas/us-war-against-iran-has-cost-483b-pentagon-official-tells-senate/4131569",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-anadolu-mines-1119",
+      "titleJa": "【Anadolu】イラン軍「海峡の東の制限区域でタンカー2隻が機雷に触れて炎上」と主張——独立した確認の記載なし",
+      "titleEn": "Anadolu (Nov 20): 2 oil tankers catch fire after hitting mines in waters east of Strait of Hormuz: Iranian army",
+      "title": "【Anadolu】イラン軍「海峡の東の制限区域でタンカー2隻が機雷に触れて炎上」と主張——独立した確認の記載なし",
+      "country": "トルコ",
+      "media": "Anadolu",
+      "source": "Anadolu",
+      "date": "2026年11月19日（現地）",
+      "summary": "Anadoluは、イラン軍が木曜に制限区域で2隻のタンカーが機雷に触れて炎上したと主張したと伝える。同日早くにも似た件があったとし、独立した確認の記載はない。",
+      "url": "https://aa.com.tr/en/middle-east/2-oil-tankers-catch-fire-after-hitting-mines-in-waters-east-of-strait-of-hormuz-iranian-army/4131604",
+      "isLatest": true
+    },
+    {
+      "id": "osint-arabnews-riyadh-1119",
+      "titleJa": "【Arab News】リヤドの金融地区の塔がフーシ派の攻撃で被害——サウジ民間防衛隊「負傷者なし」",
+      "titleEn": "Arab News (Nov 19): Houthi attack on tower at King Abdullah Financial District causes damage, Saudi Civil Defense says",
+      "title": "【Arab News】リヤドの金融地区の塔がフーシ派の攻撃で被害——サウジ民間防衛隊「負傷者なし」",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月19日（現地）",
+      "summary": "Arab Newsは、サウジ民間防衛隊の発表として、塔の数階と隣接する建物に物的損害が出たが負傷者はいないと伝える。民間防衛隊は国際人道法の明白な違反と非難した。",
+      "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-tower-at-king-abdullah-financial-district-causes-damage-saudi-civil-defense-says-3012970",
+      "isLatest": false
+    },
+    {
+      "id": "osint-arabnews-cost-1119",
+      "titleJa": "【Arab News】イラン戦争の費用は約483億ドル、米軍基地の被害の見積もりを求める声も（AP）",
+      "titleEn": "Arab News (Nov 20, AP): Iran war costs surpass $48bn amid calls for base damage estimates",
+      "title": "【Arab News】イラン戦争の費用は約483億ドル、米軍基地の被害の見積もりを求める声も（AP）",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月20日（現地）",
+      "summary": "Arab News（AP）は、国防総省の予算担当者が11/13時点の費用を約483億ドルと上院で述べたと伝える。基地の被害は含まれず、担当者は見積もりを持っていないと答えた。",
+      "url": "https://www.arabnews.com/middle-east/iran-war-costs-surpass-48bn-amid-calls-for-base-damage-estimates-3013014",
+      "isLatest": false
+    },
     {
       "id": "osint-natl-aden-1118",
       "titleJa": "【The National】フーシ派はアデンの西約100km——イエメンの治安当局者の話、差し迫った攻撃は起きにくいとの見方も",
@@ -55,7 +94,7 @@
       "date": "2026年11月18日（現地）",
       "summary": "The Nationalは、イエメンの治安当局者の話として、フーシ派がアデンの西約100kmにいると伝える。サヌアの匿名の情報筋は、作戦はバブエルマンデブの「確保」が目的で封鎖はしないと述べた。",
       "url": "https://www.thenationalnews.com/news/mena/2026/11/18/houthis-100km-from-aden-but-imminent-attack-said-to-be-unlikely/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-mossad-1118",
@@ -2389,6 +2428,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月20日",
+      "items": [
+        {
+          "id": "latest-adnoc-211-1118",
+          "title": "ADNOC Logistics & Servicesの船が11/17夕に攻撃を受け11人負傷・1人行方不明——UKMTO警報211が対応とみられる、船名はADNOC未公表・攻撃主体は不明",
+          "body": "gCaptain（11/18）は、ADNOC Logistics & Servicesが、同社の船が11/17夕方にホルムズ海峡で攻撃を受けたと確認し、乗組員11人が負傷、1人が所在不明、残りは避難したと伝える。UKMTOの報告（Khasabの北約13海里）が対応するとみられ、公式の警報211は火災が消火され乗組員1人が行方不明と伝える。ADNOCは船名を公表しておらず、警備会社Vanguard Techは船をNAVIG8 MESSIと特定したとgCaptainは書く（ADNOC・UKMTOは未確認）。攻撃主体の記載はない。",
+          "sourceLabel": "gCaptain（11/18）・UKMTO公式",
+          "date": "2026年11月18日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/tara-gas-burning-off-oman-as-another-tanker-attack-leaves-11-injured/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-kuwait-attack-1118",
+          "title": "イランがクウェートの米軍基地を標的に攻撃・バーレーンも攻撃を受ける——クウェートは防空で対応、被害の記載なし",
+          "body": "Al Jazeera（11/18）は、イランがクウェートの米軍が使う空軍基地を標的に新たな攻撃を行ったと伝える。クウェートは無人機に対抗して防空システムを作動させたと発表し（9月初め以来初めてとされる）、バーレーンは11/18早朝にイランの攻撃を撃退したと発表した。イランは米国の無人機による監視活動への対応と説明した。記事に被害の記載はなく、米側の被害は未確認。",
+          "sourceLabel": "Al Jazeera（11/18）",
+          "date": "2026年11月18日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island",
+          "isLatest": false
+        },
+        {
+          "id": "latest-centcom-sts-1118",
+          "title": "CENTCOM、対イラン海上封鎖を強化——洋上の積み替えで貨物を受けた船も封鎖回避とみなし得ると通知",
+          "body": "gCaptain（11/18）は、CENTCOMが11/18に通知を出し、封鎖の対象船から洋上の積み替えで貨物を受けた船は、イランの港に入っていなくても封鎖を回避しているとみなされ得ると伝える。そうした船は停止・乗船・進路変更・拿捕される可能性があり、積み荷が出た港へ向かうよう指示されることもあるという。通知の本文はCENTCOMの原文では未確認で、記事の引用による。",
+          "sourceLabel": "gCaptain（11/18）",
+          "date": "2026年11月18日（現地）",
+          "label": "軍事",
+          "url": "https://gcaptain.com/u-s-targets-ship-to-ship-transfers-in-expanded-iran-maritime-blockade/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-houthi-aden-1118",
+          "title": "フーシ派はアデンの西約100km（イエメンの治安当局者）——連合軍は11/17にフーシ派の軍事目標60か所を空爆と発表",
+          "body": "The National（11/18）は、イエメンの治安当局者の話として、フーシ派がアデンの西約100kmにいると伝える。サヌアの匿名の情報筋は、作戦はバブエルマンデブの「確保」が目的で封鎖はしないと述べた（フーシ派筋の主張）。Al Jazeera（11/18）は、サウジ主導の連合軍が11/17にフーシ派の軍事目標60か所を攻撃したと発表したと伝える。",
+          "sourceLabel": "The National（11/18）・Al Jazeera（11/18）",
+          "date": "2026年11月18日（現地）",
+          "label": "軍事",
+          "url": "https://www.thenationalnews.com/news/mena/2026/11/18/houthis-100km-from-aden-but-imminent-attack-said-to-be-unlikely/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月19日",
       "items": [

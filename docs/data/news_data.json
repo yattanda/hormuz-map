@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月20日 07:17 日本時間JST",
+  "updated": "2026年11月21日 07:29 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-mines-claim-1119",
-      "title": "イラン海軍・IRGC「海峡の東でタンカーが機雷に触れて炎上」と主張——海軍は1〜2隻、IRGCは超大型2隻、船名なし・独立した確認なし",
-      "body": "Middle East Eye（11/19 19:41 GMT）は、イラン海軍が木曜（11/19）、海峡の東の制限区域でタンカー1隻が機雷に触れて炎上したと、国営IRIBを引いて伝える（海軍は、船が航行システムを切っていたと述べた）。Anadolu（11/20）は、機雷に触れて炎上したタンカーを2隻と書き、独立した確認の記載はない。Al-Monitor（11/19）は、IRGCが原油400万バレル超を積んだ超大型タンカー2隻が機雷に触れたと主張したと伝え、「could not immediately be independently verified」と書く。IRGCは船名・船籍・所有者を示していない。隻数と発表主体は媒体ごとに異なり、11/18の海軍の「3隻」と同じ件かは不明。UKMTO公式に、これに対応する警報はない。",
-      "sourceLabel": "Anadolu（11/20）・Middle East Eye（11/19）・Al-Monitor（11/19）",
-      "date": "2026年11月19日（現地）",
+      "id": "latest-ukmto214-1120",
+      "title": "UKMTO警報214・Khasab北8海里でタンカーが飛翔体を受け火災・負傷者なし——船名と攻撃主体は不明",
+      "body": "UKMTO公式の警報214（Attack・11/21 01:06 JST発行）は、Khasabの北8海里で、海峡を出る途中のタンカーが左舷船首に正体不明の飛翔体を受け、船上で火災が起きたと伝える（負傷者・環境への影響の報告なし）。本文の発生時刻は11/20 15:00 UTC（11/21 00:00 JST）。gCaptain（11/20）は同じ時刻・位置と火災を伝え、船名は書いていない。警報212・211とは日時・位置が異なる。船名と攻撃主体は示されていない。",
+      "sourceLabel": "UKMTO公式・gCaptain（11/20）",
+      "date": "2026年11月20日（現地）",
       "label": "海上",
-      "url": "https://aa.com.tr/en/middle-east/2-oil-tankers-catch-fire-after-hitting-mines-in-waters-east-of-strait-of-hormuz-iranian-army/4131604",
+      "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/",
       "isLatest": true
     },
     {
-      "id": "latest-riyadh-tower-1119",
-      "title": "リヤドの金融地区の塔がフーシ派の攻撃を受け数階に被害——サウジ民間防衛隊「負傷者なし」",
-      "body": "Arab News（11/19）は、サウジ民間防衛隊の発表として、リヤドのキング・アブドゥッラー金融地区の塔がフーシ派の攻撃を受け、塔の数階と隣接する建物に物的損害が出たが、負傷者は報告されていないと伝える（原文は「material damage to several floors of the tower and neighboring buildings, with no injuries reported」）。民間防衛隊は、フーシ派による民間物への攻撃を国際人道法の明白な違反と非難した。記事にフーシ派の声明の記載はない。フーシ派は前日、リヤドの空港と金融センターを標的にしたと主張していた（Al Jazeera）が、空港の被害は確認できない。",
-      "sourceLabel": "Arab News（11/19）・Al Jazeera（11/19）",
-      "date": "2026年11月19日（現地）",
+      "id": "latest-irgc-khasab-mine-1120",
+      "title": "IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明・独立した確認なし",
+      "body": "Anadolu（11/20）は、IRGC海軍が金曜（11/20）、タンカー1隻がオマーンのKhasab港付近で機雷に触れて爆発し炎上したと述べたと伝える（国営IRIB経由）。IRGCは同船が許可のない航路を通ろうとしたと主張し、映像は後日公開するとした。船名は示されていない。UKMTO警報214は原因を「unknown projectile」としており、同一の船か、機雷か飛翔体かは確認できない。",
+      "sourceLabel": "Anadolu（11/20）",
+      "date": "2026年11月20日（現地）",
+      "label": "海上",
+      "url": "https://aa.com.tr/en/middle-east/iran-says-tanker-catches-fire-after-striking-naval-mines-near-omans-khasab-port/4132530",
+      "isLatest": false
+    },
+    {
+      "id": "latest-hodeidah-1120",
+      "title": "サウジ主導連合がホデイダ港を攻撃——フーシ派「ジェッダ港などサウジの紅海の港を標的にする」と警告し船の退避を要求",
+      "body": "Al Jazeera（11/20）は、連合軍報道官が、ホデイダ港の「作戦能力」を攻撃したと述べ、武器・弾道ミサイルの輸送に使われていたと主張したと伝える。フーシ派の報道官は、連合軍がホデイダ港を攻撃すればジェッダ港とサウジの紅海沿岸の全ての港が標的になると述べ、船会社に船の即時退避を求めた。フーシ派の主張で、港への実際の攻撃は確認できない。",
+      "sourceLabel": "Al Jazeera（11/20）",
+      "date": "2026年11月20日（現地）",
       "label": "攻撃",
-      "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-tower-at-king-abdullah-financial-district-causes-damage-saudi-civil-defense-says-3012970",
+      "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports",
       "isLatest": false
     },
     {
-      "id": "latest-senate-warpowers-1119",
-      "title": "米上院、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決——法的拘束力はなく象徴的",
-      "body": "Al Jazeera（11/19）は、上院が木曜（11/19）、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決したと伝える（原文は「The resolution was defeated on Thursday 51 to 48」）。共和党のCollins、Murkowski、Paulの3人が賛成し、民主党ではFettermanだけが反対した。決議に法的拘束力はなく、大部分は象徴的だったと記事は書く。下院は9月に220対204で可決していた。",
-      "sourceLabel": "Al Jazeera（11/19）",
-      "date": "2026年11月19日（現地）",
-      "label": "外交",
-      "url": "https://www.aljazeera.com/news/2026/11/19/senate-republicans-in-us-reject-measure-to-limit-trumps-war-powers-in-iran",
-      "isLatest": false
-    },
-    {
-      "id": "latest-war-cost-1119",
-      "title": "国防総省の予算担当者、対イラン戦費は11/13時点で約483億ドルと上院で証言——米軍基地の修復費は含まず",
-      "body": "Anadolu（11/19）とArab News（AP・11/20）は、国防総省の予算担当者で海軍主計官に指名されたArthur Millerが11/19、上院軍事委員会で、対イラン戦争の費用が11/13時点で約483億ドル（原文は「$48.3 billion」）と述べたと伝える。軍事作戦の費用と、装備・弾薬の補填費用を含み、中東の米軍施設の修復費は含まない。Blumenthal上院議員が施設被害の見積もりを求めたが、Millerは持っていないと答えた。",
-      "sourceLabel": "Anadolu（11/19）・Arab News（AP・11/20）",
-      "date": "2026年11月19日（現地）",
-      "label": "軍事",
-      "url": "https://aa.com.tr/en/americas/us-war-against-iran-has-cost-483b-pentagon-official-tells-senate/4131569",
+      "id": "latest-sts-kharg-1120",
+      "title": "イラン産原油の洋上積み替え約20万バレルをUANIが確認とBloomberg——Kharg島の14隻の船団はIRGC系Farsの報道で未確認",
+      "body": "The Maritime Executive（11/20）は、United Against Nuclear Iranが約20万バレルのイラン産原油の積み替えを確認したとBloombergが報じたと伝える。同記事は、Kharg島で14隻に積み込みが行われたとする報道がIRGC系のFars通信に由来するとみられると書き、TankerTrackers.comは「Wishful thinking」と否定したと伝える。船団の実在は確認できない。",
+      "sourceLabel": "The Maritime Executive（11/20）",
+      "date": "2026年11月20日（現地）",
+      "label": "海上",
+      "url": "https://maritime-executive.com/article/reports-claim-iran-is-preparing-oil-convoy-to-test-u-s-blockade",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-anadolu-khasab-1120",
+      "titleJa": "【Anadolu】IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明",
+      "titleEn": "Anadolu (Nov 20): Iran says tanker catches fire after striking naval mines near Oman's Khasab port",
+      "title": "【Anadolu】IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明",
+      "country": "トルコ",
+      "media": "Anadolu",
+      "source": "Anadolu",
+      "date": "2026年11月20日（現地）",
+      "summary": "Anadoluは、IRGC海軍が金曜に、タンカーがオマーンのKhasab港付近で機雷に触れて爆発・炎上したと述べたと伝える。映像は後日公開するとしており、船名はない。",
+      "url": "https://aa.com.tr/en/middle-east/iran-says-tanker-catches-fire-after-striking-naval-mines-near-omans-khasab-port/4132530",
+      "isLatest": true
+    },
+    {
+      "id": "osint-aljazeera-hodeidah-1120",
+      "titleJa": "【Al Jazeera】サウジ主導連合がホデイダ港を攻撃、フーシ派はサウジの紅海の港を標的にすると警告",
+      "titleEn": "Al Jazeera (Nov 20): Saudi coalition and Houthis exchange threats to bomb key ports",
+      "title": "【Al Jazeera】サウジ主導連合がホデイダ港を攻撃、フーシ派はサウジの紅海の港を標的にすると警告",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月20日（現地）",
+      "summary": "Al Jazeeraは、連合軍がホデイダ港の作戦能力を攻撃したと述べ、フーシ派がジェッダ港など紅海沿岸の港を標的にすると警告し船の退避を求めたと伝える。",
+      "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports",
+      "isLatest": false
+    },
     {
       "id": "osint-anadolu-mines-1119",
       "titleJa": "【Anadolu】イラン軍「海峡の東の制限区域でタンカー2隻が機雷に触れて炎上」と主張——独立した確認の記載なし",
@@ -55,7 +81,7 @@
       "date": "2026年11月19日（現地）",
       "summary": "Anadoluは、イラン軍が木曜に制限区域で2隻のタンカーが機雷に触れて炎上したと主張したと伝える。同日早くにも似た件があったとし、独立した確認の記載はない。",
       "url": "https://aa.com.tr/en/middle-east/2-oil-tankers-catch-fire-after-hitting-mines-in-waters-east-of-strait-of-hormuz-iranian-army/4131604",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-riyadh-1119",
@@ -2428,6 +2454,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月21日",
+      "items": [
+        {
+          "id": "latest-mines-claim-1119",
+          "title": "イラン海軍・IRGC「海峡の東でタンカーが機雷に触れて炎上」と主張——海軍は1〜2隻、IRGCは超大型2隻、船名なし・独立した確認なし",
+          "body": "Middle East Eye（11/19 19:41 GMT）は、イラン海軍が木曜（11/19）、海峡の東の制限区域でタンカー1隻が機雷に触れて炎上したと、国営IRIBを引いて伝える（海軍は、船が航行システムを切っていたと述べた）。Anadolu（11/20）は、機雷に触れて炎上したタンカーを2隻と書き、独立した確認の記載はない。Al-Monitor（11/19）は、IRGCが原油400万バレル超を積んだ超大型タンカー2隻が機雷に触れたと主張したと伝え、「could not immediately be independently verified」と書く。IRGCは船名・船籍・所有者を示していない。隻数と発表主体は媒体ごとに異なり、11/18の海軍の「3隻」と同じ件かは不明。UKMTO公式に、これに対応する警報はない。",
+          "sourceLabel": "Anadolu（11/20）・Middle East Eye（11/19）・Al-Monitor（11/19）",
+          "date": "2026年11月19日（現地）",
+          "label": "海上",
+          "url": "https://aa.com.tr/en/middle-east/2-oil-tankers-catch-fire-after-hitting-mines-in-waters-east-of-strait-of-hormuz-iranian-army/4131604",
+          "isLatest": false
+        },
+        {
+          "id": "latest-riyadh-tower-1119",
+          "title": "リヤドの金融地区の塔がフーシ派の攻撃を受け数階に被害——サウジ民間防衛隊「負傷者なし」",
+          "body": "Arab News（11/19）は、サウジ民間防衛隊の発表として、リヤドのキング・アブドゥッラー金融地区の塔がフーシ派の攻撃を受け、塔の数階と隣接する建物に物的損害が出たが、負傷者は報告されていないと伝える（原文は「material damage to several floors of the tower and neighboring buildings, with no injuries reported」）。民間防衛隊は、フーシ派による民間物への攻撃を国際人道法の明白な違反と非難した。記事にフーシ派の声明の記載はない。フーシ派は前日、リヤドの空港と金融センターを標的にしたと主張していた（Al Jazeera）が、空港の被害は確認できない。",
+          "sourceLabel": "Arab News（11/19）・Al Jazeera（11/19）",
+          "date": "2026年11月19日（現地）",
+          "label": "攻撃",
+          "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-tower-at-king-abdullah-financial-district-causes-damage-saudi-civil-defense-says-3012970",
+          "isLatest": false
+        },
+        {
+          "id": "latest-senate-warpowers-1119",
+          "title": "米上院、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決——法的拘束力はなく象徴的",
+          "body": "Al Jazeera（11/19）は、上院が木曜（11/19）、トランプ氏の対イラン戦争権限を制限する決議を51対48で否決したと伝える（原文は「The resolution was defeated on Thursday 51 to 48」）。共和党のCollins、Murkowski、Paulの3人が賛成し、民主党ではFettermanだけが反対した。決議に法的拘束力はなく、大部分は象徴的だったと記事は書く。下院は9月に220対204で可決していた。",
+          "sourceLabel": "Al Jazeera（11/19）",
+          "date": "2026年11月19日（現地）",
+          "label": "外交",
+          "url": "https://www.aljazeera.com/news/2026/11/19/senate-republicans-in-us-reject-measure-to-limit-trumps-war-powers-in-iran",
+          "isLatest": false
+        },
+        {
+          "id": "latest-war-cost-1119",
+          "title": "国防総省の予算担当者、対イラン戦費は11/13時点で約483億ドルと上院で証言——米軍基地の修復費は含まず",
+          "body": "Anadolu（11/19）とArab News（AP・11/20）は、国防総省の予算担当者で海軍主計官に指名されたArthur Millerが11/19、上院軍事委員会で、対イラン戦争の費用が11/13時点で約483億ドル（原文は「$48.3 billion」）と述べたと伝える。軍事作戦の費用と、装備・弾薬の補填費用を含み、中東の米軍施設の修復費は含まない。Blumenthal上院議員が施設被害の見積もりを求めたが、Millerは持っていないと答えた。",
+          "sourceLabel": "Anadolu（11/19）・Arab News（AP・11/20）",
+          "date": "2026年11月19日（現地）",
+          "label": "軍事",
+          "url": "https://aa.com.tr/en/americas/us-war-against-iran-has-cost-483b-pentagon-official-tells-senate/4131569",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月20日",
       "items": [

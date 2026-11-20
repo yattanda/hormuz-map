@@ -4135,6 +4135,34 @@
           "sourceLabel": "Anadolu（11/19）・Arab News（AP・11/20）"
         }
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "dateLabel": "2026/11/21 07:29",
+      "blockadeDay": 267,
+      "summary": "【重大更新】前回分の裏取り：解消1件（11/19の原油終値＝ブレント1月物91.98ドル・WTI12月物83.21ドル。Yahoo Finance〈NYMEXのデータ〉・Rigzone経由のReuters/Bloomberg配信・rallies.ai）・継続18件（警報196・197・201・203〜205の攻撃主体、警報207・208の攻撃主体〈Maritime Executiveは警報208とみられるTARA GASの被弾をIRGCのドローンと書くが根拠の明示を確認できない〉、MQ-1撃墜への米側の反応、機雷・沈没・炎上・LNG船・レーダー破壊の主張の裏付け、11/10のADNOC船、Didamar島、MT Velos Sapphire、UAE救助の貨物船、トランプ氏の発言の原文、UKMTO週報の期間、封鎖累計の最新値、17億バレルの始点、空母の到着日、アデンまでの距離、警報209・211の発生時刻、警報212の船名と攻撃主体、保険料6,400万ドルの集計元。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・UKMTO警報214（Khasab北8海里・11/20 15:00 UTC・タンカーが飛翔体を受け火災・負傷者なし・船名と攻撃主体は不明・公式）・IRGC海軍がKhasab港付近のタンカーが機雷に触れて炎上したと主張（警報214との同一船かは不明・独立した確認なし。Anadolu）・サウジ主導連合がホデイダ港を攻撃し、フーシ派はジェッダ港などサウジの紅海の港を標的にすると警告（Al Jazeera）・イラン産原油の洋上積み替え約20万バレルをUANIが確認とBloomberg、Kharg島の14隻の船団はFars発で未確認（The Maritime Executive）・UKMTO警報213（アデン湾・武装した小型船が貨物船に発砲・被害なし・海峡の外）・原油は11/20の終値を確定（ブレント1月物92.57ドル・WTI12月物83.98ドル）・通航はPortWatchで11/9〜11/15に1日平均2.3隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機267日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（機雷の海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報214・Khasab北8海里でタンカーが飛翔体を受け火災・負傷者なし——船名と攻撃主体は不明",
+          "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/",
+          "sourceLabel": "UKMTO公式・gCaptain（11/20）"
+        },
+        {
+          "title": "IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明・独立した確認なし",
+          "url": "https://aa.com.tr/en/middle-east/iran-says-tanker-catches-fire-after-striking-naval-mines-near-omans-khasab-port/4132530",
+          "sourceLabel": "Anadolu（11/20）"
+        },
+        {
+          "title": "サウジ主導連合がホデイダ港を攻撃——フーシ派「ジェッダ港などサウジの紅海の港を標的にする」と警告し船の退避を要求",
+          "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports",
+          "sourceLabel": "Al Jazeera（11/20）"
+        },
+        {
+          "title": "イラン産原油の洋上積み替え約20万バレルをUANIが確認とBloomberg——Kharg島の14隻の船団はIRGC系Farsの報道で未確認",
+          "url": "https://maritime-executive.com/article/reports-claim-iran-is-preparing-oil-convoy-to-test-u-s-blockade",
+          "sourceLabel": "The Maritime Executive（11/20）"
+        }
+      ]
     }
   ]
 }

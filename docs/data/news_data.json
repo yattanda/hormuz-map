@@ -1,49 +1,101 @@
 {
-  "updated": "2026年11月21日 07:29 日本時間JST",
+  "updated": "2026年11月22日 07:18 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto214-1120",
-      "title": "UKMTO警報214・Khasab北8海里でタンカーが飛翔体を受け火災・負傷者なし——船名と攻撃主体は不明",
-      "body": "UKMTO公式の警報214（Attack・11/21 01:06 JST発行）は、Khasabの北8海里で、海峡を出る途中のタンカーが左舷船首に正体不明の飛翔体を受け、船上で火災が起きたと伝える（負傷者・環境への影響の報告なし）。本文の発生時刻は11/20 15:00 UTC（11/21 00:00 JST）。gCaptain（11/20）は同じ時刻・位置と火災を伝え、船名は書いていない。警報212・211とは日時・位置が異なる。船名と攻撃主体は示されていない。",
-      "sourceLabel": "UKMTO公式・gCaptain（11/20）",
-      "date": "2026年11月20日（現地）",
+      "id": "latest-ukmto215216-1121",
+      "title": "UKMTO警報215・216・Khasab沖でタンカー2件が飛翔体を受ける——負傷者なし・同一船か、船名と攻撃主体は不明",
+      "body": "UKMTO公式の警報215（Attack・11/21 16:41 JST発行）は、本文の発生時刻11/21 05:00 UTC（14:00 JST）、Khasabの北11海里で、海峡を出る途中のタンカーが船尾に正体不明の飛翔体を受けたと伝える。警報216（同17:17 JST発行）は、05:50 UTC（14:50 JST）、Khasabの東17海里で、同じく海峡を出る途中のタンカーが機関室に飛翔体を受けたと伝える。どちらも負傷者の報告はなく、環境への影響は未確認。ロイター（gCaptain掲載）は、2件が同じ船かは直ちには明らかでないと書く。船名と攻撃主体は示されていない。",
+      "sourceLabel": "UKMTO公式・ロイター（gCaptain掲載・11/21）",
+      "date": "2026年11月21日（現地）",
       "label": "海上",
-      "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/",
+      "url": "https://gcaptain.com/two-tanker-incidents-reported-near-oman-vessel-hit-mine-east-of-hormuz/",
       "isLatest": true
     },
     {
-      "id": "latest-irgc-khasab-mine-1120",
-      "title": "IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明・独立した確認なし",
-      "body": "Anadolu（11/20）は、IRGC海軍が金曜（11/20）、タンカー1隻がオマーンのKhasab港付近で機雷に触れて爆発し炎上したと述べたと伝える（国営IRIB経由）。IRGCは同船が許可のない航路を通ろうとしたと主張し、映像は後日公開するとした。船名は示されていない。UKMTO警報214は原因を「unknown projectile」としており、同一の船か、機雷か飛翔体かは確認できない。",
-      "sourceLabel": "Anadolu（11/20）",
-      "date": "2026年11月20日（現地）",
-      "label": "海上",
-      "url": "https://aa.com.tr/en/middle-east/iran-says-tanker-catches-fire-after-striking-naval-mines-near-omans-khasab-port/4132530",
-      "isLatest": false
-    },
-    {
-      "id": "latest-hodeidah-1120",
-      "title": "サウジ主導連合がホデイダ港を攻撃——フーシ派「ジェッダ港などサウジの紅海の港を標的にする」と警告し船の退避を要求",
-      "body": "Al Jazeera（11/20）は、連合軍報道官が、ホデイダ港の「作戦能力」を攻撃したと述べ、武器・弾道ミサイルの輸送に使われていたと主張したと伝える。フーシ派の報道官は、連合軍がホデイダ港を攻撃すればジェッダ港とサウジの紅海沿岸の全ての港が標的になると述べ、船会社に船の即時退避を求めた。フーシ派の主張で、港への実際の攻撃は確認できない。",
-      "sourceLabel": "Al Jazeera（11/20）",
-      "date": "2026年11月20日（現地）",
+      "id": "latest-bahrain-1121",
+      "title": "バーレーン「イランの攻撃で民間の産業施設が火災」——IRGCは米軍基地2か所を標的にしたと主張",
+      "body": "Al Jazeera（11/21）は、バーレーン内務省が、イランの攻撃で民間の産業施設が標的になり火災が起きたと述べたと伝える（物的被害の予備報告・負傷者なし・施設名は示されず）。IRGCは、米軍のal-RiffaとAwaliの基地を標的にし、パトリオットのレーダー2基を破壊したと主張した（独立した確認なし）。IRNAは、迎撃ミサイルがシトラ島に落ちて火災が起きたとする別の説明を引いて伝えた。米軍の被害は確認できない。",
+      "sourceLabel": "Al Jazeera（11/21）",
+      "date": "2026年11月21日（現地）",
       "label": "攻撃",
-      "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports",
+      "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility",
       "isLatest": false
     },
     {
-      "id": "latest-sts-kharg-1120",
-      "title": "イラン産原油の洋上積み替え約20万バレルをUANIが確認とBloomberg——Kharg島の14隻の船団はIRGC系Farsの報道で未確認",
-      "body": "The Maritime Executive（11/20）は、United Against Nuclear Iranが約20万バレルのイラン産原油の積み替えを確認したとBloombergが報じたと伝える。同記事は、Kharg島で14隻に積み込みが行われたとする報道がIRGC系のFars通信に由来するとみられると書き、TankerTrackers.comは「Wishful thinking」と否定したと伝える。船団の実在は確認できない。",
-      "sourceLabel": "The Maritime Executive（11/20）",
-      "date": "2026年11月20日（現地）",
+      "id": "latest-mineclaim-1121",
+      "title": "イラン海軍「海峡の東の制限区域でタンカーが機雷に触れて炎上」と主張——警報215・216との関係は不明・独立した確認なし",
+      "body": "Al Jazeera（11/21）は、イラン海軍が土曜（11/21）、海峡の東の制限区域でタンカー1隻が機雷に触れて炎上したと国営テレビを通じて述べ、同船が警告を無視し識別・航行装置を切っていたと非難したと伝える。Al Jazeeraはこの主張を独立に確認できず、UKMTOの2件のいずれに当たるかも不明と書く。Al Jazeeraのテヘラン特派員は、イラン軍の発表をもとに、前週の土曜から約25件の事案が報告されたと述べた。船名は示されていない。",
+      "sourceLabel": "Al Jazeera（11/21）",
+      "date": "2026年11月21日（現地）",
       "label": "海上",
-      "url": "https://maritime-executive.com/article/reports-claim-iran-is-preparing-oil-convoy-to-test-u-s-blockade",
+      "url": "https://www.aljazeera.com/news/2026/11/21/tankers-hit-in-strait-of-hormuz-as-iran-tightens-grip-on-shipping",
+      "isLatest": false
+    },
+    {
+      "id": "latest-qatar-1121",
+      "title": "カタールの代表団がテヘランで協議——イラン「要求が満たされない限り海峡の議論は無意味」・トランプ氏「恒久的な合意を望む」",
+      "body": "Al Jazeera（11/21）は、イランのGharibabadi外務次官が、カタールの代表団が11/20夜にテヘランを訪れ約2時間協議したと述べたと伝える（Tasnim経由。正式な交渉にはなっていない）。Araghchi外相は、米側が条件を受け入れれば海峡の再開は難しくないとしつつ、イランの要求が満たされない限り海峡の開放をめぐる議論は無意味だと述べた。トランプ氏はFox Newsに、核兵器の保有を阻む恒久的な合意を望むと述べた。",
+      "sourceLabel": "Al Jazeera（11/21）",
+      "date": "2026年11月21日（現地）",
+      "label": "外交",
+      "url": "https://www.aljazeera.com/news/2026/11/21/iran-says-held-talks-with-qatari-mediators-urges-us-to-accept-conditions",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-qatar-1121",
+      "titleJa": "【Al Jazeera】カタールの代表団がテヘランで協議・イラン外相「要求が満たされない限り海峡の議論は無意味」",
+      "titleEn": "Al Jazeera (Nov 21): Iran says held talks with Qatari mediators, urges US to accept conditions",
+      "title": "【Al Jazeera】カタールの代表団がテヘランで協議・イラン外相「要求が満たされない限り海峡の議論は無意味」",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月21日（現地）",
+      "summary": "Al Jazeeraは、カタールの代表団がテヘランで約2時間協議し、正式な交渉にはなっていないとイラン側が述べたと伝える。トランプ氏は恒久的な合意を望むと述べた。",
+      "url": "https://www.aljazeera.com/news/2026/11/21/iran-says-held-talks-with-qatari-mediators-urges-us-to-accept-conditions",
+      "isLatest": true
+    },
+    {
+      "id": "osint-arabnews-bahrain-1121",
+      "titleJa": "【Arab News】バーレーン「イランが民間の産業施設を標的にし火災」・負傷者なし",
+      "titleEn": "Arab News (Nov 21): Bahrain says Iran struck civilian industrial facility, sparking fire",
+      "title": "【Arab News】バーレーン「イランが民間の産業施設を標的にし火災」・負傷者なし",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月21日（現地）",
+      "summary": "Arab Newsは、バーレーン内務省が、イランの攻撃で民間の産業施設が標的となり火災が起き、物的被害はあるが負傷者はいないと述べたと伝える。AFPの記者は、シトラ島の上に煙が上がるのを住民が見たと伝えた。",
+      "url": "https://www.arabnews.com/middle-east/bahrain-says-iran-struck-civilian-industrial-facility-sparking-fire-3013417",
+      "isLatest": false
+    },
+    {
+      "id": "osint-anadolu-f16-1121",
+      "titleJa": "【Anadolu】CENTCOM、イラン軍の「米F-16損傷」の主張を否定",
+      "titleEn": "Anadolu (Nov 21): CENTCOM denies Iranian claim of damage to US F-16 fighter jet",
+      "title": "【Anadolu】CENTCOM、イラン軍の「米F-16損傷」の主張を否定",
+      "country": "トルコ",
+      "media": "Anadolu",
+      "source": "Anadolu",
+      "date": "2026年11月21日（現地）",
+      "summary": "Anadoluは、イラン軍が防空ミサイルで米F-16を損傷し緊急着陸させたと主張したのに対し、CENTCOMがXで「FALSE」と否定し、戦闘機は全機無事だと述べたと伝える。",
+      "url": "https://aa.com.tr/en/americas/centcom-denies-iranian-claim-of-damage-to-us-f-16-fighter-jet/4133053",
+      "isLatest": false
+    },
+    {
+      "id": "osint-natl-mines-1121",
+      "titleJa": "【The National】IRGCは機雷接触を連日主張するが、専門家は検証に耐えないとみる",
+      "titleEn": "The National (Nov 21): Iran exaggerates Hormuz sea mine threat but uses fear to tighten grip",
+      "title": "【The National】IRGCは機雷接触を連日主張するが、専門家は検証に耐えないとみる",
+      "country": "アラブ首長国連邦",
+      "media": "The National",
+      "source": "The National",
+      "date": "2026年11月21日（現地）",
+      "summary": "The Nationalは、IRGCが連日、船が機雷に当たったと主張しているが、専門家はその主張が検証に耐えないとみており、それでも船員を怖がらせて費用を押し上げる効果はあり得ると伝える。",
+      "url": "https://www.thenationalnews.com/news/mena/2026/11/21/iran-sea-mine-hormuz-threat/",
+      "isLatest": false
+    },
     {
       "id": "osint-anadolu-khasab-1120",
       "titleJa": "【Anadolu】IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明",
@@ -55,7 +107,7 @@
       "date": "2026年11月20日（現地）",
       "summary": "Anadoluは、IRGC海軍が金曜に、タンカーがオマーンのKhasab港付近で機雷に触れて爆発・炎上したと述べたと伝える。映像は後日公開するとしており、船名はない。",
       "url": "https://aa.com.tr/en/middle-east/iran-says-tanker-catches-fire-after-striking-naval-mines-near-omans-khasab-port/4132530",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-hodeidah-1120",
@@ -2454,6 +2506,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月22日",
+      "items": [
+        {
+          "id": "latest-ukmto214-1120",
+          "title": "UKMTO警報214・Khasab北8海里でタンカーが飛翔体を受け火災・負傷者なし——船名と攻撃主体は不明",
+          "body": "UKMTO公式の警報214（Attack・11/21 01:06 JST発行）は、Khasabの北8海里で、海峡を出る途中のタンカーが左舷船首に正体不明の飛翔体を受け、船上で火災が起きたと伝える（負傷者・環境への影響の報告なし）。本文の発生時刻は11/20 15:00 UTC（11/21 00:00 JST）。gCaptain（11/20）は同じ時刻・位置と火災を伝え、船名は書いていない。警報212・211とは日時・位置が異なる。船名と攻撃主体は示されていない。",
+          "sourceLabel": "UKMTO公式・gCaptain（11/20）",
+          "date": "2026年11月20日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-khasab-mine-1120",
+          "title": "IRGC海軍「タンカーがKhasab港付近で機雷に触れて爆発・炎上」と主張——警報214との同一船かは不明・独立した確認なし",
+          "body": "Anadolu（11/20）は、IRGC海軍が金曜（11/20）、タンカー1隻がオマーンのKhasab港付近で機雷に触れて爆発し炎上したと述べたと伝える（国営IRIB経由）。IRGCは同船が許可のない航路を通ろうとしたと主張し、映像は後日公開するとした。船名は示されていない。UKMTO警報214は原因を「unknown projectile」としており、同一の船か、機雷か飛翔体かは確認できない。",
+          "sourceLabel": "Anadolu（11/20）",
+          "date": "2026年11月20日（現地）",
+          "label": "海上",
+          "url": "https://aa.com.tr/en/middle-east/iran-says-tanker-catches-fire-after-striking-naval-mines-near-omans-khasab-port/4132530",
+          "isLatest": false
+        },
+        {
+          "id": "latest-hodeidah-1120",
+          "title": "サウジ主導連合がホデイダ港を攻撃——フーシ派「ジェッダ港などサウジの紅海の港を標的にする」と警告し船の退避を要求",
+          "body": "Al Jazeera（11/20）は、連合軍報道官が、ホデイダ港の「作戦能力」を攻撃したと述べ、武器・弾道ミサイルの輸送に使われていたと主張したと伝える。フーシ派の報道官は、連合軍がホデイダ港を攻撃すればジェッダ港とサウジの紅海沿岸の全ての港が標的になると述べ、船会社に船の即時退避を求めた。フーシ派の主張で、港への実際の攻撃は確認できない。",
+          "sourceLabel": "Al Jazeera（11/20）",
+          "date": "2026年11月20日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports",
+          "isLatest": false
+        },
+        {
+          "id": "latest-sts-kharg-1120",
+          "title": "イラン産原油の洋上積み替え約20万バレルをUANIが確認とBloomberg——Kharg島の14隻の船団はIRGC系Farsの報道で未確認",
+          "body": "The Maritime Executive（11/20）は、United Against Nuclear Iranが約20万バレルのイラン産原油の積み替えを確認したとBloombergが報じたと伝える。同記事は、Kharg島で14隻に積み込みが行われたとする報道がIRGC系のFars通信に由来するとみられると書き、TankerTrackers.comは「Wishful thinking」と否定したと伝える。船団の実在は確認できない。",
+          "sourceLabel": "The Maritime Executive（11/20）",
+          "date": "2026年11月20日（現地）",
+          "label": "海上",
+          "url": "https://maritime-executive.com/article/reports-claim-iran-is-preparing-oil-convoy-to-test-u-s-blockade",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月21日",
       "items": [

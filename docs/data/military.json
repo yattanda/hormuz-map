@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-21",
-  "checked": "2026-11-21",
+  "updated": "2026-11-22",
+  "checked": "2026-11-22",
   "comment": "地図の艦隊・港・海域の説明。日次更新で毎回見直す（daily-site-update スキル「地図の軍事レイヤー」）。checked は見直した日、updated は本文を変えた日。艦艇の位置と海域の範囲は公表されていないため座標は目安で、日次では id・type・emoji・座標・色を変えず、印の追加・削除もしない。",
   "fleets": [
     {
@@ -126,9 +126,9 @@
           56.6
         ]
       ],
-      "detail": "米中央軍（CENTCOM）が4/13に発動し、7/14に再発効させた対イラン海上封鎖の、おおよその実施海域（ホルムズ海峡〜オマーン湾）。国籍を問わず、イランの港に出入りする船が対象と説明されている（ケイン統合参謀本部議長・4/24）。境界は公表されておらず、図は目安。11/18にはCENTCOMが通知で、洋上の積み替えで貨物を受けた船も封鎖回避とみなし得ると示し（gCaptain）、11/20にはUANIが約20万バレルの積み替えを確認したとBloombergが報じた（The Maritime Executive）。CENTCOMは10/31時点で商船144隻の進路を変更させたと発表し（CBS News）、Riviera（11/9）は147隻と伝える。",
-      "source": "CENTCOM（10/10）・CBS News（10/17・10/31）・Arab News（11/8）・Riviera（11/9）・Reuters（4/24・Marine Insight 掲載）・gCaptain（11/18）・The Maritime Executive（11/20）",
-      "updated": "2026-11-21"
+      "detail": "米中央軍（CENTCOM）が4/13に発動し、7/14に再発効させた対イラン海上封鎖の、おおよその実施海域（ホルムズ海峡〜オマーン湾）。国籍を問わず、イランの港に出入りする船が対象と説明されている（ケイン統合参謀本部議長・4/24）。境界は公表されておらず、図は目安。11/18の通知で、洋上の積み替えで貨物を受けた船も封鎖回避とみなし得ると示した（gCaptain）。CENTCOMは10/31時点で商船144隻の進路を変更させたと発表し（CBS News）、Riviera（11/9）は147隻と伝える。CENTCOMは11/21、封鎖が連続130日に達したと発表した（WION）。",
+      "source": "CENTCOM（10/10）・CBS News（10/17・10/31）・Arab News（11/8）・Riviera（11/9）・Reuters（4/24・Marine Insight 掲載）・gCaptain（11/18）・The Maritime Executive（11/20）・WION（11/21）",
+      "updated": "2026-11-22"
     },
     {
       "id": "hormuz-surveillance-zone",
@@ -237,9 +237,9 @@
           56.8
         ]
       ],
-      "detail": "ララク島の周辺。イランが敷設したとされる機雷は、位置は正確に把握されていないと報じられている。8/25にトランプ大統領が機雷の全除去を投稿したが公式な裏付けはなく、イランは否定。米中央軍は主要航路の機雷は除去済みと述べた（Fox News 10/29）。10/9以降、イラン側が機雷接触・炎上をくり返し主張し、11/18には海軍が海峡の東で3隻の炎上を、11/20にはIRGC海軍がKhasab港付近の1隻の爆発・炎上を主張した（dpa・Anadolu）。いずれも船名・位置は示されず独立した確認はなく、UKMTO警報214（11/20・Khasab北8海里）は原因を「unknown projectile」とする。図は警戒の目安で、機雷の位置ではない。",
-      "source": "BBC News（8/26）・Al Jazeera（10/17・10/22）・Fox News（10/29）・Gulf News（10/30・11/9）・AFP配信（Kashmir Reader 11/9）・Reuters配信（Jerusalem Post 11/8）・Arab News（11/10）・gCaptain（Reuters配信・11/13）・Arab News（AFP配信・11/14）・Gulf News（11/15）・Arab News（Reuters配信・11/15）・Arab News（11/16）・dpa（Yahoo 11/18）・Anadolu（11/20）",
-      "updated": "2026-11-21"
+      "detail": "ララク島の周辺。イランが敷設したとされる機雷は、位置は不明と報じられる。米中央軍は主要航路の機雷は除去済みと述べた（Fox News 10/29）。10/9以降、イラン側が機雷接触・炎上をくり返し主張し、11/18に海軍が海峡の東で3隻、11/20にIRGC海軍がKhasab港付近で1隻、11/21に海軍が海峡の東で1隻の炎上を主張した（dpa・Anadolu・Al Jazeera）。いずれも船名・位置は示されず独立した確認はなく、UKMTO警報214〜216は原因を「unknown projectile」とする。The National（11/21）は、専門家が主張を検証に耐えないとみると伝える。図は警戒の目安で、機雷の位置ではない。",
+      "source": "BBC News（8/26）・Al Jazeera（10/17・10/22）・Fox News（10/29）・Gulf News（10/30・11/9）・AFP配信（Kashmir Reader 11/9）・Reuters配信（Jerusalem Post 11/8）・Arab News（11/10）・gCaptain（Reuters配信・11/13）・Arab News（AFP配信・11/14）・Gulf News（11/15）・Arab News（Reuters配信・11/15）・Arab News（11/16）・dpa（Yahoo 11/18）・Anadolu（11/20）・Al Jazeera（11/21）・The National（11/21）",
+      "updated": "2026-11-22"
     }
   ]
 }

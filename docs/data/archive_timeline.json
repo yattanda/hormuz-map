@@ -4163,6 +4163,34 @@
           "sourceLabel": "The Maritime Executive（11/20）"
         }
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "dateLabel": "2026/11/22 07:18",
+      "blockadeDay": 268,
+      "summary": "【重大更新】前回分の裏取り：解消1件（UKMTO週報の期間＝11/12〜11/18の7日間。Marine InsightがUKMTOの週次概要として伝える。原本は未確認）・継続21件（警報196〜216の攻撃主体・船名・発生時刻、MQ-1撃墜への米側の反応、機雷・沈没・炎上・LNG船・レーダー破壊の主張の裏付け〈11/21の海軍の主張を含む〉、11/10のADNOC船、Didamar島、MT Velos Sapphire、UAE救助の貨物船、トランプ氏の発言の原文、封鎖累計の最新値〈CENTCOMは連続130日と発表・隻数の新しい値なし〉、17億バレルの始点、空母の到着日〈Al Jazeeraは11/15、APは11/16〉、アデンまでの距離、Kharg島の船団、ホデイダ港攻撃の被害、保険料6,400万ドルの集計元。UKMTO公式の取得と主要媒体の検索を試したが新しい資料なし）・UKMTO警報215・216（Khasab北11海里・東17海里・11/21 05:00・05:50 UTC・タンカー2件が飛翔体を受ける・負傷者なし・同一船か、船名と攻撃主体は不明・公式）・イラン海軍が海峡の東でタンカーが機雷に触れて炎上したと主張（警報215・216との関係は不明・独立した確認なし。Al Jazeera・ロイター）・バーレーンが産業施設の火災をイランの攻撃と発表し、IRGCは米軍基地2か所を標的にしレーダー2基を破壊したと主張（Al Jazeera・Arab News）・イラン軍の「F-16損傷」の主張をCENTCOMが否定（Anadolu）・カタールの代表団がテヘランで協議（Al Jazeera）・連合軍がフーシ派のリヤド向けミサイル3発を迎撃と発表、ジェッダ港への実際の攻撃は確認できない（Al Jazeera）・UKMTO週次概要で通航は戦前を約65%下回り、1週間にタンカー6隻が被弾（Marine Insight）・Kharg島で14隻超の船団が封鎖突破を準備との報道・出港は未確認（Jerusalem Post）・CENTCOMが封鎖は連続130日と発表（WION）・原油は週末で新しい終値なし（直近の確定は11/20：ブレント1月物92.57ドル・WTI12月物83.98ドル）・通航はPortWatchで11/9〜11/15に1日平均2.3隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機268日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（封鎖と機雷の海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報215・216・Khasab沖でタンカー2件が飛翔体を受ける——負傷者なし・同一船か、船名と攻撃主体は不明",
+          "url": "https://gcaptain.com/two-tanker-incidents-reported-near-oman-vessel-hit-mine-east-of-hormuz/",
+          "sourceLabel": "UKMTO公式・ロイター（gCaptain掲載・11/21）"
+        },
+        {
+          "title": "バーレーン「イランの攻撃で民間の産業施設が火災」——IRGCは米軍基地2か所を標的にしたと主張",
+          "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility",
+          "sourceLabel": "Al Jazeera（11/21）"
+        },
+        {
+          "title": "イラン海軍「海峡の東の制限区域でタンカーが機雷に触れて炎上」と主張——警報215・216との関係は不明・独立した確認なし",
+          "url": "https://www.aljazeera.com/news/2026/11/21/tankers-hit-in-strait-of-hormuz-as-iran-tightens-grip-on-shipping",
+          "sourceLabel": "Al Jazeera（11/21）"
+        },
+        {
+          "title": "カタールの代表団がテヘランで協議——イラン「要求が満たされない限り海峡の議論は無意味」・トランプ氏「恒久的な合意を望む」",
+          "url": "https://www.aljazeera.com/news/2026/11/21/iran-says-held-talks-with-qatari-mediators-urges-us-to-accept-conditions",
+          "sourceLabel": "Al Jazeera（11/21）"
+        }
+      ]
     }
   ]
 }

@@ -15,7 +15,21 @@ a:hover { text-decoration-thickness: 2px; }
 a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
 .hub-wrap { max-width: 960px; margin: 0 auto; padding: 0 var(--space-md); }
 .hub-header { padding: var(--space-xl) 0 var(--space-md); border-bottom: 1px solid var(--c-rule); }
-.hub-brand { margin: 0; font-size: var(--fs-2xl); font-weight: 700; line-height: 1.4; letter-spacing: 0.02em; }
+/* ロゴ（課題46 D1・印 CL2 の横組み）：印の高さ＝2行（サイト名＋英字）の高さ、印と文字の間は印の幅の 1/4。
+   サイト名は文字のまま（検索・読み上げ・拡大に強い）。英字は IBM Plex Sans Condensed・字間 0.24em */
+.hub-brand { --brand-fs: var(--fs-2xl); margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr);
+  column-gap: calc(var(--brand-fs) * 0.5); align-items: center; font-size: var(--brand-fs); font-weight: 700; }
+@media (max-width: 480px) { .hub-brand { --brand-fs: 1.3rem; } }
+@media (max-width: 359px) { .hub-brand { --brand-fs: 1.05rem; } } /* 320px でもサイト名を1行に */
+.hub-mark { grid-row: 1 / span 2; display: block; width: calc(var(--brand-fs) * 2.15); height: auto; }
+.hub-mark path { fill: none; }
+.hub-mark .hub-mark-c { stroke: var(--c-text); stroke-width: 7; }
+.hub-mark .hub-mark-l { stroke: var(--c-text-mute); stroke-width: 7; }
+.hub-mark .hub-mark-route { stroke: var(--c-accent); stroke-width: 2.8; stroke-dasharray: 3.2 2.4; }
+.hub-mark .hub-mark-head { fill: var(--c-accent); }
+.hub-brand-name { align-self: end; line-height: 1.2; letter-spacing: 0.02em; }
+.hub-brand-en { align-self: start; margin-top: 0.3em; font-family: var(--f-figure); font-weight: 600;
+  font-size: 0.46em; line-height: 1.2; letter-spacing: 0.24em; color: var(--c-text-mute); }
 .hub-tagline { margin: var(--space-xs) 0 0; color: var(--c-text); font-size: var(--fs-md); max-width: 40em; }
 .hub-section { padding: var(--space-lg) 0 0; }
 /* 段は上の太い罫で切る（§1） */

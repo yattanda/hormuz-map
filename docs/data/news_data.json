@@ -1,49 +1,88 @@
 {
-  "updated": "2026年11月22日 07:18 日本時間JST",
+  "updated": "2026年11月23日 07:31 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto215216-1121",
-      "title": "UKMTO警報215・216・Khasab沖でタンカー2件が飛翔体を受ける——負傷者なし・同一船か、船名と攻撃主体は不明",
-      "body": "UKMTO公式の警報215（Attack・11/21 16:41 JST発行）は、本文の発生時刻11/21 05:00 UTC（14:00 JST）、Khasabの北11海里で、海峡を出る途中のタンカーが船尾に正体不明の飛翔体を受けたと伝える。警報216（同17:17 JST発行）は、05:50 UTC（14:50 JST）、Khasabの東17海里で、同じく海峡を出る途中のタンカーが機関室に飛翔体を受けたと伝える。どちらも負傷者の報告はなく、環境への影響は未確認。ロイター（gCaptain掲載）は、2件が同じ船かは直ちには明らかでないと書く。船名と攻撃主体は示されていない。",
-      "sourceLabel": "UKMTO公式・ロイター（gCaptain掲載・11/21）",
-      "date": "2026年11月21日（現地）",
+      "id": "latest-ukmto217-1122",
+      "title": "UKMTO警報217・オマーン湾でタンカーと「military forces」の事案——被弾の有無・船名・軍の主体は不明",
+      "body": "UKMTO公式の警報217（Advisory・11/23 01:05 JST〈11/22 16:05 UTC〉発行）は、本文の発生時刻11/22 14:25 UTC（23:25 JST）、オマーン湾でタンカーと「military forces」が関わる事案の報告を受けたと伝える（原文は「an incident involving a tanker and military forces in the Gulf of Oman」）。被弾・火災・死傷・船名・軍の主体は公式の本文に記載がない。Euronews（11/22）は同じ文面をUKMTOの発表として伝え、場所をチャーバハール付近とし、company security officerがUKMTOに通報したと書く。同紙は、この表現が米軍による行動を示す可能性があるとするが（記事の解釈）、確認はない。イラン側の機雷の主張との関係も「unclear」と書く。",
+      "sourceLabel": "UKMTO公式・Euronews（11/22）",
+      "date": "2026年11月22日（現地）",
       "label": "海上",
-      "url": "https://gcaptain.com/two-tanker-incidents-reported-near-oman-vessel-hit-mine-east-of-hormuz/",
+      "url": "https://www.euronews.com/2026/11/22/tanker-incident-involving-military-forces-reported-in-strait-of-hormuz",
       "isLatest": true
     },
     {
-      "id": "latest-bahrain-1121",
-      "title": "バーレーン「イランの攻撃で民間の産業施設が火災」——IRGCは米軍基地2か所を標的にしたと主張",
-      "body": "Al Jazeera（11/21）は、バーレーン内務省が、イランの攻撃で民間の産業施設が標的になり火災が起きたと述べたと伝える（物的被害の予備報告・負傷者なし・施設名は示されず）。IRGCは、米軍のal-RiffaとAwaliの基地を標的にし、パトリオットのレーダー2基を破壊したと主張した（独立した確認なし）。IRNAは、迎撃ミサイルがシトラ島に落ちて火災が起きたとする別の説明を引いて伝えた。米軍の被害は確認できない。",
-      "sourceLabel": "Al Jazeera（11/21）",
-      "date": "2026年11月21日（現地）",
-      "label": "攻撃",
-      "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility",
-      "isLatest": false
-    },
-    {
-      "id": "latest-mineclaim-1121",
-      "title": "イラン海軍「海峡の東の制限区域でタンカーが機雷に触れて炎上」と主張——警報215・216との関係は不明・独立した確認なし",
-      "body": "Al Jazeera（11/21）は、イラン海軍が土曜（11/21）、海峡の東の制限区域でタンカー1隻が機雷に触れて炎上したと国営テレビを通じて述べ、同船が警告を無視し識別・航行装置を切っていたと非難したと伝える。Al Jazeeraはこの主張を独立に確認できず、UKMTOの2件のいずれに当たるかも不明と書く。Al Jazeeraのテヘラン特派員は、イラン軍の発表をもとに、前週の土曜から約25件の事案が報告されたと述べた。船名は示されていない。",
-      "sourceLabel": "Al Jazeera（11/21）",
-      "date": "2026年11月21日（現地）",
+      "id": "latest-irgc-2tankers-1122",
+      "title": "IRGC海軍「超大型タンカー2隻が機雷に触れ爆発・停止」と主張——警報215〜217との関係は不明・独立した確認なし",
+      "body": "Middle East Monitor（11/22）は、IRGC海軍の広報が日曜（11/22）にFars通信を通じて、スーパータンカー2隻がガナム島の北と海峡の東の2か所で機雷に触れ、「suffered explosions and were brought to a halt」と述べたと伝える。声明は船名・死傷者・被害の程度を示さず、船は許可のない航路を通り海軍の指示に従わなかったと主張した。Euronewsは、イラン国営メディアが海軍の話として2隻の炎上を伝えたとし、UKMTO警報217との関係は不明と書く。独立した確認はない。11/21の海軍の主張との関係（別の発表か）も不明。",
+      "sourceLabel": "Middle East Monitor（11/22）",
+      "date": "2026年11月22日（現地）",
       "label": "海上",
-      "url": "https://www.aljazeera.com/news/2026/11/21/tankers-hit-in-strait-of-hormuz-as-iran-tightens-grip-on-shipping",
+      "url": "https://www.middleeastmonitor.com/20261122-iran-says-2-supertankers-struck-naval-mines-near-strait-of-hormuz/",
       "isLatest": false
     },
     {
-      "id": "latest-qatar-1121",
-      "title": "カタールの代表団がテヘランで協議——イラン「要求が満たされない限り海峡の議論は無意味」・トランプ氏「恒久的な合意を望む」",
-      "body": "Al Jazeera（11/21）は、イランのGharibabadi外務次官が、カタールの代表団が11/20夜にテヘランを訪れ約2時間協議したと述べたと伝える（Tasnim経由。正式な交渉にはなっていない）。Araghchi外相は、米側が条件を受け入れれば海峡の再開は難しくないとしつつ、イランの要求が満たされない限り海峡の開放をめぐる議論は無意味だと述べた。トランプ氏はFox Newsに、核兵器の保有を阻む恒久的な合意を望むと述べた。",
-      "sourceLabel": "Al Jazeera（11/21）",
-      "date": "2026年11月21日（現地）",
-      "label": "外交",
-      "url": "https://www.aljazeera.com/news/2026/11/21/iran-says-held-talks-with-qatari-mediators-urges-us-to-accept-conditions",
+      "id": "latest-trump-fox-1122",
+      "title": "トランプ氏、Foxで封鎖を試す船は「海の底に沈む」と発言——新年後の攻撃再開に傾くと報じられる（最終決定は未発表）",
+      "body": "Jerusalem Post（11/22）は、トランプ氏がFox Newsの日曜のインタビューで、イラン国営メディアが封鎖を試す可能性に触れたことへの返答として「I hope they do; they’ll all be at the bottom of the sea like the rest of the navy」と述べ、交渉については「All they do is talk, but it’s all BS」と述べたと伝える。同紙は、トランプ氏が交渉が合意に至らなければ新年後に大規模な攻撃の再開に傾いていると書くが、これは記者の地の文で逐語の引用ではなく、「Trump has not announced a final decision to launch additional strikes」とも書く。Euronewsも封鎖を試す船についての同旨の発言を伝える。",
+      "sourceLabel": "Jerusalem Post（11/22）",
+      "date": "2026年11月22日（現地）",
+      "label": "軍事",
+      "url": "https://www.jpost.com/international/article-915744",
+      "isLatest": false
+    },
+    {
+      "id": "latest-cnn-ukmto-1122",
+      "title": "UKMTOへの船舶攻撃の報告は10月に30件超・11月は22日時点で22件以上——CNNの分析",
+      "body": "CNNの記事（Yahoo News Singapore転載・11/22）は、英国海軍と連携するUKMTOに報告された攻撃が、10月に30件を超えて2月下旬の戦争開始以来初めてとなり、11月は日曜（11/22）までに少なくとも22件で、戦争開始以来2番目に多い（「according to a CNN analysis of UKMTO data」）と伝える。10月より前は月平均約10件で、報告範囲はホルムズ海峡・ペルシャ湾・オマーン湾。見出しは「Iranian attacks」だが、数字は報告された船舶への攻撃の件数で、実行主体の内訳は示されない。IMOの件数は別で、数字は一致しないと同記事は書く。",
+      "sourceLabel": "CNN（Yahoo News Singapore転載・11/22）",
+      "date": "2026年11月22日（現地）",
+      "label": "海上",
+      "url": "https://sg.news.yahoo.com/iranian-attacks-strait-hormuz-highest-151328519.html",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-intercept-1122",
+      "titleJa": "【Al Jazeera】サウジ主導連合、フーシ派のドローンを迎撃と発表・フーシ派系メディアはサナアの攻撃を報じる",
+      "titleEn": "Al Jazeera (Nov 22): Saudi Arabia intercepts drone, missile as Houthis report attack on Sanaa",
+      "title": "【Al Jazeera】サウジ主導連合、フーシ派のドローンを迎撃と発表・フーシ派系メディアはサナアの攻撃を報じる",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月22日（現地）",
+      "summary": "Al Jazeeraは、サウジ主導連合の報道官が、フーシ派がリヤドに向けて発射したドローンをサウジの防空が破壊したと述べたと伝える。被害や死傷の報告はなかった。フーシ派系メディアは、サナアの石油会社への攻撃で数人が負傷したと伝えた。",
+      "url": "https://www.aljazeera.com/news/2026/11/22/houthis-report-attack-on-sanaa-as-saudi-arabia-intercepts-drone",
+      "isLatest": true
+    },
+    {
+      "id": "osint-euronews-217-1122",
+      "titleJa": "【Euronews】オマーン湾でタンカーが「軍が関与した事案」・UKMTOが報告",
+      "titleEn": "Euronews (Nov 22): Tanker incident “involving military forces” reported in Strait of Hormuz",
+      "title": "【Euronews】オマーン湾でタンカーが「軍が関与した事案」・UKMTOが報告",
+      "country": "フランス",
+      "media": "Euronews",
+      "source": "Euronews",
+      "date": "2026年11月22日（現地）",
+      "summary": "Euronewsは、UKMTOがオマーン湾でタンカーが軍が関与した事案に巻き込まれたと伝えたと報じる。同紙は、この表現が米軍の行動を示す可能性に触れるが確認はなく、イラン側の機雷の主張との関係も不明とする。",
+      "url": "https://www.euronews.com/2026/11/22/tanker-incident-involving-military-forces-reported-in-strait-of-hormuz",
+      "isLatest": false
+    },
+    {
+      "id": "osint-jpost-rabigh-1122",
+      "titleJa": "【Jerusalem Post】フーシ派「サウジのラービグの製油所に直撃」と主張・サウジは確認せず",
+      "titleEn": "Jerusalem Post (Nov 22): Yemen’s Houthis say they attacked Saudi Rabigh oil refinery",
+      "title": "【Jerusalem Post】フーシ派「サウジのラービグの製油所に直撃」と主張・サウジは確認せず",
+      "country": "イスラエル",
+      "media": "Jerusalem Post",
+      "source": "Jerusalem Post",
+      "date": "2026年11月22日（現地）",
+      "summary": "Jerusalem Post（Reuters配信）は、フーシ派がラービグの製油所を狙った作戦で直撃したと述べたと伝える。サウジ当局は製油所への攻撃を確認しておらず、被害の程度は示されていない。",
+      "url": "https://www.jpost.com/middle-east/article-915746",
+      "isLatest": false
+    },
     {
       "id": "osint-aljazeera-qatar-1121",
       "titleJa": "【Al Jazeera】カタールの代表団がテヘランで協議・イラン外相「要求が満たされない限り海峡の議論は無意味」",
@@ -55,7 +94,7 @@
       "date": "2026年11月21日（現地）",
       "summary": "Al Jazeeraは、カタールの代表団がテヘランで約2時間協議し、正式な交渉にはなっていないとイラン側が述べたと伝える。トランプ氏は恒久的な合意を望むと述べた。",
       "url": "https://www.aljazeera.com/news/2026/11/21/iran-says-held-talks-with-qatari-mediators-urges-us-to-accept-conditions",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-bahrain-1121",
@@ -2506,6 +2545,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月23日",
+      "items": [
+        {
+          "id": "latest-ukmto215216-1121",
+          "title": "UKMTO警報215・216・Khasab沖でタンカー2件が飛翔体を受ける——負傷者なし・同一船か、船名と攻撃主体は不明",
+          "body": "UKMTO公式の警報215（Attack・11/21 16:41 JST発行）は、本文の発生時刻11/21 05:00 UTC（14:00 JST）、Khasabの北11海里で、海峡を出る途中のタンカーが船尾に正体不明の飛翔体を受けたと伝える。警報216（同17:17 JST発行）は、05:50 UTC（14:50 JST）、Khasabの東17海里で、同じく海峡を出る途中のタンカーが機関室に飛翔体を受けたと伝える。どちらも負傷者の報告はなく、環境への影響は未確認。ロイター（gCaptain掲載）は、2件が同じ船かは直ちには明らかでないと書く。船名と攻撃主体は示されていない。",
+          "sourceLabel": "UKMTO公式・ロイター（gCaptain掲載・11/21）",
+          "date": "2026年11月21日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/two-tanker-incidents-reported-near-oman-vessel-hit-mine-east-of-hormuz/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-bahrain-1121",
+          "title": "バーレーン「イランの攻撃で民間の産業施設が火災」——IRGCは米軍基地2か所を標的にしたと主張",
+          "body": "Al Jazeera（11/21）は、バーレーン内務省が、イランの攻撃で民間の産業施設が標的になり火災が起きたと述べたと伝える（物的被害の予備報告・負傷者なし・施設名は示されず）。IRGCは、米軍のal-RiffaとAwaliの基地を標的にし、パトリオットのレーダー2基を破壊したと主張した（独立した確認なし）。IRNAは、迎撃ミサイルがシトラ島に落ちて火災が起きたとする別の説明を引いて伝えた。米軍の被害は確認できない。",
+          "sourceLabel": "Al Jazeera（11/21）",
+          "date": "2026年11月21日（現地）",
+          "label": "攻撃",
+          "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility",
+          "isLatest": false
+        },
+        {
+          "id": "latest-mineclaim-1121",
+          "title": "イラン海軍「海峡の東の制限区域でタンカーが機雷に触れて炎上」と主張——警報215・216との関係は不明・独立した確認なし",
+          "body": "Al Jazeera（11/21）は、イラン海軍が土曜（11/21）、海峡の東の制限区域でタンカー1隻が機雷に触れて炎上したと国営テレビを通じて述べ、同船が警告を無視し識別・航行装置を切っていたと非難したと伝える。Al Jazeeraはこの主張を独立に確認できず、UKMTOの2件のいずれに当たるかも不明と書く。Al Jazeeraのテヘラン特派員は、イラン軍の発表をもとに、前週の土曜から約25件の事案が報告されたと述べた。船名は示されていない。",
+          "sourceLabel": "Al Jazeera（11/21）",
+          "date": "2026年11月21日（現地）",
+          "label": "海上",
+          "url": "https://www.aljazeera.com/news/2026/11/21/tankers-hit-in-strait-of-hormuz-as-iran-tightens-grip-on-shipping",
+          "isLatest": false
+        },
+        {
+          "id": "latest-qatar-1121",
+          "title": "カタールの代表団がテヘランで協議——イラン「要求が満たされない限り海峡の議論は無意味」・トランプ氏「恒久的な合意を望む」",
+          "body": "Al Jazeera（11/21）は、イランのGharibabadi外務次官が、カタールの代表団が11/20夜にテヘランを訪れ約2時間協議したと述べたと伝える（Tasnim経由。正式な交渉にはなっていない）。Araghchi外相は、米側が条件を受け入れれば海峡の再開は難しくないとしつつ、イランの要求が満たされない限り海峡の開放をめぐる議論は無意味だと述べた。トランプ氏はFox Newsに、核兵器の保有を阻む恒久的な合意を望むと述べた。",
+          "sourceLabel": "Al Jazeera（11/21）",
+          "date": "2026年11月21日（現地）",
+          "label": "外交",
+          "url": "https://www.aljazeera.com/news/2026/11/21/iran-says-held-talks-with-qatari-mediators-urges-us-to-accept-conditions",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月22日",
       "items": [

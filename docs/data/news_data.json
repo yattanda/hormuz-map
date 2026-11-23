@@ -1,49 +1,75 @@
 {
-  "updated": "2026年11月23日 07:31 日本時間JST",
+  "updated": "2026年11月24日 07:30 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-ukmto217-1122",
-      "title": "UKMTO警報217・オマーン湾でタンカーと「military forces」の事案——被弾の有無・船名・軍の主体は不明",
-      "body": "UKMTO公式の警報217（Advisory・11/23 01:05 JST〈11/22 16:05 UTC〉発行）は、本文の発生時刻11/22 14:25 UTC（23:25 JST）、オマーン湾でタンカーと「military forces」が関わる事案の報告を受けたと伝える（原文は「an incident involving a tanker and military forces in the Gulf of Oman」）。被弾・火災・死傷・船名・軍の主体は公式の本文に記載がない。Euronews（11/22）は同じ文面をUKMTOの発表として伝え、場所をチャーバハール付近とし、company security officerがUKMTOに通報したと書く。同紙は、この表現が米軍による行動を示す可能性があるとするが（記事の解釈）、確認はない。イラン側の機雷の主張との関係も「unclear」と書く。",
-      "sourceLabel": "UKMTO公式・Euronews（11/22）",
-      "date": "2026年11月22日（現地）",
-      "label": "海上",
-      "url": "https://www.euronews.com/2026/11/22/tanker-incident-involving-military-forces-reported-in-strait-of-hormuz",
+      "id": "latest-oil-1123",
+      "title": "原油が急落・11/23の終値はブレント1月物89.37ドル・WTI1月物80.17ドル（2系統で一致）",
+      "body": "11/23（月）の清算値は、ブレント1月物が89.37ドル（前日比-3.20ドル、-3.46%）、WTI1月物が80.17ドル（-3.24ドル、-3.88%）。Rigzone（Bloomberg配信）の本文は「Brent for January settlement dropped 3.5% to settle at $89.37 a barrel」「WTI for January delivery dipped 4.5% to settle at $80.17 a barrel」と書き、NewsquawkのCRUDE WRAPは「WTI (F7) SETTLES USD 3.24 LOWER AT 80.17/BBL; BRENT (F7) SETTLES USD 3.20 LOWER AT 89.37/BBL」と書く。RigzoneのWTI騰落率（4.5%）は11/20終値からの計算（3.88%）と合わないが、価格と前日比は2系統で一致する。値下がりの理由として、Newsquawkは供給懸念の後退とリビアのシャララ・パイプライン再開に触れる。",
+      "sourceLabel": "Rigzone（Bloomberg配信）・Newsquawk（11/23）",
+      "date": "2026年11月23日（現地）",
+      "label": "原油・市場",
+      "url": "https://www.rigzone.com/news/wire/oil_falls_as_trump_signals_iran_talks-23-nov-2026-185152-article/",
       "isLatest": true
     },
     {
-      "id": "latest-irgc-2tankers-1122",
-      "title": "IRGC海軍「超大型タンカー2隻が機雷に触れ爆発・停止」と主張——警報215〜217との関係は不明・独立した確認なし",
-      "body": "Middle East Monitor（11/22）は、IRGC海軍の広報が日曜（11/22）にFars通信を通じて、スーパータンカー2隻がガナム島の北と海峡の東の2か所で機雷に触れ、「suffered explosions and were brought to a halt」と述べたと伝える。声明は船名・死傷者・被害の程度を示さず、船は許可のない航路を通り海軍の指示に従わなかったと主張した。Euronewsは、イラン国営メディアが海軍の話として2隻の炎上を伝えたとし、UKMTO警報217との関係は不明と書く。独立した確認はない。11/21の海軍の主張との関係（別の発表か）も不明。",
-      "sourceLabel": "Middle East Monitor（11/22）",
-      "date": "2026年11月22日（現地）",
+      "id": "latest-mines-1123",
+      "title": "イラン側「機雷でタンカー計3〜4隻が炎上」と主張——二次的な媒体のみ・船名・位置不明・独立した確認なし",
+      "body": "Caspian Post（11/23）は、Interfaxを引き、IRGCが超大型タンカー2隻の機雷接触を、イラン海軍が海峡南部でさらに2隻が許可のない航路で機雷に触れたと述べたとして、計4隻と伝える。Operativ MM（11/24）は、Anadoluを原典とされる記事として、3隻のタンカーが機雷に触れて炎上したと伝える。隻数は媒体で異なり、船名・追加分の日時と位置は示されず、11/22の2隻と重なるかも不明。UKMTO公式に警報217より新しい警報はない（11/24取得）。Interfax・Anadoluの原文と主要媒体の記事は未確認。",
+      "sourceLabel": "Caspian Post・Operativ MM（11/23〜24・二次的な媒体）",
+      "date": "2026年11月23日（現地）",
       "label": "海上",
-      "url": "https://www.middleeastmonitor.com/20261122-iran-says-2-supertankers-struck-naval-mines-near-strait-of-hormuz/",
+      "url": "https://caspianpost.com/iran/iran-reports-four-tankers-striking-mines-in-hormuz",
       "isLatest": false
     },
     {
-      "id": "latest-trump-fox-1122",
-      "title": "トランプ氏、Foxで封鎖を試す船は「海の底に沈む」と発言——新年後の攻撃再開に傾くと報じられる（最終決定は未発表）",
-      "body": "Jerusalem Post（11/22）は、トランプ氏がFox Newsの日曜のインタビューで、イラン国営メディアが封鎖を試す可能性に触れたことへの返答として「I hope they do; they’ll all be at the bottom of the sea like the rest of the navy」と述べ、交渉については「All they do is talk, but it’s all BS」と述べたと伝える。同紙は、トランプ氏が交渉が合意に至らなければ新年後に大規模な攻撃の再開に傾いていると書くが、これは記者の地の文で逐語の引用ではなく、「Trump has not announced a final decision to launch additional strikes」とも書く。Euronewsも封鎖を試す船についての同旨の発言を伝える。",
-      "sourceLabel": "Jerusalem Post（11/22）",
-      "date": "2026年11月22日（現地）",
-      "label": "軍事",
-      "url": "https://www.jpost.com/international/article-915744",
+      "id": "latest-sanctions-1123",
+      "title": "米財務省がイラン産原油収入の金融網に追加制裁——22団体と個人8人",
+      "body": "gCaptain（11/23）は、米財務省が月曜（11/23）に「Operation Economic Outcast」として22団体と個人8人を対象にしたと伝える。対象はイラン産原油の収入の決済を担う金融網で、タンカーや海運会社ではない。財務省の発表の原文は未確認。Al Jazeeraも同日、「影の銀行」網を狙った追加の制裁を報じた。",
+      "sourceLabel": "gCaptain（11/23）",
+      "date": "2026年11月23日（現地）",
+      "label": "原油・市場",
+      "url": "https://gcaptain.com/u-s-targets-financial-networks-behind-irans-tanker-fleet-and-oil-trade/",
       "isLatest": false
     },
     {
-      "id": "latest-cnn-ukmto-1122",
-      "title": "UKMTOへの船舶攻撃の報告は10月に30件超・11月は22日時点で22件以上——CNNの分析",
-      "body": "CNNの記事（Yahoo News Singapore転載・11/22）は、英国海軍と連携するUKMTOに報告された攻撃が、10月に30件を超えて2月下旬の戦争開始以来初めてとなり、11月は日曜（11/22）までに少なくとも22件で、戦争開始以来2番目に多い（「according to a CNN analysis of UKMTO data」）と伝える。10月より前は月平均約10件で、報告範囲はホルムズ海峡・ペルシャ湾・オマーン湾。見出しは「Iranian attacks」だが、数字は報告された船舶への攻撃の件数で、実行主体の内訳は示されない。IMOの件数は別で、数字は一致しないと同記事は書く。",
-      "sourceLabel": "CNN（Yahoo News Singapore転載・11/22）",
-      "date": "2026年11月22日（現地）",
-      "label": "海上",
-      "url": "https://sg.news.yahoo.com/iranian-attacks-strait-hormuz-highest-151328519.html",
+      "id": "latest-hodeidah-1123",
+      "title": "フーシ派側「連合軍の空爆でホデイダの通信施設の作業員17人が死亡」と主張——サウジは直ちにコメントせず",
+      "body": "The New Arab（AFP配信・11/23）は、フーシ派の通信省が、連合軍の空爆でホデイダ県の通信施設の作業員17人が死亡し11人が負傷したと発表したと伝える。独立した検証はなく、サウジは直ちにコメントしていない。Gulf Todayは、フーシ派系メディアが死者4人・負傷18人と伝えたと書き、死者数は媒体と時刻で異なる。",
+      "sourceLabel": "The New Arab（AFP配信・11/23）",
+      "date": "2026年11月23日（現地）",
+      "label": "攻撃",
+      "url": "https://www.newarab.com/news/yemens-houthis-say-saudi-attack-kills-17?amp",
       "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-allmeans-1123",
+      "titleJa": "【Al Jazeera】イラン外務省、米国の海上封鎖に「あらゆる手段」で対抗すると表明",
+      "titleEn": "Al Jazeera (Nov 23): Iran says it will use all available means to counter US blockade",
+      "title": "【Al Jazeera】イラン外務省、米国の海上封鎖に「あらゆる手段」で対抗すると表明",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月23日（現地）",
+      "summary": "Al Jazeeraは、バガイ外務省報道官が11/23の記者会見で、米国の海上封鎖に対抗するあらゆる手段を使うと述べ、封鎖を軍事侵略と位置づけて国連憲章51条を援用したと伝える。海峡の安全の回復には封鎖の解除や制裁の免除などが要るとした。",
+      "url": "https://www.aljazeera.com/news/2026/11/23/iran-says-it-will-use-all-available-means-to-counter-us-blockade",
+      "isLatest": true
+    },
+    {
+      "id": "osint-newarab-hodeidah-1123",
+      "titleJa": "【The New Arab】フーシ派側、連合軍の空爆でホデイダの作業員17人が死亡と主張",
+      "titleEn": "The New Arab (Nov 23): Yemen's Houthis say Saudi attack kills 17",
+      "title": "【The New Arab】フーシ派側、連合軍の空爆でホデイダの作業員17人が死亡と主張",
+      "country": "カタール",
+      "media": "The New Arab",
+      "source": "The New Arab",
+      "date": "2026年11月23日（現地）",
+      "summary": "The New Arab（AFP配信）は、フーシ派の通信省が連合軍の空爆でホデイダ県の通信施設の作業員17人が死亡したと発表したと伝える。サウジは直ちにコメントせず、AFPは主張を独立に検証できなかったと書く。",
+      "url": "https://www.newarab.com/news/yemens-houthis-say-saudi-attack-kills-17?amp",
+      "isLatest": false
+    },
     {
       "id": "osint-aljazeera-intercept-1122",
       "titleJa": "【Al Jazeera】サウジ主導連合、フーシ派のドローンを迎撃と発表・フーシ派系メディアはサナアの攻撃を報じる",
@@ -55,7 +81,7 @@
       "date": "2026年11月22日（現地）",
       "summary": "Al Jazeeraは、サウジ主導連合の報道官が、フーシ派がリヤドに向けて発射したドローンをサウジの防空が破壊したと述べたと伝える。被害や死傷の報告はなかった。フーシ派系メディアは、サナアの石油会社への攻撃で数人が負傷したと伝えた。",
       "url": "https://www.aljazeera.com/news/2026/11/22/houthis-report-attack-on-sanaa-as-saudi-arabia-intercepts-drone",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-euronews-217-1122",
@@ -2545,6 +2571,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月24日",
+      "items": [
+        {
+          "id": "latest-ukmto217-1122",
+          "title": "UKMTO警報217・オマーン湾でタンカーと「military forces」の事案——被弾の有無・船名・軍の主体は不明",
+          "body": "UKMTO公式の警報217（Advisory・11/23 01:05 JST〈11/22 16:05 UTC〉発行）は、本文の発生時刻11/22 14:25 UTC（23:25 JST）、オマーン湾でタンカーと「military forces」が関わる事案の報告を受けたと伝える（原文は「an incident involving a tanker and military forces in the Gulf of Oman」）。被弾・火災・死傷・船名・軍の主体は公式の本文に記載がない。Euronews（11/22）は同じ文面をUKMTOの発表として伝え、場所をチャーバハール付近とし、company security officerがUKMTOに通報したと書く。同紙は、この表現が米軍による行動を示す可能性があるとするが（記事の解釈）、確認はない。イラン側の機雷の主張との関係も「unclear」と書く。",
+          "sourceLabel": "UKMTO公式・Euronews（11/22）",
+          "date": "2026年11月22日（現地）",
+          "label": "海上",
+          "url": "https://www.euronews.com/2026/11/22/tanker-incident-involving-military-forces-reported-in-strait-of-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-irgc-2tankers-1122",
+          "title": "IRGC海軍「超大型タンカー2隻が機雷に触れ爆発・停止」と主張——警報215〜217との関係は不明・独立した確認なし",
+          "body": "Middle East Monitor（11/22）は、IRGC海軍の広報が日曜（11/22）にFars通信を通じて、スーパータンカー2隻がガナム島の北と海峡の東の2か所で機雷に触れ、「suffered explosions and were brought to a halt」と述べたと伝える。声明は船名・死傷者・被害の程度を示さず、船は許可のない航路を通り海軍の指示に従わなかったと主張した。Euronewsは、イラン国営メディアが海軍の話として2隻の炎上を伝えたとし、UKMTO警報217との関係は不明と書く。独立した確認はない。11/21の海軍の主張との関係（別の発表か）も不明。",
+          "sourceLabel": "Middle East Monitor（11/22）",
+          "date": "2026年11月22日（現地）",
+          "label": "海上",
+          "url": "https://www.middleeastmonitor.com/20261122-iran-says-2-supertankers-struck-naval-mines-near-strait-of-hormuz/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-trump-fox-1122",
+          "title": "トランプ氏、Foxで封鎖を試す船は「海の底に沈む」と発言——新年後の攻撃再開に傾くと報じられる（最終決定は未発表）",
+          "body": "Jerusalem Post（11/22）は、トランプ氏がFox Newsの日曜のインタビューで、イラン国営メディアが封鎖を試す可能性に触れたことへの返答として「I hope they do; they’ll all be at the bottom of the sea like the rest of the navy」と述べ、交渉については「All they do is talk, but it’s all BS」と述べたと伝える。同紙は、トランプ氏が交渉が合意に至らなければ新年後に大規模な攻撃の再開に傾いていると書くが、これは記者の地の文で逐語の引用ではなく、「Trump has not announced a final decision to launch additional strikes」とも書く。Euronewsも封鎖を試す船についての同旨の発言を伝える。",
+          "sourceLabel": "Jerusalem Post（11/22）",
+          "date": "2026年11月22日（現地）",
+          "label": "軍事",
+          "url": "https://www.jpost.com/international/article-915744",
+          "isLatest": false
+        },
+        {
+          "id": "latest-cnn-ukmto-1122",
+          "title": "UKMTOへの船舶攻撃の報告は10月に30件超・11月は22日時点で22件以上——CNNの分析",
+          "body": "CNNの記事（Yahoo News Singapore転載・11/22）は、英国海軍と連携するUKMTOに報告された攻撃が、10月に30件を超えて2月下旬の戦争開始以来初めてとなり、11月は日曜（11/22）までに少なくとも22件で、戦争開始以来2番目に多い（「according to a CNN analysis of UKMTO data」）と伝える。10月より前は月平均約10件で、報告範囲はホルムズ海峡・ペルシャ湾・オマーン湾。見出しは「Iranian attacks」だが、数字は報告された船舶への攻撃の件数で、実行主体の内訳は示されない。IMOの件数は別で、数字は一致しないと同記事は書く。",
+          "sourceLabel": "CNN（Yahoo News Singapore転載・11/22）",
+          "date": "2026年11月22日（現地）",
+          "label": "海上",
+          "url": "https://sg.news.yahoo.com/iranian-attacks-strait-hormuz-highest-151328519.html",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月23日",
       "items": [

@@ -1,49 +1,59 @@
 {
-  "updated": "2026年11月24日 07:30 日本時間JST",
+  "updated": "2026年11月25日 08:50 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-oil-1123",
-      "title": "原油が急落・11/23の終値はブレント1月物89.37ドル・WTI1月物80.17ドル（2系統で一致）",
-      "body": "11/23（月）の清算値は、ブレント1月物が89.37ドル（前日比-3.20ドル、-3.46%）、WTI1月物が80.17ドル（-3.24ドル、-3.88%）。Rigzone（Bloomberg配信）の本文は「Brent for January settlement dropped 3.5% to settle at $89.37 a barrel」「WTI for January delivery dipped 4.5% to settle at $80.17 a barrel」と書き、NewsquawkのCRUDE WRAPは「WTI (F7) SETTLES USD 3.24 LOWER AT 80.17/BBL; BRENT (F7) SETTLES USD 3.20 LOWER AT 89.37/BBL」と書く。RigzoneのWTI騰落率（4.5%）は11/20終値からの計算（3.88%）と合わないが、価格と前日比は2系統で一致する。値下がりの理由として、Newsquawkは供給懸念の後退とリビアのシャララ・パイプライン再開に触れる。",
-      "sourceLabel": "Rigzone（Bloomberg配信）・Newsquawk（11/23）",
-      "date": "2026年11月23日（現地）",
+      "id": "latest-oil-1124",
+      "title": "原油が反発・11/24の終値はブレント1月物91.40ドル・WTI1月物82.05ドル（2系統で一致）",
+      "body": "11/24（火）の清算値は、ブレント1月物が91.40ドル（前日比+2.03ドル、+2.27%）、WTI1月物が82.05ドル（+1.88ドル、+2.35%）。Reuters系（Yahoo!ニュース転載）は「清算値は、北海ブレント先物が２．０３ドル（２．２７％）高の１バレル＝９１．４０ドル」「米ＷＴＩ先物は１．８８ドル（２．３５％）高の８２．０５ドル」と書き、Bloomberg系のRigzoneは「WTI for January delivery rose 2.4% to settle at $82.05 a barrel」「Brent for January settlement climbed 2.3% to settle at $91.40 a barrel」と書く（限月はRigzoneで確認）。11/23の終値（89.37ドル・80.17ドル）とも整合する。Rigzoneは、タンカー攻撃の報道が米イラン戦争の解決に向けた外交努力をかすませたと書く。",
+      "sourceLabel": "Reuters（Yahoo!ニュース転載）・Rigzone（Bloomberg配信）（11/24）",
+      "date": "2026年11月24日（現地）",
       "label": "原油・市場",
-      "url": "https://www.rigzone.com/news/wire/oil_falls_as_trump_signals_iran_talks-23-nov-2026-185152-article/",
+      "url": "https://www.rigzone.com/news/wire/oil_climbs_despite_growing_oversupply_fears-24-nov-2026-185160-article/",
       "isLatest": true
     },
     {
-      "id": "latest-mines-1123",
-      "title": "イラン側「機雷でタンカー計3〜4隻が炎上」と主張——二次的な媒体のみ・船名・位置不明・独立した確認なし",
-      "body": "Caspian Post（11/23）は、Interfaxを引き、IRGCが超大型タンカー2隻の機雷接触を、イラン海軍が海峡南部でさらに2隻が許可のない航路で機雷に触れたと述べたとして、計4隻と伝える。Operativ MM（11/24）は、Anadoluを原典とされる記事として、3隻のタンカーが機雷に触れて炎上したと伝える。隻数は媒体で異なり、船名・追加分の日時と位置は示されず、11/22の2隻と重なるかも不明。UKMTO公式に警報217より新しい警報はない（11/24取得）。Interfax・Anadoluの原文と主要媒体の記事は未確認。",
-      "sourceLabel": "Caspian Post・Operativ MM（11/23〜24・二次的な媒体）",
-      "date": "2026年11月23日（現地）",
+      "id": "latest-ukmto219-221-1122",
+      "title": "UKMTO警報219〜221・海峡の東向きのタンカー3隻が相次いで飛翔体を受ける——乗組員は全員無事・船名と攻撃主体は不明",
+      "body": "UKMTO公式の警報219〜221（いずれもAttack・11/24 20:58 JST〜11/25 04:32 JST発行・遅れて届いた報告）は、11/22 20:25・20:32・20:42 UTC（11/23 05:25・05:32・05:42 JST）に、海峡の東向きのタンカーが正体不明の飛翔体を受けたと伝える（原文は「struck by unknown projectile whilst transiting eastbound」）。いずれも航行を続け、乗組員は全員無事で、被害の程度と環境への影響は不明とする。警報219は当初の報告を3件の別の攻撃に分け直した更新版。公式の本文に船名・攻撃主体の記載はない。Maritime Executive（11/24）は、3隻の被弾が海峡の東で相次ぎ、すべて航行を続けたと伝える。",
+      "sourceLabel": "UKMTO公式・Maritime Executive（11/24）",
+      "date": "2026年11月24日（現地）",
       "label": "海上",
-      "url": "https://caspianpost.com/iran/iran-reports-four-tankers-striking-mines-in-hormuz",
-      "isLatest": false
+      "url": "https://maritime-executive.com/article/three-tankers-hit-within-minutes-in-strait-of-hormuz"
     },
     {
-      "id": "latest-sanctions-1123",
-      "title": "米財務省がイラン産原油収入の金融網に追加制裁——22団体と個人8人",
-      "body": "gCaptain（11/23）は、米財務省が月曜（11/23）に「Operation Economic Outcast」として22団体と個人8人を対象にしたと伝える。対象はイラン産原油の収入の決済を担う金融網で、タンカーや海運会社ではない。財務省の発表の原文は未確認。Al Jazeeraも同日、「影の銀行」網を狙った追加の制裁を報じた。",
-      "sourceLabel": "gCaptain（11/23）",
-      "date": "2026年11月23日（現地）",
-      "label": "原油・市場",
-      "url": "https://gcaptain.com/u-s-targets-financial-networks-behind-irans-tanker-fleet-and-oil-trade/",
-      "isLatest": false
+      "id": "latest-gcaptain-tugs-1124",
+      "title": "イラン側がタグボート26隻を非遵守船リストに追加——新たに4隻が被弾と報じられる",
+      "body": "gCaptain（11/24）は、イラン側の海峡当局が非遵守船のリストにタグボート26隻を加えたと伝える（元のBloomberg記事は未確認）。同記事は、新たに被弾した4隻の船名は公表されていないと書く。UKMTO公式の警報218は、オマーン湾（Dibba OPL）で錨泊中のバルク船が飛翔体を受けて火災が起きたと伝え（死傷の報告なし）、警報219〜221はタンカー3隻の被弾を伝える。",
+      "sourceLabel": "gCaptain（11/24）",
+      "date": "2026年11月24日（現地）",
+      "label": "海上",
+      "url": "https://gcaptain.com/four-more-ships-attacked-as-iran-widens-hormuz-crackdown-to-tugboats/"
     },
     {
-      "id": "latest-hodeidah-1123",
-      "title": "フーシ派側「連合軍の空爆でホデイダの通信施設の作業員17人が死亡」と主張——サウジは直ちにコメントせず",
-      "body": "The New Arab（AFP配信・11/23）は、フーシ派の通信省が、連合軍の空爆でホデイダ県の通信施設の作業員17人が死亡し11人が負傷したと発表したと伝える。独立した検証はなく、サウジは直ちにコメントしていない。Gulf Todayは、フーシ派系メディアが死者4人・負傷18人と伝えたと書き、死者数は媒体と時刻で異なる。",
-      "sourceLabel": "The New Arab（AFP配信・11/23）",
-      "date": "2026年11月23日（現地）",
-      "label": "攻撃",
-      "url": "https://www.newarab.com/news/yemens-houthis-say-saudi-attack-kills-17?amp",
-      "isLatest": false
+      "id": "latest-jpost-houthi-jeddah-1124",
+      "title": "フーシ派「ホデイダを攻撃すればジッダなどサウジの紅海の港を標的にする」と主張——連合軍はホデイダ港の民間人に退避を要請",
+      "body": "Jerusalem Postは、フーシ派の軍事報道官Yahya Sareeが火曜（11/24）にXへの投稿で、「the port of Jeddah and all enemy Saudi ports along the Red Sea coast will be targets for our forces」と述べたと伝える。連合の合同軍司令部は、安全のためホデイダ港の民間人に退避を求めている（同紙）。Al Jazeeraのライブ更新も、連合軍が攻撃に踏み切ればフーシ派がサウジの紅海の港を攻撃するとしたと伝える。ジッダ港への実際の攻撃は確認できない。",
+      "sourceLabel": "Jerusalem Post（11/24〜25）・Al Jazeera（11/24）",
+      "date": "2026年11月24日（現地）",
+      "label": "その他",
+      "url": "https://www.jpost.com/middle-east/article-916028"
     }
   ],
   "osint": [
+    {
+      "id": "osint-aljazeera-traffic40-1124",
+      "titleJa": "【Al Jazeera】ホルムズ海峡を出入りする船、11/1〜7の226隻から11/17〜23の125隻へ40%超減少（MarineTraffic）",
+      "titleEn": "Al Jazeera (Nov 24): Hormuz oil traffic is down 40 percent: Are Iran's tanker attacks working?",
+      "title": "【Al Jazeera】ホルムズ海峡を出入りする船、11/1〜7の226隻から11/17〜23の125隻へ40%超減少（MarineTraffic）",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月24日（現地）",
+      "summary": "Al Jazeeraは、MarineTrafficのデータで海峡を出入りした船が11/1〜7の226隻から11/17〜23の125隻へ減り、「a drop of more than 40 percent」だと伝える（原油量ではなく隻数の比較）。AISを切った船は数えられず、実数とは異なる可能性があると同記事は注記する。機雷は「purportedly placed by Iran」（イランが敷設したとされる）と距離を置いて書く。",
+      "url": "https://www.aljazeera.com/news/2026/11/24/hormuz-oil-traffic-is-down-40-percent-are-irans-tanker-attacks-working",
+      "isLatest": true
+    },
     {
       "id": "osint-aljazeera-allmeans-1123",
       "titleJa": "【Al Jazeera】イラン外務省、米国の海上封鎖に「あらゆる手段」で対抗すると表明",
@@ -55,7 +65,7 @@
       "date": "2026年11月23日（現地）",
       "summary": "Al Jazeeraは、バガイ外務省報道官が11/23の記者会見で、米国の海上封鎖に対抗するあらゆる手段を使うと述べ、封鎖を軍事侵略と位置づけて国連憲章51条を援用したと伝える。海峡の安全の回復には封鎖の解除や制裁の免除などが要るとした。",
       "url": "https://www.aljazeera.com/news/2026/11/23/iran-says-it-will-use-all-available-means-to-counter-us-blockade",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-newarab-hodeidah-1123",
@@ -2571,6 +2581,47 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月25日",
+      "items": [
+        {
+          "id": "latest-oil-1123",
+          "title": "原油が急落・11/23の終値はブレント1月物89.37ドル・WTI1月物80.17ドル（2系統で一致）",
+          "body": "11/23（月）の清算値は、ブレント1月物が89.37ドル（前日比-3.20ドル、-3.46%）、WTI1月物が80.17ドル（-3.24ドル、-3.88%）。Rigzone（Bloomberg配信）の本文は「Brent for January settlement dropped 3.5% to settle at $89.37 a barrel」「WTI for January delivery dipped 4.5% to settle at $80.17 a barrel」と書き、NewsquawkのCRUDE WRAPは「WTI (F7) SETTLES USD 3.24 LOWER AT 80.17/BBL; BRENT (F7) SETTLES USD 3.20 LOWER AT 89.37/BBL」と書く。RigzoneのWTI騰落率（4.5%）は11/20終値からの計算（3.88%）と合わないが、価格と前日比は2系統で一致する。値下がりの理由として、Newsquawkは供給懸念の後退とリビアのシャララ・パイプライン再開に触れる。",
+          "sourceLabel": "Rigzone（Bloomberg配信）・Newsquawk（11/23）",
+          "date": "2026年11月23日（現地）",
+          "label": "原油・市場",
+          "url": "https://www.rigzone.com/news/wire/oil_falls_as_trump_signals_iran_talks-23-nov-2026-185152-article/"
+        },
+        {
+          "id": "latest-mines-1123",
+          "title": "イラン側「機雷でタンカー計3〜4隻が炎上」と主張——二次的な媒体のみ・船名・位置不明・独立した確認なし",
+          "body": "Caspian Post（11/23）は、Interfaxを引き、IRGCが超大型タンカー2隻の機雷接触を、イラン海軍が海峡南部でさらに2隻が許可のない航路で機雷に触れたと述べたとして、計4隻と伝える。Operativ MM（11/24）は、Anadoluを原典とされる記事として、3隻のタンカーが機雷に触れて炎上したと伝える。隻数は媒体で異なり、船名・追加分の日時と位置は示されず、11/22の2隻と重なるかも不明。UKMTO公式に警報217より新しい警報はない（11/24取得）。Interfax・Anadoluの原文と主要媒体の記事は未確認。",
+          "sourceLabel": "Caspian Post・Operativ MM（11/23〜24・二次的な媒体）",
+          "date": "2026年11月23日（現地）",
+          "label": "海上",
+          "url": "https://caspianpost.com/iran/iran-reports-four-tankers-striking-mines-in-hormuz"
+        },
+        {
+          "id": "latest-sanctions-1123",
+          "title": "米財務省がイラン産原油収入の金融網に追加制裁——22団体と個人8人",
+          "body": "gCaptain（11/23）は、米財務省が月曜（11/23）に「Operation Economic Outcast」として22団体と個人8人を対象にしたと伝える。対象はイラン産原油の収入の決済を担う金融網で、タンカーや海運会社ではない。財務省の発表の原文は未確認。Al Jazeeraも同日、「影の銀行」網を狙った追加の制裁を報じた。",
+          "sourceLabel": "gCaptain（11/23）",
+          "date": "2026年11月23日（現地）",
+          "label": "原油・市場",
+          "url": "https://gcaptain.com/u-s-targets-financial-networks-behind-irans-tanker-fleet-and-oil-trade/"
+        },
+        {
+          "id": "latest-hodeidah-1123",
+          "title": "フーシ派側「連合軍の空爆でホデイダの通信施設の作業員17人が死亡」と主張——サウジは直ちにコメントせず",
+          "body": "The New Arab（AFP配信・11/23）は、フーシ派の通信省が、連合軍の空爆でホデイダ県の通信施設の作業員17人が死亡し11人が負傷したと発表したと伝える。独立した検証はなく、サウジは直ちにコメントしていない。Gulf Todayは、フーシ派系メディアが死者4人・負傷18人と伝えたと書き、死者数は媒体と時刻で異なる。",
+          "sourceLabel": "The New Arab（AFP配信・11/23）",
+          "date": "2026年11月23日（現地）",
+          "label": "攻撃",
+          "url": "https://www.newarab.com/news/yemens-houthis-say-saudi-attack-kills-17?amp"
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月24日",
       "items": [

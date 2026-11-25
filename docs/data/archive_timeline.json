@@ -4275,6 +4275,34 @@
           "sourceLabel": "Jerusalem Post（11/24〜25）・Al Jazeera（11/24）"
         }
       ]
+    },
+    {
+      "date": "2026-11-26",
+      "dateLabel": "2026/11/26 07:50",
+      "blockadeDay": 272,
+      "summary": "【重大更新】前回分の裏取り：解消1件（リヤドの塔の攻撃の日付・負傷者数＝Arab News 11/25）・継続17件（警報196〜221の攻撃主体・船名、機雷等の主張の裏付け〈11/25夜のLNG船・タンカー2隻を含む〉、Kharg島の船団の出港、封鎖累計の隻数、空母の到着日、ラービグ・ホデイダ港攻撃の被害ほか。UKMTO公式の取得・RSS・主要媒体の検索を試したが独立した確認なし）・UKMTO公式に警報221より新しい警報なし（11/26 07:40 JST取得）・イラン側が11/25夜にLNG船・石油タンカーの機雷接触を主張（ロイターは独自に確認できず・Arab News）・サウジのJazan港にフーシ派の飛翔体が命中し軽微な被害（連合軍の発表・Arab News）・フーシ派がRas Tanura製油所とリヤドを標的にしたと主張（The National・被害は未確認）・イエメン政府軍の報道官がバブエルマンデブを再び取り戻すと述べた（当事者の主張・Fox News）・原油11/25終値はWTI1月物83.68ドル（Newsquawk・MT Newswiresの2系統で一致）・ブレント1月物の11/25終値は確定できず（11/24の91.40ドルのまま終値を据え置き）・通航はPortWatchで11/16〜11/22に1日平均2.7隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機272日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（機雷の海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "イラン側「LNG船とタンカー2隻が機雷に触れて炎上」と主張——ロイターは独自に確認できず・船名なし",
+          "url": "https://www.arabnews.com/middle-east/third-tanker-hits-mine-in-strait-of-hormuz-iran-says-3013942",
+          "sourceLabel": "Arab News（Reuters配信・11/25〜26）"
+        },
+        {
+          "title": "サウジのJazan港にフーシ派の飛翔体が命中・軽微な被害・民間人の死傷なし——連合軍が発表",
+          "url": "https://www.arabnews.com/saudi-arabia/houthi-projectile-hits-saudi-arabias-jazan-port-coalition-says-3014031",
+          "sourceLabel": "Arab News（11/25〜26）"
+        },
+        {
+          "title": "原油が上昇・11/25の終値はWTI1月物83.68ドル（2系統で一致）・ブレント1月物は確定できず",
+          "url": "https://www.newsquawk.com/headlines/crude-wrap-wti-f7-settles-usd-163-higher-at-usd-8368bbl-brent-f7-settles-usd-186-higher-at-usd-9064bbl",
+          "sourceLabel": "Newsquawk・MT Newswires（MarketScreener掲載）（11/25）"
+        },
+        {
+          "title": "イエメン政府軍の報道官「バブエルマンデブを再び取り戻す」——当事者の主張・フーシ派は沿岸を支配と述べる",
+          "url": "https://www.foxnews.com/world/yemeni-military-official-brands-iran-houthis-godfather-says-tehran-directing-war",
+          "sourceLabel": "Fox News（11/25）"
+        }
+      ]
     }
   ]
 }

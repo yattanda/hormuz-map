@@ -3330,6 +3330,14 @@ const tsushimaMarker = L.marker([34.1, 129.3],{icon:mkBadge('none','strait')}).a
   <strong>領海：</strong>東水道・西水道とも、津軽海峡と同じく法律で3海里にとどめる「特定海域」</div>
   <div class="p-note">出典：防衛省 統合幕僚監部（2026-05-11発表）／外務省（2026-10-02発表・別添3）／Q&A（外務省ほか4省庁）／USNI News（2026-05-11、船名の特定）／米国財務省 OFAC（IMO番号）／IMF PortWatch（2026-10-29確認、平均は本サイトの計算）／領海及び接続水域に関する法律 附則2（e-Gov）</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : 320 });
 
+// ルソン海峡（長尺10本目 2026-12「台湾海峡が通れなくなったら、日本の油の船は何日遅れる？」）— ?focus=luzon と「YouTube から来た方へ」枠から開く
+const luzonMarker = L.marker([20.6, 121.0],{icon:mkBadge('none','strait')}).addTo(map).bindTooltip('ルソン海峡', {sticky:true}).bindPopup(`
+  <div class="p-title">ルソン海峡 / Luzon Strait</div>
+  <div class="p-body"><strong>位置：</strong>台湾の南、フィリピンのルソン島とのあいだ。南シナ海と太平洋を結ぶ<br>
+  <strong>進入禁止の日（2025年12月30日）：</strong>中国の海事局が、12月30日の朝から夕方まで、台湾の周りの7つの区域で船の進入を禁じると告げた（前日の発布）。その日に台湾海峡を通った船は推定216隻で、その前の2週間の平均（1日およそ230隻）と比べ、ふだんの上がり下がりの幅の中だった。ルソン海峡も推定69隻で、直前2週間（47〜74隻）の幅の中<br>
+  <strong>遠回り：</strong>台湾海峡だけが通れないなら、台湾の東を回って遠回りは半日もかからない。台湾の南のルソン海峡まで通れなくなると、中東から東京湾までの遠回りは、抜け道しだいでおよそ1日から4日。ただし短い側のフィリピンの島々の間を抜ける道は、大きな油の船が通った記録が見当たらない</div>
+  <div class="p-note">出典：中国海事局 航行警告（2025-12-29発布）／IMF PortWatch（2026-11-20確認、船の数は推定・平均は本サイトの計算）／CSIS ChinaPower（台湾の東を回る道）／遠回りの距離と日数は大圏距離による本サイトの概算（台湾海峡だけの遠回りはシンガポール→釜山で約35海里）</div>`, { maxWidth: 280, maxHeight: window.innerWidth <= 600 ? 260 : 320 });
+
 L.marker([32.08, 34.78], {icon:mkBadge('none','general')}).addTo(map).bindPopup(`
   <div class="p-title"> テルアビブ / Tel Aviv</div>
   <div class="p-body"><strong>位置：</strong>イスラエル中部・地中海沿岸<br>
@@ -3603,6 +3611,7 @@ const FOCUS_TARGETS = {
   tsushima: { marker: tsushimaMarker, zoom: 7 },
   panama: { marker: panamaMarker, zoom: 9 },
   malacca: { marker: malaccaMarker, zoom: 6 },
+  luzon: { marker: luzonMarker, zoom: 6 },
 };
 function focusOn(key, opts) {
   if (!key || !Object.prototype.hasOwnProperty.call(FOCUS_TARGETS, key)) return false;

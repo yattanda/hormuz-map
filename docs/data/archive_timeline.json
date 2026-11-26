@@ -4275,6 +4275,34 @@
           "sourceLabel": "Jerusalem Post（11/24〜25）・Al Jazeera（11/24）"
         }
       ]
+    },
+    {
+      "date": "2026-11-27",
+      "dateLabel": "2026/11/27 08:08",
+      "blockadeDay": 273,
+      "summary": "【重大更新】前回分の裏取り：解消1件（サウジ主導連合のホデイダ港への空爆の実行・Al Jazeera 11/25）・継続17件（警報196〜221の攻撃主体・船名・発生時刻、機雷等の主張の裏付け〈11/25〜26のIRGCの主張を含む〉、Kharg島の船団の出港、封鎖累計の隻数、空母の到着日、ラス・タヌラ・ホデイダ港の被害、リヤドの塔の被害ほか。UKMTO公式の取得・RSS・主要媒体の検索を試したが独立した確認なし）・UKMTO公式に新しい警報222・223（223は海峡を出る向きのタンカーがKhasabの東18海里で飛翔体を受け、発生は11/25と媒体が伝える・222はドバイの西50海里でタンカーの近くで爆発し被害なし・船名と攻撃主体は公式の本文に記載なし）・IRGCが11/25〜26に機雷でタンカー2隻（超大型船を含む）の炎上を主張（独立した確認なし・UKMTOの警報との関係は不明・Arab News・Iran International）・クウェートの防空監視施設へのドローン攻撃でイタリア人2人が死亡（クウェートはイランの攻撃と発表・イランは否定・ロイター〈Yahoo転載〉・The New Arab）・サウジのジャザンの製油所への攻撃でネパール人労働者1人が死亡し一部操業が停止（Arab News・Al Jazeera）・ラス・タヌラの製油所の被害はフーシ派の主張のみ（The Defense Post〈Reuters配信〉）・サウジ主導連合がホデイダ港を空爆しフーシ派はジェッダ港・ジャザン港への報復攻撃を主張（Al Jazeera・The National）・原油11/25終値はブレント1月物94.61ドル・WTI1月物83.68ドル（Bloomberg系・CNBCなどで一致）・11/26のブレントの終値は2出典を確認できず据え置き（WTIは感謝祭で清算なし）・通航はPortWatchで11/16〜11/22に1日平均2.7隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機273日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（機雷の海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "UKMTO警報223・Khasabの東18海里で出る向きのタンカーが飛翔体を受ける——警報222はドバイ西方でタンカー付近の爆発（被害なし）",
+          "url": "https://boereport.com/2026/11/26/tanker-struck-by-projectile-while-transiting-strait-of-hormuz-ukmto-says/",
+          "sourceLabel": "UKMTO公式・Reuters配信（BOE Report）・Arab News（11/26）"
+        },
+        {
+          "title": "湾岸の施設への攻撃で死者——クウェートでイタリア人2人、サウジ・ジャザンの製油所でネパール人労働者1人",
+          "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-saudi-arabias-jazan-refinery-kills-nepali-worker-3014153",
+          "sourceLabel": "Arab News・Reuters（Yahoo転載）（11/26）"
+        },
+        {
+          "title": "サウジ主導連合がホデイダ港を空爆——フーシ派はジェッダ港・ジャザン港への報復攻撃を主張",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/11/26/saudi-arabia-intercepts-wave-of-retaliatory-houthi-attacks/",
+          "sourceLabel": "The National（11/26）"
+        },
+        {
+          "title": "原油が急反発・11/25の終値はブレント1月物94.61ドル・WTI1月物83.68ドル",
+          "url": "https://www.rigzone.com/news/wire/oil_up_as_hormuz_attacks_counter_recovery_in_supply-25-nov-2026-185171-article/",
+          "sourceLabel": "Rigzone（Bloomberg配信）・CNBC（11/25）"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-25",
-  "checked": "2026-11-25",
+  "updated": "2026-11-27",
+  "checked": "2026-11-27",
   "comment": "地図の艦隊・港・海域の説明。日次更新で毎回見直す（daily-site-update スキル「地図の軍事レイヤー」）。checked は見直した日、updated は本文を変えた日。艦艇の位置と海域の範囲は公表されていないため座標は目安で、日次では id・type・emoji・座標・色を変えず、印の追加・削除もしない。",
   "fleets": [
     {
@@ -237,9 +237,9 @@
           56.8
         ]
       ],
-      "detail": "ララク島の周辺。イランが敷設したとされる機雷は位置不明と報じられ、米中央軍は主要航路の機雷は除去済みと述べた（Fox News 10/29）。10/9以降、イラン側が機雷接触・炎上をくり返し主張し、11/20〜11/22に計4隻の機雷接触を、11/23夜に計3〜4隻の炎上を、11/24に4隻目のタンカーとコンテナ船の接触を主張した（Anadolu・Middle East Eye・Al Jazeeraほか。二次的な媒体を含む）。いずれも独立した確認はなく、UKMTO警報214〜216・218〜221の被弾は原因を「unknown projectile」とする。図は警戒の目安で、機雷の位置ではない。",
-      "source": "BBC News（8/26）・Al Jazeera（10/17・10/22）・Fox News（10/29）・Gulf News（10/30・11/9）・AFP配信（Kashmir Reader 11/9）・Reuters配信（Jerusalem Post 11/8）・Arab News（11/10）・gCaptain（Reuters配信・11/13）・Arab News（AFP配信・11/14）・Gulf News（11/15）・Arab News（Reuters配信・11/15）・Arab News（11/16）・dpa（Yahoo 11/18）・Anadolu（11/20）・Al Jazeera（11/21）・The National（11/21）・Middle East Monitor（11/22）・Caspian Post・Operativ MM（11/23〜24）・Middle East Eye（11/24）・UKMTO公式（11/25取得）",
-      "updated": "2026-11-25"
+      "detail": "ララク島の周辺。イランが敷設したとされる機雷は位置不明と報じられ、米中央軍は主要航路の機雷は除去済みと述べた（Fox News 10/29）。イラン側は10/9以降、機雷接触・炎上をくり返し主張し、11/20〜11/24に計4隻の接触や炎上を、11/25〜26にはKhasab北方のタンカー2隻の炎上を主張した（Anadolu・Middle East Eye・Al Jazeera・Arab Newsほか）。いずれも独立した確認はなく、UKMTO警報214〜216・218〜223は原因を「unknown projectile」とし、警報222は船の近くの爆発を伝える。図は警戒の目安で、機雷の位置ではない。",
+      "source": "BBC News（8/26）・Al Jazeera（10/17・10/22）・Fox News（10/29）・Gulf News（10/30・11/9）・AFP配信（Kashmir Reader 11/9）・Reuters配信（Jerusalem Post 11/8）・Arab News（11/10）・gCaptain（Reuters配信・11/13）・Arab News（AFP配信・11/14）・Gulf News（11/15）・Arab News（Reuters配信・11/15）・Arab News（11/16）・dpa（Yahoo 11/18）・Anadolu（11/20）・Al Jazeera（11/21）・The National（11/21）・Middle East Monitor（11/22）・Caspian Post・Operativ MM（11/23〜24）・Middle East Eye（11/24）・Arab News（11/26）・UKMTO公式（11/27取得）",
+      "updated": "2026-11-27"
     }
   ]
 }

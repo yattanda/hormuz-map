@@ -1,46 +1,75 @@
 {
-  "updated": "2026年11月25日 08:40 日本時間JST",
+  "updated": "2026年11月27日 08:08 日本時間JST",
   "staleNotice": "",
   "latest": [
     {
-      "id": "latest-oil-1124",
-      "title": "原油が反発・11/24の終値はブレント1月物91.40ドル・WTI1月物82.05ドル（2系統で一致）",
-      "body": "11/24（火）の清算値は、ブレント1月物が91.40ドル（前日比+2.03ドル、+2.27%）、WTI1月物が82.05ドル（+1.88ドル、+2.35%）。Reuters系（Yahoo!ニュース転載）は「清算値は、北海ブレント先物が２．０３ドル（２．２７％）高の１バレル＝９１．４０ドル」「米ＷＴＩ先物は１．８８ドル（２．３５％）高の８２．０５ドル」と書き、Bloomberg系のRigzoneは「WTI for January delivery rose 2.4% to settle at $82.05 a barrel」「Brent for January settlement climbed 2.3% to settle at $91.40 a barrel」と書く（限月はRigzoneで確認）。11/23の終値（89.37ドル・80.17ドル）とも整合する。Rigzoneは、タンカー攻撃の報道が米イラン戦争の解決に向けた外交努力をかすませたと書く。",
-      "sourceLabel": "Reuters（Yahoo!ニュース転載）・Rigzone（Bloomberg配信）（11/24）",
-      "date": "2026年11月24日（現地）",
-      "label": "原油・市場",
-      "url": "https://www.rigzone.com/news/wire/oil_climbs_despite_growing_oversupply_fears-24-nov-2026-185160-article/",
+      "id": "latest-ukmto-1126",
+      "title": "UKMTO警報223・Khasabの東18海里で出る向きのタンカーが飛翔体を受ける——警報222はドバイ西方でタンカー付近の爆発（被害なし）",
+      "body": "UKMTO公式の警報223（Attack・11/26 21:01 JST発行）は、Khasabの東18海里で、海峡を出る向きのタンカーが正体不明の飛翔体を受けたと現地当局の報告として伝え、乗組員の安否は確認され環境への影響の報告はない。公式の本文に発生時刻の記載はなく、Reuters配信（BOE Report）は発生を水曜（11/25）と書く。警報222（Suspicious Activity・11/26 07:55 JST発行）は、ドバイの西50海里でタンカーの近くで爆発が起き、船と環境への被害はないと伝える。船名・攻撃主体はどちらも不明。IRGCは別に、機雷でタンカー2隻が炎上したと主張したが、独立した確認はない（Arab News）。",
+      "sourceLabel": "UKMTO公式・Reuters配信（BOE Report）・Arab News（11/26）",
+      "date": "2026年11月26日（現地）",
+      "label": "海上",
+      "url": "https://boereport.com/2026/11/26/tanker-struck-by-projectile-while-transiting-strait-of-hormuz-ukmto-says/",
       "isLatest": true
     },
     {
-      "id": "latest-ukmto219-221-1122",
-      "title": "UKMTO警報219〜221・海峡の東向きのタンカー3隻が相次いで飛翔体を受ける——乗組員は全員無事・船名と攻撃主体は不明",
-      "body": "UKMTO公式の警報219〜221（いずれもAttack・11/24 20:58 JST〜11/25 04:32 JST発行・遅れて届いた報告）は、11/22 20:25・20:32・20:42 UTC（11/23 05:25・05:32・05:42 JST）に、海峡の東向きのタンカーが正体不明の飛翔体を受けたと伝える（原文は「struck by unknown projectile whilst transiting eastbound」）。いずれも航行を続け、乗組員は全員無事で、被害の程度と環境への影響は不明とする。警報219は当初の報告を3件の別の攻撃に分け直した更新版。公式の本文に船名・攻撃主体の記載はない。Maritime Executive（11/24）は、3隻の被弾が海峡の東で相次ぎ、すべて航行を続けたと伝える。",
-      "sourceLabel": "UKMTO公式・Maritime Executive（11/24）",
-      "date": "2026年11月24日（現地）",
-      "label": "海上",
-      "url": "https://maritime-executive.com/article/three-tankers-hit-within-minutes-in-strait-of-hormuz"
+      "id": "latest-gulf-attacks-1126",
+      "title": "湾岸の施設への攻撃で死者——クウェートでイタリア人2人、サウジ・ジャザンの製油所でネパール人労働者1人",
+      "body": "Arab News（11/26）は、サウジのエネルギー省の発表として、南西部ジャザンの製油所が「hostile aerial projectile」に当たって火災が起き、一部の操業が停止し、ネパール人労働者1人が死亡、国籍の異なる数人が負傷したと伝える（同記事は見出しでフーシ派の攻撃と書く）。同記事は、クウェートでもイタリア人労働者2人が施設への攻撃で死亡し、イランの責任とされているとも書く。ロイター（Yahoo転載）によれば、クウェート国防省はイランの攻撃と述べ、イラン軍は関与を否定した。",
+      "sourceLabel": "Arab News・Reuters（Yahoo転載）（11/26）",
+      "date": "2026年11月26日（現地）",
+      "label": "攻撃",
+      "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-saudi-arabias-jazan-refinery-kills-nepali-worker-3014153",
+      "isLatest": false
     },
     {
-      "id": "latest-gcaptain-tugs-1124",
-      "title": "イラン側がタグボート26隻を非遵守船リストに追加——新たに4隻が被弾と報じられる",
-      "body": "gCaptain（11/24）は、イラン側の海峡当局が非遵守船のリストにタグボート26隻を加えたと伝える（元のBloomberg記事は未確認）。同記事は、新たに被弾した4隻の船名は公表されていないと書く。UKMTO公式の警報218は、オマーン湾（Dibba OPL）で錨泊中のバルク船が飛翔体を受けて火災が起きたと伝え（死傷の報告なし）、警報219〜221はタンカー3隻の被弾を伝える。",
-      "sourceLabel": "gCaptain（11/24）",
-      "date": "2026年11月24日（現地）",
-      "label": "海上",
-      "url": "https://gcaptain.com/four-more-ships-attacked-as-iran-widens-hormuz-crackdown-to-tugboats/"
+      "id": "latest-hodeidah-1126",
+      "title": "サウジ主導連合がホデイダ港を空爆——フーシ派はジェッダ港・ジャザン港への報復攻撃を主張",
+      "body": "The National（11/26）は、フーシ派が、サウジ主導連合によるホデイダ港への空爆への報復として、ジェッダ港とジャザン港を攻撃したと述べたと伝える。ジェッダ港の被弾は直ちには確認されておらず、ジャザン港には飛来物が落ちて軽微な被害が出たが民間人の死傷はないと連合は発表した（飛来物の種類は調査中）。連合は、リヤド向けの弾道ミサイル2発とジェッダ港付近のドローン1機を迎撃し、東部州でドローン2機を破壊したとも発表した。",
+      "sourceLabel": "The National（11/26）",
+      "date": "2026年11月26日（現地）",
+      "label": "軍事",
+      "url": "https://www.thenationalnews.com/news/gulf/2026/11/26/saudi-arabia-intercepts-wave-of-retaliatory-houthi-attacks/",
+      "isLatest": false
     },
     {
-      "id": "latest-jpost-houthi-jeddah-1124",
-      "title": "フーシ派「ホデイダを攻撃すればジッダなどサウジの紅海の港を標的にする」と主張——連合軍はホデイダ港の民間人に退避を要請",
-      "body": "Jerusalem Postは、フーシ派の軍事報道官Yahya Sareeが火曜（11/24）にXへの投稿で、「the port of Jeddah and all enemy Saudi ports along the Red Sea coast will be targets for our forces」と述べたと伝える。連合の合同軍司令部は、安全のためホデイダ港の民間人に退避を求めている（同紙）。Al Jazeeraのライブ更新も、連合軍が攻撃に踏み切ればフーシ派がサウジの紅海の港を攻撃するとしたと伝える。ジッダ港への実際の攻撃は確認できない。",
-      "sourceLabel": "Jerusalem Post（11/24〜25）・Al Jazeera（11/24）",
-      "date": "2026年11月24日（現地）",
-      "label": "その他",
-      "url": "https://www.jpost.com/middle-east/article-916028"
+      "id": "latest-oil-1125",
+      "title": "原油が急反発・11/25の終値はブレント1月物94.61ドル・WTI1月物83.68ドル",
+      "body": "11/25（水）の清算値は、ブレント1月物が94.61ドル（前日比+3.21ドル、+3.5%）、WTI1月物が83.68ドル（+1.63ドル、+2%）。Rigzone（Bloomberg配信）は、中東での攻撃の激化が同地域からの原油出荷の回復を曇らせたと書く。ブレントはRigzoneとCNBCで、WTIはRigzone・MarketScreener（MT Newswires）・CNBCで一致した。11/26は米国の感謝祭でWTIは清算されず、ブレントの終値は2出典を確認できていない。",
+      "sourceLabel": "Rigzone（Bloomberg配信）・CNBC（11/25）",
+      "date": "2026年11月25日（現地）",
+      "label": "原油・市場",
+      "url": "https://www.rigzone.com/news/wire/oil_up_as_hormuz_attacks_counter_recovery_in_supply-25-nov-2026-185171-article/",
+      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-arabnews-jazan-1126",
+      "titleJa": "【Arab News】フーシ派の攻撃でサウジ・ジャザンの製油所が一部停止、ネパール人労働者1人が死亡",
+      "titleEn": "Arab News (Nov 26): Houthi attack on Saudi Arabia's Jazan refinery kills Nepali worker",
+      "title": "【Arab News】フーシ派の攻撃でサウジ・ジャザンの製油所が一部停止、ネパール人労働者1人が死亡",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月26日（現地）",
+      "summary": "Arab Newsは、サウジのエネルギー省の発表として、ジャザンの製油所が飛翔体に当たって火災が起き、一部の操業が止まり、ネパール人労働者1人が死亡、数人が負傷したと伝える（製油所は日量最大40万バレルを処理できる）。連合軍は報復としてホデイダ港の弾道ミサイル発射台を破壊したと発表した。同記事は、クウェートのイタリア人2人の死亡はイランの責任とされていると併記する。",
+      "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-saudi-arabias-jazan-refinery-kills-nepali-worker-3014153",
+      "isLatest": true
+    },
+    {
+      "id": "osint-arabnews-irgc-1126",
+      "titleJa": "【Arab News】IRGC「Khasab北方でタンカー2隻が機雷に触れ炎上」と主張・独立した確認なし",
+      "titleEn": "Arab News (Nov 26): Iran's Revolutionary Guards say two oil tankers hit sea mines near Oman's Khasab",
+      "title": "【Arab News】IRGC「Khasab北方でタンカー2隻が機雷に触れ炎上」と主張・独立した確認なし",
+      "country": "サウジアラビア",
+      "media": "Arab News",
+      "source": "Arab News",
+      "date": "2026年11月26日（現地）",
+      "summary": "Arab Newsは、IRGCがTasnim経由の声明で、許可のない航路で海峡を渡ろうとしたタンカー2隻がKhasab港の北で機雷に触れて爆発・炎上したと述べ、うち1隻は原油200万バレル超を積んだ超大型タンカーだと伝える。船名・時刻は示されず、独立した確認はない。",
+      "url": "https://www.arabnews.com/middle-east/irans-revolutionary-guards-say-two-oil-tankers-hit-sea-mines-near-omans-khasab-3014111",
+      "isLatest": false
+    },
     {
       "id": "osint-aljazeera-traffic40-1124",
       "titleJa": "【Al Jazeera】ホルムズ海峡を出入りする船、11/1〜7の226隻から11/17〜23の125隻へ40%超減少（MarineTraffic）",
@@ -52,7 +81,7 @@
       "date": "2026年11月24日（現地）",
       "summary": "Al Jazeeraは、MarineTrafficのデータで海峡を出入りした船が11/1〜7の226隻から11/17〜23の125隻へ減り、「a drop of more than 40 percent」だと伝える（原油量ではなく隻数の比較）。AISを切った船は数えられず、実数とは異なる可能性があると同記事は注記する。機雷は「purportedly placed by Iran」（イランが敷設したとされる）と距離を置いて書く。",
       "url": "https://www.aljazeera.com/news/2026/11/24/hormuz-oil-traffic-is-down-40-percent-are-irans-tanker-attacks-working",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-aljazeera-allmeans-1123",
@@ -2581,6 +2610,51 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月27日",
+      "items": [
+        {
+          "id": "latest-oil-1124",
+          "title": "原油が反発・11/24の終値はブレント1月物91.40ドル・WTI1月物82.05ドル（2系統で一致）",
+          "body": "11/24（火）の清算値は、ブレント1月物が91.40ドル（前日比+2.03ドル、+2.27%）、WTI1月物が82.05ドル（+1.88ドル、+2.35%）。Reuters系（Yahoo!ニュース転載）は「清算値は、北海ブレント先物が２．０３ドル（２．２７％）高の１バレル＝９１．４０ドル」「米ＷＴＩ先物は１．８８ドル（２．３５％）高の８２．０５ドル」と書き、Bloomberg系のRigzoneは「WTI for January delivery rose 2.4% to settle at $82.05 a barrel」「Brent for January settlement climbed 2.3% to settle at $91.40 a barrel」と書く（限月はRigzoneで確認）。11/23の終値（89.37ドル・80.17ドル）とも整合する。Rigzoneは、タンカー攻撃の報道が米イラン戦争の解決に向けた外交努力をかすませたと書く。",
+          "sourceLabel": "Reuters（Yahoo!ニュース転載）・Rigzone（Bloomberg配信）（11/24）",
+          "date": "2026年11月24日（現地）",
+          "label": "原油・市場",
+          "url": "https://www.rigzone.com/news/wire/oil_climbs_despite_growing_oversupply_fears-24-nov-2026-185160-article/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-ukmto219-221-1122",
+          "title": "UKMTO警報219〜221・海峡の東向きのタンカー3隻が相次いで飛翔体を受ける——乗組員は全員無事・船名と攻撃主体は不明",
+          "body": "UKMTO公式の警報219〜221（いずれもAttack・11/24 20:58 JST〜11/25 04:32 JST発行・遅れて届いた報告）は、11/22 20:25・20:32・20:42 UTC（11/23 05:25・05:32・05:42 JST）に、海峡の東向きのタンカーが正体不明の飛翔体を受けたと伝える（原文は「struck by unknown projectile whilst transiting eastbound」）。いずれも航行を続け、乗組員は全員無事で、被害の程度と環境への影響は不明とする。警報219は当初の報告を3件の別の攻撃に分け直した更新版。公式の本文に船名・攻撃主体の記載はない。Maritime Executive（11/24）は、3隻の被弾が海峡の東で相次ぎ、すべて航行を続けたと伝える。",
+          "sourceLabel": "UKMTO公式・Maritime Executive（11/24）",
+          "date": "2026年11月24日（現地）",
+          "label": "海上",
+          "url": "https://maritime-executive.com/article/three-tankers-hit-within-minutes-in-strait-of-hormuz",
+          "isLatest": false
+        },
+        {
+          "id": "latest-gcaptain-tugs-1124",
+          "title": "イラン側がタグボート26隻を非遵守船リストに追加——新たに4隻が被弾と報じられる",
+          "body": "gCaptain（11/24）は、イラン側の海峡当局が非遵守船のリストにタグボート26隻を加えたと伝える（元のBloomberg記事は未確認）。同記事は、新たに被弾した4隻の船名は公表されていないと書く。UKMTO公式の警報218は、オマーン湾（Dibba OPL）で錨泊中のバルク船が飛翔体を受けて火災が起きたと伝え（死傷の報告なし）、警報219〜221はタンカー3隻の被弾を伝える。",
+          "sourceLabel": "gCaptain（11/24）",
+          "date": "2026年11月24日（現地）",
+          "label": "海上",
+          "url": "https://gcaptain.com/four-more-ships-attacked-as-iran-widens-hormuz-crackdown-to-tugboats/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-jpost-houthi-jeddah-1124",
+          "title": "フーシ派「ホデイダを攻撃すればジッダなどサウジの紅海の港を標的にする」と主張——連合軍はホデイダ港の民間人に退避を要請",
+          "body": "Jerusalem Postは、フーシ派の軍事報道官Yahya Sareeが火曜（11/24）にXへの投稿で、「the port of Jeddah and all enemy Saudi ports along the Red Sea coast will be targets for our forces」と述べたと伝える。連合の合同軍司令部は、安全のためホデイダ港の民間人に退避を求めている（同紙）。Al Jazeeraのライブ更新も、連合軍が攻撃に踏み切ればフーシ派がサウジの紅海の港を攻撃するとしたと伝える。ジッダ港への実際の攻撃は確認できない。",
+          "sourceLabel": "Jerusalem Post（11/24〜25）・Al Jazeera（11/24）",
+          "date": "2026年11月24日（現地）",
+          "label": "その他",
+          "url": "https://www.jpost.com/middle-east/article-916028",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月25日",
       "items": [

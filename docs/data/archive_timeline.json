@@ -4303,6 +4303,24 @@
           "sourceLabel": "Rigzone（Bloomberg配信）・CNBC（11/25）"
         }
       ]
+    },
+    {
+      "date": "2026-11-28",
+      "dateLabel": "2026/11/28 07:49",
+      "blockadeDay": 274,
+      "summary": "【重大更新】前回分の裏取り：解消1件（封鎖累計の隻数＝CENTCOMの発表で封鎖再開後に進路変更158隻・航行不能6隻、AP・Maritime Executive・Kurdistan24）・継続16件（警報196〜224の攻撃主体・船名・発生時刻、IRGCの機雷等の主張〈11/25〜27〉の裏付け、警報224と貨物船の関係、11/26のブレント終値〈出典1つ〉、Kharg島の船団の出港、空母の到着日、ラス・タヌラ・ホデイダ港の被害、リヤドの塔の被害、クウェート攻撃の死因ほか。UKMTO公式の取得・RSS・主要媒体の検索を試したが独立した確認なし）・CENTCOMが11/26にオマーン湾でパラオ籍のばら積み船Pacific Archerを航行不能にしたと発表（封鎖再開後6隻目・指示に従って進路を変えた商船158隻・乗組員は無事・AP〈PBS転載〉・Maritime Executive）・UKMTO公式に新しい警報224（オマーン湾の貨物船と軍が関わる事案・本文に船名なし・Pacific Archerとの関係は報道で未確認）・IRGCが11/27に許可のない航路でタンカー1隻が機雷に触れて爆発しもう1隻は引き返したと主張（独立した確認なし・AP配信〈Asharq Al-Awsat〉）・イラン海軍司令官が米軍に拿捕された2隻のタンカーを奪還したと主張（船名・日時・場所の説明なし・独立した確認なし・Shafaq News）・パキスタン・サウジ・トルコの3か国がフーシ派の攻撃を非難しサウジの安全を支える取り組みを強めると表明（具体的な措置は示されず・Al Jazeera）・イエメン政府軍が726回の作戦で121人殺害と主張（独立した検証なし・Arab News）・クウェートがイラン大使に抗議（DNE Africa・Arab Newsの本文は未確認）・原油11/27終値はブレント1月物95.44ドル・WTI1月物83.08ドル（Reuters系・Bloomberg系で一致）・11/26のブレントの終値は2出典を確認できず据え置き・通航はPortWatchで11/16〜11/22に1日平均2.7隻（新しい週次の値なし）・日本関係船は新規の発表なし（残り4隻）・危機274日目・ニュース更新・現地メディア視点を更新・ルート表（旧ルート・ルートB）更新・地図の軍事レイヤーを見直し（封鎖海域の説明を更新）",
+      "relatedNews": [
+        {
+          "title": "米軍がイランの港を出た貨物船Pacific Archerを航行不能に——封鎖再開後6隻目、進路変更は158隻",
+          "url": "https://www.pbs.org/newshour/world/u-s-military-says-it-disabled-another-ship-that-tried-to-breach-naval-blockade-on-iranian-ports",
+          "sourceLabel": "AP（PBS転載）・Maritime Executive（11/27）"
+        },
+        {
+          "title": "原油11/27の終値はブレント1月物95.44ドル・WTI1月物83.08ドル——ブレントは週で約3%上昇",
+          "url": "https://www.rigzone.com/news/wire/oil_swings_with_rising_me_attacks_in_focus-27-nov-2026-185191-article/",
+          "sourceLabel": "Reuters（AOL掲載）・Rigzone（Bloomberg配信・11/27）"
+        }
+      ]
     }
   ]
 }

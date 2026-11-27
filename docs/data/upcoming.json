@@ -5,5 +5,15 @@
     "kind は schedule（予定）か deadline（期限）。date は YYYY-MM-DD（時刻は持たない）。date_note は任意（例：現地時間）",
     "url は実際に開いて確かめたものだけ（推測で書かない）。過ぎた項目は表示されないが、気づいたときに消す"
   ],
-  "items": []
+  "items": [
+    {
+      "kind": "schedule",
+      "title": "OPEC+会合",
+      "date": "2026-11-29",
+      "date_note": "日曜",
+      "source": "Reuters（AOL掲載・11/27）",
+      "url": "https://www.aol.com/articles/brent-trades-near-months-high-015047000.html",
+      "added": "2026-11-28"
+    }
+  ]
 }

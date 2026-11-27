@@ -1,7 +1,27 @@
 {
-  "updated": "2026年11月27日 08:08 日本時間JST",
+  "updated": "2026年11月28日 07:49 日本時間JST",
   "staleNotice": "",
   "latest": [
+    {
+      "id": "latest-centcom-1126",
+      "title": "米軍がイランの港を出た貨物船Pacific Archerを航行不能に——封鎖再開後6隻目、進路変更は158隻",
+      "body": "CENTCOMは11/27、11/26にオマーン湾で、バンダルアッバスを出港したパラオ籍のばら積み船M/V Pacific Archerを、米軍機が精密誘導弾で船尾を撃って航行不能にしたと発表した。APは、推進が止まり民間の乗組員は無事だったとCENTCOMが述べたと伝える。封鎖再開後の無力化は6隻目で、指示に従って進路を変えた商船は158隻（Maritime Executive）。APは、4月の封鎖開始以降では少なくとも15隻目の公表と書き、数える範囲が異なる。UKMTO公式の警報224（オマーン湾・貨物船と軍が関わる事案）と海域・船種は整合するが、同じ事案とした報道は確認できていない。",
+      "sourceLabel": "AP（PBS転載）・Maritime Executive（11/27）",
+      "date": "2026年11月27日（現地）",
+      "label": "海上",
+      "url": "https://www.pbs.org/newshour/world/u-s-military-says-it-disabled-another-ship-that-tried-to-breach-naval-blockade-on-iranian-ports",
+      "isLatest": true
+    },
+    {
+      "id": "latest-oil-1127",
+      "title": "原油11/27の終値はブレント1月物95.44ドル・WTI1月物83.08ドル——ブレントは週で約3%上昇",
+      "body": "11/27（金）の終値はブレント1月物が95.44ドル（前日比−1.13ドル、−1.2%）、WTI1月物が83.08ドル（前日比−0.60ドル、−0.7%）。Reuters（AOL掲載）は「US West Texas Intermediate crude futures settled at $83.08 a barrel, down 60 cents, or 0.7%」と書き、Bloomberg系のRigzoneは「Brent for January settlement fell 1.2% to settle at $95.44 a barrel in New York」「WTI for January delivery dipped 0.7% to settle at $83.08 a barrel」と書く。Reutersは、ブレントが週で約3%上昇しWTIは0.9%下落したと伝える。OPEC+は11/29の会合で2027年1〜3月の生産目標を据え置く見通し（Reuters）。",
+      "sourceLabel": "Reuters（AOL掲載）・Rigzone（Bloomberg配信・11/27）",
+      "date": "2026年11月27日（現地）",
+      "label": "原油・市場",
+      "url": "https://www.rigzone.com/news/wire/oil_swings_with_rising_me_attacks_in_focus-27-nov-2026-185191-article/",
+      "isLatest": false
+    },
     {
       "id": "latest-ukmto-1126",
       "title": "UKMTO警報223・Khasabの東18海里で出る向きのタンカーが飛翔体を受ける——警報222はドバイ西方でタンカー付近の爆発（被害なし）",
@@ -10,7 +30,7 @@
       "date": "2026年11月26日（現地）",
       "label": "海上",
       "url": "https://boereport.com/2026/11/26/tanker-struck-by-projectile-while-transiting-strait-of-hormuz-ukmto-says/",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "latest-gulf-attacks-1126",
@@ -21,29 +41,35 @@
       "label": "攻撃",
       "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-saudi-arabias-jazan-refinery-kills-nepali-worker-3014153",
       "isLatest": false
-    },
-    {
-      "id": "latest-hodeidah-1126",
-      "title": "サウジ主導連合がホデイダ港を空爆——フーシ派はジェッダ港・ジャザン港への報復攻撃を主張",
-      "body": "The National（11/26）は、フーシ派が、サウジ主導連合によるホデイダ港への空爆への報復として、ジェッダ港とジャザン港を攻撃したと述べたと伝える。ジェッダ港の被弾は直ちには確認されておらず、ジャザン港には飛来物が落ちて軽微な被害が出たが民間人の死傷はないと連合は発表した（飛来物の種類は調査中）。連合は、リヤド向けの弾道ミサイル2発とジェッダ港付近のドローン1機を迎撃し、東部州でドローン2機を破壊したとも発表した。",
-      "sourceLabel": "The National（11/26）",
-      "date": "2026年11月26日（現地）",
-      "label": "軍事",
-      "url": "https://www.thenationalnews.com/news/gulf/2026/11/26/saudi-arabia-intercepts-wave-of-retaliatory-houthi-attacks/",
-      "isLatest": false
-    },
-    {
-      "id": "latest-oil-1125",
-      "title": "原油が急反発・11/25の終値はブレント1月物94.61ドル・WTI1月物83.68ドル",
-      "body": "11/25（水）の清算値は、ブレント1月物が94.61ドル（前日比+3.21ドル、+3.5%）、WTI1月物が83.68ドル（+1.63ドル、+2%）。Rigzone（Bloomberg配信）は、中東での攻撃の激化が同地域からの原油出荷の回復を曇らせたと書く。ブレントはRigzoneとCNBCで、WTIはRigzone・MarketScreener（MT Newswires）・CNBCで一致した。11/26は米国の感謝祭でWTIは清算されず、ブレントの終値は2出典を確認できていない。",
-      "sourceLabel": "Rigzone（Bloomberg配信）・CNBC（11/25）",
-      "date": "2026年11月25日（現地）",
-      "label": "原油・市場",
-      "url": "https://www.rigzone.com/news/wire/oil_up_as_hormuz_attacks_counter_recovery_in_supply-25-nov-2026-185171-article/",
-      "isLatest": false
     }
   ],
   "osint": [
+    {
+      "id": "osint-aj-mecca-1127",
+      "titleJa": "【Al Jazeera】パキスタン・サウジ・トルコがフーシ派の攻撃を非難、サウジの安全を支える取り組みを強めると表明",
+      "titleEn": "Al Jazeera (Nov 27): Mecca pact allies condemn 'heinous' Houthi attacks on Saudi Arabia",
+      "title": "【Al Jazeera】パキスタン・サウジ・トルコがフーシ派の攻撃を非難、サウジの安全を支える取り組みを強めると表明",
+      "country": "カタール",
+      "media": "Al Jazeera",
+      "source": "Al Jazeera",
+      "date": "2026年11月27日（現地）",
+      "summary": "Al Jazeeraは、メッカ共同防衛協定（8/7署名）の3か国が、イスラマバードでの戦略政治・防衛委員会の後、サウジの都市・石油施設・海運へのフーシ派の攻撃を非難し、支援を強める決意を改めて示したと伝える。具体的な措置は発表されていない。サウジ当局によれば、9/23以降の死者は少なくとも26人（うち23人が空港への攻撃）という。",
+      "url": "https://www.aljazeera.com/news/2026/11/27/mecca-pact-allies-condemn-heinous-houthi-attacks-on-saudi-arabia",
+      "isLatest": true
+    },
+    {
+      "id": "osint-aawsat-irgc-1127",
+      "titleJa": "【Asharq Al-Awsat】IRGC「許可のない航路でタンカー1隻が機雷に触れた」と主張・独立した確認なし",
+      "titleEn": "Asharq Al-Awsat (Nov 27): Iran Guards Say Tanker Hits Mine Near Strait of Hormuz",
+      "title": "【Asharq Al-Awsat】IRGC「許可のない航路でタンカー1隻が機雷に触れた」と主張・独立した確認なし",
+      "country": "サウジアラビア",
+      "media": "Asharq Al-Awsat",
+      "source": "Asharq Al-Awsat",
+      "date": "2026年11月27日（現地）",
+      "summary": "Asharq Al-Awsat（AP配信）は、IRGCがイランの国営放送を通じた声明で、タンカー2隻が許可のない航路で海峡を渡ろうとし、うち1隻が機雷に触れ、もう1隻は引き返したと述べたと伝える。APはこの主張を独立して確認できないと書く。IRGCはまた、許可のない航路を通ろうとするタンカーの数がここ数日で大きく減ったと述べた。",
+      "url": "https://english.aawsat.com/world/5346276-iran-guards-say-tanker-hits-mine-near-strait-hormuz",
+      "isLatest": false
+    },
     {
       "id": "osint-arabnews-jazan-1126",
       "titleJa": "【Arab News】フーシ派の攻撃でサウジ・ジャザンの製油所が一部停止、ネパール人労働者1人が死亡",
@@ -55,7 +81,7 @@
       "date": "2026年11月26日（現地）",
       "summary": "Arab Newsは、サウジのエネルギー省の発表として、ジャザンの製油所が飛翔体に当たって火災が起き、一部の操業が止まり、ネパール人労働者1人が死亡、数人が負傷したと伝える（製油所は日量最大40万バレルを処理できる）。連合軍は報復としてホデイダ港の弾道ミサイル発射台を破壊したと発表した。同記事は、クウェートのイタリア人2人の死亡はイランの責任とされていると併記する。",
       "url": "https://www.arabnews.com/saudi-arabia/houthi-attack-on-saudi-arabias-jazan-refinery-kills-nepali-worker-3014153",
-      "isLatest": true
+      "isLatest": false
     },
     {
       "id": "osint-arabnews-irgc-1126",
@@ -2610,6 +2636,31 @@
     }
   ],
   "archive": [
+    {
+      "batchLabel": "2026年11月28日",
+      "items": [
+        {
+          "id": "latest-hodeidah-1126",
+          "title": "サウジ主導連合がホデイダ港を空爆——フーシ派はジェッダ港・ジャザン港への報復攻撃を主張",
+          "body": "The National（11/26）は、フーシ派が、サウジ主導連合によるホデイダ港への空爆への報復として、ジェッダ港とジャザン港を攻撃したと述べたと伝える。ジェッダ港の被弾は直ちには確認されておらず、ジャザン港には飛来物が落ちて軽微な被害が出たが民間人の死傷はないと連合は発表した（飛来物の種類は調査中）。連合は、リヤド向けの弾道ミサイル2発とジェッダ港付近のドローン1機を迎撃し、東部州でドローン2機を破壊したとも発表した。",
+          "sourceLabel": "The National（11/26）",
+          "date": "2026年11月26日（現地）",
+          "label": "軍事",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/11/26/saudi-arabia-intercepts-wave-of-retaliatory-houthi-attacks/",
+          "isLatest": false
+        },
+        {
+          "id": "latest-oil-1125",
+          "title": "原油が急反発・11/25の終値はブレント1月物94.61ドル・WTI1月物83.68ドル",
+          "body": "11/25（水）の清算値は、ブレント1月物が94.61ドル（前日比+3.21ドル、+3.5%）、WTI1月物が83.68ドル（+1.63ドル、+2%）。Rigzone（Bloomberg配信）は、中東での攻撃の激化が同地域からの原油出荷の回復を曇らせたと書く。ブレントはRigzoneとCNBCで、WTIはRigzone・MarketScreener（MT Newswires）・CNBCで一致した。11/26は米国の感謝祭でWTIは清算されず、ブレントの終値は2出典を確認できていない。",
+          "sourceLabel": "Rigzone（Bloomberg配信）・CNBC（11/25）",
+          "date": "2026年11月25日（現地）",
+          "label": "原油・市場",
+          "url": "https://www.rigzone.com/news/wire/oil_up_as_hormuz_attacks_counter_recovery_in_supply-25-nov-2026-185171-article/",
+          "isLatest": false
+        }
+      ]
+    },
     {
       "batchLabel": "2026年11月27日",
       "items": [
